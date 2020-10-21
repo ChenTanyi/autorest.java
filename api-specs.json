@@ -1,0 +1,14 @@
+{
+    "resources": {
+        "source": "specification/resources/resource-manager/readme.md",
+        "tag": "package-resources-2020-06",
+        "namespace": "com.azure.resourcemanager.resources.generated",
+        "output": "sdk/resources/azure-resourcemanager-resources-generated"
+    },
+    "storage": {
+        "source": "specification/storage/resource-manager/readme.md",
+        "tag": "package-2019-06",
+        "namespace": "com.azure.resourcemanager.storage.generated",
+        "output": "sdk/storage/azure-resourcemanager-storage-generated"
+    }
+}
