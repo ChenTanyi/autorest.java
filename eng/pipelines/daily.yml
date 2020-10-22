@@ -9,6 +9,10 @@ schedules:
 trigger:
   - ci
 
+variables:
+  MAVEN_CACHE_FOLDER: $(Pipeline.Workspace)/.m2/repository
+  MAVEN_OPTS: '-Dmaven.repo.local=$(MAVEN_CACHE_FOLDER)'
+
 jobs:
   - job: Build
 
@@ -20,6 +24,15 @@ jobs:
       vmImage: ubuntu-18.04
 
     steps:
+      - task: Cache@2
+        inputs:
+          key: 'maven | "$(Agent.OS)" | **/pom.xml'
+          restoreKeys: |
+            maven | "$(Agent.OS)"
+            maven
+          path: $(MAVEN_CACHE_FOLDER)
+        displayName: Cache Maven local repo
+
       - task: NodeTool@0
         displayName: 'Install Node.js $(NodeVersion)'
         inputs:
@@ -35,7 +48,7 @@ jobs:
         inputs:
           mavenPomFile: pom.xml
           goals: 'package'
-          options: '-Dlocal'
+          options: '-Dlocal $(MAVEN_OPTS)'
           javaHomeOption: 'JDKVersion'
           jdkVersionOption: $(JavaVersion)
           jdkArchitectureOption: 'x64'
@@ -50,7 +63,7 @@ jobs:
         inputs:
           mavenPomFile: azure-sdk-for-java/eng/code-quality-reports/pom.xml
           goals: 'install'
-          options: ''
+          options: '$(MAVEN_OPTS)'
           javaHomeOption: 'JDKVersion'
           jdkVersionOption: $(JavaVersion)
           jdkArchitectureOption: 'x64'
