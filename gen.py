@@ -24,7 +24,7 @@ def generate(config: dict, args: argparse.Namespace):
     output_dir = os.path.join(args.output, config['output'])
     readme = args.specs + ('/' if args.specs[-1] != '/' else '') + config['source']
 
-    shutil.rmtree(output_dir)
+    shutil.rmtree(output_dir, ignore_errors = True)
     command = 'autorest --version={0} {4} --output-folder={1} --sdk-integration --payload-flattening-threshold=0 --tag={2} --java.namespace={3} {5}'.format(AUTOREST_CORE_VERSION, output_dir, config['tag'], config['namespace'], FLUENTLITE_ARGUMENTS, readme)
     logging.info(command)
     if os.system(command) != 0:
