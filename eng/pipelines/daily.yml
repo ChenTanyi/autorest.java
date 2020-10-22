@@ -1,0 +1,47 @@
+schedules:
+- cron: 0 18 * * *
+  displayName: Daily Build
+  branches:
+    include:
+      - ci
+  always: true
+
+jobs:
+  - job: Build
+
+    variables:
+      JavaVersion: 1.11
+      NodeVersion: '14.x'
+
+    pool:
+      vmImage: ubuntu-18.04
+
+    steps:
+      - task: NodeTool@0
+        displayName: 'Install Node.js $(NodeVersion)'
+        inputs:
+          versionSpec: '$(NodeVersion)'
+
+      - script: |
+          npm install -g autorest
+          npm install
+        displayName: 'Install autorest'
+
+      - task: Maven@3
+        displayName: 'Build and Package'
+        inputs:
+          mavenPomFile: pom.xml
+          goals: 'package'
+          options: '-Dlocal'
+          javaHomeOption: 'JDKVersion'
+          jdkVersionOption: $(JavaVersion)
+          jdkArchitectureOption: 'x64'
+          publishJUnitResults: false
+
+      - script: |
+          git clone https://github.com/azure/azure-sdk-for-java
+        displayName: 'Clone azure-sdk-for-java'
+
+      - script: |
+          ./gen.py -u . -o azure-sdk-for-java
+        displayName: 'Generate and Compile'
