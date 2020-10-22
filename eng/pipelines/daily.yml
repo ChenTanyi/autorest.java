@@ -71,7 +71,7 @@ jobs:
 
       - script: |
           echo "Set Java to $JAVA_HOME_11_X64"
-          export PATH="$PATH:$JAVA_HOME_11_X64/bin"
+          export PATH="$JAVA_HOME_11_X64/bin:$PATH"
           java -version
           ./gen.py -u . -o azure-sdk-for-java
         displayName: 'Generate and Compile'
