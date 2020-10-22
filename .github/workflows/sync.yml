@@ -1,0 +1,22 @@
+name: Sync autorest.java
+on:
+  schedule:
+    - cron: 30 17 * * *
+  workflow_dispatch:
+    inputs:
+      test:
+        description: No need
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ci
+      - name: Merge from Azure/autorest.java
+        env:
+          SECRET: ${{ secrets.PERSONAL_TOKEN }}
+        run: |
+          git pull --rebase=false --no-edit https://github.com/azure/autorest.java v4
+          git push https://${SECRET}@github.com/chentanyi/autorest.java HEAD:ci
