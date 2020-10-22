@@ -6,6 +6,9 @@ schedules:
       - ci
   always: true
 
+trigger:
+  - ci
+
 jobs:
   - job: Build
 
