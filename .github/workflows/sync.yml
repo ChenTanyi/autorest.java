@@ -19,5 +19,7 @@ jobs:
         env:
           SECRET: ${{ secrets.PERSONAL_TOKEN }}
         run: |
+          git config --global user.email "tanchen@microsoft.com"
+          git config --global user.name "Tanyi Chen"
           git pull --rebase=false --no-edit https://github.com/azure/autorest.java v4
           git push https://${SECRET}@github.com/chentanyi/autorest.java HEAD:ci
