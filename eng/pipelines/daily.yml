@@ -45,6 +45,17 @@ jobs:
           git clone https://github.com/azure/azure-sdk-for-java
         displayName: 'Clone azure-sdk-for-java'
 
+      - task: Maven@3
+        displayName: 'Install sdk-build-tools'
+        inputs:
+          mavenPomFile: azure-sdk-for-java/eng/code-quality-reports/pom.xml
+          goals: 'install'
+          options: ''
+          javaHomeOption: 'JDKVersion'
+          jdkVersionOption: $(JavaVersion)
+          jdkArchitectureOption: 'x64'
+          publishJUnitResults: false
+
       - script: |
           ./gen.py -u . -o azure-sdk-for-java
         displayName: 'Generate and Compile'
