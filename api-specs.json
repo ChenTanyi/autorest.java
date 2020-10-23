@@ -7,8 +7,27 @@
     },
     "storage": {
         "source": "specification/storage/resource-manager/readme.md",
-        "tag": "package-2019-06",
         "namespace": "com.azure.resourcemanager.storage.generated",
         "output": "sdk/storage/azure-resourcemanager-storage-generated"
+    },
+    "appservice": {
+        "source": "specification/web/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.appservice.generated",
+        "output": "sdk/appservice/azure-resourcemanager-appservice-generated"
+    },
+    "compute": {
+        "source": "specification/compute/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.compute.generated",
+        "output": "sdk/compute/azure-resourcemanager-compute-generated"
+    },
+    "network": {
+        "source": "specification/network/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.network.generated",
+        "output": "sdk/compute/azure-resourcemanager-network-generated"
+    },
+    "monitor": {
+        "source": "specification/monitor/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.monitor.generated",
+        "output": "sdk/monitor/azure-resourcemanager-monitor-generated"
     }
 }

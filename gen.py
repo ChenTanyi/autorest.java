@@ -25,7 +25,7 @@ def generate(config: dict, args: argparse.Namespace):
     readme = args.specs + ('/' if args.specs[-1] != '/' else '') + config['source']
 
     shutil.rmtree(output_dir, ignore_errors = True)
-    command = 'autorest --version={0} {4} --output-folder={1} --sdk-integration --payload-flattening-threshold=0 --tag={2} --java.namespace={3} {5}'.format(AUTOREST_CORE_VERSION, output_dir, config['tag'], config['namespace'], FLUENTLITE_ARGUMENTS, readme)
+    command = 'autorest --version={0} {4} --output-folder={1} --sdk-integration --payload-flattening-threshold=0 {2} --java.namespace={3} {5}'.format(AUTOREST_CORE_VERSION, output_dir, ("--tag=" + config.get('tag')) if config.get('tag') is not None else '', config['namespace'], FLUENTLITE_ARGUMENTS, readme)
     logging.info(command)
     if os.system(command) != 0:
         raise RuntimeError('Autorest fail')
