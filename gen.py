@@ -19,7 +19,7 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 def generate(config: dict, args: argparse.Namespace):
-    FLUENTLITE_ARGUMENTS='--java --use={0} --azure-libraries-for-java-folder={1} {2} --azure-arm --fluent=lite --license-header=MICROSOFT_MIT_SMALL --generate-client-interfaces --sync-methods=all --required-parameter-client-methods --add-context-parameter --context-client-method-parameter --track1-naming --client-side-validations --client-logger'.format(args.use, args.output, MODELERFOUR_ARGUMENTS)
+    FLUENTLITE_ARGUMENTS='--java --use={0} --azure-libraries-for-java-folder={1} {2} --azure-arm --fluent=lite --license-header=MICROSOFT_MIT_SMALL'.format(args.use, args.output, MODELERFOUR_ARGUMENTS)
 
     output_dir = os.path.join(args.output, config['output'])
     readme = args.specs + ('/' if args.specs[-1] != '/' else '') + config['source']
