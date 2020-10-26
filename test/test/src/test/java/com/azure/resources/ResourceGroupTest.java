@@ -8,8 +8,6 @@ import com.azure.resourcemanager.resources.generated.models.ResourceGroup;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.concurrent.atomic.AtomicBoolean;
-
 public class ResourceGroupTest extends Base {
     @Test
     public void canCRUDResourceGroup() {
@@ -24,16 +22,7 @@ public class ResourceGroupTest extends Base {
         rg = manager.resourceGroups().get(rgName);
         Assertions.assertEquals(region, rg.region());
 
-        AtomicBoolean found = new AtomicBoolean(false);
-        manager.resourceGroups().list().forEach(
-                rg1 -> {
-                    if (rg1.name().equals(rgName)) {
-                        found.set(true);
-                        Assertions.assertEquals(region, rg1.region());
-                    }
-                }
-        );
-        Assertions.assertTrue(found.get());
+        Assertions.assertTrue(manager.resourceGroups().list().stream().anyMatch(rg1 -> rg1.name().equals(rgName)));
 
         manager.resourceGroups().delete(rgName);
         try {

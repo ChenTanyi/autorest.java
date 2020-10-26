@@ -29,7 +29,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 public class VirtualMachineTest extends Base {
     @Test
@@ -137,15 +136,7 @@ public class VirtualMachineTest extends Base {
         Assertions.assertEquals(vm.id(), computeManager.virtualMachines().getByResourceGroup(rgName, virtualMachineName).id());
 
         // list
-        AtomicBoolean found = new AtomicBoolean(false);
-        computeManager.virtualMachines().listByResourceGroup(rgName).forEach(
-                vm1 -> {
-                    if (vm1.name().equals(virtualMachineName)) {
-                        found.set(true);
-                    }
-                }
-        );
-        Assertions.assertTrue(found.get());
+        Assertions.assertTrue(computeManager.virtualMachines().listByResourceGroup(rgName).stream().anyMatch(vm1 -> vm1.name().equals(virtualMachineName)));
 
         // delete
         computeManager.virtualMachines().delete(rgName, virtualMachineName);
