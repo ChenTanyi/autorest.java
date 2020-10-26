@@ -24,7 +24,7 @@ public class StorageTests extends Base {
 
     @Test
     public void testStorage() {
-        String saName = randomString("saweidxu", 10);
+        String saName = randomString("sa", 10);
         String blobContainerName = "container1";
         Region region = Region.US_WEST;
 
