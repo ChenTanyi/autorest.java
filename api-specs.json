@@ -9,11 +9,6 @@
         "namespace": "com.azure.resourcemanager.authorization.generated",
         "output": "sdk/authorization/azure-resourcemanager-authorization-generated"
     },
-    "commerce": {
-        "source": "specification/commerce/resource-manager/readme.md",
-        "namespace": "com.azure.resourcemanager.commerce.generated",
-        "output": "sdk/commerce/azure-resourcemanager-commerce-generated"
-    },	
     "compute": {
         "source": "specification/compute/resource-manager/readme.md",
         "namespace": "com.azure.resourcemanager.compute.generated",
