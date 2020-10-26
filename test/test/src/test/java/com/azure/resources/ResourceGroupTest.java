@@ -19,17 +19,17 @@ public class ResourceGroupTest extends Base {
         ResourceGroup rg = manager.resourceGroups().define(rgName)
                 .withRegion(region)
                 .create();
-        Assertions.assertEquals(region.toString(), rg.location());
+        Assertions.assertEquals(region, rg.region());
 
         rg = manager.resourceGroups().get(rgName);
-        Assertions.assertEquals(region.toString(), rg.location());
+        Assertions.assertEquals(region, rg.region());
 
         AtomicBoolean found = new AtomicBoolean(false);
         manager.resourceGroups().list().forEach(
                 rg1 -> {
                     if (rg1.name().equals(rgName)) {
                         found.set(true);
-                        Assertions.assertEquals(region.toString(), rg1.location());
+                        Assertions.assertEquals(region, rg1.region());
                     }
                 }
         );
