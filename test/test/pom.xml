@@ -42,6 +42,30 @@
       <version>1.0.0-beta.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.azure.resourcemanager</groupId>
+      <artifactId>azure-resourcemanager-network-generated</artifactId>
+      <version>1.0.0-beta.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.azure.resourcemanager</groupId>
+      <artifactId>azure-resourcemanager-compute-generated</artifactId>
+      <version>1.0.0-beta.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.azure.resourcemanager</groupId>
+      <artifactId>azure-resourcemanager-monitor-generated</artifactId>
+      <version>1.0.0-beta.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.azure.resourcemanager</groupId>
+      <artifactId>azure-resourcemanager-appservice-generated</artifactId>
+      <version>1.0.0-beta.1</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
