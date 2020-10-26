@@ -23,7 +23,7 @@
     "network": {
         "source": "specification/network/resource-manager/readme.md",
         "namespace": "com.azure.resourcemanager.network.generated",
-        "output": "sdk/compute/azure-resourcemanager-network-generated"
+        "output": "sdk/network/azure-resourcemanager-network-generated"
     },
     "monitor": {
         "source": "specification/monitor/resource-manager/readme.md",
