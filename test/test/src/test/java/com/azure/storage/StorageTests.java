@@ -56,6 +56,8 @@ public class StorageTests extends Base {
         StorageAccount storageAccount2 = storageManager.storageAccounts().getByResourceGroup(rgName, saName);
         Assertions.assertEquals(Kind.STORAGE_V2, storageAccount2.kind());
 
+        Assertions.assertEquals(1, storageManager.storageAccounts().listByResourceGroup(rgName).stream().count());
+
         storageAccount2.update()
                 .withAccessTier(AccessTier.COOL)
                 .withTags(Map.of("tag2", "value2"))
@@ -71,6 +73,8 @@ public class StorageTests extends Base {
 
         blobContainer.refresh();
         Assertions.assertEquals(PublicAccess.BLOB, blobContainer.publicAccess());
+
+        Assertions.assertEquals(1, storageManager.blobContainers().list(rgName, saName).stream().count());
 
         BlobContainer blobContainer2 = storageManager.blobContainers().get(rgName, saName, blobContainerName);
         blobContainer2.update()
