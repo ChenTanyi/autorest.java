@@ -7144,20 +7144,24 @@ public final class WebAppsImpl implements WebApps {
         return new SiteImpl(name, this.manager());
     }
 
-    public PrivateEndpointConnectionResourceImpl definePrivateEndpointConnection(String name) {
-        return new PrivateEndpointConnectionResourceImpl(name, this.manager());
-    }
-
-    public IdentifierImpl defineDomainOwnershipIdentifier(String name) {
-        return new IdentifierImpl(name, this.manager());
+    public FunctionEnvelopeImpl defineFunction(String name) {
+        return new FunctionEnvelopeImpl(name, this.manager());
     }
 
     public RelayServiceConnectionEntityImpl defineHybridconnection(String name) {
         return new RelayServiceConnectionEntityImpl(name, this.manager());
     }
 
+    public VnetGatewayImpl defineGateway(String name) {
+        return new VnetGatewayImpl(name, this.manager());
+    }
+
     public PremierAddOnImpl definePremieraddon(String name) {
         return new PremierAddOnImpl(name, this.manager());
+    }
+
+    public PrivateEndpointConnectionResourceImpl definePrivateEndpointConnection(String name) {
+        return new PrivateEndpointConnectionResourceImpl(name, this.manager());
     }
 
     public HostnameBindingImpl defineHostNameBinding(String name) {
@@ -7172,19 +7176,15 @@ public final class WebAppsImpl implements WebApps {
         return new HybridConnectionImpl(name, this.manager());
     }
 
-    public PublicCertificateImpl definePublicCertificate(String name) {
-        return new PublicCertificateImpl(name, this.manager());
-    }
-
-    public VnetGatewayImpl defineGateway(String name) {
-        return new VnetGatewayImpl(name, this.manager());
-    }
-
-    public FunctionEnvelopeImpl defineFunction(String name) {
-        return new FunctionEnvelopeImpl(name, this.manager());
-    }
-
     public DeploymentImpl defineDeployment(String name) {
         return new DeploymentImpl(name, this.manager());
+    }
+
+    public IdentifierImpl defineDomainOwnershipIdentifier(String name) {
+        return new IdentifierImpl(name, this.manager());
+    }
+
+    public PublicCertificateImpl definePublicCertificate(String name) {
+        return new PublicCertificateImpl(name, this.manager());
     }
 }

@@ -49,9 +49,9 @@ public final class StorageQueueImpl implements StorageQueue, StorageQueue.Defini
         return this.serviceManager;
     }
 
-    private String queueName;
-
     private String resourceGroupName;
+
+    private String queueName;
 
     private String accountName;
 
