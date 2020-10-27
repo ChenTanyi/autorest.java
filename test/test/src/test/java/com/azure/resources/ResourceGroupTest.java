@@ -1,7 +1,6 @@
 package com.azure.resources;
 
 import com.azure.Base;
-import com.azure.core.management.Region;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.resourcemanager.resources.generated.ResourceManager;
 import com.azure.resourcemanager.resources.generated.models.ResourceGroup;
@@ -11,7 +10,6 @@ import org.junit.jupiter.api.Test;
 public class ResourceGroupTest extends Base {
     @Test
     public void canCRUDResourceGroup() {
-        final Region region = Region.US_EAST;
         ResourceManager manager = ResourceManager.configure().withHttpClient(client).authenticate(credential, profile);
 
         ResourceGroup rg = manager.resourceGroups().define(rgName)

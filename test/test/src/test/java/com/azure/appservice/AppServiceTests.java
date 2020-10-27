@@ -3,7 +3,6 @@ package com.azure.appservice;
 import com.azure.Base;
 import com.azure.core.http.policy.HttpLogDetailLevel;
 import com.azure.core.http.policy.HttpLogOptions;
-import com.azure.core.management.Region;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigResourceInner;
@@ -11,7 +10,6 @@ import com.azure.resourcemanager.appservice.generated.models.AppServicePlan;
 import com.azure.resourcemanager.appservice.generated.models.Site;
 import com.azure.resourcemanager.appservice.generated.models.SiteConfigResource;
 import com.azure.resourcemanager.appservice.generated.models.SkuDescription;
-import com.azure.resourcemanager.resources.generated.models.ResourceGroup;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -21,11 +19,6 @@ public class AppServiceTests extends Base {
     public void testWebapp() {
         String servicePlanName = randomString("plan", 10);
         String webappName = randomString("webapp", 10);
-        Region region = Region.US_WEST;
-
-        ResourceGroup rg = resourceManager.resourceGroups().define(rgName)
-                .withRegion(region)
-                .create();
 
         WebSiteManager appserviceManager = WebSiteManager.configure()
                 .withHttpClient(client)

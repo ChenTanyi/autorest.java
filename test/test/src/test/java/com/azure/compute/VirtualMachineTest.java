@@ -1,7 +1,6 @@
 package com.azure.compute;
 
 import com.azure.Base;
-import com.azure.core.management.Region;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.models.CreationData;
@@ -33,7 +32,6 @@ import java.util.Collections;
 public class VirtualMachineTest extends Base {
     @Test
     public void canCRUDVM() {
-        Region region = Region.US_EAST;
         String networkName = randomString("net", 16);
         String virtualMachineName = randomString("vm", 16);
         String networkInterfaceName = randomString("ni", 16);
@@ -46,10 +44,6 @@ public class VirtualMachineTest extends Base {
 
         NetworkManager networkManager = NetworkManager.configure().withHttpClient(client).authenticate(credential, profile);
         ComputeManager computeManager = ComputeManager.configure().withHttpClient(client).authenticate(credential, profile);
-
-        resourceManager.resourceGroups().define(rgName)
-                .withRegion(region)
-                .create();
 
         VirtualNetwork network = networkManager.virtualNetworks().define(networkName)
                 .withRegion(region)

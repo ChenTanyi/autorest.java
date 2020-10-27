@@ -5,6 +5,7 @@ import com.azure.core.http.HttpClient;
 import com.azure.core.http.ProxyOptions;
 import com.azure.core.http.netty.NettyAsyncHttpClientBuilder;
 import com.azure.core.management.AzureEnvironment;
+import com.azure.core.management.Region;
 import com.azure.core.management.profile.AzureProfile;
 import com.azure.core.test.TestBase;
 import com.azure.identity.EnvironmentCredentialBuilder;
@@ -31,6 +32,7 @@ public class Base extends TestBase {
     protected HttpClient client;
     protected ResourceManager resourceManager;
     protected String rgName;
+    protected Region region;
 
     @Override
     protected void beforeTest() {
@@ -40,6 +42,11 @@ public class Base extends TestBase {
         client = generateHttpClientWithProxy(null, null);
         resourceManager = ResourceManager.configure().withHttpClient(client).authenticate(credential, profile);
         rgName = randomString("rg", 15);
+        region = Region.US_EAST;
+
+        resourceManager.resourceGroups().define(rgName)
+                .withRegion(region)
+                .create();
     }
 
     @Override

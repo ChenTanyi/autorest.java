@@ -3,10 +3,8 @@ package com.azure.storage;
 import com.azure.Base;
 import com.azure.core.http.policy.HttpLogDetailLevel;
 import com.azure.core.http.policy.HttpLogOptions;
-import com.azure.core.management.Region;
 import com.azure.core.management.exception.ManagementException;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.resources.generated.models.ResourceGroup;
 import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.models.AccessTier;
 import com.azure.resourcemanager.storage.generated.models.BlobContainer;
@@ -26,11 +24,6 @@ public class StorageTests extends Base {
     public void testStorage() {
         String saName = randomString("sa", 10);
         String blobContainerName = "container1";
-        Region region = Region.US_WEST;
-
-        ResourceGroup rg = resourceManager.resourceGroups().define(rgName)
-                .withRegion(region)
-                .create();
 
         StorageManager storageManager = StorageManager.configure()
                 .withHttpClient(client)
@@ -38,7 +31,7 @@ public class StorageTests extends Base {
                 .authenticate(credential, profile);
 
         StorageAccount storageAccount = storageManager.storageAccounts().define(saName)
-                .withRegion(rg.region())
+                .withRegion(region)
                 .withExistingResourceGroup(rgName)
                 .withSku(new Sku().withName(SkuName.STANDARD_LRS))
                 .withKind(Kind.STORAGE_V2)
