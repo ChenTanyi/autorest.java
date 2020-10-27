@@ -1,5 +1,7 @@
 package com.azure.autorest.mapper;
 
+import com.azure.autorest.extension.base.model.codemodel.AnySchema;
+import com.azure.autorest.extension.base.model.codemodel.ArraySchema;
 import com.azure.autorest.extension.base.model.codemodel.ConstantSchema;
 import com.azure.autorest.extension.base.model.codemodel.Parameter;
 import com.azure.autorest.extension.base.plugin.JavaSettings;
@@ -11,13 +13,14 @@ import com.azure.autorest.util.CodeNamer;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class ClientParameterMapper implements IMapper<Parameter, ClientMethodParameter> {
-    private static ClientParameterMapper instance = new ClientParameterMapper();
+public class CustomClientParameterMapper implements IMapper<Parameter, ClientMethodParameter> {
 
-    private ClientParameterMapper() {
+    private static CustomClientParameterMapper instance = new CustomClientParameterMapper();
+
+    private CustomClientParameterMapper() {
     }
 
-    public static ClientParameterMapper getInstance() {
+    public static CustomClientParameterMapper getInstance() {
         return instance;
     }
 
@@ -26,7 +29,6 @@ public class ClientParameterMapper implements IMapper<Parameter, ClientMethodPar
         String name = parameter.getOriginalParameter() != null && parameter.getLanguage().getJava().getName().equals(parameter.getOriginalParameter().getLanguage().getJava().getName())
                 ? CodeNamer.toCamelCase(parameter.getOriginalParameter().getSchema().getLanguage().getJava().getName()) + CodeNamer.toPascalCase(parameter.getLanguage().getJava().getName())
                 : parameter.getLanguage().getJava().getName();
-        name = CodeNamer.getEscapedReservedClientMethodParameterName(name);
 
         JavaSettings settings = JavaSettings.getInstance();
         ClientMethodParameter.Builder builder = new ClientMethodParameter.Builder()
@@ -35,6 +37,13 @@ public class ClientParameterMapper implements IMapper<Parameter, ClientMethodPar
                 .fromClient(parameter.getImplementation() == Parameter.ImplementationLocation.CLIENT);
 
         IType wireType = Mappers.getSchemaMapper().map(parameter.getSchema());
+        if (parameter.getSchema() instanceof ArraySchema) {
+            ArraySchema arraySchema = (ArraySchema) parameter.getSchema();
+            if (arraySchema.getElementType() instanceof AnySchema) {
+                wireType = ClassType.JsonPatchDocument;
+            }
+        }
+
         if (parameter.isNullable() || !parameter.isRequired()) {
             wireType = wireType.asNullable();
         }

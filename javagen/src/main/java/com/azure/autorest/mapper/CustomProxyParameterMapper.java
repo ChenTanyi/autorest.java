@@ -1,5 +1,7 @@
 package com.azure.autorest.mapper;
 
+import com.azure.autorest.extension.base.model.codemodel.AnySchema;
+import com.azure.autorest.extension.base.model.codemodel.ArraySchema;
 import com.azure.autorest.extension.base.model.codemodel.ConstantSchema;
 import com.azure.autorest.extension.base.model.codemodel.Parameter;
 import com.azure.autorest.extension.base.model.codemodel.RequestParameterLocation;
@@ -14,33 +16,39 @@ import com.azure.autorest.model.clientmodel.ProxyMethodParameter;
 import com.azure.autorest.util.CodeNamer;
 import com.azure.core.util.serializer.CollectionFormat;
 
-public class ProxyParameterMapper implements IMapper<Parameter, ProxyMethodParameter> {
-    private static ProxyParameterMapper instance = new ProxyParameterMapper();
+public class CustomProxyParameterMapper implements IMapper<Parameter, ProxyMethodParameter> {
 
-    private ProxyParameterMapper() {
+    private static CustomProxyParameterMapper instance = new CustomProxyParameterMapper();
+
+    private CustomProxyParameterMapper() {
     }
 
-    public static ProxyParameterMapper getInstance() {
+    public static CustomProxyParameterMapper getInstance() {
         return instance;
     }
+
 
     @Override
     public ProxyMethodParameter map(Parameter parameter) {
         JavaSettings settings = JavaSettings.getInstance();
 
-        String name = parameter.getLanguage().getJava().getName();
-
         ProxyMethodParameter.Builder builder = new ProxyMethodParameter.Builder()
                 .requestParameterName(parameter.getLanguage().getDefault().getSerializedName())
-                .name(name)
+                .name(parameter.getLanguage().getJava().getName())
                 .isRequired(parameter.isRequired())
                 .isNullable(parameter.isNullable());
 
-        //TODO: HeaderCollectionPrefix
-//        String parameterHeaderCollectionPrefix = parameter.Extensions.GetValue<string>(SwaggerExtensions.HeaderCollectionPrefix);
+        Schema parameterJvWireType = parameter.getSchema();
 
-        Schema ParameterJvWireType = parameter.getSchema();
-        IType wireType = Mappers.getSchemaMapper().map(ParameterJvWireType);
+        IType wireType = Mappers.getSchemaMapper().map(parameterJvWireType);
+
+        if (parameterJvWireType instanceof ArraySchema) {
+            ArraySchema arraySchema = (ArraySchema) parameterJvWireType;
+            if (arraySchema.getElementType() instanceof AnySchema) {
+                wireType = ClassType.JsonPatchDocument;
+            }
+        }
+
         if (parameter.isNullable() || !parameter.isRequired()) {
             wireType = wireType.asNullable();
         }
@@ -56,12 +64,12 @@ public class ProxyParameterMapper implements IMapper<Parameter, ProxyMethodParam
         if (wireType instanceof ListType && settings.shouldGenerateXmlSerialization() && parameterRequestLocation == RequestParameterLocation.Body){
             String parameterTypePackage = settings.getPackage(settings.getImplementationSubpackage());
             String parameterTypeName = CodeNamer
-                .toPascalCase(ParameterJvWireType.getSerialization().getXml().getName() +
-                    "Wrapper");
+                    .toPascalCase(parameterJvWireType.getSerialization().getXml().getName() +
+                            "Wrapper");
             wireType = new ClassType.Builder()
-                .packageName(parameterTypePackage)
-                .name(parameterTypeName)
-                .build();
+                    .packageName(parameterTypePackage)
+                    .name(parameterTypeName)
+                    .build();
         } else if (wireType == ArrayType.ByteArray) {
             if (parameterRequestLocation != RequestParameterLocation.Body /*&& parameterRequestLocation != RequestParameterLocation.FormData*/) {
                 wireType = ClassType.String;
@@ -87,8 +95,7 @@ public class ProxyParameterMapper implements IMapper<Parameter, ProxyMethodParam
             builder.defaultValue(objValue == null ? null : String.valueOf(objValue));
         }
 
-        // parameterReference is what ClientMethod calls the ProxyMethod
-        String parameterReference = CodeNamer.getEscapedReservedClientMethodParameterName(name);
+        String parameterReference = parameter.getLanguage().getJava().getName();
         if (Parameter.ImplementationLocation.CLIENT.equals(parameter.getImplementation())) {
             String operationGroupName = parameter.getOperation().getOperationGroup().getLanguage().getJava().getName();
             String caller = (operationGroupName == null || operationGroupName.isEmpty()) ? "this" : "this.client";
