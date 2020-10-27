@@ -6,11 +6,25 @@
     <version>1.0.0</version> <!-- Need not change for every release-->
     <modules>
         <module>test</module>
-        <module>../generated/sdk/resources/azure-resourcemanager-resources-generated</module>
-        <module>../generated/sdk/storage/azure-resourcemanager-storage-generated</module>
-        <module>../generated/sdk/network/azure-resourcemanager-network-generated</module>
-        <module>../generated/sdk/compute/azure-resourcemanager-compute-generated</module>
-        <module>../generated/sdk/monitor/azure-resourcemanager-monitor-generated</module>
         <module>../generated/sdk/appservice/azure-resourcemanager-appservice-generated</module>
+        <module>../generated/sdk/authorization/azure-resourcemanager-authorization-generated</module>
+        <module>../generated/sdk/commerce/azure-resourcemanager-commerce-generated</module>
+        <module>../generated/sdk/compute/azure-resourcemanager-compute-generated</module>
+        <module>../generated/sdk/databoxedge/azure-resourcemanager-databoxedge-generated</module>
+        <module>../generated/sdk/dns/azure-resourcemanager-dns-generated</module>
+        <module>../generated/sdk/eventhubs/azure-resourcemanager-eventhubs-generated</module>
+        <module>../generated/sdk/hdinsight/azure-resourcemanager-hdinsight-generated</module>
+        <module>../generated/sdk/iothub/azure-resourcemanager-iothub-generated</module>
+        <module>../generated/sdk/keyvault/azure-resourcemanager-keyvault-generated</module>
+        <module>../generated/sdk/locks/azure-resourcemanager-locks-generated</module>
+        <module>../generated/sdk/mediaservices/azure-resourcemanager-mediaservices-generated</module>
+        <module>../generated/sdk/monitor/azure-resourcemanager-monitor-generated</module>
+        <module>../generated/sdk/mysql/azure-resourcemanager-mysql-generated</module>
+        <module>../generated/sdk/network/azure-resourcemanager-network-generated</module>
+        <module>../generated/sdk/policy/azure-resourcemanager-policy-generated</module>
+        <module>../generated/sdk/postgresql/azure-resourcemanager-postgresql-generated</module>
+        <module>../generated/sdk/resources/azure-resourcemanager-resources-generated</module>
+        <module>../generated/sdk/search/azure-resourcemanager-search-generated</module>
+        <module>../generated/sdk/storage/azure-resourcemanager-storage-generated</module>
     </modules>
 </project>

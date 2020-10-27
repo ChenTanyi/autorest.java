@@ -32,19 +32,19 @@
     </dependency>
     <dependency>
       <groupId>com.azure.resourcemanager</groupId>
-      <artifactId>azure-resourcemanager-resources-generated</artifactId>
+      <artifactId>azure-resourcemanager-appservice-generated</artifactId>
       <version>1.0.0-beta.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.azure.resourcemanager</groupId>
-      <artifactId>azure-resourcemanager-storage-generated</artifactId>
+      <artifactId>azure-resourcemanager-authorization-generated</artifactId>
       <version>1.0.0-beta.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.azure.resourcemanager</groupId>
-      <artifactId>azure-resourcemanager-network-generated</artifactId>
+      <artifactId>azure-resourcemanager-commerce-generated</artifactId>
       <version>1.0.0-beta.1</version>
       <scope>test</scope>
     </dependency>
@@ -56,13 +56,97 @@
     </dependency>
     <dependency>
       <groupId>com.azure.resourcemanager</groupId>
+      <artifactId>azure-resourcemanager-databoxedge-generated</artifactId>
+      <version>1.0.0-beta.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.azure.resourcemanager</groupId>
+      <artifactId>azure-resourcemanager-dns-generated</artifactId>
+      <version>1.0.0-beta.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.azure.resourcemanager</groupId>
+      <artifactId>azure-resourcemanager-eventhubs-generated</artifactId>
+      <version>1.0.0-beta.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.azure.resourcemanager</groupId>
+      <artifactId>azure-resourcemanager-hdinsight-generated</artifactId>
+      <version>1.0.0-beta.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.azure.resourcemanager</groupId>
+      <artifactId>azure-resourcemanager-iothub-generated</artifactId>
+      <version>1.0.0-beta.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.azure.resourcemanager</groupId>
+      <artifactId>azure-resourcemanager-keyvault-generated</artifactId>
+      <version>1.0.0-beta.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.azure.resourcemanager</groupId>
+      <artifactId>azure-resourcemanager-locks-generated</artifactId>
+      <version>1.0.0-beta.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.azure.resourcemanager</groupId>
+      <artifactId>azure-resourcemanager-mediaservices-generated</artifactId>
+      <version>1.0.0-beta.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.azure.resourcemanager</groupId>
       <artifactId>azure-resourcemanager-monitor-generated</artifactId>
       <version>1.0.0-beta.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.azure.resourcemanager</groupId>
-      <artifactId>azure-resourcemanager-appservice-generated</artifactId>
+      <artifactId>azure-resourcemanager-mysql-generated</artifactId>
+      <version>1.0.0-beta.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.azure.resourcemanager</groupId>
+      <artifactId>azure-resourcemanager-network-generated</artifactId>
+      <version>1.0.0-beta.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.azure.resourcemanager</groupId>
+      <artifactId>azure-resourcemanager-policy-generated</artifactId>
+      <version>1.0.0-beta.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.azure.resourcemanager</groupId>
+      <artifactId>azure-resourcemanager-postgresql-generated</artifactId>
+      <version>1.0.0-beta.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.azure.resourcemanager</groupId>
+      <artifactId>azure-resourcemanager-resources-generated</artifactId>
+      <version>1.0.0-beta.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.azure.resourcemanager</groupId>
+      <artifactId>azure-resourcemanager-search-generated</artifactId>
+      <version>1.0.0-beta.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.azure.resourcemanager</groupId>
+      <artifactId>azure-resourcemanager-storage-generated</artifactId>
       <version>1.0.0-beta.1</version>
       <scope>test</scope>
     </dependency>
