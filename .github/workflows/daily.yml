@@ -50,6 +50,7 @@ jobs:
         run: mvn -f azure-sdk-for-java/eng/code-quality-reports/pom.xml install
       - name: Generate and Compile
         run: |
+          rm -rf generated
           ./gen.py -u . -o azure-sdk-for-java
 
       - name: Commit and push
