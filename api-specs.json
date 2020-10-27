@@ -71,8 +71,8 @@
         "output": "sdk/network/azure-resourcemanager-network-generated"
     },
     "policy": {
-        "source": "specification/policy/resource-manager/readme.md",
-		"tag": "package-policy-2020-03",
+        "source": "specification/resources/resource-manager/readme.md",
+        "tag": "package-policy-2020-03",
         "namespace": "com.azure.resourcemanager.policy.generated",
         "output": "sdk/policy/azure-resourcemanager-policy-generated"
     },
