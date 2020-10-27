@@ -8,7 +8,7 @@
         <module>test</module>
         <module>../generated/sdk/resources/azure-resourcemanager-resources-generated</module>
         <module>../generated/sdk/storage/azure-resourcemanager-storage-generated</module>
-        <module>../generated/sdk/compute/azure-resourcemanager-network-generated</module>
+        <module>../generated/sdk/network/azure-resourcemanager-network-generated</module>
         <module>../generated/sdk/compute/azure-resourcemanager-compute-generated</module>
         <module>../generated/sdk/monitor/azure-resourcemanager-monitor-generated</module>
         <module>../generated/sdk/appservice/azure-resourcemanager-appservice-generated</module>
