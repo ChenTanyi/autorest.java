@@ -78,9 +78,9 @@ public final class ImageImpl implements Image, Image.Definition, Image.Update {
         return this.serviceManager;
     }
 
-    private String imageName;
-
     private String resourceGroupName;
+
+    private String imageName;
 
     private ImageUpdate updateParameters;
 

@@ -11415,52 +11415,20 @@ public interface WebApps {
     Site.DefinitionStages.Blank defineSite(String name);
 
     /**
+     * Begins definition for a new Deployment resource.
+     *
+     * @param name resource name.
+     * @return the first stage of the new Deployment definition.
+     */
+    Deployment.DefinitionStages.Blank defineDeployment(String name);
+
+    /**
      * Begins definition for a new FunctionEnvelope resource.
      *
      * @param name resource name.
      * @return the first stage of the new FunctionEnvelope definition.
      */
     FunctionEnvelope.DefinitionStages.Blank defineFunction(String name);
-
-    /**
-     * Begins definition for a new RelayServiceConnectionEntity resource.
-     *
-     * @param name resource name.
-     * @return the first stage of the new RelayServiceConnectionEntity definition.
-     */
-    RelayServiceConnectionEntity.DefinitionStages.Blank defineHybridconnection(String name);
-
-    /**
-     * Begins definition for a new VnetGateway resource.
-     *
-     * @param name resource name.
-     * @return the first stage of the new VnetGateway definition.
-     */
-    VnetGateway.DefinitionStages.Blank defineGateway(String name);
-
-    /**
-     * Begins definition for a new PremierAddOn resource.
-     *
-     * @param name resource name.
-     * @return the first stage of the new PremierAddOn definition.
-     */
-    PremierAddOn.DefinitionStages.Blank definePremieraddon(String name);
-
-    /**
-     * Begins definition for a new PrivateEndpointConnectionResource resource.
-     *
-     * @param name resource name.
-     * @return the first stage of the new PrivateEndpointConnectionResource definition.
-     */
-    PrivateEndpointConnectionResource.DefinitionStages.Blank definePrivateEndpointConnection(String name);
-
-    /**
-     * Begins definition for a new HostnameBinding resource.
-     *
-     * @param name resource name.
-     * @return the first stage of the new HostnameBinding definition.
-     */
-    HostnameBinding.DefinitionStages.Blank defineHostNameBinding(String name);
 
     /**
      * Begins definition for a new VnetInfo resource.
@@ -11471,20 +11439,52 @@ public interface WebApps {
     VnetInfo.DefinitionStages.Blank defineVirtualNetworkConnection(String name);
 
     /**
+     * Begins definition for a new VnetGateway resource.
+     *
+     * @param name resource name.
+     * @return the first stage of the new VnetGateway definition.
+     */
+    VnetGateway.DefinitionStages.Blank defineGateway(String name);
+
+    /**
+     * Begins definition for a new HostnameBinding resource.
+     *
+     * @param name resource name.
+     * @return the first stage of the new HostnameBinding definition.
+     */
+    HostnameBinding.DefinitionStages.Blank defineHostNameBinding(String name);
+
+    /**
+     * Begins definition for a new RelayServiceConnectionEntity resource.
+     *
+     * @param name resource name.
+     * @return the first stage of the new RelayServiceConnectionEntity definition.
+     */
+    RelayServiceConnectionEntity.DefinitionStages.Blank defineHybridconnection(String name);
+
+    /**
+     * Begins definition for a new PrivateEndpointConnectionResource resource.
+     *
+     * @param name resource name.
+     * @return the first stage of the new PrivateEndpointConnectionResource definition.
+     */
+    PrivateEndpointConnectionResource.DefinitionStages.Blank definePrivateEndpointConnection(String name);
+
+    /**
+     * Begins definition for a new PremierAddOn resource.
+     *
+     * @param name resource name.
+     * @return the first stage of the new PremierAddOn definition.
+     */
+    PremierAddOn.DefinitionStages.Blank definePremieraddon(String name);
+
+    /**
      * Begins definition for a new HybridConnection resource.
      *
      * @param name resource name.
      * @return the first stage of the new HybridConnection definition.
      */
     HybridConnection.DefinitionStages.Blank defineRelay(String name);
-
-    /**
-     * Begins definition for a new Deployment resource.
-     *
-     * @param name resource name.
-     * @return the first stage of the new Deployment definition.
-     */
-    Deployment.DefinitionStages.Blank defineDeployment(String name);
 
     /**
      * Begins definition for a new Identifier resource.

@@ -143,7 +143,7 @@ public final class KeyVaultManager {
         }
 
         /**
-         * Sets the default poll interval, used when service does not provide .
+         * Sets the default poll interval, used when service does not provide "Retry-After" header.
          *
          * @param defaultPollInterval the default poll interval.
          * @return the configurable object itself.

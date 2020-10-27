@@ -101,9 +101,9 @@ public final class FlowLogImpl implements FlowLog, FlowLog.Definition, FlowLog.U
 
     private String resourceGroupName;
 
-    private String flowLogName;
-
     private String networkWatcherName;
+
+    private String flowLogName;
 
     private TagsObject updateParameters;
 

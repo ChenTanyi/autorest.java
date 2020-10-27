@@ -148,13 +148,13 @@ public final class ZoneImpl implements Zone, Zone.Definition, Zone.Update {
         this.innerObject = new ZoneInner();
         this.serviceManager = serviceManager;
         this.zoneName = name;
-        this.createIfNoneMatch = null;
         this.createIfMatch = null;
+        this.createIfNoneMatch = null;
     }
 
     public ZoneImpl update() {
-        this.updateParameters = new ZoneUpdate();
         this.updateIfMatch = null;
+        this.updateParameters = new ZoneUpdate();
         return this;
     }
 

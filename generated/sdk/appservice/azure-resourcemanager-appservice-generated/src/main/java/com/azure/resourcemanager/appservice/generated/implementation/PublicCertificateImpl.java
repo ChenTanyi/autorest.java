@@ -52,9 +52,9 @@ public final class PublicCertificateImpl
         return this.serviceManager;
     }
 
-    private String publicCertificateName;
-
     private String resourceGroupName;
+
+    private String publicCertificateName;
 
     private String name;
 

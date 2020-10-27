@@ -432,18 +432,18 @@ public interface BlobContainers {
         Context context);
 
     /**
-     * Begins definition for a new BlobContainer resource.
-     *
-     * @param name resource name.
-     * @return the first stage of the new BlobContainer definition.
-     */
-    BlobContainer.DefinitionStages.Blank defineContainer(String name);
-
-    /**
      * Begins definition for a new ImmutabilityPolicy resource.
      *
      * @param name resource name.
      * @return the first stage of the new ImmutabilityPolicy definition.
      */
     ImmutabilityPolicy.DefinitionStages.Blank defineImmutabilityPolicy(String name);
+
+    /**
+     * Begins definition for a new BlobContainer resource.
+     *
+     * @param name resource name.
+     * @return the first stage of the new BlobContainer definition.
+     */
+    BlobContainer.DefinitionStages.Blank defineContainer(String name);
 }

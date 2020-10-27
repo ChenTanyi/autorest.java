@@ -86,9 +86,9 @@ public final class InboundNatRuleImpl implements InboundNatRule, InboundNatRule.
 
     private String resourceGroupName;
 
-    private String inboundNatRuleName;
-
     private String loadBalancerName;
+
+    private String inboundNatRuleName;
 
     public InboundNatRuleImpl withExistingLoadBalancer(String resourceGroupName, String loadBalancerName) {
         this.resourceGroupName = resourceGroupName;

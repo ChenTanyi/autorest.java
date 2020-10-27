@@ -60,9 +60,9 @@ public final class EncryptionScopeImpl implements EncryptionScope, EncryptionSco
 
     private String resourceGroupName;
 
-    private String encryptionScopeName;
-
     private String accountName;
+
+    private String encryptionScopeName;
 
     public EncryptionScopeImpl withExistingStorageAccount(String resourceGroupName, String accountName) {
         this.resourceGroupName = resourceGroupName;
