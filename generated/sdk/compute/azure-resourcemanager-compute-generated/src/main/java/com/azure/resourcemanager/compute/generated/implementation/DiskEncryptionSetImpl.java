@@ -154,6 +154,26 @@ public final class DiskEncryptionSetImpl
         this.diskEncryptionSetName = Utils.getValueFromIdByName(innerObject.id(), "diskEncryptionSets");
     }
 
+    public DiskEncryptionSet refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getDiskEncryptionSets()
+                .getByResourceGroupWithResponse(resourceGroupName, diskEncryptionSetName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public DiskEncryptionSet refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getDiskEncryptionSets()
+                .getByResourceGroupWithResponse(resourceGroupName, diskEncryptionSetName, context)
+                .getValue();
+        return this;
+    }
+
     public DiskEncryptionSetImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;

@@ -141,6 +141,26 @@ public final class HubIpConfigurationImpl
         this.ipConfigName = Utils.getValueFromIdByName(innerObject.id(), "ipConfigurations");
     }
 
+    public HubIpConfiguration refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualHubIpConfigurations()
+                .getWithResponse(resourceGroupName, virtualHubName, ipConfigName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public HubIpConfiguration refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualHubIpConfigurations()
+                .getWithResponse(resourceGroupName, virtualHubName, ipConfigName, context)
+                .getValue();
+        return this;
+    }
+
     public HubIpConfigurationImpl withName(String name) {
         this.innerModel().withName(name);
         return this;

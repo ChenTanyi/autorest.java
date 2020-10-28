@@ -187,6 +187,28 @@ public final class PrivateEndpointImpl implements PrivateEndpoint, PrivateEndpoi
         this.privateEndpointName = Utils.getValueFromIdByName(innerObject.id(), "privateEndpoints");
     }
 
+    public PrivateEndpoint refresh() {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getPrivateEndpoints()
+                .getByResourceGroupWithResponse(resourceGroupName, privateEndpointName, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public PrivateEndpoint refresh(Context context) {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getPrivateEndpoints()
+                .getByResourceGroupWithResponse(resourceGroupName, privateEndpointName, refreshExpand, context)
+                .getValue();
+        return this;
+    }
+
     public PrivateEndpointImpl withSubnet(SubnetInner subnet) {
         this.innerModel().withSubnet(subnet);
         return this;

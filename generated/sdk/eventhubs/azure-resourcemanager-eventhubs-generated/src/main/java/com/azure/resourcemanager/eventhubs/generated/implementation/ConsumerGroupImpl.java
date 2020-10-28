@@ -125,6 +125,26 @@ public final class ConsumerGroupImpl implements ConsumerGroup, ConsumerGroup.Def
         this.consumerGroupName = Utils.getValueFromIdByName(innerObject.id(), "consumergroups");
     }
 
+    public ConsumerGroup refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getConsumerGroups()
+                .getWithResponse(resourceGroupName, namespaceName, eventHubName, consumerGroupName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public ConsumerGroup refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getConsumerGroups()
+                .getWithResponse(resourceGroupName, namespaceName, eventHubName, consumerGroupName, context)
+                .getValue();
+        return this;
+    }
+
     public ConsumerGroupImpl withUserMetadata(String userMetadata) {
         this.innerModel().withUserMetadata(userMetadata);
         return this;

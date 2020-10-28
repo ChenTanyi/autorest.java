@@ -200,6 +200,26 @@ public final class WebApplicationFirewallPolicyImpl
             Utils.getValueFromIdByName(innerObject.id(), "ApplicationGatewayWebApplicationFirewallPolicies");
     }
 
+    public WebApplicationFirewallPolicy refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getWebApplicationFirewallPolicies()
+                .getByResourceGroupWithResponse(resourceGroupName, policyName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public WebApplicationFirewallPolicy refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getWebApplicationFirewallPolicies()
+                .getByResourceGroupWithResponse(resourceGroupName, policyName, context)
+                .getValue();
+        return this;
+    }
+
     public WebApplicationFirewallPolicyImpl withRegion(String location) {
         this.innerModel().withLocation(location);
         return this;

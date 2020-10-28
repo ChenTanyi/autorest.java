@@ -122,6 +122,26 @@ public final class BgpConnectionImpl implements BgpConnection, BgpConnection.Def
         this.connectionName = Utils.getValueFromIdByName(innerObject.id(), "bgpConnections");
     }
 
+    public BgpConnection refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualHubBgpConnections()
+                .getWithResponse(resourceGroupName, virtualHubName, connectionName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public BgpConnection refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualHubBgpConnections()
+                .getWithResponse(resourceGroupName, virtualHubName, connectionName, context)
+                .getValue();
+        return this;
+    }
+
     public BgpConnectionImpl withId(String id) {
         this.innerModel().withId(id);
         return this;

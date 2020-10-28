@@ -222,6 +222,26 @@ public final class ExpressRouteCircuitImpl
         this.circuitName = Utils.getValueFromIdByName(innerObject.id(), "expressRouteCircuits");
     }
 
+    public ExpressRouteCircuit refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getExpressRouteCircuits()
+                .getByResourceGroupWithResponse(resourceGroupName, circuitName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public ExpressRouteCircuit refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getExpressRouteCircuits()
+                .getByResourceGroupWithResponse(resourceGroupName, circuitName, context)
+                .getValue();
+        return this;
+    }
+
     public ExpressRouteCircuitImpl withAuthorizations(List<ExpressRouteCircuitAuthorizationInner> authorizations) {
         this.innerModel().withAuthorizations(authorizations);
         return this;

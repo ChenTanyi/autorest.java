@@ -151,6 +151,26 @@ public final class DdosProtectionPlanImpl
         this.ddosProtectionPlanName = Utils.getValueFromIdByName(innerObject.id(), "ddosProtectionPlans");
     }
 
+    public DdosProtectionPlan refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getDdosProtectionPlans()
+                .getByResourceGroupWithResponse(resourceGroupName, ddosProtectionPlanName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public DdosProtectionPlan refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getDdosProtectionPlans()
+                .getByResourceGroupWithResponse(resourceGroupName, ddosProtectionPlanName, context)
+                .getValue();
+        return this;
+    }
+
     public DdosProtectionPlanImpl withTags(Map<String, String> tags) {
         if (isInCreateMode()) {
             this.innerModel().withTags(tags);

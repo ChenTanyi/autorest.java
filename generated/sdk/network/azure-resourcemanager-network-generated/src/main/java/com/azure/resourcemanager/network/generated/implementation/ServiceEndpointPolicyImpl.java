@@ -171,6 +171,29 @@ public final class ServiceEndpointPolicyImpl
         this.serviceEndpointPolicyName = Utils.getValueFromIdByName(innerObject.id(), "serviceEndpointPolicies");
     }
 
+    public ServiceEndpointPolicy refresh() {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getServiceEndpointPolicies()
+                .getByResourceGroupWithResponse(
+                    resourceGroupName, serviceEndpointPolicyName, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public ServiceEndpointPolicy refresh(Context context) {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getServiceEndpointPolicies()
+                .getByResourceGroupWithResponse(resourceGroupName, serviceEndpointPolicyName, refreshExpand, context)
+                .getValue();
+        return this;
+    }
+
     public ServiceEndpointPolicyImpl withServiceEndpointPolicyDefinitions(
         List<ServiceEndpointPolicyDefinitionInner> serviceEndpointPolicyDefinitions) {
         this.innerModel().withServiceEndpointPolicyDefinitions(serviceEndpointPolicyDefinitions);

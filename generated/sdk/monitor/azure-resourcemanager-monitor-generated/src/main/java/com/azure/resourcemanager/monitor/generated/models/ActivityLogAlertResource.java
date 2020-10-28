@@ -289,4 +289,18 @@ public interface ActivityLogAlertResource {
             Update withEnabled(Boolean enabled);
         }
     }
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @return the refreshed resource.
+     */
+    ActivityLogAlertResource refresh();
+
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @param context The context to associate with this operation.
+     * @return the refreshed resource.
+     */
+    ActivityLogAlertResource refresh(Context context);
 }

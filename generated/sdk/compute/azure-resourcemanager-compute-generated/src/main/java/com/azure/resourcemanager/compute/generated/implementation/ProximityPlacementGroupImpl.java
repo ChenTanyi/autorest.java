@@ -168,6 +168,30 @@ public final class ProximityPlacementGroupImpl
         this.proximityPlacementGroupName = Utils.getValueFromIdByName(innerObject.id(), "proximityPlacementGroups");
     }
 
+    public ProximityPlacementGroup refresh() {
+        String refreshIncludeColocationStatus = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getProximityPlacementGroups()
+                .getByResourceGroupWithResponse(
+                    resourceGroupName, proximityPlacementGroupName, refreshIncludeColocationStatus, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public ProximityPlacementGroup refresh(Context context) {
+        String refreshIncludeColocationStatus = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getProximityPlacementGroups()
+                .getByResourceGroupWithResponse(
+                    resourceGroupName, proximityPlacementGroupName, refreshIncludeColocationStatus, context)
+                .getValue();
+        return this;
+    }
+
     public ProximityPlacementGroupImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;

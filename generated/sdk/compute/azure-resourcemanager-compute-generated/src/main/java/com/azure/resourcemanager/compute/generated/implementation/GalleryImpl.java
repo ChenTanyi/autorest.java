@@ -12,6 +12,7 @@ import com.azure.resourcemanager.compute.generated.models.Gallery;
 import com.azure.resourcemanager.compute.generated.models.GalleryIdentifier;
 import com.azure.resourcemanager.compute.generated.models.GalleryPropertiesProvisioningState;
 import com.azure.resourcemanager.compute.generated.models.GalleryUpdate;
+import com.azure.resourcemanager.compute.generated.models.SelectPermissions;
 import com.azure.resourcemanager.compute.generated.models.SharingProfile;
 import java.util.Collections;
 import java.util.Map;
@@ -141,6 +142,28 @@ public final class GalleryImpl implements Gallery, Gallery.Definition, Gallery.U
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
         this.galleryName = Utils.getValueFromIdByName(innerObject.id(), "galleries");
+    }
+
+    public Gallery refresh() {
+        SelectPermissions refreshSelect = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getGalleries()
+                .getByResourceGroupWithResponse(resourceGroupName, galleryName, refreshSelect, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public Gallery refresh(Context context) {
+        SelectPermissions refreshSelect = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getGalleries()
+                .getByResourceGroupWithResponse(resourceGroupName, galleryName, refreshSelect, context)
+                .getValue();
+        return this;
     }
 
     public GalleryImpl withDescription(String description) {

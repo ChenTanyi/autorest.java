@@ -192,6 +192,26 @@ public final class MetricAlertResourceImpl
         this.ruleName = Utils.getValueFromIdByName(innerObject.id(), "metricAlerts");
     }
 
+    public MetricAlertResource refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getMetricAlerts()
+                .getByResourceGroupWithResponse(resourceGroupName, ruleName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public MetricAlertResource refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getMetricAlerts()
+                .getByResourceGroupWithResponse(resourceGroupName, ruleName, context)
+                .getValue();
+        return this;
+    }
+
     public MetricAlertResourceImpl withDescription(String description) {
         if (isInCreateMode()) {
             this.innerModel().withDescription(description);

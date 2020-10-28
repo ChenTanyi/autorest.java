@@ -202,6 +202,26 @@ public final class ExpressRoutePortImpl
         this.expressRoutePortName = Utils.getValueFromIdByName(innerObject.id(), "ExpressRoutePorts");
     }
 
+    public ExpressRoutePort refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getExpressRoutePorts()
+                .getByResourceGroupWithResponse(resourceGroupName, expressRoutePortName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public ExpressRoutePort refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getExpressRoutePorts()
+                .getByResourceGroupWithResponse(resourceGroupName, expressRoutePortName, context)
+                .getValue();
+        return this;
+    }
+
     public ExpressRoutePortImpl withIdentity(ManagedServiceIdentity identity) {
         this.innerModel().withIdentity(identity);
         return this;

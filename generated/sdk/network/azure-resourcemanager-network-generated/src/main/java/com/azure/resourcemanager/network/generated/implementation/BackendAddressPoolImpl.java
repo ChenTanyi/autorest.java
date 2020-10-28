@@ -162,6 +162,26 @@ public final class BackendAddressPoolImpl
         this.backendAddressPoolName = Utils.getValueFromIdByName(innerObject.id(), "backendAddressPools");
     }
 
+    public BackendAddressPool refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getLoadBalancerBackendAddressPools()
+                .getWithResponse(resourceGroupName, loadBalancerName, backendAddressPoolName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public BackendAddressPool refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getLoadBalancerBackendAddressPools()
+                .getWithResponse(resourceGroupName, loadBalancerName, backendAddressPoolName, context)
+                .getValue();
+        return this;
+    }
+
     public BackendAddressPoolImpl withName(String name) {
         this.innerModel().withName(name);
         return this;

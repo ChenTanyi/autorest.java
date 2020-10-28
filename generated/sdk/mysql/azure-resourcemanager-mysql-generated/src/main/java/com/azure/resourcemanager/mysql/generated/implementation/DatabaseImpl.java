@@ -108,6 +108,26 @@ public final class DatabaseImpl implements Database, Database.Definition, Databa
         this.databaseName = Utils.getValueFromIdByName(innerObject.id(), "databases");
     }
 
+    public Database refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getDatabases()
+                .getWithResponse(resourceGroupName, serverName, databaseName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public Database refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getDatabases()
+                .getWithResponse(resourceGroupName, serverName, databaseName, context)
+                .getValue();
+        return this;
+    }
+
     public DatabaseImpl withCollation(String collation) {
         this.innerModel().withCollation(collation);
         return this;

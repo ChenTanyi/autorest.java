@@ -237,6 +237,26 @@ public final class DiskImpl implements Disk, Disk.Definition, Disk.Update {
         this.diskName = Utils.getValueFromIdByName(innerObject.id(), "disks");
     }
 
+    public Disk refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getDisks()
+                .getByResourceGroupWithResponse(resourceGroupName, diskName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public Disk refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getDisks()
+                .getByResourceGroupWithResponse(resourceGroupName, diskName, context)
+                .getValue();
+        return this;
+    }
+
     public DiskImpl withDiskMBpsReadOnly(Long diskMBpsReadOnly) {
         if (isInCreateMode()) {
             this.innerModel().withDiskMBpsReadOnly(diskMBpsReadOnly);

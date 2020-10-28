@@ -376,4 +376,18 @@ public interface GalleryApplication {
             Update withSupportedOSType(OperatingSystemTypes supportedOSType);
         }
     }
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @return the refreshed resource.
+     */
+    GalleryApplication refresh();
+
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @param context The context to associate with this operation.
+     * @return the refreshed resource.
+     */
+    GalleryApplication refresh(Context context);
 }

@@ -11415,52 +11415,12 @@ public interface WebApps {
     Site.DefinitionStages.Blank defineSite(String name);
 
     /**
-     * Begins definition for a new HybridConnection resource.
+     * Begins definition for a new HostnameBinding resource.
      *
      * @param name resource name.
-     * @return the first stage of the new HybridConnection definition.
+     * @return the first stage of the new HostnameBinding definition.
      */
-    HybridConnection.DefinitionStages.Blank defineRelay(String name);
-
-    /**
-     * Begins definition for a new RelayServiceConnectionEntity resource.
-     *
-     * @param name resource name.
-     * @return the first stage of the new RelayServiceConnectionEntity definition.
-     */
-    RelayServiceConnectionEntity.DefinitionStages.Blank defineHybridconnection(String name);
-
-    /**
-     * Begins definition for a new Identifier resource.
-     *
-     * @param name resource name.
-     * @return the first stage of the new Identifier definition.
-     */
-    Identifier.DefinitionStages.Blank defineDomainOwnershipIdentifier(String name);
-
-    /**
-     * Begins definition for a new PremierAddOn resource.
-     *
-     * @param name resource name.
-     * @return the first stage of the new PremierAddOn definition.
-     */
-    PremierAddOn.DefinitionStages.Blank definePremieraddon(String name);
-
-    /**
-     * Begins definition for a new VnetGateway resource.
-     *
-     * @param name resource name.
-     * @return the first stage of the new VnetGateway definition.
-     */
-    VnetGateway.DefinitionStages.Blank defineGateway(String name);
-
-    /**
-     * Begins definition for a new VnetInfo resource.
-     *
-     * @param name resource name.
-     * @return the first stage of the new VnetInfo definition.
-     */
-    VnetInfo.DefinitionStages.Blank defineVirtualNetworkConnection(String name);
+    HostnameBinding.DefinitionStages.Blank defineHostNameBinding(String name);
 
     /**
      * Begins definition for a new FunctionEnvelope resource.
@@ -11471,14 +11431,6 @@ public interface WebApps {
     FunctionEnvelope.DefinitionStages.Blank defineFunction(String name);
 
     /**
-     * Begins definition for a new PrivateEndpointConnectionResource resource.
-     *
-     * @param name resource name.
-     * @return the first stage of the new PrivateEndpointConnectionResource definition.
-     */
-    PrivateEndpointConnectionResource.DefinitionStages.Blank definePrivateEndpointConnection(String name);
-
-    /**
      * Begins definition for a new PublicCertificate resource.
      *
      * @param name resource name.
@@ -11487,12 +11439,44 @@ public interface WebApps {
     PublicCertificate.DefinitionStages.Blank definePublicCertificate(String name);
 
     /**
-     * Begins definition for a new HostnameBinding resource.
+     * Begins definition for a new HybridConnection resource.
      *
      * @param name resource name.
-     * @return the first stage of the new HostnameBinding definition.
+     * @return the first stage of the new HybridConnection definition.
      */
-    HostnameBinding.DefinitionStages.Blank defineHostNameBinding(String name);
+    HybridConnection.DefinitionStages.Blank defineRelay(String name);
+
+    /**
+     * Begins definition for a new VnetInfo resource.
+     *
+     * @param name resource name.
+     * @return the first stage of the new VnetInfo definition.
+     */
+    VnetInfo.DefinitionStages.Blank defineVirtualNetworkConnection(String name);
+
+    /**
+     * Begins definition for a new Identifier resource.
+     *
+     * @param name resource name.
+     * @return the first stage of the new Identifier definition.
+     */
+    Identifier.DefinitionStages.Blank defineDomainOwnershipIdentifier(String name);
+
+    /**
+     * Begins definition for a new PrivateEndpointConnectionResource resource.
+     *
+     * @param name resource name.
+     * @return the first stage of the new PrivateEndpointConnectionResource definition.
+     */
+    PrivateEndpointConnectionResource.DefinitionStages.Blank definePrivateEndpointConnection(String name);
+
+    /**
+     * Begins definition for a new PremierAddOn resource.
+     *
+     * @param name resource name.
+     * @return the first stage of the new PremierAddOn definition.
+     */
+    PremierAddOn.DefinitionStages.Blank definePremieraddon(String name);
 
     /**
      * Begins definition for a new Deployment resource.
@@ -11501,4 +11485,20 @@ public interface WebApps {
      * @return the first stage of the new Deployment definition.
      */
     Deployment.DefinitionStages.Blank defineDeployment(String name);
+
+    /**
+     * Begins definition for a new RelayServiceConnectionEntity resource.
+     *
+     * @param name resource name.
+     * @return the first stage of the new RelayServiceConnectionEntity definition.
+     */
+    RelayServiceConnectionEntity.DefinitionStages.Blank defineHybridconnection(String name);
+
+    /**
+     * Begins definition for a new VnetGateway resource.
+     *
+     * @param name resource name.
+     * @return the first stage of the new VnetGateway definition.
+     */
+    VnetGateway.DefinitionStages.Blank defineGateway(String name);
 }

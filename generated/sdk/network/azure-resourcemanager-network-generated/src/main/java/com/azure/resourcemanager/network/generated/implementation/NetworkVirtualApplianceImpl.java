@@ -210,6 +210,29 @@ public final class NetworkVirtualApplianceImpl
         this.networkVirtualApplianceName = Utils.getValueFromIdByName(innerObject.id(), "networkVirtualAppliances");
     }
 
+    public NetworkVirtualAppliance refresh() {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getNetworkVirtualAppliances()
+                .getByResourceGroupWithResponse(
+                    resourceGroupName, networkVirtualApplianceName, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public NetworkVirtualAppliance refresh(Context context) {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getNetworkVirtualAppliances()
+                .getByResourceGroupWithResponse(resourceGroupName, networkVirtualApplianceName, refreshExpand, context)
+                .getValue();
+        return this;
+    }
+
     public NetworkVirtualApplianceImpl withRegion(String location) {
         this.innerModel().withLocation(location);
         return this;

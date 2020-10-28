@@ -235,6 +235,26 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
         this.virtualHubName = Utils.getValueFromIdByName(innerObject.id(), "virtualHubs");
     }
 
+    public VirtualHub refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualHubs()
+                .getByResourceGroupWithResponse(resourceGroupName, virtualHubName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public VirtualHub refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualHubs()
+                .getByResourceGroupWithResponse(resourceGroupName, virtualHubName, context)
+                .getValue();
+        return this;
+    }
+
     public VirtualHubImpl withId(String id) {
         this.innerModel().withId(id);
         return this;

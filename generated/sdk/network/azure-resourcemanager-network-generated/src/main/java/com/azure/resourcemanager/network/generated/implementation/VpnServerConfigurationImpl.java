@@ -256,6 +256,26 @@ public final class VpnServerConfigurationImpl
         this.vpnServerConfigurationName = Utils.getValueFromIdByName(innerObject.id(), "vpnServerConfigurations");
     }
 
+    public VpnServerConfiguration refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVpnServerConfigurations()
+                .getByResourceGroupWithResponse(resourceGroupName, vpnServerConfigurationName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public VpnServerConfiguration refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVpnServerConfigurations()
+                .getByResourceGroupWithResponse(resourceGroupName, vpnServerConfigurationName, context)
+                .getValue();
+        return this;
+    }
+
     public VpnServerConfigurationImpl withRadiusServers(List<RadiusServer> radiusServers) {
         this.innerModel().withRadiusServers(radiusServers);
         return this;

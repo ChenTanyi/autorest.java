@@ -151,6 +151,26 @@ public final class SecurityPartnerProviderImpl
         this.securityPartnerProviderName = Utils.getValueFromIdByName(innerObject.id(), "securityPartnerProviders");
     }
 
+    public SecurityPartnerProvider refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getSecurityPartnerProviders()
+                .getByResourceGroupWithResponse(resourceGroupName, securityPartnerProviderName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public SecurityPartnerProvider refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getSecurityPartnerProviders()
+                .getByResourceGroupWithResponse(resourceGroupName, securityPartnerProviderName, context)
+                .getValue();
+        return this;
+    }
+
     public SecurityPartnerProviderImpl withSecurityProviderName(SecurityProviderName securityProviderName) {
         this.innerModel().withSecurityProviderName(securityProviderName);
         return this;

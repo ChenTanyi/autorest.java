@@ -54,9 +54,9 @@ public final class VirtualRouterPeeringImpl
 
     private String resourceGroupName;
 
-    private String virtualRouterName;
-
     private String peeringName;
+
+    private String virtualRouterName;
 
     public VirtualRouterPeeringImpl withExistingVirtualRouter(String resourceGroupName, String virtualRouterName) {
         this.resourceGroupName = resourceGroupName;
@@ -116,6 +116,26 @@ public final class VirtualRouterPeeringImpl
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
         this.virtualRouterName = Utils.getValueFromIdByName(innerObject.id(), "virtualRouters");
         this.peeringName = Utils.getValueFromIdByName(innerObject.id(), "peerings");
+    }
+
+    public VirtualRouterPeering refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualRouterPeerings()
+                .getWithResponse(resourceGroupName, virtualRouterName, peeringName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public VirtualRouterPeering refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualRouterPeerings()
+                .getWithResponse(resourceGroupName, virtualRouterName, peeringName, context)
+                .getValue();
+        return this;
     }
 
     public VirtualRouterPeeringImpl withPeerAsn(Long peerAsn) {

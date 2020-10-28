@@ -114,6 +114,26 @@ public final class VirtualNetworkRuleImpl
         this.virtualNetworkRuleName = Utils.getValueFromIdByName(innerObject.id(), "virtualNetworkRules");
     }
 
+    public VirtualNetworkRule refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualNetworkRules()
+                .getWithResponse(resourceGroupName, serverName, virtualNetworkRuleName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public VirtualNetworkRule refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualNetworkRules()
+                .getWithResponse(resourceGroupName, serverName, virtualNetworkRuleName, context)
+                .getValue();
+        return this;
+    }
+
     public VirtualNetworkRuleImpl withIgnoreMissingVnetServiceEndpoint(Boolean ignoreMissingVnetServiceEndpoint) {
         this.innerModel().withIgnoreMissingVnetServiceEndpoint(ignoreMissingVnetServiceEndpoint);
         return this;

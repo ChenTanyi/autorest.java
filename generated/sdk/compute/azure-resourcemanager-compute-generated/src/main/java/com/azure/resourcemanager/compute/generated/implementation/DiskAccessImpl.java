@@ -144,6 +144,26 @@ public final class DiskAccessImpl implements DiskAccess, DiskAccess.Definition, 
         this.diskAccessName = Utils.getValueFromIdByName(innerObject.id(), "diskAccesses");
     }
 
+    public DiskAccess refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getDiskAccesses()
+                .getByResourceGroupWithResponse(resourceGroupName, diskAccessName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public DiskAccess refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getDiskAccesses()
+                .getByResourceGroupWithResponse(resourceGroupName, diskAccessName, context)
+                .getValue();
+        return this;
+    }
+
     public DiskAccessImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;

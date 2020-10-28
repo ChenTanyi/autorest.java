@@ -158,6 +158,26 @@ public final class ExpressRouteGatewayImpl
         this.expressRouteGatewayName = Utils.getValueFromIdByName(innerObject.id(), "expressRouteGateways");
     }
 
+    public ExpressRouteGateway refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getExpressRouteGateways()
+                .getByResourceGroupWithResponse(resourceGroupName, expressRouteGatewayName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public ExpressRouteGateway refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getExpressRouteGateways()
+                .getByResourceGroupWithResponse(resourceGroupName, expressRouteGatewayName, context)
+                .getValue();
+        return this;
+    }
+
     public ExpressRouteGatewayImpl withAutoScaleConfiguration(
         ExpressRouteGatewayPropertiesAutoScaleConfiguration autoScaleConfiguration) {
         this.innerModel().withAutoScaleConfiguration(autoScaleConfiguration);

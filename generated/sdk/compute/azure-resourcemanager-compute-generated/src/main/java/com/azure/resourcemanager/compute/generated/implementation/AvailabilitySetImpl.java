@@ -166,6 +166,26 @@ public final class AvailabilitySetImpl implements AvailabilitySet, AvailabilityS
         this.availabilitySetName = Utils.getValueFromIdByName(innerObject.id(), "availabilitySets");
     }
 
+    public AvailabilitySet refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getAvailabilitySets()
+                .getByResourceGroupWithResponse(resourceGroupName, availabilitySetName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public AvailabilitySet refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getAvailabilitySets()
+                .getByResourceGroupWithResponse(resourceGroupName, availabilitySetName, context)
+                .getValue();
+        return this;
+    }
+
     public AvailabilitySetImpl withRegion(String location) {
         this.innerModel().withLocation(location);
         return this;

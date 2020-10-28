@@ -161,6 +161,26 @@ public final class DdosCustomPolicyImpl
         this.ddosCustomPolicyName = Utils.getValueFromIdByName(innerObject.id(), "ddosCustomPolicies");
     }
 
+    public DdosCustomPolicy refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getDdosCustomPolicies()
+                .getByResourceGroupWithResponse(resourceGroupName, ddosCustomPolicyName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public DdosCustomPolicy refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getDdosCustomPolicies()
+                .getByResourceGroupWithResponse(resourceGroupName, ddosCustomPolicyName, context)
+                .getValue();
+        return this;
+    }
+
     public DdosCustomPolicyImpl withTags(Map<String, String> tags) {
         if (isInCreateMode()) {
             this.innerModel().withTags(tags);

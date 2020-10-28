@@ -214,6 +214,29 @@ public final class NetworkSecurityGroupImpl
         this.networkSecurityGroupName = Utils.getValueFromIdByName(innerObject.id(), "networkSecurityGroups");
     }
 
+    public NetworkSecurityGroup refresh() {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getNetworkSecurityGroups()
+                .getByResourceGroupWithResponse(
+                    resourceGroupName, networkSecurityGroupName, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public NetworkSecurityGroup refresh(Context context) {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getNetworkSecurityGroups()
+                .getByResourceGroupWithResponse(resourceGroupName, networkSecurityGroupName, refreshExpand, context)
+                .getValue();
+        return this;
+    }
+
     public NetworkSecurityGroupImpl withRegion(String location) {
         this.innerModel().withLocation(location);
         return this;

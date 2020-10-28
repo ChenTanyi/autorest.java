@@ -86,9 +86,9 @@ public final class InboundNatRuleImpl implements InboundNatRule, InboundNatRule.
 
     private String resourceGroupName;
 
-    private String loadBalancerName;
-
     private String inboundNatRuleName;
+
+    private String loadBalancerName;
 
     public InboundNatRuleImpl withExistingLoadBalancer(String resourceGroupName, String loadBalancerName) {
         this.resourceGroupName = resourceGroupName;
@@ -148,6 +148,28 @@ public final class InboundNatRuleImpl implements InboundNatRule, InboundNatRule.
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
         this.loadBalancerName = Utils.getValueFromIdByName(innerObject.id(), "loadBalancers");
         this.inboundNatRuleName = Utils.getValueFromIdByName(innerObject.id(), "inboundNatRules");
+    }
+
+    public InboundNatRule refresh() {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getInboundNatRules()
+                .getWithResponse(resourceGroupName, loadBalancerName, inboundNatRuleName, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public InboundNatRule refresh(Context context) {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getInboundNatRules()
+                .getWithResponse(resourceGroupName, loadBalancerName, inboundNatRuleName, refreshExpand, context)
+                .getValue();
+        return this;
     }
 
     public InboundNatRuleImpl withName(String name) {

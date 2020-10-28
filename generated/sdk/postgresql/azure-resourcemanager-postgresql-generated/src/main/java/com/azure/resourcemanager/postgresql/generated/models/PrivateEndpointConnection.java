@@ -165,4 +165,18 @@ public interface PrivateEndpointConnection {
             Update withTags(Map<String, String> tags);
         }
     }
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @return the refreshed resource.
+     */
+    PrivateEndpointConnection refresh();
+
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @param context The context to associate with this operation.
+     * @return the refreshed resource.
+     */
+    PrivateEndpointConnection refresh(Context context);
 }

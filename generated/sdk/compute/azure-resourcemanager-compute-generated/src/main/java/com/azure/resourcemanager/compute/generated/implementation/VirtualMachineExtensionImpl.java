@@ -170,6 +170,28 @@ public final class VirtualMachineExtensionImpl
         this.vmExtensionName = Utils.getValueFromIdByName(innerObject.id(), "extensions");
     }
 
+    public VirtualMachineExtension refresh() {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualMachineExtensions()
+                .getWithResponse(resourceGroupName, vmName, vmExtensionName, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public VirtualMachineExtension refresh(Context context) {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualMachineExtensions()
+                .getWithResponse(resourceGroupName, vmName, vmExtensionName, refreshExpand, context)
+                .getValue();
+        return this;
+    }
+
     public VirtualMachineExtensionImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;

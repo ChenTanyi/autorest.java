@@ -127,6 +127,26 @@ public final class NetworkInterfaceTapConfigurationImpl
         this.tapConfigurationName = Utils.getValueFromIdByName(innerObject.id(), "tapConfigurations");
     }
 
+    public NetworkInterfaceTapConfiguration refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getNetworkInterfaceTapConfigurations()
+                .getWithResponse(resourceGroupName, networkInterfaceName, tapConfigurationName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public NetworkInterfaceTapConfiguration refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getNetworkInterfaceTapConfigurations()
+                .getWithResponse(resourceGroupName, networkInterfaceName, tapConfigurationName, context)
+                .getValue();
+        return this;
+    }
+
     public NetworkInterfaceTapConfigurationImpl withVirtualNetworkTap(VirtualNetworkTapInner virtualNetworkTap) {
         this.innerModel().withVirtualNetworkTap(virtualNetworkTap);
         return this;

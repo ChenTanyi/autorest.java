@@ -153,6 +153,18 @@ public final class LogProfileResourceImpl
         this.logProfileName = Utils.getValueFromIdByName(innerObject.id(), "logprofiles");
     }
 
+    public LogProfileResource refresh() {
+        this.innerObject =
+            serviceManager.serviceClient().getLogProfiles().getWithResponse(logProfileName, Context.NONE).getValue();
+        return this;
+    }
+
+    public LogProfileResource refresh(Context context) {
+        this.innerObject =
+            serviceManager.serviceClient().getLogProfiles().getWithResponse(logProfileName, context).getValue();
+        return this;
+    }
+
     public LogProfileResourceImpl withRegion(String location) {
         this.innerModel().withLocation(location);
         return this;

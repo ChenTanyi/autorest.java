@@ -137,6 +137,26 @@ public final class NetworkWatcherImpl implements NetworkWatcher, NetworkWatcher.
         this.networkWatcherName = Utils.getValueFromIdByName(innerObject.id(), "networkWatchers");
     }
 
+    public NetworkWatcher refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getNetworkWatchers()
+                .getByResourceGroupWithResponse(resourceGroupName, networkWatcherName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public NetworkWatcher refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getNetworkWatchers()
+                .getByResourceGroupWithResponse(resourceGroupName, networkWatcherName, context)
+                .getValue();
+        return this;
+    }
+
     public NetworkWatcherImpl withRegion(String location) {
         this.innerModel().withLocation(location);
         return this;

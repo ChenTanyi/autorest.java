@@ -13,6 +13,7 @@ import com.azure.resourcemanager.compute.generated.models.GalleryApplicationVers
 import com.azure.resourcemanager.compute.generated.models.GalleryApplicationVersionPublishingProfile;
 import com.azure.resourcemanager.compute.generated.models.GalleryApplicationVersionUpdate;
 import com.azure.resourcemanager.compute.generated.models.ReplicationStatus;
+import com.azure.resourcemanager.compute.generated.models.ReplicationStatusTypes;
 import java.util.Collections;
 import java.util.Map;
 
@@ -81,9 +82,9 @@ public final class GalleryApplicationVersionImpl
 
     private String resourceGroupName;
 
-    private String galleryName;
-
     private String galleryApplicationVersionName;
+
+    private String galleryName;
 
     public GalleryApplicationVersionImpl withExistingApplication(
         String resourceGroupName, String galleryName, String galleryApplicationName) {
@@ -171,6 +172,40 @@ public final class GalleryApplicationVersionImpl
         this.galleryName = Utils.getValueFromIdByName(innerObject.id(), "galleries");
         this.galleryApplicationName = Utils.getValueFromIdByName(innerObject.id(), "applications");
         this.galleryApplicationVersionName = Utils.getValueFromIdByName(innerObject.id(), "versions");
+    }
+
+    public GalleryApplicationVersion refresh() {
+        ReplicationStatusTypes refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getGalleryApplicationVersions()
+                .getWithResponse(
+                    resourceGroupName,
+                    galleryName,
+                    galleryApplicationName,
+                    galleryApplicationVersionName,
+                    refreshExpand,
+                    Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public GalleryApplicationVersion refresh(Context context) {
+        ReplicationStatusTypes refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getGalleryApplicationVersions()
+                .getWithResponse(
+                    resourceGroupName,
+                    galleryName,
+                    galleryApplicationName,
+                    galleryApplicationVersionName,
+                    refreshExpand,
+                    context)
+                .getValue();
+        return this;
     }
 
     public GalleryApplicationVersionImpl withRegion(String location) {

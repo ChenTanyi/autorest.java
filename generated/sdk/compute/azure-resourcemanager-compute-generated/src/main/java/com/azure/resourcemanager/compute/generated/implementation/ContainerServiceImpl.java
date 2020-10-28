@@ -171,6 +171,26 @@ public final class ContainerServiceImpl
         this.containerServiceName = Utils.getValueFromIdByName(innerObject.id(), "containerServices");
     }
 
+    public ContainerService refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getContainerServices()
+                .getByResourceGroupWithResponse(resourceGroupName, containerServiceName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public ContainerService refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getContainerServices()
+                .getByResourceGroupWithResponse(resourceGroupName, containerServiceName, context)
+                .getValue();
+        return this;
+    }
+
     public ContainerServiceImpl withMasterProfile(ContainerServiceMasterProfile masterProfile) {
         this.innerModel().withMasterProfile(masterProfile);
         return this;

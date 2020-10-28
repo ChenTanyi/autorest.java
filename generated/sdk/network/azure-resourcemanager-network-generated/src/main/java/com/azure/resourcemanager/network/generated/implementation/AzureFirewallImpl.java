@@ -230,6 +230,26 @@ public final class AzureFirewallImpl implements AzureFirewall, AzureFirewall.Def
         this.azureFirewallName = Utils.getValueFromIdByName(innerObject.id(), "azureFirewalls");
     }
 
+    public AzureFirewall refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getAzureFirewalls()
+                .getByResourceGroupWithResponse(resourceGroupName, azureFirewallName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public AzureFirewall refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getAzureFirewalls()
+                .getByResourceGroupWithResponse(resourceGroupName, azureFirewallName, context)
+                .getValue();
+        return this;
+    }
+
     public AzureFirewallImpl withVirtualHub(SubResource virtualHub) {
         this.innerModel().withVirtualHub(virtualHub);
         return this;

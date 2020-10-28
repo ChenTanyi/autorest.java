@@ -121,6 +121,26 @@ public final class AuthorizationRuleImpl
         this.authorizationRuleName = Utils.getValueFromIdByName(innerObject.id(), "authorizationRules");
     }
 
+    public AuthorizationRule refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getNamespaces()
+                .getAuthorizationRuleWithResponse(resourceGroupName, namespaceName, authorizationRuleName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public AuthorizationRule refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getNamespaces()
+                .getAuthorizationRuleWithResponse(resourceGroupName, namespaceName, authorizationRuleName, context)
+                .getValue();
+        return this;
+    }
+
     public AuthorizationRuleImpl withRights(List<AccessRights> rights) {
         this.innerModel().withRights(rights);
         return this;

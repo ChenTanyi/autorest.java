@@ -275,4 +275,18 @@ public interface Gallery {
             Update withSharingProfile(SharingProfile sharingProfile);
         }
     }
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @return the refreshed resource.
+     */
+    Gallery refresh();
+
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @param context The context to associate with this operation.
+     * @return the refreshed resource.
+     */
+    Gallery refresh(Context context);
 }

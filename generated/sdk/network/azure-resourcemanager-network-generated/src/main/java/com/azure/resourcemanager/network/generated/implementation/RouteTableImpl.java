@@ -167,6 +167,28 @@ public final class RouteTableImpl implements RouteTable, RouteTable.Definition, 
         this.routeTableName = Utils.getValueFromIdByName(innerObject.id(), "routeTables");
     }
 
+    public RouteTable refresh() {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getRouteTables()
+                .getByResourceGroupWithResponse(resourceGroupName, routeTableName, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public RouteTable refresh(Context context) {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getRouteTables()
+                .getByResourceGroupWithResponse(resourceGroupName, routeTableName, refreshExpand, context)
+                .getValue();
+        return this;
+    }
+
     public RouteTableImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;

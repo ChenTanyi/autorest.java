@@ -394,6 +394,26 @@ public final class ApplicationGatewayImpl
         this.applicationGatewayName = Utils.getValueFromIdByName(innerObject.id(), "applicationGateways");
     }
 
+    public ApplicationGateway refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getApplicationGateways()
+                .getByResourceGroupWithResponse(resourceGroupName, applicationGatewayName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public ApplicationGateway refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getApplicationGateways()
+                .getByResourceGroupWithResponse(resourceGroupName, applicationGatewayName, context)
+                .getValue();
+        return this;
+    }
+
     public ApplicationGatewayImpl withTrustedClientCertificates(
         List<ApplicationGatewayTrustedClientCertificate> trustedClientCertificates) {
         this.innerModel().withTrustedClientCertificates(trustedClientCertificates);

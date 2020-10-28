@@ -184,6 +184,26 @@ public final class VirtualNetworkTapImpl
         this.tapName = Utils.getValueFromIdByName(innerObject.id(), "virtualNetworkTaps");
     }
 
+    public VirtualNetworkTap refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualNetworkTaps()
+                .getByResourceGroupWithResponse(resourceGroupName, tapName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public VirtualNetworkTap refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualNetworkTaps()
+                .getByResourceGroupWithResponse(resourceGroupName, tapName, context)
+                .getValue();
+        return this;
+    }
+
     public VirtualNetworkTapImpl withId(String id) {
         this.innerModel().withId(id);
         return this;

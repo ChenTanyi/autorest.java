@@ -156,6 +156,28 @@ public final class VirtualMachineScaleSetExtensionImpl
         this.vmssExtensionName = Utils.getValueFromIdByName(innerObject.id(), "extensions");
     }
 
+    public VirtualMachineScaleSetExtension refresh() {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualMachineScaleSetExtensions()
+                .getWithResponse(resourceGroupName, vmScaleSetName, vmssExtensionName, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public VirtualMachineScaleSetExtension refresh(Context context) {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualMachineScaleSetExtensions()
+                .getWithResponse(resourceGroupName, vmScaleSetName, vmssExtensionName, refreshExpand, context)
+                .getValue();
+        return this;
+    }
+
     public VirtualMachineScaleSetExtensionImpl withSettings(Object settings) {
         if (isInCreateMode()) {
             this.innerModel().withSettings(settings);

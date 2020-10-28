@@ -540,4 +540,18 @@ public interface MetricAlertResource {
             Update withActions(List<MetricAlertAction> actions);
         }
     }
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @return the refreshed resource.
+     */
+    MetricAlertResource refresh();
+
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @param context The context to associate with this operation.
+     * @return the refreshed resource.
+     */
+    MetricAlertResource refresh(Context context);
 }

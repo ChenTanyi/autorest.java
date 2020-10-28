@@ -144,6 +144,26 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
         this.bastionHostname = Utils.getValueFromIdByName(innerObject.id(), "bastionHosts");
     }
 
+    public BastionHost refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getBastionHosts()
+                .getByResourceGroupWithResponse(resourceGroupName, bastionHostname, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public BastionHost refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getBastionHosts()
+                .getByResourceGroupWithResponse(resourceGroupName, bastionHostname, context)
+                .getValue();
+        return this;
+    }
+
     public BastionHostImpl withIpConfigurations(List<BastionHostIpConfiguration> ipConfigurations) {
         this.innerModel().withIpConfigurations(ipConfigurations);
         return this;

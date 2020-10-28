@@ -687,4 +687,18 @@ public interface ExpressRouteCircuitPeering {
             Update withConnections(List<ExpressRouteCircuitConnectionInner> connections);
         }
     }
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @return the refreshed resource.
+     */
+    ExpressRouteCircuitPeering refresh();
+
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @param context The context to associate with this operation.
+     * @return the refreshed resource.
+     */
+    ExpressRouteCircuitPeering refresh(Context context);
 }

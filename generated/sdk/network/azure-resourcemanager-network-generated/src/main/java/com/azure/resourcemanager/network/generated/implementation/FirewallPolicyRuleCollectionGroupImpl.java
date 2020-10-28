@@ -132,6 +132,26 @@ public final class FirewallPolicyRuleCollectionGroupImpl
         this.ruleCollectionGroupName = Utils.getValueFromIdByName(innerObject.id(), "ruleCollectionGroups");
     }
 
+    public FirewallPolicyRuleCollectionGroup refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getFirewallPolicyRuleCollectionGroups()
+                .getWithResponse(resourceGroupName, firewallPolicyName, ruleCollectionGroupName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public FirewallPolicyRuleCollectionGroup refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getFirewallPolicyRuleCollectionGroups()
+                .getWithResponse(resourceGroupName, firewallPolicyName, ruleCollectionGroupName, context)
+                .getValue();
+        return this;
+    }
+
     public FirewallPolicyRuleCollectionGroupImpl withName(String name) {
         this.innerModel().withName(name);
         return this;

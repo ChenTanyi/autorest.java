@@ -207,6 +207,28 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
         this.virtualNetworkName = Utils.getValueFromIdByName(innerObject.id(), "virtualNetworks");
     }
 
+    public VirtualNetwork refresh() {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualNetworks()
+                .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkName, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public VirtualNetwork refresh(Context context) {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualNetworks()
+                .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkName, refreshExpand, context)
+                .getValue();
+        return this;
+    }
+
     public VirtualNetworkImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;

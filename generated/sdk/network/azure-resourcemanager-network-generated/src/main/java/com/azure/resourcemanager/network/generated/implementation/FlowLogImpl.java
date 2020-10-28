@@ -101,9 +101,9 @@ public final class FlowLogImpl implements FlowLog, FlowLog.Definition, FlowLog.U
 
     private String resourceGroupName;
 
-    private String networkWatcherName;
-
     private String flowLogName;
+
+    private String networkWatcherName;
 
     private TagsObject updateParameters;
 
@@ -169,6 +169,26 @@ public final class FlowLogImpl implements FlowLog, FlowLog.Definition, FlowLog.U
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
         this.networkWatcherName = Utils.getValueFromIdByName(innerObject.id(), "networkWatchers");
         this.flowLogName = Utils.getValueFromIdByName(innerObject.id(), "flowLogs");
+    }
+
+    public FlowLog refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getFlowLogs()
+                .getWithResponse(resourceGroupName, networkWatcherName, flowLogName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public FlowLog refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getFlowLogs()
+                .getWithResponse(resourceGroupName, networkWatcherName, flowLogName, context)
+                .getValue();
+        return this;
     }
 
     public FlowLogImpl withTargetResourceId(String targetResourceId) {

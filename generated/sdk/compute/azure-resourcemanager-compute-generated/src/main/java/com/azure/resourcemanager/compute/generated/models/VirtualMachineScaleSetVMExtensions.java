@@ -6,98 +6,9 @@ package com.azure.resourcemanager.compute.generated.models;
 
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineExtensionInner;
 
 /** Resource collection API of VirtualMachineScaleSetVMExtensions. */
 public interface VirtualMachineScaleSetVMExtensions {
-    /**
-     * The operation to create or update the VMSS VM extension.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param instanceId The instance ID of the virtual machine.
-     * @param vmExtensionName The name of the virtual machine extension.
-     * @param extensionParameters Describes a Virtual Machine Extension.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Extension.
-     */
-    VirtualMachineExtension createOrUpdate(
-        String resourceGroupName,
-        String vmScaleSetName,
-        String instanceId,
-        String vmExtensionName,
-        VirtualMachineExtensionInner extensionParameters);
-
-    /**
-     * The operation to create or update the VMSS VM extension.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param instanceId The instance ID of the virtual machine.
-     * @param vmExtensionName The name of the virtual machine extension.
-     * @param extensionParameters Describes a Virtual Machine Extension.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Extension.
-     */
-    VirtualMachineExtension createOrUpdate(
-        String resourceGroupName,
-        String vmScaleSetName,
-        String instanceId,
-        String vmExtensionName,
-        VirtualMachineExtensionInner extensionParameters,
-        Context context);
-
-    /**
-     * The operation to update the VMSS VM extension.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param instanceId The instance ID of the virtual machine.
-     * @param vmExtensionName The name of the virtual machine extension.
-     * @param extensionParameters Describes a Virtual Machine Extension.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Extension.
-     */
-    VirtualMachineExtension update(
-        String resourceGroupName,
-        String vmScaleSetName,
-        String instanceId,
-        String vmExtensionName,
-        VirtualMachineExtensionUpdate extensionParameters);
-
-    /**
-     * The operation to update the VMSS VM extension.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
-     * @param instanceId The instance ID of the virtual machine.
-     * @param vmExtensionName The name of the virtual machine extension.
-     * @param extensionParameters Describes a Virtual Machine Extension.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
-     *     server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Extension.
-     */
-    VirtualMachineExtension update(
-        String resourceGroupName,
-        String vmScaleSetName,
-        String instanceId,
-        String vmExtensionName,
-        VirtualMachineExtensionUpdate extensionParameters,
-        Context context);
-
     /**
      * The operation to delete the VMSS VM extension.
      *
@@ -139,9 +50,9 @@ public interface VirtualMachineScaleSetVMExtensions {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Extension.
+     * @return describes a VMSS VM Extension.
      */
-    VirtualMachineExtension get(
+    VirtualMachineScaleSetVMExtension get(
         String resourceGroupName, String vmScaleSetName, String instanceId, String vmExtensionName);
 
     /**
@@ -157,9 +68,9 @@ public interface VirtualMachineScaleSetVMExtensions {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine Extension.
+     * @return describes a VMSS VM Extension.
      */
-    Response<VirtualMachineExtension> getWithResponse(
+    Response<VirtualMachineScaleSetVMExtension> getWithResponse(
         String resourceGroupName,
         String vmScaleSetName,
         String instanceId,
@@ -177,9 +88,10 @@ public interface VirtualMachineScaleSetVMExtensions {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Extension operation response.
+     * @return the List VMSS VM Extension operation response.
      */
-    VirtualMachineExtensionsListResult list(String resourceGroupName, String vmScaleSetName, String instanceId);
+    VirtualMachineScaleSetVMExtensionsListResult list(
+        String resourceGroupName, String vmScaleSetName, String instanceId);
 
     /**
      * The operation to get all extensions of an instance in Virtual Machine Scaleset.
@@ -193,8 +105,16 @@ public interface VirtualMachineScaleSetVMExtensions {
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Extension operation response.
+     * @return the List VMSS VM Extension operation response.
      */
-    Response<VirtualMachineExtensionsListResult> listWithResponse(
+    Response<VirtualMachineScaleSetVMExtensionsListResult> listWithResponse(
         String resourceGroupName, String vmScaleSetName, String instanceId, String expand, Context context);
+
+    /**
+     * Begins definition for a new VirtualMachineScaleSetVMExtension resource.
+     *
+     * @param name resource name.
+     * @return the first stage of the new VirtualMachineScaleSetVMExtension definition.
+     */
+    VirtualMachineScaleSetVMExtension.DefinitionStages.Blank define(String name);
 }

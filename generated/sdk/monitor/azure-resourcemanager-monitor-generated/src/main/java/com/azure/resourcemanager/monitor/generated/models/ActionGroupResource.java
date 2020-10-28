@@ -422,4 +422,18 @@ public interface ActionGroupResource {
             Update withEnabled(Boolean enabled);
         }
     }
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @return the refreshed resource.
+     */
+    ActionGroupResource refresh();
+
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @param context The context to associate with this operation.
+     * @return the refreshed resource.
+     */
+    ActionGroupResource refresh(Context context);
 }

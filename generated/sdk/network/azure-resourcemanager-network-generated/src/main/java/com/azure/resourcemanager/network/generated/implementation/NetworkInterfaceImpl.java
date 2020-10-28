@@ -235,6 +235,28 @@ public final class NetworkInterfaceImpl
         this.networkInterfaceName = Utils.getValueFromIdByName(innerObject.id(), "networkInterfaces");
     }
 
+    public NetworkInterface refresh() {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getNetworkInterfaces()
+                .getByResourceGroupWithResponse(resourceGroupName, networkInterfaceName, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public NetworkInterface refresh(Context context) {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getNetworkInterfaces()
+                .getByResourceGroupWithResponse(resourceGroupName, networkInterfaceName, refreshExpand, context)
+                .getValue();
+        return this;
+    }
+
     public NetworkInterfaceImpl withEnableIpForwarding(Boolean enableIpForwarding) {
         this.innerModel().withEnableIpForwarding(enableIpForwarding);
         return this;

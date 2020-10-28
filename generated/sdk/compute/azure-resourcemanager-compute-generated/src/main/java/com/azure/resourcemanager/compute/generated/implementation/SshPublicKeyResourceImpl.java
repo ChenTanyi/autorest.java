@@ -133,6 +133,26 @@ public final class SshPublicKeyResourceImpl
         this.sshPublicKeyName = Utils.getValueFromIdByName(innerObject.id(), "sshPublicKeys");
     }
 
+    public SshPublicKeyResource refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getSshPublicKeys()
+                .getByResourceGroupWithResponse(resourceGroupName, sshPublicKeyName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public SshPublicKeyResource refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getSshPublicKeys()
+                .getByResourceGroupWithResponse(resourceGroupName, sshPublicKeyName, context)
+                .getValue();
+        return this;
+    }
+
     public SshPublicKeyResourceImpl withRegion(String location) {
         this.innerModel().withLocation(location);
         return this;

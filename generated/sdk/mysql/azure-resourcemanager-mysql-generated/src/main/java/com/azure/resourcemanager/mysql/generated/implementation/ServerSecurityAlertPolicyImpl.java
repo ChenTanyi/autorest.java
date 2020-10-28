@@ -144,6 +144,26 @@ public final class ServerSecurityAlertPolicyImpl
             SecurityAlertPolicyName.fromString(Utils.getValueFromIdByName(innerObject.id(), "securityAlertPolicies"));
     }
 
+    public ServerSecurityAlertPolicy refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getServerSecurityAlertPolicies()
+                .getWithResponse(resourceGroupName, serverName, securityAlertPolicyName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public ServerSecurityAlertPolicy refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getServerSecurityAlertPolicies()
+                .getWithResponse(resourceGroupName, serverName, securityAlertPolicyName, context)
+                .getValue();
+        return this;
+    }
+
     public ServerSecurityAlertPolicyImpl withEmailAccountAdmins(Boolean emailAccountAdmins) {
         this.innerModel().withEmailAccountAdmins(emailAccountAdmins);
         return this;

@@ -12,6 +12,7 @@ import com.azure.resourcemanager.compute.generated.models.DedicatedHost;
 import com.azure.resourcemanager.compute.generated.models.DedicatedHostInstanceView;
 import com.azure.resourcemanager.compute.generated.models.DedicatedHostLicenseTypes;
 import com.azure.resourcemanager.compute.generated.models.DedicatedHostUpdate;
+import com.azure.resourcemanager.compute.generated.models.InstanceViewTypes;
 import com.azure.resourcemanager.compute.generated.models.Sku;
 import com.azure.resourcemanager.compute.generated.models.SubResourceReadOnly;
 import java.time.OffsetDateTime;
@@ -173,6 +174,28 @@ public final class DedicatedHostImpl implements DedicatedHost, DedicatedHost.Def
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
         this.hostGroupName = Utils.getValueFromIdByName(innerObject.id(), "hostGroups");
         this.hostname = Utils.getValueFromIdByName(innerObject.id(), "hosts");
+    }
+
+    public DedicatedHost refresh() {
+        InstanceViewTypes refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getDedicatedHosts()
+                .getWithResponse(resourceGroupName, hostGroupName, hostname, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public DedicatedHost refresh(Context context) {
+        InstanceViewTypes refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getDedicatedHosts()
+                .getWithResponse(resourceGroupName, hostGroupName, hostname, refreshExpand, context)
+                .getValue();
+        return this;
     }
 
     public DedicatedHostImpl withRegion(String location) {

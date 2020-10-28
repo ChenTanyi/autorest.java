@@ -163,6 +163,26 @@ public final class LogSearchRuleResourceImpl
         this.ruleName = Utils.getValueFromIdByName(innerObject.id(), "scheduledQueryRules");
     }
 
+    public LogSearchRuleResource refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getScheduledQueryRules()
+                .getByResourceGroupWithResponse(resourceGroupName, ruleName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public LogSearchRuleResource refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getScheduledQueryRules()
+                .getByResourceGroupWithResponse(resourceGroupName, ruleName, context)
+                .getValue();
+        return this;
+    }
+
     public LogSearchRuleResourceImpl withSource(Source source) {
         this.innerModel().withSource(source);
         return this;

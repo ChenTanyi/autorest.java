@@ -208,6 +208,28 @@ public final class PublicIpAddressImpl implements PublicIpAddress, PublicIpAddre
         this.publicIpAddressName = Utils.getValueFromIdByName(innerObject.id(), "publicIPAddresses");
     }
 
+    public PublicIpAddress refresh() {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getPublicIpAddresses()
+                .getByResourceGroupWithResponse(resourceGroupName, publicIpAddressName, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public PublicIpAddress refresh(Context context) {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getPublicIpAddresses()
+                .getByResourceGroupWithResponse(resourceGroupName, publicIpAddressName, refreshExpand, context)
+                .getValue();
+        return this;
+    }
+
     public PublicIpAddressImpl withPublicIpPrefix(SubResource publicIpPrefix) {
         this.innerModel().withPublicIpPrefix(publicIpPrefix);
         return this;

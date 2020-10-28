@@ -249,6 +249,28 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
         this.loadBalancerName = Utils.getValueFromIdByName(innerObject.id(), "loadBalancers");
     }
 
+    public LoadBalancer refresh() {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getLoadBalancers()
+                .getByResourceGroupWithResponse(resourceGroupName, loadBalancerName, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public LoadBalancer refresh(Context context) {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getLoadBalancers()
+                .getByResourceGroupWithResponse(resourceGroupName, loadBalancerName, refreshExpand, context)
+                .getValue();
+        return this;
+    }
+
     public LoadBalancerImpl withInboundNatPools(List<InboundNatPool> inboundNatPools) {
         this.innerModel().withInboundNatPools(inboundNatPools);
         return this;

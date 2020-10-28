@@ -186,6 +186,28 @@ public final class NatGatewayImpl implements NatGateway, NatGateway.Definition, 
         this.natGatewayName = Utils.getValueFromIdByName(innerObject.id(), "natGateways");
     }
 
+    public NatGateway refresh() {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getNatGateways()
+                .getByResourceGroupWithResponse(resourceGroupName, natGatewayName, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public NatGateway refresh(Context context) {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getNatGateways()
+                .getByResourceGroupWithResponse(resourceGroupName, natGatewayName, refreshExpand, context)
+                .getValue();
+        return this;
+    }
+
     public NatGatewayImpl withId(String id) {
         this.innerModel().withId(id);
         return this;

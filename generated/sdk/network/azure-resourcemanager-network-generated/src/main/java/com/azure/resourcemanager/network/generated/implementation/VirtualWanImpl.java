@@ -176,6 +176,26 @@ public final class VirtualWanImpl implements VirtualWan, VirtualWan.Definition, 
         this.virtualWanName = Utils.getValueFromIdByName(innerObject.id(), "virtualWans");
     }
 
+    public VirtualWan refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualWans()
+                .getByResourceGroupWithResponse(resourceGroupName, virtualWanName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public VirtualWan refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualWans()
+                .getByResourceGroupWithResponse(resourceGroupName, virtualWanName, context)
+                .getValue();
+        return this;
+    }
+
     public VirtualWanImpl withAllowVnetToVnetTraffic(Boolean allowVnetToVnetTraffic) {
         this.innerModel().withAllowVnetToVnetTraffic(allowVnetToVnetTraffic);
         return this;

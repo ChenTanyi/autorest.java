@@ -148,6 +148,26 @@ public final class HubRouteTableImpl implements HubRouteTable, HubRouteTable.Def
         this.routeTableName = Utils.getValueFromIdByName(innerObject.id(), "hubRouteTables");
     }
 
+    public HubRouteTable refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getHubRouteTables()
+                .getWithResponse(resourceGroupName, virtualHubName, routeTableName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public HubRouteTable refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getHubRouteTables()
+                .getWithResponse(resourceGroupName, virtualHubName, routeTableName, context)
+                .getValue();
+        return this;
+    }
+
     public HubRouteTableImpl withLabels(List<String> labels) {
         this.innerModel().withLabels(labels);
         return this;

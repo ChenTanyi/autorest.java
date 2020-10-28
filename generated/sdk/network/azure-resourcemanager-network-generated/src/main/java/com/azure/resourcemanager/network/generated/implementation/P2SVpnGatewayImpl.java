@@ -171,6 +171,26 @@ public final class P2SVpnGatewayImpl implements P2SVpnGateway, P2SVpnGateway.Def
         this.gatewayName = Utils.getValueFromIdByName(innerObject.id(), "p2svpnGateways");
     }
 
+    public P2SVpnGateway refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getP2SVpnGateways()
+                .getByResourceGroupWithResponse(resourceGroupName, gatewayName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public P2SVpnGateway refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getP2SVpnGateways()
+                .getByResourceGroupWithResponse(resourceGroupName, gatewayName, context)
+                .getValue();
+        return this;
+    }
+
     public P2SVpnGatewayImpl withP2SConnectionConfigurations(
         List<P2SConnectionConfiguration> p2SConnectionConfigurations) {
         this.innerModel().withP2SConnectionConfigurations(p2SConnectionConfigurations);

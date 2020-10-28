@@ -1003,4 +1003,18 @@ public interface VirtualMachine {
             Update withExtensionsTimeBudget(String extensionsTimeBudget);
         }
     }
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @return the refreshed resource.
+     */
+    VirtualMachine refresh();
+
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @param context The context to associate with this operation.
+     * @return the refreshed resource.
+     */
+    VirtualMachine refresh(Context context);
 }

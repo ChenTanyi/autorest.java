@@ -168,6 +168,28 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
         this.customIpPrefixName = Utils.getValueFromIdByName(innerObject.id(), "customIpPrefixes");
     }
 
+    public CustomIpPrefix refresh() {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getCustomIpPrefixes()
+                .getByResourceGroupWithResponse(resourceGroupName, customIpPrefixName, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public CustomIpPrefix refresh(Context context) {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getCustomIpPrefixes()
+                .getByResourceGroupWithResponse(resourceGroupName, customIpPrefixName, refreshExpand, context)
+                .getValue();
+        return this;
+    }
+
     public CustomIpPrefixImpl withRegion(String location) {
         this.innerModel().withLocation(location);
         return this;

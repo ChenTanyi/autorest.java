@@ -394,12 +394,12 @@ public final class NamespacesImpl implements Namespaces {
         return new EHNamespaceImpl(name, this.manager());
     }
 
-    public AuthorizationRuleImpl defineAuthorizationRule(String name) {
-        return new AuthorizationRuleImpl(name, this.manager());
-    }
-
     public VirtualNetworkRuleImpl defineVirtualnetworkrule(String name) {
         return new VirtualNetworkRuleImpl(name, this.manager());
+    }
+
+    public AuthorizationRuleImpl defineAuthorizationRule(String name) {
+        return new AuthorizationRuleImpl(name, this.manager());
     }
 
     public IpFilterRuleImpl defineIpfilterrule(String name) {

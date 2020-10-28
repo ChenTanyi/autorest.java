@@ -201,4 +201,18 @@ public interface NetworkWatcher {
             Update withTags(Map<String, String> tags);
         }
     }
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @return the refreshed resource.
+     */
+    NetworkWatcher refresh();
+
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @param context The context to associate with this operation.
+     * @return the refreshed resource.
+     */
+    NetworkWatcher refresh(Context context);
 }

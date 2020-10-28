@@ -162,6 +162,26 @@ public final class AlertRuleResourceImpl
         this.ruleName = Utils.getValueFromIdByName(innerObject.id(), "alertrules");
     }
 
+    public AlertRuleResource refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getAlertRules()
+                .getByResourceGroupWithResponse(resourceGroupName, ruleName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public AlertRuleResource refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getAlertRules()
+                .getByResourceGroupWithResponse(resourceGroupName, ruleName, context)
+                .getValue();
+        return this;
+    }
+
     public AlertRuleResourceImpl withCondition(RuleCondition condition) {
         if (isInCreateMode()) {
             this.innerModel().withCondition(condition);

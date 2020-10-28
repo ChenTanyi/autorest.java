@@ -183,6 +183,28 @@ public final class RouteFilterImpl implements RouteFilter, RouteFilter.Definitio
         this.routeFilterName = Utils.getValueFromIdByName(innerObject.id(), "routeFilters");
     }
 
+    public RouteFilter refresh() {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getRouteFilters()
+                .getByResourceGroupWithResponse(resourceGroupName, routeFilterName, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public RouteFilter refresh(Context context) {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getRouteFilters()
+                .getByResourceGroupWithResponse(resourceGroupName, routeFilterName, refreshExpand, context)
+                .getValue();
+        return this;
+    }
+
     public RouteFilterImpl withTags(Map<String, String> tags) {
         if (isInCreateMode()) {
             this.innerModel().withTags(tags);

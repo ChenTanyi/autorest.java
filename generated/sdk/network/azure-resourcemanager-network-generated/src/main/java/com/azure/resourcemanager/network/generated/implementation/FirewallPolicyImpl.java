@@ -177,6 +177,28 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
         this.firewallPolicyName = Utils.getValueFromIdByName(innerObject.id(), "firewallPolicies");
     }
 
+    public FirewallPolicy refresh() {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getFirewallPolicies()
+                .getByResourceGroupWithResponse(resourceGroupName, firewallPolicyName, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public FirewallPolicy refresh(Context context) {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getFirewallPolicies()
+                .getByResourceGroupWithResponse(resourceGroupName, firewallPolicyName, refreshExpand, context)
+                .getValue();
+        return this;
+    }
+
     public FirewallPolicyImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;

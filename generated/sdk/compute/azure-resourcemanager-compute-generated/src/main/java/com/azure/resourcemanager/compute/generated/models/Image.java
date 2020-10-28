@@ -276,4 +276,18 @@ public interface Image {
             Update withHyperVGeneration(HyperVGenerationTypes hyperVGeneration);
         }
     }
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @return the refreshed resource.
+     */
+    Image refresh();
+
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @param context The context to associate with this operation.
+     * @return the refreshed resource.
+     */
+    Image refresh(Context context);
 }

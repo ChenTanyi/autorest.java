@@ -503,20 +503,20 @@ public interface Namespaces {
     EHNamespace.DefinitionStages.Blank defineNamespace(String name);
 
     /**
-     * Begins definition for a new AuthorizationRule resource.
-     *
-     * @param name resource name.
-     * @return the first stage of the new AuthorizationRule definition.
-     */
-    AuthorizationRule.DefinitionStages.Blank defineAuthorizationRule(String name);
-
-    /**
      * Begins definition for a new VirtualNetworkRule resource.
      *
      * @param name resource name.
      * @return the first stage of the new VirtualNetworkRule definition.
      */
     VirtualNetworkRule.DefinitionStages.Blank defineVirtualnetworkrule(String name);
+
+    /**
+     * Begins definition for a new AuthorizationRule resource.
+     *
+     * @param name resource name.
+     * @return the first stage of the new AuthorizationRule definition.
+     */
+    AuthorizationRule.DefinitionStages.Blank defineAuthorizationRule(String name);
 
     /**
      * Begins definition for a new IpFilterRule resource.

@@ -120,9 +120,9 @@ public final class VirtualMachineRunCommandImpl
 
     private String vmName;
 
-    private String runCommandName;
-
     private String resourceGroupName;
+
+    private String runCommandName;
 
     private VirtualMachineRunCommandUpdate updateRunCommand;
 
@@ -185,6 +185,28 @@ public final class VirtualMachineRunCommandImpl
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
         this.vmName = Utils.getValueFromIdByName(innerObject.id(), "virtualMachines");
         this.runCommandName = Utils.getValueFromIdByName(innerObject.id(), "runCommands");
+    }
+
+    public VirtualMachineRunCommand refresh() {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualMachineRunCommands()
+                .getByVirtualMachineWithResponse(resourceGroupName, vmName, runCommandName, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public VirtualMachineRunCommand refresh(Context context) {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualMachineRunCommands()
+                .getByVirtualMachineWithResponse(resourceGroupName, vmName, runCommandName, refreshExpand, context)
+                .getValue();
+        return this;
     }
 
     public VirtualMachineRunCommandImpl withRegion(Region location) {

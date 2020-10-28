@@ -16,6 +16,7 @@ import com.azure.resourcemanager.compute.generated.models.AdditionalCapabilities
 import com.azure.resourcemanager.compute.generated.models.BillingProfile;
 import com.azure.resourcemanager.compute.generated.models.DiagnosticsProfile;
 import com.azure.resourcemanager.compute.generated.models.HardwareProfile;
+import com.azure.resourcemanager.compute.generated.models.InstanceViewTypes;
 import com.azure.resourcemanager.compute.generated.models.NetworkProfile;
 import com.azure.resourcemanager.compute.generated.models.OSProfile;
 import com.azure.resourcemanager.compute.generated.models.Plan;
@@ -257,6 +258,28 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
         this.vmName = Utils.getValueFromIdByName(innerObject.id(), "virtualMachines");
+    }
+
+    public VirtualMachine refresh() {
+        InstanceViewTypes refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualMachines()
+                .getByResourceGroupWithResponse(resourceGroupName, vmName, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public VirtualMachine refresh(Context context) {
+        InstanceViewTypes refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualMachines()
+                .getByResourceGroupWithResponse(resourceGroupName, vmName, refreshExpand, context)
+                .getValue();
+        return this;
     }
 
     public VirtualMachineImpl withHardwareProfile(HardwareProfile hardwareProfile) {

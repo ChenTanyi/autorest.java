@@ -142,6 +142,26 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
         this.eventHubName = Utils.getValueFromIdByName(innerObject.id(), "eventhubs");
     }
 
+    public Eventhub refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getEventHubs()
+                .getWithResponse(resourceGroupName, namespaceName, eventHubName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public Eventhub refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getEventHubs()
+                .getWithResponse(resourceGroupName, namespaceName, eventHubName, context)
+                .getValue();
+        return this;
+    }
+
     public EventhubImpl withPartitionCount(Long partitionCount) {
         this.innerModel().withPartitionCount(partitionCount);
         return this;

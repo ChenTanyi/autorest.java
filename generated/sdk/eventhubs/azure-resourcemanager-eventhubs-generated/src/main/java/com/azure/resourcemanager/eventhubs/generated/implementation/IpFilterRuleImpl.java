@@ -121,6 +121,26 @@ public final class IpFilterRuleImpl implements IpFilterRule, IpFilterRule.Defini
         this.ipFilterRuleName = Utils.getValueFromIdByName(innerObject.id(), "ipfilterrules");
     }
 
+    public IpFilterRule refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getNamespaces()
+                .getIpFilterRuleWithResponse(resourceGroupName, namespaceName, ipFilterRuleName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public IpFilterRule refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getNamespaces()
+                .getIpFilterRuleWithResponse(resourceGroupName, namespaceName, ipFilterRuleName, context)
+                .getValue();
+        return this;
+    }
+
     public IpFilterRuleImpl withFilterName(String filterName) {
         this.innerModel().withFilterName(filterName);
         return this;

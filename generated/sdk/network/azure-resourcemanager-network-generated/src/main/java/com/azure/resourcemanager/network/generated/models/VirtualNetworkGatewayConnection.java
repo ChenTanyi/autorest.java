@@ -537,4 +537,18 @@ public interface VirtualNetworkGatewayConnection {
             Update withTags(Map<String, String> tags);
         }
     }
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @return the refreshed resource.
+     */
+    VirtualNetworkGatewayConnection refresh();
+
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @param context The context to associate with this operation.
+     * @return the refreshed resource.
+     */
+    VirtualNetworkGatewayConnection refresh(Context context);
 }

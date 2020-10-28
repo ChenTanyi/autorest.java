@@ -175,6 +175,26 @@ public final class VpnGatewayImpl implements VpnGateway, VpnGateway.Definition, 
         this.gatewayName = Utils.getValueFromIdByName(innerObject.id(), "vpnGateways");
     }
 
+    public VpnGateway refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVpnGateways()
+                .getByResourceGroupWithResponse(resourceGroupName, gatewayName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public VpnGateway refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVpnGateways()
+                .getByResourceGroupWithResponse(resourceGroupName, gatewayName, context)
+                .getValue();
+        return this;
+    }
+
     public VpnGatewayImpl withVpnGatewayScaleUnit(Integer vpnGatewayScaleUnit) {
         this.innerModel().withVpnGatewayScaleUnit(vpnGatewayScaleUnit);
         return this;

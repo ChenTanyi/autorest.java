@@ -140,6 +140,28 @@ public final class ImageImpl implements Image, Image.Definition, Image.Update {
         this.imageName = Utils.getValueFromIdByName(innerObject.id(), "images");
     }
 
+    public Image refresh() {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getImages()
+                .getByResourceGroupWithResponse(resourceGroupName, imageName, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public Image refresh(Context context) {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getImages()
+                .getByResourceGroupWithResponse(resourceGroupName, imageName, refreshExpand, context)
+                .getValue();
+        return this;
+    }
+
     public ImageImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;

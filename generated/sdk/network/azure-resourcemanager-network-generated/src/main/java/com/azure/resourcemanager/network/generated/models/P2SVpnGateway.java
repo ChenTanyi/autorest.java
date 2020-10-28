@@ -304,4 +304,18 @@ public interface P2SVpnGateway {
             Update withTags(Map<String, String> tags);
         }
     }
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @return the refreshed resource.
+     */
+    P2SVpnGateway refresh();
+
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @param context The context to associate with this operation.
+     * @return the refreshed resource.
+     */
+    P2SVpnGateway refresh(Context context);
 }

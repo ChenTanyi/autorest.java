@@ -155,6 +155,28 @@ public final class IpGroupImpl implements IpGroup, IpGroup.Definition, IpGroup.U
         this.ipGroupsName = Utils.getValueFromIdByName(innerObject.id(), "ipGroups");
     }
 
+    public IpGroup refresh() {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getIpGroups()
+                .getByResourceGroupWithResponse(resourceGroupName, ipGroupsName, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public IpGroup refresh(Context context) {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getIpGroups()
+                .getByResourceGroupWithResponse(resourceGroupName, ipGroupsName, refreshExpand, context)
+                .getValue();
+        return this;
+    }
+
     public IpGroupImpl withId(String id) {
         this.innerModel().withId(id);
         return this;

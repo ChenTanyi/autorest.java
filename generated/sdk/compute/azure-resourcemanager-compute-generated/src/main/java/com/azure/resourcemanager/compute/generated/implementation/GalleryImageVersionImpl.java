@@ -14,6 +14,7 @@ import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionPro
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionStorageProfile;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionUpdate;
 import com.azure.resourcemanager.compute.generated.models.ReplicationStatus;
+import com.azure.resourcemanager.compute.generated.models.ReplicationStatusTypes;
 import java.util.Collections;
 import java.util.Map;
 
@@ -80,9 +81,9 @@ public final class GalleryImageVersionImpl
         return this.serviceManager;
     }
 
-    private String galleryImageName;
-
     private String resourceGroupName;
+
+    private String galleryImageName;
 
     private String galleryImageVersionName;
 
@@ -171,6 +172,35 @@ public final class GalleryImageVersionImpl
         this.galleryName = Utils.getValueFromIdByName(innerObject.id(), "galleries");
         this.galleryImageName = Utils.getValueFromIdByName(innerObject.id(), "images");
         this.galleryImageVersionName = Utils.getValueFromIdByName(innerObject.id(), "versions");
+    }
+
+    public GalleryImageVersion refresh() {
+        ReplicationStatusTypes refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getGalleryImageVersions()
+                .getWithResponse(
+                    resourceGroupName,
+                    galleryName,
+                    galleryImageName,
+                    galleryImageVersionName,
+                    refreshExpand,
+                    Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public GalleryImageVersion refresh(Context context) {
+        ReplicationStatusTypes refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getGalleryImageVersions()
+                .getWithResponse(
+                    resourceGroupName, galleryName, galleryImageName, galleryImageVersionName, refreshExpand, context)
+                .getValue();
+        return this;
     }
 
     public GalleryImageVersionImpl withRegion(String location) {

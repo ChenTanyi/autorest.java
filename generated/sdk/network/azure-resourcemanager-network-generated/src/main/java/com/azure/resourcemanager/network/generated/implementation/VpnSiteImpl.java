@@ -190,6 +190,26 @@ public final class VpnSiteImpl implements VpnSite, VpnSite.Definition, VpnSite.U
         this.vpnSiteName = Utils.getValueFromIdByName(innerObject.id(), "vpnSites");
     }
 
+    public VpnSite refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVpnSites()
+                .getByResourceGroupWithResponse(resourceGroupName, vpnSiteName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public VpnSite refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVpnSites()
+                .getByResourceGroupWithResponse(resourceGroupName, vpnSiteName, context)
+                .getValue();
+        return this;
+    }
+
     public VpnSiteImpl withVirtualWan(SubResource virtualWan) {
         this.innerModel().withVirtualWan(virtualWan);
         return this;

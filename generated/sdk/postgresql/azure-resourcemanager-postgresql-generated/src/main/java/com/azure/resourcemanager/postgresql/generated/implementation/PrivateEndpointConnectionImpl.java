@@ -122,6 +122,26 @@ public final class PrivateEndpointConnectionImpl
         this.privateEndpointConnectionName = Utils.getValueFromIdByName(innerObject.id(), "privateEndpointConnections");
     }
 
+    public PrivateEndpointConnection refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getPrivateEndpointConnections()
+                .getWithResponse(resourceGroupName, serverName, privateEndpointConnectionName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public PrivateEndpointConnection refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getPrivateEndpointConnections()
+                .getWithResponse(resourceGroupName, serverName, privateEndpointConnectionName, context)
+                .getValue();
+        return this;
+    }
+
     public PrivateEndpointConnectionImpl withPrivateEndpoint(PrivateEndpointProperty privateEndpoint) {
         this.innerModel().withPrivateEndpoint(privateEndpoint);
         return this;

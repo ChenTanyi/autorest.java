@@ -196,6 +196,28 @@ public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.
         this.publicIpPrefixName = Utils.getValueFromIdByName(innerObject.id(), "publicIPPrefixes");
     }
 
+    public PublicIpPrefix refresh() {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getPublicIpPrefixes()
+                .getByResourceGroupWithResponse(resourceGroupName, publicIpPrefixName, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public PublicIpPrefix refresh(Context context) {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getPublicIpPrefixes()
+                .getByResourceGroupWithResponse(resourceGroupName, publicIpPrefixName, refreshExpand, context)
+                .getValue();
+        return this;
+    }
+
     public PublicIpPrefixImpl withTags(Map<String, String> tags) {
         if (isInCreateMode()) {
             this.innerModel().withTags(tags);

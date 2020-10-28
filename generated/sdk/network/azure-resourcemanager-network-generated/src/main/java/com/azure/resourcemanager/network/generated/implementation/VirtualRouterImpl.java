@@ -161,6 +161,28 @@ public final class VirtualRouterImpl implements VirtualRouter, VirtualRouter.Def
         this.virtualRouterName = Utils.getValueFromIdByName(innerObject.id(), "virtualRouters");
     }
 
+    public VirtualRouter refresh() {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualRouters()
+                .getByResourceGroupWithResponse(resourceGroupName, virtualRouterName, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public VirtualRouter refresh(Context context) {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualRouters()
+                .getByResourceGroupWithResponse(resourceGroupName, virtualRouterName, refreshExpand, context)
+                .getValue();
+        return this;
+    }
+
     public VirtualRouterImpl withTags(Map<String, String> tags) {
         this.innerModel().withTags(tags);
         return this;

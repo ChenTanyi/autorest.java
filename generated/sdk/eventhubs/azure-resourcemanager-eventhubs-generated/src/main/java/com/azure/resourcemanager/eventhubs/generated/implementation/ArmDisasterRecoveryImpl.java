@@ -127,6 +127,26 @@ public final class ArmDisasterRecoveryImpl
         this.alias = Utils.getValueFromIdByName(innerObject.id(), "disasterRecoveryConfigs");
     }
 
+    public ArmDisasterRecovery refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getDisasterRecoveryConfigs()
+                .getWithResponse(resourceGroupName, namespaceName, alias, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public ArmDisasterRecovery refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getDisasterRecoveryConfigs()
+                .getWithResponse(resourceGroupName, namespaceName, alias, context)
+                .getValue();
+        return this;
+    }
+
     public ArmDisasterRecoveryImpl withAlternateName(String alternateName) {
         this.innerModel().withAlternateName(alternateName);
         return this;

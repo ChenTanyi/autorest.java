@@ -120,6 +120,26 @@ public final class VirtualApplianceSiteImpl
         this.siteName = Utils.getValueFromIdByName(innerObject.id(), "virtualApplianceSites");
     }
 
+    public VirtualApplianceSite refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualApplianceSites()
+                .getWithResponse(resourceGroupName, networkVirtualApplianceName, siteName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public VirtualApplianceSite refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualApplianceSites()
+                .getWithResponse(resourceGroupName, networkVirtualApplianceName, siteName, context)
+                .getValue();
+        return this;
+    }
+
     public VirtualApplianceSiteImpl withAddressPrefix(String addressPrefix) {
         this.innerModel().withAddressPrefix(addressPrefix);
         return this;

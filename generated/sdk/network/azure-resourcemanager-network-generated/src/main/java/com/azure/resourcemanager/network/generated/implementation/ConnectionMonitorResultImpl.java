@@ -225,6 +225,26 @@ public final class ConnectionMonitorResultImpl
         this.connectionMonitorName = Utils.getValueFromIdByName(innerObject.id(), "connectionMonitors");
     }
 
+    public ConnectionMonitorResult refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getConnectionMonitors()
+                .getWithResponse(resourceGroupName, networkWatcherName, connectionMonitorName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public ConnectionMonitorResult refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getConnectionMonitors()
+                .getWithResponse(resourceGroupName, networkWatcherName, connectionMonitorName, context)
+                .getValue();
+        return this;
+    }
+
     public ConnectionMonitorResultImpl withRegion(String location) {
         this.createParameters.withLocation(location);
         return this;

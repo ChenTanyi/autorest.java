@@ -163,6 +163,28 @@ public final class NetworkProfileImpl implements NetworkProfile, NetworkProfile.
         this.networkProfileName = Utils.getValueFromIdByName(innerObject.id(), "networkProfiles");
     }
 
+    public NetworkProfile refresh() {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getNetworkProfiles()
+                .getByResourceGroupWithResponse(resourceGroupName, networkProfileName, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public NetworkProfile refresh(Context context) {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getNetworkProfiles()
+                .getByResourceGroupWithResponse(resourceGroupName, networkProfileName, refreshExpand, context)
+                .getValue();
+        return this;
+    }
+
     public NetworkProfileImpl withRegion(String location) {
         this.innerModel().withLocation(location);
         return this;

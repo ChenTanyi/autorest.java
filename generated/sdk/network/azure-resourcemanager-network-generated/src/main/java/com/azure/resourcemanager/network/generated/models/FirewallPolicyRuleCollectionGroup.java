@@ -231,4 +231,18 @@ public interface FirewallPolicyRuleCollectionGroup {
             Update withRuleCollections(List<FirewallPolicyRuleCollection> ruleCollections);
         }
     }
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @return the refreshed resource.
+     */
+    FirewallPolicyRuleCollectionGroup refresh();
+
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @param context The context to associate with this operation.
+     * @return the refreshed resource.
+     */
+    FirewallPolicyRuleCollectionGroup refresh(Context context);
 }

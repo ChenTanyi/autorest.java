@@ -133,9 +133,9 @@ public final class GalleryImageImpl implements GalleryImage, GalleryImage.Defini
 
     private GalleryImageUpdate updateGalleryImage;
 
-    private String resourceGroupName;
-
     private String galleryImageName;
+
+    private String resourceGroupName;
 
     private String galleryName;
 
@@ -198,6 +198,26 @@ public final class GalleryImageImpl implements GalleryImage, GalleryImage.Defini
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
         this.galleryName = Utils.getValueFromIdByName(innerObject.id(), "galleries");
         this.galleryImageName = Utils.getValueFromIdByName(innerObject.id(), "images");
+    }
+
+    public GalleryImage refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getGalleryImages()
+                .getWithResponse(resourceGroupName, galleryName, galleryImageName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public GalleryImage refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getGalleryImages()
+                .getWithResponse(resourceGroupName, galleryName, galleryImageName, context)
+                .getValue();
+        return this;
     }
 
     public GalleryImageImpl withEndOfLifeDate(OffsetDateTime endOfLifeDate) {

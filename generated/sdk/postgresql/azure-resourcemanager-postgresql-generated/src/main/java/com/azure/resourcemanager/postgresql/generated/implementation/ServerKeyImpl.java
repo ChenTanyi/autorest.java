@@ -118,6 +118,26 @@ public final class ServerKeyImpl implements ServerKey, ServerKey.Definition, Ser
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "keys");
     }
 
+    public ServerKey refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getServerKeys()
+                .getWithResponse(resourceGroupName, serverName, keyName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public ServerKey refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getServerKeys()
+                .getWithResponse(resourceGroupName, serverName, keyName, context)
+                .getValue();
+        return this;
+    }
+
     public ServerKeyImpl withServerKeyType(ServerKeyType serverKeyType) {
         this.innerModel().withServerKeyType(serverKeyType);
         return this;

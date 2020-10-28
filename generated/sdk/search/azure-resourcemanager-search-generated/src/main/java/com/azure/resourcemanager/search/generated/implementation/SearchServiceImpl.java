@@ -182,8 +182,8 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
     }
 
     public SearchServiceImpl update() {
-        this.updateClientRequestId = null;
         this.updateServiceParam = new SearchServiceUpdate();
+        this.updateClientRequestId = null;
         return this;
     }
 

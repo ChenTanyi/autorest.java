@@ -209,6 +209,26 @@ public final class VirtualNetworkGatewayImpl
         this.virtualNetworkGatewayName = Utils.getValueFromIdByName(innerObject.id(), "virtualNetworkGateways");
     }
 
+    public VirtualNetworkGateway refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualNetworkGateways()
+                .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkGatewayName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public VirtualNetworkGateway refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualNetworkGateways()
+                .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkGatewayName, context)
+                .getValue();
+        return this;
+    }
+
     public VirtualNetworkGatewayImpl withId(String id) {
         this.innerModel().withId(id);
         return this;

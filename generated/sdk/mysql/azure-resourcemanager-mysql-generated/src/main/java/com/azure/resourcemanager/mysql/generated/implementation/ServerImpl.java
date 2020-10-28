@@ -215,6 +215,26 @@ public final class ServerImpl implements Server, Server.Definition, Server.Updat
         this.serverName = Utils.getValueFromIdByName(innerObject.id(), "servers");
     }
 
+    public Server refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getServers()
+                .getByResourceGroupWithResponse(resourceGroupName, serverName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public Server refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getServers()
+                .getByResourceGroupWithResponse(resourceGroupName, serverName, context)
+                .getValue();
+        return this;
+    }
+
     public ServerImpl withMinimalTlsVersion(MinimalTlsVersionEnum minimalTlsVersion) {
         this.updateParameters.withMinimalTlsVersion(minimalTlsVersion);
         return this;

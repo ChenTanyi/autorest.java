@@ -238,6 +238,26 @@ public final class ActionGroupResourceImpl
         this.actionGroupName = Utils.getValueFromIdByName(innerObject.id(), "actionGroups");
     }
 
+    public ActionGroupResource refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getActionGroups()
+                .getByResourceGroupWithResponse(resourceGroupName, actionGroupName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public ActionGroupResource refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getActionGroups()
+                .getByResourceGroupWithResponse(resourceGroupName, actionGroupName, context)
+                .getValue();
+        return this;
+    }
+
     public ActionGroupResourceImpl withItsmReceivers(List<ItsmReceiver> itsmReceivers) {
         this.innerModel().withItsmReceivers(itsmReceivers);
         return this;

@@ -108,6 +108,26 @@ public final class FirewallRuleImpl implements FirewallRule, FirewallRule.Defini
         this.firewallRuleName = Utils.getValueFromIdByName(innerObject.id(), "firewallRules");
     }
 
+    public FirewallRule refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getFirewallRules()
+                .getWithResponse(resourceGroupName, serverName, firewallRuleName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public FirewallRule refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getFirewallRules()
+                .getWithResponse(resourceGroupName, serverName, firewallRuleName, context)
+                .getValue();
+        return this;
+    }
+
     public FirewallRuleImpl withStartIpAddress(String startIpAddress) {
         this.innerModel().withStartIpAddress(startIpAddress);
         return this;

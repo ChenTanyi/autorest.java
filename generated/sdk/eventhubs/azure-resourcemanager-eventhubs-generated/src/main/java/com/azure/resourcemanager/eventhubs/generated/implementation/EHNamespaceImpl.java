@@ -178,6 +178,26 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
         this.namespaceName = Utils.getValueFromIdByName(innerObject.id(), "namespaces");
     }
 
+    public EHNamespace refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getNamespaces()
+                .getByResourceGroupWithResponse(resourceGroupName, namespaceName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public EHNamespace refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getNamespaces()
+                .getByResourceGroupWithResponse(resourceGroupName, namespaceName, context)
+                .getValue();
+        return this;
+    }
+
     public EHNamespaceImpl withEncryption(Encryption encryption) {
         this.innerModel().withEncryption(encryption);
         return this;

@@ -157,6 +157,26 @@ public final class ActivityLogAlertResourceImpl
         this.activityLogAlertName = Utils.getValueFromIdByName(innerObject.id(), "activityLogAlerts");
     }
 
+    public ActivityLogAlertResource refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getActivityLogAlerts()
+                .getByResourceGroupWithResponse(resourceGroupName, activityLogAlertName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public ActivityLogAlertResource refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getActivityLogAlerts()
+                .getByResourceGroupWithResponse(resourceGroupName, activityLogAlertName, context)
+                .getValue();
+        return this;
+    }
+
     public ActivityLogAlertResourceImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;

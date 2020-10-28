@@ -283,4 +283,18 @@ public interface HubIpConfiguration {
             Update withPublicIpAddress(PublicIpAddressInner publicIpAddress);
         }
     }
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @return the refreshed resource.
+     */
+    HubIpConfiguration refresh();
+
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @param context The context to associate with this operation.
+     * @return the refreshed resource.
+     */
+    HubIpConfiguration refresh(Context context);
 }

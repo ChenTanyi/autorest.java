@@ -140,6 +140,26 @@ public final class ApplicationSecurityGroupImpl
         this.applicationSecurityGroupName = Utils.getValueFromIdByName(innerObject.id(), "applicationSecurityGroups");
     }
 
+    public ApplicationSecurityGroup refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getApplicationSecurityGroups()
+                .getByResourceGroupWithResponse(resourceGroupName, applicationSecurityGroupName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public ApplicationSecurityGroup refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getApplicationSecurityGroups()
+                .getByResourceGroupWithResponse(resourceGroupName, applicationSecurityGroupName, context)
+                .getValue();
+        return this;
+    }
+
     public ApplicationSecurityGroupImpl withTags(Map<String, String> tags) {
         if (isInCreateMode()) {
             this.innerModel().withTags(tags);

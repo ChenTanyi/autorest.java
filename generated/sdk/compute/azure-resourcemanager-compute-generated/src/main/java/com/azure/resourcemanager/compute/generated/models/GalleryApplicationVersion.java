@@ -223,4 +223,18 @@ public interface GalleryApplicationVersion {
             Update withPublishingProfile(GalleryApplicationVersionPublishingProfile publishingProfile);
         }
     }
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @return the refreshed resource.
+     */
+    GalleryApplicationVersion refresh();
+
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @param context The context to associate with this operation.
+     * @return the refreshed resource.
+     */
+    GalleryApplicationVersion refresh(Context context);
 }

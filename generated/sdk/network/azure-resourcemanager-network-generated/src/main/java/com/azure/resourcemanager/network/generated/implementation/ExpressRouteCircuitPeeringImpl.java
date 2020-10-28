@@ -227,6 +227,26 @@ public final class ExpressRouteCircuitPeeringImpl
         this.peeringName = Utils.getValueFromIdByName(innerObject.id(), "peerings");
     }
 
+    public ExpressRouteCircuitPeering refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getExpressRouteCircuitPeerings()
+                .getWithResponse(resourceGroupName, circuitName, peeringName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public ExpressRouteCircuitPeering refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getExpressRouteCircuitPeerings()
+                .getWithResponse(resourceGroupName, circuitName, peeringName, context)
+                .getValue();
+        return this;
+    }
+
     public ExpressRouteCircuitPeeringImpl withPeeringType(ExpressRoutePeeringType peeringType) {
         this.innerModel().withPeeringType(peeringType);
         return this;

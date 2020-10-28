@@ -158,6 +158,26 @@ public final class LocalNetworkGatewayImpl
         this.localNetworkGatewayName = Utils.getValueFromIdByName(innerObject.id(), "localNetworkGateways");
     }
 
+    public LocalNetworkGateway refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getLocalNetworkGateways()
+                .getByResourceGroupWithResponse(resourceGroupName, localNetworkGatewayName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public LocalNetworkGateway refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getLocalNetworkGateways()
+                .getByResourceGroupWithResponse(resourceGroupName, localNetworkGatewayName, context)
+                .getValue();
+        return this;
+    }
+
     public LocalNetworkGatewayImpl withRegion(String location) {
         this.innerModel().withLocation(location);
         return this;

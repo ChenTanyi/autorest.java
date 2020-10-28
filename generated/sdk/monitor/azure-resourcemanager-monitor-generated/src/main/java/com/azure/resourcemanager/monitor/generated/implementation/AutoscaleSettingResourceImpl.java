@@ -163,6 +163,26 @@ public final class AutoscaleSettingResourceImpl
         this.autoscaleSettingName = Utils.getValueFromIdByName(innerObject.id(), "autoscalesettings");
     }
 
+    public AutoscaleSettingResource refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getAutoscaleSettings()
+                .getByResourceGroupWithResponse(resourceGroupName, autoscaleSettingName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public AutoscaleSettingResource refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getAutoscaleSettings()
+                .getByResourceGroupWithResponse(resourceGroupName, autoscaleSettingName, context)
+                .getValue();
+        return this;
+    }
+
     public AutoscaleSettingResourceImpl withTargetResourceUri(String targetResourceUri) {
         if (isInCreateMode()) {
             this.innerModel().withTargetResourceUri(targetResourceUri);

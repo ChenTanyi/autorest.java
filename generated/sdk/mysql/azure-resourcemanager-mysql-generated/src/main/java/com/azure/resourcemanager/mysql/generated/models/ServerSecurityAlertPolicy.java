@@ -334,4 +334,18 @@ public interface ServerSecurityAlertPolicy {
             Update withRetentionDays(Integer retentionDays);
         }
     }
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @return the refreshed resource.
+     */
+    ServerSecurityAlertPolicy refresh();
+
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @param context The context to associate with this operation.
+     * @return the refreshed resource.
+     */
+    ServerSecurityAlertPolicy refresh(Context context);
 }

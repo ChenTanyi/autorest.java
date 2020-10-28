@@ -219,4 +219,18 @@ public interface SshPublicKeyResource {
             Update withPublicKey(String publicKey);
         }
     }
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @return the refreshed resource.
+     */
+    SshPublicKeyResource refresh();
+
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @param context The context to associate with this operation.
+     * @return the refreshed resource.
+     */
+    SshPublicKeyResource refresh(Context context);
 }

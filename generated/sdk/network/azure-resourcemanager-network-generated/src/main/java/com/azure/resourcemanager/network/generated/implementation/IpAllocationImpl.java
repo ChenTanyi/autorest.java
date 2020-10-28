@@ -170,6 +170,28 @@ public final class IpAllocationImpl implements IpAllocation, IpAllocation.Defini
         this.ipAllocationName = Utils.getValueFromIdByName(innerObject.id(), "IpAllocations");
     }
 
+    public IpAllocation refresh() {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getIpAllocations()
+                .getByResourceGroupWithResponse(resourceGroupName, ipAllocationName, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public IpAllocation refresh(Context context) {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getIpAllocations()
+                .getByResourceGroupWithResponse(resourceGroupName, ipAllocationName, refreshExpand, context)
+                .getValue();
+        return this;
+    }
+
     public IpAllocationImpl withTags(Map<String, String> tags) {
         if (isInCreateMode()) {
             this.innerModel().withTags(tags);

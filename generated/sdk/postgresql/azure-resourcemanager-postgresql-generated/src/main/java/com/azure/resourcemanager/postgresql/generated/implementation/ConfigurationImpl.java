@@ -60,9 +60,9 @@ public final class ConfigurationImpl implements Configuration, Configuration.Def
 
     private String resourceGroupName;
 
-    private String configurationName;
-
     private String serverName;
+
+    private String configurationName;
 
     public ConfigurationImpl withExistingServer(String resourceGroupName, String serverName) {
         this.resourceGroupName = resourceGroupName;
@@ -122,6 +122,26 @@ public final class ConfigurationImpl implements Configuration, Configuration.Def
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
         this.serverName = Utils.getValueFromIdByName(innerObject.id(), "servers");
         this.configurationName = Utils.getValueFromIdByName(innerObject.id(), "configurations");
+    }
+
+    public Configuration refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getConfigurations()
+                .getWithResponse(resourceGroupName, serverName, configurationName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public Configuration refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getConfigurations()
+                .getWithResponse(resourceGroupName, serverName, configurationName, context)
+                .getValue();
+        return this;
     }
 
     public ConfigurationImpl withValue(String value) {

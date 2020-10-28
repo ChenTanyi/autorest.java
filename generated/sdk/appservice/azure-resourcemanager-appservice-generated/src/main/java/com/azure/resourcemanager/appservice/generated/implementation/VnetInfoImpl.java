@@ -85,9 +85,9 @@ public final class VnetInfoImpl implements VnetInfo, VnetInfo.Definition, VnetIn
 
     private String name;
 
-    private String slot;
-
     private String vnetName;
+
+    private String slot;
 
     public VnetInfoImpl withExistingSlot(String resourceGroupName, String name, String vnetName) {
         this.resourceGroupName = resourceGroupName;

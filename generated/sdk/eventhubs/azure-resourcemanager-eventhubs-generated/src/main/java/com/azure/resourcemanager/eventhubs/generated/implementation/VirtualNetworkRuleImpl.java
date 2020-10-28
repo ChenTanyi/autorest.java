@@ -113,6 +113,27 @@ public final class VirtualNetworkRuleImpl
         this.virtualNetworkRuleName = Utils.getValueFromIdByName(innerObject.id(), "virtualnetworkrules");
     }
 
+    public VirtualNetworkRule refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getNamespaces()
+                .getVirtualNetworkRuleWithResponse(
+                    resourceGroupName, namespaceName, virtualNetworkRuleName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public VirtualNetworkRule refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getNamespaces()
+                .getVirtualNetworkRuleWithResponse(resourceGroupName, namespaceName, virtualNetworkRuleName, context)
+                .getValue();
+        return this;
+    }
+
     public VirtualNetworkRuleImpl withVirtualNetworkSubnetId(String virtualNetworkSubnetId) {
         this.innerModel().withVirtualNetworkSubnetId(virtualNetworkSubnetId);
         return this;

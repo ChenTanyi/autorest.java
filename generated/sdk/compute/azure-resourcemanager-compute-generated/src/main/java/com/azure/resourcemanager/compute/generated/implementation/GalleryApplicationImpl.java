@@ -155,6 +155,26 @@ public final class GalleryApplicationImpl
         this.galleryApplicationName = Utils.getValueFromIdByName(innerObject.id(), "applications");
     }
 
+    public GalleryApplication refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getGalleryApplications()
+                .getWithResponse(resourceGroupName, galleryName, galleryApplicationName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public GalleryApplication refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getGalleryApplications()
+                .getWithResponse(resourceGroupName, galleryName, galleryApplicationName, context)
+                .getValue();
+        return this;
+    }
+
     public GalleryApplicationImpl withSupportedOSType(OperatingSystemTypes supportedOSType) {
         if (isInCreateMode()) {
             this.innerModel().withSupportedOSType(supportedOSType);

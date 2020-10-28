@@ -208,6 +208,26 @@ public final class DscpConfigurationImpl
         this.dscpConfigurationName = Utils.getValueFromIdByName(innerObject.id(), "dscpConfigurations");
     }
 
+    public DscpConfiguration refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getDscpConfigurations()
+                .getByResourceGroupWithResponse(resourceGroupName, dscpConfigurationName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public DscpConfiguration refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getDscpConfigurations()
+                .getByResourceGroupWithResponse(resourceGroupName, dscpConfigurationName, context)
+                .getValue();
+        return this;
+    }
+
     public DscpConfigurationImpl withDestinationIpRanges(List<QosIpRange> destinationIpRanges) {
         this.innerModel().withDestinationIpRanges(destinationIpRanges);
         return this;

@@ -222,6 +222,28 @@ public final class PrivateLinkServiceImpl
         this.serviceName = Utils.getValueFromIdByName(innerObject.id(), "privateLinkServices");
     }
 
+    public PrivateLinkService refresh() {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getPrivateLinkServices()
+                .getByResourceGroupWithResponse(resourceGroupName, serviceName, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public PrivateLinkService refresh(Context context) {
+        String refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getPrivateLinkServices()
+                .getByResourceGroupWithResponse(resourceGroupName, serviceName, refreshExpand, context)
+                .getValue();
+        return this;
+    }
+
     public PrivateLinkServiceImpl withFqdns(List<String> fqdns) {
         this.innerModel().withFqdns(fqdns);
         return this;

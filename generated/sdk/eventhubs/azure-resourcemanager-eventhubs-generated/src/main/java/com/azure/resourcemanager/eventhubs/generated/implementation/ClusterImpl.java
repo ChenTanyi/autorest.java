@@ -138,6 +138,26 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
         this.clusterName = Utils.getValueFromIdByName(innerObject.id(), "clusters");
     }
 
+    public Cluster refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getClusters()
+                .getByResourceGroupWithResponse(resourceGroupName, clusterName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public Cluster refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getClusters()
+                .getByResourceGroupWithResponse(resourceGroupName, clusterName, context)
+                .getValue();
+        return this;
+    }
+
     public ClusterImpl withSku(ClusterSku sku) {
         this.innerModel().withSku(sku);
         return this;

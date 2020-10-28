@@ -123,6 +123,26 @@ public final class ExpressRouteCircuitAuthorizationImpl
         this.authorizationName = Utils.getValueFromIdByName(innerObject.id(), "authorizations");
     }
 
+    public ExpressRouteCircuitAuthorization refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getExpressRouteCircuitAuthorizations()
+                .getWithResponse(resourceGroupName, circuitName, authorizationName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public ExpressRouteCircuitAuthorization refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getExpressRouteCircuitAuthorizations()
+                .getWithResponse(resourceGroupName, circuitName, authorizationName, context)
+                .getValue();
+        return this;
+    }
+
     public ExpressRouteCircuitAuthorizationImpl withAuthorizationUseStatus(
         AuthorizationUseStatus authorizationUseStatus) {
         this.innerModel().withAuthorizationUseStatus(authorizationUseStatus);

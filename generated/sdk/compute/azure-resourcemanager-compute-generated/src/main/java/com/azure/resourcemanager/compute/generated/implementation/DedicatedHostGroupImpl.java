@@ -11,6 +11,7 @@ import com.azure.resourcemanager.compute.generated.fluent.models.DedicatedHostGr
 import com.azure.resourcemanager.compute.generated.models.DedicatedHostGroup;
 import com.azure.resourcemanager.compute.generated.models.DedicatedHostGroupInstanceView;
 import com.azure.resourcemanager.compute.generated.models.DedicatedHostGroupUpdate;
+import com.azure.resourcemanager.compute.generated.models.InstanceViewTypes;
 import com.azure.resourcemanager.compute.generated.models.SubResourceReadOnly;
 import java.util.Collections;
 import java.util.List;
@@ -160,6 +161,28 @@ public final class DedicatedHostGroupImpl
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
         this.hostGroupName = Utils.getValueFromIdByName(innerObject.id(), "hostGroups");
+    }
+
+    public DedicatedHostGroup refresh() {
+        InstanceViewTypes refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getDedicatedHostGroups()
+                .getByResourceGroupWithResponse(resourceGroupName, hostGroupName, refreshExpand, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public DedicatedHostGroup refresh(Context context) {
+        InstanceViewTypes refreshExpand = null;
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getDedicatedHostGroups()
+                .getByResourceGroupWithResponse(resourceGroupName, hostGroupName, refreshExpand, context)
+                .getValue();
+        return this;
     }
 
     public DedicatedHostGroupImpl withZones(List<String> zones) {

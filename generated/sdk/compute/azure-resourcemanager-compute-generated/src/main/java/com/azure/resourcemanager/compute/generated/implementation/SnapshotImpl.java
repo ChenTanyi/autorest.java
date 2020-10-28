@@ -197,6 +197,26 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
         this.snapshotName = Utils.getValueFromIdByName(innerObject.id(), "snapshots");
     }
 
+    public Snapshot refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getSnapshots()
+                .getByResourceGroupWithResponse(resourceGroupName, snapshotName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public Snapshot refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getSnapshots()
+                .getByResourceGroupWithResponse(resourceGroupName, snapshotName, context)
+                .getValue();
+        return this;
+    }
+
     public SnapshotImpl withDiskSizeGB(Integer diskSizeGB) {
         if (isInCreateMode()) {
             this.innerModel().withDiskSizeGB(diskSizeGB);

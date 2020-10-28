@@ -191,6 +191,26 @@ public final class ExpressRouteCrossConnectionImpl
         this.crossConnectionName = Utils.getValueFromIdByName(innerObject.id(), "expressRouteCrossConnections");
     }
 
+    public ExpressRouteCrossConnection refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getExpressRouteCrossConnections()
+                .getByResourceGroupWithResponse(resourceGroupName, crossConnectionName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public ExpressRouteCrossConnection refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getExpressRouteCrossConnections()
+                .getByResourceGroupWithResponse(resourceGroupName, crossConnectionName, context)
+                .getValue();
+        return this;
+    }
+
     public ExpressRouteCrossConnectionImpl withTags(Map<String, String> tags) {
         if (isInCreateMode()) {
             this.innerModel().withTags(tags);

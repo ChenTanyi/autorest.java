@@ -233,4 +233,18 @@ public interface Cluster {
             Update withSku(ClusterSku sku);
         }
     }
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @return the refreshed resource.
+     */
+    Cluster refresh();
+
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @param context The context to associate with this operation.
+     * @return the refreshed resource.
+     */
+    Cluster refresh(Context context);
 }

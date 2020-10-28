@@ -145,6 +145,26 @@ public final class ExpressRouteCircuitConnectionImpl
         this.connectionName = Utils.getValueFromIdByName(innerObject.id(), "connections");
     }
 
+    public ExpressRouteCircuitConnection refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getExpressRouteCircuitConnections()
+                .getWithResponse(resourceGroupName, circuitName, peeringName, connectionName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public ExpressRouteCircuitConnection refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getExpressRouteCircuitConnections()
+                .getWithResponse(resourceGroupName, circuitName, peeringName, connectionName, context)
+                .getValue();
+        return this;
+    }
+
     public ExpressRouteCircuitConnectionImpl withIpv6CircuitConnectionConfig(
         Ipv6CircuitConnectionConfig ipv6CircuitConnectionConfig) {
         this.innerModel().withIpv6CircuitConnectionConfig(ipv6CircuitConnectionConfig);

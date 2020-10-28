@@ -213,6 +213,26 @@ public final class VirtualMachineScaleSetImpl
         this.vmScaleSetName = Utils.getValueFromIdByName(innerObject.id(), "virtualMachineScaleSets");
     }
 
+    public VirtualMachineScaleSet refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualMachineScaleSets()
+                .getByResourceGroupWithResponse(resourceGroupName, vmScaleSetName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public VirtualMachineScaleSet refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getVirtualMachineScaleSets()
+                .getByResourceGroupWithResponse(resourceGroupName, vmScaleSetName, context)
+                .getValue();
+        return this;
+    }
+
     public VirtualMachineScaleSetImpl withPlan(Plan plan) {
         if (isInCreateMode()) {
             this.innerModel().withPlan(plan);
