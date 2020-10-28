@@ -30,7 +30,8 @@ public class StorageTests extends Base {
                 .withLogOptions(new HttpLogOptions().setLogLevel(HttpLogDetailLevel.BODY_AND_HEADERS))
                 .authenticate(credential, profile);
 
-        StorageAccount storageAccount = storageManager.storageAccounts().define(saName)
+        StorageAccount storageAccount = storageManager.storageAccounts()
+                .define(saName)
                 .withRegion(region)
                 .withExistingResourceGroup(rgName)
                 .withSku(new Sku().withName(SkuName.STANDARD_LRS))
@@ -58,7 +59,8 @@ public class StorageTests extends Base {
         Assertions.assertEquals(AccessTier.COOL, storageAccount2.accessTier());
         Assertions.assertEquals("value2", storageAccount2.tags().get("tag2"));
 
-        BlobContainer blobContainer = storageManager.blobContainers().defineContainer(blobContainerName)
+        BlobContainer blobContainer = storageManager.blobContainers()
+                .defineContainer(blobContainerName)
                 .withExistingStorageAccount(rgName, saName)
                 .withPublicAccess(PublicAccess.BLOB)
                 .create(new Context("key", "value"));
