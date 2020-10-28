@@ -54,9 +54,9 @@ public final class VirtualRouterPeeringImpl
 
     private String resourceGroupName;
 
-    private String peeringName;
-
     private String virtualRouterName;
+
+    private String peeringName;
 
     public VirtualRouterPeeringImpl withExistingVirtualRouter(String resourceGroupName, String virtualRouterName) {
         this.resourceGroupName = resourceGroupName;

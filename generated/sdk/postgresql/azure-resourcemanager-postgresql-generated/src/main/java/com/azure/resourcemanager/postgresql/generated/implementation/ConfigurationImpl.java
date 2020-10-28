@@ -60,9 +60,9 @@ public final class ConfigurationImpl implements Configuration, Configuration.Def
 
     private String resourceGroupName;
 
-    private String serverName;
-
     private String configurationName;
+
+    private String serverName;
 
     public ConfigurationImpl withExistingServer(String resourceGroupName, String serverName) {
         this.resourceGroupName = resourceGroupName;

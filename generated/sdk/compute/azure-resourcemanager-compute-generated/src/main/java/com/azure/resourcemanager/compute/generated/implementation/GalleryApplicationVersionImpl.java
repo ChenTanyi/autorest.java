@@ -82,9 +82,9 @@ public final class GalleryApplicationVersionImpl
 
     private String resourceGroupName;
 
-    private String galleryApplicationVersionName;
-
     private String galleryName;
+
+    private String galleryApplicationVersionName;
 
     public GalleryApplicationVersionImpl withExistingApplication(
         String resourceGroupName, String galleryName, String galleryApplicationName) {

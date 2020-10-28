@@ -79,9 +79,9 @@ public final class VirtualMachineScaleSetVMExtensionImpl
         return this.serviceManager;
     }
 
-    private String instanceId;
-
     private String resourceGroupName;
+
+    private String instanceId;
 
     private String vmScaleSetName;
 

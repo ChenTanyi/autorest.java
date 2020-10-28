@@ -52,9 +52,9 @@ public final class VnetGatewayImpl implements VnetGateway, VnetGateway.Definitio
 
     private String name;
 
-    private String vnetName;
-
     private String slot;
+
+    private String vnetName;
 
     public VnetGatewayImpl withExistingVirtualNetworkConnection(
         String resourceGroupName, String name, String vnetName, String gatewayName) {

@@ -55,9 +55,9 @@ public final class ExpressRouteCircuitAuthorizationImpl
         return this.serviceManager;
     }
 
-    private String resourceGroupName;
-
     private String authorizationName;
+
+    private String resourceGroupName;
 
     private String circuitName;
 

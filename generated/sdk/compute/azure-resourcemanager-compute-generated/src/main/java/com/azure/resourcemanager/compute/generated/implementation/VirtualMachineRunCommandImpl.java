@@ -120,9 +120,9 @@ public final class VirtualMachineRunCommandImpl
 
     private String vmName;
 
-    private String resourceGroupName;
-
     private String runCommandName;
+
+    private String resourceGroupName;
 
     private VirtualMachineRunCommandUpdate updateRunCommand;
 
