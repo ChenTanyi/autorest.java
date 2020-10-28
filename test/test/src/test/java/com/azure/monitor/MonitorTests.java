@@ -34,10 +34,10 @@ public class MonitorTests extends Base {
                 .create();
         Assertions.assertEquals(1, actionGroup.azureAppPushReceivers().size());
 
-        // TODO refresh method missing
+        actionGroup.refresh();
+        Assertions.assertEquals(true, actionGroup.enabled());
 
         actionGroup = monitorManager.actionGroups().getByResourceGroup(rgName, agName);
-        Assertions.assertEquals(true, actionGroup.enabled());
         Assertions.assertEquals("azurepush@outlook.com", actionGroup.azureAppPushReceivers().iterator().next().emailAddress());
 
         // withEnable appears not working in PATCH
