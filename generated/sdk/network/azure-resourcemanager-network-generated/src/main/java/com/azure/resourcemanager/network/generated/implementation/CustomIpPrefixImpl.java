@@ -101,9 +101,9 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
         return this.serviceManager;
     }
 
-    private String resourceGroupName;
-
     private String customIpPrefixName;
+
+    private String resourceGroupName;
 
     private TagsObject updateParameters;
 

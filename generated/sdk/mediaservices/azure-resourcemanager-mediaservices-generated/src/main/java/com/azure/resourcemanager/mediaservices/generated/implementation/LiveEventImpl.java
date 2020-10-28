@@ -133,9 +133,9 @@ public final class LiveEventImpl implements LiveEvent, LiveEvent.Definition, Liv
 
     private String accountName;
 
-    private String liveEventName;
-
     private Boolean createAutoStart;
+
+    private String liveEventName;
 
     public LiveEventImpl withExistingMediaservice(String resourceGroupName, String accountName) {
         this.resourceGroupName = resourceGroupName;

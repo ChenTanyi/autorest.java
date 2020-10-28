@@ -92,9 +92,9 @@ public final class JobImpl implements Job, Job.Definition, Job.Update {
         return this.serviceManager;
     }
 
-    private String jobName;
-
     private String transformName;
+
+    private String jobName;
 
     private String resourceGroupName;
 

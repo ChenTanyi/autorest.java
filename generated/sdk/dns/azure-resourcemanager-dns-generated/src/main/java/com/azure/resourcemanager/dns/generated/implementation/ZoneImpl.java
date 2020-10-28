@@ -153,8 +153,8 @@ public final class ZoneImpl implements Zone, Zone.Definition, Zone.Update {
     }
 
     public ZoneImpl update() {
-        this.updateIfMatch = null;
         this.updateParameters = new ZoneUpdate();
+        this.updateIfMatch = null;
         return this;
     }
 

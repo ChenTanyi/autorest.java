@@ -80,9 +80,9 @@ public final class GalleryImageVersionImpl
         return this.serviceManager;
     }
 
-    private String resourceGroupName;
-
     private String galleryImageName;
+
+    private String resourceGroupName;
 
     private String galleryImageVersionName;
 
