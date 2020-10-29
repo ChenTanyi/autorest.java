@@ -7,7 +7,8 @@
     "authorization": {
         "source": "specification/authorization/resource-manager/readme.md",
         "namespace": "com.azure.resourcemanager.authorization.generated",
-        "output": "sdk/authorization/azure-resourcemanager-authorization-generated"
+        "output": "sdk/authorization/azure-resourcemanager-authorization-generated",
+        "tag": "package-2018-09-01-preview"
     },
     "commerce": {
         "source": "specification/commerce/resource-manager/readme.md",
