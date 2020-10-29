@@ -58,7 +58,7 @@ def generate(config: dict, **kwargs):
     shutil.rmtree(output_dir, ignore_errors = True)
     tag = '--tag={0}'.format(config.get('tag')) if config.get('tag') else ''
     sdk_integration = '--sdk-integration' if kwargs.get('sdk') else ''
-    command = 'autorest --version={0} --use={1} --java.azure-libraries-for-java-folder={2} --java.output-folder={3} --java.payload-flattening-threshold=0 --verbose --java.namespace={4} {5}'.format(
+    command = 'autorest --version={0} --use={1} --java.azure-libraries-for-java-folder={2} --java.output-folder={3} --payload-flattening-threshold=0 --verbose --java.namespace={4} {5}'.format(
         AUTOREST_CORE_VERSION,
         kwargs['use'],
         kwargs['output'],
