@@ -6,7 +6,7 @@ package com.azure.resourcemanager.eventhubs.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.eventhubs.generated.EventHubManager;
+import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.RegionsClient;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.MessagingRegionsInner;
 import com.azure.resourcemanager.eventhubs.generated.models.MessagingRegions;
@@ -15,9 +15,9 @@ import com.azure.resourcemanager.eventhubs.generated.models.Regions;
 public final class RegionsImpl implements Regions {
     private final RegionsClient innerClient;
 
-    private final EventHubManager serviceManager;
+    private final EventHubsManager serviceManager;
 
-    public RegionsImpl(RegionsClient innerClient, EventHubManager serviceManager) {
+    public RegionsImpl(RegionsClient innerClient, EventHubsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -36,7 +36,7 @@ public final class RegionsImpl implements Regions {
         return this.innerClient;
     }
 
-    private EventHubManager manager() {
+    private EventHubsManager manager() {
         return this.serviceManager;
     }
 }

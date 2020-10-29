@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
-import com.azure.resourcemanager.eventhubs.generated.EventHubManager;
+import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.AvailableClustersListInner;
 import com.azure.resourcemanager.eventhubs.generated.models.AvailableCluster;
 import com.azure.resourcemanager.eventhubs.generated.models.AvailableClustersList;
@@ -14,9 +14,9 @@ import java.util.List;
 public final class AvailableClustersListImpl implements AvailableClustersList {
     private AvailableClustersListInner innerObject;
 
-    private final EventHubManager serviceManager;
+    private final EventHubsManager serviceManager;
 
-    public AvailableClustersListImpl(AvailableClustersListInner innerObject, EventHubManager serviceManager) {
+    public AvailableClustersListImpl(AvailableClustersListInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,7 +34,7 @@ public final class AvailableClustersListImpl implements AvailableClustersList {
         return this.innerObject;
     }
 
-    private EventHubManager manager() {
+    private EventHubsManager manager() {
         return this.serviceManager;
     }
 }

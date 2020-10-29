@@ -5,7 +5,7 @@
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.eventhubs.generated.EventHubManager;
+import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.eventhubs.generated.models.ConnectionState;
 import com.azure.resourcemanager.eventhubs.generated.models.EndPointProvisioningState;
@@ -16,7 +16,7 @@ public final class PrivateEndpointConnectionImpl
     implements PrivateEndpointConnection, PrivateEndpointConnection.Definition, PrivateEndpointConnection.Update {
     private PrivateEndpointConnectionInner innerObject;
 
-    private final EventHubManager serviceManager;
+    private final EventHubsManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -46,7 +46,7 @@ public final class PrivateEndpointConnectionImpl
         return this.innerObject;
     }
 
-    private EventHubManager manager() {
+    private EventHubsManager manager() {
         return this.serviceManager;
     }
 
@@ -84,7 +84,7 @@ public final class PrivateEndpointConnectionImpl
         return this;
     }
 
-    public PrivateEndpointConnectionImpl(String name, EventHubManager serviceManager) {
+    public PrivateEndpointConnectionImpl(String name, EventHubsManager serviceManager) {
         this.innerObject = new PrivateEndpointConnectionInner();
         this.serviceManager = serviceManager;
         this.privateEndpointConnectionName = name;
@@ -116,7 +116,7 @@ public final class PrivateEndpointConnectionImpl
         return this;
     }
 
-    public PrivateEndpointConnectionImpl(PrivateEndpointConnectionInner innerObject, EventHubManager serviceManager) {
+    public PrivateEndpointConnectionImpl(PrivateEndpointConnectionInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

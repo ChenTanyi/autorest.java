@@ -5,7 +5,7 @@
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.eventhubs.generated.EventHubManager;
+import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ArmDisasterRecoveryInner;
 import com.azure.resourcemanager.eventhubs.generated.models.ArmDisasterRecovery;
 import com.azure.resourcemanager.eventhubs.generated.models.ProvisioningStateDR;
@@ -15,7 +15,7 @@ public final class ArmDisasterRecoveryImpl
     implements ArmDisasterRecovery, ArmDisasterRecovery.Definition, ArmDisasterRecovery.Update {
     private ArmDisasterRecoveryInner innerObject;
 
-    private final EventHubManager serviceManager;
+    private final EventHubsManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -53,7 +53,7 @@ public final class ArmDisasterRecoveryImpl
         return this.innerObject;
     }
 
-    private EventHubManager manager() {
+    private EventHubsManager manager() {
         return this.serviceManager;
     }
 
@@ -89,7 +89,7 @@ public final class ArmDisasterRecoveryImpl
         return this;
     }
 
-    public ArmDisasterRecoveryImpl(String name, EventHubManager serviceManager) {
+    public ArmDisasterRecoveryImpl(String name, EventHubsManager serviceManager) {
         this.innerObject = new ArmDisasterRecoveryInner();
         this.serviceManager = serviceManager;
         this.alias = name;
@@ -119,7 +119,7 @@ public final class ArmDisasterRecoveryImpl
         return this;
     }
 
-    public ArmDisasterRecoveryImpl(ArmDisasterRecoveryInner innerObject, EventHubManager serviceManager) {
+    public ArmDisasterRecoveryImpl(ArmDisasterRecoveryInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

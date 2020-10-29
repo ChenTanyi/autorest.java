@@ -4,16 +4,16 @@
 
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
-import com.azure.resourcemanager.eventhubs.generated.EventHubManager;
+import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.AccessKeysInner;
 import com.azure.resourcemanager.eventhubs.generated.models.AccessKeys;
 
 public final class AccessKeysImpl implements AccessKeys {
     private AccessKeysInner innerObject;
 
-    private final EventHubManager serviceManager;
+    private final EventHubsManager serviceManager;
 
-    public AccessKeysImpl(AccessKeysInner innerObject, EventHubManager serviceManager) {
+    public AccessKeysImpl(AccessKeysInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -50,7 +50,7 @@ public final class AccessKeysImpl implements AccessKeys {
         return this.innerObject;
     }
 
-    private EventHubManager manager() {
+    private EventHubsManager manager() {
         return this.serviceManager;
     }
 }

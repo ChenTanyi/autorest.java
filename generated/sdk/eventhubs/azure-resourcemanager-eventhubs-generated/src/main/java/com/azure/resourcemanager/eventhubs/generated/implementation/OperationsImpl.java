@@ -6,7 +6,7 @@ package com.azure.resourcemanager.eventhubs.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.eventhubs.generated.EventHubManager;
+import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.OperationsClient;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.eventhubs.generated.models.Operation;
@@ -15,9 +15,9 @@ import com.azure.resourcemanager.eventhubs.generated.models.Operations;
 public final class OperationsImpl implements Operations {
     private final OperationsClient innerClient;
 
-    private final EventHubManager serviceManager;
+    private final EventHubsManager serviceManager;
 
-    public OperationsImpl(OperationsClient innerClient, EventHubManager serviceManager) {
+    public OperationsImpl(OperationsClient innerClient, EventHubsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -36,7 +36,7 @@ public final class OperationsImpl implements Operations {
         return this.innerClient;
     }
 
-    private EventHubManager manager() {
+    private EventHubsManager manager() {
         return this.serviceManager;
     }
 }

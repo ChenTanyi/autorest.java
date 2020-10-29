@@ -7,7 +7,7 @@ package com.azure.resourcemanager.eventhubs.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.eventhubs.generated.EventHubManager;
+import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.ConfigurationsClient;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ClusterQuotaConfigurationPropertiesInner;
 import com.azure.resourcemanager.eventhubs.generated.models.ClusterQuotaConfigurationProperties;
@@ -16,9 +16,9 @@ import com.azure.resourcemanager.eventhubs.generated.models.Configurations;
 public final class ConfigurationsImpl implements Configurations {
     private final ConfigurationsClient innerClient;
 
-    private final EventHubManager serviceManager;
+    private final EventHubsManager serviceManager;
 
-    public ConfigurationsImpl(ConfigurationsClient innerClient, EventHubManager serviceManager) {
+    public ConfigurationsImpl(ConfigurationsClient innerClient, EventHubsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -80,7 +80,7 @@ public final class ConfigurationsImpl implements Configurations {
         return this.innerClient;
     }
 
-    private EventHubManager manager() {
+    private EventHubsManager manager() {
         return this.serviceManager;
     }
 }

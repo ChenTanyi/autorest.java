@@ -8,7 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.eventhubs.generated.EventHubManager;
+import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.EventHubsClient;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.AccessKeysInner;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.AuthorizationRuleInner;
@@ -22,9 +22,9 @@ import com.azure.resourcemanager.eventhubs.generated.models.RegenerateAccessKeyP
 public final class EventHubsImpl implements EventHubs {
     private final EventHubsClient innerClient;
 
-    private final EventHubManager serviceManager;
+    private final EventHubsManager serviceManager;
 
-    public EventHubsImpl(EventHubsClient innerClient, EventHubManager serviceManager) {
+    public EventHubsImpl(EventHubsClient innerClient, EventHubsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -259,7 +259,7 @@ public final class EventHubsImpl implements EventHubs {
         return this.innerClient;
     }
 
-    private EventHubManager manager() {
+    private EventHubsManager manager() {
         return this.serviceManager;
     }
 

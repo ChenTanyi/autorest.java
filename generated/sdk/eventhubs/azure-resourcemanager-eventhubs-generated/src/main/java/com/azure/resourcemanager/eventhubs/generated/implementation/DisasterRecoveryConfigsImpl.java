@@ -8,7 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.eventhubs.generated.EventHubManager;
+import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.DisasterRecoveryConfigsClient;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.AccessKeysInner;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ArmDisasterRecoveryInner;
@@ -24,9 +24,9 @@ import com.azure.resourcemanager.eventhubs.generated.models.DisasterRecoveryConf
 public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfigs {
     private final DisasterRecoveryConfigsClient innerClient;
 
-    private final EventHubManager serviceManager;
+    private final EventHubsManager serviceManager;
 
-    public DisasterRecoveryConfigsImpl(DisasterRecoveryConfigsClient innerClient, EventHubManager serviceManager) {
+    public DisasterRecoveryConfigsImpl(DisasterRecoveryConfigsClient innerClient, EventHubsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -196,7 +196,7 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
         return this.innerClient;
     }
 
-    private EventHubManager manager() {
+    private EventHubsManager manager() {
         return this.serviceManager;
     }
 

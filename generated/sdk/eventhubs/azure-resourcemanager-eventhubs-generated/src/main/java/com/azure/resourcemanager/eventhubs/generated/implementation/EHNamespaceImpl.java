@@ -6,7 +6,7 @@ package com.azure.resourcemanager.eventhubs.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.eventhubs.generated.EventHubManager;
+import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.EHNamespaceInner;
 import com.azure.resourcemanager.eventhubs.generated.models.EHNamespace;
 import com.azure.resourcemanager.eventhubs.generated.models.Encryption;
@@ -19,7 +19,7 @@ import java.util.Map;
 public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definition, EHNamespace.Update {
     private EHNamespaceInner innerObject;
 
-    private final EventHubManager serviceManager;
+    private final EventHubsManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -110,7 +110,7 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
         return this.innerObject;
     }
 
-    private EventHubManager manager() {
+    private EventHubsManager manager() {
         return this.serviceManager;
     }
 
@@ -141,7 +141,7 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
         return this;
     }
 
-    public EHNamespaceImpl(String name, EventHubManager serviceManager) {
+    public EHNamespaceImpl(String name, EventHubsManager serviceManager) {
         this.innerObject = new EHNamespaceInner();
         this.serviceManager = serviceManager;
         this.namespaceName = name;
@@ -171,7 +171,7 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
         return this;
     }
 
-    public EHNamespaceImpl(EHNamespaceInner innerObject, EventHubManager serviceManager) {
+    public EHNamespaceImpl(EHNamespaceInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

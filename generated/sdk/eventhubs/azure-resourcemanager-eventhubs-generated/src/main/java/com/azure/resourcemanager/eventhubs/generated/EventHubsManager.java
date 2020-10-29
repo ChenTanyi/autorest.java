@@ -49,10 +49,10 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Entry point to EventHubManager. Azure Event Hubs client for managing Event Hubs Cluster, IPFilter Rules and
+ * Entry point to EventHubsManager. Azure Event Hubs client for managing Event Hubs Cluster, IPFilter Rules and
  * VirtualNetworkRules resources.
  */
-public final class EventHubManager {
+public final class EventHubsManager {
     private Clusters clusters;
 
     private Namespaces namespaces;
@@ -75,7 +75,7 @@ public final class EventHubManager {
 
     private final EventHubManagementClient clientObject;
 
-    private EventHubManager(HttpPipeline httpPipeline, AzureProfile profile, Duration defaultPollInterval) {
+    private EventHubsManager(HttpPipeline httpPipeline, AzureProfile profile, Duration defaultPollInterval) {
         Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
         Objects.requireNonNull(profile, "'profile' cannot be null.");
         this.clientObject =
@@ -88,25 +88,25 @@ public final class EventHubManager {
     }
 
     /**
-     * Creates an instance of EventHub service API entry point.
+     * Creates an instance of EventHubs service API entry point.
      *
      * @param credential the credential to use.
      * @param profile the Azure profile for client.
-     * @return the EventHub service API instance.
+     * @return the EventHubs service API instance.
      */
-    public static EventHubManager authenticate(TokenCredential credential, AzureProfile profile) {
+    public static EventHubsManager authenticate(TokenCredential credential, AzureProfile profile) {
         Objects.requireNonNull(credential, "'credential' cannot be null.");
         Objects.requireNonNull(profile, "'profile' cannot be null.");
         return configure().authenticate(credential, profile);
     }
 
     /**
-     * Gets a Configurable instance that can be used to create EventHubManager with optional configuration.
+     * Gets a Configurable instance that can be used to create EventHubsManager with optional configuration.
      *
      * @return the Configurable instance allowing configurations.
      */
     public static Configurable configure() {
-        return new EventHubManager.Configurable();
+        return new EventHubsManager.Configurable();
     }
 
     /** The Configurable allowing configurations to be set. */
@@ -181,13 +181,13 @@ public final class EventHubManager {
         }
 
         /**
-         * Creates an instance of EventHub service API entry point.
+         * Creates an instance of EventHubs service API entry point.
          *
          * @param credential the credential to use.
          * @param profile the Azure profile for client.
-         * @return the EventHub service API instance.
+         * @return the EventHubs service API instance.
          */
-        public EventHubManager authenticate(TokenCredential credential, AzureProfile profile) {
+        public EventHubsManager authenticate(TokenCredential credential, AzureProfile profile) {
             Objects.requireNonNull(credential, "'credential' cannot be null.");
             Objects.requireNonNull(profile, "'profile' cannot be null.");
 
@@ -217,7 +217,7 @@ public final class EventHubManager {
                     .httpClient(httpClient)
                     .policies(policies.toArray(new HttpPipelinePolicy[0]))
                     .build();
-            return new EventHubManager(httpPipeline, profile, defaultPollInterval);
+            return new EventHubsManager(httpPipeline, profile, defaultPollInterval);
         }
     }
 

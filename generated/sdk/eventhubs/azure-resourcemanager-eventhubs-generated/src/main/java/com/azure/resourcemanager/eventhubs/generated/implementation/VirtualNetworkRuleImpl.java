@@ -5,7 +5,7 @@
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.eventhubs.generated.EventHubManager;
+import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.VirtualNetworkRuleInner;
 import com.azure.resourcemanager.eventhubs.generated.models.VirtualNetworkRule;
 
@@ -13,7 +13,7 @@ public final class VirtualNetworkRuleImpl
     implements VirtualNetworkRule, VirtualNetworkRule.Definition, VirtualNetworkRule.Update {
     private VirtualNetworkRuleInner innerObject;
 
-    private final EventHubManager serviceManager;
+    private final EventHubsManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -35,7 +35,7 @@ public final class VirtualNetworkRuleImpl
         return this.innerObject;
     }
 
-    private EventHubManager manager() {
+    private EventHubsManager manager() {
         return this.serviceManager;
     }
 
@@ -73,7 +73,7 @@ public final class VirtualNetworkRuleImpl
         return this;
     }
 
-    public VirtualNetworkRuleImpl(String name, EventHubManager serviceManager) {
+    public VirtualNetworkRuleImpl(String name, EventHubsManager serviceManager) {
         this.innerObject = new VirtualNetworkRuleInner();
         this.serviceManager = serviceManager;
         this.virtualNetworkRuleName = name;
@@ -105,7 +105,7 @@ public final class VirtualNetworkRuleImpl
         return this;
     }
 
-    public VirtualNetworkRuleImpl(VirtualNetworkRuleInner innerObject, EventHubManager serviceManager) {
+    public VirtualNetworkRuleImpl(VirtualNetworkRuleInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

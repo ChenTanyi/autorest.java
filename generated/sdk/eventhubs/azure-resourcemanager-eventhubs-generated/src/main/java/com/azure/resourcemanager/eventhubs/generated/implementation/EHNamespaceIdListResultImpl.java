@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
-import com.azure.resourcemanager.eventhubs.generated.EventHubManager;
+import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.EHNamespaceIdListResultInner;
 import com.azure.resourcemanager.eventhubs.generated.models.EHNamespaceIdContainer;
 import com.azure.resourcemanager.eventhubs.generated.models.EHNamespaceIdListResult;
@@ -14,9 +14,9 @@ import java.util.List;
 public final class EHNamespaceIdListResultImpl implements EHNamespaceIdListResult {
     private EHNamespaceIdListResultInner innerObject;
 
-    private final EventHubManager serviceManager;
+    private final EventHubsManager serviceManager;
 
-    public EHNamespaceIdListResultImpl(EHNamespaceIdListResultInner innerObject, EventHubManager serviceManager) {
+    public EHNamespaceIdListResultImpl(EHNamespaceIdListResultInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,7 +34,7 @@ public final class EHNamespaceIdListResultImpl implements EHNamespaceIdListResul
         return this.innerObject;
     }
 
-    private EventHubManager manager() {
+    private EventHubsManager manager() {
         return this.serviceManager;
     }
 }

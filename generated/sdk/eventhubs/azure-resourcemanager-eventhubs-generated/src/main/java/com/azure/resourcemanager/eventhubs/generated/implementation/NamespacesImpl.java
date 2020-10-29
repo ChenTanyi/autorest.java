@@ -8,7 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.eventhubs.generated.EventHubManager;
+import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.NamespacesClient;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.AccessKeysInner;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.AuthorizationRuleInner;
@@ -31,9 +31,9 @@ import com.azure.resourcemanager.eventhubs.generated.models.VirtualNetworkRule;
 public final class NamespacesImpl implements Namespaces {
     private final NamespacesClient innerClient;
 
-    private final EventHubManager serviceManager;
+    private final EventHubsManager serviceManager;
 
-    public NamespacesImpl(NamespacesClient innerClient, EventHubManager serviceManager) {
+    public NamespacesImpl(NamespacesClient innerClient, EventHubsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -386,7 +386,7 @@ public final class NamespacesImpl implements Namespaces {
         return this.innerClient;
     }
 
-    private EventHubManager manager() {
+    private EventHubsManager manager() {
         return this.serviceManager;
     }
 

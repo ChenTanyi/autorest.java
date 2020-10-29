@@ -5,7 +5,7 @@
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.eventhubs.generated.EventHubManager;
+import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.AuthorizationRuleInner;
 import com.azure.resourcemanager.eventhubs.generated.models.AccessRights;
 import com.azure.resourcemanager.eventhubs.generated.models.AuthorizationRule;
@@ -16,7 +16,7 @@ public final class AuthorizationRuleImpl
     implements AuthorizationRule, AuthorizationRule.Definition, AuthorizationRule.Update {
     private AuthorizationRuleInner innerObject;
 
-    private final EventHubManager serviceManager;
+    private final EventHubsManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -43,7 +43,7 @@ public final class AuthorizationRuleImpl
         return this.innerObject;
     }
 
-    private EventHubManager manager() {
+    private EventHubsManager manager() {
         return this.serviceManager;
     }
 
@@ -81,7 +81,7 @@ public final class AuthorizationRuleImpl
         return this;
     }
 
-    public AuthorizationRuleImpl(String name, EventHubManager serviceManager) {
+    public AuthorizationRuleImpl(String name, EventHubsManager serviceManager) {
         this.innerObject = new AuthorizationRuleInner();
         this.serviceManager = serviceManager;
         this.authorizationRuleName = name;
@@ -113,7 +113,7 @@ public final class AuthorizationRuleImpl
         return this;
     }
 
-    public AuthorizationRuleImpl(AuthorizationRuleInner innerObject, EventHubManager serviceManager) {
+    public AuthorizationRuleImpl(AuthorizationRuleInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

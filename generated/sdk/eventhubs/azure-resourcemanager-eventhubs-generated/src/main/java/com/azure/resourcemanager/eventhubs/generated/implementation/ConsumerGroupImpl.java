@@ -5,7 +5,7 @@
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.eventhubs.generated.EventHubManager;
+import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ConsumerGroupInner;
 import com.azure.resourcemanager.eventhubs.generated.models.ConsumerGroup;
 import java.time.OffsetDateTime;
@@ -13,7 +13,7 @@ import java.time.OffsetDateTime;
 public final class ConsumerGroupImpl implements ConsumerGroup, ConsumerGroup.Definition, ConsumerGroup.Update {
     private ConsumerGroupInner innerObject;
 
-    private final EventHubManager serviceManager;
+    private final EventHubsManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -43,7 +43,7 @@ public final class ConsumerGroupImpl implements ConsumerGroup, ConsumerGroup.Def
         return this.innerObject;
     }
 
-    private EventHubManager manager() {
+    private EventHubsManager manager() {
         return this.serviceManager;
     }
 
@@ -84,7 +84,7 @@ public final class ConsumerGroupImpl implements ConsumerGroup, ConsumerGroup.Def
         return this;
     }
 
-    public ConsumerGroupImpl(String name, EventHubManager serviceManager) {
+    public ConsumerGroupImpl(String name, EventHubsManager serviceManager) {
         this.innerObject = new ConsumerGroupInner();
         this.serviceManager = serviceManager;
         this.consumerGroupName = name;
@@ -116,7 +116,7 @@ public final class ConsumerGroupImpl implements ConsumerGroup, ConsumerGroup.Def
         return this;
     }
 
-    public ConsumerGroupImpl(ConsumerGroupInner innerObject, EventHubManager serviceManager) {
+    public ConsumerGroupImpl(ConsumerGroupInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

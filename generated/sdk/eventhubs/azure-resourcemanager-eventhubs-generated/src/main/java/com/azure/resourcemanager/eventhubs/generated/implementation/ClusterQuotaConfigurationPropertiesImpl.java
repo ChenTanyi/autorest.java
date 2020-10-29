@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
-import com.azure.resourcemanager.eventhubs.generated.EventHubManager;
+import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ClusterQuotaConfigurationPropertiesInner;
 import com.azure.resourcemanager.eventhubs.generated.models.ClusterQuotaConfigurationProperties;
 import java.util.Collections;
@@ -13,10 +13,10 @@ import java.util.Map;
 public final class ClusterQuotaConfigurationPropertiesImpl implements ClusterQuotaConfigurationProperties {
     private ClusterQuotaConfigurationPropertiesInner innerObject;
 
-    private final EventHubManager serviceManager;
+    private final EventHubsManager serviceManager;
 
     public ClusterQuotaConfigurationPropertiesImpl(
-        ClusterQuotaConfigurationPropertiesInner innerObject, EventHubManager serviceManager) {
+        ClusterQuotaConfigurationPropertiesInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,7 +34,7 @@ public final class ClusterQuotaConfigurationPropertiesImpl implements ClusterQuo
         return this.innerObject;
     }
 
-    private EventHubManager manager() {
+    private EventHubsManager manager() {
         return this.serviceManager;
     }
 }

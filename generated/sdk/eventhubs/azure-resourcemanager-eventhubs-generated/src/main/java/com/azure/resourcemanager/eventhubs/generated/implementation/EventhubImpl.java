@@ -5,7 +5,7 @@
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.eventhubs.generated.EventHubManager;
+import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.EventhubInner;
 import com.azure.resourcemanager.eventhubs.generated.models.CaptureDescription;
 import com.azure.resourcemanager.eventhubs.generated.models.EntityStatus;
@@ -17,7 +17,7 @@ import java.util.List;
 public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventhub.Update {
     private EventhubInner innerObject;
 
-    private final EventHubManager serviceManager;
+    private final EventHubsManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -68,7 +68,7 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
         return this.innerObject;
     }
 
-    private EventHubManager manager() {
+    private EventHubsManager manager() {
         return this.serviceManager;
     }
 
@@ -104,7 +104,7 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
         return this;
     }
 
-    public EventhubImpl(String name, EventHubManager serviceManager) {
+    public EventhubImpl(String name, EventHubsManager serviceManager) {
         this.innerObject = new EventhubInner();
         this.serviceManager = serviceManager;
         this.eventHubName = name;
@@ -134,7 +134,7 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
         return this;
     }
 
-    public EventhubImpl(EventhubInner innerObject, EventHubManager serviceManager) {
+    public EventhubImpl(EventhubInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

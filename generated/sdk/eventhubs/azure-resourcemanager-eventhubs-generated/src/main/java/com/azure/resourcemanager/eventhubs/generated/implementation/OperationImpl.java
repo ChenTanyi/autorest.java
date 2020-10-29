@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
-import com.azure.resourcemanager.eventhubs.generated.EventHubManager;
+import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.eventhubs.generated.models.Operation;
 import com.azure.resourcemanager.eventhubs.generated.models.OperationDisplay;
@@ -12,9 +12,9 @@ import com.azure.resourcemanager.eventhubs.generated.models.OperationDisplay;
 public final class OperationImpl implements Operation {
     private OperationInner innerObject;
 
-    private final EventHubManager serviceManager;
+    private final EventHubsManager serviceManager;
 
-    public OperationImpl(OperationInner innerObject, EventHubManager serviceManager) {
+    public OperationImpl(OperationInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -31,7 +31,7 @@ public final class OperationImpl implements Operation {
         return this.innerObject;
     }
 
-    private EventHubManager manager() {
+    private EventHubsManager manager() {
         return this.serviceManager;
     }
 }
