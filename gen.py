@@ -8,7 +8,7 @@ import shutil
 import logging
 import argparse
 
-AUTOREST_CORE_VERSION = '3.0.6324'
+AUTOREST_CORE_VERSION = '3.0.6326'
 MODELERFOUR_ARGUMENTS = '--pipeline.modelerfour.additional-checks=false --pipeline.modelerfour.lenient-model-deduplication=true'
 FLUENTLITE_ARGUMENTS = '--java {0} --azure-arm --fluent=lite --license-header=MICROSOFT_MIT_SMALL'.format(
     MODELERFOUR_ARGUMENTS)
