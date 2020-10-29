@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.hdinsight.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.credential.TokenCredential;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -51,7 +50,7 @@ public final class SecurityProfile {
      * The domain admin password.
      */
     @JsonProperty(value = "domainUserPassword")
-    private TokenCredential domainUserPassword;
+    private String domainUserPassword;
 
     /*
      * Optional. The Distinguished Names for cluster user groups
@@ -179,7 +178,7 @@ public final class SecurityProfile {
      *
      * @return the domainUserPassword value.
      */
-    public TokenCredential domainUserPassword() {
+    public String domainUserPassword() {
         return this.domainUserPassword;
     }
 
@@ -189,7 +188,7 @@ public final class SecurityProfile {
      * @param domainUserPassword the domainUserPassword value to set.
      * @return the SecurityProfile object itself.
      */
-    public SecurityProfile withDomainUserPassword(TokenCredential domainUserPassword) {
+    public SecurityProfile withDomainUserPassword(String domainUserPassword) {
         this.domainUserPassword = domainUserPassword;
         return this;
     }

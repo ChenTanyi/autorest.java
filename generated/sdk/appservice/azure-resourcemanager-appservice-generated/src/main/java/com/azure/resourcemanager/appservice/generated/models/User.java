@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.appservice.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.azure.core.credential.TokenCredential;
 import com.azure.resourcemanager.appservice.generated.fluent.models.UserInner;
 
 /** An immutable client-side representation of User. */
@@ -51,21 +50,21 @@ public interface User {
      *
      * @return the publishingPassword value.
      */
-    TokenCredential publishingPassword();
+    String publishingPassword();
 
     /**
      * Gets the publishingPasswordHash property: Password hash used for publishing.
      *
      * @return the publishingPasswordHash value.
      */
-    TokenCredential publishingPasswordHash();
+    String publishingPasswordHash();
 
     /**
      * Gets the publishingPasswordHashSalt property: Password hash salt used for publishing.
      *
      * @return the publishingPasswordHashSalt value.
      */
-    TokenCredential publishingPasswordHashSalt();
+    String publishingPasswordHashSalt();
 
     /**
      * Gets the scmUri property: Url of SCM site.

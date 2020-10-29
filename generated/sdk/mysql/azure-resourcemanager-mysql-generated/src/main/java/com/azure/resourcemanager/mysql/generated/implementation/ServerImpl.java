@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.mysql.generated.implementation;
 
-import com.azure.core.credential.TokenCredential;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.mysql.generated.MySqlManager;
@@ -285,7 +284,7 @@ public final class ServerImpl implements Server, Server.Definition, Server.Updat
         return this;
     }
 
-    public ServerImpl withAdministratorLoginPassword(TokenCredential administratorLoginPassword) {
+    public ServerImpl withAdministratorLoginPassword(String administratorLoginPassword) {
         this.updateParameters.withAdministratorLoginPassword(administratorLoginPassword);
         return this;
     }

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.credential.TokenCredential;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.UserInner;
 import com.azure.resourcemanager.appservice.generated.models.User;
@@ -39,15 +38,15 @@ public final class UserImpl implements User {
         return this.innerModel().publishingUsername();
     }
 
-    public TokenCredential publishingPassword() {
+    public String publishingPassword() {
         return this.innerModel().publishingPassword();
     }
 
-    public TokenCredential publishingPasswordHash() {
+    public String publishingPasswordHash() {
         return this.innerModel().publishingPasswordHash();
     }
 
-    public TokenCredential publishingPasswordHashSalt() {
+    public String publishingPasswordHashSalt() {
         return this.innerModel().publishingPasswordHashSalt();
     }
 

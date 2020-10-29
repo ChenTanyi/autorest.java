@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.postgresql.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.azure.core.credential.TokenCredential;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.ServerInner;
@@ -381,7 +380,7 @@ public interface Server {
              * @param administratorLoginPassword The password of the administrator login.
              * @return the next definition stage.
              */
-            Update withAdministratorLoginPassword(TokenCredential administratorLoginPassword);
+            Update withAdministratorLoginPassword(String administratorLoginPassword);
         }
         /** The stage of the Server update allowing to specify version. */
         interface WithVersion {

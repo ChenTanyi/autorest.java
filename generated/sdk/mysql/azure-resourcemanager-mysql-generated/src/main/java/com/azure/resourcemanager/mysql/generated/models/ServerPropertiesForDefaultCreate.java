@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mysql.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.credential.TokenCredential;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -30,7 +29,7 @@ public final class ServerPropertiesForDefaultCreate extends ServerPropertiesForC
      * The password of the administrator login.
      */
     @JsonProperty(value = "administratorLoginPassword", required = true)
-    private TokenCredential administratorLoginPassword;
+    private String administratorLoginPassword;
 
     /**
      * Get the administratorLogin property: The administrator's login name of a server. Can only be specified when the
@@ -59,7 +58,7 @@ public final class ServerPropertiesForDefaultCreate extends ServerPropertiesForC
      *
      * @return the administratorLoginPassword value.
      */
-    public TokenCredential administratorLoginPassword() {
+    public String administratorLoginPassword() {
         return this.administratorLoginPassword;
     }
 
@@ -69,7 +68,7 @@ public final class ServerPropertiesForDefaultCreate extends ServerPropertiesForC
      * @param administratorLoginPassword the administratorLoginPassword value to set.
      * @return the ServerPropertiesForDefaultCreate object itself.
      */
-    public ServerPropertiesForDefaultCreate withAdministratorLoginPassword(TokenCredential administratorLoginPassword) {
+    public ServerPropertiesForDefaultCreate withAdministratorLoginPassword(String administratorLoginPassword) {
         this.administratorLoginPassword = administratorLoginPassword;
         return this;
     }

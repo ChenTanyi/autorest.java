@@ -6,7 +6,6 @@ package com.azure.resourcemanager.postgresql.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
-import com.azure.core.credential.TokenCredential;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -46,7 +45,7 @@ public class ServerUpdateParameters {
      * The password of the administrator login.
      */
     @JsonProperty(value = "properties.administratorLoginPassword")
-    private TokenCredential administratorLoginPassword;
+    private String administratorLoginPassword;
 
     /*
      * The version of a server.
@@ -164,7 +163,7 @@ public class ServerUpdateParameters {
      *
      * @return the administratorLoginPassword value.
      */
-    public TokenCredential administratorLoginPassword() {
+    public String administratorLoginPassword() {
         return this.administratorLoginPassword;
     }
 
@@ -174,7 +173,7 @@ public class ServerUpdateParameters {
      * @param administratorLoginPassword the administratorLoginPassword value to set.
      * @return the ServerUpdateParameters object itself.
      */
-    public ServerUpdateParameters withAdministratorLoginPassword(TokenCredential administratorLoginPassword) {
+    public ServerUpdateParameters withAdministratorLoginPassword(String administratorLoginPassword) {
         this.administratorLoginPassword = administratorLoginPassword;
         return this;
     }
