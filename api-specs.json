@@ -34,6 +34,11 @@
         "namespace": "com.azure.resourcemanager.eventhubs.generated",
         "output": "sdk/eventhubs/azure-resourcemanager-eventhubs-generated"
     },
+    "frontdoor": {
+        "source": "specification/frontdoor/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.frontdoor.generated",
+        "output": "sdk/frontdoor/azure-resourcemanager-frontdoor-generated"
+    },
     "hdinsight": {
         "source": "specification/hdinsight/resource-manager/readme.md",
         "namespace": "com.azure.resourcemanager.hdinsight.generated",
