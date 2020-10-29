@@ -10,7 +10,7 @@ import argparse
 
 AUTOREST_CORE_VERSION = '3.0.6326'
 MODELERFOUR_ARGUMENTS = '--pipeline.modelerfour.additional-checks=false --pipeline.modelerfour.lenient-model-deduplication=true'
-FLUENTLITE_ARGUMENTS = '--java {0} --azure-arm --fluent=lite --license-header=MICROSOFT_MIT_SMALL'.format(
+FLUENTLITE_ARGUMENTS = '--java {0} --azure-arm --fluent=lite --java.fluent=lite --java.license-header=MICROSOFT_MIT_SMALL'.format(
     MODELERFOUR_ARGUMENTS)
 
 
