@@ -195,16 +195,6 @@ public final class VpnGatewayImpl implements VpnGateway, VpnGateway.Definition, 
         return this;
     }
 
-    public VpnGatewayImpl withVpnGatewayScaleUnit(Integer vpnGatewayScaleUnit) {
-        this.innerModel().withVpnGatewayScaleUnit(vpnGatewayScaleUnit);
-        return this;
-    }
-
-    public VpnGatewayImpl withVirtualHub(SubResource virtualHub) {
-        this.innerModel().withVirtualHub(virtualHub);
-        return this;
-    }
-
     public VpnGatewayImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;
@@ -215,8 +205,18 @@ public final class VpnGatewayImpl implements VpnGateway, VpnGateway.Definition, 
         return this;
     }
 
-    public VpnGatewayImpl withId(String id) {
-        this.innerModel().withId(id);
+    public VpnGatewayImpl withTags(Map<String, String> tags) {
+        if (isInCreateMode()) {
+            this.innerModel().withTags(tags);
+            return this;
+        } else {
+            this.updateVpnGatewayParameters.withTags(tags);
+            return this;
+        }
+    }
+
+    public VpnGatewayImpl withVirtualHub(SubResource virtualHub) {
+        this.innerModel().withVirtualHub(virtualHub);
         return this;
     }
 
@@ -230,14 +230,14 @@ public final class VpnGatewayImpl implements VpnGateway, VpnGateway.Definition, 
         return this;
     }
 
-    public VpnGatewayImpl withTags(Map<String, String> tags) {
-        if (isInCreateMode()) {
-            this.innerModel().withTags(tags);
-            return this;
-        } else {
-            this.updateVpnGatewayParameters.withTags(tags);
-            return this;
-        }
+    public VpnGatewayImpl withVpnGatewayScaleUnit(Integer vpnGatewayScaleUnit) {
+        this.innerModel().withVpnGatewayScaleUnit(vpnGatewayScaleUnit);
+        return this;
+    }
+
+    public VpnGatewayImpl withId(String id) {
+        this.innerModel().withId(id);
+        return this;
     }
 
     private boolean isInCreateMode() {

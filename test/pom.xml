@@ -13,6 +13,7 @@
         <module>../generated/sdk/databoxedge/azure-resourcemanager-databoxedge-generated</module>
         <module>../generated/sdk/dns/azure-resourcemanager-dns-generated</module>
         <module>../generated/sdk/eventhubs/azure-resourcemanager-eventhubs-generated</module>
+        <module>../generated/sdk/frontdoor/azure-resourcemanager-frontdoor-generated</module>
         <module>../generated/sdk/hdinsight/azure-resourcemanager-hdinsight-generated</module>
         <module>../generated/sdk/iothub/azure-resourcemanager-iothub-generated</module>
         <module>../generated/sdk/keyvault/azure-resourcemanager-keyvault-generated</module>

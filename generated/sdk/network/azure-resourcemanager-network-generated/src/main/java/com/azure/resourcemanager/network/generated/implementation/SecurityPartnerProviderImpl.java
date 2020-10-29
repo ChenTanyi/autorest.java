@@ -86,9 +86,9 @@ public final class SecurityPartnerProviderImpl
 
     private String resourceGroupName;
 
-    private TagsObject updateParameters;
-
     private String securityPartnerProviderName;
+
+    private TagsObject updateParameters;
 
     public SecurityPartnerProviderImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -171,8 +171,13 @@ public final class SecurityPartnerProviderImpl
         return this;
     }
 
-    public SecurityPartnerProviderImpl withSecurityProviderName(SecurityProviderName securityProviderName) {
-        this.innerModel().withSecurityProviderName(securityProviderName);
+    public SecurityPartnerProviderImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
+    public SecurityPartnerProviderImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
@@ -186,23 +191,18 @@ public final class SecurityPartnerProviderImpl
         }
     }
 
-    public SecurityPartnerProviderImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public SecurityPartnerProviderImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
-    public SecurityPartnerProviderImpl withId(String id) {
-        this.innerModel().withId(id);
+    public SecurityPartnerProviderImpl withSecurityProviderName(SecurityProviderName securityProviderName) {
+        this.innerModel().withSecurityProviderName(securityProviderName);
         return this;
     }
 
     public SecurityPartnerProviderImpl withVirtualHub(SubResource virtualHub) {
         this.innerModel().withVirtualHub(virtualHub);
+        return this;
+    }
+
+    public SecurityPartnerProviderImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 

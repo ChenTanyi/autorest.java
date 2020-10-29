@@ -74,11 +74,11 @@ public final class PrivateEndpointConnectionImpl
         return this.serviceManager;
     }
 
-    private String privateEndpointConnectionName;
-
     private String resourceGroupName;
 
     private String vaultName;
+
+    private String privateEndpointConnectionName;
 
     public PrivateEndpointConnectionImpl withExistingVault(String resourceGroupName, String vaultName) {
         this.resourceGroupName = resourceGroupName;
@@ -164,14 +164,13 @@ public final class PrivateEndpointConnectionImpl
         return this;
     }
 
-    public PrivateEndpointConnectionImpl withPrivateLinkServiceConnectionState(
-        PrivateLinkServiceConnectionState privateLinkServiceConnectionState) {
-        this.innerModel().withPrivateLinkServiceConnectionState(privateLinkServiceConnectionState);
+    public PrivateEndpointConnectionImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
         return this;
     }
 
-    public PrivateEndpointConnectionImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
+    public PrivateEndpointConnectionImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
@@ -185,8 +184,9 @@ public final class PrivateEndpointConnectionImpl
         return this;
     }
 
-    public PrivateEndpointConnectionImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
+    public PrivateEndpointConnectionImpl withPrivateLinkServiceConnectionState(
+        PrivateLinkServiceConnectionState privateLinkServiceConnectionState) {
+        this.innerModel().withPrivateLinkServiceConnectionState(privateLinkServiceConnectionState);
         return this;
     }
 }

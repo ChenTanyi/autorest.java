@@ -81,9 +81,9 @@ public final class DiskAccessImpl implements DiskAccess, DiskAccess.Definition, 
 
     private String resourceGroupName;
 
-    private DiskAccessUpdate updateDiskAccess;
-
     private String diskAccessName;
+
+    private DiskAccessUpdate updateDiskAccess;
 
     public DiskAccessImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -169,6 +169,11 @@ public final class DiskAccessImpl implements DiskAccess, DiskAccess.Definition, 
         return this;
     }
 
+    public DiskAccessImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
+    }
+
     public DiskAccessImpl withTags(Map<String, String> tags) {
         if (isInCreateMode()) {
             this.innerModel().withTags(tags);
@@ -177,11 +182,6 @@ public final class DiskAccessImpl implements DiskAccess, DiskAccess.Definition, 
             this.updateDiskAccess.withTags(tags);
             return this;
         }
-    }
-
-    public DiskAccessImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
     }
 
     private boolean isInCreateMode() {

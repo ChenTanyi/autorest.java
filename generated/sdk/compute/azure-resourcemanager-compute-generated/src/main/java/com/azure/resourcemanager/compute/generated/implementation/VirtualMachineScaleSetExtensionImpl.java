@@ -89,9 +89,9 @@ public final class VirtualMachineScaleSetExtensionImpl
 
     private String vmScaleSetName;
 
-    private VirtualMachineScaleSetExtensionUpdate updateExtensionParameters;
-
     private String vmssExtensionName;
+
+    private VirtualMachineScaleSetExtensionUpdate updateExtensionParameters;
 
     public VirtualMachineScaleSetExtensionImpl withExistingVirtualMachineScaleSet(
         String resourceGroupName, String vmScaleSetName) {
@@ -178,66 +178,6 @@ public final class VirtualMachineScaleSetExtensionImpl
         return this;
     }
 
-    public VirtualMachineScaleSetExtensionImpl withSettings(Object settings) {
-        if (isInCreateMode()) {
-            this.innerModel().withSettings(settings);
-            return this;
-        } else {
-            this.updateExtensionParameters.withSettings(settings);
-            return this;
-        }
-    }
-
-    public VirtualMachineScaleSetExtensionImpl withProvisionAfterExtensions(List<String> provisionAfterExtensions) {
-        if (isInCreateMode()) {
-            this.innerModel().withProvisionAfterExtensions(provisionAfterExtensions);
-            return this;
-        } else {
-            this.updateExtensionParameters.withProvisionAfterExtensions(provisionAfterExtensions);
-            return this;
-        }
-    }
-
-    public VirtualMachineScaleSetExtensionImpl withEnableAutomaticUpgrade(Boolean enableAutomaticUpgrade) {
-        if (isInCreateMode()) {
-            this.innerModel().withEnableAutomaticUpgrade(enableAutomaticUpgrade);
-            return this;
-        } else {
-            this.updateExtensionParameters.withEnableAutomaticUpgrade(enableAutomaticUpgrade);
-            return this;
-        }
-    }
-
-    public VirtualMachineScaleSetExtensionImpl withAutoUpgradeMinorVersion(Boolean autoUpgradeMinorVersion) {
-        if (isInCreateMode()) {
-            this.innerModel().withAutoUpgradeMinorVersion(autoUpgradeMinorVersion);
-            return this;
-        } else {
-            this.updateExtensionParameters.withAutoUpgradeMinorVersion(autoUpgradeMinorVersion);
-            return this;
-        }
-    }
-
-    public VirtualMachineScaleSetExtensionImpl withPublisher(String publisher) {
-        if (isInCreateMode()) {
-            this.innerModel().withPublisher(publisher);
-            return this;
-        } else {
-            this.updateExtensionParameters.withPublisher(publisher);
-            return this;
-        }
-    }
-
-    public VirtualMachineScaleSetExtensionImpl withTypeHandlerVersion(String typeHandlerVersion) {
-        if (isInCreateMode()) {
-            this.innerModel().withTypeHandlerVersion(typeHandlerVersion);
-            return this;
-        } else {
-            this.updateExtensionParameters.withTypeHandlerVersion(typeHandlerVersion);
-            return this;
-        }
-    }
-
     public VirtualMachineScaleSetExtensionImpl withName(String name) {
         this.innerModel().withName(name);
         return this;
@@ -253,12 +193,12 @@ public final class VirtualMachineScaleSetExtensionImpl
         }
     }
 
-    public VirtualMachineScaleSetExtensionImpl withProtectedSettings(Object protectedSettings) {
+    public VirtualMachineScaleSetExtensionImpl withPublisher(String publisher) {
         if (isInCreateMode()) {
-            this.innerModel().withProtectedSettings(protectedSettings);
+            this.innerModel().withPublisher(publisher);
             return this;
         } else {
-            this.updateExtensionParameters.withProtectedSettings(protectedSettings);
+            this.updateExtensionParameters.withPublisher(publisher);
             return this;
         }
     }
@@ -269,6 +209,66 @@ public final class VirtualMachineScaleSetExtensionImpl
             return this;
         } else {
             this.updateExtensionParameters.withTypePropertiesType(typePropertiesType);
+            return this;
+        }
+    }
+
+    public VirtualMachineScaleSetExtensionImpl withTypeHandlerVersion(String typeHandlerVersion) {
+        if (isInCreateMode()) {
+            this.innerModel().withTypeHandlerVersion(typeHandlerVersion);
+            return this;
+        } else {
+            this.updateExtensionParameters.withTypeHandlerVersion(typeHandlerVersion);
+            return this;
+        }
+    }
+
+    public VirtualMachineScaleSetExtensionImpl withAutoUpgradeMinorVersion(Boolean autoUpgradeMinorVersion) {
+        if (isInCreateMode()) {
+            this.innerModel().withAutoUpgradeMinorVersion(autoUpgradeMinorVersion);
+            return this;
+        } else {
+            this.updateExtensionParameters.withAutoUpgradeMinorVersion(autoUpgradeMinorVersion);
+            return this;
+        }
+    }
+
+    public VirtualMachineScaleSetExtensionImpl withEnableAutomaticUpgrade(Boolean enableAutomaticUpgrade) {
+        if (isInCreateMode()) {
+            this.innerModel().withEnableAutomaticUpgrade(enableAutomaticUpgrade);
+            return this;
+        } else {
+            this.updateExtensionParameters.withEnableAutomaticUpgrade(enableAutomaticUpgrade);
+            return this;
+        }
+    }
+
+    public VirtualMachineScaleSetExtensionImpl withSettings(Object settings) {
+        if (isInCreateMode()) {
+            this.innerModel().withSettings(settings);
+            return this;
+        } else {
+            this.updateExtensionParameters.withSettings(settings);
+            return this;
+        }
+    }
+
+    public VirtualMachineScaleSetExtensionImpl withProtectedSettings(Object protectedSettings) {
+        if (isInCreateMode()) {
+            this.innerModel().withProtectedSettings(protectedSettings);
+            return this;
+        } else {
+            this.updateExtensionParameters.withProtectedSettings(protectedSettings);
+            return this;
+        }
+    }
+
+    public VirtualMachineScaleSetExtensionImpl withProvisionAfterExtensions(List<String> provisionAfterExtensions) {
+        if (isInCreateMode()) {
+            this.innerModel().withProvisionAfterExtensions(provisionAfterExtensions);
+            return this;
+        } else {
+            this.updateExtensionParameters.withProvisionAfterExtensions(provisionAfterExtensions);
             return this;
         }
     }

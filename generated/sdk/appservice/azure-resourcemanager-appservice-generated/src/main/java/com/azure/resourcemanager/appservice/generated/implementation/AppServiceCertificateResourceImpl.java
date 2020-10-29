@@ -79,13 +79,13 @@ public final class AppServiceCertificateResourceImpl
         return this.serviceManager;
     }
 
-    private String certificateOrderName;
-
     private String resourceGroupName;
 
-    private AppServiceCertificatePatchResource updateKeyVaultCertificate;
+    private String certificateOrderName;
 
     private String name;
+
+    private AppServiceCertificatePatchResource updateKeyVaultCertificate;
 
     public AppServiceCertificateResourceImpl withExistingCertificateOrder(
         String resourceGroupName, String certificateOrderName) {
@@ -174,13 +174,18 @@ public final class AppServiceCertificateResourceImpl
         return this;
     }
 
+    public AppServiceCertificateResourceImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
     public AppServiceCertificateResourceImpl withRegion(String location) {
         this.innerModel().withLocation(location);
         return this;
     }
 
-    public AppServiceCertificateResourceImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
+    public AppServiceCertificateResourceImpl withTags(Map<String, String> tags) {
+        this.innerModel().withTags(tags);
         return this;
     }
 
@@ -192,11 +197,6 @@ public final class AppServiceCertificateResourceImpl
             this.updateKeyVaultCertificate.withKeyVaultId(keyVaultId);
             return this;
         }
-    }
-
-    public AppServiceCertificateResourceImpl withTags(Map<String, String> tags) {
-        this.innerModel().withTags(tags);
-        return this;
     }
 
     public AppServiceCertificateResourceImpl withKeyVaultSecretName(String keyVaultSecretName) {

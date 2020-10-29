@@ -99,9 +99,9 @@ public final class AvailabilitySetImpl implements AvailabilitySet, AvailabilityS
 
     private String resourceGroupName;
 
-    private AvailabilitySetUpdate updateParameters;
-
     private String availabilitySetName;
+
+    private AvailabilitySetUpdate updateParameters;
 
     public AvailabilitySetImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -186,19 +186,14 @@ public final class AvailabilitySetImpl implements AvailabilitySet, AvailabilityS
         return this;
     }
 
-    public AvailabilitySetImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
+    public AvailabilitySetImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
         return this;
     }
 
-    public AvailabilitySetImpl withVirtualMachines(List<SubResource> virtualMachines) {
-        if (isInCreateMode()) {
-            this.innerModel().withVirtualMachines(virtualMachines);
-            return this;
-        } else {
-            this.updateParameters.withVirtualMachines(virtualMachines);
-            return this;
-        }
+    public AvailabilitySetImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
     }
 
     public AvailabilitySetImpl withTags(Map<String, String> tags) {
@@ -207,16 +202,6 @@ public final class AvailabilitySetImpl implements AvailabilitySet, AvailabilityS
             return this;
         } else {
             this.updateParameters.withTags(tags);
-            return this;
-        }
-    }
-
-    public AvailabilitySetImpl withPlatformUpdateDomainCount(Integer platformUpdateDomainCount) {
-        if (isInCreateMode()) {
-            this.innerModel().withPlatformUpdateDomainCount(platformUpdateDomainCount);
-            return this;
-        } else {
-            this.updateParameters.withPlatformUpdateDomainCount(platformUpdateDomainCount);
             return this;
         }
     }
@@ -231,6 +216,16 @@ public final class AvailabilitySetImpl implements AvailabilitySet, AvailabilityS
         }
     }
 
+    public AvailabilitySetImpl withPlatformUpdateDomainCount(Integer platformUpdateDomainCount) {
+        if (isInCreateMode()) {
+            this.innerModel().withPlatformUpdateDomainCount(platformUpdateDomainCount);
+            return this;
+        } else {
+            this.updateParameters.withPlatformUpdateDomainCount(platformUpdateDomainCount);
+            return this;
+        }
+    }
+
     public AvailabilitySetImpl withPlatformFaultDomainCount(Integer platformFaultDomainCount) {
         if (isInCreateMode()) {
             this.innerModel().withPlatformFaultDomainCount(platformFaultDomainCount);
@@ -241,9 +236,14 @@ public final class AvailabilitySetImpl implements AvailabilitySet, AvailabilityS
         }
     }
 
-    public AvailabilitySetImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
+    public AvailabilitySetImpl withVirtualMachines(List<SubResource> virtualMachines) {
+        if (isInCreateMode()) {
+            this.innerModel().withVirtualMachines(virtualMachines);
+            return this;
+        } else {
+            this.updateParameters.withVirtualMachines(virtualMachines);
+            return this;
+        }
     }
 
     public AvailabilitySetImpl withProximityPlacementGroup(SubResource proximityPlacementGroup) {

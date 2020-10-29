@@ -85,9 +85,9 @@ public final class VnetInfoImpl implements VnetInfo, VnetInfo.Definition, VnetIn
 
     private String name;
 
-    private String slot;
-
     private String vnetName;
+
+    private String slot;
 
     public VnetInfoImpl withExistingSlot(String resourceGroupName, String name, String vnetName) {
         this.resourceGroupName = resourceGroupName;
@@ -178,13 +178,18 @@ public final class VnetInfoImpl implements VnetInfo, VnetInfo.Definition, VnetIn
         return this;
     }
 
+    public VnetInfoImpl withKind(String kind) {
+        this.innerModel().withKind(kind);
+        return this;
+    }
+
     public VnetInfoImpl withVnetResourceId(String vnetResourceId) {
         this.innerModel().withVnetResourceId(vnetResourceId);
         return this;
     }
 
-    public VnetInfoImpl withIsSwift(Boolean isSwift) {
-        this.innerModel().withIsSwift(isSwift);
+    public VnetInfoImpl withCertBlob(String certBlob) {
+        this.innerModel().withCertBlob(certBlob);
         return this;
     }
 
@@ -193,13 +198,8 @@ public final class VnetInfoImpl implements VnetInfo, VnetInfo.Definition, VnetIn
         return this;
     }
 
-    public VnetInfoImpl withKind(String kind) {
-        this.innerModel().withKind(kind);
-        return this;
-    }
-
-    public VnetInfoImpl withCertBlob(String certBlob) {
-        this.innerModel().withCertBlob(certBlob);
+    public VnetInfoImpl withIsSwift(Boolean isSwift) {
+        this.innerModel().withIsSwift(isSwift);
         return this;
     }
 }

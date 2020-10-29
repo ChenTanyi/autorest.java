@@ -141,8 +141,6 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
         return this.serviceManager;
     }
 
-    private SearchServiceUpdate updateServiceParam;
-
     private String resourceGroupName;
 
     private String searchServiceName;
@@ -150,6 +148,8 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
     private UUID createClientRequestId;
 
     private UUID updateClientRequestId;
+
+    private SearchServiceUpdate updateServiceParam;
 
     public SearchServiceImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -239,6 +239,26 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
         return this;
     }
 
+    public SearchServiceImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
+    public SearchServiceImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
+    }
+
+    public SearchServiceImpl withTags(Map<String, String> tags) {
+        if (isInCreateMode()) {
+            this.innerModel().withTags(tags);
+            return this;
+        } else {
+            this.updateServiceParam.withTags(tags);
+            return this;
+        }
+    }
+
     public SearchServiceImpl withSku(Sku sku) {
         if (isInCreateMode()) {
             this.innerModel().withSku(sku);
@@ -249,12 +269,32 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
         }
     }
 
-    public SearchServiceImpl withNetworkRuleSet(NetworkRuleSet networkRuleSet) {
+    public SearchServiceImpl withIdentity(Identity identity) {
         if (isInCreateMode()) {
-            this.innerModel().withNetworkRuleSet(networkRuleSet);
+            this.innerModel().withIdentity(identity);
             return this;
         } else {
-            this.updateServiceParam.withNetworkRuleSet(networkRuleSet);
+            this.updateServiceParam.withIdentity(identity);
+            return this;
+        }
+    }
+
+    public SearchServiceImpl withReplicaCount(Integer replicaCount) {
+        if (isInCreateMode()) {
+            this.innerModel().withReplicaCount(replicaCount);
+            return this;
+        } else {
+            this.updateServiceParam.withReplicaCount(replicaCount);
+            return this;
+        }
+    }
+
+    public SearchServiceImpl withPartitionCount(Integer partitionCount) {
+        if (isInCreateMode()) {
+            this.innerModel().withPartitionCount(partitionCount);
+            return this;
+        } else {
+            this.updateServiceParam.withPartitionCount(partitionCount);
             return this;
         }
     }
@@ -279,52 +319,12 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
         }
     }
 
-    public SearchServiceImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public SearchServiceImpl withPartitionCount(Integer partitionCount) {
+    public SearchServiceImpl withNetworkRuleSet(NetworkRuleSet networkRuleSet) {
         if (isInCreateMode()) {
-            this.innerModel().withPartitionCount(partitionCount);
+            this.innerModel().withNetworkRuleSet(networkRuleSet);
             return this;
         } else {
-            this.updateServiceParam.withPartitionCount(partitionCount);
-            return this;
-        }
-    }
-
-    public SearchServiceImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
-    public SearchServiceImpl withReplicaCount(Integer replicaCount) {
-        if (isInCreateMode()) {
-            this.innerModel().withReplicaCount(replicaCount);
-            return this;
-        } else {
-            this.updateServiceParam.withReplicaCount(replicaCount);
-            return this;
-        }
-    }
-
-    public SearchServiceImpl withIdentity(Identity identity) {
-        if (isInCreateMode()) {
-            this.innerModel().withIdentity(identity);
-            return this;
-        } else {
-            this.updateServiceParam.withIdentity(identity);
-            return this;
-        }
-    }
-
-    public SearchServiceImpl withTags(Map<String, String> tags) {
-        if (isInCreateMode()) {
-            this.innerModel().withTags(tags);
-            return this;
-        } else {
-            this.updateServiceParam.withTags(tags);
+            this.updateServiceParam.withNetworkRuleSet(networkRuleSet);
             return this;
         }
     }

@@ -169,9 +169,9 @@ public final class ActionGroupResourceImpl
         return this.serviceManager;
     }
 
-    private String actionGroupName;
-
     private String resourceGroupName;
+
+    private String actionGroupName;
 
     private ActionGroupPatchBody updateActionGroupPatch;
 
@@ -258,39 +258,13 @@ public final class ActionGroupResourceImpl
         return this;
     }
 
-    public ActionGroupResourceImpl withItsmReceivers(List<ItsmReceiver> itsmReceivers) {
-        this.innerModel().withItsmReceivers(itsmReceivers);
+    public ActionGroupResourceImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
         return this;
     }
 
-    public ActionGroupResourceImpl withArmRoleReceivers(List<ArmRoleReceiver> armRoleReceivers) {
-        this.innerModel().withArmRoleReceivers(armRoleReceivers);
-        return this;
-    }
-
-    public ActionGroupResourceImpl withAutomationRunbookReceivers(
-        List<AutomationRunbookReceiver> automationRunbookReceivers) {
-        this.innerModel().withAutomationRunbookReceivers(automationRunbookReceivers);
-        return this;
-    }
-
-    public ActionGroupResourceImpl withEnabled(Boolean enabled) {
-        if (isInCreateMode()) {
-            this.innerModel().withEnabled(enabled);
-            return this;
-        } else {
-            this.updateActionGroupPatch.withEnabled(enabled);
-            return this;
-        }
-    }
-
-    public ActionGroupResourceImpl withVoiceReceivers(List<VoiceReceiver> voiceReceivers) {
-        this.innerModel().withVoiceReceivers(voiceReceivers);
-        return this;
-    }
-
-    public ActionGroupResourceImpl withGroupShortName(String groupShortName) {
-        this.innerModel().withGroupShortName(groupShortName);
+    public ActionGroupResourceImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
@@ -304,33 +278,23 @@ public final class ActionGroupResourceImpl
         }
     }
 
-    public ActionGroupResourceImpl withAzureAppPushReceivers(List<AzureAppPushReceiver> azureAppPushReceivers) {
-        this.innerModel().withAzureAppPushReceivers(azureAppPushReceivers);
+    public ActionGroupResourceImpl withGroupShortName(String groupShortName) {
+        this.innerModel().withGroupShortName(groupShortName);
         return this;
     }
 
-    public ActionGroupResourceImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public ActionGroupResourceImpl withAzureFunctionReceivers(List<AzureFunctionReceiver> azureFunctionReceivers) {
-        this.innerModel().withAzureFunctionReceivers(azureFunctionReceivers);
-        return this;
+    public ActionGroupResourceImpl withEnabled(Boolean enabled) {
+        if (isInCreateMode()) {
+            this.innerModel().withEnabled(enabled);
+            return this;
+        } else {
+            this.updateActionGroupPatch.withEnabled(enabled);
+            return this;
+        }
     }
 
     public ActionGroupResourceImpl withEmailReceivers(List<EmailReceiver> emailReceivers) {
         this.innerModel().withEmailReceivers(emailReceivers);
-        return this;
-    }
-
-    public ActionGroupResourceImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
-    public ActionGroupResourceImpl withLogicAppReceivers(List<LogicAppReceiver> logicAppReceivers) {
-        this.innerModel().withLogicAppReceivers(logicAppReceivers);
         return this;
     }
 
@@ -341,6 +305,42 @@ public final class ActionGroupResourceImpl
 
     public ActionGroupResourceImpl withWebhookReceivers(List<WebhookReceiver> webhookReceivers) {
         this.innerModel().withWebhookReceivers(webhookReceivers);
+        return this;
+    }
+
+    public ActionGroupResourceImpl withItsmReceivers(List<ItsmReceiver> itsmReceivers) {
+        this.innerModel().withItsmReceivers(itsmReceivers);
+        return this;
+    }
+
+    public ActionGroupResourceImpl withAzureAppPushReceivers(List<AzureAppPushReceiver> azureAppPushReceivers) {
+        this.innerModel().withAzureAppPushReceivers(azureAppPushReceivers);
+        return this;
+    }
+
+    public ActionGroupResourceImpl withAutomationRunbookReceivers(
+        List<AutomationRunbookReceiver> automationRunbookReceivers) {
+        this.innerModel().withAutomationRunbookReceivers(automationRunbookReceivers);
+        return this;
+    }
+
+    public ActionGroupResourceImpl withVoiceReceivers(List<VoiceReceiver> voiceReceivers) {
+        this.innerModel().withVoiceReceivers(voiceReceivers);
+        return this;
+    }
+
+    public ActionGroupResourceImpl withLogicAppReceivers(List<LogicAppReceiver> logicAppReceivers) {
+        this.innerModel().withLogicAppReceivers(logicAppReceivers);
+        return this;
+    }
+
+    public ActionGroupResourceImpl withAzureFunctionReceivers(List<AzureFunctionReceiver> azureFunctionReceivers) {
+        this.innerModel().withAzureFunctionReceivers(azureFunctionReceivers);
+        return this;
+    }
+
+    public ActionGroupResourceImpl withArmRoleReceivers(List<ArmRoleReceiver> armRoleReceivers) {
+        this.innerModel().withArmRoleReceivers(armRoleReceivers);
         return this;
     }
 

@@ -170,9 +170,9 @@ public final class NetworkInterfaceImpl
 
     private String resourceGroupName;
 
-    private TagsObject updateParameters;
-
     private String networkInterfaceName;
+
+    private TagsObject updateParameters;
 
     public NetworkInterfaceImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -257,8 +257,13 @@ public final class NetworkInterfaceImpl
         return this;
     }
 
-    public NetworkInterfaceImpl withEnableIpForwarding(Boolean enableIpForwarding) {
-        this.innerModel().withEnableIpForwarding(enableIpForwarding);
+    public NetworkInterfaceImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
+    public NetworkInterfaceImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
@@ -272,8 +277,8 @@ public final class NetworkInterfaceImpl
         }
     }
 
-    public NetworkInterfaceImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
+    public NetworkInterfaceImpl withNetworkSecurityGroup(NetworkSecurityGroupInner networkSecurityGroup) {
+        this.innerModel().withNetworkSecurityGroup(networkSecurityGroup);
         return this;
     }
 
@@ -282,28 +287,23 @@ public final class NetworkInterfaceImpl
         return this;
     }
 
-    public NetworkInterfaceImpl withEnableAcceleratedNetworking(Boolean enableAcceleratedNetworking) {
-        this.innerModel().withEnableAcceleratedNetworking(enableAcceleratedNetworking);
-        return this;
-    }
-
-    public NetworkInterfaceImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
-    public NetworkInterfaceImpl withNetworkSecurityGroup(NetworkSecurityGroupInner networkSecurityGroup) {
-        this.innerModel().withNetworkSecurityGroup(networkSecurityGroup);
-        return this;
-    }
-
     public NetworkInterfaceImpl withDnsSettings(NetworkInterfaceDnsSettings dnsSettings) {
         this.innerModel().withDnsSettings(dnsSettings);
         return this;
     }
 
-    public NetworkInterfaceImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
+    public NetworkInterfaceImpl withEnableAcceleratedNetworking(Boolean enableAcceleratedNetworking) {
+        this.innerModel().withEnableAcceleratedNetworking(enableAcceleratedNetworking);
+        return this;
+    }
+
+    public NetworkInterfaceImpl withEnableIpForwarding(Boolean enableIpForwarding) {
+        this.innerModel().withEnableIpForwarding(enableIpForwarding);
+        return this;
+    }
+
+    public NetworkInterfaceImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 

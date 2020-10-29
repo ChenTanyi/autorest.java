@@ -44,9 +44,9 @@ public final class DatabaseImpl implements Database, Database.Definition, Databa
 
     private String resourceGroupName;
 
-    private String databaseName;
-
     private String serverName;
+
+    private String databaseName;
 
     public DatabaseImpl withExistingServer(String resourceGroupName, String serverName) {
         this.resourceGroupName = resourceGroupName;
@@ -128,13 +128,13 @@ public final class DatabaseImpl implements Database, Database.Definition, Databa
         return this;
     }
 
-    public DatabaseImpl withCollation(String collation) {
-        this.innerModel().withCollation(collation);
+    public DatabaseImpl withCharset(String charset) {
+        this.innerModel().withCharset(charset);
         return this;
     }
 
-    public DatabaseImpl withCharset(String charset) {
-        this.innerModel().withCharset(charset);
+    public DatabaseImpl withCollation(String collation) {
+        this.innerModel().withCollation(collation);
         return this;
     }
 }

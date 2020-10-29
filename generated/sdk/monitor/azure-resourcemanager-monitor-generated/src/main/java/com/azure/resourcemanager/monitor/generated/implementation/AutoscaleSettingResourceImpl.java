@@ -183,14 +183,14 @@ public final class AutoscaleSettingResourceImpl
         return this;
     }
 
-    public AutoscaleSettingResourceImpl withTargetResourceUri(String targetResourceUri) {
-        if (isInCreateMode()) {
-            this.innerModel().withTargetResourceUri(targetResourceUri);
-            return this;
-        } else {
-            this.updateAutoscaleSettingResource.withTargetResourceUri(targetResourceUri);
-            return this;
-        }
+    public AutoscaleSettingResourceImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
+    public AutoscaleSettingResourceImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
     }
 
     public AutoscaleSettingResourceImpl withProfiles(List<AutoscaleProfile> profiles) {
@@ -199,6 +199,16 @@ public final class AutoscaleSettingResourceImpl
             return this;
         } else {
             this.updateAutoscaleSettingResource.withProfiles(profiles);
+            return this;
+        }
+    }
+
+    public AutoscaleSettingResourceImpl withTags(Map<String, String> tags) {
+        if (isInCreateMode()) {
+            this.innerModel().withTags(tags);
+            return this;
+        } else {
+            this.updateAutoscaleSettingResource.withTags(tags);
             return this;
         }
     }
@@ -213,11 +223,6 @@ public final class AutoscaleSettingResourceImpl
         }
     }
 
-    public AutoscaleSettingResourceImpl withNamePropertiesName(String namePropertiesName) {
-        this.innerModel().withNamePropertiesName(namePropertiesName);
-        return this;
-    }
-
     public AutoscaleSettingResourceImpl withEnabled(Boolean enabled) {
         if (isInCreateMode()) {
             this.innerModel().withEnabled(enabled);
@@ -228,24 +233,19 @@ public final class AutoscaleSettingResourceImpl
         }
     }
 
-    public AutoscaleSettingResourceImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
+    public AutoscaleSettingResourceImpl withNamePropertiesName(String namePropertiesName) {
+        this.innerModel().withNamePropertiesName(namePropertiesName);
         return this;
     }
 
-    public AutoscaleSettingResourceImpl withTags(Map<String, String> tags) {
+    public AutoscaleSettingResourceImpl withTargetResourceUri(String targetResourceUri) {
         if (isInCreateMode()) {
-            this.innerModel().withTags(tags);
+            this.innerModel().withTargetResourceUri(targetResourceUri);
             return this;
         } else {
-            this.updateAutoscaleSettingResource.withTags(tags);
+            this.updateAutoscaleSettingResource.withTargetResourceUri(targetResourceUri);
             return this;
         }
-    }
-
-    public AutoscaleSettingResourceImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
     }
 
     public AutoscaleSettingResourceImpl withName(String name) {

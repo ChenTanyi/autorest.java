@@ -181,9 +181,9 @@ public final class DiskImpl implements Disk, Disk.Definition, Disk.Update {
         return this.serviceManager;
     }
 
-    private String diskName;
-
     private String resourceGroupName;
+
+    private String diskName;
 
     private DiskUpdate updateDisk;
 
@@ -257,27 +257,22 @@ public final class DiskImpl implements Disk, Disk.Definition, Disk.Update {
         return this;
     }
 
-    public DiskImpl withDiskMBpsReadOnly(Long diskMBpsReadOnly) {
-        if (isInCreateMode()) {
-            this.innerModel().withDiskMBpsReadOnly(diskMBpsReadOnly);
-            return this;
-        } else {
-            this.updateDisk.withDiskMBpsReadOnly(diskMBpsReadOnly);
-            return this;
-        }
-    }
-
-    public DiskImpl withCreationData(CreationData creationData) {
-        this.innerModel().withCreationData(creationData);
+    public DiskImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
         return this;
     }
 
-    public DiskImpl withDiskIopsReadOnly(Long diskIopsReadOnly) {
+    public DiskImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
+    }
+
+    public DiskImpl withTags(Map<String, String> tags) {
         if (isInCreateMode()) {
-            this.innerModel().withDiskIopsReadOnly(diskIopsReadOnly);
+            this.innerModel().withTags(tags);
             return this;
         } else {
-            this.updateDisk.withDiskIopsReadOnly(diskIopsReadOnly);
+            this.updateDisk.withTags(tags);
             return this;
         }
     }
@@ -297,44 +292,24 @@ public final class DiskImpl implements Disk, Disk.Definition, Disk.Update {
         return this;
     }
 
-    public DiskImpl withDiskAccessId(String diskAccessId) {
+    public DiskImpl withOsType(OperatingSystemTypes osType) {
         if (isInCreateMode()) {
-            this.innerModel().withDiskAccessId(diskAccessId);
+            this.innerModel().withOsType(osType);
             return this;
         } else {
-            this.updateDisk.withDiskAccessId(diskAccessId);
+            this.updateDisk.withOsType(osType);
             return this;
         }
     }
 
-    public DiskImpl withMaxShares(Integer maxShares) {
-        if (isInCreateMode()) {
-            this.innerModel().withMaxShares(maxShares);
-            return this;
-        } else {
-            this.updateDisk.withMaxShares(maxShares);
-            return this;
-        }
+    public DiskImpl withHyperVGeneration(HyperVGeneration hyperVGeneration) {
+        this.innerModel().withHyperVGeneration(hyperVGeneration);
+        return this;
     }
 
-    public DiskImpl withDiskMBpsReadWrite(Long diskMBpsReadWrite) {
-        if (isInCreateMode()) {
-            this.innerModel().withDiskMBpsReadWrite(diskMBpsReadWrite);
-            return this;
-        } else {
-            this.updateDisk.withDiskMBpsReadWrite(diskMBpsReadWrite);
-            return this;
-        }
-    }
-
-    public DiskImpl withNetworkAccessPolicy(NetworkAccessPolicy networkAccessPolicy) {
-        if (isInCreateMode()) {
-            this.innerModel().withNetworkAccessPolicy(networkAccessPolicy);
-            return this;
-        } else {
-            this.updateDisk.withNetworkAccessPolicy(networkAccessPolicy);
-            return this;
-        }
+    public DiskImpl withCreationData(CreationData creationData) {
+        this.innerModel().withCreationData(creationData);
+        return this;
     }
 
     public DiskImpl withDiskSizeGB(Integer diskSizeGB) {
@@ -357,16 +332,6 @@ public final class DiskImpl implements Disk, Disk.Definition, Disk.Update {
         }
     }
 
-    public DiskImpl withTags(Map<String, String> tags) {
-        if (isInCreateMode()) {
-            this.innerModel().withTags(tags);
-            return this;
-        } else {
-            this.updateDisk.withTags(tags);
-            return this;
-        }
-    }
-
     public DiskImpl withDiskIopsReadWrite(Long diskIopsReadWrite) {
         if (isInCreateMode()) {
             this.innerModel().withDiskIopsReadWrite(diskIopsReadWrite);
@@ -377,27 +342,32 @@ public final class DiskImpl implements Disk, Disk.Definition, Disk.Update {
         }
     }
 
-    public DiskImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
-    public DiskImpl withHyperVGeneration(HyperVGeneration hyperVGeneration) {
-        this.innerModel().withHyperVGeneration(hyperVGeneration);
-        return this;
-    }
-
-    public DiskImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public DiskImpl withOsType(OperatingSystemTypes osType) {
+    public DiskImpl withDiskMBpsReadWrite(Long diskMBpsReadWrite) {
         if (isInCreateMode()) {
-            this.innerModel().withOsType(osType);
+            this.innerModel().withDiskMBpsReadWrite(diskMBpsReadWrite);
             return this;
         } else {
-            this.updateDisk.withOsType(osType);
+            this.updateDisk.withDiskMBpsReadWrite(diskMBpsReadWrite);
+            return this;
+        }
+    }
+
+    public DiskImpl withDiskIopsReadOnly(Long diskIopsReadOnly) {
+        if (isInCreateMode()) {
+            this.innerModel().withDiskIopsReadOnly(diskIopsReadOnly);
+            return this;
+        } else {
+            this.updateDisk.withDiskIopsReadOnly(diskIopsReadOnly);
+            return this;
+        }
+    }
+
+    public DiskImpl withDiskMBpsReadOnly(Long diskMBpsReadOnly) {
+        if (isInCreateMode()) {
+            this.innerModel().withDiskMBpsReadOnly(diskMBpsReadOnly);
+            return this;
+        } else {
+            this.updateDisk.withDiskMBpsReadOnly(diskMBpsReadOnly);
             return this;
         }
     }
@@ -408,6 +378,36 @@ public final class DiskImpl implements Disk, Disk.Definition, Disk.Update {
             return this;
         } else {
             this.updateDisk.withEncryption(encryption);
+            return this;
+        }
+    }
+
+    public DiskImpl withMaxShares(Integer maxShares) {
+        if (isInCreateMode()) {
+            this.innerModel().withMaxShares(maxShares);
+            return this;
+        } else {
+            this.updateDisk.withMaxShares(maxShares);
+            return this;
+        }
+    }
+
+    public DiskImpl withNetworkAccessPolicy(NetworkAccessPolicy networkAccessPolicy) {
+        if (isInCreateMode()) {
+            this.innerModel().withNetworkAccessPolicy(networkAccessPolicy);
+            return this;
+        } else {
+            this.updateDisk.withNetworkAccessPolicy(networkAccessPolicy);
+            return this;
+        }
+    }
+
+    public DiskImpl withDiskAccessId(String diskAccessId) {
+        if (isInCreateMode()) {
+            this.innerModel().withDiskAccessId(diskAccessId);
+            return this;
+        } else {
+            this.updateDisk.withDiskAccessId(diskAccessId);
             return this;
         }
     }

@@ -191,23 +191,13 @@ public final class FlowLogImpl implements FlowLog, FlowLog.Definition, FlowLog.U
         return this;
     }
 
-    public FlowLogImpl withTargetResourceId(String targetResourceId) {
-        this.innerModel().withTargetResourceId(targetResourceId);
+    public FlowLogImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
         return this;
     }
 
-    public FlowLogImpl withRetentionPolicy(RetentionPolicyParameters retentionPolicy) {
-        this.innerModel().withRetentionPolicy(retentionPolicy);
-        return this;
-    }
-
-    public FlowLogImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
-    public FlowLogImpl withStorageId(String storageId) {
-        this.innerModel().withStorageId(storageId);
+    public FlowLogImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
@@ -221,18 +211,13 @@ public final class FlowLogImpl implements FlowLog, FlowLog.Definition, FlowLog.U
         }
     }
 
-    public FlowLogImpl withFlowAnalyticsConfiguration(TrafficAnalyticsProperties flowAnalyticsConfiguration) {
-        this.innerModel().withFlowAnalyticsConfiguration(flowAnalyticsConfiguration);
+    public FlowLogImpl withTargetResourceId(String targetResourceId) {
+        this.innerModel().withTargetResourceId(targetResourceId);
         return this;
     }
 
-    public FlowLogImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
-    public FlowLogImpl withFormat(FlowLogFormatParameters format) {
-        this.innerModel().withFormat(format);
+    public FlowLogImpl withStorageId(String storageId) {
+        this.innerModel().withStorageId(storageId);
         return this;
     }
 
@@ -241,8 +226,23 @@ public final class FlowLogImpl implements FlowLog, FlowLog.Definition, FlowLog.U
         return this;
     }
 
-    public FlowLogImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
+    public FlowLogImpl withRetentionPolicy(RetentionPolicyParameters retentionPolicy) {
+        this.innerModel().withRetentionPolicy(retentionPolicy);
+        return this;
+    }
+
+    public FlowLogImpl withFormat(FlowLogFormatParameters format) {
+        this.innerModel().withFormat(format);
+        return this;
+    }
+
+    public FlowLogImpl withFlowAnalyticsConfiguration(TrafficAnalyticsProperties flowAnalyticsConfiguration) {
+        this.innerModel().withFlowAnalyticsConfiguration(flowAnalyticsConfiguration);
+        return this;
+    }
+
+    public FlowLogImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 

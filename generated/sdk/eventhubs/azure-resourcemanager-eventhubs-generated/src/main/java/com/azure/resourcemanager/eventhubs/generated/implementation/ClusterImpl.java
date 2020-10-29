@@ -158,8 +158,8 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
         return this;
     }
 
-    public ClusterImpl withSku(ClusterSku sku) {
-        this.innerModel().withSku(sku);
+    public ClusterImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
         return this;
     }
 
@@ -173,8 +173,8 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
         return this;
     }
 
-    public ClusterImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
+    public ClusterImpl withSku(ClusterSku sku) {
+        this.innerModel().withSku(sku);
         return this;
     }
 }

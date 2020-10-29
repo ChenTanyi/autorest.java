@@ -104,9 +104,9 @@ public final class ServiceEndpointPolicyImpl
         return this.serviceManager;
     }
 
-    private String serviceEndpointPolicyName;
-
     private String resourceGroupName;
+
+    private String serviceEndpointPolicyName;
 
     private TagsObject updateParameters;
 
@@ -194,19 +194,13 @@ public final class ServiceEndpointPolicyImpl
         return this;
     }
 
-    public ServiceEndpointPolicyImpl withServiceEndpointPolicyDefinitions(
-        List<ServiceEndpointPolicyDefinitionInner> serviceEndpointPolicyDefinitions) {
-        this.innerModel().withServiceEndpointPolicyDefinitions(serviceEndpointPolicyDefinitions);
-        return this;
-    }
-
     public ServiceEndpointPolicyImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;
     }
 
-    public ServiceEndpointPolicyImpl withId(String id) {
-        this.innerModel().withId(id);
+    public ServiceEndpointPolicyImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
@@ -220,8 +214,14 @@ public final class ServiceEndpointPolicyImpl
         }
     }
 
-    public ServiceEndpointPolicyImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
+    public ServiceEndpointPolicyImpl withServiceEndpointPolicyDefinitions(
+        List<ServiceEndpointPolicyDefinitionInner> serviceEndpointPolicyDefinitions) {
+        this.innerModel().withServiceEndpointPolicyDefinitions(serviceEndpointPolicyDefinitions);
+        return this;
+    }
+
+    public ServiceEndpointPolicyImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 

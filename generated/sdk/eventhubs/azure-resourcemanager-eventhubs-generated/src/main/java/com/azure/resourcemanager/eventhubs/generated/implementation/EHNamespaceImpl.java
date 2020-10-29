@@ -198,13 +198,8 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
         return this;
     }
 
-    public EHNamespaceImpl withEncryption(Encryption encryption) {
-        this.innerModel().withEncryption(encryption);
-        return this;
-    }
-
-    public EHNamespaceImpl withTags(Map<String, String> tags) {
-        this.innerModel().withTags(tags);
+    public EHNamespaceImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
         return this;
     }
 
@@ -213,8 +208,8 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
         return this;
     }
 
-    public EHNamespaceImpl withKafkaEnabled(Boolean kafkaEnabled) {
-        this.innerModel().withKafkaEnabled(kafkaEnabled);
+    public EHNamespaceImpl withTags(Map<String, String> tags) {
+        this.innerModel().withTags(tags);
         return this;
     }
 
@@ -223,23 +218,13 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
         return this;
     }
 
-    public EHNamespaceImpl withZoneRedundant(Boolean zoneRedundant) {
-        this.innerModel().withZoneRedundant(zoneRedundant);
-        return this;
-    }
-
-    public EHNamespaceImpl withMaximumThroughputUnits(Integer maximumThroughputUnits) {
-        this.innerModel().withMaximumThroughputUnits(maximumThroughputUnits);
-        return this;
-    }
-
     public EHNamespaceImpl withIdentity(Identity identity) {
         this.innerModel().withIdentity(identity);
         return this;
     }
 
-    public EHNamespaceImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
+    public EHNamespaceImpl withClusterArmId(String clusterArmId) {
+        this.innerModel().withClusterArmId(clusterArmId);
         return this;
     }
 
@@ -248,8 +233,23 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
         return this;
     }
 
-    public EHNamespaceImpl withClusterArmId(String clusterArmId) {
-        this.innerModel().withClusterArmId(clusterArmId);
+    public EHNamespaceImpl withMaximumThroughputUnits(Integer maximumThroughputUnits) {
+        this.innerModel().withMaximumThroughputUnits(maximumThroughputUnits);
+        return this;
+    }
+
+    public EHNamespaceImpl withKafkaEnabled(Boolean kafkaEnabled) {
+        this.innerModel().withKafkaEnabled(kafkaEnabled);
+        return this;
+    }
+
+    public EHNamespaceImpl withZoneRedundant(Boolean zoneRedundant) {
+        this.innerModel().withZoneRedundant(zoneRedundant);
+        return this;
+    }
+
+    public EHNamespaceImpl withEncryption(Encryption encryption) {
+        this.innerModel().withEncryption(encryption);
         return this;
     }
 }

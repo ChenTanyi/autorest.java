@@ -156,13 +156,13 @@ public final class ContentKeyPolicyImpl
         return this;
     }
 
-    public ContentKeyPolicyImpl withOptions(List<ContentKeyPolicyOption> options) {
-        this.innerModel().withOptions(options);
+    public ContentKeyPolicyImpl withDescription(String description) {
+        this.innerModel().withDescription(description);
         return this;
     }
 
-    public ContentKeyPolicyImpl withDescription(String description) {
-        this.innerModel().withDescription(description);
+    public ContentKeyPolicyImpl withOptions(List<ContentKeyPolicyOption> options) {
+        this.innerModel().withOptions(options);
         return this;
     }
 }

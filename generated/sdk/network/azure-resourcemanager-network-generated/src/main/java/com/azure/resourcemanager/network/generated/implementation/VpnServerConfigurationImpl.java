@@ -187,11 +187,11 @@ public final class VpnServerConfigurationImpl
         return this.serviceManager;
     }
 
-    private TagsObject updateVpnServerConfigurationParameters;
-
     private String resourceGroupName;
 
     private String vpnServerConfigurationName;
+
+    private TagsObject updateVpnServerConfigurationParameters;
 
     public VpnServerConfigurationImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -276,41 +276,13 @@ public final class VpnServerConfigurationImpl
         return this;
     }
 
-    public VpnServerConfigurationImpl withRadiusServers(List<RadiusServer> radiusServers) {
-        this.innerModel().withRadiusServers(radiusServers);
-        return this;
-    }
-
-    public VpnServerConfigurationImpl withAadAuthenticationParameters(
-        AadAuthenticationParameters aadAuthenticationParameters) {
-        this.innerModel().withAadAuthenticationParameters(aadAuthenticationParameters);
-        return this;
-    }
-
-    public VpnServerConfigurationImpl withRadiusServerRootCertificates(
-        List<VpnServerConfigRadiusServerRootCertificate> radiusServerRootCertificates) {
-        this.innerModel().withRadiusServerRootCertificates(radiusServerRootCertificates);
-        return this;
-    }
-
-    public VpnServerConfigurationImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     public VpnServerConfigurationImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;
     }
 
-    public VpnServerConfigurationImpl withVpnClientRevokedCertificates(
-        List<VpnServerConfigVpnClientRevokedCertificate> vpnClientRevokedCertificates) {
-        this.innerModel().withVpnClientRevokedCertificates(vpnClientRevokedCertificates);
-        return this;
-    }
-
-    public VpnServerConfigurationImpl withRadiusServerAddress(String radiusServerAddress) {
-        this.innerModel().withRadiusServerAddress(radiusServerAddress);
+    public VpnServerConfigurationImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
@@ -324,18 +296,8 @@ public final class VpnServerConfigurationImpl
         }
     }
 
-    public VpnServerConfigurationImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public VpnServerConfigurationImpl withRadiusServerSecret(String radiusServerSecret) {
-        this.innerModel().withRadiusServerSecret(radiusServerSecret);
-        return this;
-    }
-
-    public VpnServerConfigurationImpl withVpnAuthenticationTypes(List<VpnAuthenticationType> vpnAuthenticationTypes) {
-        this.innerModel().withVpnAuthenticationTypes(vpnAuthenticationTypes);
+    public VpnServerConfigurationImpl withNamePropertiesName(String namePropertiesName) {
+        this.innerModel().withNamePropertiesName(namePropertiesName);
         return this;
     }
 
@@ -344,8 +306,8 @@ public final class VpnServerConfigurationImpl
         return this;
     }
 
-    public VpnServerConfigurationImpl withVpnClientIpsecPolicies(List<IpsecPolicy> vpnClientIpsecPolicies) {
-        this.innerModel().withVpnClientIpsecPolicies(vpnClientIpsecPolicies);
+    public VpnServerConfigurationImpl withVpnAuthenticationTypes(List<VpnAuthenticationType> vpnAuthenticationTypes) {
+        this.innerModel().withVpnAuthenticationTypes(vpnAuthenticationTypes);
         return this;
     }
 
@@ -355,14 +317,52 @@ public final class VpnServerConfigurationImpl
         return this;
     }
 
-    public VpnServerConfigurationImpl withNamePropertiesName(String namePropertiesName) {
-        this.innerModel().withNamePropertiesName(namePropertiesName);
+    public VpnServerConfigurationImpl withVpnClientRevokedCertificates(
+        List<VpnServerConfigVpnClientRevokedCertificate> vpnClientRevokedCertificates) {
+        this.innerModel().withVpnClientRevokedCertificates(vpnClientRevokedCertificates);
+        return this;
+    }
+
+    public VpnServerConfigurationImpl withRadiusServerRootCertificates(
+        List<VpnServerConfigRadiusServerRootCertificate> radiusServerRootCertificates) {
+        this.innerModel().withRadiusServerRootCertificates(radiusServerRootCertificates);
         return this;
     }
 
     public VpnServerConfigurationImpl withRadiusClientRootCertificates(
         List<VpnServerConfigRadiusClientRootCertificate> radiusClientRootCertificates) {
         this.innerModel().withRadiusClientRootCertificates(radiusClientRootCertificates);
+        return this;
+    }
+
+    public VpnServerConfigurationImpl withVpnClientIpsecPolicies(List<IpsecPolicy> vpnClientIpsecPolicies) {
+        this.innerModel().withVpnClientIpsecPolicies(vpnClientIpsecPolicies);
+        return this;
+    }
+
+    public VpnServerConfigurationImpl withRadiusServerAddress(String radiusServerAddress) {
+        this.innerModel().withRadiusServerAddress(radiusServerAddress);
+        return this;
+    }
+
+    public VpnServerConfigurationImpl withRadiusServerSecret(String radiusServerSecret) {
+        this.innerModel().withRadiusServerSecret(radiusServerSecret);
+        return this;
+    }
+
+    public VpnServerConfigurationImpl withRadiusServers(List<RadiusServer> radiusServers) {
+        this.innerModel().withRadiusServers(radiusServers);
+        return this;
+    }
+
+    public VpnServerConfigurationImpl withAadAuthenticationParameters(
+        AadAuthenticationParameters aadAuthenticationParameters) {
+        this.innerModel().withAadAuthenticationParameters(aadAuthenticationParameters);
+        return this;
+    }
+
+    public VpnServerConfigurationImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 

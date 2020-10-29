@@ -49,11 +49,11 @@ public final class ConsumerGroupImpl implements ConsumerGroup, ConsumerGroup.Def
 
     private String resourceGroupName;
 
-    private String consumerGroupName;
+    private String namespaceName;
 
     private String eventHubName;
 
-    private String namespaceName;
+    private String consumerGroupName;
 
     public ConsumerGroupImpl withExistingEventhub(String resourceGroupName, String namespaceName, String eventHubName) {
         this.resourceGroupName = resourceGroupName;

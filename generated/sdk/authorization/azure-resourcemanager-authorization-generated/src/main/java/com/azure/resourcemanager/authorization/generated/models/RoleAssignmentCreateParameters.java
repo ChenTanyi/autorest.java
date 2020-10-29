@@ -42,27 +42,6 @@ public class RoleAssignmentCreateParameters {
     @JsonProperty(value = "properties.canDelegate")
     private Boolean canDelegate;
 
-    /*
-     * Description of role assignment
-     */
-    @JsonProperty(value = "properties.description")
-    private String description;
-
-    /*
-     * The conditions on the role assignment. This limits the resources it can
-     * be assigned to. e.g.:
-     * @Resource[Microsoft.Storage/storageAccounts/blobServices/containers:ContainerName]
-     * StringEqualsIgnoreCase 'foo_storage_container'
-     */
-    @JsonProperty(value = "properties.condition")
-    private String condition;
-
-    /*
-     * Version of the condition. Currently accepted value is '2.0'
-     */
-    @JsonProperty(value = "properties.conditionVersion")
-    private String conditionVersion;
-
     /**
      * Get the roleDefinitionId property: The role definition ID used in the role assignment.
      *
@@ -142,70 +121,6 @@ public class RoleAssignmentCreateParameters {
      */
     public RoleAssignmentCreateParameters withCanDelegate(Boolean canDelegate) {
         this.canDelegate = canDelegate;
-        return this;
-    }
-
-    /**
-     * Get the description property: Description of role assignment.
-     *
-     * @return the description value.
-     */
-    public String description() {
-        return this.description;
-    }
-
-    /**
-     * Set the description property: Description of role assignment.
-     *
-     * @param description the description value to set.
-     * @return the RoleAssignmentCreateParameters object itself.
-     */
-    public RoleAssignmentCreateParameters withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
-    /**
-     * Get the condition property: The conditions on the role assignment. This limits the resources it can be assigned
-     * to. e.g.: @Resource[Microsoft.Storage/storageAccounts/blobServices/containers:ContainerName]
-     * StringEqualsIgnoreCase 'foo_storage_container'.
-     *
-     * @return the condition value.
-     */
-    public String condition() {
-        return this.condition;
-    }
-
-    /**
-     * Set the condition property: The conditions on the role assignment. This limits the resources it can be assigned
-     * to. e.g.: @Resource[Microsoft.Storage/storageAccounts/blobServices/containers:ContainerName]
-     * StringEqualsIgnoreCase 'foo_storage_container'.
-     *
-     * @param condition the condition value to set.
-     * @return the RoleAssignmentCreateParameters object itself.
-     */
-    public RoleAssignmentCreateParameters withCondition(String condition) {
-        this.condition = condition;
-        return this;
-    }
-
-    /**
-     * Get the conditionVersion property: Version of the condition. Currently accepted value is '2.0'.
-     *
-     * @return the conditionVersion value.
-     */
-    public String conditionVersion() {
-        return this.conditionVersion;
-    }
-
-    /**
-     * Set the conditionVersion property: Version of the condition. Currently accepted value is '2.0'.
-     *
-     * @param conditionVersion the conditionVersion value to set.
-     * @return the RoleAssignmentCreateParameters object itself.
-     */
-    public RoleAssignmentCreateParameters withConditionVersion(String conditionVersion) {
-        this.conditionVersion = conditionVersion;
         return this;
     }
 

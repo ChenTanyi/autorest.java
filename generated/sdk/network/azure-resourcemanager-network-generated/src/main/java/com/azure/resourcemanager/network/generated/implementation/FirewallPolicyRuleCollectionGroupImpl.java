@@ -64,9 +64,9 @@ public final class FirewallPolicyRuleCollectionGroupImpl
 
     private String resourceGroupName;
 
-    private String ruleCollectionGroupName;
-
     private String firewallPolicyName;
+
+    private String ruleCollectionGroupName;
 
     public FirewallPolicyRuleCollectionGroupImpl withExistingFirewallPolicy(
         String resourceGroupName, String firewallPolicyName) {
@@ -152,24 +152,24 @@ public final class FirewallPolicyRuleCollectionGroupImpl
         return this;
     }
 
+    public FirewallPolicyRuleCollectionGroupImpl withId(String id) {
+        this.innerModel().withId(id);
+        return this;
+    }
+
     public FirewallPolicyRuleCollectionGroupImpl withName(String name) {
         this.innerModel().withName(name);
         return this;
     }
 
-    public FirewallPolicyRuleCollectionGroupImpl withId(String id) {
-        this.innerModel().withId(id);
+    public FirewallPolicyRuleCollectionGroupImpl withPriority(Integer priority) {
+        this.innerModel().withPriority(priority);
         return this;
     }
 
     public FirewallPolicyRuleCollectionGroupImpl withRuleCollections(
         List<FirewallPolicyRuleCollection> ruleCollections) {
         this.innerModel().withRuleCollections(ruleCollections);
-        return this;
-    }
-
-    public FirewallPolicyRuleCollectionGroupImpl withPriority(Integer priority) {
-        this.innerModel().withPriority(priority);
         return this;
     }
 }

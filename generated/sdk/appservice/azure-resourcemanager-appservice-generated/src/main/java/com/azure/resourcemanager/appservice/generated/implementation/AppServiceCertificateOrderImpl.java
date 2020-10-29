@@ -160,9 +160,9 @@ public final class AppServiceCertificateOrderImpl
         return this.serviceManager;
     }
 
-    private String certificateOrderName;
-
     private String resourceGroupName;
+
+    private String certificateOrderName;
 
     private AppServiceCertificateOrderPatchResource updateCertificateDistinguishedName;
 
@@ -254,29 +254,14 @@ public final class AppServiceCertificateOrderImpl
         return this;
     }
 
-    public AppServiceCertificateOrderImpl withAutoRenew(Boolean autoRenew) {
-        if (isInCreateMode()) {
-            this.innerModel().withAutoRenew(autoRenew);
-            return this;
-        } else {
-            this.updateCertificateDistinguishedName.withAutoRenew(autoRenew);
-            return this;
-        }
-    }
-
-    public AppServiceCertificateOrderImpl withValidityInYears(Integer validityInYears) {
-        this.innerModel().withValidityInYears(validityInYears);
+    public AppServiceCertificateOrderImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
-    public AppServiceCertificateOrderImpl withDistinguishedName(String distinguishedName) {
-        if (isInCreateMode()) {
-            this.innerModel().withDistinguishedName(distinguishedName);
-            return this;
-        } else {
-            this.updateCertificateDistinguishedName.withDistinguishedName(distinguishedName);
-            return this;
-        }
+    public AppServiceCertificateOrderImpl withTags(Map<String, String> tags) {
+        this.innerModel().withTags(tags);
+        return this;
     }
 
     public AppServiceCertificateOrderImpl withCertificates(Map<String, AppServiceCertificate> certificates) {
@@ -289,6 +274,26 @@ public final class AppServiceCertificateOrderImpl
         }
     }
 
+    public AppServiceCertificateOrderImpl withDistinguishedName(String distinguishedName) {
+        if (isInCreateMode()) {
+            this.innerModel().withDistinguishedName(distinguishedName);
+            return this;
+        } else {
+            this.updateCertificateDistinguishedName.withDistinguishedName(distinguishedName);
+            return this;
+        }
+    }
+
+    public AppServiceCertificateOrderImpl withValidityInYears(Integer validityInYears) {
+        this.innerModel().withValidityInYears(validityInYears);
+        return this;
+    }
+
+    public AppServiceCertificateOrderImpl withKeySize(Integer keySize) {
+        this.innerModel().withKeySize(keySize);
+        return this;
+    }
+
     public AppServiceCertificateOrderImpl withProductType(CertificateProductType productType) {
         if (isInCreateMode()) {
             this.innerModel().withProductType(productType);
@@ -299,17 +304,12 @@ public final class AppServiceCertificateOrderImpl
         }
     }
 
-    public AppServiceCertificateOrderImpl withKeySize(Integer keySize) {
-        this.innerModel().withKeySize(keySize);
-        return this;
-    }
-
-    public AppServiceCertificateOrderImpl withKind(String kind) {
+    public AppServiceCertificateOrderImpl withAutoRenew(Boolean autoRenew) {
         if (isInCreateMode()) {
-            this.innerModel().withKind(kind);
+            this.innerModel().withAutoRenew(autoRenew);
             return this;
         } else {
-            this.updateCertificateDistinguishedName.withKind(kind);
+            this.updateCertificateDistinguishedName.withAutoRenew(autoRenew);
             return this;
         }
     }
@@ -324,14 +324,14 @@ public final class AppServiceCertificateOrderImpl
         }
     }
 
-    public AppServiceCertificateOrderImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public AppServiceCertificateOrderImpl withTags(Map<String, String> tags) {
-        this.innerModel().withTags(tags);
-        return this;
+    public AppServiceCertificateOrderImpl withKind(String kind) {
+        if (isInCreateMode()) {
+            this.innerModel().withKind(kind);
+            return this;
+        } else {
+            this.updateCertificateDistinguishedName.withKind(kind);
+            return this;
+        }
     }
 
     private boolean isInCreateMode() {

@@ -50,11 +50,11 @@ public final class PrivateEndpointConnectionImpl
         return this.serviceManager;
     }
 
-    private String privateEndpointConnectionName;
-
     private String resourceGroupName;
 
     private String namespaceName;
+
+    private String privateEndpointConnectionName;
 
     public PrivateEndpointConnectionImpl withExistingNamespace(String resourceGroupName, String namespaceName) {
         this.resourceGroupName = resourceGroupName;
@@ -144,6 +144,11 @@ public final class PrivateEndpointConnectionImpl
         return this;
     }
 
+    public PrivateEndpointConnectionImpl withPrivateEndpoint(PrivateEndpoint privateEndpoint) {
+        this.innerModel().withPrivateEndpoint(privateEndpoint);
+        return this;
+    }
+
     public PrivateEndpointConnectionImpl withPrivateLinkServiceConnectionState(
         ConnectionState privateLinkServiceConnectionState) {
         this.innerModel().withPrivateLinkServiceConnectionState(privateLinkServiceConnectionState);
@@ -152,11 +157,6 @@ public final class PrivateEndpointConnectionImpl
 
     public PrivateEndpointConnectionImpl withProvisioningState(EndPointProvisioningState provisioningState) {
         this.innerModel().withProvisioningState(provisioningState);
-        return this;
-    }
-
-    public PrivateEndpointConnectionImpl withPrivateEndpoint(PrivateEndpoint privateEndpoint) {
-        this.innerModel().withPrivateEndpoint(privateEndpoint);
         return this;
     }
 }

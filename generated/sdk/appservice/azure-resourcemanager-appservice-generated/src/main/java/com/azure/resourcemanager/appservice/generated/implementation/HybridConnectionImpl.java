@@ -75,9 +75,9 @@ public final class HybridConnectionImpl
 
     private String name;
 
-    private String relayName;
-
     private String namespaceName;
+
+    private String relayName;
 
     public HybridConnectionImpl withExistingHybridConnectionNamespace(
         String resourceGroupName, String name, String namespaceName) {
@@ -170,21 +170,6 @@ public final class HybridConnectionImpl
         return this;
     }
 
-    public HybridConnectionImpl withServiceBusSuffix(String serviceBusSuffix) {
-        this.innerModel().withServiceBusSuffix(serviceBusSuffix);
-        return this;
-    }
-
-    public HybridConnectionImpl withPort(Integer port) {
-        this.innerModel().withPort(port);
-        return this;
-    }
-
-    public HybridConnectionImpl withRelayArmUri(String relayArmUri) {
-        this.innerModel().withRelayArmUri(relayArmUri);
-        return this;
-    }
-
     public HybridConnectionImpl withKind(String kind) {
         this.innerModel().withKind(kind);
         return this;
@@ -195,8 +180,13 @@ public final class HybridConnectionImpl
         return this;
     }
 
-    public HybridConnectionImpl withSendKeyName(String sendKeyName) {
-        this.innerModel().withSendKeyName(sendKeyName);
+    public HybridConnectionImpl withRelayName(String relayName) {
+        this.innerModel().withRelayName(relayName);
+        return this;
+    }
+
+    public HybridConnectionImpl withRelayArmUri(String relayArmUri) {
+        this.innerModel().withRelayArmUri(relayArmUri);
         return this;
     }
 
@@ -205,13 +195,23 @@ public final class HybridConnectionImpl
         return this;
     }
 
+    public HybridConnectionImpl withPort(Integer port) {
+        this.innerModel().withPort(port);
+        return this;
+    }
+
+    public HybridConnectionImpl withSendKeyName(String sendKeyName) {
+        this.innerModel().withSendKeyName(sendKeyName);
+        return this;
+    }
+
     public HybridConnectionImpl withSendKeyValue(String sendKeyValue) {
         this.innerModel().withSendKeyValue(sendKeyValue);
         return this;
     }
 
-    public HybridConnectionImpl withRelayName(String relayName) {
-        this.innerModel().withRelayName(relayName);
+    public HybridConnectionImpl withServiceBusSuffix(String serviceBusSuffix) {
+        this.innerModel().withServiceBusSuffix(serviceBusSuffix);
         return this;
     }
 }

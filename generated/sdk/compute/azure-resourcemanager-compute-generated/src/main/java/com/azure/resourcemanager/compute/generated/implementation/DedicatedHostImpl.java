@@ -107,13 +107,13 @@ public final class DedicatedHostImpl implements DedicatedHost, DedicatedHost.Def
         return this.serviceManager;
     }
 
-    private String hostname;
-
     private String resourceGroupName;
 
-    private DedicatedHostUpdate updateParameters;
-
     private String hostGroupName;
+
+    private String hostname;
+
+    private DedicatedHostUpdate updateParameters;
 
     public DedicatedHostImpl withExistingHostGroup(String resourceGroupName, String hostGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -198,14 +198,29 @@ public final class DedicatedHostImpl implements DedicatedHost, DedicatedHost.Def
         return this;
     }
 
+    public DedicatedHostImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
     public DedicatedHostImpl withRegion(String location) {
         this.innerModel().withLocation(location);
         return this;
     }
 
-    public DedicatedHostImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
+    public DedicatedHostImpl withSku(Sku sku) {
+        this.innerModel().withSku(sku);
         return this;
+    }
+
+    public DedicatedHostImpl withTags(Map<String, String> tags) {
+        if (isInCreateMode()) {
+            this.innerModel().withTags(tags);
+            return this;
+        } else {
+            this.updateParameters.withTags(tags);
+            return this;
+        }
     }
 
     public DedicatedHostImpl withPlatformFaultDomain(Integer platformFaultDomain) {
@@ -214,21 +229,6 @@ public final class DedicatedHostImpl implements DedicatedHost, DedicatedHost.Def
             return this;
         } else {
             this.updateParameters.withPlatformFaultDomain(platformFaultDomain);
-            return this;
-        }
-    }
-
-    public DedicatedHostImpl withSku(Sku sku) {
-        this.innerModel().withSku(sku);
-        return this;
-    }
-
-    public DedicatedHostImpl withLicenseType(DedicatedHostLicenseTypes licenseType) {
-        if (isInCreateMode()) {
-            this.innerModel().withLicenseType(licenseType);
-            return this;
-        } else {
-            this.updateParameters.withLicenseType(licenseType);
             return this;
         }
     }
@@ -243,12 +243,12 @@ public final class DedicatedHostImpl implements DedicatedHost, DedicatedHost.Def
         }
     }
 
-    public DedicatedHostImpl withTags(Map<String, String> tags) {
+    public DedicatedHostImpl withLicenseType(DedicatedHostLicenseTypes licenseType) {
         if (isInCreateMode()) {
-            this.innerModel().withTags(tags);
+            this.innerModel().withLicenseType(licenseType);
             return this;
         } else {
-            this.updateParameters.withTags(tags);
+            this.updateParameters.withLicenseType(licenseType);
             return this;
         }
     }

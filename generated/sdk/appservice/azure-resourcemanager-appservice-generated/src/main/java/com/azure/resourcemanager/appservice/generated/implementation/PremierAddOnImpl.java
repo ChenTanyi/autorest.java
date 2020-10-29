@@ -177,8 +177,8 @@ public final class PremierAddOnImpl implements PremierAddOn, PremierAddOn.Defini
         return this;
     }
 
-    public PremierAddOnImpl withTags(Map<String, String> tags) {
-        this.innerModel().withTags(tags);
+    public PremierAddOnImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
         return this;
     }
 
@@ -187,12 +187,17 @@ public final class PremierAddOnImpl implements PremierAddOn, PremierAddOn.Defini
         return this;
     }
 
-    public PremierAddOnImpl withMarketplaceOffer(String marketplaceOffer) {
+    public PremierAddOnImpl withTags(Map<String, String> tags) {
+        this.innerModel().withTags(tags);
+        return this;
+    }
+
+    public PremierAddOnImpl withSku(String sku) {
         if (isInCreateMode()) {
-            this.innerModel().withMarketplaceOffer(marketplaceOffer);
+            this.innerModel().withSku(sku);
             return this;
         } else {
-            this.updatePremierAddOn.withMarketplaceOffer(marketplaceOffer);
+            this.updatePremierAddOn.withSku(sku);
             return this;
         }
     }
@@ -207,22 +212,12 @@ public final class PremierAddOnImpl implements PremierAddOn, PremierAddOn.Defini
         }
     }
 
-    public PremierAddOnImpl withSku(String sku) {
+    public PremierAddOnImpl withVendor(String vendor) {
         if (isInCreateMode()) {
-            this.innerModel().withSku(sku);
+            this.innerModel().withVendor(vendor);
             return this;
         } else {
-            this.updatePremierAddOn.withSku(sku);
-            return this;
-        }
-    }
-
-    public PremierAddOnImpl withKind(String kind) {
-        if (isInCreateMode()) {
-            this.innerModel().withKind(kind);
-            return this;
-        } else {
-            this.updatePremierAddOn.withKind(kind);
+            this.updatePremierAddOn.withVendor(vendor);
             return this;
         }
     }
@@ -237,19 +232,24 @@ public final class PremierAddOnImpl implements PremierAddOn, PremierAddOn.Defini
         }
     }
 
-    public PremierAddOnImpl withVendor(String vendor) {
+    public PremierAddOnImpl withMarketplaceOffer(String marketplaceOffer) {
         if (isInCreateMode()) {
-            this.innerModel().withVendor(vendor);
+            this.innerModel().withMarketplaceOffer(marketplaceOffer);
             return this;
         } else {
-            this.updatePremierAddOn.withVendor(vendor);
+            this.updatePremierAddOn.withMarketplaceOffer(marketplaceOffer);
             return this;
         }
     }
 
-    public PremierAddOnImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
+    public PremierAddOnImpl withKind(String kind) {
+        if (isInCreateMode()) {
+            this.innerModel().withKind(kind);
+            return this;
+        } else {
+            this.updatePremierAddOn.withKind(kind);
+            return this;
+        }
     }
 
     private boolean isInCreateMode() {

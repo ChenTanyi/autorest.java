@@ -133,9 +133,9 @@ public final class LiveEventImpl implements LiveEvent, LiveEvent.Definition, Liv
 
     private String accountName;
 
-    private Boolean createAutoStart;
-
     private String liveEventName;
+
+    private Boolean createAutoStart;
 
     public LiveEventImpl withExistingMediaservice(String resourceGroupName, String accountName) {
         this.resourceGroupName = resourceGroupName;
@@ -218,33 +218,8 @@ public final class LiveEventImpl implements LiveEvent, LiveEvent.Definition, Liv
         return this;
     }
 
-    public LiveEventImpl withAutoStart(Boolean autoStart) {
-        this.createAutoStart = autoStart;
-        return this;
-    }
-
-    public LiveEventImpl withHostnamePrefix(String hostnamePrefix) {
-        this.innerModel().withHostnamePrefix(hostnamePrefix);
-        return this;
-    }
-
-    public LiveEventImpl withCrossSiteAccessPolicies(CrossSiteAccessPolicies crossSiteAccessPolicies) {
-        this.innerModel().withCrossSiteAccessPolicies(crossSiteAccessPolicies);
-        return this;
-    }
-
     public LiveEventImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
-    public LiveEventImpl withDescription(String description) {
-        this.innerModel().withDescription(description);
-        return this;
-    }
-
-    public LiveEventImpl withTranscriptions(List<LiveEventTranscription> transcriptions) {
-        this.innerModel().withTranscriptions(transcriptions);
         return this;
     }
 
@@ -253,18 +228,18 @@ public final class LiveEventImpl implements LiveEvent, LiveEvent.Definition, Liv
         return this;
     }
 
+    public LiveEventImpl withTags(Map<String, String> tags) {
+        this.innerModel().withTags(tags);
+        return this;
+    }
+
+    public LiveEventImpl withDescription(String description) {
+        this.innerModel().withDescription(description);
+        return this;
+    }
+
     public LiveEventImpl withInput(LiveEventInput input) {
         this.innerModel().withInput(input);
-        return this;
-    }
-
-    public LiveEventImpl withStreamOptions(List<StreamOptionsFlag> streamOptions) {
-        this.innerModel().withStreamOptions(streamOptions);
-        return this;
-    }
-
-    public LiveEventImpl withUseStaticHostname(Boolean useStaticHostname) {
-        this.innerModel().withUseStaticHostname(useStaticHostname);
         return this;
     }
 
@@ -273,13 +248,38 @@ public final class LiveEventImpl implements LiveEvent, LiveEvent.Definition, Liv
         return this;
     }
 
-    public LiveEventImpl withTags(Map<String, String> tags) {
-        this.innerModel().withTags(tags);
+    public LiveEventImpl withEncoding(LiveEventEncoding encoding) {
+        this.innerModel().withEncoding(encoding);
         return this;
     }
 
-    public LiveEventImpl withEncoding(LiveEventEncoding encoding) {
-        this.innerModel().withEncoding(encoding);
+    public LiveEventImpl withTranscriptions(List<LiveEventTranscription> transcriptions) {
+        this.innerModel().withTranscriptions(transcriptions);
+        return this;
+    }
+
+    public LiveEventImpl withCrossSiteAccessPolicies(CrossSiteAccessPolicies crossSiteAccessPolicies) {
+        this.innerModel().withCrossSiteAccessPolicies(crossSiteAccessPolicies);
+        return this;
+    }
+
+    public LiveEventImpl withUseStaticHostname(Boolean useStaticHostname) {
+        this.innerModel().withUseStaticHostname(useStaticHostname);
+        return this;
+    }
+
+    public LiveEventImpl withHostnamePrefix(String hostnamePrefix) {
+        this.innerModel().withHostnamePrefix(hostnamePrefix);
+        return this;
+    }
+
+    public LiveEventImpl withStreamOptions(List<StreamOptionsFlag> streamOptions) {
+        this.innerModel().withStreamOptions(streamOptions);
+        return this;
+    }
+
+    public LiveEventImpl withAutoStart(Boolean autoStart) {
+        this.createAutoStart = autoStart;
         return this;
     }
 }

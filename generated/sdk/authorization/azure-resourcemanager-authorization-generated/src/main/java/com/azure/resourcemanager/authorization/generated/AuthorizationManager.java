@@ -22,8 +22,20 @@ import com.azure.core.util.Configuration;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.authorization.generated.fluent.AuthorizationManagementClient;
 import com.azure.resourcemanager.authorization.generated.implementation.AuthorizationManagementClientBuilder;
+import com.azure.resourcemanager.authorization.generated.implementation.ClassicAdministratorsImpl;
+import com.azure.resourcemanager.authorization.generated.implementation.DenyAssignmentsImpl;
+import com.azure.resourcemanager.authorization.generated.implementation.GlobalAdministratorsImpl;
+import com.azure.resourcemanager.authorization.generated.implementation.PermissionsImpl;
+import com.azure.resourcemanager.authorization.generated.implementation.ProviderOperationsMetadatasImpl;
 import com.azure.resourcemanager.authorization.generated.implementation.RoleAssignmentsImpl;
+import com.azure.resourcemanager.authorization.generated.implementation.RoleDefinitionsImpl;
+import com.azure.resourcemanager.authorization.generated.models.ClassicAdministrators;
+import com.azure.resourcemanager.authorization.generated.models.DenyAssignments;
+import com.azure.resourcemanager.authorization.generated.models.GlobalAdministrators;
+import com.azure.resourcemanager.authorization.generated.models.Permissions;
+import com.azure.resourcemanager.authorization.generated.models.ProviderOperationsMetadatas;
 import com.azure.resourcemanager.authorization.generated.models.RoleAssignments;
+import com.azure.resourcemanager.authorization.generated.models.RoleDefinitions;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -33,10 +45,23 @@ import java.util.Objects;
 /**
  * Entry point to AuthorizationManager. Role based access control provides you a way to apply granular level policy
  * administration down to individual resources or resource groups. These operations enable you to manage role
- * assignments. A role assignment grants access to Azure Active Directory users.
+ * definitions and role assignments. A role definition describes the set of actions that can be performed on resources.
+ * A role assignment grants access to Azure Active Directory users.
  */
 public final class AuthorizationManager {
+    private ClassicAdministrators classicAdministrators;
+
+    private GlobalAdministrators globalAdministrators;
+
+    private ProviderOperationsMetadatas providerOperationsMetadatas;
+
     private RoleAssignments roleAssignments;
+
+    private Permissions permissions;
+
+    private RoleDefinitions roleDefinitions;
+
+    private DenyAssignments denyAssignments;
 
     private final AuthorizationManagementClient clientObject;
 
@@ -186,12 +211,61 @@ public final class AuthorizationManager {
         }
     }
 
+    /** @return Resource collection API of ClassicAdministrators. */
+    public ClassicAdministrators classicAdministrators() {
+        if (this.classicAdministrators == null) {
+            this.classicAdministrators = new ClassicAdministratorsImpl(clientObject.getClassicAdministrators(), this);
+        }
+        return classicAdministrators;
+    }
+
+    /** @return Resource collection API of GlobalAdministrators. */
+    public GlobalAdministrators globalAdministrators() {
+        if (this.globalAdministrators == null) {
+            this.globalAdministrators = new GlobalAdministratorsImpl(clientObject.getGlobalAdministrators(), this);
+        }
+        return globalAdministrators;
+    }
+
+    /** @return Resource collection API of ProviderOperationsMetadatas. */
+    public ProviderOperationsMetadatas providerOperationsMetadatas() {
+        if (this.providerOperationsMetadatas == null) {
+            this.providerOperationsMetadatas =
+                new ProviderOperationsMetadatasImpl(clientObject.getProviderOperationsMetadatas(), this);
+        }
+        return providerOperationsMetadatas;
+    }
+
     /** @return Resource collection API of RoleAssignments. */
     public RoleAssignments roleAssignments() {
         if (this.roleAssignments == null) {
             this.roleAssignments = new RoleAssignmentsImpl(clientObject.getRoleAssignments(), this);
         }
         return roleAssignments;
+    }
+
+    /** @return Resource collection API of Permissions. */
+    public Permissions permissions() {
+        if (this.permissions == null) {
+            this.permissions = new PermissionsImpl(clientObject.getPermissions(), this);
+        }
+        return permissions;
+    }
+
+    /** @return Resource collection API of RoleDefinitions. */
+    public RoleDefinitions roleDefinitions() {
+        if (this.roleDefinitions == null) {
+            this.roleDefinitions = new RoleDefinitionsImpl(clientObject.getRoleDefinitions(), this);
+        }
+        return roleDefinitions;
+    }
+
+    /** @return Resource collection API of DenyAssignments. */
+    public DenyAssignments denyAssignments() {
+        if (this.denyAssignments == null) {
+            this.denyAssignments = new DenyAssignmentsImpl(clientObject.getDenyAssignments(), this);
+        }
+        return denyAssignments;
     }
 
     /**

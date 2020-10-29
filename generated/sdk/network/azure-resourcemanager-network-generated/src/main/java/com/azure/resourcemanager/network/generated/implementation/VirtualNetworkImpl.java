@@ -234,13 +234,38 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
         return this;
     }
 
-    public VirtualNetworkImpl withIpAllocations(List<SubResource> ipAllocations) {
-        this.innerModel().withIpAllocations(ipAllocations);
+    public VirtualNetworkImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
-    public VirtualNetworkImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
+    public VirtualNetworkImpl withTags(Map<String, String> tags) {
+        if (isInCreateMode()) {
+            this.innerModel().withTags(tags);
+            return this;
+        } else {
+            this.updateParameters.withTags(tags);
+            return this;
+        }
+    }
+
+    public VirtualNetworkImpl withAddressSpace(AddressSpace addressSpace) {
+        this.innerModel().withAddressSpace(addressSpace);
+        return this;
+    }
+
+    public VirtualNetworkImpl withDhcpOptions(DhcpOptions dhcpOptions) {
+        this.innerModel().withDhcpOptions(dhcpOptions);
+        return this;
+    }
+
+    public VirtualNetworkImpl withSubnets(List<SubnetInner> subnets) {
+        this.innerModel().withSubnets(subnets);
+        return this;
+    }
+
+    public VirtualNetworkImpl withVirtualNetworkPeerings(List<VirtualNetworkPeeringInner> virtualNetworkPeerings) {
+        this.innerModel().withVirtualNetworkPeerings(virtualNetworkPeerings);
         return this;
     }
 
@@ -254,31 +279,6 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
         return this;
     }
 
-    public VirtualNetworkImpl withSubnets(List<SubnetInner> subnets) {
-        this.innerModel().withSubnets(subnets);
-        return this;
-    }
-
-    public VirtualNetworkImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
-    public VirtualNetworkImpl withVirtualNetworkPeerings(List<VirtualNetworkPeeringInner> virtualNetworkPeerings) {
-        this.innerModel().withVirtualNetworkPeerings(virtualNetworkPeerings);
-        return this;
-    }
-
-    public VirtualNetworkImpl withAddressSpace(AddressSpace addressSpace) {
-        this.innerModel().withAddressSpace(addressSpace);
-        return this;
-    }
-
-    public VirtualNetworkImpl withDhcpOptions(DhcpOptions dhcpOptions) {
-        this.innerModel().withDhcpOptions(dhcpOptions);
-        return this;
-    }
-
     public VirtualNetworkImpl withDdosProtectionPlan(SubResource ddosProtectionPlan) {
         this.innerModel().withDdosProtectionPlan(ddosProtectionPlan);
         return this;
@@ -289,14 +289,14 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
         return this;
     }
 
-    public VirtualNetworkImpl withTags(Map<String, String> tags) {
-        if (isInCreateMode()) {
-            this.innerModel().withTags(tags);
-            return this;
-        } else {
-            this.updateParameters.withTags(tags);
-            return this;
-        }
+    public VirtualNetworkImpl withIpAllocations(List<SubResource> ipAllocations) {
+        this.innerModel().withIpAllocations(ipAllocations);
+        return this;
+    }
+
+    public VirtualNetworkImpl withId(String id) {
+        this.innerModel().withId(id);
+        return this;
     }
 
     private boolean isInCreateMode() {

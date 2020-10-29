@@ -96,9 +96,9 @@ public final class DdosCustomPolicyImpl
 
     private String resourceGroupName;
 
-    private TagsObject updateParameters;
-
     private String ddosCustomPolicyName;
+
+    private TagsObject updateParameters;
 
     public DdosCustomPolicyImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -181,6 +181,16 @@ public final class DdosCustomPolicyImpl
         return this;
     }
 
+    public DdosCustomPolicyImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
+    public DdosCustomPolicyImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
+    }
+
     public DdosCustomPolicyImpl withTags(Map<String, String> tags) {
         if (isInCreateMode()) {
             this.innerModel().withTags(tags);
@@ -191,23 +201,13 @@ public final class DdosCustomPolicyImpl
         }
     }
 
-    public DdosCustomPolicyImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public DdosCustomPolicyImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
+    public DdosCustomPolicyImpl withProtocolCustomSettings(List<ProtocolCustomSettingsFormat> protocolCustomSettings) {
+        this.innerModel().withProtocolCustomSettings(protocolCustomSettings);
         return this;
     }
 
     public DdosCustomPolicyImpl withId(String id) {
         this.innerModel().withId(id);
-        return this;
-    }
-
-    public DdosCustomPolicyImpl withProtocolCustomSettings(List<ProtocolCustomSettingsFormat> protocolCustomSettings) {
-        this.innerModel().withProtocolCustomSettings(protocolCustomSettings);
         return this;
     }
 

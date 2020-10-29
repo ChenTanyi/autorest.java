@@ -157,9 +157,9 @@ public final class ExpressRouteCircuitImpl
 
     private String resourceGroupName;
 
-    private TagsObject updateParameters;
-
     private String circuitName;
+
+    private TagsObject updateParameters;
 
     public ExpressRouteCircuitImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -242,34 +242,13 @@ public final class ExpressRouteCircuitImpl
         return this;
     }
 
-    public ExpressRouteCircuitImpl withAuthorizations(List<ExpressRouteCircuitAuthorizationInner> authorizations) {
-        this.innerModel().withAuthorizations(authorizations);
+    public ExpressRouteCircuitImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
         return this;
     }
 
-    public ExpressRouteCircuitImpl withExpressRoutePort(SubResource expressRoutePort) {
-        this.innerModel().withExpressRoutePort(expressRoutePort);
-        return this;
-    }
-
-    public ExpressRouteCircuitImpl withServiceKey(String serviceKey) {
-        this.innerModel().withServiceKey(serviceKey);
-        return this;
-    }
-
-    public ExpressRouteCircuitImpl withServiceProviderProvisioningState(
-        ServiceProviderProvisioningState serviceProviderProvisioningState) {
-        this.innerModel().withServiceProviderProvisioningState(serviceProviderProvisioningState);
-        return this;
-    }
-
-    public ExpressRouteCircuitImpl withAllowClassicOperations(Boolean allowClassicOperations) {
-        this.innerModel().withAllowClassicOperations(allowClassicOperations);
-        return this;
-    }
-
-    public ExpressRouteCircuitImpl withId(String id) {
-        this.innerModel().withId(id);
+    public ExpressRouteCircuitImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
@@ -283,24 +262,13 @@ public final class ExpressRouteCircuitImpl
         }
     }
 
-    public ExpressRouteCircuitImpl withServiceProviderProperties(
-        ExpressRouteCircuitServiceProviderProperties serviceProviderProperties) {
-        this.innerModel().withServiceProviderProperties(serviceProviderProperties);
+    public ExpressRouteCircuitImpl withSku(ExpressRouteCircuitSku sku) {
+        this.innerModel().withSku(sku);
         return this;
     }
 
-    public ExpressRouteCircuitImpl withPeerings(List<ExpressRouteCircuitPeeringInner> peerings) {
-        this.innerModel().withPeerings(peerings);
-        return this;
-    }
-
-    public ExpressRouteCircuitImpl withGatewayManagerEtag(String gatewayManagerEtag) {
-        this.innerModel().withGatewayManagerEtag(gatewayManagerEtag);
-        return this;
-    }
-
-    public ExpressRouteCircuitImpl withServiceProviderNotes(String serviceProviderNotes) {
-        this.innerModel().withServiceProviderNotes(serviceProviderNotes);
+    public ExpressRouteCircuitImpl withAllowClassicOperations(Boolean allowClassicOperations) {
+        this.innerModel().withAllowClassicOperations(allowClassicOperations);
         return this;
     }
 
@@ -309,8 +277,40 @@ public final class ExpressRouteCircuitImpl
         return this;
     }
 
-    public ExpressRouteCircuitImpl withGlobalReachEnabled(Boolean globalReachEnabled) {
-        this.innerModel().withGlobalReachEnabled(globalReachEnabled);
+    public ExpressRouteCircuitImpl withServiceProviderProvisioningState(
+        ServiceProviderProvisioningState serviceProviderProvisioningState) {
+        this.innerModel().withServiceProviderProvisioningState(serviceProviderProvisioningState);
+        return this;
+    }
+
+    public ExpressRouteCircuitImpl withAuthorizations(List<ExpressRouteCircuitAuthorizationInner> authorizations) {
+        this.innerModel().withAuthorizations(authorizations);
+        return this;
+    }
+
+    public ExpressRouteCircuitImpl withPeerings(List<ExpressRouteCircuitPeeringInner> peerings) {
+        this.innerModel().withPeerings(peerings);
+        return this;
+    }
+
+    public ExpressRouteCircuitImpl withServiceKey(String serviceKey) {
+        this.innerModel().withServiceKey(serviceKey);
+        return this;
+    }
+
+    public ExpressRouteCircuitImpl withServiceProviderNotes(String serviceProviderNotes) {
+        this.innerModel().withServiceProviderNotes(serviceProviderNotes);
+        return this;
+    }
+
+    public ExpressRouteCircuitImpl withServiceProviderProperties(
+        ExpressRouteCircuitServiceProviderProperties serviceProviderProperties) {
+        this.innerModel().withServiceProviderProperties(serviceProviderProperties);
+        return this;
+    }
+
+    public ExpressRouteCircuitImpl withExpressRoutePort(SubResource expressRoutePort) {
+        this.innerModel().withExpressRoutePort(expressRoutePort);
         return this;
     }
 
@@ -319,18 +319,18 @@ public final class ExpressRouteCircuitImpl
         return this;
     }
 
-    public ExpressRouteCircuitImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
+    public ExpressRouteCircuitImpl withGatewayManagerEtag(String gatewayManagerEtag) {
+        this.innerModel().withGatewayManagerEtag(gatewayManagerEtag);
         return this;
     }
 
-    public ExpressRouteCircuitImpl withSku(ExpressRouteCircuitSku sku) {
-        this.innerModel().withSku(sku);
+    public ExpressRouteCircuitImpl withGlobalReachEnabled(Boolean globalReachEnabled) {
+        this.innerModel().withGlobalReachEnabled(globalReachEnabled);
         return this;
     }
 
-    public ExpressRouteCircuitImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
+    public ExpressRouteCircuitImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 

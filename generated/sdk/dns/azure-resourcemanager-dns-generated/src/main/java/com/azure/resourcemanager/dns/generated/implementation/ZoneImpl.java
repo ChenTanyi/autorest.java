@@ -105,17 +105,17 @@ public final class ZoneImpl implements Zone, Zone.Definition, Zone.Update {
         return this.serviceManager;
     }
 
-    private String createIfMatch;
-
-    private String updateIfMatch;
-
     private String resourceGroupName;
 
-    private ZoneUpdate updateParameters;
+    private String zoneName;
+
+    private String createIfMatch;
 
     private String createIfNoneMatch;
 
-    private String zoneName;
+    private String updateIfMatch;
+
+    private ZoneUpdate updateParameters;
 
     public ZoneImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -205,18 +205,13 @@ public final class ZoneImpl implements Zone, Zone.Definition, Zone.Update {
         return this;
     }
 
-    public ZoneImpl withIfNoneMatch(String ifNoneMatch) {
-        this.createIfNoneMatch = ifNoneMatch;
+    public ZoneImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
         return this;
     }
 
     public ZoneImpl withRegion(String location) {
         this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public ZoneImpl withResolutionVirtualNetworks(List<SubResource> resolutionVirtualNetworks) {
-        this.innerModel().withResolutionVirtualNetworks(resolutionVirtualNetworks);
         return this;
     }
 
@@ -230,8 +225,23 @@ public final class ZoneImpl implements Zone, Zone.Definition, Zone.Update {
         }
     }
 
+    public ZoneImpl withEtag(String etag) {
+        this.innerModel().withEtag(etag);
+        return this;
+    }
+
+    public ZoneImpl withZoneType(ZoneType zoneType) {
+        this.innerModel().withZoneType(zoneType);
+        return this;
+    }
+
     public ZoneImpl withRegistrationVirtualNetworks(List<SubResource> registrationVirtualNetworks) {
         this.innerModel().withRegistrationVirtualNetworks(registrationVirtualNetworks);
+        return this;
+    }
+
+    public ZoneImpl withResolutionVirtualNetworks(List<SubResource> resolutionVirtualNetworks) {
+        this.innerModel().withResolutionVirtualNetworks(resolutionVirtualNetworks);
         return this;
     }
 
@@ -245,18 +255,8 @@ public final class ZoneImpl implements Zone, Zone.Definition, Zone.Update {
         }
     }
 
-    public ZoneImpl withZoneType(ZoneType zoneType) {
-        this.innerModel().withZoneType(zoneType);
-        return this;
-    }
-
-    public ZoneImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
-    public ZoneImpl withEtag(String etag) {
-        this.innerModel().withEtag(etag);
+    public ZoneImpl withIfNoneMatch(String ifNoneMatch) {
+        this.createIfNoneMatch = ifNoneMatch;
         return this;
     }
 

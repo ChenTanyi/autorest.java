@@ -194,6 +194,11 @@ public final class RouteTableImpl implements RouteTable, RouteTable.Definition, 
         return this;
     }
 
+    public RouteTableImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
+    }
+
     public RouteTableImpl withTags(Map<String, String> tags) {
         if (isInCreateMode()) {
             this.innerModel().withTags(tags);
@@ -204,18 +209,13 @@ public final class RouteTableImpl implements RouteTable, RouteTable.Definition, 
         }
     }
 
-    public RouteTableImpl withDisableBgpRoutePropagation(Boolean disableBgpRoutePropagation) {
-        this.innerModel().withDisableBgpRoutePropagation(disableBgpRoutePropagation);
-        return this;
-    }
-
-    public RouteTableImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
     public RouteTableImpl withRoutes(List<RouteInner> routes) {
         this.innerModel().withRoutes(routes);
+        return this;
+    }
+
+    public RouteTableImpl withDisableBgpRoutePropagation(Boolean disableBgpRoutePropagation) {
+        this.innerModel().withDisableBgpRoutePropagation(disableBgpRoutePropagation);
         return this;
     }
 

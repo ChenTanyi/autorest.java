@@ -138,13 +138,13 @@ public final class IdentifierImpl implements Identifier, Identifier.Definition, 
         return this;
     }
 
-    public IdentifierImpl withValue(String value) {
-        this.innerModel().withValue(value);
+    public IdentifierImpl withKind(String kind) {
+        this.innerModel().withKind(kind);
         return this;
     }
 
-    public IdentifierImpl withKind(String kind) {
-        this.innerModel().withKind(kind);
+    public IdentifierImpl withValue(String value) {
+        this.innerModel().withValue(value);
         return this;
     }
 }

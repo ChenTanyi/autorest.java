@@ -146,9 +146,9 @@ public final class VirtualNetworkGatewayImpl
 
     private String resourceGroupName;
 
-    private TagsObject updateParameters;
-
     private String virtualNetworkGatewayName;
+
+    private TagsObject updateParameters;
 
     public VirtualNetworkGatewayImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -229,58 +229,13 @@ public final class VirtualNetworkGatewayImpl
         return this;
     }
 
-    public VirtualNetworkGatewayImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
-    public VirtualNetworkGatewayImpl withCustomRoutes(AddressSpace customRoutes) {
-        this.innerModel().withCustomRoutes(customRoutes);
-        return this;
-    }
-
-    public VirtualNetworkGatewayImpl withVpnClientConfiguration(VpnClientConfiguration vpnClientConfiguration) {
-        this.innerModel().withVpnClientConfiguration(vpnClientConfiguration);
-        return this;
-    }
-
-    public VirtualNetworkGatewayImpl withIpConfigurations(List<VirtualNetworkGatewayIpConfiguration> ipConfigurations) {
-        this.innerModel().withIpConfigurations(ipConfigurations);
-        return this;
-    }
-
-    public VirtualNetworkGatewayImpl withBgpSettings(BgpSettings bgpSettings) {
-        this.innerModel().withBgpSettings(bgpSettings);
-        return this;
-    }
-
-    public VirtualNetworkGatewayImpl withSku(VirtualNetworkGatewaySku sku) {
-        this.innerModel().withSku(sku);
-        return this;
-    }
-
-    public VirtualNetworkGatewayImpl withActive(Boolean active) {
-        this.innerModel().withActive(active);
-        return this;
-    }
-
-    public VirtualNetworkGatewayImpl withGatewayType(VirtualNetworkGatewayType gatewayType) {
-        this.innerModel().withGatewayType(gatewayType);
-        return this;
-    }
-
-    public VirtualNetworkGatewayImpl withVpnGatewayGeneration(VpnGatewayGeneration vpnGatewayGeneration) {
-        this.innerModel().withVpnGatewayGeneration(vpnGatewayGeneration);
-        return this;
-    }
-
     public VirtualNetworkGatewayImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;
     }
 
-    public VirtualNetworkGatewayImpl withGatewayDefaultSite(SubResource gatewayDefaultSite) {
-        this.innerModel().withGatewayDefaultSite(gatewayDefaultSite);
+    public VirtualNetworkGatewayImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
@@ -294,13 +249,13 @@ public final class VirtualNetworkGatewayImpl
         }
     }
 
-    public VirtualNetworkGatewayImpl withEnablePrivateIpAddress(Boolean enablePrivateIpAddress) {
-        this.innerModel().withEnablePrivateIpAddress(enablePrivateIpAddress);
+    public VirtualNetworkGatewayImpl withIpConfigurations(List<VirtualNetworkGatewayIpConfiguration> ipConfigurations) {
+        this.innerModel().withIpConfigurations(ipConfigurations);
         return this;
     }
 
-    public VirtualNetworkGatewayImpl withEnableBgp(Boolean enableBgp) {
-        this.innerModel().withEnableBgp(enableBgp);
+    public VirtualNetworkGatewayImpl withGatewayType(VirtualNetworkGatewayType gatewayType) {
+        this.innerModel().withGatewayType(gatewayType);
         return this;
     }
 
@@ -309,13 +264,58 @@ public final class VirtualNetworkGatewayImpl
         return this;
     }
 
-    public VirtualNetworkGatewayImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
+    public VirtualNetworkGatewayImpl withVpnGatewayGeneration(VpnGatewayGeneration vpnGatewayGeneration) {
+        this.innerModel().withVpnGatewayGeneration(vpnGatewayGeneration);
+        return this;
+    }
+
+    public VirtualNetworkGatewayImpl withEnableBgp(Boolean enableBgp) {
+        this.innerModel().withEnableBgp(enableBgp);
+        return this;
+    }
+
+    public VirtualNetworkGatewayImpl withEnablePrivateIpAddress(Boolean enablePrivateIpAddress) {
+        this.innerModel().withEnablePrivateIpAddress(enablePrivateIpAddress);
+        return this;
+    }
+
+    public VirtualNetworkGatewayImpl withActive(Boolean active) {
+        this.innerModel().withActive(active);
+        return this;
+    }
+
+    public VirtualNetworkGatewayImpl withGatewayDefaultSite(SubResource gatewayDefaultSite) {
+        this.innerModel().withGatewayDefaultSite(gatewayDefaultSite);
+        return this;
+    }
+
+    public VirtualNetworkGatewayImpl withSku(VirtualNetworkGatewaySku sku) {
+        this.innerModel().withSku(sku);
+        return this;
+    }
+
+    public VirtualNetworkGatewayImpl withVpnClientConfiguration(VpnClientConfiguration vpnClientConfiguration) {
+        this.innerModel().withVpnClientConfiguration(vpnClientConfiguration);
+        return this;
+    }
+
+    public VirtualNetworkGatewayImpl withBgpSettings(BgpSettings bgpSettings) {
+        this.innerModel().withBgpSettings(bgpSettings);
+        return this;
+    }
+
+    public VirtualNetworkGatewayImpl withCustomRoutes(AddressSpace customRoutes) {
+        this.innerModel().withCustomRoutes(customRoutes);
         return this;
     }
 
     public VirtualNetworkGatewayImpl withEnableDnsForwarding(Boolean enableDnsForwarding) {
         this.innerModel().withEnableDnsForwarding(enableDnsForwarding);
+        return this;
+    }
+
+    public VirtualNetworkGatewayImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 

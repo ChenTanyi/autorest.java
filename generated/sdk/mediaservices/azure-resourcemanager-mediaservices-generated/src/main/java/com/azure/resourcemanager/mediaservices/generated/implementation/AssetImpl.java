@@ -159,6 +159,11 @@ public final class AssetImpl implements Asset, Asset.Definition, Asset.Update {
         return this;
     }
 
+    public AssetImpl withAlternateId(String alternateId) {
+        this.innerModel().withAlternateId(alternateId);
+        return this;
+    }
+
     public AssetImpl withDescription(String description) {
         this.innerModel().withDescription(description);
         return this;
@@ -166,11 +171,6 @@ public final class AssetImpl implements Asset, Asset.Definition, Asset.Update {
 
     public AssetImpl withContainer(String container) {
         this.innerModel().withContainer(container);
-        return this;
-    }
-
-    public AssetImpl withAlternateId(String alternateId) {
-        this.innerModel().withAlternateId(alternateId);
         return this;
     }
 

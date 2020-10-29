@@ -101,9 +101,9 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
         return this.serviceManager;
     }
 
-    private String customIpPrefixName;
-
     private String resourceGroupName;
+
+    private String customIpPrefixName;
 
     private TagsObject updateParameters;
 
@@ -190,23 +190,13 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
         return this;
     }
 
+    public CustomIpPrefixImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
     public CustomIpPrefixImpl withRegion(String location) {
         this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public CustomIpPrefixImpl withCidr(String cidr) {
-        this.innerModel().withCidr(cidr);
-        return this;
-    }
-
-    public CustomIpPrefixImpl withZones(List<String> zones) {
-        this.innerModel().withZones(zones);
-        return this;
-    }
-
-    public CustomIpPrefixImpl withId(String id) {
-        this.innerModel().withId(id);
         return this;
     }
 
@@ -220,13 +210,23 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
         }
     }
 
-    public CustomIpPrefixImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
+    public CustomIpPrefixImpl withZones(List<String> zones) {
+        this.innerModel().withZones(zones);
+        return this;
+    }
+
+    public CustomIpPrefixImpl withCidr(String cidr) {
+        this.innerModel().withCidr(cidr);
         return this;
     }
 
     public CustomIpPrefixImpl withCommissionedState(CommissionedState commissionedState) {
         this.innerModel().withCommissionedState(commissionedState);
+        return this;
+    }
+
+    public CustomIpPrefixImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 

@@ -100,11 +100,11 @@ public final class ShareImpl implements Share, Share.Definition, Share.Update {
         return this.serviceManager;
     }
 
-    private String resourceGroupName;
+    private String deviceName;
 
     private String name;
 
-    private String deviceName;
+    private String resourceGroupName;
 
     public ShareImpl withExistingDataBoxEdgeDevice(String deviceName, String name) {
         this.deviceName = deviceName;
@@ -186,8 +186,18 @@ public final class ShareImpl implements Share, Share.Definition, Share.Update {
         return this;
     }
 
+    public ShareImpl withShareStatus(ShareStatus shareStatus) {
+        this.innerModel().withShareStatus(shareStatus);
+        return this;
+    }
+
     public ShareImpl withMonitoringStatus(MonitoringStatus monitoringStatus) {
         this.innerModel().withMonitoringStatus(monitoringStatus);
+        return this;
+    }
+
+    public ShareImpl withAccessProtocol(ShareAccessProtocol accessProtocol) {
+        this.innerModel().withAccessProtocol(accessProtocol);
         return this;
     }
 
@@ -196,8 +206,8 @@ public final class ShareImpl implements Share, Share.Definition, Share.Update {
         return this;
     }
 
-    public ShareImpl withShareStatus(ShareStatus shareStatus) {
-        this.innerModel().withShareStatus(shareStatus);
+    public ShareImpl withAzureContainerInfo(AzureContainerInfo azureContainerInfo) {
+        this.innerModel().withAzureContainerInfo(azureContainerInfo);
         return this;
     }
 
@@ -206,13 +216,8 @@ public final class ShareImpl implements Share, Share.Definition, Share.Update {
         return this;
     }
 
-    public ShareImpl withAzureContainerInfo(AzureContainerInfo azureContainerInfo) {
-        this.innerModel().withAzureContainerInfo(azureContainerInfo);
-        return this;
-    }
-
-    public ShareImpl withDataPolicy(DataPolicy dataPolicy) {
-        this.innerModel().withDataPolicy(dataPolicy);
+    public ShareImpl withClientAccessRights(List<ClientAccessRight> clientAccessRights) {
+        this.innerModel().withClientAccessRights(clientAccessRights);
         return this;
     }
 
@@ -221,13 +226,8 @@ public final class ShareImpl implements Share, Share.Definition, Share.Update {
         return this;
     }
 
-    public ShareImpl withClientAccessRights(List<ClientAccessRight> clientAccessRights) {
-        this.innerModel().withClientAccessRights(clientAccessRights);
-        return this;
-    }
-
-    public ShareImpl withAccessProtocol(ShareAccessProtocol accessProtocol) {
-        this.innerModel().withAccessProtocol(accessProtocol);
+    public ShareImpl withDataPolicy(DataPolicy dataPolicy) {
+        this.innerModel().withDataPolicy(dataPolicy);
         return this;
     }
 }

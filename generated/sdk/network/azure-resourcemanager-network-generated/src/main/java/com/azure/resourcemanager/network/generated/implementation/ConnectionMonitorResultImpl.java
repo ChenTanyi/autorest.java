@@ -147,15 +147,15 @@ public final class ConnectionMonitorResultImpl
         return this.serviceManager;
     }
 
-    private ConnectionMonitor createParameters;
-
     private String resourceGroupName;
 
     private String networkWatcherName;
 
-    private TagsObject updateParameters;
-
     private String connectionMonitorName;
+
+    private ConnectionMonitor createParameters;
+
+    private TagsObject updateParameters;
 
     public ConnectionMonitorResultImpl withExistingNetworkWatcher(String resourceGroupName, String networkWatcherName) {
         this.resourceGroupName = resourceGroupName;
@@ -245,54 +245,13 @@ public final class ConnectionMonitorResultImpl
         return this;
     }
 
-    public ConnectionMonitorResultImpl withRegion(String location) {
-        this.createParameters.withLocation(location);
-        return this;
-    }
-
-    public ConnectionMonitorResultImpl withSource(ConnectionMonitorSource source) {
-        this.createParameters.withSource(source);
-        return this;
-    }
-
-    public ConnectionMonitorResultImpl withOutputs(List<ConnectionMonitorOutput> outputs) {
-        this.createParameters.withOutputs(outputs);
-        return this;
-    }
-
-    public ConnectionMonitorResultImpl withEndpoints(List<ConnectionMonitorEndpoint> endpoints) {
-        this.createParameters.withEndpoints(endpoints);
-        return this;
-    }
-
-    public ConnectionMonitorResultImpl withDestination(ConnectionMonitorDestination destination) {
-        this.createParameters.withDestination(destination);
-        return this;
-    }
-
     public ConnectionMonitorResultImpl withRegion(Region location) {
         this.createParameters.withLocation(location.toString());
         return this;
     }
 
-    public ConnectionMonitorResultImpl withAutoStart(Boolean autoStart) {
-        this.createParameters.withAutoStart(autoStart);
-        return this;
-    }
-
-    public ConnectionMonitorResultImpl withTestConfigurations(
-        List<ConnectionMonitorTestConfiguration> testConfigurations) {
-        this.createParameters.withTestConfigurations(testConfigurations);
-        return this;
-    }
-
-    public ConnectionMonitorResultImpl withMonitoringIntervalInSeconds(Integer monitoringIntervalInSeconds) {
-        this.createParameters.withMonitoringIntervalInSeconds(monitoringIntervalInSeconds);
-        return this;
-    }
-
-    public ConnectionMonitorResultImpl withTestGroups(List<ConnectionMonitorTestGroup> testGroups) {
-        this.createParameters.withTestGroups(testGroups);
+    public ConnectionMonitorResultImpl withRegion(String location) {
+        this.createParameters.withLocation(location);
         return this;
     }
 
@@ -304,6 +263,47 @@ public final class ConnectionMonitorResultImpl
             this.updateParameters.withTags(tags);
             return this;
         }
+    }
+
+    public ConnectionMonitorResultImpl withSource(ConnectionMonitorSource source) {
+        this.createParameters.withSource(source);
+        return this;
+    }
+
+    public ConnectionMonitorResultImpl withDestination(ConnectionMonitorDestination destination) {
+        this.createParameters.withDestination(destination);
+        return this;
+    }
+
+    public ConnectionMonitorResultImpl withAutoStart(Boolean autoStart) {
+        this.createParameters.withAutoStart(autoStart);
+        return this;
+    }
+
+    public ConnectionMonitorResultImpl withMonitoringIntervalInSeconds(Integer monitoringIntervalInSeconds) {
+        this.createParameters.withMonitoringIntervalInSeconds(monitoringIntervalInSeconds);
+        return this;
+    }
+
+    public ConnectionMonitorResultImpl withEndpoints(List<ConnectionMonitorEndpoint> endpoints) {
+        this.createParameters.withEndpoints(endpoints);
+        return this;
+    }
+
+    public ConnectionMonitorResultImpl withTestConfigurations(
+        List<ConnectionMonitorTestConfiguration> testConfigurations) {
+        this.createParameters.withTestConfigurations(testConfigurations);
+        return this;
+    }
+
+    public ConnectionMonitorResultImpl withTestGroups(List<ConnectionMonitorTestGroup> testGroups) {
+        this.createParameters.withTestGroups(testGroups);
+        return this;
+    }
+
+    public ConnectionMonitorResultImpl withOutputs(List<ConnectionMonitorOutput> outputs) {
+        this.createParameters.withOutputs(outputs);
+        return this;
     }
 
     public ConnectionMonitorResultImpl withNotes(String notes) {

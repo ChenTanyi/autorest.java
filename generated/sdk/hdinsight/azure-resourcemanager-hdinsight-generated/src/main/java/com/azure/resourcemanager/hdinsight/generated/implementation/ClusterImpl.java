@@ -75,11 +75,11 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
         return this.serviceManager;
     }
 
-    private ClusterCreateParametersExtended createParameters;
-
     private String resourceGroupName;
 
     private String clusterName;
+
+    private ClusterCreateParametersExtended createParameters;
 
     private ClusterPatchParameters updateParameters;
 
@@ -165,6 +165,11 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
         return this;
     }
 
+    public ClusterImpl withRegion(Region location) {
+        this.createParameters.withLocation(location.toString());
+        return this;
+    }
+
     public ClusterImpl withRegion(String location) {
         this.createParameters.withLocation(location);
         return this;
@@ -182,11 +187,6 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
 
     public ClusterImpl withProperties(ClusterCreateProperties properties) {
         this.createParameters.withProperties(properties);
-        return this;
-    }
-
-    public ClusterImpl withRegion(Region location) {
-        this.createParameters.withLocation(location.toString());
         return this;
     }
 

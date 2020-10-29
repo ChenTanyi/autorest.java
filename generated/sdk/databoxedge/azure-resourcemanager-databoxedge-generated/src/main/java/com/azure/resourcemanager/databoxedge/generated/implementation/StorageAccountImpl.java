@@ -60,11 +60,11 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this.serviceManager;
     }
 
-    private String resourceGroupName;
+    private String deviceName;
 
     private String storageAccountName;
 
-    private String deviceName;
+    private String resourceGroupName;
 
     public StorageAccountImpl withExistingDataBoxEdgeDevice(String deviceName, String storageAccountName) {
         this.deviceName = deviceName;
@@ -146,6 +146,11 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this;
     }
 
+    public StorageAccountImpl withDescription(String description) {
+        this.innerModel().withDescription(description);
+        return this;
+    }
+
     public StorageAccountImpl withStorageAccountStatus(StorageAccountStatus storageAccountStatus) {
         this.innerModel().withStorageAccountStatus(storageAccountStatus);
         return this;
@@ -158,11 +163,6 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
 
     public StorageAccountImpl withStorageAccountCredentialId(String storageAccountCredentialId) {
         this.innerModel().withStorageAccountCredentialId(storageAccountCredentialId);
-        return this;
-    }
-
-    public StorageAccountImpl withDescription(String description) {
-        this.innerModel().withDescription(description);
         return this;
     }
 }

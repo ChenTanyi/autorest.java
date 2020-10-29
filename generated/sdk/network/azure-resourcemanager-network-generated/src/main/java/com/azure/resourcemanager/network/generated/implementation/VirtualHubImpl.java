@@ -168,9 +168,9 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
         return this.serviceManager;
     }
 
-    private String virtualHubName;
-
     private String resourceGroupName;
+
+    private String virtualHubName;
 
     private TagsObject updateVirtualHubParameters;
 
@@ -255,83 +255,13 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
         return this;
     }
 
-    public VirtualHubImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
-    public VirtualHubImpl withVirtualHubRouteTableV2S(List<VirtualHubRouteTableV2Inner> virtualHubRouteTableV2S) {
-        this.innerModel().withVirtualHubRouteTableV2S(virtualHubRouteTableV2S);
-        return this;
-    }
-
-    public VirtualHubImpl withVirtualRouterIps(List<String> virtualRouterIps) {
-        this.innerModel().withVirtualRouterIps(virtualRouterIps);
-        return this;
-    }
-
-    public VirtualHubImpl withP2SVpnGateway(SubResource p2SVpnGateway) {
-        this.innerModel().withP2SVpnGateway(p2SVpnGateway);
-        return this;
-    }
-
-    public VirtualHubImpl withVpnGateway(SubResource vpnGateway) {
-        this.innerModel().withVpnGateway(vpnGateway);
-        return this;
-    }
-
-    public VirtualHubImpl withVirtualRouterAsn(Long virtualRouterAsn) {
-        this.innerModel().withVirtualRouterAsn(virtualRouterAsn);
-        return this;
-    }
-
-    public VirtualHubImpl withRouteTable(VirtualHubRouteTable routeTable) {
-        this.innerModel().withRouteTable(routeTable);
-        return this;
-    }
-
-    public VirtualHubImpl withSku(String sku) {
-        this.innerModel().withSku(sku);
-        return this;
-    }
-
-    public VirtualHubImpl withSecurityPartnerProvider(SubResource securityPartnerProvider) {
-        this.innerModel().withSecurityPartnerProvider(securityPartnerProvider);
-        return this;
-    }
-
-    public VirtualHubImpl withExpressRouteGateway(SubResource expressRouteGateway) {
-        this.innerModel().withExpressRouteGateway(expressRouteGateway);
-        return this;
-    }
-
-    public VirtualHubImpl withVirtualWan(SubResource virtualWan) {
-        this.innerModel().withVirtualWan(virtualWan);
-        return this;
-    }
-
-    public VirtualHubImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
     public VirtualHubImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;
     }
 
-    public VirtualHubImpl withAddressPrefix(String addressPrefix) {
-        this.innerModel().withAddressPrefix(addressPrefix);
-        return this;
-    }
-
-    public VirtualHubImpl withAzureFirewall(SubResource azureFirewall) {
-        this.innerModel().withAzureFirewall(azureFirewall);
-        return this;
-    }
-
-    public VirtualHubImpl withEnableVirtualRouterRoutePropogation(Boolean enableVirtualRouterRoutePropogation) {
-        this.innerModel().withEnableVirtualRouterRoutePropogation(enableVirtualRouterRoutePropogation);
+    public VirtualHubImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
@@ -345,8 +275,78 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
         }
     }
 
+    public VirtualHubImpl withVirtualWan(SubResource virtualWan) {
+        this.innerModel().withVirtualWan(virtualWan);
+        return this;
+    }
+
+    public VirtualHubImpl withVpnGateway(SubResource vpnGateway) {
+        this.innerModel().withVpnGateway(vpnGateway);
+        return this;
+    }
+
+    public VirtualHubImpl withP2SVpnGateway(SubResource p2SVpnGateway) {
+        this.innerModel().withP2SVpnGateway(p2SVpnGateway);
+        return this;
+    }
+
+    public VirtualHubImpl withExpressRouteGateway(SubResource expressRouteGateway) {
+        this.innerModel().withExpressRouteGateway(expressRouteGateway);
+        return this;
+    }
+
+    public VirtualHubImpl withAzureFirewall(SubResource azureFirewall) {
+        this.innerModel().withAzureFirewall(azureFirewall);
+        return this;
+    }
+
+    public VirtualHubImpl withSecurityPartnerProvider(SubResource securityPartnerProvider) {
+        this.innerModel().withSecurityPartnerProvider(securityPartnerProvider);
+        return this;
+    }
+
+    public VirtualHubImpl withAddressPrefix(String addressPrefix) {
+        this.innerModel().withAddressPrefix(addressPrefix);
+        return this;
+    }
+
+    public VirtualHubImpl withRouteTable(VirtualHubRouteTable routeTable) {
+        this.innerModel().withRouteTable(routeTable);
+        return this;
+    }
+
     public VirtualHubImpl withSecurityProviderName(String securityProviderName) {
         this.innerModel().withSecurityProviderName(securityProviderName);
+        return this;
+    }
+
+    public VirtualHubImpl withVirtualHubRouteTableV2S(List<VirtualHubRouteTableV2Inner> virtualHubRouteTableV2S) {
+        this.innerModel().withVirtualHubRouteTableV2S(virtualHubRouteTableV2S);
+        return this;
+    }
+
+    public VirtualHubImpl withSku(String sku) {
+        this.innerModel().withSku(sku);
+        return this;
+    }
+
+    public VirtualHubImpl withVirtualRouterAsn(Long virtualRouterAsn) {
+        this.innerModel().withVirtualRouterAsn(virtualRouterAsn);
+        return this;
+    }
+
+    public VirtualHubImpl withVirtualRouterIps(List<String> virtualRouterIps) {
+        this.innerModel().withVirtualRouterIps(virtualRouterIps);
+        return this;
+    }
+
+    public VirtualHubImpl withEnableVirtualRouterRoutePropogation(Boolean enableVirtualRouterRoutePropogation) {
+        this.innerModel().withEnableVirtualRouterRoutePropogation(enableVirtualRouterRoutePropogation);
+        return this;
+    }
+
+    public VirtualHubImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 

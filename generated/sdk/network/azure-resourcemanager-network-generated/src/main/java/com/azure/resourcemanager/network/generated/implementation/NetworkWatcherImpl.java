@@ -157,6 +157,11 @@ public final class NetworkWatcherImpl implements NetworkWatcher, NetworkWatcher.
         return this;
     }
 
+    public NetworkWatcherImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
     public NetworkWatcherImpl withRegion(String location) {
         this.innerModel().withLocation(location);
         return this;
@@ -170,11 +175,6 @@ public final class NetworkWatcherImpl implements NetworkWatcher, NetworkWatcher.
             this.updateParameters.withTags(tags);
             return this;
         }
-    }
-
-    public NetworkWatcherImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
     }
 
     public NetworkWatcherImpl withId(String id) {

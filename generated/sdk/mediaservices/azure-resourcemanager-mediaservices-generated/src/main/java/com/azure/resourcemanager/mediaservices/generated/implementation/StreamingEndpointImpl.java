@@ -223,18 +223,8 @@ public final class StreamingEndpointImpl
         return this;
     }
 
-    public StreamingEndpointImpl withCrossSiteAccessPolicies(CrossSiteAccessPolicies crossSiteAccessPolicies) {
-        this.innerModel().withCrossSiteAccessPolicies(crossSiteAccessPolicies);
-        return this;
-    }
-
-    public StreamingEndpointImpl withTags(Map<String, String> tags) {
-        this.innerModel().withTags(tags);
-        return this;
-    }
-
-    public StreamingEndpointImpl withCdnEnabled(Boolean cdnEnabled) {
-        this.innerModel().withCdnEnabled(cdnEnabled);
+    public StreamingEndpointImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
         return this;
     }
 
@@ -243,8 +233,8 @@ public final class StreamingEndpointImpl
         return this;
     }
 
-    public StreamingEndpointImpl withCdnProvider(String cdnProvider) {
-        this.innerModel().withCdnProvider(cdnProvider);
+    public StreamingEndpointImpl withTags(Map<String, String> tags) {
+        this.innerModel().withTags(tags);
         return this;
     }
 
@@ -253,23 +243,8 @@ public final class StreamingEndpointImpl
         return this;
     }
 
-    public StreamingEndpointImpl withMaxCacheAge(Long maxCacheAge) {
-        this.innerModel().withMaxCacheAge(maxCacheAge);
-        return this;
-    }
-
-    public StreamingEndpointImpl withAutoStart(Boolean autoStart) {
-        this.createAutoStart = autoStart;
-        return this;
-    }
-
     public StreamingEndpointImpl withScaleUnits(Integer scaleUnits) {
         this.innerModel().withScaleUnits(scaleUnits);
-        return this;
-    }
-
-    public StreamingEndpointImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
         return this;
     }
 
@@ -278,8 +253,28 @@ public final class StreamingEndpointImpl
         return this;
     }
 
+    public StreamingEndpointImpl withAccessControl(StreamingEndpointAccessControl accessControl) {
+        this.innerModel().withAccessControl(accessControl);
+        return this;
+    }
+
+    public StreamingEndpointImpl withMaxCacheAge(Long maxCacheAge) {
+        this.innerModel().withMaxCacheAge(maxCacheAge);
+        return this;
+    }
+
     public StreamingEndpointImpl withCustomHostNames(List<String> customHostNames) {
         this.innerModel().withCustomHostNames(customHostNames);
+        return this;
+    }
+
+    public StreamingEndpointImpl withCdnEnabled(Boolean cdnEnabled) {
+        this.innerModel().withCdnEnabled(cdnEnabled);
+        return this;
+    }
+
+    public StreamingEndpointImpl withCdnProvider(String cdnProvider) {
+        this.innerModel().withCdnProvider(cdnProvider);
         return this;
     }
 
@@ -288,8 +283,13 @@ public final class StreamingEndpointImpl
         return this;
     }
 
-    public StreamingEndpointImpl withAccessControl(StreamingEndpointAccessControl accessControl) {
-        this.innerModel().withAccessControl(accessControl);
+    public StreamingEndpointImpl withCrossSiteAccessPolicies(CrossSiteAccessPolicies crossSiteAccessPolicies) {
+        this.innerModel().withCrossSiteAccessPolicies(crossSiteAccessPolicies);
+        return this;
+    }
+
+    public StreamingEndpointImpl withAutoStart(Boolean autoStart) {
+        this.createAutoStart = autoStart;
         return this;
     }
 }

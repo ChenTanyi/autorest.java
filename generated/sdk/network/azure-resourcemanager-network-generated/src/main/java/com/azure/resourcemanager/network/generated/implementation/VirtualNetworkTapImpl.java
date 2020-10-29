@@ -204,32 +204,8 @@ public final class VirtualNetworkTapImpl
         return this;
     }
 
-    public VirtualNetworkTapImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
-    public VirtualNetworkTapImpl withDestinationLoadBalancerFrontEndIpConfiguration(
-        FrontendIpConfigurationInner destinationLoadBalancerFrontEndIpConfiguration) {
-        this
-            .innerModel()
-            .withDestinationLoadBalancerFrontEndIpConfiguration(destinationLoadBalancerFrontEndIpConfiguration);
-        return this;
-    }
-
-    public VirtualNetworkTapImpl withDestinationNetworkInterfaceIpConfiguration(
-        NetworkInterfaceIpConfigurationInner destinationNetworkInterfaceIpConfiguration) {
-        this.innerModel().withDestinationNetworkInterfaceIpConfiguration(destinationNetworkInterfaceIpConfiguration);
-        return this;
-    }
-
     public VirtualNetworkTapImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
-    public VirtualNetworkTapImpl withDestinationPort(Integer destinationPort) {
-        this.innerModel().withDestinationPort(destinationPort);
         return this;
     }
 
@@ -246,6 +222,30 @@ public final class VirtualNetworkTapImpl
             this.updateTapParameters.withTags(tags);
             return this;
         }
+    }
+
+    public VirtualNetworkTapImpl withDestinationNetworkInterfaceIpConfiguration(
+        NetworkInterfaceIpConfigurationInner destinationNetworkInterfaceIpConfiguration) {
+        this.innerModel().withDestinationNetworkInterfaceIpConfiguration(destinationNetworkInterfaceIpConfiguration);
+        return this;
+    }
+
+    public VirtualNetworkTapImpl withDestinationLoadBalancerFrontEndIpConfiguration(
+        FrontendIpConfigurationInner destinationLoadBalancerFrontEndIpConfiguration) {
+        this
+            .innerModel()
+            .withDestinationLoadBalancerFrontEndIpConfiguration(destinationLoadBalancerFrontEndIpConfiguration);
+        return this;
+    }
+
+    public VirtualNetworkTapImpl withDestinationPort(Integer destinationPort) {
+        this.innerModel().withDestinationPort(destinationPort);
+        return this;
+    }
+
+    public VirtualNetworkTapImpl withId(String id) {
+        this.innerModel().withId(id);
+        return this;
     }
 
     private boolean isInCreateMode() {

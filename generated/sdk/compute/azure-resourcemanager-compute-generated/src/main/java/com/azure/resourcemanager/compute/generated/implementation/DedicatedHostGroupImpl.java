@@ -96,9 +96,9 @@ public final class DedicatedHostGroupImpl
 
     private String resourceGroupName;
 
-    private DedicatedHostGroupUpdate updateParameters;
-
     private String hostGroupName;
+
+    private DedicatedHostGroupUpdate updateParameters;
 
     public DedicatedHostGroupImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -185,14 +185,9 @@ public final class DedicatedHostGroupImpl
         return this;
     }
 
-    public DedicatedHostGroupImpl withZones(List<String> zones) {
-        if (isInCreateMode()) {
-            this.innerModel().withZones(zones);
-            return this;
-        } else {
-            this.updateParameters.withZones(zones);
-            return this;
-        }
+    public DedicatedHostGroupImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
     }
 
     public DedicatedHostGroupImpl withRegion(String location) {
@@ -200,12 +195,22 @@ public final class DedicatedHostGroupImpl
         return this;
     }
 
-    public DedicatedHostGroupImpl withSupportAutomaticPlacement(Boolean supportAutomaticPlacement) {
+    public DedicatedHostGroupImpl withTags(Map<String, String> tags) {
         if (isInCreateMode()) {
-            this.innerModel().withSupportAutomaticPlacement(supportAutomaticPlacement);
+            this.innerModel().withTags(tags);
             return this;
         } else {
-            this.updateParameters.withSupportAutomaticPlacement(supportAutomaticPlacement);
+            this.updateParameters.withTags(tags);
+            return this;
+        }
+    }
+
+    public DedicatedHostGroupImpl withZones(List<String> zones) {
+        if (isInCreateMode()) {
+            this.innerModel().withZones(zones);
+            return this;
+        } else {
+            this.updateParameters.withZones(zones);
             return this;
         }
     }
@@ -220,17 +225,12 @@ public final class DedicatedHostGroupImpl
         }
     }
 
-    public DedicatedHostGroupImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
-    public DedicatedHostGroupImpl withTags(Map<String, String> tags) {
+    public DedicatedHostGroupImpl withSupportAutomaticPlacement(Boolean supportAutomaticPlacement) {
         if (isInCreateMode()) {
-            this.innerModel().withTags(tags);
+            this.innerModel().withSupportAutomaticPlacement(supportAutomaticPlacement);
             return this;
         } else {
-            this.updateParameters.withTags(tags);
+            this.updateParameters.withSupportAutomaticPlacement(supportAutomaticPlacement);
             return this;
         }
     }

@@ -233,14 +233,14 @@ public final class VirtualMachineScaleSetImpl
         return this;
     }
 
-    public VirtualMachineScaleSetImpl withPlan(Plan plan) {
-        if (isInCreateMode()) {
-            this.innerModel().withPlan(plan);
-            return this;
-        } else {
-            this.updateParameters.withPlan(plan);
-            return this;
-        }
+    public VirtualMachineScaleSetImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
+    public VirtualMachineScaleSetImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
     }
 
     public VirtualMachineScaleSetImpl withTags(Map<String, String> tags) {
@@ -249,118 +249,6 @@ public final class VirtualMachineScaleSetImpl
             return this;
         } else {
             this.updateParameters.withTags(tags);
-            return this;
-        }
-    }
-
-    public VirtualMachineScaleSetImpl withVirtualMachineProfile(VirtualMachineScaleSetVMProfile virtualMachineProfile) {
-        this.innerModel().withVirtualMachineProfile(virtualMachineProfile);
-        return this;
-    }
-
-    public VirtualMachineScaleSetImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
-    public VirtualMachineScaleSetImpl withDoNotRunExtensionsOnOverprovisionedVMs(
-        Boolean doNotRunExtensionsOnOverprovisionedVMs) {
-        if (isInCreateMode()) {
-            this.innerModel().withDoNotRunExtensionsOnOverprovisionedVMs(doNotRunExtensionsOnOverprovisionedVMs);
-            return this;
-        } else {
-            this.updateParameters.withDoNotRunExtensionsOnOverprovisionedVMs(doNotRunExtensionsOnOverprovisionedVMs);
-            return this;
-        }
-    }
-
-    public VirtualMachineScaleSetImpl withVirtualMachineProfile(
-        VirtualMachineScaleSetUpdateVMProfile virtualMachineProfile) {
-        this.updateParameters.withVirtualMachineProfile(virtualMachineProfile);
-        return this;
-    }
-
-    public VirtualMachineScaleSetImpl withUpgradePolicy(UpgradePolicy upgradePolicy) {
-        if (isInCreateMode()) {
-            this.innerModel().withUpgradePolicy(upgradePolicy);
-            return this;
-        } else {
-            this.updateParameters.withUpgradePolicy(upgradePolicy);
-            return this;
-        }
-    }
-
-    public VirtualMachineScaleSetImpl withOverprovision(Boolean overprovision) {
-        if (isInCreateMode()) {
-            this.innerModel().withOverprovision(overprovision);
-            return this;
-        } else {
-            this.updateParameters.withOverprovision(overprovision);
-            return this;
-        }
-    }
-
-    public VirtualMachineScaleSetImpl withHostGroup(SubResource hostGroup) {
-        this.innerModel().withHostGroup(hostGroup);
-        return this;
-    }
-
-    public VirtualMachineScaleSetImpl withIdentity(VirtualMachineScaleSetIdentity identity) {
-        if (isInCreateMode()) {
-            this.innerModel().withIdentity(identity);
-            return this;
-        } else {
-            this.updateParameters.withIdentity(identity);
-            return this;
-        }
-    }
-
-    public VirtualMachineScaleSetImpl withPlatformFaultDomainCount(Integer platformFaultDomainCount) {
-        this.innerModel().withPlatformFaultDomainCount(platformFaultDomainCount);
-        return this;
-    }
-
-    public VirtualMachineScaleSetImpl withScaleInPolicy(ScaleInPolicy scaleInPolicy) {
-        if (isInCreateMode()) {
-            this.innerModel().withScaleInPolicy(scaleInPolicy);
-            return this;
-        } else {
-            this.updateParameters.withScaleInPolicy(scaleInPolicy);
-            return this;
-        }
-    }
-
-    public VirtualMachineScaleSetImpl withProximityPlacementGroup(SubResource proximityPlacementGroup) {
-        if (isInCreateMode()) {
-            this.innerModel().withProximityPlacementGroup(proximityPlacementGroup);
-            return this;
-        } else {
-            this.updateParameters.withProximityPlacementGroup(proximityPlacementGroup);
-            return this;
-        }
-    }
-
-    public VirtualMachineScaleSetImpl withAutomaticRepairsPolicy(AutomaticRepairsPolicy automaticRepairsPolicy) {
-        if (isInCreateMode()) {
-            this.innerModel().withAutomaticRepairsPolicy(automaticRepairsPolicy);
-            return this;
-        } else {
-            this.updateParameters.withAutomaticRepairsPolicy(automaticRepairsPolicy);
-            return this;
-        }
-    }
-
-    public VirtualMachineScaleSetImpl withZones(List<String> zones) {
-        this.innerModel().withZones(zones);
-        return this;
-    }
-
-    public VirtualMachineScaleSetImpl withAdditionalCapabilities(AdditionalCapabilities additionalCapabilities) {
-        if (isInCreateMode()) {
-            this.innerModel().withAdditionalCapabilities(additionalCapabilities);
-            return this;
-        } else {
-            this.updateParameters.withAdditionalCapabilities(additionalCapabilities);
             return this;
         }
     }
@@ -375,9 +263,75 @@ public final class VirtualMachineScaleSetImpl
         }
     }
 
-    public VirtualMachineScaleSetImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
+    public VirtualMachineScaleSetImpl withPlan(Plan plan) {
+        if (isInCreateMode()) {
+            this.innerModel().withPlan(plan);
+            return this;
+        } else {
+            this.updateParameters.withPlan(plan);
+            return this;
+        }
+    }
+
+    public VirtualMachineScaleSetImpl withIdentity(VirtualMachineScaleSetIdentity identity) {
+        if (isInCreateMode()) {
+            this.innerModel().withIdentity(identity);
+            return this;
+        } else {
+            this.updateParameters.withIdentity(identity);
+            return this;
+        }
+    }
+
+    public VirtualMachineScaleSetImpl withZones(List<String> zones) {
+        this.innerModel().withZones(zones);
         return this;
+    }
+
+    public VirtualMachineScaleSetImpl withUpgradePolicy(UpgradePolicy upgradePolicy) {
+        if (isInCreateMode()) {
+            this.innerModel().withUpgradePolicy(upgradePolicy);
+            return this;
+        } else {
+            this.updateParameters.withUpgradePolicy(upgradePolicy);
+            return this;
+        }
+    }
+
+    public VirtualMachineScaleSetImpl withAutomaticRepairsPolicy(AutomaticRepairsPolicy automaticRepairsPolicy) {
+        if (isInCreateMode()) {
+            this.innerModel().withAutomaticRepairsPolicy(automaticRepairsPolicy);
+            return this;
+        } else {
+            this.updateParameters.withAutomaticRepairsPolicy(automaticRepairsPolicy);
+            return this;
+        }
+    }
+
+    public VirtualMachineScaleSetImpl withVirtualMachineProfile(VirtualMachineScaleSetVMProfile virtualMachineProfile) {
+        this.innerModel().withVirtualMachineProfile(virtualMachineProfile);
+        return this;
+    }
+
+    public VirtualMachineScaleSetImpl withOverprovision(Boolean overprovision) {
+        if (isInCreateMode()) {
+            this.innerModel().withOverprovision(overprovision);
+            return this;
+        } else {
+            this.updateParameters.withOverprovision(overprovision);
+            return this;
+        }
+    }
+
+    public VirtualMachineScaleSetImpl withDoNotRunExtensionsOnOverprovisionedVMs(
+        Boolean doNotRunExtensionsOnOverprovisionedVMs) {
+        if (isInCreateMode()) {
+            this.innerModel().withDoNotRunExtensionsOnOverprovisionedVMs(doNotRunExtensionsOnOverprovisionedVMs);
+            return this;
+        } else {
+            this.updateParameters.withDoNotRunExtensionsOnOverprovisionedVMs(doNotRunExtensionsOnOverprovisionedVMs);
+            return this;
+        }
     }
 
     public VirtualMachineScaleSetImpl withSinglePlacementGroup(Boolean singlePlacementGroup) {
@@ -392,6 +346,52 @@ public final class VirtualMachineScaleSetImpl
 
     public VirtualMachineScaleSetImpl withZoneBalance(Boolean zoneBalance) {
         this.innerModel().withZoneBalance(zoneBalance);
+        return this;
+    }
+
+    public VirtualMachineScaleSetImpl withPlatformFaultDomainCount(Integer platformFaultDomainCount) {
+        this.innerModel().withPlatformFaultDomainCount(platformFaultDomainCount);
+        return this;
+    }
+
+    public VirtualMachineScaleSetImpl withProximityPlacementGroup(SubResource proximityPlacementGroup) {
+        if (isInCreateMode()) {
+            this.innerModel().withProximityPlacementGroup(proximityPlacementGroup);
+            return this;
+        } else {
+            this.updateParameters.withProximityPlacementGroup(proximityPlacementGroup);
+            return this;
+        }
+    }
+
+    public VirtualMachineScaleSetImpl withHostGroup(SubResource hostGroup) {
+        this.innerModel().withHostGroup(hostGroup);
+        return this;
+    }
+
+    public VirtualMachineScaleSetImpl withAdditionalCapabilities(AdditionalCapabilities additionalCapabilities) {
+        if (isInCreateMode()) {
+            this.innerModel().withAdditionalCapabilities(additionalCapabilities);
+            return this;
+        } else {
+            this.updateParameters.withAdditionalCapabilities(additionalCapabilities);
+            return this;
+        }
+    }
+
+    public VirtualMachineScaleSetImpl withScaleInPolicy(ScaleInPolicy scaleInPolicy) {
+        if (isInCreateMode()) {
+            this.innerModel().withScaleInPolicy(scaleInPolicy);
+            return this;
+        } else {
+            this.updateParameters.withScaleInPolicy(scaleInPolicy);
+            return this;
+        }
+    }
+
+    public VirtualMachineScaleSetImpl withVirtualMachineProfile(
+        VirtualMachineScaleSetUpdateVMProfile virtualMachineProfile) {
+        this.updateParameters.withVirtualMachineProfile(virtualMachineProfile);
         return this;
     }
 

@@ -92,13 +92,13 @@ public final class JobImpl implements Job, Job.Definition, Job.Update {
         return this.serviceManager;
     }
 
-    private String transformName;
-
-    private String jobName;
-
     private String resourceGroupName;
 
     private String accountName;
+
+    private String transformName;
+
+    private String jobName;
 
     public JobImpl withExistingTransform(String resourceGroupName, String accountName, String transformName) {
         this.resourceGroupName = resourceGroupName;
@@ -186,6 +186,16 @@ public final class JobImpl implements Job, Job.Definition, Job.Update {
         return this;
     }
 
+    public JobImpl withDescription(String description) {
+        this.innerModel().withDescription(description);
+        return this;
+    }
+
+    public JobImpl withInput(JobInput input) {
+        this.innerModel().withInput(input);
+        return this;
+    }
+
     public JobImpl withOutputs(List<JobOutput> outputs) {
         this.innerModel().withOutputs(outputs);
         return this;
@@ -196,18 +206,8 @@ public final class JobImpl implements Job, Job.Definition, Job.Update {
         return this;
     }
 
-    public JobImpl withDescription(String description) {
-        this.innerModel().withDescription(description);
-        return this;
-    }
-
     public JobImpl withCorrelationData(Map<String, String> correlationData) {
         this.innerModel().withCorrelationData(correlationData);
-        return this;
-    }
-
-    public JobImpl withInput(JobInput input) {
-        this.innerModel().withInput(input);
         return this;
     }
 }

@@ -206,11 +206,6 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
         return this;
     }
 
-    public BlobContainerImpl withMetadata(Map<String, String> metadata) {
-        this.innerModel().withMetadata(metadata);
-        return this;
-    }
-
     public BlobContainerImpl withDefaultEncryptionScope(String defaultEncryptionScope) {
         this.innerModel().withDefaultEncryptionScope(defaultEncryptionScope);
         return this;
@@ -223,6 +218,11 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
 
     public BlobContainerImpl withPublicAccess(PublicAccess publicAccess) {
         this.innerModel().withPublicAccess(publicAccess);
+        return this;
+    }
+
+    public BlobContainerImpl withMetadata(Map<String, String> metadata) {
+        this.innerModel().withMetadata(metadata);
         return this;
     }
 }

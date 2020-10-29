@@ -54,9 +54,9 @@ public final class PublicCertificateImpl
 
     private String resourceGroupName;
 
-    private String publicCertificateName;
-
     private String name;
+
+    private String publicCertificateName;
 
     public PublicCertificateImpl withExistingSite(String resourceGroupName, String name) {
         this.resourceGroupName = resourceGroupName;

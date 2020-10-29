@@ -271,9 +271,9 @@ public final class AppServiceEnvironmentResourceImpl
 
     private String resourceGroupName;
 
-    private AppServiceEnvironmentPatchResource updateHostingEnvironmentEnvelope;
-
     private String name;
+
+    private AppServiceEnvironmentPatchResource updateHostingEnvironmentEnvelope;
 
     public AppServiceEnvironmentResourceImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -357,22 +357,52 @@ public final class AppServiceEnvironmentResourceImpl
         return this;
     }
 
-    public AppServiceEnvironmentResourceImpl withUserWhitelistedIpRanges(List<String> userWhitelistedIpRanges) {
+    public AppServiceEnvironmentResourceImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
+    public AppServiceEnvironmentResourceImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
+    }
+
+    public AppServiceEnvironmentResourceImpl withTags(Map<String, String> tags) {
+        this.innerModel().withTags(tags);
+        return this;
+    }
+
+    public AppServiceEnvironmentResourceImpl withNamePropertiesName(String namePropertiesName) {
         if (isInCreateMode()) {
-            this.innerModel().withUserWhitelistedIpRanges(userWhitelistedIpRanges);
+            this.innerModel().withNamePropertiesName(namePropertiesName);
             return this;
         } else {
-            this.updateHostingEnvironmentEnvelope.withUserWhitelistedIpRanges(userWhitelistedIpRanges);
+            this.updateHostingEnvironmentEnvelope.withNamePropertiesName(namePropertiesName);
             return this;
         }
     }
 
-    public AppServiceEnvironmentResourceImpl withWorkerPools(List<WorkerPool> workerPools) {
+    public AppServiceEnvironmentResourceImpl withLocationPropertiesLocation(String locationPropertiesLocation) {
+        this.innerModel().withLocationPropertiesLocation(locationPropertiesLocation);
+        return this;
+    }
+
+    public AppServiceEnvironmentResourceImpl withVnetName(String vnetName) {
         if (isInCreateMode()) {
-            this.innerModel().withWorkerPools(workerPools);
+            this.innerModel().withVnetName(vnetName);
             return this;
         } else {
-            this.updateHostingEnvironmentEnvelope.withWorkerPools(workerPools);
+            this.updateHostingEnvironmentEnvelope.withVnetName(vnetName);
+            return this;
+        }
+    }
+
+    public AppServiceEnvironmentResourceImpl withVnetResourceGroupName(String vnetResourceGroupName) {
+        if (isInCreateMode()) {
+            this.innerModel().withVnetResourceGroupName(vnetResourceGroupName);
+            return this;
+        } else {
+            this.updateHostingEnvironmentEnvelope.withVnetResourceGroupName(vnetResourceGroupName);
             return this;
         }
     }
@@ -387,138 +417,12 @@ public final class AppServiceEnvironmentResourceImpl
         }
     }
 
-    public AppServiceEnvironmentResourceImpl withSuspended(Boolean suspended) {
+    public AppServiceEnvironmentResourceImpl withVirtualNetwork(VirtualNetworkProfile virtualNetwork) {
         if (isInCreateMode()) {
-            this.innerModel().withSuspended(suspended);
+            this.innerModel().withVirtualNetwork(virtualNetwork);
             return this;
         } else {
-            this.updateHostingEnvironmentEnvelope.withSuspended(suspended);
-            return this;
-        }
-    }
-
-    public AppServiceEnvironmentResourceImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
-    public AppServiceEnvironmentResourceImpl withApiManagementAccountId(String apiManagementAccountId) {
-        if (isInCreateMode()) {
-            this.innerModel().withApiManagementAccountId(apiManagementAccountId);
-            return this;
-        } else {
-            this.updateHostingEnvironmentEnvelope.withApiManagementAccountId(apiManagementAccountId);
-            return this;
-        }
-    }
-
-    public AppServiceEnvironmentResourceImpl withNamePropertiesName(String namePropertiesName) {
-        if (isInCreateMode()) {
-            this.innerModel().withNamePropertiesName(namePropertiesName);
-            return this;
-        } else {
-            this.updateHostingEnvironmentEnvelope.withNamePropertiesName(namePropertiesName);
-            return this;
-        }
-    }
-
-    public AppServiceEnvironmentResourceImpl withClusterSettings(List<NameValuePair> clusterSettings) {
-        if (isInCreateMode()) {
-            this.innerModel().withClusterSettings(clusterSettings);
-            return this;
-        } else {
-            this.updateHostingEnvironmentEnvelope.withClusterSettings(clusterSettings);
-            return this;
-        }
-    }
-
-    public AppServiceEnvironmentResourceImpl withMultiSize(String multiSize) {
-        if (isInCreateMode()) {
-            this.innerModel().withMultiSize(multiSize);
-            return this;
-        } else {
-            this.updateHostingEnvironmentEnvelope.withMultiSize(multiSize);
-            return this;
-        }
-    }
-
-    public AppServiceEnvironmentResourceImpl withLocationPropertiesLocation(String locationPropertiesLocation) {
-        this.innerModel().withLocationPropertiesLocation(locationPropertiesLocation);
-        return this;
-    }
-
-    public AppServiceEnvironmentResourceImpl withNetworkAccessControlList(
-        List<NetworkAccessControlEntry> networkAccessControlList) {
-        if (isInCreateMode()) {
-            this.innerModel().withNetworkAccessControlList(networkAccessControlList);
-            return this;
-        } else {
-            this.updateHostingEnvironmentEnvelope.withNetworkAccessControlList(networkAccessControlList);
-            return this;
-        }
-    }
-
-    public AppServiceEnvironmentResourceImpl withMultiRoleCount(Integer multiRoleCount) {
-        if (isInCreateMode()) {
-            this.innerModel().withMultiRoleCount(multiRoleCount);
-            return this;
-        } else {
-            this.updateHostingEnvironmentEnvelope.withMultiRoleCount(multiRoleCount);
-            return this;
-        }
-    }
-
-    public AppServiceEnvironmentResourceImpl withDnsSuffix(String dnsSuffix) {
-        if (isInCreateMode()) {
-            this.innerModel().withDnsSuffix(dnsSuffix);
-            return this;
-        } else {
-            this.updateHostingEnvironmentEnvelope.withDnsSuffix(dnsSuffix);
-            return this;
-        }
-    }
-
-    public AppServiceEnvironmentResourceImpl withSslCertKeyVaultSecretName(String sslCertKeyVaultSecretName) {
-        if (isInCreateMode()) {
-            this.innerModel().withSslCertKeyVaultSecretName(sslCertKeyVaultSecretName);
-            return this;
-        } else {
-            this.updateHostingEnvironmentEnvelope.withSslCertKeyVaultSecretName(sslCertKeyVaultSecretName);
-            return this;
-        }
-    }
-
-    public AppServiceEnvironmentResourceImpl withSslCertKeyVaultId(String sslCertKeyVaultId) {
-        if (isInCreateMode()) {
-            this.innerModel().withSslCertKeyVaultId(sslCertKeyVaultId);
-            return this;
-        } else {
-            this.updateHostingEnvironmentEnvelope.withSslCertKeyVaultId(sslCertKeyVaultId);
-            return this;
-        }
-    }
-
-    public AppServiceEnvironmentResourceImpl withDynamicCacheEnabled(Boolean dynamicCacheEnabled) {
-        if (isInCreateMode()) {
-            this.innerModel().withDynamicCacheEnabled(dynamicCacheEnabled);
-            return this;
-        } else {
-            this.updateHostingEnvironmentEnvelope.withDynamicCacheEnabled(dynamicCacheEnabled);
-            return this;
-        }
-    }
-
-    public AppServiceEnvironmentResourceImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public AppServiceEnvironmentResourceImpl withIpsslAddressCount(Integer ipsslAddressCount) {
-        if (isInCreateMode()) {
-            this.innerModel().withIpsslAddressCount(ipsslAddressCount);
-            return this;
-        } else {
-            this.updateHostingEnvironmentEnvelope.withIpsslAddressCount(ipsslAddressCount);
+            this.updateHostingEnvironmentEnvelope.withVirtualNetwork(virtualNetwork);
             return this;
         }
     }
@@ -534,52 +438,63 @@ public final class AppServiceEnvironmentResourceImpl
         }
     }
 
-    public AppServiceEnvironmentResourceImpl withVnetResourceGroupName(String vnetResourceGroupName) {
+    public AppServiceEnvironmentResourceImpl withMultiSize(String multiSize) {
         if (isInCreateMode()) {
-            this.innerModel().withVnetResourceGroupName(vnetResourceGroupName);
+            this.innerModel().withMultiSize(multiSize);
             return this;
         } else {
-            this.updateHostingEnvironmentEnvelope.withVnetResourceGroupName(vnetResourceGroupName);
+            this.updateHostingEnvironmentEnvelope.withMultiSize(multiSize);
             return this;
         }
     }
 
-    public AppServiceEnvironmentResourceImpl withVnetName(String vnetName) {
+    public AppServiceEnvironmentResourceImpl withMultiRoleCount(Integer multiRoleCount) {
         if (isInCreateMode()) {
-            this.innerModel().withVnetName(vnetName);
+            this.innerModel().withMultiRoleCount(multiRoleCount);
             return this;
         } else {
-            this.updateHostingEnvironmentEnvelope.withVnetName(vnetName);
+            this.updateHostingEnvironmentEnvelope.withMultiRoleCount(multiRoleCount);
             return this;
         }
     }
 
-    public AppServiceEnvironmentResourceImpl withHasLinuxWorkers(Boolean hasLinuxWorkers) {
+    public AppServiceEnvironmentResourceImpl withWorkerPools(List<WorkerPool> workerPools) {
         if (isInCreateMode()) {
-            this.innerModel().withHasLinuxWorkers(hasLinuxWorkers);
+            this.innerModel().withWorkerPools(workerPools);
             return this;
         } else {
-            this.updateHostingEnvironmentEnvelope.withHasLinuxWorkers(hasLinuxWorkers);
+            this.updateHostingEnvironmentEnvelope.withWorkerPools(workerPools);
             return this;
         }
     }
 
-    public AppServiceEnvironmentResourceImpl withVirtualNetwork(VirtualNetworkProfile virtualNetwork) {
+    public AppServiceEnvironmentResourceImpl withIpsslAddressCount(Integer ipsslAddressCount) {
         if (isInCreateMode()) {
-            this.innerModel().withVirtualNetwork(virtualNetwork);
+            this.innerModel().withIpsslAddressCount(ipsslAddressCount);
             return this;
         } else {
-            this.updateHostingEnvironmentEnvelope.withVirtualNetwork(virtualNetwork);
+            this.updateHostingEnvironmentEnvelope.withIpsslAddressCount(ipsslAddressCount);
             return this;
         }
     }
 
-    public AppServiceEnvironmentResourceImpl withKind(String kind) {
+    public AppServiceEnvironmentResourceImpl withDnsSuffix(String dnsSuffix) {
         if (isInCreateMode()) {
-            this.innerModel().withKind(kind);
+            this.innerModel().withDnsSuffix(dnsSuffix);
             return this;
         } else {
-            this.updateHostingEnvironmentEnvelope.withKind(kind);
+            this.updateHostingEnvironmentEnvelope.withDnsSuffix(dnsSuffix);
+            return this;
+        }
+    }
+
+    public AppServiceEnvironmentResourceImpl withNetworkAccessControlList(
+        List<NetworkAccessControlEntry> networkAccessControlList) {
+        if (isInCreateMode()) {
+            this.innerModel().withNetworkAccessControlList(networkAccessControlList);
+            return this;
+        } else {
+            this.updateHostingEnvironmentEnvelope.withNetworkAccessControlList(networkAccessControlList);
             return this;
         }
     }
@@ -594,9 +509,94 @@ public final class AppServiceEnvironmentResourceImpl
         }
     }
 
-    public AppServiceEnvironmentResourceImpl withTags(Map<String, String> tags) {
-        this.innerModel().withTags(tags);
-        return this;
+    public AppServiceEnvironmentResourceImpl withApiManagementAccountId(String apiManagementAccountId) {
+        if (isInCreateMode()) {
+            this.innerModel().withApiManagementAccountId(apiManagementAccountId);
+            return this;
+        } else {
+            this.updateHostingEnvironmentEnvelope.withApiManagementAccountId(apiManagementAccountId);
+            return this;
+        }
+    }
+
+    public AppServiceEnvironmentResourceImpl withSuspended(Boolean suspended) {
+        if (isInCreateMode()) {
+            this.innerModel().withSuspended(suspended);
+            return this;
+        } else {
+            this.updateHostingEnvironmentEnvelope.withSuspended(suspended);
+            return this;
+        }
+    }
+
+    public AppServiceEnvironmentResourceImpl withDynamicCacheEnabled(Boolean dynamicCacheEnabled) {
+        if (isInCreateMode()) {
+            this.innerModel().withDynamicCacheEnabled(dynamicCacheEnabled);
+            return this;
+        } else {
+            this.updateHostingEnvironmentEnvelope.withDynamicCacheEnabled(dynamicCacheEnabled);
+            return this;
+        }
+    }
+
+    public AppServiceEnvironmentResourceImpl withClusterSettings(List<NameValuePair> clusterSettings) {
+        if (isInCreateMode()) {
+            this.innerModel().withClusterSettings(clusterSettings);
+            return this;
+        } else {
+            this.updateHostingEnvironmentEnvelope.withClusterSettings(clusterSettings);
+            return this;
+        }
+    }
+
+    public AppServiceEnvironmentResourceImpl withUserWhitelistedIpRanges(List<String> userWhitelistedIpRanges) {
+        if (isInCreateMode()) {
+            this.innerModel().withUserWhitelistedIpRanges(userWhitelistedIpRanges);
+            return this;
+        } else {
+            this.updateHostingEnvironmentEnvelope.withUserWhitelistedIpRanges(userWhitelistedIpRanges);
+            return this;
+        }
+    }
+
+    public AppServiceEnvironmentResourceImpl withHasLinuxWorkers(Boolean hasLinuxWorkers) {
+        if (isInCreateMode()) {
+            this.innerModel().withHasLinuxWorkers(hasLinuxWorkers);
+            return this;
+        } else {
+            this.updateHostingEnvironmentEnvelope.withHasLinuxWorkers(hasLinuxWorkers);
+            return this;
+        }
+    }
+
+    public AppServiceEnvironmentResourceImpl withSslCertKeyVaultId(String sslCertKeyVaultId) {
+        if (isInCreateMode()) {
+            this.innerModel().withSslCertKeyVaultId(sslCertKeyVaultId);
+            return this;
+        } else {
+            this.updateHostingEnvironmentEnvelope.withSslCertKeyVaultId(sslCertKeyVaultId);
+            return this;
+        }
+    }
+
+    public AppServiceEnvironmentResourceImpl withSslCertKeyVaultSecretName(String sslCertKeyVaultSecretName) {
+        if (isInCreateMode()) {
+            this.innerModel().withSslCertKeyVaultSecretName(sslCertKeyVaultSecretName);
+            return this;
+        } else {
+            this.updateHostingEnvironmentEnvelope.withSslCertKeyVaultSecretName(sslCertKeyVaultSecretName);
+            return this;
+        }
+    }
+
+    public AppServiceEnvironmentResourceImpl withKind(String kind) {
+        if (isInCreateMode()) {
+            this.innerModel().withKind(kind);
+            return this;
+        } else {
+            this.updateHostingEnvironmentEnvelope.withKind(kind);
+            return this;
+        }
     }
 
     private boolean isInCreateMode() {

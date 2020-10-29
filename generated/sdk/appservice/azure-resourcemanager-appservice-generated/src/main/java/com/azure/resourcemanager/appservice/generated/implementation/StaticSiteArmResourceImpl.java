@@ -102,9 +102,9 @@ public final class StaticSiteArmResourceImpl
 
     private String resourceGroupName;
 
-    private StaticSitePatchResource updateStaticSiteEnvelope;
-
     private String name;
+
+    private StaticSitePatchResource updateStaticSiteEnvelope;
 
     public StaticSiteArmResourceImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -189,6 +189,36 @@ public final class StaticSiteArmResourceImpl
         return this;
     }
 
+    public StaticSiteArmResourceImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
+    public StaticSiteArmResourceImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
+    }
+
+    public StaticSiteArmResourceImpl withTags(Map<String, String> tags) {
+        this.innerModel().withTags(tags);
+        return this;
+    }
+
+    public StaticSiteArmResourceImpl withSku(SkuDescription sku) {
+        this.innerModel().withSku(sku);
+        return this;
+    }
+
+    public StaticSiteArmResourceImpl withRepositoryUrl(String repositoryUrl) {
+        if (isInCreateMode()) {
+            this.innerModel().withRepositoryUrl(repositoryUrl);
+            return this;
+        } else {
+            this.updateStaticSiteEnvelope.withRepositoryUrl(repositoryUrl);
+            return this;
+        }
+    }
+
     public StaticSiteArmResourceImpl withBranch(String branch) {
         if (isInCreateMode()) {
             this.innerModel().withBranch(branch);
@@ -209,31 +239,6 @@ public final class StaticSiteArmResourceImpl
         }
     }
 
-    public StaticSiteArmResourceImpl withTags(Map<String, String> tags) {
-        this.innerModel().withTags(tags);
-        return this;
-    }
-
-    public StaticSiteArmResourceImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public StaticSiteArmResourceImpl withRepositoryUrl(String repositoryUrl) {
-        if (isInCreateMode()) {
-            this.innerModel().withRepositoryUrl(repositoryUrl);
-            return this;
-        } else {
-            this.updateStaticSiteEnvelope.withRepositoryUrl(repositoryUrl);
-            return this;
-        }
-    }
-
-    public StaticSiteArmResourceImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
     public StaticSiteArmResourceImpl withBuildProperties(StaticSiteBuildProperties buildProperties) {
         if (isInCreateMode()) {
             this.innerModel().withBuildProperties(buildProperties);
@@ -252,11 +257,6 @@ public final class StaticSiteArmResourceImpl
             this.updateStaticSiteEnvelope.withKind(kind);
             return this;
         }
-    }
-
-    public StaticSiteArmResourceImpl withSku(SkuDescription sku) {
-        this.innerModel().withSku(sku);
-        return this;
     }
 
     private boolean isInCreateMode() {

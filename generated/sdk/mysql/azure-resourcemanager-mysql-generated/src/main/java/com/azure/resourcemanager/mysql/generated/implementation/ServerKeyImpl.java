@@ -52,11 +52,11 @@ public final class ServerKeyImpl implements ServerKey, ServerKey.Definition, Ser
         return this.serviceManager;
     }
 
-    private String resourceGroupName;
+    private String serverName;
 
     private String keyName;
 
-    private String serverName;
+    private String resourceGroupName;
 
     public ServerKeyImpl withExistingServer(String serverName, String keyName) {
         this.serverName = serverName;

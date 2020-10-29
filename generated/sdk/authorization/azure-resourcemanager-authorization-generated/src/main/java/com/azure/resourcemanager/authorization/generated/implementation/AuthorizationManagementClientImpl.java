@@ -22,7 +22,13 @@ import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.serializer.SerializerAdapter;
 import com.azure.core.util.serializer.SerializerEncoding;
 import com.azure.resourcemanager.authorization.generated.fluent.AuthorizationManagementClient;
+import com.azure.resourcemanager.authorization.generated.fluent.ClassicAdministratorsClient;
+import com.azure.resourcemanager.authorization.generated.fluent.DenyAssignmentsClient;
+import com.azure.resourcemanager.authorization.generated.fluent.GlobalAdministratorsClient;
+import com.azure.resourcemanager.authorization.generated.fluent.PermissionsClient;
+import com.azure.resourcemanager.authorization.generated.fluent.ProviderOperationsMetadatasClient;
 import com.azure.resourcemanager.authorization.generated.fluent.RoleAssignmentsClient;
+import com.azure.resourcemanager.authorization.generated.fluent.RoleDefinitionsClient;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.nio.ByteBuffer;
@@ -62,18 +68,6 @@ public final class AuthorizationManagementClientImpl implements AuthorizationMan
         return this.endpoint;
     }
 
-    /** Api Version. */
-    private final String apiVersion;
-
-    /**
-     * Gets Api Version.
-     *
-     * @return the apiVersion value.
-     */
-    public String getApiVersion() {
-        return this.apiVersion;
-    }
-
     /** The HTTP pipeline to send requests through. */
     private final HttpPipeline httpPipeline;
 
@@ -110,6 +104,42 @@ public final class AuthorizationManagementClientImpl implements AuthorizationMan
         return this.defaultPollInterval;
     }
 
+    /** The ClassicAdministratorsClient object to access its operations. */
+    private final ClassicAdministratorsClient classicAdministrators;
+
+    /**
+     * Gets the ClassicAdministratorsClient object to access its operations.
+     *
+     * @return the ClassicAdministratorsClient object.
+     */
+    public ClassicAdministratorsClient getClassicAdministrators() {
+        return this.classicAdministrators;
+    }
+
+    /** The GlobalAdministratorsClient object to access its operations. */
+    private final GlobalAdministratorsClient globalAdministrators;
+
+    /**
+     * Gets the GlobalAdministratorsClient object to access its operations.
+     *
+     * @return the GlobalAdministratorsClient object.
+     */
+    public GlobalAdministratorsClient getGlobalAdministrators() {
+        return this.globalAdministrators;
+    }
+
+    /** The ProviderOperationsMetadatasClient object to access its operations. */
+    private final ProviderOperationsMetadatasClient providerOperationsMetadatas;
+
+    /**
+     * Gets the ProviderOperationsMetadatasClient object to access its operations.
+     *
+     * @return the ProviderOperationsMetadatasClient object.
+     */
+    public ProviderOperationsMetadatasClient getProviderOperationsMetadatas() {
+        return this.providerOperationsMetadatas;
+    }
+
     /** The RoleAssignmentsClient object to access its operations. */
     private final RoleAssignmentsClient roleAssignments;
 
@@ -120,6 +150,42 @@ public final class AuthorizationManagementClientImpl implements AuthorizationMan
      */
     public RoleAssignmentsClient getRoleAssignments() {
         return this.roleAssignments;
+    }
+
+    /** The PermissionsClient object to access its operations. */
+    private final PermissionsClient permissions;
+
+    /**
+     * Gets the PermissionsClient object to access its operations.
+     *
+     * @return the PermissionsClient object.
+     */
+    public PermissionsClient getPermissions() {
+        return this.permissions;
+    }
+
+    /** The RoleDefinitionsClient object to access its operations. */
+    private final RoleDefinitionsClient roleDefinitions;
+
+    /**
+     * Gets the RoleDefinitionsClient object to access its operations.
+     *
+     * @return the RoleDefinitionsClient object.
+     */
+    public RoleDefinitionsClient getRoleDefinitions() {
+        return this.roleDefinitions;
+    }
+
+    /** The DenyAssignmentsClient object to access its operations. */
+    private final DenyAssignmentsClient denyAssignments;
+
+    /**
+     * Gets the DenyAssignmentsClient object to access its operations.
+     *
+     * @return the DenyAssignmentsClient object.
+     */
+    public DenyAssignmentsClient getDenyAssignments() {
+        return this.denyAssignments;
     }
 
     /**
@@ -144,8 +210,13 @@ public final class AuthorizationManagementClientImpl implements AuthorizationMan
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
-        this.apiVersion = "2020-04-01-preview";
+        this.classicAdministrators = new ClassicAdministratorsClientImpl(this);
+        this.globalAdministrators = new GlobalAdministratorsClientImpl(this);
+        this.providerOperationsMetadatas = new ProviderOperationsMetadatasClientImpl(this);
         this.roleAssignments = new RoleAssignmentsClientImpl(this);
+        this.permissions = new PermissionsClientImpl(this);
+        this.roleDefinitions = new RoleDefinitionsClientImpl(this);
+        this.denyAssignments = new DenyAssignmentsClientImpl(this);
     }
 
     /**

@@ -150,23 +150,8 @@ public final class PolicyDefinitionImpl
         return this;
     }
 
-    public PolicyDefinitionImpl withPolicyRule(Object policyRule) {
-        this.innerModel().withPolicyRule(policyRule);
-        return this;
-    }
-
-    public PolicyDefinitionImpl withDisplayName(String displayName) {
-        this.innerModel().withDisplayName(displayName);
-        return this;
-    }
-
-    public PolicyDefinitionImpl withMetadata(Object metadata) {
-        this.innerModel().withMetadata(metadata);
-        return this;
-    }
-
-    public PolicyDefinitionImpl withDescription(String description) {
-        this.innerModel().withDescription(description);
+    public PolicyDefinitionImpl withPolicyType(PolicyType policyType) {
+        this.innerModel().withPolicyType(policyType);
         return this;
     }
 
@@ -175,8 +160,23 @@ public final class PolicyDefinitionImpl
         return this;
     }
 
-    public PolicyDefinitionImpl withPolicyType(PolicyType policyType) {
-        this.innerModel().withPolicyType(policyType);
+    public PolicyDefinitionImpl withDisplayName(String displayName) {
+        this.innerModel().withDisplayName(displayName);
+        return this;
+    }
+
+    public PolicyDefinitionImpl withDescription(String description) {
+        this.innerModel().withDescription(description);
+        return this;
+    }
+
+    public PolicyDefinitionImpl withPolicyRule(Object policyRule) {
+        this.innerModel().withPolicyRule(policyRule);
+        return this;
+    }
+
+    public PolicyDefinitionImpl withMetadata(Object metadata) {
+        this.innerModel().withMetadata(metadata);
         return this;
     }
 

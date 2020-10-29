@@ -52,15 +52,15 @@ public final class ImmutabilityPolicyImpl
         return this.serviceManager;
     }
 
-    private String createIfMatch;
-
-    private String updateIfMatch;
-
     private String resourceGroupName;
 
     private String accountName;
 
     private String containerName;
+
+    private String createIfMatch;
+
+    private String updateIfMatch;
 
     public ImmutabilityPolicyImpl withExistingContainer(String resourceGroupName, String accountName) {
         this.resourceGroupName = resourceGroupName;
@@ -156,6 +156,17 @@ public final class ImmutabilityPolicyImpl
         return this;
     }
 
+    public ImmutabilityPolicyImpl withImmutabilityPeriodSinceCreationInDays(
+        Integer immutabilityPeriodSinceCreationInDays) {
+        this.innerModel().withImmutabilityPeriodSinceCreationInDays(immutabilityPeriodSinceCreationInDays);
+        return this;
+    }
+
+    public ImmutabilityPolicyImpl withAllowProtectedAppendWrites(Boolean allowProtectedAppendWrites) {
+        this.innerModel().withAllowProtectedAppendWrites(allowProtectedAppendWrites);
+        return this;
+    }
+
     public ImmutabilityPolicyImpl withIfMatch(String ifMatch) {
         if (isInCreateMode()) {
             this.createIfMatch = ifMatch;
@@ -164,17 +175,6 @@ public final class ImmutabilityPolicyImpl
             this.updateIfMatch = ifMatch;
             return this;
         }
-    }
-
-    public ImmutabilityPolicyImpl withAllowProtectedAppendWrites(Boolean allowProtectedAppendWrites) {
-        this.innerModel().withAllowProtectedAppendWrites(allowProtectedAppendWrites);
-        return this;
-    }
-
-    public ImmutabilityPolicyImpl withImmutabilityPeriodSinceCreationInDays(
-        Integer immutabilityPeriodSinceCreationInDays) {
-        this.innerModel().withImmutabilityPeriodSinceCreationInDays(immutabilityPeriodSinceCreationInDays);
-        return this;
     }
 
     private boolean isInCreateMode() {

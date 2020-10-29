@@ -47,11 +47,11 @@ public final class IpFilterRuleImpl implements IpFilterRule, IpFilterRule.Defini
         return this.serviceManager;
     }
 
-    private String ipFilterRuleName;
-
     private String resourceGroupName;
 
     private String namespaceName;
+
+    private String ipFilterRuleName;
 
     public IpFilterRuleImpl withExistingNamespace(String resourceGroupName, String namespaceName) {
         this.resourceGroupName = resourceGroupName;
@@ -141,8 +141,8 @@ public final class IpFilterRuleImpl implements IpFilterRule, IpFilterRule.Defini
         return this;
     }
 
-    public IpFilterRuleImpl withFilterName(String filterName) {
-        this.innerModel().withFilterName(filterName);
+    public IpFilterRuleImpl withIpMask(String ipMask) {
+        this.innerModel().withIpMask(ipMask);
         return this;
     }
 
@@ -151,8 +151,8 @@ public final class IpFilterRuleImpl implements IpFilterRule, IpFilterRule.Defini
         return this;
     }
 
-    public IpFilterRuleImpl withIpMask(String ipMask) {
-        this.innerModel().withIpMask(ipMask);
+    public IpFilterRuleImpl withFilterName(String filterName) {
+        this.innerModel().withFilterName(filterName);
         return this;
     }
 }

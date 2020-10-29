@@ -131,13 +131,13 @@ public final class GalleryImageImpl implements GalleryImage, GalleryImage.Defini
         return this.serviceManager;
     }
 
-    private GalleryImageUpdate updateGalleryImage;
-
-    private String galleryImageName;
-
     private String resourceGroupName;
 
     private String galleryName;
+
+    private String galleryImageName;
+
+    private GalleryImageUpdate updateGalleryImage;
 
     public GalleryImageImpl withExistingGallery(String resourceGroupName, String galleryName) {
         this.resourceGroupName = resourceGroupName;
@@ -220,74 +220,14 @@ public final class GalleryImageImpl implements GalleryImage, GalleryImage.Defini
         return this;
     }
 
-    public GalleryImageImpl withEndOfLifeDate(OffsetDateTime endOfLifeDate) {
-        if (isInCreateMode()) {
-            this.innerModel().withEndOfLifeDate(endOfLifeDate);
-            return this;
-        } else {
-            this.updateGalleryImage.withEndOfLifeDate(endOfLifeDate);
-            return this;
-        }
-    }
-
-    public GalleryImageImpl withHyperVGeneration(HyperVGeneration hyperVGeneration) {
-        if (isInCreateMode()) {
-            this.innerModel().withHyperVGeneration(hyperVGeneration);
-            return this;
-        } else {
-            this.updateGalleryImage.withHyperVGeneration(hyperVGeneration);
-            return this;
-        }
-    }
-
-    public GalleryImageImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
     public GalleryImageImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;
     }
 
-    public GalleryImageImpl withRecommended(RecommendedMachineConfiguration recommended) {
-        if (isInCreateMode()) {
-            this.innerModel().withRecommended(recommended);
-            return this;
-        } else {
-            this.updateGalleryImage.withRecommended(recommended);
-            return this;
-        }
-    }
-
-    public GalleryImageImpl withFeatures(List<GalleryImageFeature> features) {
-        if (isInCreateMode()) {
-            this.innerModel().withFeatures(features);
-            return this;
-        } else {
-            this.updateGalleryImage.withFeatures(features);
-            return this;
-        }
-    }
-
-    public GalleryImageImpl withOsType(OperatingSystemTypes osType) {
-        if (isInCreateMode()) {
-            this.innerModel().withOsType(osType);
-            return this;
-        } else {
-            this.updateGalleryImage.withOsType(osType);
-            return this;
-        }
-    }
-
-    public GalleryImageImpl withReleaseNoteUri(String releaseNoteUri) {
-        if (isInCreateMode()) {
-            this.innerModel().withReleaseNoteUri(releaseNoteUri);
-            return this;
-        } else {
-            this.updateGalleryImage.withReleaseNoteUri(releaseNoteUri);
-            return this;
-        }
+    public GalleryImageImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
     }
 
     public GalleryImageImpl withTags(Map<String, String> tags) {
@@ -300,32 +240,12 @@ public final class GalleryImageImpl implements GalleryImage, GalleryImage.Defini
         }
     }
 
-    public GalleryImageImpl withPrivacyStatementUri(String privacyStatementUri) {
+    public GalleryImageImpl withDescription(String description) {
         if (isInCreateMode()) {
-            this.innerModel().withPrivacyStatementUri(privacyStatementUri);
+            this.innerModel().withDescription(description);
             return this;
         } else {
-            this.updateGalleryImage.withPrivacyStatementUri(privacyStatementUri);
-            return this;
-        }
-    }
-
-    public GalleryImageImpl withIdentifier(GalleryImageIdentifier identifier) {
-        if (isInCreateMode()) {
-            this.innerModel().withIdentifier(identifier);
-            return this;
-        } else {
-            this.updateGalleryImage.withIdentifier(identifier);
-            return this;
-        }
-    }
-
-    public GalleryImageImpl withOsState(OperatingSystemStateTypes osState) {
-        if (isInCreateMode()) {
-            this.innerModel().withOsState(osState);
-            return this;
-        } else {
-            this.updateGalleryImage.withOsState(osState);
+            this.updateGalleryImage.withDescription(description);
             return this;
         }
     }
@@ -340,12 +260,92 @@ public final class GalleryImageImpl implements GalleryImage, GalleryImage.Defini
         }
     }
 
-    public GalleryImageImpl withPurchasePlan(ImagePurchasePlan purchasePlan) {
+    public GalleryImageImpl withPrivacyStatementUri(String privacyStatementUri) {
         if (isInCreateMode()) {
-            this.innerModel().withPurchasePlan(purchasePlan);
+            this.innerModel().withPrivacyStatementUri(privacyStatementUri);
             return this;
         } else {
-            this.updateGalleryImage.withPurchasePlan(purchasePlan);
+            this.updateGalleryImage.withPrivacyStatementUri(privacyStatementUri);
+            return this;
+        }
+    }
+
+    public GalleryImageImpl withReleaseNoteUri(String releaseNoteUri) {
+        if (isInCreateMode()) {
+            this.innerModel().withReleaseNoteUri(releaseNoteUri);
+            return this;
+        } else {
+            this.updateGalleryImage.withReleaseNoteUri(releaseNoteUri);
+            return this;
+        }
+    }
+
+    public GalleryImageImpl withOsType(OperatingSystemTypes osType) {
+        if (isInCreateMode()) {
+            this.innerModel().withOsType(osType);
+            return this;
+        } else {
+            this.updateGalleryImage.withOsType(osType);
+            return this;
+        }
+    }
+
+    public GalleryImageImpl withOsState(OperatingSystemStateTypes osState) {
+        if (isInCreateMode()) {
+            this.innerModel().withOsState(osState);
+            return this;
+        } else {
+            this.updateGalleryImage.withOsState(osState);
+            return this;
+        }
+    }
+
+    public GalleryImageImpl withHyperVGeneration(HyperVGeneration hyperVGeneration) {
+        if (isInCreateMode()) {
+            this.innerModel().withHyperVGeneration(hyperVGeneration);
+            return this;
+        } else {
+            this.updateGalleryImage.withHyperVGeneration(hyperVGeneration);
+            return this;
+        }
+    }
+
+    public GalleryImageImpl withFeatures(List<GalleryImageFeature> features) {
+        if (isInCreateMode()) {
+            this.innerModel().withFeatures(features);
+            return this;
+        } else {
+            this.updateGalleryImage.withFeatures(features);
+            return this;
+        }
+    }
+
+    public GalleryImageImpl withEndOfLifeDate(OffsetDateTime endOfLifeDate) {
+        if (isInCreateMode()) {
+            this.innerModel().withEndOfLifeDate(endOfLifeDate);
+            return this;
+        } else {
+            this.updateGalleryImage.withEndOfLifeDate(endOfLifeDate);
+            return this;
+        }
+    }
+
+    public GalleryImageImpl withIdentifier(GalleryImageIdentifier identifier) {
+        if (isInCreateMode()) {
+            this.innerModel().withIdentifier(identifier);
+            return this;
+        } else {
+            this.updateGalleryImage.withIdentifier(identifier);
+            return this;
+        }
+    }
+
+    public GalleryImageImpl withRecommended(RecommendedMachineConfiguration recommended) {
+        if (isInCreateMode()) {
+            this.innerModel().withRecommended(recommended);
+            return this;
+        } else {
+            this.updateGalleryImage.withRecommended(recommended);
             return this;
         }
     }
@@ -360,12 +360,12 @@ public final class GalleryImageImpl implements GalleryImage, GalleryImage.Defini
         }
     }
 
-    public GalleryImageImpl withDescription(String description) {
+    public GalleryImageImpl withPurchasePlan(ImagePurchasePlan purchasePlan) {
         if (isInCreateMode()) {
-            this.innerModel().withDescription(description);
+            this.innerModel().withPurchasePlan(purchasePlan);
             return this;
         } else {
-            this.updateGalleryImage.withDescription(description);
+            this.updateGalleryImage.withPurchasePlan(purchasePlan);
             return this;
         }
     }

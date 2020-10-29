@@ -206,11 +206,11 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this.serviceManager;
     }
 
-    private StorageAccountCreateParameters createParameters;
-
     private String resourceGroupName;
 
     private String accountName;
+
+    private StorageAccountCreateParameters createParameters;
 
     private StorageAccountUpdateParameters updateParameters;
 
@@ -298,6 +298,36 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this;
     }
 
+    public StorageAccountImpl withRegion(Region location) {
+        this.createParameters.withLocation(location.toString());
+        return this;
+    }
+
+    public StorageAccountImpl withRegion(String location) {
+        this.createParameters.withLocation(location);
+        return this;
+    }
+
+    public StorageAccountImpl withSku(Sku sku) {
+        if (isInCreateMode()) {
+            this.createParameters.withSku(sku);
+            return this;
+        } else {
+            this.updateParameters.withSku(sku);
+            return this;
+        }
+    }
+
+    public StorageAccountImpl withKind(Kind kind) {
+        if (isInCreateMode()) {
+            this.createParameters.withKind(kind);
+            return this;
+        } else {
+            this.updateParameters.withKind(kind);
+            return this;
+        }
+    }
+
     public StorageAccountImpl withTags(Map<String, String> tags) {
         if (isInCreateMode()) {
             this.createParameters.withTags(tags);
@@ -318,12 +348,42 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         }
     }
 
-    public StorageAccountImpl withEnableHttpsTrafficOnly(Boolean enableHttpsTrafficOnly) {
+    public StorageAccountImpl withCustomDomain(CustomDomain customDomain) {
         if (isInCreateMode()) {
-            this.createParameters.withEnableHttpsTrafficOnly(enableHttpsTrafficOnly);
+            this.createParameters.withCustomDomain(customDomain);
             return this;
         } else {
-            this.updateParameters.withEnableHttpsTrafficOnly(enableHttpsTrafficOnly);
+            this.updateParameters.withCustomDomain(customDomain);
+            return this;
+        }
+    }
+
+    public StorageAccountImpl withEncryption(Encryption encryption) {
+        if (isInCreateMode()) {
+            this.createParameters.withEncryption(encryption);
+            return this;
+        } else {
+            this.updateParameters.withEncryption(encryption);
+            return this;
+        }
+    }
+
+    public StorageAccountImpl withNetworkRuleSet(NetworkRuleSet networkRuleSet) {
+        if (isInCreateMode()) {
+            this.createParameters.withNetworkRuleSet(networkRuleSet);
+            return this;
+        } else {
+            this.updateParameters.withNetworkRuleSet(networkRuleSet);
+            return this;
+        }
+    }
+
+    public StorageAccountImpl withAccessTier(AccessTier accessTier) {
+        if (isInCreateMode()) {
+            this.createParameters.withAccessTier(accessTier);
+            return this;
+        } else {
+            this.updateParameters.withAccessTier(accessTier);
             return this;
         }
     }
@@ -339,42 +399,12 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         }
     }
 
-    public StorageAccountImpl withKind(Kind kind) {
+    public StorageAccountImpl withEnableHttpsTrafficOnly(Boolean enableHttpsTrafficOnly) {
         if (isInCreateMode()) {
-            this.createParameters.withKind(kind);
+            this.createParameters.withEnableHttpsTrafficOnly(enableHttpsTrafficOnly);
             return this;
         } else {
-            this.updateParameters.withKind(kind);
-            return this;
-        }
-    }
-
-    public StorageAccountImpl withNetworkRuleSet(NetworkRuleSet networkRuleSet) {
-        if (isInCreateMode()) {
-            this.createParameters.withNetworkRuleSet(networkRuleSet);
-            return this;
-        } else {
-            this.updateParameters.withNetworkRuleSet(networkRuleSet);
-            return this;
-        }
-    }
-
-    public StorageAccountImpl withMinimumTlsVersion(MinimumTlsVersion minimumTlsVersion) {
-        if (isInCreateMode()) {
-            this.createParameters.withMinimumTlsVersion(minimumTlsVersion);
-            return this;
-        } else {
-            this.updateParameters.withMinimumTlsVersion(minimumTlsVersion);
-            return this;
-        }
-    }
-
-    public StorageAccountImpl withEncryption(Encryption encryption) {
-        if (isInCreateMode()) {
-            this.createParameters.withEncryption(encryption);
-            return this;
-        } else {
-            this.updateParameters.withEncryption(encryption);
+            this.updateParameters.withEnableHttpsTrafficOnly(enableHttpsTrafficOnly);
             return this;
         }
     }
@@ -384,42 +414,12 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this;
     }
 
-    public StorageAccountImpl withAccessTier(AccessTier accessTier) {
+    public StorageAccountImpl withLargeFileSharesState(LargeFileSharesState largeFileSharesState) {
         if (isInCreateMode()) {
-            this.createParameters.withAccessTier(accessTier);
+            this.createParameters.withLargeFileSharesState(largeFileSharesState);
             return this;
         } else {
-            this.updateParameters.withAccessTier(accessTier);
-            return this;
-        }
-    }
-
-    public StorageAccountImpl withSku(Sku sku) {
-        if (isInCreateMode()) {
-            this.createParameters.withSku(sku);
-            return this;
-        } else {
-            this.updateParameters.withSku(sku);
-            return this;
-        }
-    }
-
-    public StorageAccountImpl withCustomDomain(CustomDomain customDomain) {
-        if (isInCreateMode()) {
-            this.createParameters.withCustomDomain(customDomain);
-            return this;
-        } else {
-            this.updateParameters.withCustomDomain(customDomain);
-            return this;
-        }
-    }
-
-    public StorageAccountImpl withAllowBlobPublicAccess(Boolean allowBlobPublicAccess) {
-        if (isInCreateMode()) {
-            this.createParameters.withAllowBlobPublicAccess(allowBlobPublicAccess);
-            return this;
-        } else {
-            this.updateParameters.withAllowBlobPublicAccess(allowBlobPublicAccess);
+            this.updateParameters.withLargeFileSharesState(largeFileSharesState);
             return this;
         }
     }
@@ -434,24 +434,24 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         }
     }
 
-    public StorageAccountImpl withLargeFileSharesState(LargeFileSharesState largeFileSharesState) {
+    public StorageAccountImpl withAllowBlobPublicAccess(Boolean allowBlobPublicAccess) {
         if (isInCreateMode()) {
-            this.createParameters.withLargeFileSharesState(largeFileSharesState);
+            this.createParameters.withAllowBlobPublicAccess(allowBlobPublicAccess);
             return this;
         } else {
-            this.updateParameters.withLargeFileSharesState(largeFileSharesState);
+            this.updateParameters.withAllowBlobPublicAccess(allowBlobPublicAccess);
             return this;
         }
     }
 
-    public StorageAccountImpl withRegion(String location) {
-        this.createParameters.withLocation(location);
-        return this;
-    }
-
-    public StorageAccountImpl withRegion(Region location) {
-        this.createParameters.withLocation(location.toString());
-        return this;
+    public StorageAccountImpl withMinimumTlsVersion(MinimumTlsVersion minimumTlsVersion) {
+        if (isInCreateMode()) {
+            this.createParameters.withMinimumTlsVersion(minimumTlsVersion);
+            return this;
+        } else {
+            this.updateParameters.withMinimumTlsVersion(minimumTlsVersion);
+            return this;
+        }
     }
 
     private boolean isInCreateMode() {

@@ -254,18 +254,38 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
         return this;
     }
 
-    public DomainImpl withKind(String kind) {
-        if (isInCreateMode()) {
-            this.innerModel().withKind(kind);
-            return this;
-        } else {
-            this.updateDomain.withKind(kind);
-            return this;
-        }
+    public DomainImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
+    public DomainImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
+    }
+
+    public DomainImpl withTags(Map<String, String> tags) {
+        this.innerModel().withTags(tags);
+        return this;
     }
 
     public DomainImpl withContactAdmin(Contact contactAdmin) {
         this.innerModel().withContactAdmin(contactAdmin);
+        return this;
+    }
+
+    public DomainImpl withContactBilling(Contact contactBilling) {
+        this.innerModel().withContactBilling(contactBilling);
+        return this;
+    }
+
+    public DomainImpl withContactRegistrant(Contact contactRegistrant) {
+        this.innerModel().withContactRegistrant(contactRegistrant);
+        return this;
+    }
+
+    public DomainImpl withContactTech(Contact contactTech) {
+        this.innerModel().withContactTech(contactTech);
         return this;
     }
 
@@ -275,6 +295,41 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
             return this;
         } else {
             this.updateDomain.withPrivacy(privacy);
+            return this;
+        }
+    }
+
+    public DomainImpl withAutoRenew(Boolean autoRenew) {
+        if (isInCreateMode()) {
+            this.innerModel().withAutoRenew(autoRenew);
+            return this;
+        } else {
+            this.updateDomain.withAutoRenew(autoRenew);
+            return this;
+        }
+    }
+
+    public DomainImpl withConsent(DomainPurchaseConsent consent) {
+        this.innerModel().withConsent(consent);
+        return this;
+    }
+
+    public DomainImpl withDnsType(DnsType dnsType) {
+        if (isInCreateMode()) {
+            this.innerModel().withDnsType(dnsType);
+            return this;
+        } else {
+            this.updateDomain.withDnsType(dnsType);
+            return this;
+        }
+    }
+
+    public DomainImpl withDnsZoneId(String dnsZoneId) {
+        if (isInCreateMode()) {
+            this.innerModel().withDnsZoneId(dnsZoneId);
+            return this;
+        } else {
+            this.updateDomain.withDnsZoneId(dnsZoneId);
             return this;
         }
     }
@@ -299,67 +354,12 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
         }
     }
 
-    public DomainImpl withContactTech(Contact contactTech) {
-        this.innerModel().withContactTech(contactTech);
-        return this;
-    }
-
-    public DomainImpl withDnsZoneId(String dnsZoneId) {
+    public DomainImpl withKind(String kind) {
         if (isInCreateMode()) {
-            this.innerModel().withDnsZoneId(dnsZoneId);
+            this.innerModel().withKind(kind);
             return this;
         } else {
-            this.updateDomain.withDnsZoneId(dnsZoneId);
-            return this;
-        }
-    }
-
-    public DomainImpl withTags(Map<String, String> tags) {
-        this.innerModel().withTags(tags);
-        return this;
-    }
-
-    public DomainImpl withContactRegistrant(Contact contactRegistrant) {
-        this.innerModel().withContactRegistrant(contactRegistrant);
-        return this;
-    }
-
-    public DomainImpl withContactBilling(Contact contactBilling) {
-        this.innerModel().withContactBilling(contactBilling);
-        return this;
-    }
-
-    public DomainImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public DomainImpl withAutoRenew(Boolean autoRenew) {
-        if (isInCreateMode()) {
-            this.innerModel().withAutoRenew(autoRenew);
-            return this;
-        } else {
-            this.updateDomain.withAutoRenew(autoRenew);
-            return this;
-        }
-    }
-
-    public DomainImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
-    public DomainImpl withConsent(DomainPurchaseConsent consent) {
-        this.innerModel().withConsent(consent);
-        return this;
-    }
-
-    public DomainImpl withDnsType(DnsType dnsType) {
-        if (isInCreateMode()) {
-            this.innerModel().withDnsType(dnsType);
-            return this;
-        } else {
-            this.updateDomain.withDnsType(dnsType);
+            this.updateDomain.withKind(kind);
             return this;
         }
     }

@@ -148,11 +148,6 @@ public final class EncryptionScopeImpl implements EncryptionScope, EncryptionSco
         return this;
     }
 
-    public EncryptionScopeImpl withKeyVaultProperties(EncryptionScopeKeyVaultProperties keyVaultProperties) {
-        this.innerModel().withKeyVaultProperties(keyVaultProperties);
-        return this;
-    }
-
     public EncryptionScopeImpl withSource(EncryptionScopeSource source) {
         this.innerModel().withSource(source);
         return this;
@@ -160,6 +155,11 @@ public final class EncryptionScopeImpl implements EncryptionScope, EncryptionSco
 
     public EncryptionScopeImpl withState(EncryptionScopeState state) {
         this.innerModel().withState(state);
+        return this;
+    }
+
+    public EncryptionScopeImpl withKeyVaultProperties(EncryptionScopeKeyVaultProperties keyVaultProperties) {
+        this.innerModel().withKeyVaultProperties(keyVaultProperties);
         return this;
     }
 }

@@ -96,9 +96,9 @@ public final class NetworkProfileImpl implements NetworkProfile, NetworkProfile.
 
     private String resourceGroupName;
 
-    private TagsObject updateParameters;
-
     private String networkProfileName;
+
+    private TagsObject updateParameters;
 
     public NetworkProfileImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -185,19 +185,13 @@ public final class NetworkProfileImpl implements NetworkProfile, NetworkProfile.
         return this;
     }
 
-    public NetworkProfileImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
     public NetworkProfileImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;
     }
 
-    public NetworkProfileImpl withContainerNetworkInterfaceConfigurations(
-        List<ContainerNetworkInterfaceConfiguration> containerNetworkInterfaceConfigurations) {
-        this.innerModel().withContainerNetworkInterfaceConfigurations(containerNetworkInterfaceConfigurations);
+    public NetworkProfileImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
@@ -209,6 +203,12 @@ public final class NetworkProfileImpl implements NetworkProfile, NetworkProfile.
             this.updateParameters.withTags(tags);
             return this;
         }
+    }
+
+    public NetworkProfileImpl withContainerNetworkInterfaceConfigurations(
+        List<ContainerNetworkInterfaceConfiguration> containerNetworkInterfaceConfigurations) {
+        this.innerModel().withContainerNetworkInterfaceConfigurations(containerNetworkInterfaceConfigurations);
+        return this;
     }
 
     public NetworkProfileImpl withId(String id) {

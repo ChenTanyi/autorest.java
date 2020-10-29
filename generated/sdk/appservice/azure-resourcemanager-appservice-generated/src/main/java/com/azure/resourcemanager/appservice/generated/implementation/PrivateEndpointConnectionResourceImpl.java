@@ -56,15 +56,15 @@ public final class PrivateEndpointConnectionResourceImpl
         return this.serviceManager;
     }
 
-    private String privateEndpointConnectionName;
-
     private String resourceGroupName;
 
-    private PrivateLinkConnectionApprovalRequestResource updatePrivateEndpointWrapper;
+    private String name;
+
+    private String privateEndpointConnectionName;
 
     private PrivateLinkConnectionApprovalRequestResource createPrivateEndpointWrapper;
 
-    private String name;
+    private PrivateLinkConnectionApprovalRequestResource updatePrivateEndpointWrapper;
 
     public PrivateEndpointConnectionResourceImpl withExistingSite(String resourceGroupName, String name) {
         this.resourceGroupName = resourceGroupName;
@@ -155,6 +155,16 @@ public final class PrivateEndpointConnectionResourceImpl
         return this;
     }
 
+    public PrivateEndpointConnectionResourceImpl withKind(String kind) {
+        if (isInCreateMode()) {
+            this.createPrivateEndpointWrapper.withKind(kind);
+            return this;
+        } else {
+            this.updatePrivateEndpointWrapper.withKind(kind);
+            return this;
+        }
+    }
+
     public PrivateEndpointConnectionResourceImpl withPrivateLinkServiceConnectionState(
         PrivateLinkConnectionState privateLinkServiceConnectionState) {
         if (isInCreateMode()) {
@@ -162,16 +172,6 @@ public final class PrivateEndpointConnectionResourceImpl
             return this;
         } else {
             this.updatePrivateEndpointWrapper.withPrivateLinkServiceConnectionState(privateLinkServiceConnectionState);
-            return this;
-        }
-    }
-
-    public PrivateEndpointConnectionResourceImpl withKind(String kind) {
-        if (isInCreateMode()) {
-            this.createPrivateEndpointWrapper.withKind(kind);
-            return this;
-        } else {
-            this.updatePrivateEndpointWrapper.withKind(kind);
             return this;
         }
     }

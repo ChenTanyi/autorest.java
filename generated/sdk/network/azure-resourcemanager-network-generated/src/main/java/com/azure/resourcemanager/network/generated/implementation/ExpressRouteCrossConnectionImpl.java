@@ -211,21 +211,6 @@ public final class ExpressRouteCrossConnectionImpl
         return this;
     }
 
-    public ExpressRouteCrossConnectionImpl withTags(Map<String, String> tags) {
-        if (isInCreateMode()) {
-            this.innerModel().withTags(tags);
-            return this;
-        } else {
-            this.updateCrossConnectionParameters.withTags(tags);
-            return this;
-        }
-    }
-
-    public ExpressRouteCrossConnectionImpl withPeerings(List<ExpressRouteCrossConnectionPeeringInner> peerings) {
-        this.innerModel().withPeerings(peerings);
-        return this;
-    }
-
     public ExpressRouteCrossConnectionImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;
@@ -236,10 +221,14 @@ public final class ExpressRouteCrossConnectionImpl
         return this;
     }
 
-    public ExpressRouteCrossConnectionImpl withServiceProviderProvisioningState(
-        ServiceProviderProvisioningState serviceProviderProvisioningState) {
-        this.innerModel().withServiceProviderProvisioningState(serviceProviderProvisioningState);
-        return this;
+    public ExpressRouteCrossConnectionImpl withTags(Map<String, String> tags) {
+        if (isInCreateMode()) {
+            this.innerModel().withTags(tags);
+            return this;
+        } else {
+            this.updateCrossConnectionParameters.withTags(tags);
+            return this;
+        }
     }
 
     public ExpressRouteCrossConnectionImpl withExpressRouteCircuit(ExpressRouteCircuitReference expressRouteCircuit) {
@@ -247,8 +236,19 @@ public final class ExpressRouteCrossConnectionImpl
         return this;
     }
 
+    public ExpressRouteCrossConnectionImpl withServiceProviderProvisioningState(
+        ServiceProviderProvisioningState serviceProviderProvisioningState) {
+        this.innerModel().withServiceProviderProvisioningState(serviceProviderProvisioningState);
+        return this;
+    }
+
     public ExpressRouteCrossConnectionImpl withServiceProviderNotes(String serviceProviderNotes) {
         this.innerModel().withServiceProviderNotes(serviceProviderNotes);
+        return this;
+    }
+
+    public ExpressRouteCrossConnectionImpl withPeerings(List<ExpressRouteCrossConnectionPeeringInner> peerings) {
+        this.innerModel().withPeerings(peerings);
         return this;
     }
 

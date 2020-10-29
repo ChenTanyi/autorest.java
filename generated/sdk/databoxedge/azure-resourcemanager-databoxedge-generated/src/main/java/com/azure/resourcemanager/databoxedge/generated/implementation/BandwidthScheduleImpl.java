@@ -59,11 +59,11 @@ public final class BandwidthScheduleImpl
         return this.serviceManager;
     }
 
-    private String resourceGroupName;
+    private String deviceName;
 
     private String name;
 
-    private String deviceName;
+    private String resourceGroupName;
 
     public BandwidthScheduleImpl withExistingDataBoxEdgeDevice(String deviceName, String name) {
         this.deviceName = deviceName;
@@ -145,11 +145,6 @@ public final class BandwidthScheduleImpl
         return this;
     }
 
-    public BandwidthScheduleImpl withDays(List<DayOfWeek> days) {
-        this.innerModel().withDays(days);
-        return this;
-    }
-
     public BandwidthScheduleImpl withStart(String start) {
         this.innerModel().withStart(start);
         return this;
@@ -162,6 +157,11 @@ public final class BandwidthScheduleImpl
 
     public BandwidthScheduleImpl withRateInMbps(int rateInMbps) {
         this.innerModel().withRateInMbps(rateInMbps);
+        return this;
+    }
+
+    public BandwidthScheduleImpl withDays(List<DayOfWeek> days) {
+        this.innerModel().withDays(days);
         return this;
     }
 }

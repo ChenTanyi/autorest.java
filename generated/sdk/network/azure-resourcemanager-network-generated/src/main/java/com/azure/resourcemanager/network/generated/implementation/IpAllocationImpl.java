@@ -105,9 +105,9 @@ public final class IpAllocationImpl implements IpAllocation, IpAllocation.Defini
 
     private String resourceGroupName;
 
-    private TagsObject updateParameters;
-
     private String ipAllocationName;
+
+    private TagsObject updateParameters;
 
     public IpAllocationImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -192,6 +192,16 @@ public final class IpAllocationImpl implements IpAllocation, IpAllocation.Defini
         return this;
     }
 
+    public IpAllocationImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
+    public IpAllocationImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
+    }
+
     public IpAllocationImpl withTags(Map<String, String> tags) {
         if (isInCreateMode()) {
             this.innerModel().withTags(tags);
@@ -207,13 +217,8 @@ public final class IpAllocationImpl implements IpAllocation, IpAllocation.Defini
         return this;
     }
 
-    public IpAllocationImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
-    public IpAllocationImpl withId(String id) {
-        this.innerModel().withId(id);
+    public IpAllocationImpl withPrefix(String prefix) {
+        this.innerModel().withPrefix(prefix);
         return this;
     }
 
@@ -222,8 +227,8 @@ public final class IpAllocationImpl implements IpAllocation, IpAllocation.Defini
         return this;
     }
 
-    public IpAllocationImpl withAllocationTags(Map<String, String> allocationTags) {
-        this.innerModel().withAllocationTags(allocationTags);
+    public IpAllocationImpl withPrefixType(IpVersion prefixType) {
+        this.innerModel().withPrefixType(prefixType);
         return this;
     }
 
@@ -232,18 +237,13 @@ public final class IpAllocationImpl implements IpAllocation, IpAllocation.Defini
         return this;
     }
 
-    public IpAllocationImpl withPrefix(String prefix) {
-        this.innerModel().withPrefix(prefix);
+    public IpAllocationImpl withAllocationTags(Map<String, String> allocationTags) {
+        this.innerModel().withAllocationTags(allocationTags);
         return this;
     }
 
-    public IpAllocationImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public IpAllocationImpl withPrefixType(IpVersion prefixType) {
-        this.innerModel().withPrefixType(prefixType);
+    public IpAllocationImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 

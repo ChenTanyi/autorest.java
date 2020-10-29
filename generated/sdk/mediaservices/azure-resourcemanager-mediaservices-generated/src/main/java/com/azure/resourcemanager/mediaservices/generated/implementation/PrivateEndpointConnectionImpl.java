@@ -141,14 +141,14 @@ public final class PrivateEndpointConnectionImpl
         return this;
     }
 
-    public PrivateEndpointConnectionImpl withPrivateLinkServiceConnectionState(
-        PrivateLinkServiceConnectionState privateLinkServiceConnectionState) {
-        this.innerModel().withPrivateLinkServiceConnectionState(privateLinkServiceConnectionState);
+    public PrivateEndpointConnectionImpl withPrivateEndpoint(PrivateEndpoint privateEndpoint) {
+        this.innerModel().withPrivateEndpoint(privateEndpoint);
         return this;
     }
 
-    public PrivateEndpointConnectionImpl withPrivateEndpoint(PrivateEndpoint privateEndpoint) {
-        this.innerModel().withPrivateEndpoint(privateEndpoint);
+    public PrivateEndpointConnectionImpl withPrivateLinkServiceConnectionState(
+        PrivateLinkServiceConnectionState privateLinkServiceConnectionState) {
+        this.innerModel().withPrivateLinkServiceConnectionState(privateLinkServiceConnectionState);
         return this;
     }
 }

@@ -137,9 +137,9 @@ public final class ExpressRoutePortImpl
 
     private String resourceGroupName;
 
-    private TagsObject updateParameters;
-
     private String expressRoutePortName;
+
+    private TagsObject updateParameters;
 
     public ExpressRoutePortImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -222,18 +222,13 @@ public final class ExpressRoutePortImpl
         return this;
     }
 
-    public ExpressRoutePortImpl withIdentity(ManagedServiceIdentity identity) {
-        this.innerModel().withIdentity(identity);
+    public ExpressRoutePortImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
         return this;
     }
 
     public ExpressRoutePortImpl withRegion(String location) {
         this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public ExpressRoutePortImpl withPeeringLocation(String peeringLocation) {
-        this.innerModel().withPeeringLocation(peeringLocation);
         return this;
     }
 
@@ -247,18 +242,13 @@ public final class ExpressRoutePortImpl
         }
     }
 
-    public ExpressRoutePortImpl withLinks(List<ExpressRouteLinkInner> links) {
-        this.innerModel().withLinks(links);
+    public ExpressRoutePortImpl withIdentity(ManagedServiceIdentity identity) {
+        this.innerModel().withIdentity(identity);
         return this;
     }
 
-    public ExpressRoutePortImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
-    public ExpressRoutePortImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
+    public ExpressRoutePortImpl withPeeringLocation(String peeringLocation) {
+        this.innerModel().withPeeringLocation(peeringLocation);
         return this;
     }
 
@@ -269,6 +259,16 @@ public final class ExpressRoutePortImpl
 
     public ExpressRoutePortImpl withEncapsulation(ExpressRoutePortsEncapsulation encapsulation) {
         this.innerModel().withEncapsulation(encapsulation);
+        return this;
+    }
+
+    public ExpressRoutePortImpl withLinks(List<ExpressRouteLinkInner> links) {
+        this.innerModel().withLinks(links);
+        return this;
+    }
+
+    public ExpressRoutePortImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 

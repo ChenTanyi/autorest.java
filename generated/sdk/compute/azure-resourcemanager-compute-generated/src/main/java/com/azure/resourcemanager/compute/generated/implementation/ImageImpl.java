@@ -167,22 +167,17 @@ public final class ImageImpl implements Image, Image.Definition, Image.Update {
         return this;
     }
 
+    public ImageImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
+    }
+
     public ImageImpl withTags(Map<String, String> tags) {
         if (isInCreateMode()) {
             this.innerModel().withTags(tags);
             return this;
         } else {
             this.updateParameters.withTags(tags);
-            return this;
-        }
-    }
-
-    public ImageImpl withHyperVGeneration(HyperVGenerationTypes hyperVGeneration) {
-        if (isInCreateMode()) {
-            this.innerModel().withHyperVGeneration(hyperVGeneration);
-            return this;
-        } else {
-            this.updateParameters.withHyperVGeneration(hyperVGeneration);
             return this;
         }
     }
@@ -197,17 +192,22 @@ public final class ImageImpl implements Image, Image.Definition, Image.Update {
         }
     }
 
-    public ImageImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
     public ImageImpl withStorageProfile(ImageStorageProfile storageProfile) {
         if (isInCreateMode()) {
             this.innerModel().withStorageProfile(storageProfile);
             return this;
         } else {
             this.updateParameters.withStorageProfile(storageProfile);
+            return this;
+        }
+    }
+
+    public ImageImpl withHyperVGeneration(HyperVGenerationTypes hyperVGeneration) {
+        if (isInCreateMode()) {
+            this.innerModel().withHyperVGeneration(hyperVGeneration);
+            return this;
+        } else {
+            this.updateParameters.withHyperVGeneration(hyperVGeneration);
             return this;
         }
     }

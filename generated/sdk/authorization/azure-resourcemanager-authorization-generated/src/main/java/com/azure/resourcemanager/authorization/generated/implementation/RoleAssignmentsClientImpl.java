@@ -290,6 +290,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2018-09-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -303,7 +304,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
                             resourceType,
                             resourceName,
                             filter,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -377,6 +378,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2018-09-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -388,7 +390,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
                 resourceType,
                 resourceName,
                 filter,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 accept,
                 context)
@@ -605,6 +607,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2018-09-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -614,7 +617,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
                             this.client.getEndpoint(),
                             resourceGroupName,
                             filter,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -662,6 +665,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2018-09-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -669,7 +673,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
                 this.client.getEndpoint(),
                 resourceGroupName,
                 filter,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 accept,
                 context)
@@ -800,18 +804,12 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter roleAssignmentName is required and cannot be null."));
         }
+        final String apiVersion = "2018-09-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
-                    service
-                        .delete(
-                            this.client.getEndpoint(),
-                            scope,
-                            roleAssignmentName,
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
+                    service.delete(this.client.getEndpoint(), scope, roleAssignmentName, apiVersion, accept, context))
             .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
     }
 
@@ -842,10 +840,10 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter roleAssignmentName is required and cannot be null."));
         }
+        final String apiVersion = "2018-09-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .delete(this.client.getEndpoint(), scope, roleAssignmentName, this.client.getApiVersion(), accept, context);
+        return service.delete(this.client.getEndpoint(), scope, roleAssignmentName, apiVersion, accept, context);
     }
 
     /**
@@ -938,6 +936,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2018-09-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -947,7 +946,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
                             this.client.getEndpoint(),
                             scope,
                             roleAssignmentName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             parameters,
                             accept,
                             context))
@@ -991,17 +990,11 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2018-09-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .create(
-                this.client.getEndpoint(),
-                scope,
-                roleAssignmentName,
-                this.client.getApiVersion(),
-                parameters,
-                accept,
-                context);
+            .create(this.client.getEndpoint(), scope, roleAssignmentName, apiVersion, parameters, accept, context);
     }
 
     /**
@@ -1101,18 +1094,12 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter roleAssignmentName is required and cannot be null."));
         }
+        final String apiVersion = "2018-09-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
-                    service
-                        .get(
-                            this.client.getEndpoint(),
-                            scope,
-                            roleAssignmentName,
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
+                    service.get(this.client.getEndpoint(), scope, roleAssignmentName, apiVersion, accept, context))
             .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
     }
 
@@ -1143,10 +1130,10 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter roleAssignmentName is required and cannot be null."));
         }
+        final String apiVersion = "2018-09-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .get(this.client.getEndpoint(), scope, roleAssignmentName, this.client.getApiVersion(), accept, context);
+        return service.get(this.client.getEndpoint(), scope, roleAssignmentName, apiVersion, accept, context);
     }
 
     /**
@@ -1223,11 +1210,10 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
         if (roleId == null) {
             return Mono.error(new IllegalArgumentException("Parameter roleId is required and cannot be null."));
         }
+        final String apiVersion = "2018-09-01-preview";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service.deleteById(this.client.getEndpoint(), roleId, this.client.getApiVersion(), accept, context))
+            .withContext(context -> service.deleteById(this.client.getEndpoint(), roleId, apiVersion, accept, context))
             .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
     }
 
@@ -1252,9 +1238,10 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
         if (roleId == null) {
             return Mono.error(new IllegalArgumentException("Parameter roleId is required and cannot be null."));
         }
+        final String apiVersion = "2018-09-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service.deleteById(this.client.getEndpoint(), roleId, this.client.getApiVersion(), accept, context);
+        return service.deleteById(this.client.getEndpoint(), roleId, apiVersion, accept, context);
     }
 
     /**
@@ -1335,18 +1322,12 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2018-09-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
-                    service
-                        .createById(
-                            this.client.getEndpoint(),
-                            roleId,
-                            this.client.getApiVersion(),
-                            parameters,
-                            accept,
-                            context))
+                    service.createById(this.client.getEndpoint(), roleId, apiVersion, parameters, accept, context))
             .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
     }
 
@@ -1378,10 +1359,10 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2018-09-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .createById(this.client.getEndpoint(), roleId, this.client.getApiVersion(), parameters, accept, context);
+        return service.createById(this.client.getEndpoint(), roleId, apiVersion, parameters, accept, context);
     }
 
     /**
@@ -1459,11 +1440,10 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
         if (roleId == null) {
             return Mono.error(new IllegalArgumentException("Parameter roleId is required and cannot be null."));
         }
+        final String apiVersion = "2018-09-01-preview";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service.getById(this.client.getEndpoint(), roleId, this.client.getApiVersion(), accept, context))
+            .withContext(context -> service.getById(this.client.getEndpoint(), roleId, apiVersion, accept, context))
             .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
     }
 
@@ -1488,9 +1468,10 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
         if (roleId == null) {
             return Mono.error(new IllegalArgumentException("Parameter roleId is required and cannot be null."));
         }
+        final String apiVersion = "2018-09-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service.getById(this.client.getEndpoint(), roleId, this.client.getApiVersion(), accept, context);
+        return service.getById(this.client.getEndpoint(), roleId, apiVersion, accept, context);
     }
 
     /**
@@ -1569,6 +1550,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2018-09-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1577,7 +1559,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
                         .list(
                             this.client.getEndpoint(),
                             filter,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -1619,16 +1601,11 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2018-09-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(
-                this.client.getEndpoint(),
-                filter,
-                this.client.getApiVersion(),
-                this.client.getSubscriptionId(),
-                accept,
-                context)
+            .list(this.client.getEndpoint(), filter, apiVersion, this.client.getSubscriptionId(), accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -1740,13 +1717,11 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
         if (scope == null) {
             return Mono.error(new IllegalArgumentException("Parameter scope is required and cannot be null."));
         }
+        final String apiVersion = "2018-09-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
-                context ->
-                    service
-                        .listForScope(
-                            this.client.getEndpoint(), scope, filter, this.client.getApiVersion(), accept, context))
+                context -> service.listForScope(this.client.getEndpoint(), scope, filter, apiVersion, accept, context))
             .<PagedResponse<RoleAssignmentInner>>map(
                 res ->
                     new PagedResponseBase<>(
@@ -1784,10 +1759,11 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
         if (scope == null) {
             return Mono.error(new IllegalArgumentException("Parameter scope is required and cannot be null."));
         }
+        final String apiVersion = "2018-09-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .listForScope(this.client.getEndpoint(), scope, filter, this.client.getApiVersion(), accept, context)
+            .listForScope(this.client.getEndpoint(), scope, filter, apiVersion, accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(

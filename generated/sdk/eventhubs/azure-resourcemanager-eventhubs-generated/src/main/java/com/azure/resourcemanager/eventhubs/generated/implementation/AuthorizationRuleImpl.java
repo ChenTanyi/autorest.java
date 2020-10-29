@@ -49,9 +49,9 @@ public final class AuthorizationRuleImpl
 
     private String resourceGroupName;
 
-    private String authorizationRuleName;
-
     private String namespaceName;
+
+    private String authorizationRuleName;
 
     public AuthorizationRuleImpl withExistingNamespace(String resourceGroupName, String namespaceName) {
         this.resourceGroupName = resourceGroupName;

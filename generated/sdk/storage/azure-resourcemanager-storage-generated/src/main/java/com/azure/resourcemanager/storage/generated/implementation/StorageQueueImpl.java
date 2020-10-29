@@ -49,11 +49,11 @@ public final class StorageQueueImpl implements StorageQueue, StorageQueue.Defini
         return this.serviceManager;
     }
 
-    private String queueName;
-
     private String resourceGroupName;
 
     private String accountName;
+
+    private String queueName;
 
     public StorageQueueImpl withExistingStorageAccount(String resourceGroupName, String accountName) {
         this.resourceGroupName = resourceGroupName;

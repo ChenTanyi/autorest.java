@@ -111,9 +111,9 @@ public final class VirtualWanImpl implements VirtualWan, VirtualWan.Definition, 
 
     private String resourceGroupName;
 
-    private TagsObject updateWanParameters;
-
     private String virtualWanName;
+
+    private TagsObject updateWanParameters;
 
     public VirtualWanImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -196,13 +196,13 @@ public final class VirtualWanImpl implements VirtualWan, VirtualWan.Definition, 
         return this;
     }
 
-    public VirtualWanImpl withAllowVnetToVnetTraffic(Boolean allowVnetToVnetTraffic) {
-        this.innerModel().withAllowVnetToVnetTraffic(allowVnetToVnetTraffic);
+    public VirtualWanImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
         return this;
     }
 
-    public VirtualWanImpl withDisableVpnEncryption(Boolean disableVpnEncryption) {
-        this.innerModel().withDisableVpnEncryption(disableVpnEncryption);
+    public VirtualWanImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
@@ -216,8 +216,18 @@ public final class VirtualWanImpl implements VirtualWan, VirtualWan.Definition, 
         }
     }
 
-    public VirtualWanImpl withId(String id) {
-        this.innerModel().withId(id);
+    public VirtualWanImpl withDisableVpnEncryption(Boolean disableVpnEncryption) {
+        this.innerModel().withDisableVpnEncryption(disableVpnEncryption);
+        return this;
+    }
+
+    public VirtualWanImpl withAllowBranchToBranchTraffic(Boolean allowBranchToBranchTraffic) {
+        this.innerModel().withAllowBranchToBranchTraffic(allowBranchToBranchTraffic);
+        return this;
+    }
+
+    public VirtualWanImpl withAllowVnetToVnetTraffic(Boolean allowVnetToVnetTraffic) {
+        this.innerModel().withAllowVnetToVnetTraffic(allowVnetToVnetTraffic);
         return this;
     }
 
@@ -226,18 +236,8 @@ public final class VirtualWanImpl implements VirtualWan, VirtualWan.Definition, 
         return this;
     }
 
-    public VirtualWanImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public VirtualWanImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
-    public VirtualWanImpl withAllowBranchToBranchTraffic(Boolean allowBranchToBranchTraffic) {
-        this.innerModel().withAllowBranchToBranchTraffic(allowBranchToBranchTraffic);
+    public VirtualWanImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 

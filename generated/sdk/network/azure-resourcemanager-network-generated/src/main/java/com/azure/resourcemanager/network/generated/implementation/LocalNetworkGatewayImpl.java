@@ -178,28 +178,13 @@ public final class LocalNetworkGatewayImpl
         return this;
     }
 
-    public LocalNetworkGatewayImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public LocalNetworkGatewayImpl withBgpSettings(BgpSettings bgpSettings) {
-        this.innerModel().withBgpSettings(bgpSettings);
-        return this;
-    }
-
     public LocalNetworkGatewayImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;
     }
 
-    public LocalNetworkGatewayImpl withGatewayIpAddress(String gatewayIpAddress) {
-        this.innerModel().withGatewayIpAddress(gatewayIpAddress);
-        return this;
-    }
-
-    public LocalNetworkGatewayImpl withLocalNetworkAddressSpace(AddressSpace localNetworkAddressSpace) {
-        this.innerModel().withLocalNetworkAddressSpace(localNetworkAddressSpace);
+    public LocalNetworkGatewayImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
@@ -213,13 +198,28 @@ public final class LocalNetworkGatewayImpl
         }
     }
 
-    public LocalNetworkGatewayImpl withId(String id) {
-        this.innerModel().withId(id);
+    public LocalNetworkGatewayImpl withLocalNetworkAddressSpace(AddressSpace localNetworkAddressSpace) {
+        this.innerModel().withLocalNetworkAddressSpace(localNetworkAddressSpace);
+        return this;
+    }
+
+    public LocalNetworkGatewayImpl withGatewayIpAddress(String gatewayIpAddress) {
+        this.innerModel().withGatewayIpAddress(gatewayIpAddress);
         return this;
     }
 
     public LocalNetworkGatewayImpl withFqdn(String fqdn) {
         this.innerModel().withFqdn(fqdn);
+        return this;
+    }
+
+    public LocalNetworkGatewayImpl withBgpSettings(BgpSettings bgpSettings) {
+        this.innerModel().withBgpSettings(bgpSettings);
+        return this;
+    }
+
+    public LocalNetworkGatewayImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 

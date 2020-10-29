@@ -163,23 +163,13 @@ public final class PolicySetDefinitionImpl
         return this;
     }
 
-    public PolicySetDefinitionImpl withPolicyDefinitionGroups(List<PolicyDefinitionGroup> policyDefinitionGroups) {
-        this.innerModel().withPolicyDefinitionGroups(policyDefinitionGroups);
-        return this;
-    }
-
-    public PolicySetDefinitionImpl withDisplayName(String displayName) {
-        this.innerModel().withDisplayName(displayName);
-        return this;
-    }
-
     public PolicySetDefinitionImpl withPolicyType(PolicyType policyType) {
         this.innerModel().withPolicyType(policyType);
         return this;
     }
 
-    public PolicySetDefinitionImpl withParameters(Map<String, ParameterDefinitionsValue> parameters) {
-        this.innerModel().withParameters(parameters);
+    public PolicySetDefinitionImpl withDisplayName(String displayName) {
+        this.innerModel().withDisplayName(displayName);
         return this;
     }
 
@@ -193,8 +183,18 @@ public final class PolicySetDefinitionImpl
         return this;
     }
 
+    public PolicySetDefinitionImpl withParameters(Map<String, ParameterDefinitionsValue> parameters) {
+        this.innerModel().withParameters(parameters);
+        return this;
+    }
+
     public PolicySetDefinitionImpl withPolicyDefinitions(List<PolicyDefinitionReference> policyDefinitions) {
         this.innerModel().withPolicyDefinitions(policyDefinitions);
+        return this;
+    }
+
+    public PolicySetDefinitionImpl withPolicyDefinitionGroups(List<PolicyDefinitionGroup> policyDefinitionGroups) {
+        this.innerModel().withPolicyDefinitionGroups(policyDefinitionGroups);
         return this;
     }
 }

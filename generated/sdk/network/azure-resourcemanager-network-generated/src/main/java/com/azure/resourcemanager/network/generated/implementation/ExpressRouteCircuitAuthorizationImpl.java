@@ -55,11 +55,11 @@ public final class ExpressRouteCircuitAuthorizationImpl
         return this.serviceManager;
     }
 
-    private String authorizationName;
-
     private String resourceGroupName;
 
     private String circuitName;
+
+    private String authorizationName;
 
     public ExpressRouteCircuitAuthorizationImpl withExistingExpressRouteCircuit(
         String resourceGroupName, String circuitName) {
@@ -143,14 +143,13 @@ public final class ExpressRouteCircuitAuthorizationImpl
         return this;
     }
 
-    public ExpressRouteCircuitAuthorizationImpl withAuthorizationUseStatus(
-        AuthorizationUseStatus authorizationUseStatus) {
-        this.innerModel().withAuthorizationUseStatus(authorizationUseStatus);
+    public ExpressRouteCircuitAuthorizationImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 
-    public ExpressRouteCircuitAuthorizationImpl withId(String id) {
-        this.innerModel().withId(id);
+    public ExpressRouteCircuitAuthorizationImpl withName(String name) {
+        this.innerModel().withName(name);
         return this;
     }
 
@@ -159,8 +158,9 @@ public final class ExpressRouteCircuitAuthorizationImpl
         return this;
     }
 
-    public ExpressRouteCircuitAuthorizationImpl withName(String name) {
-        this.innerModel().withName(name);
+    public ExpressRouteCircuitAuthorizationImpl withAuthorizationUseStatus(
+        AuthorizationUseStatus authorizationUseStatus) {
+        this.innerModel().withAuthorizationUseStatus(authorizationUseStatus);
         return this;
     }
 }

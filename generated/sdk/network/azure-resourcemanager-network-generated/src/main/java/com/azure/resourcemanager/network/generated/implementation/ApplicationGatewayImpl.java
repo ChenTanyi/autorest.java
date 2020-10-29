@@ -327,9 +327,9 @@ public final class ApplicationGatewayImpl
         return this.serviceManager;
     }
 
-    private String applicationGatewayName;
-
     private String resourceGroupName;
+
+    private String applicationGatewayName;
 
     private TagsObject updateParameters;
 
@@ -414,58 +414,13 @@ public final class ApplicationGatewayImpl
         return this;
     }
 
-    public ApplicationGatewayImpl withTrustedClientCertificates(
-        List<ApplicationGatewayTrustedClientCertificate> trustedClientCertificates) {
-        this.innerModel().withTrustedClientCertificates(trustedClientCertificates);
-        return this;
-    }
-
-    public ApplicationGatewayImpl withPrivateLinkConfigurations(
-        List<ApplicationGatewayPrivateLinkConfiguration> privateLinkConfigurations) {
-        this.innerModel().withPrivateLinkConfigurations(privateLinkConfigurations);
-        return this;
-    }
-
-    public ApplicationGatewayImpl withSku(ApplicationGatewaySku sku) {
-        this.innerModel().withSku(sku);
-        return this;
-    }
-
-    public ApplicationGatewayImpl withWebApplicationFirewallConfiguration(
-        ApplicationGatewayWebApplicationFirewallConfiguration webApplicationFirewallConfiguration) {
-        this.innerModel().withWebApplicationFirewallConfiguration(webApplicationFirewallConfiguration);
-        return this;
-    }
-
     public ApplicationGatewayImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;
     }
 
-    public ApplicationGatewayImpl withRequestRoutingRules(
-        List<ApplicationGatewayRequestRoutingRule> requestRoutingRules) {
-        this.innerModel().withRequestRoutingRules(requestRoutingRules);
-        return this;
-    }
-
-    public ApplicationGatewayImpl withFirewallPolicy(SubResource firewallPolicy) {
-        this.innerModel().withFirewallPolicy(firewallPolicy);
-        return this;
-    }
-
-    public ApplicationGatewayImpl withForceFirewallPolicyAssociation(Boolean forceFirewallPolicyAssociation) {
-        this.innerModel().withForceFirewallPolicyAssociation(forceFirewallPolicyAssociation);
-        return this;
-    }
-
-    public ApplicationGatewayImpl withZones(List<String> zones) {
-        this.innerModel().withZones(zones);
-        return this;
-    }
-
-    public ApplicationGatewayImpl withFrontendIpConfigurations(
-        List<ApplicationGatewayFrontendIpConfiguration> frontendIpConfigurations) {
-        this.innerModel().withFrontendIpConfigurations(frontendIpConfigurations);
+    public ApplicationGatewayImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
@@ -479,47 +434,8 @@ public final class ApplicationGatewayImpl
         }
     }
 
-    public ApplicationGatewayImpl withEnableFips(Boolean enableFips) {
-        this.innerModel().withEnableFips(enableFips);
-        return this;
-    }
-
-    public ApplicationGatewayImpl withSslProfiles(List<ApplicationGatewaySslProfile> sslProfiles) {
-        this.innerModel().withSslProfiles(sslProfiles);
-        return this;
-    }
-
-    public ApplicationGatewayImpl withHttpListeners(List<ApplicationGatewayHttpListener> httpListeners) {
-        this.innerModel().withHttpListeners(httpListeners);
-        return this;
-    }
-
-    public ApplicationGatewayImpl withEnableHttp2(Boolean enableHttp2) {
-        this.innerModel().withEnableHttp2(enableHttp2);
-        return this;
-    }
-
-    public ApplicationGatewayImpl withBackendAddressPools(
-        List<ApplicationGatewayBackendAddressPool> backendAddressPools) {
-        this.innerModel().withBackendAddressPools(backendAddressPools);
-        return this;
-    }
-
-    public ApplicationGatewayImpl withAuthenticationCertificates(
-        List<ApplicationGatewayAuthenticationCertificate> authenticationCertificates) {
-        this.innerModel().withAuthenticationCertificates(authenticationCertificates);
-        return this;
-    }
-
-    public ApplicationGatewayImpl withRedirectConfigurations(
-        List<ApplicationGatewayRedirectConfiguration> redirectConfigurations) {
-        this.innerModel().withRedirectConfigurations(redirectConfigurations);
-        return this;
-    }
-
-    public ApplicationGatewayImpl withBackendHttpSettingsCollection(
-        List<ApplicationGatewayBackendHttpSettings> backendHttpSettingsCollection) {
-        this.innerModel().withBackendHttpSettingsCollection(backendHttpSettingsCollection);
+    public ApplicationGatewayImpl withZones(List<String> zones) {
+        this.innerModel().withZones(zones);
         return this;
     }
 
@@ -528,45 +444,13 @@ public final class ApplicationGatewayImpl
         return this;
     }
 
-    public ApplicationGatewayImpl withId(String id) {
-        this.innerModel().withId(id);
+    public ApplicationGatewayImpl withSku(ApplicationGatewaySku sku) {
+        this.innerModel().withSku(sku);
         return this;
     }
 
-    public ApplicationGatewayImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public ApplicationGatewayImpl withSslCertificates(List<ApplicationGatewaySslCertificate> sslCertificates) {
-        this.innerModel().withSslCertificates(sslCertificates);
-        return this;
-    }
-
-    public ApplicationGatewayImpl withCustomErrorConfigurations(
-        List<ApplicationGatewayCustomError> customErrorConfigurations) {
-        this.innerModel().withCustomErrorConfigurations(customErrorConfigurations);
-        return this;
-    }
-
-    public ApplicationGatewayImpl withAutoscaleConfiguration(
-        ApplicationGatewayAutoscaleConfiguration autoscaleConfiguration) {
-        this.innerModel().withAutoscaleConfiguration(autoscaleConfiguration);
-        return this;
-    }
-
-    public ApplicationGatewayImpl withUrlPathMaps(List<ApplicationGatewayUrlPathMap> urlPathMaps) {
-        this.innerModel().withUrlPathMaps(urlPathMaps);
-        return this;
-    }
-
-    public ApplicationGatewayImpl withRewriteRuleSets(List<ApplicationGatewayRewriteRuleSet> rewriteRuleSets) {
-        this.innerModel().withRewriteRuleSets(rewriteRuleSets);
-        return this;
-    }
-
-    public ApplicationGatewayImpl withFrontendPorts(List<ApplicationGatewayFrontendPort> frontendPorts) {
-        this.innerModel().withFrontendPorts(frontendPorts);
+    public ApplicationGatewayImpl withSslPolicy(ApplicationGatewaySslPolicy sslPolicy) {
+        this.innerModel().withSslPolicy(sslPolicy);
         return this;
     }
 
@@ -576,19 +460,135 @@ public final class ApplicationGatewayImpl
         return this;
     }
 
-    public ApplicationGatewayImpl withProbes(List<ApplicationGatewayProbe> probes) {
-        this.innerModel().withProbes(probes);
-        return this;
-    }
-
-    public ApplicationGatewayImpl withSslPolicy(ApplicationGatewaySslPolicy sslPolicy) {
-        this.innerModel().withSslPolicy(sslPolicy);
+    public ApplicationGatewayImpl withAuthenticationCertificates(
+        List<ApplicationGatewayAuthenticationCertificate> authenticationCertificates) {
+        this.innerModel().withAuthenticationCertificates(authenticationCertificates);
         return this;
     }
 
     public ApplicationGatewayImpl withTrustedRootCertificates(
         List<ApplicationGatewayTrustedRootCertificate> trustedRootCertificates) {
         this.innerModel().withTrustedRootCertificates(trustedRootCertificates);
+        return this;
+    }
+
+    public ApplicationGatewayImpl withTrustedClientCertificates(
+        List<ApplicationGatewayTrustedClientCertificate> trustedClientCertificates) {
+        this.innerModel().withTrustedClientCertificates(trustedClientCertificates);
+        return this;
+    }
+
+    public ApplicationGatewayImpl withSslCertificates(List<ApplicationGatewaySslCertificate> sslCertificates) {
+        this.innerModel().withSslCertificates(sslCertificates);
+        return this;
+    }
+
+    public ApplicationGatewayImpl withFrontendIpConfigurations(
+        List<ApplicationGatewayFrontendIpConfiguration> frontendIpConfigurations) {
+        this.innerModel().withFrontendIpConfigurations(frontendIpConfigurations);
+        return this;
+    }
+
+    public ApplicationGatewayImpl withFrontendPorts(List<ApplicationGatewayFrontendPort> frontendPorts) {
+        this.innerModel().withFrontendPorts(frontendPorts);
+        return this;
+    }
+
+    public ApplicationGatewayImpl withProbes(List<ApplicationGatewayProbe> probes) {
+        this.innerModel().withProbes(probes);
+        return this;
+    }
+
+    public ApplicationGatewayImpl withBackendAddressPools(
+        List<ApplicationGatewayBackendAddressPool> backendAddressPools) {
+        this.innerModel().withBackendAddressPools(backendAddressPools);
+        return this;
+    }
+
+    public ApplicationGatewayImpl withBackendHttpSettingsCollection(
+        List<ApplicationGatewayBackendHttpSettings> backendHttpSettingsCollection) {
+        this.innerModel().withBackendHttpSettingsCollection(backendHttpSettingsCollection);
+        return this;
+    }
+
+    public ApplicationGatewayImpl withHttpListeners(List<ApplicationGatewayHttpListener> httpListeners) {
+        this.innerModel().withHttpListeners(httpListeners);
+        return this;
+    }
+
+    public ApplicationGatewayImpl withSslProfiles(List<ApplicationGatewaySslProfile> sslProfiles) {
+        this.innerModel().withSslProfiles(sslProfiles);
+        return this;
+    }
+
+    public ApplicationGatewayImpl withUrlPathMaps(List<ApplicationGatewayUrlPathMap> urlPathMaps) {
+        this.innerModel().withUrlPathMaps(urlPathMaps);
+        return this;
+    }
+
+    public ApplicationGatewayImpl withRequestRoutingRules(
+        List<ApplicationGatewayRequestRoutingRule> requestRoutingRules) {
+        this.innerModel().withRequestRoutingRules(requestRoutingRules);
+        return this;
+    }
+
+    public ApplicationGatewayImpl withRewriteRuleSets(List<ApplicationGatewayRewriteRuleSet> rewriteRuleSets) {
+        this.innerModel().withRewriteRuleSets(rewriteRuleSets);
+        return this;
+    }
+
+    public ApplicationGatewayImpl withRedirectConfigurations(
+        List<ApplicationGatewayRedirectConfiguration> redirectConfigurations) {
+        this.innerModel().withRedirectConfigurations(redirectConfigurations);
+        return this;
+    }
+
+    public ApplicationGatewayImpl withWebApplicationFirewallConfiguration(
+        ApplicationGatewayWebApplicationFirewallConfiguration webApplicationFirewallConfiguration) {
+        this.innerModel().withWebApplicationFirewallConfiguration(webApplicationFirewallConfiguration);
+        return this;
+    }
+
+    public ApplicationGatewayImpl withFirewallPolicy(SubResource firewallPolicy) {
+        this.innerModel().withFirewallPolicy(firewallPolicy);
+        return this;
+    }
+
+    public ApplicationGatewayImpl withEnableHttp2(Boolean enableHttp2) {
+        this.innerModel().withEnableHttp2(enableHttp2);
+        return this;
+    }
+
+    public ApplicationGatewayImpl withEnableFips(Boolean enableFips) {
+        this.innerModel().withEnableFips(enableFips);
+        return this;
+    }
+
+    public ApplicationGatewayImpl withAutoscaleConfiguration(
+        ApplicationGatewayAutoscaleConfiguration autoscaleConfiguration) {
+        this.innerModel().withAutoscaleConfiguration(autoscaleConfiguration);
+        return this;
+    }
+
+    public ApplicationGatewayImpl withPrivateLinkConfigurations(
+        List<ApplicationGatewayPrivateLinkConfiguration> privateLinkConfigurations) {
+        this.innerModel().withPrivateLinkConfigurations(privateLinkConfigurations);
+        return this;
+    }
+
+    public ApplicationGatewayImpl withCustomErrorConfigurations(
+        List<ApplicationGatewayCustomError> customErrorConfigurations) {
+        this.innerModel().withCustomErrorConfigurations(customErrorConfigurations);
+        return this;
+    }
+
+    public ApplicationGatewayImpl withForceFirewallPolicyAssociation(Boolean forceFirewallPolicyAssociation) {
+        this.innerModel().withForceFirewallPolicyAssociation(forceFirewallPolicyAssociation);
+        return this;
+    }
+
+    public ApplicationGatewayImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 

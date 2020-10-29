@@ -82,9 +82,9 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
         return this.serviceManager;
     }
 
-    private String bastionHostname;
-
     private String resourceGroupName;
+
+    private String bastionHostname;
 
     public BastionHostImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -164,16 +164,6 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
         return this;
     }
 
-    public BastionHostImpl withIpConfigurations(List<BastionHostIpConfiguration> ipConfigurations) {
-        this.innerModel().withIpConfigurations(ipConfigurations);
-        return this;
-    }
-
-    public BastionHostImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     public BastionHostImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;
@@ -189,8 +179,18 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
         return this;
     }
 
+    public BastionHostImpl withIpConfigurations(List<BastionHostIpConfiguration> ipConfigurations) {
+        this.innerModel().withIpConfigurations(ipConfigurations);
+        return this;
+    }
+
     public BastionHostImpl withDnsName(String dnsName) {
         this.innerModel().withDnsName(dnsName);
+        return this;
+    }
+
+    public BastionHostImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 }

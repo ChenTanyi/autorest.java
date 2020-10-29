@@ -59,9 +59,9 @@ public final class NetworkInterfaceTapConfigurationImpl
 
     private String resourceGroupName;
 
-    private String tapConfigurationName;
-
     private String networkInterfaceName;
+
+    private String tapConfigurationName;
 
     public NetworkInterfaceTapConfigurationImpl withExistingNetworkInterface(
         String resourceGroupName, String networkInterfaceName) {
@@ -147,11 +147,6 @@ public final class NetworkInterfaceTapConfigurationImpl
         return this;
     }
 
-    public NetworkInterfaceTapConfigurationImpl withVirtualNetworkTap(VirtualNetworkTapInner virtualNetworkTap) {
-        this.innerModel().withVirtualNetworkTap(virtualNetworkTap);
-        return this;
-    }
-
     public NetworkInterfaceTapConfigurationImpl withId(String id) {
         this.innerModel().withId(id);
         return this;
@@ -159,6 +154,11 @@ public final class NetworkInterfaceTapConfigurationImpl
 
     public NetworkInterfaceTapConfigurationImpl withName(String name) {
         this.innerModel().withName(name);
+        return this;
+    }
+
+    public NetworkInterfaceTapConfigurationImpl withVirtualNetworkTap(VirtualNetworkTapInner virtualNetworkTap) {
+        this.innerModel().withVirtualNetworkTap(virtualNetworkTap);
         return this;
     }
 }

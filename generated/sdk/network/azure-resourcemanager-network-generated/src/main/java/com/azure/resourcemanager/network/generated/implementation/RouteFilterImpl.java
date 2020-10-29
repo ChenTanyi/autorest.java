@@ -205,6 +205,16 @@ public final class RouteFilterImpl implements RouteFilter, RouteFilter.Definitio
         return this;
     }
 
+    public RouteFilterImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
+    public RouteFilterImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
+    }
+
     public RouteFilterImpl withTags(Map<String, String> tags) {
         if (isInCreateMode()) {
             this.innerModel().withTags(tags);
@@ -215,23 +225,13 @@ public final class RouteFilterImpl implements RouteFilter, RouteFilter.Definitio
         }
     }
 
-    public RouteFilterImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public RouteFilterImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     public RouteFilterImpl withRules(List<RouteFilterRuleInner> rules) {
         this.innerModel().withRules(rules);
         return this;
     }
 
-    public RouteFilterImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
+    public RouteFilterImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 

@@ -66,11 +66,11 @@ public final class VaultImpl implements Vault, Vault.Definition, Vault.Update {
         return this.serviceManager;
     }
 
-    private VaultCreateOrUpdateParameters createParameters;
-
     private String resourceGroupName;
 
     private String vaultName;
+
+    private VaultCreateOrUpdateParameters createParameters;
 
     private VaultPatchParameters updateParameters;
 
@@ -156,18 +156,8 @@ public final class VaultImpl implements Vault, Vault.Definition, Vault.Update {
         return this;
     }
 
-    public VaultImpl withTags(Map<String, String> tags) {
-        if (isInCreateMode()) {
-            this.createParameters.withTags(tags);
-            return this;
-        } else {
-            this.updateParameters.withTags(tags);
-            return this;
-        }
-    }
-
-    public VaultImpl withProperties(VaultProperties properties) {
-        this.createParameters.withProperties(properties);
+    public VaultImpl withRegion(Region location) {
+        this.createParameters.withLocation(location.toString());
         return this;
     }
 
@@ -176,9 +166,19 @@ public final class VaultImpl implements Vault, Vault.Definition, Vault.Update {
         return this;
     }
 
-    public VaultImpl withRegion(Region location) {
-        this.createParameters.withLocation(location.toString());
+    public VaultImpl withProperties(VaultProperties properties) {
+        this.createParameters.withProperties(properties);
         return this;
+    }
+
+    public VaultImpl withTags(Map<String, String> tags) {
+        if (isInCreateMode()) {
+            this.createParameters.withTags(tags);
+            return this;
+        } else {
+            this.updateParameters.withTags(tags);
+            return this;
+        }
     }
 
     public VaultImpl withProperties(VaultPatchProperties properties) {

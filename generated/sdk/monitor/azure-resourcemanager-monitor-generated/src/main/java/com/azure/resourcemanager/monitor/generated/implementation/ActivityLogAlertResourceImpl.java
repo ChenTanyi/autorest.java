@@ -90,9 +90,9 @@ public final class ActivityLogAlertResourceImpl
 
     private String resourceGroupName;
 
-    private ActivityLogAlertPatchBody updateActivityLogAlertPatch;
-
     private String activityLogAlertName;
+
+    private ActivityLogAlertPatchBody updateActivityLogAlertPatch;
 
     public ActivityLogAlertResourceImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -182,12 +182,17 @@ public final class ActivityLogAlertResourceImpl
         return this;
     }
 
-    public ActivityLogAlertResourceImpl withEnabled(Boolean enabled) {
+    public ActivityLogAlertResourceImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
+    }
+
+    public ActivityLogAlertResourceImpl withTags(Map<String, String> tags) {
         if (isInCreateMode()) {
-            this.innerModel().withEnabled(enabled);
+            this.innerModel().withTags(tags);
             return this;
         } else {
-            this.updateActivityLogAlertPatch.withEnabled(enabled);
+            this.updateActivityLogAlertPatch.withTags(tags);
             return this;
         }
     }
@@ -197,9 +202,14 @@ public final class ActivityLogAlertResourceImpl
         return this;
     }
 
-    public ActivityLogAlertResourceImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
+    public ActivityLogAlertResourceImpl withEnabled(Boolean enabled) {
+        if (isInCreateMode()) {
+            this.innerModel().withEnabled(enabled);
+            return this;
+        } else {
+            this.updateActivityLogAlertPatch.withEnabled(enabled);
+            return this;
+        }
     }
 
     public ActivityLogAlertResourceImpl withCondition(ActivityLogAlertAllOfCondition condition) {
@@ -215,16 +225,6 @@ public final class ActivityLogAlertResourceImpl
     public ActivityLogAlertResourceImpl withDescription(String description) {
         this.innerModel().withDescription(description);
         return this;
-    }
-
-    public ActivityLogAlertResourceImpl withTags(Map<String, String> tags) {
-        if (isInCreateMode()) {
-            this.innerModel().withTags(tags);
-            return this;
-        } else {
-            this.updateActivityLogAlertPatch.withTags(tags);
-            return this;
-        }
     }
 
     private boolean isInCreateMode() {

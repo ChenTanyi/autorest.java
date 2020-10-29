@@ -146,9 +146,9 @@ public final class DscpConfigurationImpl
         return this.serviceManager;
     }
 
-    private String dscpConfigurationName;
-
     private String resourceGroupName;
+
+    private String dscpConfigurationName;
 
     public DscpConfigurationImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -228,8 +228,13 @@ public final class DscpConfigurationImpl
         return this;
     }
 
-    public DscpConfigurationImpl withDestinationIpRanges(List<QosIpRange> destinationIpRanges) {
-        this.innerModel().withDestinationIpRanges(destinationIpRanges);
+    public DscpConfigurationImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
+    public DscpConfigurationImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
@@ -243,13 +248,13 @@ public final class DscpConfigurationImpl
         return this;
     }
 
-    public DscpConfigurationImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
+    public DscpConfigurationImpl withSourceIpRanges(List<QosIpRange> sourceIpRanges) {
+        this.innerModel().withSourceIpRanges(sourceIpRanges);
         return this;
     }
 
-    public DscpConfigurationImpl withId(String id) {
-        this.innerModel().withId(id);
+    public DscpConfigurationImpl withDestinationIpRanges(List<QosIpRange> destinationIpRanges) {
+        this.innerModel().withDestinationIpRanges(destinationIpRanges);
         return this;
     }
 
@@ -268,13 +273,8 @@ public final class DscpConfigurationImpl
         return this;
     }
 
-    public DscpConfigurationImpl withSourceIpRanges(List<QosIpRange> sourceIpRanges) {
-        this.innerModel().withSourceIpRanges(sourceIpRanges);
-        return this;
-    }
-
-    public DscpConfigurationImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
+    public DscpConfigurationImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 }

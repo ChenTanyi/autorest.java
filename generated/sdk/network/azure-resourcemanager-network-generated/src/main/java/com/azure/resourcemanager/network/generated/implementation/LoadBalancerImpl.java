@@ -271,48 +271,13 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
         return this;
     }
 
-    public LoadBalancerImpl withInboundNatPools(List<InboundNatPool> inboundNatPools) {
-        this.innerModel().withInboundNatPools(inboundNatPools);
-        return this;
-    }
-
-    public LoadBalancerImpl withInboundNatRules(List<InboundNatRuleInner> inboundNatRules) {
-        this.innerModel().withInboundNatRules(inboundNatRules);
+    public LoadBalancerImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
         return this;
     }
 
     public LoadBalancerImpl withRegion(String location) {
         this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public LoadBalancerImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
-    public LoadBalancerImpl withOutboundRules(List<OutboundRuleInner> outboundRules) {
-        this.innerModel().withOutboundRules(outboundRules);
-        return this;
-    }
-
-    public LoadBalancerImpl withFrontendIpConfigurations(List<FrontendIpConfigurationInner> frontendIpConfigurations) {
-        this.innerModel().withFrontendIpConfigurations(frontendIpConfigurations);
-        return this;
-    }
-
-    public LoadBalancerImpl withLoadBalancingRules(List<LoadBalancingRuleInner> loadBalancingRules) {
-        this.innerModel().withLoadBalancingRules(loadBalancingRules);
-        return this;
-    }
-
-    public LoadBalancerImpl withSku(LoadBalancerSku sku) {
-        this.innerModel().withSku(sku);
-        return this;
-    }
-
-    public LoadBalancerImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
         return this;
     }
 
@@ -326,13 +291,48 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
         }
     }
 
-    public LoadBalancerImpl withProbes(List<ProbeInner> probes) {
-        this.innerModel().withProbes(probes);
+    public LoadBalancerImpl withSku(LoadBalancerSku sku) {
+        this.innerModel().withSku(sku);
+        return this;
+    }
+
+    public LoadBalancerImpl withFrontendIpConfigurations(List<FrontendIpConfigurationInner> frontendIpConfigurations) {
+        this.innerModel().withFrontendIpConfigurations(frontendIpConfigurations);
         return this;
     }
 
     public LoadBalancerImpl withBackendAddressPools(List<BackendAddressPoolInner> backendAddressPools) {
         this.innerModel().withBackendAddressPools(backendAddressPools);
+        return this;
+    }
+
+    public LoadBalancerImpl withLoadBalancingRules(List<LoadBalancingRuleInner> loadBalancingRules) {
+        this.innerModel().withLoadBalancingRules(loadBalancingRules);
+        return this;
+    }
+
+    public LoadBalancerImpl withProbes(List<ProbeInner> probes) {
+        this.innerModel().withProbes(probes);
+        return this;
+    }
+
+    public LoadBalancerImpl withInboundNatRules(List<InboundNatRuleInner> inboundNatRules) {
+        this.innerModel().withInboundNatRules(inboundNatRules);
+        return this;
+    }
+
+    public LoadBalancerImpl withInboundNatPools(List<InboundNatPool> inboundNatPools) {
+        this.innerModel().withInboundNatPools(inboundNatPools);
+        return this;
+    }
+
+    public LoadBalancerImpl withOutboundRules(List<OutboundRuleInner> outboundRules) {
+        this.innerModel().withOutboundRules(outboundRules);
+        return this;
+    }
+
+    public LoadBalancerImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 

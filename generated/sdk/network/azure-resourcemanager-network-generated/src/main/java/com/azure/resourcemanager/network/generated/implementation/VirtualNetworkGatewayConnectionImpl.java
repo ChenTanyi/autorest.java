@@ -283,40 +283,8 @@ public final class VirtualNetworkGatewayConnectionImpl
         return this;
     }
 
-    public VirtualNetworkGatewayConnectionImpl withVirtualNetworkGateway1(
-        VirtualNetworkGatewayInner virtualNetworkGateway1) {
-        this.innerModel().withVirtualNetworkGateway1(virtualNetworkGateway1);
-        return this;
-    }
-
-    public VirtualNetworkGatewayConnectionImpl withUseLocalAzureIpAddress(Boolean useLocalAzureIpAddress) {
-        this.innerModel().withUseLocalAzureIpAddress(useLocalAzureIpAddress);
-        return this;
-    }
-
-    public VirtualNetworkGatewayConnectionImpl withSharedKey(String sharedKey) {
-        this.innerModel().withSharedKey(sharedKey);
-        return this;
-    }
-
-    public VirtualNetworkGatewayConnectionImpl withDpdTimeoutSeconds(Integer dpdTimeoutSeconds) {
-        this.innerModel().withDpdTimeoutSeconds(dpdTimeoutSeconds);
-        return this;
-    }
-
-    public VirtualNetworkGatewayConnectionImpl withUsePolicyBasedTrafficSelectors(
-        Boolean usePolicyBasedTrafficSelectors) {
-        this.innerModel().withUsePolicyBasedTrafficSelectors(usePolicyBasedTrafficSelectors);
-        return this;
-    }
-
     public VirtualNetworkGatewayConnectionImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
-    public VirtualNetworkGatewayConnectionImpl withId(String id) {
-        this.innerModel().withId(id);
         return this;
     }
 
@@ -325,8 +293,29 @@ public final class VirtualNetworkGatewayConnectionImpl
         return this;
     }
 
-    public VirtualNetworkGatewayConnectionImpl withEnableBgp(Boolean enableBgp) {
-        this.innerModel().withEnableBgp(enableBgp);
+    public VirtualNetworkGatewayConnectionImpl withVirtualNetworkGateway1(
+        VirtualNetworkGatewayInner virtualNetworkGateway1) {
+        this.innerModel().withVirtualNetworkGateway1(virtualNetworkGateway1);
+        return this;
+    }
+
+    public VirtualNetworkGatewayConnectionImpl withConnectionType(VirtualNetworkGatewayConnectionType connectionType) {
+        this.innerModel().withConnectionType(connectionType);
+        return this;
+    }
+
+    public VirtualNetworkGatewayConnectionImpl withTags(Map<String, String> tags) {
+        if (isInCreateMode()) {
+            this.innerModel().withTags(tags);
+            return this;
+        } else {
+            this.updateParameters.withTags(tags);
+            return this;
+        }
+    }
+
+    public VirtualNetworkGatewayConnectionImpl withAuthorizationKey(String authorizationKey) {
+        this.innerModel().withAuthorizationKey(authorizationKey);
         return this;
     }
 
@@ -336,13 +325,50 @@ public final class VirtualNetworkGatewayConnectionImpl
         return this;
     }
 
-    public VirtualNetworkGatewayConnectionImpl withAuthorizationKey(String authorizationKey) {
-        this.innerModel().withAuthorizationKey(authorizationKey);
+    public VirtualNetworkGatewayConnectionImpl withLocalNetworkGateway2(LocalNetworkGatewayInner localNetworkGateway2) {
+        this.innerModel().withLocalNetworkGateway2(localNetworkGateway2);
         return this;
     }
 
-    public VirtualNetworkGatewayConnectionImpl withConnectionType(VirtualNetworkGatewayConnectionType connectionType) {
-        this.innerModel().withConnectionType(connectionType);
+    public VirtualNetworkGatewayConnectionImpl withConnectionProtocol(
+        VirtualNetworkGatewayConnectionProtocol connectionProtocol) {
+        this.innerModel().withConnectionProtocol(connectionProtocol);
+        return this;
+    }
+
+    public VirtualNetworkGatewayConnectionImpl withRoutingWeight(Integer routingWeight) {
+        this.innerModel().withRoutingWeight(routingWeight);
+        return this;
+    }
+
+    public VirtualNetworkGatewayConnectionImpl withDpdTimeoutSeconds(Integer dpdTimeoutSeconds) {
+        this.innerModel().withDpdTimeoutSeconds(dpdTimeoutSeconds);
+        return this;
+    }
+
+    public VirtualNetworkGatewayConnectionImpl withSharedKey(String sharedKey) {
+        this.innerModel().withSharedKey(sharedKey);
+        return this;
+    }
+
+    public VirtualNetworkGatewayConnectionImpl withPeer(SubResource peer) {
+        this.innerModel().withPeer(peer);
+        return this;
+    }
+
+    public VirtualNetworkGatewayConnectionImpl withEnableBgp(Boolean enableBgp) {
+        this.innerModel().withEnableBgp(enableBgp);
+        return this;
+    }
+
+    public VirtualNetworkGatewayConnectionImpl withUseLocalAzureIpAddress(Boolean useLocalAzureIpAddress) {
+        this.innerModel().withUseLocalAzureIpAddress(useLocalAzureIpAddress);
+        return this;
+    }
+
+    public VirtualNetworkGatewayConnectionImpl withUsePolicyBasedTrafficSelectors(
+        Boolean usePolicyBasedTrafficSelectors) {
+        this.innerModel().withUsePolicyBasedTrafficSelectors(usePolicyBasedTrafficSelectors);
         return this;
     }
 
@@ -357,40 +383,14 @@ public final class VirtualNetworkGatewayConnectionImpl
         return this;
     }
 
-    public VirtualNetworkGatewayConnectionImpl withConnectionProtocol(
-        VirtualNetworkGatewayConnectionProtocol connectionProtocol) {
-        this.innerModel().withConnectionProtocol(connectionProtocol);
-        return this;
-    }
-
-    public VirtualNetworkGatewayConnectionImpl withLocalNetworkGateway2(LocalNetworkGatewayInner localNetworkGateway2) {
-        this.innerModel().withLocalNetworkGateway2(localNetworkGateway2);
-        return this;
-    }
-
     public VirtualNetworkGatewayConnectionImpl withExpressRouteGatewayBypass(Boolean expressRouteGatewayBypass) {
         this.innerModel().withExpressRouteGatewayBypass(expressRouteGatewayBypass);
         return this;
     }
 
-    public VirtualNetworkGatewayConnectionImpl withRoutingWeight(Integer routingWeight) {
-        this.innerModel().withRoutingWeight(routingWeight);
+    public VirtualNetworkGatewayConnectionImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
-    }
-
-    public VirtualNetworkGatewayConnectionImpl withPeer(SubResource peer) {
-        this.innerModel().withPeer(peer);
-        return this;
-    }
-
-    public VirtualNetworkGatewayConnectionImpl withTags(Map<String, String> tags) {
-        if (isInCreateMode()) {
-            this.innerModel().withTags(tags);
-            return this;
-        } else {
-            this.updateParameters.withTags(tags);
-            return this;
-        }
     }
 
     private boolean isInCreateMode() {

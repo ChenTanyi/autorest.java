@@ -59,9 +59,9 @@ public final class ArmDisasterRecoveryImpl
 
     private String resourceGroupName;
 
-    private String alias;
-
     private String namespaceName;
+
+    private String alias;
 
     public ArmDisasterRecoveryImpl withExistingNamespace(String resourceGroupName, String namespaceName) {
         this.resourceGroupName = resourceGroupName;
@@ -147,13 +147,13 @@ public final class ArmDisasterRecoveryImpl
         return this;
     }
 
-    public ArmDisasterRecoveryImpl withAlternateName(String alternateName) {
-        this.innerModel().withAlternateName(alternateName);
+    public ArmDisasterRecoveryImpl withPartnerNamespace(String partnerNamespace) {
+        this.innerModel().withPartnerNamespace(partnerNamespace);
         return this;
     }
 
-    public ArmDisasterRecoveryImpl withPartnerNamespace(String partnerNamespace) {
-        this.innerModel().withPartnerNamespace(partnerNamespace);
+    public ArmDisasterRecoveryImpl withAlternateName(String alternateName) {
+        this.innerModel().withAlternateName(alternateName);
         return this;
     }
 }

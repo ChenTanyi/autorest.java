@@ -51,13 +51,13 @@ public final class PrivateEndpointConnectionImpl
         return this.serviceManager;
     }
 
-    private String privateEndpointConnectionName;
-
     private String resourceGroupName;
 
-    private TagsObject updateParameters;
-
     private String serverName;
+
+    private String privateEndpointConnectionName;
+
+    private TagsObject updateParameters;
 
     public PrivateEndpointConnectionImpl withExistingServer(String resourceGroupName, String serverName) {
         this.resourceGroupName = resourceGroupName;
@@ -147,14 +147,14 @@ public final class PrivateEndpointConnectionImpl
         return this;
     }
 
-    public PrivateEndpointConnectionImpl withTags(Map<String, String> tags) {
-        this.updateParameters.withTags(tags);
-        return this;
-    }
-
     public PrivateEndpointConnectionImpl withPrivateLinkServiceConnectionState(
         PrivateLinkServiceConnectionStateProperty privateLinkServiceConnectionState) {
         this.innerModel().withPrivateLinkServiceConnectionState(privateLinkServiceConnectionState);
+        return this;
+    }
+
+    public PrivateEndpointConnectionImpl withTags(Map<String, String> tags) {
+        this.updateParameters.withTags(tags);
         return this;
     }
 }

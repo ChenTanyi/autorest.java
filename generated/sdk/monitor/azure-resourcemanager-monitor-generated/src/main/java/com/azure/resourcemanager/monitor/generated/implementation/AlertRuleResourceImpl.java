@@ -182,43 +182,13 @@ public final class AlertRuleResourceImpl
         return this;
     }
 
-    public AlertRuleResourceImpl withCondition(RuleCondition condition) {
-        if (isInCreateMode()) {
-            this.innerModel().withCondition(condition);
-            return this;
-        } else {
-            this.updateAlertRulesResource.withCondition(condition);
-            return this;
-        }
-    }
-
-    public AlertRuleResourceImpl withIsEnabled(boolean isEnabled) {
-        this.innerModel().withIsEnabled(isEnabled);
-        return this;
-    }
-
-    public AlertRuleResourceImpl withName(String name) {
-        this.updateAlertRulesResource.withName(name);
-        return this;
-    }
-
-    public AlertRuleResourceImpl withIsEnabled(Boolean isEnabled) {
-        this.updateAlertRulesResource.withIsEnabled(isEnabled);
-        return this;
-    }
-
-    public AlertRuleResourceImpl withActions(List<RuleAction> actions) {
-        if (isInCreateMode()) {
-            this.innerModel().withActions(actions);
-            return this;
-        } else {
-            this.updateAlertRulesResource.withActions(actions);
-            return this;
-        }
-    }
-
     public AlertRuleResourceImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
+    public AlertRuleResourceImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
@@ -227,12 +197,17 @@ public final class AlertRuleResourceImpl
         return this;
     }
 
-    public AlertRuleResourceImpl withDescription(String description) {
+    public AlertRuleResourceImpl withIsEnabled(boolean isEnabled) {
+        this.innerModel().withIsEnabled(isEnabled);
+        return this;
+    }
+
+    public AlertRuleResourceImpl withCondition(RuleCondition condition) {
         if (isInCreateMode()) {
-            this.innerModel().withDescription(description);
+            this.innerModel().withCondition(condition);
             return this;
         } else {
-            this.updateAlertRulesResource.withDescription(description);
+            this.updateAlertRulesResource.withCondition(condition);
             return this;
         }
     }
@@ -247,8 +222,33 @@ public final class AlertRuleResourceImpl
         }
     }
 
-    public AlertRuleResourceImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
+    public AlertRuleResourceImpl withDescription(String description) {
+        if (isInCreateMode()) {
+            this.innerModel().withDescription(description);
+            return this;
+        } else {
+            this.updateAlertRulesResource.withDescription(description);
+            return this;
+        }
+    }
+
+    public AlertRuleResourceImpl withActions(List<RuleAction> actions) {
+        if (isInCreateMode()) {
+            this.innerModel().withActions(actions);
+            return this;
+        } else {
+            this.updateAlertRulesResource.withActions(actions);
+            return this;
+        }
+    }
+
+    public AlertRuleResourceImpl withName(String name) {
+        this.updateAlertRulesResource.withName(name);
+        return this;
+    }
+
+    public AlertRuleResourceImpl withIsEnabled(Boolean isEnabled) {
+        this.updateAlertRulesResource.withIsEnabled(isEnabled);
         return this;
     }
 

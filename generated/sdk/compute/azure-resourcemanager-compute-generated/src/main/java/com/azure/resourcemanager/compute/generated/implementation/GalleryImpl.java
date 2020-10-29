@@ -81,9 +81,9 @@ public final class GalleryImpl implements Gallery, Gallery.Definition, Gallery.U
 
     private String resourceGroupName;
 
-    private GalleryUpdate updateGallery;
-
     private String galleryName;
+
+    private GalleryUpdate updateGallery;
 
     public GalleryImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -166,6 +166,26 @@ public final class GalleryImpl implements Gallery, Gallery.Definition, Gallery.U
         return this;
     }
 
+    public GalleryImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
+    public GalleryImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
+    }
+
+    public GalleryImpl withTags(Map<String, String> tags) {
+        if (isInCreateMode()) {
+            this.innerModel().withTags(tags);
+            return this;
+        } else {
+            this.updateGallery.withTags(tags);
+            return this;
+        }
+    }
+
     public GalleryImpl withDescription(String description) {
         if (isInCreateMode()) {
             this.innerModel().withDescription(description);
@@ -174,16 +194,6 @@ public final class GalleryImpl implements Gallery, Gallery.Definition, Gallery.U
             this.updateGallery.withDescription(description);
             return this;
         }
-    }
-
-    public GalleryImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public GalleryImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
     }
 
     public GalleryImpl withIdentifier(GalleryIdentifier identifier) {
@@ -202,16 +212,6 @@ public final class GalleryImpl implements Gallery, Gallery.Definition, Gallery.U
             return this;
         } else {
             this.updateGallery.withSharingProfile(sharingProfile);
-            return this;
-        }
-    }
-
-    public GalleryImpl withTags(Map<String, String> tags) {
-        if (isInCreateMode()) {
-            this.innerModel().withTags(tags);
-            return this;
-        } else {
-            this.updateGallery.withTags(tags);
             return this;
         }
     }

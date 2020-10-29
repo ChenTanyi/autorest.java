@@ -74,11 +74,11 @@ public final class IotHubDescriptionImpl
         return this.serviceManager;
     }
 
-    private String createIfMatch;
-
     private String resourceGroupName;
 
     private String resourceName;
+
+    private String createIfMatch;
 
     private TagsResource updateIotHubTags;
 
@@ -162,8 +162,18 @@ public final class IotHubDescriptionImpl
         return this;
     }
 
-    public IotHubDescriptionImpl withProperties(IotHubProperties properties) {
-        this.innerModel().withProperties(properties);
+    public IotHubDescriptionImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
+    public IotHubDescriptionImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
+    }
+
+    public IotHubDescriptionImpl withSku(IotHubSkuInfo sku) {
+        this.innerModel().withSku(sku);
         return this;
     }
 
@@ -177,28 +187,18 @@ public final class IotHubDescriptionImpl
         }
     }
 
-    public IotHubDescriptionImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
+    public IotHubDescriptionImpl withEtag(String etag) {
+        this.innerModel().withEtag(etag);
         return this;
     }
 
-    public IotHubDescriptionImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
-    public IotHubDescriptionImpl withSku(IotHubSkuInfo sku) {
-        this.innerModel().withSku(sku);
+    public IotHubDescriptionImpl withProperties(IotHubProperties properties) {
+        this.innerModel().withProperties(properties);
         return this;
     }
 
     public IotHubDescriptionImpl withIfMatch(String ifMatch) {
         this.createIfMatch = ifMatch;
-        return this;
-    }
-
-    public IotHubDescriptionImpl withEtag(String etag) {
-        this.innerModel().withEtag(etag);
         return this;
     }
 

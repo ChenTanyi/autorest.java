@@ -141,9 +141,9 @@ public final class PublicIpAddressImpl implements PublicIpAddress, PublicIpAddre
         return this.serviceManager;
     }
 
-    private String publicIpAddressName;
-
     private String resourceGroupName;
+
+    private String publicIpAddressName;
 
     private TagsObject updateParameters;
 
@@ -230,18 +230,13 @@ public final class PublicIpAddressImpl implements PublicIpAddress, PublicIpAddre
         return this;
     }
 
-    public PublicIpAddressImpl withPublicIpPrefix(SubResource publicIpPrefix) {
-        this.innerModel().withPublicIpPrefix(publicIpPrefix);
+    public PublicIpAddressImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
         return this;
     }
 
-    public PublicIpAddressImpl withDdosSettings(DdosSettings ddosSettings) {
-        this.innerModel().withDdosSettings(ddosSettings);
-        return this;
-    }
-
-    public PublicIpAddressImpl withSku(PublicIpAddressSku sku) {
-        this.innerModel().withSku(sku);
+    public PublicIpAddressImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
@@ -255,18 +250,8 @@ public final class PublicIpAddressImpl implements PublicIpAddress, PublicIpAddre
         }
     }
 
-    public PublicIpAddressImpl withDnsSettings(PublicIpAddressDnsSettings dnsSettings) {
-        this.innerModel().withDnsSettings(dnsSettings);
-        return this;
-    }
-
-    public PublicIpAddressImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
-    public PublicIpAddressImpl withIdleTimeoutInMinutes(Integer idleTimeoutInMinutes) {
-        this.innerModel().withIdleTimeoutInMinutes(idleTimeoutInMinutes);
+    public PublicIpAddressImpl withSku(PublicIpAddressSku sku) {
+        this.innerModel().withSku(sku);
         return this;
     }
 
@@ -275,18 +260,23 @@ public final class PublicIpAddressImpl implements PublicIpAddress, PublicIpAddre
         return this;
     }
 
-    public PublicIpAddressImpl withPublicIpAddressVersion(IpVersion publicIpAddressVersion) {
-        this.innerModel().withPublicIpAddressVersion(publicIpAddressVersion);
-        return this;
-    }
-
     public PublicIpAddressImpl withPublicIpAllocationMethod(IpAllocationMethod publicIpAllocationMethod) {
         this.innerModel().withPublicIpAllocationMethod(publicIpAllocationMethod);
         return this;
     }
 
-    public PublicIpAddressImpl withIpAddress(String ipAddress) {
-        this.innerModel().withIpAddress(ipAddress);
+    public PublicIpAddressImpl withPublicIpAddressVersion(IpVersion publicIpAddressVersion) {
+        this.innerModel().withPublicIpAddressVersion(publicIpAddressVersion);
+        return this;
+    }
+
+    public PublicIpAddressImpl withDnsSettings(PublicIpAddressDnsSettings dnsSettings) {
+        this.innerModel().withDnsSettings(dnsSettings);
+        return this;
+    }
+
+    public PublicIpAddressImpl withDdosSettings(DdosSettings ddosSettings) {
+        this.innerModel().withDdosSettings(ddosSettings);
         return this;
     }
 
@@ -295,13 +285,23 @@ public final class PublicIpAddressImpl implements PublicIpAddress, PublicIpAddre
         return this;
     }
 
-    public PublicIpAddressImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
+    public PublicIpAddressImpl withIpAddress(String ipAddress) {
+        this.innerModel().withIpAddress(ipAddress);
         return this;
     }
 
-    public PublicIpAddressImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
+    public PublicIpAddressImpl withPublicIpPrefix(SubResource publicIpPrefix) {
+        this.innerModel().withPublicIpPrefix(publicIpPrefix);
+        return this;
+    }
+
+    public PublicIpAddressImpl withIdleTimeoutInMinutes(Integer idleTimeoutInMinutes) {
+        this.innerModel().withIdleTimeoutInMinutes(idleTimeoutInMinutes);
+        return this;
+    }
+
+    public PublicIpAddressImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 

@@ -180,13 +180,18 @@ public final class MediaServiceImpl implements MediaService, MediaService.Defini
         return this;
     }
 
-    public MediaServiceImpl withEncryption(AccountEncryption encryption) {
-        this.innerModel().withEncryption(encryption);
+    public MediaServiceImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
     public MediaServiceImpl withTags(Map<String, String> tags) {
         this.innerModel().withTags(tags);
+        return this;
+    }
+
+    public MediaServiceImpl withIdentity(MediaServiceIdentity identity) {
+        this.innerModel().withIdentity(identity);
         return this;
     }
 
@@ -200,13 +205,8 @@ public final class MediaServiceImpl implements MediaService, MediaService.Defini
         return this;
     }
 
-    public MediaServiceImpl withIdentity(MediaServiceIdentity identity) {
-        this.innerModel().withIdentity(identity);
-        return this;
-    }
-
-    public MediaServiceImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
+    public MediaServiceImpl withEncryption(AccountEncryption encryption) {
+        this.innerModel().withEncryption(encryption);
         return this;
     }
 }

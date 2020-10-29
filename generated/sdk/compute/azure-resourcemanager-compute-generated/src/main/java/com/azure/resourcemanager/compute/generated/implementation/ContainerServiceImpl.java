@@ -191,48 +191,8 @@ public final class ContainerServiceImpl
         return this;
     }
 
-    public ContainerServiceImpl withMasterProfile(ContainerServiceMasterProfile masterProfile) {
-        this.innerModel().withMasterProfile(masterProfile);
-        return this;
-    }
-
-    public ContainerServiceImpl withOrchestratorProfile(ContainerServiceOrchestratorProfile orchestratorProfile) {
-        this.innerModel().withOrchestratorProfile(orchestratorProfile);
-        return this;
-    }
-
-    public ContainerServiceImpl withLinuxProfile(ContainerServiceLinuxProfile linuxProfile) {
-        this.innerModel().withLinuxProfile(linuxProfile);
-        return this;
-    }
-
-    public ContainerServiceImpl withCustomProfile(ContainerServiceCustomProfile customProfile) {
-        this.innerModel().withCustomProfile(customProfile);
-        return this;
-    }
-
-    public ContainerServiceImpl withDiagnosticsProfile(ContainerServiceDiagnosticsProfile diagnosticsProfile) {
-        this.innerModel().withDiagnosticsProfile(diagnosticsProfile);
-        return this;
-    }
-
-    public ContainerServiceImpl withWindowsProfile(ContainerServiceWindowsProfile windowsProfile) {
-        this.innerModel().withWindowsProfile(windowsProfile);
-        return this;
-    }
-
     public ContainerServiceImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
-    public ContainerServiceImpl withServicePrincipalProfile(ContainerServicePrincipalProfile servicePrincipalProfile) {
-        this.innerModel().withServicePrincipalProfile(servicePrincipalProfile);
-        return this;
-    }
-
-    public ContainerServiceImpl withTags(Map<String, String> tags) {
-        this.innerModel().withTags(tags);
         return this;
     }
 
@@ -241,8 +201,48 @@ public final class ContainerServiceImpl
         return this;
     }
 
+    public ContainerServiceImpl withTags(Map<String, String> tags) {
+        this.innerModel().withTags(tags);
+        return this;
+    }
+
+    public ContainerServiceImpl withOrchestratorProfile(ContainerServiceOrchestratorProfile orchestratorProfile) {
+        this.innerModel().withOrchestratorProfile(orchestratorProfile);
+        return this;
+    }
+
+    public ContainerServiceImpl withCustomProfile(ContainerServiceCustomProfile customProfile) {
+        this.innerModel().withCustomProfile(customProfile);
+        return this;
+    }
+
+    public ContainerServiceImpl withServicePrincipalProfile(ContainerServicePrincipalProfile servicePrincipalProfile) {
+        this.innerModel().withServicePrincipalProfile(servicePrincipalProfile);
+        return this;
+    }
+
+    public ContainerServiceImpl withMasterProfile(ContainerServiceMasterProfile masterProfile) {
+        this.innerModel().withMasterProfile(masterProfile);
+        return this;
+    }
+
     public ContainerServiceImpl withAgentPoolProfiles(List<ContainerServiceAgentPoolProfile> agentPoolProfiles) {
         this.innerModel().withAgentPoolProfiles(agentPoolProfiles);
+        return this;
+    }
+
+    public ContainerServiceImpl withWindowsProfile(ContainerServiceWindowsProfile windowsProfile) {
+        this.innerModel().withWindowsProfile(windowsProfile);
+        return this;
+    }
+
+    public ContainerServiceImpl withLinuxProfile(ContainerServiceLinuxProfile linuxProfile) {
+        this.innerModel().withLinuxProfile(linuxProfile);
+        return this;
+    }
+
+    public ContainerServiceImpl withDiagnosticsProfile(ContainerServiceDiagnosticsProfile diagnosticsProfile) {
+        this.innerModel().withDiagnosticsProfile(diagnosticsProfile);
         return this;
     }
 }

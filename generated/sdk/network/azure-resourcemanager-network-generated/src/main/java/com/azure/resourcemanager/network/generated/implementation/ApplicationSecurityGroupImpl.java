@@ -73,9 +73,9 @@ public final class ApplicationSecurityGroupImpl
         return this.serviceManager;
     }
 
-    private String applicationSecurityGroupName;
-
     private String resourceGroupName;
+
+    private String applicationSecurityGroupName;
 
     private TagsObject updateParameters;
 
@@ -160,16 +160,6 @@ public final class ApplicationSecurityGroupImpl
         return this;
     }
 
-    public ApplicationSecurityGroupImpl withTags(Map<String, String> tags) {
-        if (isInCreateMode()) {
-            this.innerModel().withTags(tags);
-            return this;
-        } else {
-            this.updateParameters.withTags(tags);
-            return this;
-        }
-    }
-
     public ApplicationSecurityGroupImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;
@@ -178,6 +168,16 @@ public final class ApplicationSecurityGroupImpl
     public ApplicationSecurityGroupImpl withRegion(String location) {
         this.innerModel().withLocation(location);
         return this;
+    }
+
+    public ApplicationSecurityGroupImpl withTags(Map<String, String> tags) {
+        if (isInCreateMode()) {
+            this.innerModel().withTags(tags);
+            return this;
+        } else {
+            this.updateParameters.withTags(tags);
+            return this;
+        }
     }
 
     public ApplicationSecurityGroupImpl withId(String id) {

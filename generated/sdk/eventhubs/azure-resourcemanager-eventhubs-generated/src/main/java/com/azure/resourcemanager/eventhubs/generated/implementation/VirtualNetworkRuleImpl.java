@@ -39,11 +39,11 @@ public final class VirtualNetworkRuleImpl
         return this.serviceManager;
     }
 
-    private String virtualNetworkRuleName;
-
     private String resourceGroupName;
 
     private String namespaceName;
+
+    private String virtualNetworkRuleName;
 
     public VirtualNetworkRuleImpl withExistingNamespace(String resourceGroupName, String namespaceName) {
         this.resourceGroupName = resourceGroupName;

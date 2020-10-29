@@ -59,11 +59,11 @@ public final class TransformImpl implements Transform, Transform.Definition, Tra
         return this.serviceManager;
     }
 
-    private String transformName;
-
     private String resourceGroupName;
 
     private String accountName;
+
+    private String transformName;
 
     public TransformImpl withExistingMediaService(String resourceGroupName, String accountName) {
         this.resourceGroupName = resourceGroupName;
@@ -149,13 +149,13 @@ public final class TransformImpl implements Transform, Transform.Definition, Tra
         return this;
     }
 
-    public TransformImpl withOutputs(List<TransformOutput> outputs) {
-        this.innerModel().withOutputs(outputs);
+    public TransformImpl withDescription(String description) {
+        this.innerModel().withDescription(description);
         return this;
     }
 
-    public TransformImpl withDescription(String description) {
-        this.innerModel().withDescription(description);
+    public TransformImpl withOutputs(List<TransformOutput> outputs) {
+        this.innerModel().withOutputs(outputs);
         return this;
     }
 }

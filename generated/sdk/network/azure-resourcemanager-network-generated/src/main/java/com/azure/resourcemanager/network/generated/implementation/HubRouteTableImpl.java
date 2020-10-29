@@ -82,9 +82,9 @@ public final class HubRouteTableImpl implements HubRouteTable, HubRouteTable.Def
         return this.serviceManager;
     }
 
-    private String virtualHubName;
-
     private String resourceGroupName;
+
+    private String virtualHubName;
 
     private String routeTableName;
 
@@ -168,8 +168,8 @@ public final class HubRouteTableImpl implements HubRouteTable, HubRouteTable.Def
         return this;
     }
 
-    public HubRouteTableImpl withLabels(List<String> labels) {
-        this.innerModel().withLabels(labels);
+    public HubRouteTableImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 
@@ -178,13 +178,13 @@ public final class HubRouteTableImpl implements HubRouteTable, HubRouteTable.Def
         return this;
     }
 
-    public HubRouteTableImpl withId(String id) {
-        this.innerModel().withId(id);
+    public HubRouteTableImpl withRoutes(List<HubRoute> routes) {
+        this.innerModel().withRoutes(routes);
         return this;
     }
 
-    public HubRouteTableImpl withRoutes(List<HubRoute> routes) {
-        this.innerModel().withRoutes(routes);
+    public HubRouteTableImpl withLabels(List<String> labels) {
+        this.innerModel().withLabels(labels);
         return this;
     }
 }

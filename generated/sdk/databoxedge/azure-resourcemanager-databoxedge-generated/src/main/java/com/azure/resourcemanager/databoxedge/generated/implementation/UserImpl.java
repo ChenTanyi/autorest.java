@@ -56,11 +56,11 @@ public final class UserImpl implements User, User.Definition, User.Update {
         return this.serviceManager;
     }
 
-    private String resourceGroupName;
+    private String deviceName;
 
     private String name;
 
-    private String deviceName;
+    private String resourceGroupName;
 
     public UserImpl withExistingDataBoxEdgeDevice(String deviceName, String name) {
         this.deviceName = deviceName;
@@ -147,13 +147,13 @@ public final class UserImpl implements User, User.Definition, User.Update {
         return this;
     }
 
-    public UserImpl withShareAccessRights(List<ShareAccessRight> shareAccessRights) {
-        this.innerModel().withShareAccessRights(shareAccessRights);
+    public UserImpl withEncryptedPassword(AsymmetricEncryptedSecret encryptedPassword) {
+        this.innerModel().withEncryptedPassword(encryptedPassword);
         return this;
     }
 
-    public UserImpl withEncryptedPassword(AsymmetricEncryptedSecret encryptedPassword) {
-        this.innerModel().withEncryptedPassword(encryptedPassword);
+    public UserImpl withShareAccessRights(List<ShareAccessRight> shareAccessRights) {
+        this.innerModel().withShareAccessRights(shareAccessRights);
         return this;
     }
 }

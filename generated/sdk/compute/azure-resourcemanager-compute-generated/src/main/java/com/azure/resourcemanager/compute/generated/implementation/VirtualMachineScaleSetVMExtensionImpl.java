@@ -81,13 +81,13 @@ public final class VirtualMachineScaleSetVMExtensionImpl
 
     private String resourceGroupName;
 
-    private String instanceId;
-
     private String vmScaleSetName;
 
-    private VirtualMachineScaleSetVMExtensionUpdate updateExtensionParameters;
+    private String instanceId;
 
     private String vmExtensionName;
+
+    private VirtualMachineScaleSetVMExtensionUpdate updateExtensionParameters;
 
     public VirtualMachineScaleSetVMExtensionImpl withExistingVirtualMachine(
         String resourceGroupName, String vmScaleSetName, String instanceId) {
@@ -185,21 +185,6 @@ public final class VirtualMachineScaleSetVMExtensionImpl
         return this;
     }
 
-    public VirtualMachineScaleSetVMExtensionImpl withInstanceView(VirtualMachineExtensionInstanceView instanceView) {
-        this.innerModel().withInstanceView(instanceView);
-        return this;
-    }
-
-    public VirtualMachineScaleSetVMExtensionImpl withProtectedSettings(Object protectedSettings) {
-        if (isInCreateMode()) {
-            this.innerModel().withProtectedSettings(protectedSettings);
-            return this;
-        } else {
-            this.updateExtensionParameters.withProtectedSettings(protectedSettings);
-            return this;
-        }
-    }
-
     public VirtualMachineScaleSetVMExtensionImpl withForceUpdateTag(String forceUpdateTag) {
         if (isInCreateMode()) {
             this.innerModel().withForceUpdateTag(forceUpdateTag);
@@ -210,12 +195,12 @@ public final class VirtualMachineScaleSetVMExtensionImpl
         }
     }
 
-    public VirtualMachineScaleSetVMExtensionImpl withSettings(Object settings) {
+    public VirtualMachineScaleSetVMExtensionImpl withPublisher(String publisher) {
         if (isInCreateMode()) {
-            this.innerModel().withSettings(settings);
+            this.innerModel().withPublisher(publisher);
             return this;
         } else {
-            this.updateExtensionParameters.withSettings(settings);
+            this.updateExtensionParameters.withPublisher(publisher);
             return this;
         }
     }
@@ -230,12 +215,12 @@ public final class VirtualMachineScaleSetVMExtensionImpl
         }
     }
 
-    public VirtualMachineScaleSetVMExtensionImpl withEnableAutomaticUpgrade(Boolean enableAutomaticUpgrade) {
+    public VirtualMachineScaleSetVMExtensionImpl withTypeHandlerVersion(String typeHandlerVersion) {
         if (isInCreateMode()) {
-            this.innerModel().withEnableAutomaticUpgrade(enableAutomaticUpgrade);
+            this.innerModel().withTypeHandlerVersion(typeHandlerVersion);
             return this;
         } else {
-            this.updateExtensionParameters.withEnableAutomaticUpgrade(enableAutomaticUpgrade);
+            this.updateExtensionParameters.withTypeHandlerVersion(typeHandlerVersion);
             return this;
         }
     }
@@ -250,24 +235,39 @@ public final class VirtualMachineScaleSetVMExtensionImpl
         }
     }
 
-    public VirtualMachineScaleSetVMExtensionImpl withTypeHandlerVersion(String typeHandlerVersion) {
+    public VirtualMachineScaleSetVMExtensionImpl withEnableAutomaticUpgrade(Boolean enableAutomaticUpgrade) {
         if (isInCreateMode()) {
-            this.innerModel().withTypeHandlerVersion(typeHandlerVersion);
+            this.innerModel().withEnableAutomaticUpgrade(enableAutomaticUpgrade);
             return this;
         } else {
-            this.updateExtensionParameters.withTypeHandlerVersion(typeHandlerVersion);
+            this.updateExtensionParameters.withEnableAutomaticUpgrade(enableAutomaticUpgrade);
             return this;
         }
     }
 
-    public VirtualMachineScaleSetVMExtensionImpl withPublisher(String publisher) {
+    public VirtualMachineScaleSetVMExtensionImpl withSettings(Object settings) {
         if (isInCreateMode()) {
-            this.innerModel().withPublisher(publisher);
+            this.innerModel().withSettings(settings);
             return this;
         } else {
-            this.updateExtensionParameters.withPublisher(publisher);
+            this.updateExtensionParameters.withSettings(settings);
             return this;
         }
+    }
+
+    public VirtualMachineScaleSetVMExtensionImpl withProtectedSettings(Object protectedSettings) {
+        if (isInCreateMode()) {
+            this.innerModel().withProtectedSettings(protectedSettings);
+            return this;
+        } else {
+            this.updateExtensionParameters.withProtectedSettings(protectedSettings);
+            return this;
+        }
+    }
+
+    public VirtualMachineScaleSetVMExtensionImpl withInstanceView(VirtualMachineExtensionInstanceView instanceView) {
+        this.innerModel().withInstanceView(instanceView);
+        return this;
     }
 
     private boolean isInCreateMode() {

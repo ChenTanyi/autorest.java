@@ -125,9 +125,9 @@ public final class PrivateEndpointImpl implements PrivateEndpoint, PrivateEndpoi
         return this.serviceManager;
     }
 
-    private String privateEndpointName;
-
     private String resourceGroupName;
+
+    private String privateEndpointName;
 
     public PrivateEndpointImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -209,8 +209,13 @@ public final class PrivateEndpointImpl implements PrivateEndpoint, PrivateEndpoi
         return this;
     }
 
-    public PrivateEndpointImpl withSubnet(SubnetInner subnet) {
-        this.innerModel().withSubnet(subnet);
+    public PrivateEndpointImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
+    public PrivateEndpointImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
@@ -219,13 +224,8 @@ public final class PrivateEndpointImpl implements PrivateEndpoint, PrivateEndpoi
         return this;
     }
 
-    public PrivateEndpointImpl withCustomDnsConfigs(List<CustomDnsConfigPropertiesFormat> customDnsConfigs) {
-        this.innerModel().withCustomDnsConfigs(customDnsConfigs);
-        return this;
-    }
-
-    public PrivateEndpointImpl withId(String id) {
-        this.innerModel().withId(id);
+    public PrivateEndpointImpl withSubnet(SubnetInner subnet) {
+        this.innerModel().withSubnet(subnet);
         return this;
     }
 
@@ -241,13 +241,13 @@ public final class PrivateEndpointImpl implements PrivateEndpoint, PrivateEndpoi
         return this;
     }
 
-    public PrivateEndpointImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
+    public PrivateEndpointImpl withCustomDnsConfigs(List<CustomDnsConfigPropertiesFormat> customDnsConfigs) {
+        this.innerModel().withCustomDnsConfigs(customDnsConfigs);
         return this;
     }
 
-    public PrivateEndpointImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
+    public PrivateEndpointImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 }

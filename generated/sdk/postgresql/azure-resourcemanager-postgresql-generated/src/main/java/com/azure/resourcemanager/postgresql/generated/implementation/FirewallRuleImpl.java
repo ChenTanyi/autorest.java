@@ -44,9 +44,9 @@ public final class FirewallRuleImpl implements FirewallRule, FirewallRule.Defini
 
     private String resourceGroupName;
 
-    private String firewallRuleName;
-
     private String serverName;
+
+    private String firewallRuleName;
 
     public FirewallRuleImpl withExistingServer(String resourceGroupName, String serverName) {
         this.resourceGroupName = resourceGroupName;

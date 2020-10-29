@@ -48,13 +48,13 @@ public final class VnetGatewayImpl implements VnetGateway, VnetGateway.Definitio
 
     private String resourceGroupName;
 
-    private String gatewayName;
-
     private String name;
 
-    private String slot;
-
     private String vnetName;
+
+    private String gatewayName;
+
+    private String slot;
 
     public VnetGatewayImpl withExistingVirtualNetworkConnection(
         String resourceGroupName, String name, String vnetName, String gatewayName) {
@@ -155,13 +155,13 @@ public final class VnetGatewayImpl implements VnetGateway, VnetGateway.Definitio
         return this;
     }
 
-    public VnetGatewayImpl withVpnPackageUri(String vpnPackageUri) {
-        this.innerModel().withVpnPackageUri(vpnPackageUri);
+    public VnetGatewayImpl withVnetName(String vnetName) {
+        this.innerModel().withVnetName(vnetName);
         return this;
     }
 
-    public VnetGatewayImpl withVnetName(String vnetName) {
-        this.innerModel().withVnetName(vnetName);
+    public VnetGatewayImpl withVpnPackageUri(String vpnPackageUri) {
+        this.innerModel().withVpnPackageUri(vpnPackageUri);
         return this;
     }
 }

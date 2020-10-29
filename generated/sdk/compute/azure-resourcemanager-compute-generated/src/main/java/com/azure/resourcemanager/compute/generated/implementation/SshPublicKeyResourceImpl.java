@@ -153,19 +153,14 @@ public final class SshPublicKeyResourceImpl
         return this;
     }
 
-    public SshPublicKeyResourceImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
+    public SshPublicKeyResourceImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
         return this;
     }
 
-    public SshPublicKeyResourceImpl withPublicKey(String publicKey) {
-        if (isInCreateMode()) {
-            this.innerModel().withPublicKey(publicKey);
-            return this;
-        } else {
-            this.updateParameters.withPublicKey(publicKey);
-            return this;
-        }
+    public SshPublicKeyResourceImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
     }
 
     public SshPublicKeyResourceImpl withTags(Map<String, String> tags) {
@@ -178,9 +173,14 @@ public final class SshPublicKeyResourceImpl
         }
     }
 
-    public SshPublicKeyResourceImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
+    public SshPublicKeyResourceImpl withPublicKey(String publicKey) {
+        if (isInCreateMode()) {
+            this.innerModel().withPublicKey(publicKey);
+            return this;
+        } else {
+            this.updateParameters.withPublicKey(publicKey);
+            return this;
+        }
     }
 
     private boolean isInCreateMode() {

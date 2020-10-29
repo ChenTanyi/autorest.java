@@ -134,11 +134,11 @@ public final class DataBoxEdgeDeviceImpl
         return this.serviceManager;
     }
 
+    private String deviceName;
+
     private String resourceGroupName;
 
     private DataBoxEdgeDevicePatch updateParameters;
-
-    private String deviceName;
 
     public DataBoxEdgeDeviceImpl withExistingResourceGroup(String deviceName) {
         this.deviceName = deviceName;
@@ -221,6 +221,16 @@ public final class DataBoxEdgeDeviceImpl
         return this;
     }
 
+    public DataBoxEdgeDeviceImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
+    public DataBoxEdgeDeviceImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
+    }
+
     public DataBoxEdgeDeviceImpl withTags(Map<String, String> tags) {
         if (isInCreateMode()) {
             this.innerModel().withTags(tags);
@@ -231,18 +241,8 @@ public final class DataBoxEdgeDeviceImpl
         }
     }
 
-    public DataBoxEdgeDeviceImpl withFriendlyName(String friendlyName) {
-        this.innerModel().withFriendlyName(friendlyName);
-        return this;
-    }
-
-    public DataBoxEdgeDeviceImpl withDescription(String description) {
-        this.innerModel().withDescription(description);
-        return this;
-    }
-
-    public DataBoxEdgeDeviceImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
+    public DataBoxEdgeDeviceImpl withSku(Sku sku) {
+        this.innerModel().withSku(sku);
         return this;
     }
 
@@ -251,8 +251,13 @@ public final class DataBoxEdgeDeviceImpl
         return this;
     }
 
-    public DataBoxEdgeDeviceImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
+    public DataBoxEdgeDeviceImpl withDataBoxEdgeDeviceStatus(DataBoxEdgeDeviceStatus dataBoxEdgeDeviceStatus) {
+        this.innerModel().withDataBoxEdgeDeviceStatus(dataBoxEdgeDeviceStatus);
+        return this;
+    }
+
+    public DataBoxEdgeDeviceImpl withDescription(String description) {
+        this.innerModel().withDescription(description);
         return this;
     }
 
@@ -261,13 +266,8 @@ public final class DataBoxEdgeDeviceImpl
         return this;
     }
 
-    public DataBoxEdgeDeviceImpl withDataBoxEdgeDeviceStatus(DataBoxEdgeDeviceStatus dataBoxEdgeDeviceStatus) {
-        this.innerModel().withDataBoxEdgeDeviceStatus(dataBoxEdgeDeviceStatus);
-        return this;
-    }
-
-    public DataBoxEdgeDeviceImpl withSku(Sku sku) {
-        this.innerModel().withSku(sku);
+    public DataBoxEdgeDeviceImpl withFriendlyName(String friendlyName) {
+        this.innerModel().withFriendlyName(friendlyName);
         return this;
     }
 

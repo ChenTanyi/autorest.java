@@ -78,11 +78,11 @@ public final class HostnameBindingImpl implements HostnameBinding, HostnameBindi
         return this.serviceManager;
     }
 
-    private String hostname;
-
     private String resourceGroupName;
 
     private String name;
+
+    private String hostname;
 
     public HostnameBindingImpl withExistingSite(String resourceGroupName, String name) {
         this.resourceGroupName = resourceGroupName;
@@ -168,28 +168,23 @@ public final class HostnameBindingImpl implements HostnameBinding, HostnameBindi
         return this;
     }
 
-    public HostnameBindingImpl withHostnameType(HostnameType hostnameType) {
-        this.innerModel().withHostnameType(hostnameType);
-        return this;
-    }
-
-    public HostnameBindingImpl withThumbprint(String thumbprint) {
-        this.innerModel().withThumbprint(thumbprint);
-        return this;
-    }
-
-    public HostnameBindingImpl withAzureResourceName(String azureResourceName) {
-        this.innerModel().withAzureResourceName(azureResourceName);
-        return this;
-    }
-
-    public HostnameBindingImpl withSslState(SslState sslState) {
-        this.innerModel().withSslState(sslState);
+    public HostnameBindingImpl withKind(String kind) {
+        this.innerModel().withKind(kind);
         return this;
     }
 
     public HostnameBindingImpl withSiteName(String siteName) {
         this.innerModel().withSiteName(siteName);
+        return this;
+    }
+
+    public HostnameBindingImpl withDomainId(String domainId) {
+        this.innerModel().withDomainId(domainId);
+        return this;
+    }
+
+    public HostnameBindingImpl withAzureResourceName(String azureResourceName) {
+        this.innerModel().withAzureResourceName(azureResourceName);
         return this;
     }
 
@@ -204,13 +199,18 @@ public final class HostnameBindingImpl implements HostnameBinding, HostnameBindi
         return this;
     }
 
-    public HostnameBindingImpl withDomainId(String domainId) {
-        this.innerModel().withDomainId(domainId);
+    public HostnameBindingImpl withHostnameType(HostnameType hostnameType) {
+        this.innerModel().withHostnameType(hostnameType);
         return this;
     }
 
-    public HostnameBindingImpl withKind(String kind) {
-        this.innerModel().withKind(kind);
+    public HostnameBindingImpl withSslState(SslState sslState) {
+        this.innerModel().withSslState(sslState);
+        return this;
+    }
+
+    public HostnameBindingImpl withThumbprint(String thumbprint) {
+        this.innerModel().withThumbprint(thumbprint);
         return this;
     }
 }

@@ -48,11 +48,11 @@ public final class VirtualNetworkRuleImpl
         return this.serviceManager;
     }
 
-    private String virtualNetworkRuleName;
-
     private String resourceGroupName;
 
     private String serverName;
+
+    private String virtualNetworkRuleName;
 
     public VirtualNetworkRuleImpl withExistingServer(String resourceGroupName, String serverName) {
         this.resourceGroupName = resourceGroupName;
@@ -134,13 +134,13 @@ public final class VirtualNetworkRuleImpl
         return this;
     }
 
-    public VirtualNetworkRuleImpl withIgnoreMissingVnetServiceEndpoint(Boolean ignoreMissingVnetServiceEndpoint) {
-        this.innerModel().withIgnoreMissingVnetServiceEndpoint(ignoreMissingVnetServiceEndpoint);
+    public VirtualNetworkRuleImpl withVirtualNetworkSubnetId(String virtualNetworkSubnetId) {
+        this.innerModel().withVirtualNetworkSubnetId(virtualNetworkSubnetId);
         return this;
     }
 
-    public VirtualNetworkRuleImpl withVirtualNetworkSubnetId(String virtualNetworkSubnetId) {
-        this.innerModel().withVirtualNetworkSubnetId(virtualNetworkSubnetId);
+    public VirtualNetworkRuleImpl withIgnoreMissingVnetServiceEndpoint(Boolean ignoreMissingVnetServiceEndpoint) {
+        this.innerModel().withIgnoreMissingVnetServiceEndpoint(ignoreMissingVnetServiceEndpoint);
         return this;
     }
 }

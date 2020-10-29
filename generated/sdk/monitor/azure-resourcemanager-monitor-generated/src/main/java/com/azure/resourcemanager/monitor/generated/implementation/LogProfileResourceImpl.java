@@ -92,9 +92,9 @@ public final class LogProfileResourceImpl
         return this.serviceManager;
     }
 
-    private LogProfileResourcePatch updateLogProfilesResource;
-
     private String logProfileName;
+
+    private LogProfileResourcePatch updateLogProfilesResource;
 
     public LogProfileResource create() {
         this.innerObject =
@@ -165,17 +165,32 @@ public final class LogProfileResourceImpl
         return this;
     }
 
+    public LogProfileResourceImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
     public LogProfileResourceImpl withRegion(String location) {
         this.innerModel().withLocation(location);
         return this;
     }
 
-    public LogProfileResourceImpl withStorageAccountId(String storageAccountId) {
+    public LogProfileResourceImpl withLocations(List<String> locations) {
         if (isInCreateMode()) {
-            this.innerModel().withStorageAccountId(storageAccountId);
+            this.innerModel().withLocations(locations);
             return this;
         } else {
-            this.updateLogProfilesResource.withStorageAccountId(storageAccountId);
+            this.updateLogProfilesResource.withLocations(locations);
+            return this;
+        }
+    }
+
+    public LogProfileResourceImpl withCategories(List<String> categories) {
+        if (isInCreateMode()) {
+            this.innerModel().withCategories(categories);
+            return this;
+        } else {
+            this.updateLogProfilesResource.withCategories(categories);
             return this;
         }
     }
@@ -200,19 +215,14 @@ public final class LogProfileResourceImpl
         }
     }
 
-    public LogProfileResourceImpl withCategories(List<String> categories) {
+    public LogProfileResourceImpl withStorageAccountId(String storageAccountId) {
         if (isInCreateMode()) {
-            this.innerModel().withCategories(categories);
+            this.innerModel().withStorageAccountId(storageAccountId);
             return this;
         } else {
-            this.updateLogProfilesResource.withCategories(categories);
+            this.updateLogProfilesResource.withStorageAccountId(storageAccountId);
             return this;
         }
-    }
-
-    public LogProfileResourceImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
     }
 
     public LogProfileResourceImpl withServiceBusRuleId(String serviceBusRuleId) {
@@ -221,16 +231,6 @@ public final class LogProfileResourceImpl
             return this;
         } else {
             this.updateLogProfilesResource.withServiceBusRuleId(serviceBusRuleId);
-            return this;
-        }
-    }
-
-    public LogProfileResourceImpl withLocations(List<String> locations) {
-        if (isInCreateMode()) {
-            this.innerModel().withLocations(locations);
-            return this;
-        } else {
-            this.updateLogProfilesResource.withLocations(locations);
             return this;
         }
     }

@@ -162,9 +162,9 @@ public final class ExpressRouteCircuitPeeringImpl
 
     private String resourceGroupName;
 
-    private String peeringName;
-
     private String circuitName;
+
+    private String peeringName;
 
     public ExpressRouteCircuitPeeringImpl withExistingExpressRouteCircuit(
         String resourceGroupName, String circuitName) {
@@ -247,18 +247,28 @@ public final class ExpressRouteCircuitPeeringImpl
         return this;
     }
 
+    public ExpressRouteCircuitPeeringImpl withId(String id) {
+        this.innerModel().withId(id);
+        return this;
+    }
+
+    public ExpressRouteCircuitPeeringImpl withName(String name) {
+        this.innerModel().withName(name);
+        return this;
+    }
+
     public ExpressRouteCircuitPeeringImpl withPeeringType(ExpressRoutePeeringType peeringType) {
         this.innerModel().withPeeringType(peeringType);
         return this;
     }
 
-    public ExpressRouteCircuitPeeringImpl withGatewayManagerEtag(String gatewayManagerEtag) {
-        this.innerModel().withGatewayManagerEtag(gatewayManagerEtag);
+    public ExpressRouteCircuitPeeringImpl withState(ExpressRoutePeeringState state) {
+        this.innerModel().withState(state);
         return this;
     }
 
-    public ExpressRouteCircuitPeeringImpl withExpressRouteConnection(ExpressRouteConnectionId expressRouteConnection) {
-        this.innerModel().withExpressRouteConnection(expressRouteConnection);
+    public ExpressRouteCircuitPeeringImpl withAzureAsn(Integer azureAsn) {
+        this.innerModel().withAzureAsn(azureAsn);
         return this;
     }
 
@@ -272,13 +282,28 @@ public final class ExpressRouteCircuitPeeringImpl
         return this;
     }
 
-    public ExpressRouteCircuitPeeringImpl withConnections(List<ExpressRouteCircuitConnectionInner> connections) {
-        this.innerModel().withConnections(connections);
+    public ExpressRouteCircuitPeeringImpl withSecondaryPeerAddressPrefix(String secondaryPeerAddressPrefix) {
+        this.innerModel().withSecondaryPeerAddressPrefix(secondaryPeerAddressPrefix);
         return this;
     }
 
     public ExpressRouteCircuitPeeringImpl withPrimaryAzurePort(String primaryAzurePort) {
         this.innerModel().withPrimaryAzurePort(primaryAzurePort);
+        return this;
+    }
+
+    public ExpressRouteCircuitPeeringImpl withSecondaryAzurePort(String secondaryAzurePort) {
+        this.innerModel().withSecondaryAzurePort(secondaryAzurePort);
+        return this;
+    }
+
+    public ExpressRouteCircuitPeeringImpl withSharedKey(String sharedKey) {
+        this.innerModel().withSharedKey(sharedKey);
+        return this;
+    }
+
+    public ExpressRouteCircuitPeeringImpl withVlanId(Integer vlanId) {
+        this.innerModel().withVlanId(vlanId);
         return this;
     }
 
@@ -293,18 +318,13 @@ public final class ExpressRouteCircuitPeeringImpl
         return this;
     }
 
-    public ExpressRouteCircuitPeeringImpl withSecondaryAzurePort(String secondaryAzurePort) {
-        this.innerModel().withSecondaryAzurePort(secondaryAzurePort);
+    public ExpressRouteCircuitPeeringImpl withGatewayManagerEtag(String gatewayManagerEtag) {
+        this.innerModel().withGatewayManagerEtag(gatewayManagerEtag);
         return this;
     }
 
-    public ExpressRouteCircuitPeeringImpl withName(String name) {
-        this.innerModel().withName(name);
-        return this;
-    }
-
-    public ExpressRouteCircuitPeeringImpl withId(String id) {
-        this.innerModel().withId(id);
+    public ExpressRouteCircuitPeeringImpl withRouteFilter(SubResource routeFilter) {
+        this.innerModel().withRouteFilter(routeFilter);
         return this;
     }
 
@@ -314,33 +334,13 @@ public final class ExpressRouteCircuitPeeringImpl
         return this;
     }
 
-    public ExpressRouteCircuitPeeringImpl withVlanId(Integer vlanId) {
-        this.innerModel().withVlanId(vlanId);
+    public ExpressRouteCircuitPeeringImpl withExpressRouteConnection(ExpressRouteConnectionId expressRouteConnection) {
+        this.innerModel().withExpressRouteConnection(expressRouteConnection);
         return this;
     }
 
-    public ExpressRouteCircuitPeeringImpl withSecondaryPeerAddressPrefix(String secondaryPeerAddressPrefix) {
-        this.innerModel().withSecondaryPeerAddressPrefix(secondaryPeerAddressPrefix);
-        return this;
-    }
-
-    public ExpressRouteCircuitPeeringImpl withSharedKey(String sharedKey) {
-        this.innerModel().withSharedKey(sharedKey);
-        return this;
-    }
-
-    public ExpressRouteCircuitPeeringImpl withState(ExpressRoutePeeringState state) {
-        this.innerModel().withState(state);
-        return this;
-    }
-
-    public ExpressRouteCircuitPeeringImpl withRouteFilter(SubResource routeFilter) {
-        this.innerModel().withRouteFilter(routeFilter);
-        return this;
-    }
-
-    public ExpressRouteCircuitPeeringImpl withAzureAsn(Integer azureAsn) {
-        this.innerModel().withAzureAsn(azureAsn);
+    public ExpressRouteCircuitPeeringImpl withConnections(List<ExpressRouteCircuitConnectionInner> connections) {
+        this.innerModel().withConnections(connections);
         return this;
     }
 }

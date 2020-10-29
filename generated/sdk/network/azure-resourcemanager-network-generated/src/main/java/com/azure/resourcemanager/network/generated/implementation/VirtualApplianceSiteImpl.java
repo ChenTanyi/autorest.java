@@ -55,9 +55,9 @@ public final class VirtualApplianceSiteImpl
 
     private String resourceGroupName;
 
-    private String siteName;
-
     private String networkVirtualApplianceName;
+
+    private String siteName;
 
     public VirtualApplianceSiteImpl withExistingNetworkVirtualAppliance(
         String resourceGroupName, String networkVirtualApplianceName) {
@@ -140,16 +140,6 @@ public final class VirtualApplianceSiteImpl
         return this;
     }
 
-    public VirtualApplianceSiteImpl withAddressPrefix(String addressPrefix) {
-        this.innerModel().withAddressPrefix(addressPrefix);
-        return this;
-    }
-
-    public VirtualApplianceSiteImpl withO365Policy(Office365PolicyProperties o365Policy) {
-        this.innerModel().withO365Policy(o365Policy);
-        return this;
-    }
-
     public VirtualApplianceSiteImpl withId(String id) {
         this.innerModel().withId(id);
         return this;
@@ -157,6 +147,16 @@ public final class VirtualApplianceSiteImpl
 
     public VirtualApplianceSiteImpl withName(String name) {
         this.innerModel().withName(name);
+        return this;
+    }
+
+    public VirtualApplianceSiteImpl withAddressPrefix(String addressPrefix) {
+        this.innerModel().withAddressPrefix(addressPrefix);
+        return this;
+    }
+
+    public VirtualApplianceSiteImpl withO365Policy(Office365PolicyProperties o365Policy) {
+        this.innerModel().withO365Policy(o365Policy);
         return this;
     }
 }

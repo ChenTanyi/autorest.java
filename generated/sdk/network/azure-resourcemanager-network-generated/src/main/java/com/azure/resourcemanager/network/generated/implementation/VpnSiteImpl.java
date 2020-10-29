@@ -210,18 +210,13 @@ public final class VpnSiteImpl implements VpnSite, VpnSite.Definition, VpnSite.U
         return this;
     }
 
-    public VpnSiteImpl withVirtualWan(SubResource virtualWan) {
-        this.innerModel().withVirtualWan(virtualWan);
+    public VpnSiteImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
         return this;
     }
 
-    public VpnSiteImpl withDeviceProperties(DeviceProperties deviceProperties) {
-        this.innerModel().withDeviceProperties(deviceProperties);
-        return this;
-    }
-
-    public VpnSiteImpl withIsSecuritySite(Boolean isSecuritySite) {
-        this.innerModel().withIsSecuritySite(isSecuritySite);
+    public VpnSiteImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
@@ -235,8 +230,18 @@ public final class VpnSiteImpl implements VpnSite, VpnSite.Definition, VpnSite.U
         }
     }
 
-    public VpnSiteImpl withAddressSpace(AddressSpace addressSpace) {
-        this.innerModel().withAddressSpace(addressSpace);
+    public VpnSiteImpl withVirtualWan(SubResource virtualWan) {
+        this.innerModel().withVirtualWan(virtualWan);
+        return this;
+    }
+
+    public VpnSiteImpl withDeviceProperties(DeviceProperties deviceProperties) {
+        this.innerModel().withDeviceProperties(deviceProperties);
+        return this;
+    }
+
+    public VpnSiteImpl withIpAddress(String ipAddress) {
+        this.innerModel().withIpAddress(ipAddress);
         return this;
     }
 
@@ -245,18 +250,23 @@ public final class VpnSiteImpl implements VpnSite, VpnSite.Definition, VpnSite.U
         return this;
     }
 
-    public VpnSiteImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
+    public VpnSiteImpl withAddressSpace(AddressSpace addressSpace) {
+        this.innerModel().withAddressSpace(addressSpace);
         return this;
     }
 
-    public VpnSiteImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
+    public VpnSiteImpl withBgpProperties(BgpSettings bgpProperties) {
+        this.innerModel().withBgpProperties(bgpProperties);
         return this;
     }
 
-    public VpnSiteImpl withIpAddress(String ipAddress) {
-        this.innerModel().withIpAddress(ipAddress);
+    public VpnSiteImpl withIsSecuritySite(Boolean isSecuritySite) {
+        this.innerModel().withIsSecuritySite(isSecuritySite);
+        return this;
+    }
+
+    public VpnSiteImpl withVpnSiteLinks(List<VpnSiteLinkInner> vpnSiteLinks) {
+        this.innerModel().withVpnSiteLinks(vpnSiteLinks);
         return this;
     }
 
@@ -267,16 +277,6 @@ public final class VpnSiteImpl implements VpnSite, VpnSite.Definition, VpnSite.U
 
     public VpnSiteImpl withId(String id) {
         this.innerModel().withId(id);
-        return this;
-    }
-
-    public VpnSiteImpl withVpnSiteLinks(List<VpnSiteLinkInner> vpnSiteLinks) {
-        this.innerModel().withVpnSiteLinks(vpnSiteLinks);
-        return this;
-    }
-
-    public VpnSiteImpl withBgpProperties(BgpSettings bgpProperties) {
-        this.innerModel().withBgpProperties(bgpProperties);
         return this;
     }
 

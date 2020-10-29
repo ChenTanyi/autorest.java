@@ -126,13 +126,13 @@ public final class VnetRouteImpl implements VnetRoute, VnetRoute.Definition, Vne
         this.routeName = Utils.getValueFromIdByName(innerObject.id(), "routes");
     }
 
-    public VnetRouteImpl withStartAddress(String startAddress) {
-        this.innerModel().withStartAddress(startAddress);
+    public VnetRouteImpl withKind(String kind) {
+        this.innerModel().withKind(kind);
         return this;
     }
 
-    public VnetRouteImpl withKind(String kind) {
-        this.innerModel().withKind(kind);
+    public VnetRouteImpl withStartAddress(String startAddress) {
+        this.innerModel().withStartAddress(startAddress);
         return this;
     }
 

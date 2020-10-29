@@ -162,9 +162,8 @@ public final class BlobServicePropertiesImpl
         return this;
     }
 
-    public BlobServicePropertiesImpl withContainerDeleteRetentionPolicy(
-        DeleteRetentionPolicy containerDeleteRetentionPolicy) {
-        this.innerModel().withContainerDeleteRetentionPolicy(containerDeleteRetentionPolicy);
+    public BlobServicePropertiesImpl withCors(CorsRules cors) {
+        this.innerModel().withCors(cors);
         return this;
     }
 
@@ -178,13 +177,8 @@ public final class BlobServicePropertiesImpl
         return this;
     }
 
-    public BlobServicePropertiesImpl withChangeFeed(ChangeFeed changeFeed) {
-        this.innerModel().withChangeFeed(changeFeed);
-        return this;
-    }
-
-    public BlobServicePropertiesImpl withCors(CorsRules cors) {
-        this.innerModel().withCors(cors);
+    public BlobServicePropertiesImpl withIsVersioningEnabled(Boolean isVersioningEnabled) {
+        this.innerModel().withIsVersioningEnabled(isVersioningEnabled);
         return this;
     }
 
@@ -193,13 +187,19 @@ public final class BlobServicePropertiesImpl
         return this;
     }
 
+    public BlobServicePropertiesImpl withChangeFeed(ChangeFeed changeFeed) {
+        this.innerModel().withChangeFeed(changeFeed);
+        return this;
+    }
+
     public BlobServicePropertiesImpl withRestorePolicy(RestorePolicyProperties restorePolicy) {
         this.innerModel().withRestorePolicy(restorePolicy);
         return this;
     }
 
-    public BlobServicePropertiesImpl withIsVersioningEnabled(Boolean isVersioningEnabled) {
-        this.innerModel().withIsVersioningEnabled(isVersioningEnabled);
+    public BlobServicePropertiesImpl withContainerDeleteRetentionPolicy(
+        DeleteRetentionPolicy containerDeleteRetentionPolicy) {
+        this.innerModel().withContainerDeleteRetentionPolicy(containerDeleteRetentionPolicy);
         return this;
     }
 }

@@ -147,13 +147,13 @@ public final class ServerImpl implements Server, Server.Definition, Server.Updat
         return this.serviceManager;
     }
 
-    private ServerForCreate createParameters;
-
     private String resourceGroupName;
 
-    private ServerUpdateParameters updateParameters;
-
     private String serverName;
+
+    private ServerForCreate createParameters;
+
+    private ServerUpdateParameters updateParameters;
 
     public ServerImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -235,43 +235,18 @@ public final class ServerImpl implements Server, Server.Definition, Server.Updat
         return this;
     }
 
-    public ServerImpl withMinimalTlsVersion(MinimalTlsVersionEnum minimalTlsVersion) {
-        this.updateParameters.withMinimalTlsVersion(minimalTlsVersion);
-        return this;
-    }
-
-    public ServerImpl withReplicationRole(String replicationRole) {
-        this.updateParameters.withReplicationRole(replicationRole);
-        return this;
-    }
-
-    public ServerImpl withStorageProfile(StorageProfile storageProfile) {
-        this.updateParameters.withStorageProfile(storageProfile);
-        return this;
-    }
-
     public ServerImpl withRegion(Region location) {
         this.createParameters.withLocation(location.toString());
         return this;
     }
 
-    public ServerImpl withSslEnforcement(SslEnforcementEnum sslEnforcement) {
-        this.updateParameters.withSslEnforcement(sslEnforcement);
+    public ServerImpl withRegion(String location) {
+        this.createParameters.withLocation(location);
         return this;
     }
 
-    public ServerImpl withSku(Sku sku) {
-        if (isInCreateMode()) {
-            this.createParameters.withSku(sku);
-            return this;
-        } else {
-            this.updateParameters.withSku(sku);
-            return this;
-        }
-    }
-
-    public ServerImpl withAdministratorLoginPassword(TokenCredential administratorLoginPassword) {
-        this.updateParameters.withAdministratorLoginPassword(administratorLoginPassword);
+    public ServerImpl withProperties(ServerPropertiesForCreate properties) {
+        this.createParameters.withProperties(properties);
         return this;
     }
 
@@ -285,16 +260,6 @@ public final class ServerImpl implements Server, Server.Definition, Server.Updat
         }
     }
 
-    public ServerImpl withRegion(String location) {
-        this.createParameters.withLocation(location);
-        return this;
-    }
-
-    public ServerImpl withPublicNetworkAccess(PublicNetworkAccessEnum publicNetworkAccess) {
-        this.updateParameters.withPublicNetworkAccess(publicNetworkAccess);
-        return this;
-    }
-
     public ServerImpl withIdentity(ResourceIdentity identity) {
         if (isInCreateMode()) {
             this.createParameters.withIdentity(identity);
@@ -305,13 +270,48 @@ public final class ServerImpl implements Server, Server.Definition, Server.Updat
         }
     }
 
+    public ServerImpl withSku(Sku sku) {
+        if (isInCreateMode()) {
+            this.createParameters.withSku(sku);
+            return this;
+        } else {
+            this.updateParameters.withSku(sku);
+            return this;
+        }
+    }
+
+    public ServerImpl withStorageProfile(StorageProfile storageProfile) {
+        this.updateParameters.withStorageProfile(storageProfile);
+        return this;
+    }
+
+    public ServerImpl withAdministratorLoginPassword(TokenCredential administratorLoginPassword) {
+        this.updateParameters.withAdministratorLoginPassword(administratorLoginPassword);
+        return this;
+    }
+
     public ServerImpl withVersion(ServerVersion version) {
         this.updateParameters.withVersion(version);
         return this;
     }
 
-    public ServerImpl withProperties(ServerPropertiesForCreate properties) {
-        this.createParameters.withProperties(properties);
+    public ServerImpl withSslEnforcement(SslEnforcementEnum sslEnforcement) {
+        this.updateParameters.withSslEnforcement(sslEnforcement);
+        return this;
+    }
+
+    public ServerImpl withMinimalTlsVersion(MinimalTlsVersionEnum minimalTlsVersion) {
+        this.updateParameters.withMinimalTlsVersion(minimalTlsVersion);
+        return this;
+    }
+
+    public ServerImpl withPublicNetworkAccess(PublicNetworkAccessEnum publicNetworkAccess) {
+        this.updateParameters.withPublicNetworkAccess(publicNetworkAccess);
+        return this;
+    }
+
+    public ServerImpl withReplicationRole(String replicationRole) {
+        this.updateParameters.withReplicationRole(replicationRole);
         return this;
     }
 

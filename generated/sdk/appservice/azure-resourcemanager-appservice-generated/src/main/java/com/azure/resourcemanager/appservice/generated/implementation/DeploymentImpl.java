@@ -138,31 +138,6 @@ public final class DeploymentImpl implements Deployment, Deployment.Definition {
         return this;
     }
 
-    public DeploymentImpl withAuthorEmail(String authorEmail) {
-        this.innerModel().withAuthorEmail(authorEmail);
-        return this;
-    }
-
-    public DeploymentImpl withEndTime(OffsetDateTime endTime) {
-        this.innerModel().withEndTime(endTime);
-        return this;
-    }
-
-    public DeploymentImpl withDetails(String details) {
-        this.innerModel().withDetails(details);
-        return this;
-    }
-
-    public DeploymentImpl withActive(Boolean active) {
-        this.innerModel().withActive(active);
-        return this;
-    }
-
-    public DeploymentImpl withMessage(String message) {
-        this.innerModel().withMessage(message);
-        return this;
-    }
-
     public DeploymentImpl withKind(String kind) {
         this.innerModel().withKind(kind);
         return this;
@@ -173,8 +148,23 @@ public final class DeploymentImpl implements Deployment, Deployment.Definition {
         return this;
     }
 
+    public DeploymentImpl withMessage(String message) {
+        this.innerModel().withMessage(message);
+        return this;
+    }
+
     public DeploymentImpl withAuthor(String author) {
         this.innerModel().withAuthor(author);
+        return this;
+    }
+
+    public DeploymentImpl withDeployer(String deployer) {
+        this.innerModel().withDeployer(deployer);
+        return this;
+    }
+
+    public DeploymentImpl withAuthorEmail(String authorEmail) {
+        this.innerModel().withAuthorEmail(authorEmail);
         return this;
     }
 
@@ -183,8 +173,18 @@ public final class DeploymentImpl implements Deployment, Deployment.Definition {
         return this;
     }
 
-    public DeploymentImpl withDeployer(String deployer) {
-        this.innerModel().withDeployer(deployer);
+    public DeploymentImpl withEndTime(OffsetDateTime endTime) {
+        this.innerModel().withEndTime(endTime);
+        return this;
+    }
+
+    public DeploymentImpl withActive(Boolean active) {
+        this.innerModel().withActive(active);
+        return this;
+    }
+
+    public DeploymentImpl withDetails(String details) {
+        this.innerModel().withDetails(details);
         return this;
     }
 }

@@ -70,11 +70,11 @@ public final class StorageAccountCredentialImpl
         return this.serviceManager;
     }
 
-    private String resourceGroupName;
+    private String deviceName;
 
     private String name;
 
-    private String deviceName;
+    private String resourceGroupName;
 
     public StorageAccountCredentialImpl withExistingDataBoxEdgeDevice(String deviceName, String name) {
         this.deviceName = deviceName;
@@ -156,18 +156,8 @@ public final class StorageAccountCredentialImpl
         return this;
     }
 
-    public StorageAccountCredentialImpl withAccountKey(AsymmetricEncryptedSecret accountKey) {
-        this.innerModel().withAccountKey(accountKey);
-        return this;
-    }
-
     public StorageAccountCredentialImpl withAlias(String alias) {
         this.innerModel().withAlias(alias);
-        return this;
-    }
-
-    public StorageAccountCredentialImpl withStorageAccountId(String storageAccountId) {
-        this.innerModel().withStorageAccountId(storageAccountId);
         return this;
     }
 
@@ -176,13 +166,23 @@ public final class StorageAccountCredentialImpl
         return this;
     }
 
+    public StorageAccountCredentialImpl withAccountType(AccountType accountType) {
+        this.innerModel().withAccountType(accountType);
+        return this;
+    }
+
     public StorageAccountCredentialImpl withUsername(String username) {
         this.innerModel().withUsername(username);
         return this;
     }
 
-    public StorageAccountCredentialImpl withAccountType(AccountType accountType) {
-        this.innerModel().withAccountType(accountType);
+    public StorageAccountCredentialImpl withAccountKey(AsymmetricEncryptedSecret accountKey) {
+        this.innerModel().withAccountKey(accountKey);
+        return this;
+    }
+
+    public StorageAccountCredentialImpl withConnectionString(String connectionString) {
+        this.innerModel().withConnectionString(connectionString);
         return this;
     }
 
@@ -191,8 +191,8 @@ public final class StorageAccountCredentialImpl
         return this;
     }
 
-    public StorageAccountCredentialImpl withConnectionString(String connectionString) {
-        this.innerModel().withConnectionString(connectionString);
+    public StorageAccountCredentialImpl withStorageAccountId(String storageAccountId) {
+        this.innerModel().withStorageAccountId(storageAccountId);
         return this;
     }
 }

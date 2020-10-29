@@ -241,14 +241,19 @@ public final class CertificateImpl implements Certificate, Certificate.Definitio
         return this;
     }
 
-    public CertificateImpl withServerFarmId(String serverFarmId) {
-        if (isInCreateMode()) {
-            this.innerModel().withServerFarmId(serverFarmId);
-            return this;
-        } else {
-            this.updateCertificateEnvelope.withServerFarmId(serverFarmId);
-            return this;
-        }
+    public CertificateImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
+    public CertificateImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
+    }
+
+    public CertificateImpl withTags(Map<String, String> tags) {
+        this.innerModel().withTags(tags);
+        return this;
     }
 
     public CertificateImpl withHostNames(List<String> hostNames) {
@@ -261,24 +266,14 @@ public final class CertificateImpl implements Certificate, Certificate.Definitio
         }
     }
 
-    public CertificateImpl withTags(Map<String, String> tags) {
-        this.innerModel().withTags(tags);
-        return this;
-    }
-
-    public CertificateImpl withKeyVaultSecretName(String keyVaultSecretName) {
+    public CertificateImpl withPfxBlob(byte[] pfxBlob) {
         if (isInCreateMode()) {
-            this.innerModel().withKeyVaultSecretName(keyVaultSecretName);
+            this.innerModel().withPfxBlob(pfxBlob);
             return this;
         } else {
-            this.updateCertificateEnvelope.withKeyVaultSecretName(keyVaultSecretName);
+            this.updateCertificateEnvelope.withPfxBlob(pfxBlob);
             return this;
         }
-    }
-
-    public CertificateImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
     }
 
     public CertificateImpl withPassword(String password) {
@@ -291,27 +286,32 @@ public final class CertificateImpl implements Certificate, Certificate.Definitio
         }
     }
 
-    public CertificateImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
-    public CertificateImpl withPfxBlob(byte[] pfxBlob) {
+    public CertificateImpl withKeyVaultId(String keyVaultId) {
         if (isInCreateMode()) {
-            this.innerModel().withPfxBlob(pfxBlob);
+            this.innerModel().withKeyVaultId(keyVaultId);
             return this;
         } else {
-            this.updateCertificateEnvelope.withPfxBlob(pfxBlob);
+            this.updateCertificateEnvelope.withKeyVaultId(keyVaultId);
             return this;
         }
     }
 
-    public CertificateImpl withKind(String kind) {
+    public CertificateImpl withKeyVaultSecretName(String keyVaultSecretName) {
         if (isInCreateMode()) {
-            this.innerModel().withKind(kind);
+            this.innerModel().withKeyVaultSecretName(keyVaultSecretName);
             return this;
         } else {
-            this.updateCertificateEnvelope.withKind(kind);
+            this.updateCertificateEnvelope.withKeyVaultSecretName(keyVaultSecretName);
+            return this;
+        }
+    }
+
+    public CertificateImpl withServerFarmId(String serverFarmId) {
+        if (isInCreateMode()) {
+            this.innerModel().withServerFarmId(serverFarmId);
+            return this;
+        } else {
+            this.updateCertificateEnvelope.withServerFarmId(serverFarmId);
             return this;
         }
     }
@@ -326,12 +326,12 @@ public final class CertificateImpl implements Certificate, Certificate.Definitio
         }
     }
 
-    public CertificateImpl withKeyVaultId(String keyVaultId) {
+    public CertificateImpl withKind(String kind) {
         if (isInCreateMode()) {
-            this.innerModel().withKeyVaultId(keyVaultId);
+            this.innerModel().withKind(kind);
             return this;
         } else {
-            this.updateCertificateEnvelope.withKeyVaultId(keyVaultId);
+            this.updateCertificateEnvelope.withKind(kind);
             return this;
         }
     }

@@ -126,6 +126,16 @@ public final class StreamingPolicyImpl implements StreamingPolicy, StreamingPoli
         return this;
     }
 
+    public StreamingPolicyImpl withDefaultContentKeyPolicyName(String defaultContentKeyPolicyName) {
+        this.innerModel().withDefaultContentKeyPolicyName(defaultContentKeyPolicyName);
+        return this;
+    }
+
+    public StreamingPolicyImpl withEnvelopeEncryption(EnvelopeEncryption envelopeEncryption) {
+        this.innerModel().withEnvelopeEncryption(envelopeEncryption);
+        return this;
+    }
+
     public StreamingPolicyImpl withCommonEncryptionCenc(CommonEncryptionCenc commonEncryptionCenc) {
         this.innerModel().withCommonEncryptionCenc(commonEncryptionCenc);
         return this;
@@ -138,16 +148,6 @@ public final class StreamingPolicyImpl implements StreamingPolicy, StreamingPoli
 
     public StreamingPolicyImpl withNoEncryption(NoEncryption noEncryption) {
         this.innerModel().withNoEncryption(noEncryption);
-        return this;
-    }
-
-    public StreamingPolicyImpl withEnvelopeEncryption(EnvelopeEncryption envelopeEncryption) {
-        this.innerModel().withEnvelopeEncryption(envelopeEncryption);
-        return this;
-    }
-
-    public StreamingPolicyImpl withDefaultContentKeyPolicyName(String defaultContentKeyPolicyName) {
-        this.innerModel().withDefaultContentKeyPolicyName(defaultContentKeyPolicyName);
         return this;
     }
 }

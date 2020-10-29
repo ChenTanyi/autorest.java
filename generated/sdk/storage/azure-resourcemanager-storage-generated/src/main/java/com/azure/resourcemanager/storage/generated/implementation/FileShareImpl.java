@@ -194,23 +194,23 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
         return this;
     }
 
-    public FileShareImpl withShareQuota(Integer shareQuota) {
-        this.innerModel().withShareQuota(shareQuota);
-        return this;
-    }
-
-    public FileShareImpl withRootSquash(RootSquashType rootSquash) {
-        this.innerModel().withRootSquash(rootSquash);
-        return this;
-    }
-
     public FileShareImpl withMetadata(Map<String, String> metadata) {
         this.innerModel().withMetadata(metadata);
         return this;
     }
 
+    public FileShareImpl withShareQuota(Integer shareQuota) {
+        this.innerModel().withShareQuota(shareQuota);
+        return this;
+    }
+
     public FileShareImpl withEnabledProtocols(EnabledProtocols enabledProtocols) {
         this.innerModel().withEnabledProtocols(enabledProtocols);
+        return this;
+    }
+
+    public FileShareImpl withRootSquash(RootSquashType rootSquash) {
+        this.innerModel().withRootSquash(rootSquash);
         return this;
     }
 

@@ -250,49 +250,13 @@ public final class AzureFirewallImpl implements AzureFirewall, AzureFirewall.Def
         return this;
     }
 
-    public AzureFirewallImpl withVirtualHub(SubResource virtualHub) {
-        this.innerModel().withVirtualHub(virtualHub);
-        return this;
-    }
-
-    public AzureFirewallImpl withNetworkRuleCollections(
-        List<AzureFirewallNetworkRuleCollection> networkRuleCollections) {
-        this.innerModel().withNetworkRuleCollections(networkRuleCollections);
-        return this;
-    }
-
-    public AzureFirewallImpl withHubIpAddresses(HubIpAddresses hubIpAddresses) {
-        this.innerModel().withHubIpAddresses(hubIpAddresses);
-        return this;
-    }
-
     public AzureFirewallImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;
     }
 
-    public AzureFirewallImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
-    public AzureFirewallImpl withThreatIntelMode(AzureFirewallThreatIntelMode threatIntelMode) {
-        this.innerModel().withThreatIntelMode(threatIntelMode);
-        return this;
-    }
-
-    public AzureFirewallImpl withManagementIpConfiguration(AzureFirewallIpConfiguration managementIpConfiguration) {
-        this.innerModel().withManagementIpConfiguration(managementIpConfiguration);
-        return this;
-    }
-
     public AzureFirewallImpl withRegion(String location) {
         this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public AzureFirewallImpl withFirewallPolicy(SubResource firewallPolicy) {
-        this.innerModel().withFirewallPolicy(firewallPolicy);
         return this;
     }
 
@@ -306,13 +270,8 @@ public final class AzureFirewallImpl implements AzureFirewall, AzureFirewall.Def
         }
     }
 
-    public AzureFirewallImpl withIpConfigurations(List<AzureFirewallIpConfiguration> ipConfigurations) {
-        this.innerModel().withIpConfigurations(ipConfigurations);
-        return this;
-    }
-
-    public AzureFirewallImpl withSku(AzureFirewallSku sku) {
-        this.innerModel().withSku(sku);
+    public AzureFirewallImpl withZones(List<String> zones) {
+        this.innerModel().withZones(zones);
         return this;
     }
 
@@ -322,8 +281,49 @@ public final class AzureFirewallImpl implements AzureFirewall, AzureFirewall.Def
         return this;
     }
 
-    public AzureFirewallImpl withZones(List<String> zones) {
-        this.innerModel().withZones(zones);
+    public AzureFirewallImpl withNatRuleCollections(List<AzureFirewallNatRuleCollection> natRuleCollections) {
+        this.innerModel().withNatRuleCollections(natRuleCollections);
+        return this;
+    }
+
+    public AzureFirewallImpl withNetworkRuleCollections(
+        List<AzureFirewallNetworkRuleCollection> networkRuleCollections) {
+        this.innerModel().withNetworkRuleCollections(networkRuleCollections);
+        return this;
+    }
+
+    public AzureFirewallImpl withIpConfigurations(List<AzureFirewallIpConfiguration> ipConfigurations) {
+        this.innerModel().withIpConfigurations(ipConfigurations);
+        return this;
+    }
+
+    public AzureFirewallImpl withManagementIpConfiguration(AzureFirewallIpConfiguration managementIpConfiguration) {
+        this.innerModel().withManagementIpConfiguration(managementIpConfiguration);
+        return this;
+    }
+
+    public AzureFirewallImpl withThreatIntelMode(AzureFirewallThreatIntelMode threatIntelMode) {
+        this.innerModel().withThreatIntelMode(threatIntelMode);
+        return this;
+    }
+
+    public AzureFirewallImpl withVirtualHub(SubResource virtualHub) {
+        this.innerModel().withVirtualHub(virtualHub);
+        return this;
+    }
+
+    public AzureFirewallImpl withFirewallPolicy(SubResource firewallPolicy) {
+        this.innerModel().withFirewallPolicy(firewallPolicy);
+        return this;
+    }
+
+    public AzureFirewallImpl withHubIpAddresses(HubIpAddresses hubIpAddresses) {
+        this.innerModel().withHubIpAddresses(hubIpAddresses);
+        return this;
+    }
+
+    public AzureFirewallImpl withSku(AzureFirewallSku sku) {
+        this.innerModel().withSku(sku);
         return this;
     }
 
@@ -332,8 +332,8 @@ public final class AzureFirewallImpl implements AzureFirewall, AzureFirewall.Def
         return this;
     }
 
-    public AzureFirewallImpl withNatRuleCollections(List<AzureFirewallNatRuleCollection> natRuleCollections) {
-        this.innerModel().withNatRuleCollections(natRuleCollections);
+    public AzureFirewallImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 

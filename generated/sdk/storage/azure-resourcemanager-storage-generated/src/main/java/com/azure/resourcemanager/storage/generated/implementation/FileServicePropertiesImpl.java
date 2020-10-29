@@ -136,13 +136,13 @@ public final class FileServicePropertiesImpl
         return this;
     }
 
-    public FileServicePropertiesImpl withShareDeleteRetentionPolicy(DeleteRetentionPolicy shareDeleteRetentionPolicy) {
-        this.innerModel().withShareDeleteRetentionPolicy(shareDeleteRetentionPolicy);
+    public FileServicePropertiesImpl withCors(CorsRules cors) {
+        this.innerModel().withCors(cors);
         return this;
     }
 
-    public FileServicePropertiesImpl withCors(CorsRules cors) {
-        this.innerModel().withCors(cors);
+    public FileServicePropertiesImpl withShareDeleteRetentionPolicy(DeleteRetentionPolicy shareDeleteRetentionPolicy) {
+        this.innerModel().withShareDeleteRetentionPolicy(shareDeleteRetentionPolicy);
         return this;
     }
 }

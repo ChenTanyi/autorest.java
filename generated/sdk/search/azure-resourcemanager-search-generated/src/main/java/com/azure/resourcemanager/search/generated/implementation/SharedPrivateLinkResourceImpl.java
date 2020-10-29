@@ -41,11 +41,11 @@ public final class SharedPrivateLinkResourceImpl
         return this.serviceManager;
     }
 
-    private String sharedPrivateLinkResourceName;
-
     private String resourceGroupName;
 
     private String searchServiceName;
+
+    private String sharedPrivateLinkResourceName;
 
     private UUID createClientRequestId;
 
@@ -169,6 +169,11 @@ public final class SharedPrivateLinkResourceImpl
         return this;
     }
 
+    public SharedPrivateLinkResourceImpl withProperties(SharedPrivateLinkResourceProperties properties) {
+        this.innerModel().withProperties(properties);
+        return this;
+    }
+
     public SharedPrivateLinkResourceImpl withClientRequestId(UUID clientRequestId) {
         if (isInCreateMode()) {
             this.createClientRequestId = clientRequestId;
@@ -177,11 +182,6 @@ public final class SharedPrivateLinkResourceImpl
             this.updateClientRequestId = clientRequestId;
             return this;
         }
-    }
-
-    public SharedPrivateLinkResourceImpl withProperties(SharedPrivateLinkResourceProperties properties) {
-        this.innerModel().withProperties(properties);
-        return this;
     }
 
     private boolean isInCreateMode() {

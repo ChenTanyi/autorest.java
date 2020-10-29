@@ -56,9 +56,9 @@ public final class BgpConnectionImpl implements BgpConnection, BgpConnection.Def
         return this.serviceManager;
     }
 
-    private String virtualHubName;
-
     private String resourceGroupName;
+
+    private String virtualHubName;
 
     private String connectionName;
 
@@ -152,13 +152,13 @@ public final class BgpConnectionImpl implements BgpConnection, BgpConnection.Def
         return this;
     }
 
-    public BgpConnectionImpl withPeerIp(String peerIp) {
-        this.innerModel().withPeerIp(peerIp);
+    public BgpConnectionImpl withPeerAsn(Long peerAsn) {
+        this.innerModel().withPeerAsn(peerAsn);
         return this;
     }
 
-    public BgpConnectionImpl withPeerAsn(Long peerAsn) {
-        this.innerModel().withPeerAsn(peerAsn);
+    public BgpConnectionImpl withPeerIp(String peerIp) {
+        this.innerModel().withPeerIp(peerIp);
         return this;
     }
 }

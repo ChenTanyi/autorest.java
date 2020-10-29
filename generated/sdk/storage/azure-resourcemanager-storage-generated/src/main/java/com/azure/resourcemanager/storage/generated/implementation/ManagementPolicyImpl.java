@@ -48,9 +48,9 @@ public final class ManagementPolicyImpl
 
     private String resourceGroupName;
 
-    private ManagementPolicyName managementPolicyName;
-
     private String accountName;
+
+    private ManagementPolicyName managementPolicyName;
 
     public ManagementPolicyImpl withExistingStorageAccount(String resourceGroupName, String accountName) {
         this.resourceGroupName = resourceGroupName;

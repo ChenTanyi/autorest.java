@@ -145,9 +145,9 @@ public final class NetworkVirtualApplianceImpl
 
     private String resourceGroupName;
 
-    private TagsObject updateParameters;
-
     private String networkVirtualApplianceName;
+
+    private TagsObject updateParameters;
 
     public NetworkVirtualApplianceImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -233,23 +233,13 @@ public final class NetworkVirtualApplianceImpl
         return this;
     }
 
+    public NetworkVirtualApplianceImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
     public NetworkVirtualApplianceImpl withRegion(String location) {
         this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public NetworkVirtualApplianceImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
-    public NetworkVirtualApplianceImpl withCloudInitConfiguration(String cloudInitConfiguration) {
-        this.innerModel().withCloudInitConfiguration(cloudInitConfiguration);
-        return this;
-    }
-
-    public NetworkVirtualApplianceImpl withNvaSku(VirtualApplianceSkuProperties nvaSku) {
-        this.innerModel().withNvaSku(nvaSku);
         return this;
     }
 
@@ -263,23 +253,13 @@ public final class NetworkVirtualApplianceImpl
         }
     }
 
-    public NetworkVirtualApplianceImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
-    public NetworkVirtualApplianceImpl withCloudInitConfigurationBlobs(List<String> cloudInitConfigurationBlobs) {
-        this.innerModel().withCloudInitConfigurationBlobs(cloudInitConfigurationBlobs);
-        return this;
-    }
-
-    public NetworkVirtualApplianceImpl withVirtualHub(SubResource virtualHub) {
-        this.innerModel().withVirtualHub(virtualHub);
-        return this;
-    }
-
     public NetworkVirtualApplianceImpl withIdentity(ManagedServiceIdentity identity) {
         this.innerModel().withIdentity(identity);
+        return this;
+    }
+
+    public NetworkVirtualApplianceImpl withNvaSku(VirtualApplianceSkuProperties nvaSku) {
+        this.innerModel().withNvaSku(nvaSku);
         return this;
     }
 
@@ -288,8 +268,28 @@ public final class NetworkVirtualApplianceImpl
         return this;
     }
 
+    public NetworkVirtualApplianceImpl withVirtualHub(SubResource virtualHub) {
+        this.innerModel().withVirtualHub(virtualHub);
+        return this;
+    }
+
+    public NetworkVirtualApplianceImpl withCloudInitConfigurationBlobs(List<String> cloudInitConfigurationBlobs) {
+        this.innerModel().withCloudInitConfigurationBlobs(cloudInitConfigurationBlobs);
+        return this;
+    }
+
+    public NetworkVirtualApplianceImpl withCloudInitConfiguration(String cloudInitConfiguration) {
+        this.innerModel().withCloudInitConfiguration(cloudInitConfiguration);
+        return this;
+    }
+
     public NetworkVirtualApplianceImpl withVirtualApplianceAsn(Long virtualApplianceAsn) {
         this.innerModel().withVirtualApplianceAsn(virtualApplianceAsn);
+        return this;
+    }
+
+    public NetworkVirtualApplianceImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 

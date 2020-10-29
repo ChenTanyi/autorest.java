@@ -44,15 +44,15 @@ public final class CertificateDescriptionImpl
         return this.serviceManager;
     }
 
-    private String createIfMatch;
-
-    private String updateIfMatch;
-
     private String resourceGroupName;
+
+    private String resourceName;
 
     private String certificateName;
 
-    private String resourceName;
+    private String createIfMatch;
+
+    private String updateIfMatch;
 
     public CertificateDescriptionImpl withExistingIotHub(String resourceGroupName, String resourceName) {
         this.resourceGroupName = resourceGroupName;

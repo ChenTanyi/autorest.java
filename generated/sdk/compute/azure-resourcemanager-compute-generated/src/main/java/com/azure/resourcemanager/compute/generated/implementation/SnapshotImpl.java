@@ -134,9 +134,9 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
 
     private String resourceGroupName;
 
-    private SnapshotUpdate updateSnapshot;
-
     private String snapshotName;
+
+    private SnapshotUpdate updateSnapshot;
 
     public SnapshotImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -217,39 +217,9 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
         return this;
     }
 
-    public SnapshotImpl withDiskSizeGB(Integer diskSizeGB) {
-        if (isInCreateMode()) {
-            this.innerModel().withDiskSizeGB(diskSizeGB);
-            return this;
-        } else {
-            this.updateSnapshot.withDiskSizeGB(diskSizeGB);
-            return this;
-        }
-    }
-
-    public SnapshotImpl withDiskAccessId(String diskAccessId) {
-        if (isInCreateMode()) {
-            this.innerModel().withDiskAccessId(diskAccessId);
-            return this;
-        } else {
-            this.updateSnapshot.withDiskAccessId(diskAccessId);
-            return this;
-        }
-    }
-
     public SnapshotImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;
-    }
-
-    public SnapshotImpl withEncryptionSettingsCollection(EncryptionSettingsCollection encryptionSettingsCollection) {
-        if (isInCreateMode()) {
-            this.innerModel().withEncryptionSettingsCollection(encryptionSettingsCollection);
-            return this;
-        } else {
-            this.updateSnapshot.withEncryptionSettingsCollection(encryptionSettingsCollection);
-            return this;
-        }
     }
 
     public SnapshotImpl withRegion(String location) {
@@ -257,22 +227,12 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
         return this;
     }
 
-    public SnapshotImpl withEncryption(Encryption encryption) {
+    public SnapshotImpl withTags(Map<String, String> tags) {
         if (isInCreateMode()) {
-            this.innerModel().withEncryption(encryption);
+            this.innerModel().withTags(tags);
             return this;
         } else {
-            this.updateSnapshot.withEncryption(encryption);
-            return this;
-        }
-    }
-
-    public SnapshotImpl withOsType(OperatingSystemTypes osType) {
-        if (isInCreateMode()) {
-            this.innerModel().withOsType(osType);
-            return this;
-        } else {
-            this.updateSnapshot.withOsType(osType);
+            this.updateSnapshot.withTags(tags);
             return this;
         }
     }
@@ -287,6 +247,61 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
         }
     }
 
+    public SnapshotImpl withOsType(OperatingSystemTypes osType) {
+        if (isInCreateMode()) {
+            this.innerModel().withOsType(osType);
+            return this;
+        } else {
+            this.updateSnapshot.withOsType(osType);
+            return this;
+        }
+    }
+
+    public SnapshotImpl withHyperVGeneration(HyperVGeneration hyperVGeneration) {
+        this.innerModel().withHyperVGeneration(hyperVGeneration);
+        return this;
+    }
+
+    public SnapshotImpl withCreationData(CreationData creationData) {
+        this.innerModel().withCreationData(creationData);
+        return this;
+    }
+
+    public SnapshotImpl withDiskSizeGB(Integer diskSizeGB) {
+        if (isInCreateMode()) {
+            this.innerModel().withDiskSizeGB(diskSizeGB);
+            return this;
+        } else {
+            this.updateSnapshot.withDiskSizeGB(diskSizeGB);
+            return this;
+        }
+    }
+
+    public SnapshotImpl withEncryptionSettingsCollection(EncryptionSettingsCollection encryptionSettingsCollection) {
+        if (isInCreateMode()) {
+            this.innerModel().withEncryptionSettingsCollection(encryptionSettingsCollection);
+            return this;
+        } else {
+            this.updateSnapshot.withEncryptionSettingsCollection(encryptionSettingsCollection);
+            return this;
+        }
+    }
+
+    public SnapshotImpl withIncremental(Boolean incremental) {
+        this.innerModel().withIncremental(incremental);
+        return this;
+    }
+
+    public SnapshotImpl withEncryption(Encryption encryption) {
+        if (isInCreateMode()) {
+            this.innerModel().withEncryption(encryption);
+            return this;
+        } else {
+            this.updateSnapshot.withEncryption(encryption);
+            return this;
+        }
+    }
+
     public SnapshotImpl withNetworkAccessPolicy(NetworkAccessPolicy networkAccessPolicy) {
         if (isInCreateMode()) {
             this.innerModel().withNetworkAccessPolicy(networkAccessPolicy);
@@ -297,29 +312,14 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
         }
     }
 
-    public SnapshotImpl withTags(Map<String, String> tags) {
+    public SnapshotImpl withDiskAccessId(String diskAccessId) {
         if (isInCreateMode()) {
-            this.innerModel().withTags(tags);
+            this.innerModel().withDiskAccessId(diskAccessId);
             return this;
         } else {
-            this.updateSnapshot.withTags(tags);
+            this.updateSnapshot.withDiskAccessId(diskAccessId);
             return this;
         }
-    }
-
-    public SnapshotImpl withHyperVGeneration(HyperVGeneration hyperVGeneration) {
-        this.innerModel().withHyperVGeneration(hyperVGeneration);
-        return this;
-    }
-
-    public SnapshotImpl withIncremental(Boolean incremental) {
-        this.innerModel().withIncremental(incremental);
-        return this;
-    }
-
-    public SnapshotImpl withCreationData(CreationData creationData) {
-        this.innerModel().withCreationData(creationData);
-        return this;
     }
 
     private boolean isInCreateMode() {

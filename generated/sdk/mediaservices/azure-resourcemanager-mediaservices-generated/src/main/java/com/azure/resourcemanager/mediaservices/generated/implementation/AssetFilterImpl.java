@@ -60,9 +60,9 @@ public final class AssetFilterImpl implements AssetFilter, AssetFilter.Definitio
 
     private String accountName;
 
-    private String filterName;
-
     private String assetName;
+
+    private String filterName;
 
     public AssetFilterImpl withExistingAsset(String resourceGroupName, String accountName, String assetName) {
         this.resourceGroupName = resourceGroupName;
@@ -151,11 +151,6 @@ public final class AssetFilterImpl implements AssetFilter, AssetFilter.Definitio
         return this;
     }
 
-    public AssetFilterImpl withTracks(List<FilterTrackSelection> tracks) {
-        this.innerModel().withTracks(tracks);
-        return this;
-    }
-
     public AssetFilterImpl withPresentationTimeRange(PresentationTimeRange presentationTimeRange) {
         this.innerModel().withPresentationTimeRange(presentationTimeRange);
         return this;
@@ -163,6 +158,11 @@ public final class AssetFilterImpl implements AssetFilter, AssetFilter.Definitio
 
     public AssetFilterImpl withFirstQuality(FirstQuality firstQuality) {
         this.innerModel().withFirstQuality(firstQuality);
+        return this;
+    }
+
+    public AssetFilterImpl withTracks(List<FilterTrackSelection> tracks) {
+        this.innerModel().withTracks(tracks);
         return this;
     }
 }

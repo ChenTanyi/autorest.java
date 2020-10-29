@@ -183,8 +183,8 @@ public final class VirtualRouterImpl implements VirtualRouter, VirtualRouter.Def
         return this;
     }
 
-    public VirtualRouterImpl withTags(Map<String, String> tags) {
-        this.innerModel().withTags(tags);
+    public VirtualRouterImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
         return this;
     }
 
@@ -193,8 +193,8 @@ public final class VirtualRouterImpl implements VirtualRouter, VirtualRouter.Def
         return this;
     }
 
-    public VirtualRouterImpl withId(String id) {
-        this.innerModel().withId(id);
+    public VirtualRouterImpl withTags(Map<String, String> tags) {
+        this.innerModel().withTags(tags);
         return this;
     }
 
@@ -208,18 +208,18 @@ public final class VirtualRouterImpl implements VirtualRouter, VirtualRouter.Def
         return this;
     }
 
+    public VirtualRouterImpl withHostedSubnet(SubResource hostedSubnet) {
+        this.innerModel().withHostedSubnet(hostedSubnet);
+        return this;
+    }
+
     public VirtualRouterImpl withHostedGateway(SubResource hostedGateway) {
         this.innerModel().withHostedGateway(hostedGateway);
         return this;
     }
 
-    public VirtualRouterImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
-    public VirtualRouterImpl withHostedSubnet(SubResource hostedSubnet) {
-        this.innerModel().withHostedSubnet(hostedSubnet);
+    public VirtualRouterImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 }

@@ -76,15 +76,15 @@ public final class GalleryApplicationVersionImpl
         return this.serviceManager;
     }
 
-    private String galleryApplicationName;
-
-    private GalleryApplicationVersionUpdate updateGalleryApplicationVersion;
-
     private String resourceGroupName;
 
     private String galleryName;
 
+    private String galleryApplicationName;
+
     private String galleryApplicationVersionName;
+
+    private GalleryApplicationVersionUpdate updateGalleryApplicationVersion;
 
     public GalleryApplicationVersionImpl withExistingApplication(
         String resourceGroupName, String galleryName, String galleryApplicationName) {
@@ -208,14 +208,24 @@ public final class GalleryApplicationVersionImpl
         return this;
     }
 
+    public GalleryApplicationVersionImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
     public GalleryApplicationVersionImpl withRegion(String location) {
         this.innerModel().withLocation(location);
         return this;
     }
 
-    public GalleryApplicationVersionImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
+    public GalleryApplicationVersionImpl withTags(Map<String, String> tags) {
+        if (isInCreateMode()) {
+            this.innerModel().withTags(tags);
+            return this;
+        } else {
+            this.updateGalleryApplicationVersion.withTags(tags);
+            return this;
+        }
     }
 
     public GalleryApplicationVersionImpl withPublishingProfile(
@@ -225,16 +235,6 @@ public final class GalleryApplicationVersionImpl
             return this;
         } else {
             this.updateGalleryApplicationVersion.withPublishingProfile(publishingProfile);
-            return this;
-        }
-    }
-
-    public GalleryApplicationVersionImpl withTags(Map<String, String> tags) {
-        if (isInCreateMode()) {
-            this.innerModel().withTags(tags);
-            return this;
-        } else {
-            this.updateGalleryApplicationVersion.withTags(tags);
             return this;
         }
     }

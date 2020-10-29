@@ -148,11 +148,11 @@ public final class AppServicePlanImpl implements AppServicePlan, AppServicePlan.
         return this.serviceManager;
     }
 
-    private AppServicePlanPatchResource updateAppServicePlan;
-
     private String resourceGroupName;
 
     private String name;
+
+    private AppServicePlanPatchResource updateAppServicePlan;
 
     public AppServicePlanImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -235,9 +235,49 @@ public final class AppServicePlanImpl implements AppServicePlan, AppServicePlan.
         return this;
     }
 
-    public AppServicePlanImpl withHyperV(Boolean hyperV) {
-        this.innerModel().withHyperV(hyperV);
+    public AppServicePlanImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
         return this;
+    }
+
+    public AppServicePlanImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
+    }
+
+    public AppServicePlanImpl withTags(Map<String, String> tags) {
+        this.innerModel().withTags(tags);
+        return this;
+    }
+
+    public AppServicePlanImpl withSku(SkuDescription sku) {
+        this.innerModel().withSku(sku);
+        return this;
+    }
+
+    public AppServicePlanImpl withWorkerTierName(String workerTierName) {
+        if (isInCreateMode()) {
+            this.innerModel().withWorkerTierName(workerTierName);
+            return this;
+        } else {
+            this.updateAppServicePlan.withWorkerTierName(workerTierName);
+            return this;
+        }
+    }
+
+    public AppServicePlanImpl withHostingEnvironmentProfile(HostingEnvironmentProfile hostingEnvironmentProfile) {
+        this.innerModel().withHostingEnvironmentProfile(hostingEnvironmentProfile);
+        return this;
+    }
+
+    public AppServicePlanImpl withPerSiteScaling(Boolean perSiteScaling) {
+        if (isInCreateMode()) {
+            this.innerModel().withPerSiteScaling(perSiteScaling);
+            return this;
+        } else {
+            this.updateAppServicePlan.withPerSiteScaling(perSiteScaling);
+            return this;
+        }
     }
 
     public AppServicePlanImpl withMaximumElasticWorkerCount(Integer maximumElasticWorkerCount) {
@@ -250,37 +290,12 @@ public final class AppServicePlanImpl implements AppServicePlan, AppServicePlan.
         }
     }
 
-    public AppServicePlanImpl withTargetWorkerCount(Integer targetWorkerCount) {
+    public AppServicePlanImpl withIsSpot(Boolean isSpot) {
         if (isInCreateMode()) {
-            this.innerModel().withTargetWorkerCount(targetWorkerCount);
+            this.innerModel().withIsSpot(isSpot);
             return this;
         } else {
-            this.updateAppServicePlan.withTargetWorkerCount(targetWorkerCount);
-            return this;
-        }
-    }
-
-    public AppServicePlanImpl withHostingEnvironmentProfile(HostingEnvironmentProfile hostingEnvironmentProfile) {
-        this.innerModel().withHostingEnvironmentProfile(hostingEnvironmentProfile);
-        return this;
-    }
-
-    public AppServicePlanImpl withKind(String kind) {
-        if (isInCreateMode()) {
-            this.innerModel().withKind(kind);
-            return this;
-        } else {
-            this.updateAppServicePlan.withKind(kind);
-            return this;
-        }
-    }
-
-    public AppServicePlanImpl withPerSiteScaling(Boolean perSiteScaling) {
-        if (isInCreateMode()) {
-            this.innerModel().withPerSiteScaling(perSiteScaling);
-            return this;
-        } else {
-            this.updateAppServicePlan.withPerSiteScaling(perSiteScaling);
+            this.updateAppServicePlan.withIsSpot(isSpot);
             return this;
         }
     }
@@ -295,14 +310,14 @@ public final class AppServicePlanImpl implements AppServicePlan, AppServicePlan.
         }
     }
 
-    public AppServicePlanImpl withIsXenon(Boolean isXenon) {
-        this.innerModel().withIsXenon(isXenon);
-        return this;
-    }
-
-    public AppServicePlanImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
+    public AppServicePlanImpl withFreeOfferExpirationTime(OffsetDateTime freeOfferExpirationTime) {
+        if (isInCreateMode()) {
+            this.innerModel().withFreeOfferExpirationTime(freeOfferExpirationTime);
+            return this;
+        } else {
+            this.updateAppServicePlan.withFreeOfferExpirationTime(freeOfferExpirationTime);
+            return this;
+        }
     }
 
     public AppServicePlanImpl withReserved(Boolean reserved) {
@@ -310,27 +325,22 @@ public final class AppServicePlanImpl implements AppServicePlan, AppServicePlan.
         return this;
     }
 
-    public AppServicePlanImpl withIsSpot(Boolean isSpot) {
-        if (isInCreateMode()) {
-            this.innerModel().withIsSpot(isSpot);
-            return this;
-        } else {
-            this.updateAppServicePlan.withIsSpot(isSpot);
-            return this;
-        }
-    }
-
-    public AppServicePlanImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
+    public AppServicePlanImpl withIsXenon(Boolean isXenon) {
+        this.innerModel().withIsXenon(isXenon);
         return this;
     }
 
-    public AppServicePlanImpl withFreeOfferExpirationTime(OffsetDateTime freeOfferExpirationTime) {
+    public AppServicePlanImpl withHyperV(Boolean hyperV) {
+        this.innerModel().withHyperV(hyperV);
+        return this;
+    }
+
+    public AppServicePlanImpl withTargetWorkerCount(Integer targetWorkerCount) {
         if (isInCreateMode()) {
-            this.innerModel().withFreeOfferExpirationTime(freeOfferExpirationTime);
+            this.innerModel().withTargetWorkerCount(targetWorkerCount);
             return this;
         } else {
-            this.updateAppServicePlan.withFreeOfferExpirationTime(freeOfferExpirationTime);
+            this.updateAppServicePlan.withTargetWorkerCount(targetWorkerCount);
             return this;
         }
     }
@@ -345,22 +355,12 @@ public final class AppServicePlanImpl implements AppServicePlan, AppServicePlan.
         }
     }
 
-    public AppServicePlanImpl withSku(SkuDescription sku) {
-        this.innerModel().withSku(sku);
-        return this;
-    }
-
-    public AppServicePlanImpl withTags(Map<String, String> tags) {
-        this.innerModel().withTags(tags);
-        return this;
-    }
-
-    public AppServicePlanImpl withWorkerTierName(String workerTierName) {
+    public AppServicePlanImpl withKind(String kind) {
         if (isInCreateMode()) {
-            this.innerModel().withWorkerTierName(workerTierName);
+            this.innerModel().withKind(kind);
             return this;
         } else {
-            this.updateAppServicePlan.withWorkerTierName(workerTierName);
+            this.updateAppServicePlan.withKind(kind);
             return this;
         }
     }

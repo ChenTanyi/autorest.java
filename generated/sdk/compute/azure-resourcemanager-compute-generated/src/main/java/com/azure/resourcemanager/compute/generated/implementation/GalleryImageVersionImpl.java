@@ -83,13 +83,13 @@ public final class GalleryImageVersionImpl
 
     private String resourceGroupName;
 
+    private String galleryName;
+
     private String galleryImageName;
 
     private String galleryImageVersionName;
 
     private GalleryImageVersionUpdate updateGalleryImageVersion;
-
-    private String galleryName;
 
     public GalleryImageVersionImpl withExistingImage(
         String resourceGroupName, String galleryName, String galleryImageName) {
@@ -203,22 +203,22 @@ public final class GalleryImageVersionImpl
         return this;
     }
 
-    public GalleryImageVersionImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
     public GalleryImageVersionImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;
     }
 
-    public GalleryImageVersionImpl withStorageProfile(GalleryImageVersionStorageProfile storageProfile) {
+    public GalleryImageVersionImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
+    }
+
+    public GalleryImageVersionImpl withTags(Map<String, String> tags) {
         if (isInCreateMode()) {
-            this.innerModel().withStorageProfile(storageProfile);
+            this.innerModel().withTags(tags);
             return this;
         } else {
-            this.updateGalleryImageVersion.withStorageProfile(storageProfile);
+            this.updateGalleryImageVersion.withTags(tags);
             return this;
         }
     }
@@ -233,12 +233,12 @@ public final class GalleryImageVersionImpl
         }
     }
 
-    public GalleryImageVersionImpl withTags(Map<String, String> tags) {
+    public GalleryImageVersionImpl withStorageProfile(GalleryImageVersionStorageProfile storageProfile) {
         if (isInCreateMode()) {
-            this.innerModel().withTags(tags);
+            this.innerModel().withStorageProfile(storageProfile);
             return this;
         } else {
-            this.updateGalleryImageVersion.withTags(tags);
+            this.updateGalleryImageVersion.withStorageProfile(storageProfile);
             return this;
         }
     }

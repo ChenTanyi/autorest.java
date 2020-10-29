@@ -75,11 +75,11 @@ public final class ExpressRouteCircuitConnectionImpl
 
     private String resourceGroupName;
 
+    private String circuitName;
+
     private String peeringName;
 
     private String connectionName;
-
-    private String circuitName;
 
     public ExpressRouteCircuitConnectionImpl withExistingPeering(
         String resourceGroupName, String circuitName, String peeringName) {
@@ -165,19 +165,18 @@ public final class ExpressRouteCircuitConnectionImpl
         return this;
     }
 
-    public ExpressRouteCircuitConnectionImpl withIpv6CircuitConnectionConfig(
-        Ipv6CircuitConnectionConfig ipv6CircuitConnectionConfig) {
-        this.innerModel().withIpv6CircuitConnectionConfig(ipv6CircuitConnectionConfig);
-        return this;
-    }
-
-    public ExpressRouteCircuitConnectionImpl withExpressRouteCircuitPeering(SubResource expressRouteCircuitPeering) {
-        this.innerModel().withExpressRouteCircuitPeering(expressRouteCircuitPeering);
+    public ExpressRouteCircuitConnectionImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 
     public ExpressRouteCircuitConnectionImpl withName(String name) {
         this.innerModel().withName(name);
+        return this;
+    }
+
+    public ExpressRouteCircuitConnectionImpl withExpressRouteCircuitPeering(SubResource expressRouteCircuitPeering) {
+        this.innerModel().withExpressRouteCircuitPeering(expressRouteCircuitPeering);
         return this;
     }
 
@@ -187,8 +186,8 @@ public final class ExpressRouteCircuitConnectionImpl
         return this;
     }
 
-    public ExpressRouteCircuitConnectionImpl withId(String id) {
-        this.innerModel().withId(id);
+    public ExpressRouteCircuitConnectionImpl withAddressPrefix(String addressPrefix) {
+        this.innerModel().withAddressPrefix(addressPrefix);
         return this;
     }
 
@@ -197,8 +196,9 @@ public final class ExpressRouteCircuitConnectionImpl
         return this;
     }
 
-    public ExpressRouteCircuitConnectionImpl withAddressPrefix(String addressPrefix) {
-        this.innerModel().withAddressPrefix(addressPrefix);
+    public ExpressRouteCircuitConnectionImpl withIpv6CircuitConnectionConfig(
+        Ipv6CircuitConnectionConfig ipv6CircuitConnectionConfig) {
+        this.innerModel().withIpv6CircuitConnectionConfig(ipv6CircuitConnectionConfig);
         return this;
     }
 }

@@ -88,9 +88,9 @@ public final class IpGroupImpl implements IpGroup, IpGroup.Definition, IpGroup.U
         return this.serviceManager;
     }
 
-    private String ipGroupsName;
-
     private String resourceGroupName;
+
+    private String ipGroupsName;
 
     private TagsObject updateParameters;
 
@@ -177,8 +177,13 @@ public final class IpGroupImpl implements IpGroup, IpGroup.Definition, IpGroup.U
         return this;
     }
 
-    public IpGroupImpl withId(String id) {
-        this.innerModel().withId(id);
+    public IpGroupImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
+    public IpGroupImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
@@ -197,13 +202,8 @@ public final class IpGroupImpl implements IpGroup, IpGroup.Definition, IpGroup.U
         return this;
     }
 
-    public IpGroupImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public IpGroupImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
+    public IpGroupImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 

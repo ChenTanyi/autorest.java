@@ -96,9 +96,9 @@ public final class LogSearchRuleResourceImpl
 
     private String resourceGroupName;
 
-    private LogSearchRuleResourcePatch updateParameters;
-
     private String ruleName;
+
+    private LogSearchRuleResourcePatch updateParameters;
 
     public LogSearchRuleResourceImpl withExistingResourcegroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -183,6 +183,16 @@ public final class LogSearchRuleResourceImpl
         return this;
     }
 
+    public LogSearchRuleResourceImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
+    public LogSearchRuleResourceImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
+    }
+
     public LogSearchRuleResourceImpl withSource(Source source) {
         this.innerModel().withSource(source);
         return this;
@@ -190,16 +200,6 @@ public final class LogSearchRuleResourceImpl
 
     public LogSearchRuleResourceImpl withAction(Action action) {
         this.innerModel().withAction(action);
-        return this;
-    }
-
-    public LogSearchRuleResourceImpl withSchedule(Schedule schedule) {
-        this.innerModel().withSchedule(schedule);
-        return this;
-    }
-
-    public LogSearchRuleResourceImpl withDescription(String description) {
-        this.innerModel().withDescription(description);
         return this;
     }
 
@@ -213,8 +213,8 @@ public final class LogSearchRuleResourceImpl
         }
     }
 
-    public LogSearchRuleResourceImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
+    public LogSearchRuleResourceImpl withDescription(String description) {
+        this.innerModel().withDescription(description);
         return this;
     }
 
@@ -228,8 +228,8 @@ public final class LogSearchRuleResourceImpl
         }
     }
 
-    public LogSearchRuleResourceImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
+    public LogSearchRuleResourceImpl withSchedule(Schedule schedule) {
+        this.innerModel().withSchedule(schedule);
         return this;
     }
 

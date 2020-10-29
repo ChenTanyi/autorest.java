@@ -147,13 +147,13 @@ public final class ManagementLockObjectImpl
         return this;
     }
 
-    public ManagementLockObjectImpl withOwners(List<ManagementLockOwner> owners) {
-        this.innerModel().withOwners(owners);
+    public ManagementLockObjectImpl withNotes(String notes) {
+        this.innerModel().withNotes(notes);
         return this;
     }
 
-    public ManagementLockObjectImpl withNotes(String notes) {
-        this.innerModel().withNotes(notes);
+    public ManagementLockObjectImpl withOwners(List<ManagementLockOwner> owners) {
+        this.innerModel().withOwners(owners);
         return this;
     }
 }

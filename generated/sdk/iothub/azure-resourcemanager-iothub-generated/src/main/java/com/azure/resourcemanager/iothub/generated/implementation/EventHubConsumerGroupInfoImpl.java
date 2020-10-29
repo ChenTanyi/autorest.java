@@ -59,11 +59,11 @@ public final class EventHubConsumerGroupInfoImpl
 
     private String resourceGroupName;
 
-    private String name;
-
     private String resourceName;
 
     private String eventHubEndpointName;
+
+    private String name;
 
     private EventHubConsumerGroupBodyDescription createConsumerGroupBody;
 

@@ -197,14 +197,8 @@ public final class ProximityPlacementGroupImpl
         return this;
     }
 
-    public ProximityPlacementGroupImpl withProximityPlacementGroupType(
-        ProximityPlacementGroupType proximityPlacementGroupType) {
-        this.innerModel().withProximityPlacementGroupType(proximityPlacementGroupType);
-        return this;
-    }
-
-    public ProximityPlacementGroupImpl withColocationStatus(InstanceViewStatus colocationStatus) {
-        this.innerModel().withColocationStatus(colocationStatus);
+    public ProximityPlacementGroupImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
@@ -218,8 +212,14 @@ public final class ProximityPlacementGroupImpl
         }
     }
 
-    public ProximityPlacementGroupImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
+    public ProximityPlacementGroupImpl withProximityPlacementGroupType(
+        ProximityPlacementGroupType proximityPlacementGroupType) {
+        this.innerModel().withProximityPlacementGroupType(proximityPlacementGroupType);
+        return this;
+    }
+
+    public ProximityPlacementGroupImpl withColocationStatus(InstanceViewStatus colocationStatus) {
+        this.innerModel().withColocationStatus(colocationStatus);
         return this;
     }
 

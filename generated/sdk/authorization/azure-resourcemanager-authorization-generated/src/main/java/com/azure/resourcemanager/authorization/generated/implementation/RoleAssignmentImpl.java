@@ -51,18 +51,6 @@ public final class RoleAssignmentImpl implements RoleAssignment {
         return this.innerModel().canDelegate();
     }
 
-    public String description() {
-        return this.innerModel().description();
-    }
-
-    public String condition() {
-        return this.innerModel().condition();
-    }
-
-    public String conditionVersion() {
-        return this.innerModel().conditionVersion();
-    }
-
     public RoleAssignmentInner innerModel() {
         return this.innerObject;
     }

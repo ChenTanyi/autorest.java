@@ -74,9 +74,9 @@ public final class WorkerPoolResourceImpl
 
     private String resourceGroupName;
 
-    private String workerPoolName;
-
     private String name;
+
+    private String workerPoolName;
 
     public WorkerPoolResourceImpl withExistingHostingEnvironment(String resourceGroupName, String name) {
         this.resourceGroupName = resourceGroupName;
@@ -160,11 +160,6 @@ public final class WorkerPoolResourceImpl
         return this;
     }
 
-    public WorkerPoolResourceImpl withWorkerCount(Integer workerCount) {
-        this.innerModel().withWorkerCount(workerCount);
-        return this;
-    }
-
     public WorkerPoolResourceImpl withKind(String kind) {
         this.innerModel().withKind(kind);
         return this;
@@ -175,11 +170,6 @@ public final class WorkerPoolResourceImpl
         return this;
     }
 
-    public WorkerPoolResourceImpl withWorkerSize(String workerSize) {
-        this.innerModel().withWorkerSize(workerSize);
-        return this;
-    }
-
     public WorkerPoolResourceImpl withWorkerSizeId(Integer workerSizeId) {
         this.innerModel().withWorkerSizeId(workerSizeId);
         return this;
@@ -187,6 +177,16 @@ public final class WorkerPoolResourceImpl
 
     public WorkerPoolResourceImpl withComputeMode(ComputeModeOptions computeMode) {
         this.innerModel().withComputeMode(computeMode);
+        return this;
+    }
+
+    public WorkerPoolResourceImpl withWorkerSize(String workerSize) {
+        this.innerModel().withWorkerSize(workerSize);
+        return this;
+    }
+
+    public WorkerPoolResourceImpl withWorkerCount(Integer workerCount) {
+        this.innerModel().withWorkerCount(workerCount);
         return this;
     }
 }

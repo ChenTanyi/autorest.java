@@ -86,9 +86,9 @@ public final class DdosProtectionPlanImpl
 
     private String resourceGroupName;
 
-    private TagsObject updateParameters;
-
     private String ddosProtectionPlanName;
+
+    private TagsObject updateParameters;
 
     public DdosProtectionPlanImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -171,16 +171,6 @@ public final class DdosProtectionPlanImpl
         return this;
     }
 
-    public DdosProtectionPlanImpl withTags(Map<String, String> tags) {
-        if (isInCreateMode()) {
-            this.innerModel().withTags(tags);
-            return this;
-        } else {
-            this.updateParameters.withTags(tags);
-            return this;
-        }
-    }
-
     public DdosProtectionPlanImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;
@@ -189,6 +179,16 @@ public final class DdosProtectionPlanImpl
     public DdosProtectionPlanImpl withRegion(String location) {
         this.innerModel().withLocation(location);
         return this;
+    }
+
+    public DdosProtectionPlanImpl withTags(Map<String, String> tags) {
+        if (isInCreateMode()) {
+            this.innerModel().withTags(tags);
+            return this;
+        } else {
+            this.updateParameters.withTags(tags);
+            return this;
+        }
     }
 
     private boolean isInCreateMode() {

@@ -146,8 +146,8 @@ public final class AccountFilterImpl implements AccountFilter, AccountFilter.Def
         return this;
     }
 
-    public AccountFilterImpl withTracks(List<FilterTrackSelection> tracks) {
-        this.innerModel().withTracks(tracks);
+    public AccountFilterImpl withPresentationTimeRange(PresentationTimeRange presentationTimeRange) {
+        this.innerModel().withPresentationTimeRange(presentationTimeRange);
         return this;
     }
 
@@ -156,8 +156,8 @@ public final class AccountFilterImpl implements AccountFilter, AccountFilter.Def
         return this;
     }
 
-    public AccountFilterImpl withPresentationTimeRange(PresentationTimeRange presentationTimeRange) {
-        this.innerModel().withPresentationTimeRange(presentationTimeRange);
+    public AccountFilterImpl withTracks(List<FilterTrackSelection> tracks) {
+        this.innerModel().withTracks(tracks);
         return this;
     }
 }

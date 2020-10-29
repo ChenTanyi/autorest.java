@@ -164,18 +164,8 @@ public final class ServerSecurityAlertPolicyImpl
         return this;
     }
 
-    public ServerSecurityAlertPolicyImpl withEmailAccountAdmins(Boolean emailAccountAdmins) {
-        this.innerModel().withEmailAccountAdmins(emailAccountAdmins);
-        return this;
-    }
-
     public ServerSecurityAlertPolicyImpl withState(ServerSecurityAlertPolicyState state) {
         this.innerModel().withState(state);
-        return this;
-    }
-
-    public ServerSecurityAlertPolicyImpl withEmailAddresses(List<String> emailAddresses) {
-        this.innerModel().withEmailAddresses(emailAddresses);
         return this;
     }
 
@@ -184,8 +174,18 @@ public final class ServerSecurityAlertPolicyImpl
         return this;
     }
 
-    public ServerSecurityAlertPolicyImpl withRetentionDays(Integer retentionDays) {
-        this.innerModel().withRetentionDays(retentionDays);
+    public ServerSecurityAlertPolicyImpl withEmailAddresses(List<String> emailAddresses) {
+        this.innerModel().withEmailAddresses(emailAddresses);
+        return this;
+    }
+
+    public ServerSecurityAlertPolicyImpl withEmailAccountAdmins(Boolean emailAccountAdmins) {
+        this.innerModel().withEmailAccountAdmins(emailAccountAdmins);
+        return this;
+    }
+
+    public ServerSecurityAlertPolicyImpl withStorageEndpoint(String storageEndpoint) {
+        this.innerModel().withStorageEndpoint(storageEndpoint);
         return this;
     }
 
@@ -194,8 +194,8 @@ public final class ServerSecurityAlertPolicyImpl
         return this;
     }
 
-    public ServerSecurityAlertPolicyImpl withStorageEndpoint(String storageEndpoint) {
-        this.innerModel().withStorageEndpoint(storageEndpoint);
+    public ServerSecurityAlertPolicyImpl withRetentionDays(Integer retentionDays) {
+        this.innerModel().withRetentionDays(retentionDays);
         return this;
     }
 }

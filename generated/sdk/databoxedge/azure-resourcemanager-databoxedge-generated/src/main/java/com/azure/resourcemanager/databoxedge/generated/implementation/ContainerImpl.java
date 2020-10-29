@@ -54,13 +54,13 @@ public final class ContainerImpl implements Container, Container.Definition, Con
         return this.serviceManager;
     }
 
-    private String resourceGroupName;
-
-    private String containerName;
+    private String deviceName;
 
     private String storageAccountName;
 
-    private String deviceName;
+    private String containerName;
+
+    private String resourceGroupName;
 
     public ContainerImpl withExistingStorageAccount(
         String deviceName, String storageAccountName, String containerName) {

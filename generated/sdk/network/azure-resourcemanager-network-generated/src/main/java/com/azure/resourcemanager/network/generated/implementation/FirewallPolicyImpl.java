@@ -204,18 +204,13 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
         return this;
     }
 
-    public FirewallPolicyImpl withThreatIntelWhitelist(FirewallPolicyThreatIntelWhitelist threatIntelWhitelist) {
-        this.innerModel().withThreatIntelWhitelist(threatIntelWhitelist);
-        return this;
-    }
-
     public FirewallPolicyImpl withRegion(String location) {
         this.innerModel().withLocation(location);
         return this;
     }
 
-    public FirewallPolicyImpl withThreatIntelMode(AzureFirewallThreatIntelMode threatIntelMode) {
-        this.innerModel().withThreatIntelMode(threatIntelMode);
+    public FirewallPolicyImpl withTags(Map<String, String> tags) {
+        this.innerModel().withTags(tags);
         return this;
     }
 
@@ -224,13 +219,18 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
         return this;
     }
 
-    public FirewallPolicyImpl withDnsSettings(DnsSettings dnsSettings) {
-        this.innerModel().withDnsSettings(dnsSettings);
+    public FirewallPolicyImpl withThreatIntelMode(AzureFirewallThreatIntelMode threatIntelMode) {
+        this.innerModel().withThreatIntelMode(threatIntelMode);
         return this;
     }
 
-    public FirewallPolicyImpl withTags(Map<String, String> tags) {
-        this.innerModel().withTags(tags);
+    public FirewallPolicyImpl withThreatIntelWhitelist(FirewallPolicyThreatIntelWhitelist threatIntelWhitelist) {
+        this.innerModel().withThreatIntelWhitelist(threatIntelWhitelist);
+        return this;
+    }
+
+    public FirewallPolicyImpl withDnsSettings(DnsSettings dnsSettings) {
+        this.innerModel().withDnsSettings(dnsSettings);
         return this;
     }
 

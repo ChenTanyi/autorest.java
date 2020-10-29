@@ -96,11 +96,11 @@ public final class BackendAddressPoolImpl
         return this.serviceManager;
     }
 
-    private String backendAddressPoolName;
-
     private String resourceGroupName;
 
     private String loadBalancerName;
+
+    private String backendAddressPoolName;
 
     public BackendAddressPoolImpl withExistingLoadBalancer(String resourceGroupName, String loadBalancerName) {
         this.resourceGroupName = resourceGroupName;
@@ -182,6 +182,11 @@ public final class BackendAddressPoolImpl
         return this;
     }
 
+    public BackendAddressPoolImpl withId(String id) {
+        this.innerModel().withId(id);
+        return this;
+    }
+
     public BackendAddressPoolImpl withName(String name) {
         this.innerModel().withName(name);
         return this;
@@ -190,11 +195,6 @@ public final class BackendAddressPoolImpl
     public BackendAddressPoolImpl withLoadBalancerBackendAddresses(
         List<LoadBalancerBackendAddress> loadBalancerBackendAddresses) {
         this.innerModel().withLoadBalancerBackendAddresses(loadBalancerBackendAddresses);
-        return this;
-    }
-
-    public BackendAddressPoolImpl withId(String id) {
-        this.innerModel().withId(id);
         return this;
     }
 }

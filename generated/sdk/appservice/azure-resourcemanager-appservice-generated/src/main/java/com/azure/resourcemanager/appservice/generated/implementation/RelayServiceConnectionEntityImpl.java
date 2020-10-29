@@ -71,9 +71,9 @@ public final class RelayServiceConnectionEntityImpl
 
     private String resourceGroupName;
 
-    private String entityName;
-
     private String name;
+
+    private String entityName;
 
     public RelayServiceConnectionEntityImpl withExistingSite(String resourceGroupName, String name) {
         this.resourceGroupName = resourceGroupName;
@@ -163,8 +163,8 @@ public final class RelayServiceConnectionEntityImpl
         return this;
     }
 
-    public RelayServiceConnectionEntityImpl withResourceConnectionString(String resourceConnectionString) {
-        this.innerModel().withResourceConnectionString(resourceConnectionString);
+    public RelayServiceConnectionEntityImpl withKind(String kind) {
+        this.innerModel().withKind(kind);
         return this;
     }
 
@@ -173,18 +173,8 @@ public final class RelayServiceConnectionEntityImpl
         return this;
     }
 
-    public RelayServiceConnectionEntityImpl withHostname(String hostname) {
-        this.innerModel().withHostname(hostname);
-        return this;
-    }
-
     public RelayServiceConnectionEntityImpl withEntityConnectionString(String entityConnectionString) {
         this.innerModel().withEntityConnectionString(entityConnectionString);
-        return this;
-    }
-
-    public RelayServiceConnectionEntityImpl withPort(Integer port) {
-        this.innerModel().withPort(port);
         return this;
     }
 
@@ -193,13 +183,23 @@ public final class RelayServiceConnectionEntityImpl
         return this;
     }
 
-    public RelayServiceConnectionEntityImpl withBiztalkUri(String biztalkUri) {
-        this.innerModel().withBiztalkUri(biztalkUri);
+    public RelayServiceConnectionEntityImpl withResourceConnectionString(String resourceConnectionString) {
+        this.innerModel().withResourceConnectionString(resourceConnectionString);
         return this;
     }
 
-    public RelayServiceConnectionEntityImpl withKind(String kind) {
-        this.innerModel().withKind(kind);
+    public RelayServiceConnectionEntityImpl withHostname(String hostname) {
+        this.innerModel().withHostname(hostname);
+        return this;
+    }
+
+    public RelayServiceConnectionEntityImpl withPort(Integer port) {
+        this.innerModel().withPort(port);
+        return this;
+    }
+
+    public RelayServiceConnectionEntityImpl withBiztalkUri(String biztalkUri) {
+        this.innerModel().withBiztalkUri(biztalkUri);
         return this;
     }
 }

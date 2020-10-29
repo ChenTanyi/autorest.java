@@ -135,13 +135,13 @@ public final class DomainOwnershipIdentifierImpl
         return this;
     }
 
-    public DomainOwnershipIdentifierImpl withOwnershipId(String ownershipId) {
-        this.innerModel().withOwnershipId(ownershipId);
+    public DomainOwnershipIdentifierImpl withKind(String kind) {
+        this.innerModel().withKind(kind);
         return this;
     }
 
-    public DomainOwnershipIdentifierImpl withKind(String kind) {
-        this.innerModel().withKind(kind);
+    public DomainOwnershipIdentifierImpl withOwnershipId(String ownershipId) {
+        this.innerModel().withOwnershipId(ownershipId);
         return this;
     }
 }

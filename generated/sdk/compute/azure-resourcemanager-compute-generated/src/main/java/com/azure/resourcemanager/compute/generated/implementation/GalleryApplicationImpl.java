@@ -86,13 +86,13 @@ public final class GalleryApplicationImpl
         return this.serviceManager;
     }
 
-    private String galleryApplicationName;
-
     private String resourceGroupName;
 
-    private GalleryApplicationUpdate updateGalleryApplication;
-
     private String galleryName;
+
+    private String galleryApplicationName;
+
+    private GalleryApplicationUpdate updateGalleryApplication;
 
     public GalleryApplicationImpl withExistingGallery(String resourceGroupName, String galleryName) {
         this.resourceGroupName = resourceGroupName;
@@ -175,37 +175,32 @@ public final class GalleryApplicationImpl
         return this;
     }
 
-    public GalleryApplicationImpl withSupportedOSType(OperatingSystemTypes supportedOSType) {
-        if (isInCreateMode()) {
-            this.innerModel().withSupportedOSType(supportedOSType);
-            return this;
-        } else {
-            this.updateGalleryApplication.withSupportedOSType(supportedOSType);
-            return this;
-        }
-    }
-
     public GalleryApplicationImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;
     }
 
-    public GalleryApplicationImpl withEndOfLifeDate(OffsetDateTime endOfLifeDate) {
+    public GalleryApplicationImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
+    }
+
+    public GalleryApplicationImpl withTags(Map<String, String> tags) {
         if (isInCreateMode()) {
-            this.innerModel().withEndOfLifeDate(endOfLifeDate);
+            this.innerModel().withTags(tags);
             return this;
         } else {
-            this.updateGalleryApplication.withEndOfLifeDate(endOfLifeDate);
+            this.updateGalleryApplication.withTags(tags);
             return this;
         }
     }
 
-    public GalleryApplicationImpl withPrivacyStatementUri(String privacyStatementUri) {
+    public GalleryApplicationImpl withDescription(String description) {
         if (isInCreateMode()) {
-            this.innerModel().withPrivacyStatementUri(privacyStatementUri);
+            this.innerModel().withDescription(description);
             return this;
         } else {
-            this.updateGalleryApplication.withPrivacyStatementUri(privacyStatementUri);
+            this.updateGalleryApplication.withDescription(description);
             return this;
         }
     }
@@ -220,27 +215,12 @@ public final class GalleryApplicationImpl
         }
     }
 
-    public GalleryApplicationImpl withTags(Map<String, String> tags) {
+    public GalleryApplicationImpl withPrivacyStatementUri(String privacyStatementUri) {
         if (isInCreateMode()) {
-            this.innerModel().withTags(tags);
+            this.innerModel().withPrivacyStatementUri(privacyStatementUri);
             return this;
         } else {
-            this.updateGalleryApplication.withTags(tags);
-            return this;
-        }
-    }
-
-    public GalleryApplicationImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public GalleryApplicationImpl withDescription(String description) {
-        if (isInCreateMode()) {
-            this.innerModel().withDescription(description);
-            return this;
-        } else {
-            this.updateGalleryApplication.withDescription(description);
+            this.updateGalleryApplication.withPrivacyStatementUri(privacyStatementUri);
             return this;
         }
     }
@@ -251,6 +231,26 @@ public final class GalleryApplicationImpl
             return this;
         } else {
             this.updateGalleryApplication.withReleaseNoteUri(releaseNoteUri);
+            return this;
+        }
+    }
+
+    public GalleryApplicationImpl withEndOfLifeDate(OffsetDateTime endOfLifeDate) {
+        if (isInCreateMode()) {
+            this.innerModel().withEndOfLifeDate(endOfLifeDate);
+            return this;
+        } else {
+            this.updateGalleryApplication.withEndOfLifeDate(endOfLifeDate);
+            return this;
+        }
+    }
+
+    public GalleryApplicationImpl withSupportedOSType(OperatingSystemTypes supportedOSType) {
+        if (isInCreateMode()) {
+            this.innerModel().withSupportedOSType(supportedOSType);
+            return this;
+        } else {
+            this.updateGalleryApplication.withSupportedOSType(supportedOSType);
             return this;
         }
     }

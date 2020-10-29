@@ -191,34 +191,8 @@ public final class P2SVpnGatewayImpl implements P2SVpnGateway, P2SVpnGateway.Def
         return this;
     }
 
-    public P2SVpnGatewayImpl withP2SConnectionConfigurations(
-        List<P2SConnectionConfiguration> p2SConnectionConfigurations) {
-        this.innerModel().withP2SConnectionConfigurations(p2SConnectionConfigurations);
-        return this;
-    }
-
-    public P2SVpnGatewayImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     public P2SVpnGatewayImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
-    public P2SVpnGatewayImpl withCustomDnsServers(List<String> customDnsServers) {
-        this.innerModel().withCustomDnsServers(customDnsServers);
-        return this;
-    }
-
-    public P2SVpnGatewayImpl withVirtualHub(SubResource virtualHub) {
-        this.innerModel().withVirtualHub(virtualHub);
-        return this;
-    }
-
-    public P2SVpnGatewayImpl withVpnGatewayScaleUnit(Integer vpnGatewayScaleUnit) {
-        this.innerModel().withVpnGatewayScaleUnit(vpnGatewayScaleUnit);
         return this;
     }
 
@@ -237,8 +211,34 @@ public final class P2SVpnGatewayImpl implements P2SVpnGateway, P2SVpnGateway.Def
         }
     }
 
+    public P2SVpnGatewayImpl withVirtualHub(SubResource virtualHub) {
+        this.innerModel().withVirtualHub(virtualHub);
+        return this;
+    }
+
+    public P2SVpnGatewayImpl withP2SConnectionConfigurations(
+        List<P2SConnectionConfiguration> p2SConnectionConfigurations) {
+        this.innerModel().withP2SConnectionConfigurations(p2SConnectionConfigurations);
+        return this;
+    }
+
+    public P2SVpnGatewayImpl withVpnGatewayScaleUnit(Integer vpnGatewayScaleUnit) {
+        this.innerModel().withVpnGatewayScaleUnit(vpnGatewayScaleUnit);
+        return this;
+    }
+
     public P2SVpnGatewayImpl withVpnServerConfiguration(SubResource vpnServerConfiguration) {
         this.innerModel().withVpnServerConfiguration(vpnServerConfiguration);
+        return this;
+    }
+
+    public P2SVpnGatewayImpl withCustomDnsServers(List<String> customDnsServers) {
+        this.innerModel().withCustomDnsServers(customDnsServers);
+        return this;
+    }
+
+    public P2SVpnGatewayImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 

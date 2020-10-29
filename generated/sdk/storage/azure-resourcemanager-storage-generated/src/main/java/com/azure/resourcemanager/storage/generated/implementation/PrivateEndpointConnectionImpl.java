@@ -50,11 +50,11 @@ public final class PrivateEndpointConnectionImpl
         return this.serviceManager;
     }
 
-    private String privateEndpointConnectionName;
-
     private String resourceGroupName;
 
     private String accountName;
+
+    private String privateEndpointConnectionName;
 
     public PrivateEndpointConnectionImpl withExistingStorageAccount(String resourceGroupName, String accountName) {
         this.resourceGroupName = resourceGroupName;
@@ -142,14 +142,14 @@ public final class PrivateEndpointConnectionImpl
         return this;
     }
 
-    public PrivateEndpointConnectionImpl withPrivateLinkServiceConnectionState(
-        PrivateLinkServiceConnectionState privateLinkServiceConnectionState) {
-        this.innerModel().withPrivateLinkServiceConnectionState(privateLinkServiceConnectionState);
+    public PrivateEndpointConnectionImpl withPrivateEndpoint(PrivateEndpoint privateEndpoint) {
+        this.innerModel().withPrivateEndpoint(privateEndpoint);
         return this;
     }
 
-    public PrivateEndpointConnectionImpl withPrivateEndpoint(PrivateEndpoint privateEndpoint) {
-        this.innerModel().withPrivateEndpoint(privateEndpoint);
+    public PrivateEndpointConnectionImpl withPrivateLinkServiceConnectionState(
+        PrivateLinkServiceConnectionState privateLinkServiceConnectionState) {
+        this.innerModel().withPrivateLinkServiceConnectionState(privateLinkServiceConnectionState);
         return this;
     }
 }

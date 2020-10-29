@@ -118,11 +118,11 @@ public final class VirtualMachineRunCommandImpl
         return this.serviceManager;
     }
 
+    private String resourceGroupName;
+
     private String vmName;
 
     private String runCommandName;
-
-    private String resourceGroupName;
 
     private VirtualMachineRunCommandUpdate updateRunCommand;
 
@@ -214,44 +214,9 @@ public final class VirtualMachineRunCommandImpl
         return this;
     }
 
-    public VirtualMachineRunCommandImpl withRunAsPassword(String runAsPassword) {
-        if (isInCreateMode()) {
-            this.innerModel().withRunAsPassword(runAsPassword);
-            return this;
-        } else {
-            this.updateRunCommand.withRunAsPassword(runAsPassword);
-            return this;
-        }
-    }
-
-    public VirtualMachineRunCommandImpl withAsyncExecution(Boolean asyncExecution) {
-        if (isInCreateMode()) {
-            this.innerModel().withAsyncExecution(asyncExecution);
-            return this;
-        } else {
-            this.updateRunCommand.withAsyncExecution(asyncExecution);
-            return this;
-        }
-    }
-
-    public VirtualMachineRunCommandImpl withErrorBlobUri(String errorBlobUri) {
-        if (isInCreateMode()) {
-            this.innerModel().withErrorBlobUri(errorBlobUri);
-            return this;
-        } else {
-            this.updateRunCommand.withErrorBlobUri(errorBlobUri);
-            return this;
-        }
-    }
-
-    public VirtualMachineRunCommandImpl withProtectedParameters(List<RunCommandInputParameter> protectedParameters) {
-        if (isInCreateMode()) {
-            this.innerModel().withProtectedParameters(protectedParameters);
-            return this;
-        } else {
-            this.updateRunCommand.withProtectedParameters(protectedParameters);
-            return this;
-        }
+    public VirtualMachineRunCommandImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
     }
 
     public VirtualMachineRunCommandImpl withTags(Map<String, String> tags) {
@@ -260,6 +225,16 @@ public final class VirtualMachineRunCommandImpl
             return this;
         } else {
             this.updateRunCommand.withTags(tags);
+            return this;
+        }
+    }
+
+    public VirtualMachineRunCommandImpl withSource(VirtualMachineRunCommandScriptSource source) {
+        if (isInCreateMode()) {
+            this.innerModel().withSource(source);
+            return this;
+        } else {
+            this.updateRunCommand.withSource(source);
             return this;
         }
     }
@@ -274,27 +249,22 @@ public final class VirtualMachineRunCommandImpl
         }
     }
 
-    public VirtualMachineRunCommandImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public VirtualMachineRunCommandImpl withSource(VirtualMachineRunCommandScriptSource source) {
+    public VirtualMachineRunCommandImpl withProtectedParameters(List<RunCommandInputParameter> protectedParameters) {
         if (isInCreateMode()) {
-            this.innerModel().withSource(source);
+            this.innerModel().withProtectedParameters(protectedParameters);
             return this;
         } else {
-            this.updateRunCommand.withSource(source);
+            this.updateRunCommand.withProtectedParameters(protectedParameters);
             return this;
         }
     }
 
-    public VirtualMachineRunCommandImpl withOutputBlobUri(String outputBlobUri) {
+    public VirtualMachineRunCommandImpl withAsyncExecution(Boolean asyncExecution) {
         if (isInCreateMode()) {
-            this.innerModel().withOutputBlobUri(outputBlobUri);
+            this.innerModel().withAsyncExecution(asyncExecution);
             return this;
         } else {
-            this.updateRunCommand.withOutputBlobUri(outputBlobUri);
+            this.updateRunCommand.withAsyncExecution(asyncExecution);
             return this;
         }
     }
@@ -309,12 +279,42 @@ public final class VirtualMachineRunCommandImpl
         }
     }
 
+    public VirtualMachineRunCommandImpl withRunAsPassword(String runAsPassword) {
+        if (isInCreateMode()) {
+            this.innerModel().withRunAsPassword(runAsPassword);
+            return this;
+        } else {
+            this.updateRunCommand.withRunAsPassword(runAsPassword);
+            return this;
+        }
+    }
+
     public VirtualMachineRunCommandImpl withTimeoutInSeconds(Integer timeoutInSeconds) {
         if (isInCreateMode()) {
             this.innerModel().withTimeoutInSeconds(timeoutInSeconds);
             return this;
         } else {
             this.updateRunCommand.withTimeoutInSeconds(timeoutInSeconds);
+            return this;
+        }
+    }
+
+    public VirtualMachineRunCommandImpl withOutputBlobUri(String outputBlobUri) {
+        if (isInCreateMode()) {
+            this.innerModel().withOutputBlobUri(outputBlobUri);
+            return this;
+        } else {
+            this.updateRunCommand.withOutputBlobUri(outputBlobUri);
+            return this;
+        }
+    }
+
+    public VirtualMachineRunCommandImpl withErrorBlobUri(String errorBlobUri) {
+        if (isInCreateMode()) {
+            this.innerModel().withErrorBlobUri(errorBlobUri);
+            return this;
+        } else {
+            this.updateRunCommand.withErrorBlobUri(errorBlobUri);
             return this;
         }
     }

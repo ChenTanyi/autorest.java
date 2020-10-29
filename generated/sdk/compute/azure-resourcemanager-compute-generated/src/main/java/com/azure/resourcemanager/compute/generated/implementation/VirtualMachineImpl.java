@@ -195,9 +195,9 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         return this.serviceManager;
     }
 
-    private String vmName;
-
     private String resourceGroupName;
+
+    private String vmName;
 
     private VirtualMachineUpdateInner updateParameters;
 
@@ -282,12 +282,22 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         return this;
     }
 
-    public VirtualMachineImpl withHardwareProfile(HardwareProfile hardwareProfile) {
+    public VirtualMachineImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
+    public VirtualMachineImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
+    }
+
+    public VirtualMachineImpl withTags(Map<String, String> tags) {
         if (isInCreateMode()) {
-            this.innerModel().withHardwareProfile(hardwareProfile);
+            this.innerModel().withTags(tags);
             return this;
         } else {
-            this.updateParameters.withHardwareProfile(hardwareProfile);
+            this.updateParameters.withTags(tags);
             return this;
         }
     }
@@ -302,77 +312,12 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         }
     }
 
-    public VirtualMachineImpl withDiagnosticsProfile(DiagnosticsProfile diagnosticsProfile) {
+    public VirtualMachineImpl withIdentity(VirtualMachineIdentity identity) {
         if (isInCreateMode()) {
-            this.innerModel().withDiagnosticsProfile(diagnosticsProfile);
+            this.innerModel().withIdentity(identity);
             return this;
         } else {
-            this.updateParameters.withDiagnosticsProfile(diagnosticsProfile);
-            return this;
-        }
-    }
-
-    public VirtualMachineImpl withOsProfile(OSProfile osProfile) {
-        if (isInCreateMode()) {
-            this.innerModel().withOsProfile(osProfile);
-            return this;
-        } else {
-            this.updateParameters.withOsProfile(osProfile);
-            return this;
-        }
-    }
-
-    public VirtualMachineImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
-    public VirtualMachineImpl withTags(Map<String, String> tags) {
-        if (isInCreateMode()) {
-            this.innerModel().withTags(tags);
-            return this;
-        } else {
-            this.updateParameters.withTags(tags);
-            return this;
-        }
-    }
-
-    public VirtualMachineImpl withLicenseType(String licenseType) {
-        if (isInCreateMode()) {
-            this.innerModel().withLicenseType(licenseType);
-            return this;
-        } else {
-            this.updateParameters.withLicenseType(licenseType);
-            return this;
-        }
-    }
-
-    public VirtualMachineImpl withAdditionalCapabilities(AdditionalCapabilities additionalCapabilities) {
-        if (isInCreateMode()) {
-            this.innerModel().withAdditionalCapabilities(additionalCapabilities);
-            return this;
-        } else {
-            this.updateParameters.withAdditionalCapabilities(additionalCapabilities);
-            return this;
-        }
-    }
-
-    public VirtualMachineImpl withHostGroup(SubResource hostGroup) {
-        if (isInCreateMode()) {
-            this.innerModel().withHostGroup(hostGroup);
-            return this;
-        } else {
-            this.updateParameters.withHostGroup(hostGroup);
-            return this;
-        }
-    }
-
-    public VirtualMachineImpl withVirtualMachineScaleSet(SubResource virtualMachineScaleSet) {
-        if (isInCreateMode()) {
-            this.innerModel().withVirtualMachineScaleSet(virtualMachineScaleSet);
-            return this;
-        } else {
-            this.updateParameters.withVirtualMachineScaleSet(virtualMachineScaleSet);
+            this.updateParameters.withIdentity(identity);
             return this;
         }
     }
@@ -387,52 +332,42 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         }
     }
 
-    public VirtualMachineImpl withHost(SubResource host) {
+    public VirtualMachineImpl withHardwareProfile(HardwareProfile hardwareProfile) {
         if (isInCreateMode()) {
-            this.innerModel().withHost(host);
+            this.innerModel().withHardwareProfile(hardwareProfile);
             return this;
         } else {
-            this.updateParameters.withHost(host);
+            this.updateParameters.withHardwareProfile(hardwareProfile);
             return this;
         }
     }
 
-    public VirtualMachineImpl withPriority(VirtualMachinePriorityTypes priority) {
+    public VirtualMachineImpl withStorageProfile(StorageProfile storageProfile) {
         if (isInCreateMode()) {
-            this.innerModel().withPriority(priority);
+            this.innerModel().withStorageProfile(storageProfile);
             return this;
         } else {
-            this.updateParameters.withPriority(priority);
+            this.updateParameters.withStorageProfile(storageProfile);
             return this;
         }
     }
 
-    public VirtualMachineImpl withSecurityProfile(SecurityProfile securityProfile) {
+    public VirtualMachineImpl withAdditionalCapabilities(AdditionalCapabilities additionalCapabilities) {
         if (isInCreateMode()) {
-            this.innerModel().withSecurityProfile(securityProfile);
+            this.innerModel().withAdditionalCapabilities(additionalCapabilities);
             return this;
         } else {
-            this.updateParameters.withSecurityProfile(securityProfile);
+            this.updateParameters.withAdditionalCapabilities(additionalCapabilities);
             return this;
         }
     }
 
-    public VirtualMachineImpl withAvailabilitySet(SubResource availabilitySet) {
+    public VirtualMachineImpl withOsProfile(OSProfile osProfile) {
         if (isInCreateMode()) {
-            this.innerModel().withAvailabilitySet(availabilitySet);
+            this.innerModel().withOsProfile(osProfile);
             return this;
         } else {
-            this.updateParameters.withAvailabilitySet(availabilitySet);
-            return this;
-        }
-    }
-
-    public VirtualMachineImpl withProximityPlacementGroup(SubResource proximityPlacementGroup) {
-        if (isInCreateMode()) {
-            this.innerModel().withProximityPlacementGroup(proximityPlacementGroup);
-            return this;
-        } else {
-            this.updateParameters.withProximityPlacementGroup(proximityPlacementGroup);
+            this.updateParameters.withOsProfile(osProfile);
             return this;
         }
     }
@@ -447,12 +382,62 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         }
     }
 
-    public VirtualMachineImpl withExtensionsTimeBudget(String extensionsTimeBudget) {
+    public VirtualMachineImpl withSecurityProfile(SecurityProfile securityProfile) {
         if (isInCreateMode()) {
-            this.innerModel().withExtensionsTimeBudget(extensionsTimeBudget);
+            this.innerModel().withSecurityProfile(securityProfile);
             return this;
         } else {
-            this.updateParameters.withExtensionsTimeBudget(extensionsTimeBudget);
+            this.updateParameters.withSecurityProfile(securityProfile);
+            return this;
+        }
+    }
+
+    public VirtualMachineImpl withDiagnosticsProfile(DiagnosticsProfile diagnosticsProfile) {
+        if (isInCreateMode()) {
+            this.innerModel().withDiagnosticsProfile(diagnosticsProfile);
+            return this;
+        } else {
+            this.updateParameters.withDiagnosticsProfile(diagnosticsProfile);
+            return this;
+        }
+    }
+
+    public VirtualMachineImpl withAvailabilitySet(SubResource availabilitySet) {
+        if (isInCreateMode()) {
+            this.innerModel().withAvailabilitySet(availabilitySet);
+            return this;
+        } else {
+            this.updateParameters.withAvailabilitySet(availabilitySet);
+            return this;
+        }
+    }
+
+    public VirtualMachineImpl withVirtualMachineScaleSet(SubResource virtualMachineScaleSet) {
+        if (isInCreateMode()) {
+            this.innerModel().withVirtualMachineScaleSet(virtualMachineScaleSet);
+            return this;
+        } else {
+            this.updateParameters.withVirtualMachineScaleSet(virtualMachineScaleSet);
+            return this;
+        }
+    }
+
+    public VirtualMachineImpl withProximityPlacementGroup(SubResource proximityPlacementGroup) {
+        if (isInCreateMode()) {
+            this.innerModel().withProximityPlacementGroup(proximityPlacementGroup);
+            return this;
+        } else {
+            this.updateParameters.withProximityPlacementGroup(proximityPlacementGroup);
+            return this;
+        }
+    }
+
+    public VirtualMachineImpl withPriority(VirtualMachinePriorityTypes priority) {
+        if (isInCreateMode()) {
+            this.innerModel().withPriority(priority);
+            return this;
+        } else {
+            this.updateParameters.withPriority(priority);
             return this;
         }
     }
@@ -467,21 +452,6 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         }
     }
 
-    public VirtualMachineImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public VirtualMachineImpl withIdentity(VirtualMachineIdentity identity) {
-        if (isInCreateMode()) {
-            this.innerModel().withIdentity(identity);
-            return this;
-        } else {
-            this.updateParameters.withIdentity(identity);
-            return this;
-        }
-    }
-
     public VirtualMachineImpl withBillingProfile(BillingProfile billingProfile) {
         if (isInCreateMode()) {
             this.innerModel().withBillingProfile(billingProfile);
@@ -492,12 +462,42 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         }
     }
 
-    public VirtualMachineImpl withStorageProfile(StorageProfile storageProfile) {
+    public VirtualMachineImpl withHost(SubResource host) {
         if (isInCreateMode()) {
-            this.innerModel().withStorageProfile(storageProfile);
+            this.innerModel().withHost(host);
             return this;
         } else {
-            this.updateParameters.withStorageProfile(storageProfile);
+            this.updateParameters.withHost(host);
+            return this;
+        }
+    }
+
+    public VirtualMachineImpl withHostGroup(SubResource hostGroup) {
+        if (isInCreateMode()) {
+            this.innerModel().withHostGroup(hostGroup);
+            return this;
+        } else {
+            this.updateParameters.withHostGroup(hostGroup);
+            return this;
+        }
+    }
+
+    public VirtualMachineImpl withLicenseType(String licenseType) {
+        if (isInCreateMode()) {
+            this.innerModel().withLicenseType(licenseType);
+            return this;
+        } else {
+            this.updateParameters.withLicenseType(licenseType);
+            return this;
+        }
+    }
+
+    public VirtualMachineImpl withExtensionsTimeBudget(String extensionsTimeBudget) {
+        if (isInCreateMode()) {
+            this.innerModel().withExtensionsTimeBudget(extensionsTimeBudget);
+            return this;
+        } else {
+            this.updateParameters.withExtensionsTimeBudget(extensionsTimeBudget);
             return this;
         }
     }

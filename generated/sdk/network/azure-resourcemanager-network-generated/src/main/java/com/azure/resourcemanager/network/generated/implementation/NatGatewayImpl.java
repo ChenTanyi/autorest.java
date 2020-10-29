@@ -121,9 +121,9 @@ public final class NatGatewayImpl implements NatGateway, NatGateway.Definition, 
 
     private String resourceGroupName;
 
-    private TagsObject updateParameters;
-
     private String natGatewayName;
+
+    private TagsObject updateParameters;
 
     public NatGatewayImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -208,38 +208,13 @@ public final class NatGatewayImpl implements NatGateway, NatGateway.Definition, 
         return this;
     }
 
-    public NatGatewayImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
-    public NatGatewayImpl withIdleTimeoutInMinutes(Integer idleTimeoutInMinutes) {
-        this.innerModel().withIdleTimeoutInMinutes(idleTimeoutInMinutes);
-        return this;
-    }
-
-    public NatGatewayImpl withSku(NatGatewaySku sku) {
-        this.innerModel().withSku(sku);
-        return this;
-    }
-
     public NatGatewayImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;
     }
 
-    public NatGatewayImpl withZones(List<String> zones) {
-        this.innerModel().withZones(zones);
-        return this;
-    }
-
-    public NatGatewayImpl withPublicIpPrefixes(List<SubResource> publicIpPrefixes) {
-        this.innerModel().withPublicIpPrefixes(publicIpPrefixes);
-        return this;
-    }
-
-    public NatGatewayImpl withPublicIpAddresses(List<SubResource> publicIpAddresses) {
-        this.innerModel().withPublicIpAddresses(publicIpAddresses);
+    public NatGatewayImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
@@ -253,8 +228,33 @@ public final class NatGatewayImpl implements NatGateway, NatGateway.Definition, 
         }
     }
 
-    public NatGatewayImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
+    public NatGatewayImpl withSku(NatGatewaySku sku) {
+        this.innerModel().withSku(sku);
+        return this;
+    }
+
+    public NatGatewayImpl withZones(List<String> zones) {
+        this.innerModel().withZones(zones);
+        return this;
+    }
+
+    public NatGatewayImpl withIdleTimeoutInMinutes(Integer idleTimeoutInMinutes) {
+        this.innerModel().withIdleTimeoutInMinutes(idleTimeoutInMinutes);
+        return this;
+    }
+
+    public NatGatewayImpl withPublicIpAddresses(List<SubResource> publicIpAddresses) {
+        this.innerModel().withPublicIpAddresses(publicIpAddresses);
+        return this;
+    }
+
+    public NatGatewayImpl withPublicIpPrefixes(List<SubResource> publicIpPrefixes) {
+        this.innerModel().withPublicIpPrefixes(publicIpPrefixes);
+        return this;
+    }
+
+    public NatGatewayImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 

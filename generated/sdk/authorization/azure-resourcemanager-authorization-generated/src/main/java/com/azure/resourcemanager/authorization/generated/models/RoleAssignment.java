@@ -67,29 +67,6 @@ public interface RoleAssignment {
     Boolean canDelegate();
 
     /**
-     * Gets the description property: Description of role assignment.
-     *
-     * @return the description value.
-     */
-    String description();
-
-    /**
-     * Gets the condition property: The conditions on the role assignment. This limits the resources it can be assigned
-     * to. e.g.: @Resource[Microsoft.Storage/storageAccounts/blobServices/containers:ContainerName]
-     * StringEqualsIgnoreCase 'foo_storage_container'.
-     *
-     * @return the condition value.
-     */
-    String condition();
-
-    /**
-     * Gets the conditionVersion property: Version of the condition. Currently accepted value is '2.0'.
-     *
-     * @return the conditionVersion value.
-     */
-    String conditionVersion();
-
-    /**
      * Gets the inner com.azure.resourcemanager.authorization.generated.fluent.models.RoleAssignmentInner object.
      *
      * @return the inner object.

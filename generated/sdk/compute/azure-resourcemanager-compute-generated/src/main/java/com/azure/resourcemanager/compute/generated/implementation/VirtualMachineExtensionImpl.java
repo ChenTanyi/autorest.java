@@ -101,13 +101,13 @@ public final class VirtualMachineExtensionImpl
         return this.serviceManager;
     }
 
-    private String vmName;
-
     private String resourceGroupName;
 
-    private VirtualMachineExtensionUpdate updateExtensionParameters;
+    private String vmName;
 
     private String vmExtensionName;
+
+    private VirtualMachineExtensionUpdate updateExtensionParameters;
 
     public VirtualMachineExtensionImpl withExistingVirtualMachine(String resourceGroupName, String vmName) {
         this.resourceGroupName = resourceGroupName;
@@ -197,14 +197,9 @@ public final class VirtualMachineExtensionImpl
         return this;
     }
 
-    public VirtualMachineExtensionImpl withProtectedSettings(Object protectedSettings) {
-        if (isInCreateMode()) {
-            this.innerModel().withProtectedSettings(protectedSettings);
-            return this;
-        } else {
-            this.updateExtensionParameters.withProtectedSettings(protectedSettings);
-            return this;
-        }
+    public VirtualMachineExtensionImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
     }
 
     public VirtualMachineExtensionImpl withTags(Map<String, String> tags) {
@@ -217,32 +212,12 @@ public final class VirtualMachineExtensionImpl
         }
     }
 
-    public VirtualMachineExtensionImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public VirtualMachineExtensionImpl withInstanceView(VirtualMachineExtensionInstanceView instanceView) {
-        this.innerModel().withInstanceView(instanceView);
-        return this;
-    }
-
     public VirtualMachineExtensionImpl withForceUpdateTag(String forceUpdateTag) {
         if (isInCreateMode()) {
             this.innerModel().withForceUpdateTag(forceUpdateTag);
             return this;
         } else {
             this.updateExtensionParameters.withForceUpdateTag(forceUpdateTag);
-            return this;
-        }
-    }
-
-    public VirtualMachineExtensionImpl withTypeHandlerVersion(String typeHandlerVersion) {
-        if (isInCreateMode()) {
-            this.innerModel().withTypeHandlerVersion(typeHandlerVersion);
-            return this;
-        } else {
-            this.updateExtensionParameters.withTypeHandlerVersion(typeHandlerVersion);
             return this;
         }
     }
@@ -257,12 +232,17 @@ public final class VirtualMachineExtensionImpl
         }
     }
 
-    public VirtualMachineExtensionImpl withEnableAutomaticUpgrade(Boolean enableAutomaticUpgrade) {
+    public VirtualMachineExtensionImpl withTypePropertiesType(String typePropertiesType) {
+        this.innerModel().withTypePropertiesType(typePropertiesType);
+        return this;
+    }
+
+    public VirtualMachineExtensionImpl withTypeHandlerVersion(String typeHandlerVersion) {
         if (isInCreateMode()) {
-            this.innerModel().withEnableAutomaticUpgrade(enableAutomaticUpgrade);
+            this.innerModel().withTypeHandlerVersion(typeHandlerVersion);
             return this;
         } else {
-            this.updateExtensionParameters.withEnableAutomaticUpgrade(enableAutomaticUpgrade);
+            this.updateExtensionParameters.withTypeHandlerVersion(typeHandlerVersion);
             return this;
         }
     }
@@ -277,14 +257,14 @@ public final class VirtualMachineExtensionImpl
         }
     }
 
-    public VirtualMachineExtensionImpl withType(String type) {
-        this.updateExtensionParameters.withType(type);
-        return this;
-    }
-
-    public VirtualMachineExtensionImpl withTypePropertiesType(String typePropertiesType) {
-        this.innerModel().withTypePropertiesType(typePropertiesType);
-        return this;
+    public VirtualMachineExtensionImpl withEnableAutomaticUpgrade(Boolean enableAutomaticUpgrade) {
+        if (isInCreateMode()) {
+            this.innerModel().withEnableAutomaticUpgrade(enableAutomaticUpgrade);
+            return this;
+        } else {
+            this.updateExtensionParameters.withEnableAutomaticUpgrade(enableAutomaticUpgrade);
+            return this;
+        }
     }
 
     public VirtualMachineExtensionImpl withSettings(Object settings) {
@@ -295,6 +275,26 @@ public final class VirtualMachineExtensionImpl
             this.updateExtensionParameters.withSettings(settings);
             return this;
         }
+    }
+
+    public VirtualMachineExtensionImpl withProtectedSettings(Object protectedSettings) {
+        if (isInCreateMode()) {
+            this.innerModel().withProtectedSettings(protectedSettings);
+            return this;
+        } else {
+            this.updateExtensionParameters.withProtectedSettings(protectedSettings);
+            return this;
+        }
+    }
+
+    public VirtualMachineExtensionImpl withInstanceView(VirtualMachineExtensionInstanceView instanceView) {
+        this.innerModel().withInstanceView(instanceView);
+        return this;
+    }
+
+    public VirtualMachineExtensionImpl withType(String type) {
+        this.updateExtensionParameters.withType(type);
+        return this;
     }
 
     private boolean isInCreateMode() {

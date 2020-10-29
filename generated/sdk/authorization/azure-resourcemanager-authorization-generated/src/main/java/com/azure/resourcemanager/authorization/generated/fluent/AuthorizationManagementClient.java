@@ -24,13 +24,6 @@ public interface AuthorizationManagementClient {
     String getEndpoint();
 
     /**
-     * Gets Api Version.
-     *
-     * @return the apiVersion value.
-     */
-    String getApiVersion();
-
-    /**
      * Gets The HTTP pipeline to send requests through.
      *
      * @return the httpPipeline value.
@@ -45,9 +38,51 @@ public interface AuthorizationManagementClient {
     Duration getDefaultPollInterval();
 
     /**
+     * Gets the ClassicAdministratorsClient object to access its operations.
+     *
+     * @return the ClassicAdministratorsClient object.
+     */
+    ClassicAdministratorsClient getClassicAdministrators();
+
+    /**
+     * Gets the GlobalAdministratorsClient object to access its operations.
+     *
+     * @return the GlobalAdministratorsClient object.
+     */
+    GlobalAdministratorsClient getGlobalAdministrators();
+
+    /**
+     * Gets the ProviderOperationsMetadatasClient object to access its operations.
+     *
+     * @return the ProviderOperationsMetadatasClient object.
+     */
+    ProviderOperationsMetadatasClient getProviderOperationsMetadatas();
+
+    /**
      * Gets the RoleAssignmentsClient object to access its operations.
      *
      * @return the RoleAssignmentsClient object.
      */
     RoleAssignmentsClient getRoleAssignments();
+
+    /**
+     * Gets the PermissionsClient object to access its operations.
+     *
+     * @return the PermissionsClient object.
+     */
+    PermissionsClient getPermissions();
+
+    /**
+     * Gets the RoleDefinitionsClient object to access its operations.
+     *
+     * @return the RoleDefinitionsClient object.
+     */
+    RoleDefinitionsClient getRoleDefinitions();
+
+    /**
+     * Gets the DenyAssignmentsClient object to access its operations.
+     *
+     * @return the DenyAssignmentsClient object.
+     */
+    DenyAssignmentsClient getDenyAssignments();
 }

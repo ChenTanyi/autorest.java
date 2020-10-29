@@ -152,6 +152,16 @@ public final class StreamingLocatorImpl implements StreamingLocator, StreamingLo
         return this;
     }
 
+    public StreamingLocatorImpl withAssetName(String assetName) {
+        this.innerModel().withAssetName(assetName);
+        return this;
+    }
+
+    public StreamingLocatorImpl withStartTime(OffsetDateTime startTime) {
+        this.innerModel().withStartTime(startTime);
+        return this;
+    }
+
     public StreamingLocatorImpl withEndTime(OffsetDateTime endTime) {
         this.innerModel().withEndTime(endTime);
         return this;
@@ -162,23 +172,18 @@ public final class StreamingLocatorImpl implements StreamingLocator, StreamingLo
         return this;
     }
 
-    public StreamingLocatorImpl withStartTime(OffsetDateTime startTime) {
-        this.innerModel().withStartTime(startTime);
+    public StreamingLocatorImpl withStreamingPolicyName(String streamingPolicyName) {
+        this.innerModel().withStreamingPolicyName(streamingPolicyName);
+        return this;
+    }
+
+    public StreamingLocatorImpl withDefaultContentKeyPolicyName(String defaultContentKeyPolicyName) {
+        this.innerModel().withDefaultContentKeyPolicyName(defaultContentKeyPolicyName);
         return this;
     }
 
     public StreamingLocatorImpl withContentKeys(List<StreamingLocatorContentKey> contentKeys) {
         this.innerModel().withContentKeys(contentKeys);
-        return this;
-    }
-
-    public StreamingLocatorImpl withAssetName(String assetName) {
-        this.innerModel().withAssetName(assetName);
-        return this;
-    }
-
-    public StreamingLocatorImpl withStreamingPolicyName(String streamingPolicyName) {
-        this.innerModel().withStreamingPolicyName(streamingPolicyName);
         return this;
     }
 
@@ -189,11 +194,6 @@ public final class StreamingLocatorImpl implements StreamingLocator, StreamingLo
 
     public StreamingLocatorImpl withFilters(List<String> filters) {
         this.innerModel().withFilters(filters);
-        return this;
-    }
-
-    public StreamingLocatorImpl withDefaultContentKeyPolicyName(String defaultContentKeyPolicyName) {
-        this.innerModel().withDefaultContentKeyPolicyName(defaultContentKeyPolicyName);
         return this;
     }
 }

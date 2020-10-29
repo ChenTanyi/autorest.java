@@ -131,9 +131,9 @@ public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.
 
     private String resourceGroupName;
 
-    private TagsObject updateParameters;
-
     private String publicIpPrefixName;
+
+    private TagsObject updateParameters;
 
     public PublicIpPrefixImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -218,6 +218,16 @@ public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.
         return this;
     }
 
+    public PublicIpPrefixImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
+    public PublicIpPrefixImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
+    }
+
     public PublicIpPrefixImpl withTags(Map<String, String> tags) {
         if (isInCreateMode()) {
             this.innerModel().withTags(tags);
@@ -228,18 +238,13 @@ public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.
         }
     }
 
+    public PublicIpPrefixImpl withSku(PublicIpPrefixSku sku) {
+        this.innerModel().withSku(sku);
+        return this;
+    }
+
     public PublicIpPrefixImpl withZones(List<String> zones) {
         this.innerModel().withZones(zones);
-        return this;
-    }
-
-    public PublicIpPrefixImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
-    public PublicIpPrefixImpl withCustomIpPrefix(SubResource customIpPrefix) {
-        this.innerModel().withCustomIpPrefix(customIpPrefix);
         return this;
     }
 
@@ -248,13 +253,8 @@ public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.
         return this;
     }
 
-    public PublicIpPrefixImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public PublicIpPrefixImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
+    public PublicIpPrefixImpl withIpTags(List<IpTag> ipTags) {
+        this.innerModel().withIpTags(ipTags);
         return this;
     }
 
@@ -263,13 +263,13 @@ public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.
         return this;
     }
 
-    public PublicIpPrefixImpl withSku(PublicIpPrefixSku sku) {
-        this.innerModel().withSku(sku);
+    public PublicIpPrefixImpl withCustomIpPrefix(SubResource customIpPrefix) {
+        this.innerModel().withCustomIpPrefix(customIpPrefix);
         return this;
     }
 
-    public PublicIpPrefixImpl withIpTags(List<IpTag> ipTags) {
-        this.innerModel().withIpTags(ipTags);
+    public PublicIpPrefixImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 

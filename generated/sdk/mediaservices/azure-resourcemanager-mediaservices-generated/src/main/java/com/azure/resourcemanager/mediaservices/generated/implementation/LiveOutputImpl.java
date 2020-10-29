@@ -85,11 +85,11 @@ public final class LiveOutputImpl implements LiveOutput, LiveOutput.Definition {
 
     private String resourceGroupName;
 
-    private String liveOutputName;
-
     private String accountName;
 
     private String liveEventName;
+
+    private String liveOutputName;
 
     public LiveOutputImpl withExistingLiveEvent(String resourceGroupName, String accountName, String liveEventName) {
         this.resourceGroupName = resourceGroupName;
@@ -142,18 +142,8 @@ public final class LiveOutputImpl implements LiveOutput, LiveOutput.Definition {
         return this;
     }
 
-    public LiveOutputImpl withManifestName(String manifestName) {
-        this.innerModel().withManifestName(manifestName);
-        return this;
-    }
-
-    public LiveOutputImpl withHls(Hls hls) {
-        this.innerModel().withHls(hls);
-        return this;
-    }
-
-    public LiveOutputImpl withArchiveWindowLength(Duration archiveWindowLength) {
-        this.innerModel().withArchiveWindowLength(archiveWindowLength);
+    public LiveOutputImpl withDescription(String description) {
+        this.innerModel().withDescription(description);
         return this;
     }
 
@@ -162,8 +152,18 @@ public final class LiveOutputImpl implements LiveOutput, LiveOutput.Definition {
         return this;
     }
 
-    public LiveOutputImpl withDescription(String description) {
-        this.innerModel().withDescription(description);
+    public LiveOutputImpl withArchiveWindowLength(Duration archiveWindowLength) {
+        this.innerModel().withArchiveWindowLength(archiveWindowLength);
+        return this;
+    }
+
+    public LiveOutputImpl withManifestName(String manifestName) {
+        this.innerModel().withManifestName(manifestName);
+        return this;
+    }
+
+    public LiveOutputImpl withHls(Hls hls) {
+        this.innerModel().withHls(hls);
         return this;
     }
 

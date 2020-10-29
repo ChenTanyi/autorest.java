@@ -149,9 +149,9 @@ public final class NetworkSecurityGroupImpl
 
     private String resourceGroupName;
 
-    private TagsObject updateParameters;
-
     private String networkSecurityGroupName;
+
+    private TagsObject updateParameters;
 
     public NetworkSecurityGroupImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -237,13 +237,13 @@ public final class NetworkSecurityGroupImpl
         return this;
     }
 
-    public NetworkSecurityGroupImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
+    public NetworkSecurityGroupImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
         return this;
     }
 
-    public NetworkSecurityGroupImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
+    public NetworkSecurityGroupImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 

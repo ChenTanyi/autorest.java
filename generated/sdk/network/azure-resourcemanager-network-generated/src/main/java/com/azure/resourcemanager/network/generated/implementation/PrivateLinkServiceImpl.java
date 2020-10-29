@@ -244,11 +244,6 @@ public final class PrivateLinkServiceImpl
         return this;
     }
 
-    public PrivateLinkServiceImpl withFqdns(List<String> fqdns) {
-        this.innerModel().withFqdns(fqdns);
-        return this;
-    }
-
     public PrivateLinkServiceImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;
@@ -259,24 +254,14 @@ public final class PrivateLinkServiceImpl
         return this;
     }
 
-    public PrivateLinkServiceImpl withEnableProxyProtocol(Boolean enableProxyProtocol) {
-        this.innerModel().withEnableProxyProtocol(enableProxyProtocol);
+    public PrivateLinkServiceImpl withTags(Map<String, String> tags) {
+        this.innerModel().withTags(tags);
         return this;
     }
 
     public PrivateLinkServiceImpl withLoadBalancerFrontendIpConfigurations(
         List<FrontendIpConfigurationInner> loadBalancerFrontendIpConfigurations) {
         this.innerModel().withLoadBalancerFrontendIpConfigurations(loadBalancerFrontendIpConfigurations);
-        return this;
-    }
-
-    public PrivateLinkServiceImpl withTags(Map<String, String> tags) {
-        this.innerModel().withTags(tags);
-        return this;
-    }
-
-    public PrivateLinkServiceImpl withId(String id) {
-        this.innerModel().withId(id);
         return this;
     }
 
@@ -292,6 +277,21 @@ public final class PrivateLinkServiceImpl
 
     public PrivateLinkServiceImpl withAutoApproval(ResourceSet autoApproval) {
         this.innerModel().withAutoApproval(autoApproval);
+        return this;
+    }
+
+    public PrivateLinkServiceImpl withFqdns(List<String> fqdns) {
+        this.innerModel().withFqdns(fqdns);
+        return this;
+    }
+
+    public PrivateLinkServiceImpl withEnableProxyProtocol(Boolean enableProxyProtocol) {
+        this.innerModel().withEnableProxyProtocol(enableProxyProtocol);
+        return this;
+    }
+
+    public PrivateLinkServiceImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 }

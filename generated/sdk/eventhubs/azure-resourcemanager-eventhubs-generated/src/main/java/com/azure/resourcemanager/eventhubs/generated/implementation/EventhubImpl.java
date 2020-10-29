@@ -74,9 +74,9 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
 
     private String resourceGroupName;
 
-    private String eventHubName;
-
     private String namespaceName;
+
+    private String eventHubName;
 
     public EventhubImpl withExistingNamespace(String resourceGroupName, String namespaceName) {
         this.resourceGroupName = resourceGroupName;
@@ -162,13 +162,13 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
         return this;
     }
 
-    public EventhubImpl withPartitionCount(Long partitionCount) {
-        this.innerModel().withPartitionCount(partitionCount);
+    public EventhubImpl withMessageRetentionInDays(Long messageRetentionInDays) {
+        this.innerModel().withMessageRetentionInDays(messageRetentionInDays);
         return this;
     }
 
-    public EventhubImpl withCaptureDescription(CaptureDescription captureDescription) {
-        this.innerModel().withCaptureDescription(captureDescription);
+    public EventhubImpl withPartitionCount(Long partitionCount) {
+        this.innerModel().withPartitionCount(partitionCount);
         return this;
     }
 
@@ -177,8 +177,8 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
         return this;
     }
 
-    public EventhubImpl withMessageRetentionInDays(Long messageRetentionInDays) {
-        this.innerModel().withMessageRetentionInDays(messageRetentionInDays);
+    public EventhubImpl withCaptureDescription(CaptureDescription captureDescription) {
+        this.innerModel().withCaptureDescription(captureDescription);
         return this;
     }
 }

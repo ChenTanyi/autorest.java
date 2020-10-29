@@ -86,9 +86,9 @@ public final class InboundNatRuleImpl implements InboundNatRule, InboundNatRule.
 
     private String resourceGroupName;
 
-    private String inboundNatRuleName;
-
     private String loadBalancerName;
+
+    private String inboundNatRuleName;
 
     public InboundNatRuleImpl withExistingLoadBalancer(String resourceGroupName, String loadBalancerName) {
         this.resourceGroupName = resourceGroupName;
@@ -172,13 +172,18 @@ public final class InboundNatRuleImpl implements InboundNatRule, InboundNatRule.
         return this;
     }
 
+    public InboundNatRuleImpl withId(String id) {
+        this.innerModel().withId(id);
+        return this;
+    }
+
     public InboundNatRuleImpl withName(String name) {
         this.innerModel().withName(name);
         return this;
     }
 
-    public InboundNatRuleImpl withBackendPort(Integer backendPort) {
-        this.innerModel().withBackendPort(backendPort);
+    public InboundNatRuleImpl withFrontendIpConfiguration(SubResource frontendIpConfiguration) {
+        this.innerModel().withFrontendIpConfiguration(frontendIpConfiguration);
         return this;
     }
 
@@ -187,8 +192,13 @@ public final class InboundNatRuleImpl implements InboundNatRule, InboundNatRule.
         return this;
     }
 
-    public InboundNatRuleImpl withEnableFloatingIp(Boolean enableFloatingIp) {
-        this.innerModel().withEnableFloatingIp(enableFloatingIp);
+    public InboundNatRuleImpl withFrontendPort(Integer frontendPort) {
+        this.innerModel().withFrontendPort(frontendPort);
+        return this;
+    }
+
+    public InboundNatRuleImpl withBackendPort(Integer backendPort) {
+        this.innerModel().withBackendPort(backendPort);
         return this;
     }
 
@@ -197,23 +207,13 @@ public final class InboundNatRuleImpl implements InboundNatRule, InboundNatRule.
         return this;
     }
 
+    public InboundNatRuleImpl withEnableFloatingIp(Boolean enableFloatingIp) {
+        this.innerModel().withEnableFloatingIp(enableFloatingIp);
+        return this;
+    }
+
     public InboundNatRuleImpl withEnableTcpReset(Boolean enableTcpReset) {
         this.innerModel().withEnableTcpReset(enableTcpReset);
-        return this;
-    }
-
-    public InboundNatRuleImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
-    public InboundNatRuleImpl withFrontendPort(Integer frontendPort) {
-        this.innerModel().withFrontendPort(frontendPort);
-        return this;
-    }
-
-    public InboundNatRuleImpl withFrontendIpConfiguration(SubResource frontendIpConfiguration) {
-        this.innerModel().withFrontendIpConfiguration(frontendIpConfiguration);
         return this;
     }
 }

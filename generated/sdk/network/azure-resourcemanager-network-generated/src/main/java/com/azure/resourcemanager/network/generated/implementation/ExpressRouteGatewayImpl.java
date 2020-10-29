@@ -178,19 +178,8 @@ public final class ExpressRouteGatewayImpl
         return this;
     }
 
-    public ExpressRouteGatewayImpl withAutoScaleConfiguration(
-        ExpressRouteGatewayPropertiesAutoScaleConfiguration autoScaleConfiguration) {
-        this.innerModel().withAutoScaleConfiguration(autoScaleConfiguration);
-        return this;
-    }
-
     public ExpressRouteGatewayImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
-    public ExpressRouteGatewayImpl withTags(Map<String, String> tags) {
-        this.innerModel().withTags(tags);
         return this;
     }
 
@@ -199,13 +188,24 @@ public final class ExpressRouteGatewayImpl
         return this;
     }
 
-    public ExpressRouteGatewayImpl withId(String id) {
-        this.innerModel().withId(id);
+    public ExpressRouteGatewayImpl withTags(Map<String, String> tags) {
+        this.innerModel().withTags(tags);
+        return this;
+    }
+
+    public ExpressRouteGatewayImpl withAutoScaleConfiguration(
+        ExpressRouteGatewayPropertiesAutoScaleConfiguration autoScaleConfiguration) {
+        this.innerModel().withAutoScaleConfiguration(autoScaleConfiguration);
         return this;
     }
 
     public ExpressRouteGatewayImpl withVirtualHub(VirtualHubId virtualHub) {
         this.innerModel().withVirtualHub(virtualHub);
+        return this;
+    }
+
+    public ExpressRouteGatewayImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 }

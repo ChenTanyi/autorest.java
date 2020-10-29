@@ -251,9 +251,9 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
 
     private String resourceGroupName;
 
-    private SitePatchResourceInner updateSiteEnvelope;
-
     private String name;
+
+    private SitePatchResourceInner updateSiteEnvelope;
 
     public SiteImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -333,44 +333,19 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         return this;
     }
 
-    public SiteImpl withHyperV(Boolean hyperV) {
-        this.innerModel().withHyperV(hyperV);
+    public SiteImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
         return this;
     }
 
-    public SiteImpl withServerFarmId(String serverFarmId) {
-        if (isInCreateMode()) {
-            this.innerModel().withServerFarmId(serverFarmId);
-            return this;
-        } else {
-            this.updateSiteEnvelope.withServerFarmId(serverFarmId);
-            return this;
-        }
-    }
-
-    public SiteImpl withSiteConfig(SiteConfigInner siteConfig) {
-        if (isInCreateMode()) {
-            this.innerModel().withSiteConfig(siteConfig);
-            return this;
-        } else {
-            this.updateSiteEnvelope.withSiteConfig(siteConfig);
-            return this;
-        }
-    }
-
-    public SiteImpl withReserved(Boolean reserved) {
-        this.innerModel().withReserved(reserved);
+    public SiteImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
-    public SiteImpl withClientCertExclusionPaths(String clientCertExclusionPaths) {
-        if (isInCreateMode()) {
-            this.innerModel().withClientCertExclusionPaths(clientCertExclusionPaths);
-            return this;
-        } else {
-            this.updateSiteEnvelope.withClientCertExclusionPaths(clientCertExclusionPaths);
-            return this;
-        }
+    public SiteImpl withTags(Map<String, String> tags) {
+        this.innerModel().withTags(tags);
+        return this;
     }
 
     public SiteImpl withIdentity(ManagedServiceIdentity identity) {
@@ -383,32 +358,82 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         }
     }
 
-    public SiteImpl withKind(String kind) {
+    public SiteImpl withEnabled(Boolean enabled) {
         if (isInCreateMode()) {
-            this.innerModel().withKind(kind);
+            this.innerModel().withEnabled(enabled);
             return this;
         } else {
-            this.updateSiteEnvelope.withKind(kind);
+            this.updateSiteEnvelope.withEnabled(enabled);
             return this;
         }
     }
 
-    public SiteImpl withContainerSize(Integer containerSize) {
+    public SiteImpl withHostnameSslStates(List<HostnameSslState> hostnameSslStates) {
         if (isInCreateMode()) {
-            this.innerModel().withContainerSize(containerSize);
+            this.innerModel().withHostnameSslStates(hostnameSslStates);
             return this;
         } else {
-            this.updateSiteEnvelope.withContainerSize(containerSize);
+            this.updateSiteEnvelope.withHostnameSslStates(hostnameSslStates);
             return this;
         }
     }
 
-    public SiteImpl withHttpsOnly(Boolean httpsOnly) {
+    public SiteImpl withServerFarmId(String serverFarmId) {
         if (isInCreateMode()) {
-            this.innerModel().withHttpsOnly(httpsOnly);
+            this.innerModel().withServerFarmId(serverFarmId);
             return this;
         } else {
-            this.updateSiteEnvelope.withHttpsOnly(httpsOnly);
+            this.updateSiteEnvelope.withServerFarmId(serverFarmId);
+            return this;
+        }
+    }
+
+    public SiteImpl withReserved(Boolean reserved) {
+        this.innerModel().withReserved(reserved);
+        return this;
+    }
+
+    public SiteImpl withIsXenon(Boolean isXenon) {
+        this.innerModel().withIsXenon(isXenon);
+        return this;
+    }
+
+    public SiteImpl withHyperV(Boolean hyperV) {
+        this.innerModel().withHyperV(hyperV);
+        return this;
+    }
+
+    public SiteImpl withSiteConfig(SiteConfigInner siteConfig) {
+        if (isInCreateMode()) {
+            this.innerModel().withSiteConfig(siteConfig);
+            return this;
+        } else {
+            this.updateSiteEnvelope.withSiteConfig(siteConfig);
+            return this;
+        }
+    }
+
+    public SiteImpl withScmSiteAlsoStopped(Boolean scmSiteAlsoStopped) {
+        if (isInCreateMode()) {
+            this.innerModel().withScmSiteAlsoStopped(scmSiteAlsoStopped);
+            return this;
+        } else {
+            this.updateSiteEnvelope.withScmSiteAlsoStopped(scmSiteAlsoStopped);
+            return this;
+        }
+    }
+
+    public SiteImpl withHostingEnvironmentProfile(HostingEnvironmentProfile hostingEnvironmentProfile) {
+        this.innerModel().withHostingEnvironmentProfile(hostingEnvironmentProfile);
+        return this;
+    }
+
+    public SiteImpl withClientAffinityEnabled(Boolean clientAffinityEnabled) {
+        if (isInCreateMode()) {
+            this.innerModel().withClientAffinityEnabled(clientAffinityEnabled);
+            return this;
+        } else {
+            this.updateSiteEnvelope.withClientAffinityEnabled(clientAffinityEnabled);
             return this;
         }
     }
@@ -423,12 +448,12 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         }
     }
 
-    public SiteImpl withRedundancyMode(RedundancyMode redundancyMode) {
+    public SiteImpl withClientCertExclusionPaths(String clientCertExclusionPaths) {
         if (isInCreateMode()) {
-            this.innerModel().withRedundancyMode(redundancyMode);
+            this.innerModel().withClientCertExclusionPaths(clientCertExclusionPaths);
             return this;
         } else {
-            this.updateSiteEnvelope.withRedundancyMode(redundancyMode);
+            this.updateSiteEnvelope.withClientCertExclusionPaths(clientCertExclusionPaths);
             return this;
         }
     }
@@ -443,22 +468,12 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         }
     }
 
-    public SiteImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
-    public SiteImpl withCloningInfo(CloningInfo cloningInfo) {
-        this.innerModel().withCloningInfo(cloningInfo);
-        return this;
-    }
-
-    public SiteImpl withHostnameSslStates(List<HostnameSslState> hostnameSslStates) {
+    public SiteImpl withContainerSize(Integer containerSize) {
         if (isInCreateMode()) {
-            this.innerModel().withHostnameSslStates(hostnameSslStates);
+            this.innerModel().withContainerSize(containerSize);
             return this;
         } else {
-            this.updateSiteEnvelope.withHostnameSslStates(hostnameSslStates);
+            this.updateSiteEnvelope.withContainerSize(containerSize);
             return this;
         }
     }
@@ -473,52 +488,37 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         }
     }
 
-    public SiteImpl withClientAffinityEnabled(Boolean clientAffinityEnabled) {
+    public SiteImpl withCloningInfo(CloningInfo cloningInfo) {
+        this.innerModel().withCloningInfo(cloningInfo);
+        return this;
+    }
+
+    public SiteImpl withHttpsOnly(Boolean httpsOnly) {
         if (isInCreateMode()) {
-            this.innerModel().withClientAffinityEnabled(clientAffinityEnabled);
+            this.innerModel().withHttpsOnly(httpsOnly);
             return this;
         } else {
-            this.updateSiteEnvelope.withClientAffinityEnabled(clientAffinityEnabled);
+            this.updateSiteEnvelope.withHttpsOnly(httpsOnly);
             return this;
         }
     }
 
-    public SiteImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
-    }
-
-    public SiteImpl withHostingEnvironmentProfile(HostingEnvironmentProfile hostingEnvironmentProfile) {
-        this.innerModel().withHostingEnvironmentProfile(hostingEnvironmentProfile);
-        return this;
-    }
-
-    public SiteImpl withTags(Map<String, String> tags) {
-        this.innerModel().withTags(tags);
-        return this;
-    }
-
-    public SiteImpl withIsXenon(Boolean isXenon) {
-        this.innerModel().withIsXenon(isXenon);
-        return this;
-    }
-
-    public SiteImpl withScmSiteAlsoStopped(Boolean scmSiteAlsoStopped) {
+    public SiteImpl withRedundancyMode(RedundancyMode redundancyMode) {
         if (isInCreateMode()) {
-            this.innerModel().withScmSiteAlsoStopped(scmSiteAlsoStopped);
+            this.innerModel().withRedundancyMode(redundancyMode);
             return this;
         } else {
-            this.updateSiteEnvelope.withScmSiteAlsoStopped(scmSiteAlsoStopped);
+            this.updateSiteEnvelope.withRedundancyMode(redundancyMode);
             return this;
         }
     }
 
-    public SiteImpl withEnabled(Boolean enabled) {
+    public SiteImpl withKind(String kind) {
         if (isInCreateMode()) {
-            this.innerModel().withEnabled(enabled);
+            this.innerModel().withKind(kind);
             return this;
         } else {
-            this.updateSiteEnvelope.withEnabled(enabled);
+            this.updateSiteEnvelope.withKind(kind);
             return this;
         }
     }

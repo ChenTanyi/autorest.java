@@ -138,11 +138,6 @@ public final class VirtualRouterPeeringImpl
         return this;
     }
 
-    public VirtualRouterPeeringImpl withPeerAsn(Long peerAsn) {
-        this.innerModel().withPeerAsn(peerAsn);
-        return this;
-    }
-
     public VirtualRouterPeeringImpl withId(String id) {
         this.innerModel().withId(id);
         return this;
@@ -150,6 +145,11 @@ public final class VirtualRouterPeeringImpl
 
     public VirtualRouterPeeringImpl withName(String name) {
         this.innerModel().withName(name);
+        return this;
+    }
+
+    public VirtualRouterPeeringImpl withPeerAsn(Long peerAsn) {
+        this.innerModel().withPeerAsn(peerAsn);
         return this;
     }
 

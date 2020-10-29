@@ -220,13 +220,13 @@ public final class WebApplicationFirewallPolicyImpl
         return this;
     }
 
-    public WebApplicationFirewallPolicyImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
+    public WebApplicationFirewallPolicyImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
         return this;
     }
 
-    public WebApplicationFirewallPolicyImpl withId(String id) {
-        this.innerModel().withId(id);
+    public WebApplicationFirewallPolicyImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 
@@ -235,13 +235,8 @@ public final class WebApplicationFirewallPolicyImpl
         return this;
     }
 
-    public WebApplicationFirewallPolicyImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
-    public WebApplicationFirewallPolicyImpl withManagedRules(ManagedRulesDefinition managedRules) {
-        this.innerModel().withManagedRules(managedRules);
+    public WebApplicationFirewallPolicyImpl withPolicySettings(PolicySettings policySettings) {
+        this.innerModel().withPolicySettings(policySettings);
         return this;
     }
 
@@ -250,8 +245,13 @@ public final class WebApplicationFirewallPolicyImpl
         return this;
     }
 
-    public WebApplicationFirewallPolicyImpl withPolicySettings(PolicySettings policySettings) {
-        this.innerModel().withPolicySettings(policySettings);
+    public WebApplicationFirewallPolicyImpl withManagedRules(ManagedRulesDefinition managedRules) {
+        this.innerModel().withManagedRules(managedRules);
+        return this;
+    }
+
+    public WebApplicationFirewallPolicyImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 }

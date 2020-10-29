@@ -104,9 +104,9 @@ public final class FunctionEnvelopeImpl implements FunctionEnvelope, FunctionEnv
 
     private String resourceGroupName;
 
-    private String functionName;
-
     private String name;
+
+    private String functionName;
 
     public FunctionEnvelopeImpl withExistingSite(String resourceGroupName, String name) {
         this.resourceGroupName = resourceGroupName;
@@ -158,8 +158,8 @@ public final class FunctionEnvelopeImpl implements FunctionEnvelope, FunctionEnv
         return this;
     }
 
-    public FunctionEnvelopeImpl withHref(String href) {
-        this.innerModel().withHref(href);
+    public FunctionEnvelopeImpl withKind(String kind) {
+        this.innerModel().withKind(kind);
         return this;
     }
 
@@ -168,48 +168,8 @@ public final class FunctionEnvelopeImpl implements FunctionEnvelope, FunctionEnv
         return this;
     }
 
-    public FunctionEnvelopeImpl withInvokeUrlTemplate(String invokeUrlTemplate) {
-        this.innerModel().withInvokeUrlTemplate(invokeUrlTemplate);
-        return this;
-    }
-
-    public FunctionEnvelopeImpl withTestData(String testData) {
-        this.innerModel().withTestData(testData);
-        return this;
-    }
-
-    public FunctionEnvelopeImpl withTestDataHref(String testDataHref) {
-        this.innerModel().withTestDataHref(testDataHref);
-        return this;
-    }
-
-    public FunctionEnvelopeImpl withLanguage(String language) {
-        this.innerModel().withLanguage(language);
-        return this;
-    }
-
-    public FunctionEnvelopeImpl withKind(String kind) {
-        this.innerModel().withKind(kind);
-        return this;
-    }
-
-    public FunctionEnvelopeImpl withFiles(Map<String, String> files) {
-        this.innerModel().withFiles(files);
-        return this;
-    }
-
-    public FunctionEnvelopeImpl withIsDisabled(Boolean isDisabled) {
-        this.innerModel().withIsDisabled(isDisabled);
-        return this;
-    }
-
     public FunctionEnvelopeImpl withScriptRootPathHref(String scriptRootPathHref) {
         this.innerModel().withScriptRootPathHref(scriptRootPathHref);
-        return this;
-    }
-
-    public FunctionEnvelopeImpl withConfigHref(String configHref) {
-        this.innerModel().withConfigHref(configHref);
         return this;
     }
 
@@ -218,13 +178,53 @@ public final class FunctionEnvelopeImpl implements FunctionEnvelope, FunctionEnv
         return this;
     }
 
-    public FunctionEnvelopeImpl withConfig(Object config) {
-        this.innerModel().withConfig(config);
+    public FunctionEnvelopeImpl withConfigHref(String configHref) {
+        this.innerModel().withConfigHref(configHref);
+        return this;
+    }
+
+    public FunctionEnvelopeImpl withTestDataHref(String testDataHref) {
+        this.innerModel().withTestDataHref(testDataHref);
         return this;
     }
 
     public FunctionEnvelopeImpl withSecretsFileHref(String secretsFileHref) {
         this.innerModel().withSecretsFileHref(secretsFileHref);
+        return this;
+    }
+
+    public FunctionEnvelopeImpl withHref(String href) {
+        this.innerModel().withHref(href);
+        return this;
+    }
+
+    public FunctionEnvelopeImpl withConfig(Object config) {
+        this.innerModel().withConfig(config);
+        return this;
+    }
+
+    public FunctionEnvelopeImpl withFiles(Map<String, String> files) {
+        this.innerModel().withFiles(files);
+        return this;
+    }
+
+    public FunctionEnvelopeImpl withTestData(String testData) {
+        this.innerModel().withTestData(testData);
+        return this;
+    }
+
+    public FunctionEnvelopeImpl withInvokeUrlTemplate(String invokeUrlTemplate) {
+        this.innerModel().withInvokeUrlTemplate(invokeUrlTemplate);
+        return this;
+    }
+
+    public FunctionEnvelopeImpl withLanguage(String language) {
+        this.innerModel().withLanguage(language);
+        return this;
+    }
+
+    public FunctionEnvelopeImpl withIsDisabled(Boolean isDisabled) {
+        this.innerModel().withIsDisabled(isDisabled);
         return this;
     }
 }

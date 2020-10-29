@@ -91,9 +91,9 @@ public final class DiskEncryptionSetImpl
 
     private String resourceGroupName;
 
-    private DiskEncryptionSetUpdate updateDiskEncryptionSet;
-
     private String diskEncryptionSetName;
+
+    private DiskEncryptionSetUpdate updateDiskEncryptionSet;
 
     public DiskEncryptionSetImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -179,6 +179,11 @@ public final class DiskEncryptionSetImpl
         return this;
     }
 
+    public DiskEncryptionSetImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
+    }
+
     public DiskEncryptionSetImpl withTags(Map<String, String> tags) {
         if (isInCreateMode()) {
             this.innerModel().withTags(tags);
@@ -194,9 +199,14 @@ public final class DiskEncryptionSetImpl
         return this;
     }
 
-    public DiskEncryptionSetImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
+    public DiskEncryptionSetImpl withEncryptionType(DiskEncryptionSetType encryptionType) {
+        if (isInCreateMode()) {
+            this.innerModel().withEncryptionType(encryptionType);
+            return this;
+        } else {
+            this.updateDiskEncryptionSet.withEncryptionType(encryptionType);
+            return this;
+        }
     }
 
     public DiskEncryptionSetImpl withActiveKey(KeyVaultAndKeyReference activeKey) {
@@ -205,16 +215,6 @@ public final class DiskEncryptionSetImpl
             return this;
         } else {
             this.updateDiskEncryptionSet.withActiveKey(activeKey);
-            return this;
-        }
-    }
-
-    public DiskEncryptionSetImpl withEncryptionType(DiskEncryptionSetType encryptionType) {
-        if (isInCreateMode()) {
-            this.innerModel().withEncryptionType(encryptionType);
-            return this;
-        } else {
-            this.updateDiskEncryptionSet.withEncryptionType(encryptionType);
             return this;
         }
     }

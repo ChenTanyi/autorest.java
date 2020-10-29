@@ -125,9 +125,9 @@ public final class MetricAlertResourceImpl
 
     private String resourceGroupName;
 
-    private MetricAlertResourcePatch updateParameters;
-
     private String ruleName;
+
+    private MetricAlertResourcePatch updateParameters;
 
     public MetricAlertResourceImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -212,6 +212,16 @@ public final class MetricAlertResourceImpl
         return this;
     }
 
+    public MetricAlertResourceImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
+    public MetricAlertResourceImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
+    }
+
     public MetricAlertResourceImpl withDescription(String description) {
         if (isInCreateMode()) {
             this.innerModel().withDescription(description);
@@ -222,42 +232,22 @@ public final class MetricAlertResourceImpl
         }
     }
 
+    public MetricAlertResourceImpl withSeverity(int severity) {
+        this.innerModel().withSeverity(severity);
+        return this;
+    }
+
     public MetricAlertResourceImpl withEnabled(boolean enabled) {
         this.innerModel().withEnabled(enabled);
         return this;
     }
 
-    public MetricAlertResourceImpl withTargetResourceRegion(String targetResourceRegion) {
+    public MetricAlertResourceImpl withEvaluationFrequency(Duration evaluationFrequency) {
         if (isInCreateMode()) {
-            this.innerModel().withTargetResourceRegion(targetResourceRegion);
+            this.innerModel().withEvaluationFrequency(evaluationFrequency);
             return this;
         } else {
-            this.updateParameters.withTargetResourceRegion(targetResourceRegion);
-            return this;
-        }
-    }
-
-    public MetricAlertResourceImpl withTargetResourceType(String targetResourceType) {
-        if (isInCreateMode()) {
-            this.innerModel().withTargetResourceType(targetResourceType);
-            return this;
-        } else {
-            this.updateParameters.withTargetResourceType(targetResourceType);
-            return this;
-        }
-    }
-
-    public MetricAlertResourceImpl withEnabled(Boolean enabled) {
-        this.updateParameters.withEnabled(enabled);
-        return this;
-    }
-
-    public MetricAlertResourceImpl withTags(Map<String, String> tags) {
-        if (isInCreateMode()) {
-            this.innerModel().withTags(tags);
-            return this;
-        } else {
-            this.updateParameters.withTags(tags);
+            this.updateParameters.withEvaluationFrequency(evaluationFrequency);
             return this;
         }
     }
@@ -272,19 +262,54 @@ public final class MetricAlertResourceImpl
         }
     }
 
-    public MetricAlertResourceImpl withEvaluationFrequency(Duration evaluationFrequency) {
+    public MetricAlertResourceImpl withCriteria(MetricAlertCriteria criteria) {
         if (isInCreateMode()) {
-            this.innerModel().withEvaluationFrequency(evaluationFrequency);
+            this.innerModel().withCriteria(criteria);
             return this;
         } else {
-            this.updateParameters.withEvaluationFrequency(evaluationFrequency);
+            this.updateParameters.withCriteria(criteria);
             return this;
         }
     }
 
-    public MetricAlertResourceImpl withRegion(String location) {
-        this.innerModel().withLocation(location);
-        return this;
+    public MetricAlertResourceImpl withTags(Map<String, String> tags) {
+        if (isInCreateMode()) {
+            this.innerModel().withTags(tags);
+            return this;
+        } else {
+            this.updateParameters.withTags(tags);
+            return this;
+        }
+    }
+
+    public MetricAlertResourceImpl withScopes(List<String> scopes) {
+        if (isInCreateMode()) {
+            this.innerModel().withScopes(scopes);
+            return this;
+        } else {
+            this.updateParameters.withScopes(scopes);
+            return this;
+        }
+    }
+
+    public MetricAlertResourceImpl withTargetResourceType(String targetResourceType) {
+        if (isInCreateMode()) {
+            this.innerModel().withTargetResourceType(targetResourceType);
+            return this;
+        } else {
+            this.updateParameters.withTargetResourceType(targetResourceType);
+            return this;
+        }
+    }
+
+    public MetricAlertResourceImpl withTargetResourceRegion(String targetResourceRegion) {
+        if (isInCreateMode()) {
+            this.innerModel().withTargetResourceRegion(targetResourceRegion);
+            return this;
+        } else {
+            this.updateParameters.withTargetResourceRegion(targetResourceRegion);
+            return this;
+        }
     }
 
     public MetricAlertResourceImpl withAutoMitigate(Boolean autoMitigate) {
@@ -293,16 +318,6 @@ public final class MetricAlertResourceImpl
             return this;
         } else {
             this.updateParameters.withAutoMitigate(autoMitigate);
-            return this;
-        }
-    }
-
-    public MetricAlertResourceImpl withCriteria(MetricAlertCriteria criteria) {
-        if (isInCreateMode()) {
-            this.innerModel().withCriteria(criteria);
-            return this;
-        } else {
-            this.updateParameters.withCriteria(criteria);
             return this;
         }
     }
@@ -317,28 +332,13 @@ public final class MetricAlertResourceImpl
         }
     }
 
-    public MetricAlertResourceImpl withSeverity(int severity) {
-        this.innerModel().withSeverity(severity);
-        return this;
-    }
-
-    public MetricAlertResourceImpl withRegion(Region location) {
-        this.innerModel().withLocation(location.toString());
-        return this;
-    }
-
-    public MetricAlertResourceImpl withScopes(List<String> scopes) {
-        if (isInCreateMode()) {
-            this.innerModel().withScopes(scopes);
-            return this;
-        } else {
-            this.updateParameters.withScopes(scopes);
-            return this;
-        }
-    }
-
     public MetricAlertResourceImpl withSeverity(Integer severity) {
         this.updateParameters.withSeverity(severity);
+        return this;
+    }
+
+    public MetricAlertResourceImpl withEnabled(Boolean enabled) {
+        this.updateParameters.withEnabled(enabled);
         return this;
     }
 
