@@ -32,9 +32,12 @@ import java.util.Collections;
 
 public class FrontDoorTests extends Base {
 
+    private String subscriptionId;
+    private String fdName;
+
     @Test
     public void testFrontDoor() {
-        String fdName = randomString("fd", 10);
+        fdName = randomString("fd", 10);
         String saName = randomString("sa", 10);
 
         FrontDoorManager frontDoorManager = FrontDoorManager.configure()
@@ -57,18 +60,28 @@ public class FrontDoorTests extends Base {
                 .create();
 
         String backendAddress = storageAccount.name() + ".blob.core.windows.net";
+        String frontendName = "frontend1";
+        String loadBalancingName = "loadbalancing1";
+        String healthProbeName = "healthprobe1";
+        String routingRuleName = "rule1";
+        String backendPoolName = "backend1";
+        subscriptionId = profile.getSubscriptionId();
+        String frontendEndpointsId = getResourceId("frontendEndpoints", frontendName);
+        String loadBalancingSettingsId = getResourceId("loadBalancingSettings", loadBalancingName);
+        String healthProbeSettingsId = getResourceId("healthProbeSettings", healthProbeName);
+        String backendPoolsId = getResourceId("backendPools", backendPoolName);
 
         FrontDoor frontDoor = frontDoorManager.frontDoors().define(fdName)
                 .withRegion("global")
                 .withExistingResourceGroup(rgName)
                 .withFrontendEndpoints(Collections.singletonList(
                         new FrontendEndpointInner()
-                                .withName("frontend1")
-                                .withHostname("fd1weidxu.azurefd.net")
+                                .withName(frontendName)
+                                .withHostname(fdName + ".azurefd.net")
                                 .withSessionAffinityEnabledState(SessionAffinityEnabledState.DISABLED)
                 ))
                 .withBackendPools(Collections.singletonList(
-                        new BackendPool().withName("backend1").withBackends(Collections.singletonList(
+                        new BackendPool().withName(backendPoolName).withBackends(Collections.singletonList(
                                 new Backend()
                                         .withAddress(backendAddress)
                                         .withEnabledState(BackendEnabledState.ENABLED)
@@ -78,18 +91,19 @@ public class FrontDoorTests extends Base {
                                         .withPriority(1)
                                         .withWeight(50)
                         ))
-                        .withLoadBalancingSettings(new SubResource().withId())
+                        .withLoadBalancingSettings(new SubResource().withId(loadBalancingSettingsId))
+                        .withHealthProbeSettings(new SubResource().withId(healthProbeSettingsId))
                 ))
                 .withLoadBalancingSettings(Collections.singletonList(
                         new LoadBalancingSettingsModel()
-                            .withName("loadbalancer1")
+                            .withName(loadBalancingName)
                             .withSampleSize(4)
                             .withSuccessfulSamplesRequired(2)
                             .withAdditionalLatencyMilliseconds(0)
                 ))
                 .withHealthProbeSettings(Collections.singletonList(
                         new HealthProbeSettingsModel()
-                                .withName("healthprobe1")
+                                .withName(healthProbeName)
                                 .withEnabledState(HealthProbeEnabled.ENABLED)
                                 .withPath("/")
                                 .withProtocol(FrontDoorProtocol.HTTPS)
@@ -98,17 +112,22 @@ public class FrontDoorTests extends Base {
                 ))
                 .withRoutingRules(Collections.singletonList(
                         new RoutingRule()
-                                .withName("rule1")
+                                .withName(routingRuleName)
                                 .withEnabledState(RoutingRuleEnabledState.ENABLED)
-                                .withFrontendEndpoints(Collections.singletonList(new SubResource().withId()))
+                                .withFrontendEndpoints(Collections.singletonList(new SubResource().withId(frontendEndpointsId)))
                                 .withAcceptedProtocols(Arrays.asList(FrontDoorProtocol.HTTP, FrontDoorProtocol.HTTPS))
-                                .withPatternsToMatch("/*")
+                                .withPatternsToMatch(Collections.singletonList("/*"))
                                 .withRouteConfiguration(new ForwardingConfiguration()
                                         .withForwardingProtocol(FrontDoorForwardingProtocol.HTTPS_ONLY)
-                                        .withBackendPool(new SubResource().withId()))
+                                        .withBackendPool(new SubResource().withId(backendPoolsId)))
                 ))
                 .create();
 
         frontDoor.refresh();
+    }
+
+    private String getResourceId(String type, String name) {
+        return String.format("/subscriptions/%1$s/resourceGroups/%2$s/providers/Microsoft.Network/frontdoors/%3$s/%4$s/%5$s",
+                subscriptionId, rgName, fdName, type, name);
     }
 }
