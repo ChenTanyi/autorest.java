@@ -60,7 +60,7 @@ public class StorageTests extends Base {
         Assertions.assertEquals("value2", storageAccount2.tags().get("tag2"));
 
         BlobContainer blobContainer = storageManager.blobContainers()
-                .defineContainer(blobContainerName)
+                .define(blobContainerName)
                 .withExistingStorageAccount(rgName, saName)
                 .withPublicAccess(PublicAccess.BLOB)
                 .create(new Context("key", "value"));

@@ -5,7 +5,7 @@ import com.azure.core.http.policy.HttpLogDetailLevel;
 import com.azure.core.http.policy.HttpLogOptions;
 import com.azure.core.management.Region;
 import com.azure.core.management.exception.ManagementException;
-import com.azure.resourcemanager.eventhubs.generated.EventHubManager;
+import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.models.CheckNameAvailabilityParameter;
 import com.azure.resourcemanager.eventhubs.generated.models.CheckNameAvailabilityResult;
 import com.azure.resourcemanager.eventhubs.generated.models.EHNamespace;
@@ -25,7 +25,7 @@ public class EventHubsTests extends Base {
         String nameSpaceName = randomString("ns", 15);
         Region region = Region.US_WEST;
 
-        EventHubManager eventHubsManager = EventHubManager.configure()
+        EventHubsManager eventHubsManager = EventHubsManager.configure()
                 .withHttpClient(client)
                 .withLogOptions(new HttpLogOptions().setLogLevel(HttpLogDetailLevel.BODY_AND_HEADERS))
                 .authenticate(credential, profile);
@@ -37,7 +37,7 @@ public class EventHubsTests extends Base {
         Assertions.assertTrue(result.nameAvailable());
 
         // create namespace
-        EHNamespace namespace = eventHubsManager.namespaces().defineNamespace(nameSpaceName)
+        EHNamespace namespace = eventHubsManager.namespaces().define(nameSpaceName)
                 .withRegion(region)
                 .withExistingResourceGroup(rgName)
                 .withSku(new Sku()

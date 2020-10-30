@@ -26,7 +26,7 @@ public class AppServiceTests extends Base {
                 .authenticate(credential, profile);
 
         AppServicePlan appServicePlan = appserviceManager.appServicePlans()
-                .defineServerfarm(servicePlanName)
+                .define(servicePlanName)
                 .withRegion(region)
                 .withExistingResourceGroup(rgName)
                 .withSku(new SkuDescription().withName("S1").withTier("Standard").withSize("S1"))
@@ -38,7 +38,7 @@ public class AppServiceTests extends Base {
         Assertions.assertNotNull(appserviceManager.appServicePlans().getByResourceGroup(rgName, servicePlanName));
 
         Site webapp = appserviceManager.webApps()
-                .defineSite(webappName)
+                .define(webappName)
                 .withRegion(region)
                 .withExistingResourceGroup(rgName)
                 .withServerFarmId(appServicePlan.id())
