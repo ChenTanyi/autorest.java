@@ -938,7 +938,7 @@ public interface AppServiceEnvironments {
      * @param name resource name.
      * @return the first stage of the new AppServiceEnvironmentResource definition.
      */
-    AppServiceEnvironmentResource.DefinitionStages.Blank defineHostingEnvironment(String name);
+    AppServiceEnvironmentResource.DefinitionStages.Blank define(String name);
 
     /**
      * Begins definition for a new WorkerPoolResource resource.

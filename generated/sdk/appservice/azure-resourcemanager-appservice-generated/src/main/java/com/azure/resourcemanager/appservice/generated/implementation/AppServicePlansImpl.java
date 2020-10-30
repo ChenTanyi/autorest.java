@@ -497,11 +497,11 @@ public final class AppServicePlansImpl implements AppServicePlans {
         return this.serviceManager;
     }
 
-    public AppServicePlanImpl defineServerfarm(String name) {
+    public AppServicePlanImpl define(String name) {
         return new AppServicePlanImpl(name, this.manager());
     }
 
-    public VnetRouteImpl defineRoute(String name) {
+    public VnetRouteImpl defineVnetRoute(String name) {
         return new VnetRouteImpl(name, this.manager());
     }
 }

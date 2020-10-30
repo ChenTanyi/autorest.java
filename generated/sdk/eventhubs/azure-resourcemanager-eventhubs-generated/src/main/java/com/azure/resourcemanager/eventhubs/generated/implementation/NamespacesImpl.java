@@ -390,15 +390,15 @@ public final class NamespacesImpl implements Namespaces {
         return this.serviceManager;
     }
 
-    public EHNamespaceImpl defineNamespace(String name) {
+    public EHNamespaceImpl define(String name) {
         return new EHNamespaceImpl(name, this.manager());
     }
 
-    public IpFilterRuleImpl defineIpfilterrule(String name) {
+    public IpFilterRuleImpl defineIpFilterRule(String name) {
         return new IpFilterRuleImpl(name, this.manager());
     }
 
-    public VirtualNetworkRuleImpl defineVirtualnetworkrule(String name) {
+    public VirtualNetworkRuleImpl defineVirtualNetworkRule(String name) {
         return new VirtualNetworkRuleImpl(name, this.manager());
     }
 

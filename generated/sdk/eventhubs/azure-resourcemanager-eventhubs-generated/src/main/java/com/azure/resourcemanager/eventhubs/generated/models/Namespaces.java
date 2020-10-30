@@ -500,7 +500,7 @@ public interface Namespaces {
      * @param name resource name.
      * @return the first stage of the new EHNamespace definition.
      */
-    EHNamespace.DefinitionStages.Blank defineNamespace(String name);
+    EHNamespace.DefinitionStages.Blank define(String name);
 
     /**
      * Begins definition for a new IpFilterRule resource.
@@ -508,7 +508,7 @@ public interface Namespaces {
      * @param name resource name.
      * @return the first stage of the new IpFilterRule definition.
      */
-    IpFilterRule.DefinitionStages.Blank defineIpfilterrule(String name);
+    IpFilterRule.DefinitionStages.Blank defineIpFilterRule(String name);
 
     /**
      * Begins definition for a new VirtualNetworkRule resource.
@@ -516,7 +516,7 @@ public interface Namespaces {
      * @param name resource name.
      * @return the first stage of the new VirtualNetworkRule definition.
      */
-    VirtualNetworkRule.DefinitionStages.Blank defineVirtualnetworkrule(String name);
+    VirtualNetworkRule.DefinitionStages.Blank defineVirtualNetworkRule(String name);
 
     /**
      * Begins definition for a new AuthorizationRule resource.

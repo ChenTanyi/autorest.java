@@ -443,11 +443,11 @@ public final class IotHubResourcesImpl implements IotHubResources {
         return this.serviceManager;
     }
 
-    public IotHubDescriptionImpl defineIotHub(String name) {
+    public IotHubDescriptionImpl define(String name) {
         return new IotHubDescriptionImpl(name, this.manager());
     }
 
-    public EventHubConsumerGroupInfoImpl defineConsumerGroup(String name) {
+    public EventHubConsumerGroupInfoImpl defineEventHubConsumerGroup(String name) {
         return new EventHubConsumerGroupInfoImpl(name, this.manager());
     }
 }

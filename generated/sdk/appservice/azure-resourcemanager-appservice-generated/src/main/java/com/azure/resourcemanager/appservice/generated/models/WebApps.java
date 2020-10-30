@@ -11412,7 +11412,7 @@ public interface WebApps {
      * @param name resource name.
      * @return the first stage of the new Site definition.
      */
-    Site.DefinitionStages.Blank defineSite(String name);
+    Site.DefinitionStages.Blank define(String name);
 
     /**
      * Begins definition for a new Deployment resource.
@@ -11444,7 +11444,7 @@ public interface WebApps {
      * @param name resource name.
      * @return the first stage of the new HostnameBinding definition.
      */
-    HostnameBinding.DefinitionStages.Blank defineHostNameBinding(String name);
+    HostnameBinding.DefinitionStages.Blank defineHostnameBinding(String name);
 
     /**
      * Begins definition for a new HybridConnection resource.
@@ -11452,7 +11452,7 @@ public interface WebApps {
      * @param name resource name.
      * @return the first stage of the new HybridConnection definition.
      */
-    HybridConnection.DefinitionStages.Blank defineRelay(String name);
+    HybridConnection.DefinitionStages.Blank defineHybridConnection(String name);
 
     /**
      * Begins definition for a new RelayServiceConnectionEntity resource.
@@ -11460,7 +11460,7 @@ public interface WebApps {
      * @param name resource name.
      * @return the first stage of the new RelayServiceConnectionEntity definition.
      */
-    RelayServiceConnectionEntity.DefinitionStages.Blank defineHybridconnection(String name);
+    RelayServiceConnectionEntity.DefinitionStages.Blank defineRelayServiceConnection(String name);
 
     /**
      * Begins definition for a new PremierAddOn resource.
@@ -11468,7 +11468,7 @@ public interface WebApps {
      * @param name resource name.
      * @return the first stage of the new PremierAddOn definition.
      */
-    PremierAddOn.DefinitionStages.Blank definePremieraddon(String name);
+    PremierAddOn.DefinitionStages.Blank definePremierAddOn(String name);
 
     /**
      * Begins definition for a new PublicCertificate resource.
@@ -11484,7 +11484,7 @@ public interface WebApps {
      * @param name resource name.
      * @return the first stage of the new PrivateEndpointConnectionResource definition.
      */
-    PrivateEndpointConnectionResource.DefinitionStages.Blank definePrivateEndpointConnection(String name);
+    PrivateEndpointConnectionResource.DefinitionStages.Blank definePrivateEndpointConnectionResource(String name);
 
     /**
      * Begins definition for a new VnetInfo resource.
@@ -11492,7 +11492,7 @@ public interface WebApps {
      * @param name resource name.
      * @return the first stage of the new VnetInfo definition.
      */
-    VnetInfo.DefinitionStages.Blank defineVirtualNetworkConnection(String name);
+    VnetInfo.DefinitionStages.Blank defineVnetConnectionSlot(String name);
 
     /**
      * Begins definition for a new VnetGateway resource.
@@ -11500,5 +11500,5 @@ public interface WebApps {
      * @param name resource name.
      * @return the first stage of the new VnetGateway definition.
      */
-    VnetGateway.DefinitionStages.Blank defineGateway(String name);
+    VnetGateway.DefinitionStages.Blank defineVnetConnectionGatewaySlot(String name);
 }

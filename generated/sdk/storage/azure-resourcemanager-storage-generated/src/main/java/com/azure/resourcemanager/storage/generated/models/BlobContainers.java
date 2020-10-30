@@ -437,7 +437,7 @@ public interface BlobContainers {
      * @param name resource name.
      * @return the first stage of the new BlobContainer definition.
      */
-    BlobContainer.DefinitionStages.Blank defineContainer(String name);
+    BlobContainer.DefinitionStages.Blank define(String name);
 
     /**
      * Begins definition for a new ImmutabilityPolicy resource.

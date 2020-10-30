@@ -7140,7 +7140,7 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceManager;
     }
 
-    public SiteImpl defineSite(String name) {
+    public SiteImpl define(String name) {
         return new SiteImpl(name, this.manager());
     }
 
@@ -7156,19 +7156,19 @@ public final class WebAppsImpl implements WebApps {
         return new FunctionEnvelopeImpl(name, this.manager());
     }
 
-    public HostnameBindingImpl defineHostNameBinding(String name) {
+    public HostnameBindingImpl defineHostnameBinding(String name) {
         return new HostnameBindingImpl(name, this.manager());
     }
 
-    public HybridConnectionImpl defineRelay(String name) {
+    public HybridConnectionImpl defineHybridConnection(String name) {
         return new HybridConnectionImpl(name, this.manager());
     }
 
-    public RelayServiceConnectionEntityImpl defineHybridconnection(String name) {
+    public RelayServiceConnectionEntityImpl defineRelayServiceConnection(String name) {
         return new RelayServiceConnectionEntityImpl(name, this.manager());
     }
 
-    public PremierAddOnImpl definePremieraddon(String name) {
+    public PremierAddOnImpl definePremierAddOn(String name) {
         return new PremierAddOnImpl(name, this.manager());
     }
 
@@ -7176,15 +7176,15 @@ public final class WebAppsImpl implements WebApps {
         return new PublicCertificateImpl(name, this.manager());
     }
 
-    public PrivateEndpointConnectionResourceImpl definePrivateEndpointConnection(String name) {
+    public PrivateEndpointConnectionResourceImpl definePrivateEndpointConnectionResource(String name) {
         return new PrivateEndpointConnectionResourceImpl(name, this.manager());
     }
 
-    public VnetInfoImpl defineVirtualNetworkConnection(String name) {
+    public VnetInfoImpl defineVnetConnectionSlot(String name) {
         return new VnetInfoImpl(name, this.manager());
     }
 
-    public VnetGatewayImpl defineGateway(String name) {
+    public VnetGatewayImpl defineVnetConnectionGatewaySlot(String name) {
         return new VnetGatewayImpl(name, this.manager());
     }
 }

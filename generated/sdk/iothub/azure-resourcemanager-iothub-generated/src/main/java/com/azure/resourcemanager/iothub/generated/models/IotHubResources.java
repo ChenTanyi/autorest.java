@@ -603,7 +603,7 @@ public interface IotHubResources {
      * @param name resource name.
      * @return the first stage of the new IotHubDescription definition.
      */
-    IotHubDescription.DefinitionStages.Blank defineIotHub(String name);
+    IotHubDescription.DefinitionStages.Blank define(String name);
 
     /**
      * Begins definition for a new EventHubConsumerGroupInfo resource.
@@ -611,5 +611,5 @@ public interface IotHubResources {
      * @param name resource name.
      * @return the first stage of the new EventHubConsumerGroupInfo definition.
      */
-    EventHubConsumerGroupInfo.DefinitionStages.Blank defineConsumerGroup(String name);
+    EventHubConsumerGroupInfo.DefinitionStages.Blank defineEventHubConsumerGroup(String name);
 }

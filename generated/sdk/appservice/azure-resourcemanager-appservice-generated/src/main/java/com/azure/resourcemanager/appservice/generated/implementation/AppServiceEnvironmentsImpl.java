@@ -575,7 +575,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         return this.serviceManager;
     }
 
-    public AppServiceEnvironmentResourceImpl defineHostingEnvironment(String name) {
+    public AppServiceEnvironmentResourceImpl define(String name) {
         return new AppServiceEnvironmentResourceImpl(name, this.manager());
     }
 

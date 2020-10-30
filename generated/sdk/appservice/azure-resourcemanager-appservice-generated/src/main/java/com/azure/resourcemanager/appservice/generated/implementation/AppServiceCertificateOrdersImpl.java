@@ -323,7 +323,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         return this.serviceManager;
     }
 
-    public AppServiceCertificateOrderImpl defineCertificateOrder(String name) {
+    public AppServiceCertificateOrderImpl define(String name) {
         return new AppServiceCertificateOrderImpl(name, this.manager());
     }
 

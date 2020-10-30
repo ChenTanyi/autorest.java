@@ -471,7 +471,7 @@ public interface AppServiceCertificateOrders {
      * @param name resource name.
      * @return the first stage of the new AppServiceCertificateOrder definition.
      */
-    AppServiceCertificateOrder.DefinitionStages.Blank defineCertificateOrder(String name);
+    AppServiceCertificateOrder.DefinitionStages.Blank define(String name);
 
     /**
      * Begins definition for a new AppServiceCertificateResource resource.

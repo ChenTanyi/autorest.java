@@ -208,11 +208,11 @@ public final class DomainsImpl implements Domains {
         return this.serviceManager;
     }
 
-    public DomainImpl defineDomain(String name) {
+    public DomainImpl define(String name) {
         return new DomainImpl(name, this.manager());
     }
 
-    public DomainOwnershipIdentifierImpl defineDomainOwnershipIdentifier(String name) {
+    public DomainOwnershipIdentifierImpl defineOwnershipIdentifier(String name) {
         return new DomainOwnershipIdentifierImpl(name, this.manager());
     }
 }

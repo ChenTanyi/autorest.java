@@ -707,7 +707,7 @@ public interface AppServicePlans {
      * @param name resource name.
      * @return the first stage of the new AppServicePlan definition.
      */
-    AppServicePlan.DefinitionStages.Blank defineServerfarm(String name);
+    AppServicePlan.DefinitionStages.Blank define(String name);
 
     /**
      * Begins definition for a new VnetRoute resource.
@@ -715,5 +715,5 @@ public interface AppServicePlans {
      * @param name resource name.
      * @return the first stage of the new VnetRoute definition.
      */
-    VnetRoute.DefinitionStages.Blank defineRoute(String name);
+    VnetRoute.DefinitionStages.Blank defineVnetRoute(String name);
 }

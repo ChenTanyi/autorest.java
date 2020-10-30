@@ -306,7 +306,7 @@ public interface Domains {
      * @param name resource name.
      * @return the first stage of the new Domain definition.
      */
-    Domain.DefinitionStages.Blank defineDomain(String name);
+    Domain.DefinitionStages.Blank define(String name);
 
     /**
      * Begins definition for a new DomainOwnershipIdentifier resource.
@@ -314,5 +314,5 @@ public interface Domains {
      * @param name resource name.
      * @return the first stage of the new DomainOwnershipIdentifier definition.
      */
-    DomainOwnershipIdentifier.DefinitionStages.Blank defineDomainOwnershipIdentifier(String name);
+    DomainOwnershipIdentifier.DefinitionStages.Blank defineOwnershipIdentifier(String name);
 }

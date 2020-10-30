@@ -294,7 +294,7 @@ public final class BlobContainersImpl implements BlobContainers {
         return this.serviceManager;
     }
 
-    public BlobContainerImpl defineContainer(String name) {
+    public BlobContainerImpl define(String name) {
         return new BlobContainerImpl(name, this.manager());
     }
 
