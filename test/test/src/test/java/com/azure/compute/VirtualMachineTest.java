@@ -99,7 +99,7 @@ public class VirtualMachineTest extends Base {
                 .withNetworkProfile(
                         new NetworkProfile()
                             .withNetworkInterfaces(Collections.singletonList(
-                                    (NetworkInterfaceReference) new NetworkInterfaceReference()
+                                    new NetworkInterfaceReference()
                                         .withPrimary(true)
                                         .withId(networkInterface.id())
                             ))
@@ -121,7 +121,7 @@ public class VirtualMachineTest extends Base {
                 .withStorageProfile(vm.storageProfile().withDataDisks(Collections.singletonList(
                         new DataDisk()
                                 .withCreateOption(DiskCreateOptionTypes.ATTACH)
-                                .withManagedDisk((ManagedDiskParameters) new ManagedDiskParameters().withId(disk.id()))
+                                .withManagedDisk(new ManagedDiskParameters().withId(disk.id()))
                 )))
                 .apply();
         Assertions.assertEquals(disk.id(), vm.storageProfile().dataDisks().get(0).managedDisk().id());
