@@ -201,6 +201,20 @@ public final class NatRule extends FirewallPolicyRule {
         return this;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public NatRule withName(String name) {
+        super.withName(name);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public NatRule withDescription(String description) {
+        super.withDescription(description);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

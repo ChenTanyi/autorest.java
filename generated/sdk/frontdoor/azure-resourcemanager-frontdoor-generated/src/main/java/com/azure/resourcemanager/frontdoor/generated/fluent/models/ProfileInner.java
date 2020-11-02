@@ -12,6 +12,7 @@ import com.azure.resourcemanager.frontdoor.generated.models.NetworkExperimentRes
 import com.azure.resourcemanager.frontdoor.generated.models.State;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Map;
 
 /** Defines an Network Experiment Profile and lists of Experiments. */
 @JsonFlatten
@@ -84,6 +85,20 @@ public class ProfileInner extends Resource {
      */
     public ProfileInner withEnabledState(State enabledState) {
         this.enabledState = enabledState;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ProfileInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ProfileInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

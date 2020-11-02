@@ -10,6 +10,7 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Specifies information about the dedicated host group that the dedicated host should be assigned to. Only tags may be
@@ -144,6 +145,13 @@ public class DedicatedHostGroupUpdate extends UpdateResource {
      */
     public DedicatedHostGroupUpdate withSupportAutomaticPlacement(Boolean supportAutomaticPlacement) {
         this.supportAutomaticPlacement = supportAutomaticPlacement;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public DedicatedHostGroupUpdate withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

@@ -154,9 +154,4 @@ public final class VirtualApplianceSiteImpl
         this.innerModel().withO365Policy(o365Policy);
         return this;
     }
-
-    public VirtualApplianceSiteImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
 }

@@ -15,6 +15,7 @@ import com.azure.resourcemanager.appservice.generated.models.StatusOptions;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
+import java.util.Map;
 
 /** App Service plan. */
 @JsonFlatten
@@ -515,6 +516,20 @@ public class AppServicePlanInner extends Resource {
      */
     public AppServicePlanInner withKind(String kind) {
         this.kind = kind;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public AppServicePlanInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public AppServicePlanInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

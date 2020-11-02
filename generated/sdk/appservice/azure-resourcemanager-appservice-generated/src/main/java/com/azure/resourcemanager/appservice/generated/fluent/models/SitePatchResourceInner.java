@@ -842,6 +842,13 @@ public class SitePatchResourceInner extends ProxyOnlyResource {
         return this.inProgressOperationId;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public SitePatchResourceInner withKind(String kind) {
+        super.withKind(kind);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

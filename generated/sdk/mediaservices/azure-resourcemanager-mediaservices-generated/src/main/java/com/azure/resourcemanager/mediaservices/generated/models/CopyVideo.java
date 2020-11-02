@@ -19,6 +19,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 public class CopyVideo extends Codec {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(CopyVideo.class);
 
+    /** {@inheritDoc} */
+    @Override
+    public CopyVideo withLabel(String label) {
+        super.withLabel(label);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

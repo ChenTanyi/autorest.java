@@ -13,6 +13,7 @@ import com.azure.resourcemanager.frontdoor.generated.models.NetworkExperimentRes
 import com.azure.resourcemanager.frontdoor.generated.models.State;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Map;
 
 /** Defines the properties of an Experiment. */
 @JsonFlatten
@@ -167,6 +168,20 @@ public class ExperimentInner extends Resource {
      */
     public String scriptFileUri() {
         return this.scriptFileUri;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ExperimentInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ExperimentInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
+        return this;
     }
 
     /**

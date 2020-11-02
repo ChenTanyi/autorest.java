@@ -15,6 +15,7 @@ import com.azure.resourcemanager.mediaservices.generated.models.StorageAuthentic
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 /** A Media Services account. */
@@ -139,6 +140,20 @@ public class MediaServiceInner extends Resource {
      */
     public MediaServiceInner withEncryption(AccountEncryption encryption) {
         this.encryption = encryption;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public MediaServiceInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public MediaServiceInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

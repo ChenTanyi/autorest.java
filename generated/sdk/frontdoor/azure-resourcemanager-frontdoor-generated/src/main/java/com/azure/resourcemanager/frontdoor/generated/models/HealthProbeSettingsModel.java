@@ -212,6 +212,13 @@ public class HealthProbeSettingsModel extends SubResource {
         return this.resourceState;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public HealthProbeSettingsModel withId(String id) {
+        super.withId(id);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

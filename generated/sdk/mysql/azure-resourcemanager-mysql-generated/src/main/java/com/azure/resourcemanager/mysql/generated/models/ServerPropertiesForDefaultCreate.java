@@ -73,6 +73,49 @@ public final class ServerPropertiesForDefaultCreate extends ServerPropertiesForC
         return this;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public ServerPropertiesForDefaultCreate withVersion(ServerVersion version) {
+        super.withVersion(version);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ServerPropertiesForDefaultCreate withSslEnforcement(SslEnforcementEnum sslEnforcement) {
+        super.withSslEnforcement(sslEnforcement);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ServerPropertiesForDefaultCreate withMinimalTlsVersion(MinimalTlsVersionEnum minimalTlsVersion) {
+        super.withMinimalTlsVersion(minimalTlsVersion);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ServerPropertiesForDefaultCreate withInfrastructureEncryption(
+        InfrastructureEncryption infrastructureEncryption) {
+        super.withInfrastructureEncryption(infrastructureEncryption);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ServerPropertiesForDefaultCreate withPublicNetworkAccess(PublicNetworkAccessEnum publicNetworkAccess) {
+        super.withPublicNetworkAccess(publicNetworkAccess);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ServerPropertiesForDefaultCreate withStorageProfile(StorageProfile storageProfile) {
+        super.withStorageProfile(storageProfile);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

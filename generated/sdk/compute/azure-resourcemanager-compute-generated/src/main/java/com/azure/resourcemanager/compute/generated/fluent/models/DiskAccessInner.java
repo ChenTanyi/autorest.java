@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
+import java.util.Map;
 
 /** disk access resource. */
 @JsonFlatten
@@ -65,6 +66,20 @@ public class DiskAccessInner extends Resource {
      */
     public OffsetDateTime timeCreated() {
         return this.timeCreated;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public DiskAccessInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public DiskAccessInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
+        return this;
     }
 
     /**

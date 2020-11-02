@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import java.util.Map;
 
 /**
  * A video analyzer preset that extracts insights (rich metadata) from both audio and video, and outputs a JSON format
@@ -64,6 +65,27 @@ public class VideoAnalyzerPreset extends AudioAnalyzerPreset {
      */
     public VideoAnalyzerPreset withInsightsToExtract(InsightsType insightsToExtract) {
         this.insightsToExtract = insightsToExtract;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VideoAnalyzerPreset withAudioLanguage(String audioLanguage) {
+        super.withAudioLanguage(audioLanguage);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VideoAnalyzerPreset withMode(AudioAnalysisMode mode) {
+        super.withMode(mode);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VideoAnalyzerPreset withExperimentalOptions(Map<String, String> experimentalOptions) {
+        super.withExperimentalOptions(experimentalOptions);
         return this;
     }
 

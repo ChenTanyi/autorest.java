@@ -16,6 +16,7 @@ import com.azure.resourcemanager.network.generated.models.VirtualApplianceSkuPro
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** NetworkVirtualAppliance Resource. */
 @JsonFlatten
@@ -319,6 +320,20 @@ public class NetworkVirtualApplianceInner extends Resource {
      */
     public NetworkVirtualApplianceInner withId(String id) {
         this.id = id;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public NetworkVirtualApplianceInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public NetworkVirtualApplianceInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

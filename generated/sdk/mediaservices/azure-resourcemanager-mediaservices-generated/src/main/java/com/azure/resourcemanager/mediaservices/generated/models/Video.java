@@ -121,6 +121,13 @@ public class Video extends Codec {
         return this;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public Video withLabel(String label) {
+        super.withLabel(label);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

@@ -8,6 +8,7 @@ import com.azure.core.annotation.Immutable;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.List;
 
 /**
  * The instance view of a dedicated host that includes the name of the dedicated host. It is used for the response to
@@ -30,6 +31,20 @@ public final class DedicatedHostInstanceViewWithName extends DedicatedHostInstan
      */
     public String name() {
         return this.name;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public DedicatedHostInstanceViewWithName withAvailableCapacity(DedicatedHostAvailableCapacity availableCapacity) {
+        super.withAvailableCapacity(availableCapacity);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public DedicatedHostInstanceViewWithName withStatuses(List<InstanceViewStatus> statuses) {
+        super.withStatuses(statuses);
+        return this;
     }
 
     /**

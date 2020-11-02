@@ -392,6 +392,13 @@ public class AppServiceCertificateOrderPatchResource extends ProxyOnlyResource {
         return this.nextAutoRenewalTimestamp;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public AppServiceCertificateOrderPatchResource withKind(String kind) {
+        super.withKind(kind);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

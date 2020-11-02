@@ -14,6 +14,7 @@ import com.azure.resourcemanager.frontdoor.generated.models.TimeseriesType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** Defines the Timeseries. */
 @JsonFlatten
@@ -203,6 +204,20 @@ public class TimeseriesInner extends Resource {
      */
     public TimeseriesInner withTimeseriesData(List<TimeseriesDataPoint> timeseriesData) {
         this.timeseriesData = timeseriesData;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public TimeseriesInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public TimeseriesInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

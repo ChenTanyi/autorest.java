@@ -212,6 +212,27 @@ public class VideoLayer extends Layer {
         return this;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public VideoLayer withWidth(String width) {
+        super.withWidth(width);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VideoLayer withHeight(String height) {
+        super.withHeight(height);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VideoLayer withLabel(String label) {
+        super.withLabel(label);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

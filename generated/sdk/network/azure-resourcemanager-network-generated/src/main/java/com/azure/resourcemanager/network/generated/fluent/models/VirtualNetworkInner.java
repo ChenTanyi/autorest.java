@@ -16,6 +16,7 @@ import com.azure.resourcemanager.network.generated.models.VirtualNetworkBgpCommu
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** Virtual Network resource. */
 @JsonFlatten
@@ -341,6 +342,20 @@ public class VirtualNetworkInner extends Resource {
      */
     public VirtualNetworkInner withId(String id) {
         this.id = id;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VirtualNetworkInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VirtualNetworkInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

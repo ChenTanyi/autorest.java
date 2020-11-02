@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Duration;
 import java.time.OffsetDateTime;
 import java.util.List;
+import java.util.Map;
 
 /** The metric alert resource. */
 @JsonFlatten
@@ -340,6 +341,20 @@ public class MetricAlertResourceInner extends Resource {
      */
     public OffsetDateTime lastUpdatedTime() {
         return this.lastUpdatedTime;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public MetricAlertResourceInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public MetricAlertResourceInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
+        return this;
     }
 
     /**

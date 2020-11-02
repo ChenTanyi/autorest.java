@@ -13,6 +13,7 @@ import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** The IpGroups resource information. */
 @JsonFlatten
@@ -115,6 +116,20 @@ public class IpGroupInner extends Resource {
      */
     public IpGroupInner withId(String id) {
         this.id = id;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public IpGroupInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public IpGroupInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

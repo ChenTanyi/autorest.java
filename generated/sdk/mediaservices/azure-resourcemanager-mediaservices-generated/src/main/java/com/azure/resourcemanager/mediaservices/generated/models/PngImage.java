@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import java.time.Duration;
 import java.util.List;
 
 /** Describes the properties for producing a series of PNG images from the input video. */
@@ -44,6 +45,55 @@ public class PngImage extends Image {
      */
     public PngImage withLayers(List<Layer> layers) {
         this.layers = layers;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public PngImage withStart(String start) {
+        super.withStart(start);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public PngImage withStep(String step) {
+        super.withStep(step);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public PngImage withRange(String range) {
+        super.withRange(range);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public PngImage withKeyFrameInterval(Duration keyFrameInterval) {
+        super.withKeyFrameInterval(keyFrameInterval);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public PngImage withStretchMode(StretchMode stretchMode) {
+        super.withStretchMode(stretchMode);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public PngImage withSyncMode(VideoSyncMode syncMode) {
+        super.withSyncMode(syncMode);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public PngImage withLabel(String label) {
+        super.withLabel(label);
         return this;
     }
 

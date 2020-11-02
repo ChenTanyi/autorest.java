@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import java.time.Duration;
 import java.util.List;
 
 /** Describes the properties for producing a series of JPEG images from the input video. */
@@ -81,6 +82,55 @@ public class JpgImage extends Image {
      */
     public JpgImage withSpriteColumn(Integer spriteColumn) {
         this.spriteColumn = spriteColumn;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public JpgImage withStart(String start) {
+        super.withStart(start);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public JpgImage withStep(String step) {
+        super.withStep(step);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public JpgImage withRange(String range) {
+        super.withRange(range);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public JpgImage withKeyFrameInterval(Duration keyFrameInterval) {
+        super.withKeyFrameInterval(keyFrameInterval);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public JpgImage withStretchMode(StretchMode stretchMode) {
+        super.withStretchMode(stretchMode);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public JpgImage withSyncMode(VideoSyncMode syncMode) {
+        super.withSyncMode(syncMode);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public JpgImage withLabel(String label) {
+        super.withLabel(label);
         return this;
     }
 

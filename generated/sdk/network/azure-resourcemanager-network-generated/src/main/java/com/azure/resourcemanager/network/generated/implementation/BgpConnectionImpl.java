@@ -156,9 +156,4 @@ public final class BgpConnectionImpl implements BgpConnection, BgpConnection.Def
         this.innerModel().withPeerIp(peerIp);
         return this;
     }
-
-    public BgpConnectionImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
 }

@@ -50,6 +50,13 @@ public class StaticSiteCustomDomainOverviewArmResourceInner extends ProxyOnlyRes
         return this.createdOn;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public StaticSiteCustomDomainOverviewArmResourceInner withKind(String kind) {
+        super.withKind(kind);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

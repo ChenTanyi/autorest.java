@@ -154,10 +154,7 @@ public interface ExpressRouteCircuitAuthorization {
 
     /** The template for ExpressRouteCircuitAuthorization update. */
     interface Update
-        extends UpdateStages.WithId,
-            UpdateStages.WithName,
-            UpdateStages.WithAuthorizationKey,
-            UpdateStages.WithAuthorizationUseStatus {
+        extends UpdateStages.WithName, UpdateStages.WithAuthorizationKey, UpdateStages.WithAuthorizationUseStatus {
         /**
          * Executes the update request.
          *
@@ -175,16 +172,6 @@ public interface ExpressRouteCircuitAuthorization {
     }
     /** The ExpressRouteCircuitAuthorization update stages. */
     interface UpdateStages {
-        /** The stage of the ExpressRouteCircuitAuthorization update allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Fully qualified resource Id for the resource..
-             *
-             * @param id Fully qualified resource Id for the resource.
-             * @return the next definition stage.
-             */
-            Update withId(String id);
-        }
         /** The stage of the ExpressRouteCircuitAuthorization update allowing to specify name. */
         interface WithName {
             /**

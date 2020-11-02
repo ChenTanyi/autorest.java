@@ -11,6 +11,7 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.models.ClusterSku;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Map;
 
 /** Single Event Hubs Cluster resource in List or Get operations. */
 @JsonFlatten
@@ -104,6 +105,20 @@ public class ClusterInner extends Resource {
      */
     public String status() {
         return this.status;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ClusterInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ClusterInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
+        return this;
     }
 
     /**

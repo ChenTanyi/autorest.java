@@ -47,6 +47,27 @@ public class JpgLayer extends Layer {
         return this;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public JpgLayer withWidth(String width) {
+        super.withWidth(width);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public JpgLayer withHeight(String height) {
+        super.withHeight(height);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public JpgLayer withLabel(String label) {
+        super.withLabel(label);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

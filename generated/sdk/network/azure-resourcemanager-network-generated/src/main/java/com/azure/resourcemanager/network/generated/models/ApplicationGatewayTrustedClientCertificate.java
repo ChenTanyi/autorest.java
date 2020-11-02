@@ -115,6 +115,13 @@ public class ApplicationGatewayTrustedClientCertificate extends SubResource {
         return this.provisioningState;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public ApplicationGatewayTrustedClientCertificate withId(String id) {
+        super.withId(id);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

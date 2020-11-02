@@ -353,6 +353,13 @@ public class ApplicationGatewayHttpListener extends SubResource {
         return this;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public ApplicationGatewayHttpListener withId(String id) {
+        super.withId(id);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

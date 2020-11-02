@@ -152,9 +152,4 @@ public final class VirtualRouterPeeringImpl
         this.innerModel().withPeerIp(peerIp);
         return this;
     }
-
-    public VirtualRouterPeeringImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
 }

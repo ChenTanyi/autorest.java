@@ -229,8 +229,7 @@ public interface ExpressRouteCircuitConnection {
 
     /** The template for ExpressRouteCircuitConnection update. */
     interface Update
-        extends UpdateStages.WithId,
-            UpdateStages.WithName,
+        extends UpdateStages.WithName,
             UpdateStages.WithExpressRouteCircuitPeering,
             UpdateStages.WithPeerExpressRouteCircuitPeering,
             UpdateStages.WithAddressPrefix,
@@ -253,16 +252,6 @@ public interface ExpressRouteCircuitConnection {
     }
     /** The ExpressRouteCircuitConnection update stages. */
     interface UpdateStages {
-        /** The stage of the ExpressRouteCircuitConnection update allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Fully qualified resource Id for the resource..
-             *
-             * @param id Fully qualified resource Id for the resource.
-             * @return the next definition stage.
-             */
-            Update withId(String id);
-        }
         /** The stage of the ExpressRouteCircuitConnection update allowing to specify name. */
         interface WithName {
             /**

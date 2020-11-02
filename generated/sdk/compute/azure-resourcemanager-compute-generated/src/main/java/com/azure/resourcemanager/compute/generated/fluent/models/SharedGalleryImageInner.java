@@ -279,6 +279,13 @@ public class SharedGalleryImageInner extends PirSharedGalleryResourceInner {
         return this;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public SharedGalleryImageInner withUniqueId(String uniqueId) {
+        super.withUniqueId(uniqueId);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

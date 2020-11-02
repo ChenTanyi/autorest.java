@@ -203,9 +203,4 @@ public final class ExpressRouteGatewayImpl
         this.innerModel().withVirtualHub(virtualHub);
         return this;
     }
-
-    public ExpressRouteGatewayImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
 }

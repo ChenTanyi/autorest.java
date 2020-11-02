@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.math.BigDecimal;
+import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -70,6 +71,13 @@ public final class MonetaryCredit extends OfferTermInfo {
      */
     public MonetaryCredit withExcludedMeterIds(List<UUID> excludedMeterIds) {
         this.excludedMeterIds = excludedMeterIds;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public MonetaryCredit withEffectiveDate(OffsetDateTime effectiveDate) {
+        super.withEffectiveDate(effectiveDate);
         return this;
     }
 

@@ -10,6 +10,7 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import java.util.List;
 
 /** Describes the properties for an output ISO MP4 file. */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata\\.type")
@@ -18,6 +19,20 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Immutable
 public class Mp4Format extends MultiBitrateFormat {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(Mp4Format.class);
+
+    /** {@inheritDoc} */
+    @Override
+    public Mp4Format withOutputFiles(List<OutputFile> outputFiles) {
+        super.withOutputFiles(outputFiles);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public Mp4Format withFilenamePattern(String filenamePattern) {
+        super.withFilenamePattern(filenamePattern);
+        return this;
+    }
 
     /**
      * Validates the instance.

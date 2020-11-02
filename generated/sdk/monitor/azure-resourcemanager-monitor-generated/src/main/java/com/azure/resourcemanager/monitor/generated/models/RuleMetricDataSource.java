@@ -46,6 +46,13 @@ public class RuleMetricDataSource extends RuleDataSource {
         return this;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public RuleMetricDataSource withResourceUri(String resourceUri) {
+        super.withResourceUri(resourceUri);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

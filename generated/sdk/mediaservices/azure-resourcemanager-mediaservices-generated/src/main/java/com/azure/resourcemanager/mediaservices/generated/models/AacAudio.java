@@ -46,6 +46,34 @@ public class AacAudio extends Audio {
         return this;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public AacAudio withChannels(Integer channels) {
+        super.withChannels(channels);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public AacAudio withSamplingRate(Integer samplingRate) {
+        super.withSamplingRate(samplingRate);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public AacAudio withBitrate(Integer bitrate) {
+        super.withBitrate(bitrate);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public AacAudio withLabel(String label) {
+        super.withLabel(label);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

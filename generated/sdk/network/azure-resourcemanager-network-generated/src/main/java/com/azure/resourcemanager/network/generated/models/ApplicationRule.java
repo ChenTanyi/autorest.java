@@ -175,6 +175,20 @@ public final class ApplicationRule extends FirewallPolicyRule {
         return this;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public ApplicationRule withName(String name) {
+        super.withName(name);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ApplicationRule withDescription(String description) {
+        super.withDescription(description);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

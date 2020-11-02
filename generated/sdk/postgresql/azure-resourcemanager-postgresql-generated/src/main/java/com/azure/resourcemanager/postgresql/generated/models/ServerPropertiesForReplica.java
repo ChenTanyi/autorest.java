@@ -44,6 +44,48 @@ public final class ServerPropertiesForReplica extends ServerPropertiesForCreate 
         return this;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public ServerPropertiesForReplica withVersion(ServerVersion version) {
+        super.withVersion(version);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ServerPropertiesForReplica withSslEnforcement(SslEnforcementEnum sslEnforcement) {
+        super.withSslEnforcement(sslEnforcement);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ServerPropertiesForReplica withMinimalTlsVersion(MinimalTlsVersionEnum minimalTlsVersion) {
+        super.withMinimalTlsVersion(minimalTlsVersion);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ServerPropertiesForReplica withInfrastructureEncryption(InfrastructureEncryption infrastructureEncryption) {
+        super.withInfrastructureEncryption(infrastructureEncryption);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ServerPropertiesForReplica withPublicNetworkAccess(PublicNetworkAccessEnum publicNetworkAccess) {
+        super.withPublicNetworkAccess(publicNetworkAccess);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ServerPropertiesForReplica withStorageProfile(StorageProfile storageProfile) {
+        super.withStorageProfile(storageProfile);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

@@ -27,6 +27,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
+import java.util.Map;
 
 /** The storage account. */
 @JsonFlatten
@@ -568,6 +569,20 @@ public class StorageAccountInner extends Resource {
      */
     public StorageAccountInner withMinimumTlsVersion(MinimumTlsVersion minimumTlsVersion) {
         this.minimumTlsVersion = minimumTlsVersion;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public StorageAccountInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public StorageAccountInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

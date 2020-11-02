@@ -21,6 +21,7 @@ import com.azure.resourcemanager.network.generated.models.VpnType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** A common class for general resource information. */
 @JsonFlatten
@@ -472,6 +473,20 @@ public class VirtualNetworkGatewayInner extends Resource {
      */
     public VirtualNetworkGatewayInner withId(String id) {
         this.id = id;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VirtualNetworkGatewayInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VirtualNetworkGatewayInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

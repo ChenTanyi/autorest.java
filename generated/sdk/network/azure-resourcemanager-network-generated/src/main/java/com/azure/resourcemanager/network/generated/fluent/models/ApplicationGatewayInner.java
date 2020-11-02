@@ -37,6 +37,7 @@ import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** Application gateway resource. */
 @JsonFlatten
@@ -965,6 +966,20 @@ public class ApplicationGatewayInner extends Resource {
      */
     public ApplicationGatewayInner withId(String id) {
         this.id = id;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ApplicationGatewayInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ApplicationGatewayInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

@@ -188,8 +188,7 @@ public interface HubIpConfiguration {
 
     /** The template for HubIpConfiguration update. */
     interface Update
-        extends UpdateStages.WithId,
-            UpdateStages.WithName,
+        extends UpdateStages.WithName,
             UpdateStages.WithPrivateIpAddress,
             UpdateStages.WithPrivateIpAllocationMethod,
             UpdateStages.WithSubnet,
@@ -211,16 +210,6 @@ public interface HubIpConfiguration {
     }
     /** The HubIpConfiguration update stages. */
     interface UpdateStages {
-        /** The stage of the HubIpConfiguration update allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Fully qualified resource Id for the resource..
-             *
-             * @param id Fully qualified resource Id for the resource.
-             * @return the next definition stage.
-             */
-            Update withId(String id);
-        }
         /** The stage of the HubIpConfiguration update allowing to specify name. */
         interface WithName {
             /**

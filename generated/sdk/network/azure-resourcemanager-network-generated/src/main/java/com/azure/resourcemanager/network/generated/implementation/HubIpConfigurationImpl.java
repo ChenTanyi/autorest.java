@@ -185,9 +185,4 @@ public final class HubIpConfigurationImpl
         this.innerModel().withPublicIpAddress(publicIpAddress);
         return this;
     }
-
-    public HubIpConfigurationImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
 }

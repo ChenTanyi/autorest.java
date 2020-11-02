@@ -19,6 +19,7 @@ import com.azure.resourcemanager.appservice.generated.models.WorkerPool;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** App Service Environment ARM resource. */
 @JsonFlatten
@@ -915,6 +916,20 @@ public class AppServiceEnvironmentResourceInner extends Resource {
      */
     public AppServiceEnvironmentResourceInner withKind(String kind) {
         this.kind = kind;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public AppServiceEnvironmentResourceInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public AppServiceEnvironmentResourceInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

@@ -260,8 +260,7 @@ public interface PrivateEndpoint {
             UpdateStages.WithSubnet,
             UpdateStages.WithPrivateLinkServiceConnections,
             UpdateStages.WithManualPrivateLinkServiceConnections,
-            UpdateStages.WithCustomDnsConfigs,
-            UpdateStages.WithId {
+            UpdateStages.WithCustomDnsConfigs {
         /**
          * Executes the update request.
          *
@@ -335,16 +334,6 @@ public interface PrivateEndpoint {
              * @return the next definition stage.
              */
             Update withCustomDnsConfigs(List<CustomDnsConfigPropertiesFormat> customDnsConfigs);
-        }
-        /** The stage of the PrivateEndpoint update allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            Update withId(String id);
         }
     }
     /**

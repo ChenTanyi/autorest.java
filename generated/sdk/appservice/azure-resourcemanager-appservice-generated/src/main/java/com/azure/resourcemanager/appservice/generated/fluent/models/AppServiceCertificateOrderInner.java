@@ -425,6 +425,20 @@ public class AppServiceCertificateOrderInner extends Resource {
         return this;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public AppServiceCertificateOrderInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public AppServiceCertificateOrderInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

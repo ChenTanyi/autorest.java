@@ -165,8 +165,7 @@ public interface HubRouteTable {
     HubRouteTable.Update update();
 
     /** The template for HubRouteTable update. */
-    interface Update
-        extends UpdateStages.WithId, UpdateStages.WithName, UpdateStages.WithRoutes, UpdateStages.WithLabels {
+    interface Update extends UpdateStages.WithName, UpdateStages.WithRoutes, UpdateStages.WithLabels {
         /**
          * Executes the update request.
          *
@@ -184,16 +183,6 @@ public interface HubRouteTable {
     }
     /** The HubRouteTable update stages. */
     interface UpdateStages {
-        /** The stage of the HubRouteTable update allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Fully qualified resource Id for the resource..
-             *
-             * @param id Fully qualified resource Id for the resource.
-             * @return the next definition stage.
-             */
-            Update withId(String id);
-        }
         /** The stage of the HubRouteTable update allowing to specify name. */
         interface WithName {
             /**

@@ -272,9 +272,4 @@ public final class DscpConfigurationImpl
         this.innerModel().withProtocol(protocol);
         return this;
     }
-
-    public DscpConfigurationImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
 }

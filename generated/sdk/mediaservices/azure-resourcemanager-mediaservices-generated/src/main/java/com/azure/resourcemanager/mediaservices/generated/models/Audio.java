@@ -104,6 +104,13 @@ public class Audio extends Codec {
         return this;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public Audio withLabel(String label) {
+        super.withLabel(label);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

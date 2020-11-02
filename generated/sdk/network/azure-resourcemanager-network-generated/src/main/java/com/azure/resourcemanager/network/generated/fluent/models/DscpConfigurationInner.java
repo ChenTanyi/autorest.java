@@ -15,6 +15,7 @@ import com.azure.resourcemanager.network.generated.models.QosPortRange;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** DSCP Configuration in a resource group. */
 @JsonFlatten
@@ -276,6 +277,20 @@ public class DscpConfigurationInner extends Resource {
      */
     public DscpConfigurationInner withId(String id) {
         this.id = id;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public DscpConfigurationInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public DscpConfigurationInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

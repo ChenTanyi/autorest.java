@@ -16,6 +16,7 @@ import com.azure.resourcemanager.monitor.generated.models.Source;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
+import java.util.Map;
 
 /** The Log Search Rule resource. */
 @JsonFlatten
@@ -184,6 +185,20 @@ public class LogSearchRuleResourceInner extends Resource {
      */
     public LogSearchRuleResourceInner withAction(Action action) {
         this.action = action;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public LogSearchRuleResourceInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public LogSearchRuleResourceInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

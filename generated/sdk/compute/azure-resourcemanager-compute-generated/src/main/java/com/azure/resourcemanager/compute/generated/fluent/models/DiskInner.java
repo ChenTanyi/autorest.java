@@ -21,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
+import java.util.Map;
 
 /** Disk resource. */
 @JsonFlatten
@@ -613,6 +614,20 @@ public class DiskInner extends Resource {
      */
     public DiskInner withTier(String tier) {
         this.tier = tier;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public DiskInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public DiskInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

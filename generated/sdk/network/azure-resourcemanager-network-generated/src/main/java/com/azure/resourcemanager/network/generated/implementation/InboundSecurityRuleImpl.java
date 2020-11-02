@@ -136,9 +136,4 @@ public final class InboundSecurityRuleImpl
         this.innerModel().withRules(rules);
         return this;
     }
-
-    public InboundSecurityRuleImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
 }

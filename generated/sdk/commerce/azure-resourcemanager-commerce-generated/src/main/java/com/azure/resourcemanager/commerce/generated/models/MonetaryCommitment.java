@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.math.BigDecimal;
+import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -78,6 +79,13 @@ public final class MonetaryCommitment extends OfferTermInfo {
      */
     public MonetaryCommitment withExcludedMeterIds(List<UUID> excludedMeterIds) {
         this.excludedMeterIds = excludedMeterIds;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public MonetaryCommitment withEffectiveDate(OffsetDateTime effectiveDate) {
+        super.withEffectiveDate(effectiveDate);
         return this;
     }
 

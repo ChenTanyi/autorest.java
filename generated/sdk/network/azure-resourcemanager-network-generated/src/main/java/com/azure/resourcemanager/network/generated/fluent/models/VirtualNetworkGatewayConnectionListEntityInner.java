@@ -20,6 +20,7 @@ import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayC
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** A common class for general resource information. */
 @JsonFlatten
@@ -530,6 +531,20 @@ public class VirtualNetworkGatewayConnectionListEntityInner extends Resource {
      */
     public VirtualNetworkGatewayConnectionListEntityInner withId(String id) {
         this.id = id;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VirtualNetworkGatewayConnectionListEntityInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VirtualNetworkGatewayConnectionListEntityInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

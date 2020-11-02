@@ -211,9 +211,4 @@ public final class InboundNatRuleImpl implements InboundNatRule, InboundNatRule.
         this.innerModel().withEnableTcpReset(enableTcpReset);
         return this;
     }
-
-    public InboundNatRuleImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
 }

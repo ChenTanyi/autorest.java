@@ -182,9 +182,4 @@ public final class HubRouteTableImpl implements HubRouteTable, HubRouteTable.Def
         this.innerModel().withLabels(labels);
         return this;
     }
-
-    public HubRouteTableImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
 }

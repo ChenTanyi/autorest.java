@@ -32,6 +32,13 @@ public class SiteInstanceInner extends ProxyOnlyResource {
         return this.siteInstanceName;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public SiteInstanceInner withKind(String kind) {
+        super.withKind(kind);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

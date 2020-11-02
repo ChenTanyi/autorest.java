@@ -74,6 +74,48 @@ public final class ServerPropertiesForRestore extends ServerPropertiesForCreate 
         return this;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public ServerPropertiesForRestore withVersion(ServerVersion version) {
+        super.withVersion(version);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ServerPropertiesForRestore withSslEnforcement(SslEnforcementEnum sslEnforcement) {
+        super.withSslEnforcement(sslEnforcement);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ServerPropertiesForRestore withMinimalTlsVersion(MinimalTlsVersionEnum minimalTlsVersion) {
+        super.withMinimalTlsVersion(minimalTlsVersion);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ServerPropertiesForRestore withInfrastructureEncryption(InfrastructureEncryption infrastructureEncryption) {
+        super.withInfrastructureEncryption(infrastructureEncryption);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ServerPropertiesForRestore withPublicNetworkAccess(PublicNetworkAccessEnum publicNetworkAccess) {
+        super.withPublicNetworkAccess(publicNetworkAccess);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ServerPropertiesForRestore withStorageProfile(StorageProfile storageProfile) {
+        super.withStorageProfile(storageProfile);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

@@ -29,6 +29,41 @@ public final class HealthProbeSettingsProperties extends HealthProbeSettingsUpda
         return this.resourceState;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public HealthProbeSettingsProperties withPath(String path) {
+        super.withPath(path);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public HealthProbeSettingsProperties withProtocol(FrontDoorProtocol protocol) {
+        super.withProtocol(protocol);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public HealthProbeSettingsProperties withIntervalInSeconds(Integer intervalInSeconds) {
+        super.withIntervalInSeconds(intervalInSeconds);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public HealthProbeSettingsProperties withHealthProbeMethod(FrontDoorHealthProbeMethod healthProbeMethod) {
+        super.withHealthProbeMethod(healthProbeMethod);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public HealthProbeSettingsProperties withEnabledState(HealthProbeEnabled enabledState) {
+        super.withEnabledState(enabledState);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

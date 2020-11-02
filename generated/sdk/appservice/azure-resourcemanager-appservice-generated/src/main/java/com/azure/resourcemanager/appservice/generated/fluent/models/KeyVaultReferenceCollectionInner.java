@@ -46,6 +46,13 @@ public class KeyVaultReferenceCollectionInner extends ProxyOnlyResource {
         return this;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public KeyVaultReferenceCollectionInner withKind(String kind) {
+        super.withKind(kind);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

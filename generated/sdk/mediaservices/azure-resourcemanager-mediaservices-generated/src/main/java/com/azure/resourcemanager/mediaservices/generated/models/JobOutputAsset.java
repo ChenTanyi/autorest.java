@@ -46,6 +46,13 @@ public class JobOutputAsset extends JobOutput {
         return this;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public JobOutputAsset withLabel(String label) {
+        super.withLabel(label);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

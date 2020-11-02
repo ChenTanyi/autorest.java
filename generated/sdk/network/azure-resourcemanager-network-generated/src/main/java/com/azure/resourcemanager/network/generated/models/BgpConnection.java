@@ -154,8 +154,7 @@ public interface BgpConnection {
     BgpConnection.Update update();
 
     /** The template for BgpConnection update. */
-    interface Update
-        extends UpdateStages.WithId, UpdateStages.WithName, UpdateStages.WithPeerAsn, UpdateStages.WithPeerIp {
+    interface Update extends UpdateStages.WithName, UpdateStages.WithPeerAsn, UpdateStages.WithPeerIp {
         /**
          * Executes the update request.
          *
@@ -173,16 +172,6 @@ public interface BgpConnection {
     }
     /** The BgpConnection update stages. */
     interface UpdateStages {
-        /** The stage of the BgpConnection update allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Fully qualified resource Id for the resource..
-             *
-             * @param id Fully qualified resource Id for the resource.
-             * @return the next definition stage.
-             */
-            Update withId(String id);
-        }
         /** The stage of the BgpConnection update allowing to specify name. */
         interface WithName {
             /**

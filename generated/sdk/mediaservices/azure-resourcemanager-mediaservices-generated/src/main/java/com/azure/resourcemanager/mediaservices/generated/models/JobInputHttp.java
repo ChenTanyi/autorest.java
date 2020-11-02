@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import java.util.List;
 
 /** Represents HTTPS job input. */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata\\.type")
@@ -49,6 +50,34 @@ public class JobInputHttp extends JobInputClip {
      */
     public JobInputHttp withBaseUri(String baseUri) {
         this.baseUri = baseUri;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public JobInputHttp withFiles(List<String> files) {
+        super.withFiles(files);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public JobInputHttp withStart(ClipTime start) {
+        super.withStart(start);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public JobInputHttp withEnd(ClipTime end) {
+        super.withEnd(end);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public JobInputHttp withLabel(String label) {
+        super.withLabel(label);
         return this;
     }
 

@@ -15,6 +15,7 @@ import com.azure.resourcemanager.network.generated.models.VirtualHubRouteTable;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** VirtualHub Resource. */
 @JsonFlatten
@@ -486,6 +487,20 @@ public class VirtualHubInner extends Resource {
      */
     public VirtualHubInner withId(String id) {
         this.id = id;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VirtualHubInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VirtualHubInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

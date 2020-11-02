@@ -14,6 +14,7 @@ import com.azure.resourcemanager.eventhubs.generated.models.Sku;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
+import java.util.Map;
 
 /** Single Namespace item in List or Get Operation. */
 @JsonFlatten
@@ -311,6 +312,20 @@ public class EHNamespaceInner extends Resource {
      */
     public EHNamespaceInner withEncryption(Encryption encryption) {
         this.encryption = encryption;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public EHNamespaceInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public EHNamespaceInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

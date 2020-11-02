@@ -249,8 +249,7 @@ public interface VirtualRouter {
             UpdateStages.WithVirtualRouterAsn,
             UpdateStages.WithVirtualRouterIps,
             UpdateStages.WithHostedSubnet,
-            UpdateStages.WithHostedGateway,
-            UpdateStages.WithId {
+            UpdateStages.WithHostedGateway {
         /**
          * Executes the update request.
          *
@@ -317,16 +316,6 @@ public interface VirtualRouter {
              * @return the next definition stage.
              */
             Update withHostedGateway(SubResource hostedGateway);
-        }
-        /** The stage of the VirtualRouter update allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            Update withId(String id);
         }
     }
     /**

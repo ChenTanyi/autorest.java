@@ -18,6 +18,7 @@ import com.azure.resourcemanager.frontdoor.generated.models.RoutingRule;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Front Door represents a collection of backend endpoints to route traffic to along with rules that specify how traffic
@@ -312,6 +313,20 @@ public class FrontDoorInner extends Resource {
      */
     public List<RulesEngineInner> rulesEngines() {
         return this.rulesEngines;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public FrontDoorInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public FrontDoorInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
+        return this;
     }
 
     /**

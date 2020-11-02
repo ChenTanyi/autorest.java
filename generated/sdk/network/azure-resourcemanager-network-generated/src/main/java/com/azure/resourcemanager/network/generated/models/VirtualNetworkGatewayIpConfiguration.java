@@ -172,6 +172,13 @@ public class VirtualNetworkGatewayIpConfiguration extends SubResource {
         return this.provisioningState;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public VirtualNetworkGatewayIpConfiguration withId(String id) {
+        super.withId(id);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

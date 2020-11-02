@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import java.util.List;
 
 /** Represents an Asset for input into a Job. */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata\\.type")
@@ -43,6 +44,34 @@ public class JobInputAsset extends JobInputClip {
      */
     public JobInputAsset withAssetName(String assetName) {
         this.assetName = assetName;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public JobInputAsset withFiles(List<String> files) {
+        super.withFiles(files);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public JobInputAsset withStart(ClipTime start) {
+        super.withStart(start);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public JobInputAsset withEnd(ClipTime end) {
+        super.withEnd(end);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public JobInputAsset withLabel(String label) {
+        super.withLabel(label);
         return this;
     }
 

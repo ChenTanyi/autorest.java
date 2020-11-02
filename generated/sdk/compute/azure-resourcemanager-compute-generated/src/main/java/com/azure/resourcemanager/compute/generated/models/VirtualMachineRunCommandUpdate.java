@@ -10,6 +10,7 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** Describes a Virtual Machine run command. */
 @JsonFlatten
@@ -285,6 +286,13 @@ public class VirtualMachineRunCommandUpdate extends UpdateResource {
      */
     public VirtualMachineRunCommandInstanceView instanceView() {
         return this.instanceView;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VirtualMachineRunCommandUpdate withTags(Map<String, String> tags) {
+        super.withTags(tags);
+        return this;
     }
 
     /**

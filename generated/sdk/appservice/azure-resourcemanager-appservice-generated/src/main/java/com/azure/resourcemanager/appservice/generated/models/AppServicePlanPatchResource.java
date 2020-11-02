@@ -465,6 +465,13 @@ public class AppServicePlanPatchResource extends ProxyOnlyResource {
         return this.provisioningState;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public AppServicePlanPatchResource withKind(String kind) {
+        super.withKind(kind);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

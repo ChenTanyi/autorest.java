@@ -19,6 +19,7 @@ import com.azure.resourcemanager.network.generated.models.PublicIpAddressSku;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** Public IP address resource. */
 @JsonFlatten
@@ -372,6 +373,20 @@ public class PublicIpAddressInner extends Resource {
      */
     public PublicIpAddressInner withId(String id) {
         this.id = id;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public PublicIpAddressInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public PublicIpAddressInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

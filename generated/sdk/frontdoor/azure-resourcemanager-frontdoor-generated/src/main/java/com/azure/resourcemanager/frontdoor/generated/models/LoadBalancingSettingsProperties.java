@@ -29,6 +29,27 @@ public final class LoadBalancingSettingsProperties extends LoadBalancingSettings
         return this.resourceState;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public LoadBalancingSettingsProperties withSampleSize(Integer sampleSize) {
+        super.withSampleSize(sampleSize);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public LoadBalancingSettingsProperties withSuccessfulSamplesRequired(Integer successfulSamplesRequired) {
+        super.withSuccessfulSamplesRequired(successfulSamplesRequired);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public LoadBalancingSettingsProperties withAdditionalLatencyMilliseconds(Integer additionalLatencyMilliseconds) {
+        super.withAdditionalLatencyMilliseconds(additionalLatencyMilliseconds);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

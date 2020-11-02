@@ -156,9 +156,4 @@ public final class NetworkInterfaceTapConfigurationImpl
         this.innerModel().withVirtualNetworkTap(virtualNetworkTap);
         return this;
     }
-
-    public NetworkInterfaceTapConfigurationImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
 }

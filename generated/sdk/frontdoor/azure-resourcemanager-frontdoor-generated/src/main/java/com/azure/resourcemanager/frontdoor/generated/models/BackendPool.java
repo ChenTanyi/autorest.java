@@ -152,6 +152,13 @@ public class BackendPool extends SubResource {
         return this.resourceState;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public BackendPool withId(String id) {
+        super.withId(id);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
+import java.util.Map;
 
 /** SSL certificate for an app. */
 @JsonFlatten
@@ -430,6 +431,20 @@ public class CertificateInner extends Resource {
      */
     public CertificateInner withKind(String kind) {
         this.kind = kind;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public CertificateInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public CertificateInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

@@ -122,6 +122,34 @@ public final class RuntimeScriptActionDetailInner extends RuntimeScriptAction {
         return this.debugInformation;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public RuntimeScriptActionDetailInner withName(String name) {
+        super.withName(name);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public RuntimeScriptActionDetailInner withUri(String uri) {
+        super.withUri(uri);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public RuntimeScriptActionDetailInner withParameters(String parameters) {
+        super.withParameters(parameters);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public RuntimeScriptActionDetailInner withRoles(List<String> roles) {
+        super.withRoles(roles);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

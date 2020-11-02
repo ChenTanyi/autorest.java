@@ -14,6 +14,7 @@ import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** Custom IP prefix resource. */
 @JsonFlatten
@@ -186,6 +187,20 @@ public class CustomIpPrefixInner extends Resource {
      */
     public CustomIpPrefixInner withId(String id) {
         this.id = id;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public CustomIpPrefixInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public CustomIpPrefixInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

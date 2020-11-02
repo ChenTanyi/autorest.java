@@ -217,9 +217,4 @@ public final class VirtualRouterImpl implements VirtualRouter, VirtualRouter.Def
         this.innerModel().withHostedGateway(hostedGateway);
         return this;
     }
-
-    public VirtualRouterImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
 }

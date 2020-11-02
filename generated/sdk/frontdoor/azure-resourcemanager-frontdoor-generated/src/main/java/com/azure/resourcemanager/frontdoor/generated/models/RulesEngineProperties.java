@@ -8,6 +8,7 @@ import com.azure.core.annotation.Immutable;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.List;
 
 /** The JSON object that contains the properties required to create a Rules Engine Configuration. */
 @Immutable
@@ -27,6 +28,13 @@ public final class RulesEngineProperties extends RulesEngineUpdateParameters {
      */
     public FrontDoorResourceState resourceState() {
         return this.resourceState;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public RulesEngineProperties withRules(List<RulesEngineRule> rules) {
+        super.withRules(rules);
+        return this;
     }
 
     /**

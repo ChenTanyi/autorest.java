@@ -11,6 +11,7 @@ import com.azure.resourcemanager.iothub.generated.models.IotHubProperties;
 import com.azure.resourcemanager.iothub.generated.models.IotHubSkuInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Map;
 
 /** The description of the IoT hub. */
 @Fluent
@@ -96,6 +97,20 @@ public final class IotHubDescriptionInner extends Resource {
      */
     public IotHubDescriptionInner withSku(IotHubSkuInfo sku) {
         this.sku = sku;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public IotHubDescriptionInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public IotHubDescriptionInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

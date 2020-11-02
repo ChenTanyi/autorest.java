@@ -76,6 +76,36 @@ public final class FrontendEndpointProperties extends FrontendEndpointUpdatePara
         return this.customHttpsConfiguration;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public FrontendEndpointProperties withHostname(String hostname) {
+        super.withHostname(hostname);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public FrontendEndpointProperties withSessionAffinityEnabledState(
+        SessionAffinityEnabledState sessionAffinityEnabledState) {
+        super.withSessionAffinityEnabledState(sessionAffinityEnabledState);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public FrontendEndpointProperties withSessionAffinityTtlSeconds(Integer sessionAffinityTtlSeconds) {
+        super.withSessionAffinityTtlSeconds(sessionAffinityTtlSeconds);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public FrontendEndpointProperties withWebApplicationFirewallPolicyLink(
+        FrontendEndpointUpdateParametersWebApplicationFirewallPolicyLink webApplicationFirewallPolicyLink) {
+        super.withWebApplicationFirewallPolicyLink(webApplicationFirewallPolicyLink);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

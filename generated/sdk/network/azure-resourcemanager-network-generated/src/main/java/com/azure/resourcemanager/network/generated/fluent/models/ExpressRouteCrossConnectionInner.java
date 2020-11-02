@@ -14,6 +14,7 @@ import com.azure.resourcemanager.network.generated.models.ServiceProviderProvisi
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** ExpressRouteCrossConnection resource. */
 @JsonFlatten
@@ -257,6 +258,20 @@ public class ExpressRouteCrossConnectionInner extends Resource {
      */
     public ExpressRouteCrossConnectionInner withId(String id) {
         this.id = id;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ExpressRouteCrossConnectionInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ExpressRouteCrossConnectionInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

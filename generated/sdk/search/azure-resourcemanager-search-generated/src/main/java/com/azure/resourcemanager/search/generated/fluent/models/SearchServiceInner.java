@@ -18,6 +18,7 @@ import com.azure.resourcemanager.search.generated.models.Sku;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** Describes an Azure Cognitive Search service and its current state. */
 @JsonFlatten
@@ -354,6 +355,20 @@ public class SearchServiceInner extends Resource {
      */
     public List<SharedPrivateLinkResourceInner> sharedPrivateLinkResources() {
         return this.sharedPrivateLinkResources;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public SearchServiceInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public SearchServiceInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
+        return this;
     }
 
     /**

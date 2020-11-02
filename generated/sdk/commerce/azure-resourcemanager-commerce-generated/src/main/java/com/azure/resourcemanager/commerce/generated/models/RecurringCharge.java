@@ -10,6 +10,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import java.time.OffsetDateTime;
 
 /** Indicates a recurring charge is present for this offer. */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "Name")
@@ -41,6 +42,13 @@ public final class RecurringCharge extends OfferTermInfo {
      */
     public RecurringCharge withRecurringCharge(Integer recurringCharge) {
         this.recurringCharge = recurringCharge;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public RecurringCharge withEffectiveDate(OffsetDateTime effectiveDate) {
+        super.withEffectiveDate(effectiveDate);
         return this;
     }
 

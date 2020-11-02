@@ -884,6 +884,13 @@ public class AppServiceEnvironmentPatchResource extends ProxyOnlyResource {
         return this;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public AppServiceEnvironmentPatchResource withKind(String kind) {
+        super.withKind(kind);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

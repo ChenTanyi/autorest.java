@@ -11,6 +11,7 @@ import com.azure.resourcemanager.hdinsight.generated.models.ClusterGetProperties
 import com.azure.resourcemanager.hdinsight.generated.models.ClusterIdentity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Map;
 
 /** The HDInsight cluster. */
 @Fluent
@@ -92,6 +93,20 @@ public final class ClusterInner extends Resource {
      */
     public ClusterInner withIdentity(ClusterIdentity identity) {
         this.identity = identity;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ClusterInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ClusterInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

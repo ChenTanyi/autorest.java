@@ -21,6 +21,7 @@ import com.azure.resourcemanager.monitor.generated.models.WebhookReceiver;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** An action group resource. */
 @JsonFlatten
@@ -347,6 +348,20 @@ public class ActionGroupResourceInner extends Resource {
      */
     public ActionGroupResourceInner withArmRoleReceivers(List<ArmRoleReceiver> armRoleReceivers) {
         this.armRoleReceivers = armRoleReceivers;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ActionGroupResourceInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ActionGroupResourceInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

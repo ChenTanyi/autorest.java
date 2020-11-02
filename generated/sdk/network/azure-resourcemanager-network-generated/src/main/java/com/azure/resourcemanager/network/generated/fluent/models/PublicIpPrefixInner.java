@@ -17,6 +17,7 @@ import com.azure.resourcemanager.network.generated.models.ReferencedPublicIpAddr
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** Public IP prefix resource. */
 @JsonFlatten
@@ -298,6 +299,20 @@ public class PublicIpPrefixInner extends Resource {
      */
     public PublicIpPrefixInner withId(String id) {
         this.id = id;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public PublicIpPrefixInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public PublicIpPrefixInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

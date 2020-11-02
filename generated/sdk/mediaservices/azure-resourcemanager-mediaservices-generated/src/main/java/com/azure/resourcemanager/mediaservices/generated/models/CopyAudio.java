@@ -19,6 +19,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 public class CopyAudio extends Codec {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(CopyAudio.class);
 
+    /** {@inheritDoc} */
+    @Override
+    public CopyAudio withLabel(String label) {
+        super.withLabel(label);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

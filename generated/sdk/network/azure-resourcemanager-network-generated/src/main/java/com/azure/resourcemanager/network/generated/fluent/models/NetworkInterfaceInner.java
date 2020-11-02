@@ -14,6 +14,7 @@ import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** A network interface in a resource group. */
 @JsonFlatten
@@ -327,6 +328,20 @@ public class NetworkInterfaceInner extends Resource {
      */
     public NetworkInterfaceInner withId(String id) {
         this.id = id;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public NetworkInterfaceInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public NetworkInterfaceInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

@@ -163,7 +163,7 @@ public interface BackendAddressPool {
     BackendAddressPool.Update update();
 
     /** The template for BackendAddressPool update. */
-    interface Update extends UpdateStages.WithId, UpdateStages.WithName, UpdateStages.WithLoadBalancerBackendAddresses {
+    interface Update extends UpdateStages.WithName, UpdateStages.WithLoadBalancerBackendAddresses {
         /**
          * Executes the update request.
          *
@@ -181,16 +181,6 @@ public interface BackendAddressPool {
     }
     /** The BackendAddressPool update stages. */
     interface UpdateStages {
-        /** The stage of the BackendAddressPool update allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Fully qualified resource Id for the resource..
-             *
-             * @param id Fully qualified resource Id for the resource.
-             * @return the next definition stage.
-             */
-            Update withId(String id);
-        }
         /** The stage of the BackendAddressPool update allowing to specify name. */
         interface WithName {
             /**

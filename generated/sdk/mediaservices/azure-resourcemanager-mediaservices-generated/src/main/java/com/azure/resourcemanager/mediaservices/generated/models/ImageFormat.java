@@ -19,6 +19,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 public class ImageFormat extends Format {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(ImageFormat.class);
 
+    /** {@inheritDoc} */
+    @Override
+    public ImageFormat withFilenamePattern(String filenamePattern) {
+        super.withFilenamePattern(filenamePattern);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

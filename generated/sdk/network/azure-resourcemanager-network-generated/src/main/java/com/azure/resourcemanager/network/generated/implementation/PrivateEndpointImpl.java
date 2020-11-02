@@ -245,9 +245,4 @@ public final class PrivateEndpointImpl implements PrivateEndpoint, PrivateEndpoi
         this.innerModel().withCustomDnsConfigs(customDnsConfigs);
         return this;
     }
-
-    public PrivateEndpointImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
 }

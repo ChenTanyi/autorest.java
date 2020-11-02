@@ -173,6 +173,69 @@ public class H264Layer extends VideoLayer {
         return this;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public H264Layer withBitrate(int bitrate) {
+        super.withBitrate(bitrate);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public H264Layer withMaxBitrate(Integer maxBitrate) {
+        super.withMaxBitrate(maxBitrate);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public H264Layer withBFrames(Integer bFrames) {
+        super.withBFrames(bFrames);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public H264Layer withFrameRate(String frameRate) {
+        super.withFrameRate(frameRate);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public H264Layer withSlices(Integer slices) {
+        super.withSlices(slices);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public H264Layer withAdaptiveBFrame(Boolean adaptiveBFrame) {
+        super.withAdaptiveBFrame(adaptiveBFrame);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public H264Layer withWidth(String width) {
+        super.withWidth(width);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public H264Layer withHeight(String height) {
+        super.withHeight(height);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public H264Layer withLabel(String label) {
+        super.withLabel(label);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

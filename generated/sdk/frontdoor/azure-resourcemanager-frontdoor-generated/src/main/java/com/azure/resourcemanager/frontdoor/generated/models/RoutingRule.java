@@ -265,6 +265,13 @@ public class RoutingRule extends SubResource {
         return this.resourceState;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public RoutingRule withId(String id) {
+        super.withId(id);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

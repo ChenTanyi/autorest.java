@@ -13,6 +13,7 @@ import com.azure.resourcemanager.monitor.generated.models.ActivityLogAlertAllOfC
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** An activity log alert resource. */
 @JsonFlatten
@@ -154,6 +155,20 @@ public class ActivityLogAlertResourceInner extends Resource {
      */
     public ActivityLogAlertResourceInner withDescription(String description) {
         this.description = description;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ActivityLogAlertResourceInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ActivityLogAlertResourceInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

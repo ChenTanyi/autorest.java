@@ -210,10 +210,7 @@ public interface ExpressRouteGateway {
 
     /** The template for ExpressRouteGateway update. */
     interface Update
-        extends UpdateStages.WithTags,
-            UpdateStages.WithAutoScaleConfiguration,
-            UpdateStages.WithVirtualHub,
-            UpdateStages.WithId {
+        extends UpdateStages.WithTags, UpdateStages.WithAutoScaleConfiguration, UpdateStages.WithVirtualHub {
         /**
          * Executes the update request.
          *
@@ -262,16 +259,6 @@ public interface ExpressRouteGateway {
              * @return the next definition stage.
              */
             Update withVirtualHub(VirtualHubId virtualHub);
-        }
-        /** The stage of the ExpressRouteGateway update allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            Update withId(String id);
         }
     }
     /**

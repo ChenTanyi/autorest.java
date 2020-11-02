@@ -13,6 +13,7 @@ import com.azure.resourcemanager.dns.generated.models.ZoneType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** Describes a DNS zone. */
 @JsonFlatten
@@ -179,6 +180,20 @@ public class ZoneInner extends Resource {
      */
     public ZoneInner withResolutionVirtualNetworks(List<SubResource> resolutionVirtualNetworks) {
         this.resolutionVirtualNetworks = resolutionVirtualNetworks;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ZoneInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ZoneInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

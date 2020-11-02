@@ -24,6 +24,7 @@ import com.azure.resourcemanager.compute.generated.models.VirtualMachinePriority
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** Describes a Virtual Machine Update. */
 @JsonFlatten
@@ -727,6 +728,13 @@ public class VirtualMachineUpdateInner extends UpdateResource {
      */
     public VirtualMachineUpdateInner withExtensionsTimeBudget(String extensionsTimeBudget) {
         this.extensionsTimeBudget = extensionsTimeBudget;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VirtualMachineUpdateInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

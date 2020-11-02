@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
+import java.util.Map;
 
 /** The streaming endpoint. */
 @JsonFlatten
@@ -370,6 +371,20 @@ public class StreamingEndpointInner extends Resource {
      */
     public OffsetDateTime lastModified() {
         return this.lastModified;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public StreamingEndpointInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public StreamingEndpointInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
+        return this;
     }
 
     /**

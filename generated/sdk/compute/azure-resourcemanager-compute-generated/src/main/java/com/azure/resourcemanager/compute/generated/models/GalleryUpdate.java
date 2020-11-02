@@ -9,6 +9,7 @@ import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Map;
 
 /** Specifies information about the Shared Image Gallery that you want to update. */
 @JsonFlatten
@@ -107,6 +108,13 @@ public class GalleryUpdate extends UpdateResourceDefinition {
      */
     public GalleryUpdate withSharingProfile(SharingProfile sharingProfile) {
         this.sharingProfile = sharingProfile;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public GalleryUpdate withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

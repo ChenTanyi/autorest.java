@@ -13,6 +13,7 @@ import com.azure.resourcemanager.appservice.generated.models.StaticSiteBuildProp
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** Static Site ARM resource. */
 @JsonFlatten
@@ -206,6 +207,20 @@ public class StaticSiteArmResourceInner extends Resource {
      */
     public StaticSiteArmResourceInner withKind(String kind) {
         this.kind = kind;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public StaticSiteArmResourceInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public StaticSiteArmResourceInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

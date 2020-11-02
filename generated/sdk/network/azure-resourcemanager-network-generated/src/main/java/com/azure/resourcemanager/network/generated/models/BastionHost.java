@@ -198,11 +198,7 @@ public interface BastionHost {
     BastionHost.Update update();
 
     /** The template for BastionHost update. */
-    interface Update
-        extends UpdateStages.WithTags,
-            UpdateStages.WithIpConfigurations,
-            UpdateStages.WithDnsName,
-            UpdateStages.WithId {
+    interface Update extends UpdateStages.WithTags, UpdateStages.WithIpConfigurations, UpdateStages.WithDnsName {
         /**
          * Executes the update request.
          *
@@ -249,16 +245,6 @@ public interface BastionHost {
              * @return the next definition stage.
              */
             Update withDnsName(String dnsName);
-        }
-        /** The stage of the BastionHost update allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            Update withId(String id);
         }
     }
     /**

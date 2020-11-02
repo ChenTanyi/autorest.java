@@ -154,6 +154,13 @@ public class LoadBalancingSettingsModel extends SubResource {
         return this.resourceState;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public LoadBalancingSettingsModel withId(String id) {
+        super.withId(id);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

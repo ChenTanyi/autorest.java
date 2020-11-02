@@ -297,6 +297,13 @@ public class ApplicationGatewayRequestRoutingRule extends SubResource {
         return this.provisioningState;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public ApplicationGatewayRequestRoutingRule withId(String id) {
+        super.withId(id);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

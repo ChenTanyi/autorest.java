@@ -300,8 +300,7 @@ public interface DscpConfiguration {
             UpdateStages.WithDestinationIpRanges,
             UpdateStages.WithSourcePortRanges,
             UpdateStages.WithDestinationPortRanges,
-            UpdateStages.WithProtocol,
-            UpdateStages.WithId {
+            UpdateStages.WithProtocol {
         /**
          * Executes the update request.
          *
@@ -388,16 +387,6 @@ public interface DscpConfiguration {
              * @return the next definition stage.
              */
             Update withProtocol(ProtocolType protocol);
-        }
-        /** The stage of the DscpConfiguration update allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            Update withId(String id);
         }
     }
     /**

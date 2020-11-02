@@ -20,6 +20,7 @@ import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSet
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** Describes a Virtual Machine Scale Set. */
 @JsonFlatten
@@ -523,6 +524,20 @@ public class VirtualMachineScaleSetInner extends Resource {
      */
     public VirtualMachineScaleSetInner withScaleInPolicy(ScaleInPolicy scaleInPolicy) {
         this.scaleInPolicy = scaleInPolicy;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VirtualMachineScaleSetInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VirtualMachineScaleSetInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

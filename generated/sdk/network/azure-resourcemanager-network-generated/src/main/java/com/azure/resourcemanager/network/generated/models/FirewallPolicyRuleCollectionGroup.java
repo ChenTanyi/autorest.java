@@ -153,11 +153,7 @@ public interface FirewallPolicyRuleCollectionGroup {
     FirewallPolicyRuleCollectionGroup.Update update();
 
     /** The template for FirewallPolicyRuleCollectionGroup update. */
-    interface Update
-        extends UpdateStages.WithId,
-            UpdateStages.WithName,
-            UpdateStages.WithPriority,
-            UpdateStages.WithRuleCollections {
+    interface Update extends UpdateStages.WithName, UpdateStages.WithPriority, UpdateStages.WithRuleCollections {
         /**
          * Executes the update request.
          *
@@ -175,16 +171,6 @@ public interface FirewallPolicyRuleCollectionGroup {
     }
     /** The FirewallPolicyRuleCollectionGroup update stages. */
     interface UpdateStages {
-        /** The stage of the FirewallPolicyRuleCollectionGroup update allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Fully qualified resource Id for the resource..
-             *
-             * @param id Fully qualified resource Id for the resource.
-             * @return the next definition stage.
-             */
-            Update withId(String id);
-        }
         /** The stage of the FirewallPolicyRuleCollectionGroup update allowing to specify name. */
         interface WithName {
             /**

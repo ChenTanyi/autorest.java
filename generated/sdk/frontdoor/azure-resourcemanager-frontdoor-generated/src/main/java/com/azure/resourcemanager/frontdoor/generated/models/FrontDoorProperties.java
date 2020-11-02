@@ -6,6 +6,7 @@ package com.azure.resourcemanager.frontdoor.generated.models;
 
 import com.azure.core.annotation.Immutable;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.resourcemanager.frontdoor.generated.fluent.models.FrontendEndpointInner;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.RulesEngineInner;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -89,6 +90,62 @@ public final class FrontDoorProperties extends FrontDoorUpdateParameters {
      */
     public List<RulesEngineInner> rulesEngines() {
         return this.rulesEngines;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public FrontDoorProperties withFriendlyName(String friendlyName) {
+        super.withFriendlyName(friendlyName);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public FrontDoorProperties withRoutingRules(List<RoutingRule> routingRules) {
+        super.withRoutingRules(routingRules);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public FrontDoorProperties withLoadBalancingSettings(List<LoadBalancingSettingsModel> loadBalancingSettings) {
+        super.withLoadBalancingSettings(loadBalancingSettings);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public FrontDoorProperties withHealthProbeSettings(List<HealthProbeSettingsModel> healthProbeSettings) {
+        super.withHealthProbeSettings(healthProbeSettings);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public FrontDoorProperties withBackendPools(List<BackendPool> backendPools) {
+        super.withBackendPools(backendPools);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public FrontDoorProperties withFrontendEndpoints(List<FrontendEndpointInner> frontendEndpoints) {
+        super.withFrontendEndpoints(frontendEndpoints);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public FrontDoorProperties withBackendPoolsSettings(BackendPoolsSettings backendPoolsSettings) {
+        super.withBackendPoolsSettings(backendPoolsSettings);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public FrontDoorProperties withEnabledState(FrontDoorEnabledState enabledState) {
+        super.withEnabledState(enabledState);
+        return this;
     }
 
     /**

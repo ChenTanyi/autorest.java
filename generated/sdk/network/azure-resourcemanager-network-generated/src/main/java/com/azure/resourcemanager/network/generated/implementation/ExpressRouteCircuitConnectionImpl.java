@@ -196,9 +196,4 @@ public final class ExpressRouteCircuitConnectionImpl
         this.innerModel().withIpv6CircuitConnectionConfig(ipv6CircuitConnectionConfig);
         return this;
     }
-
-    public ExpressRouteCircuitConnectionImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
 }

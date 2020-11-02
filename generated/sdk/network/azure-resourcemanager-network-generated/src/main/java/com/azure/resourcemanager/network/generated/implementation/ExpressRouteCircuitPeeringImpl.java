@@ -338,9 +338,4 @@ public final class ExpressRouteCircuitPeeringImpl
         this.innerModel().withConnections(connections);
         return this;
     }
-
-    public ExpressRouteCircuitPeeringImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
 }

@@ -13,6 +13,7 @@ import com.azure.resourcemanager.keyvault.generated.models.PrivateEndpointConnec
 import com.azure.resourcemanager.keyvault.generated.models.PrivateLinkServiceConnectionState;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Map;
 
 /** Private endpoint connection resource. */
 @JsonFlatten
@@ -86,6 +87,20 @@ public class PrivateEndpointConnectionInner extends Resource {
      */
     public PrivateEndpointConnectionProvisioningState provisioningState() {
         return this.provisioningState;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public PrivateEndpointConnectionInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public PrivateEndpointConnectionInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
+        return this;
     }
 
     /**

@@ -17,6 +17,7 @@ import com.azure.resourcemanager.frontdoor.generated.models.RoutingRuleLink;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** Defines web application firewall policy. */
 @JsonFlatten
@@ -190,6 +191,20 @@ public class WebApplicationFirewallPolicyInner extends Resource {
      */
     public PolicyResourceState resourceState() {
         return this.resourceState;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public WebApplicationFirewallPolicyInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public WebApplicationFirewallPolicyInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
+        return this;
     }
 
     /**

@@ -63,6 +63,13 @@ public class MultiBitrateFormat extends Format {
         return this;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public MultiBitrateFormat withFilenamePattern(String filenamePattern) {
+        super.withFilenamePattern(filenamePattern);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

@@ -12,6 +12,7 @@ import com.azure.resourcemanager.frontdoor.generated.models.ManagedRuleGroupDefi
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** Describes the a managed rule set definition. */
 @JsonFlatten
@@ -92,6 +93,20 @@ public class ManagedRuleSetDefinitionInner extends Resource {
      */
     public List<ManagedRuleGroupDefinition> ruleGroups() {
         return this.ruleGroups;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ManagedRuleSetDefinitionInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ManagedRuleSetDefinitionInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
+        return this;
     }
 
     /**

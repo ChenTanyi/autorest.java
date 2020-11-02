@@ -22,6 +22,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
+import java.util.Map;
 
 /** Represents a server. */
 @JsonFlatten
@@ -455,6 +456,20 @@ public class ServerInner extends Resource {
      */
     public List<ServerPrivateEndpointConnection> privateEndpointConnections() {
         return this.privateEndpointConnections;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ServerInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ServerInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
+        return this;
     }
 
     /**

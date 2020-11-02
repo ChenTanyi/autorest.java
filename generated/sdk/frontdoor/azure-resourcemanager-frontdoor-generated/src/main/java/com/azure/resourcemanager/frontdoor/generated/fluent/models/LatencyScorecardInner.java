@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
+import java.util.Map;
 
 /** Defines the LatencyScorecard. */
 @JsonFlatten
@@ -166,6 +167,20 @@ public class LatencyScorecardInner extends Resource {
      */
     public LatencyScorecardInner withLatencyMetrics(List<LatencyMetric> latencyMetrics) {
         this.latencyMetrics = latencyMetrics;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public LatencyScorecardInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public LatencyScorecardInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

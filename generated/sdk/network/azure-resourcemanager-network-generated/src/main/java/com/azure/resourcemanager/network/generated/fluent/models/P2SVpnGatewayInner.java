@@ -15,6 +15,7 @@ import com.azure.resourcemanager.network.generated.models.VpnClientConnectionHea
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** P2SVpnGateway Resource. */
 @JsonFlatten
@@ -221,6 +222,20 @@ public class P2SVpnGatewayInner extends Resource {
      */
     public P2SVpnGatewayInner withId(String id) {
         this.id = id;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public P2SVpnGatewayInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public P2SVpnGatewayInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

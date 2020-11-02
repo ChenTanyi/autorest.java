@@ -11,6 +11,7 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.models.EndpointType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Map;
 
 /** Defines the properties of a preconfigured endpoint. */
 @JsonFlatten
@@ -119,6 +120,20 @@ public class PreconfiguredEndpointInner extends Resource {
      */
     public PreconfiguredEndpointInner withBackend(String backend) {
         this.backend = backend;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public PreconfiguredEndpointInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public PreconfiguredEndpointInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

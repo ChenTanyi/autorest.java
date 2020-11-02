@@ -14,6 +14,7 @@ import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** LoadBalancer resource. */
 @JsonFlatten
@@ -328,6 +329,20 @@ public class LoadBalancerInner extends Resource {
      */
     public LoadBalancerInner withId(String id) {
         this.id = id;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public LoadBalancerInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public LoadBalancerInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

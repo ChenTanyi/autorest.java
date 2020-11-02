@@ -249,9 +249,4 @@ public final class WebApplicationFirewallPolicyImpl
         this.innerModel().withManagedRules(managedRules);
         return this;
     }
-
-    public WebApplicationFirewallPolicyImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
 }

@@ -9,6 +9,7 @@ import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Map;
 
 /** Describes a Virtual Machine Extension. */
 @JsonFlatten
@@ -238,6 +239,13 @@ public class VirtualMachineExtensionUpdate extends UpdateResource {
      */
     public VirtualMachineExtensionUpdate withProtectedSettings(Object protectedSettings) {
         this.protectedSettings = protectedSettings;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VirtualMachineExtensionUpdate withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

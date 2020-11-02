@@ -192,9 +192,4 @@ public final class BackendAddressPoolImpl
         this.innerModel().withLoadBalancerBackendAddresses(loadBalancerBackendAddresses);
         return this;
     }
-
-    public BackendAddressPoolImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
 }

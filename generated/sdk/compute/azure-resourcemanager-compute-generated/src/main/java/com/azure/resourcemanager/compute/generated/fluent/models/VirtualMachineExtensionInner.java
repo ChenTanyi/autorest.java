@@ -11,6 +11,7 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineExtensionInstanceView;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Map;
 
 /** Describes a Virtual Machine Extension. */
 @JsonFlatten
@@ -281,6 +282,20 @@ public class VirtualMachineExtensionInner extends Resource {
      */
     public VirtualMachineExtensionInner withInstanceView(VirtualMachineExtensionInstanceView instanceView) {
         this.instanceView = instanceView;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VirtualMachineExtensionInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VirtualMachineExtensionInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

@@ -233,9 +233,4 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
         this.innerModel().withDnsSettings(dnsSettings);
         return this;
     }
-
-    public FirewallPolicyImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
 }

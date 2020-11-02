@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import java.time.Duration;
 
 /** Describes the properties of a video overlay. */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata\\.type")
@@ -98,6 +99,48 @@ public class VideoOverlay extends Overlay {
      */
     public VideoOverlay withCropRectangle(Rectangle cropRectangle) {
         this.cropRectangle = cropRectangle;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VideoOverlay withInputLabel(String inputLabel) {
+        super.withInputLabel(inputLabel);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VideoOverlay withStart(Duration start) {
+        super.withStart(start);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VideoOverlay withEnd(Duration end) {
+        super.withEnd(end);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VideoOverlay withFadeInDuration(Duration fadeInDuration) {
+        super.withFadeInDuration(fadeInDuration);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VideoOverlay withFadeOutDuration(Duration fadeOutDuration) {
+        super.withFadeOutDuration(fadeOutDuration);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VideoOverlay withAudioGainLevel(Double audioGainLevel) {
+        super.withAudioGainLevel(audioGainLevel);
         return this;
     }
 

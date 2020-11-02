@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
+import java.util.Map;
 
 /** Specifies the metric alert criteria for a single resource that has multiple metric criteria. */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "odata\\.type")
@@ -45,6 +46,14 @@ public class MetricAlertSingleResourceMultipleMetricCriteria extends MetricAlert
      */
     public MetricAlertSingleResourceMultipleMetricCriteria withAllOf(List<MetricCriteria> allOf) {
         this.allOf = allOf;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public MetricAlertSingleResourceMultipleMetricCriteria withAdditionalProperties(
+        Map<String, Object> additionalProperties) {
+        super.withAdditionalProperties(additionalProperties);
         return this;
     }
 

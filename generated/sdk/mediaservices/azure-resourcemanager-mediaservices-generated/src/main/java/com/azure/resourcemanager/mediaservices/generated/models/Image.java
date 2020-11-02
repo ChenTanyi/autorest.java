@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import java.time.Duration;
 
 /** Describes the basic properties for generating thumbnails from the input video. */
 @JsonTypeInfo(
@@ -168,6 +169,34 @@ public class Image extends Video {
      */
     public Image withRange(String range) {
         this.range = range;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public Image withKeyFrameInterval(Duration keyFrameInterval) {
+        super.withKeyFrameInterval(keyFrameInterval);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public Image withStretchMode(StretchMode stretchMode) {
+        super.withStretchMode(stretchMode);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public Image withSyncMode(VideoSyncMode syncMode) {
+        super.withSyncMode(syncMode);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public Image withLabel(String label) {
+        super.withLabel(label);
         return this;
     }
 

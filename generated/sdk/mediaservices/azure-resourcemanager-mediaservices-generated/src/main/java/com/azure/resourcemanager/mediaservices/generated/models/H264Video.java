@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import java.time.Duration;
 import java.util.List;
 
 /** Describes all the properties for encoding a video with the H.264 codec. */
@@ -106,6 +107,34 @@ public class H264Video extends Video {
      */
     public H264Video withLayers(List<H264Layer> layers) {
         this.layers = layers;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public H264Video withKeyFrameInterval(Duration keyFrameInterval) {
+        super.withKeyFrameInterval(keyFrameInterval);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public H264Video withStretchMode(StretchMode stretchMode) {
+        super.withStretchMode(stretchMode);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public H264Video withSyncMode(VideoSyncMode syncMode) {
+        super.withSyncMode(syncMode);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public H264Video withLabel(String label) {
+        super.withLabel(label);
         return this;
     }
 

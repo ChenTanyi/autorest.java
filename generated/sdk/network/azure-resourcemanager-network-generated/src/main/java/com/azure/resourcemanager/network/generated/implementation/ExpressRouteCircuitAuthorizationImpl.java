@@ -158,9 +158,4 @@ public final class ExpressRouteCircuitAuthorizationImpl
         this.innerModel().withAuthorizationUseStatus(authorizationUseStatus);
         return this;
     }
-
-    public ExpressRouteCircuitAuthorizationImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
 }

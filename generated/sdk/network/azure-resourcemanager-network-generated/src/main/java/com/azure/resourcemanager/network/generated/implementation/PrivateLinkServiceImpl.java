@@ -289,9 +289,4 @@ public final class PrivateLinkServiceImpl
         this.innerModel().withEnableProxyProtocol(enableProxyProtocol);
         return this;
     }
-
-    public PrivateLinkServiceImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
 }

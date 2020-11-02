@@ -188,9 +188,4 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
         this.innerModel().withDnsName(dnsName);
         return this;
     }
-
-    public BastionHostImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
 }

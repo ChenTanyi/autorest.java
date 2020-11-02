@@ -19,6 +19,27 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 public class PngLayer extends Layer {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(PngLayer.class);
 
+    /** {@inheritDoc} */
+    @Override
+    public PngLayer withWidth(String width) {
+        super.withWidth(width);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public PngLayer withHeight(String height) {
+        super.withHeight(height);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public PngLayer withLabel(String label) {
+        super.withLabel(label);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

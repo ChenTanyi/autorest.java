@@ -16,6 +16,7 @@ import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** FirewallPolicy Resource. */
 @JsonFlatten
@@ -226,6 +227,20 @@ public class FirewallPolicyInner extends Resource {
      */
     public FirewallPolicyInner withId(String id) {
         this.id = id;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public FirewallPolicyInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public FirewallPolicyInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

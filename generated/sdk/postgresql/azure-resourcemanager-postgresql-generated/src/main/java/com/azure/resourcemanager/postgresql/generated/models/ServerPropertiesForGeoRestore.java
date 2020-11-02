@@ -44,6 +44,49 @@ public final class ServerPropertiesForGeoRestore extends ServerPropertiesForCrea
         return this;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public ServerPropertiesForGeoRestore withVersion(ServerVersion version) {
+        super.withVersion(version);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ServerPropertiesForGeoRestore withSslEnforcement(SslEnforcementEnum sslEnforcement) {
+        super.withSslEnforcement(sslEnforcement);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ServerPropertiesForGeoRestore withMinimalTlsVersion(MinimalTlsVersionEnum minimalTlsVersion) {
+        super.withMinimalTlsVersion(minimalTlsVersion);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ServerPropertiesForGeoRestore withInfrastructureEncryption(
+        InfrastructureEncryption infrastructureEncryption) {
+        super.withInfrastructureEncryption(infrastructureEncryption);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ServerPropertiesForGeoRestore withPublicNetworkAccess(PublicNetworkAccessEnum publicNetworkAccess) {
+        super.withPublicNetworkAccess(publicNetworkAccess);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ServerPropertiesForGeoRestore withStorageProfile(StorageProfile storageProfile) {
+        super.withStorageProfile(storageProfile);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

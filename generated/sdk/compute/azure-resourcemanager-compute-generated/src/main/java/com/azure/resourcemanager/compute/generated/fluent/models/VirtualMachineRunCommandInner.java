@@ -14,6 +14,7 @@ import com.azure.resourcemanager.compute.generated.models.VirtualMachineRunComma
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** Describes a Virtual Machine run command. */
 @JsonFlatten
@@ -289,6 +290,20 @@ public class VirtualMachineRunCommandInner extends Resource {
      */
     public VirtualMachineRunCommandInstanceView instanceView() {
         return this.instanceView;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VirtualMachineRunCommandInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VirtualMachineRunCommandInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
+        return this;
     }
 
     /**

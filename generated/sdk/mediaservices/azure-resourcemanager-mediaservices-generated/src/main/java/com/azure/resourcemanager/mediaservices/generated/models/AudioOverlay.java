@@ -10,6 +10,7 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+import java.time.Duration;
 
 /** Describes the properties of an audio overlay. */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@odata\\.type")
@@ -18,6 +19,48 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Immutable
 public class AudioOverlay extends Overlay {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(AudioOverlay.class);
+
+    /** {@inheritDoc} */
+    @Override
+    public AudioOverlay withInputLabel(String inputLabel) {
+        super.withInputLabel(inputLabel);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public AudioOverlay withStart(Duration start) {
+        super.withStart(start);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public AudioOverlay withEnd(Duration end) {
+        super.withEnd(end);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public AudioOverlay withFadeInDuration(Duration fadeInDuration) {
+        super.withFadeInDuration(fadeInDuration);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public AudioOverlay withFadeOutDuration(Duration fadeOutDuration) {
+        super.withFadeOutDuration(fadeOutDuration);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public AudioOverlay withAudioGainLevel(Double audioGainLevel) {
+        super.withAudioGainLevel(audioGainLevel);
+        return this;
+    }
 
     /**
      * Validates the instance.

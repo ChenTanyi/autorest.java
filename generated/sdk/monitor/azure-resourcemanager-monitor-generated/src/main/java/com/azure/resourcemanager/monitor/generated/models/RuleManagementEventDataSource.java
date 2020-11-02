@@ -262,6 +262,13 @@ public class RuleManagementEventDataSource extends RuleDataSource {
         return this;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public RuleManagementEventDataSource withResourceUri(String resourceUri) {
+        super.withResourceUri(resourceUri);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

@@ -241,6 +241,13 @@ public class FrontendEndpointInner extends SubResource {
         return this.customHttpsConfiguration;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public FrontendEndpointInner withId(String id) {
+        super.withId(id);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

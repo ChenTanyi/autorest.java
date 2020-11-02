@@ -131,7 +131,7 @@ public interface InboundSecurityRule {
     InboundSecurityRule.Update update();
 
     /** The template for InboundSecurityRule update. */
-    interface Update extends UpdateStages.WithId, UpdateStages.WithName, UpdateStages.WithRules {
+    interface Update extends UpdateStages.WithName, UpdateStages.WithRules {
         /**
          * Executes the update request.
          *
@@ -149,16 +149,6 @@ public interface InboundSecurityRule {
     }
     /** The InboundSecurityRule update stages. */
     interface UpdateStages {
-        /** The stage of the InboundSecurityRule update allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Fully qualified resource Id for the resource..
-             *
-             * @param id Fully qualified resource Id for the resource.
-             * @return the next definition stage.
-             */
-            Update withId(String id);
-        }
         /** The stage of the InboundSecurityRule update allowing to specify name. */
         interface WithName {
             /**

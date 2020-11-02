@@ -148,11 +148,7 @@ public interface VirtualApplianceSite {
     VirtualApplianceSite.Update update();
 
     /** The template for VirtualApplianceSite update. */
-    interface Update
-        extends UpdateStages.WithId,
-            UpdateStages.WithName,
-            UpdateStages.WithAddressPrefix,
-            UpdateStages.WithO365Policy {
+    interface Update extends UpdateStages.WithName, UpdateStages.WithAddressPrefix, UpdateStages.WithO365Policy {
         /**
          * Executes the update request.
          *
@@ -170,16 +166,6 @@ public interface VirtualApplianceSite {
     }
     /** The VirtualApplianceSite update stages. */
     interface UpdateStages {
-        /** The stage of the VirtualApplianceSite update allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Fully qualified resource Id for the resource..
-             *
-             * @param id Fully qualified resource Id for the resource.
-             * @return the next definition stage.
-             */
-            Update withId(String id);
-        }
         /** The stage of the VirtualApplianceSite update allowing to specify name. */
         interface WithName {
             /**

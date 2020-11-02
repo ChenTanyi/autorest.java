@@ -13,6 +13,7 @@ import com.azure.resourcemanager.monitor.generated.models.AutoscaleProfile;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** The autoscale setting resource. */
 @JsonFlatten
@@ -157,6 +158,20 @@ public class AutoscaleSettingResourceInner extends Resource {
      */
     public AutoscaleSettingResourceInner withTargetResourceUri(String targetResourceUri) {
         this.targetResourceUri = targetResourceUri;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public AutoscaleSettingResourceInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public AutoscaleSettingResourceInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

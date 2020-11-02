@@ -13,6 +13,7 @@ import com.azure.resourcemanager.compute.generated.models.SubResourceReadOnly;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Specifies information about the dedicated host group that the dedicated hosts should be assigned to.
@@ -148,6 +149,20 @@ public class DedicatedHostGroupInner extends Resource {
      */
     public DedicatedHostGroupInner withSupportAutomaticPlacement(Boolean supportAutomaticPlacement) {
         this.supportAutomaticPlacement = supportAutomaticPlacement;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public DedicatedHostGroupInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public DedicatedHostGroupInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

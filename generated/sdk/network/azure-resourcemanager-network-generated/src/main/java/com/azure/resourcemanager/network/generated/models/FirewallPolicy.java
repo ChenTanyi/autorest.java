@@ -263,8 +263,7 @@ public interface FirewallPolicy {
             UpdateStages.WithBasePolicy,
             UpdateStages.WithThreatIntelMode,
             UpdateStages.WithThreatIntelWhitelist,
-            UpdateStages.WithDnsSettings,
-            UpdateStages.WithId {
+            UpdateStages.WithDnsSettings {
         /**
          * Executes the update request.
          *
@@ -331,16 +330,6 @@ public interface FirewallPolicy {
              * @return the next definition stage.
              */
             Update withDnsSettings(DnsSettings dnsSettings);
-        }
-        /** The stage of the FirewallPolicy update allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            Update withId(String id);
         }
     }
     /**

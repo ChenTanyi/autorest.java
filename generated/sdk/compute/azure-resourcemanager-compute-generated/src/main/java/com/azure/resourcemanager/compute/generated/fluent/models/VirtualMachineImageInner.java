@@ -16,6 +16,7 @@ import com.azure.resourcemanager.compute.generated.models.PurchasePlan;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** Describes a Virtual Machine Image. */
 @JsonFlatten
@@ -179,6 +180,34 @@ public class VirtualMachineImageInner extends VirtualMachineImageResourceInner {
      */
     public VirtualMachineImageInner withDisallowed(DisallowedConfiguration disallowed) {
         this.disallowed = disallowed;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VirtualMachineImageInner withName(String name) {
+        super.withName(name);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VirtualMachineImageInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VirtualMachineImageInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public VirtualMachineImageInner withId(String id) {
+        super.withId(id);
         return this;
     }
 

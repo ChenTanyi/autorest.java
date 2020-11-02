@@ -19,6 +19,7 @@ import com.azure.resourcemanager.compute.generated.models.SnapshotSku;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
+import java.util.Map;
 
 /** Snapshot resource. */
 @JsonFlatten
@@ -397,6 +398,20 @@ public class SnapshotInner extends Resource {
      */
     public SnapshotInner withDiskAccessId(String diskAccessId) {
         this.diskAccessId = diskAccessId;
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public SnapshotInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public SnapshotInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
         return this;
     }
 

@@ -124,6 +124,13 @@ public class StaticSiteBuildArmResourceInner extends ProxyOnlyResource {
         return this.status;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public StaticSiteBuildArmResourceInner withKind(String kind) {
+        super.withKind(kind);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

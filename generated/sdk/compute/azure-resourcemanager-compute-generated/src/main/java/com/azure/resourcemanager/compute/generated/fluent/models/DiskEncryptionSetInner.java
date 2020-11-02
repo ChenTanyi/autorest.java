@@ -14,6 +14,7 @@ import com.azure.resourcemanager.compute.generated.models.KeyVaultAndKeyReferenc
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import java.util.Map;
 
 /** disk encryption set resource. */
 @JsonFlatten
@@ -133,6 +134,20 @@ public class DiskEncryptionSetInner extends Resource {
      */
     public String provisioningState() {
         return this.provisioningState;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public DiskEncryptionSetInner withLocation(String location) {
+        super.withLocation(location);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public DiskEncryptionSetInner withTags(Map<String, String> tags) {
+        super.withTags(tags);
+        return this;
     }
 
     /**

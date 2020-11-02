@@ -134,7 +134,7 @@ public interface NetworkInterfaceTapConfiguration {
     NetworkInterfaceTapConfiguration.Update update();
 
     /** The template for NetworkInterfaceTapConfiguration update. */
-    interface Update extends UpdateStages.WithId, UpdateStages.WithName, UpdateStages.WithVirtualNetworkTap {
+    interface Update extends UpdateStages.WithName, UpdateStages.WithVirtualNetworkTap {
         /**
          * Executes the update request.
          *
@@ -152,16 +152,6 @@ public interface NetworkInterfaceTapConfiguration {
     }
     /** The NetworkInterfaceTapConfiguration update stages. */
     interface UpdateStages {
-        /** The stage of the NetworkInterfaceTapConfiguration update allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Fully qualified resource Id for the resource..
-             *
-             * @param id Fully qualified resource Id for the resource.
-             * @return the next definition stage.
-             */
-            Update withId(String id);
-        }
         /** The stage of the NetworkInterfaceTapConfiguration update allowing to specify name. */
         interface WithName {
             /**

@@ -167,9 +167,4 @@ public final class FirewallPolicyRuleCollectionGroupImpl
         this.innerModel().withRuleCollections(ruleCollections);
         return this;
     }
-
-    public FirewallPolicyRuleCollectionGroupImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
 }
