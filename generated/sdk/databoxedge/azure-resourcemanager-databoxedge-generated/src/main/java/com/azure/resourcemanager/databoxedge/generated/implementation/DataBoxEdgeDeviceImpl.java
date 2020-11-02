@@ -140,8 +140,8 @@ public final class DataBoxEdgeDeviceImpl
 
     private DataBoxEdgeDevicePatch updateParameters;
 
-    public DataBoxEdgeDeviceImpl withExistingResourceGroup(String deviceName) {
-        this.deviceName = deviceName;
+    public DataBoxEdgeDeviceImpl withExistingResourceGroup(String resourceGroupName) {
+        this.resourceGroupName = resourceGroupName;
         return this;
     }
 
@@ -166,7 +166,7 @@ public final class DataBoxEdgeDeviceImpl
     public DataBoxEdgeDeviceImpl(String name, DataBoxEdgeManager serviceManager) {
         this.innerObject = new DataBoxEdgeDeviceInner();
         this.serviceManager = serviceManager;
-        this.resourceGroupName = name;
+        this.deviceName = name;
     }
 
     public DataBoxEdgeDeviceImpl update() {
@@ -197,8 +197,8 @@ public final class DataBoxEdgeDeviceImpl
     public DataBoxEdgeDeviceImpl(DataBoxEdgeDeviceInner innerObject, DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");
+        this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");
+        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
     }
 
     public DataBoxEdgeDevice refresh() {

@@ -80,13 +80,13 @@ public interface ServerKey {
         /** The stage of the ServerKey definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
-             * Specifies serverName, keyName.
+             * Specifies serverName, resourceGroupName.
              *
              * @param serverName The name of the server.
-             * @param keyName The name of the PostgreSQL Server key to be operated on (updated or created).
+             * @param resourceGroupName The name of the resource group. The name is case insensitive.
              * @return the next definition stage.
              */
-            WithCreate withExistingServer(String serverName, String keyName);
+            WithCreate withExistingServer(String serverName, String resourceGroupName);
         }
         /**
          * The stage of the ServerKey definition which contains all the minimum required properties for the resource to

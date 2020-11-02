@@ -129,13 +129,13 @@ public interface Share {
         /** The stage of the Share definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
-             * Specifies deviceName, name.
+             * Specifies deviceName, resourceGroupName.
              *
              * @param deviceName The device name.
-             * @param name The share name.
+             * @param resourceGroupName The resource group name.
              * @return the next definition stage.
              */
-            WithShareStatus withExistingDataBoxEdgeDevice(String deviceName, String name);
+            WithShareStatus withExistingDataBoxEdgeDevice(String deviceName, String resourceGroupName);
         }
         /** The stage of the Share definition allowing to specify shareStatus. */
         interface WithShareStatus {

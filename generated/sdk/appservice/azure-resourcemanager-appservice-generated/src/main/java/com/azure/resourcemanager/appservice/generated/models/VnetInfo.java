@@ -111,14 +111,15 @@ public interface VnetInfo {
         /** The stage of the VnetInfo definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
-             * Specifies resourceGroupName, name, vnetName.
+             * Specifies resourceGroupName, name, slot.
              *
              * @param resourceGroupName Name of the resource group to which the resource belongs.
              * @param name Name of the app.
-             * @param vnetName Name of an existing Virtual Network.
+             * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update
+             *     connections for the production slot.
              * @return the next definition stage.
              */
-            WithCreate withExistingSlot(String resourceGroupName, String name, String vnetName);
+            WithCreate withExistingSlot(String resourceGroupName, String name, String slot);
         }
         /**
          * The stage of the VnetInfo definition which contains all the minimum required properties for the resource to

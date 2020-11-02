@@ -57,11 +57,11 @@ public final class VnetGatewayImpl implements VnetGateway, VnetGateway.Definitio
     private String slot;
 
     public VnetGatewayImpl withExistingVirtualNetworkConnection(
-        String resourceGroupName, String name, String vnetName, String gatewayName) {
+        String resourceGroupName, String name, String vnetName, String slot) {
         this.resourceGroupName = resourceGroupName;
         this.name = name;
         this.vnetName = vnetName;
-        this.gatewayName = gatewayName;
+        this.slot = slot;
         return this;
     }
 
@@ -90,7 +90,7 @@ public final class VnetGatewayImpl implements VnetGateway, VnetGateway.Definitio
     public VnetGatewayImpl(String name, WebSiteManager serviceManager) {
         this.innerObject = new VnetGatewayInner();
         this.serviceManager = serviceManager;
-        this.slot = name;
+        this.gatewayName = name;
     }
 
     public VnetGatewayImpl update() {
@@ -124,9 +124,9 @@ public final class VnetGatewayImpl implements VnetGateway, VnetGateway.Definitio
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
         this.name = Utils.getValueFromIdByName(innerObject.id(), "sites");
-        this.vnetName = Utils.getValueFromIdByName(innerObject.id(), "slots");
-        this.gatewayName = Utils.getValueFromIdByName(innerObject.id(), "virtualNetworkConnections");
-        this.slot = Utils.getValueFromIdByName(innerObject.id(), "gateways");
+        this.vnetName = Utils.getValueFromIdByName(innerObject.id(), "virtualNetworkConnections");
+        this.gatewayName = Utils.getValueFromIdByName(innerObject.id(), "gateways");
+        this.slot = Utils.getValueFromIdByName(innerObject.id(), "slots");
     }
 
     public VnetGateway refresh() {

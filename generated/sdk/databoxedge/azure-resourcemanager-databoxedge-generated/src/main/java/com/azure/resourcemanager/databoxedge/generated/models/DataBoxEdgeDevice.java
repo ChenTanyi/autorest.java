@@ -224,12 +224,12 @@ public interface DataBoxEdgeDevice {
         /** The stage of the DataBoxEdgeDevice definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
-             * Specifies deviceName.
+             * Specifies resourceGroupName.
              *
-             * @param deviceName The device name.
+             * @param resourceGroupName The resource group name.
              * @return the next definition stage.
              */
-            WithCreate withExistingResourceGroup(String deviceName);
+            WithCreate withExistingResourceGroup(String resourceGroupName);
         }
         /**
          * The stage of the DataBoxEdgeDevice definition which contains all the minimum required properties for the

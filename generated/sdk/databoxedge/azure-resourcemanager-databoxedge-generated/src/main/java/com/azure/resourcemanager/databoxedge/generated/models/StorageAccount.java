@@ -94,13 +94,13 @@ public interface StorageAccount {
         /** The stage of the StorageAccount definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
-             * Specifies deviceName, storageAccountName.
+             * Specifies deviceName, resourceGroupName.
              *
              * @param deviceName The device name.
-             * @param storageAccountName The StorageAccount name.
+             * @param resourceGroupName The resource group name.
              * @return the next definition stage.
              */
-            WithCreate withExistingDataBoxEdgeDevice(String deviceName, String storageAccountName);
+            WithCreate withExistingDataBoxEdgeDevice(String deviceName, String resourceGroupName);
         }
         /**
          * The stage of the StorageAccount definition which contains all the minimum required properties for the

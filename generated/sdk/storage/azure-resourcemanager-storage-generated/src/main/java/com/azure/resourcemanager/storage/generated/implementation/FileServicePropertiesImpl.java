@@ -54,7 +54,7 @@ public final class FileServicePropertiesImpl
 
     private String accountName;
 
-    public FileServicePropertiesImpl withExistingStorageAccount(String resourceGroupName) {
+    public FileServicePropertiesImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
         return this;
     }

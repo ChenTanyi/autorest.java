@@ -114,13 +114,13 @@ public interface StorageAccountCredential {
         /** The stage of the StorageAccountCredential definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
-             * Specifies deviceName, name.
+             * Specifies deviceName, resourceGroupName.
              *
              * @param deviceName The device name.
-             * @param name The storage account credential name.
+             * @param resourceGroupName The resource group name.
              * @return the next definition stage.
              */
-            WithAlias withExistingDataBoxEdgeDevice(String deviceName, String name);
+            WithAlias withExistingDataBoxEdgeDevice(String deviceName, String resourceGroupName);
         }
         /** The stage of the StorageAccountCredential definition allowing to specify alias. */
         interface WithAlias {

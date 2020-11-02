@@ -77,13 +77,13 @@ public interface User {
         /** The stage of the User definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
-             * Specifies deviceName, name.
+             * Specifies deviceName, resourceGroupName.
              *
              * @param deviceName The device name.
-             * @param name The user name.
+             * @param resourceGroupName The resource group name.
              * @return the next definition stage.
              */
-            WithUserType withExistingDataBoxEdgeDevice(String deviceName, String name);
+            WithUserType withExistingDataBoxEdgeDevice(String deviceName, String resourceGroupName);
         }
         /** The stage of the User definition allowing to specify userType. */
         interface WithUserType {

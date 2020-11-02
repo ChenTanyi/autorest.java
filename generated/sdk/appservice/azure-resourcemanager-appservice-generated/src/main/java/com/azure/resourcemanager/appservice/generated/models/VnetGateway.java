@@ -72,16 +72,17 @@ public interface VnetGateway {
         /** The stage of the VnetGateway definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
-             * Specifies resourceGroupName, name, vnetName, gatewayName.
+             * Specifies resourceGroupName, name, vnetName, slot.
              *
              * @param resourceGroupName Name of the resource group to which the resource belongs.
              * @param name Name of the app.
              * @param vnetName Name of the Virtual Network.
-             * @param gatewayName Name of the gateway. Currently, the only supported string is "primary".
+             * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update a gateway
+             *     for the production slot's Virtual Network.
              * @return the next definition stage.
              */
             WithCreate withExistingVirtualNetworkConnection(
-                String resourceGroupName, String name, String vnetName, String gatewayName);
+                String resourceGroupName, String name, String vnetName, String slot);
         }
         /**
          * The stage of the VnetGateway definition which contains all the minimum required properties for the resource

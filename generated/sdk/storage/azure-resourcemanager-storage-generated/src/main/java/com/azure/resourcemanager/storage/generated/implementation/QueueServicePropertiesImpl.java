@@ -44,7 +44,7 @@ public final class QueueServicePropertiesImpl
 
     private String accountName;
 
-    public QueueServicePropertiesImpl withExistingStorageAccount(String resourceGroupName) {
+    public QueueServicePropertiesImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
         return this;
     }

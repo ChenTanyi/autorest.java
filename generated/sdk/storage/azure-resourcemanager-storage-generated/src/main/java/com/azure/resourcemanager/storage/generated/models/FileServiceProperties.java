@@ -80,7 +80,7 @@ public interface FileServiceProperties {
              *     insensitive.
              * @return the next definition stage.
              */
-            WithCreate withExistingStorageAccount(String resourceGroupName);
+            WithCreate withExistingResourceGroup(String resourceGroupName);
         }
         /**
          * The stage of the FileServiceProperties definition which contains all the minimum required properties for the

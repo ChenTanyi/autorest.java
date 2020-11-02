@@ -83,15 +83,15 @@ public interface Container {
         /** The stage of the Container definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
-             * Specifies deviceName, storageAccountName, containerName.
+             * Specifies deviceName, storageAccountName, resourceGroupName.
              *
              * @param deviceName The device name.
              * @param storageAccountName The Storage Account Name.
-             * @param containerName The container name.
+             * @param resourceGroupName The resource group name.
              * @return the next definition stage.
              */
             WithDataFormat withExistingStorageAccount(
-                String deviceName, String storageAccountName, String containerName);
+                String deviceName, String storageAccountName, String resourceGroupName);
         }
         /** The stage of the Container definition allowing to specify dataFormat. */
         interface WithDataFormat {

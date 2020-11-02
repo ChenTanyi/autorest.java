@@ -80,7 +80,7 @@ public final class BlobServicePropertiesImpl
 
     private String accountName;
 
-    public BlobServicePropertiesImpl withExistingStorageAccount(String resourceGroupName) {
+    public BlobServicePropertiesImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
         return this;
     }

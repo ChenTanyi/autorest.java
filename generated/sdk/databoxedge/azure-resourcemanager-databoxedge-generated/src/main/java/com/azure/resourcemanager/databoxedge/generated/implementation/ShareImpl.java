@@ -106,9 +106,9 @@ public final class ShareImpl implements Share, Share.Definition, Share.Update {
 
     private String resourceGroupName;
 
-    public ShareImpl withExistingDataBoxEdgeDevice(String deviceName, String name) {
+    public ShareImpl withExistingDataBoxEdgeDevice(String deviceName, String resourceGroupName) {
         this.deviceName = deviceName;
-        this.name = name;
+        this.resourceGroupName = resourceGroupName;
         return this;
     }
 
@@ -133,7 +133,7 @@ public final class ShareImpl implements Share, Share.Definition, Share.Update {
     public ShareImpl(String name, DataBoxEdgeManager serviceManager) {
         this.innerObject = new ShareInner();
         this.serviceManager = serviceManager;
-        this.resourceGroupName = name;
+        this.name = name;
     }
 
     public ShareImpl update() {
@@ -161,9 +161,9 @@ public final class ShareImpl implements Share, Share.Definition, Share.Update {
     public ShareImpl(ShareInner innerObject, DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.name = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "shares");
+        this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");
+        this.name = Utils.getValueFromIdByName(innerObject.id(), "shares");
+        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
     }
 
     public Share refresh() {

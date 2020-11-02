@@ -63,10 +63,10 @@ public final class ContainerImpl implements Container, Container.Definition, Con
     private String resourceGroupName;
 
     public ContainerImpl withExistingStorageAccount(
-        String deviceName, String storageAccountName, String containerName) {
+        String deviceName, String storageAccountName, String resourceGroupName) {
         this.deviceName = deviceName;
         this.storageAccountName = storageAccountName;
-        this.containerName = containerName;
+        this.resourceGroupName = resourceGroupName;
         return this;
     }
 
@@ -92,7 +92,7 @@ public final class ContainerImpl implements Container, Container.Definition, Con
     public ContainerImpl(String name, DataBoxEdgeManager serviceManager) {
         this.innerObject = new ContainerInner();
         this.serviceManager = serviceManager;
-        this.resourceGroupName = name;
+        this.containerName = name;
     }
 
     public ContainerImpl update() {
@@ -121,10 +121,10 @@ public final class ContainerImpl implements Container, Container.Definition, Con
     public ContainerImpl(ContainerInner innerObject, DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.storageAccountName = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");
-        this.containerName = Utils.getValueFromIdByName(innerObject.id(), "storageAccounts");
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "containers");
+        this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");
+        this.storageAccountName = Utils.getValueFromIdByName(innerObject.id(), "storageAccounts");
+        this.containerName = Utils.getValueFromIdByName(innerObject.id(), "containers");
+        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
     }
 
     public Container refresh() {

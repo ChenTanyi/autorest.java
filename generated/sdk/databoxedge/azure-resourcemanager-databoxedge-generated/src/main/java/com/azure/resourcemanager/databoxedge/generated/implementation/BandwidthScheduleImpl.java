@@ -65,9 +65,9 @@ public final class BandwidthScheduleImpl
 
     private String resourceGroupName;
 
-    public BandwidthScheduleImpl withExistingDataBoxEdgeDevice(String deviceName, String name) {
+    public BandwidthScheduleImpl withExistingDataBoxEdgeDevice(String deviceName, String resourceGroupName) {
         this.deviceName = deviceName;
-        this.name = name;
+        this.resourceGroupName = resourceGroupName;
         return this;
     }
 
@@ -92,7 +92,7 @@ public final class BandwidthScheduleImpl
     public BandwidthScheduleImpl(String name, DataBoxEdgeManager serviceManager) {
         this.innerObject = new BandwidthScheduleInner();
         this.serviceManager = serviceManager;
-        this.resourceGroupName = name;
+        this.name = name;
     }
 
     public BandwidthScheduleImpl update() {
@@ -120,9 +120,9 @@ public final class BandwidthScheduleImpl
     public BandwidthScheduleImpl(BandwidthScheduleInner innerObject, DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.name = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "bandwidthSchedules");
+        this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");
+        this.name = Utils.getValueFromIdByName(innerObject.id(), "bandwidthSchedules");
+        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
     }
 
     public BandwidthSchedule refresh() {

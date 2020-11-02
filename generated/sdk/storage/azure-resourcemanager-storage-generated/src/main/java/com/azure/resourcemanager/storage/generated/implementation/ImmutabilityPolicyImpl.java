@@ -62,7 +62,7 @@ public final class ImmutabilityPolicyImpl
 
     private String updateIfMatch;
 
-    public ImmutabilityPolicyImpl withExistingContainer(String resourceGroupName, String accountName) {
+    public ImmutabilityPolicyImpl withExistingStorageAccount(String resourceGroupName, String accountName) {
         this.resourceGroupName = resourceGroupName;
         this.accountName = accountName;
         return this;

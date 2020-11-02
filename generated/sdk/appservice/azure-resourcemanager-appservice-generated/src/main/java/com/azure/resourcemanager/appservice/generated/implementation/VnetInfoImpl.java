@@ -89,10 +89,10 @@ public final class VnetInfoImpl implements VnetInfo, VnetInfo.Definition, VnetIn
 
     private String slot;
 
-    public VnetInfoImpl withExistingSlot(String resourceGroupName, String name, String vnetName) {
+    public VnetInfoImpl withExistingSlot(String resourceGroupName, String name, String slot) {
         this.resourceGroupName = resourceGroupName;
         this.name = name;
-        this.vnetName = vnetName;
+        this.slot = slot;
         return this;
     }
 
@@ -121,7 +121,7 @@ public final class VnetInfoImpl implements VnetInfo, VnetInfo.Definition, VnetIn
     public VnetInfoImpl(String name, WebSiteManager serviceManager) {
         this.innerObject = new VnetInfoInner();
         this.serviceManager = serviceManager;
-        this.slot = name;
+        this.vnetName = name;
     }
 
     public VnetInfoImpl update() {
@@ -154,8 +154,8 @@ public final class VnetInfoImpl implements VnetInfo, VnetInfo.Definition, VnetIn
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
         this.name = Utils.getValueFromIdByName(innerObject.id(), "sites");
-        this.vnetName = Utils.getValueFromIdByName(innerObject.id(), "slots");
-        this.slot = Utils.getValueFromIdByName(innerObject.id(), "virtualNetworkConnections");
+        this.vnetName = Utils.getValueFromIdByName(innerObject.id(), "virtualNetworkConnections");
+        this.slot = Utils.getValueFromIdByName(innerObject.id(), "slots");
     }
 
     public VnetInfo refresh() {

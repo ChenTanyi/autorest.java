@@ -123,12 +123,12 @@ public interface Profile {
         /** The stage of the Profile definition allowing to specify parent resource. */
         interface WithResourceGroup {
             /**
-             * Specifies profileName.
+             * Specifies resourceGroupName.
              *
-             * @param profileName The Profile identifier associated with the Tenant and Partner.
+             * @param resourceGroupName Name of the Resource group within the Azure subscription.
              * @return the next definition stage.
              */
-            WithCreate withExistingResourceGroup(String profileName);
+            WithCreate withExistingResourceGroup(String resourceGroupName);
         }
         /**
          * The stage of the Profile definition which contains all the minimum required properties for the resource to be

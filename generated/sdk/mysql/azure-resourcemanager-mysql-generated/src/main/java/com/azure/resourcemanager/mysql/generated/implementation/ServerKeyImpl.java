@@ -58,9 +58,9 @@ public final class ServerKeyImpl implements ServerKey, ServerKey.Definition, Ser
 
     private String resourceGroupName;
 
-    public ServerKeyImpl withExistingServer(String serverName, String keyName) {
+    public ServerKeyImpl withExistingServer(String serverName, String resourceGroupName) {
         this.serverName = serverName;
-        this.keyName = keyName;
+        this.resourceGroupName = resourceGroupName;
         return this;
     }
 
@@ -85,7 +85,7 @@ public final class ServerKeyImpl implements ServerKey, ServerKey.Definition, Ser
     public ServerKeyImpl(String name, MySqlManager serviceManager) {
         this.innerObject = new ServerKeyInner();
         this.serviceManager = serviceManager;
-        this.resourceGroupName = name;
+        this.keyName = name;
     }
 
     public ServerKeyImpl update() {
@@ -113,9 +113,9 @@ public final class ServerKeyImpl implements ServerKey, ServerKey.Definition, Ser
     public ServerKeyImpl(ServerKeyInner innerObject, MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.serverName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.keyName = Utils.getValueFromIdByName(innerObject.id(), "servers");
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "keys");
+        this.serverName = Utils.getValueFromIdByName(innerObject.id(), "servers");
+        this.keyName = Utils.getValueFromIdByName(innerObject.id(), "keys");
+        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
     }
 
     public ServerKey refresh() {

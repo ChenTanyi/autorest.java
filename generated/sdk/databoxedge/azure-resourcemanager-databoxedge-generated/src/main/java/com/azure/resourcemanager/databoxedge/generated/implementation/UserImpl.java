@@ -62,9 +62,9 @@ public final class UserImpl implements User, User.Definition, User.Update {
 
     private String resourceGroupName;
 
-    public UserImpl withExistingDataBoxEdgeDevice(String deviceName, String name) {
+    public UserImpl withExistingDataBoxEdgeDevice(String deviceName, String resourceGroupName) {
         this.deviceName = deviceName;
-        this.name = name;
+        this.resourceGroupName = resourceGroupName;
         return this;
     }
 
@@ -89,7 +89,7 @@ public final class UserImpl implements User, User.Definition, User.Update {
     public UserImpl(String name, DataBoxEdgeManager serviceManager) {
         this.innerObject = new UserInner();
         this.serviceManager = serviceManager;
-        this.resourceGroupName = name;
+        this.name = name;
     }
 
     public UserImpl update() {
@@ -117,9 +117,9 @@ public final class UserImpl implements User, User.Definition, User.Update {
     public UserImpl(UserInner innerObject, DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.name = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "users");
+        this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");
+        this.name = Utils.getValueFromIdByName(innerObject.id(), "users");
+        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
     }
 
     public User refresh() {

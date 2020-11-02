@@ -86,13 +86,13 @@ public interface BandwidthSchedule {
         /** The stage of the BandwidthSchedule definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
-             * Specifies deviceName, name.
+             * Specifies deviceName, resourceGroupName.
              *
              * @param deviceName The device name.
-             * @param name The bandwidth schedule name which needs to be added/updated.
+             * @param resourceGroupName The resource group name.
              * @return the next definition stage.
              */
-            WithStart withExistingDataBoxEdgeDevice(String deviceName, String name);
+            WithStart withExistingDataBoxEdgeDevice(String deviceName, String resourceGroupName);
         }
         /** The stage of the BandwidthSchedule definition allowing to specify start. */
         interface WithStart {

@@ -76,9 +76,9 @@ public final class StorageAccountCredentialImpl
 
     private String resourceGroupName;
 
-    public StorageAccountCredentialImpl withExistingDataBoxEdgeDevice(String deviceName, String name) {
+    public StorageAccountCredentialImpl withExistingDataBoxEdgeDevice(String deviceName, String resourceGroupName) {
         this.deviceName = deviceName;
-        this.name = name;
+        this.resourceGroupName = resourceGroupName;
         return this;
     }
 
@@ -103,7 +103,7 @@ public final class StorageAccountCredentialImpl
     public StorageAccountCredentialImpl(String name, DataBoxEdgeManager serviceManager) {
         this.innerObject = new StorageAccountCredentialInner();
         this.serviceManager = serviceManager;
-        this.resourceGroupName = name;
+        this.name = name;
     }
 
     public StorageAccountCredentialImpl update() {
@@ -131,9 +131,9 @@ public final class StorageAccountCredentialImpl
     public StorageAccountCredentialImpl(StorageAccountCredentialInner innerObject, DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.name = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "storageAccountCredentials");
+        this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");
+        this.name = Utils.getValueFromIdByName(innerObject.id(), "storageAccountCredentials");
+        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
     }
 
     public StorageAccountCredential refresh() {

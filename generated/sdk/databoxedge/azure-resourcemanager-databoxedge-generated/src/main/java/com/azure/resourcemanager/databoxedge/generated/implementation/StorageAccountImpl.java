@@ -66,9 +66,9 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
 
     private String resourceGroupName;
 
-    public StorageAccountImpl withExistingDataBoxEdgeDevice(String deviceName, String storageAccountName) {
+    public StorageAccountImpl withExistingDataBoxEdgeDevice(String deviceName, String resourceGroupName) {
         this.deviceName = deviceName;
-        this.storageAccountName = storageAccountName;
+        this.resourceGroupName = resourceGroupName;
         return this;
     }
 
@@ -93,7 +93,7 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
     public StorageAccountImpl(String name, DataBoxEdgeManager serviceManager) {
         this.innerObject = new StorageAccountInner();
         this.serviceManager = serviceManager;
-        this.resourceGroupName = name;
+        this.storageAccountName = name;
     }
 
     public StorageAccountImpl update() {
@@ -121,9 +121,9 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
     public StorageAccountImpl(StorageAccountInner innerObject, DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
-        this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.storageAccountName = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "storageAccounts");
+        this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");
+        this.storageAccountName = Utils.getValueFromIdByName(innerObject.id(), "storageAccounts");
+        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
     }
 
     public StorageAccount refresh() {

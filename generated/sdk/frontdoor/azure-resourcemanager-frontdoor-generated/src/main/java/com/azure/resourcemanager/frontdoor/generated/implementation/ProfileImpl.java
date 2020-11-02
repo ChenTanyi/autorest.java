@@ -79,8 +79,8 @@ public final class ProfileImpl implements Profile, Profile.Definition, Profile.U
 
     private ProfileUpdateModel updateParameters;
 
-    public ProfileImpl withExistingResourceGroup(String profileName) {
-        this.profileName = profileName;
+    public ProfileImpl withExistingResourceGroup(String resourceGroupName) {
+        this.resourceGroupName = resourceGroupName;
         return this;
     }
 
@@ -105,7 +105,7 @@ public final class ProfileImpl implements Profile, Profile.Definition, Profile.U
     public ProfileImpl(String name, FrontDoorManager serviceManager) {
         this.innerObject = new ProfileInner();
         this.serviceManager = serviceManager;
-        this.resourceGroupName = name;
+        this.profileName = name;
     }
 
     public ProfileImpl update() {

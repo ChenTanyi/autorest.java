@@ -92,7 +92,7 @@ public interface ImmutabilityPolicy {
              *     names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
              * @return the next definition stage.
              */
-            WithCreate withExistingContainer(String resourceGroupName, String accountName);
+            WithCreate withExistingStorageAccount(String resourceGroupName, String accountName);
         }
         /**
          * The stage of the ImmutabilityPolicy definition which contains all the minimum required properties for the

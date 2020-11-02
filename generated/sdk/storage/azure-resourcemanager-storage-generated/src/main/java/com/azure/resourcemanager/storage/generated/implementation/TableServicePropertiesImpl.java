@@ -44,7 +44,7 @@ public final class TableServicePropertiesImpl
 
     private String accountName;
 
-    public TableServicePropertiesImpl withExistingStorageAccount(String resourceGroupName) {
+    public TableServicePropertiesImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
         return this;
     }

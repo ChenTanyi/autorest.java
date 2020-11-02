@@ -66,7 +66,7 @@ public interface QueueServiceProperties {
              *     insensitive.
              * @return the next definition stage.
              */
-            WithCreate withExistingStorageAccount(String resourceGroupName);
+            WithCreate withExistingResourceGroup(String resourceGroupName);
         }
         /**
          * The stage of the QueueServiceProperties definition which contains all the minimum required properties for the
