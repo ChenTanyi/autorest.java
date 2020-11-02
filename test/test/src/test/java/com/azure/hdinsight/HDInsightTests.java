@@ -12,6 +12,7 @@ import com.azure.resourcemanager.hdinsight.generated.models.ComputeProfile;
 import com.azure.resourcemanager.hdinsight.generated.models.HardwareProfile;
 import com.azure.resourcemanager.hdinsight.generated.models.LinuxOperatingSystemProfile;
 import com.azure.resourcemanager.hdinsight.generated.models.OSType;
+import com.azure.resourcemanager.hdinsight.generated.models.Operation;
 import com.azure.resourcemanager.hdinsight.generated.models.OsProfile;
 import com.azure.resourcemanager.hdinsight.generated.models.Role;
 import com.azure.resourcemanager.hdinsight.generated.models.StorageProfile;
@@ -107,5 +108,21 @@ public class HDInsightTests extends Base {
                 .create();
 
         Assertions.assertNotNull(cluster);
+    }
+
+    @Test
+    public void testListOperations() {
+        HDInsightManager hdInsightManager = HDInsightManager.configure()
+                .withHttpClient(client)
+                .withLogOptions(new HttpLogOptions().setLogLevel(HttpLogDetailLevel.BODY_AND_HEADERS))
+                .authenticate(credential, profile);
+
+        int operationCount = 0;
+        for (Operation operation : hdInsightManager.operations().list()) {
+            Assertions.assertNotNull(operation);
+            Assertions.assertNotNull(operation.name());
+            ++operationCount;
+        }
+        Assertions.assertTrue(operationCount > 0);
     }
 }
