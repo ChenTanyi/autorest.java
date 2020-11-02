@@ -170,8 +170,7 @@ public interface VpnGateway {
                 DefinitionStages.WithVirtualHub,
                 DefinitionStages.WithConnections,
                 DefinitionStages.WithBgpSettings,
-                DefinitionStages.WithVpnGatewayScaleUnit,
-                DefinitionStages.WithId {
+                DefinitionStages.WithVpnGatewayScaleUnit {
             /**
              * Executes the create request.
              *
@@ -236,16 +235,6 @@ public interface VpnGateway {
              * @return the next definition stage.
              */
             WithCreate withVpnGatewayScaleUnit(Integer vpnGatewayScaleUnit);
-        }
-        /** The stage of the VpnGateway definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

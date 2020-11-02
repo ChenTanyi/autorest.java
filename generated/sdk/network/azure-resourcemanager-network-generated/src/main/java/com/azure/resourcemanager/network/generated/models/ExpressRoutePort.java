@@ -215,8 +215,7 @@ public interface ExpressRoutePort {
                 DefinitionStages.WithPeeringLocation,
                 DefinitionStages.WithBandwidthInGbps,
                 DefinitionStages.WithEncapsulation,
-                DefinitionStages.WithLinks,
-                DefinitionStages.WithId {
+                DefinitionStages.WithLinks {
             /**
              * Executes the create request.
              *
@@ -293,16 +292,6 @@ public interface ExpressRoutePort {
              * @return the next definition stage.
              */
             WithCreate withLinks(List<ExpressRouteLinkInner> links);
-        }
-        /** The stage of the ExpressRoutePort definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

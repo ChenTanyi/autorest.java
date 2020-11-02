@@ -184,8 +184,7 @@ public interface IpAllocation {
                 DefinitionStages.WithPrefixLength,
                 DefinitionStages.WithPrefixType,
                 DefinitionStages.WithIpamAllocationId,
-                DefinitionStages.WithAllocationTags,
-                DefinitionStages.WithId {
+                DefinitionStages.WithAllocationTags {
             /**
              * Executes the create request.
              *
@@ -270,16 +269,6 @@ public interface IpAllocation {
              * @return the next definition stage.
              */
             WithCreate withAllocationTags(Map<String, String> allocationTags);
-        }
-        /** The stage of the IpAllocation definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

@@ -268,11 +268,6 @@ public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.
         return this;
     }
 
-    public PublicIpPrefixImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     private boolean isInCreateMode() {
         return this.innerModel().id() == null;
     }

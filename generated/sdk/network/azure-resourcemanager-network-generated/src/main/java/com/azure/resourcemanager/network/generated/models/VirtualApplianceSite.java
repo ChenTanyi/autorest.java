@@ -93,10 +93,7 @@ public interface VirtualApplianceSite {
          * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
-            extends DefinitionStages.WithId,
-                DefinitionStages.WithName,
-                DefinitionStages.WithAddressPrefix,
-                DefinitionStages.WithO365Policy {
+            extends DefinitionStages.WithName, DefinitionStages.WithAddressPrefix, DefinitionStages.WithO365Policy {
             /**
              * Executes the create request.
              *
@@ -111,16 +108,6 @@ public interface VirtualApplianceSite {
              * @return the created resource.
              */
             VirtualApplianceSite create(Context context);
-        }
-        /** The stage of the VirtualApplianceSite definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Fully qualified resource Id for the resource..
-             *
-             * @param id Fully qualified resource Id for the resource.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
         /** The stage of the VirtualApplianceSite definition allowing to specify name. */
         interface WithName {

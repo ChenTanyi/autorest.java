@@ -108,10 +108,7 @@ public interface HubRouteTable {
          * to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
-            extends DefinitionStages.WithId,
-                DefinitionStages.WithName,
-                DefinitionStages.WithRoutes,
-                DefinitionStages.WithLabels {
+            extends DefinitionStages.WithName, DefinitionStages.WithRoutes, DefinitionStages.WithLabels {
             /**
              * Executes the create request.
              *
@@ -126,16 +123,6 @@ public interface HubRouteTable {
              * @return the created resource.
              */
             HubRouteTable create(Context context);
-        }
-        /** The stage of the HubRouteTable definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Fully qualified resource Id for the resource..
-             *
-             * @param id Fully qualified resource Id for the resource.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
         /** The stage of the HubRouteTable definition allowing to specify name. */
         interface WithName {

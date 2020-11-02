@@ -294,11 +294,6 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
         return this;
     }
 
-    public VirtualNetworkImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     private boolean isInCreateMode() {
         return this.innerModel().id() == null;
     }

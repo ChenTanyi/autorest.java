@@ -302,11 +302,6 @@ public final class NetworkInterfaceImpl
         return this;
     }
 
-    public NetworkInterfaceImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     private boolean isInCreateMode() {
         return this.innerModel().id() == null;
     }

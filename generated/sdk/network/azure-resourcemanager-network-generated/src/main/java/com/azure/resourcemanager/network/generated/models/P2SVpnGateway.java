@@ -177,8 +177,7 @@ public interface P2SVpnGateway {
                 DefinitionStages.WithP2SConnectionConfigurations,
                 DefinitionStages.WithVpnGatewayScaleUnit,
                 DefinitionStages.WithVpnServerConfiguration,
-                DefinitionStages.WithCustomDnsServers,
-                DefinitionStages.WithId {
+                DefinitionStages.WithCustomDnsServers {
             /**
              * Executes the create request.
              *
@@ -255,16 +254,6 @@ public interface P2SVpnGateway {
              * @return the next definition stage.
              */
             WithCreate withCustomDnsServers(List<String> customDnsServers);
-        }
-        /** The stage of the P2SVpnGateway definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

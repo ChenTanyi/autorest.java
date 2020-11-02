@@ -198,8 +198,7 @@ public interface ExpressRouteCrossConnection {
                 DefinitionStages.WithExpressRouteCircuit,
                 DefinitionStages.WithServiceProviderProvisioningState,
                 DefinitionStages.WithServiceProviderNotes,
-                DefinitionStages.WithPeerings,
-                DefinitionStages.WithId {
+                DefinitionStages.WithPeerings {
             /**
              * Executes the create request.
              *
@@ -270,16 +269,6 @@ public interface ExpressRouteCrossConnection {
              * @return the next definition stage.
              */
             WithCreate withPeerings(List<ExpressRouteCrossConnectionPeeringInner> peerings);
-        }
-        /** The stage of the ExpressRouteCrossConnection definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

@@ -253,11 +253,6 @@ public final class NatGatewayImpl implements NatGateway, NatGateway.Definition, 
         return this;
     }
 
-    public NatGatewayImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     private boolean isInCreateMode() {
         return this.innerModel().id() == null;
     }

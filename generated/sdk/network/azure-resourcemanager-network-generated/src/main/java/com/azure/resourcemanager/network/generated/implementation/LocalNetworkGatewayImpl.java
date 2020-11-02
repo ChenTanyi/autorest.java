@@ -218,11 +218,6 @@ public final class LocalNetworkGatewayImpl
         return this;
     }
 
-    public LocalNetworkGatewayImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     private boolean isInCreateMode() {
         return this.innerModel().id() == null;
     }

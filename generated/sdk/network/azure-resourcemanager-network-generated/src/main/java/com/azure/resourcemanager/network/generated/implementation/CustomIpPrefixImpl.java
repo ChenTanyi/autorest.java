@@ -225,11 +225,6 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
         return this;
     }
 
-    public CustomIpPrefixImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     private boolean isInCreateMode() {
         return this.innerModel().id() == null;
     }

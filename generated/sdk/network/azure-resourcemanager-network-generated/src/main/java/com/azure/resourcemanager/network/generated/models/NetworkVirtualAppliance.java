@@ -214,8 +214,7 @@ public interface NetworkVirtualAppliance {
                 DefinitionStages.WithVirtualHub,
                 DefinitionStages.WithCloudInitConfigurationBlobs,
                 DefinitionStages.WithCloudInitConfiguration,
-                DefinitionStages.WithVirtualApplianceAsn,
-                DefinitionStages.WithId {
+                DefinitionStages.WithVirtualApplianceAsn {
             /**
              * Executes the create request.
              *
@@ -311,16 +310,6 @@ public interface NetworkVirtualAppliance {
              * @return the next definition stage.
              */
             WithCreate withVirtualApplianceAsn(Long virtualApplianceAsn);
-        }
-        /** The stage of the NetworkVirtualAppliance definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

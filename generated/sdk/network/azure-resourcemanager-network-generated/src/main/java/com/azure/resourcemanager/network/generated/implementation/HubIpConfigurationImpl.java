@@ -161,11 +161,6 @@ public final class HubIpConfigurationImpl
         return this;
     }
 
-    public HubIpConfigurationImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     public HubIpConfigurationImpl withName(String name) {
         this.innerModel().withName(name);
         return this;
@@ -188,6 +183,11 @@ public final class HubIpConfigurationImpl
 
     public HubIpConfigurationImpl withPublicIpAddress(PublicIpAddressInner publicIpAddress) {
         this.innerModel().withPublicIpAddress(publicIpAddress);
+        return this;
+    }
+
+    public HubIpConfigurationImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 }

@@ -99,10 +99,7 @@ public interface BgpConnection {
          * to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
-            extends DefinitionStages.WithId,
-                DefinitionStages.WithName,
-                DefinitionStages.WithPeerAsn,
-                DefinitionStages.WithPeerIp {
+            extends DefinitionStages.WithName, DefinitionStages.WithPeerAsn, DefinitionStages.WithPeerIp {
             /**
              * Executes the create request.
              *
@@ -117,16 +114,6 @@ public interface BgpConnection {
              * @return the created resource.
              */
             BgpConnection create(Context context);
-        }
-        /** The stage of the BgpConnection definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Fully qualified resource Id for the resource..
-             *
-             * @param id Fully qualified resource Id for the resource.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
         /** The stage of the BgpConnection definition allowing to specify name. */
         interface WithName {

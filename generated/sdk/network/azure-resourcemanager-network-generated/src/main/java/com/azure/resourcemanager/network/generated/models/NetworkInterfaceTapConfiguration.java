@@ -87,8 +87,7 @@ public interface NetworkInterfaceTapConfiguration {
          * The stage of the NetworkInterfaceTapConfiguration definition which contains all the minimum required
          * properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate
-            extends DefinitionStages.WithId, DefinitionStages.WithName, DefinitionStages.WithVirtualNetworkTap {
+        interface WithCreate extends DefinitionStages.WithName, DefinitionStages.WithVirtualNetworkTap {
             /**
              * Executes the create request.
              *
@@ -103,16 +102,6 @@ public interface NetworkInterfaceTapConfiguration {
              * @return the created resource.
              */
             NetworkInterfaceTapConfiguration create(Context context);
-        }
-        /** The stage of the NetworkInterfaceTapConfiguration definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Fully qualified resource Id for the resource..
-             *
-             * @param id Fully qualified resource Id for the resource.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
         /** The stage of the NetworkInterfaceTapConfiguration definition allowing to specify name. */
         interface WithName {

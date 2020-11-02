@@ -198,8 +198,7 @@ public interface DscpConfiguration {
                 DefinitionStages.WithDestinationIpRanges,
                 DefinitionStages.WithSourcePortRanges,
                 DefinitionStages.WithDestinationPortRanges,
-                DefinitionStages.WithProtocol,
-                DefinitionStages.WithId {
+                DefinitionStages.WithProtocol {
             /**
              * Executes the create request.
              *
@@ -284,16 +283,6 @@ public interface DscpConfiguration {
              * @return the next definition stage.
              */
             WithCreate withProtocol(ProtocolType protocol);
-        }
-        /** The stage of the DscpConfiguration definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

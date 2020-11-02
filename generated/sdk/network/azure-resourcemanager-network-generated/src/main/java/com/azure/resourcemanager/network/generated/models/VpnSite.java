@@ -203,8 +203,7 @@ public interface VpnSite {
                 DefinitionStages.WithBgpProperties,
                 DefinitionStages.WithIsSecuritySite,
                 DefinitionStages.WithVpnSiteLinks,
-                DefinitionStages.WithO365Policy,
-                DefinitionStages.WithId {
+                DefinitionStages.WithO365Policy {
             /**
              * Executes the create request.
              *
@@ -319,16 +318,6 @@ public interface VpnSite {
              * @return the next definition stage.
              */
             WithCreate withO365Policy(O365PolicyProperties o365Policy);
-        }
-        /** The stage of the VpnSite definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

@@ -184,8 +184,7 @@ public interface NatGateway {
                 DefinitionStages.WithZones,
                 DefinitionStages.WithIdleTimeoutInMinutes,
                 DefinitionStages.WithPublicIpAddresses,
-                DefinitionStages.WithPublicIpPrefixes,
-                DefinitionStages.WithId {
+                DefinitionStages.WithPublicIpPrefixes {
             /**
              * Executes the create request.
              *
@@ -263,16 +262,6 @@ public interface NatGateway {
              * @return the next definition stage.
              */
             WithCreate withPublicIpPrefixes(List<SubResource> publicIpPrefixes);
-        }
-        /** The stage of the NatGateway definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

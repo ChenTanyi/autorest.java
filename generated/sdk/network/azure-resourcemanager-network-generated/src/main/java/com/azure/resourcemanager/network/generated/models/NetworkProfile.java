@@ -151,9 +151,7 @@ public interface NetworkProfile {
          * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
-            extends DefinitionStages.WithTags,
-                DefinitionStages.WithContainerNetworkInterfaceConfigurations,
-                DefinitionStages.WithId {
+            extends DefinitionStages.WithTags, DefinitionStages.WithContainerNetworkInterfaceConfigurations {
             /**
              * Executes the create request.
              *
@@ -190,16 +188,6 @@ public interface NetworkProfile {
              */
             WithCreate withContainerNetworkInterfaceConfigurations(
                 List<ContainerNetworkInterfaceConfiguration> containerNetworkInterfaceConfigurations);
-        }
-        /** The stage of the NetworkProfile definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

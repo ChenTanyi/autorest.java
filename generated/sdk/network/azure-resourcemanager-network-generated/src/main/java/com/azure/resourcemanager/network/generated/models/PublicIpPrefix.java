@@ -208,8 +208,7 @@ public interface PublicIpPrefix {
                 DefinitionStages.WithPublicIpAddressVersion,
                 DefinitionStages.WithIpTags,
                 DefinitionStages.WithPrefixLength,
-                DefinitionStages.WithCustomIpPrefix,
-                DefinitionStages.WithId {
+                DefinitionStages.WithCustomIpPrefix {
             /**
              * Executes the create request.
              *
@@ -295,16 +294,6 @@ public interface PublicIpPrefix {
              * @return the next definition stage.
              */
             WithCreate withCustomIpPrefix(SubResource customIpPrefix);
-        }
-        /** The stage of the PublicIpPrefix definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

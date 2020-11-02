@@ -127,8 +127,7 @@ public interface ExpressRouteCircuitConnection {
          * for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
-            extends DefinitionStages.WithId,
-                DefinitionStages.WithName,
+            extends DefinitionStages.WithName,
                 DefinitionStages.WithExpressRouteCircuitPeering,
                 DefinitionStages.WithPeerExpressRouteCircuitPeering,
                 DefinitionStages.WithAddressPrefix,
@@ -148,16 +147,6 @@ public interface ExpressRouteCircuitConnection {
              * @return the created resource.
              */
             ExpressRouteCircuitConnection create(Context context);
-        }
-        /** The stage of the ExpressRouteCircuitConnection definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Fully qualified resource Id for the resource..
-             *
-             * @param id Fully qualified resource Id for the resource.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
         /** The stage of the ExpressRouteCircuitConnection definition allowing to specify name. */
         interface WithName {

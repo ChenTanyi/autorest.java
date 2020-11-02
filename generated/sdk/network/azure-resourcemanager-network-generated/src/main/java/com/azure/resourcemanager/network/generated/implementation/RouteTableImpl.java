@@ -219,11 +219,6 @@ public final class RouteTableImpl implements RouteTable, RouteTable.Definition, 
         return this;
     }
 
-    public RouteTableImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     private boolean isInCreateMode() {
         return this.innerModel().id() == null;
     }

@@ -218,8 +218,7 @@ public interface ExpressRouteCircuitPeering {
          * the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
-            extends DefinitionStages.WithId,
-                DefinitionStages.WithName,
+            extends DefinitionStages.WithName,
                 DefinitionStages.WithPeeringType,
                 DefinitionStages.WithState,
                 DefinitionStages.WithAzureAsn,
@@ -251,16 +250,6 @@ public interface ExpressRouteCircuitPeering {
              * @return the created resource.
              */
             ExpressRouteCircuitPeering create(Context context);
-        }
-        /** The stage of the ExpressRouteCircuitPeering definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Fully qualified resource Id for the resource..
-             *
-             * @param id Fully qualified resource Id for the resource.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
         /** The stage of the ExpressRouteCircuitPeering definition allowing to specify name. */
         interface WithName {

@@ -329,11 +329,6 @@ public final class ExpressRouteCircuitImpl
         return this;
     }
 
-    public ExpressRouteCircuitImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     private boolean isInCreateMode() {
         return this.innerModel().id() == null;
     }

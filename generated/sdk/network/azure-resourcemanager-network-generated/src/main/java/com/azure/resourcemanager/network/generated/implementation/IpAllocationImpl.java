@@ -242,11 +242,6 @@ public final class IpAllocationImpl implements IpAllocation, IpAllocation.Defini
         return this;
     }
 
-    public IpAllocationImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     private boolean isInCreateMode() {
         return this.innerModel().id() == null;
     }

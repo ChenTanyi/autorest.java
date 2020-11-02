@@ -243,8 +243,7 @@ public interface VpnServerConfiguration {
                 DefinitionStages.WithRadiusServerAddress,
                 DefinitionStages.WithRadiusServerSecret,
                 DefinitionStages.WithRadiusServers,
-                DefinitionStages.WithAadAuthenticationParameters,
-                DefinitionStages.WithId {
+                DefinitionStages.WithAadAuthenticationParameters {
             /**
              * Executes the create request.
              *
@@ -401,16 +400,6 @@ public interface VpnServerConfiguration {
              * @return the next definition stage.
              */
             WithCreate withAadAuthenticationParameters(AadAuthenticationParameters aadAuthenticationParameters);
-        }
-        /** The stage of the VpnServerConfiguration definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

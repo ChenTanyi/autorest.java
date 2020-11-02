@@ -225,8 +225,7 @@ public interface PublicIpAddress {
                 DefinitionStages.WithIpTags,
                 DefinitionStages.WithIpAddress,
                 DefinitionStages.WithPublicIpPrefix,
-                DefinitionStages.WithIdleTimeoutInMinutes,
-                DefinitionStages.WithId {
+                DefinitionStages.WithIdleTimeoutInMinutes {
             /**
              * Executes the create request.
              *
@@ -354,16 +353,6 @@ public interface PublicIpAddress {
              * @return the next definition stage.
              */
             WithCreate withIdleTimeoutInMinutes(Integer idleTimeoutInMinutes);
-        }
-        /** The stage of the PublicIpAddress definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

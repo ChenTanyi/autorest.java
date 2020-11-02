@@ -127,11 +127,6 @@ public final class InboundSecurityRuleImpl
         this.ruleCollectionName = Utils.getValueFromIdByName(innerObject.id(), "inboundSecurityRules");
     }
 
-    public InboundSecurityRuleImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     public InboundSecurityRuleImpl withName(String name) {
         this.innerModel().withName(name);
         return this;
@@ -139,6 +134,11 @@ public final class InboundSecurityRuleImpl
 
     public InboundSecurityRuleImpl withRules(List<InboundSecurityRules> rules) {
         this.innerModel().withRules(rules);
+        return this;
+    }
+
+    public InboundSecurityRuleImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 }

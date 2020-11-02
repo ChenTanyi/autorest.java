@@ -245,8 +245,7 @@ public interface ExpressRouteCircuit {
                 DefinitionStages.WithExpressRoutePort,
                 DefinitionStages.WithBandwidthInGbps,
                 DefinitionStages.WithGatewayManagerEtag,
-                DefinitionStages.WithGlobalReachEnabled,
-                DefinitionStages.WithId {
+                DefinitionStages.WithGlobalReachEnabled {
             /**
              * Executes the create request.
              *
@@ -408,16 +407,6 @@ public interface ExpressRouteCircuit {
              * @return the next definition stage.
              */
             WithCreate withGlobalReachEnabled(Boolean globalReachEnabled);
-        }
-        /** The stage of the ExpressRouteCircuit definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

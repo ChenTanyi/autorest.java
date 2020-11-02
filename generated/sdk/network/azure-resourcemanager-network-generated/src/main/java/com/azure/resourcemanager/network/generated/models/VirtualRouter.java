@@ -169,8 +169,7 @@ public interface VirtualRouter {
                 DefinitionStages.WithVirtualRouterAsn,
                 DefinitionStages.WithVirtualRouterIps,
                 DefinitionStages.WithHostedSubnet,
-                DefinitionStages.WithHostedGateway,
-                DefinitionStages.WithId {
+                DefinitionStages.WithHostedGateway {
             /**
              * Executes the create request.
              *
@@ -235,16 +234,6 @@ public interface VirtualRouter {
              * @return the next definition stage.
              */
             WithCreate withHostedGateway(SubResource hostedGateway);
-        }
-        /** The stage of the VirtualRouter definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

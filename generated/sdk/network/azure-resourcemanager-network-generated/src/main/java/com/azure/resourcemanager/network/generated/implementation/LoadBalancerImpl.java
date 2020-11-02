@@ -331,11 +331,6 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
         return this;
     }
 
-    public LoadBalancerImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     private boolean isInCreateMode() {
         return this.innerModel().id() == null;
     }

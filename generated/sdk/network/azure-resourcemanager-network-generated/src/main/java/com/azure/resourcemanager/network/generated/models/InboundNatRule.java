@@ -142,8 +142,7 @@ public interface InboundNatRule {
          * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
-            extends DefinitionStages.WithId,
-                DefinitionStages.WithName,
+            extends DefinitionStages.WithName,
                 DefinitionStages.WithFrontendIpConfiguration,
                 DefinitionStages.WithProtocol,
                 DefinitionStages.WithFrontendPort,
@@ -165,16 +164,6 @@ public interface InboundNatRule {
              * @return the created resource.
              */
             InboundNatRule create(Context context);
-        }
-        /** The stage of the InboundNatRule definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Fully qualified resource Id for the resource..
-             *
-             * @param id Fully qualified resource Id for the resource.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
         /** The stage of the InboundNatRule definition allowing to specify name. */
         interface WithName {

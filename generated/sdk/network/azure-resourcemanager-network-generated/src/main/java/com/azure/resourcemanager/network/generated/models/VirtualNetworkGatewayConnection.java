@@ -316,8 +316,7 @@ public interface VirtualNetworkGatewayConnection {
                 DefinitionStages.WithUsePolicyBasedTrafficSelectors,
                 DefinitionStages.WithIpsecPolicies,
                 DefinitionStages.WithTrafficSelectorPolicies,
-                DefinitionStages.WithExpressRouteGatewayBypass,
-                DefinitionStages.WithId {
+                DefinitionStages.WithExpressRouteGatewayBypass {
             /**
              * Executes the create request.
              *
@@ -488,16 +487,6 @@ public interface VirtualNetworkGatewayConnection {
              * @return the next definition stage.
              */
             WithCreate withExpressRouteGatewayBypass(Boolean expressRouteGatewayBypass);
-        }
-        /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

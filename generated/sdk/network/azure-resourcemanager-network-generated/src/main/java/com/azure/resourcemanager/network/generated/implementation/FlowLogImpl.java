@@ -241,11 +241,6 @@ public final class FlowLogImpl implements FlowLog, FlowLog.Definition, FlowLog.U
         return this;
     }
 
-    public FlowLogImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     private boolean isInCreateMode() {
         return this.innerModel().id() == null;
     }

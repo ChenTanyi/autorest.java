@@ -275,11 +275,6 @@ public final class VpnSiteImpl implements VpnSite, VpnSite.Definition, VpnSite.U
         return this;
     }
 
-    public VpnSiteImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     private boolean isInCreateMode() {
         return this.innerModel().id() == null;
     }

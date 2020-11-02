@@ -172,11 +172,6 @@ public final class InboundNatRuleImpl implements InboundNatRule, InboundNatRule.
         return this;
     }
 
-    public InboundNatRuleImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     public InboundNatRuleImpl withName(String name) {
         this.innerModel().withName(name);
         return this;
@@ -214,6 +209,11 @@ public final class InboundNatRuleImpl implements InboundNatRule, InboundNatRule.
 
     public InboundNatRuleImpl withEnableTcpReset(Boolean enableTcpReset) {
         this.innerModel().withEnableTcpReset(enableTcpReset);
+        return this;
+    }
+
+    public InboundNatRuleImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 }

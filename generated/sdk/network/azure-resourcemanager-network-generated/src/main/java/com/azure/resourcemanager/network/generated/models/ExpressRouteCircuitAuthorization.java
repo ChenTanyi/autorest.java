@@ -94,8 +94,7 @@ public interface ExpressRouteCircuitAuthorization {
          * properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
-            extends DefinitionStages.WithId,
-                DefinitionStages.WithName,
+            extends DefinitionStages.WithName,
                 DefinitionStages.WithAuthorizationKey,
                 DefinitionStages.WithAuthorizationUseStatus {
             /**
@@ -112,16 +111,6 @@ public interface ExpressRouteCircuitAuthorization {
              * @return the created resource.
              */
             ExpressRouteCircuitAuthorization create(Context context);
-        }
-        /** The stage of the ExpressRouteCircuitAuthorization definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Fully qualified resource Id for the resource..
-             *
-             * @param id Fully qualified resource Id for the resource.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
         /** The stage of the ExpressRouteCircuitAuthorization definition allowing to specify name. */
         interface WithName {

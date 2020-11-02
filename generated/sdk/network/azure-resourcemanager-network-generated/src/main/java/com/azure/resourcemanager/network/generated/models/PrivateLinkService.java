@@ -202,8 +202,7 @@ public interface PrivateLinkService {
                 DefinitionStages.WithVisibility,
                 DefinitionStages.WithAutoApproval,
                 DefinitionStages.WithFqdns,
-                DefinitionStages.WithEnableProxyProtocol,
-                DefinitionStages.WithId {
+                DefinitionStages.WithEnableProxyProtocol {
             /**
              * Executes the create request.
              *
@@ -292,16 +291,6 @@ public interface PrivateLinkService {
              * @return the next definition stage.
              */
             WithCreate withEnableProxyProtocol(Boolean enableProxyProtocol);
-        }
-        /** The stage of the PrivateLinkService definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

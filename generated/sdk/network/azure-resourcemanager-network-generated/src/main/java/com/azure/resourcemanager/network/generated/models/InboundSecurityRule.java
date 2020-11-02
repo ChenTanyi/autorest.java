@@ -86,7 +86,7 @@ public interface InboundSecurityRule {
          * The stage of the InboundSecurityRule definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate extends DefinitionStages.WithId, DefinitionStages.WithName, DefinitionStages.WithRules {
+        interface WithCreate extends DefinitionStages.WithName, DefinitionStages.WithRules {
             /**
              * Executes the create request.
              *
@@ -101,16 +101,6 @@ public interface InboundSecurityRule {
              * @return the created resource.
              */
             InboundSecurityRule create(Context context);
-        }
-        /** The stage of the InboundSecurityRule definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Fully qualified resource Id for the resource..
-             *
-             * @param id Fully qualified resource Id for the resource.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
         /** The stage of the InboundSecurityRule definition allowing to specify name. */
         interface WithName {

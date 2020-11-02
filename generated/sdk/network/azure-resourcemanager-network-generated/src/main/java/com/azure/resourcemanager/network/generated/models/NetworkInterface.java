@@ -229,8 +229,7 @@ public interface NetworkInterface {
                 DefinitionStages.WithIpConfigurations,
                 DefinitionStages.WithDnsSettings,
                 DefinitionStages.WithEnableAcceleratedNetworking,
-                DefinitionStages.WithEnableIpForwarding,
-                DefinitionStages.WithId {
+                DefinitionStages.WithEnableIpForwarding {
             /**
              * Executes the create request.
              *
@@ -307,16 +306,6 @@ public interface NetworkInterface {
              * @return the next definition stage.
              */
             WithCreate withEnableIpForwarding(Boolean enableIpForwarding);
-        }
-        /** The stage of the NetworkInterface definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

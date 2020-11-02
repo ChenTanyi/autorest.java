@@ -332,11 +332,6 @@ public final class AzureFirewallImpl implements AzureFirewall, AzureFirewall.Def
         return this;
     }
 
-    public AzureFirewallImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     private boolean isInCreateMode() {
         return this.innerModel().id() == null;
     }

@@ -108,8 +108,7 @@ public interface HubIpConfiguration {
          * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
-            extends DefinitionStages.WithId,
-                DefinitionStages.WithName,
+            extends DefinitionStages.WithName,
                 DefinitionStages.WithPrivateIpAddress,
                 DefinitionStages.WithPrivateIpAllocationMethod,
                 DefinitionStages.WithSubnet,
@@ -128,16 +127,6 @@ public interface HubIpConfiguration {
              * @return the created resource.
              */
             HubIpConfiguration create(Context context);
-        }
-        /** The stage of the HubIpConfiguration definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Fully qualified resource Id for the resource..
-             *
-             * @param id Fully qualified resource Id for the resource.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
         /** The stage of the HubIpConfiguration definition allowing to specify name. */
         interface WithName {

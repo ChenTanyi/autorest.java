@@ -402,8 +402,7 @@ public interface ApplicationGateway {
                 DefinitionStages.WithAutoscaleConfiguration,
                 DefinitionStages.WithPrivateLinkConfigurations,
                 DefinitionStages.WithCustomErrorConfigurations,
-                DefinitionStages.WithForceFirewallPolicyAssociation,
-                DefinitionStages.WithId {
+                DefinitionStages.WithForceFirewallPolicyAssociation {
             /**
              * Executes the create request.
              *
@@ -771,16 +770,6 @@ public interface ApplicationGateway {
              * @return the next definition stage.
              */
             WithCreate withForceFirewallPolicyAssociation(Boolean forceFirewallPolicyAssociation);
-        }
-        /** The stage of the ApplicationGateway definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

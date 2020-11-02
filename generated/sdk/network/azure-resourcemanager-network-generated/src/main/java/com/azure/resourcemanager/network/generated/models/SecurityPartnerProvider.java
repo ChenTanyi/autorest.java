@@ -152,8 +152,7 @@ public interface SecurityPartnerProvider {
         interface WithCreate
             extends DefinitionStages.WithTags,
                 DefinitionStages.WithSecurityProviderName,
-                DefinitionStages.WithVirtualHub,
-                DefinitionStages.WithId {
+                DefinitionStages.WithVirtualHub {
             /**
              * Executes the create request.
              *
@@ -198,16 +197,6 @@ public interface SecurityPartnerProvider {
              * @return the next definition stage.
              */
             WithCreate withVirtualHub(SubResource virtualHub);
-        }
-        /** The stage of the SecurityPartnerProvider definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

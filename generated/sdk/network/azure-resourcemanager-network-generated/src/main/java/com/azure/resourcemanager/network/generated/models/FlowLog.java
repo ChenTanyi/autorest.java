@@ -184,8 +184,7 @@ public interface FlowLog {
                 DefinitionStages.WithEnabled,
                 DefinitionStages.WithRetentionPolicy,
                 DefinitionStages.WithFormat,
-                DefinitionStages.WithFlowAnalyticsConfiguration,
-                DefinitionStages.WithId {
+                DefinitionStages.WithFlowAnalyticsConfiguration {
             /**
              * Executes the create request.
              *
@@ -271,16 +270,6 @@ public interface FlowLog {
              * @return the next definition stage.
              */
             WithCreate withFlowAnalyticsConfiguration(TrafficAnalyticsProperties flowAnalyticsConfiguration);
-        }
-        /** The stage of the FlowLog definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

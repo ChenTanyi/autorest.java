@@ -267,11 +267,6 @@ public final class ExpressRoutePortImpl
         return this;
     }
 
-    public ExpressRoutePortImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     private boolean isInCreateMode() {
         return this.innerModel().id() == null;
     }

@@ -183,8 +183,7 @@ public interface WebApplicationFirewallPolicy {
             extends DefinitionStages.WithTags,
                 DefinitionStages.WithPolicySettings,
                 DefinitionStages.WithCustomRules,
-                DefinitionStages.WithManagedRules,
-                DefinitionStages.WithId {
+                DefinitionStages.WithManagedRules {
             /**
              * Executes the create request.
              *
@@ -239,16 +238,6 @@ public interface WebApplicationFirewallPolicy {
              * @return the next definition stage.
              */
             WithCreate withManagedRules(ManagedRulesDefinition managedRules);
-        }
-        /** The stage of the WebApplicationFirewallPolicy definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

@@ -236,11 +236,6 @@ public final class VirtualWanImpl implements VirtualWan, VirtualWan.Definition, 
         return this;
     }
 
-    public VirtualWanImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     private boolean isInCreateMode() {
         return this.innerModel().id() == null;
     }

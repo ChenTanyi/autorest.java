@@ -152,11 +152,6 @@ public final class FirewallPolicyRuleCollectionGroupImpl
         return this;
     }
 
-    public FirewallPolicyRuleCollectionGroupImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     public FirewallPolicyRuleCollectionGroupImpl withName(String name) {
         this.innerModel().withName(name);
         return this;
@@ -170,6 +165,11 @@ public final class FirewallPolicyRuleCollectionGroupImpl
     public FirewallPolicyRuleCollectionGroupImpl withRuleCollections(
         List<FirewallPolicyRuleCollection> ruleCollections) {
         this.innerModel().withRuleCollections(ruleCollections);
+        return this;
+    }
+
+    public FirewallPolicyRuleCollectionGroupImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 }

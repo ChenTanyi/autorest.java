@@ -388,11 +388,6 @@ public final class VirtualNetworkGatewayConnectionImpl
         return this;
     }
 
-    public VirtualNetworkGatewayConnectionImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     private boolean isInCreateMode() {
         return this.innerModel().id() == null;
     }

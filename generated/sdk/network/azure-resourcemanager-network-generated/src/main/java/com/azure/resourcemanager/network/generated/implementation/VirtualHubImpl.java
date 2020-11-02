@@ -345,11 +345,6 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
         return this;
     }
 
-    public VirtualHubImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     private boolean isInCreateMode() {
         return this.innerModel().id() == null;
     }

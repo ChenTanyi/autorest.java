@@ -151,10 +151,7 @@ public interface ServiceEndpointPolicy {
          * The stage of the ServiceEndpointPolicy definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate
-            extends DefinitionStages.WithTags,
-                DefinitionStages.WithServiceEndpointPolicyDefinitions,
-                DefinitionStages.WithId {
+        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithServiceEndpointPolicyDefinitions {
             /**
              * Executes the create request.
              *
@@ -192,16 +189,6 @@ public interface ServiceEndpointPolicy {
              */
             WithCreate withServiceEndpointPolicyDefinitions(
                 List<ServiceEndpointPolicyDefinitionInner> serviceEndpointPolicyDefinitions);
-        }
-        /** The stage of the ServiceEndpointPolicy definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

@@ -150,7 +150,7 @@ public interface RouteFilter {
          * The stage of the RouteFilter definition which contains all the minimum required properties for the resource
          * to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithRules, DefinitionStages.WithId {
+        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithRules {
             /**
              * Executes the create request.
              *
@@ -185,16 +185,6 @@ public interface RouteFilter {
              * @return the next definition stage.
              */
             WithCreate withRules(List<RouteFilterRuleInner> rules);
-        }
-        /** The stage of the RouteFilter definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

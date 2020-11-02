@@ -235,11 +235,6 @@ public final class VpnGatewayImpl implements VpnGateway, VpnGateway.Definition, 
         return this;
     }
 
-    public VpnGatewayImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     private boolean isInCreateMode() {
         return this.innerModel().id() == null;
     }

@@ -183,8 +183,7 @@ public interface VirtualWan {
                 DefinitionStages.WithDisableVpnEncryption,
                 DefinitionStages.WithAllowBranchToBranchTraffic,
                 DefinitionStages.WithAllowVnetToVnetTraffic,
-                DefinitionStages.WithTypePropertiesType,
-                DefinitionStages.WithId {
+                DefinitionStages.WithTypePropertiesType {
             /**
              * Executes the create request.
              *
@@ -249,16 +248,6 @@ public interface VirtualWan {
              * @return the next definition stage.
              */
             WithCreate withTypePropertiesType(String typePropertiesType);
-        }
-        /** The stage of the VirtualWan definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

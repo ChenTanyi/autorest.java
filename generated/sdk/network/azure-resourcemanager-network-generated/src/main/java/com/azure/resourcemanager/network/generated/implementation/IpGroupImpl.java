@@ -202,11 +202,6 @@ public final class IpGroupImpl implements IpGroup, IpGroup.Definition, IpGroup.U
         return this;
     }
 
-    public IpGroupImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     private boolean isInCreateMode() {
         return this.innerModel().id() == null;
     }

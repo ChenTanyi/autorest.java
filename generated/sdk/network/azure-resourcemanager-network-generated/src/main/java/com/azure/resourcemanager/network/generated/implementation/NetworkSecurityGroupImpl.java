@@ -262,11 +262,6 @@ public final class NetworkSecurityGroupImpl
         return this;
     }
 
-    public NetworkSecurityGroupImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     private boolean isInCreateMode() {
         return this.innerModel().id() == null;
     }

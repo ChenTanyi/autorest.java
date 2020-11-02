@@ -183,8 +183,7 @@ public interface FirewallPolicy {
                 DefinitionStages.WithBasePolicy,
                 DefinitionStages.WithThreatIntelMode,
                 DefinitionStages.WithThreatIntelWhitelist,
-                DefinitionStages.WithDnsSettings,
-                DefinitionStages.WithId {
+                DefinitionStages.WithDnsSettings {
             /**
              * Executes the create request.
              *
@@ -249,16 +248,6 @@ public interface FirewallPolicy {
              * @return the next definition stage.
              */
             WithCreate withDnsSettings(DnsSettings dnsSettings);
-        }
-        /** The stage of the FirewallPolicy definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

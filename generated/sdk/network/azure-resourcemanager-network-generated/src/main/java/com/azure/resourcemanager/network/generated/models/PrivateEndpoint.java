@@ -172,8 +172,7 @@ public interface PrivateEndpoint {
                 DefinitionStages.WithSubnet,
                 DefinitionStages.WithPrivateLinkServiceConnections,
                 DefinitionStages.WithManualPrivateLinkServiceConnections,
-                DefinitionStages.WithCustomDnsConfigs,
-                DefinitionStages.WithId {
+                DefinitionStages.WithCustomDnsConfigs {
             /**
              * Executes the create request.
              *
@@ -246,16 +245,6 @@ public interface PrivateEndpoint {
              * @return the next definition stage.
              */
             WithCreate withCustomDnsConfigs(List<CustomDnsConfigPropertiesFormat> customDnsConfigs);
-        }
-        /** The stage of the PrivateEndpoint definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

@@ -255,8 +255,7 @@ public interface VirtualNetworkGateway {
                 DefinitionStages.WithVpnClientConfiguration,
                 DefinitionStages.WithBgpSettings,
                 DefinitionStages.WithCustomRoutes,
-                DefinitionStages.WithEnableDnsForwarding,
-                DefinitionStages.WithId {
+                DefinitionStages.WithEnableDnsForwarding {
             /**
              * Executes the create request.
              *
@@ -425,16 +424,6 @@ public interface VirtualNetworkGateway {
              * @return the next definition stage.
              */
             WithCreate withEnableDnsForwarding(Boolean enableDnsForwarding);
-        }
-        /** The stage of the VirtualNetworkGateway definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

@@ -247,11 +247,6 @@ public final class ExpressRouteCircuitPeeringImpl
         return this;
     }
 
-    public ExpressRouteCircuitPeeringImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     public ExpressRouteCircuitPeeringImpl withName(String name) {
         this.innerModel().withName(name);
         return this;
@@ -341,6 +336,11 @@ public final class ExpressRouteCircuitPeeringImpl
 
     public ExpressRouteCircuitPeeringImpl withConnections(List<ExpressRouteCircuitConnectionInner> connections) {
         this.innerModel().withConnections(connections);
+        return this;
+    }
+
+    public ExpressRouteCircuitPeeringImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 }

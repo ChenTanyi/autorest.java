@@ -172,8 +172,7 @@ public interface VirtualNetworkTap {
             extends DefinitionStages.WithTags,
                 DefinitionStages.WithDestinationNetworkInterfaceIpConfiguration,
                 DefinitionStages.WithDestinationLoadBalancerFrontEndIpConfiguration,
-                DefinitionStages.WithDestinationPort,
-                DefinitionStages.WithId {
+                DefinitionStages.WithDestinationPort {
             /**
              * Executes the create request.
              *
@@ -239,16 +238,6 @@ public interface VirtualNetworkTap {
              * @return the next definition stage.
              */
             WithCreate withDestinationPort(Integer destinationPort);
-        }
-        /** The stage of the VirtualNetworkTap definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

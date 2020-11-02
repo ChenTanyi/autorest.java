@@ -143,10 +143,7 @@ public interface BastionHost {
          * to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
-            extends DefinitionStages.WithTags,
-                DefinitionStages.WithIpConfigurations,
-                DefinitionStages.WithDnsName,
-                DefinitionStages.WithId {
+            extends DefinitionStages.WithTags, DefinitionStages.WithIpConfigurations, DefinitionStages.WithDnsName {
             /**
              * Executes the create request.
              *
@@ -191,16 +188,6 @@ public interface BastionHost {
              * @return the next definition stage.
              */
             WithCreate withDnsName(String dnsName);
-        }
-        /** The stage of the BastionHost definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

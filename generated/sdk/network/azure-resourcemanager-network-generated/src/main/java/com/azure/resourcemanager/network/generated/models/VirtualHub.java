@@ -265,8 +265,7 @@ public interface VirtualHub {
                 DefinitionStages.WithSku,
                 DefinitionStages.WithVirtualRouterAsn,
                 DefinitionStages.WithVirtualRouterIps,
-                DefinitionStages.WithEnableVirtualRouterRoutePropogation,
-                DefinitionStages.WithId {
+                DefinitionStages.WithEnableVirtualRouterRoutePropogation {
             /**
              * Executes the create request.
              *
@@ -434,16 +433,6 @@ public interface VirtualHub {
              * @return the next definition stage.
              */
             WithCreate withEnableVirtualRouterRoutePropogation(Boolean enableVirtualRouterRoutePropogation);
-        }
-        /** The stage of the VirtualHub definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

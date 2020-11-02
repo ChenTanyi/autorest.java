@@ -116,10 +116,7 @@ public interface BackendAddressPool {
          * The stage of the BackendAddressPool definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate
-            extends DefinitionStages.WithId,
-                DefinitionStages.WithName,
-                DefinitionStages.WithLoadBalancerBackendAddresses {
+        interface WithCreate extends DefinitionStages.WithName, DefinitionStages.WithLoadBalancerBackendAddresses {
             /**
              * Executes the create request.
              *
@@ -134,16 +131,6 @@ public interface BackendAddressPool {
              * @return the created resource.
              */
             BackendAddressPool create(Context context);
-        }
-        /** The stage of the BackendAddressPool definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Fully qualified resource Id for the resource..
-             *
-             * @param id Fully qualified resource Id for the resource.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
         /** The stage of the BackendAddressPool definition allowing to specify name. */
         interface WithName {

@@ -152,8 +152,7 @@ public interface ExpressRouteGateway {
         interface WithCreate
             extends DefinitionStages.WithTags,
                 DefinitionStages.WithAutoScaleConfiguration,
-                DefinitionStages.WithVirtualHub,
-                DefinitionStages.WithId {
+                DefinitionStages.WithVirtualHub {
             /**
              * Executes the create request.
              *
@@ -200,16 +199,6 @@ public interface ExpressRouteGateway {
              * @return the next definition stage.
              */
             WithCreate withVirtualHub(VirtualHubId virtualHub);
-        }
-        /** The stage of the ExpressRouteGateway definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

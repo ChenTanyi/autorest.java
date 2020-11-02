@@ -216,8 +216,7 @@ public interface LoadBalancer {
                 DefinitionStages.WithProbes,
                 DefinitionStages.WithInboundNatRules,
                 DefinitionStages.WithInboundNatPools,
-                DefinitionStages.WithOutboundRules,
-                DefinitionStages.WithId {
+                DefinitionStages.WithOutboundRules {
             /**
              * Executes the create request.
              *
@@ -342,16 +341,6 @@ public interface LoadBalancer {
              * @return the next definition stage.
              */
             WithCreate withOutboundRules(List<OutboundRuleInner> outboundRules);
-        }
-        /** The stage of the LoadBalancer definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

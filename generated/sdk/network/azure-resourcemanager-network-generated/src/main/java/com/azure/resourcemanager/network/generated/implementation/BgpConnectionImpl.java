@@ -142,11 +142,6 @@ public final class BgpConnectionImpl implements BgpConnection, BgpConnection.Def
         return this;
     }
 
-    public BgpConnectionImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     public BgpConnectionImpl withName(String name) {
         this.innerModel().withName(name);
         return this;
@@ -159,6 +154,11 @@ public final class BgpConnectionImpl implements BgpConnection, BgpConnection.Def
 
     public BgpConnectionImpl withPeerIp(String peerIp) {
         this.innerModel().withPeerIp(peerIp);
+        return this;
+    }
+
+    public BgpConnectionImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 }

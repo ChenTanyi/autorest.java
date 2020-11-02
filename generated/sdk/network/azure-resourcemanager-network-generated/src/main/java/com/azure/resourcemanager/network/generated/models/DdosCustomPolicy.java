@@ -153,8 +153,7 @@ public interface DdosCustomPolicy {
          * The stage of the DdosCustomPolicy definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate
-            extends DefinitionStages.WithTags, DefinitionStages.WithProtocolCustomSettings, DefinitionStages.WithId {
+        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithProtocolCustomSettings {
             /**
              * Executes the create request.
              *
@@ -190,16 +189,6 @@ public interface DdosCustomPolicy {
              * @return the next definition stage.
              */
             WithCreate withProtocolCustomSettings(List<ProtocolCustomSettingsFormat> protocolCustomSettings);
-        }
-        /** The stage of the DdosCustomPolicy definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

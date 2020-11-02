@@ -233,8 +233,7 @@ public interface AzureFirewall {
                 DefinitionStages.WithFirewallPolicy,
                 DefinitionStages.WithHubIpAddresses,
                 DefinitionStages.WithSku,
-                DefinitionStages.WithAdditionalProperties,
-                DefinitionStages.WithId {
+                DefinitionStages.WithAdditionalProperties {
             /**
              * Executes the create request.
              *
@@ -385,16 +384,6 @@ public interface AzureFirewall {
              * @return the next definition stage.
              */
             WithCreate withAdditionalProperties(Map<String, String> additionalProperties);
-        }
-        /** The stage of the AzureFirewall definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

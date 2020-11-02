@@ -288,11 +288,6 @@ public final class NetworkVirtualApplianceImpl
         return this;
     }
 
-    public NetworkVirtualApplianceImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     private boolean isInCreateMode() {
         return this.innerModel().id() == null;
     }

@@ -361,11 +361,6 @@ public final class VpnServerConfigurationImpl
         return this;
     }
 
-    public VpnServerConfigurationImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     private boolean isInCreateMode() {
         return this.innerModel().id() == null;
     }

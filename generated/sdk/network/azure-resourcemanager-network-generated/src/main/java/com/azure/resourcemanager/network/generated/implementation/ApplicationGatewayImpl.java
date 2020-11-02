@@ -587,11 +587,6 @@ public final class ApplicationGatewayImpl
         return this;
     }
 
-    public ApplicationGatewayImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     private boolean isInCreateMode() {
         return this.innerModel().id() == null;
     }

@@ -167,8 +167,7 @@ public interface LocalNetworkGateway {
                 DefinitionStages.WithLocalNetworkAddressSpace,
                 DefinitionStages.WithGatewayIpAddress,
                 DefinitionStages.WithFqdn,
-                DefinitionStages.WithBgpSettings,
-                DefinitionStages.WithId {
+                DefinitionStages.WithBgpSettings {
             /**
              * Executes the create request.
              *
@@ -233,16 +232,6 @@ public interface LocalNetworkGateway {
              * @return the next definition stage.
              */
             WithCreate withBgpSettings(BgpSettings bgpSettings);
-        }
-        /** The stage of the LocalNetworkGateway definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

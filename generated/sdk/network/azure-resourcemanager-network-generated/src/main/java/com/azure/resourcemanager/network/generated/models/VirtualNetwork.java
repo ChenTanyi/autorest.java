@@ -216,8 +216,7 @@ public interface VirtualNetwork {
                 DefinitionStages.WithEnableVmProtection,
                 DefinitionStages.WithDdosProtectionPlan,
                 DefinitionStages.WithBgpCommunities,
-                DefinitionStages.WithIpAllocations,
-                DefinitionStages.WithId {
+                DefinitionStages.WithIpAllocations {
             /**
              * Executes the create request.
              *
@@ -343,16 +342,6 @@ public interface VirtualNetwork {
              * @return the next definition stage.
              */
             WithCreate withIpAllocations(List<SubResource> ipAllocations);
-        }
-        /** The stage of the VirtualNetwork definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

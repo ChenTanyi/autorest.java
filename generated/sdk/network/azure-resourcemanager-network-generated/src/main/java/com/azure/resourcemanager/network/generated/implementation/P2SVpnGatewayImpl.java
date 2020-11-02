@@ -237,11 +237,6 @@ public final class P2SVpnGatewayImpl implements P2SVpnGateway, P2SVpnGateway.Def
         return this;
     }
 
-    public P2SVpnGatewayImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     private boolean isInCreateMode() {
         return this.innerModel().id() == null;
     }

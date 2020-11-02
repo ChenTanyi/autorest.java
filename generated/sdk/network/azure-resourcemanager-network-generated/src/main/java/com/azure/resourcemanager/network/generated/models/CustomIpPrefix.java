@@ -170,8 +170,7 @@ public interface CustomIpPrefix {
             extends DefinitionStages.WithTags,
                 DefinitionStages.WithZones,
                 DefinitionStages.WithCidr,
-                DefinitionStages.WithCommissionedState,
-                DefinitionStages.WithId {
+                DefinitionStages.WithCommissionedState {
             /**
              * Executes the create request.
              *
@@ -228,16 +227,6 @@ public interface CustomIpPrefix {
              * @return the next definition stage.
              */
             WithCreate withCommissionedState(CommissionedState commissionedState);
-        }
-        /** The stage of the CustomIpPrefix definition allowing to specify id. */
-        interface WithId {
-            /**
-             * Specifies the id property: Resource ID..
-             *
-             * @param id Resource ID.
-             * @return the next definition stage.
-             */
-            WithCreate withId(String id);
         }
     }
     /**

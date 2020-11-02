@@ -168,11 +168,6 @@ public final class HubRouteTableImpl implements HubRouteTable, HubRouteTable.Def
         return this;
     }
 
-    public HubRouteTableImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     public HubRouteTableImpl withName(String name) {
         this.innerModel().withName(name);
         return this;
@@ -185,6 +180,11 @@ public final class HubRouteTableImpl implements HubRouteTable, HubRouteTable.Def
 
     public HubRouteTableImpl withLabels(List<String> labels) {
         this.innerModel().withLabels(labels);
+        return this;
+    }
+
+    public HubRouteTableImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 }

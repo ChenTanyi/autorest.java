@@ -143,11 +143,6 @@ public final class ExpressRouteCircuitAuthorizationImpl
         return this;
     }
 
-    public ExpressRouteCircuitAuthorizationImpl withId(String id) {
-        this.innerModel().withId(id);
-        return this;
-    }
-
     public ExpressRouteCircuitAuthorizationImpl withName(String name) {
         this.innerModel().withName(name);
         return this;
@@ -161,6 +156,11 @@ public final class ExpressRouteCircuitAuthorizationImpl
     public ExpressRouteCircuitAuthorizationImpl withAuthorizationUseStatus(
         AuthorizationUseStatus authorizationUseStatus) {
         this.innerModel().withAuthorizationUseStatus(authorizationUseStatus);
+        return this;
+    }
+
+    public ExpressRouteCircuitAuthorizationImpl withId(String id) {
+        this.innerModel().withId(id);
         return this;
     }
 }
