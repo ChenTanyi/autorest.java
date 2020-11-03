@@ -4,6 +4,7 @@ import com.azure.Base;
 import com.azure.core.http.policy.HttpLogDetailLevel;
 import com.azure.core.http.policy.HttpLogOptions;
 import com.azure.core.management.Region;
+import com.azure.core.management.exception.ManagementException;
 import com.azure.resourcemanager.hdinsight.generated.HDInsightManager;
 import com.azure.resourcemanager.hdinsight.generated.models.Cluster;
 import com.azure.resourcemanager.hdinsight.generated.models.ClusterCreateProperties;
@@ -26,14 +27,15 @@ import com.azure.resourcemanager.storage.generated.models.StorageAccountKey;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class HDInsightTests extends Base {
 
     @Test
-    @Disabled("Get 504 error: The gateway did not receive a response from 'Microsoft.HDInsight' within the specified time period.")
     public void testCluster() {
         String saName = randomString("sa", 15);
         String clusterName = randomString("cls", 15);
@@ -81,7 +83,7 @@ public class HDInsightTests extends Base {
                                                 .withName("headnode")
                                                 .withTargetInstanceCount(2)
                                                 .withHardwareProfile(new HardwareProfile()
-                                                        .withVmSize("Standard_D2a_v4"))
+                                                        .withVmSize("STANDARD_A4_V2"))
                                                 .withOsProfile(new OsProfile()
                                                         .withLinuxOperatingSystemProfile(new LinuxOperatingSystemProfile()
                                                                 .withUsername(username)
@@ -90,7 +92,7 @@ public class HDInsightTests extends Base {
                                                 .withName("workernode")
                                                 .withTargetInstanceCount(3)
                                                 .withHardwareProfile(new HardwareProfile()
-                                                        .withVmSize("Standard_D2a_v4"))
+                                                        .withVmSize("STANDARD_A4_V2"))
                                                 .withOsProfile(new OsProfile()
                                                         .withLinuxOperatingSystemProfile(new LinuxOperatingSystemProfile()
                                                                 .withUsername(username)
@@ -99,7 +101,7 @@ public class HDInsightTests extends Base {
                         .withStorageProfile(new StorageProfile()
                                 .withStorageaccounts(ImmutableList.of(
                                         new com.azure.resourcemanager.hdinsight.generated.models.StorageAccount()
-                                                .withName(storageAccount.primaryEndpoints().blob())
+                                                .withName(storageAccount.name() + ".blob.core.windows.net")
                                                 .withKey(storageAccountKey.value())
                                                 .withContainer(clusterName.toLowerCase())
                                                 .withIsDefault(true)
@@ -108,6 +110,42 @@ public class HDInsightTests extends Base {
                 .create();
 
         Assertions.assertNotNull(cluster);
+        Assertions.assertEquals(OSType.LINUX, cluster.properties().osType());
+        Assertions.assertEquals("Spark", cluster.properties().clusterDefinition().kind());
+        Assertions.assertEquals(0, cluster.tags().size());
+
+        // list clusters
+        boolean foundCluster = false;
+        for (Cluster resource : hdInsightManager.clusters().list()) {
+            if (clusterName.equals(resource.name())) {
+                foundCluster = true;
+                break;
+            }
+        }
+        Assertions.assertTrue(foundCluster);
+
+        // update cluster
+        Map<String, String> tags = new HashMap<>();
+        tags.put("key1", "value1");
+        cluster.update()
+                .withTags(tags)
+                .apply();
+
+        // get cluster
+        Cluster updatedCluster = hdInsightManager.clusters().getByResourceGroup(rgName, clusterName);
+        Assertions.assertNotNull(updatedCluster);
+        Assertions.assertTrue(updatedCluster.tags().containsKey("key1"));
+        Assertions.assertEquals("value1", updatedCluster.tags().get("key1"));
+
+        // delete cluster
+        hdInsightManager.clusters().delete(rgName, clusterName);
+
+        // validate delete
+        try {
+            hdInsightManager.clusters().getByResourceGroup(rgName, clusterName);
+        } catch (ManagementException e) {
+            Assertions.assertEquals(404, e.getResponse().getStatusCode());
+        }
     }
 
     @Test
