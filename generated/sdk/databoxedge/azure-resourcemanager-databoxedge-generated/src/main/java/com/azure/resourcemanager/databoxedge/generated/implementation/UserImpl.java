@@ -40,7 +40,7 @@ public final class UserImpl implements User, User.Definition, User.Update {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

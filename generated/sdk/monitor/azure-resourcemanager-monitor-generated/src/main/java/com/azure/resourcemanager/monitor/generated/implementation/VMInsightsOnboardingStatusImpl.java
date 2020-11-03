@@ -52,7 +52,7 @@ public final class VMInsightsOnboardingStatusImpl implements VMInsightsOnboardin
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

@@ -49,7 +49,7 @@ public final class FileShareItemImpl implements FileShareItem {
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

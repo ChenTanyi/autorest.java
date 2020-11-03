@@ -57,7 +57,7 @@ public final class RoleDefinitionImpl implements RoleDefinition {
                         .map(inner1 -> new PermissionImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -66,7 +66,7 @@ public final class RoleDefinitionImpl implements RoleDefinition {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

@@ -22,10 +22,12 @@ import com.azure.core.util.Configuration;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.keyvault.generated.fluent.KeyVaultManagementClient;
 import com.azure.resourcemanager.keyvault.generated.implementation.KeyVaultManagementClientBuilder;
+import com.azure.resourcemanager.keyvault.generated.implementation.KeysImpl;
 import com.azure.resourcemanager.keyvault.generated.implementation.OperationsImpl;
 import com.azure.resourcemanager.keyvault.generated.implementation.PrivateEndpointConnectionsImpl;
 import com.azure.resourcemanager.keyvault.generated.implementation.PrivateLinkResourcesImpl;
 import com.azure.resourcemanager.keyvault.generated.implementation.VaultsImpl;
+import com.azure.resourcemanager.keyvault.generated.models.Keys;
 import com.azure.resourcemanager.keyvault.generated.models.Operations;
 import com.azure.resourcemanager.keyvault.generated.models.PrivateEndpointConnections;
 import com.azure.resourcemanager.keyvault.generated.models.PrivateLinkResources;
@@ -48,6 +50,8 @@ public final class KeyVaultManager {
     private PrivateLinkResources privateLinkResources;
 
     private Operations operations;
+
+    private Keys keys;
 
     private final KeyVaultManagementClient clientObject;
 
@@ -228,6 +232,14 @@ public final class KeyVaultManager {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
         }
         return operations;
+    }
+
+    /** @return Resource collection API of Keys. */
+    public Keys keys() {
+        if (this.keys == null) {
+            this.keys = new KeysImpl(clientObject.getKeys(), this);
+        }
+        return keys;
     }
 
     /**

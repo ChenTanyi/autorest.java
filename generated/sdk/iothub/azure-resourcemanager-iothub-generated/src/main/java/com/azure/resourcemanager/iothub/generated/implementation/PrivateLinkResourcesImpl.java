@@ -33,7 +33,7 @@ public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
                         .map(inner1 -> new GroupIdInformationImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

@@ -60,7 +60,7 @@ public final class MetricDefinitionImpl implements MetricDefinition {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -69,7 +69,7 @@ public final class MetricDefinitionImpl implements MetricDefinition {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -87,7 +87,7 @@ public final class MetricDefinitionImpl implements MetricDefinition {
                         .map(inner1 -> new LocalizableStringImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

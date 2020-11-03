@@ -8,6 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.management.Resource;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.InboundNatPool;
 import com.azure.resourcemanager.network.generated.models.LoadBalancerSku;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
@@ -21,6 +22,12 @@ import java.util.Map;
 @Fluent
 public class LoadBalancerInner extends Resource {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(LoadBalancerInner.class);
+
+    /*
+     * The extended location of the load balancer.
+     */
+    @JsonProperty(value = "extendedLocation")
+    private ExtendedLocation extendedLocation;
 
     /*
      * The load balancer SKU.
@@ -106,6 +113,26 @@ public class LoadBalancerInner extends Resource {
      */
     @JsonProperty(value = "id")
     private String id;
+
+    /**
+     * Get the extendedLocation property: The extended location of the load balancer.
+     *
+     * @return the extendedLocation value.
+     */
+    public ExtendedLocation extendedLocation() {
+        return this.extendedLocation;
+    }
+
+    /**
+     * Set the extendedLocation property: The extended location of the load balancer.
+     *
+     * @param extendedLocation the extendedLocation value to set.
+     * @return the LoadBalancerInner object itself.
+     */
+    public LoadBalancerInner withExtendedLocation(ExtendedLocation extendedLocation) {
+        this.extendedLocation = extendedLocation;
+        return this;
+    }
 
     /**
      * Get the sku property: The load balancer SKU.
@@ -352,6 +379,9 @@ public class LoadBalancerInner extends Resource {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+        if (extendedLocation() != null) {
+            extendedLocation().validate();
+        }
         if (sku() != null) {
             sku().validate();
         }

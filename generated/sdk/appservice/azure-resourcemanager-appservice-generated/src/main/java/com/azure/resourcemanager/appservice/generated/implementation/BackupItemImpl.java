@@ -76,7 +76,7 @@ public final class BackupItemImpl implements BackupItem {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

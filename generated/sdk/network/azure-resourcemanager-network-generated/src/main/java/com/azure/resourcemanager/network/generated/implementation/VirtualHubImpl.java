@@ -43,7 +43,7 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -101,7 +101,7 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
                         .map(inner1 -> new VirtualHubRouteTableV2Impl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -118,7 +118,7 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -127,7 +127,7 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -140,12 +140,12 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
-    public Boolean enableVirtualRouterRoutePropogation() {
-        return this.innerModel().enableVirtualRouterRoutePropogation();
+    public Boolean allowBranchToBranchTraffic() {
+        return this.innerModel().allowBranchToBranchTraffic();
     }
 
     public String id() {
@@ -340,8 +340,8 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
         return this;
     }
 
-    public VirtualHubImpl withEnableVirtualRouterRoutePropogation(Boolean enableVirtualRouterRoutePropogation) {
-        this.innerModel().withEnableVirtualRouterRoutePropogation(enableVirtualRouterRoutePropogation);
+    public VirtualHubImpl withAllowBranchToBranchTraffic(Boolean allowBranchToBranchTraffic) {
+        this.innerModel().withAllowBranchToBranchTraffic(allowBranchToBranchTraffic);
         return this;
     }
 

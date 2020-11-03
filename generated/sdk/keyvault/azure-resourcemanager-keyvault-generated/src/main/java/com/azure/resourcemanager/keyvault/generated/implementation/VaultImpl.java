@@ -42,7 +42,7 @@ public final class VaultImpl implements Vault, Vault.Definition, Vault.Update {
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

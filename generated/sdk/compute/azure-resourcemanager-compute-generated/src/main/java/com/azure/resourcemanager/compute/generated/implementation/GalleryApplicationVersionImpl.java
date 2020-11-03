@@ -44,7 +44,7 @@ public final class GalleryApplicationVersionImpl
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

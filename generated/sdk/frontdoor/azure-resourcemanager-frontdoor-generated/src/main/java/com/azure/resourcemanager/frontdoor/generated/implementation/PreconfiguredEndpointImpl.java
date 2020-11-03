@@ -42,7 +42,7 @@ public final class PreconfiguredEndpointImpl implements PreconfiguredEndpoint {
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

@@ -54,6 +54,13 @@ public interface ServiceTagsListResult {
     List<ServiceTagInformation> values();
 
     /**
+     * Gets the nextLink property: The URL to get next page of service tag information resources.
+     *
+     * @return the nextLink value.
+     */
+    String nextLink();
+
+    /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ServiceTagsListResultInner object.
      *
      * @return the inner object.

@@ -258,7 +258,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
                         .map(inner1 -> new CertificateOrderActionImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -292,7 +292,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
                         .map(inner1 -> new CertificateEmailImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

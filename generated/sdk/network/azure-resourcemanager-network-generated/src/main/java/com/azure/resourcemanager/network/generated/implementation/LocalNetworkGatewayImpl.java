@@ -39,7 +39,7 @@ public final class LocalNetworkGatewayImpl
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

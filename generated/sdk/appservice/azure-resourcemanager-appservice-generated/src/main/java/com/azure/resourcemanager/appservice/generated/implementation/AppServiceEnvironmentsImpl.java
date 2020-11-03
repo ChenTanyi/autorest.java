@@ -166,7 +166,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
                         .map(inner1 -> new HostingEnvironmentDiagnosticsImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -374,7 +374,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
                         .map(inner1 -> new OperationImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

@@ -40,11 +40,18 @@ public class IpGroupInner extends Resource {
     private List<String> ipAddresses;
 
     /*
-     * List of references to Azure resources that this IpGroups is associated
-     * with.
+     * List of references to Firewall resources that this IpGroups is
+     * associated with.
      */
     @JsonProperty(value = "properties.firewalls", access = JsonProperty.Access.WRITE_ONLY)
     private List<SubResource> firewalls;
+
+    /*
+     * List of references to Firewall Policies resources that this IpGroups is
+     * associated with.
+     */
+    @JsonProperty(value = "properties.firewallPolicies", access = JsonProperty.Access.WRITE_ONLY)
+    private List<SubResource> firewallPolicies;
 
     /*
      * Resource ID.
@@ -91,12 +98,22 @@ public class IpGroupInner extends Resource {
     }
 
     /**
-     * Get the firewalls property: List of references to Azure resources that this IpGroups is associated with.
+     * Get the firewalls property: List of references to Firewall resources that this IpGroups is associated with.
      *
      * @return the firewalls value.
      */
     public List<SubResource> firewalls() {
         return this.firewalls;
+    }
+
+    /**
+     * Get the firewallPolicies property: List of references to Firewall Policies resources that this IpGroups is
+     * associated with.
+     *
+     * @return the firewallPolicies value.
+     */
+    public List<SubResource> firewallPolicies() {
+        return this.firewallPolicies;
     }
 
     /**

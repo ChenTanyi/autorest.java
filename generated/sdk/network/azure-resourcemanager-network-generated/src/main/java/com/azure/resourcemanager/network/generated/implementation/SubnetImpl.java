@@ -60,7 +60,7 @@ public final class SubnetImpl implements Subnet {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -91,7 +91,7 @@ public final class SubnetImpl implements Subnet {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -105,7 +105,7 @@ public final class SubnetImpl implements Subnet {
                         .map(inner1 -> new ServiceEndpointPolicyImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -119,7 +119,7 @@ public final class SubnetImpl implements Subnet {
                         .map(inner1 -> new PrivateEndpointImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -133,7 +133,7 @@ public final class SubnetImpl implements Subnet {
                         .map(inner1 -> new IpConfigurationImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -147,7 +147,7 @@ public final class SubnetImpl implements Subnet {
                         .map(inner1 -> new IpConfigurationProfileImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -156,7 +156,7 @@ public final class SubnetImpl implements Subnet {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -165,7 +165,7 @@ public final class SubnetImpl implements Subnet {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -174,7 +174,7 @@ public final class SubnetImpl implements Subnet {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -183,7 +183,7 @@ public final class SubnetImpl implements Subnet {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

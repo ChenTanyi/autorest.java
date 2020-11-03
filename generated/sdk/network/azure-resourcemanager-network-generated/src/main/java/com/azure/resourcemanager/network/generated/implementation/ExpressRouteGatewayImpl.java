@@ -42,7 +42,7 @@ public final class ExpressRouteGatewayImpl
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -64,7 +64,7 @@ public final class ExpressRouteGatewayImpl
                         .map(inner1 -> new ExpressRouteConnectionImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

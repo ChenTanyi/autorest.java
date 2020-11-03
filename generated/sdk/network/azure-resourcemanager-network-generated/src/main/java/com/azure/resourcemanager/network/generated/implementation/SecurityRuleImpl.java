@@ -64,7 +64,7 @@ public final class SecurityRuleImpl implements SecurityRule {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -78,7 +78,7 @@ public final class SecurityRuleImpl implements SecurityRule {
                         .map(inner1 -> new ApplicationSecurityGroupImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -91,7 +91,7 @@ public final class SecurityRuleImpl implements SecurityRule {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -105,7 +105,7 @@ public final class SecurityRuleImpl implements SecurityRule {
                         .map(inner1 -> new ApplicationSecurityGroupImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -114,7 +114,7 @@ public final class SecurityRuleImpl implements SecurityRule {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -123,7 +123,7 @@ public final class SecurityRuleImpl implements SecurityRule {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

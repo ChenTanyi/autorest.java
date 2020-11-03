@@ -36,7 +36,7 @@ public final class PrivateEndpointConnectionsImpl implements PrivateEndpointConn
                         .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

@@ -40,7 +40,7 @@ public final class ResourceGroupImpl implements ResourceGroup, ResourceGroup.Def
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

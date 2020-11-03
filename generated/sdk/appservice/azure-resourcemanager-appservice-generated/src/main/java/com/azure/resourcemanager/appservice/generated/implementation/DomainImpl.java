@@ -48,7 +48,7 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -81,7 +81,7 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -114,7 +114,7 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -127,7 +127,7 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

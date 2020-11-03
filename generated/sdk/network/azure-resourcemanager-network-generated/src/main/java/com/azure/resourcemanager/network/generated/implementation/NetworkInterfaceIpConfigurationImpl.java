@@ -61,7 +61,7 @@ public final class NetworkInterfaceIpConfigurationImpl implements NetworkInterfa
                         .map(inner1 -> new VirtualNetworkTapImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -70,7 +70,7 @@ public final class NetworkInterfaceIpConfigurationImpl implements NetworkInterfa
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -84,7 +84,7 @@ public final class NetworkInterfaceIpConfigurationImpl implements NetworkInterfa
                         .map(inner1 -> new BackendAddressPoolImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -98,7 +98,7 @@ public final class NetworkInterfaceIpConfigurationImpl implements NetworkInterfa
                         .map(inner1 -> new InboundNatRuleImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -146,7 +146,7 @@ public final class NetworkInterfaceIpConfigurationImpl implements NetworkInterfa
                         .map(inner1 -> new ApplicationSecurityGroupImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

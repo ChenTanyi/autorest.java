@@ -66,7 +66,7 @@ public final class WebJobImpl implements WebJob {
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

@@ -9,6 +9,7 @@ import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.management.Resource;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.IpTag;
 import com.azure.resourcemanager.network.generated.models.IpVersion;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
@@ -24,6 +25,12 @@ import java.util.Map;
 @Fluent
 public class PublicIpPrefixInner extends Resource {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(PublicIpPrefixInner.class);
+
+    /*
+     * The extended location of the public ip address.
+     */
+    @JsonProperty(value = "extendedLocation")
+    private ExtendedLocation extendedLocation;
 
     /*
      * The public IP prefix SKU.
@@ -104,6 +111,26 @@ public class PublicIpPrefixInner extends Resource {
      */
     @JsonProperty(value = "id")
     private String id;
+
+    /**
+     * Get the extendedLocation property: The extended location of the public ip address.
+     *
+     * @return the extendedLocation value.
+     */
+    public ExtendedLocation extendedLocation() {
+        return this.extendedLocation;
+    }
+
+    /**
+     * Set the extendedLocation property: The extended location of the public ip address.
+     *
+     * @param extendedLocation the extendedLocation value to set.
+     * @return the PublicIpPrefixInner object itself.
+     */
+    public PublicIpPrefixInner withExtendedLocation(ExtendedLocation extendedLocation) {
+        this.extendedLocation = extendedLocation;
+        return this;
+    }
 
     /**
      * Get the sku property: The public IP prefix SKU.
@@ -322,6 +349,9 @@ public class PublicIpPrefixInner extends Resource {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+        if (extendedLocation() != null) {
+            extendedLocation().validate();
+        }
         if (sku() != null) {
             sku().validate();
         }

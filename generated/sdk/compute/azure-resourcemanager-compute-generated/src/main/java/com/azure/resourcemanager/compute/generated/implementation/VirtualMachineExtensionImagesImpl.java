@@ -61,7 +61,7 @@ public final class VirtualMachineExtensionImagesImpl implements VirtualMachineEx
                         .map(inner1 -> new VirtualMachineExtensionImageImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -95,7 +95,7 @@ public final class VirtualMachineExtensionImagesImpl implements VirtualMachineEx
                         .map(inner1 -> new VirtualMachineExtensionImageImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

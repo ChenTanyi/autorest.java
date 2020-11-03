@@ -15,6 +15,7 @@ import com.azure.resourcemanager.network.generated.fluent.models.LoadBalancingRu
 import com.azure.resourcemanager.network.generated.fluent.models.OutboundRuleInner;
 import com.azure.resourcemanager.network.generated.fluent.models.ProbeInner;
 import com.azure.resourcemanager.network.generated.models.BackendAddressPool;
+import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.FrontendIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.InboundNatPool;
 import com.azure.resourcemanager.network.generated.models.InboundNatRule;
@@ -52,8 +53,12 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
+    }
+
+    public ExtendedLocation extendedLocation() {
+        return this.innerModel().extendedLocation();
     }
 
     public LoadBalancerSku sku() {
@@ -74,7 +79,7 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
                         .map(inner1 -> new FrontendIpConfigurationImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -88,7 +93,7 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
                         .map(inner1 -> new BackendAddressPoolImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -102,7 +107,7 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
                         .map(inner1 -> new LoadBalancingRuleImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -113,7 +118,7 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
                 .unmodifiableList(
                     inner.stream().map(inner1 -> new ProbeImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -127,7 +132,7 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
                         .map(inner1 -> new InboundNatRuleImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -136,7 +141,7 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -150,7 +155,7 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
                         .map(inner1 -> new OutboundRuleImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -289,6 +294,11 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
             this.updateParameters.withTags(tags);
             return this;
         }
+    }
+
+    public LoadBalancerImpl withExtendedLocation(ExtendedLocation extendedLocation) {
+        this.innerModel().withExtendedLocation(extendedLocation);
+        return this;
     }
 
     public LoadBalancerImpl withSku(LoadBalancerSku sku) {

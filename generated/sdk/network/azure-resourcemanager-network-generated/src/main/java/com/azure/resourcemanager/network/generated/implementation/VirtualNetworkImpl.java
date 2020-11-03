@@ -13,6 +13,7 @@ import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkI
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkPeeringInner;
 import com.azure.resourcemanager.network.generated.models.AddressSpace;
 import com.azure.resourcemanager.network.generated.models.DhcpOptions;
+import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.Subnet;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
@@ -46,8 +47,12 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
+    }
+
+    public ExtendedLocation extendedLocation() {
+        return this.innerModel().extendedLocation();
     }
 
     public String etag() {
@@ -69,7 +74,7 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
                 .unmodifiableList(
                     inner.stream().map(inner1 -> new SubnetImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -83,7 +88,7 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
                         .map(inner1 -> new VirtualNetworkPeeringImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -116,7 +121,7 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -247,6 +252,11 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
             this.updateParameters.withTags(tags);
             return this;
         }
+    }
+
+    public VirtualNetworkImpl withExtendedLocation(ExtendedLocation extendedLocation) {
+        this.innerModel().withExtendedLocation(extendedLocation);
+        return this;
     }
 
     public VirtualNetworkImpl withAddressSpace(AddressSpace addressSpace) {

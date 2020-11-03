@@ -48,7 +48,7 @@ public final class OutboundRuleImpl implements OutboundRule {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

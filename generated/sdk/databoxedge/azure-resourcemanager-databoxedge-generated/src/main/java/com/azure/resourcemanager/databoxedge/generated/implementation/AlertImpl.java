@@ -64,7 +64,7 @@ public final class AlertImpl implements Alert {
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

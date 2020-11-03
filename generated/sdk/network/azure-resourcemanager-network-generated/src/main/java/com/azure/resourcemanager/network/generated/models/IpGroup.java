@@ -65,11 +65,19 @@ public interface IpGroup {
     List<String> ipAddresses();
 
     /**
-     * Gets the firewalls property: List of references to Azure resources that this IpGroups is associated with.
+     * Gets the firewalls property: List of references to Firewall resources that this IpGroups is associated with.
      *
      * @return the firewalls value.
      */
     List<SubResource> firewalls();
+
+    /**
+     * Gets the firewallPolicies property: List of references to Firewall Policies resources that this IpGroups is
+     * associated with.
+     *
+     * @return the firewallPolicies value.
+     */
+    List<SubResource> firewallPolicies();
 
     /**
      * Gets the id property: Resource ID.

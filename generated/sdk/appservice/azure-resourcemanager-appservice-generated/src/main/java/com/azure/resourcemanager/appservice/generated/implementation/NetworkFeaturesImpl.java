@@ -66,7 +66,7 @@ public final class NetworkFeaturesImpl implements NetworkFeatures {
                         .map(inner1 -> new RelayServiceConnectionEntityImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -80,7 +80,7 @@ public final class NetworkFeaturesImpl implements NetworkFeatures {
                         .map(inner1 -> new HybridConnectionImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

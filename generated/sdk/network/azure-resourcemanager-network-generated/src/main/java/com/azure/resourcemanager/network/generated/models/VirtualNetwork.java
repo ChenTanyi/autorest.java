@@ -46,6 +46,13 @@ public interface VirtualNetwork {
     Map<String, String> tags();
 
     /**
+     * Gets the extendedLocation property: The extended location of the virtual network.
+     *
+     * @return the extendedLocation value.
+     */
+    ExtendedLocation extendedLocation();
+
+    /**
      * Gets the etag property: A unique read-only string that changes whenever the resource is updated.
      *
      * @return the etag value.
@@ -208,6 +215,7 @@ public interface VirtualNetwork {
          */
         interface WithCreate
             extends DefinitionStages.WithTags,
+                DefinitionStages.WithExtendedLocation,
                 DefinitionStages.WithAddressSpace,
                 DefinitionStages.WithDhcpOptions,
                 DefinitionStages.WithSubnets,
@@ -241,6 +249,16 @@ public interface VirtualNetwork {
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
+        }
+        /** The stage of the VirtualNetwork definition allowing to specify extendedLocation. */
+        interface WithExtendedLocation {
+            /**
+             * Specifies the extendedLocation property: The extended location of the virtual network..
+             *
+             * @param extendedLocation The extended location of the virtual network.
+             * @return the next definition stage.
+             */
+            WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
         /** The stage of the VirtualNetwork definition allowing to specify addressSpace. */
         interface WithAddressSpace {

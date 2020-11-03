@@ -42,7 +42,7 @@ public final class RouteFilterImpl implements RouteFilter, RouteFilter.Definitio
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -60,7 +60,7 @@ public final class RouteFilterImpl implements RouteFilter, RouteFilter.Definitio
                         .map(inner1 -> new RouteFilterRuleImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -74,7 +74,7 @@ public final class RouteFilterImpl implements RouteFilter, RouteFilter.Definitio
                         .map(inner1 -> new ExpressRouteCircuitPeeringImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -88,7 +88,7 @@ public final class RouteFilterImpl implements RouteFilter, RouteFilter.Definitio
                         .map(inner1 -> new ExpressRouteCircuitPeeringImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

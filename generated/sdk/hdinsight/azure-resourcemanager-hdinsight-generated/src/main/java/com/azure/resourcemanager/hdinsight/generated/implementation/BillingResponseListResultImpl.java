@@ -27,7 +27,7 @@ public final class BillingResponseListResultImpl implements BillingResponseListR
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -36,7 +36,7 @@ public final class BillingResponseListResultImpl implements BillingResponseListR
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -45,7 +45,7 @@ public final class BillingResponseListResultImpl implements BillingResponseListR
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

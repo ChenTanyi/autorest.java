@@ -47,7 +47,7 @@ public final class NetworkSecurityGroupImpl
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -65,7 +65,7 @@ public final class NetworkSecurityGroupImpl
                         .map(inner1 -> new SecurityRuleImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -79,7 +79,7 @@ public final class NetworkSecurityGroupImpl
                         .map(inner1 -> new SecurityRuleImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -93,7 +93,7 @@ public final class NetworkSecurityGroupImpl
                         .map(inner1 -> new NetworkInterfaceImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -104,7 +104,7 @@ public final class NetworkSecurityGroupImpl
                 .unmodifiableList(
                     inner.stream().map(inner1 -> new SubnetImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -115,7 +115,7 @@ public final class NetworkSecurityGroupImpl
                 .unmodifiableList(
                     inner.stream().map(inner1 -> new FlowLogImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

@@ -40,7 +40,7 @@ public final class ExpressRoutePortsLocationImpl implements ExpressRoutePortsLoc
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -57,7 +57,7 @@ public final class ExpressRoutePortsLocationImpl implements ExpressRoutePortsLoc
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

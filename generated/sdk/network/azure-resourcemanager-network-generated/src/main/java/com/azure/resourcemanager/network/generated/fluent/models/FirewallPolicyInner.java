@@ -11,7 +11,11 @@ import com.azure.core.management.SubResource;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.models.AzureFirewallThreatIntelMode;
 import com.azure.resourcemanager.network.generated.models.DnsSettings;
+import com.azure.resourcemanager.network.generated.models.FirewallPolicyIntrusionDetection;
+import com.azure.resourcemanager.network.generated.models.FirewallPolicySku;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicyThreatIntelWhitelist;
+import com.azure.resourcemanager.network.generated.models.FirewallPolicyTransportSecurity;
+import com.azure.resourcemanager.network.generated.models.ManagedServiceIdentity;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -29,6 +33,12 @@ public class FirewallPolicyInner extends Resource {
      */
     @JsonProperty(value = "etag", access = JsonProperty.Access.WRITE_ONLY)
     private String etag;
+
+    /*
+     * The identity of the firewall policy.
+     */
+    @JsonProperty(value = "identity")
+    private ManagedServiceIdentity identity;
 
     /*
      * List of references to FirewallPolicyRuleCollectionGroups.
@@ -80,6 +90,24 @@ public class FirewallPolicyInner extends Resource {
     private DnsSettings dnsSettings;
 
     /*
+     * The configuration for Intrusion detection.
+     */
+    @JsonProperty(value = "properties.intrusionDetection")
+    private FirewallPolicyIntrusionDetection intrusionDetection;
+
+    /*
+     * TLS Configuration definition.
+     */
+    @JsonProperty(value = "properties.transportSecurity")
+    private FirewallPolicyTransportSecurity transportSecurity;
+
+    /*
+     * The Firewall Policy SKU.
+     */
+    @JsonProperty(value = "properties.sku")
+    private FirewallPolicySku sku;
+
+    /*
      * Resource ID.
      */
     @JsonProperty(value = "id")
@@ -92,6 +120,26 @@ public class FirewallPolicyInner extends Resource {
      */
     public String etag() {
         return this.etag;
+    }
+
+    /**
+     * Get the identity property: The identity of the firewall policy.
+     *
+     * @return the identity value.
+     */
+    public ManagedServiceIdentity identity() {
+        return this.identity;
+    }
+
+    /**
+     * Set the identity property: The identity of the firewall policy.
+     *
+     * @param identity the identity value to set.
+     * @return the FirewallPolicyInner object itself.
+     */
+    public FirewallPolicyInner withIdentity(ManagedServiceIdentity identity) {
+        this.identity = identity;
+        return this;
     }
 
     /**
@@ -211,6 +259,66 @@ public class FirewallPolicyInner extends Resource {
     }
 
     /**
+     * Get the intrusionDetection property: The configuration for Intrusion detection.
+     *
+     * @return the intrusionDetection value.
+     */
+    public FirewallPolicyIntrusionDetection intrusionDetection() {
+        return this.intrusionDetection;
+    }
+
+    /**
+     * Set the intrusionDetection property: The configuration for Intrusion detection.
+     *
+     * @param intrusionDetection the intrusionDetection value to set.
+     * @return the FirewallPolicyInner object itself.
+     */
+    public FirewallPolicyInner withIntrusionDetection(FirewallPolicyIntrusionDetection intrusionDetection) {
+        this.intrusionDetection = intrusionDetection;
+        return this;
+    }
+
+    /**
+     * Get the transportSecurity property: TLS Configuration definition.
+     *
+     * @return the transportSecurity value.
+     */
+    public FirewallPolicyTransportSecurity transportSecurity() {
+        return this.transportSecurity;
+    }
+
+    /**
+     * Set the transportSecurity property: TLS Configuration definition.
+     *
+     * @param transportSecurity the transportSecurity value to set.
+     * @return the FirewallPolicyInner object itself.
+     */
+    public FirewallPolicyInner withTransportSecurity(FirewallPolicyTransportSecurity transportSecurity) {
+        this.transportSecurity = transportSecurity;
+        return this;
+    }
+
+    /**
+     * Get the sku property: The Firewall Policy SKU.
+     *
+     * @return the sku value.
+     */
+    public FirewallPolicySku sku() {
+        return this.sku;
+    }
+
+    /**
+     * Set the sku property: The Firewall Policy SKU.
+     *
+     * @param sku the sku value to set.
+     * @return the FirewallPolicyInner object itself.
+     */
+    public FirewallPolicyInner withSku(FirewallPolicySku sku) {
+        this.sku = sku;
+        return this;
+    }
+
+    /**
      * Get the id property: Resource ID.
      *
      * @return the id value.
@@ -250,11 +358,23 @@ public class FirewallPolicyInner extends Resource {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+        if (identity() != null) {
+            identity().validate();
+        }
         if (threatIntelWhitelist() != null) {
             threatIntelWhitelist().validate();
         }
         if (dnsSettings() != null) {
             dnsSettings().validate();
+        }
+        if (intrusionDetection() != null) {
+            intrusionDetection().validate();
+        }
+        if (transportSecurity() != null) {
+            transportSecurity().validate();
+        }
+        if (sku() != null) {
+            sku().validate();
         }
     }
 }

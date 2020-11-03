@@ -88,7 +88,7 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

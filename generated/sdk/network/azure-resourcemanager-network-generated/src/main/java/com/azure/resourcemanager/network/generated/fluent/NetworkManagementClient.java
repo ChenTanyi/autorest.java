@@ -118,6 +118,13 @@ public interface NetworkManagementClient {
     AzureFirewallFqdnTagsClient getAzureFirewallFqdnTags();
 
     /**
+     * Gets the WebCategoriesClient object to access its operations.
+     *
+     * @return the WebCategoriesClient object.
+     */
+    WebCategoriesClient getWebCategories();
+
+    /**
      * Gets the BastionHostsClient object to access its operations.
      *
      * @return the BastionHostsClient object.

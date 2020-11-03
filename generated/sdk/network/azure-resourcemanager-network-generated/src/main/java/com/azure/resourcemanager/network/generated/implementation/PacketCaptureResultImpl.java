@@ -39,11 +39,11 @@ public final class PacketCaptureResultImpl implements PacketCaptureResult {
         return this.innerModel().target();
     }
 
-    public Integer bytesToCapturePerPacket() {
+    public Long bytesToCapturePerPacket() {
         return this.innerModel().bytesToCapturePerPacket();
     }
 
-    public Integer totalBytesPerSession() {
+    public Long totalBytesPerSession() {
         return this.innerModel().totalBytesPerSession();
     }
 
@@ -60,7 +60,7 @@ public final class PacketCaptureResultImpl implements PacketCaptureResult {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

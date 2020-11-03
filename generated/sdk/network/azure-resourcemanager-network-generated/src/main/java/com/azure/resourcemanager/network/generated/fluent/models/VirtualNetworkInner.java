@@ -11,6 +11,7 @@ import com.azure.core.management.SubResource;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.models.AddressSpace;
 import com.azure.resourcemanager.network.generated.models.DhcpOptions;
+import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkBgpCommunities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -23,6 +24,12 @@ import java.util.Map;
 @Fluent
 public class VirtualNetworkInner extends Resource {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualNetworkInner.class);
+
+    /*
+     * The extended location of the virtual network.
+     */
+    @JsonProperty(value = "extendedLocation")
+    private ExtendedLocation extendedLocation;
 
     /*
      * A unique read-only string that changes whenever the resource is updated.
@@ -107,6 +114,26 @@ public class VirtualNetworkInner extends Resource {
      */
     @JsonProperty(value = "id")
     private String id;
+
+    /**
+     * Get the extendedLocation property: The extended location of the virtual network.
+     *
+     * @return the extendedLocation value.
+     */
+    public ExtendedLocation extendedLocation() {
+        return this.extendedLocation;
+    }
+
+    /**
+     * Set the extendedLocation property: The extended location of the virtual network.
+     *
+     * @param extendedLocation the extendedLocation value to set.
+     * @return the VirtualNetworkInner object itself.
+     */
+    public VirtualNetworkInner withExtendedLocation(ExtendedLocation extendedLocation) {
+        this.extendedLocation = extendedLocation;
+        return this;
+    }
 
     /**
      * Get the etag property: A unique read-only string that changes whenever the resource is updated.
@@ -365,6 +392,9 @@ public class VirtualNetworkInner extends Resource {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+        if (extendedLocation() != null) {
+            extendedLocation().validate();
+        }
         if (addressSpace() != null) {
             addressSpace().validate();
         }

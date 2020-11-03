@@ -45,14 +45,14 @@ public interface PacketCaptureResult {
      *
      * @return the bytesToCapturePerPacket value.
      */
-    Integer bytesToCapturePerPacket();
+    Long bytesToCapturePerPacket();
 
     /**
      * Gets the totalBytesPerSession property: Maximum size of the capture output.
      *
      * @return the totalBytesPerSession value.
      */
-    Integer totalBytesPerSession();
+    Long totalBytesPerSession();
 
     /**
      * Gets the timeLimitInSeconds property: Maximum duration of the capture session in seconds.

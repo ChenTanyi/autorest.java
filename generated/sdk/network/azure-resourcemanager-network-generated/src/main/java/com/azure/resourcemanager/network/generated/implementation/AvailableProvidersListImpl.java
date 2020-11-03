@@ -26,7 +26,7 @@ public final class AvailableProvidersListImpl implements AvailableProvidersList 
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

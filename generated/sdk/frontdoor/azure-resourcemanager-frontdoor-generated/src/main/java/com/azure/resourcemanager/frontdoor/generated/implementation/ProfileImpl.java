@@ -41,7 +41,7 @@ public final class ProfileImpl implements Profile, Profile.Definition, Profile.U
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

@@ -34,7 +34,7 @@ public final class VirtualMachineExtensionsListResultImpl implements VirtualMach
                         .map(inner1 -> new VirtualMachineExtensionImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

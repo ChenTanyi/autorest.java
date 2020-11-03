@@ -59,7 +59,7 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -77,7 +77,7 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
                         .map(inner1 -> new VirtualMachineExtensionImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -90,7 +90,7 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

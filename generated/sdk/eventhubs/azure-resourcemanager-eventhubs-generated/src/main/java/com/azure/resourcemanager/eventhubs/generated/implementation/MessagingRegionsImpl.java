@@ -42,7 +42,7 @@ public final class MessagingRegionsImpl implements MessagingRegions {
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

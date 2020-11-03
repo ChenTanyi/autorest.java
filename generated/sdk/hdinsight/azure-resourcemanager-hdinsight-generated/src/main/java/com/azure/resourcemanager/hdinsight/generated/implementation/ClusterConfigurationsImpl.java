@@ -25,7 +25,7 @@ public final class ClusterConfigurationsImpl implements ClusterConfigurations {
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

@@ -13,6 +13,7 @@ import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfac
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceTapConfigurationInner;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkSecurityGroupInner;
 import com.azure.resourcemanager.network.generated.fluent.models.PrivateEndpointInner;
+import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.NetworkInterface;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceDnsSettings;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceIpConfiguration;
@@ -49,8 +50,12 @@ public final class NetworkInterfaceImpl
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
+    }
+
+    public ExtendedLocation extendedLocation() {
+        return this.innerModel().extendedLocation();
     }
 
     public String etag() {
@@ -89,7 +94,7 @@ public final class NetworkInterfaceImpl
                         .map(inner1 -> new NetworkInterfaceIpConfigurationImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -103,7 +108,7 @@ public final class NetworkInterfaceImpl
                         .map(inner1 -> new NetworkInterfaceTapConfigurationImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -132,7 +137,7 @@ public final class NetworkInterfaceImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -275,6 +280,11 @@ public final class NetworkInterfaceImpl
             this.updateParameters.withTags(tags);
             return this;
         }
+    }
+
+    public NetworkInterfaceImpl withExtendedLocation(ExtendedLocation extendedLocation) {
+        this.innerModel().withExtendedLocation(extendedLocation);
+        return this;
     }
 
     public NetworkInterfaceImpl withNetworkSecurityGroup(NetworkSecurityGroupInner networkSecurityGroup) {

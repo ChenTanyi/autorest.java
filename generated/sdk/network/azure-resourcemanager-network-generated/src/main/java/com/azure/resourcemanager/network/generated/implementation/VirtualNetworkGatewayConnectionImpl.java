@@ -19,6 +19,7 @@ import com.azure.resourcemanager.network.generated.models.TrafficSelectorPolicy;
 import com.azure.resourcemanager.network.generated.models.TunnelConnectionHealth;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGateway;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnection;
+import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnectionMode;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnectionProtocol;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnectionStatus;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnectionType;
@@ -51,7 +52,7 @@ public final class VirtualNetworkGatewayConnectionImpl
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -106,6 +107,10 @@ public final class VirtualNetworkGatewayConnectionImpl
         return this.innerModel().dpdTimeoutSeconds();
     }
 
+    public VirtualNetworkGatewayConnectionMode connectionMode() {
+        return this.innerModel().connectionMode();
+    }
+
     public String sharedKey() {
         return this.innerModel().sharedKey();
     }
@@ -119,7 +124,7 @@ public final class VirtualNetworkGatewayConnectionImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -152,7 +157,7 @@ public final class VirtualNetworkGatewayConnectionImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -161,7 +166,7 @@ public final class VirtualNetworkGatewayConnectionImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -343,6 +348,11 @@ public final class VirtualNetworkGatewayConnectionImpl
 
     public VirtualNetworkGatewayConnectionImpl withDpdTimeoutSeconds(Integer dpdTimeoutSeconds) {
         this.innerModel().withDpdTimeoutSeconds(dpdTimeoutSeconds);
+        return this;
+    }
+
+    public VirtualNetworkGatewayConnectionImpl withConnectionMode(VirtualNetworkGatewayConnectionMode connectionMode) {
+        this.innerModel().withConnectionMode(connectionMode);
         return this;
     }
 

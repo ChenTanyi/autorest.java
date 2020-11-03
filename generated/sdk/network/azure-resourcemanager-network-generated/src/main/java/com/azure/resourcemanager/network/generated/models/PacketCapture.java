@@ -27,13 +27,13 @@ public class PacketCapture {
      * Number of bytes captured per packet, the remaining bytes are truncated.
      */
     @JsonProperty(value = "properties.bytesToCapturePerPacket")
-    private Integer bytesToCapturePerPacket;
+    private Long bytesToCapturePerPacket;
 
     /*
      * Maximum size of the capture output.
      */
     @JsonProperty(value = "properties.totalBytesPerSession")
-    private Integer totalBytesPerSession;
+    private Long totalBytesPerSession;
 
     /*
      * Maximum duration of the capture session in seconds.
@@ -78,7 +78,7 @@ public class PacketCapture {
      *
      * @return the bytesToCapturePerPacket value.
      */
-    public Integer bytesToCapturePerPacket() {
+    public Long bytesToCapturePerPacket() {
         return this.bytesToCapturePerPacket;
     }
 
@@ -88,7 +88,7 @@ public class PacketCapture {
      * @param bytesToCapturePerPacket the bytesToCapturePerPacket value to set.
      * @return the PacketCapture object itself.
      */
-    public PacketCapture withBytesToCapturePerPacket(Integer bytesToCapturePerPacket) {
+    public PacketCapture withBytesToCapturePerPacket(Long bytesToCapturePerPacket) {
         this.bytesToCapturePerPacket = bytesToCapturePerPacket;
         return this;
     }
@@ -98,7 +98,7 @@ public class PacketCapture {
      *
      * @return the totalBytesPerSession value.
      */
-    public Integer totalBytesPerSession() {
+    public Long totalBytesPerSession() {
         return this.totalBytesPerSession;
     }
 
@@ -108,7 +108,7 @@ public class PacketCapture {
      * @param totalBytesPerSession the totalBytesPerSession value to set.
      * @return the PacketCapture object itself.
      */
-    public PacketCapture withTotalBytesPerSession(Integer totalBytesPerSession) {
+    public PacketCapture withTotalBytesPerSession(Long totalBytesPerSession) {
         this.totalBytesPerSession = totalBytesPerSession;
         return this;
     }

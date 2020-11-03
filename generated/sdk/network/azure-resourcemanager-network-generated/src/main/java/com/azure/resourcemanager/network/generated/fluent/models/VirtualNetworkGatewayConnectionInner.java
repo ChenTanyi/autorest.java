@@ -13,6 +13,7 @@ import com.azure.resourcemanager.network.generated.models.IpsecPolicy;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.TrafficSelectorPolicy;
 import com.azure.resourcemanager.network.generated.models.TunnelConnectionHealth;
+import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnectionMode;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnectionProtocol;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnectionStatus;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnectionType;
@@ -80,6 +81,12 @@ public class VirtualNetworkGatewayConnectionInner extends Resource {
      */
     @JsonProperty(value = "properties.dpdTimeoutSeconds")
     private Integer dpdTimeoutSeconds;
+
+    /*
+     * The connection mode for this connection.
+     */
+    @JsonProperty(value = "properties.connectionMode")
+    private VirtualNetworkGatewayConnectionMode connectionMode;
 
     /*
      * The IPSec shared key.
@@ -343,6 +350,26 @@ public class VirtualNetworkGatewayConnectionInner extends Resource {
      */
     public VirtualNetworkGatewayConnectionInner withDpdTimeoutSeconds(Integer dpdTimeoutSeconds) {
         this.dpdTimeoutSeconds = dpdTimeoutSeconds;
+        return this;
+    }
+
+    /**
+     * Get the connectionMode property: The connection mode for this connection.
+     *
+     * @return the connectionMode value.
+     */
+    public VirtualNetworkGatewayConnectionMode connectionMode() {
+        return this.connectionMode;
+    }
+
+    /**
+     * Set the connectionMode property: The connection mode for this connection.
+     *
+     * @param connectionMode the connectionMode value to set.
+     * @return the VirtualNetworkGatewayConnectionInner object itself.
+     */
+    public VirtualNetworkGatewayConnectionInner withConnectionMode(VirtualNetworkGatewayConnectionMode connectionMode) {
+        this.connectionMode = connectionMode;
         return this;
     }
 

@@ -45,7 +45,7 @@ public final class VpnSiteImpl implements VpnSite, VpnSite.Definition, VpnSite.U
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -95,7 +95,7 @@ public final class VpnSiteImpl implements VpnSite, VpnSite.Definition, VpnSite.U
                         .map(inner1 -> new VpnSiteLinkImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

@@ -172,11 +172,11 @@ public interface VirtualHub {
     List<String> virtualRouterIps();
 
     /**
-     * Gets the enableVirtualRouterRoutePropogation property: Flag to control route propogation for VirtualRouter hub.
+     * Gets the allowBranchToBranchTraffic property: Flag to control transit for VirtualRouter hub.
      *
-     * @return the enableVirtualRouterRoutePropogation value.
+     * @return the allowBranchToBranchTraffic value.
      */
-    Boolean enableVirtualRouterRoutePropogation();
+    Boolean allowBranchToBranchTraffic();
 
     /**
      * Gets the id property: Resource ID.
@@ -265,7 +265,7 @@ public interface VirtualHub {
                 DefinitionStages.WithSku,
                 DefinitionStages.WithVirtualRouterAsn,
                 DefinitionStages.WithVirtualRouterIps,
-                DefinitionStages.WithEnableVirtualRouterRoutePropogation {
+                DefinitionStages.WithAllowBranchToBranchTraffic {
             /**
              * Executes the create request.
              *
@@ -423,16 +423,15 @@ public interface VirtualHub {
              */
             WithCreate withVirtualRouterIps(List<String> virtualRouterIps);
         }
-        /** The stage of the VirtualHub definition allowing to specify enableVirtualRouterRoutePropogation. */
-        interface WithEnableVirtualRouterRoutePropogation {
+        /** The stage of the VirtualHub definition allowing to specify allowBranchToBranchTraffic. */
+        interface WithAllowBranchToBranchTraffic {
             /**
-             * Specifies the enableVirtualRouterRoutePropogation property: Flag to control route propogation for
-             * VirtualRouter hub..
+             * Specifies the allowBranchToBranchTraffic property: Flag to control transit for VirtualRouter hub..
              *
-             * @param enableVirtualRouterRoutePropogation Flag to control route propogation for VirtualRouter hub.
+             * @param allowBranchToBranchTraffic Flag to control transit for VirtualRouter hub.
              * @return the next definition stage.
              */
-            WithCreate withEnableVirtualRouterRoutePropogation(Boolean enableVirtualRouterRoutePropogation);
+            WithCreate withAllowBranchToBranchTraffic(Boolean allowBranchToBranchTraffic);
         }
     }
     /**

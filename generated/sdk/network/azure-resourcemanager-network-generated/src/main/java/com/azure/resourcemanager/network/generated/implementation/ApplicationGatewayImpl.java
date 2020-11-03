@@ -66,7 +66,7 @@ public final class ApplicationGatewayImpl
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -79,7 +79,7 @@ public final class ApplicationGatewayImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -104,7 +104,7 @@ public final class ApplicationGatewayImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -113,7 +113,7 @@ public final class ApplicationGatewayImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -122,7 +122,7 @@ public final class ApplicationGatewayImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -131,7 +131,7 @@ public final class ApplicationGatewayImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -140,7 +140,7 @@ public final class ApplicationGatewayImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -149,7 +149,7 @@ public final class ApplicationGatewayImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -158,7 +158,7 @@ public final class ApplicationGatewayImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -167,7 +167,7 @@ public final class ApplicationGatewayImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -176,7 +176,7 @@ public final class ApplicationGatewayImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -185,7 +185,7 @@ public final class ApplicationGatewayImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -194,7 +194,7 @@ public final class ApplicationGatewayImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -203,7 +203,7 @@ public final class ApplicationGatewayImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -212,7 +212,7 @@ public final class ApplicationGatewayImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -221,7 +221,7 @@ public final class ApplicationGatewayImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -230,7 +230,7 @@ public final class ApplicationGatewayImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -239,7 +239,7 @@ public final class ApplicationGatewayImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -268,7 +268,7 @@ public final class ApplicationGatewayImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -282,7 +282,7 @@ public final class ApplicationGatewayImpl
                         .map(inner1 -> new ApplicationGatewayPrivateEndpointConnectionImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -299,7 +299,7 @@ public final class ApplicationGatewayImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

@@ -92,7 +92,7 @@ public final class ListContainerItemImpl implements ListContainerItem {
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

@@ -11,6 +11,7 @@ import com.azure.core.management.SubResource;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.models.AddressSpace;
 import com.azure.resourcemanager.network.generated.models.BgpSettings;
+import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewaySku;
@@ -139,6 +140,19 @@ public class VirtualNetworkGatewayInner extends Resource {
      */
     @JsonProperty(value = "properties.inboundDnsForwardingEndpoint", access = JsonProperty.Access.WRITE_ONLY)
     private String inboundDnsForwardingEndpoint;
+
+    /*
+     * MAS FIJI customer vnet resource id. VirtualNetworkGateway of type local
+     * gateway is associated with the customer vnet.
+     */
+    @JsonProperty(value = "properties.virtualNetworkExtendedLocationResourceId")
+    private String virtualNetworkExtendedLocationResourceId;
+
+    /*
+     * The extended location of type local virtual network gateway.
+     */
+    @JsonProperty(value = "properties.extendedLocation")
+    private ExtendedLocation extendedLocation;
 
     /*
      * Resource ID.
@@ -457,6 +471,49 @@ public class VirtualNetworkGatewayInner extends Resource {
     }
 
     /**
+     * Get the virtualNetworkExtendedLocationResourceId property: MAS FIJI customer vnet resource id.
+     * VirtualNetworkGateway of type local gateway is associated with the customer vnet.
+     *
+     * @return the virtualNetworkExtendedLocationResourceId value.
+     */
+    public String virtualNetworkExtendedLocationResourceId() {
+        return this.virtualNetworkExtendedLocationResourceId;
+    }
+
+    /**
+     * Set the virtualNetworkExtendedLocationResourceId property: MAS FIJI customer vnet resource id.
+     * VirtualNetworkGateway of type local gateway is associated with the customer vnet.
+     *
+     * @param virtualNetworkExtendedLocationResourceId the virtualNetworkExtendedLocationResourceId value to set.
+     * @return the VirtualNetworkGatewayInner object itself.
+     */
+    public VirtualNetworkGatewayInner withVirtualNetworkExtendedLocationResourceId(
+        String virtualNetworkExtendedLocationResourceId) {
+        this.virtualNetworkExtendedLocationResourceId = virtualNetworkExtendedLocationResourceId;
+        return this;
+    }
+
+    /**
+     * Get the extendedLocation property: The extended location of type local virtual network gateway.
+     *
+     * @return the extendedLocation value.
+     */
+    public ExtendedLocation extendedLocation() {
+        return this.extendedLocation;
+    }
+
+    /**
+     * Set the extendedLocation property: The extended location of type local virtual network gateway.
+     *
+     * @param extendedLocation the extendedLocation value to set.
+     * @return the VirtualNetworkGatewayInner object itself.
+     */
+    public VirtualNetworkGatewayInner withExtendedLocation(ExtendedLocation extendedLocation) {
+        this.extendedLocation = extendedLocation;
+        return this;
+    }
+
+    /**
      * Get the id property: Resource ID.
      *
      * @return the id value.
@@ -510,6 +567,9 @@ public class VirtualNetworkGatewayInner extends Resource {
         }
         if (customRoutes() != null) {
             customRoutes().validate();
+        }
+        if (extendedLocation() != null) {
+            extendedLocation().validate();
         }
     }
 }

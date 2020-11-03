@@ -44,7 +44,7 @@ public final class ProbeImpl implements Probe {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

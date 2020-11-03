@@ -66,6 +66,13 @@ public class VpnGatewayInner extends Resource {
     private List<VpnGatewayIpConfiguration> ipConfigurations;
 
     /*
+     * Enable Routing Preference property for the Public IP Interface of the
+     * VpnGateway.
+     */
+    @JsonProperty(value = "properties.isRoutingPreferenceInternet")
+    private Boolean isRoutingPreferenceInternet;
+
+    /*
      * Resource ID.
      */
     @JsonProperty(value = "id")
@@ -176,6 +183,28 @@ public class VpnGatewayInner extends Resource {
      */
     public List<VpnGatewayIpConfiguration> ipConfigurations() {
         return this.ipConfigurations;
+    }
+
+    /**
+     * Get the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP Interface of
+     * the VpnGateway.
+     *
+     * @return the isRoutingPreferenceInternet value.
+     */
+    public Boolean isRoutingPreferenceInternet() {
+        return this.isRoutingPreferenceInternet;
+    }
+
+    /**
+     * Set the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP Interface of
+     * the VpnGateway.
+     *
+     * @param isRoutingPreferenceInternet the isRoutingPreferenceInternet value to set.
+     * @return the VpnGatewayInner object itself.
+     */
+    public VpnGatewayInner withIsRoutingPreferenceInternet(Boolean isRoutingPreferenceInternet) {
+        this.isRoutingPreferenceInternet = isRoutingPreferenceInternet;
+        return this;
     }
 
     /**

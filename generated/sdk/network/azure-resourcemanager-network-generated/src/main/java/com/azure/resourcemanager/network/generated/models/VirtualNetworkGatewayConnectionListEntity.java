@@ -98,6 +98,13 @@ public interface VirtualNetworkGatewayConnectionListEntity {
     Integer routingWeight();
 
     /**
+     * Gets the connectionMode property: The connection mode for this connection.
+     *
+     * @return the connectionMode value.
+     */
+    VirtualNetworkGatewayConnectionMode connectionMode();
+
+    /**
      * Gets the sharedKey property: The IPSec shared key.
      *
      * @return the sharedKey value.

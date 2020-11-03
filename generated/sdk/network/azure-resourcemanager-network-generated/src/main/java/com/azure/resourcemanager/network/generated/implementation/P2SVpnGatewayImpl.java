@@ -40,7 +40,7 @@ public final class P2SVpnGatewayImpl implements P2SVpnGateway, P2SVpnGateway.Def
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -57,7 +57,7 @@ public final class P2SVpnGatewayImpl implements P2SVpnGateway, P2SVpnGateway.Def
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -82,8 +82,12 @@ public final class P2SVpnGatewayImpl implements P2SVpnGateway, P2SVpnGateway.Def
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
+    }
+
+    public Boolean isRoutingPreferenceInternet() {
+        return this.innerModel().isRoutingPreferenceInternet();
     }
 
     public String id() {
@@ -234,6 +238,11 @@ public final class P2SVpnGatewayImpl implements P2SVpnGateway, P2SVpnGateway.Def
 
     public P2SVpnGatewayImpl withCustomDnsServers(List<String> customDnsServers) {
         this.innerModel().withCustomDnsServers(customDnsServers);
+        return this;
+    }
+
+    public P2SVpnGatewayImpl withIsRoutingPreferenceInternet(Boolean isRoutingPreferenceInternet) {
+        this.innerModel().withIsRoutingPreferenceInternet(isRoutingPreferenceInternet);
         return this;
     }
 

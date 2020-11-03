@@ -107,7 +107,7 @@ public final class AppServicePlansImpl implements AppServicePlans {
                         .map(inner1 -> new CapabilityImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -297,7 +297,7 @@ public final class AppServicePlansImpl implements AppServicePlans {
                         .map(inner1 -> new VnetInfoImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -415,7 +415,7 @@ public final class AppServicePlansImpl implements AppServicePlans {
                         .map(inner1 -> new VnetRouteImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -448,7 +448,7 @@ public final class AppServicePlansImpl implements AppServicePlans {
                         .map(inner1 -> new VnetRouteImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

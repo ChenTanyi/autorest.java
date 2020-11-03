@@ -62,7 +62,7 @@ public final class VirtualMachineImagesImpl implements VirtualMachineImages {
                         .map(inner1 -> new VirtualMachineImageResourceImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -102,7 +102,7 @@ public final class VirtualMachineImagesImpl implements VirtualMachineImages {
                         .map(inner1 -> new VirtualMachineImageResourceImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -135,7 +135,7 @@ public final class VirtualMachineImagesImpl implements VirtualMachineImages {
                         .map(inner1 -> new VirtualMachineImageResourceImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -167,7 +167,7 @@ public final class VirtualMachineImagesImpl implements VirtualMachineImages {
                         .map(inner1 -> new VirtualMachineImageResourceImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

@@ -52,7 +52,7 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -69,7 +69,7 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -90,7 +90,7 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -103,7 +103,7 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -141,7 +141,7 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

@@ -25,7 +25,7 @@ public final class AssetContainerSasImpl implements AssetContainerSas {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

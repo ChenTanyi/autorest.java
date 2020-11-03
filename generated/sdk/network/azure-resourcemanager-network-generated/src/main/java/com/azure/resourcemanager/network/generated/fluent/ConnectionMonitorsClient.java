@@ -25,6 +25,7 @@ public interface ConnectionMonitorsClient {
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param connectionMonitorName The name of the connection monitor.
      * @param parameters Parameters that define the operation to create a connection monitor.
+     * @param migrate Value indicating whether connection monitor V1 should be migrated to V2 format.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -35,7 +36,8 @@ public interface ConnectionMonitorsClient {
         String resourceGroupName,
         String networkWatcherName,
         String connectionMonitorName,
-        ConnectionMonitor parameters);
+        ConnectionMonitor parameters,
+        String migrate);
 
     /**
      * Create or update a connection monitor.
@@ -44,6 +46,7 @@ public interface ConnectionMonitorsClient {
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param connectionMonitorName The name of the connection monitor.
      * @param parameters Parameters that define the operation to create a connection monitor.
+     * @param migrate Value indicating whether connection monitor V1 should be migrated to V2 format.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -56,6 +59,7 @@ public interface ConnectionMonitorsClient {
         String networkWatcherName,
         String connectionMonitorName,
         ConnectionMonitor parameters,
+        String migrate,
         Context context);
 
     /**
@@ -65,6 +69,27 @@ public interface ConnectionMonitorsClient {
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param connectionMonitorName The name of the connection monitor.
      * @param parameters Parameters that define the operation to create a connection monitor.
+     * @param migrate Value indicating whether connection monitor V1 should be migrated to V2 format.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about the connection monitor.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ConnectionMonitorResultInner createOrUpdate(
+        String resourceGroupName,
+        String networkWatcherName,
+        String connectionMonitorName,
+        ConnectionMonitor parameters,
+        String migrate);
+
+    /**
+     * Create or update a connection monitor.
+     *
+     * @param resourceGroupName The name of the resource group containing Network Watcher.
+     * @param networkWatcherName The name of the Network Watcher resource.
+     * @param connectionMonitorName The name of the connection monitor.
+     * @param parameters Parameters that define the operation to create a connection monitor.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -84,6 +109,7 @@ public interface ConnectionMonitorsClient {
      * @param networkWatcherName The name of the Network Watcher resource.
      * @param connectionMonitorName The name of the connection monitor.
      * @param parameters Parameters that define the operation to create a connection monitor.
+     * @param migrate Value indicating whether connection monitor V1 should be migrated to V2 format.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -96,6 +122,7 @@ public interface ConnectionMonitorsClient {
         String networkWatcherName,
         String connectionMonitorName,
         ConnectionMonitor parameters,
+        String migrate,
         Context context);
 
     /**

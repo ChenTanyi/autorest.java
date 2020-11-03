@@ -258,7 +258,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * Deletes the specified public IP address.
      *
      * @param resourceGroupName The name of the resource group.
-     * @param publicIpAddressName The name of the subnet.
+     * @param publicIpAddressName The name of the public IP address.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -287,7 +287,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -308,7 +308,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * Deletes the specified public IP address.
      *
      * @param resourceGroupName The name of the resource group.
-     * @param publicIpAddressName The name of the subnet.
+     * @param publicIpAddressName The name of the public IP address.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -338,7 +338,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -356,7 +356,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * Deletes the specified public IP address.
      *
      * @param resourceGroupName The name of the resource group.
-     * @param publicIpAddressName The name of the subnet.
+     * @param publicIpAddressName The name of the public IP address.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -374,7 +374,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * Deletes the specified public IP address.
      *
      * @param resourceGroupName The name of the resource group.
-     * @param publicIpAddressName The name of the subnet.
+     * @param publicIpAddressName The name of the public IP address.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -396,7 +396,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * Deletes the specified public IP address.
      *
      * @param resourceGroupName The name of the resource group.
-     * @param publicIpAddressName The name of the subnet.
+     * @param publicIpAddressName The name of the public IP address.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -411,7 +411,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * Deletes the specified public IP address.
      *
      * @param resourceGroupName The name of the resource group.
-     * @param publicIpAddressName The name of the subnet.
+     * @param publicIpAddressName The name of the public IP address.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -428,7 +428,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * Deletes the specified public IP address.
      *
      * @param resourceGroupName The name of the resource group.
-     * @param publicIpAddressName The name of the subnet.
+     * @param publicIpAddressName The name of the public IP address.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -445,7 +445,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * Deletes the specified public IP address.
      *
      * @param resourceGroupName The name of the resource group.
-     * @param publicIpAddressName The name of the subnet.
+     * @param publicIpAddressName The name of the public IP address.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -463,7 +463,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * Deletes the specified public IP address.
      *
      * @param resourceGroupName The name of the resource group.
-     * @param publicIpAddressName The name of the subnet.
+     * @param publicIpAddressName The name of the public IP address.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -477,7 +477,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * Deletes the specified public IP address.
      *
      * @param resourceGroupName The name of the resource group.
-     * @param publicIpAddressName The name of the subnet.
+     * @param publicIpAddressName The name of the public IP address.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -492,7 +492,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * Gets the specified public IP address in a specified resource group.
      *
      * @param resourceGroupName The name of the resource group.
-     * @param publicIpAddressName The name of the subnet.
+     * @param publicIpAddressName The name of the public IP address.
      * @param expand Expands referenced resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -522,7 +522,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -544,7 +544,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * Gets the specified public IP address in a specified resource group.
      *
      * @param resourceGroupName The name of the resource group.
-     * @param publicIpAddressName The name of the subnet.
+     * @param publicIpAddressName The name of the public IP address.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -575,7 +575,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -594,7 +594,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * Gets the specified public IP address in a specified resource group.
      *
      * @param resourceGroupName The name of the resource group.
-     * @param publicIpAddressName The name of the subnet.
+     * @param publicIpAddressName The name of the public IP address.
      * @param expand Expands referenced resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -619,7 +619,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * Gets the specified public IP address in a specified resource group.
      *
      * @param resourceGroupName The name of the resource group.
-     * @param publicIpAddressName The name of the subnet.
+     * @param publicIpAddressName The name of the public IP address.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -643,7 +643,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * Gets the specified public IP address in a specified resource group.
      *
      * @param resourceGroupName The name of the resource group.
-     * @param publicIpAddressName The name of the subnet.
+     * @param publicIpAddressName The name of the public IP address.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -659,7 +659,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
      * Gets the specified public IP address in a specified resource group.
      *
      * @param resourceGroupName The name of the resource group.
-     * @param publicIpAddressName The name of the subnet.
+     * @param publicIpAddressName The name of the public IP address.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -712,7 +712,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -770,7 +770,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -983,7 +983,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1041,7 +1041,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1137,7 +1137,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1179,7 +1179,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1275,7 +1275,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1329,7 +1329,7 @@ public final class PublicIpAddressesClientImpl implements PublicIpAddressesClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

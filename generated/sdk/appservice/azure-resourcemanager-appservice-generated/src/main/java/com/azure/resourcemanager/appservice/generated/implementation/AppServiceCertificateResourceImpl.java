@@ -43,7 +43,7 @@ public final class AppServiceCertificateResourceImpl
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

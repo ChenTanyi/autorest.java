@@ -33,7 +33,7 @@ public final class ListTableServicesImpl implements ListTableServices {
                         .map(inner1 -> new TableServicePropertiesImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

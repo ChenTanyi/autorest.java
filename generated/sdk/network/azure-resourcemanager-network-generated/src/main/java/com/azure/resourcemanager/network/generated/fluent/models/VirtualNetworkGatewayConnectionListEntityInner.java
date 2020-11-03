@@ -14,6 +14,7 @@ import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.TrafficSelectorPolicy;
 import com.azure.resourcemanager.network.generated.models.TunnelConnectionHealth;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkConnectionGatewayReference;
+import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnectionMode;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnectionProtocol;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnectionStatus;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnectionType;
@@ -76,6 +77,12 @@ public class VirtualNetworkGatewayConnectionListEntityInner extends Resource {
      */
     @JsonProperty(value = "properties.routingWeight")
     private Integer routingWeight;
+
+    /*
+     * The connection mode for this connection.
+     */
+    @JsonProperty(value = "properties.connectionMode")
+    private VirtualNetworkGatewayConnectionMode connectionMode;
 
     /*
      * The IPSec shared key.
@@ -314,6 +321,27 @@ public class VirtualNetworkGatewayConnectionListEntityInner extends Resource {
      */
     public VirtualNetworkGatewayConnectionListEntityInner withRoutingWeight(Integer routingWeight) {
         this.routingWeight = routingWeight;
+        return this;
+    }
+
+    /**
+     * Get the connectionMode property: The connection mode for this connection.
+     *
+     * @return the connectionMode value.
+     */
+    public VirtualNetworkGatewayConnectionMode connectionMode() {
+        return this.connectionMode;
+    }
+
+    /**
+     * Set the connectionMode property: The connection mode for this connection.
+     *
+     * @param connectionMode the connectionMode value to set.
+     * @return the VirtualNetworkGatewayConnectionListEntityInner object itself.
+     */
+    public VirtualNetworkGatewayConnectionListEntityInner withConnectionMode(
+        VirtualNetworkGatewayConnectionMode connectionMode) {
+        this.connectionMode = connectionMode;
         return this;
     }
 

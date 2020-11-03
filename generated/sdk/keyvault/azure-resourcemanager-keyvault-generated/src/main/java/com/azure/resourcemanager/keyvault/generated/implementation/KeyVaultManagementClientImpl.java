@@ -22,6 +22,7 @@ import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.serializer.SerializerAdapter;
 import com.azure.core.util.serializer.SerializerEncoding;
 import com.azure.resourcemanager.keyvault.generated.fluent.KeyVaultManagementClient;
+import com.azure.resourcemanager.keyvault.generated.fluent.KeysClient;
 import com.azure.resourcemanager.keyvault.generated.fluent.OperationsClient;
 import com.azure.resourcemanager.keyvault.generated.fluent.PrivateEndpointConnectionsClient;
 import com.azure.resourcemanager.keyvault.generated.fluent.PrivateLinkResourcesClient;
@@ -165,6 +166,18 @@ public final class KeyVaultManagementClientImpl implements KeyVaultManagementCli
         return this.operations;
     }
 
+    /** The KeysClient object to access its operations. */
+    private final KeysClient keys;
+
+    /**
+     * Gets the KeysClient object to access its operations.
+     *
+     * @return the KeysClient object.
+     */
+    public KeysClient getKeys() {
+        return this.keys;
+    }
+
     /**
      * Initializes an instance of KeyVaultManagementClient client.
      *
@@ -193,6 +206,7 @@ public final class KeyVaultManagementClientImpl implements KeyVaultManagementCli
         this.privateEndpointConnections = new PrivateEndpointConnectionsClientImpl(this);
         this.privateLinkResources = new PrivateLinkResourcesClientImpl(this);
         this.operations = new OperationsClientImpl(this);
+        this.keys = new KeysClientImpl(this);
     }
 
     /**

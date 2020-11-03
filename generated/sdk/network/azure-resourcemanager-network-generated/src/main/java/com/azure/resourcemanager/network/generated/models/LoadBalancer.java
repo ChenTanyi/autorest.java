@@ -49,6 +49,13 @@ public interface LoadBalancer {
     Map<String, String> tags();
 
     /**
+     * Gets the extendedLocation property: The extended location of the load balancer.
+     *
+     * @return the extendedLocation value.
+     */
+    ExtendedLocation extendedLocation();
+
+    /**
      * Gets the sku property: The load balancer SKU.
      *
      * @return the sku value.
@@ -209,6 +216,7 @@ public interface LoadBalancer {
          */
         interface WithCreate
             extends DefinitionStages.WithTags,
+                DefinitionStages.WithExtendedLocation,
                 DefinitionStages.WithSku,
                 DefinitionStages.WithFrontendIpConfigurations,
                 DefinitionStages.WithBackendAddressPools,
@@ -241,6 +249,16 @@ public interface LoadBalancer {
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
+        }
+        /** The stage of the LoadBalancer definition allowing to specify extendedLocation. */
+        interface WithExtendedLocation {
+            /**
+             * Specifies the extendedLocation property: The extended location of the load balancer..
+             *
+             * @param extendedLocation The extended location of the load balancer.
+             * @return the next definition stage.
+             */
+            WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
         /** The stage of the LoadBalancer definition allowing to specify sku. */
         interface WithSku {

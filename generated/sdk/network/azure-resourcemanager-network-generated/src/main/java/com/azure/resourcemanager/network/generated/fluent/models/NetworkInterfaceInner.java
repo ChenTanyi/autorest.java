@@ -9,6 +9,7 @@ import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.management.Resource;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceDnsSettings;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -21,6 +22,12 @@ import java.util.Map;
 @Fluent
 public class NetworkInterfaceInner extends Resource {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(NetworkInterfaceInner.class);
+
+    /*
+     * The extended location of the network interface.
+     */
+    @JsonProperty(value = "extendedLocation")
+    private ExtendedLocation extendedLocation;
 
     /*
      * A unique read-only string that changes whenever the resource is updated.
@@ -119,6 +126,26 @@ public class NetworkInterfaceInner extends Resource {
      */
     @JsonProperty(value = "id")
     private String id;
+
+    /**
+     * Get the extendedLocation property: The extended location of the network interface.
+     *
+     * @return the extendedLocation value.
+     */
+    public ExtendedLocation extendedLocation() {
+        return this.extendedLocation;
+    }
+
+    /**
+     * Set the extendedLocation property: The extended location of the network interface.
+     *
+     * @param extendedLocation the extendedLocation value to set.
+     * @return the NetworkInterfaceInner object itself.
+     */
+    public NetworkInterfaceInner withExtendedLocation(ExtendedLocation extendedLocation) {
+        this.extendedLocation = extendedLocation;
+        return this;
+    }
 
     /**
      * Get the etag property: A unique read-only string that changes whenever the resource is updated.
@@ -351,6 +378,9 @@ public class NetworkInterfaceInner extends Resource {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+        if (extendedLocation() != null) {
+            extendedLocation().validate();
+        }
         if (networkSecurityGroup() != null) {
             networkSecurityGroup().validate();
         }

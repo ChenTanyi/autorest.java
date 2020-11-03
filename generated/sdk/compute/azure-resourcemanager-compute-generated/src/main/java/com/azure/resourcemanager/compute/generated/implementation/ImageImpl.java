@@ -42,7 +42,7 @@ public final class ImageImpl implements Image, Image.Definition, Image.Update {
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

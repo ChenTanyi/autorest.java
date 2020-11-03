@@ -33,7 +33,7 @@ public final class ExpressRouteConnectionListImpl implements ExpressRouteConnect
                         .map(inner1 -> new ExpressRouteConnectionImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

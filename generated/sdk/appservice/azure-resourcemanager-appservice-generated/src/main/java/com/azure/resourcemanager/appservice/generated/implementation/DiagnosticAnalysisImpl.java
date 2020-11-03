@@ -56,7 +56,7 @@ public final class DiagnosticAnalysisImpl implements DiagnosticAnalysis {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -70,7 +70,7 @@ public final class DiagnosticAnalysisImpl implements DiagnosticAnalysis {
                         .map(inner1 -> new AnalysisDataImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -84,7 +84,7 @@ public final class DiagnosticAnalysisImpl implements DiagnosticAnalysis {
                         .map(inner1 -> new DetectorDefinitionImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

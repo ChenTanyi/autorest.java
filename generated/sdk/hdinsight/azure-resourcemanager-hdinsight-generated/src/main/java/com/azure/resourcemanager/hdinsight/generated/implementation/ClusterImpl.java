@@ -43,7 +43,7 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

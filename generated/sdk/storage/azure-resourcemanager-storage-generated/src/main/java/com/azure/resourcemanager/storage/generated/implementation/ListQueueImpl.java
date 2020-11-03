@@ -37,7 +37,7 @@ public final class ListQueueImpl implements ListQueue {
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

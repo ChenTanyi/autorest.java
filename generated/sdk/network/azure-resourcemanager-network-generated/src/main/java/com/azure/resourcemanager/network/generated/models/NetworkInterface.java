@@ -46,6 +46,13 @@ public interface NetworkInterface {
     Map<String, String> tags();
 
     /**
+     * Gets the extendedLocation property: The extended location of the network interface.
+     *
+     * @return the extendedLocation value.
+     */
+    ExtendedLocation extendedLocation();
+
+    /**
      * Gets the etag property: A unique read-only string that changes whenever the resource is updated.
      *
      * @return the etag value.
@@ -225,6 +232,7 @@ public interface NetworkInterface {
          */
         interface WithCreate
             extends DefinitionStages.WithTags,
+                DefinitionStages.WithExtendedLocation,
                 DefinitionStages.WithNetworkSecurityGroup,
                 DefinitionStages.WithIpConfigurations,
                 DefinitionStages.WithDnsSettings,
@@ -254,6 +262,16 @@ public interface NetworkInterface {
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
+        }
+        /** The stage of the NetworkInterface definition allowing to specify extendedLocation. */
+        interface WithExtendedLocation {
+            /**
+             * Specifies the extendedLocation property: The extended location of the network interface..
+             *
+             * @param extendedLocation The extended location of the network interface.
+             * @return the next definition stage.
+             */
+            WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
         /** The stage of the NetworkInterface definition allowing to specify networkSecurityGroup. */
         interface WithNetworkSecurityGroup {

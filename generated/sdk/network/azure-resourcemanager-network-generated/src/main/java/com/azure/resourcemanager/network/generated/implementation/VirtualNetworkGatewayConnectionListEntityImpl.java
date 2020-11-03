@@ -13,6 +13,7 @@ import com.azure.resourcemanager.network.generated.models.TrafficSelectorPolicy;
 import com.azure.resourcemanager.network.generated.models.TunnelConnectionHealth;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkConnectionGatewayReference;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnectionListEntity;
+import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnectionMode;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnectionProtocol;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnectionStatus;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnectionType;
@@ -48,7 +49,7 @@ public final class VirtualNetworkGatewayConnectionListEntityImpl implements Virt
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -84,6 +85,10 @@ public final class VirtualNetworkGatewayConnectionListEntityImpl implements Virt
         return this.innerModel().routingWeight();
     }
 
+    public VirtualNetworkGatewayConnectionMode connectionMode() {
+        return this.innerModel().connectionMode();
+    }
+
     public String sharedKey() {
         return this.innerModel().sharedKey();
     }
@@ -97,7 +102,7 @@ public final class VirtualNetworkGatewayConnectionListEntityImpl implements Virt
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -126,7 +131,7 @@ public final class VirtualNetworkGatewayConnectionListEntityImpl implements Virt
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -135,7 +140,7 @@ public final class VirtualNetworkGatewayConnectionListEntityImpl implements Virt
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

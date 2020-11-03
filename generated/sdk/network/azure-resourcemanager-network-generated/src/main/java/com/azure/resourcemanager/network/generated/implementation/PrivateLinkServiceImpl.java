@@ -47,7 +47,7 @@ public final class PrivateLinkServiceImpl
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -65,7 +65,7 @@ public final class PrivateLinkServiceImpl
                         .map(inner1 -> new FrontendIpConfigurationImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -79,7 +79,7 @@ public final class PrivateLinkServiceImpl
                         .map(inner1 -> new PrivateLinkServiceIpConfigurationImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -93,7 +93,7 @@ public final class PrivateLinkServiceImpl
                         .map(inner1 -> new NetworkInterfaceImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -111,7 +111,7 @@ public final class PrivateLinkServiceImpl
                         .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -128,7 +128,7 @@ public final class PrivateLinkServiceImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

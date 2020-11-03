@@ -100,6 +100,14 @@ public interface P2SVpnGateway {
     List<String> customDnsServers();
 
     /**
+     * Gets the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP Interface of
+     * the P2SVpnGateway.
+     *
+     * @return the isRoutingPreferenceInternet value.
+     */
+    Boolean isRoutingPreferenceInternet();
+
+    /**
      * Gets the id property: Resource ID.
      *
      * @return the id value.
@@ -177,7 +185,8 @@ public interface P2SVpnGateway {
                 DefinitionStages.WithP2SConnectionConfigurations,
                 DefinitionStages.WithVpnGatewayScaleUnit,
                 DefinitionStages.WithVpnServerConfiguration,
-                DefinitionStages.WithCustomDnsServers {
+                DefinitionStages.WithCustomDnsServers,
+                DefinitionStages.WithIsRoutingPreferenceInternet {
             /**
              * Executes the create request.
              *
@@ -254,6 +263,18 @@ public interface P2SVpnGateway {
              * @return the next definition stage.
              */
             WithCreate withCustomDnsServers(List<String> customDnsServers);
+        }
+        /** The stage of the P2SVpnGateway definition allowing to specify isRoutingPreferenceInternet. */
+        interface WithIsRoutingPreferenceInternet {
+            /**
+             * Specifies the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP
+             * Interface of the P2SVpnGateway..
+             *
+             * @param isRoutingPreferenceInternet Enable Routing Preference property for the Public IP Interface of the
+             *     P2SVpnGateway.
+             * @return the next definition stage.
+             */
+            WithCreate withIsRoutingPreferenceInternet(Boolean isRoutingPreferenceInternet);
         }
     }
     /**

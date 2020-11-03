@@ -39,7 +39,7 @@ public final class HubRouteTableImpl implements HubRouteTable, HubRouteTable.Def
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -48,7 +48,7 @@ public final class HubRouteTableImpl implements HubRouteTable, HubRouteTable.Def
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -57,7 +57,7 @@ public final class HubRouteTableImpl implements HubRouteTable, HubRouteTable.Def
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -66,7 +66,7 @@ public final class HubRouteTableImpl implements HubRouteTable, HubRouteTable.Def
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

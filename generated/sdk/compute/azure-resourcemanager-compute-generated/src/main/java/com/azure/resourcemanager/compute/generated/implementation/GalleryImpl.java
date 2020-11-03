@@ -43,7 +43,7 @@ public final class GalleryImpl implements Gallery, Gallery.Definition, Gallery.U
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

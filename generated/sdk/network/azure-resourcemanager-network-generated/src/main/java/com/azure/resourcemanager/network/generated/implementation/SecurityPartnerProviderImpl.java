@@ -40,7 +40,7 @@ public final class SecurityPartnerProviderImpl
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

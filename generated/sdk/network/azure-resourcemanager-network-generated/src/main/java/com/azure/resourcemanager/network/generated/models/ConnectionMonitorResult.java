@@ -204,7 +204,8 @@ public interface ConnectionMonitorResult {
                 DefinitionStages.WithTestConfigurations,
                 DefinitionStages.WithTestGroups,
                 DefinitionStages.WithOutputs,
-                DefinitionStages.WithNotes {
+                DefinitionStages.WithNotes,
+                DefinitionStages.WithMigrate {
             /**
              * Executes the create request.
              *
@@ -338,6 +339,17 @@ public interface ConnectionMonitorResult {
              * @return the next definition stage.
              */
             WithCreate withNotes(String notes);
+        }
+        /** The stage of the ConnectionMonitorResult definition allowing to specify migrate. */
+        interface WithMigrate {
+            /**
+             * Specifies the migrate property: Value indicating whether connection monitor V1 should be migrated to V2
+             * format..
+             *
+             * @param migrate Value indicating whether connection monitor V1 should be migrated to V2 format.
+             * @return the next definition stage.
+             */
+            WithCreate withMigrate(String migrate);
         }
     }
     /**

@@ -53,7 +53,7 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -107,7 +107,7 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
                         .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -121,7 +121,7 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
                         .map(inner1 -> new SharedPrivateLinkResourceImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

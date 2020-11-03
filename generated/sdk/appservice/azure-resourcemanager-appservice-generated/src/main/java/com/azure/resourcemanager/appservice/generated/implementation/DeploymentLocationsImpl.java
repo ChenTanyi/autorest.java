@@ -35,7 +35,7 @@ public final class DeploymentLocationsImpl implements DeploymentLocations {
                         .map(inner1 -> new GeoRegionImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -44,7 +44,7 @@ public final class DeploymentLocationsImpl implements DeploymentLocations {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -53,7 +53,7 @@ public final class DeploymentLocationsImpl implements DeploymentLocations {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

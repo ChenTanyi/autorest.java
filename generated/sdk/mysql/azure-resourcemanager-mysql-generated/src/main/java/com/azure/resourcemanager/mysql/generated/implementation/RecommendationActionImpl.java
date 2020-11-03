@@ -66,7 +66,7 @@ public final class RecommendationActionImpl implements RecommendationAction {
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

@@ -125,6 +125,7 @@ import com.azure.resourcemanager.network.generated.implementation.VpnSiteLinksIm
 import com.azure.resourcemanager.network.generated.implementation.VpnSitesConfigurationsImpl;
 import com.azure.resourcemanager.network.generated.implementation.VpnSitesImpl;
 import com.azure.resourcemanager.network.generated.implementation.WebApplicationFirewallPoliciesImpl;
+import com.azure.resourcemanager.network.generated.implementation.WebCategoriesImpl;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayPrivateEndpointConnections;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayPrivateLinkResources;
 import com.azure.resourcemanager.network.generated.models.ApplicationGateways;
@@ -228,6 +229,7 @@ import com.azure.resourcemanager.network.generated.models.VpnSiteLinks;
 import com.azure.resourcemanager.network.generated.models.VpnSites;
 import com.azure.resourcemanager.network.generated.models.VpnSitesConfigurations;
 import com.azure.resourcemanager.network.generated.models.WebApplicationFirewallPolicies;
+import com.azure.resourcemanager.network.generated.models.WebCategories;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -253,6 +255,8 @@ public final class NetworkManager {
     private AzureFirewalls azureFirewalls;
 
     private AzureFirewallFqdnTags azureFirewallFqdnTags;
+
+    private WebCategories webCategories;
 
     private BastionHosts bastionHosts;
 
@@ -667,6 +671,14 @@ public final class NetworkManager {
             this.azureFirewallFqdnTags = new AzureFirewallFqdnTagsImpl(clientObject.getAzureFirewallFqdnTags(), this);
         }
         return azureFirewallFqdnTags;
+    }
+
+    /** @return Resource collection API of WebCategories. */
+    public WebCategories webCategories() {
+        if (this.webCategories == null) {
+            this.webCategories = new WebCategoriesImpl(clientObject.getWebCategories(), this);
+        }
+        return webCategories;
     }
 
     /** @return Resource collection API of BastionHosts. */

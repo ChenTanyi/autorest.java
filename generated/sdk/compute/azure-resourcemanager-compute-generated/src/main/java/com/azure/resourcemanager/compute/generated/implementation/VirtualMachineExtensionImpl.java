@@ -41,7 +41,7 @@ public final class VirtualMachineExtensionImpl
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

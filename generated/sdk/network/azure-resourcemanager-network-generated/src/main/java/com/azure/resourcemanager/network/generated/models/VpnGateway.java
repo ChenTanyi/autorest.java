@@ -94,6 +94,14 @@ public interface VpnGateway {
     List<VpnGatewayIpConfiguration> ipConfigurations();
 
     /**
+     * Gets the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP Interface of
+     * the VpnGateway.
+     *
+     * @return the isRoutingPreferenceInternet value.
+     */
+    Boolean isRoutingPreferenceInternet();
+
+    /**
      * Gets the id property: Resource ID.
      *
      * @return the id value.
@@ -170,7 +178,8 @@ public interface VpnGateway {
                 DefinitionStages.WithVirtualHub,
                 DefinitionStages.WithConnections,
                 DefinitionStages.WithBgpSettings,
-                DefinitionStages.WithVpnGatewayScaleUnit {
+                DefinitionStages.WithVpnGatewayScaleUnit,
+                DefinitionStages.WithIsRoutingPreferenceInternet {
             /**
              * Executes the create request.
              *
@@ -235,6 +244,18 @@ public interface VpnGateway {
              * @return the next definition stage.
              */
             WithCreate withVpnGatewayScaleUnit(Integer vpnGatewayScaleUnit);
+        }
+        /** The stage of the VpnGateway definition allowing to specify isRoutingPreferenceInternet. */
+        interface WithIsRoutingPreferenceInternet {
+            /**
+             * Specifies the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP
+             * Interface of the VpnGateway..
+             *
+             * @param isRoutingPreferenceInternet Enable Routing Preference property for the Public IP Interface of the
+             *     VpnGateway.
+             * @return the next definition stage.
+             */
+            WithCreate withIsRoutingPreferenceInternet(Boolean isRoutingPreferenceInternet);
         }
     }
     /**

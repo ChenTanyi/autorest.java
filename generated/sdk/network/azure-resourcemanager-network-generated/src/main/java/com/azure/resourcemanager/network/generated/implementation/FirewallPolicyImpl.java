@@ -12,7 +12,11 @@ import com.azure.resourcemanager.network.generated.fluent.models.FirewallPolicyI
 import com.azure.resourcemanager.network.generated.models.AzureFirewallThreatIntelMode;
 import com.azure.resourcemanager.network.generated.models.DnsSettings;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicy;
+import com.azure.resourcemanager.network.generated.models.FirewallPolicyIntrusionDetection;
+import com.azure.resourcemanager.network.generated.models.FirewallPolicySku;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicyThreatIntelWhitelist;
+import com.azure.resourcemanager.network.generated.models.FirewallPolicyTransportSecurity;
+import com.azure.resourcemanager.network.generated.models.ManagedServiceIdentity;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import java.util.Collections;
 import java.util.List;
@@ -40,7 +44,7 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -48,12 +52,16 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
         return this.innerModel().etag();
     }
 
+    public ManagedServiceIdentity identity() {
+        return this.innerModel().identity();
+    }
+
     public List<SubResource> ruleCollectionGroups() {
         List<SubResource> inner = this.innerModel().ruleCollectionGroups();
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -70,7 +78,7 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -79,7 +87,7 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -93,6 +101,18 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
 
     public DnsSettings dnsSettings() {
         return this.innerModel().dnsSettings();
+    }
+
+    public FirewallPolicyIntrusionDetection intrusionDetection() {
+        return this.innerModel().intrusionDetection();
+    }
+
+    public FirewallPolicyTransportSecurity transportSecurity() {
+        return this.innerModel().transportSecurity();
+    }
+
+    public FirewallPolicySku sku() {
+        return this.innerModel().sku();
     }
 
     public String id() {
@@ -214,6 +234,11 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
         return this;
     }
 
+    public FirewallPolicyImpl withIdentity(ManagedServiceIdentity identity) {
+        this.innerModel().withIdentity(identity);
+        return this;
+    }
+
     public FirewallPolicyImpl withBasePolicy(SubResource basePolicy) {
         this.innerModel().withBasePolicy(basePolicy);
         return this;
@@ -231,6 +256,21 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
 
     public FirewallPolicyImpl withDnsSettings(DnsSettings dnsSettings) {
         this.innerModel().withDnsSettings(dnsSettings);
+        return this;
+    }
+
+    public FirewallPolicyImpl withIntrusionDetection(FirewallPolicyIntrusionDetection intrusionDetection) {
+        this.innerModel().withIntrusionDetection(intrusionDetection);
+        return this;
+    }
+
+    public FirewallPolicyImpl withTransportSecurity(FirewallPolicyTransportSecurity transportSecurity) {
+        this.innerModel().withTransportSecurity(transportSecurity);
+        return this;
+    }
+
+    public FirewallPolicyImpl withSku(FirewallPolicySku sku) {
+        this.innerModel().withSku(sku);
         return this;
     }
 }

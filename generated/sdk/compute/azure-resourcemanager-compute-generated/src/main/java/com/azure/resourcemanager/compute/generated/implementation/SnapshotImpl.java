@@ -48,7 +48,7 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

@@ -51,7 +51,7 @@ public final class ResponseModelImpl implements ResponseModel {
                 .unmodifiableList(
                     inner.stream().map(inner1 -> new MetricImpl(inner1, this.manager())).collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

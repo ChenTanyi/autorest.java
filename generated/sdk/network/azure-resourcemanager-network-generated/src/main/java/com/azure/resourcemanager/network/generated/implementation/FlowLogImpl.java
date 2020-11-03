@@ -39,7 +39,7 @@ public final class FlowLogImpl implements FlowLog, FlowLog.Definition, FlowLog.U
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

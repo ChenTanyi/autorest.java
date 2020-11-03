@@ -11,6 +11,7 @@ import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkGatewayInner;
 import com.azure.resourcemanager.network.generated.models.AddressSpace;
 import com.azure.resourcemanager.network.generated.models.BgpSettings;
+import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGateway;
@@ -47,7 +48,7 @@ public final class VirtualNetworkGatewayImpl
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -60,7 +61,7 @@ public final class VirtualNetworkGatewayImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -122,6 +123,14 @@ public final class VirtualNetworkGatewayImpl
 
     public String inboundDnsForwardingEndpoint() {
         return this.innerModel().inboundDnsForwardingEndpoint();
+    }
+
+    public String virtualNetworkExtendedLocationResourceId() {
+        return this.innerModel().virtualNetworkExtendedLocationResourceId();
+    }
+
+    public ExtendedLocation extendedLocation() {
+        return this.innerModel().extendedLocation();
     }
 
     public String id() {
@@ -311,6 +320,17 @@ public final class VirtualNetworkGatewayImpl
 
     public VirtualNetworkGatewayImpl withEnableDnsForwarding(Boolean enableDnsForwarding) {
         this.innerModel().withEnableDnsForwarding(enableDnsForwarding);
+        return this;
+    }
+
+    public VirtualNetworkGatewayImpl withVirtualNetworkExtendedLocationResourceId(
+        String virtualNetworkExtendedLocationResourceId) {
+        this.innerModel().withVirtualNetworkExtendedLocationResourceId(virtualNetworkExtendedLocationResourceId);
+        return this;
+    }
+
+    public VirtualNetworkGatewayImpl withExtendedLocation(ExtendedLocation extendedLocation) {
+        this.innerModel().withExtendedLocation(extendedLocation);
         return this;
     }
 

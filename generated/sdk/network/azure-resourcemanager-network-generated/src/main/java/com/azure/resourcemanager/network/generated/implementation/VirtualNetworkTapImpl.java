@@ -45,7 +45,7 @@ public final class VirtualNetworkTapImpl
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -63,7 +63,7 @@ public final class VirtualNetworkTapImpl
                         .map(inner1 -> new NetworkInterfaceTapConfigurationImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

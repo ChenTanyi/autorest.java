@@ -46,7 +46,7 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

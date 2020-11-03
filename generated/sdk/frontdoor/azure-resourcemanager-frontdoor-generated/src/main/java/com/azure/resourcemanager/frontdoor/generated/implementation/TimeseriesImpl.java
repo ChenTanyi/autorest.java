@@ -45,7 +45,7 @@ public final class TimeseriesImpl implements Timeseries {
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -78,7 +78,7 @@ public final class TimeseriesImpl implements Timeseries {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

@@ -64,7 +64,12 @@ public final class ConfigurationsImpl implements Configurations {
     }
 
     public Map<String, String> get(String resourceGroupName, String clusterName, String configurationName) {
-        return Collections.unmodifiableMap(this.serviceClient().get(resourceGroupName, clusterName, configurationName));
+        Map<String, String> inner = this.serviceClient().get(resourceGroupName, clusterName, configurationName);
+        if (inner != null) {
+            return Collections.unmodifiableMap(inner);
+        } else {
+            return Collections.emptyMap();
+        }
     }
 
     public Response<Map<String, String>> getWithResponse(

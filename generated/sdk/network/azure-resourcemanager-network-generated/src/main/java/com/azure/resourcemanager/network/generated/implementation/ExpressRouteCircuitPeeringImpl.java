@@ -134,7 +134,7 @@ public final class ExpressRouteCircuitPeeringImpl
                         .map(inner1 -> new ExpressRouteCircuitConnectionImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -148,7 +148,7 @@ public final class ExpressRouteCircuitPeeringImpl
                         .map(inner1 -> new PeerExpressRouteCircuitConnectionImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

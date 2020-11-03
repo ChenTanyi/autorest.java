@@ -59,7 +59,7 @@ public final class JobImpl implements Job, Job.Definition, Job.Update {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -72,7 +72,7 @@ public final class JobImpl implements Job, Job.Definition, Job.Update {
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

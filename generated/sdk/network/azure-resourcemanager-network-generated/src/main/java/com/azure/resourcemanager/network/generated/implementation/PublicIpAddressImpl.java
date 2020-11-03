@@ -11,6 +11,7 @@ import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.IpConfigurationInner;
 import com.azure.resourcemanager.network.generated.fluent.models.PublicIpAddressInner;
 import com.azure.resourcemanager.network.generated.models.DdosSettings;
+import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.IpAllocationMethod;
 import com.azure.resourcemanager.network.generated.models.IpConfiguration;
 import com.azure.resourcemanager.network.generated.models.IpTag;
@@ -46,8 +47,12 @@ public final class PublicIpAddressImpl implements PublicIpAddress, PublicIpAddre
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
+    }
+
+    public ExtendedLocation extendedLocation() {
+        return this.innerModel().extendedLocation();
     }
 
     public PublicIpAddressSku sku() {
@@ -63,7 +68,7 @@ public final class PublicIpAddressImpl implements PublicIpAddress, PublicIpAddre
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -97,7 +102,7 @@ public final class PublicIpAddressImpl implements PublicIpAddress, PublicIpAddre
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -248,6 +253,11 @@ public final class PublicIpAddressImpl implements PublicIpAddress, PublicIpAddre
             this.updateParameters.withTags(tags);
             return this;
         }
+    }
+
+    public PublicIpAddressImpl withExtendedLocation(ExtendedLocation extendedLocation) {
+        this.innerModel().withExtendedLocation(extendedLocation);
+        return this;
     }
 
     public PublicIpAddressImpl withSku(PublicIpAddressSku sku) {

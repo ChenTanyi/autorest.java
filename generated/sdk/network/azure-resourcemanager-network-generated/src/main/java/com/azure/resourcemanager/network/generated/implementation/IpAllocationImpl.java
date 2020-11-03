@@ -38,7 +38,7 @@ public final class IpAllocationImpl implements IpAllocation, IpAllocation.Defini
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -79,7 +79,7 @@ public final class IpAllocationImpl implements IpAllocation, IpAllocation.Defini
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

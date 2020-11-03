@@ -109,6 +109,13 @@ public interface VirtualNetworkGatewayConnection {
     Integer dpdTimeoutSeconds();
 
     /**
+     * Gets the connectionMode property: The connection mode for this connection.
+     *
+     * @return the connectionMode value.
+     */
+    VirtualNetworkGatewayConnectionMode connectionMode();
+
+    /**
      * Gets the sharedKey property: The IPSec shared key.
      *
      * @return the sharedKey value.
@@ -309,6 +316,7 @@ public interface VirtualNetworkGatewayConnection {
                 DefinitionStages.WithConnectionProtocol,
                 DefinitionStages.WithRoutingWeight,
                 DefinitionStages.WithDpdTimeoutSeconds,
+                DefinitionStages.WithConnectionMode,
                 DefinitionStages.WithSharedKey,
                 DefinitionStages.WithPeer,
                 DefinitionStages.WithEnableBgp,
@@ -401,6 +409,16 @@ public interface VirtualNetworkGatewayConnection {
              * @return the next definition stage.
              */
             WithCreate withDpdTimeoutSeconds(Integer dpdTimeoutSeconds);
+        }
+        /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify connectionMode. */
+        interface WithConnectionMode {
+            /**
+             * Specifies the connectionMode property: The connection mode for this connection..
+             *
+             * @param connectionMode The connection mode for this connection.
+             * @return the next definition stage.
+             */
+            WithCreate withConnectionMode(VirtualNetworkGatewayConnectionMode connectionMode);
         }
         /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify sharedKey. */
         interface WithSharedKey {

@@ -9,6 +9,7 @@ import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.PublicIpPrefixInner;
+import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.IpTag;
 import com.azure.resourcemanager.network.generated.models.IpVersion;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
@@ -42,8 +43,12 @@ public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
+    }
+
+    public ExtendedLocation extendedLocation() {
+        return this.innerModel().extendedLocation();
     }
 
     public PublicIpPrefixSku sku() {
@@ -59,7 +64,7 @@ public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -72,7 +77,7 @@ public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -89,7 +94,7 @@ public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -236,6 +241,11 @@ public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.
             this.updateParameters.withTags(tags);
             return this;
         }
+    }
+
+    public PublicIpPrefixImpl withExtendedLocation(ExtendedLocation extendedLocation) {
+        this.innerModel().withExtendedLocation(extendedLocation);
+        return this;
     }
 
     public PublicIpPrefixImpl withSku(PublicIpPrefixSku sku) {

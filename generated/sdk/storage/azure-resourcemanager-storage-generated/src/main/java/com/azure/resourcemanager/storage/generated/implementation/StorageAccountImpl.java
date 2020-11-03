@@ -63,7 +63,7 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -165,7 +165,7 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
                         .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

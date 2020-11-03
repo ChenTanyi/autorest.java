@@ -51,6 +51,13 @@ public interface FirewallPolicy {
     String etag();
 
     /**
+     * Gets the identity property: The identity of the firewall policy.
+     *
+     * @return the identity value.
+     */
+    ManagedServiceIdentity identity();
+
+    /**
      * Gets the ruleCollectionGroups property: List of references to FirewallPolicyRuleCollectionGroups.
      *
      * @return the ruleCollectionGroups value.
@@ -105,6 +112,27 @@ public interface FirewallPolicy {
      * @return the dnsSettings value.
      */
     DnsSettings dnsSettings();
+
+    /**
+     * Gets the intrusionDetection property: The configuration for Intrusion detection.
+     *
+     * @return the intrusionDetection value.
+     */
+    FirewallPolicyIntrusionDetection intrusionDetection();
+
+    /**
+     * Gets the transportSecurity property: TLS Configuration definition.
+     *
+     * @return the transportSecurity value.
+     */
+    FirewallPolicyTransportSecurity transportSecurity();
+
+    /**
+     * Gets the sku property: The Firewall Policy SKU.
+     *
+     * @return the sku value.
+     */
+    FirewallPolicySku sku();
 
     /**
      * Gets the id property: Resource ID.
@@ -180,10 +208,14 @@ public interface FirewallPolicy {
          */
         interface WithCreate
             extends DefinitionStages.WithTags,
+                DefinitionStages.WithIdentity,
                 DefinitionStages.WithBasePolicy,
                 DefinitionStages.WithThreatIntelMode,
                 DefinitionStages.WithThreatIntelWhitelist,
-                DefinitionStages.WithDnsSettings {
+                DefinitionStages.WithDnsSettings,
+                DefinitionStages.WithIntrusionDetection,
+                DefinitionStages.WithTransportSecurity,
+                DefinitionStages.WithSku {
             /**
              * Executes the create request.
              *
@@ -208,6 +240,16 @@ public interface FirewallPolicy {
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
+        }
+        /** The stage of the FirewallPolicy definition allowing to specify identity. */
+        interface WithIdentity {
+            /**
+             * Specifies the identity property: The identity of the firewall policy..
+             *
+             * @param identity The identity of the firewall policy.
+             * @return the next definition stage.
+             */
+            WithCreate withIdentity(ManagedServiceIdentity identity);
         }
         /** The stage of the FirewallPolicy definition allowing to specify basePolicy. */
         interface WithBasePolicy {
@@ -249,6 +291,36 @@ public interface FirewallPolicy {
              */
             WithCreate withDnsSettings(DnsSettings dnsSettings);
         }
+        /** The stage of the FirewallPolicy definition allowing to specify intrusionDetection. */
+        interface WithIntrusionDetection {
+            /**
+             * Specifies the intrusionDetection property: The configuration for Intrusion detection..
+             *
+             * @param intrusionDetection The configuration for Intrusion detection.
+             * @return the next definition stage.
+             */
+            WithCreate withIntrusionDetection(FirewallPolicyIntrusionDetection intrusionDetection);
+        }
+        /** The stage of the FirewallPolicy definition allowing to specify transportSecurity. */
+        interface WithTransportSecurity {
+            /**
+             * Specifies the transportSecurity property: TLS Configuration definition..
+             *
+             * @param transportSecurity TLS Configuration definition.
+             * @return the next definition stage.
+             */
+            WithCreate withTransportSecurity(FirewallPolicyTransportSecurity transportSecurity);
+        }
+        /** The stage of the FirewallPolicy definition allowing to specify sku. */
+        interface WithSku {
+            /**
+             * Specifies the sku property: The Firewall Policy SKU..
+             *
+             * @param sku The Firewall Policy SKU.
+             * @return the next definition stage.
+             */
+            WithCreate withSku(FirewallPolicySku sku);
+        }
     }
     /**
      * Begins update for the FirewallPolicy resource.
@@ -260,10 +332,14 @@ public interface FirewallPolicy {
     /** The template for FirewallPolicy update. */
     interface Update
         extends UpdateStages.WithTags,
+            UpdateStages.WithIdentity,
             UpdateStages.WithBasePolicy,
             UpdateStages.WithThreatIntelMode,
             UpdateStages.WithThreatIntelWhitelist,
-            UpdateStages.WithDnsSettings {
+            UpdateStages.WithDnsSettings,
+            UpdateStages.WithIntrusionDetection,
+            UpdateStages.WithTransportSecurity,
+            UpdateStages.WithSku {
         /**
          * Executes the update request.
          *
@@ -290,6 +366,16 @@ public interface FirewallPolicy {
              * @return the next definition stage.
              */
             Update withTags(Map<String, String> tags);
+        }
+        /** The stage of the FirewallPolicy update allowing to specify identity. */
+        interface WithIdentity {
+            /**
+             * Specifies the identity property: The identity of the firewall policy..
+             *
+             * @param identity The identity of the firewall policy.
+             * @return the next definition stage.
+             */
+            Update withIdentity(ManagedServiceIdentity identity);
         }
         /** The stage of the FirewallPolicy update allowing to specify basePolicy. */
         interface WithBasePolicy {
@@ -330,6 +416,36 @@ public interface FirewallPolicy {
              * @return the next definition stage.
              */
             Update withDnsSettings(DnsSettings dnsSettings);
+        }
+        /** The stage of the FirewallPolicy update allowing to specify intrusionDetection. */
+        interface WithIntrusionDetection {
+            /**
+             * Specifies the intrusionDetection property: The configuration for Intrusion detection..
+             *
+             * @param intrusionDetection The configuration for Intrusion detection.
+             * @return the next definition stage.
+             */
+            Update withIntrusionDetection(FirewallPolicyIntrusionDetection intrusionDetection);
+        }
+        /** The stage of the FirewallPolicy update allowing to specify transportSecurity. */
+        interface WithTransportSecurity {
+            /**
+             * Specifies the transportSecurity property: TLS Configuration definition..
+             *
+             * @param transportSecurity TLS Configuration definition.
+             * @return the next definition stage.
+             */
+            Update withTransportSecurity(FirewallPolicyTransportSecurity transportSecurity);
+        }
+        /** The stage of the FirewallPolicy update allowing to specify sku. */
+        interface WithSku {
+            /**
+             * Specifies the sku property: The Firewall Policy SKU..
+             *
+             * @param sku The Firewall Policy SKU.
+             * @return the next definition stage.
+             */
+            Update withSku(FirewallPolicySku sku);
         }
     }
     /**

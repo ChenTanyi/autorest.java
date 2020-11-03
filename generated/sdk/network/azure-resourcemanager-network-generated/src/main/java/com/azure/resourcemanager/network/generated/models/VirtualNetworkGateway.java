@@ -170,6 +170,21 @@ public interface VirtualNetworkGateway {
     String inboundDnsForwardingEndpoint();
 
     /**
+     * Gets the virtualNetworkExtendedLocationResourceId property: MAS FIJI customer vnet resource id.
+     * VirtualNetworkGateway of type local gateway is associated with the customer vnet.
+     *
+     * @return the virtualNetworkExtendedLocationResourceId value.
+     */
+    String virtualNetworkExtendedLocationResourceId();
+
+    /**
+     * Gets the extendedLocation property: The extended location of type local virtual network gateway.
+     *
+     * @return the extendedLocation value.
+     */
+    ExtendedLocation extendedLocation();
+
+    /**
      * Gets the id property: Resource ID.
      *
      * @return the id value.
@@ -255,7 +270,9 @@ public interface VirtualNetworkGateway {
                 DefinitionStages.WithVpnClientConfiguration,
                 DefinitionStages.WithBgpSettings,
                 DefinitionStages.WithCustomRoutes,
-                DefinitionStages.WithEnableDnsForwarding {
+                DefinitionStages.WithEnableDnsForwarding,
+                DefinitionStages.WithVirtualNetworkExtendedLocationResourceId,
+                DefinitionStages.WithExtendedLocation {
             /**
              * Executes the create request.
              *
@@ -424,6 +441,31 @@ public interface VirtualNetworkGateway {
              * @return the next definition stage.
              */
             WithCreate withEnableDnsForwarding(Boolean enableDnsForwarding);
+        }
+        /**
+         * The stage of the VirtualNetworkGateway definition allowing to specify
+         * virtualNetworkExtendedLocationResourceId.
+         */
+        interface WithVirtualNetworkExtendedLocationResourceId {
+            /**
+             * Specifies the virtualNetworkExtendedLocationResourceId property: MAS FIJI customer vnet resource id.
+             * VirtualNetworkGateway of type local gateway is associated with the customer vnet..
+             *
+             * @param virtualNetworkExtendedLocationResourceId MAS FIJI customer vnet resource id. VirtualNetworkGateway
+             *     of type local gateway is associated with the customer vnet.
+             * @return the next definition stage.
+             */
+            WithCreate withVirtualNetworkExtendedLocationResourceId(String virtualNetworkExtendedLocationResourceId);
+        }
+        /** The stage of the VirtualNetworkGateway definition allowing to specify extendedLocation. */
+        interface WithExtendedLocation {
+            /**
+             * Specifies the extendedLocation property: The extended location of type local virtual network gateway..
+             *
+             * @param extendedLocation The extended location of type local virtual network gateway.
+             * @return the next definition stage.
+             */
+            WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
     }
     /**

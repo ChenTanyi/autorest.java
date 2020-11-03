@@ -43,7 +43,7 @@ public final class VpnGatewayImpl implements VpnGateway, VpnGateway.Definition, 
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -65,7 +65,7 @@ public final class VpnGatewayImpl implements VpnGateway, VpnGateway.Definition, 
                         .map(inner1 -> new VpnConnectionImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -86,8 +86,12 @@ public final class VpnGatewayImpl implements VpnGateway, VpnGateway.Definition, 
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
+    }
+
+    public Boolean isRoutingPreferenceInternet() {
+        return this.innerModel().isRoutingPreferenceInternet();
     }
 
     public String id() {
@@ -232,6 +236,11 @@ public final class VpnGatewayImpl implements VpnGateway, VpnGateway.Definition, 
 
     public VpnGatewayImpl withVpnGatewayScaleUnit(Integer vpnGatewayScaleUnit) {
         this.innerModel().withVpnGatewayScaleUnit(vpnGatewayScaleUnit);
+        return this;
+    }
+
+    public VpnGatewayImpl withIsRoutingPreferenceInternet(Boolean isRoutingPreferenceInternet) {
+        this.innerModel().withIsRoutingPreferenceInternet(isRoutingPreferenceInternet);
         return this;
     }
 

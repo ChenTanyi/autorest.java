@@ -44,7 +44,7 @@ public final class BackendAddressPoolImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -58,7 +58,7 @@ public final class BackendAddressPoolImpl
                         .map(inner1 -> new NetworkInterfaceIpConfigurationImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -67,7 +67,7 @@ public final class BackendAddressPoolImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -80,7 +80,7 @@ public final class BackendAddressPoolImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

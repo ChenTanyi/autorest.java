@@ -39,14 +39,14 @@ public final class PacketCaptureResultProperties extends PacketCaptureParameters
 
     /** {@inheritDoc} */
     @Override
-    public PacketCaptureResultProperties withBytesToCapturePerPacket(Integer bytesToCapturePerPacket) {
+    public PacketCaptureResultProperties withBytesToCapturePerPacket(Long bytesToCapturePerPacket) {
         super.withBytesToCapturePerPacket(bytesToCapturePerPacket);
         return this;
     }
 
     /** {@inheritDoc} */
     @Override
-    public PacketCaptureResultProperties withTotalBytesPerSession(Integer totalBytesPerSession) {
+    public PacketCaptureResultProperties withTotalBytesPerSession(Long totalBytesPerSession) {
         super.withTotalBytesPerSession(totalBytesPerSession);
         return this;
     }

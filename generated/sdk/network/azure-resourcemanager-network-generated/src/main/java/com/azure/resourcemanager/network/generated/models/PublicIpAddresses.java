@@ -14,7 +14,7 @@ public interface PublicIpAddresses {
      * Deletes the specified public IP address.
      *
      * @param resourceGroupName The name of the resource group.
-     * @param publicIpAddressName The name of the subnet.
+     * @param publicIpAddressName The name of the public IP address.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -25,7 +25,7 @@ public interface PublicIpAddresses {
      * Deletes the specified public IP address.
      *
      * @param resourceGroupName The name of the resource group.
-     * @param publicIpAddressName The name of the subnet.
+     * @param publicIpAddressName The name of the public IP address.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -37,7 +37,7 @@ public interface PublicIpAddresses {
      * Gets the specified public IP address in a specified resource group.
      *
      * @param resourceGroupName The name of the resource group.
-     * @param publicIpAddressName The name of the subnet.
+     * @param publicIpAddressName The name of the public IP address.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -49,7 +49,7 @@ public interface PublicIpAddresses {
      * Gets the specified public IP address in a specified resource group.
      *
      * @param resourceGroupName The name of the resource group.
-     * @param publicIpAddressName The name of the subnet.
+     * @param publicIpAddressName The name of the public IP address.
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

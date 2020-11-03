@@ -54,7 +54,7 @@ public final class QueryStatisticImpl implements QueryStatistic {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

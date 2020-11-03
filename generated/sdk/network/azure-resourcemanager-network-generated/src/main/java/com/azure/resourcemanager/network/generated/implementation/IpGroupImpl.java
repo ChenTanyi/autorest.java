@@ -38,7 +38,7 @@ public final class IpGroupImpl implements IpGroup, IpGroup.Definition, IpGroup.U
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -55,7 +55,7 @@ public final class IpGroupImpl implements IpGroup, IpGroup.Definition, IpGroup.U
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -64,7 +64,16 @@ public final class IpGroupImpl implements IpGroup, IpGroup.Definition, IpGroup.U
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
+        }
+    }
+
+    public List<SubResource> firewallPolicies() {
+        List<SubResource> inner = this.innerModel().firewallPolicies();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
         }
     }
 

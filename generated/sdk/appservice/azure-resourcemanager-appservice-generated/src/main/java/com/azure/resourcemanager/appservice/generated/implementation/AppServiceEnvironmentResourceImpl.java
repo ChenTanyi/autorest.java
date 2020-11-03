@@ -54,7 +54,7 @@ public final class AppServiceEnvironmentResourceImpl
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -107,7 +107,7 @@ public final class AppServiceEnvironmentResourceImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -160,7 +160,7 @@ public final class AppServiceEnvironmentResourceImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -174,7 +174,7 @@ public final class AppServiceEnvironmentResourceImpl
                         .map(inner1 -> new StampCapacityImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -183,7 +183,7 @@ public final class AppServiceEnvironmentResourceImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -224,7 +224,7 @@ public final class AppServiceEnvironmentResourceImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -233,7 +233,7 @@ public final class AppServiceEnvironmentResourceImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

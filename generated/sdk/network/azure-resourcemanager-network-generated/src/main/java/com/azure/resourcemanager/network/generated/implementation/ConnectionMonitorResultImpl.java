@@ -51,7 +51,7 @@ public final class ConnectionMonitorResultImpl
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -80,7 +80,7 @@ public final class ConnectionMonitorResultImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -89,7 +89,7 @@ public final class ConnectionMonitorResultImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -98,7 +98,7 @@ public final class ConnectionMonitorResultImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -107,7 +107,7 @@ public final class ConnectionMonitorResultImpl
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -153,6 +153,8 @@ public final class ConnectionMonitorResultImpl
 
     private String connectionMonitorName;
 
+    private String createMigrate;
+
     private ConnectionMonitor createParameters;
 
     private TagsObject updateParameters;
@@ -169,7 +171,12 @@ public final class ConnectionMonitorResultImpl
                 .serviceClient()
                 .getConnectionMonitors()
                 .createOrUpdate(
-                    resourceGroupName, networkWatcherName, connectionMonitorName, createParameters, Context.NONE);
+                    resourceGroupName,
+                    networkWatcherName,
+                    connectionMonitorName,
+                    createParameters,
+                    createMigrate,
+                    Context.NONE);
         return this;
     }
 
@@ -179,7 +186,12 @@ public final class ConnectionMonitorResultImpl
                 .serviceClient()
                 .getConnectionMonitors()
                 .createOrUpdate(
-                    resourceGroupName, networkWatcherName, connectionMonitorName, createParameters, context);
+                    resourceGroupName,
+                    networkWatcherName,
+                    connectionMonitorName,
+                    createParameters,
+                    createMigrate,
+                    context);
         return this;
     }
 
@@ -187,6 +199,7 @@ public final class ConnectionMonitorResultImpl
         this.innerObject = new ConnectionMonitorResultInner();
         this.serviceManager = serviceManager;
         this.connectionMonitorName = name;
+        this.createMigrate = null;
         this.createParameters = new ConnectionMonitor();
     }
 
@@ -308,6 +321,11 @@ public final class ConnectionMonitorResultImpl
 
     public ConnectionMonitorResultImpl withNotes(String notes) {
         this.createParameters.withNotes(notes);
+        return this;
+    }
+
+    public ConnectionMonitorResultImpl withMigrate(String migrate) {
+        this.createMigrate = migrate;
         return this;
     }
 

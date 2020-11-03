@@ -35,7 +35,7 @@ public final class VirtualMachineScaleSetVMExtensionsListResultImpl
                         .map(inner1 -> new VirtualMachineScaleSetVMExtensionImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

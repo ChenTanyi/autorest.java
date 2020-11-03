@@ -33,7 +33,7 @@ public final class ListQueueServicesImpl implements ListQueueServices {
                         .map(inner1 -> new QueueServicePropertiesImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

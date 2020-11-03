@@ -47,7 +47,7 @@ public final class ExpressRouteCircuitImpl
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -81,7 +81,7 @@ public final class ExpressRouteCircuitImpl
                         .map(inner1 -> new ExpressRouteCircuitAuthorizationImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -95,7 +95,7 @@ public final class ExpressRouteCircuitImpl
                         .map(inner1 -> new ExpressRouteCircuitPeeringImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

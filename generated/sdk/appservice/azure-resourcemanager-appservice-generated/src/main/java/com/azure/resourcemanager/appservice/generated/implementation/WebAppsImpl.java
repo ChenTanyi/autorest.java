@@ -2382,7 +2382,7 @@ public final class WebAppsImpl implements WebApps {
                         .map(inner1 -> new NetworkTraceImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -2426,7 +2426,7 @@ public final class WebAppsImpl implements WebApps {
                         .map(inner1 -> new NetworkTraceImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -5391,7 +5391,7 @@ public final class WebAppsImpl implements WebApps {
                         .map(inner1 -> new NetworkTraceImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -5438,7 +5438,7 @@ public final class WebAppsImpl implements WebApps {
                         .map(inner1 -> new NetworkTraceImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -6450,7 +6450,7 @@ public final class WebAppsImpl implements WebApps {
                         .map(inner1 -> new VnetInfoImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -6876,7 +6876,7 @@ public final class WebAppsImpl implements WebApps {
                         .map(inner1 -> new VnetInfoImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

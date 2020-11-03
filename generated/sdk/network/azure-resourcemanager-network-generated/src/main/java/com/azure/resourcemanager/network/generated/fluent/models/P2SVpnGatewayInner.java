@@ -72,6 +72,13 @@ public class P2SVpnGatewayInner extends Resource {
     private List<String> customDnsServers;
 
     /*
+     * Enable Routing Preference property for the Public IP Interface of the
+     * P2SVpnGateway.
+     */
+    @JsonProperty(value = "properties.isRoutingPreferenceInternet")
+    private Boolean isRoutingPreferenceInternet;
+
+    /*
      * Resource ID.
      */
     @JsonProperty(value = "id")
@@ -202,6 +209,28 @@ public class P2SVpnGatewayInner extends Resource {
      */
     public P2SVpnGatewayInner withCustomDnsServers(List<String> customDnsServers) {
         this.customDnsServers = customDnsServers;
+        return this;
+    }
+
+    /**
+     * Get the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP Interface of
+     * the P2SVpnGateway.
+     *
+     * @return the isRoutingPreferenceInternet value.
+     */
+    public Boolean isRoutingPreferenceInternet() {
+        return this.isRoutingPreferenceInternet;
+    }
+
+    /**
+     * Set the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP Interface of
+     * the P2SVpnGateway.
+     *
+     * @param isRoutingPreferenceInternet the isRoutingPreferenceInternet value to set.
+     * @return the P2SVpnGatewayInner object itself.
+     */
+    public P2SVpnGatewayInner withIsRoutingPreferenceInternet(Boolean isRoutingPreferenceInternet) {
+        this.isRoutingPreferenceInternet = isRoutingPreferenceInternet;
         return this;
     }
 

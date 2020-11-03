@@ -43,7 +43,7 @@ public final class ExpressRouteCrossConnectionImpl
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -97,7 +97,7 @@ public final class ExpressRouteCrossConnectionImpl
                         .map(inner1 -> new ExpressRouteCrossConnectionPeeringImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

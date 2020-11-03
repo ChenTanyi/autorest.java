@@ -62,7 +62,7 @@ public final class BaselineResponseImpl implements BaselineResponse {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -71,7 +71,7 @@ public final class BaselineResponseImpl implements BaselineResponse {
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 
@@ -85,7 +85,7 @@ public final class BaselineResponseImpl implements BaselineResponse {
                         .map(inner1 -> new BaselineMetadataValueImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

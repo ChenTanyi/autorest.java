@@ -36,7 +36,7 @@ public final class VirtualMachinesImpl implements VirtualMachines {
                         .map(inner1 -> new HostInfoImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

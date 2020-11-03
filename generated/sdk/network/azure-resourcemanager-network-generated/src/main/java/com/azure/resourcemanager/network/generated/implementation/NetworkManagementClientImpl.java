@@ -146,6 +146,7 @@ import com.azure.resourcemanager.network.generated.fluent.VpnSiteLinksClient;
 import com.azure.resourcemanager.network.generated.fluent.VpnSitesClient;
 import com.azure.resourcemanager.network.generated.fluent.VpnSitesConfigurationsClient;
 import com.azure.resourcemanager.network.generated.fluent.WebApplicationFirewallPoliciesClient;
+import com.azure.resourcemanager.network.generated.fluent.WebCategoriesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.BastionActiveSessionInner;
 import com.azure.resourcemanager.network.generated.fluent.models.BastionSessionStateInner;
 import com.azure.resourcemanager.network.generated.fluent.models.BastionShareableLinkInner;
@@ -346,6 +347,18 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
      */
     public AzureFirewallFqdnTagsClient getAzureFirewallFqdnTags() {
         return this.azureFirewallFqdnTags;
+    }
+
+    /** The WebCategoriesClient object to access its operations. */
+    private final WebCategoriesClient webCategories;
+
+    /**
+     * Gets the WebCategoriesClient object to access its operations.
+     *
+     * @return the WebCategoriesClient object.
+     */
+    public WebCategoriesClient getWebCategories() {
+        return this.webCategories;
     }
 
     /** The BastionHostsClient object to access its operations. */
@@ -1511,6 +1524,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         this.availableServiceAliases = new AvailableServiceAliasesClientImpl(this);
         this.azureFirewalls = new AzureFirewallsClientImpl(this);
         this.azureFirewallFqdnTags = new AzureFirewallFqdnTagsClientImpl(this);
+        this.webCategories = new WebCategoriesClientImpl(this);
         this.bastionHosts = new BastionHostsClientImpl(this);
         this.customIpPrefixes = new CustomIpPrefixesClientImpl(this);
         this.ddosCustomPolicies = new DdosCustomPoliciesClientImpl(this);
@@ -1818,7 +1832,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         } else {
             bslRequest.validate();
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1897,7 +1911,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         } else {
             bslRequest.validate();
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         context = this.mergeContext(context);
         Mono<Response<Flux<ByteBuffer>>> mono =
@@ -2046,7 +2060,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         } else {
             bslRequest.validate();
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2101,7 +2115,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         } else {
             bslRequest.validate();
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         context = this.mergeContext(context);
         return service
@@ -2300,7 +2314,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         } else {
             bslRequest.validate();
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2364,7 +2378,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         } else {
             bslRequest.validate();
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         context = this.mergeContext(context);
         return service
@@ -2493,7 +2507,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
                 .error(
                     new IllegalArgumentException("Parameter this.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2565,7 +2579,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
                 .error(
                     new IllegalArgumentException("Parameter this.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         context = this.mergeContext(context);
         Mono<Response<Flux<ByteBuffer>>> mono =
@@ -2708,7 +2722,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         } else {
             sessionIds.validate();
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2772,7 +2786,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         } else {
             sessionIds.validate();
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         context = this.mergeContext(context);
         return service
@@ -2901,7 +2915,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
                 .error(
                     new IllegalArgumentException("Parameter this.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2949,7 +2963,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
                 .error(
                     new IllegalArgumentException("Parameter this.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         context = this.mergeContext(context);
         return service
@@ -3045,7 +3059,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         if (virtualWanName == null) {
             return Mono.error(new IllegalArgumentException("Parameter virtualWanName is required and cannot be null."));
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3092,7 +3106,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         if (virtualWanName == null) {
             return Mono.error(new IllegalArgumentException("Parameter virtualWanName is required and cannot be null."));
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         context = this.mergeContext(context);
         return service
@@ -3200,7 +3214,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         } else {
             vpnClientParams.validate();
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3259,7 +3273,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         } else {
             vpnClientParams.validate();
         }
-        final String apiVersion = "2020-06-01";
+        final String apiVersion = "2020-07-01";
         final String accept = "application/json";
         context = this.mergeContext(context);
         return service

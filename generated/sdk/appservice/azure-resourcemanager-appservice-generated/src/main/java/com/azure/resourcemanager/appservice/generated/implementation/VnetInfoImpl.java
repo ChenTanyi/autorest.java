@@ -57,7 +57,7 @@ public final class VnetInfoImpl implements VnetInfo, VnetInfo.Definition, VnetIn
                         .map(inner1 -> new VnetRouteImpl(inner1, this.manager()))
                         .collect(Collectors.toList()));
         } else {
-            return null;
+            return Collections.emptyList();
         }
     }
 

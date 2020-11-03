@@ -29,7 +29,7 @@ public final class HostKeysImpl implements HostKeys {
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 
@@ -38,7 +38,7 @@ public final class HostKeysImpl implements HostKeys {
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {
-            return null;
+            return Collections.emptyMap();
         }
     }
 

@@ -132,10 +132,10 @@ public class VirtualHubInner extends Resource {
     private List<String> virtualRouterIps;
 
     /*
-     * Flag to control route propogation for VirtualRouter hub.
+     * Flag to control transit for VirtualRouter hub.
      */
-    @JsonProperty(value = "properties.enableVirtualRouterRoutePropogation")
-    private Boolean enableVirtualRouterRoutePropogation;
+    @JsonProperty(value = "properties.allowBranchToBranchTraffic")
+    private Boolean allowBranchToBranchTraffic;
 
     /*
      * Resource ID.
@@ -451,22 +451,22 @@ public class VirtualHubInner extends Resource {
     }
 
     /**
-     * Get the enableVirtualRouterRoutePropogation property: Flag to control route propogation for VirtualRouter hub.
+     * Get the allowBranchToBranchTraffic property: Flag to control transit for VirtualRouter hub.
      *
-     * @return the enableVirtualRouterRoutePropogation value.
+     * @return the allowBranchToBranchTraffic value.
      */
-    public Boolean enableVirtualRouterRoutePropogation() {
-        return this.enableVirtualRouterRoutePropogation;
+    public Boolean allowBranchToBranchTraffic() {
+        return this.allowBranchToBranchTraffic;
     }
 
     /**
-     * Set the enableVirtualRouterRoutePropogation property: Flag to control route propogation for VirtualRouter hub.
+     * Set the allowBranchToBranchTraffic property: Flag to control transit for VirtualRouter hub.
      *
-     * @param enableVirtualRouterRoutePropogation the enableVirtualRouterRoutePropogation value to set.
+     * @param allowBranchToBranchTraffic the allowBranchToBranchTraffic value to set.
      * @return the VirtualHubInner object itself.
      */
-    public VirtualHubInner withEnableVirtualRouterRoutePropogation(Boolean enableVirtualRouterRoutePropogation) {
-        this.enableVirtualRouterRoutePropogation = enableVirtualRouterRoutePropogation;
+    public VirtualHubInner withAllowBranchToBranchTraffic(Boolean allowBranchToBranchTraffic) {
+        this.allowBranchToBranchTraffic = allowBranchToBranchTraffic;
         return this;
     }
 

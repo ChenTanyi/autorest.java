@@ -182,7 +182,12 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
     }
 
     public List<String> listAvailableServerVariables() {
-        return Collections.unmodifiableList(this.serviceClient().listAvailableServerVariables());
+        List<String> inner = this.serviceClient().listAvailableServerVariables();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     public Response<List<String>> listAvailableServerVariablesWithResponse(Context context) {
@@ -190,7 +195,12 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
     }
 
     public List<String> listAvailableRequestHeaders() {
-        return Collections.unmodifiableList(this.serviceClient().listAvailableRequestHeaders());
+        List<String> inner = this.serviceClient().listAvailableRequestHeaders();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     public Response<List<String>> listAvailableRequestHeadersWithResponse(Context context) {
@@ -198,7 +208,12 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
     }
 
     public List<String> listAvailableResponseHeaders() {
-        return Collections.unmodifiableList(this.serviceClient().listAvailableResponseHeaders());
+        List<String> inner = this.serviceClient().listAvailableResponseHeaders();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     public Response<List<String>> listAvailableResponseHeadersWithResponse(Context context) {
