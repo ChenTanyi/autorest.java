@@ -51,7 +51,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def generate(config: dict, **kwargs):
-    output_dir = os.path.join(kwargs['output'], config['output'])
+    output_dir = os.path.abspath(os.path.join(kwargs['output'], config['output']))
     readme = kwargs['specs'] + ('/' if kwargs['specs'][-1] != '/' else
                                 '') + config['source']
 
@@ -60,8 +60,8 @@ def generate(config: dict, **kwargs):
     sdk_integration = '--sdk-integration' if kwargs.get('sdk') else ''
     command = 'autorest --version={0} --use={1} --java.azure-libraries-for-java-folder={2} --java.output-folder={3} --payload-flattening-threshold=0 --verbose --java.namespace={4} {5}'.format(
         AUTOREST_CORE_VERSION,
-        kwargs['use'],
-        kwargs['output'],
+        os.path.abspath(kwargs['use']),
+        os.path.abspath(kwargs['output']),
         output_dir,
         config['namespace'],
         ' '.join((tag, sdk_integration, FLUENTLITE_ARGUMENTS, readme)),
