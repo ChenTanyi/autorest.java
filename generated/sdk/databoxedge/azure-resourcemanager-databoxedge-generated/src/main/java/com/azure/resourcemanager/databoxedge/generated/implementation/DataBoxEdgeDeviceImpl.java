@@ -206,7 +206,7 @@ public final class DataBoxEdgeDeviceImpl
             serviceManager
                 .serviceClient()
                 .getDevices()
-                .getByResourceGroupWithResponse(deviceName, resourceGroupName, Context.NONE)
+                .getByResourceGroupWithResponse(resourceGroupName, deviceName, Context.NONE)
                 .getValue();
         return this;
     }
@@ -216,7 +216,7 @@ public final class DataBoxEdgeDeviceImpl
             serviceManager
                 .serviceClient()
                 .getDevices()
-                .getByResourceGroupWithResponse(deviceName, resourceGroupName, context)
+                .getByResourceGroupWithResponse(resourceGroupName, deviceName, context)
                 .getValue();
         return this;
     }

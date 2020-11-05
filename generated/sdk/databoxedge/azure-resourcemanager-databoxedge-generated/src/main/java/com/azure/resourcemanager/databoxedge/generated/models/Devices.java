@@ -60,20 +60,20 @@ public interface Devices {
     /**
      * Gets the properties of the Data Box Edge/Data Box Gateway device.
      *
-     * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
+     * @param deviceName The device name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the properties of the Data Box Edge/Data Box Gateway device.
      */
-    DataBoxEdgeDevice getByResourceGroup(String deviceName, String resourceGroupName);
+    DataBoxEdgeDevice getByResourceGroup(String resourceGroupName, String deviceName);
 
     /**
      * Gets the properties of the Data Box Edge/Data Box Gateway device.
      *
-     * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
+     * @param deviceName The device name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -81,7 +81,7 @@ public interface Devices {
      * @return the properties of the Data Box Edge/Data Box Gateway device.
      */
     Response<DataBoxEdgeDevice> getByResourceGroupWithResponse(
-        String deviceName, String resourceGroupName, Context context);
+        String resourceGroupName, String deviceName, Context context);
 
     /**
      * Deletes the Data Box Edge/Data Box Gateway device.

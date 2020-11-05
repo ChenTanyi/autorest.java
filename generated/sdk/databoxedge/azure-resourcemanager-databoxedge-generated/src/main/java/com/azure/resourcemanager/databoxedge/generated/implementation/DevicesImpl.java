@@ -56,8 +56,8 @@ public final class DevicesImpl implements Devices {
         return inner.mapPage(inner1 -> new DataBoxEdgeDeviceImpl(inner1, this.manager()));
     }
 
-    public DataBoxEdgeDevice getByResourceGroup(String deviceName, String resourceGroupName) {
-        DataBoxEdgeDeviceInner inner = this.serviceClient().getByResourceGroup(deviceName, resourceGroupName);
+    public DataBoxEdgeDevice getByResourceGroup(String resourceGroupName, String deviceName) {
+        DataBoxEdgeDeviceInner inner = this.serviceClient().getByResourceGroup(resourceGroupName, deviceName);
         if (inner != null) {
             return new DataBoxEdgeDeviceImpl(inner, this.manager());
         } else {
@@ -66,9 +66,9 @@ public final class DevicesImpl implements Devices {
     }
 
     public Response<DataBoxEdgeDevice> getByResourceGroupWithResponse(
-        String deviceName, String resourceGroupName, Context context) {
+        String resourceGroupName, String deviceName, Context context) {
         Response<DataBoxEdgeDeviceInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(deviceName, resourceGroupName, context);
+            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, deviceName, context);
         if (inner != null) {
             return new SimpleResponse<>(
                 inner.getRequest(),
