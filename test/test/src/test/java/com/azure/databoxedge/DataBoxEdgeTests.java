@@ -56,7 +56,7 @@ public class DataBoxEdgeTests extends Base {
                 .apply();
 
         // get device
-        DataBoxEdgeDevice updatedDevice = dataBoxEdgeManager.devices().getByResourceGroup(deviceName, rgName);
+        DataBoxEdgeDevice updatedDevice = dataBoxEdgeManager.devices().getByResourceGroup(rgName, deviceName);
         Assertions.assertNotNull(updatedDevice);
         Assertions.assertTrue(device.tags().containsKey("key1"));
         Assertions.assertEquals("value1", updatedDevice.tags().get("key1"));
@@ -66,7 +66,7 @@ public class DataBoxEdgeTests extends Base {
 
         // validate delete
         try {
-            dataBoxEdgeManager.devices().getByResourceGroup(deviceName, rgName);
+            dataBoxEdgeManager.devices().getByResourceGroup(rgName, deviceName);
         } catch (ManagementException e) {
             Assertions.assertEquals(404, e.getResponse().getStatusCode());
         }
