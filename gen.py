@@ -60,7 +60,7 @@ def generate(config: dict, **kwargs):
     sdk_integration = '--sdk-integration' if kwargs.get('sdk') else ''
     command = 'autorest --version={0} --use={1} --java.azure-libraries-for-java-folder={2} --java.output-folder={3} --payload-flattening-threshold=0 --verbose --java.namespace={4} {5}'.format(
         AUTOREST_CORE_VERSION,
-        os.path.abspath(kwargs['use']),
+        kwargs['use'],
         os.path.abspath(kwargs['output']),
         output_dir,
         config['namespace'],
