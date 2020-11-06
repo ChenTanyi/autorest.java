@@ -47,7 +47,7 @@ public class StorageTests extends Base {
         Assertions.assertEquals(Kind.STORAGE_V2, storageAccount.kind());
         Assertions.assertEquals("value1", storageAccount.tags().get("tag1"));
 
-        StorageAccount storageAccount2 = storageManager.storageAccounts().getByResourceGroup(rgName, saName);
+        StorageAccount storageAccount2 = storageManager.storageAccounts().getById(storageAccount.id());
         Assertions.assertEquals(Kind.STORAGE_V2, storageAccount2.kind());
 
         Assertions.assertEquals(1, storageManager.storageAccounts().listByResourceGroup(rgName).stream().count());
@@ -71,7 +71,7 @@ public class StorageTests extends Base {
 
         Assertions.assertEquals(1, storageManager.blobContainers().list(rgName, saName).stream().count());
 
-        BlobContainer blobContainer2 = storageManager.blobContainers().get(rgName, saName, blobContainerName);
+        BlobContainer blobContainer2 = storageManager.blobContainers().getById(blobContainer.id());
         blobContainer2.update()
                 .withPublicAccess(PublicAccess.NONE)
                 .apply(new Context("key", "value"));
