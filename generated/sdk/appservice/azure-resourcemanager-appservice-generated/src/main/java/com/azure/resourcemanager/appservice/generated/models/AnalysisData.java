@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AnalysisDataInner;
 import java.util.List;
 
 /** An immutable client-side representation of AnalysisData. */
-@Immutable
 public interface AnalysisData {
     /**
      * Gets the source property: Name of the Detector.

@@ -132,7 +132,7 @@ public final class RouteFilterImpl implements RouteFilter, RouteFilter.Definitio
             serviceManager
                 .serviceClient()
                 .getRouteFilters()
-                .createOrUpdate(resourceGroupName, routeFilterName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, routeFilterName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -141,7 +141,7 @@ public final class RouteFilterImpl implements RouteFilter, RouteFilter.Definitio
             serviceManager
                 .serviceClient()
                 .getRouteFilters()
-                .createOrUpdate(resourceGroupName, routeFilterName, innerObject, context);
+                .createOrUpdate(resourceGroupName, routeFilterName, this.innerModel(), context);
         return this;
     }
 
@@ -184,23 +184,23 @@ public final class RouteFilterImpl implements RouteFilter, RouteFilter.Definitio
     }
 
     public RouteFilter refresh() {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getRouteFilters()
-                .getByResourceGroupWithResponse(resourceGroupName, routeFilterName, refreshExpand, Context.NONE)
+                .getByResourceGroupWithResponse(resourceGroupName, routeFilterName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public RouteFilter refresh(Context context) {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getRouteFilters()
-                .getByResourceGroupWithResponse(resourceGroupName, routeFilterName, refreshExpand, context)
+                .getByResourceGroupWithResponse(resourceGroupName, routeFilterName, localExpand, context)
                 .getValue();
         return this;
     }

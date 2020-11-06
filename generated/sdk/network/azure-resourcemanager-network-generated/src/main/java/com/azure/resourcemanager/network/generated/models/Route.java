@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.RouteInner;
 
 /** An immutable client-side representation of Route. */
-@Immutable
 public interface Route {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

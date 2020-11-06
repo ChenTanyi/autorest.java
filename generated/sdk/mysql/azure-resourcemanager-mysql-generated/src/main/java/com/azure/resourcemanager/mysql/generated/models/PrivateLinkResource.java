@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.mysql.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.mysql.generated.fluent.models.PrivateLinkResourceInner;
 
 /** An immutable client-side representation of PrivateLinkResource. */
-@Immutable
 public interface PrivateLinkResource {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

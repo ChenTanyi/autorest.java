@@ -94,7 +94,8 @@ public final class ServerSecurityAlertPolicyImpl
             serviceManager
                 .serviceClient()
                 .getServerSecurityAlertPolicies()
-                .createOrUpdate(resourceGroupName, serverName, securityAlertPolicyName, innerObject, Context.NONE);
+                .createOrUpdate(
+                    resourceGroupName, serverName, securityAlertPolicyName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -103,7 +104,7 @@ public final class ServerSecurityAlertPolicyImpl
             serviceManager
                 .serviceClient()
                 .getServerSecurityAlertPolicies()
-                .createOrUpdate(resourceGroupName, serverName, securityAlertPolicyName, innerObject, context);
+                .createOrUpdate(resourceGroupName, serverName, securityAlertPolicyName, this.innerModel(), context);
         return this;
     }
 
@@ -122,7 +123,8 @@ public final class ServerSecurityAlertPolicyImpl
             serviceManager
                 .serviceClient()
                 .getServerSecurityAlertPolicies()
-                .createOrUpdate(resourceGroupName, serverName, securityAlertPolicyName, innerObject, Context.NONE);
+                .createOrUpdate(
+                    resourceGroupName, serverName, securityAlertPolicyName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -131,7 +133,7 @@ public final class ServerSecurityAlertPolicyImpl
             serviceManager
                 .serviceClient()
                 .getServerSecurityAlertPolicies()
-                .createOrUpdate(resourceGroupName, serverName, securityAlertPolicyName, innerObject, context);
+                .createOrUpdate(resourceGroupName, serverName, securityAlertPolicyName, this.innerModel(), context);
         return this;
     }
 

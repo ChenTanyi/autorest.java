@@ -113,7 +113,8 @@ public final class BackendAddressPoolImpl
             serviceManager
                 .serviceClient()
                 .getLoadBalancerBackendAddressPools()
-                .createOrUpdate(resourceGroupName, loadBalancerName, backendAddressPoolName, innerObject, Context.NONE);
+                .createOrUpdate(
+                    resourceGroupName, loadBalancerName, backendAddressPoolName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -122,7 +123,8 @@ public final class BackendAddressPoolImpl
             serviceManager
                 .serviceClient()
                 .getLoadBalancerBackendAddressPools()
-                .createOrUpdate(resourceGroupName, loadBalancerName, backendAddressPoolName, innerObject, context);
+                .createOrUpdate(
+                    resourceGroupName, loadBalancerName, backendAddressPoolName, this.innerModel(), context);
         return this;
     }
 
@@ -141,7 +143,8 @@ public final class BackendAddressPoolImpl
             serviceManager
                 .serviceClient()
                 .getLoadBalancerBackendAddressPools()
-                .createOrUpdate(resourceGroupName, loadBalancerName, backendAddressPoolName, innerObject, Context.NONE);
+                .createOrUpdate(
+                    resourceGroupName, loadBalancerName, backendAddressPoolName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -150,7 +153,8 @@ public final class BackendAddressPoolImpl
             serviceManager
                 .serviceClient()
                 .getLoadBalancerBackendAddressPools()
-                .createOrUpdate(resourceGroupName, loadBalancerName, backendAddressPoolName, innerObject, context);
+                .createOrUpdate(
+                    resourceGroupName, loadBalancerName, backendAddressPoolName, this.innerModel(), context);
         return this;
     }
 

@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.NetworkTraceInner;
 
 /** An immutable client-side representation of NetworkTrace. */
-@Immutable
 public interface NetworkTrace {
     /**
      * Gets the path property: Local file path for the captured network trace file.

@@ -183,7 +183,7 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
             serviceManager
                 .serviceClient()
                 .getDomains()
-                .createOrUpdate(resourceGroupName, domainName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, domainName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -192,7 +192,7 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
             serviceManager
                 .serviceClient()
                 .getDomains()
-                .createOrUpdate(resourceGroupName, domainName, innerObject, context);
+                .createOrUpdate(resourceGroupName, domainName, this.innerModel(), context);
         return this;
     }
 

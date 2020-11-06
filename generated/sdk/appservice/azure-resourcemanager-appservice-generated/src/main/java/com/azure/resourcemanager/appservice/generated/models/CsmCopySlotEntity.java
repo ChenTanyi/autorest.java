@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmCopySlotEntityInner;
 
 /** An immutable client-side representation of CsmCopySlotEntity. */
-@Immutable
 public interface CsmCopySlotEntity {
     /**
      * Gets the targetSlot property: Destination deployment slot during copy operation.

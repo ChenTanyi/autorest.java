@@ -4,14 +4,12 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceCertificateResourceInner;
 import java.util.Map;
 
 /** An immutable client-side representation of AppServiceCertificateResource. */
-@Immutable
 public interface AppServiceCertificateResource {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

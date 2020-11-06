@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteSealInner;
 
 /** An immutable client-side representation of SiteSeal. */
-@Immutable
 public interface SiteSeal {
     /**
      * Gets the html property: HTML snippet.

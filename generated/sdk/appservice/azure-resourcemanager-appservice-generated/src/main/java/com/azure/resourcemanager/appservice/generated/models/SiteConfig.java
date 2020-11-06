@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigInner;
 import java.time.OffsetDateTime;
 import java.util.List;
 
 /** An immutable client-side representation of SiteConfig. */
-@Immutable
 public interface SiteConfig {
     /**
      * Gets the numberOfWorkers property: Number of workers.

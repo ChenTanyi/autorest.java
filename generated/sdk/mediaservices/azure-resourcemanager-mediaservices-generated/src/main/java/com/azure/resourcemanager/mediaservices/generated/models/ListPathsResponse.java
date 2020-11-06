@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.mediaservices.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.ListPathsResponseInner;
 import java.util.List;
 
 /** An immutable client-side representation of ListPathsResponse. */
-@Immutable
 public interface ListPathsResponse {
     /**
      * Gets the streamingPaths property: Streaming Paths supported by current Streaming Locator.

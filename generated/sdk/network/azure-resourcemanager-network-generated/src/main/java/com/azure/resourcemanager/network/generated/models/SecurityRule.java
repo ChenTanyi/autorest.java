@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.SecurityRuleInner;
 import java.util.List;
 
 /** An immutable client-side representation of SecurityRule. */
-@Immutable
 public interface SecurityRule {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.search.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.search.generated.fluent.models.QueryKeyInner;
 
 /** An immutable client-side representation of QueryKey. */
-@Immutable
 public interface QueryKey {
     /**
      * Gets the name property: The name of the query API key; may be empty.

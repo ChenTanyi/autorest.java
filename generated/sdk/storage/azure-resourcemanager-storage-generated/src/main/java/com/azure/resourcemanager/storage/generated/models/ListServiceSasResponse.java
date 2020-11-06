@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.storage.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.storage.generated.fluent.models.ListServiceSasResponseInner;
 
 /** An immutable client-side representation of ListServiceSasResponse. */
-@Immutable
 public interface ListServiceSasResponse {
     /**
      * Gets the serviceSasToken property: List service SAS credentials of specific resource.

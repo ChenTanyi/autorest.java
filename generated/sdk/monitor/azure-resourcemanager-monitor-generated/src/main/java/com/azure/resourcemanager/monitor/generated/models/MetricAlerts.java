@@ -104,6 +104,29 @@ public interface MetricAlerts {
     Response<Void> deleteWithResponse(String resourceGroupName, String ruleName, Context context);
 
     /**
+     * Retrieve an alert rule definition.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the metric alert resource.
+     */
+    MetricAlertResource getById(String id);
+
+    /**
+     * Retrieve an alert rule definition.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the metric alert resource.
+     */
+    Response<MetricAlertResource> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new MetricAlertResource resource.
      *
      * @param name resource name.

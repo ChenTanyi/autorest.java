@@ -69,6 +69,20 @@ public final class TransformsImpl implements Transforms {
         return this.serviceClient().deleteWithResponse(resourceGroupName, accountName, transformName, context);
     }
 
+    public Transform getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        String transformName = Utils.getValueFromIdByName(id, "transforms");
+        return this.getWithResponse(resourceGroupName, accountName, transformName, Context.NONE).getValue();
+    }
+
+    public Response<Transform> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        String transformName = Utils.getValueFromIdByName(id, "transforms");
+        return this.getWithResponse(resourceGroupName, accountName, transformName, context);
+    }
+
     private TransformsClient serviceClient() {
         return this.innerClient;
     }

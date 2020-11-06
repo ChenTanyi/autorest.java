@@ -110,6 +110,31 @@ public interface DedicatedHostGroups {
     PagedIterable<DedicatedHostGroup> list(Context context);
 
     /**
+     * Retrieves information about a dedicated host group.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to.
+     */
+    DedicatedHostGroup getById(String id);
+
+    /**
+     * Retrieves information about a dedicated host group.
+     *
+     * @param id the id of the resource.
+     * @param expand The expand expression to apply on the operation. The response shows the list of instance view of
+     *     the dedicated hosts under the dedicated host group.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to.
+     */
+    Response<DedicatedHostGroup> getByIdWithResponse(String id, InstanceViewTypes expand, Context context);
+
+    /**
      * Begins definition for a new DedicatedHostGroup resource.
      *
      * @param name resource name.

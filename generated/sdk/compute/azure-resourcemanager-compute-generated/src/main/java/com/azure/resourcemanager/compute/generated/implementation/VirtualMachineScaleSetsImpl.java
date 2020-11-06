@@ -367,6 +367,18 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         this.serviceClient().setOrchestrationServiceState(resourceGroupName, vmScaleSetName, parameters, context);
     }
 
+    public VirtualMachineScaleSet getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
+        return this.getByResourceGroupWithResponse(resourceGroupName, vmScaleSetName, Context.NONE).getValue();
+    }
+
+    public Response<VirtualMachineScaleSet> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
+        return this.getByResourceGroupWithResponse(resourceGroupName, vmScaleSetName, context);
+    }
+
     private VirtualMachineScaleSetsClient serviceClient() {
         return this.innerClient;
     }

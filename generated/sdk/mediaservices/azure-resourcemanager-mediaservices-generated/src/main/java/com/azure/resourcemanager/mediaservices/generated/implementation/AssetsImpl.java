@@ -160,6 +160,20 @@ public final class AssetsImpl implements Assets {
         }
     }
 
+    public Asset getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        String assetName = Utils.getValueFromIdByName(id, "assets");
+        return this.getWithResponse(resourceGroupName, accountName, assetName, Context.NONE).getValue();
+    }
+
+    public Response<Asset> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        String assetName = Utils.getValueFromIdByName(id, "assets");
+        return this.getWithResponse(resourceGroupName, accountName, assetName, context);
+    }
+
     private AssetsClient serviceClient() {
         return this.innerClient;
     }

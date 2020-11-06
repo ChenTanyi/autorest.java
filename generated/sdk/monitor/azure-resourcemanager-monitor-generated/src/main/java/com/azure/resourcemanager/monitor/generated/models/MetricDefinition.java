@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.monitor.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricDefinitionInner;
 import java.util.List;
 
 /** An immutable client-side representation of MetricDefinition. */
-@Immutable
 public interface MetricDefinition {
     /**
      * Gets the isDimensionRequired property: Flag to indicate whether the dimension is required.

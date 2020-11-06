@@ -101,7 +101,8 @@ public final class InboundNatRuleImpl implements InboundNatRule, InboundNatRule.
             serviceManager
                 .serviceClient()
                 .getInboundNatRules()
-                .createOrUpdate(resourceGroupName, loadBalancerName, inboundNatRuleName, innerObject, Context.NONE);
+                .createOrUpdate(
+                    resourceGroupName, loadBalancerName, inboundNatRuleName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -110,7 +111,7 @@ public final class InboundNatRuleImpl implements InboundNatRule, InboundNatRule.
             serviceManager
                 .serviceClient()
                 .getInboundNatRules()
-                .createOrUpdate(resourceGroupName, loadBalancerName, inboundNatRuleName, innerObject, context);
+                .createOrUpdate(resourceGroupName, loadBalancerName, inboundNatRuleName, this.innerModel(), context);
         return this;
     }
 
@@ -129,7 +130,8 @@ public final class InboundNatRuleImpl implements InboundNatRule, InboundNatRule.
             serviceManager
                 .serviceClient()
                 .getInboundNatRules()
-                .createOrUpdate(resourceGroupName, loadBalancerName, inboundNatRuleName, innerObject, Context.NONE);
+                .createOrUpdate(
+                    resourceGroupName, loadBalancerName, inboundNatRuleName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -138,7 +140,7 @@ public final class InboundNatRuleImpl implements InboundNatRule, InboundNatRule.
             serviceManager
                 .serviceClient()
                 .getInboundNatRules()
-                .createOrUpdate(resourceGroupName, loadBalancerName, inboundNatRuleName, innerObject, context);
+                .createOrUpdate(resourceGroupName, loadBalancerName, inboundNatRuleName, this.innerModel(), context);
         return this;
     }
 
@@ -151,23 +153,23 @@ public final class InboundNatRuleImpl implements InboundNatRule, InboundNatRule.
     }
 
     public InboundNatRule refresh() {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getInboundNatRules()
-                .getWithResponse(resourceGroupName, loadBalancerName, inboundNatRuleName, refreshExpand, Context.NONE)
+                .getWithResponse(resourceGroupName, loadBalancerName, inboundNatRuleName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public InboundNatRule refresh(Context context) {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getInboundNatRules()
-                .getWithResponse(resourceGroupName, loadBalancerName, inboundNatRuleName, refreshExpand, context)
+                .getWithResponse(resourceGroupName, loadBalancerName, inboundNatRuleName, localExpand, context)
                 .getValue();
         return this;
     }

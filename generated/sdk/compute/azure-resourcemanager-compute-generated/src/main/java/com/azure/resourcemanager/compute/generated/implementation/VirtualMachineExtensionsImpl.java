@@ -81,6 +81,21 @@ public final class VirtualMachineExtensionsImpl implements VirtualMachineExtensi
         }
     }
 
+    public VirtualMachineExtension getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String vmName = Utils.getValueFromIdByName(id, "virtualMachines");
+        String vmExtensionName = Utils.getValueFromIdByName(id, "extensions");
+        String localExpand = null;
+        return this.getWithResponse(resourceGroupName, vmName, vmExtensionName, localExpand, Context.NONE).getValue();
+    }
+
+    public Response<VirtualMachineExtension> getByIdWithResponse(String id, String expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String vmName = Utils.getValueFromIdByName(id, "virtualMachines");
+        String vmExtensionName = Utils.getValueFromIdByName(id, "extensions");
+        return this.getWithResponse(resourceGroupName, vmName, vmExtensionName, expand, context);
+    }
+
     private VirtualMachineExtensionsClient serviceClient() {
         return this.innerClient;
     }

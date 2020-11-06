@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.mysql.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.mysql.generated.fluent.models.PerformanceTierPropertiesInner;
 import java.util.List;
 
 /** An immutable client-side representation of PerformanceTierProperties. */
-@Immutable
 public interface PerformanceTierProperties {
     /**
      * Gets the id property: ID of the performance tier.

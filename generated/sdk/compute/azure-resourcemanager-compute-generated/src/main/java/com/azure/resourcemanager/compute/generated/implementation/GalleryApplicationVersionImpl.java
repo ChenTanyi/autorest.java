@@ -104,7 +104,7 @@ public final class GalleryApplicationVersionImpl
                     galleryName,
                     galleryApplicationName,
                     galleryApplicationVersionName,
-                    innerObject,
+                    this.innerModel(),
                     Context.NONE);
         return this;
     }
@@ -119,7 +119,7 @@ public final class GalleryApplicationVersionImpl
                     galleryName,
                     galleryApplicationName,
                     galleryApplicationVersionName,
-                    innerObject,
+                    this.innerModel(),
                     context);
         return this;
     }
@@ -175,7 +175,7 @@ public final class GalleryApplicationVersionImpl
     }
 
     public GalleryApplicationVersion refresh() {
-        ReplicationStatusTypes refreshExpand = null;
+        ReplicationStatusTypes localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
@@ -185,14 +185,14 @@ public final class GalleryApplicationVersionImpl
                     galleryName,
                     galleryApplicationName,
                     galleryApplicationVersionName,
-                    refreshExpand,
+                    localExpand,
                     Context.NONE)
                 .getValue();
         return this;
     }
 
     public GalleryApplicationVersion refresh(Context context) {
-        ReplicationStatusTypes refreshExpand = null;
+        ReplicationStatusTypes localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
@@ -202,7 +202,7 @@ public final class GalleryApplicationVersionImpl
                     galleryName,
                     galleryApplicationName,
                     galleryApplicationVersionName,
-                    refreshExpand,
+                    localExpand,
                     context)
                 .getValue();
         return this;

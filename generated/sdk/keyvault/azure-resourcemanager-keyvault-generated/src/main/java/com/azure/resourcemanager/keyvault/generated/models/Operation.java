@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.keyvault.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.OperationInner;
 
 /** An immutable client-side representation of Operation. */
-@Immutable
 public interface Operation {
     /**
      * Gets the name property: Operation name: {provider}/{resource}/{operation}.

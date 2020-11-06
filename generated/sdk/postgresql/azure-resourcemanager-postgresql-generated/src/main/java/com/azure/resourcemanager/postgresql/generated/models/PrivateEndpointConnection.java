@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.postgresql.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.PrivateEndpointConnectionInner;
 import java.util.Map;
 
 /** An immutable client-side representation of PrivateEndpointConnection. */
-@Immutable
 public interface PrivateEndpointConnection {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

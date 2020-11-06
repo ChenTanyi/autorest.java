@@ -89,6 +89,29 @@ public interface LoadBalancerBackendAddressPools {
     void delete(String resourceGroupName, String loadBalancerName, String backendAddressPoolName, Context context);
 
     /**
+     * Gets load balancer backend address pool.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return load balancer backend address pool.
+     */
+    BackendAddressPool getById(String id);
+
+    /**
+     * Gets load balancer backend address pool.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return load balancer backend address pool.
+     */
+    Response<BackendAddressPool> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new BackendAddressPool resource.
      *
      * @param name resource name.

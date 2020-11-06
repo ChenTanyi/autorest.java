@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnServerConfigurationsResponseInner;
 import java.util.List;
 
 /** An immutable client-side representation of VpnServerConfigurationsResponse. */
-@Immutable
 public interface VpnServerConfigurationsResponse {
     /**
      * Gets the vpnServerConfigurationResourceIds property: List of VpnServerConfigurations associated with VirtualWan.

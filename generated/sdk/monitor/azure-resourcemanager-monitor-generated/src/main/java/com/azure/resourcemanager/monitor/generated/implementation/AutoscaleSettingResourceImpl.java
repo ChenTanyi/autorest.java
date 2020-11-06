@@ -109,7 +109,7 @@ public final class AutoscaleSettingResourceImpl
             serviceManager
                 .serviceClient()
                 .getAutoscaleSettings()
-                .createOrUpdateWithResponse(resourceGroupName, autoscaleSettingName, innerObject, Context.NONE)
+                .createOrUpdateWithResponse(resourceGroupName, autoscaleSettingName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -119,7 +119,7 @@ public final class AutoscaleSettingResourceImpl
             serviceManager
                 .serviceClient()
                 .getAutoscaleSettings()
-                .createOrUpdateWithResponse(resourceGroupName, autoscaleSettingName, innerObject, context)
+                .createOrUpdateWithResponse(resourceGroupName, autoscaleSettingName, this.innerModel(), context)
                 .getValue();
         return this;
     }

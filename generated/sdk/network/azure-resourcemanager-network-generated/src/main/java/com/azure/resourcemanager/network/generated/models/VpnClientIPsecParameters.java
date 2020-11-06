@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnClientIPsecParametersInner;
 
 /** An immutable client-side representation of VpnClientIPsecParameters. */
-@Immutable
 public interface VpnClientIPsecParameters {
     /**
      * Gets the saLifeTimeSeconds property: The IPSec Security Association (also called Quick Mode or Phase 2 SA)

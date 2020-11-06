@@ -70,6 +70,20 @@ public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
         return inner.mapPage(inner1 -> new VirtualApplianceSiteImpl(inner1, this.manager()));
     }
 
+    public VirtualApplianceSite getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String networkVirtualApplianceName = Utils.getValueFromIdByName(id, "networkVirtualAppliances");
+        String siteName = Utils.getValueFromIdByName(id, "virtualApplianceSites");
+        return this.getWithResponse(resourceGroupName, networkVirtualApplianceName, siteName, Context.NONE).getValue();
+    }
+
+    public Response<VirtualApplianceSite> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String networkVirtualApplianceName = Utils.getValueFromIdByName(id, "networkVirtualAppliances");
+        String siteName = Utils.getValueFromIdByName(id, "virtualApplianceSites");
+        return this.getWithResponse(resourceGroupName, networkVirtualApplianceName, siteName, context);
+    }
+
     private VirtualApplianceSitesClient serviceClient() {
         return this.innerClient;
     }

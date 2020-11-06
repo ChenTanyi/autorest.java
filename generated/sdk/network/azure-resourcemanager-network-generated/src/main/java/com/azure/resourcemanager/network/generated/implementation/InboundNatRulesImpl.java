@@ -69,6 +69,23 @@ public final class InboundNatRulesImpl implements InboundNatRules {
         }
     }
 
+    public InboundNatRule getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String loadBalancerName = Utils.getValueFromIdByName(id, "loadBalancers");
+        String inboundNatRuleName = Utils.getValueFromIdByName(id, "inboundNatRules");
+        String localExpand = null;
+        return this
+            .getWithResponse(resourceGroupName, loadBalancerName, inboundNatRuleName, localExpand, Context.NONE)
+            .getValue();
+    }
+
+    public Response<InboundNatRule> getByIdWithResponse(String id, String expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String loadBalancerName = Utils.getValueFromIdByName(id, "loadBalancers");
+        String inboundNatRuleName = Utils.getValueFromIdByName(id, "inboundNatRules");
+        return this.getWithResponse(resourceGroupName, loadBalancerName, inboundNatRuleName, expand, context);
+    }
+
     private InboundNatRulesClient serviceClient() {
         return this.innerClient;
     }

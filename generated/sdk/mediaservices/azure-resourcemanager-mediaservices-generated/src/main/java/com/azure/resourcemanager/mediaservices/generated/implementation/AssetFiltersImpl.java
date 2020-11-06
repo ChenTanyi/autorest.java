@@ -69,6 +69,22 @@ public final class AssetFiltersImpl implements AssetFilters {
         return this.serviceClient().deleteWithResponse(resourceGroupName, accountName, assetName, filterName, context);
     }
 
+    public AssetFilter getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        String assetName = Utils.getValueFromIdByName(id, "assets");
+        String filterName = Utils.getValueFromIdByName(id, "assetFilters");
+        return this.getWithResponse(resourceGroupName, accountName, assetName, filterName, Context.NONE).getValue();
+    }
+
+    public Response<AssetFilter> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        String assetName = Utils.getValueFromIdByName(id, "assets");
+        String filterName = Utils.getValueFromIdByName(id, "assetFilters");
+        return this.getWithResponse(resourceGroupName, accountName, assetName, filterName, context);
+    }
+
     private AssetFiltersClient serviceClient() {
         return this.innerClient;
     }

@@ -110,7 +110,7 @@ public final class NetworkProfileImpl implements NetworkProfile, NetworkProfile.
             serviceManager
                 .serviceClient()
                 .getNetworkProfiles()
-                .createOrUpdateWithResponse(resourceGroupName, networkProfileName, innerObject, Context.NONE)
+                .createOrUpdateWithResponse(resourceGroupName, networkProfileName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -120,7 +120,7 @@ public final class NetworkProfileImpl implements NetworkProfile, NetworkProfile.
             serviceManager
                 .serviceClient()
                 .getNetworkProfiles()
-                .createOrUpdateWithResponse(resourceGroupName, networkProfileName, innerObject, context)
+                .createOrUpdateWithResponse(resourceGroupName, networkProfileName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -164,23 +164,23 @@ public final class NetworkProfileImpl implements NetworkProfile, NetworkProfile.
     }
 
     public NetworkProfile refresh() {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getNetworkProfiles()
-                .getByResourceGroupWithResponse(resourceGroupName, networkProfileName, refreshExpand, Context.NONE)
+                .getByResourceGroupWithResponse(resourceGroupName, networkProfileName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public NetworkProfile refresh(Context context) {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getNetworkProfiles()
-                .getByResourceGroupWithResponse(resourceGroupName, networkProfileName, refreshExpand, context)
+                .getByResourceGroupWithResponse(resourceGroupName, networkProfileName, localExpand, context)
                 .getValue();
         return this;
     }

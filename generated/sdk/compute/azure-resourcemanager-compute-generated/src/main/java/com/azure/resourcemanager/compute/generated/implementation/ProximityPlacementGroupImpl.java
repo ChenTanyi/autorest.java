@@ -115,7 +115,8 @@ public final class ProximityPlacementGroupImpl
             serviceManager
                 .serviceClient()
                 .getProximityPlacementGroups()
-                .createOrUpdateWithResponse(resourceGroupName, proximityPlacementGroupName, innerObject, Context.NONE)
+                .createOrUpdateWithResponse(
+                    resourceGroupName, proximityPlacementGroupName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -125,7 +126,7 @@ public final class ProximityPlacementGroupImpl
             serviceManager
                 .serviceClient()
                 .getProximityPlacementGroups()
-                .createOrUpdateWithResponse(resourceGroupName, proximityPlacementGroupName, innerObject, context)
+                .createOrUpdateWithResponse(resourceGroupName, proximityPlacementGroupName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -169,25 +170,25 @@ public final class ProximityPlacementGroupImpl
     }
 
     public ProximityPlacementGroup refresh() {
-        String refreshIncludeColocationStatus = null;
+        String localIncludeColocationStatus = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getProximityPlacementGroups()
                 .getByResourceGroupWithResponse(
-                    resourceGroupName, proximityPlacementGroupName, refreshIncludeColocationStatus, Context.NONE)
+                    resourceGroupName, proximityPlacementGroupName, localIncludeColocationStatus, Context.NONE)
                 .getValue();
         return this;
     }
 
     public ProximityPlacementGroup refresh(Context context) {
-        String refreshIncludeColocationStatus = null;
+        String localIncludeColocationStatus = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getProximityPlacementGroups()
                 .getByResourceGroupWithResponse(
-                    resourceGroupName, proximityPlacementGroupName, refreshIncludeColocationStatus, context)
+                    resourceGroupName, proximityPlacementGroupName, localIncludeColocationStatus, context)
                 .getValue();
         return this;
     }

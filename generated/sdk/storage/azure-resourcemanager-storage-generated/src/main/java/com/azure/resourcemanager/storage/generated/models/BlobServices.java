@@ -74,6 +74,33 @@ public interface BlobServices {
         String resourceGroupName, String accountName, Context context);
 
     /**
+     * Gets the properties of a storage account’s Blob service, including properties for Storage Analytics and CORS
+     * (Cross-Origin Resource Sharing) rules.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the properties of a storage account’s Blob service, including properties for Storage Analytics and CORS
+     *     (Cross-Origin Resource Sharing) rules.
+     */
+    BlobServiceProperties getServicePropertiesById(String id);
+
+    /**
+     * Gets the properties of a storage account’s Blob service, including properties for Storage Analytics and CORS
+     * (Cross-Origin Resource Sharing) rules.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the properties of a storage account’s Blob service, including properties for Storage Analytics and CORS
+     *     (Cross-Origin Resource Sharing) rules.
+     */
+    Response<BlobServiceProperties> getServicePropertiesByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new BlobServiceProperties resource.
      *
      * @param name resource name.

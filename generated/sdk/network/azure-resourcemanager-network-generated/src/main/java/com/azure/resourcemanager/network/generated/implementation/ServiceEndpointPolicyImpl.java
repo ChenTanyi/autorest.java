@@ -120,7 +120,7 @@ public final class ServiceEndpointPolicyImpl
             serviceManager
                 .serviceClient()
                 .getServiceEndpointPolicies()
-                .createOrUpdate(resourceGroupName, serviceEndpointPolicyName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, serviceEndpointPolicyName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -129,7 +129,7 @@ public final class ServiceEndpointPolicyImpl
             serviceManager
                 .serviceClient()
                 .getServiceEndpointPolicies()
-                .createOrUpdate(resourceGroupName, serviceEndpointPolicyName, innerObject, context);
+                .createOrUpdate(resourceGroupName, serviceEndpointPolicyName, this.innerModel(), context);
         return this;
     }
 
@@ -172,24 +172,23 @@ public final class ServiceEndpointPolicyImpl
     }
 
     public ServiceEndpointPolicy refresh() {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getServiceEndpointPolicies()
-                .getByResourceGroupWithResponse(
-                    resourceGroupName, serviceEndpointPolicyName, refreshExpand, Context.NONE)
+                .getByResourceGroupWithResponse(resourceGroupName, serviceEndpointPolicyName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public ServiceEndpointPolicy refresh(Context context) {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getServiceEndpointPolicies()
-                .getByResourceGroupWithResponse(resourceGroupName, serviceEndpointPolicyName, refreshExpand, context)
+                .getByResourceGroupWithResponse(resourceGroupName, serviceEndpointPolicyName, localExpand, context)
                 .getValue();
         return this;
     }

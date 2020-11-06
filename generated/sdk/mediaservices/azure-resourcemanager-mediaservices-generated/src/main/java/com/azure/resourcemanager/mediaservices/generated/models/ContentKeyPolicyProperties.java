@@ -4,14 +4,12 @@
 
 package com.azure.resourcemanager.mediaservices.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.ContentKeyPolicyPropertiesInner;
 import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.UUID;
 
 /** An immutable client-side representation of ContentKeyPolicyProperties. */
-@Immutable
 public interface ContentKeyPolicyProperties {
     /**
      * Gets the policyId property: The legacy Policy ID.

@@ -156,6 +156,20 @@ public final class CertificatesImpl implements Certificates {
         }
     }
 
+    public CertificateDescription getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceName = Utils.getValueFromIdByName(id, "IotHubs");
+        String certificateName = Utils.getValueFromIdByName(id, "certificates");
+        return this.getWithResponse(resourceGroupName, resourceName, certificateName, Context.NONE).getValue();
+    }
+
+    public Response<CertificateDescription> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceName = Utils.getValueFromIdByName(id, "IotHubs");
+        String certificateName = Utils.getValueFromIdByName(id, "certificates");
+        return this.getWithResponse(resourceGroupName, resourceName, certificateName, context);
+    }
+
     private CertificatesClient serviceClient() {
         return this.innerClient;
     }

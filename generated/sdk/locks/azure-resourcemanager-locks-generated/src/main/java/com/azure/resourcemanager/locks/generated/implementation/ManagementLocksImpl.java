@@ -382,6 +382,18 @@ public final class ManagementLocksImpl implements ManagementLocks {
         return inner.mapPage(inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
     }
 
+    public ManagementLockObject getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String lockName = Utils.getValueFromIdByName(id, "locks");
+        return this.getByResourceGroupWithResponse(resourceGroupName, lockName, Context.NONE).getValue();
+    }
+
+    public Response<ManagementLockObject> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String lockName = Utils.getValueFromIdByName(id, "locks");
+        return this.getByResourceGroupWithResponse(resourceGroupName, lockName, context);
+    }
+
     private ManagementLocksClient serviceClient() {
         return this.innerClient;
     }

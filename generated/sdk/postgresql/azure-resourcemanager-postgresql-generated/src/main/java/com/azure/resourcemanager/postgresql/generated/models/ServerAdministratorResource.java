@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.postgresql.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.ServerAdministratorResourceInner;
 import java.util.UUID;
 
 /** An immutable client-side representation of ServerAdministratorResource. */
-@Immutable
 public interface ServerAdministratorResource {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

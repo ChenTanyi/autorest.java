@@ -66,6 +66,20 @@ public final class ServerKeysImpl implements ServerKeys {
         this.serviceClient().delete(serverName, keyName, resourceGroupName, context);
     }
 
+    public ServerKey getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String serverName = Utils.getValueFromIdByName(id, "servers");
+        String keyName = Utils.getValueFromIdByName(id, "keys");
+        return this.getWithResponse(resourceGroupName, serverName, keyName, Context.NONE).getValue();
+    }
+
+    public Response<ServerKey> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String serverName = Utils.getValueFromIdByName(id, "servers");
+        String keyName = Utils.getValueFromIdByName(id, "keys");
+        return this.getWithResponse(resourceGroupName, serverName, keyName, context);
+    }
+
     private ServerKeysClient serviceClient() {
         return this.innerClient;
     }

@@ -182,6 +182,29 @@ public interface Mediaservices {
     Response<MediaService> getBySubscriptionWithResponse(String accountName, Context context);
 
     /**
+     * Get the details of a Media Services account.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the details of a Media Services account.
+     */
+    MediaService getById(String id);
+
+    /**
+     * Get the details of a Media Services account.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the details of a Media Services account.
+     */
+    Response<MediaService> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new MediaService resource.
      *
      * @param name resource name.

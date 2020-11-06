@@ -77,6 +77,18 @@ public final class MetricAlertsImpl implements MetricAlerts {
         return this.serviceClient().deleteWithResponse(resourceGroupName, ruleName, context);
     }
 
+    public MetricAlertResource getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String ruleName = Utils.getValueFromIdByName(id, "metricAlerts");
+        return this.getByResourceGroupWithResponse(resourceGroupName, ruleName, Context.NONE).getValue();
+    }
+
+    public Response<MetricAlertResource> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String ruleName = Utils.getValueFromIdByName(id, "metricAlerts");
+        return this.getByResourceGroupWithResponse(resourceGroupName, ruleName, context);
+    }
+
     private MetricAlertsClient serviceClient() {
         return this.innerClient;
     }

@@ -80,6 +80,20 @@ public final class SecurityPartnerProvidersImpl implements SecurityPartnerProvid
         return inner.mapPage(inner1 -> new SecurityPartnerProviderImpl(inner1, this.manager()));
     }
 
+    public SecurityPartnerProvider getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String securityPartnerProviderName = Utils.getValueFromIdByName(id, "securityPartnerProviders");
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, securityPartnerProviderName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<SecurityPartnerProvider> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String securityPartnerProviderName = Utils.getValueFromIdByName(id, "securityPartnerProviders");
+        return this.getByResourceGroupWithResponse(resourceGroupName, securityPartnerProviderName, context);
+    }
+
     private SecurityPartnerProvidersClient serviceClient() {
         return this.innerClient;
     }

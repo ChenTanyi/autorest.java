@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.PacketCaptureQueryStatusResultInner;
 import java.time.OffsetDateTime;
 import java.util.List;
 
 /** An immutable client-side representation of PacketCaptureQueryStatusResult. */
-@Immutable
 public interface PacketCaptureQueryStatusResult {
     /**
      * Gets the name property: The name of the packet capture resource.

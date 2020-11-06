@@ -66,6 +66,20 @@ public final class HubRouteTablesImpl implements HubRouteTables {
         return inner.mapPage(inner1 -> new HubRouteTableImpl(inner1, this.manager()));
     }
 
+    public HubRouteTable getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
+        String routeTableName = Utils.getValueFromIdByName(id, "hubRouteTables");
+        return this.getWithResponse(resourceGroupName, virtualHubName, routeTableName, Context.NONE).getValue();
+    }
+
+    public Response<HubRouteTable> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
+        String routeTableName = Utils.getValueFromIdByName(id, "hubRouteTables");
+        return this.getWithResponse(resourceGroupName, virtualHubName, routeTableName, context);
+    }
+
     private HubRouteTablesClient serviceClient() {
         return this.innerClient;
     }

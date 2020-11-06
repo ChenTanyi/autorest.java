@@ -103,6 +103,29 @@ public interface SecurityPartnerProviders {
     PagedIterable<SecurityPartnerProvider> list(Context context);
 
     /**
+     * Gets the specified Security Partner Provider.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified Security Partner Provider.
+     */
+    SecurityPartnerProvider getById(String id);
+
+    /**
+     * Gets the specified Security Partner Provider.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified Security Partner Provider.
+     */
+    Response<SecurityPartnerProvider> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new SecurityPartnerProvider resource.
      *
      * @param name resource name.

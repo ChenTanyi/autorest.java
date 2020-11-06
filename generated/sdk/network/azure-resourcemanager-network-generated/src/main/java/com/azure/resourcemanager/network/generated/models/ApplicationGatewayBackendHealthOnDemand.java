@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayBackendHealthOnDemandInner;
 
 /** An immutable client-side representation of ApplicationGatewayBackendHealthOnDemand. */
-@Immutable
 public interface ApplicationGatewayBackendHealthOnDemand {
     /**
      * Gets the backendAddressPool property: Reference to an ApplicationGatewayBackendAddressPool resource.

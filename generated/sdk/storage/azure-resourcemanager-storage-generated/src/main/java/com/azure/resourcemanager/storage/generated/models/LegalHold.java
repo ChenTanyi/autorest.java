@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.storage.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.storage.generated.fluent.models.LegalHoldInner;
 import java.util.List;
 
 /** An immutable client-side representation of LegalHold. */
-@Immutable
 public interface LegalHold {
     /**
      * Gets the hasLegalHold property: The hasLegalHold public property is set to true by SRP if there are at least one

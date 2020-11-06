@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineImageResourceInner;
 import java.util.Map;
 
 /** An immutable client-side representation of VirtualMachineImageResource. */
-@Immutable
 public interface VirtualMachineImageResource {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

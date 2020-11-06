@@ -74,7 +74,7 @@ public final class ImmutabilityPolicyImpl
                 .serviceClient()
                 .getBlobContainers()
                 .createOrUpdateImmutabilityPolicyWithResponse(
-                    resourceGroupName, accountName, containerName, createIfMatch, innerObject, Context.NONE)
+                    resourceGroupName, accountName, containerName, createIfMatch, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -85,7 +85,7 @@ public final class ImmutabilityPolicyImpl
                 .serviceClient()
                 .getBlobContainers()
                 .createOrUpdateImmutabilityPolicyWithResponse(
-                    resourceGroupName, accountName, containerName, createIfMatch, innerObject, context)
+                    resourceGroupName, accountName, containerName, createIfMatch, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -108,7 +108,7 @@ public final class ImmutabilityPolicyImpl
                 .serviceClient()
                 .getBlobContainers()
                 .createOrUpdateImmutabilityPolicyWithResponse(
-                    resourceGroupName, accountName, containerName, updateIfMatch, innerObject, Context.NONE)
+                    resourceGroupName, accountName, containerName, updateIfMatch, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -119,7 +119,7 @@ public final class ImmutabilityPolicyImpl
                 .serviceClient()
                 .getBlobContainers()
                 .createOrUpdateImmutabilityPolicyWithResponse(
-                    resourceGroupName, accountName, containerName, updateIfMatch, innerObject, context)
+                    resourceGroupName, accountName, containerName, updateIfMatch, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -133,25 +133,24 @@ public final class ImmutabilityPolicyImpl
     }
 
     public ImmutabilityPolicy refresh() {
-        String refreshIfMatch = null;
+        String localIfMatch = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getBlobContainers()
                 .getImmutabilityPolicyWithResponse(
-                    resourceGroupName, accountName, containerName, refreshIfMatch, Context.NONE)
+                    resourceGroupName, accountName, containerName, localIfMatch, Context.NONE)
                 .getValue();
         return this;
     }
 
     public ImmutabilityPolicy refresh(Context context) {
-        String refreshIfMatch = null;
+        String localIfMatch = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getBlobContainers()
-                .getImmutabilityPolicyWithResponse(
-                    resourceGroupName, accountName, containerName, refreshIfMatch, context)
+                .getImmutabilityPolicyWithResponse(resourceGroupName, accountName, containerName, localIfMatch, context)
                 .getValue();
         return this;
     }

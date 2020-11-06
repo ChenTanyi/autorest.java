@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DomainOwnershipIdentifierInner;
 
 /** An immutable client-side representation of DomainOwnershipIdentifier. */
-@Immutable
 public interface DomainOwnershipIdentifier {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

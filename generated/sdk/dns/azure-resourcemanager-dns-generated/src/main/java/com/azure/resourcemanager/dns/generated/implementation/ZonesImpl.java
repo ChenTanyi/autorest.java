@@ -79,6 +79,18 @@ public final class ZonesImpl implements Zones {
         return inner.mapPage(inner1 -> new ZoneImpl(inner1, this.manager()));
     }
 
+    public Zone getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String zoneName = Utils.getValueFromIdByName(id, "dnsZones");
+        return this.getByResourceGroupWithResponse(resourceGroupName, zoneName, Context.NONE).getValue();
+    }
+
+    public Response<Zone> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String zoneName = Utils.getValueFromIdByName(id, "dnsZones");
+        return this.getByResourceGroupWithResponse(resourceGroupName, zoneName, context);
+    }
+
     private ZonesClient serviceClient() {
         return this.innerClient;
     }

@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.AutoApprovedPrivateLinkServiceInner;
 
 /** An immutable client-side representation of AutoApprovedPrivateLinkService. */
-@Immutable
 public interface AutoApprovedPrivateLinkService {
     /**
      * Gets the privateLinkService property: The id of the private link service resource.

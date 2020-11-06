@@ -64,7 +64,7 @@ public final class FileServicePropertiesImpl
             serviceManager
                 .serviceClient()
                 .getFileServices()
-                .setServicePropertiesWithResponse(resourceGroupName, accountName, innerObject, Context.NONE)
+                .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -74,7 +74,7 @@ public final class FileServicePropertiesImpl
             serviceManager
                 .serviceClient()
                 .getFileServices()
-                .setServicePropertiesWithResponse(resourceGroupName, accountName, innerObject, context)
+                .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -94,7 +94,7 @@ public final class FileServicePropertiesImpl
             serviceManager
                 .serviceClient()
                 .getFileServices()
-                .setServicePropertiesWithResponse(resourceGroupName, accountName, innerObject, Context.NONE)
+                .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -104,7 +104,7 @@ public final class FileServicePropertiesImpl
             serviceManager
                 .serviceClient()
                 .getFileServices()
-                .setServicePropertiesWithResponse(resourceGroupName, accountName, innerObject, context)
+                .setServicePropertiesWithResponse(resourceGroupName, accountName, this.innerModel(), context)
                 .getValue();
         return this;
     }

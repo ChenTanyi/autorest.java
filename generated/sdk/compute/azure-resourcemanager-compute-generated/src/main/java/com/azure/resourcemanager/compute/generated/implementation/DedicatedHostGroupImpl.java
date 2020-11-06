@@ -110,7 +110,7 @@ public final class DedicatedHostGroupImpl
             serviceManager
                 .serviceClient()
                 .getDedicatedHostGroups()
-                .createOrUpdateWithResponse(resourceGroupName, hostGroupName, innerObject, Context.NONE)
+                .createOrUpdateWithResponse(resourceGroupName, hostGroupName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -120,7 +120,7 @@ public final class DedicatedHostGroupImpl
             serviceManager
                 .serviceClient()
                 .getDedicatedHostGroups()
-                .createOrUpdateWithResponse(resourceGroupName, hostGroupName, innerObject, context)
+                .createOrUpdateWithResponse(resourceGroupName, hostGroupName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -164,23 +164,23 @@ public final class DedicatedHostGroupImpl
     }
 
     public DedicatedHostGroup refresh() {
-        InstanceViewTypes refreshExpand = null;
+        InstanceViewTypes localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getDedicatedHostGroups()
-                .getByResourceGroupWithResponse(resourceGroupName, hostGroupName, refreshExpand, Context.NONE)
+                .getByResourceGroupWithResponse(resourceGroupName, hostGroupName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public DedicatedHostGroup refresh(Context context) {
-        InstanceViewTypes refreshExpand = null;
+        InstanceViewTypes localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getDedicatedHostGroups()
-                .getByResourceGroupWithResponse(resourceGroupName, hostGroupName, refreshExpand, context)
+                .getByResourceGroupWithResponse(resourceGroupName, hostGroupName, localExpand, context)
                 .getValue();
         return this;
     }

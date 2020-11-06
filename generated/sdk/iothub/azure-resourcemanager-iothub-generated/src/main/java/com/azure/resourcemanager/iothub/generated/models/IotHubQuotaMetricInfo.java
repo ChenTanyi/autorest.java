@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.iothub.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.iothub.generated.fluent.models.IotHubQuotaMetricInfoInner;
 
 /** An immutable client-side representation of IotHubQuotaMetricInfo. */
-@Immutable
 public interface IotHubQuotaMetricInfo {
     /**
      * Gets the name property: The name of the quota metric.

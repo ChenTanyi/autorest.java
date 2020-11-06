@@ -103,7 +103,7 @@ public final class VirtualMachineScaleSetVMExtensionImpl
                 .serviceClient()
                 .getVirtualMachineScaleSetVMExtensions()
                 .createOrUpdate(
-                    resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, innerObject, Context.NONE);
+                    resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -112,7 +112,8 @@ public final class VirtualMachineScaleSetVMExtensionImpl
             serviceManager
                 .serviceClient()
                 .getVirtualMachineScaleSetVMExtensions()
-                .createOrUpdate(resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, innerObject, context);
+                .createOrUpdate(
+                    resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, this.innerModel(), context);
         return this;
     }
 
@@ -163,24 +164,24 @@ public final class VirtualMachineScaleSetVMExtensionImpl
     }
 
     public VirtualMachineScaleSetVMExtension refresh() {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getVirtualMachineScaleSetVMExtensions()
                 .getWithResponse(
-                    resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, refreshExpand, Context.NONE)
+                    resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public VirtualMachineScaleSetVMExtension refresh(Context context) {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getVirtualMachineScaleSetVMExtensions()
-                .getWithResponse(resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, refreshExpand, context)
+                .getWithResponse(resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, localExpand, context)
                 .getValue();
         return this;
     }

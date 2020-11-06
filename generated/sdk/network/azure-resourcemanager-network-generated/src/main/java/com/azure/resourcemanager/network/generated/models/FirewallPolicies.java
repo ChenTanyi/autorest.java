@@ -104,6 +104,30 @@ public interface FirewallPolicies {
     PagedIterable<FirewallPolicy> list(Context context);
 
     /**
+     * Gets the specified Firewall Policy.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified Firewall Policy.
+     */
+    FirewallPolicy getById(String id);
+
+    /**
+     * Gets the specified Firewall Policy.
+     *
+     * @param id the id of the resource.
+     * @param expand Expands referenced resources.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified Firewall Policy.
+     */
+    Response<FirewallPolicy> getByIdWithResponse(String id, String expand, Context context);
+
+    /**
      * Begins definition for a new FirewallPolicy resource.
      *
      * @param name resource name.

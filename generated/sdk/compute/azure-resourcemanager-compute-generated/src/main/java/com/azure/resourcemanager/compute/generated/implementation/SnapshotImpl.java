@@ -148,7 +148,7 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
             serviceManager
                 .serviceClient()
                 .getSnapshots()
-                .createOrUpdate(resourceGroupName, snapshotName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, snapshotName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -157,7 +157,7 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
             serviceManager
                 .serviceClient()
                 .getSnapshots()
-                .createOrUpdate(resourceGroupName, snapshotName, innerObject, context);
+                .createOrUpdate(resourceGroupName, snapshotName, this.innerModel(), context);
         return this;
     }
 

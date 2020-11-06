@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.eventhubs.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.NetworkRuleSetInner;
 import java.util.List;
 
 /** An immutable client-side representation of NetworkRuleSet. */
-@Immutable
 public interface NetworkRuleSet {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

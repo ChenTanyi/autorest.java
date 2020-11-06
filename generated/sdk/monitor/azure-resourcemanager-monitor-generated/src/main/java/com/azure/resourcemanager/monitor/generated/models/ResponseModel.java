@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.monitor.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.monitor.generated.fluent.models.ResponseInner;
 import java.time.Duration;
 import java.util.List;
 
 /** An immutable client-side representation of ResponseModel. */
-@Immutable
 public interface ResponseModel {
     /**
      * Gets the cost property: The integer value representing the cost of the query, for data case.

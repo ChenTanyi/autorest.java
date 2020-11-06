@@ -118,7 +118,7 @@ public final class FlowLogImpl implements FlowLog, FlowLog.Definition, FlowLog.U
             serviceManager
                 .serviceClient()
                 .getFlowLogs()
-                .createOrUpdate(resourceGroupName, networkWatcherName, flowLogName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, networkWatcherName, flowLogName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -127,7 +127,7 @@ public final class FlowLogImpl implements FlowLog, FlowLog.Definition, FlowLog.U
             serviceManager
                 .serviceClient()
                 .getFlowLogs()
-                .createOrUpdate(resourceGroupName, networkWatcherName, flowLogName, innerObject, context);
+                .createOrUpdate(resourceGroupName, networkWatcherName, flowLogName, this.innerModel(), context);
         return this;
     }
 

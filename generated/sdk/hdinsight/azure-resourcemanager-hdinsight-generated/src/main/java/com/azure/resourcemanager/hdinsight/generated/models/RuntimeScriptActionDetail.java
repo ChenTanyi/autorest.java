@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.hdinsight.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.RuntimeScriptActionDetailInner;
 import java.util.List;
 
 /** An immutable client-side representation of RuntimeScriptActionDetail. */
-@Immutable
 public interface RuntimeScriptActionDetail {
     /**
      * Gets the name property: The name of the script action.

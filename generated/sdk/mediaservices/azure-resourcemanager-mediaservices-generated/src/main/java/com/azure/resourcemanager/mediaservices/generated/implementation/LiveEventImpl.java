@@ -148,7 +148,8 @@ public final class LiveEventImpl implements LiveEvent, LiveEvent.Definition, Liv
             serviceManager
                 .serviceClient()
                 .getLiveEvents()
-                .create(resourceGroupName, accountName, liveEventName, innerObject, createAutoStart, Context.NONE);
+                .create(
+                    resourceGroupName, accountName, liveEventName, this.innerModel(), createAutoStart, Context.NONE);
         return this;
     }
 
@@ -157,7 +158,7 @@ public final class LiveEventImpl implements LiveEvent, LiveEvent.Definition, Liv
             serviceManager
                 .serviceClient()
                 .getLiveEvents()
-                .create(resourceGroupName, accountName, liveEventName, innerObject, createAutoStart, context);
+                .create(resourceGroupName, accountName, liveEventName, this.innerModel(), createAutoStart, context);
         return this;
     }
 
@@ -177,7 +178,7 @@ public final class LiveEventImpl implements LiveEvent, LiveEvent.Definition, Liv
             serviceManager
                 .serviceClient()
                 .getLiveEvents()
-                .update(resourceGroupName, accountName, liveEventName, innerObject, Context.NONE);
+                .update(resourceGroupName, accountName, liveEventName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -186,7 +187,7 @@ public final class LiveEventImpl implements LiveEvent, LiveEvent.Definition, Liv
             serviceManager
                 .serviceClient()
                 .getLiveEvents()
-                .update(resourceGroupName, accountName, liveEventName, innerObject, context);
+                .update(resourceGroupName, accountName, liveEventName, this.innerModel(), context);
         return this;
     }
 

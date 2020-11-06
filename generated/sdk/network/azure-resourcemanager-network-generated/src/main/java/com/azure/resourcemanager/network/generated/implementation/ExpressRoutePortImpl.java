@@ -151,7 +151,7 @@ public final class ExpressRoutePortImpl
             serviceManager
                 .serviceClient()
                 .getExpressRoutePorts()
-                .createOrUpdate(resourceGroupName, expressRoutePortName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, expressRoutePortName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -160,7 +160,7 @@ public final class ExpressRoutePortImpl
             serviceManager
                 .serviceClient()
                 .getExpressRoutePorts()
-                .createOrUpdate(resourceGroupName, expressRoutePortName, innerObject, context);
+                .createOrUpdate(resourceGroupName, expressRoutePortName, this.innerModel(), context);
         return this;
     }
 

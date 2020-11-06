@@ -196,6 +196,29 @@ public interface Servers {
     void upgrade(String resourceGroupName, String serverName, ServerUpgradeParameters parameters, Context context);
 
     /**
+     * Gets information about a server.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about a server.
+     */
+    Server getById(String id);
+
+    /**
+     * Gets information about a server.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about a server.
+     */
+    Response<Server> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new Server resource.
      *
      * @param name resource name.

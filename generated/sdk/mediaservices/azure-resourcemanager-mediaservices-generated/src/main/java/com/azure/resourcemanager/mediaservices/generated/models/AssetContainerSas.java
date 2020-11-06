@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.mediaservices.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.AssetContainerSasInner;
 import java.util.List;
 
 /** An immutable client-side representation of AssetContainerSas. */
-@Immutable
 public interface AssetContainerSas {
     /**
      * Gets the assetContainerSasUrls property: The list of Asset container SAS URLs.

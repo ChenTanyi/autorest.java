@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.databoxedge.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.StorageAccountCredentialInner;
 
 /** An immutable client-side representation of StorageAccountCredential. */
-@Immutable
 public interface StorageAccountCredential {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

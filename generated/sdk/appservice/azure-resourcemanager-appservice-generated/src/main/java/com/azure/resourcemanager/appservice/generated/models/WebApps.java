@@ -11407,6 +11407,307 @@ public interface WebApps {
     Response<WebJob> getWebJobWithResponse(String resourceGroupName, String name, String webJobName, Context context);
 
     /**
+     * Description for Get domain ownership identifier for web app.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a domain specific resource identifier.
+     */
+    Identifier getDomainOwnershipIdentifierById(String id);
+
+    /**
+     * Description for Get domain ownership identifier for web app.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a domain specific resource identifier.
+     */
+    Response<Identifier> getDomainOwnershipIdentifierByIdWithResponse(String id, Context context);
+
+    /**
+     * Description for Gets the details of a web, mobile, or API app.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a web app, a mobile app backend, or an API app.
+     */
+    Site getById(String id);
+
+    /**
+     * Description for Gets the details of a web, mobile, or API app.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a web app, a mobile app backend, or an API app.
+     */
+    Response<Site> getByIdWithResponse(String id, Context context);
+
+    /**
+     * Description for Get a deployment by its ID for an app, or a deployment slot.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return user credentials used for publishing activity.
+     */
+    Deployment getDeploymentById(String id);
+
+    /**
+     * Description for Get a deployment by its ID for an app, or a deployment slot.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return user credentials used for publishing activity.
+     */
+    Response<Deployment> getDeploymentByIdWithResponse(String id, Context context);
+
+    /**
+     * Description for Get function information by its ID for web site, or a deployment slot.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return function information.
+     */
+    FunctionEnvelope getFunctionById(String id);
+
+    /**
+     * Description for Get function information by its ID for web site, or a deployment slot.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return function information.
+     */
+    Response<FunctionEnvelope> getFunctionByIdWithResponse(String id, Context context);
+
+    /**
+     * Description for Get the named hostname binding for an app (or deployment slot, if specified).
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a hostname binding object.
+     */
+    HostnameBinding getHostnameBindingById(String id);
+
+    /**
+     * Description for Get the named hostname binding for an app (or deployment slot, if specified).
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a hostname binding object.
+     */
+    Response<HostnameBinding> getHostnameBindingByIdWithResponse(String id, Context context);
+
+    /**
+     * Description for Retrieves a specific Service Bus Hybrid Connection used by this Web App.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return hybrid Connection contract.
+     */
+    HybridConnection getHybridConnectionById(String id);
+
+    /**
+     * Description for Retrieves a specific Service Bus Hybrid Connection used by this Web App.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return hybrid Connection contract.
+     */
+    Response<HybridConnection> getHybridConnectionByIdWithResponse(String id, Context context);
+
+    /**
+     * Description for Gets a hybrid connection configuration by its name.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return hybrid Connection for an App Service app.
+     */
+    RelayServiceConnectionEntity getRelayServiceConnectionById(String id);
+
+    /**
+     * Description for Gets a hybrid connection configuration by its name.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return hybrid Connection for an App Service app.
+     */
+    Response<RelayServiceConnectionEntity> getRelayServiceConnectionByIdWithResponse(String id, Context context);
+
+    /**
+     * Description for Gets a virtual network the app (or deployment slot) is connected to by name.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return virtual Network information contract.
+     */
+    VnetInfo getVnetConnectionSlotById(String id);
+
+    /**
+     * Description for Gets a virtual network the app (or deployment slot) is connected to by name.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return virtual Network information contract.
+     */
+    Response<VnetInfo> getVnetConnectionSlotByIdWithResponse(String id, Context context);
+
+    /**
+     * Description for Gets a named add-on of an app.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return premier add-on.
+     */
+    PremierAddOn getPremierAddOnById(String id);
+
+    /**
+     * Description for Gets a named add-on of an app.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return premier add-on.
+     */
+    Response<PremierAddOn> getPremierAddOnByIdWithResponse(String id, Context context);
+
+    /**
+     * Description for Get the named public certificate for an app (or deployment slot, if specified).
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return public certificate object.
+     */
+    PublicCertificate getPublicCertificateById(String id);
+
+    /**
+     * Description for Get the named public certificate for an app (or deployment slot, if specified).
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return public certificate object.
+     */
+    Response<PublicCertificate> getPublicCertificateByIdWithResponse(String id, Context context);
+
+    /**
+     * Description for Gets a private endpoint connection.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return private Endpoint Connection ARM resource.
+     */
+    PrivateEndpointConnectionResource getPrivateEndpointConnectionById(String id);
+
+    /**
+     * Description for Gets a private endpoint connection.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return private Endpoint Connection ARM resource.
+     */
+    Response<PrivateEndpointConnectionResource> getPrivateEndpointConnectionByIdWithResponse(
+        String id, Context context);
+
+    /**
+     * Description for Gets an app's Virtual Network gateway.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the Virtual Network gateway contract.
+     */
+    VnetGateway getVnetConnectionGatewaySlotById(String id);
+
+    /**
+     * Description for Gets an app's Virtual Network gateway.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the Virtual Network gateway contract.
+     */
+    Response<VnetGateway> getVnetConnectionGatewaySlotByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new Site resource.
      *
      * @param name resource name.

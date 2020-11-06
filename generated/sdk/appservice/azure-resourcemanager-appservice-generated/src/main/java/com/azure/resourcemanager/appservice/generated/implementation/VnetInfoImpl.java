@@ -102,7 +102,7 @@ public final class VnetInfoImpl implements VnetInfo, VnetInfo.Definition, VnetIn
                 .serviceClient()
                 .getWebApps()
                 .createOrUpdateVnetConnectionSlotWithResponse(
-                    resourceGroupName, name, vnetName, slot, innerObject, Context.NONE)
+                    resourceGroupName, name, vnetName, slot, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -113,7 +113,7 @@ public final class VnetInfoImpl implements VnetInfo, VnetInfo.Definition, VnetIn
                 .serviceClient()
                 .getWebApps()
                 .createOrUpdateVnetConnectionSlotWithResponse(
-                    resourceGroupName, name, vnetName, slot, innerObject, context)
+                    resourceGroupName, name, vnetName, slot, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -134,7 +134,7 @@ public final class VnetInfoImpl implements VnetInfo, VnetInfo.Definition, VnetIn
                 .serviceClient()
                 .getWebApps()
                 .updateVnetConnectionSlotWithResponse(
-                    resourceGroupName, name, vnetName, slot, innerObject, Context.NONE)
+                    resourceGroupName, name, vnetName, slot, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -144,7 +144,8 @@ public final class VnetInfoImpl implements VnetInfo, VnetInfo.Definition, VnetIn
             serviceManager
                 .serviceClient()
                 .getWebApps()
-                .updateVnetConnectionSlotWithResponse(resourceGroupName, name, vnetName, slot, innerObject, context)
+                .updateVnetConnectionSlotWithResponse(
+                    resourceGroupName, name, vnetName, slot, this.innerModel(), context)
                 .getValue();
         return this;
     }

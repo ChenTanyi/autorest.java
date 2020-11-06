@@ -168,7 +168,7 @@ public final class CertificateImpl implements Certificate, Certificate.Definitio
             serviceManager
                 .serviceClient()
                 .getCertificates()
-                .createOrUpdateWithResponse(resourceGroupName, name, innerObject, Context.NONE)
+                .createOrUpdateWithResponse(resourceGroupName, name, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -178,7 +178,7 @@ public final class CertificateImpl implements Certificate, Certificate.Definitio
             serviceManager
                 .serviceClient()
                 .getCertificates()
-                .createOrUpdateWithResponse(resourceGroupName, name, innerObject, context)
+                .createOrUpdateWithResponse(resourceGroupName, name, this.innerModel(), context)
                 .getValue();
         return this;
     }

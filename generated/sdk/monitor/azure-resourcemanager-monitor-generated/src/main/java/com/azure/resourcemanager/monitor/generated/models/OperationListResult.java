@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.monitor.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.monitor.generated.fluent.models.OperationListResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of OperationListResult. */
-@Immutable
 public interface OperationListResult {
     /**
      * Gets the value property: List of operations supported by the Microsoft.Insights provider.

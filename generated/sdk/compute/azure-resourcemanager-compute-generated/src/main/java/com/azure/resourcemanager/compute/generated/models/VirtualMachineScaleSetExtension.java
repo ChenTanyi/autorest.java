@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetExtensionInner;
 import java.util.List;
 
 /** An immutable client-side representation of VirtualMachineScaleSetExtension. */
-@Immutable
 public interface VirtualMachineScaleSetExtension {
     /**
      * Gets the id property: Resource Id.

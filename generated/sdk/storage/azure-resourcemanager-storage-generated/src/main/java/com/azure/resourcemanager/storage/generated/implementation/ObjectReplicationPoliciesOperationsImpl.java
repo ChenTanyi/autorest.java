@@ -72,6 +72,20 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
             .deleteWithResponse(resourceGroupName, accountName, objectReplicationPolicyId, context);
     }
 
+    public ObjectReplicationPolicy getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String objectReplicationPolicyId = Utils.getValueFromIdByName(id, "objectReplicationPolicies");
+        return this.getWithResponse(resourceGroupName, accountName, objectReplicationPolicyId, Context.NONE).getValue();
+    }
+
+    public Response<ObjectReplicationPolicy> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String objectReplicationPolicyId = Utils.getValueFromIdByName(id, "objectReplicationPolicies");
+        return this.getWithResponse(resourceGroupName, accountName, objectReplicationPolicyId, context);
+    }
+
     private ObjectReplicationPoliciesOperationsClient serviceClient() {
         return this.innerClient;
     }

@@ -76,6 +76,18 @@ public final class NetworkExperimentProfilesImpl implements NetworkExperimentPro
         this.serviceClient().delete(resourceGroupName, profileName, context);
     }
 
+    public Profile getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String profileName = Utils.getValueFromIdByName(id, "NetworkExperimentProfiles");
+        return this.getByResourceGroupWithResponse(resourceGroupName, profileName, Context.NONE).getValue();
+    }
+
+    public Response<Profile> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String profileName = Utils.getValueFromIdByName(id, "NetworkExperimentProfiles");
+        return this.getByResourceGroupWithResponse(resourceGroupName, profileName, context);
+    }
+
     private NetworkExperimentProfilesClient serviceClient() {
         return this.innerClient;
     }

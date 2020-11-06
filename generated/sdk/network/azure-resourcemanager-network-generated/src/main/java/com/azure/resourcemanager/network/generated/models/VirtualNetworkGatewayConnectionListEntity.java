@@ -4,14 +4,12 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.management.SubResource;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkGatewayConnectionListEntityInner;
 import java.util.List;
 import java.util.Map;
 
 /** An immutable client-side representation of VirtualNetworkGatewayConnectionListEntity. */
-@Immutable
 public interface VirtualNetworkGatewayConnectionListEntity {
     /**
      * Gets the name property: The name of the resource.

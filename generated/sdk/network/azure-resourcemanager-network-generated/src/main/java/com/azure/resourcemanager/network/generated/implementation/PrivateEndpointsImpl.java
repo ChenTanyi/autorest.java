@@ -79,6 +79,21 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
         return inner.mapPage(inner1 -> new PrivateEndpointImpl(inner1, this.manager()));
     }
 
+    public PrivateEndpoint getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String privateEndpointName = Utils.getValueFromIdByName(id, "privateEndpoints");
+        String localExpand = null;
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, privateEndpointName, localExpand, Context.NONE)
+            .getValue();
+    }
+
+    public Response<PrivateEndpoint> getByIdWithResponse(String id, String expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String privateEndpointName = Utils.getValueFromIdByName(id, "privateEndpoints");
+        return this.getByResourceGroupWithResponse(resourceGroupName, privateEndpointName, expand, context);
+    }
+
     private PrivateEndpointsClient serviceClient() {
         return this.innerClient;
     }

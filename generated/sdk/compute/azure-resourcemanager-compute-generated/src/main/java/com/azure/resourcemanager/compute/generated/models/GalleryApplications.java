@@ -101,6 +101,31 @@ public interface GalleryApplications {
     PagedIterable<GalleryApplication> listByGallery(String resourceGroupName, String galleryName, Context context);
 
     /**
+     * Retrieves information about a gallery Application Definition.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies information about the gallery Application Definition that you want to create or update.
+     */
+    GalleryApplication getById(String id);
+
+    /**
+     * Retrieves information about a gallery Application Definition.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies information about the gallery Application Definition that you want to create or update.
+     */
+    Response<GalleryApplication> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new GalleryApplication resource.
      *
      * @param name resource name.

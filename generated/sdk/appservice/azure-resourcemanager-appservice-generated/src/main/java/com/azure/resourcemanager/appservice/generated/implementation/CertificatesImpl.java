@@ -76,6 +76,18 @@ public final class CertificatesImpl implements Certificates {
         return this.serviceClient().deleteWithResponse(resourceGroupName, name, context);
     }
 
+    public Certificate getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "certificates");
+        return this.getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE).getValue();
+    }
+
+    public Response<Certificate> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "certificates");
+        return this.getByResourceGroupWithResponse(resourceGroupName, name, context);
+    }
+
     private CertificatesClient serviceClient() {
         return this.innerClient;
     }

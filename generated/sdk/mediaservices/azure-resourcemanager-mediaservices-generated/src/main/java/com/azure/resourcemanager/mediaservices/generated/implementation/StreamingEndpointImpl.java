@@ -153,7 +153,12 @@ public final class StreamingEndpointImpl
                 .serviceClient()
                 .getStreamingEndpoints()
                 .create(
-                    resourceGroupName, accountName, streamingEndpointName, innerObject, createAutoStart, Context.NONE);
+                    resourceGroupName,
+                    accountName,
+                    streamingEndpointName,
+                    this.innerModel(),
+                    createAutoStart,
+                    Context.NONE);
         return this;
     }
 
@@ -162,7 +167,8 @@ public final class StreamingEndpointImpl
             serviceManager
                 .serviceClient()
                 .getStreamingEndpoints()
-                .create(resourceGroupName, accountName, streamingEndpointName, innerObject, createAutoStart, context);
+                .create(
+                    resourceGroupName, accountName, streamingEndpointName, this.innerModel(), createAutoStart, context);
         return this;
     }
 
@@ -182,7 +188,7 @@ public final class StreamingEndpointImpl
             serviceManager
                 .serviceClient()
                 .getStreamingEndpoints()
-                .update(resourceGroupName, accountName, streamingEndpointName, innerObject, Context.NONE);
+                .update(resourceGroupName, accountName, streamingEndpointName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -191,7 +197,7 @@ public final class StreamingEndpointImpl
             serviceManager
                 .serviceClient()
                 .getStreamingEndpoints()
-                .update(resourceGroupName, accountName, streamingEndpointName, innerObject, context);
+                .update(resourceGroupName, accountName, streamingEndpointName, this.innerModel(), context);
         return this;
     }
 

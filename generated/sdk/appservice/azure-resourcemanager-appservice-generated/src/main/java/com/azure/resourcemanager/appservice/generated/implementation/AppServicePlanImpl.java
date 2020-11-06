@@ -164,7 +164,7 @@ public final class AppServicePlanImpl implements AppServicePlan, AppServicePlan.
             serviceManager
                 .serviceClient()
                 .getAppServicePlans()
-                .createOrUpdate(resourceGroupName, name, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, name, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -173,7 +173,7 @@ public final class AppServicePlanImpl implements AppServicePlan, AppServicePlan.
             serviceManager
                 .serviceClient()
                 .getAppServicePlans()
-                .createOrUpdate(resourceGroupName, name, innerObject, context);
+                .createOrUpdate(resourceGroupName, name, this.innerModel(), context);
         return this;
     }
 

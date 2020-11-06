@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.monitor.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetadataValueInner;
 
 /** An immutable client-side representation of MetadataValue. */
-@Immutable
 public interface MetadataValue {
     /**
      * Gets the name property: the name of the metadata.

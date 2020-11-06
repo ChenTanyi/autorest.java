@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.management.SubResource;
 import com.azure.resourcemanager.network.generated.fluent.models.OutboundRuleInner;
 import java.util.List;
 
 /** An immutable client-side representation of OutboundRule. */
-@Immutable
 public interface OutboundRule {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.PrivateLinkResourcesWrapperInner;
 import java.util.List;
 
 /** An immutable client-side representation of PrivateLinkResourcesWrapper. */
-@Immutable
 public interface PrivateLinkResourcesWrapper {
     /**
      * Gets the value property: The value property.

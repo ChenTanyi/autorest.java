@@ -96,6 +96,29 @@ public interface LiveOutputs {
         String resourceGroupName, String accountName, String liveEventName, String liveOutputName, Context context);
 
     /**
+     * Gets a live output.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a live output.
+     */
+    LiveOutput getById(String id);
+
+    /**
+     * Gets a live output.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a live output.
+     */
+    Response<LiveOutput> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new LiveOutput resource.
      *
      * @param name resource name.

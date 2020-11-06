@@ -110,7 +110,7 @@ public final class ExpressRouteGatewayImpl
             serviceManager
                 .serviceClient()
                 .getExpressRouteGateways()
-                .createOrUpdate(resourceGroupName, expressRouteGatewayName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, expressRouteGatewayName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -119,7 +119,7 @@ public final class ExpressRouteGatewayImpl
             serviceManager
                 .serviceClient()
                 .getExpressRouteGateways()
-                .createOrUpdate(resourceGroupName, expressRouteGatewayName, innerObject, context);
+                .createOrUpdate(resourceGroupName, expressRouteGatewayName, this.innerModel(), context);
         return this;
     }
 
@@ -138,7 +138,7 @@ public final class ExpressRouteGatewayImpl
             serviceManager
                 .serviceClient()
                 .getExpressRouteGateways()
-                .createOrUpdate(resourceGroupName, expressRouteGatewayName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, expressRouteGatewayName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -147,7 +147,7 @@ public final class ExpressRouteGatewayImpl
             serviceManager
                 .serviceClient()
                 .getExpressRouteGateways()
-                .createOrUpdate(resourceGroupName, expressRouteGatewayName, innerObject, context);
+                .createOrUpdate(resourceGroupName, expressRouteGatewayName, this.innerModel(), context);
         return this;
     }
 

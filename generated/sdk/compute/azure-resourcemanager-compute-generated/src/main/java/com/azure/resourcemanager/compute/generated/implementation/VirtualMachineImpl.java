@@ -211,7 +211,7 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
             serviceManager
                 .serviceClient()
                 .getVirtualMachines()
-                .createOrUpdate(resourceGroupName, vmName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, vmName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -220,7 +220,7 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
             serviceManager
                 .serviceClient()
                 .getVirtualMachines()
-                .createOrUpdate(resourceGroupName, vmName, innerObject, context);
+                .createOrUpdate(resourceGroupName, vmName, this.innerModel(), context);
         return this;
     }
 
@@ -261,23 +261,23 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
     }
 
     public VirtualMachine refresh() {
-        InstanceViewTypes refreshExpand = null;
+        InstanceViewTypes localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getVirtualMachines()
-                .getByResourceGroupWithResponse(resourceGroupName, vmName, refreshExpand, Context.NONE)
+                .getByResourceGroupWithResponse(resourceGroupName, vmName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public VirtualMachine refresh(Context context) {
-        InstanceViewTypes refreshExpand = null;
+        InstanceViewTypes localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getVirtualMachines()
-                .getByResourceGroupWithResponse(resourceGroupName, vmName, refreshExpand, context)
+                .getByResourceGroupWithResponse(resourceGroupName, vmName, localExpand, context)
                 .getValue();
         return this;
     }

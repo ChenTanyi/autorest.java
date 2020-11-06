@@ -109,6 +109,20 @@ public final class VirtualHubBgpConnectionsImpl implements VirtualHubBgpConnecti
         }
     }
 
+    public BgpConnection getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
+        String connectionName = Utils.getValueFromIdByName(id, "bgpConnections");
+        return this.getWithResponse(resourceGroupName, virtualHubName, connectionName, Context.NONE).getValue();
+    }
+
+    public Response<BgpConnection> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
+        String connectionName = Utils.getValueFromIdByName(id, "bgpConnections");
+        return this.getWithResponse(resourceGroupName, virtualHubName, connectionName, context);
+    }
+
     private VirtualHubBgpConnectionsClient serviceClient() {
         return this.innerClient;
     }

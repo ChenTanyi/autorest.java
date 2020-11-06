@@ -120,7 +120,7 @@ public final class VirtualMachineExtensionImpl
             serviceManager
                 .serviceClient()
                 .getVirtualMachineExtensions()
-                .createOrUpdate(resourceGroupName, vmName, vmExtensionName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, vmName, vmExtensionName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -129,7 +129,7 @@ public final class VirtualMachineExtensionImpl
             serviceManager
                 .serviceClient()
                 .getVirtualMachineExtensions()
-                .createOrUpdate(resourceGroupName, vmName, vmExtensionName, innerObject, context);
+                .createOrUpdate(resourceGroupName, vmName, vmExtensionName, this.innerModel(), context);
         return this;
     }
 
@@ -171,23 +171,23 @@ public final class VirtualMachineExtensionImpl
     }
 
     public VirtualMachineExtension refresh() {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getVirtualMachineExtensions()
-                .getWithResponse(resourceGroupName, vmName, vmExtensionName, refreshExpand, Context.NONE)
+                .getWithResponse(resourceGroupName, vmName, vmExtensionName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public VirtualMachineExtension refresh(Context context) {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getVirtualMachineExtensions()
-                .getWithResponse(resourceGroupName, vmName, vmExtensionName, refreshExpand, context)
+                .getWithResponse(resourceGroupName, vmName, vmExtensionName, localExpand, context)
                 .getValue();
         return this;
     }

@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualWanSecurityProvidersInner;
 import java.util.List;
 
 /** An immutable client-side representation of VirtualWanSecurityProviders. */
-@Immutable
 public interface VirtualWanSecurityProviders {
     /**
      * Gets the supportedProviders property: List of VirtualWAN security providers.

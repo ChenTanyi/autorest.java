@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.databoxedge.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.JobInner;
 import java.time.OffsetDateTime;
 
 /** An immutable client-side representation of Job. */
-@Immutable
 public interface Job {
     /**
      * Gets the id property: The path ID that uniquely identifies the object.

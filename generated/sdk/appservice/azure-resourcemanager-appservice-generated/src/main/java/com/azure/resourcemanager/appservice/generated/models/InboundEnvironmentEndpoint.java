@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.InboundEnvironmentEndpointInner;
 import java.util.List;
 
 /** An immutable client-side representation of InboundEnvironmentEndpoint. */
-@Immutable
 public interface InboundEnvironmentEndpoint {
     /**
      * Gets the description property: Short text describing the purpose of the network traffic.

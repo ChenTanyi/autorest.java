@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.storage.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountListKeysResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of StorageAccountListKeysResult. */
-@Immutable
 public interface StorageAccountListKeysResult {
     /**
      * Gets the keys property: Gets the list of storage account keys and their properties for the specified storage

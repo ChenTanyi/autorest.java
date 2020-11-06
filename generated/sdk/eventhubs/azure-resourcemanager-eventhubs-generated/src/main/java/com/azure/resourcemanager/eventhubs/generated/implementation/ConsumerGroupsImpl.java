@@ -90,6 +90,24 @@ public final class ConsumerGroupsImpl implements ConsumerGroups {
         return inner.mapPage(inner1 -> new ConsumerGroupImpl(inner1, this.manager()));
     }
 
+    public ConsumerGroup getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String eventHubName = Utils.getValueFromIdByName(id, "eventhubs");
+        String consumerGroupName = Utils.getValueFromIdByName(id, "consumergroups");
+        return this
+            .getWithResponse(resourceGroupName, namespaceName, eventHubName, consumerGroupName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<ConsumerGroup> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String eventHubName = Utils.getValueFromIdByName(id, "eventhubs");
+        String consumerGroupName = Utils.getValueFromIdByName(id, "consumergroups");
+        return this.getWithResponse(resourceGroupName, namespaceName, eventHubName, consumerGroupName, context);
+    }
+
     private ConsumerGroupsClient serviceClient() {
         return this.innerClient;
     }

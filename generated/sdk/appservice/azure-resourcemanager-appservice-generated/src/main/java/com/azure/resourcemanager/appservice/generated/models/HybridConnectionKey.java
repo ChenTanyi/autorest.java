@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.HybridConnectionKeyInner;
 
 /** An immutable client-side representation of HybridConnectionKey. */
-@Immutable
 public interface HybridConnectionKey {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

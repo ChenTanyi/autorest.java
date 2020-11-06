@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.postgresql.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.VirtualNetworkRuleInner;
 
 /** An immutable client-side representation of VirtualNetworkRule. */
-@Immutable
 public interface VirtualNetworkRule {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

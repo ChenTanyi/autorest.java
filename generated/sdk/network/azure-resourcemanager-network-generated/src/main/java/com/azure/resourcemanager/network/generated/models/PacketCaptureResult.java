@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.PacketCaptureResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of PacketCaptureResult. */
-@Immutable
 public interface PacketCaptureResult {
     /**
      * Gets the name property: Name of the packet capture session.

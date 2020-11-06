@@ -133,7 +133,7 @@ public final class VirtualNetworkTapImpl
             serviceManager
                 .serviceClient()
                 .getVirtualNetworkTaps()
-                .createOrUpdate(resourceGroupName, tapName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, tapName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -142,7 +142,7 @@ public final class VirtualNetworkTapImpl
             serviceManager
                 .serviceClient()
                 .getVirtualNetworkTaps()
-                .createOrUpdate(resourceGroupName, tapName, innerObject, context);
+                .createOrUpdate(resourceGroupName, tapName, this.innerModel(), context);
         return this;
     }
 

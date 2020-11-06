@@ -58,6 +58,22 @@ public final class ManagementPoliciesImpl implements ManagementPolicies {
         return this.serviceClient().deleteWithResponse(resourceGroupName, accountName, managementPolicyName, context);
     }
 
+    public ManagementPolicy getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        ManagementPolicyName managementPolicyName =
+            ManagementPolicyName.fromString(Utils.getValueFromIdByName(id, "managementPolicies"));
+        return this.getWithResponse(resourceGroupName, accountName, managementPolicyName, Context.NONE).getValue();
+    }
+
+    public Response<ManagementPolicy> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        ManagementPolicyName managementPolicyName =
+            ManagementPolicyName.fromString(Utils.getValueFromIdByName(id, "managementPolicies"));
+        return this.getWithResponse(resourceGroupName, accountName, managementPolicyName, context);
+    }
+
     private ManagementPoliciesClient serviceClient() {
         return this.innerClient;
     }

@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.PerfMonResponseInner;
 
 /** An immutable client-side representation of PerfMonResponse. */
-@Immutable
 public interface PerfMonResponse {
     /**
      * Gets the code property: The response code.

@@ -69,6 +69,20 @@ public final class BandwidthSchedulesImpl implements BandwidthSchedules {
         this.serviceClient().delete(deviceName, name, resourceGroupName, context);
     }
 
+    public BandwidthSchedule getById(String id) {
+        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        String name = Utils.getValueFromIdByName(id, "bandwidthSchedules");
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        return this.getWithResponse(deviceName, name, resourceGroupName, Context.NONE).getValue();
+    }
+
+    public Response<BandwidthSchedule> getByIdWithResponse(String id, Context context) {
+        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        String name = Utils.getValueFromIdByName(id, "bandwidthSchedules");
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        return this.getWithResponse(deviceName, name, resourceGroupName, context);
+    }
+
     private BandwidthSchedulesClient serviceClient() {
         return this.innerClient;
     }

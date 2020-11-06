@@ -105,6 +105,18 @@ public final class DisksImpl implements Disks {
         this.serviceClient().revokeAccess(resourceGroupName, diskName, context);
     }
 
+    public Disk getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String diskName = Utils.getValueFromIdByName(id, "disks");
+        return this.getByResourceGroupWithResponse(resourceGroupName, diskName, Context.NONE).getValue();
+    }
+
+    public Response<Disk> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String diskName = Utils.getValueFromIdByName(id, "disks");
+        return this.getByResourceGroupWithResponse(resourceGroupName, diskName, context);
+    }
+
     private DisksClient serviceClient() {
         return this.innerClient;
     }

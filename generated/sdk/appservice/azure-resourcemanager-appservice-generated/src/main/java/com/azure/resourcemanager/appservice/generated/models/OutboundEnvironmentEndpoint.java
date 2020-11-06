@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.OutboundEnvironmentEndpointInner;
 import java.util.List;
 
 /** An immutable client-side representation of OutboundEnvironmentEndpoint. */
-@Immutable
 public interface OutboundEnvironmentEndpoint {
     /**
      * Gets the category property: The type of service accessed by the App Service Environment, e.g., Azure Storage,

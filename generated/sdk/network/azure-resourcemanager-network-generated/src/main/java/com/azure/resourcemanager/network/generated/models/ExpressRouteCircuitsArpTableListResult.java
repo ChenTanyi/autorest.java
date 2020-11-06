@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitsArpTableListResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of ExpressRouteCircuitsArpTableListResult. */
-@Immutable
 public interface ExpressRouteCircuitsArpTableListResult {
     /**
      * Gets the value property: A list of the ARP tables.

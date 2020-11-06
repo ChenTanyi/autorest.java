@@ -105,7 +105,7 @@ public final class DiskEncryptionSetImpl
             serviceManager
                 .serviceClient()
                 .getDiskEncryptionSets()
-                .createOrUpdate(resourceGroupName, diskEncryptionSetName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, diskEncryptionSetName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -114,7 +114,7 @@ public final class DiskEncryptionSetImpl
             serviceManager
                 .serviceClient()
                 .getDiskEncryptionSets()
-                .createOrUpdate(resourceGroupName, diskEncryptionSetName, innerObject, context);
+                .createOrUpdate(resourceGroupName, diskEncryptionSetName, this.innerModel(), context);
         return this;
     }
 

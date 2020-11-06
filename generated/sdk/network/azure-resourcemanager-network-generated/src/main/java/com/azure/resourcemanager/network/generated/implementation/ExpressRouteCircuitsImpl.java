@@ -202,6 +202,18 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
         return inner.mapPage(inner1 -> new ExpressRouteCircuitImpl(inner1, this.manager()));
     }
 
+    public ExpressRouteCircuit getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
+        return this.getByResourceGroupWithResponse(resourceGroupName, circuitName, Context.NONE).getValue();
+    }
+
+    public Response<ExpressRouteCircuit> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
+        return this.getByResourceGroupWithResponse(resourceGroupName, circuitName, context);
+    }
+
     private ExpressRouteCircuitsClient serviceClient() {
         return this.innerClient;
     }

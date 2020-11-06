@@ -149,6 +149,31 @@ public interface DiskAccesses {
         String resourceGroupName, String diskAccessName, Context context);
 
     /**
+     * Gets information about a disk access resource.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about a disk access resource.
+     */
+    DiskAccess getById(String id);
+
+    /**
+     * Gets information about a disk access resource.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about a disk access resource.
+     */
+    Response<DiskAccess> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new DiskAccess resource.
      *
      * @param name resource name.

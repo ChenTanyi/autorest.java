@@ -59,6 +59,20 @@ public final class ConfigurationsImpl implements Configurations {
         return inner.mapPage(inner1 -> new ConfigurationImpl(inner1, this.manager()));
     }
 
+    public Configuration getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String serverName = Utils.getValueFromIdByName(id, "servers");
+        String configurationName = Utils.getValueFromIdByName(id, "configurations");
+        return this.getWithResponse(resourceGroupName, serverName, configurationName, Context.NONE).getValue();
+    }
+
+    public Response<Configuration> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String serverName = Utils.getValueFromIdByName(id, "servers");
+        String configurationName = Utils.getValueFromIdByName(id, "configurations");
+        return this.getWithResponse(resourceGroupName, serverName, configurationName, context);
+    }
+
     private ConfigurationsClient serviceClient() {
         return this.innerClient;
     }

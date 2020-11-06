@@ -83,7 +83,7 @@ public final class ContentKeyPolicyImpl
                 .serviceClient()
                 .getContentKeyPolicies()
                 .createOrUpdateWithResponse(
-                    resourceGroupName, accountName, contentKeyPolicyName, innerObject, Context.NONE)
+                    resourceGroupName, accountName, contentKeyPolicyName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -93,7 +93,8 @@ public final class ContentKeyPolicyImpl
             serviceManager
                 .serviceClient()
                 .getContentKeyPolicies()
-                .createOrUpdateWithResponse(resourceGroupName, accountName, contentKeyPolicyName, innerObject, context)
+                .createOrUpdateWithResponse(
+                    resourceGroupName, accountName, contentKeyPolicyName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -113,7 +114,8 @@ public final class ContentKeyPolicyImpl
             serviceManager
                 .serviceClient()
                 .getContentKeyPolicies()
-                .updateWithResponse(resourceGroupName, accountName, contentKeyPolicyName, innerObject, Context.NONE)
+                .updateWithResponse(
+                    resourceGroupName, accountName, contentKeyPolicyName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -123,7 +125,7 @@ public final class ContentKeyPolicyImpl
             serviceManager
                 .serviceClient()
                 .getContentKeyPolicies()
-                .updateWithResponse(resourceGroupName, accountName, contentKeyPolicyName, innerObject, context)
+                .updateWithResponse(resourceGroupName, accountName, contentKeyPolicyName, this.innerModel(), context)
                 .getValue();
         return this;
     }

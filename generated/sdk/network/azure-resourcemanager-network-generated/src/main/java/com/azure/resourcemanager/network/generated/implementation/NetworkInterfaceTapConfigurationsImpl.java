@@ -75,6 +75,22 @@ public final class NetworkInterfaceTapConfigurationsImpl implements NetworkInter
         return inner.mapPage(inner1 -> new NetworkInterfaceTapConfigurationImpl(inner1, this.manager()));
     }
 
+    public NetworkInterfaceTapConfiguration getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String networkInterfaceName = Utils.getValueFromIdByName(id, "networkInterfaces");
+        String tapConfigurationName = Utils.getValueFromIdByName(id, "tapConfigurations");
+        return this
+            .getWithResponse(resourceGroupName, networkInterfaceName, tapConfigurationName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<NetworkInterfaceTapConfiguration> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String networkInterfaceName = Utils.getValueFromIdByName(id, "networkInterfaces");
+        String tapConfigurationName = Utils.getValueFromIdByName(id, "tapConfigurations");
+        return this.getWithResponse(resourceGroupName, networkInterfaceName, tapConfigurationName, context);
+    }
+
     private NetworkInterfaceTapConfigurationsClient serviceClient() {
         return this.innerClient;
     }

@@ -71,7 +71,7 @@ public final class PrivateEndpointConnectionImpl
                 .serviceClient()
                 .getPrivateEndpointConnections()
                 .createOrUpdate(
-                    resourceGroupName, serverName, privateEndpointConnectionName, innerObject, Context.NONE);
+                    resourceGroupName, serverName, privateEndpointConnectionName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -80,7 +80,8 @@ public final class PrivateEndpointConnectionImpl
             serviceManager
                 .serviceClient()
                 .getPrivateEndpointConnections()
-                .createOrUpdate(resourceGroupName, serverName, privateEndpointConnectionName, innerObject, context);
+                .createOrUpdate(
+                    resourceGroupName, serverName, privateEndpointConnectionName, this.innerModel(), context);
         return this;
     }
 

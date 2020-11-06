@@ -102,7 +102,7 @@ public final class PremierAddOnImpl implements PremierAddOn, PremierAddOn.Defini
             serviceManager
                 .serviceClient()
                 .getWebApps()
-                .addPremierAddOnWithResponse(resourceGroupName, name, premierAddOnName, innerObject, Context.NONE)
+                .addPremierAddOnWithResponse(resourceGroupName, name, premierAddOnName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -112,7 +112,7 @@ public final class PremierAddOnImpl implements PremierAddOn, PremierAddOn.Defini
             serviceManager
                 .serviceClient()
                 .getWebApps()
-                .addPremierAddOnWithResponse(resourceGroupName, name, premierAddOnName, innerObject, context)
+                .addPremierAddOnWithResponse(resourceGroupName, name, premierAddOnName, this.innerModel(), context)
                 .getValue();
         return this;
     }

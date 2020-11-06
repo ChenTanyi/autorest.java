@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.storage.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.storage.generated.fluent.models.ListTableServicesInner;
 import java.util.List;
 
 /** An immutable client-side representation of ListTableServices. */
-@Immutable
 public interface ListTableServices {
     /**
      * Gets the value property: List of table services returned.

@@ -70,6 +70,20 @@ public final class GalleryApplicationsImpl implements GalleryApplications {
         return inner.mapPage(inner1 -> new GalleryApplicationImpl(inner1, this.manager()));
     }
 
+    public GalleryApplication getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String galleryName = Utils.getValueFromIdByName(id, "galleries");
+        String galleryApplicationName = Utils.getValueFromIdByName(id, "applications");
+        return this.getWithResponse(resourceGroupName, galleryName, galleryApplicationName, Context.NONE).getValue();
+    }
+
+    public Response<GalleryApplication> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String galleryName = Utils.getValueFromIdByName(id, "galleries");
+        String galleryApplicationName = Utils.getValueFromIdByName(id, "applications");
+        return this.getWithResponse(resourceGroupName, galleryName, galleryApplicationName, context);
+    }
+
     private GalleryApplicationsClient serviceClient() {
         return this.innerClient;
     }

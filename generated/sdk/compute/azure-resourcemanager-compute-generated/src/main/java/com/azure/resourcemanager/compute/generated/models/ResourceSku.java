@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.compute.generated.fluent.models.ResourceSkuInner;
 import java.util.List;
 
 /** An immutable client-side representation of ResourceSku. */
-@Immutable
 public interface ResourceSku {
     /**
      * Gets the resourceType property: The type of resource the SKU applies to.

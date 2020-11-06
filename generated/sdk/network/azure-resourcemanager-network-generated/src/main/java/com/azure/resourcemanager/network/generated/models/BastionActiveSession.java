@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.BastionActiveSessionInner;
 
 /** An immutable client-side representation of BastionActiveSession. */
-@Immutable
 public interface BastionActiveSession {
     /**
      * Gets the sessionId property: A unique id for the session.

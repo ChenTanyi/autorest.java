@@ -69,6 +69,20 @@ public final class StreamingPoliciesImpl implements StreamingPolicies {
         return this.serviceClient().deleteWithResponse(resourceGroupName, accountName, streamingPolicyName, context);
     }
 
+    public StreamingPolicy getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        String streamingPolicyName = Utils.getValueFromIdByName(id, "streamingPolicies");
+        return this.getWithResponse(resourceGroupName, accountName, streamingPolicyName, Context.NONE).getValue();
+    }
+
+    public Response<StreamingPolicy> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        String streamingPolicyName = Utils.getValueFromIdByName(id, "streamingPolicies");
+        return this.getWithResponse(resourceGroupName, accountName, streamingPolicyName, context);
+    }
+
     private StreamingPoliciesClient serviceClient() {
         return this.innerClient;
     }

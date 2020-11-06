@@ -78,6 +78,21 @@ public final class DedicatedHostGroupsImpl implements DedicatedHostGroups {
         return inner.mapPage(inner1 -> new DedicatedHostGroupImpl(inner1, this.manager()));
     }
 
+    public DedicatedHostGroup getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String hostGroupName = Utils.getValueFromIdByName(id, "hostGroups");
+        InstanceViewTypes localExpand = null;
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, hostGroupName, localExpand, Context.NONE)
+            .getValue();
+    }
+
+    public Response<DedicatedHostGroup> getByIdWithResponse(String id, InstanceViewTypes expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String hostGroupName = Utils.getValueFromIdByName(id, "hostGroups");
+        return this.getByResourceGroupWithResponse(resourceGroupName, hostGroupName, expand, context);
+    }
+
     private DedicatedHostGroupsClient serviceClient() {
         return this.innerClient;
     }

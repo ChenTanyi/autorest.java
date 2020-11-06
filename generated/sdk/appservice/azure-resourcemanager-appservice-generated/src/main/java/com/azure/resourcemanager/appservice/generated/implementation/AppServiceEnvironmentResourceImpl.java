@@ -285,7 +285,7 @@ public final class AppServiceEnvironmentResourceImpl
             serviceManager
                 .serviceClient()
                 .getAppServiceEnvironments()
-                .createOrUpdate(resourceGroupName, name, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, name, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -294,7 +294,7 @@ public final class AppServiceEnvironmentResourceImpl
             serviceManager
                 .serviceClient()
                 .getAppServiceEnvironments()
-                .createOrUpdate(resourceGroupName, name, innerObject, context);
+                .createOrUpdate(resourceGroupName, name, this.innerModel(), context);
         return this;
     }
 

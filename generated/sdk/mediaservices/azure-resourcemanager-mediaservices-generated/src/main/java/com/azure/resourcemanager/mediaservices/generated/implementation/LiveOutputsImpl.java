@@ -71,6 +71,24 @@ public final class LiveOutputsImpl implements LiveOutputs {
         this.serviceClient().delete(resourceGroupName, accountName, liveEventName, liveOutputName, context);
     }
 
+    public LiveOutput getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "mediaservices");
+        String liveEventName = Utils.getValueFromIdByName(id, "liveEvents");
+        String liveOutputName = Utils.getValueFromIdByName(id, "liveOutputs");
+        return this
+            .getWithResponse(resourceGroupName, accountName, liveEventName, liveOutputName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<LiveOutput> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "mediaservices");
+        String liveEventName = Utils.getValueFromIdByName(id, "liveEvents");
+        String liveOutputName = Utils.getValueFromIdByName(id, "liveOutputs");
+        return this.getWithResponse(resourceGroupName, accountName, liveEventName, liveOutputName, context);
+    }
+
     private LiveOutputsClient serviceClient() {
         return this.innerClient;
     }

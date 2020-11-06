@@ -149,7 +149,7 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
             serviceManager
                 .serviceClient()
                 .getFirewallPolicies()
-                .createOrUpdate(resourceGroupName, firewallPolicyName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, firewallPolicyName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -158,7 +158,7 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
             serviceManager
                 .serviceClient()
                 .getFirewallPolicies()
-                .createOrUpdate(resourceGroupName, firewallPolicyName, innerObject, context);
+                .createOrUpdate(resourceGroupName, firewallPolicyName, this.innerModel(), context);
         return this;
     }
 
@@ -177,7 +177,7 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
             serviceManager
                 .serviceClient()
                 .getFirewallPolicies()
-                .createOrUpdate(resourceGroupName, firewallPolicyName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, firewallPolicyName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -186,7 +186,7 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
             serviceManager
                 .serviceClient()
                 .getFirewallPolicies()
-                .createOrUpdate(resourceGroupName, firewallPolicyName, innerObject, context);
+                .createOrUpdate(resourceGroupName, firewallPolicyName, this.innerModel(), context);
         return this;
     }
 
@@ -198,23 +198,23 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
     }
 
     public FirewallPolicy refresh() {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getFirewallPolicies()
-                .getByResourceGroupWithResponse(resourceGroupName, firewallPolicyName, refreshExpand, Context.NONE)
+                .getByResourceGroupWithResponse(resourceGroupName, firewallPolicyName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public FirewallPolicy refresh(Context context) {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getFirewallPolicies()
-                .getByResourceGroupWithResponse(resourceGroupName, firewallPolicyName, refreshExpand, context)
+                .getByResourceGroupWithResponse(resourceGroupName, firewallPolicyName, localExpand, context)
                 .getValue();
         return this;
     }

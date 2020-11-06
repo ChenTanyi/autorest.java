@@ -78,6 +78,18 @@ public final class DdosProtectionPlansImpl implements DdosProtectionPlans {
         return inner.mapPage(inner1 -> new DdosProtectionPlanImpl(inner1, this.manager()));
     }
 
+    public DdosProtectionPlan getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String ddosProtectionPlanName = Utils.getValueFromIdByName(id, "ddosProtectionPlans");
+        return this.getByResourceGroupWithResponse(resourceGroupName, ddosProtectionPlanName, Context.NONE).getValue();
+    }
+
+    public Response<DdosProtectionPlan> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String ddosProtectionPlanName = Utils.getValueFromIdByName(id, "ddosProtectionPlans");
+        return this.getByResourceGroupWithResponse(resourceGroupName, ddosProtectionPlanName, context);
+    }
+
     private DdosProtectionPlansClient serviceClient() {
         return this.innerClient;
     }

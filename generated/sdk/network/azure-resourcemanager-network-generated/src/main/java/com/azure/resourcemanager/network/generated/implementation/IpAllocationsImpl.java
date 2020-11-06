@@ -76,6 +76,21 @@ public final class IpAllocationsImpl implements IpAllocations {
         return inner.mapPage(inner1 -> new IpAllocationImpl(inner1, this.manager()));
     }
 
+    public IpAllocation getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String ipAllocationName = Utils.getValueFromIdByName(id, "IpAllocations");
+        String localExpand = null;
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, ipAllocationName, localExpand, Context.NONE)
+            .getValue();
+    }
+
+    public Response<IpAllocation> getByIdWithResponse(String id, String expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String ipAllocationName = Utils.getValueFromIdByName(id, "IpAllocations");
+        return this.getByResourceGroupWithResponse(resourceGroupName, ipAllocationName, expand, context);
+    }
+
     private IpAllocationsClient serviceClient() {
         return this.innerClient;
     }

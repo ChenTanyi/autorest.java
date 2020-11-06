@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.mediaservices.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.StreamingEndpointInner;
@@ -13,7 +12,6 @@ import java.util.List;
 import java.util.Map;
 
 /** An immutable client-side representation of StreamingEndpoint. */
-@Immutable
 public interface StreamingEndpoint {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

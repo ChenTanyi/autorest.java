@@ -76,6 +76,21 @@ public final class PublicIpPrefixesImpl implements PublicIpPrefixes {
         return inner.mapPage(inner1 -> new PublicIpPrefixImpl(inner1, this.manager()));
     }
 
+    public PublicIpPrefix getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String publicIpPrefixName = Utils.getValueFromIdByName(id, "publicIPPrefixes");
+        String localExpand = null;
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, publicIpPrefixName, localExpand, Context.NONE)
+            .getValue();
+    }
+
+    public Response<PublicIpPrefix> getByIdWithResponse(String id, String expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String publicIpPrefixName = Utils.getValueFromIdByName(id, "publicIPPrefixes");
+        return this.getByResourceGroupWithResponse(resourceGroupName, publicIpPrefixName, expand, context);
+    }
+
     private PublicIpPrefixesClient serviceClient() {
         return this.innerClient;
     }

@@ -86,7 +86,7 @@ public final class AssetImpl implements Asset, Asset.Definition, Asset.Update {
             serviceManager
                 .serviceClient()
                 .getAssets()
-                .createOrUpdateWithResponse(resourceGroupName, accountName, assetName, innerObject, Context.NONE)
+                .createOrUpdateWithResponse(resourceGroupName, accountName, assetName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -96,7 +96,7 @@ public final class AssetImpl implements Asset, Asset.Definition, Asset.Update {
             serviceManager
                 .serviceClient()
                 .getAssets()
-                .createOrUpdateWithResponse(resourceGroupName, accountName, assetName, innerObject, context)
+                .createOrUpdateWithResponse(resourceGroupName, accountName, assetName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -116,7 +116,7 @@ public final class AssetImpl implements Asset, Asset.Definition, Asset.Update {
             serviceManager
                 .serviceClient()
                 .getAssets()
-                .updateWithResponse(resourceGroupName, accountName, assetName, innerObject, Context.NONE)
+                .updateWithResponse(resourceGroupName, accountName, assetName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -126,7 +126,7 @@ public final class AssetImpl implements Asset, Asset.Definition, Asset.Update {
             serviceManager
                 .serviceClient()
                 .getAssets()
-                .updateWithResponse(resourceGroupName, accountName, assetName, innerObject, context)
+                .updateWithResponse(resourceGroupName, accountName, assetName, this.innerModel(), context)
                 .getValue();
         return this;
     }

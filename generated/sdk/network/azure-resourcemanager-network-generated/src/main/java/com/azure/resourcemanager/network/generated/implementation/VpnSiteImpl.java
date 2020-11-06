@@ -139,7 +139,7 @@ public final class VpnSiteImpl implements VpnSite, VpnSite.Definition, VpnSite.U
             serviceManager
                 .serviceClient()
                 .getVpnSites()
-                .createOrUpdate(resourceGroupName, vpnSiteName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, vpnSiteName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -148,7 +148,7 @@ public final class VpnSiteImpl implements VpnSite, VpnSite.Definition, VpnSite.U
             serviceManager
                 .serviceClient()
                 .getVpnSites()
-                .createOrUpdate(resourceGroupName, vpnSiteName, innerObject, context);
+                .createOrUpdate(resourceGroupName, vpnSiteName, this.innerModel(), context);
         return this;
     }
 

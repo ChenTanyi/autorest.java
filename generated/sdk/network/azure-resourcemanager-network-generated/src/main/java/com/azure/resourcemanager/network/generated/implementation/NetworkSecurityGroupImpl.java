@@ -163,7 +163,7 @@ public final class NetworkSecurityGroupImpl
             serviceManager
                 .serviceClient()
                 .getNetworkSecurityGroups()
-                .createOrUpdate(resourceGroupName, networkSecurityGroupName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, networkSecurityGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -172,7 +172,7 @@ public final class NetworkSecurityGroupImpl
             serviceManager
                 .serviceClient()
                 .getNetworkSecurityGroups()
-                .createOrUpdate(resourceGroupName, networkSecurityGroupName, innerObject, context);
+                .createOrUpdate(resourceGroupName, networkSecurityGroupName, this.innerModel(), context);
         return this;
     }
 
@@ -215,24 +215,23 @@ public final class NetworkSecurityGroupImpl
     }
 
     public NetworkSecurityGroup refresh() {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getNetworkSecurityGroups()
-                .getByResourceGroupWithResponse(
-                    resourceGroupName, networkSecurityGroupName, refreshExpand, Context.NONE)
+                .getByResourceGroupWithResponse(resourceGroupName, networkSecurityGroupName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public NetworkSecurityGroup refresh(Context context) {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getNetworkSecurityGroups()
-                .getByResourceGroupWithResponse(resourceGroupName, networkSecurityGroupName, refreshExpand, context)
+                .getByResourceGroupWithResponse(resourceGroupName, networkSecurityGroupName, localExpand, context)
                 .getValue();
         return this;
     }

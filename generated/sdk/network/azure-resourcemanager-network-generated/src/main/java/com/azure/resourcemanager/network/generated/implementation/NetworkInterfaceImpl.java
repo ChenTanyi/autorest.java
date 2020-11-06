@@ -189,7 +189,7 @@ public final class NetworkInterfaceImpl
             serviceManager
                 .serviceClient()
                 .getNetworkInterfaces()
-                .createOrUpdate(resourceGroupName, networkInterfaceName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, networkInterfaceName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -198,7 +198,7 @@ public final class NetworkInterfaceImpl
             serviceManager
                 .serviceClient()
                 .getNetworkInterfaces()
-                .createOrUpdate(resourceGroupName, networkInterfaceName, innerObject, context);
+                .createOrUpdate(resourceGroupName, networkInterfaceName, this.innerModel(), context);
         return this;
     }
 
@@ -241,23 +241,23 @@ public final class NetworkInterfaceImpl
     }
 
     public NetworkInterface refresh() {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getNetworkInterfaces()
-                .getByResourceGroupWithResponse(resourceGroupName, networkInterfaceName, refreshExpand, Context.NONE)
+                .getByResourceGroupWithResponse(resourceGroupName, networkInterfaceName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public NetworkInterface refresh(Context context) {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getNetworkInterfaces()
-                .getByResourceGroupWithResponse(resourceGroupName, networkInterfaceName, refreshExpand, context)
+                .getByResourceGroupWithResponse(resourceGroupName, networkInterfaceName, localExpand, context)
                 .getValue();
         return this;
     }

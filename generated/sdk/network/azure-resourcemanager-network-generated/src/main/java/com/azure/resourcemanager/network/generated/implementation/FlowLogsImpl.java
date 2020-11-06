@@ -66,6 +66,20 @@ public final class FlowLogsImpl implements FlowLogs {
         return inner.mapPage(inner1 -> new FlowLogImpl(inner1, this.manager()));
     }
 
+    public FlowLog getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
+        String flowLogName = Utils.getValueFromIdByName(id, "flowLogs");
+        return this.getWithResponse(resourceGroupName, networkWatcherName, flowLogName, Context.NONE).getValue();
+    }
+
+    public Response<FlowLog> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
+        String flowLogName = Utils.getValueFromIdByName(id, "flowLogs");
+        return this.getWithResponse(resourceGroupName, networkWatcherName, flowLogName, context);
+    }
+
     private FlowLogsClient serviceClient() {
         return this.innerClient;
     }

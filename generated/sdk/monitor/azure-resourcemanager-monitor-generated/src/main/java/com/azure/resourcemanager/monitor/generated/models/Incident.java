@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.monitor.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.monitor.generated.fluent.models.IncidentInner;
 import java.time.OffsetDateTime;
 
 /** An immutable client-side representation of Incident. */
-@Immutable
 public interface Incident {
     /**
      * Gets the name property: Incident name.

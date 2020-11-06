@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.KeyInfoInner;
 
 /** An immutable client-side representation of KeyInfo. */
-@Immutable
 public interface KeyInfo {
     /**
      * Gets the name property: Key name.

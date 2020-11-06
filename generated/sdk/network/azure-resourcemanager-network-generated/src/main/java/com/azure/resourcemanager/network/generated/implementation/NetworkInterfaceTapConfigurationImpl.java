@@ -76,7 +76,7 @@ public final class NetworkInterfaceTapConfigurationImpl
                 .serviceClient()
                 .getNetworkInterfaceTapConfigurations()
                 .createOrUpdate(
-                    resourceGroupName, networkInterfaceName, tapConfigurationName, innerObject, Context.NONE);
+                    resourceGroupName, networkInterfaceName, tapConfigurationName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -85,7 +85,8 @@ public final class NetworkInterfaceTapConfigurationImpl
             serviceManager
                 .serviceClient()
                 .getNetworkInterfaceTapConfigurations()
-                .createOrUpdate(resourceGroupName, networkInterfaceName, tapConfigurationName, innerObject, context);
+                .createOrUpdate(
+                    resourceGroupName, networkInterfaceName, tapConfigurationName, this.innerModel(), context);
         return this;
     }
 
@@ -105,7 +106,7 @@ public final class NetworkInterfaceTapConfigurationImpl
                 .serviceClient()
                 .getNetworkInterfaceTapConfigurations()
                 .createOrUpdate(
-                    resourceGroupName, networkInterfaceName, tapConfigurationName, innerObject, Context.NONE);
+                    resourceGroupName, networkInterfaceName, tapConfigurationName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -114,7 +115,8 @@ public final class NetworkInterfaceTapConfigurationImpl
             serviceManager
                 .serviceClient()
                 .getNetworkInterfaceTapConfigurations()
-                .createOrUpdate(resourceGroupName, networkInterfaceName, tapConfigurationName, innerObject, context);
+                .createOrUpdate(
+                    resourceGroupName, networkInterfaceName, tapConfigurationName, this.innerModel(), context);
         return this;
     }
 

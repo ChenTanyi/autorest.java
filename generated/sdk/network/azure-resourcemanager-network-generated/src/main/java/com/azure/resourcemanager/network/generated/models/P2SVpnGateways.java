@@ -242,6 +242,29 @@ public interface P2SVpnGateways {
         String resourceGroupName, String p2SVpnGatewayName, P2SVpnConnectionRequest request, Context context);
 
     /**
+     * Retrieves the details of a virtual wan p2s vpn gateway.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return p2SVpnGateway Resource.
+     */
+    P2SVpnGateway getById(String id);
+
+    /**
+     * Retrieves the details of a virtual wan p2s vpn gateway.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return p2SVpnGateway Resource.
+     */
+    Response<P2SVpnGateway> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new P2SVpnGateway resource.
      *
      * @param name resource name.

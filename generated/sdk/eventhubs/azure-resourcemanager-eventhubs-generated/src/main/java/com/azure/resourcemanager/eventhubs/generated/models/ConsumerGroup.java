@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.eventhubs.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ConsumerGroupInner;
 import java.time.OffsetDateTime;
 
 /** An immutable client-side representation of ConsumerGroup. */
-@Immutable
 public interface ConsumerGroup {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

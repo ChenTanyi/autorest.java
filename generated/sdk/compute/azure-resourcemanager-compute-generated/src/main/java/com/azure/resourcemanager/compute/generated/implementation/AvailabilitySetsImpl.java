@@ -92,6 +92,18 @@ public final class AvailabilitySetsImpl implements AvailabilitySets {
         return inner.mapPage(inner1 -> new VirtualMachineSizeImpl(inner1, this.manager()));
     }
 
+    public AvailabilitySet getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String availabilitySetName = Utils.getValueFromIdByName(id, "availabilitySets");
+        return this.getByResourceGroupWithResponse(resourceGroupName, availabilitySetName, Context.NONE).getValue();
+    }
+
+    public Response<AvailabilitySet> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String availabilitySetName = Utils.getValueFromIdByName(id, "availabilitySets");
+        return this.getByResourceGroupWithResponse(resourceGroupName, availabilitySetName, context);
+    }
+
     private AvailabilitySetsClient serviceClient() {
         return this.innerClient;
     }

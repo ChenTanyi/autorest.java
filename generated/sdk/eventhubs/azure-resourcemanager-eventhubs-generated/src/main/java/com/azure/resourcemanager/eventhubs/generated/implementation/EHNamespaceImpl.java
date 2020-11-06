@@ -128,7 +128,7 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
             serviceManager
                 .serviceClient()
                 .getNamespaces()
-                .createOrUpdate(resourceGroupName, namespaceName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, namespaceName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -137,7 +137,7 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
             serviceManager
                 .serviceClient()
                 .getNamespaces()
-                .createOrUpdate(resourceGroupName, namespaceName, innerObject, context);
+                .createOrUpdate(resourceGroupName, namespaceName, this.innerModel(), context);
         return this;
     }
 
@@ -156,7 +156,7 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
             serviceManager
                 .serviceClient()
                 .getNamespaces()
-                .updateWithResponse(resourceGroupName, namespaceName, innerObject, Context.NONE)
+                .updateWithResponse(resourceGroupName, namespaceName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -166,7 +166,7 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
             serviceManager
                 .serviceClient()
                 .getNamespaces()
-                .updateWithResponse(resourceGroupName, namespaceName, innerObject, context)
+                .updateWithResponse(resourceGroupName, namespaceName, this.innerModel(), context)
                 .getValue();
         return this;
     }

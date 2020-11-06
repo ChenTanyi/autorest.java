@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DomainControlCenterSsoRequestInner;
 
 /** An immutable client-side representation of DomainControlCenterSsoRequest. */
-@Immutable
 public interface DomainControlCenterSsoRequest {
     /**
      * Gets the url property: URL where the single sign-on request is to be made.

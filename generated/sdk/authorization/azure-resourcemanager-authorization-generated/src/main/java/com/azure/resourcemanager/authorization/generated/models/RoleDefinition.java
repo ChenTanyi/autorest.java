@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.authorization.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.authorization.generated.fluent.models.RoleDefinitionInner;
 import java.util.List;
 
 /** An immutable client-side representation of RoleDefinition. */
-@Immutable
 public interface RoleDefinition {
     /**
      * Gets the id property: The role definition ID.

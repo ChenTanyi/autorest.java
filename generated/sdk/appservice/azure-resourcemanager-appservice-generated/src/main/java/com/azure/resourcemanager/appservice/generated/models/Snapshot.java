@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SnapshotInner;
 
 /** An immutable client-side representation of Snapshot. */
-@Immutable
 public interface Snapshot {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

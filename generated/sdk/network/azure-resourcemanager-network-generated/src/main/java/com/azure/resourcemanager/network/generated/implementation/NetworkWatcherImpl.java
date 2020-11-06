@@ -84,7 +84,7 @@ public final class NetworkWatcherImpl implements NetworkWatcher, NetworkWatcher.
             serviceManager
                 .serviceClient()
                 .getNetworkWatchers()
-                .createOrUpdateWithResponse(resourceGroupName, networkWatcherName, innerObject, Context.NONE)
+                .createOrUpdateWithResponse(resourceGroupName, networkWatcherName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -94,7 +94,7 @@ public final class NetworkWatcherImpl implements NetworkWatcher, NetworkWatcher.
             serviceManager
                 .serviceClient()
                 .getNetworkWatchers()
-                .createOrUpdateWithResponse(resourceGroupName, networkWatcherName, innerObject, context)
+                .createOrUpdateWithResponse(resourceGroupName, networkWatcherName, this.innerModel(), context)
                 .getValue();
         return this;
     }

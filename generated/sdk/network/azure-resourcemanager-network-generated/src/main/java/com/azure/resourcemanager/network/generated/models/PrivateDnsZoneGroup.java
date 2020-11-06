@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.PrivateDnsZoneGroupInner;
 import java.util.List;
 
 /** An immutable client-side representation of PrivateDnsZoneGroup. */
-@Immutable
 public interface PrivateDnsZoneGroup {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

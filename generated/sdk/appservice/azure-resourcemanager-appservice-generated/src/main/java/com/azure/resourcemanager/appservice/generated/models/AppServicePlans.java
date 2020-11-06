@@ -702,6 +702,31 @@ public interface AppServicePlans {
     Response<Void> rebootWorkerWithResponse(String resourceGroupName, String name, String workerName, Context context);
 
     /**
+     * Description for Get an App Service plan.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return app Service plan.
+     */
+    AppServicePlan getById(String id);
+
+    /**
+     * Description for Get an App Service plan.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return app Service plan.
+     */
+    Response<AppServicePlan> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new AppServicePlan resource.
      *
      * @param name resource name.

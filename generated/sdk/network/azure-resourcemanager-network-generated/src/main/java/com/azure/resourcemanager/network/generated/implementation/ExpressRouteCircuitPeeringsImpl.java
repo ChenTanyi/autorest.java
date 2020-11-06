@@ -70,6 +70,20 @@ public final class ExpressRouteCircuitPeeringsImpl implements ExpressRouteCircui
         return inner.mapPage(inner1 -> new ExpressRouteCircuitPeeringImpl(inner1, this.manager()));
     }
 
+    public ExpressRouteCircuitPeering getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
+        String peeringName = Utils.getValueFromIdByName(id, "peerings");
+        return this.getWithResponse(resourceGroupName, circuitName, peeringName, Context.NONE).getValue();
+    }
+
+    public Response<ExpressRouteCircuitPeering> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
+        String peeringName = Utils.getValueFromIdByName(id, "peerings");
+        return this.getWithResponse(resourceGroupName, circuitName, peeringName, context);
+    }
+
     private ExpressRouteCircuitPeeringsClient serviceClient() {
         return this.innerClient;
     }

@@ -83,6 +83,24 @@ public final class ContainersImpl implements Containers {
         this.serviceClient().refresh(deviceName, storageAccountName, containerName, resourceGroupName, context);
     }
 
+    public Container getById(String id) {
+        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        String storageAccountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String containerName = Utils.getValueFromIdByName(id, "containers");
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        return this
+            .getWithResponse(deviceName, storageAccountName, containerName, resourceGroupName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<Container> getByIdWithResponse(String id, Context context) {
+        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        String storageAccountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String containerName = Utils.getValueFromIdByName(id, "containers");
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        return this.getWithResponse(deviceName, storageAccountName, containerName, resourceGroupName, context);
+    }
+
     private ContainersClient serviceClient() {
         return this.innerClient;
     }

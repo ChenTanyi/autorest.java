@@ -103,6 +103,18 @@ public final class DiskAccessesImpl implements DiskAccesses {
         }
     }
 
+    public DiskAccess getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String diskAccessName = Utils.getValueFromIdByName(id, "diskAccesses");
+        return this.getByResourceGroupWithResponse(resourceGroupName, diskAccessName, Context.NONE).getValue();
+    }
+
+    public Response<DiskAccess> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String diskAccessName = Utils.getValueFromIdByName(id, "diskAccesses");
+        return this.getByResourceGroupWithResponse(resourceGroupName, diskAccessName, context);
+    }
+
     private DiskAccessesClient serviceClient() {
         return this.innerClient;
     }

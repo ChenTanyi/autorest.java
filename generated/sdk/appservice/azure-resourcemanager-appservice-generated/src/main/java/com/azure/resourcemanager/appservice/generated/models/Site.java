@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigInner;
@@ -15,7 +14,6 @@ import java.util.Map;
 import java.util.UUID;
 
 /** An immutable client-side representation of Site. */
-@Immutable
 public interface Site {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

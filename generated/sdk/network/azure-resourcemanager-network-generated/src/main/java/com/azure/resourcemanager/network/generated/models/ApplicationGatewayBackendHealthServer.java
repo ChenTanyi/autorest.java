@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayBackendHealthServerInner;
 
 /** An immutable client-side representation of ApplicationGatewayBackendHealthServer. */
-@Immutable
 public interface ApplicationGatewayBackendHealthServer {
     /**
      * Gets the address property: IP address or FQDN of backend server.

@@ -64,6 +64,16 @@ public final class LogProfilesImpl implements LogProfiles {
         return inner.mapPage(inner1 -> new LogProfileResourceImpl(inner1, this.manager()));
     }
 
+    public LogProfileResource getById(String id) {
+        String logProfileName = Utils.getValueFromIdByName(id, "logprofiles");
+        return this.getWithResponse(logProfileName, Context.NONE).getValue();
+    }
+
+    public Response<LogProfileResource> getByIdWithResponse(String id, Context context) {
+        String logProfileName = Utils.getValueFromIdByName(id, "logprofiles");
+        return this.getWithResponse(logProfileName, context);
+    }
+
     private LogProfilesClient serviceClient() {
         return this.innerClient;
     }

@@ -58,6 +58,20 @@ public final class EncryptionScopesImpl implements EncryptionScopes {
         return inner.mapPage(inner1 -> new EncryptionScopeImpl(inner1, this.manager()));
     }
 
+    public EncryptionScope getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String encryptionScopeName = Utils.getValueFromIdByName(id, "encryptionScopes");
+        return this.getWithResponse(resourceGroupName, accountName, encryptionScopeName, Context.NONE).getValue();
+    }
+
+    public Response<EncryptionScope> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String encryptionScopeName = Utils.getValueFromIdByName(id, "encryptionScopes");
+        return this.getWithResponse(resourceGroupName, accountName, encryptionScopeName, context);
+    }
+
     private EncryptionScopesClient serviceClient() {
         return this.innerClient;
     }

@@ -91,6 +91,29 @@ public interface FirewallPolicyRuleCollectionGroups {
         String resourceGroupName, String firewallPolicyName, Context context);
 
     /**
+     * Gets the specified FirewallPolicyRuleCollectionGroup.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified FirewallPolicyRuleCollectionGroup.
+     */
+    FirewallPolicyRuleCollectionGroup getById(String id);
+
+    /**
+     * Gets the specified FirewallPolicyRuleCollectionGroup.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified FirewallPolicyRuleCollectionGroup.
+     */
+    Response<FirewallPolicyRuleCollectionGroup> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new FirewallPolicyRuleCollectionGroup resource.
      *
      * @param name resource name.

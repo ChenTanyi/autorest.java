@@ -137,7 +137,7 @@ public final class VirtualMachineRunCommandImpl
             serviceManager
                 .serviceClient()
                 .getVirtualMachineRunCommands()
-                .createOrUpdate(resourceGroupName, vmName, runCommandName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, vmName, runCommandName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -146,7 +146,7 @@ public final class VirtualMachineRunCommandImpl
             serviceManager
                 .serviceClient()
                 .getVirtualMachineRunCommands()
-                .createOrUpdate(resourceGroupName, vmName, runCommandName, innerObject, context);
+                .createOrUpdate(resourceGroupName, vmName, runCommandName, this.innerModel(), context);
         return this;
     }
 
@@ -188,23 +188,23 @@ public final class VirtualMachineRunCommandImpl
     }
 
     public VirtualMachineRunCommand refresh() {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getVirtualMachineRunCommands()
-                .getByVirtualMachineWithResponse(resourceGroupName, vmName, runCommandName, refreshExpand, Context.NONE)
+                .getByVirtualMachineWithResponse(resourceGroupName, vmName, runCommandName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public VirtualMachineRunCommand refresh(Context context) {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getVirtualMachineRunCommands()
-                .getByVirtualMachineWithResponse(resourceGroupName, vmName, runCommandName, refreshExpand, context)
+                .getByVirtualMachineWithResponse(resourceGroupName, vmName, runCommandName, localExpand, context)
                 .getValue();
         return this;
     }

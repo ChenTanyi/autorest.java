@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.iothub.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.iothub.generated.fluent.models.TestRouteResultInner;
 
 /** An immutable client-side representation of TestRouteResult. */
-@Immutable
 public interface TestRouteResult {
     /**
      * Gets the result property: Result of testing route.

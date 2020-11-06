@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.AvailableServiceAliasInner;
 
 /** An immutable client-side representation of AvailableServiceAlias. */
-@Immutable
 public interface AvailableServiceAlias {
     /**
      * Gets the name property: The name of the service alias.

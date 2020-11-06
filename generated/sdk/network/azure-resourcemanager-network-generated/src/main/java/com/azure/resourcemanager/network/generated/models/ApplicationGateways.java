@@ -399,6 +399,29 @@ public interface ApplicationGateways {
         String predefinedPolicyName, Context context);
 
     /**
+     * Gets the specified application gateway.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified application gateway.
+     */
+    ApplicationGateway getById(String id);
+
+    /**
+     * Gets the specified application gateway.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified application gateway.
+     */
+    Response<ApplicationGateway> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new ApplicationGateway resource.
      *
      * @param name resource name.

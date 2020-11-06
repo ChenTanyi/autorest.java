@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.compute.generated.fluent.models.RunCommandDocumentBaseInner;
 
 /** An immutable client-side representation of RunCommandDocumentBase. */
-@Immutable
 public interface RunCommandDocumentBase {
     /**
      * Gets the schema property: The VM run command schema.

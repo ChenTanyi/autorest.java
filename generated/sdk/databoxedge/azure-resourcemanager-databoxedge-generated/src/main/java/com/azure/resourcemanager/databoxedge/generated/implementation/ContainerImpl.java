@@ -76,7 +76,7 @@ public final class ContainerImpl implements Container, Container.Definition, Con
                 .serviceClient()
                 .getContainers()
                 .createOrUpdate(
-                    deviceName, storageAccountName, containerName, resourceGroupName, innerObject, Context.NONE);
+                    deviceName, storageAccountName, containerName, resourceGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -85,7 +85,8 @@ public final class ContainerImpl implements Container, Container.Definition, Con
             serviceManager
                 .serviceClient()
                 .getContainers()
-                .createOrUpdate(deviceName, storageAccountName, containerName, resourceGroupName, innerObject, context);
+                .createOrUpdate(
+                    deviceName, storageAccountName, containerName, resourceGroupName, this.innerModel(), context);
         return this;
     }
 
@@ -105,7 +106,7 @@ public final class ContainerImpl implements Container, Container.Definition, Con
                 .serviceClient()
                 .getContainers()
                 .createOrUpdate(
-                    deviceName, storageAccountName, containerName, resourceGroupName, innerObject, Context.NONE);
+                    deviceName, storageAccountName, containerName, resourceGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -114,7 +115,8 @@ public final class ContainerImpl implements Container, Container.Definition, Con
             serviceManager
                 .serviceClient()
                 .getContainers()
-                .createOrUpdate(deviceName, storageAccountName, containerName, resourceGroupName, innerObject, context);
+                .createOrUpdate(
+                    deviceName, storageAccountName, containerName, resourceGroupName, this.innerModel(), context);
         return this;
     }
 

@@ -175,6 +175,29 @@ public interface StreamingEndpoints {
         Context context);
 
     /**
+     * Gets a streaming endpoint.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a streaming endpoint.
+     */
+    StreamingEndpoint getById(String id);
+
+    /**
+     * Gets a streaming endpoint.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a streaming endpoint.
+     */
+    Response<StreamingEndpoint> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new StreamingEndpoint resource.
      *
      * @param name resource name.

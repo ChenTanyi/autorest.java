@@ -125,7 +125,7 @@ public final class VirtualWanImpl implements VirtualWan, VirtualWan.Definition, 
             serviceManager
                 .serviceClient()
                 .getVirtualWans()
-                .createOrUpdate(resourceGroupName, virtualWanName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, virtualWanName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -134,7 +134,7 @@ public final class VirtualWanImpl implements VirtualWan, VirtualWan.Definition, 
             serviceManager
                 .serviceClient()
                 .getVirtualWans()
-                .createOrUpdate(resourceGroupName, virtualWanName, innerObject, context);
+                .createOrUpdate(resourceGroupName, virtualWanName, this.innerModel(), context);
         return this;
     }
 

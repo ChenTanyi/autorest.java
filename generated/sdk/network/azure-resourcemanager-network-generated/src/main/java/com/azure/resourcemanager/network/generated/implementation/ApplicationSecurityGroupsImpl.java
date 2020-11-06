@@ -81,6 +81,20 @@ public final class ApplicationSecurityGroupsImpl implements ApplicationSecurityG
         return inner.mapPage(inner1 -> new ApplicationSecurityGroupImpl(inner1, this.manager()));
     }
 
+    public ApplicationSecurityGroup getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String applicationSecurityGroupName = Utils.getValueFromIdByName(id, "applicationSecurityGroups");
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, applicationSecurityGroupName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<ApplicationSecurityGroup> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String applicationSecurityGroupName = Utils.getValueFromIdByName(id, "applicationSecurityGroups");
+        return this.getByResourceGroupWithResponse(resourceGroupName, applicationSecurityGroupName, context);
+    }
+
     private ApplicationSecurityGroupsClient serviceClient() {
         return this.innerClient;
     }

@@ -130,6 +130,18 @@ public final class VpnGatewaysImpl implements VpnGateways {
         return inner.mapPage(inner1 -> new VpnGatewayImpl(inner1, this.manager()));
     }
 
+    public VpnGateway getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String gatewayName = Utils.getValueFromIdByName(id, "vpnGateways");
+        return this.getByResourceGroupWithResponse(resourceGroupName, gatewayName, Context.NONE).getValue();
+    }
+
+    public Response<VpnGateway> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String gatewayName = Utils.getValueFromIdByName(id, "vpnGateways");
+        return this.getByResourceGroupWithResponse(resourceGroupName, gatewayName, context);
+    }
+
     private VpnGatewaysClient serviceClient() {
         return this.innerClient;
     }

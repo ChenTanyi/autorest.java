@@ -252,6 +252,29 @@ public interface ExpressRouteCircuits {
     PagedIterable<ExpressRouteCircuit> list(Context context);
 
     /**
+     * Gets information about the specified express route circuit.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about the specified express route circuit.
+     */
+    ExpressRouteCircuit getById(String id);
+
+    /**
+     * Gets information about the specified express route circuit.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about the specified express route circuit.
+     */
+    Response<ExpressRouteCircuit> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new ExpressRouteCircuit resource.
      *
      * @param name resource name.

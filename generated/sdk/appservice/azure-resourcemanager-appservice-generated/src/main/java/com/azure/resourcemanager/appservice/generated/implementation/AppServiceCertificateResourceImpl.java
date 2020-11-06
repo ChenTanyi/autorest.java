@@ -99,7 +99,8 @@ public final class AppServiceCertificateResourceImpl
             serviceManager
                 .serviceClient()
                 .getAppServiceCertificateOrders()
-                .createOrUpdateCertificate(resourceGroupName, certificateOrderName, name, innerObject, Context.NONE);
+                .createOrUpdateCertificate(
+                    resourceGroupName, certificateOrderName, name, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -108,7 +109,7 @@ public final class AppServiceCertificateResourceImpl
             serviceManager
                 .serviceClient()
                 .getAppServiceCertificateOrders()
-                .createOrUpdateCertificate(resourceGroupName, certificateOrderName, name, innerObject, context);
+                .createOrUpdateCertificate(resourceGroupName, certificateOrderName, name, this.innerModel(), context);
         return this;
     }
 

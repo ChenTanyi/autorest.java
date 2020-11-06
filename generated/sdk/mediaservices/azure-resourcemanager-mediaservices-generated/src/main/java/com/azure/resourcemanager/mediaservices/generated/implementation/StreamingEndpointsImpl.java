@@ -101,6 +101,20 @@ public final class StreamingEndpointsImpl implements StreamingEndpoints {
         this.serviceClient().scale(resourceGroupName, accountName, streamingEndpointName, parameters, context);
     }
 
+    public StreamingEndpoint getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "mediaservices");
+        String streamingEndpointName = Utils.getValueFromIdByName(id, "streamingEndpoints");
+        return this.getWithResponse(resourceGroupName, accountName, streamingEndpointName, Context.NONE).getValue();
+    }
+
+    public Response<StreamingEndpoint> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "mediaservices");
+        String streamingEndpointName = Utils.getValueFromIdByName(id, "streamingEndpoints");
+        return this.getWithResponse(resourceGroupName, accountName, streamingEndpointName, context);
+    }
+
     private StreamingEndpointsClient serviceClient() {
         return this.innerClient;
     }

@@ -205,6 +205,20 @@ public final class VirtualNetworkGatewayConnectionsImpl implements VirtualNetwor
             .stopPacketCapture(resourceGroupName, virtualNetworkGatewayConnectionName, parameters, context);
     }
 
+    public VirtualNetworkGatewayConnection getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String virtualNetworkGatewayConnectionName = Utils.getValueFromIdByName(id, "connections");
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkGatewayConnectionName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<VirtualNetworkGatewayConnection> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String virtualNetworkGatewayConnectionName = Utils.getValueFromIdByName(id, "connections");
+        return this.getByResourceGroupWithResponse(resourceGroupName, virtualNetworkGatewayConnectionName, context);
+    }
+
     private VirtualNetworkGatewayConnectionsClient serviceClient() {
         return this.innerClient;
     }

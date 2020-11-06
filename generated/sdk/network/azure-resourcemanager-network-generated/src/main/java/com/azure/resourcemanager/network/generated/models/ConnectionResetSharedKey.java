@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.ConnectionResetSharedKeyInner;
 
 /** An immutable client-side representation of ConnectionResetSharedKey. */
-@Immutable
 public interface ConnectionResetSharedKey {
     /**
      * Gets the keyLength property: The virtual network connection reset shared key length, should between 1 and 128.

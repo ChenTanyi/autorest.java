@@ -85,7 +85,8 @@ public final class StreamingPolicyImpl implements StreamingPolicy, StreamingPoli
             serviceManager
                 .serviceClient()
                 .getStreamingPolicies()
-                .createWithResponse(resourceGroupName, accountName, streamingPolicyName, innerObject, Context.NONE)
+                .createWithResponse(
+                    resourceGroupName, accountName, streamingPolicyName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -95,7 +96,7 @@ public final class StreamingPolicyImpl implements StreamingPolicy, StreamingPoli
             serviceManager
                 .serviceClient()
                 .getStreamingPolicies()
-                .createWithResponse(resourceGroupName, accountName, streamingPolicyName, innerObject, context)
+                .createWithResponse(resourceGroupName, accountName, streamingPolicyName, this.innerModel(), context)
                 .getValue();
         return this;
     }

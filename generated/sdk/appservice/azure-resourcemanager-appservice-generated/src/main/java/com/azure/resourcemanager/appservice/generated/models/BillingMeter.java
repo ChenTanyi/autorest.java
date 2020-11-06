@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.BillingMeterInner;
 
 /** An immutable client-side representation of BillingMeter. */
-@Immutable
 public interface BillingMeter {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

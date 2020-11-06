@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SourceControlInner;
 import java.time.OffsetDateTime;
 
 /** An immutable client-side representation of SourceControl. */
-@Immutable
 public interface SourceControl {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

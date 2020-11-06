@@ -70,6 +70,21 @@ public final class DedicatedHostsImpl implements DedicatedHosts {
         return inner.mapPage(inner1 -> new DedicatedHostImpl(inner1, this.manager()));
     }
 
+    public DedicatedHost getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String hostGroupName = Utils.getValueFromIdByName(id, "hostGroups");
+        String hostname = Utils.getValueFromIdByName(id, "hosts");
+        InstanceViewTypes localExpand = null;
+        return this.getWithResponse(resourceGroupName, hostGroupName, hostname, localExpand, Context.NONE).getValue();
+    }
+
+    public Response<DedicatedHost> getByIdWithResponse(String id, InstanceViewTypes expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String hostGroupName = Utils.getValueFromIdByName(id, "hostGroups");
+        String hostname = Utils.getValueFromIdByName(id, "hosts");
+        return this.getWithResponse(resourceGroupName, hostGroupName, hostname, expand, context);
+    }
+
     private DedicatedHostsClient serviceClient() {
         return this.innerClient;
     }

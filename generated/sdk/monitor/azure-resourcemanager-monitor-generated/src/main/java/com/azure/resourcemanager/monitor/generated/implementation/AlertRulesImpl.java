@@ -77,6 +77,18 @@ public final class AlertRulesImpl implements AlertRules {
         return inner.mapPage(inner1 -> new AlertRuleResourceImpl(inner1, this.manager()));
     }
 
+    public AlertRuleResource getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        String ruleName = Utils.getValueFromIdByName(id, "alertrules");
+        return this.getByResourceGroupWithResponse(resourceGroupName, ruleName, Context.NONE).getValue();
+    }
+
+    public Response<AlertRuleResource> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        String ruleName = Utils.getValueFromIdByName(id, "alertrules");
+        return this.getByResourceGroupWithResponse(resourceGroupName, ruleName, context);
+    }
+
     private AlertRulesClient serviceClient() {
         return this.innerClient;
     }

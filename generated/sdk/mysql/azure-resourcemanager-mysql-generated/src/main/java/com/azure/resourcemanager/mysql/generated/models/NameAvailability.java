@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.mysql.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.mysql.generated.fluent.models.NameAvailabilityInner;
 
 /** An immutable client-side representation of NameAvailability. */
-@Immutable
 public interface NameAvailability {
     /**
      * Gets the message property: Error Message.

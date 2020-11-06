@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayBackendHealthInner;
 import java.util.List;
 
 /** An immutable client-side representation of ApplicationGatewayBackendHealth. */
-@Immutable
 public interface ApplicationGatewayBackendHealth {
     /**
      * Gets the backendAddressPools property: A list of ApplicationGatewayBackendHealthPool resources.

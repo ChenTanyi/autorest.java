@@ -73,7 +73,7 @@ public final class AccountFilterImpl implements AccountFilter, AccountFilter.Def
             serviceManager
                 .serviceClient()
                 .getAccountFilters()
-                .createOrUpdateWithResponse(resourceGroupName, accountName, filterName, innerObject, Context.NONE)
+                .createOrUpdateWithResponse(resourceGroupName, accountName, filterName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -83,7 +83,7 @@ public final class AccountFilterImpl implements AccountFilter, AccountFilter.Def
             serviceManager
                 .serviceClient()
                 .getAccountFilters()
-                .createOrUpdateWithResponse(resourceGroupName, accountName, filterName, innerObject, context)
+                .createOrUpdateWithResponse(resourceGroupName, accountName, filterName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -103,7 +103,7 @@ public final class AccountFilterImpl implements AccountFilter, AccountFilter.Def
             serviceManager
                 .serviceClient()
                 .getAccountFilters()
-                .updateWithResponse(resourceGroupName, accountName, filterName, innerObject, Context.NONE)
+                .updateWithResponse(resourceGroupName, accountName, filterName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -113,7 +113,7 @@ public final class AccountFilterImpl implements AccountFilter, AccountFilter.Def
             serviceManager
                 .serviceClient()
                 .getAccountFilters()
-                .updateWithResponse(resourceGroupName, accountName, filterName, innerObject, context)
+                .updateWithResponse(resourceGroupName, accountName, filterName, this.innerModel(), context)
                 .getValue();
         return this;
     }

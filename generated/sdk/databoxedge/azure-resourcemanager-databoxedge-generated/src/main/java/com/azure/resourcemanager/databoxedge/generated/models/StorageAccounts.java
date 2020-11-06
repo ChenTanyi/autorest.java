@@ -89,6 +89,29 @@ public interface StorageAccounts {
     void delete(String deviceName, String storageAccountName, String resourceGroupName, Context context);
 
     /**
+     * Gets a StorageAccount by name.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a StorageAccount by name.
+     */
+    StorageAccount getById(String id);
+
+    /**
+     * Gets a StorageAccount by name.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a StorageAccount by name.
+     */
+    Response<StorageAccount> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new StorageAccount resource.
      *
      * @param name resource name.

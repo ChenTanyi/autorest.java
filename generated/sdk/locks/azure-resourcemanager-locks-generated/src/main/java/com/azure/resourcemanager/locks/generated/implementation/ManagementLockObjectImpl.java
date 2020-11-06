@@ -70,7 +70,8 @@ public final class ManagementLockObjectImpl
             serviceManager
                 .serviceClient()
                 .getManagementLocks()
-                .createOrUpdateAtResourceGroupLevelWithResponse(resourceGroupName, lockName, innerObject, Context.NONE)
+                .createOrUpdateAtResourceGroupLevelWithResponse(
+                    resourceGroupName, lockName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -80,7 +81,7 @@ public final class ManagementLockObjectImpl
             serviceManager
                 .serviceClient()
                 .getManagementLocks()
-                .createOrUpdateAtResourceGroupLevelWithResponse(resourceGroupName, lockName, innerObject, context)
+                .createOrUpdateAtResourceGroupLevelWithResponse(resourceGroupName, lockName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -100,7 +101,8 @@ public final class ManagementLockObjectImpl
             serviceManager
                 .serviceClient()
                 .getManagementLocks()
-                .createOrUpdateAtResourceGroupLevelWithResponse(resourceGroupName, lockName, innerObject, Context.NONE)
+                .createOrUpdateAtResourceGroupLevelWithResponse(
+                    resourceGroupName, lockName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -110,7 +112,7 @@ public final class ManagementLockObjectImpl
             serviceManager
                 .serviceClient()
                 .getManagementLocks()
-                .createOrUpdateAtResourceGroupLevelWithResponse(resourceGroupName, lockName, innerObject, context)
+                .createOrUpdateAtResourceGroupLevelWithResponse(resourceGroupName, lockName, this.innerModel(), context)
                 .getValue();
         return this;
     }

@@ -177,7 +177,7 @@ public final class FrontDoorImpl implements FrontDoor, FrontDoor.Definition, Fro
             serviceManager
                 .serviceClient()
                 .getFrontDoors()
-                .createOrUpdate(resourceGroupName, frontDoorName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, frontDoorName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -186,7 +186,7 @@ public final class FrontDoorImpl implements FrontDoor, FrontDoor.Definition, Fro
             serviceManager
                 .serviceClient()
                 .getFrontDoors()
-                .createOrUpdate(resourceGroupName, frontDoorName, innerObject, context);
+                .createOrUpdate(resourceGroupName, frontDoorName, this.innerModel(), context);
         return this;
     }
 
@@ -205,7 +205,7 @@ public final class FrontDoorImpl implements FrontDoor, FrontDoor.Definition, Fro
             serviceManager
                 .serviceClient()
                 .getFrontDoors()
-                .createOrUpdate(resourceGroupName, frontDoorName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, frontDoorName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -214,7 +214,7 @@ public final class FrontDoorImpl implements FrontDoor, FrontDoor.Definition, Fro
             serviceManager
                 .serviceClient()
                 .getFrontDoors()
-                .createOrUpdate(resourceGroupName, frontDoorName, innerObject, context);
+                .createOrUpdate(resourceGroupName, frontDoorName, this.innerModel(), context);
         return this;
     }
 

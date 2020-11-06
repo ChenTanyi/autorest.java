@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.mediaservices.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.EntityNameAvailabilityCheckOutputInner;
 
 /** An immutable client-side representation of EntityNameAvailabilityCheckOutput. */
-@Immutable
 public interface EntityNameAvailabilityCheckOutput {
     /**
      * Gets the nameAvailable property: Specifies if the name is available.

@@ -64,7 +64,7 @@ public final class ManagementPolicyImpl
                 .serviceClient()
                 .getManagementPolicies()
                 .createOrUpdateWithResponse(
-                    resourceGroupName, accountName, managementPolicyName, innerObject, Context.NONE)
+                    resourceGroupName, accountName, managementPolicyName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -74,7 +74,8 @@ public final class ManagementPolicyImpl
             serviceManager
                 .serviceClient()
                 .getManagementPolicies()
-                .createOrUpdateWithResponse(resourceGroupName, accountName, managementPolicyName, innerObject, context)
+                .createOrUpdateWithResponse(
+                    resourceGroupName, accountName, managementPolicyName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -95,7 +96,7 @@ public final class ManagementPolicyImpl
                 .serviceClient()
                 .getManagementPolicies()
                 .createOrUpdateWithResponse(
-                    resourceGroupName, accountName, managementPolicyName, innerObject, Context.NONE)
+                    resourceGroupName, accountName, managementPolicyName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -105,7 +106,8 @@ public final class ManagementPolicyImpl
             serviceManager
                 .serviceClient()
                 .getManagementPolicies()
-                .createOrUpdateWithResponse(resourceGroupName, accountName, managementPolicyName, innerObject, context)
+                .createOrUpdateWithResponse(
+                    resourceGroupName, accountName, managementPolicyName, this.innerModel(), context)
                 .getValue();
         return this;
     }

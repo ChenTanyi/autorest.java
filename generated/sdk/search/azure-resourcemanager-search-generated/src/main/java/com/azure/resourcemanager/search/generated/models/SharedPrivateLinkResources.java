@@ -143,6 +143,33 @@ public interface SharedPrivateLinkResources {
         String resourceGroupName, String searchServiceName, UUID clientRequestId, Context context);
 
     /**
+     * Gets the details of the shared private link resource managed by the search service in the given resource group.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the details of the shared private link resource managed by the search service in the given resource
+     *     group.
+     */
+    SharedPrivateLinkResource getById(String id);
+
+    /**
+     * Gets the details of the shared private link resource managed by the search service in the given resource group.
+     *
+     * @param id the id of the resource.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     *     included in response information as a way to track the request.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the details of the shared private link resource managed by the search service in the given resource
+     *     group.
+     */
+    Response<SharedPrivateLinkResource> getByIdWithResponse(String id, UUID clientRequestId, Context context);
+
+    /**
      * Begins definition for a new SharedPrivateLinkResource resource.
      *
      * @param name resource name.

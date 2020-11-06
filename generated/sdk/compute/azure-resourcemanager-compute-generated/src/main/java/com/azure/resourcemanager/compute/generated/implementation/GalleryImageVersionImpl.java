@@ -109,7 +109,7 @@ public final class GalleryImageVersionImpl
                     galleryName,
                     galleryImageName,
                     galleryImageVersionName,
-                    innerObject,
+                    this.innerModel(),
                     Context.NONE);
         return this;
     }
@@ -120,7 +120,12 @@ public final class GalleryImageVersionImpl
                 .serviceClient()
                 .getGalleryImageVersions()
                 .createOrUpdate(
-                    resourceGroupName, galleryName, galleryImageName, galleryImageVersionName, innerObject, context);
+                    resourceGroupName,
+                    galleryName,
+                    galleryImageName,
+                    galleryImageVersionName,
+                    this.innerModel(),
+                    context);
         return this;
     }
 
@@ -175,7 +180,7 @@ public final class GalleryImageVersionImpl
     }
 
     public GalleryImageVersion refresh() {
-        ReplicationStatusTypes refreshExpand = null;
+        ReplicationStatusTypes localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
@@ -185,20 +190,20 @@ public final class GalleryImageVersionImpl
                     galleryName,
                     galleryImageName,
                     galleryImageVersionName,
-                    refreshExpand,
+                    localExpand,
                     Context.NONE)
                 .getValue();
         return this;
     }
 
     public GalleryImageVersion refresh(Context context) {
-        ReplicationStatusTypes refreshExpand = null;
+        ReplicationStatusTypes localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getGalleryImageVersions()
                 .getWithResponse(
-                    resourceGroupName, galleryName, galleryImageName, galleryImageVersionName, refreshExpand, context)
+                    resourceGroupName, galleryName, galleryImageName, galleryImageVersionName, localExpand, context)
                 .getValue();
         return this;
     }

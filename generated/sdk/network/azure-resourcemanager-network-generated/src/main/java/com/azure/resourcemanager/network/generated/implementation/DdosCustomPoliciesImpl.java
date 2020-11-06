@@ -55,6 +55,18 @@ public final class DdosCustomPoliciesImpl implements DdosCustomPolicies {
         }
     }
 
+    public DdosCustomPolicy getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String ddosCustomPolicyName = Utils.getValueFromIdByName(id, "ddosCustomPolicies");
+        return this.getByResourceGroupWithResponse(resourceGroupName, ddosCustomPolicyName, Context.NONE).getValue();
+    }
+
+    public Response<DdosCustomPolicy> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String ddosCustomPolicyName = Utils.getValueFromIdByName(id, "ddosCustomPolicies");
+        return this.getByResourceGroupWithResponse(resourceGroupName, ddosCustomPolicyName, context);
+    }
+
     private DdosCustomPoliciesClient serviceClient() {
         return this.innerClient;
     }

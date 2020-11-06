@@ -69,6 +69,18 @@ public final class PoliciesImpl implements Policies {
         this.serviceClient().delete(resourceGroupName, policyName, context);
     }
 
+    public WebApplicationFirewallPolicy getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String policyName = Utils.getValueFromIdByName(id, "FrontDoorWebApplicationFirewallPolicies");
+        return this.getByResourceGroupWithResponse(resourceGroupName, policyName, Context.NONE).getValue();
+    }
+
+    public Response<WebApplicationFirewallPolicy> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String policyName = Utils.getValueFromIdByName(id, "FrontDoorWebApplicationFirewallPolicies");
+        return this.getByResourceGroupWithResponse(resourceGroupName, policyName, context);
+    }
+
     private PoliciesClient serviceClient() {
         return this.innerClient;
     }

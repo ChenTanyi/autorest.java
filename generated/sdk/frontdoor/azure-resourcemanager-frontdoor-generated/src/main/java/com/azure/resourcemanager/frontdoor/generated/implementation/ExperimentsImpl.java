@@ -67,6 +67,20 @@ public final class ExperimentsImpl implements Experiments {
         this.serviceClient().delete(resourceGroupName, profileName, experimentName, context);
     }
 
+    public Experiment getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String profileName = Utils.getValueFromIdByName(id, "NetworkExperimentProfiles");
+        String experimentName = Utils.getValueFromIdByName(id, "Experiments");
+        return this.getWithResponse(resourceGroupName, profileName, experimentName, Context.NONE).getValue();
+    }
+
+    public Response<Experiment> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String profileName = Utils.getValueFromIdByName(id, "NetworkExperimentProfiles");
+        String experimentName = Utils.getValueFromIdByName(id, "Experiments");
+        return this.getWithResponse(resourceGroupName, profileName, experimentName, context);
+    }
+
     private ExperimentsClient serviceClient() {
         return this.innerClient;
     }

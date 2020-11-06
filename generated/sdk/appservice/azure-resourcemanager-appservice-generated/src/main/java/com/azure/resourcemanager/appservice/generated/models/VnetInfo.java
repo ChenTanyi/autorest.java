@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetInfoInner;
 import java.util.List;
 
 /** An immutable client-side representation of VnetInfo. */
-@Immutable
 public interface VnetInfo {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

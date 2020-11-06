@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.storage.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.storage.generated.fluent.models.ListQueueServicesInner;
 import java.util.List;
 
 /** An immutable client-side representation of ListQueueServices. */
-@Immutable
 public interface ListQueueServices {
     /**
      * Gets the value property: List of queue services returned.

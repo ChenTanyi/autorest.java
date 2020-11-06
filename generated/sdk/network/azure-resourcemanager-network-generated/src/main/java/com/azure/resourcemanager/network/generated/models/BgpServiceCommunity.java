@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.BgpServiceCommunityInner;
 import java.util.List;
 import java.util.Map;
 
 /** An immutable client-side representation of BgpServiceCommunity. */
-@Immutable
 public interface BgpServiceCommunity {
     /**
      * Gets the name property: The name of the resource.

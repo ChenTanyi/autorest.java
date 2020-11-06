@@ -169,7 +169,7 @@ public final class VirtualNetworkGatewayImpl
             serviceManager
                 .serviceClient()
                 .getVirtualNetworkGateways()
-                .createOrUpdate(resourceGroupName, virtualNetworkGatewayName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, virtualNetworkGatewayName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -178,7 +178,7 @@ public final class VirtualNetworkGatewayImpl
             serviceManager
                 .serviceClient()
                 .getVirtualNetworkGateways()
-                .createOrUpdate(resourceGroupName, virtualNetworkGatewayName, innerObject, context);
+                .createOrUpdate(resourceGroupName, virtualNetworkGatewayName, this.innerModel(), context);
         return this;
     }
 

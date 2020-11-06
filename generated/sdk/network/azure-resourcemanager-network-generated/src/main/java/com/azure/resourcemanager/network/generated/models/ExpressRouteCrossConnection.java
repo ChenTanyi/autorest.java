@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCrossConnectionInner;
@@ -13,7 +12,6 @@ import java.util.List;
 import java.util.Map;
 
 /** An immutable client-side representation of ExpressRouteCrossConnection. */
-@Immutable
 public interface ExpressRouteCrossConnection {
     /**
      * Gets the name property: The name of the resource.

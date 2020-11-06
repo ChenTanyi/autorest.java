@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.databoxedge.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.NetworkSettingsInner;
 import java.util.List;
 
 /** An immutable client-side representation of NetworkSettings. */
-@Immutable
 public interface NetworkSettings {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

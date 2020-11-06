@@ -67,6 +67,20 @@ public final class GalleryImagesImpl implements GalleryImages {
         return inner.mapPage(inner1 -> new GalleryImageImpl(inner1, this.manager()));
     }
 
+    public GalleryImage getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String galleryName = Utils.getValueFromIdByName(id, "galleries");
+        String galleryImageName = Utils.getValueFromIdByName(id, "images");
+        return this.getWithResponse(resourceGroupName, galleryName, galleryImageName, Context.NONE).getValue();
+    }
+
+    public Response<GalleryImage> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String galleryName = Utils.getValueFromIdByName(id, "galleries");
+        String galleryImageName = Utils.getValueFromIdByName(id, "images");
+        return this.getWithResponse(resourceGroupName, galleryName, galleryImageName, context);
+    }
+
     private GalleryImagesClient serviceClient() {
         return this.innerClient;
     }

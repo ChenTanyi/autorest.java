@@ -92,7 +92,7 @@ public final class IotHubDescriptionImpl
             serviceManager
                 .serviceClient()
                 .getIotHubResources()
-                .createOrUpdate(resourceGroupName, resourceName, innerObject, createIfMatch, Context.NONE);
+                .createOrUpdate(resourceGroupName, resourceName, this.innerModel(), createIfMatch, Context.NONE);
         return this;
     }
 
@@ -101,7 +101,7 @@ public final class IotHubDescriptionImpl
             serviceManager
                 .serviceClient()
                 .getIotHubResources()
-                .createOrUpdate(resourceGroupName, resourceName, innerObject, createIfMatch, context);
+                .createOrUpdate(resourceGroupName, resourceName, this.innerModel(), createIfMatch, context);
         return this;
     }
 

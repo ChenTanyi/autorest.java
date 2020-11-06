@@ -104,6 +104,29 @@ public interface AlertRules {
     PagedIterable<AlertRuleResource> list(Context context);
 
     /**
+     * Gets a classic metric alert rule.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a classic metric alert rule.
+     */
+    AlertRuleResource getById(String id);
+
+    /**
+     * Gets a classic metric alert rule.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a classic metric alert rule.
+     */
+    Response<AlertRuleResource> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new AlertRuleResource resource.
      *
      * @param name resource name.

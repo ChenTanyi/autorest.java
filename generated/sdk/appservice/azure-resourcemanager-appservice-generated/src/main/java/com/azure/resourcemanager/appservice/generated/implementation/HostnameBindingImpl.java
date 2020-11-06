@@ -95,7 +95,8 @@ public final class HostnameBindingImpl implements HostnameBinding, HostnameBindi
             serviceManager
                 .serviceClient()
                 .getWebApps()
-                .createOrUpdateHostnameBindingWithResponse(resourceGroupName, name, hostname, innerObject, Context.NONE)
+                .createOrUpdateHostnameBindingWithResponse(
+                    resourceGroupName, name, hostname, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -105,7 +106,8 @@ public final class HostnameBindingImpl implements HostnameBinding, HostnameBindi
             serviceManager
                 .serviceClient()
                 .getWebApps()
-                .createOrUpdateHostnameBindingWithResponse(resourceGroupName, name, hostname, innerObject, context)
+                .createOrUpdateHostnameBindingWithResponse(
+                    resourceGroupName, name, hostname, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -125,7 +127,8 @@ public final class HostnameBindingImpl implements HostnameBinding, HostnameBindi
             serviceManager
                 .serviceClient()
                 .getWebApps()
-                .createOrUpdateHostnameBindingWithResponse(resourceGroupName, name, hostname, innerObject, Context.NONE)
+                .createOrUpdateHostnameBindingWithResponse(
+                    resourceGroupName, name, hostname, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -135,7 +138,8 @@ public final class HostnameBindingImpl implements HostnameBinding, HostnameBindi
             serviceManager
                 .serviceClient()
                 .getWebApps()
-                .createOrUpdateHostnameBindingWithResponse(resourceGroupName, name, hostname, innerObject, context)
+                .createOrUpdateHostnameBindingWithResponse(
+                    resourceGroupName, name, hostname, this.innerModel(), context)
                 .getValue();
         return this;
     }

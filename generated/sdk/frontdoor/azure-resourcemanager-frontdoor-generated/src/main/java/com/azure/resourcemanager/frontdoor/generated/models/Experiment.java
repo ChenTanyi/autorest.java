@@ -4,14 +4,12 @@
 
 package com.azure.resourcemanager.frontdoor.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.ExperimentInner;
 import java.util.Map;
 
 /** An immutable client-side representation of Experiment. */
-@Immutable
 public interface Experiment {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

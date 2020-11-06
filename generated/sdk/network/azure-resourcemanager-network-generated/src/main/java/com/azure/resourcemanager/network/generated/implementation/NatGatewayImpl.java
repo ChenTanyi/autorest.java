@@ -135,7 +135,7 @@ public final class NatGatewayImpl implements NatGateway, NatGateway.Definition, 
             serviceManager
                 .serviceClient()
                 .getNatGateways()
-                .createOrUpdate(resourceGroupName, natGatewayName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, natGatewayName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -144,7 +144,7 @@ public final class NatGatewayImpl implements NatGateway, NatGateway.Definition, 
             serviceManager
                 .serviceClient()
                 .getNatGateways()
-                .createOrUpdate(resourceGroupName, natGatewayName, innerObject, context);
+                .createOrUpdate(resourceGroupName, natGatewayName, this.innerModel(), context);
         return this;
     }
 
@@ -187,23 +187,23 @@ public final class NatGatewayImpl implements NatGateway, NatGateway.Definition, 
     }
 
     public NatGateway refresh() {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getNatGateways()
-                .getByResourceGroupWithResponse(resourceGroupName, natGatewayName, refreshExpand, Context.NONE)
+                .getByResourceGroupWithResponse(resourceGroupName, natGatewayName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public NatGateway refresh(Context context) {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getNatGateways()
-                .getByResourceGroupWithResponse(resourceGroupName, natGatewayName, refreshExpand, context)
+                .getByResourceGroupWithResponse(resourceGroupName, natGatewayName, localExpand, context)
                 .getValue();
         return this;
     }

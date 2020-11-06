@@ -96,7 +96,7 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
             serviceManager
                 .serviceClient()
                 .getBastionHosts()
-                .createOrUpdate(resourceGroupName, bastionHostname, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, bastionHostname, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -105,7 +105,7 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
             serviceManager
                 .serviceClient()
                 .getBastionHosts()
-                .createOrUpdate(resourceGroupName, bastionHostname, innerObject, context);
+                .createOrUpdate(resourceGroupName, bastionHostname, this.innerModel(), context);
         return this;
     }
 
@@ -124,7 +124,7 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
             serviceManager
                 .serviceClient()
                 .getBastionHosts()
-                .createOrUpdate(resourceGroupName, bastionHostname, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, bastionHostname, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -133,7 +133,7 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
             serviceManager
                 .serviceClient()
                 .getBastionHosts()
-                .createOrUpdate(resourceGroupName, bastionHostname, innerObject, context);
+                .createOrUpdate(resourceGroupName, bastionHostname, this.innerModel(), context);
         return this;
     }
 

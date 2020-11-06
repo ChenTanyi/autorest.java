@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.authorization.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.authorization.generated.fluent.models.ClassicAdministratorInner;
 
 /** An immutable client-side representation of ClassicAdministrator. */
-@Immutable
 public interface ClassicAdministrator {
     /**
      * Gets the id property: The ID of the administrator.

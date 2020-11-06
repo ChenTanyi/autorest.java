@@ -107,6 +107,29 @@ public interface PrivateEndpointConnections {
         String resourceGroupName, String accountName, String privateEndpointConnectionName, Context context);
 
     /**
+     * Gets the specified private endpoint connection associated with the storage account.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified private endpoint connection associated with the storage account.
+     */
+    PrivateEndpointConnection getById(String id);
+
+    /**
+     * Gets the specified private endpoint connection associated with the storage account.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified private endpoint connection associated with the storage account.
+     */
+    Response<PrivateEndpointConnection> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new PrivateEndpointConnection resource.
      *
      * @param name resource name.

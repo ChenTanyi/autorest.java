@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.compute.generated.fluent.models.RetrieveBootDiagnosticsDataResultInner;
 
 /** An immutable client-side representation of RetrieveBootDiagnosticsDataResult. */
-@Immutable
 public interface RetrieveBootDiagnosticsDataResult {
     /**
      * Gets the consoleScreenshotBlobUri property: The console screenshot blob URI.

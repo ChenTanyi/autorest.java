@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.monitor.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricInner;
 import java.util.List;
 
 /** An immutable client-side representation of Metric. */
-@Immutable
 public interface Metric {
     /**
      * Gets the id property: the metric Id.

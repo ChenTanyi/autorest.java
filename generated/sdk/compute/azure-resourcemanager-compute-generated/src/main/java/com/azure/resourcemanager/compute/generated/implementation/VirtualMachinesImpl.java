@@ -327,6 +327,19 @@ public final class VirtualMachinesImpl implements VirtualMachines {
         }
     }
 
+    public VirtualMachine getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String vmName = Utils.getValueFromIdByName(id, "virtualMachines");
+        InstanceViewTypes localExpand = null;
+        return this.getByResourceGroupWithResponse(resourceGroupName, vmName, localExpand, Context.NONE).getValue();
+    }
+
+    public Response<VirtualMachine> getByIdWithResponse(String id, InstanceViewTypes expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String vmName = Utils.getValueFromIdByName(id, "virtualMachines");
+        return this.getByResourceGroupWithResponse(resourceGroupName, vmName, expand, context);
+    }
+
     private VirtualMachinesClient serviceClient() {
         return this.innerClient;
     }

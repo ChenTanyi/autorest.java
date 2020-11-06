@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.FirewallPolicyRuleCollectionGroupInner;
 import java.util.List;
 
 /** An immutable client-side representation of FirewallPolicyRuleCollectionGroup. */
-@Immutable
 public interface FirewallPolicyRuleCollectionGroup {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

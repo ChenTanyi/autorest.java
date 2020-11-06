@@ -178,7 +178,7 @@ public final class ExpressRouteCircuitPeeringImpl
             serviceManager
                 .serviceClient()
                 .getExpressRouteCircuitPeerings()
-                .createOrUpdate(resourceGroupName, circuitName, peeringName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, circuitName, peeringName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -187,7 +187,7 @@ public final class ExpressRouteCircuitPeeringImpl
             serviceManager
                 .serviceClient()
                 .getExpressRouteCircuitPeerings()
-                .createOrUpdate(resourceGroupName, circuitName, peeringName, innerObject, context);
+                .createOrUpdate(resourceGroupName, circuitName, peeringName, this.innerModel(), context);
         return this;
     }
 
@@ -206,7 +206,7 @@ public final class ExpressRouteCircuitPeeringImpl
             serviceManager
                 .serviceClient()
                 .getExpressRouteCircuitPeerings()
-                .createOrUpdate(resourceGroupName, circuitName, peeringName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, circuitName, peeringName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -215,7 +215,7 @@ public final class ExpressRouteCircuitPeeringImpl
             serviceManager
                 .serviceClient()
                 .getExpressRouteCircuitPeerings()
-                .createOrUpdate(resourceGroupName, circuitName, peeringName, innerObject, context);
+                .createOrUpdate(resourceGroupName, circuitName, peeringName, this.innerModel(), context);
         return this;
     }
 

@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.PeerRouteListInner;
 import java.util.List;
 
 /** An immutable client-side representation of PeerRouteList. */
-@Immutable
 public interface PeerRouteList {
     /**
      * Gets the value property: List of peer routes.

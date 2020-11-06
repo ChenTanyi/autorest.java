@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.FunctionSecretsInner;
 
 /** An immutable client-side representation of FunctionSecrets. */
-@Immutable
 public interface FunctionSecrets {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

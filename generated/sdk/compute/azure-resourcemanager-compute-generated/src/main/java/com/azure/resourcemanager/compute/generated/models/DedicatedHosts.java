@@ -92,6 +92,30 @@ public interface DedicatedHosts {
     PagedIterable<DedicatedHost> listByHostGroup(String resourceGroupName, String hostGroupName, Context context);
 
     /**
+     * Retrieves information about a dedicated host.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies information about the Dedicated host.
+     */
+    DedicatedHost getById(String id);
+
+    /**
+     * Retrieves information about a dedicated host.
+     *
+     * @param id the id of the resource.
+     * @param expand The expand expression to apply on the operation.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies information about the Dedicated host.
+     */
+    Response<DedicatedHost> getByIdWithResponse(String id, InstanceViewTypes expand, Context context);
+
+    /**
      * Begins definition for a new DedicatedHost resource.
      *
      * @param name resource name.

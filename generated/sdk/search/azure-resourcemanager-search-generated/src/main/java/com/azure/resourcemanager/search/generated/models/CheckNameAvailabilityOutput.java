@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.search.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.search.generated.fluent.models.CheckNameAvailabilityOutputInner;
 
 /** An immutable client-side representation of CheckNameAvailabilityOutput. */
-@Immutable
 public interface CheckNameAvailabilityOutput {
     /**
      * Gets the isNameAvailable property: A value indicating whether the name is available.

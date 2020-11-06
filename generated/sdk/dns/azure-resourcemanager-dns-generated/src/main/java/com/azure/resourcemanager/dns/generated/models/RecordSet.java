@@ -4,14 +4,12 @@
 
 package com.azure.resourcemanager.dns.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.management.SubResource;
 import com.azure.resourcemanager.dns.generated.fluent.models.RecordSetInner;
 import java.util.List;
 import java.util.Map;
 
 /** An immutable client-side representation of RecordSet. */
-@Immutable
 public interface RecordSet {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

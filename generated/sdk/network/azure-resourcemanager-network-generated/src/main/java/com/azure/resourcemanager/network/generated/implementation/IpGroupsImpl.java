@@ -76,6 +76,21 @@ public final class IpGroupsImpl implements IpGroups {
         return inner.mapPage(inner1 -> new IpGroupImpl(inner1, this.manager()));
     }
 
+    public IpGroup getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String ipGroupsName = Utils.getValueFromIdByName(id, "ipGroups");
+        String localExpand = null;
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, ipGroupsName, localExpand, Context.NONE)
+            .getValue();
+    }
+
+    public Response<IpGroup> getByIdWithResponse(String id, String expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String ipGroupsName = Utils.getValueFromIdByName(id, "ipGroups");
+        return this.getByResourceGroupWithResponse(resourceGroupName, ipGroupsName, expand, context);
+    }
+
     private IpGroupsClient serviceClient() {
         return this.innerClient;
     }

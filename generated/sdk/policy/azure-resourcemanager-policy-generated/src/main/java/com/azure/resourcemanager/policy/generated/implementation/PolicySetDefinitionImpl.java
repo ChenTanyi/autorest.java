@@ -92,7 +92,7 @@ public final class PolicySetDefinitionImpl
             serviceManager
                 .serviceClient()
                 .getPolicySetDefinitions()
-                .createOrUpdateWithResponse(policySetDefinitionName, innerObject, Context.NONE)
+                .createOrUpdateWithResponse(policySetDefinitionName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -102,7 +102,7 @@ public final class PolicySetDefinitionImpl
             serviceManager
                 .serviceClient()
                 .getPolicySetDefinitions()
-                .createOrUpdateWithResponse(policySetDefinitionName, innerObject, context)
+                .createOrUpdateWithResponse(policySetDefinitionName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -122,7 +122,7 @@ public final class PolicySetDefinitionImpl
             serviceManager
                 .serviceClient()
                 .getPolicySetDefinitions()
-                .createOrUpdateWithResponse(policySetDefinitionName, innerObject, Context.NONE)
+                .createOrUpdateWithResponse(policySetDefinitionName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -132,7 +132,7 @@ public final class PolicySetDefinitionImpl
             serviceManager
                 .serviceClient()
                 .getPolicySetDefinitions()
-                .createOrUpdateWithResponse(policySetDefinitionName, innerObject, context)
+                .createOrUpdateWithResponse(policySetDefinitionName, this.innerModel(), context)
                 .getValue();
         return this;
     }

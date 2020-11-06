@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.hdinsight.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.CapabilitiesResultInner;
 import java.util.List;
 import java.util.Map;
 
 /** An immutable client-side representation of CapabilitiesResult. */
-@Immutable
 public interface CapabilitiesResult {
     /**
      * Gets the versions property: The version capability.

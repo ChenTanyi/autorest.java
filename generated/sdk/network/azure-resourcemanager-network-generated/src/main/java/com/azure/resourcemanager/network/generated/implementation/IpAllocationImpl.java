@@ -119,7 +119,7 @@ public final class IpAllocationImpl implements IpAllocation, IpAllocation.Defini
             serviceManager
                 .serviceClient()
                 .getIpAllocations()
-                .createOrUpdate(resourceGroupName, ipAllocationName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, ipAllocationName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -128,7 +128,7 @@ public final class IpAllocationImpl implements IpAllocation, IpAllocation.Defini
             serviceManager
                 .serviceClient()
                 .getIpAllocations()
-                .createOrUpdate(resourceGroupName, ipAllocationName, innerObject, context);
+                .createOrUpdate(resourceGroupName, ipAllocationName, this.innerModel(), context);
         return this;
     }
 
@@ -171,23 +171,23 @@ public final class IpAllocationImpl implements IpAllocation, IpAllocation.Defini
     }
 
     public IpAllocation refresh() {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getIpAllocations()
-                .getByResourceGroupWithResponse(resourceGroupName, ipAllocationName, refreshExpand, Context.NONE)
+                .getByResourceGroupWithResponse(resourceGroupName, ipAllocationName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public IpAllocation refresh(Context context) {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getIpAllocations()
-                .getByResourceGroupWithResponse(resourceGroupName, ipAllocationName, refreshExpand, context)
+                .getByResourceGroupWithResponse(resourceGroupName, ipAllocationName, localExpand, context)
                 .getValue();
         return this;
     }

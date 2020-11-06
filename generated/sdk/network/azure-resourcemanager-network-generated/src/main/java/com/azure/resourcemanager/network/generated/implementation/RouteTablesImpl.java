@@ -76,6 +76,21 @@ public final class RouteTablesImpl implements RouteTables {
         return inner.mapPage(inner1 -> new RouteTableImpl(inner1, this.manager()));
     }
 
+    public RouteTable getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String routeTableName = Utils.getValueFromIdByName(id, "routeTables");
+        String localExpand = null;
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, routeTableName, localExpand, Context.NONE)
+            .getValue();
+    }
+
+    public Response<RouteTable> getByIdWithResponse(String id, String expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String routeTableName = Utils.getValueFromIdByName(id, "routeTables");
+        return this.getByResourceGroupWithResponse(resourceGroupName, routeTableName, expand, context);
+    }
+
     private RouteTablesClient serviceClient() {
         return this.innerClient;
     }

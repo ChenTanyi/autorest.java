@@ -203,7 +203,7 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
             serviceManager
                 .serviceClient()
                 .getLoadBalancers()
-                .createOrUpdate(resourceGroupName, loadBalancerName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, loadBalancerName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -212,7 +212,7 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
             serviceManager
                 .serviceClient()
                 .getLoadBalancers()
-                .createOrUpdate(resourceGroupName, loadBalancerName, innerObject, context);
+                .createOrUpdate(resourceGroupName, loadBalancerName, this.innerModel(), context);
         return this;
     }
 
@@ -255,23 +255,23 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
     }
 
     public LoadBalancer refresh() {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getLoadBalancers()
-                .getByResourceGroupWithResponse(resourceGroupName, loadBalancerName, refreshExpand, Context.NONE)
+                .getByResourceGroupWithResponse(resourceGroupName, loadBalancerName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public LoadBalancer refresh(Context context) {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getLoadBalancers()
-                .getByResourceGroupWithResponse(resourceGroupName, loadBalancerName, refreshExpand, context)
+                .getByResourceGroupWithResponse(resourceGroupName, loadBalancerName, localExpand, context)
                 .getValue();
         return this;
     }

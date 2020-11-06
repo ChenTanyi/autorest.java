@@ -108,6 +108,29 @@ public interface ScheduledQueryRules {
     PagedIterable<LogSearchRuleResource> listByResourceGroup(String resourceGroupName, String filter, Context context);
 
     /**
+     * Gets an Log Search rule.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an Log Search rule.
+     */
+    LogSearchRuleResource getById(String id);
+
+    /**
+     * Gets an Log Search rule.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an Log Search rule.
+     */
+    Response<LogSearchRuleResource> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new LogSearchRuleResource resource.
      *
      * @param name resource name.

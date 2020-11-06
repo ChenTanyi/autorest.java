@@ -396,6 +396,20 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
                 resourceGroupName, virtualNetworkGatewayName, request, context);
     }
 
+    public VirtualNetworkGateway getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String virtualNetworkGatewayName = Utils.getValueFromIdByName(id, "virtualNetworkGateways");
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkGatewayName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<VirtualNetworkGateway> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String virtualNetworkGatewayName = Utils.getValueFromIdByName(id, "virtualNetworkGateways");
+        return this.getByResourceGroupWithResponse(resourceGroupName, virtualNetworkGatewayName, context);
+    }
+
     private VirtualNetworkGatewaysClient serviceClient() {
         return this.innerClient;
     }

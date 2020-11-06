@@ -102,6 +102,29 @@ public interface NetworkExperimentProfiles {
     void delete(String resourceGroupName, String profileName, Context context);
 
     /**
+     * Gets an NetworkExperiment Profile by ProfileName.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an NetworkExperiment Profile by ProfileName.
+     */
+    Profile getById(String id);
+
+    /**
+     * Gets an NetworkExperiment Profile by ProfileName.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an NetworkExperiment Profile by ProfileName.
+     */
+    Response<Profile> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new Profile resource.
      *
      * @param name resource name.

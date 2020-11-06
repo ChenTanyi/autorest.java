@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.monitor.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.monitor.generated.fluent.models.SingleMetricBaselineInner;
 import java.time.Duration;
 import java.util.List;
 
 /** An immutable client-side representation of SingleMetricBaseline. */
-@Immutable
 public interface SingleMetricBaseline {
     /**
      * Gets the id property: The metric baseline Id.

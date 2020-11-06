@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.VerificationIpFlowResultInner;
 
 /** An immutable client-side representation of VerificationIpFlowResult. */
-@Immutable
 public interface VerificationIpFlowResult {
     /**
      * Gets the access property: Indicates whether the traffic is allowed or denied.

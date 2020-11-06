@@ -89,7 +89,7 @@ public final class ProfileImpl implements Profile, Profile.Definition, Profile.U
             serviceManager
                 .serviceClient()
                 .getNetworkExperimentProfiles()
-                .createOrUpdate(profileName, resourceGroupName, innerObject, Context.NONE);
+                .createOrUpdate(profileName, resourceGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -98,7 +98,7 @@ public final class ProfileImpl implements Profile, Profile.Definition, Profile.U
             serviceManager
                 .serviceClient()
                 .getNetworkExperimentProfiles()
-                .createOrUpdate(profileName, resourceGroupName, innerObject, context);
+                .createOrUpdate(profileName, resourceGroupName, this.innerModel(), context);
         return this;
     }
 

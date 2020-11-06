@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.mysql.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.mysql.generated.fluent.models.OperationListResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of OperationListResult. */
-@Immutable
 public interface OperationListResult {
     /**
      * Gets the value property: The list of resource provider operations.

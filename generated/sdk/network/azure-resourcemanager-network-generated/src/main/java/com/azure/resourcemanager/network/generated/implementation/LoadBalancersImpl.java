@@ -76,6 +76,21 @@ public final class LoadBalancersImpl implements LoadBalancers {
         return inner.mapPage(inner1 -> new LoadBalancerImpl(inner1, this.manager()));
     }
 
+    public LoadBalancer getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String loadBalancerName = Utils.getValueFromIdByName(id, "loadBalancers");
+        String localExpand = null;
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, loadBalancerName, localExpand, Context.NONE)
+            .getValue();
+    }
+
+    public Response<LoadBalancer> getByIdWithResponse(String id, String expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String loadBalancerName = Utils.getValueFromIdByName(id, "loadBalancers");
+        return this.getByResourceGroupWithResponse(resourceGroupName, loadBalancerName, expand, context);
+    }
+
     private LoadBalancersClient serviceClient() {
         return this.innerClient;
     }

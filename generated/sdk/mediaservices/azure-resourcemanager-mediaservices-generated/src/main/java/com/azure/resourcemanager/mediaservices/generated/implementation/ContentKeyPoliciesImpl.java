@@ -100,6 +100,20 @@ public final class ContentKeyPoliciesImpl implements ContentKeyPolicies {
         }
     }
 
+    public ContentKeyPolicy getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        String contentKeyPolicyName = Utils.getValueFromIdByName(id, "contentKeyPolicies");
+        return this.getWithResponse(resourceGroupName, accountName, contentKeyPolicyName, Context.NONE).getValue();
+    }
+
+    public Response<ContentKeyPolicy> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        String contentKeyPolicyName = Utils.getValueFromIdByName(id, "contentKeyPolicies");
+        return this.getWithResponse(resourceGroupName, accountName, contentKeyPolicyName, context);
+    }
+
     private ContentKeyPoliciesClient serviceClient() {
         return this.innerClient;
     }

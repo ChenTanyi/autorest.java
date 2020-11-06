@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.TldLegalAgreementInner;
 
 /** An immutable client-side representation of TldLegalAgreement. */
-@Immutable
 public interface TldLegalAgreement {
     /**
      * Gets the agreementKey property: Unique identifier for the agreement.

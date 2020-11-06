@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.AzureReachabilityReportInner;
 import java.util.List;
 
 /** An immutable client-side representation of AzureReachabilityReport. */
-@Immutable
 public interface AzureReachabilityReport {
     /**
      * Gets the aggregationLevel property: The aggregation level of Azure reachability report. Can be Country, State or

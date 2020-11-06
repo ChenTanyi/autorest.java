@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.mysql.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.mysql.generated.fluent.models.AdvisorInner;
 
 /** An immutable client-side representation of Advisor. */
-@Immutable
 public interface Advisor {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

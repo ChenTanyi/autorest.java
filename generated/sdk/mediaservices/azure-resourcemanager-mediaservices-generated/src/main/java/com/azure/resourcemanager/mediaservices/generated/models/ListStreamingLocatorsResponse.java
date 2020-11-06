@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.mediaservices.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.ListStreamingLocatorsResponseInner;
 import java.util.List;
 
 /** An immutable client-side representation of ListStreamingLocatorsResponse. */
-@Immutable
 public interface ListStreamingLocatorsResponse {
     /**
      * Gets the streamingLocators property: The list of Streaming Locators.

@@ -99,7 +99,7 @@ public final class HubRouteTableImpl implements HubRouteTable, HubRouteTable.Def
             serviceManager
                 .serviceClient()
                 .getHubRouteTables()
-                .createOrUpdate(resourceGroupName, virtualHubName, routeTableName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, virtualHubName, routeTableName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -108,7 +108,7 @@ public final class HubRouteTableImpl implements HubRouteTable, HubRouteTable.Def
             serviceManager
                 .serviceClient()
                 .getHubRouteTables()
-                .createOrUpdate(resourceGroupName, virtualHubName, routeTableName, innerObject, context);
+                .createOrUpdate(resourceGroupName, virtualHubName, routeTableName, this.innerModel(), context);
         return this;
     }
 
@@ -127,7 +127,7 @@ public final class HubRouteTableImpl implements HubRouteTable, HubRouteTable.Def
             serviceManager
                 .serviceClient()
                 .getHubRouteTables()
-                .createOrUpdate(resourceGroupName, virtualHubName, routeTableName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, virtualHubName, routeTableName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -136,7 +136,7 @@ public final class HubRouteTableImpl implements HubRouteTable, HubRouteTable.Def
             serviceManager
                 .serviceClient()
                 .getHubRouteTables()
-                .createOrUpdate(resourceGroupName, virtualHubName, routeTableName, innerObject, context);
+                .createOrUpdate(resourceGroupName, virtualHubName, routeTableName, this.innerModel(), context);
         return this;
     }
 

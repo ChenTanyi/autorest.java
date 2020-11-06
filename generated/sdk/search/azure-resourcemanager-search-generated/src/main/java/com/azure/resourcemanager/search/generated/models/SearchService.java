@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.search.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.search.generated.fluent.models.SearchServiceInner;
@@ -13,7 +12,6 @@ import java.util.Map;
 import java.util.UUID;
 
 /** An immutable client-side representation of SearchService. */
-@Immutable
 public interface SearchService {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

@@ -343,7 +343,7 @@ public final class ApplicationGatewayImpl
             serviceManager
                 .serviceClient()
                 .getApplicationGateways()
-                .createOrUpdate(resourceGroupName, applicationGatewayName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, applicationGatewayName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -352,7 +352,7 @@ public final class ApplicationGatewayImpl
             serviceManager
                 .serviceClient()
                 .getApplicationGateways()
-                .createOrUpdate(resourceGroupName, applicationGatewayName, innerObject, context);
+                .createOrUpdate(resourceGroupName, applicationGatewayName, this.innerModel(), context);
         return this;
     }
 

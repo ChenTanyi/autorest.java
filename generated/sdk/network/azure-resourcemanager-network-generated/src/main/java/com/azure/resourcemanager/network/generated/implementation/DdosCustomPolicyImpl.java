@@ -110,7 +110,7 @@ public final class DdosCustomPolicyImpl
             serviceManager
                 .serviceClient()
                 .getDdosCustomPolicies()
-                .createOrUpdate(resourceGroupName, ddosCustomPolicyName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, ddosCustomPolicyName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -119,7 +119,7 @@ public final class DdosCustomPolicyImpl
             serviceManager
                 .serviceClient()
                 .getDdosCustomPolicies()
-                .createOrUpdate(resourceGroupName, ddosCustomPolicyName, innerObject, context);
+                .createOrUpdate(resourceGroupName, ddosCustomPolicyName, this.innerModel(), context);
         return this;
     }
 

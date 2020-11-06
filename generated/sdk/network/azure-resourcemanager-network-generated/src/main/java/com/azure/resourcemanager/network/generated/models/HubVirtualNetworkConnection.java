@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.management.SubResource;
 import com.azure.resourcemanager.network.generated.fluent.models.HubVirtualNetworkConnectionInner;
 
 /** An immutable client-side representation of HubVirtualNetworkConnection. */
-@Immutable
 public interface HubVirtualNetworkConnection {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

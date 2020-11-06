@@ -119,7 +119,7 @@ public final class FunctionEnvelopeImpl implements FunctionEnvelope, FunctionEnv
             serviceManager
                 .serviceClient()
                 .getWebApps()
-                .createFunction(resourceGroupName, name, functionName, innerObject, Context.NONE);
+                .createFunction(resourceGroupName, name, functionName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -128,7 +128,7 @@ public final class FunctionEnvelopeImpl implements FunctionEnvelope, FunctionEnv
             serviceManager
                 .serviceClient()
                 .getWebApps()
-                .createFunction(resourceGroupName, name, functionName, innerObject, context);
+                .createFunction(resourceGroupName, name, functionName, this.innerModel(), context);
         return this;
     }
 

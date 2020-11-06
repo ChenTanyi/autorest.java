@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.DnsNameAvailabilityResultInner;
 
 /** An immutable client-side representation of DnsNameAvailabilityResult. */
-@Immutable
 public interface DnsNameAvailabilityResult {
     /**
      * Gets the available property: Domain availability (True/False).

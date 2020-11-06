@@ -489,6 +489,18 @@ public final class AppServicePlansImpl implements AppServicePlans {
         return this.serviceClient().rebootWorkerWithResponse(resourceGroupName, name, workerName, context);
     }
 
+    public AppServicePlan getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "serverfarms");
+        return this.getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE).getValue();
+    }
+
+    public Response<AppServicePlan> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "serverfarms");
+        return this.getByResourceGroupWithResponse(resourceGroupName, name, context);
+    }
+
     private AppServicePlansClient serviceClient() {
         return this.innerClient;
     }

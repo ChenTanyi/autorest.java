@@ -104,6 +104,18 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
         this.serviceClient().delete(resourceGroupName, expressRouteGatewayName, context);
     }
 
+    public ExpressRouteGateway getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String expressRouteGatewayName = Utils.getValueFromIdByName(id, "expressRouteGateways");
+        return this.getByResourceGroupWithResponse(resourceGroupName, expressRouteGatewayName, Context.NONE).getValue();
+    }
+
+    public Response<ExpressRouteGateway> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String expressRouteGatewayName = Utils.getValueFromIdByName(id, "expressRouteGateways");
+        return this.getByResourceGroupWithResponse(resourceGroupName, expressRouteGatewayName, context);
+    }
+
     private ExpressRouteGatewaysClient serviceClient() {
         return this.innerClient;
     }

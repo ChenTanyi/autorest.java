@@ -123,7 +123,7 @@ public final class ContainerServiceImpl
             serviceManager
                 .serviceClient()
                 .getContainerServices()
-                .createOrUpdate(resourceGroupName, containerServiceName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, containerServiceName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -132,7 +132,7 @@ public final class ContainerServiceImpl
             serviceManager
                 .serviceClient()
                 .getContainerServices()
-                .createOrUpdate(resourceGroupName, containerServiceName, innerObject, context);
+                .createOrUpdate(resourceGroupName, containerServiceName, this.innerModel(), context);
         return this;
     }
 
@@ -151,7 +151,7 @@ public final class ContainerServiceImpl
             serviceManager
                 .serviceClient()
                 .getContainerServices()
-                .createOrUpdate(resourceGroupName, containerServiceName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, containerServiceName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -160,7 +160,7 @@ public final class ContainerServiceImpl
             serviceManager
                 .serviceClient()
                 .getContainerServices()
-                .createOrUpdate(resourceGroupName, containerServiceName, innerObject, context);
+                .createOrUpdate(resourceGroupName, containerServiceName, this.innerModel(), context);
         return this;
     }
 

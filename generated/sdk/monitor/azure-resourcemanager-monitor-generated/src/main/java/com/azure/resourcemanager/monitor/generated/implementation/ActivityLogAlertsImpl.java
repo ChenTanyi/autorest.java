@@ -79,6 +79,18 @@ public final class ActivityLogAlertsImpl implements ActivityLogAlerts {
         return inner.mapPage(inner1 -> new ActivityLogAlertResourceImpl(inner1, this.manager()));
     }
 
+    public ActivityLogAlertResource getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String activityLogAlertName = Utils.getValueFromIdByName(id, "activityLogAlerts");
+        return this.getByResourceGroupWithResponse(resourceGroupName, activityLogAlertName, Context.NONE).getValue();
+    }
+
+    public Response<ActivityLogAlertResource> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String activityLogAlertName = Utils.getValueFromIdByName(id, "activityLogAlerts");
+        return this.getByResourceGroupWithResponse(resourceGroupName, activityLogAlertName, context);
+    }
+
     private ActivityLogAlertsClient serviceClient() {
         return this.innerClient;
     }

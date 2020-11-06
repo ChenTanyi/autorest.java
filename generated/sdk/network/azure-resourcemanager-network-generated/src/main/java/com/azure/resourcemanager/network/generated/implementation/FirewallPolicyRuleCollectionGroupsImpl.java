@@ -75,6 +75,22 @@ public final class FirewallPolicyRuleCollectionGroupsImpl implements FirewallPol
         return inner.mapPage(inner1 -> new FirewallPolicyRuleCollectionGroupImpl(inner1, this.manager()));
     }
 
+    public FirewallPolicyRuleCollectionGroup getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String firewallPolicyName = Utils.getValueFromIdByName(id, "firewallPolicies");
+        String ruleCollectionGroupName = Utils.getValueFromIdByName(id, "ruleCollectionGroups");
+        return this
+            .getWithResponse(resourceGroupName, firewallPolicyName, ruleCollectionGroupName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<FirewallPolicyRuleCollectionGroup> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String firewallPolicyName = Utils.getValueFromIdByName(id, "firewallPolicies");
+        String ruleCollectionGroupName = Utils.getValueFromIdByName(id, "ruleCollectionGroups");
+        return this.getWithResponse(resourceGroupName, firewallPolicyName, ruleCollectionGroupName, context);
+    }
+
     private FirewallPolicyRuleCollectionGroupsClient serviceClient() {
         return this.innerClient;
     }

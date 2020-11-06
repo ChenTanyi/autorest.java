@@ -103,7 +103,7 @@ public final class MediaServiceImpl implements MediaService, MediaService.Defini
             serviceManager
                 .serviceClient()
                 .getMediaservices()
-                .createOrUpdateWithResponse(resourceGroupName, accountName, innerObject, Context.NONE)
+                .createOrUpdateWithResponse(resourceGroupName, accountName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -113,7 +113,7 @@ public final class MediaServiceImpl implements MediaService, MediaService.Defini
             serviceManager
                 .serviceClient()
                 .getMediaservices()
-                .createOrUpdateWithResponse(resourceGroupName, accountName, innerObject, context)
+                .createOrUpdateWithResponse(resourceGroupName, accountName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -133,7 +133,7 @@ public final class MediaServiceImpl implements MediaService, MediaService.Defini
             serviceManager
                 .serviceClient()
                 .getMediaservices()
-                .updateWithResponse(resourceGroupName, accountName, innerObject, Context.NONE)
+                .updateWithResponse(resourceGroupName, accountName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -143,7 +143,7 @@ public final class MediaServiceImpl implements MediaService, MediaService.Defini
             serviceManager
                 .serviceClient()
                 .getMediaservices()
-                .updateWithResponse(resourceGroupName, accountName, innerObject, context)
+                .updateWithResponse(resourceGroupName, accountName, this.innerModel(), context)
                 .getValue();
         return this;
     }

@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.iothub.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.iothub.generated.fluent.models.IotHubSkuDescriptionInner;
 
 /** An immutable client-side representation of IotHubSkuDescription. */
-@Immutable
 public interface IotHubSkuDescription {
     /**
      * Gets the resourceType property: The type of the resource.

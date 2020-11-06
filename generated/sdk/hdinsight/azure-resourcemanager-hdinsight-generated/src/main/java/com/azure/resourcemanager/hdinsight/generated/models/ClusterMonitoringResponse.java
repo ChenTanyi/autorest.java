@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.hdinsight.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.ClusterMonitoringResponseInner;
 
 /** An immutable client-side representation of ClusterMonitoringResponse. */
-@Immutable
 public interface ClusterMonitoringResponse {
     /**
      * Gets the clusterMonitoringEnabled property: The status of the Operations Management Suite (OMS) on the HDInsight

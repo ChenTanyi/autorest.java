@@ -94,6 +94,29 @@ public interface Transforms {
         String resourceGroupName, String accountName, String transformName, Context context);
 
     /**
+     * Gets a Transform.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a Transform.
+     */
+    Transform getById(String id);
+
+    /**
+     * Gets a Transform.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a Transform.
+     */
+    Response<Transform> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new Transform resource.
      *
      * @param name resource name.

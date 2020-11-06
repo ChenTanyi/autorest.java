@@ -113,7 +113,7 @@ public final class AvailabilitySetImpl implements AvailabilitySet, AvailabilityS
             serviceManager
                 .serviceClient()
                 .getAvailabilitySets()
-                .createOrUpdateWithResponse(resourceGroupName, availabilitySetName, innerObject, Context.NONE)
+                .createOrUpdateWithResponse(resourceGroupName, availabilitySetName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -123,7 +123,7 @@ public final class AvailabilitySetImpl implements AvailabilitySet, AvailabilityS
             serviceManager
                 .serviceClient()
                 .getAvailabilitySets()
-                .createOrUpdateWithResponse(resourceGroupName, availabilitySetName, innerObject, context)
+                .createOrUpdateWithResponse(resourceGroupName, availabilitySetName, this.innerModel(), context)
                 .getValue();
         return this;
     }

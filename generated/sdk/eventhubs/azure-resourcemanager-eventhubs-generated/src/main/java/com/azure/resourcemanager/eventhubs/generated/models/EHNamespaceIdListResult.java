@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.eventhubs.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.EHNamespaceIdListResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of EHNamespaceIdListResult. */
-@Immutable
 public interface EHNamespaceIdListResult {
     /**
      * Gets the value property: Result of the List Namespace IDs operation.

@@ -76,7 +76,8 @@ public final class TransformImpl implements Transform, Transform.Definition, Tra
             serviceManager
                 .serviceClient()
                 .getTransforms()
-                .createOrUpdateWithResponse(resourceGroupName, accountName, transformName, innerObject, Context.NONE)
+                .createOrUpdateWithResponse(
+                    resourceGroupName, accountName, transformName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -86,7 +87,7 @@ public final class TransformImpl implements Transform, Transform.Definition, Tra
             serviceManager
                 .serviceClient()
                 .getTransforms()
-                .createOrUpdateWithResponse(resourceGroupName, accountName, transformName, innerObject, context)
+                .createOrUpdateWithResponse(resourceGroupName, accountName, transformName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -106,7 +107,7 @@ public final class TransformImpl implements Transform, Transform.Definition, Tra
             serviceManager
                 .serviceClient()
                 .getTransforms()
-                .updateWithResponse(resourceGroupName, accountName, transformName, innerObject, Context.NONE)
+                .updateWithResponse(resourceGroupName, accountName, transformName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -116,7 +117,7 @@ public final class TransformImpl implements Transform, Transform.Definition, Tra
             serviceManager
                 .serviceClient()
                 .getTransforms()
-                .updateWithResponse(resourceGroupName, accountName, transformName, innerObject, context)
+                .updateWithResponse(resourceGroupName, accountName, transformName, this.innerModel(), context)
                 .getValue();
         return this;
     }

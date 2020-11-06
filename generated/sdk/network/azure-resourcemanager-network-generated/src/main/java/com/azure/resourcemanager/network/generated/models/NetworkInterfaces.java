@@ -337,6 +337,30 @@ public interface NetworkInterfaces {
         Context context);
 
     /**
+     * Gets information about the specified network interface.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about the specified network interface.
+     */
+    NetworkInterface getById(String id);
+
+    /**
+     * Gets information about the specified network interface.
+     *
+     * @param id the id of the resource.
+     * @param expand Expands referenced resources.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about the specified network interface.
+     */
+    Response<NetworkInterface> getByIdWithResponse(String id, String expand, Context context);
+
+    /**
      * Begins definition for a new NetworkInterface resource.
      *
      * @param name resource name.

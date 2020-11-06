@@ -78,6 +78,20 @@ public final class VpnServerConfigurationsImpl implements VpnServerConfiguration
         return inner.mapPage(inner1 -> new VpnServerConfigurationImpl(inner1, this.manager()));
     }
 
+    public VpnServerConfiguration getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String vpnServerConfigurationName = Utils.getValueFromIdByName(id, "vpnServerConfigurations");
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, vpnServerConfigurationName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<VpnServerConfiguration> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String vpnServerConfigurationName = Utils.getValueFromIdByName(id, "vpnServerConfigurations");
+        return this.getByResourceGroupWithResponse(resourceGroupName, vpnServerConfigurationName, context);
+    }
+
     private VpnServerConfigurationsClient serviceClient() {
         return this.innerClient;
     }

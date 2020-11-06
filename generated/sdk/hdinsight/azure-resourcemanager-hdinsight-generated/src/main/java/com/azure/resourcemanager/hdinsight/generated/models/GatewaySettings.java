@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.hdinsight.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.GatewaySettingsInner;
 
 /** An immutable client-side representation of GatewaySettings. */
-@Immutable
 public interface GatewaySettings {
     /**
      * Gets the isCredentialEnabled property: Indicates whether or not the gateway settings based authorization is

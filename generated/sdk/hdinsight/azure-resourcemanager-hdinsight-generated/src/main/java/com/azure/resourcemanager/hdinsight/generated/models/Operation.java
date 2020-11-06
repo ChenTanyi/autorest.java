@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.hdinsight.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.OperationInner;
 
 /** An immutable client-side representation of Operation. */
-@Immutable
 public interface Operation {
     /**
      * Gets the name property: The operation name: {provider}/{resource}/{operation}.

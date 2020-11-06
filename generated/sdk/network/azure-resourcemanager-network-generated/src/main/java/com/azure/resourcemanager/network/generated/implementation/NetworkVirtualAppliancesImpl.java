@@ -80,6 +80,21 @@ public final class NetworkVirtualAppliancesImpl implements NetworkVirtualApplian
         return inner.mapPage(inner1 -> new NetworkVirtualApplianceImpl(inner1, this.manager()));
     }
 
+    public NetworkVirtualAppliance getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String networkVirtualApplianceName = Utils.getValueFromIdByName(id, "networkVirtualAppliances");
+        String localExpand = null;
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, networkVirtualApplianceName, localExpand, Context.NONE)
+            .getValue();
+    }
+
+    public Response<NetworkVirtualAppliance> getByIdWithResponse(String id, String expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String networkVirtualApplianceName = Utils.getValueFromIdByName(id, "networkVirtualAppliances");
+        return this.getByResourceGroupWithResponse(resourceGroupName, networkVirtualApplianceName, expand, context);
+    }
+
     private NetworkVirtualAppliancesClient serviceClient() {
         return this.innerClient;
     }

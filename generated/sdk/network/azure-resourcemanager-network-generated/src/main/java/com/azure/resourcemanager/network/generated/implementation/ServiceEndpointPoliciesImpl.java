@@ -80,6 +80,21 @@ public final class ServiceEndpointPoliciesImpl implements ServiceEndpointPolicie
         return inner.mapPage(inner1 -> new ServiceEndpointPolicyImpl(inner1, this.manager()));
     }
 
+    public ServiceEndpointPolicy getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String serviceEndpointPolicyName = Utils.getValueFromIdByName(id, "serviceEndpointPolicies");
+        String localExpand = null;
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, serviceEndpointPolicyName, localExpand, Context.NONE)
+            .getValue();
+    }
+
+    public Response<ServiceEndpointPolicy> getByIdWithResponse(String id, String expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String serviceEndpointPolicyName = Utils.getValueFromIdByName(id, "serviceEndpointPolicies");
+        return this.getByResourceGroupWithResponse(resourceGroupName, serviceEndpointPolicyName, expand, context);
+    }
+
     private ServiceEndpointPoliciesClient serviceClient() {
         return this.innerClient;
     }

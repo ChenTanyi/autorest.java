@@ -126,7 +126,7 @@ public final class P2SVpnGatewayImpl implements P2SVpnGateway, P2SVpnGateway.Def
             serviceManager
                 .serviceClient()
                 .getP2SVpnGateways()
-                .createOrUpdate(resourceGroupName, gatewayName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, gatewayName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -135,7 +135,7 @@ public final class P2SVpnGatewayImpl implements P2SVpnGateway, P2SVpnGateway.Def
             serviceManager
                 .serviceClient()
                 .getP2SVpnGateways()
-                .createOrUpdate(resourceGroupName, gatewayName, innerObject, context);
+                .createOrUpdate(resourceGroupName, gatewayName, this.innerModel(), context);
         return this;
     }
 

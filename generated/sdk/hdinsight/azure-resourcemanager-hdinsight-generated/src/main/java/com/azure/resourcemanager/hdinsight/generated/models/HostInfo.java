@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.hdinsight.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.HostInfoInner;
 
 /** An immutable client-side representation of HostInfo. */
-@Immutable
 public interface HostInfo {
     /**
      * Gets the name property: The host name.

@@ -265,13 +265,16 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
             serviceManager
                 .serviceClient()
                 .getWebApps()
-                .createOrUpdate(resourceGroupName, name, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, name, this.innerModel(), Context.NONE);
         return this;
     }
 
     public Site create(Context context) {
         this.innerObject =
-            serviceManager.serviceClient().getWebApps().createOrUpdate(resourceGroupName, name, innerObject, context);
+            serviceManager
+                .serviceClient()
+                .getWebApps()
+                .createOrUpdate(resourceGroupName, name, this.innerModel(), context);
         return this;
     }
 

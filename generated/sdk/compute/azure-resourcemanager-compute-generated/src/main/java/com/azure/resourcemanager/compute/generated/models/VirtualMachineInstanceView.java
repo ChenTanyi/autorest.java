@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineInstanceViewInner;
 import java.util.List;
 
 /** An immutable client-side representation of VirtualMachineInstanceView. */
-@Immutable
 public interface VirtualMachineInstanceView {
     /**
      * Gets the platformUpdateDomain property: Specifies the update domain of the virtual machine.

@@ -487,6 +487,18 @@ public final class StaticSitesImpl implements StaticSites {
             .resetStaticSiteApiKeyWithResponse(resourceGroupName, name, resetPropertiesEnvelope, context);
     }
 
+    public StaticSiteArmResource getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "staticSites");
+        return this.getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE).getValue();
+    }
+
+    public Response<StaticSiteArmResource> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "staticSites");
+        return this.getByResourceGroupWithResponse(resourceGroupName, name, context);
+    }
+
     private StaticSitesClient serviceClient() {
         return this.innerClient;
     }

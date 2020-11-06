@@ -146,7 +146,7 @@ public final class WebApplicationFirewallPolicyImpl
             serviceManager
                 .serviceClient()
                 .getWebApplicationFirewallPolicies()
-                .createOrUpdateWithResponse(resourceGroupName, policyName, innerObject, Context.NONE)
+                .createOrUpdateWithResponse(resourceGroupName, policyName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -156,7 +156,7 @@ public final class WebApplicationFirewallPolicyImpl
             serviceManager
                 .serviceClient()
                 .getWebApplicationFirewallPolicies()
-                .createOrUpdateWithResponse(resourceGroupName, policyName, innerObject, context)
+                .createOrUpdateWithResponse(resourceGroupName, policyName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -176,7 +176,7 @@ public final class WebApplicationFirewallPolicyImpl
             serviceManager
                 .serviceClient()
                 .getWebApplicationFirewallPolicies()
-                .createOrUpdateWithResponse(resourceGroupName, policyName, innerObject, Context.NONE)
+                .createOrUpdateWithResponse(resourceGroupName, policyName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -186,7 +186,7 @@ public final class WebApplicationFirewallPolicyImpl
             serviceManager
                 .serviceClient()
                 .getWebApplicationFirewallPolicies()
-                .createOrUpdateWithResponse(resourceGroupName, policyName, innerObject, context)
+                .createOrUpdateWithResponse(resourceGroupName, policyName, this.innerModel(), context)
                 .getValue();
         return this;
     }

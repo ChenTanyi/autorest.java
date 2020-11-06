@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.BgpPeerStatusListResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of BgpPeerStatusListResult. */
-@Immutable
 public interface BgpPeerStatusListResult {
     /**
      * Gets the value property: List of BGP peers.

@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ContinuousWebJobInner;
 import java.util.Map;
 
 /** An immutable client-side representation of ContinuousWebJob. */
-@Immutable
 public interface ContinuousWebJob {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

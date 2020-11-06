@@ -72,6 +72,18 @@ public final class QueueServicesImpl implements QueueServices {
         }
     }
 
+    public QueueServiceProperties getServicePropertiesById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        return this.getServicePropertiesWithResponse(resourceGroupName, accountName, Context.NONE).getValue();
+    }
+
+    public Response<QueueServiceProperties> getServicePropertiesByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        return this.getServicePropertiesWithResponse(resourceGroupName, accountName, context);
+    }
+
     private QueueServicesClient serviceClient() {
         return this.innerClient;
     }

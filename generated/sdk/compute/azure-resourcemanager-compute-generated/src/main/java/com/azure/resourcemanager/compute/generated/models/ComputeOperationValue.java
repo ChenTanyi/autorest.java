@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.compute.generated.fluent.models.ComputeOperationValueInner;
 
 /** An immutable client-side representation of ComputeOperationValue. */
-@Immutable
 public interface ComputeOperationValue {
     /**
      * Gets the origin property: The origin of the compute operation.

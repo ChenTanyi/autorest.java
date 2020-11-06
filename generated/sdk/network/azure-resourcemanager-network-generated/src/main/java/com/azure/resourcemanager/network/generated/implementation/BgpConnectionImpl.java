@@ -73,7 +73,7 @@ public final class BgpConnectionImpl implements BgpConnection, BgpConnection.Def
             serviceManager
                 .serviceClient()
                 .getVirtualHubBgpConnections()
-                .createOrUpdate(resourceGroupName, virtualHubName, connectionName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, virtualHubName, connectionName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -82,7 +82,7 @@ public final class BgpConnectionImpl implements BgpConnection, BgpConnection.Def
             serviceManager
                 .serviceClient()
                 .getVirtualHubBgpConnections()
-                .createOrUpdate(resourceGroupName, virtualHubName, connectionName, innerObject, context);
+                .createOrUpdate(resourceGroupName, virtualHubName, connectionName, this.innerModel(), context);
         return this;
     }
 
@@ -101,7 +101,7 @@ public final class BgpConnectionImpl implements BgpConnection, BgpConnection.Def
             serviceManager
                 .serviceClient()
                 .getVirtualHubBgpConnections()
-                .createOrUpdate(resourceGroupName, virtualHubName, connectionName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, virtualHubName, connectionName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -110,7 +110,7 @@ public final class BgpConnectionImpl implements BgpConnection, BgpConnection.Def
             serviceManager
                 .serviceClient()
                 .getVirtualHubBgpConnections()
-                .createOrUpdate(resourceGroupName, virtualHubName, connectionName, innerObject, context);
+                .createOrUpdate(resourceGroupName, virtualHubName, connectionName, this.innerModel(), context);
         return this;
     }
 

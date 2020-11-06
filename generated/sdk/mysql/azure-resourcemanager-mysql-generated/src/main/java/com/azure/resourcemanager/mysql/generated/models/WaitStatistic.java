@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.mysql.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.mysql.generated.fluent.models.WaitStatisticInner;
 import java.time.OffsetDateTime;
 
 /** An immutable client-side representation of WaitStatistic. */
-@Immutable
 public interface WaitStatistic {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.KeyVaultReferenceCollectionInner;
 import java.util.Map;
 
 /** An immutable client-side representation of KeyVaultReferenceCollection. */
-@Immutable
 public interface KeyVaultReferenceCollection {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

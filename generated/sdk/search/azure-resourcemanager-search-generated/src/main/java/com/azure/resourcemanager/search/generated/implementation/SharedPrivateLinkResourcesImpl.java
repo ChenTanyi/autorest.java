@@ -96,6 +96,26 @@ public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkRe
         return inner.mapPage(inner1 -> new SharedPrivateLinkResourceImpl(inner1, this.manager()));
     }
 
+    public SharedPrivateLinkResource getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String searchServiceName = Utils.getValueFromIdByName(id, "searchServices");
+        String sharedPrivateLinkResourceName = Utils.getValueFromIdByName(id, "sharedPrivateLinkResources");
+        UUID localClientRequestId = null;
+        return this
+            .getWithResponse(
+                resourceGroupName, searchServiceName, sharedPrivateLinkResourceName, localClientRequestId, Context.NONE)
+            .getValue();
+    }
+
+    public Response<SharedPrivateLinkResource> getByIdWithResponse(String id, UUID clientRequestId, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String searchServiceName = Utils.getValueFromIdByName(id, "searchServices");
+        String sharedPrivateLinkResourceName = Utils.getValueFromIdByName(id, "sharedPrivateLinkResources");
+        return this
+            .getWithResponse(
+                resourceGroupName, searchServiceName, sharedPrivateLinkResourceName, clientRequestId, context);
+    }
+
     private SharedPrivateLinkResourcesClient serviceClient() {
         return this.innerClient;
     }

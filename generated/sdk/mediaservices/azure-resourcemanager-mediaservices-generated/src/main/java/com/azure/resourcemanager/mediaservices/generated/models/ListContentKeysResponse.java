@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.mediaservices.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.ListContentKeysResponseInner;
 import java.util.List;
 
 /** An immutable client-side representation of ListContentKeysResponse. */
-@Immutable
 public interface ListContentKeysResponse {
     /**
      * Gets the contentKeys property: ContentKeys used by current Streaming Locator.

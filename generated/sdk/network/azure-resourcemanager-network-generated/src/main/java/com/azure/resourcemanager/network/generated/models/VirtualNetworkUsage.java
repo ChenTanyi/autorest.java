@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkUsageInner;
 
 /** An immutable client-side representation of VirtualNetworkUsage. */
-@Immutable
 public interface VirtualNetworkUsage {
     /**
      * Gets the currentValue property: Indicates number of IPs used from the Subnet.

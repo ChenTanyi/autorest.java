@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.mediaservices.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.StorageEncryptedAssetDecryptionDataInner;
 import java.util.List;
 
 /** An immutable client-side representation of StorageEncryptedAssetDecryptionData. */
-@Immutable
 public interface StorageEncryptedAssetDecryptionData {
     /**
      * Gets the key property: The Asset File storage encryption key.

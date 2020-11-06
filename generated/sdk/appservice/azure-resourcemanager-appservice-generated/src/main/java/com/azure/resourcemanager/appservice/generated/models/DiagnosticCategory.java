@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DiagnosticCategoryInner;
 
 /** An immutable client-side representation of DiagnosticCategory. */
-@Immutable
 public interface DiagnosticCategory {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

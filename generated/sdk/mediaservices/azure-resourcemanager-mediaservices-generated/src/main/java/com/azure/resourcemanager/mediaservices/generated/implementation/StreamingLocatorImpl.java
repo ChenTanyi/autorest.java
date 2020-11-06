@@ -111,7 +111,8 @@ public final class StreamingLocatorImpl implements StreamingLocator, StreamingLo
             serviceManager
                 .serviceClient()
                 .getStreamingLocators()
-                .createWithResponse(resourceGroupName, accountName, streamingLocatorName, innerObject, Context.NONE)
+                .createWithResponse(
+                    resourceGroupName, accountName, streamingLocatorName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -121,7 +122,7 @@ public final class StreamingLocatorImpl implements StreamingLocator, StreamingLo
             serviceManager
                 .serviceClient()
                 .getStreamingLocators()
-                .createWithResponse(resourceGroupName, accountName, streamingLocatorName, innerObject, context)
+                .createWithResponse(resourceGroupName, accountName, streamingLocatorName, this.innerModel(), context)
                 .getValue();
         return this;
     }

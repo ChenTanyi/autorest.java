@@ -76,6 +76,18 @@ public final class BastionHostsImpl implements BastionHosts {
         return inner.mapPage(inner1 -> new BastionHostImpl(inner1, this.manager()));
     }
 
+    public BastionHost getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String bastionHostname = Utils.getValueFromIdByName(id, "bastionHosts");
+        return this.getByResourceGroupWithResponse(resourceGroupName, bastionHostname, Context.NONE).getValue();
+    }
+
+    public Response<BastionHost> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String bastionHostname = Utils.getValueFromIdByName(id, "bastionHosts");
+        return this.getByResourceGroupWithResponse(resourceGroupName, bastionHostname, context);
+    }
+
     private BastionHostsClient serviceClient() {
         return this.innerClient;
     }

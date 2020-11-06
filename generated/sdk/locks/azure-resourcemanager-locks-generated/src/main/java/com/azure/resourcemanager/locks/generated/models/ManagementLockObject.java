@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.locks.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.locks.generated.fluent.models.ManagementLockObjectInner;
 import java.util.List;
 
 /** An immutable client-side representation of ManagementLockObject. */
-@Immutable
 public interface ManagementLockObject {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

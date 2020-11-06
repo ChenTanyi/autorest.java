@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.monitor.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.monitor.generated.fluent.models.CalculateBaselineResponseInner;
 import java.time.OffsetDateTime;
 import java.util.List;
 
 /** An immutable client-side representation of CalculateBaselineResponse. */
-@Immutable
 public interface CalculateBaselineResponse {
     /**
      * Gets the type property: the resource type of the baseline resource.

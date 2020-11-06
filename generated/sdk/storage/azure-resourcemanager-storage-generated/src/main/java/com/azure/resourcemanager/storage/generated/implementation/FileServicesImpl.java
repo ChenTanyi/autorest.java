@@ -72,6 +72,18 @@ public final class FileServicesImpl implements FileServices {
         }
     }
 
+    public FileServiceProperties getServicePropertiesById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        return this.getServicePropertiesWithResponse(resourceGroupName, accountName, Context.NONE).getValue();
+    }
+
+    public Response<FileServiceProperties> getServicePropertiesByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        return this.getServicePropertiesWithResponse(resourceGroupName, accountName, context);
+    }
+
     private FileServicesClient serviceClient() {
         return this.innerClient;
     }

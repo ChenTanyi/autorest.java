@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.iothub.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.iothub.generated.fluent.models.CertificateListDescriptionInner;
 import java.util.List;
 
 /** An immutable client-side representation of CertificateListDescription. */
-@Immutable
 public interface CertificateListDescription {
     /**
      * Gets the value property: The array of Certificate objects.

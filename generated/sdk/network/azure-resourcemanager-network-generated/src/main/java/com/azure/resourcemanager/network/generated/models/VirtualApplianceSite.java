@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualApplianceSiteInner;
 
 /** An immutable client-side representation of VirtualApplianceSite. */
-@Immutable
 public interface VirtualApplianceSite {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

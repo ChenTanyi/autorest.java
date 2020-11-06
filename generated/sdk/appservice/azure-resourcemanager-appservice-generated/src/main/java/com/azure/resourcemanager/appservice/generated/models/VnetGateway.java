@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetGatewayInner;
 
 /** An immutable client-side representation of VnetGateway. */
-@Immutable
 public interface VnetGateway {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

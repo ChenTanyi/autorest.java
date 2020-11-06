@@ -67,6 +67,20 @@ public final class AccountFiltersImpl implements AccountFilters {
         return this.serviceClient().deleteWithResponse(resourceGroupName, accountName, filterName, context);
     }
 
+    public AccountFilter getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        String filterName = Utils.getValueFromIdByName(id, "accountFilters");
+        return this.getWithResponse(resourceGroupName, accountName, filterName, Context.NONE).getValue();
+    }
+
+    public Response<AccountFilter> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        String filterName = Utils.getValueFromIdByName(id, "accountFilters");
+        return this.getWithResponse(resourceGroupName, accountName, filterName, context);
+    }
+
     private AccountFiltersClient serviceClient() {
         return this.innerClient;
     }

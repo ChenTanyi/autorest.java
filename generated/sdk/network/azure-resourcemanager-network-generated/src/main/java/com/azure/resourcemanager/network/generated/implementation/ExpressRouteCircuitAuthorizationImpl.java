@@ -73,7 +73,7 @@ public final class ExpressRouteCircuitAuthorizationImpl
             serviceManager
                 .serviceClient()
                 .getExpressRouteCircuitAuthorizations()
-                .createOrUpdate(resourceGroupName, circuitName, authorizationName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, circuitName, authorizationName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -82,7 +82,7 @@ public final class ExpressRouteCircuitAuthorizationImpl
             serviceManager
                 .serviceClient()
                 .getExpressRouteCircuitAuthorizations()
-                .createOrUpdate(resourceGroupName, circuitName, authorizationName, innerObject, context);
+                .createOrUpdate(resourceGroupName, circuitName, authorizationName, this.innerModel(), context);
         return this;
     }
 
@@ -101,7 +101,7 @@ public final class ExpressRouteCircuitAuthorizationImpl
             serviceManager
                 .serviceClient()
                 .getExpressRouteCircuitAuthorizations()
-                .createOrUpdate(resourceGroupName, circuitName, authorizationName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, circuitName, authorizationName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -110,7 +110,7 @@ public final class ExpressRouteCircuitAuthorizationImpl
             serviceManager
                 .serviceClient()
                 .getExpressRouteCircuitAuthorizations()
-                .createOrUpdate(resourceGroupName, circuitName, authorizationName, innerObject, context);
+                .createOrUpdate(resourceGroupName, circuitName, authorizationName, this.innerModel(), context);
         return this;
     }
 

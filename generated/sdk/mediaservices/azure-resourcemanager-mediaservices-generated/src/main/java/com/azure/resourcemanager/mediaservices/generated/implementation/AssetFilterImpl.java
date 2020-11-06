@@ -77,7 +77,7 @@ public final class AssetFilterImpl implements AssetFilter, AssetFilter.Definitio
                 .serviceClient()
                 .getAssetFilters()
                 .createOrUpdateWithResponse(
-                    resourceGroupName, accountName, assetName, filterName, innerObject, Context.NONE)
+                    resourceGroupName, accountName, assetName, filterName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -87,7 +87,8 @@ public final class AssetFilterImpl implements AssetFilter, AssetFilter.Definitio
             serviceManager
                 .serviceClient()
                 .getAssetFilters()
-                .createOrUpdateWithResponse(resourceGroupName, accountName, assetName, filterName, innerObject, context)
+                .createOrUpdateWithResponse(
+                    resourceGroupName, accountName, assetName, filterName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -107,7 +108,8 @@ public final class AssetFilterImpl implements AssetFilter, AssetFilter.Definitio
             serviceManager
                 .serviceClient()
                 .getAssetFilters()
-                .updateWithResponse(resourceGroupName, accountName, assetName, filterName, innerObject, Context.NONE)
+                .updateWithResponse(
+                    resourceGroupName, accountName, assetName, filterName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -117,7 +119,7 @@ public final class AssetFilterImpl implements AssetFilter, AssetFilter.Definitio
             serviceManager
                 .serviceClient()
                 .getAssetFilters()
-                .updateWithResponse(resourceGroupName, accountName, assetName, filterName, innerObject, context)
+                .updateWithResponse(resourceGroupName, accountName, assetName, filterName, this.innerModel(), context)
                 .getValue();
         return this;
     }

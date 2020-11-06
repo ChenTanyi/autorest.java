@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.keyvault.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.PrivateLinkResourceListResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of PrivateLinkResourceListResult. */
-@Immutable
 public interface PrivateLinkResourceListResult {
     /**
      * Gets the value property: Array of private link resources.

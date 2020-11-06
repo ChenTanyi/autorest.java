@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.authorization.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.authorization.generated.fluent.models.DenyAssignmentInner;
 import java.util.List;
 
 /** An immutable client-side representation of DenyAssignment. */
-@Immutable
 public interface DenyAssignment {
     /**
      * Gets the id property: The deny assignment ID.

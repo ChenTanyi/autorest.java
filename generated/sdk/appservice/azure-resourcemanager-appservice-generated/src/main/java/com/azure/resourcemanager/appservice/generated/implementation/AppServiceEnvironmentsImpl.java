@@ -567,6 +567,32 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         return inner.mapPage(inner1 -> new UsageImpl(inner1, this.manager()));
     }
 
+    public AppServiceEnvironmentResource getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
+        return this.getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE).getValue();
+    }
+
+    public Response<AppServiceEnvironmentResource> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
+        return this.getByResourceGroupWithResponse(resourceGroupName, name, context);
+    }
+
+    public WorkerPoolResource getWorkerPoolById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
+        String workerPoolName = Utils.getValueFromIdByName(id, "workerPools");
+        return this.getWorkerPoolWithResponse(resourceGroupName, name, workerPoolName, Context.NONE).getValue();
+    }
+
+    public Response<WorkerPoolResource> getWorkerPoolByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
+        String workerPoolName = Utils.getValueFromIdByName(id, "workerPools");
+        return this.getWorkerPoolWithResponse(resourceGroupName, name, workerPoolName, context);
+    }
+
     private AppServiceEnvironmentsClient serviceClient() {
         return this.innerClient;
     }

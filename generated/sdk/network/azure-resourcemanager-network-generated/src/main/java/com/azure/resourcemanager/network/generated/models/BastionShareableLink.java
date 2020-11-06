@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.management.Resource;
 import com.azure.resourcemanager.network.generated.fluent.models.BastionShareableLinkInner;
 
 /** An immutable client-side representation of BastionShareableLink. */
-@Immutable
 public interface BastionShareableLink {
     /**
      * Gets the vm property: Reference of the virtual machine resource.

@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.storage.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.storage.generated.fluent.models.FileServiceItemsInner;
 import java.util.List;
 
 /** An immutable client-side representation of FileServiceItems. */
-@Immutable
 public interface FileServiceItems {
     /**
      * Gets the value property: List of file services returned.

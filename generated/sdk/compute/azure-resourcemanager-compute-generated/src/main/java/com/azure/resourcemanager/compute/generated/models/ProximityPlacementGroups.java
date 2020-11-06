@@ -106,6 +106,31 @@ public interface ProximityPlacementGroups {
     PagedIterable<ProximityPlacementGroup> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
+     * Retrieves information about a proximity placement group .
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies information about the proximity placement group.
+     */
+    ProximityPlacementGroup getById(String id);
+
+    /**
+     * Retrieves information about a proximity placement group .
+     *
+     * @param id the id of the resource.
+     * @param includeColocationStatus includeColocationStatus=true enables fetching the colocation status of all the
+     *     resources in the proximity placement group.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies information about the proximity placement group.
+     */
+    Response<ProximityPlacementGroup> getByIdWithResponse(String id, String includeColocationStatus, Context context);
+
+    /**
      * Begins definition for a new ProximityPlacementGroup resource.
      *
      * @param name resource name.

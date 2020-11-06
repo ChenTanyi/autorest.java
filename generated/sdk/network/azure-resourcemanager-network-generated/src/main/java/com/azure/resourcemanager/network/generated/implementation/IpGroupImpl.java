@@ -113,7 +113,7 @@ public final class IpGroupImpl implements IpGroup, IpGroup.Definition, IpGroup.U
             serviceManager
                 .serviceClient()
                 .getIpGroups()
-                .createOrUpdate(resourceGroupName, ipGroupsName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, ipGroupsName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -122,7 +122,7 @@ public final class IpGroupImpl implements IpGroup, IpGroup.Definition, IpGroup.U
             serviceManager
                 .serviceClient()
                 .getIpGroups()
-                .createOrUpdate(resourceGroupName, ipGroupsName, innerObject, context);
+                .createOrUpdate(resourceGroupName, ipGroupsName, this.innerModel(), context);
         return this;
     }
 
@@ -165,23 +165,23 @@ public final class IpGroupImpl implements IpGroup, IpGroup.Definition, IpGroup.U
     }
 
     public IpGroup refresh() {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getIpGroups()
-                .getByResourceGroupWithResponse(resourceGroupName, ipGroupsName, refreshExpand, Context.NONE)
+                .getByResourceGroupWithResponse(resourceGroupName, ipGroupsName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public IpGroup refresh(Context context) {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getIpGroups()
-                .getByResourceGroupWithResponse(resourceGroupName, ipGroupsName, refreshExpand, context)
+                .getByResourceGroupWithResponse(resourceGroupName, ipGroupsName, localExpand, context)
                 .getValue();
         return this;
     }

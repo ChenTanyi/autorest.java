@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteConnectionListInner;
 import java.util.List;
 
 /** An immutable client-side representation of ExpressRouteConnectionList. */
-@Immutable
 public interface ExpressRouteConnectionList {
     /**
      * Gets the value property: The list of ExpressRoute connections.

@@ -68,6 +68,20 @@ public final class VirtualNetworkRulesImpl implements VirtualNetworkRules {
         return inner.mapPage(inner1 -> new VirtualNetworkRuleImpl(inner1, this.manager()));
     }
 
+    public VirtualNetworkRule getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String serverName = Utils.getValueFromIdByName(id, "servers");
+        String virtualNetworkRuleName = Utils.getValueFromIdByName(id, "virtualNetworkRules");
+        return this.getWithResponse(resourceGroupName, serverName, virtualNetworkRuleName, Context.NONE).getValue();
+    }
+
+    public Response<VirtualNetworkRule> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String serverName = Utils.getValueFromIdByName(id, "servers");
+        String virtualNetworkRuleName = Utils.getValueFromIdByName(id, "virtualNetworkRules");
+        return this.getWithResponse(resourceGroupName, serverName, virtualNetworkRuleName, context);
+    }
+
     private VirtualNetworkRulesClient serviceClient() {
         return this.innerClient;
     }

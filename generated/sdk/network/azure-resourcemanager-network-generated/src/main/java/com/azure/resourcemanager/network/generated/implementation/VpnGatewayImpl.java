@@ -130,7 +130,7 @@ public final class VpnGatewayImpl implements VpnGateway, VpnGateway.Definition, 
             serviceManager
                 .serviceClient()
                 .getVpnGateways()
-                .createOrUpdate(resourceGroupName, gatewayName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, gatewayName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -139,7 +139,7 @@ public final class VpnGatewayImpl implements VpnGateway, VpnGateway.Definition, 
             serviceManager
                 .serviceClient()
                 .getVpnGateways()
-                .createOrUpdate(resourceGroupName, gatewayName, innerObject, context);
+                .createOrUpdate(resourceGroupName, gatewayName, this.innerModel(), context);
         return this;
     }
 

@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.databoxedge.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.OrderInner;
 import java.util.List;
 
 /** An immutable client-side representation of Order. */
-@Immutable
 public interface Order {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

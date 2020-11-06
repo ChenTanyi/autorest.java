@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineRunCommandInner;
@@ -12,7 +11,6 @@ import java.util.List;
 import java.util.Map;
 
 /** An immutable client-side representation of VirtualMachineRunCommand. */
-@Immutable
 public interface VirtualMachineRunCommand {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

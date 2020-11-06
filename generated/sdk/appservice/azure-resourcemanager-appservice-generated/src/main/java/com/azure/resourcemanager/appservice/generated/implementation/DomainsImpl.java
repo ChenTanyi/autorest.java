@@ -200,6 +200,32 @@ public final class DomainsImpl implements Domains {
         return this.serviceClient().renewWithResponse(resourceGroupName, domainName, context);
     }
 
+    public Domain getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String domainName = Utils.getValueFromIdByName(id, "domains");
+        return this.getByResourceGroupWithResponse(resourceGroupName, domainName, Context.NONE).getValue();
+    }
+
+    public Response<Domain> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String domainName = Utils.getValueFromIdByName(id, "domains");
+        return this.getByResourceGroupWithResponse(resourceGroupName, domainName, context);
+    }
+
+    public DomainOwnershipIdentifier getOwnershipIdentifierById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String domainName = Utils.getValueFromIdByName(id, "domains");
+        String name = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
+        return this.getOwnershipIdentifierWithResponse(resourceGroupName, domainName, name, Context.NONE).getValue();
+    }
+
+    public Response<DomainOwnershipIdentifier> getOwnershipIdentifierByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String domainName = Utils.getValueFromIdByName(id, "domains");
+        String name = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
+        return this.getOwnershipIdentifierWithResponse(resourceGroupName, domainName, name, context);
+    }
+
     private DomainsClient serviceClient() {
         return this.innerClient;
     }

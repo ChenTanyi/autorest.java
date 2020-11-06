@@ -191,6 +191,21 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
         }
     }
 
+    public PublicIpAddress getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String publicIpAddressName = Utils.getValueFromIdByName(id, "publicIPAddresses");
+        String localExpand = null;
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, publicIpAddressName, localExpand, Context.NONE)
+            .getValue();
+    }
+
+    public Response<PublicIpAddress> getByIdWithResponse(String id, String expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String publicIpAddressName = Utils.getValueFromIdByName(id, "publicIPAddresses");
+        return this.getByResourceGroupWithResponse(resourceGroupName, publicIpAddressName, expand, context);
+    }
+
     private PublicIpAddressesClient serviceClient() {
         return this.innerClient;
     }

@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineSizeInner;
 
 /** An immutable client-side representation of VirtualMachineSize. */
-@Immutable
 public interface VirtualMachineSize {
     /**
      * Gets the name property: The name of the virtual machine size.

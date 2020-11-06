@@ -68,7 +68,7 @@ public final class RulesEngineImpl implements RulesEngine, RulesEngine.Definitio
             serviceManager
                 .serviceClient()
                 .getRulesEngines()
-                .createOrUpdate(resourceGroupName, frontDoorName, rulesEngineName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, frontDoorName, rulesEngineName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -77,7 +77,7 @@ public final class RulesEngineImpl implements RulesEngine, RulesEngine.Definitio
             serviceManager
                 .serviceClient()
                 .getRulesEngines()
-                .createOrUpdate(resourceGroupName, frontDoorName, rulesEngineName, innerObject, context);
+                .createOrUpdate(resourceGroupName, frontDoorName, rulesEngineName, this.innerModel(), context);
         return this;
     }
 
@@ -96,7 +96,7 @@ public final class RulesEngineImpl implements RulesEngine, RulesEngine.Definitio
             serviceManager
                 .serviceClient()
                 .getRulesEngines()
-                .createOrUpdate(resourceGroupName, frontDoorName, rulesEngineName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, frontDoorName, rulesEngineName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -105,7 +105,7 @@ public final class RulesEngineImpl implements RulesEngine, RulesEngine.Definitio
             serviceManager
                 .serviceClient()
                 .getRulesEngines()
-                .createOrUpdate(resourceGroupName, frontDoorName, rulesEngineName, innerObject, context);
+                .createOrUpdate(resourceGroupName, frontDoorName, rulesEngineName, this.innerModel(), context);
         return this;
     }
 

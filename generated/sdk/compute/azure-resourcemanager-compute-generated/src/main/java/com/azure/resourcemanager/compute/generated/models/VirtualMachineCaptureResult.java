@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineCaptureResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of VirtualMachineCaptureResult. */
-@Immutable
 public interface VirtualMachineCaptureResult {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

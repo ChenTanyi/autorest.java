@@ -162,7 +162,7 @@ public final class PublicIpAddressImpl implements PublicIpAddress, PublicIpAddre
             serviceManager
                 .serviceClient()
                 .getPublicIpAddresses()
-                .createOrUpdate(resourceGroupName, publicIpAddressName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, publicIpAddressName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -171,7 +171,7 @@ public final class PublicIpAddressImpl implements PublicIpAddress, PublicIpAddre
             serviceManager
                 .serviceClient()
                 .getPublicIpAddresses()
-                .createOrUpdate(resourceGroupName, publicIpAddressName, innerObject, context);
+                .createOrUpdate(resourceGroupName, publicIpAddressName, this.innerModel(), context);
         return this;
     }
 
@@ -214,23 +214,23 @@ public final class PublicIpAddressImpl implements PublicIpAddress, PublicIpAddre
     }
 
     public PublicIpAddress refresh() {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getPublicIpAddresses()
-                .getByResourceGroupWithResponse(resourceGroupName, publicIpAddressName, refreshExpand, Context.NONE)
+                .getByResourceGroupWithResponse(resourceGroupName, publicIpAddressName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public PublicIpAddress refresh(Context context) {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getPublicIpAddresses()
-                .getByResourceGroupWithResponse(resourceGroupName, publicIpAddressName, refreshExpand, context)
+                .getByResourceGroupWithResponse(resourceGroupName, publicIpAddressName, localExpand, context)
                 .getValue();
         return this;
     }

@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.iothub.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.iothub.generated.fluent.models.TestAllRoutesResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of TestAllRoutesResult. */
-@Immutable
 public interface TestAllRoutesResult {
     /**
      * Gets the routes property: JSON-serialized array of matched routes.

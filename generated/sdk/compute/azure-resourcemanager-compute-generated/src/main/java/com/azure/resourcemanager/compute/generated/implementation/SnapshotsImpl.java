@@ -107,6 +107,18 @@ public final class SnapshotsImpl implements Snapshots {
         this.serviceClient().revokeAccess(resourceGroupName, snapshotName, context);
     }
 
+    public Snapshot getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String snapshotName = Utils.getValueFromIdByName(id, "snapshots");
+        return this.getByResourceGroupWithResponse(resourceGroupName, snapshotName, Context.NONE).getValue();
+    }
+
+    public Response<Snapshot> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String snapshotName = Utils.getValueFromIdByName(id, "snapshots");
+        return this.getByResourceGroupWithResponse(resourceGroupName, snapshotName, context);
+    }
+
     private SnapshotsClient serviceClient() {
         return this.innerClient;
     }

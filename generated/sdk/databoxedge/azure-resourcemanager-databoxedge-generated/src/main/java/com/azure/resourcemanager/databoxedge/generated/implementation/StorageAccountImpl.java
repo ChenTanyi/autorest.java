@@ -77,7 +77,7 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
             serviceManager
                 .serviceClient()
                 .getStorageAccounts()
-                .createOrUpdate(deviceName, storageAccountName, resourceGroupName, innerObject, Context.NONE);
+                .createOrUpdate(deviceName, storageAccountName, resourceGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -86,7 +86,7 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
             serviceManager
                 .serviceClient()
                 .getStorageAccounts()
-                .createOrUpdate(deviceName, storageAccountName, resourceGroupName, innerObject, context);
+                .createOrUpdate(deviceName, storageAccountName, resourceGroupName, this.innerModel(), context);
         return this;
     }
 
@@ -105,7 +105,7 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
             serviceManager
                 .serviceClient()
                 .getStorageAccounts()
-                .createOrUpdate(deviceName, storageAccountName, resourceGroupName, innerObject, Context.NONE);
+                .createOrUpdate(deviceName, storageAccountName, resourceGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -114,7 +114,7 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
             serviceManager
                 .serviceClient()
                 .getStorageAccounts()
-                .createOrUpdate(deviceName, storageAccountName, resourceGroupName, innerObject, context);
+                .createOrUpdate(deviceName, storageAccountName, resourceGroupName, this.innerModel(), context);
         return this;
     }
 

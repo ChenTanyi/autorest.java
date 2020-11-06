@@ -4,14 +4,12 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.BackendAddressPoolInner;
 import java.util.List;
 
 /** An immutable client-side representation of BackendAddressPool. */
-@Immutable
 public interface BackendAddressPool {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

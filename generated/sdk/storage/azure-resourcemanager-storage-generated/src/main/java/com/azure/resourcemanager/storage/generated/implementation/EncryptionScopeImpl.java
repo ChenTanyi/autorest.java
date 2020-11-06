@@ -75,7 +75,7 @@ public final class EncryptionScopeImpl implements EncryptionScope, EncryptionSco
             serviceManager
                 .serviceClient()
                 .getEncryptionScopes()
-                .putWithResponse(resourceGroupName, accountName, encryptionScopeName, innerObject, Context.NONE)
+                .putWithResponse(resourceGroupName, accountName, encryptionScopeName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -85,7 +85,7 @@ public final class EncryptionScopeImpl implements EncryptionScope, EncryptionSco
             serviceManager
                 .serviceClient()
                 .getEncryptionScopes()
-                .putWithResponse(resourceGroupName, accountName, encryptionScopeName, innerObject, context)
+                .putWithResponse(resourceGroupName, accountName, encryptionScopeName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -105,7 +105,7 @@ public final class EncryptionScopeImpl implements EncryptionScope, EncryptionSco
             serviceManager
                 .serviceClient()
                 .getEncryptionScopes()
-                .patchWithResponse(resourceGroupName, accountName, encryptionScopeName, innerObject, Context.NONE)
+                .patchWithResponse(resourceGroupName, accountName, encryptionScopeName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -115,7 +115,7 @@ public final class EncryptionScopeImpl implements EncryptionScope, EncryptionSco
             serviceManager
                 .serviceClient()
                 .getEncryptionScopes()
-                .patchWithResponse(resourceGroupName, accountName, encryptionScopeName, innerObject, context)
+                .patchWithResponse(resourceGroupName, accountName, encryptionScopeName, this.innerModel(), context)
                 .getValue();
         return this;
     }

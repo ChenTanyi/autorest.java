@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCrossConnectionPeeringInner;
 
 /** An immutable client-side representation of ExpressRouteCrossConnectionPeering. */
-@Immutable
 public interface ExpressRouteCrossConnectionPeering {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

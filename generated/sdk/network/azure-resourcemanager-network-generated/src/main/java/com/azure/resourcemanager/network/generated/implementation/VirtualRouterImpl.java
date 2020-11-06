@@ -113,7 +113,7 @@ public final class VirtualRouterImpl implements VirtualRouter, VirtualRouter.Def
             serviceManager
                 .serviceClient()
                 .getVirtualRouters()
-                .createOrUpdate(resourceGroupName, virtualRouterName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, virtualRouterName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -122,7 +122,7 @@ public final class VirtualRouterImpl implements VirtualRouter, VirtualRouter.Def
             serviceManager
                 .serviceClient()
                 .getVirtualRouters()
-                .createOrUpdate(resourceGroupName, virtualRouterName, innerObject, context);
+                .createOrUpdate(resourceGroupName, virtualRouterName, this.innerModel(), context);
         return this;
     }
 
@@ -141,7 +141,7 @@ public final class VirtualRouterImpl implements VirtualRouter, VirtualRouter.Def
             serviceManager
                 .serviceClient()
                 .getVirtualRouters()
-                .createOrUpdate(resourceGroupName, virtualRouterName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, virtualRouterName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -150,7 +150,7 @@ public final class VirtualRouterImpl implements VirtualRouter, VirtualRouter.Def
             serviceManager
                 .serviceClient()
                 .getVirtualRouters()
-                .createOrUpdate(resourceGroupName, virtualRouterName, innerObject, context);
+                .createOrUpdate(resourceGroupName, virtualRouterName, this.innerModel(), context);
         return this;
     }
 
@@ -162,23 +162,23 @@ public final class VirtualRouterImpl implements VirtualRouter, VirtualRouter.Def
     }
 
     public VirtualRouter refresh() {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getVirtualRouters()
-                .getByResourceGroupWithResponse(resourceGroupName, virtualRouterName, refreshExpand, Context.NONE)
+                .getByResourceGroupWithResponse(resourceGroupName, virtualRouterName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public VirtualRouter refresh(Context context) {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getVirtualRouters()
-                .getByResourceGroupWithResponse(resourceGroupName, virtualRouterName, refreshExpand, context)
+                .getByResourceGroupWithResponse(resourceGroupName, virtualRouterName, localExpand, context)
                 .getValue();
         return this;
     }

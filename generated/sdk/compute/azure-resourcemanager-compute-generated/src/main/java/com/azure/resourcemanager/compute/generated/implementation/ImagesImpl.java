@@ -76,6 +76,19 @@ public final class ImagesImpl implements Images {
         return inner.mapPage(inner1 -> new ImageImpl(inner1, this.manager()));
     }
 
+    public Image getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String imageName = Utils.getValueFromIdByName(id, "images");
+        String localExpand = null;
+        return this.getByResourceGroupWithResponse(resourceGroupName, imageName, localExpand, Context.NONE).getValue();
+    }
+
+    public Response<Image> getByIdWithResponse(String id, String expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String imageName = Utils.getValueFromIdByName(id, "images");
+        return this.getByResourceGroupWithResponse(resourceGroupName, imageName, expand, context);
+    }
+
     private ImagesClient serviceClient() {
         return this.innerClient;
     }

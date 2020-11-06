@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.mediaservices.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.AccountFilterInner;
 import java.util.List;
 
 /** An immutable client-side representation of AccountFilter. */
-@Immutable
 public interface AccountFilter {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

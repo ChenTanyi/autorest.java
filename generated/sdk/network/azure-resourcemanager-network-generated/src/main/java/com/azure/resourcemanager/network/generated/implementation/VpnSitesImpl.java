@@ -76,6 +76,18 @@ public final class VpnSitesImpl implements VpnSites {
         return inner.mapPage(inner1 -> new VpnSiteImpl(inner1, this.manager()));
     }
 
+    public VpnSite getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String vpnSiteName = Utils.getValueFromIdByName(id, "vpnSites");
+        return this.getByResourceGroupWithResponse(resourceGroupName, vpnSiteName, Context.NONE).getValue();
+    }
+
+    public Response<VpnSite> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String vpnSiteName = Utils.getValueFromIdByName(id, "vpnSites");
+        return this.getByResourceGroupWithResponse(resourceGroupName, vpnSiteName, context);
+    }
+
     private VpnSitesClient serviceClient() {
         return this.innerClient;
     }

@@ -73,6 +73,20 @@ public final class SharesImpl implements Shares {
         this.serviceClient().refresh(deviceName, name, resourceGroupName, context);
     }
 
+    public Share getById(String id) {
+        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        String name = Utils.getValueFromIdByName(id, "shares");
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        return this.getWithResponse(deviceName, name, resourceGroupName, Context.NONE).getValue();
+    }
+
+    public Response<Share> getByIdWithResponse(String id, Context context) {
+        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        String name = Utils.getValueFromIdByName(id, "shares");
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        return this.getWithResponse(deviceName, name, resourceGroupName, context);
+    }
+
     private SharesClient serviceClient() {
         return this.innerClient;
     }

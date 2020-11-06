@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.PrivateLinkServiceVisibilityInner;
 
 /** An immutable client-side representation of PrivateLinkServiceVisibility. */
-@Immutable
 public interface PrivateLinkServiceVisibility {
     /**
      * Gets the visible property: Private Link Service Visibility (True/False).

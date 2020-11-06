@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.monitor.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricAlertStatusCollectionInner;
 import java.util.List;
 
 /** An immutable client-side representation of MetricAlertStatusCollection. */
-@Immutable
 public interface MetricAlertStatusCollection {
     /**
      * Gets the value property: the values for the alert rule resources.

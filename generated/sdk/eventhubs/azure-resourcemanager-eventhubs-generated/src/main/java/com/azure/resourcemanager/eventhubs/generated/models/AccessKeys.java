@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.eventhubs.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.AccessKeysInner;
 
 /** An immutable client-side representation of AccessKeys. */
-@Immutable
 public interface AccessKeys {
     /**
      * Gets the primaryConnectionString property: Primary connection string of the created namespace AuthorizationRule.

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.BastionHostInner;
@@ -12,7 +11,6 @@ import java.util.List;
 import java.util.Map;
 
 /** An immutable client-side representation of BastionHost. */
-@Immutable
 public interface BastionHost {
     /**
      * Gets the name property: The name of the resource.

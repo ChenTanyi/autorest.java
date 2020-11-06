@@ -137,7 +137,7 @@ public final class ExpressRouteCrossConnectionImpl
             serviceManager
                 .serviceClient()
                 .getExpressRouteCrossConnections()
-                .createOrUpdate(resourceGroupName, crossConnectionName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, crossConnectionName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -146,7 +146,7 @@ public final class ExpressRouteCrossConnectionImpl
             serviceManager
                 .serviceClient()
                 .getExpressRouteCrossConnections()
-                .createOrUpdate(resourceGroupName, crossConnectionName, innerObject, context);
+                .createOrUpdate(resourceGroupName, crossConnectionName, this.innerModel(), context);
         return this;
     }
 

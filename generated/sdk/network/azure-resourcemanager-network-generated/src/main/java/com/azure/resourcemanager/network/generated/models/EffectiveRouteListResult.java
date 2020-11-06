@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.EffectiveRouteListResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of EffectiveRouteListResult. */
-@Immutable
 public interface EffectiveRouteListResult {
     /**
      * Gets the value property: A list of effective routes.

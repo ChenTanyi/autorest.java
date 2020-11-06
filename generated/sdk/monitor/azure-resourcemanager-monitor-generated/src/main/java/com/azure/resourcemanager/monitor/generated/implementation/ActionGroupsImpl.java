@@ -89,6 +89,18 @@ public final class ActionGroupsImpl implements ActionGroups {
             .enableReceiverWithResponse(resourceGroupName, actionGroupName, enableRequest, context);
     }
 
+    public ActionGroupResource getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String actionGroupName = Utils.getValueFromIdByName(id, "actionGroups");
+        return this.getByResourceGroupWithResponse(resourceGroupName, actionGroupName, Context.NONE).getValue();
+    }
+
+    public Response<ActionGroupResource> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String actionGroupName = Utils.getValueFromIdByName(id, "actionGroups");
+        return this.getByResourceGroupWithResponse(resourceGroupName, actionGroupName, context);
+    }
+
     private ActionGroupsClient serviceClient() {
         return this.innerClient;
     }

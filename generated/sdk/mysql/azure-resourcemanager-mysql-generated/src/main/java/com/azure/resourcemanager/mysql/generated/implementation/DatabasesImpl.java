@@ -66,6 +66,20 @@ public final class DatabasesImpl implements Databases {
         return inner.mapPage(inner1 -> new DatabaseImpl(inner1, this.manager()));
     }
 
+    public Database getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String serverName = Utils.getValueFromIdByName(id, "servers");
+        String databaseName = Utils.getValueFromIdByName(id, "databases");
+        return this.getWithResponse(resourceGroupName, serverName, databaseName, Context.NONE).getValue();
+    }
+
+    public Response<Database> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String serverName = Utils.getValueFromIdByName(id, "servers");
+        String databaseName = Utils.getValueFromIdByName(id, "databases");
+        return this.getWithResponse(resourceGroupName, serverName, databaseName, context);
+    }
+
     private DatabasesClient serviceClient() {
         return this.innerClient;
     }

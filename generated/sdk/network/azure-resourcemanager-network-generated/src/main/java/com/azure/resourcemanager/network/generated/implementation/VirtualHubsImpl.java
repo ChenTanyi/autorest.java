@@ -96,6 +96,18 @@ public final class VirtualHubsImpl implements VirtualHubs {
             .getEffectiveVirtualHubRoutes(resourceGroupName, virtualHubName, effectiveRoutesParameters, context);
     }
 
+    public VirtualHub getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
+        return this.getByResourceGroupWithResponse(resourceGroupName, virtualHubName, Context.NONE).getValue();
+    }
+
+    public Response<VirtualHub> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
+        return this.getByResourceGroupWithResponse(resourceGroupName, virtualHubName, context);
+    }
+
     private VirtualHubsClient serviceClient() {
         return this.innerClient;
     }

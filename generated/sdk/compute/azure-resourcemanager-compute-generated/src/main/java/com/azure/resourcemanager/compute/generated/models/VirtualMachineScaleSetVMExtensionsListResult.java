@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetVMExtensionsListResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of VirtualMachineScaleSetVMExtensionsListResult. */
-@Immutable
 public interface VirtualMachineScaleSetVMExtensionsListResult {
     /**
      * Gets the value property: The list of VMSS VM extensions.

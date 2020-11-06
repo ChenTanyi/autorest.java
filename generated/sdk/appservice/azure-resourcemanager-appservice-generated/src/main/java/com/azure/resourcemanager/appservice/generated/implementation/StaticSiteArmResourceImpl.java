@@ -116,7 +116,7 @@ public final class StaticSiteArmResourceImpl
             serviceManager
                 .serviceClient()
                 .getStaticSites()
-                .createOrUpdateStaticSiteWithResponse(resourceGroupName, name, innerObject, Context.NONE)
+                .createOrUpdateStaticSiteWithResponse(resourceGroupName, name, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -126,7 +126,7 @@ public final class StaticSiteArmResourceImpl
             serviceManager
                 .serviceClient()
                 .getStaticSites()
-                .createOrUpdateStaticSiteWithResponse(resourceGroupName, name, innerObject, context)
+                .createOrUpdateStaticSiteWithResponse(resourceGroupName, name, this.innerModel(), context)
                 .getValue();
         return this;
     }

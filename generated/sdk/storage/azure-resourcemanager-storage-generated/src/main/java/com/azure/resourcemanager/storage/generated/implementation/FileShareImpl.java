@@ -119,7 +119,7 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
             serviceManager
                 .serviceClient()
                 .getFileShares()
-                .createWithResponse(resourceGroupName, accountName, shareName, innerObject, Context.NONE)
+                .createWithResponse(resourceGroupName, accountName, shareName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -129,7 +129,7 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
             serviceManager
                 .serviceClient()
                 .getFileShares()
-                .createWithResponse(resourceGroupName, accountName, shareName, innerObject, context)
+                .createWithResponse(resourceGroupName, accountName, shareName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -149,7 +149,7 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
             serviceManager
                 .serviceClient()
                 .getFileShares()
-                .updateWithResponse(resourceGroupName, accountName, shareName, innerObject, Context.NONE)
+                .updateWithResponse(resourceGroupName, accountName, shareName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -159,7 +159,7 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
             serviceManager
                 .serviceClient()
                 .getFileShares()
-                .updateWithResponse(resourceGroupName, accountName, shareName, innerObject, context)
+                .updateWithResponse(resourceGroupName, accountName, shareName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -173,23 +173,23 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
     }
 
     public FileShare refresh() {
-        GetShareExpand refreshExpand = null;
+        GetShareExpand localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getFileShares()
-                .getWithResponse(resourceGroupName, accountName, shareName, refreshExpand, Context.NONE)
+                .getWithResponse(resourceGroupName, accountName, shareName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public FileShare refresh(Context context) {
-        GetShareExpand refreshExpand = null;
+        GetShareExpand localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getFileShares()
-                .getWithResponse(resourceGroupName, accountName, shareName, refreshExpand, context)
+                .getWithResponse(resourceGroupName, accountName, shareName, localExpand, context)
                 .getValue();
         return this;
     }

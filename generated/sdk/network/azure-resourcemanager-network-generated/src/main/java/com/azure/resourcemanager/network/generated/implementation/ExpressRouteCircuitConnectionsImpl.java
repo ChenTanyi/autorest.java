@@ -74,6 +74,24 @@ public final class ExpressRouteCircuitConnectionsImpl implements ExpressRouteCir
         return inner.mapPage(inner1 -> new ExpressRouteCircuitConnectionImpl(inner1, this.manager()));
     }
 
+    public ExpressRouteCircuitConnection getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
+        String peeringName = Utils.getValueFromIdByName(id, "peerings");
+        String connectionName = Utils.getValueFromIdByName(id, "connections");
+        return this
+            .getWithResponse(resourceGroupName, circuitName, peeringName, connectionName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<ExpressRouteCircuitConnection> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
+        String peeringName = Utils.getValueFromIdByName(id, "peerings");
+        String connectionName = Utils.getValueFromIdByName(id, "connections");
+        return this.getWithResponse(resourceGroupName, circuitName, peeringName, connectionName, context);
+    }
+
     private ExpressRouteCircuitConnectionsClient serviceClient() {
         return this.innerClient;
     }

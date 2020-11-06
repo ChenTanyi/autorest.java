@@ -184,7 +184,7 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
             serviceManager
                 .serviceClient()
                 .getVirtualHubs()
-                .createOrUpdate(resourceGroupName, virtualHubName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, virtualHubName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -193,7 +193,7 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
             serviceManager
                 .serviceClient()
                 .getVirtualHubs()
-                .createOrUpdate(resourceGroupName, virtualHubName, innerObject, context);
+                .createOrUpdate(resourceGroupName, virtualHubName, this.innerModel(), context);
         return this;
     }
 

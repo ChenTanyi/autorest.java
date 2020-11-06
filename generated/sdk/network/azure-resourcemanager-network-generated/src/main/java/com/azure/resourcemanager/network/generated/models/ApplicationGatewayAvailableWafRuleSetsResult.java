@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayAvailableWafRuleSetsResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of ApplicationGatewayAvailableWafRuleSetsResult. */
-@Immutable
 public interface ApplicationGatewayAvailableWafRuleSetsResult {
     /**
      * Gets the value property: The list of application gateway rule sets.

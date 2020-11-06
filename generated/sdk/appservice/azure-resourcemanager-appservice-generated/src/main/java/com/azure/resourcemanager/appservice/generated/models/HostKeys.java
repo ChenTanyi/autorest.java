@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.HostKeysInner;
 import java.util.Map;
 
 /** An immutable client-side representation of HostKeys. */
-@Immutable
 public interface HostKeys {
     /**
      * Gets the masterKey property: Secret key.

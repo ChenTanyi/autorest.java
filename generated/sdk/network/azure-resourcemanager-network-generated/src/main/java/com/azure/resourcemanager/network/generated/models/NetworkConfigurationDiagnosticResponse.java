@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkConfigurationDiagnosticResponseInner;
 import java.util.List;
 
 /** An immutable client-side representation of NetworkConfigurationDiagnosticResponse. */
-@Immutable
 public interface NetworkConfigurationDiagnosticResponse {
     /**
      * Gets the results property: List of network configuration diagnostic results.

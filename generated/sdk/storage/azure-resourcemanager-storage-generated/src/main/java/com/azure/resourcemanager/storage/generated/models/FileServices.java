@@ -71,6 +71,31 @@ public interface FileServices {
         String resourceGroupName, String accountName, Context context);
 
     /**
+     * Gets the properties of file services in storage accounts, including CORS (Cross-Origin Resource Sharing) rules.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the properties of file services in storage accounts, including CORS (Cross-Origin Resource Sharing)
+     *     rules.
+     */
+    FileServiceProperties getServicePropertiesById(String id);
+
+    /**
+     * Gets the properties of file services in storage accounts, including CORS (Cross-Origin Resource Sharing) rules.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the properties of file services in storage accounts, including CORS (Cross-Origin Resource Sharing)
+     *     rules.
+     */
+    Response<FileServiceProperties> getServicePropertiesByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new FileServiceProperties resource.
      *
      * @param name resource name.

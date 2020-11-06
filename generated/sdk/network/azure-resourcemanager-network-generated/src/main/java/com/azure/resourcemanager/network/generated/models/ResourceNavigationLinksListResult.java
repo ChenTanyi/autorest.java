@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.ResourceNavigationLinksListResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of ResourceNavigationLinksListResult. */
-@Immutable
 public interface ResourceNavigationLinksListResult {
     /**
      * Gets the value property: The resource navigation links in a subnet.

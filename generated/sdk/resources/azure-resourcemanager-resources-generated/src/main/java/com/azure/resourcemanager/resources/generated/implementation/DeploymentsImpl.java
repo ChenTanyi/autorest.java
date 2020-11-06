@@ -743,6 +743,18 @@ public final class DeploymentsImpl implements Deployments {
         }
     }
 
+    public DeploymentExtended getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        String deploymentName = Utils.getValueFromIdByName(id, "deployments");
+        return this.getByResourceGroupWithResponse(resourceGroupName, deploymentName, Context.NONE).getValue();
+    }
+
+    public Response<DeploymentExtended> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        String deploymentName = Utils.getValueFromIdByName(id, "deployments");
+        return this.getByResourceGroupWithResponse(resourceGroupName, deploymentName, context);
+    }
+
     private DeploymentsClient serviceClient() {
         return this.innerClient;
     }

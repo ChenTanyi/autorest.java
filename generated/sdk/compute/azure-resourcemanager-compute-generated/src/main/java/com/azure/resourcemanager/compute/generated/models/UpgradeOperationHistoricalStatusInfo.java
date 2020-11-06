@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.compute.generated.fluent.models.UpgradeOperationHistoricalStatusInfoInner;
 
 /** An immutable client-side representation of UpgradeOperationHistoricalStatusInfo. */
-@Immutable
 public interface UpgradeOperationHistoricalStatusInfo {
     /**
      * Gets the properties property: Information about the properties of the upgrade operation.

@@ -88,6 +88,29 @@ public interface ServerKeys {
     void delete(String serverName, String keyName, String resourceGroupName, Context context);
 
     /**
+     * Gets a PostgreSQL Server key.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a PostgreSQL Server key.
+     */
+    ServerKey getById(String id);
+
+    /**
+     * Gets a PostgreSQL Server key.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a PostgreSQL Server key.
+     */
+    Response<ServerKey> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new ServerKey resource.
      *
      * @param name resource name.

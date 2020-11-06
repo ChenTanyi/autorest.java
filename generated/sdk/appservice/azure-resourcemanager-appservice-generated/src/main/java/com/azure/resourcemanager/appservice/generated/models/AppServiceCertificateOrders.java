@@ -466,6 +466,56 @@ public interface AppServiceCertificateOrders {
         String resourceGroupName, String name, Context context);
 
     /**
+     * Description for Get a certificate order.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return sSL certificate purchase order.
+     */
+    AppServiceCertificateOrder getById(String id);
+
+    /**
+     * Description for Get a certificate order.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return sSL certificate purchase order.
+     */
+    Response<AppServiceCertificateOrder> getByIdWithResponse(String id, Context context);
+
+    /**
+     * Description for Get the certificate associated with a certificate order.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     */
+    AppServiceCertificateResource getCertificateById(String id);
+
+    /**
+     * Description for Get the certificate associated with a certificate order.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return key Vault container ARM resource for a certificate that is purchased through Azure.
+     */
+    Response<AppServiceCertificateResource> getCertificateByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new AppServiceCertificateOrder resource.
      *
      * @param name resource name.

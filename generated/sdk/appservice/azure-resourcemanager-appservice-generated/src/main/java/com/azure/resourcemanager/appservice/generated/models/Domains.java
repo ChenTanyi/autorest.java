@@ -301,6 +301,56 @@ public interface Domains {
     Response<Void> renewWithResponse(String resourceGroupName, String domainName, Context context);
 
     /**
+     * Description for Get a domain.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about a domain.
+     */
+    Domain getById(String id);
+
+    /**
+     * Description for Get a domain.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about a domain.
+     */
+    Response<Domain> getByIdWithResponse(String id, Context context);
+
+    /**
+     * Description for Get ownership identifier for domain.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return domain ownership Identifier.
+     */
+    DomainOwnershipIdentifier getOwnershipIdentifierById(String id);
+
+    /**
+     * Description for Get ownership identifier for domain.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return domain ownership Identifier.
+     */
+    Response<DomainOwnershipIdentifier> getOwnershipIdentifierByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new Domain resource.
      *
      * @param name resource name.

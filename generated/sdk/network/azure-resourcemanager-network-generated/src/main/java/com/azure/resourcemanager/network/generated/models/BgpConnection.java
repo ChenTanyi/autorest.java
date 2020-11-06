@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.BgpConnectionInner;
 
 /** An immutable client-side representation of BgpConnection. */
-@Immutable
 public interface BgpConnection {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

@@ -159,7 +159,7 @@ public final class NetworkVirtualApplianceImpl
             serviceManager
                 .serviceClient()
                 .getNetworkVirtualAppliances()
-                .createOrUpdate(resourceGroupName, networkVirtualApplianceName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, networkVirtualApplianceName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -168,7 +168,7 @@ public final class NetworkVirtualApplianceImpl
             serviceManager
                 .serviceClient()
                 .getNetworkVirtualAppliances()
-                .createOrUpdate(resourceGroupName, networkVirtualApplianceName, innerObject, context);
+                .createOrUpdate(resourceGroupName, networkVirtualApplianceName, this.innerModel(), context);
         return this;
     }
 
@@ -211,24 +211,24 @@ public final class NetworkVirtualApplianceImpl
     }
 
     public NetworkVirtualAppliance refresh() {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getNetworkVirtualAppliances()
                 .getByResourceGroupWithResponse(
-                    resourceGroupName, networkVirtualApplianceName, refreshExpand, Context.NONE)
+                    resourceGroupName, networkVirtualApplianceName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public NetworkVirtualAppliance refresh(Context context) {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getNetworkVirtualAppliances()
-                .getByResourceGroupWithResponse(resourceGroupName, networkVirtualApplianceName, refreshExpand, context)
+                .getByResourceGroupWithResponse(resourceGroupName, networkVirtualApplianceName, localExpand, context)
                 .getValue();
         return this;
     }

@@ -121,6 +121,21 @@ public final class VirtualNetworksImpl implements VirtualNetworks {
         return inner.mapPage(inner1 -> new VirtualNetworkUsageImpl(inner1, this.manager()));
     }
 
+    public VirtualNetwork getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String virtualNetworkName = Utils.getValueFromIdByName(id, "virtualNetworks");
+        String localExpand = null;
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkName, localExpand, Context.NONE)
+            .getValue();
+    }
+
+    public Response<VirtualNetwork> getByIdWithResponse(String id, String expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String virtualNetworkName = Utils.getValueFromIdByName(id, "virtualNetworks");
+        return this.getByResourceGroupWithResponse(resourceGroupName, virtualNetworkName, expand, context);
+    }
+
     private VirtualNetworksClient serviceClient() {
         return this.innerClient;
     }

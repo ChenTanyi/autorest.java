@@ -89,6 +89,29 @@ public interface VirtualHubIpConfigurations {
     PagedIterable<HubIpConfiguration> list(String resourceGroupName, String virtualHubName, Context context);
 
     /**
+     * Retrieves the details of a Virtual Hub Ip configuration.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return ipConfigurations.
+     */
+    HubIpConfiguration getById(String id);
+
+    /**
+     * Retrieves the details of a Virtual Hub Ip configuration.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return ipConfigurations.
+     */
+    Response<HubIpConfiguration> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new HubIpConfiguration resource.
      *
      * @param name resource name.

@@ -105,7 +105,8 @@ public final class GalleryApplicationImpl
             serviceManager
                 .serviceClient()
                 .getGalleryApplications()
-                .createOrUpdate(resourceGroupName, galleryName, galleryApplicationName, innerObject, Context.NONE);
+                .createOrUpdate(
+                    resourceGroupName, galleryName, galleryApplicationName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -114,7 +115,7 @@ public final class GalleryApplicationImpl
             serviceManager
                 .serviceClient()
                 .getGalleryApplications()
-                .createOrUpdate(resourceGroupName, galleryName, galleryApplicationName, innerObject, context);
+                .createOrUpdate(resourceGroupName, galleryName, galleryApplicationName, this.innerModel(), context);
         return this;
     }
 

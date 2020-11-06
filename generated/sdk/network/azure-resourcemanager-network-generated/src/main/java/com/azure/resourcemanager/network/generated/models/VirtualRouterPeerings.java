@@ -95,6 +95,31 @@ public interface VirtualRouterPeerings {
     PagedIterable<VirtualRouterPeering> list(String resourceGroupName, String virtualRouterName, Context context);
 
     /**
+     * Gets the specified Virtual Router Peering.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified Virtual Router Peering.
+     */
+    VirtualRouterPeering getById(String id);
+
+    /**
+     * Gets the specified Virtual Router Peering.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified Virtual Router Peering.
+     */
+    Response<VirtualRouterPeering> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new VirtualRouterPeering resource.
      *
      * @param name resource name.

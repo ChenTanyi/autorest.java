@@ -104,6 +104,30 @@ public interface NetworkVirtualAppliances {
     PagedIterable<NetworkVirtualAppliance> list(Context context);
 
     /**
+     * Gets the specified Network Virtual Appliance.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified Network Virtual Appliance.
+     */
+    NetworkVirtualAppliance getById(String id);
+
+    /**
+     * Gets the specified Network Virtual Appliance.
+     *
+     * @param id the id of the resource.
+     * @param expand Expands referenced resources.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified Network Virtual Appliance.
+     */
+    Response<NetworkVirtualAppliance> getByIdWithResponse(String id, String expand, Context context);
+
+    /**
      * Begins definition for a new NetworkVirtualAppliance resource.
      *
      * @param name resource name.

@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ResourceHealthMetadataInner;
 
 /** An immutable client-side representation of ResourceHealthMetadata. */
-@Immutable
 public interface ResourceHealthMetadata {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

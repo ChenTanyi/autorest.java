@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.DedicatedHostInner;
@@ -13,7 +12,6 @@ import java.util.List;
 import java.util.Map;
 
 /** An immutable client-side representation of DedicatedHost. */
-@Immutable
 public interface DedicatedHost {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

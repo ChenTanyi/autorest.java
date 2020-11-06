@@ -68,6 +68,18 @@ public final class LocalNetworkGatewaysImpl implements LocalNetworkGateways {
         return inner.mapPage(inner1 -> new LocalNetworkGatewayImpl(inner1, this.manager()));
     }
 
+    public LocalNetworkGateway getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String localNetworkGatewayName = Utils.getValueFromIdByName(id, "localNetworkGateways");
+        return this.getByResourceGroupWithResponse(resourceGroupName, localNetworkGatewayName, Context.NONE).getValue();
+    }
+
+    public Response<LocalNetworkGateway> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String localNetworkGatewayName = Utils.getValueFromIdByName(id, "localNetworkGateways");
+        return this.getByResourceGroupWithResponse(resourceGroupName, localNetworkGatewayName, context);
+    }
+
     private LocalNetworkGatewaysClient serviceClient() {
         return this.innerClient;
     }

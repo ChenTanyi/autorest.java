@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.compute.generated.fluent.models.PirSharedGalleryResourceInner;
 
 /** An immutable client-side representation of PirSharedGalleryResource. */
-@Immutable
 public interface PirSharedGalleryResource {
     /**
      * Gets the name property: Resource name.

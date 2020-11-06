@@ -89,6 +89,29 @@ public interface Applications {
     void delete(String resourceGroupName, String clusterName, String applicationName, Context context);
 
     /**
+     * Gets properties of the specified application.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties of the specified application.
+     */
+    Application getById(String id);
+
+    /**
+     * Gets properties of the specified application.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties of the specified application.
+     */
+    Response<Application> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new Application resource.
      *
      * @param name resource name.

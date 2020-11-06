@@ -100,7 +100,7 @@ public final class DdosProtectionPlanImpl
             serviceManager
                 .serviceClient()
                 .getDdosProtectionPlans()
-                .createOrUpdate(resourceGroupName, ddosProtectionPlanName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, ddosProtectionPlanName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -109,7 +109,7 @@ public final class DdosProtectionPlanImpl
             serviceManager
                 .serviceClient()
                 .getDdosProtectionPlans()
-                .createOrUpdate(resourceGroupName, ddosProtectionPlanName, innerObject, context);
+                .createOrUpdate(resourceGroupName, ddosProtectionPlanName, this.innerModel(), context);
         return this;
     }
 

@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.databoxedge.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.ContainerInner;
 import java.time.OffsetDateTime;
 
 /** An immutable client-side representation of Container. */
-@Immutable
 public interface Container {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

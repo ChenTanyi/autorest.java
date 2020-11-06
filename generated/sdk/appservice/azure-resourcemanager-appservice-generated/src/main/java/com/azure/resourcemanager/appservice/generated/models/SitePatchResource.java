@@ -4,14 +4,12 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SitePatchResourceInner;
 import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.UUID;
 
 /** An immutable client-side representation of SitePatchResource. */
-@Immutable
 public interface SitePatchResource {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

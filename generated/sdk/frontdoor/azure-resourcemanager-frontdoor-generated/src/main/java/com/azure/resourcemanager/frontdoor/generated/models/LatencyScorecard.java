@@ -4,14 +4,12 @@
 
 package com.azure.resourcemanager.frontdoor.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.LatencyScorecardInner;
 import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
 
 /** An immutable client-side representation of LatencyScorecard. */
-@Immutable
 public interface LatencyScorecard {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

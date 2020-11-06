@@ -110,6 +110,18 @@ public final class FrontDoorsImpl implements FrontDoors {
         }
     }
 
+    public FrontDoor getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String frontDoorName = Utils.getValueFromIdByName(id, "frontDoors");
+        return this.getByResourceGroupWithResponse(resourceGroupName, frontDoorName, Context.NONE).getValue();
+    }
+
+    public Response<FrontDoor> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String frontDoorName = Utils.getValueFromIdByName(id, "frontDoors");
+        return this.getByResourceGroupWithResponse(resourceGroupName, frontDoorName, context);
+    }
+
     private FrontDoorsClient serviceClient() {
         return this.innerClient;
     }

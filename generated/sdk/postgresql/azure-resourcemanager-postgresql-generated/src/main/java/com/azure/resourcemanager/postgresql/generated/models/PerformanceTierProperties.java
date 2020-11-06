@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.postgresql.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.PerformanceTierPropertiesInner;
 import java.util.List;
 
 /** An immutable client-side representation of PerformanceTierProperties. */
-@Immutable
 public interface PerformanceTierProperties {
     /**
      * Gets the id property: ID of the performance tier.

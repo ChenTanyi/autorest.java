@@ -174,6 +174,18 @@ public final class P2SVpnGatewaysImpl implements P2SVpnGateways {
         this.serviceClient().disconnectP2SVpnConnections(resourceGroupName, p2SVpnGatewayName, request, context);
     }
 
+    public P2SVpnGateway getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String gatewayName = Utils.getValueFromIdByName(id, "p2svpnGateways");
+        return this.getByResourceGroupWithResponse(resourceGroupName, gatewayName, Context.NONE).getValue();
+    }
+
+    public Response<P2SVpnGateway> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String gatewayName = Utils.getValueFromIdByName(id, "p2svpnGateways");
+        return this.getByResourceGroupWithResponse(resourceGroupName, gatewayName, context);
+    }
+
     private P2SVpnGatewaysClient serviceClient() {
         return this.innerClient;
     }

@@ -89,6 +89,29 @@ public interface PrivateEndpointConnections {
     PagedIterable<PrivateEndpointConnection> listByServer(String resourceGroupName, String serverName, Context context);
 
     /**
+     * Gets a private endpoint connection.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a private endpoint connection.
+     */
+    PrivateEndpointConnection getById(String id);
+
+    /**
+     * Gets a private endpoint connection.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a private endpoint connection.
+     */
+    Response<PrivateEndpointConnection> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new PrivateEndpointConnection resource.
      *
      * @param name resource name.

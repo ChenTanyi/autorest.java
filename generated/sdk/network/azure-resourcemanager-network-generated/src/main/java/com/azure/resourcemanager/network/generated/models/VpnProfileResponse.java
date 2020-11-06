@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnProfileResponseInner;
 
 /** An immutable client-side representation of VpnProfileResponse. */
-@Immutable
 public interface VpnProfileResponse {
     /**
      * Gets the profileUrl property: URL to the VPN profile.

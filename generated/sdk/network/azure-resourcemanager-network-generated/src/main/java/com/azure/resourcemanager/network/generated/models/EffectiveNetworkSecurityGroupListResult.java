@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.EffectiveNetworkSecurityGroupListResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of EffectiveNetworkSecurityGroupListResult. */
-@Immutable
 public interface EffectiveNetworkSecurityGroupListResult {
     /**
      * Gets the value property: A list of effective network security groups.

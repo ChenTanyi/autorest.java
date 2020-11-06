@@ -116,7 +116,7 @@ public final class RouteTableImpl implements RouteTable, RouteTable.Definition, 
             serviceManager
                 .serviceClient()
                 .getRouteTables()
-                .createOrUpdate(resourceGroupName, routeTableName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, routeTableName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -125,7 +125,7 @@ public final class RouteTableImpl implements RouteTable, RouteTable.Definition, 
             serviceManager
                 .serviceClient()
                 .getRouteTables()
-                .createOrUpdate(resourceGroupName, routeTableName, innerObject, context);
+                .createOrUpdate(resourceGroupName, routeTableName, this.innerModel(), context);
         return this;
     }
 
@@ -168,23 +168,23 @@ public final class RouteTableImpl implements RouteTable, RouteTable.Definition, 
     }
 
     public RouteTable refresh() {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getRouteTables()
-                .getByResourceGroupWithResponse(resourceGroupName, routeTableName, refreshExpand, Context.NONE)
+                .getByResourceGroupWithResponse(resourceGroupName, routeTableName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public RouteTable refresh(Context context) {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getRouteTables()
-                .getByResourceGroupWithResponse(resourceGroupName, routeTableName, refreshExpand, context)
+                .getByResourceGroupWithResponse(resourceGroupName, routeTableName, localExpand, context)
                 .getValue();
         return this;
     }

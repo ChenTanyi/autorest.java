@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.monitor.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSettingsCategoryResourceCollectionInner;
 import java.util.List;
 
 /** An immutable client-side representation of DiagnosticSettingsCategoryResourceCollection. */
-@Immutable
 public interface DiagnosticSettingsCategoryResourceCollection {
     /**
      * Gets the value property: The collection of diagnostic settings category resources.

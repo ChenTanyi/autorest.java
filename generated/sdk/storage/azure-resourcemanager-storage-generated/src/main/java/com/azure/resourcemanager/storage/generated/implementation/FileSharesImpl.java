@@ -90,6 +90,21 @@ public final class FileSharesImpl implements FileShares {
             .restoreWithResponse(resourceGroupName, accountName, shareName, deletedShare, context);
     }
 
+    public FileShare getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String shareName = Utils.getValueFromIdByName(id, "shares");
+        GetShareExpand localExpand = null;
+        return this.getWithResponse(resourceGroupName, accountName, shareName, localExpand, Context.NONE).getValue();
+    }
+
+    public Response<FileShare> getByIdWithResponse(String id, GetShareExpand expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String shareName = Utils.getValueFromIdByName(id, "shares");
+        return this.getWithResponse(resourceGroupName, accountName, shareName, expand, context);
+    }
+
     private FileSharesClient serviceClient() {
         return this.innerClient;
     }

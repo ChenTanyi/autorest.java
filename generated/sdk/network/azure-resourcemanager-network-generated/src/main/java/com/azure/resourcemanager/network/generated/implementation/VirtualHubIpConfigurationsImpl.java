@@ -67,6 +67,20 @@ public final class VirtualHubIpConfigurationsImpl implements VirtualHubIpConfigu
         return inner.mapPage(inner1 -> new HubIpConfigurationImpl(inner1, this.manager()));
     }
 
+    public HubIpConfiguration getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
+        String ipConfigName = Utils.getValueFromIdByName(id, "ipConfigurations");
+        return this.getWithResponse(resourceGroupName, virtualHubName, ipConfigName, Context.NONE).getValue();
+    }
+
+    public Response<HubIpConfiguration> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
+        String ipConfigName = Utils.getValueFromIdByName(id, "ipConfigurations");
+        return this.getWithResponse(resourceGroupName, virtualHubName, ipConfigName, context);
+    }
+
     private VirtualHubIpConfigurationsClient serviceClient() {
         return this.innerClient;
     }

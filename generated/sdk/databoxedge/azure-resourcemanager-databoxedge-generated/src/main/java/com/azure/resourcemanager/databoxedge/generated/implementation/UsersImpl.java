@@ -66,6 +66,20 @@ public final class UsersImpl implements Users {
         this.serviceClient().delete(deviceName, name, resourceGroupName, context);
     }
 
+    public User getById(String id) {
+        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        String name = Utils.getValueFromIdByName(id, "users");
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        return this.getWithResponse(deviceName, name, resourceGroupName, Context.NONE).getValue();
+    }
+
+    public Response<User> getByIdWithResponse(String id, Context context) {
+        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        String name = Utils.getValueFromIdByName(id, "users");
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        return this.getWithResponse(deviceName, name, resourceGroupName, context);
+    }
+
     private UsersClient serviceClient() {
         return this.innerClient;
     }

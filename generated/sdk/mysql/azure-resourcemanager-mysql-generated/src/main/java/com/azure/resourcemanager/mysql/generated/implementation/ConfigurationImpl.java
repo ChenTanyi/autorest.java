@@ -75,7 +75,7 @@ public final class ConfigurationImpl implements Configuration, Configuration.Def
             serviceManager
                 .serviceClient()
                 .getConfigurations()
-                .createOrUpdate(resourceGroupName, serverName, configurationName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, serverName, configurationName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -84,7 +84,7 @@ public final class ConfigurationImpl implements Configuration, Configuration.Def
             serviceManager
                 .serviceClient()
                 .getConfigurations()
-                .createOrUpdate(resourceGroupName, serverName, configurationName, innerObject, context);
+                .createOrUpdate(resourceGroupName, serverName, configurationName, this.innerModel(), context);
         return this;
     }
 
@@ -103,7 +103,7 @@ public final class ConfigurationImpl implements Configuration, Configuration.Def
             serviceManager
                 .serviceClient()
                 .getConfigurations()
-                .createOrUpdate(resourceGroupName, serverName, configurationName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, serverName, configurationName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -112,7 +112,7 @@ public final class ConfigurationImpl implements Configuration, Configuration.Def
             serviceManager
                 .serviceClient()
                 .getConfigurations()
-                .createOrUpdate(resourceGroupName, serverName, configurationName, innerObject, context);
+                .createOrUpdate(resourceGroupName, serverName, configurationName, this.innerModel(), context);
         return this;
     }
 

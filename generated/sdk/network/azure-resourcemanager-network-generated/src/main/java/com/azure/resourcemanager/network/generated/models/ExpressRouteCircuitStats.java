@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitStatsInner;
 
 /** An immutable client-side representation of ExpressRouteCircuitStats. */
-@Immutable
 public interface ExpressRouteCircuitStats {
     /**
      * Gets the primarybytesIn property: The Primary BytesIn of the peering.

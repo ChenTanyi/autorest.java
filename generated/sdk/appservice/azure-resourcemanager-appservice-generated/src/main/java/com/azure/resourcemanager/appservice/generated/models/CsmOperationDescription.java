@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmOperationDescriptionInner;
 
 /** An immutable client-side representation of CsmOperationDescription. */
-@Immutable
 public interface CsmOperationDescription {
     /**
      * Gets the name property: The name property.

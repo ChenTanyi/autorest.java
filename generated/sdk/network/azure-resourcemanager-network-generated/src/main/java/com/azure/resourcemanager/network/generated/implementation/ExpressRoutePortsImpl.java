@@ -109,6 +109,18 @@ public final class ExpressRoutePortsImpl implements ExpressRoutePorts {
         }
     }
 
+    public ExpressRoutePort getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String expressRoutePortName = Utils.getValueFromIdByName(id, "ExpressRoutePorts");
+        return this.getByResourceGroupWithResponse(resourceGroupName, expressRoutePortName, Context.NONE).getValue();
+    }
+
+    public Response<ExpressRoutePort> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String expressRoutePortName = Utils.getValueFromIdByName(id, "ExpressRoutePorts");
+        return this.getByResourceGroupWithResponse(resourceGroupName, expressRoutePortName, context);
+    }
+
     private ExpressRoutePortsClient serviceClient() {
         return this.innerClient;
     }

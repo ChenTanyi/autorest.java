@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.frontdoor.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.FrontendEndpointInner;
 
 /** An immutable client-side representation of FrontendEndpoint. */
-@Immutable
 public interface FrontendEndpoint {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

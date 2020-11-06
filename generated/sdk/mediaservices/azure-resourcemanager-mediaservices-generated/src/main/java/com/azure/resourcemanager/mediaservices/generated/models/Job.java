@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.mediaservices.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.JobInner;
 import java.time.OffsetDateTime;
@@ -12,7 +11,6 @@ import java.util.List;
 import java.util.Map;
 
 /** An immutable client-side representation of Job. */
-@Immutable
 public interface Job {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

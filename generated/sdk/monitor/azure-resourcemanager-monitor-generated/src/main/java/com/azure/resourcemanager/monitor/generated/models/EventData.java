@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.monitor.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.monitor.generated.fluent.models.EventDataInner;
 import java.time.OffsetDateTime;
 import java.util.Map;
 
 /** An immutable client-side representation of EventData. */
-@Immutable
 public interface EventData {
     /**
      * Gets the authorization property: The sender authorization information.

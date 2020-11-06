@@ -119,6 +119,33 @@ public interface ContainerServices {
     PagedIterable<ContainerService> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
+     * Gets the properties of the specified container service in the specified subscription and resource group. The
+     * operation returns the properties including state, orchestrator, number of masters and agents, and FQDNs of
+     * masters and agents.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the properties of the specified container service in the specified subscription and resource group.
+     */
+    ContainerService getById(String id);
+
+    /**
+     * Gets the properties of the specified container service in the specified subscription and resource group. The
+     * operation returns the properties including state, orchestrator, number of masters and agents, and FQDNs of
+     * masters and agents.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the properties of the specified container service in the specified subscription and resource group.
+     */
+    Response<ContainerService> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new ContainerService resource.
      *
      * @param name resource name.

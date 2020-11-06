@@ -164,7 +164,7 @@ public final class VirtualMachineScaleSetImpl
             serviceManager
                 .serviceClient()
                 .getVirtualMachineScaleSets()
-                .createOrUpdate(resourceGroupName, vmScaleSetName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, vmScaleSetName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -173,7 +173,7 @@ public final class VirtualMachineScaleSetImpl
             serviceManager
                 .serviceClient()
                 .getVirtualMachineScaleSets()
-                .createOrUpdate(resourceGroupName, vmScaleSetName, innerObject, context);
+                .createOrUpdate(resourceGroupName, vmScaleSetName, this.innerModel(), context);
         return this;
     }
 

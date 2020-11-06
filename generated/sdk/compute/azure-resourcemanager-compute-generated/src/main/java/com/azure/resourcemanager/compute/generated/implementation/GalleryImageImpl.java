@@ -150,7 +150,7 @@ public final class GalleryImageImpl implements GalleryImage, GalleryImage.Defini
             serviceManager
                 .serviceClient()
                 .getGalleryImages()
-                .createOrUpdate(resourceGroupName, galleryName, galleryImageName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, galleryName, galleryImageName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -159,7 +159,7 @@ public final class GalleryImageImpl implements GalleryImage, GalleryImage.Defini
             serviceManager
                 .serviceClient()
                 .getGalleryImages()
-                .createOrUpdate(resourceGroupName, galleryName, galleryImageName, innerObject, context);
+                .createOrUpdate(resourceGroupName, galleryName, galleryImageName, this.innerModel(), context);
         return this;
     }
 

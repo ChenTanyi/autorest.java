@@ -90,6 +90,29 @@ public interface BandwidthSchedules {
     void delete(String deviceName, String name, String resourceGroupName, Context context);
 
     /**
+     * Gets the properties of the specified bandwidth schedule.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the properties of the specified bandwidth schedule.
+     */
+    BandwidthSchedule getById(String id);
+
+    /**
+     * Gets the properties of the specified bandwidth schedule.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the properties of the specified bandwidth schedule.
+     */
+    Response<BandwidthSchedule> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new BandwidthSchedule resource.
      *
      * @param name resource name.

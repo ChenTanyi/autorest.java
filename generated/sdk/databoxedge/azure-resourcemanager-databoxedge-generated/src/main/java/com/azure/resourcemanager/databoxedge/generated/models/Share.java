@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.databoxedge.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.ShareInner;
 import java.util.List;
 
 /** An immutable client-side representation of Share. */
-@Immutable
 public interface Share {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

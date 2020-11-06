@@ -150,7 +150,7 @@ public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.
             serviceManager
                 .serviceClient()
                 .getPublicIpPrefixes()
-                .createOrUpdate(resourceGroupName, publicIpPrefixName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, publicIpPrefixName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -159,7 +159,7 @@ public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.
             serviceManager
                 .serviceClient()
                 .getPublicIpPrefixes()
-                .createOrUpdate(resourceGroupName, publicIpPrefixName, innerObject, context);
+                .createOrUpdate(resourceGroupName, publicIpPrefixName, this.innerModel(), context);
         return this;
     }
 
@@ -202,23 +202,23 @@ public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.
     }
 
     public PublicIpPrefix refresh() {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getPublicIpPrefixes()
-                .getByResourceGroupWithResponse(resourceGroupName, publicIpPrefixName, refreshExpand, Context.NONE)
+                .getByResourceGroupWithResponse(resourceGroupName, publicIpPrefixName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public PublicIpPrefix refresh(Context context) {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getPublicIpPrefixes()
-                .getByResourceGroupWithResponse(resourceGroupName, publicIpPrefixName, refreshExpand, context)
+                .getByResourceGroupWithResponse(resourceGroupName, publicIpPrefixName, localExpand, context)
                 .getValue();
         return this;
     }

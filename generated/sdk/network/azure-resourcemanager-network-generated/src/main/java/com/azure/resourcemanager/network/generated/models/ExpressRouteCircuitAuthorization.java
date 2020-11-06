@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitAuthorizationInner;
 
 /** An immutable client-side representation of ExpressRouteCircuitAuthorization. */
-@Immutable
 public interface ExpressRouteCircuitAuthorization {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

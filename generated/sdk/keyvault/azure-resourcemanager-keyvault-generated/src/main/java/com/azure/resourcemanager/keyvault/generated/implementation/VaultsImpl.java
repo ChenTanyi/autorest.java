@@ -191,6 +191,18 @@ public final class VaultsImpl implements Vaults {
         }
     }
 
+    public Vault getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String vaultName = Utils.getValueFromIdByName(id, "vaults");
+        return this.getByResourceGroupWithResponse(resourceGroupName, vaultName, Context.NONE).getValue();
+    }
+
+    public Response<Vault> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String vaultName = Utils.getValueFromIdByName(id, "vaults");
+        return this.getByResourceGroupWithResponse(resourceGroupName, vaultName, context);
+    }
+
     private VaultsClient serviceClient() {
         return this.innerClient;
     }

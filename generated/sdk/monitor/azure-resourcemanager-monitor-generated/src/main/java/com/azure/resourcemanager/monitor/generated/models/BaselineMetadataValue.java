@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.monitor.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.monitor.generated.fluent.models.BaselineMetadataValueInner;
 
 /** An immutable client-side representation of BaselineMetadataValue. */
-@Immutable
 public interface BaselineMetadataValue {
     /**
      * Gets the name property: the name of the metadata.

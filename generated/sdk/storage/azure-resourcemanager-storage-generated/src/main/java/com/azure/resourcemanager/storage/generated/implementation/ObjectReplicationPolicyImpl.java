@@ -82,7 +82,7 @@ public final class ObjectReplicationPolicyImpl
                 .serviceClient()
                 .getObjectReplicationPoliciesOperations()
                 .createOrUpdateWithResponse(
-                    resourceGroupName, accountName, objectReplicationPolicyId, innerObject, Context.NONE)
+                    resourceGroupName, accountName, objectReplicationPolicyId, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -93,7 +93,7 @@ public final class ObjectReplicationPolicyImpl
                 .serviceClient()
                 .getObjectReplicationPoliciesOperations()
                 .createOrUpdateWithResponse(
-                    resourceGroupName, accountName, objectReplicationPolicyId, innerObject, context)
+                    resourceGroupName, accountName, objectReplicationPolicyId, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -114,7 +114,7 @@ public final class ObjectReplicationPolicyImpl
                 .serviceClient()
                 .getObjectReplicationPoliciesOperations()
                 .createOrUpdateWithResponse(
-                    resourceGroupName, accountName, objectReplicationPolicyId, innerObject, Context.NONE)
+                    resourceGroupName, accountName, objectReplicationPolicyId, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -125,7 +125,7 @@ public final class ObjectReplicationPolicyImpl
                 .serviceClient()
                 .getObjectReplicationPoliciesOperations()
                 .createOrUpdateWithResponse(
-                    resourceGroupName, accountName, objectReplicationPolicyId, innerObject, context)
+                    resourceGroupName, accountName, objectReplicationPolicyId, this.innerModel(), context)
                 .getValue();
         return this;
     }

@@ -76,6 +76,21 @@ public final class VirtualRoutersImpl implements VirtualRouters {
         return inner.mapPage(inner1 -> new VirtualRouterImpl(inner1, this.manager()));
     }
 
+    public VirtualRouter getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String virtualRouterName = Utils.getValueFromIdByName(id, "virtualRouters");
+        String localExpand = null;
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, virtualRouterName, localExpand, Context.NONE)
+            .getValue();
+    }
+
+    public Response<VirtualRouter> getByIdWithResponse(String id, String expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String virtualRouterName = Utils.getValueFromIdByName(id, "virtualRouters");
+        return this.getByResourceGroupWithResponse(resourceGroupName, virtualRouterName, expand, context);
+    }
+
     private VirtualRoutersClient serviceClient() {
         return this.innerClient;
     }

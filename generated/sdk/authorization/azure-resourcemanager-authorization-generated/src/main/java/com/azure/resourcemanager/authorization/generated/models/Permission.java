@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.authorization.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.authorization.generated.fluent.models.PermissionInner;
 import java.util.List;
 
 /** An immutable client-side representation of Permission. */
-@Immutable
 public interface Permission {
     /**
      * Gets the actions property: Allowed actions.

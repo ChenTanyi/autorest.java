@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.iothub.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.iothub.generated.fluent.models.IotHubNameAvailabilityInfoInner;
 
 /** An immutable client-side representation of IotHubNameAvailabilityInfo. */
-@Immutable
 public interface IotHubNameAvailabilityInfo {
     /**
      * Gets the nameAvailable property: The value which indicates whether the provided name is available.

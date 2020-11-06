@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.databoxedge.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.ResourceTypeSkuInner;
 import java.util.List;
 
 /** An immutable client-side representation of ResourceTypeSku. */
-@Immutable
 public interface ResourceTypeSku {
     /**
      * Gets the resourceType property: The type of the resource.

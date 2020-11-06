@@ -89,6 +89,29 @@ public interface RulesEngines {
     void delete(String resourceGroupName, String frontDoorName, String rulesEngineName, Context context);
 
     /**
+     * Gets a Rules Engine Configuration with the specified name within the specified Front Door.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a Rules Engine Configuration with the specified name within the specified Front Door.
+     */
+    RulesEngine getById(String id);
+
+    /**
+     * Gets a Rules Engine Configuration with the specified name within the specified Front Door.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a Rules Engine Configuration with the specified name within the specified Front Door.
+     */
+    Response<RulesEngine> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new RulesEngine resource.
      *
      * @param name resource name.

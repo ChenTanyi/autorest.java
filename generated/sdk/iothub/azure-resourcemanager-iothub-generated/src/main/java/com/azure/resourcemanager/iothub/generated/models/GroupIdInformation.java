@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.iothub.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.iothub.generated.fluent.models.GroupIdInformationInner;
 
 /** An immutable client-side representation of GroupIdInformation. */
-@Immutable
 public interface GroupIdInformation {
     /**
      * Gets the id property: The resource identifier.

@@ -59,7 +59,7 @@ public final class DatabaseImpl implements Database, Database.Definition, Databa
             serviceManager
                 .serviceClient()
                 .getDatabases()
-                .createOrUpdate(resourceGroupName, serverName, databaseName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, serverName, databaseName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -68,7 +68,7 @@ public final class DatabaseImpl implements Database, Database.Definition, Databa
             serviceManager
                 .serviceClient()
                 .getDatabases()
-                .createOrUpdate(resourceGroupName, serverName, databaseName, innerObject, context);
+                .createOrUpdate(resourceGroupName, serverName, databaseName, this.innerModel(), context);
         return this;
     }
 
@@ -87,7 +87,7 @@ public final class DatabaseImpl implements Database, Database.Definition, Databa
             serviceManager
                 .serviceClient()
                 .getDatabases()
-                .createOrUpdate(resourceGroupName, serverName, databaseName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, serverName, databaseName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -96,7 +96,7 @@ public final class DatabaseImpl implements Database, Database.Definition, Databa
             serviceManager
                 .serviceClient()
                 .getDatabases()
-                .createOrUpdate(resourceGroupName, serverName, databaseName, innerObject, context);
+                .createOrUpdate(resourceGroupName, serverName, databaseName, this.innerModel(), context);
         return this;
     }
 

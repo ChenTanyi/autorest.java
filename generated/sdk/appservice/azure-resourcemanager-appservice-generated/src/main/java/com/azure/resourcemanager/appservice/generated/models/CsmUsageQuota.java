@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmUsageQuotaInner;
 import java.time.OffsetDateTime;
 
 /** An immutable client-side representation of CsmUsageQuota. */
-@Immutable
 public interface CsmUsageQuota {
     /**
      * Gets the unit property: Units of measurement for the quota resource.

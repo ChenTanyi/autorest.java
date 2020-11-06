@@ -4,14 +4,12 @@
 
 package com.azure.resourcemanager.storage.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.storage.generated.fluent.models.BlobContainerInner;
 import java.time.OffsetDateTime;
 import java.util.Map;
 
 /** An immutable client-side representation of BlobContainer. */
-@Immutable
 public interface BlobContainer {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

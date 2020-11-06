@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
@@ -14,7 +13,6 @@ import java.util.List;
 import java.util.Map;
 
 /** An immutable client-side representation of VpnGateway. */
-@Immutable
 public interface VpnGateway {
     /**
      * Gets the name property: The name of the resource.

@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteExtensionInfoInner;
 import java.time.OffsetDateTime;
 import java.util.List;
 
 /** An immutable client-side representation of SiteExtensionInfo. */
-@Immutable
 public interface SiteExtensionInfo {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

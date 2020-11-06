@@ -89,7 +89,7 @@ public final class WorkerPoolResourceImpl
             serviceManager
                 .serviceClient()
                 .getAppServiceEnvironments()
-                .createOrUpdateWorkerPool(resourceGroupName, name, workerPoolName, innerObject, Context.NONE);
+                .createOrUpdateWorkerPool(resourceGroupName, name, workerPoolName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -98,7 +98,7 @@ public final class WorkerPoolResourceImpl
             serviceManager
                 .serviceClient()
                 .getAppServiceEnvironments()
-                .createOrUpdateWorkerPool(resourceGroupName, name, workerPoolName, innerObject, context);
+                .createOrUpdateWorkerPool(resourceGroupName, name, workerPoolName, this.innerModel(), context);
         return this;
     }
 
@@ -117,7 +117,7 @@ public final class WorkerPoolResourceImpl
             serviceManager
                 .serviceClient()
                 .getAppServiceEnvironments()
-                .updateWorkerPoolWithResponse(resourceGroupName, name, workerPoolName, innerObject, Context.NONE)
+                .updateWorkerPoolWithResponse(resourceGroupName, name, workerPoolName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -127,7 +127,7 @@ public final class WorkerPoolResourceImpl
             serviceManager
                 .serviceClient()
                 .getAppServiceEnvironments()
-                .updateWorkerPoolWithResponse(resourceGroupName, name, workerPoolName, innerObject, context)
+                .updateWorkerPoolWithResponse(resourceGroupName, name, workerPoolName, this.innerModel(), context)
                 .getValue();
         return this;
     }

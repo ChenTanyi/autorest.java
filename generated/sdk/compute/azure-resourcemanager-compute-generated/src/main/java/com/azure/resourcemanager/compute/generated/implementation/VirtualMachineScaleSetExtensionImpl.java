@@ -105,7 +105,7 @@ public final class VirtualMachineScaleSetExtensionImpl
             serviceManager
                 .serviceClient()
                 .getVirtualMachineScaleSetExtensions()
-                .createOrUpdate(resourceGroupName, vmScaleSetName, vmssExtensionName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, vmScaleSetName, vmssExtensionName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -114,7 +114,7 @@ public final class VirtualMachineScaleSetExtensionImpl
             serviceManager
                 .serviceClient()
                 .getVirtualMachineScaleSetExtensions()
-                .createOrUpdate(resourceGroupName, vmScaleSetName, vmssExtensionName, innerObject, context);
+                .createOrUpdate(resourceGroupName, vmScaleSetName, vmssExtensionName, this.innerModel(), context);
         return this;
     }
 
@@ -157,23 +157,23 @@ public final class VirtualMachineScaleSetExtensionImpl
     }
 
     public VirtualMachineScaleSetExtension refresh() {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getVirtualMachineScaleSetExtensions()
-                .getWithResponse(resourceGroupName, vmScaleSetName, vmssExtensionName, refreshExpand, Context.NONE)
+                .getWithResponse(resourceGroupName, vmScaleSetName, vmssExtensionName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public VirtualMachineScaleSetExtension refresh(Context context) {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getVirtualMachineScaleSetExtensions()
-                .getWithResponse(resourceGroupName, vmScaleSetName, vmssExtensionName, refreshExpand, context)
+                .getWithResponse(resourceGroupName, vmScaleSetName, vmssExtensionName, localExpand, context)
                 .getValue();
         return this;
     }

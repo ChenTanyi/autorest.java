@@ -254,6 +254,21 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
         return inner.mapPage(inner1 -> new AutoApprovedPrivateLinkServiceImpl(inner1, this.manager()));
     }
 
+    public PrivateLinkService getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String serviceName = Utils.getValueFromIdByName(id, "privateLinkServices");
+        String localExpand = null;
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, serviceName, localExpand, Context.NONE)
+            .getValue();
+    }
+
+    public Response<PrivateLinkService> getByIdWithResponse(String id, String expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String serviceName = Utils.getValueFromIdByName(id, "privateLinkServices");
+        return this.getByResourceGroupWithResponse(resourceGroupName, serviceName, expand, context);
+    }
+
     private PrivateLinkServicesClient serviceClient() {
         return this.innerClient;
     }

@@ -87,7 +87,7 @@ public final class RelayServiceConnectionEntityImpl
                 .serviceClient()
                 .getWebApps()
                 .createOrUpdateRelayServiceConnectionWithResponse(
-                    resourceGroupName, name, entityName, innerObject, Context.NONE)
+                    resourceGroupName, name, entityName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -98,7 +98,7 @@ public final class RelayServiceConnectionEntityImpl
                 .serviceClient()
                 .getWebApps()
                 .createOrUpdateRelayServiceConnectionWithResponse(
-                    resourceGroupName, name, entityName, innerObject, context)
+                    resourceGroupName, name, entityName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -119,7 +119,7 @@ public final class RelayServiceConnectionEntityImpl
                 .serviceClient()
                 .getWebApps()
                 .updateRelayServiceConnectionWithResponse(
-                    resourceGroupName, name, entityName, innerObject, Context.NONE)
+                    resourceGroupName, name, entityName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -129,7 +129,8 @@ public final class RelayServiceConnectionEntityImpl
             serviceManager
                 .serviceClient()
                 .getWebApps()
-                .updateRelayServiceConnectionWithResponse(resourceGroupName, name, entityName, innerObject, context)
+                .updateRelayServiceConnectionWithResponse(
+                    resourceGroupName, name, entityName, this.innerModel(), context)
                 .getValue();
         return this;
     }

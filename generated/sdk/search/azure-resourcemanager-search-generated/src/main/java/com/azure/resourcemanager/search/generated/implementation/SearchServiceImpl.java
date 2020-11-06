@@ -161,7 +161,8 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
             serviceManager
                 .serviceClient()
                 .getServices()
-                .createOrUpdate(resourceGroupName, searchServiceName, innerObject, createClientRequestId, Context.NONE);
+                .createOrUpdate(
+                    resourceGroupName, searchServiceName, this.innerModel(), createClientRequestId, Context.NONE);
         return this;
     }
 
@@ -170,7 +171,8 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
             serviceManager
                 .serviceClient()
                 .getServices()
-                .createOrUpdate(resourceGroupName, searchServiceName, innerObject, createClientRequestId, context);
+                .createOrUpdate(
+                    resourceGroupName, searchServiceName, this.innerModel(), createClientRequestId, context);
         return this;
     }
 
@@ -217,24 +219,24 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
     }
 
     public SearchService refresh() {
-        UUID refreshClientRequestId = null;
+        UUID localClientRequestId = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getServices()
                 .getByResourceGroupWithResponse(
-                    resourceGroupName, searchServiceName, refreshClientRequestId, Context.NONE)
+                    resourceGroupName, searchServiceName, localClientRequestId, Context.NONE)
                 .getValue();
         return this;
     }
 
     public SearchService refresh(Context context) {
-        UUID refreshClientRequestId = null;
+        UUID localClientRequestId = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getServices()
-                .getByResourceGroupWithResponse(resourceGroupName, searchServiceName, refreshClientRequestId, context)
+                .getByResourceGroupWithResponse(resourceGroupName, searchServiceName, localClientRequestId, context)
                 .getValue();
         return this;
     }

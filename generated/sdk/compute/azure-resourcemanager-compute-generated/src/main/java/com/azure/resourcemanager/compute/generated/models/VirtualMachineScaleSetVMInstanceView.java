@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetVMInstanceViewInner;
 import java.util.List;
 
 /** An immutable client-side representation of VirtualMachineScaleSetVMInstanceView. */
-@Immutable
 public interface VirtualMachineScaleSetVMInstanceView {
     /**
      * Gets the platformUpdateDomain property: The Update Domain count.

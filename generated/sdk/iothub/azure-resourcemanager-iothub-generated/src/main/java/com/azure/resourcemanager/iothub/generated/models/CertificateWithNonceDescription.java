@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.iothub.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.iothub.generated.fluent.models.CertificateWithNonceDescriptionInner;
 
 /** An immutable client-side representation of CertificateWithNonceDescription. */
-@Immutable
 public interface CertificateWithNonceDescription {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

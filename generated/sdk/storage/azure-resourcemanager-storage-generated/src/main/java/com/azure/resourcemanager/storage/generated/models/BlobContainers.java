@@ -432,6 +432,55 @@ public interface BlobContainers {
         Context context);
 
     /**
+     * Gets properties of a specified container.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties of a specified container.
+     */
+    BlobContainer getById(String id);
+
+    /**
+     * Gets properties of a specified container.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties of a specified container.
+     */
+    Response<BlobContainer> getByIdWithResponse(String id, Context context);
+
+    /**
+     * Gets the existing immutability policy along with the corresponding ETag in response headers and body.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the existing immutability policy along with the corresponding ETag in response headers and body.
+     */
+    ImmutabilityPolicy getImmutabilityPolicyById(String id);
+
+    /**
+     * Gets the existing immutability policy along with the corresponding ETag in response headers and body.
+     *
+     * @param id the id of the resource.
+     * @param ifMatch The entity state (ETag) version of the immutability policy to update. A value of "*" can be used
+     *     to apply the operation only if the immutability policy already exists. If omitted, this operation will always
+     *     be applied.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the existing immutability policy along with the corresponding ETag in response headers and body.
+     */
+    Response<ImmutabilityPolicy> getImmutabilityPolicyByIdWithResponse(String id, String ifMatch, Context context);
+
+    /**
      * Begins definition for a new BlobContainer resource.
      *
      * @param name resource name.

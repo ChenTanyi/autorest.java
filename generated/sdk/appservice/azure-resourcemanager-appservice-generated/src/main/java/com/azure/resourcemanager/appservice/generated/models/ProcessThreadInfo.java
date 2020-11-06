@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ProcessThreadInfoInner;
 import java.time.OffsetDateTime;
 
 /** An immutable client-side representation of ProcessThreadInfo. */
-@Immutable
 public interface ProcessThreadInfo {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

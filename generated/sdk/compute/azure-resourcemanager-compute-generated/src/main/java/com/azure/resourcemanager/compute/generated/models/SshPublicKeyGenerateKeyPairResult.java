@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.compute.generated.fluent.models.SshPublicKeyGenerateKeyPairResultInner;
 
 /** An immutable client-side representation of SshPublicKeyGenerateKeyPairResult. */
-@Immutable
 public interface SshPublicKeyGenerateKeyPairResult {
     /**
      * Gets the privateKey property: Private key portion of the key pair used to authenticate to a virtual machine

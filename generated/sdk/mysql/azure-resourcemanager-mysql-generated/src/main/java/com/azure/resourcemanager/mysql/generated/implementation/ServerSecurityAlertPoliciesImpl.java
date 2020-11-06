@@ -50,6 +50,22 @@ public final class ServerSecurityAlertPoliciesImpl implements ServerSecurityAler
         }
     }
 
+    public ServerSecurityAlertPolicy getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String serverName = Utils.getValueFromIdByName(id, "servers");
+        SecurityAlertPolicyName securityAlertPolicyName =
+            SecurityAlertPolicyName.fromString(Utils.getValueFromIdByName(id, "securityAlertPolicies"));
+        return this.getWithResponse(resourceGroupName, serverName, securityAlertPolicyName, Context.NONE).getValue();
+    }
+
+    public Response<ServerSecurityAlertPolicy> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String serverName = Utils.getValueFromIdByName(id, "servers");
+        SecurityAlertPolicyName securityAlertPolicyName =
+            SecurityAlertPolicyName.fromString(Utils.getValueFromIdByName(id, "securityAlertPolicies"));
+        return this.getWithResponse(resourceGroupName, serverName, securityAlertPolicyName, context);
+    }
+
     private ServerSecurityAlertPoliciesClient serviceClient() {
         return this.innerClient;
     }

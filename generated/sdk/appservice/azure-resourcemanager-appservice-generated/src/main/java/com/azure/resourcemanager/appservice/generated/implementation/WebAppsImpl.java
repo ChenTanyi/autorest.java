@@ -7132,6 +7132,198 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public Identifier getDomainOwnershipIdentifierById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "sites");
+        String domainOwnershipIdentifierName = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
+        return this
+            .getDomainOwnershipIdentifierWithResponse(
+                resourceGroupName, name, domainOwnershipIdentifierName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<Identifier> getDomainOwnershipIdentifierByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "sites");
+        String domainOwnershipIdentifierName = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
+        return this
+            .getDomainOwnershipIdentifierWithResponse(resourceGroupName, name, domainOwnershipIdentifierName, context);
+    }
+
+    public Site getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "sites");
+        return this.getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE).getValue();
+    }
+
+    public Response<Site> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "sites");
+        return this.getByResourceGroupWithResponse(resourceGroupName, name, context);
+    }
+
+    public Deployment getDeploymentById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "sites");
+        String varId = Utils.getValueFromIdByName(id, "deployments");
+        return this.getDeploymentWithResponse(resourceGroupName, name, varId, Context.NONE).getValue();
+    }
+
+    public Response<Deployment> getDeploymentByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "sites");
+        String varId = Utils.getValueFromIdByName(id, "deployments");
+        return this.getDeploymentWithResponse(resourceGroupName, name, varId, context);
+    }
+
+    public FunctionEnvelope getFunctionById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "sites");
+        String functionName = Utils.getValueFromIdByName(id, "functions");
+        return this.getFunctionWithResponse(resourceGroupName, name, functionName, Context.NONE).getValue();
+    }
+
+    public Response<FunctionEnvelope> getFunctionByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "sites");
+        String functionName = Utils.getValueFromIdByName(id, "functions");
+        return this.getFunctionWithResponse(resourceGroupName, name, functionName, context);
+    }
+
+    public HostnameBinding getHostnameBindingById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "sites");
+        String hostname = Utils.getValueFromIdByName(id, "hostNameBindings");
+        return this.getHostnameBindingWithResponse(resourceGroupName, name, hostname, Context.NONE).getValue();
+    }
+
+    public Response<HostnameBinding> getHostnameBindingByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "sites");
+        String hostname = Utils.getValueFromIdByName(id, "hostNameBindings");
+        return this.getHostnameBindingWithResponse(resourceGroupName, name, hostname, context);
+    }
+
+    public HybridConnection getHybridConnectionById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "sites");
+        String namespaceName = Utils.getValueFromIdByName(id, "hybridConnectionNamespaces");
+        String relayName = Utils.getValueFromIdByName(id, "relays");
+        return this
+            .getHybridConnectionWithResponse(resourceGroupName, name, namespaceName, relayName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<HybridConnection> getHybridConnectionByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "sites");
+        String namespaceName = Utils.getValueFromIdByName(id, "hybridConnectionNamespaces");
+        String relayName = Utils.getValueFromIdByName(id, "relays");
+        return this.getHybridConnectionWithResponse(resourceGroupName, name, namespaceName, relayName, context);
+    }
+
+    public RelayServiceConnectionEntity getRelayServiceConnectionById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "sites");
+        String entityName = Utils.getValueFromIdByName(id, "hybridconnection");
+        return this.getRelayServiceConnectionWithResponse(resourceGroupName, name, entityName, Context.NONE).getValue();
+    }
+
+    public Response<RelayServiceConnectionEntity> getRelayServiceConnectionByIdWithResponse(
+        String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "sites");
+        String entityName = Utils.getValueFromIdByName(id, "hybridconnection");
+        return this.getRelayServiceConnectionWithResponse(resourceGroupName, name, entityName, context);
+    }
+
+    public VnetInfo getVnetConnectionSlotById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "sites");
+        String vnetName = Utils.getValueFromIdByName(id, "virtualNetworkConnections");
+        String slot = Utils.getValueFromIdByName(id, "slots");
+        return this.getVnetConnectionSlotWithResponse(resourceGroupName, name, vnetName, slot, Context.NONE).getValue();
+    }
+
+    public Response<VnetInfo> getVnetConnectionSlotByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "sites");
+        String vnetName = Utils.getValueFromIdByName(id, "virtualNetworkConnections");
+        String slot = Utils.getValueFromIdByName(id, "slots");
+        return this.getVnetConnectionSlotWithResponse(resourceGroupName, name, vnetName, slot, context);
+    }
+
+    public PremierAddOn getPremierAddOnById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "sites");
+        String premierAddOnName = Utils.getValueFromIdByName(id, "premieraddons");
+        return this.getPremierAddOnWithResponse(resourceGroupName, name, premierAddOnName, Context.NONE).getValue();
+    }
+
+    public Response<PremierAddOn> getPremierAddOnByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "sites");
+        String premierAddOnName = Utils.getValueFromIdByName(id, "premieraddons");
+        return this.getPremierAddOnWithResponse(resourceGroupName, name, premierAddOnName, context);
+    }
+
+    public PublicCertificate getPublicCertificateById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "sites");
+        String publicCertificateName = Utils.getValueFromIdByName(id, "publicCertificates");
+        return this
+            .getPublicCertificateWithResponse(resourceGroupName, name, publicCertificateName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<PublicCertificate> getPublicCertificateByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "sites");
+        String publicCertificateName = Utils.getValueFromIdByName(id, "publicCertificates");
+        return this.getPublicCertificateWithResponse(resourceGroupName, name, publicCertificateName, context);
+    }
+
+    public PrivateEndpointConnectionResource getPrivateEndpointConnectionById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "sites");
+        String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
+        return this
+            .getPrivateEndpointConnectionWithResponse(
+                resourceGroupName, name, privateEndpointConnectionName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<PrivateEndpointConnectionResource> getPrivateEndpointConnectionByIdWithResponse(
+        String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "sites");
+        String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
+        return this
+            .getPrivateEndpointConnectionWithResponse(resourceGroupName, name, privateEndpointConnectionName, context);
+    }
+
+    public VnetGateway getVnetConnectionGatewaySlotById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "sites");
+        String vnetName = Utils.getValueFromIdByName(id, "virtualNetworkConnections");
+        String gatewayName = Utils.getValueFromIdByName(id, "gateways");
+        String slot = Utils.getValueFromIdByName(id, "slots");
+        return this
+            .getVnetConnectionGatewaySlotWithResponse(
+                resourceGroupName, name, vnetName, gatewayName, slot, Context.NONE)
+            .getValue();
+    }
+
+    public Response<VnetGateway> getVnetConnectionGatewaySlotByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String name = Utils.getValueFromIdByName(id, "sites");
+        String vnetName = Utils.getValueFromIdByName(id, "virtualNetworkConnections");
+        String gatewayName = Utils.getValueFromIdByName(id, "gateways");
+        String slot = Utils.getValueFromIdByName(id, "slots");
+        return this
+            .getVnetConnectionGatewaySlotWithResponse(resourceGroupName, name, vnetName, gatewayName, slot, context);
+    }
+
     private WebAppsClient serviceClient() {
         return this.innerClient;
     }

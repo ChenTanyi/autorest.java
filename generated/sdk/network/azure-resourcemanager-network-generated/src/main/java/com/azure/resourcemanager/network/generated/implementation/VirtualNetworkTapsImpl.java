@@ -77,6 +77,18 @@ public final class VirtualNetworkTapsImpl implements VirtualNetworkTaps {
         return inner.mapPage(inner1 -> new VirtualNetworkTapImpl(inner1, this.manager()));
     }
 
+    public VirtualNetworkTap getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String tapName = Utils.getValueFromIdByName(id, "virtualNetworkTaps");
+        return this.getByResourceGroupWithResponse(resourceGroupName, tapName, Context.NONE).getValue();
+    }
+
+    public Response<VirtualNetworkTap> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String tapName = Utils.getValueFromIdByName(id, "virtualNetworkTaps");
+        return this.getByResourceGroupWithResponse(resourceGroupName, tapName, context);
+    }
+
     private VirtualNetworkTapsClient serviceClient() {
         return this.innerClient;
     }

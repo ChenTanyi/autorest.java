@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.authorization.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.authorization.generated.fluent.models.RoleAssignmentInner;
 
 /** An immutable client-side representation of RoleAssignment. */
-@Immutable
 public interface RoleAssignment {
     /**
      * Gets the id property: The role assignment ID.

@@ -69,6 +69,20 @@ public final class VirtualRouterPeeringsImpl implements VirtualRouterPeerings {
         return inner.mapPage(inner1 -> new VirtualRouterPeeringImpl(inner1, this.manager()));
     }
 
+    public VirtualRouterPeering getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String virtualRouterName = Utils.getValueFromIdByName(id, "virtualRouters");
+        String peeringName = Utils.getValueFromIdByName(id, "peerings");
+        return this.getWithResponse(resourceGroupName, virtualRouterName, peeringName, Context.NONE).getValue();
+    }
+
+    public Response<VirtualRouterPeering> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String virtualRouterName = Utils.getValueFromIdByName(id, "virtualRouters");
+        String peeringName = Utils.getValueFromIdByName(id, "peerings");
+        return this.getWithResponse(resourceGroupName, virtualRouterName, peeringName, context);
+    }
+
     private VirtualRouterPeeringsClient serviceClient() {
         return this.innerClient;
     }

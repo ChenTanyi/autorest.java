@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.monitor.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.monitor.generated.fluent.models.LogSearchRuleResourceInner;
@@ -12,7 +11,6 @@ import java.time.OffsetDateTime;
 import java.util.Map;
 
 /** An immutable client-side representation of LogSearchRuleResource. */
-@Immutable
 public interface LogSearchRuleResource {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

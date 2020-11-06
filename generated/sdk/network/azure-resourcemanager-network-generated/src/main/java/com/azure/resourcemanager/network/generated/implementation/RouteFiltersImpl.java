@@ -76,6 +76,21 @@ public final class RouteFiltersImpl implements RouteFilters {
         return inner.mapPage(inner1 -> new RouteFilterImpl(inner1, this.manager()));
     }
 
+    public RouteFilter getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String routeFilterName = Utils.getValueFromIdByName(id, "routeFilters");
+        String localExpand = null;
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, routeFilterName, localExpand, Context.NONE)
+            .getValue();
+    }
+
+    public Response<RouteFilter> getByIdWithResponse(String id, String expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String routeFilterName = Utils.getValueFromIdByName(id, "routeFilters");
+        return this.getByResourceGroupWithResponse(resourceGroupName, routeFilterName, expand, context);
+    }
+
     private RouteFiltersClient serviceClient() {
         return this.innerClient;
     }

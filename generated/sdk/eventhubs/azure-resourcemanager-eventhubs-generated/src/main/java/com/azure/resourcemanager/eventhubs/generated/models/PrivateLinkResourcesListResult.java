@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.eventhubs.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.PrivateLinkResourcesListResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of PrivateLinkResourcesListResult. */
-@Immutable
 public interface PrivateLinkResourcesListResult {
     /**
      * Gets the value property: A collection of private link resources.

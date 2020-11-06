@@ -117,6 +117,18 @@ public final class ClustersImpl implements Clusters {
         }
     }
 
+    public Cluster getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String clusterName = Utils.getValueFromIdByName(id, "clusters");
+        return this.getByResourceGroupWithResponse(resourceGroupName, clusterName, Context.NONE).getValue();
+    }
+
+    public Response<Cluster> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String clusterName = Utils.getValueFromIdByName(id, "clusters");
+        return this.getByResourceGroupWithResponse(resourceGroupName, clusterName, context);
+    }
+
     private ClustersClient serviceClient() {
         return this.innerClient;
     }

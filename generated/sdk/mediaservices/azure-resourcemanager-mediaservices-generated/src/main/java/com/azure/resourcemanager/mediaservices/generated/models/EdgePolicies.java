@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.mediaservices.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.EdgePoliciesInner;
 
 /** An immutable client-side representation of EdgePolicies. */
-@Immutable
 public interface EdgePolicies {
     /**
      * Gets the usageDataCollectionPolicy property: The usageDataCollectionPolicy property.

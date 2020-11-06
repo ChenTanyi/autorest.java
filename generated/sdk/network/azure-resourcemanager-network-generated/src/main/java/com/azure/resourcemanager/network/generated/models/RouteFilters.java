@@ -104,6 +104,30 @@ public interface RouteFilters {
     PagedIterable<RouteFilter> list(Context context);
 
     /**
+     * Gets the specified route filter.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified route filter.
+     */
+    RouteFilter getById(String id);
+
+    /**
+     * Gets the specified route filter.
+     *
+     * @param id the id of the resource.
+     * @param expand Expands referenced express route bgp peering resources.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified route filter.
+     */
+    Response<RouteFilter> getByIdWithResponse(String id, String expand, Context context);
+
+    /**
      * Begins definition for a new RouteFilter resource.
      *
      * @param name resource name.

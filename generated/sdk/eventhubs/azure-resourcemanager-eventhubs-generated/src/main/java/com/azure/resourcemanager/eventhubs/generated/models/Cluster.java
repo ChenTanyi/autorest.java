@@ -4,14 +4,12 @@
 
 package com.azure.resourcemanager.eventhubs.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ClusterInner;
 import java.util.Map;
 
 /** An immutable client-side representation of Cluster. */
-@Immutable
 public interface Cluster {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

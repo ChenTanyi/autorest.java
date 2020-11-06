@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.monitor.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricNamespaceInner;
 
 /** An immutable client-side representation of MetricNamespace. */
-@Immutable
 public interface MetricNamespace {
     /**
      * Gets the id property: The ID of the metricNamespace.

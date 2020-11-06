@@ -176,7 +176,7 @@ public final class AppServiceCertificateOrderImpl
             serviceManager
                 .serviceClient()
                 .getAppServiceCertificateOrders()
-                .createOrUpdate(resourceGroupName, certificateOrderName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, certificateOrderName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -185,7 +185,7 @@ public final class AppServiceCertificateOrderImpl
             serviceManager
                 .serviceClient()
                 .getAppServiceCertificateOrders()
-                .createOrUpdate(resourceGroupName, certificateOrderName, innerObject, context);
+                .createOrUpdate(resourceGroupName, certificateOrderName, this.innerModel(), context);
         return this;
     }
 

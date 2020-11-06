@@ -70,7 +70,7 @@ public final class PublicCertificateImpl
                 .serviceClient()
                 .getWebApps()
                 .createOrUpdatePublicCertificateWithResponse(
-                    resourceGroupName, name, publicCertificateName, innerObject, Context.NONE)
+                    resourceGroupName, name, publicCertificateName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -81,7 +81,7 @@ public final class PublicCertificateImpl
                 .serviceClient()
                 .getWebApps()
                 .createOrUpdatePublicCertificateWithResponse(
-                    resourceGroupName, name, publicCertificateName, innerObject, context)
+                    resourceGroupName, name, publicCertificateName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -102,7 +102,7 @@ public final class PublicCertificateImpl
                 .serviceClient()
                 .getWebApps()
                 .createOrUpdatePublicCertificateWithResponse(
-                    resourceGroupName, name, publicCertificateName, innerObject, Context.NONE)
+                    resourceGroupName, name, publicCertificateName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -113,7 +113,7 @@ public final class PublicCertificateImpl
                 .serviceClient()
                 .getWebApps()
                 .createOrUpdatePublicCertificateWithResponse(
-                    resourceGroupName, name, publicCertificateName, innerObject, context)
+                    resourceGroupName, name, publicCertificateName, this.innerModel(), context)
                 .getValue();
         return this;
     }

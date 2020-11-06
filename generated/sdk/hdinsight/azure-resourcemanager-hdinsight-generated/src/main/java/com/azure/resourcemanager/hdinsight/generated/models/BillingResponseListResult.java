@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.hdinsight.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.BillingResponseListResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of BillingResponseListResult. */
-@Immutable
 public interface BillingResponseListResult {
     /**
      * Gets the vmSizes property: The virtual machine sizes to include or exclude.

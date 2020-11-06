@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.mysql.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.mysql.generated.fluent.models.RecommendedActionSessionsOperationStatusInner;
 import java.time.OffsetDateTime;
 
 /** An immutable client-side representation of RecommendedActionSessionsOperationStatus. */
-@Immutable
 public interface RecommendedActionSessionsOperationStatus {
     /**
      * Gets the name property: Operation identifier.

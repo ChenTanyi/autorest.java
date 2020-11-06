@@ -4,14 +4,12 @@
 
 package com.azure.resourcemanager.mediaservices.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.AssetInner;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
 /** An immutable client-side representation of Asset. */
-@Immutable
 public interface Asset {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

@@ -315,6 +315,32 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         }
     }
 
+    public AppServiceCertificateOrder getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
+        return this.getByResourceGroupWithResponse(resourceGroupName, certificateOrderName, Context.NONE).getValue();
+    }
+
+    public Response<AppServiceCertificateOrder> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
+        return this.getByResourceGroupWithResponse(resourceGroupName, certificateOrderName, context);
+    }
+
+    public AppServiceCertificateResource getCertificateById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
+        String name = Utils.getValueFromIdByName(id, "certificates");
+        return this.getCertificateWithResponse(resourceGroupName, certificateOrderName, name, Context.NONE).getValue();
+    }
+
+    public Response<AppServiceCertificateResource> getCertificateByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
+        String name = Utils.getValueFromIdByName(id, "certificates");
+        return this.getCertificateWithResponse(resourceGroupName, certificateOrderName, name, context);
+    }
+
     private AppServiceCertificateOrdersClient serviceClient() {
         return this.innerClient;
     }

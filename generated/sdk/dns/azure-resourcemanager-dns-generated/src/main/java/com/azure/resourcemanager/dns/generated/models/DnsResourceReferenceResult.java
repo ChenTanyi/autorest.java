@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.dns.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.dns.generated.fluent.models.DnsResourceReferenceResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of DnsResourceReferenceResult. */
-@Immutable
 public interface DnsResourceReferenceResult {
     /**
      * Gets the dnsResourceReferences property: The result of dns resource reference request. A list of dns resource

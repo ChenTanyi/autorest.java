@@ -83,6 +83,29 @@ public interface LocalNetworkGateways {
     PagedIterable<LocalNetworkGateway> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
+     * Gets the specified local network gateway in a resource group.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified local network gateway in a resource group.
+     */
+    LocalNetworkGateway getById(String id);
+
+    /**
+     * Gets the specified local network gateway in a resource group.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified local network gateway in a resource group.
+     */
+    Response<LocalNetworkGateway> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new LocalNetworkGateway resource.
      *
      * @param name resource name.

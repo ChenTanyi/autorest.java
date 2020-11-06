@@ -185,7 +185,7 @@ public final class ActionGroupResourceImpl
             serviceManager
                 .serviceClient()
                 .getActionGroups()
-                .createOrUpdateWithResponse(resourceGroupName, actionGroupName, innerObject, Context.NONE)
+                .createOrUpdateWithResponse(resourceGroupName, actionGroupName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -195,7 +195,7 @@ public final class ActionGroupResourceImpl
             serviceManager
                 .serviceClient()
                 .getActionGroups()
-                .createOrUpdateWithResponse(resourceGroupName, actionGroupName, innerObject, context)
+                .createOrUpdateWithResponse(resourceGroupName, actionGroupName, this.innerModel(), context)
                 .getValue();
         return this;
     }

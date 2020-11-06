@@ -60,7 +60,7 @@ public final class IdentifierImpl implements Identifier, Identifier.Definition, 
                 .serviceClient()
                 .getWebApps()
                 .createOrUpdateDomainOwnershipIdentifierWithResponse(
-                    resourceGroupName, name, domainOwnershipIdentifierName, innerObject, Context.NONE)
+                    resourceGroupName, name, domainOwnershipIdentifierName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -71,7 +71,7 @@ public final class IdentifierImpl implements Identifier, Identifier.Definition, 
                 .serviceClient()
                 .getWebApps()
                 .createOrUpdateDomainOwnershipIdentifierWithResponse(
-                    resourceGroupName, name, domainOwnershipIdentifierName, innerObject, context)
+                    resourceGroupName, name, domainOwnershipIdentifierName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -92,7 +92,7 @@ public final class IdentifierImpl implements Identifier, Identifier.Definition, 
                 .serviceClient()
                 .getWebApps()
                 .updateDomainOwnershipIdentifierWithResponse(
-                    resourceGroupName, name, domainOwnershipIdentifierName, innerObject, Context.NONE)
+                    resourceGroupName, name, domainOwnershipIdentifierName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -103,7 +103,7 @@ public final class IdentifierImpl implements Identifier, Identifier.Definition, 
                 .serviceClient()
                 .getWebApps()
                 .updateDomainOwnershipIdentifierWithResponse(
-                    resourceGroupName, name, domainOwnershipIdentifierName, innerObject, context)
+                    resourceGroupName, name, domainOwnershipIdentifierName, this.innerModel(), context)
                 .getValue();
         return this;
     }

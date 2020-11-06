@@ -75,7 +75,11 @@ public final class InboundSecurityRuleImpl
                 .serviceClient()
                 .getInboundSecurityRuleOperations()
                 .createOrUpdate(
-                    resourceGroupName, networkVirtualApplianceName, ruleCollectionName, innerObject, Context.NONE);
+                    resourceGroupName,
+                    networkVirtualApplianceName,
+                    ruleCollectionName,
+                    this.innerModel(),
+                    Context.NONE);
         return this;
     }
 
@@ -85,7 +89,7 @@ public final class InboundSecurityRuleImpl
                 .serviceClient()
                 .getInboundSecurityRuleOperations()
                 .createOrUpdate(
-                    resourceGroupName, networkVirtualApplianceName, ruleCollectionName, innerObject, context);
+                    resourceGroupName, networkVirtualApplianceName, ruleCollectionName, this.innerModel(), context);
         return this;
     }
 
@@ -105,7 +109,11 @@ public final class InboundSecurityRuleImpl
                 .serviceClient()
                 .getInboundSecurityRuleOperations()
                 .createOrUpdate(
-                    resourceGroupName, networkVirtualApplianceName, ruleCollectionName, innerObject, Context.NONE);
+                    resourceGroupName,
+                    networkVirtualApplianceName,
+                    ruleCollectionName,
+                    this.innerModel(),
+                    Context.NONE);
         return this;
     }
 
@@ -115,7 +123,7 @@ public final class InboundSecurityRuleImpl
                 .serviceClient()
                 .getInboundSecurityRuleOperations()
                 .createOrUpdate(
-                    resourceGroupName, networkVirtualApplianceName, ruleCollectionName, innerObject, context);
+                    resourceGroupName, networkVirtualApplianceName, ruleCollectionName, this.innerModel(), context);
         return this;
     }
 

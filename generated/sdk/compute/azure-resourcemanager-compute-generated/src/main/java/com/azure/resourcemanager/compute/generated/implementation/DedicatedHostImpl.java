@@ -126,7 +126,7 @@ public final class DedicatedHostImpl implements DedicatedHost, DedicatedHost.Def
             serviceManager
                 .serviceClient()
                 .getDedicatedHosts()
-                .createOrUpdate(resourceGroupName, hostGroupName, hostname, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, hostGroupName, hostname, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -135,7 +135,7 @@ public final class DedicatedHostImpl implements DedicatedHost, DedicatedHost.Def
             serviceManager
                 .serviceClient()
                 .getDedicatedHosts()
-                .createOrUpdate(resourceGroupName, hostGroupName, hostname, innerObject, context);
+                .createOrUpdate(resourceGroupName, hostGroupName, hostname, this.innerModel(), context);
         return this;
     }
 
@@ -177,23 +177,23 @@ public final class DedicatedHostImpl implements DedicatedHost, DedicatedHost.Def
     }
 
     public DedicatedHost refresh() {
-        InstanceViewTypes refreshExpand = null;
+        InstanceViewTypes localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getDedicatedHosts()
-                .getWithResponse(resourceGroupName, hostGroupName, hostname, refreshExpand, Context.NONE)
+                .getWithResponse(resourceGroupName, hostGroupName, hostname, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public DedicatedHost refresh(Context context) {
-        InstanceViewTypes refreshExpand = null;
+        InstanceViewTypes localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getDedicatedHosts()
-                .getWithResponse(resourceGroupName, hostGroupName, hostname, refreshExpand, context)
+                .getWithResponse(resourceGroupName, hostGroupName, hostname, localExpand, context)
                 .getValue();
         return this;
     }

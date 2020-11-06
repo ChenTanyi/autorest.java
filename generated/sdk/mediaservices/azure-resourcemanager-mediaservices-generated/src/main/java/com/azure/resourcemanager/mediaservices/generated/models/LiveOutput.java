@@ -4,14 +4,12 @@
 
 package com.azure.resourcemanager.mediaservices.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.LiveOutputInner;
 import java.time.Duration;
 import java.time.OffsetDateTime;
 
 /** An immutable client-side representation of LiveOutput. */
-@Immutable
 public interface LiveOutput {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

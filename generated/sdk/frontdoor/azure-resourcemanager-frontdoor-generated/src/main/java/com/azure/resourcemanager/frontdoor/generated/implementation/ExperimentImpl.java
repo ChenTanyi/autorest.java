@@ -109,7 +109,7 @@ public final class ExperimentImpl implements Experiment, Experiment.Definition, 
             serviceManager
                 .serviceClient()
                 .getExperiments()
-                .createOrUpdate(resourceGroupName, profileName, experimentName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, profileName, experimentName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -118,7 +118,7 @@ public final class ExperimentImpl implements Experiment, Experiment.Definition, 
             serviceManager
                 .serviceClient()
                 .getExperiments()
-                .createOrUpdate(resourceGroupName, profileName, experimentName, innerObject, context);
+                .createOrUpdate(resourceGroupName, profileName, experimentName, this.innerModel(), context);
         return this;
     }
 

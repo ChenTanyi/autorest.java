@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.iothub.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.iothub.generated.fluent.models.JobResponseInner;
 import java.time.OffsetDateTime;
 
 /** An immutable client-side representation of JobResponse. */
-@Immutable
 public interface JobResponse {
     /**
      * Gets the jobId property: The job identifier.

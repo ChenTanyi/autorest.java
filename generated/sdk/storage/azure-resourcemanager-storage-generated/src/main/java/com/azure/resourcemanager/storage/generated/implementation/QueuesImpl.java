@@ -71,6 +71,20 @@ public final class QueuesImpl implements Queues {
         return inner.mapPage(inner1 -> new ListQueueImpl(inner1, this.manager()));
     }
 
+    public StorageQueue getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String queueName = Utils.getValueFromIdByName(id, "queues");
+        return this.getWithResponse(resourceGroupName, accountName, queueName, Context.NONE).getValue();
+    }
+
+    public Response<StorageQueue> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String queueName = Utils.getValueFromIdByName(id, "queues");
+        return this.getWithResponse(resourceGroupName, accountName, queueName, context);
+    }
+
     private QueuesClient serviceClient() {
         return this.innerClient;
     }

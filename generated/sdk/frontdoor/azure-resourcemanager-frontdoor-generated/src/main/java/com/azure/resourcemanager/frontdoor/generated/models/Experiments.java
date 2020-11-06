@@ -89,6 +89,29 @@ public interface Experiments {
     void delete(String resourceGroupName, String profileName, String experimentName, Context context);
 
     /**
+     * Gets an Experiment by ExperimentName.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an Experiment by ExperimentName.
+     */
+    Experiment getById(String id);
+
+    /**
+     * Gets an Experiment by ExperimentName.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an Experiment by ExperimentName.
+     */
+    Response<Experiment> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new Experiment resource.
      *
      * @param name resource name.

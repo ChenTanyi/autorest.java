@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.mediaservices.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.StreamingPolicyInner;
 import java.time.OffsetDateTime;
 
 /** An immutable client-side representation of StreamingPolicy. */
-@Immutable
 public interface StreamingPolicy {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

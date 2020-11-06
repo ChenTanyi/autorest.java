@@ -221,6 +221,18 @@ public final class DevicesImpl implements Devices {
         }
     }
 
+    public DataBoxEdgeDevice getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        return this.getByResourceGroupWithResponse(resourceGroupName, deviceName, Context.NONE).getValue();
+    }
+
+    public Response<DataBoxEdgeDevice> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        return this.getByResourceGroupWithResponse(resourceGroupName, deviceName, context);
+    }
+
     private DevicesClient serviceClient() {
         return this.innerClient;
     }

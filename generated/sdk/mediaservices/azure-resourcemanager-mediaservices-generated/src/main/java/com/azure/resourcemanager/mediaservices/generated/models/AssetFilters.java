@@ -97,6 +97,29 @@ public interface AssetFilters {
         String resourceGroupName, String accountName, String assetName, String filterName, Context context);
 
     /**
+     * Get the details of an Asset Filter associated with the specified Asset.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the details of an Asset Filter associated with the specified Asset.
+     */
+    AssetFilter getById(String id);
+
+    /**
+     * Get the details of an Asset Filter associated with the specified Asset.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the details of an Asset Filter associated with the specified Asset.
+     */
+    Response<AssetFilter> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new AssetFilter resource.
      *
      * @param name resource name.

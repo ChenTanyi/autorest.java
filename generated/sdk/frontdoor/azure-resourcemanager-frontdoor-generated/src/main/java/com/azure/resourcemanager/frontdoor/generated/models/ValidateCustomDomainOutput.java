@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.frontdoor.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.ValidateCustomDomainOutputInner;
 
 /** An immutable client-side representation of ValidateCustomDomainOutput. */
-@Immutable
 public interface ValidateCustomDomainOutput {
     /**
      * Gets the customDomainValidated property: Indicates whether the custom domain is valid or not.

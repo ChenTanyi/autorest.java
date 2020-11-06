@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.ConnectivityInformationInner;
 import java.util.List;
 
 /** An immutable client-side representation of ConnectivityInformation. */
-@Immutable
 public interface ConnectivityInformation {
     /**
      * Gets the hops property: List of hops between the source and the destination.

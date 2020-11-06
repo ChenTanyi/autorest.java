@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.policy.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.policy.generated.fluent.models.PolicyAssignmentInner;
 import java.util.List;
 import java.util.Map;
 
 /** An immutable client-side representation of PolicyAssignment. */
-@Immutable
 public interface PolicyAssignment {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.ServiceTagsListResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of ServiceTagsListResult. */
-@Immutable
 public interface ServiceTagsListResult {
     /**
      * Gets the name property: The name of the cloud.

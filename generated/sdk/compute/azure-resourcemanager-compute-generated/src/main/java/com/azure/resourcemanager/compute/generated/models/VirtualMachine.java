@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
@@ -13,7 +12,6 @@ import java.util.List;
 import java.util.Map;
 
 /** An immutable client-side representation of VirtualMachine. */
-@Immutable
 public interface VirtualMachine {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
@@ -229,13 +227,15 @@ public interface VirtualMachine {
     VirtualMachineInstanceView instanceView();
 
     /**
-     * Gets the licenseType property: Specifies that the image or disk that is being used was licensed on-premises. This
-     * element is only used for images that contain the Windows Server operating system. &lt;br&gt;&lt;br&gt; Possible
-     * values are: &lt;br&gt;&lt;br&gt; Windows_Client &lt;br&gt;&lt;br&gt; Windows_Server &lt;br&gt;&lt;br&gt; If this
-     * element is included in a request for an update, the value must match the initial value. This value cannot be
-     * updated. &lt;br&gt;&lt;br&gt; For more information, see [Azure Hybrid Use Benefit for Windows
-     * Server](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-hybrid-use-benefit-licensing?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
-     * &lt;br&gt;&lt;br&gt; Minimum api-version: 2015-06-15.
+     * Gets the licenseType property: Specifies that the image or disk that is being used was licensed on-premises.
+     * &lt;br&gt;&lt;br&gt; Possible values for Windows Server operating system are: &lt;br&gt;&lt;br&gt; Windows_Client
+     * &lt;br&gt;&lt;br&gt; Windows_Server &lt;br&gt;&lt;br&gt; Possible values for Linux Server operating system are:
+     * &lt;br&gt;&lt;br&gt; RHEL_BYOS (for RHEL) &lt;br&gt;&lt;br&gt; SLES_BYOS (for SUSE) &lt;br&gt;&lt;br&gt; For more
+     * information, see [Azure Hybrid Use Benefit for Windows
+     * Server](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing)
+     * &lt;br&gt;&lt;br&gt; [Azure Hybrid Use Benefit for Linux
+     * Server](https://docs.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux) &lt;br&gt;&lt;br&gt;
+     * Minimum api-version: 2015-06-15.
      *
      * @return the licenseType value.
      */
@@ -622,21 +622,24 @@ public interface VirtualMachine {
         interface WithLicenseType {
             /**
              * Specifies the licenseType property: Specifies that the image or disk that is being used was licensed
-             * on-premises. This element is only used for images that contain the Windows Server operating system.
-             * &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt; Windows_Client &lt;br&gt;&lt;br&gt;
-             * Windows_Server &lt;br&gt;&lt;br&gt; If this element is included in a request for an update, the value
-             * must match the initial value. This value cannot be updated. &lt;br&gt;&lt;br&gt; For more information,
-             * see [Azure Hybrid Use Benefit for Windows
-             * Server](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-hybrid-use-benefit-licensing?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+             * on-premises. &lt;br&gt;&lt;br&gt; Possible values for Windows Server operating system are:
+             * &lt;br&gt;&lt;br&gt; Windows_Client &lt;br&gt;&lt;br&gt; Windows_Server &lt;br&gt;&lt;br&gt; Possible
+             * values for Linux Server operating system are: &lt;br&gt;&lt;br&gt; RHEL_BYOS (for RHEL)
+             * &lt;br&gt;&lt;br&gt; SLES_BYOS (for SUSE) &lt;br&gt;&lt;br&gt; For more information, see [Azure Hybrid
+             * Use Benefit for Windows
+             * Server](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing)
+             * &lt;br&gt;&lt;br&gt; [Azure Hybrid Use Benefit for Linux
+             * Server](https://docs.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux)
              * &lt;br&gt;&lt;br&gt; Minimum api-version: 2015-06-15.
              *
-             * @param licenseType Specifies that the image or disk that is being used was licensed on-premises. This
-             *     element is only used for images that contain the Windows Server operating system.
-             *     &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt; Windows_Client &lt;br&gt;&lt;br&gt;
-             *     Windows_Server &lt;br&gt;&lt;br&gt; If this element is included in a request for an update, the value
-             *     must match the initial value. This value cannot be updated. &lt;br&gt;&lt;br&gt; For more
-             *     information, see [Azure Hybrid Use Benefit for Windows
-             *     Server](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-hybrid-use-benefit-licensing?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+             * @param licenseType Specifies that the image or disk that is being used was licensed on-premises.
+             *     &lt;br&gt;&lt;br&gt; Possible values for Windows Server operating system are: &lt;br&gt;&lt;br&gt;
+             *     Windows_Client &lt;br&gt;&lt;br&gt; Windows_Server &lt;br&gt;&lt;br&gt; Possible values for Linux
+             *     Server operating system are: &lt;br&gt;&lt;br&gt; RHEL_BYOS (for RHEL) &lt;br&gt;&lt;br&gt; SLES_BYOS
+             *     (for SUSE) &lt;br&gt;&lt;br&gt; For more information, see [Azure Hybrid Use Benefit for Windows
+             *     Server](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing)
+             *     &lt;br&gt;&lt;br&gt; [Azure Hybrid Use Benefit for Linux
+             *     Server](https://docs.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux)
              *     &lt;br&gt;&lt;br&gt; Minimum api-version: 2015-06-15.
              * @return the next definition stage.
              */
@@ -967,21 +970,24 @@ public interface VirtualMachine {
         interface WithLicenseType {
             /**
              * Specifies the licenseType property: Specifies that the image or disk that is being used was licensed
-             * on-premises. This element is only used for images that contain the Windows Server operating system.
-             * &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt; Windows_Client &lt;br&gt;&lt;br&gt;
-             * Windows_Server &lt;br&gt;&lt;br&gt; If this element is included in a request for an update, the value
-             * must match the initial value. This value cannot be updated. &lt;br&gt;&lt;br&gt; For more information,
-             * see [Azure Hybrid Use Benefit for Windows
-             * Server](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-hybrid-use-benefit-licensing?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+             * on-premises. &lt;br&gt;&lt;br&gt; Possible values for Windows Server operating system are:
+             * &lt;br&gt;&lt;br&gt; Windows_Client &lt;br&gt;&lt;br&gt; Windows_Server &lt;br&gt;&lt;br&gt; Possible
+             * values for Linux Server operating system are: &lt;br&gt;&lt;br&gt; RHEL_BYOS (for RHEL)
+             * &lt;br&gt;&lt;br&gt; SLES_BYOS (for SUSE) &lt;br&gt;&lt;br&gt; For more information, see [Azure Hybrid
+             * Use Benefit for Windows
+             * Server](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing)
+             * &lt;br&gt;&lt;br&gt; [Azure Hybrid Use Benefit for Linux
+             * Server](https://docs.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux)
              * &lt;br&gt;&lt;br&gt; Minimum api-version: 2015-06-15.
              *
-             * @param licenseType Specifies that the image or disk that is being used was licensed on-premises. This
-             *     element is only used for images that contain the Windows Server operating system.
-             *     &lt;br&gt;&lt;br&gt; Possible values are: &lt;br&gt;&lt;br&gt; Windows_Client &lt;br&gt;&lt;br&gt;
-             *     Windows_Server &lt;br&gt;&lt;br&gt; If this element is included in a request for an update, the value
-             *     must match the initial value. This value cannot be updated. &lt;br&gt;&lt;br&gt; For more
-             *     information, see [Azure Hybrid Use Benefit for Windows
-             *     Server](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-hybrid-use-benefit-licensing?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+             * @param licenseType Specifies that the image or disk that is being used was licensed on-premises.
+             *     &lt;br&gt;&lt;br&gt; Possible values for Windows Server operating system are: &lt;br&gt;&lt;br&gt;
+             *     Windows_Client &lt;br&gt;&lt;br&gt; Windows_Server &lt;br&gt;&lt;br&gt; Possible values for Linux
+             *     Server operating system are: &lt;br&gt;&lt;br&gt; RHEL_BYOS (for RHEL) &lt;br&gt;&lt;br&gt; SLES_BYOS
+             *     (for SUSE) &lt;br&gt;&lt;br&gt; For more information, see [Azure Hybrid Use Benefit for Windows
+             *     Server](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing)
+             *     &lt;br&gt;&lt;br&gt; [Azure Hybrid Use Benefit for Linux
+             *     Server](https://docs.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux)
              *     &lt;br&gt;&lt;br&gt; Minimum api-version: 2015-06-15.
              * @return the next definition stage.
              */

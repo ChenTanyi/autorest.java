@@ -112,6 +112,32 @@ public interface Galleries {
     PagedIterable<Gallery> list(Context context);
 
     /**
+     * Retrieves information about a Shared Image Gallery.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies information about the Shared Image Gallery that you want to create or update.
+     */
+    Gallery getById(String id);
+
+    /**
+     * Retrieves information about a Shared Image Gallery.
+     *
+     * @param id the id of the resource.
+     * @param select The select expression to apply on the operation.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies information about the Shared Image Gallery that you want to create or update.
+     */
+    Response<Gallery> getByIdWithResponse(String id, SelectPermissions select, Context context);
+
+    /**
      * Begins definition for a new Gallery resource.
      *
      * @param name resource name.

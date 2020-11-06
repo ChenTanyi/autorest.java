@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.storage.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.storage.generated.fluent.models.LeaseContainerResponseInner;
 
 /** An immutable client-side representation of LeaseContainerResponse. */
-@Immutable
 public interface LeaseContainerResponse {
     /**
      * Gets the leaseId property: Returned unique lease ID that must be included with any request to delete the

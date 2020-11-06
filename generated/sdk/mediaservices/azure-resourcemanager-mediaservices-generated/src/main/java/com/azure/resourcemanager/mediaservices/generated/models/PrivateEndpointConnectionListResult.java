@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.mediaservices.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.PrivateEndpointConnectionListResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of PrivateEndpointConnectionListResult. */
-@Immutable
 public interface PrivateEndpointConnectionListResult {
     /**
      * Gets the value property: Array of private endpoint connections.

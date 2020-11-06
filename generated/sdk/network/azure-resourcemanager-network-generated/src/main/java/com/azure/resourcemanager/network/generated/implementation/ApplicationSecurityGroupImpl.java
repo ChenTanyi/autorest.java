@@ -89,7 +89,7 @@ public final class ApplicationSecurityGroupImpl
             serviceManager
                 .serviceClient()
                 .getApplicationSecurityGroups()
-                .createOrUpdate(resourceGroupName, applicationSecurityGroupName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, applicationSecurityGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -98,7 +98,7 @@ public final class ApplicationSecurityGroupImpl
             serviceManager
                 .serviceClient()
                 .getApplicationSecurityGroups()
-                .createOrUpdate(resourceGroupName, applicationSecurityGroupName, innerObject, context);
+                .createOrUpdate(resourceGroupName, applicationSecurityGroupName, this.innerModel(), context);
         return this;
     }
 

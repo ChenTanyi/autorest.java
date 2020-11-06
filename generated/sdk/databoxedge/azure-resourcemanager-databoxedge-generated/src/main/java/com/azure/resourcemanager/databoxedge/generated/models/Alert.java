@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.databoxedge.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.AlertInner;
 import java.time.OffsetDateTime;
 import java.util.Map;
 
 /** An immutable client-side representation of Alert. */
-@Immutable
 public interface Alert {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

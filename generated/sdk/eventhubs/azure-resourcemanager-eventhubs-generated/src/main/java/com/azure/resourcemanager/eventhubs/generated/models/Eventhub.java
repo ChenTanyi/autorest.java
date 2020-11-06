@@ -4,14 +4,12 @@
 
 package com.azure.resourcemanager.eventhubs.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.EventhubInner;
 import java.time.OffsetDateTime;
 import java.util.List;
 
 /** An immutable client-side representation of Eventhub. */
-@Immutable
 public interface Eventhub {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

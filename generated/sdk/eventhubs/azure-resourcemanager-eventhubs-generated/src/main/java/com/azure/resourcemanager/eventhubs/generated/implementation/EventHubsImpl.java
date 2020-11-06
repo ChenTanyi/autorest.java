@@ -255,6 +255,20 @@ public final class EventHubsImpl implements EventHubs {
         }
     }
 
+    public Eventhub getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String eventHubName = Utils.getValueFromIdByName(id, "eventhubs");
+        return this.getWithResponse(resourceGroupName, namespaceName, eventHubName, Context.NONE).getValue();
+    }
+
+    public Response<Eventhub> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String eventHubName = Utils.getValueFromIdByName(id, "eventhubs");
+        return this.getWithResponse(resourceGroupName, namespaceName, eventHubName, context);
+    }
+
     private EventHubsClient serviceClient() {
         return this.innerClient;
     }

@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.databoxedge.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.UploadCertificateResponseInner;
 
 /** An immutable client-side representation of UploadCertificateResponse. */
-@Immutable
 public interface UploadCertificateResponse {
     /**
      * Gets the authType property: Specifies authentication type.

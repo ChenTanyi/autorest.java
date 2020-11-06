@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.databoxedge.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.RoleInner;
 
 /** An immutable client-side representation of Role. */
-@Immutable
 public interface Role {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

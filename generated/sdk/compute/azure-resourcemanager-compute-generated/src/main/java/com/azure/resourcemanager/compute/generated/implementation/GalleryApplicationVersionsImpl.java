@@ -106,6 +106,34 @@ public final class GalleryApplicationVersionsImpl implements GalleryApplicationV
         return inner.mapPage(inner1 -> new GalleryApplicationVersionImpl(inner1, this.manager()));
     }
 
+    public GalleryApplicationVersion getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String galleryName = Utils.getValueFromIdByName(id, "galleries");
+        String galleryApplicationName = Utils.getValueFromIdByName(id, "applications");
+        String galleryApplicationVersionName = Utils.getValueFromIdByName(id, "versions");
+        ReplicationStatusTypes localExpand = null;
+        return this
+            .getWithResponse(
+                resourceGroupName,
+                galleryName,
+                galleryApplicationName,
+                galleryApplicationVersionName,
+                localExpand,
+                Context.NONE)
+            .getValue();
+    }
+
+    public Response<GalleryApplicationVersion> getByIdWithResponse(
+        String id, ReplicationStatusTypes expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String galleryName = Utils.getValueFromIdByName(id, "galleries");
+        String galleryApplicationName = Utils.getValueFromIdByName(id, "applications");
+        String galleryApplicationVersionName = Utils.getValueFromIdByName(id, "versions");
+        return this
+            .getWithResponse(
+                resourceGroupName, galleryName, galleryApplicationName, galleryApplicationVersionName, expand, context);
+    }
+
     private GalleryApplicationVersionsClient serviceClient() {
         return this.innerClient;
     }

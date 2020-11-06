@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.eventhubs.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.EHNamespaceInner;
@@ -12,7 +11,6 @@ import java.time.OffsetDateTime;
 import java.util.Map;
 
 /** An immutable client-side representation of EHNamespace. */
-@Immutable
 public interface EHNamespace {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

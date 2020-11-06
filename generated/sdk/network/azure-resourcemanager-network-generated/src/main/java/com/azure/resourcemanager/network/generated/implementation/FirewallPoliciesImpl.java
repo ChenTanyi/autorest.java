@@ -76,6 +76,21 @@ public final class FirewallPoliciesImpl implements FirewallPolicies {
         return inner.mapPage(inner1 -> new FirewallPolicyImpl(inner1, this.manager()));
     }
 
+    public FirewallPolicy getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String firewallPolicyName = Utils.getValueFromIdByName(id, "firewallPolicies");
+        String localExpand = null;
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, firewallPolicyName, localExpand, Context.NONE)
+            .getValue();
+    }
+
+    public Response<FirewallPolicy> getByIdWithResponse(String id, String expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String firewallPolicyName = Utils.getValueFromIdByName(id, "firewallPolicies");
+        return this.getByResourceGroupWithResponse(resourceGroupName, firewallPolicyName, expand, context);
+    }
+
     private FirewallPoliciesClient serviceClient() {
         return this.innerClient;
     }

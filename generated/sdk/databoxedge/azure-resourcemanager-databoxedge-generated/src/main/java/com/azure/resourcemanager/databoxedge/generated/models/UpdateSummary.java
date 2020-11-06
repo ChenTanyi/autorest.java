@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.databoxedge.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.UpdateSummaryInner;
 import java.time.OffsetDateTime;
 import java.util.List;
 
 /** An immutable client-side representation of UpdateSummary. */
-@Immutable
 public interface UpdateSummary {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

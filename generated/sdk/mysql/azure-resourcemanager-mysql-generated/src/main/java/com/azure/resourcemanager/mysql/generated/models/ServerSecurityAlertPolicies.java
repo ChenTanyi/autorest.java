@@ -39,6 +39,29 @@ public interface ServerSecurityAlertPolicies {
         String resourceGroupName, String serverName, SecurityAlertPolicyName securityAlertPolicyName, Context context);
 
     /**
+     * Get a server's security alert policy.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a server's security alert policy.
+     */
+    ServerSecurityAlertPolicy getById(String id);
+
+    /**
+     * Get a server's security alert policy.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a server's security alert policy.
+     */
+    Response<ServerSecurityAlertPolicy> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new ServerSecurityAlertPolicy resource.
      *
      * @param name resource name.

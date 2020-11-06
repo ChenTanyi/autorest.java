@@ -133,6 +133,29 @@ public interface ActionGroups {
         String resourceGroupName, String actionGroupName, EnableRequest enableRequest, Context context);
 
     /**
+     * Get an action group.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an action group.
+     */
+    ActionGroupResource getById(String id);
+
+    /**
+     * Get an action group.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an action group.
+     */
+    Response<ActionGroupResource> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new ActionGroupResource resource.
      *
      * @param name resource name.

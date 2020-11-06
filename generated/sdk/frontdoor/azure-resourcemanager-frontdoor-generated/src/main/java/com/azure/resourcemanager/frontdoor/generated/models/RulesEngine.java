@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.frontdoor.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.RulesEngineInner;
 import java.util.List;
 
 /** An immutable client-side representation of RulesEngine. */
-@Immutable
 public interface RulesEngine {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

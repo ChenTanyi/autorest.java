@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ValidateResponseInner;
 
 /** An immutable client-side representation of ValidateResponse. */
-@Immutable
 public interface ValidateResponse {
     /**
      * Gets the status property: Result of validation.

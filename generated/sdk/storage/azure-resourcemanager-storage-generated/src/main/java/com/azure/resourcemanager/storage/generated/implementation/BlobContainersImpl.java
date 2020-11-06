@@ -286,6 +286,39 @@ public final class BlobContainersImpl implements BlobContainers {
         }
     }
 
+    public BlobContainer getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String containerName = Utils.getValueFromIdByName(id, "containers");
+        return this.getWithResponse(resourceGroupName, accountName, containerName, Context.NONE).getValue();
+    }
+
+    public Response<BlobContainer> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String containerName = Utils.getValueFromIdByName(id, "containers");
+        return this.getWithResponse(resourceGroupName, accountName, containerName, context);
+    }
+
+    public ImmutabilityPolicy getImmutabilityPolicyById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String containerName = Utils.getValueFromIdByName(id, "containers");
+        String localIfMatch = null;
+        return this
+            .getImmutabilityPolicyWithResponse(
+                resourceGroupName, accountName, containerName, localIfMatch, Context.NONE)
+            .getValue();
+    }
+
+    public Response<ImmutabilityPolicy> getImmutabilityPolicyByIdWithResponse(
+        String id, String ifMatch, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String containerName = Utils.getValueFromIdByName(id, "containers");
+        return this.getImmutabilityPolicyWithResponse(resourceGroupName, accountName, containerName, ifMatch, context);
+    }
+
     private BlobContainersClient serviceClient() {
         return this.innerClient;
     }

@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.P2SVpnConnectionHealthInner;
 
 /** An immutable client-side representation of P2SVpnConnectionHealth. */
-@Immutable
 public interface P2SVpnConnectionHealth {
     /**
      * Gets the sasUrl property: Returned sas url of the blob to which the p2s vpn connection detailed health will be

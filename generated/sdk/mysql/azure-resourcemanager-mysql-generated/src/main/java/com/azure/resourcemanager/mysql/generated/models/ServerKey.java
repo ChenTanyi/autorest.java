@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.mysql.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.mysql.generated.fluent.models.ServerKeyInner;
 import java.time.OffsetDateTime;
 
 /** An immutable client-side representation of ServerKey. */
-@Immutable
 public interface ServerKey {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

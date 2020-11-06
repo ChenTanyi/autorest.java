@@ -76,6 +76,18 @@ public final class VirtualWansImpl implements VirtualWans {
         return inner.mapPage(inner1 -> new VirtualWanImpl(inner1, this.manager()));
     }
 
+    public VirtualWan getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String virtualWanName = Utils.getValueFromIdByName(id, "virtualWans");
+        return this.getByResourceGroupWithResponse(resourceGroupName, virtualWanName, Context.NONE).getValue();
+    }
+
+    public Response<VirtualWan> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String virtualWanName = Utils.getValueFromIdByName(id, "virtualWans");
+        return this.getByResourceGroupWithResponse(resourceGroupName, virtualWanName, context);
+    }
+
     private VirtualWansClient serviceClient() {
         return this.innerClient;
     }

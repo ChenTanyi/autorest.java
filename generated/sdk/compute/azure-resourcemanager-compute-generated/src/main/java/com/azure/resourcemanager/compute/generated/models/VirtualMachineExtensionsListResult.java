@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineExtensionsListResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of VirtualMachineExtensionsListResult. */
-@Immutable
 public interface VirtualMachineExtensionsListResult {
     /**
      * Gets the value property: The list of extensions.

@@ -66,7 +66,7 @@ public final class CertificateDescriptionImpl
                 .serviceClient()
                 .getCertificates()
                 .createOrUpdateWithResponse(
-                    resourceGroupName, resourceName, certificateName, innerObject, createIfMatch, Context.NONE)
+                    resourceGroupName, resourceName, certificateName, this.innerModel(), createIfMatch, Context.NONE)
                 .getValue();
         return this;
     }
@@ -77,7 +77,7 @@ public final class CertificateDescriptionImpl
                 .serviceClient()
                 .getCertificates()
                 .createOrUpdateWithResponse(
-                    resourceGroupName, resourceName, certificateName, innerObject, createIfMatch, context)
+                    resourceGroupName, resourceName, certificateName, this.innerModel(), createIfMatch, context)
                 .getValue();
         return this;
     }
@@ -100,7 +100,7 @@ public final class CertificateDescriptionImpl
                 .serviceClient()
                 .getCertificates()
                 .createOrUpdateWithResponse(
-                    resourceGroupName, resourceName, certificateName, innerObject, updateIfMatch, Context.NONE)
+                    resourceGroupName, resourceName, certificateName, this.innerModel(), updateIfMatch, Context.NONE)
                 .getValue();
         return this;
     }
@@ -111,7 +111,7 @@ public final class CertificateDescriptionImpl
                 .serviceClient()
                 .getCertificates()
                 .createOrUpdateWithResponse(
-                    resourceGroupName, resourceName, certificateName, innerObject, updateIfMatch, context)
+                    resourceGroupName, resourceName, certificateName, this.innerModel(), updateIfMatch, context)
                 .getValue();
         return this;
     }

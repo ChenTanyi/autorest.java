@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.monitor.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.monitor.generated.fluent.models.LocalizableStringInner;
 
 /** An immutable client-side representation of LocalizableString. */
-@Immutable
 public interface LocalizableString {
     /**
      * Gets the value property: the invariant value.

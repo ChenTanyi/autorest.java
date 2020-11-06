@@ -57,7 +57,7 @@ public final class VirtualNetworkRuleImpl
                 .serviceClient()
                 .getNamespaces()
                 .createOrUpdateVirtualNetworkRuleWithResponse(
-                    resourceGroupName, namespaceName, virtualNetworkRuleName, innerObject, Context.NONE)
+                    resourceGroupName, namespaceName, virtualNetworkRuleName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -68,7 +68,7 @@ public final class VirtualNetworkRuleImpl
                 .serviceClient()
                 .getNamespaces()
                 .createOrUpdateVirtualNetworkRuleWithResponse(
-                    resourceGroupName, namespaceName, virtualNetworkRuleName, innerObject, context)
+                    resourceGroupName, namespaceName, virtualNetworkRuleName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -89,7 +89,7 @@ public final class VirtualNetworkRuleImpl
                 .serviceClient()
                 .getNamespaces()
                 .createOrUpdateVirtualNetworkRuleWithResponse(
-                    resourceGroupName, namespaceName, virtualNetworkRuleName, innerObject, Context.NONE)
+                    resourceGroupName, namespaceName, virtualNetworkRuleName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -100,7 +100,7 @@ public final class VirtualNetworkRuleImpl
                 .serviceClient()
                 .getNamespaces()
                 .createOrUpdateVirtualNetworkRuleWithResponse(
-                    resourceGroupName, namespaceName, virtualNetworkRuleName, innerObject, context)
+                    resourceGroupName, namespaceName, virtualNetworkRuleName, this.innerModel(), context)
                 .getValue();
         return this;
     }

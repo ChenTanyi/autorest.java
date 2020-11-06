@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.storage.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountInner;
@@ -13,7 +12,6 @@ import java.util.List;
 import java.util.Map;
 
 /** An immutable client-side representation of StorageAccount. */
-@Immutable
 public interface StorageAccount {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

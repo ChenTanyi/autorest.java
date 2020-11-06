@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.GatewayRouteListResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of GatewayRouteListResult. */
-@Immutable
 public interface GatewayRouteListResult {
     /**
      * Gets the value property: List of gateway routes.

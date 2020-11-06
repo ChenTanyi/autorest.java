@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.search.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.search.generated.fluent.models.PrivateLinkResourceInner;
 
 /** An immutable client-side representation of PrivateLinkResource. */
-@Immutable
 public interface PrivateLinkResource {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

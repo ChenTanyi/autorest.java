@@ -76,7 +76,7 @@ public final class BandwidthScheduleImpl
             serviceManager
                 .serviceClient()
                 .getBandwidthSchedules()
-                .createOrUpdate(deviceName, name, resourceGroupName, innerObject, Context.NONE);
+                .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -85,7 +85,7 @@ public final class BandwidthScheduleImpl
             serviceManager
                 .serviceClient()
                 .getBandwidthSchedules()
-                .createOrUpdate(deviceName, name, resourceGroupName, innerObject, context);
+                .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), context);
         return this;
     }
 
@@ -104,7 +104,7 @@ public final class BandwidthScheduleImpl
             serviceManager
                 .serviceClient()
                 .getBandwidthSchedules()
-                .createOrUpdate(deviceName, name, resourceGroupName, innerObject, Context.NONE);
+                .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -113,7 +113,7 @@ public final class BandwidthScheduleImpl
             serviceManager
                 .serviceClient()
                 .getBandwidthSchedules()
-                .createOrUpdate(deviceName, name, resourceGroupName, innerObject, context);
+                .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), context);
         return this;
     }
 

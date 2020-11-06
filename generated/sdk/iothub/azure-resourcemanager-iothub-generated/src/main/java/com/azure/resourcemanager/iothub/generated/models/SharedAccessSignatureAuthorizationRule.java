@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.iothub.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.iothub.generated.fluent.models.SharedAccessSignatureAuthorizationRuleInner;
 
 /** An immutable client-side representation of SharedAccessSignatureAuthorizationRule. */
-@Immutable
 public interface SharedAccessSignatureAuthorizationRule {
     /**
      * Gets the keyName property: The name of the shared access policy.

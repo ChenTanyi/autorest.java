@@ -157,6 +157,30 @@ public interface FileShares {
         String resourceGroupName, String accountName, String shareName, DeletedShare deletedShare, Context context);
 
     /**
+     * Gets properties of a specified share.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties of a specified share.
+     */
+    FileShare getById(String id);
+
+    /**
+     * Gets properties of a specified share.
+     *
+     * @param id the id of the resource.
+     * @param expand Optional, used to expand the properties within share's properties.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties of a specified share.
+     */
+    Response<FileShare> getByIdWithResponse(String id, GetShareExpand expand, Context context);
+
+    /**
      * Begins definition for a new FileShare resource.
      *
      * @param name resource name.

@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteAuthSettingsInner;
 import java.util.List;
 
 /** An immutable client-side representation of SiteAuthSettings. */
-@Immutable
 public interface SiteAuthSettings {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

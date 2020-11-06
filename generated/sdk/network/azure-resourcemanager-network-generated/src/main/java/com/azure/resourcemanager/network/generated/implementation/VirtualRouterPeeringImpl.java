@@ -69,7 +69,7 @@ public final class VirtualRouterPeeringImpl
             serviceManager
                 .serviceClient()
                 .getVirtualRouterPeerings()
-                .createOrUpdate(resourceGroupName, virtualRouterName, peeringName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, virtualRouterName, peeringName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -78,7 +78,7 @@ public final class VirtualRouterPeeringImpl
             serviceManager
                 .serviceClient()
                 .getVirtualRouterPeerings()
-                .createOrUpdate(resourceGroupName, virtualRouterName, peeringName, innerObject, context);
+                .createOrUpdate(resourceGroupName, virtualRouterName, peeringName, this.innerModel(), context);
         return this;
     }
 
@@ -97,7 +97,7 @@ public final class VirtualRouterPeeringImpl
             serviceManager
                 .serviceClient()
                 .getVirtualRouterPeerings()
-                .createOrUpdate(resourceGroupName, virtualRouterName, peeringName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, virtualRouterName, peeringName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -106,7 +106,7 @@ public final class VirtualRouterPeeringImpl
             serviceManager
                 .serviceClient()
                 .getVirtualRouterPeerings()
-                .createOrUpdate(resourceGroupName, virtualRouterName, peeringName, innerObject, context);
+                .createOrUpdate(resourceGroupName, virtualRouterName, peeringName, this.innerModel(), context);
         return this;
     }
 

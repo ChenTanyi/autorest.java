@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.hdinsight.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.ApplicationInner;
 import java.util.Map;
 
 /** An immutable client-side representation of Application. */
-@Immutable
 public interface Application {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

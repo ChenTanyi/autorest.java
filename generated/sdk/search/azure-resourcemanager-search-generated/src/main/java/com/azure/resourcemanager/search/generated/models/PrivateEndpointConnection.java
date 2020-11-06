@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.search.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.search.generated.fluent.models.PrivateEndpointConnectionInner;
 
 /** An immutable client-side representation of PrivateEndpointConnection. */
-@Immutable
 public interface PrivateEndpointConnection {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

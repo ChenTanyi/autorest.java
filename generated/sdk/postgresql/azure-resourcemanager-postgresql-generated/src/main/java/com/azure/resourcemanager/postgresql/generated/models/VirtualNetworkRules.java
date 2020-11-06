@@ -89,6 +89,29 @@ public interface VirtualNetworkRules {
     PagedIterable<VirtualNetworkRule> listByServer(String resourceGroupName, String serverName, Context context);
 
     /**
+     * Gets a virtual network rule.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a virtual network rule.
+     */
+    VirtualNetworkRule getById(String id);
+
+    /**
+     * Gets a virtual network rule.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a virtual network rule.
+     */
+    Response<VirtualNetworkRule> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new VirtualNetworkRule resource.
      *
      * @param name resource name.

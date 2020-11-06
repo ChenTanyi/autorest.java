@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.authorization.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.authorization.generated.fluent.models.ProviderOperationsMetadataInner;
 import java.util.List;
 
 /** An immutable client-side representation of ProviderOperationsMetadata. */
-@Immutable
 public interface ProviderOperationsMetadata {
     /**
      * Gets the id property: The provider id.

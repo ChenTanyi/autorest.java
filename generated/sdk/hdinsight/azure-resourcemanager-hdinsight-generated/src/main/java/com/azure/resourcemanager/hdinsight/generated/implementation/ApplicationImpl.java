@@ -76,7 +76,7 @@ public final class ApplicationImpl implements Application, Application.Definitio
             serviceManager
                 .serviceClient()
                 .getApplications()
-                .create(resourceGroupName, clusterName, applicationName, innerObject, Context.NONE);
+                .create(resourceGroupName, clusterName, applicationName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -85,7 +85,7 @@ public final class ApplicationImpl implements Application, Application.Definitio
             serviceManager
                 .serviceClient()
                 .getApplications()
-                .create(resourceGroupName, clusterName, applicationName, innerObject, context);
+                .create(resourceGroupName, clusterName, applicationName, this.innerModel(), context);
         return this;
     }
 

@@ -89,7 +89,8 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
             serviceManager
                 .serviceClient()
                 .getEventHubs()
-                .createOrUpdateWithResponse(resourceGroupName, namespaceName, eventHubName, innerObject, Context.NONE)
+                .createOrUpdateWithResponse(
+                    resourceGroupName, namespaceName, eventHubName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -99,7 +100,7 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
             serviceManager
                 .serviceClient()
                 .getEventHubs()
-                .createOrUpdateWithResponse(resourceGroupName, namespaceName, eventHubName, innerObject, context)
+                .createOrUpdateWithResponse(resourceGroupName, namespaceName, eventHubName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -119,7 +120,8 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
             serviceManager
                 .serviceClient()
                 .getEventHubs()
-                .createOrUpdateWithResponse(resourceGroupName, namespaceName, eventHubName, innerObject, Context.NONE)
+                .createOrUpdateWithResponse(
+                    resourceGroupName, namespaceName, eventHubName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -129,7 +131,7 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
             serviceManager
                 .serviceClient()
                 .getEventHubs()
-                .createOrUpdateWithResponse(resourceGroupName, namespaceName, eventHubName, innerObject, context)
+                .createOrUpdateWithResponse(resourceGroupName, namespaceName, eventHubName, this.innerModel(), context)
                 .getValue();
         return this;
     }

@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.management.SubResource;
 import com.azure.resourcemanager.network.generated.fluent.models.ProbeInner;
 import java.util.List;
 
 /** An immutable client-side representation of Probe. */
-@Immutable
 public interface Probe {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

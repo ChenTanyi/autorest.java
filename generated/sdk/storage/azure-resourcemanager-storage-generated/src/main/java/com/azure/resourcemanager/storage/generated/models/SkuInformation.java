@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.storage.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.storage.generated.fluent.models.SkuInformationInner;
 import java.util.List;
 
 /** An immutable client-side representation of SkuInformation. */
-@Immutable
 public interface SkuInformation {
     /**
      * Gets the name property: The SKU name. Required for account creation; optional for update. Note that in older

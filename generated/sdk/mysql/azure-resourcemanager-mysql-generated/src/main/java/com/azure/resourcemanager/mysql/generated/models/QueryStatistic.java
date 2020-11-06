@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.mysql.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.mysql.generated.fluent.models.QueryStatisticInner;
 import java.time.OffsetDateTime;
 import java.util.List;
 
 /** An immutable client-side representation of QueryStatistic. */
-@Immutable
 public interface QueryStatistic {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

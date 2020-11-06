@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.compute.generated.fluent.models.RunCommandDocumentInner;
 import java.util.List;
 
 /** An immutable client-side representation of RunCommandDocument. */
-@Immutable
 public interface RunCommandDocument {
     /**
      * Gets the schema property: The VM run command schema.

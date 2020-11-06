@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.commerce.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.commerce.generated.fluent.models.UsageAggregationInner;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
 /** An immutable client-side representation of UsageAggregation. */
-@Immutable
 public interface UsageAggregation {
     /**
      * Gets the id property: Unique Id for the usage aggregate.

@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StampCapacityInner;
 
 /** An immutable client-side representation of StampCapacity. */
-@Immutable
 public interface StampCapacity {
     /**
      * Gets the name property: Name of the stamp.

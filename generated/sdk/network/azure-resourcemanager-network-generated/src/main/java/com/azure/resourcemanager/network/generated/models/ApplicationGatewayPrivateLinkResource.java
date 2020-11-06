@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayPrivateLinkResourceInner;
 import java.util.List;
 
 /** An immutable client-side representation of ApplicationGatewayPrivateLinkResource. */
-@Immutable
 public interface ApplicationGatewayPrivateLinkResource {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

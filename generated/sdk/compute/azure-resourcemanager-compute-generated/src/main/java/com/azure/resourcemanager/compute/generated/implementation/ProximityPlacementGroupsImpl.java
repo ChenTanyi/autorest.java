@@ -82,6 +82,25 @@ public final class ProximityPlacementGroupsImpl implements ProximityPlacementGro
         return inner.mapPage(inner1 -> new ProximityPlacementGroupImpl(inner1, this.manager()));
     }
 
+    public ProximityPlacementGroup getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String proximityPlacementGroupName = Utils.getValueFromIdByName(id, "proximityPlacementGroups");
+        String localIncludeColocationStatus = null;
+        return this
+            .getByResourceGroupWithResponse(
+                resourceGroupName, proximityPlacementGroupName, localIncludeColocationStatus, Context.NONE)
+            .getValue();
+    }
+
+    public Response<ProximityPlacementGroup> getByIdWithResponse(
+        String id, String includeColocationStatus, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String proximityPlacementGroupName = Utils.getValueFromIdByName(id, "proximityPlacementGroups");
+        return this
+            .getByResourceGroupWithResponse(
+                resourceGroupName, proximityPlacementGroupName, includeColocationStatus, context);
+    }
+
     private ProximityPlacementGroupsClient serviceClient() {
         return this.innerClient;
     }

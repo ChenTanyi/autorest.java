@@ -69,6 +69,20 @@ public final class StorageAccountsImpl implements StorageAccounts {
         this.serviceClient().delete(deviceName, storageAccountName, resourceGroupName, context);
     }
 
+    public StorageAccount getById(String id) {
+        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        String storageAccountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        return this.getWithResponse(deviceName, storageAccountName, resourceGroupName, Context.NONE).getValue();
+    }
+
+    public Response<StorageAccount> getByIdWithResponse(String id, Context context) {
+        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        String storageAccountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        return this.getWithResponse(deviceName, storageAccountName, resourceGroupName, context);
+    }
+
     private StorageAccountsClient serviceClient() {
         return this.innerClient;
     }

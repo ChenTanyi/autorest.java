@@ -105,6 +105,20 @@ public final class LiveEventsImpl implements LiveEvents {
         this.serviceClient().reset(resourceGroupName, accountName, liveEventName, context);
     }
 
+    public LiveEvent getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "mediaservices");
+        String liveEventName = Utils.getValueFromIdByName(id, "liveEvents");
+        return this.getWithResponse(resourceGroupName, accountName, liveEventName, Context.NONE).getValue();
+    }
+
+    public Response<LiveEvent> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "mediaservices");
+        String liveEventName = Utils.getValueFromIdByName(id, "liveEvents");
+        return this.getWithResponse(resourceGroupName, accountName, liveEventName, context);
+    }
+
     private LiveEventsClient serviceClient() {
         return this.innerClient;
     }

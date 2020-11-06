@@ -161,7 +161,7 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
             serviceManager
                 .serviceClient()
                 .getVirtualNetworks()
-                .createOrUpdate(resourceGroupName, virtualNetworkName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, virtualNetworkName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -170,7 +170,7 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
             serviceManager
                 .serviceClient()
                 .getVirtualNetworks()
-                .createOrUpdate(resourceGroupName, virtualNetworkName, innerObject, context);
+                .createOrUpdate(resourceGroupName, virtualNetworkName, this.innerModel(), context);
         return this;
     }
 
@@ -213,23 +213,23 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
     }
 
     public VirtualNetwork refresh() {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getVirtualNetworks()
-                .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkName, refreshExpand, Context.NONE)
+                .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public VirtualNetwork refresh(Context context) {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getVirtualNetworks()
-                .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkName, refreshExpand, context)
+                .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkName, localExpand, context)
                 .getValue();
         return this;
     }

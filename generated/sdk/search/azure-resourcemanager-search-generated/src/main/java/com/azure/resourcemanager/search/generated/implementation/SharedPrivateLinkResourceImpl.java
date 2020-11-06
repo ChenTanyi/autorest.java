@@ -66,7 +66,7 @@ public final class SharedPrivateLinkResourceImpl
                     resourceGroupName,
                     searchServiceName,
                     sharedPrivateLinkResourceName,
-                    innerObject,
+                    this.innerModel(),
                     createClientRequestId,
                     Context.NONE);
         return this;
@@ -81,7 +81,7 @@ public final class SharedPrivateLinkResourceImpl
                     resourceGroupName,
                     searchServiceName,
                     sharedPrivateLinkResourceName,
-                    innerObject,
+                    this.innerModel(),
                     createClientRequestId,
                     context);
         return this;
@@ -108,7 +108,7 @@ public final class SharedPrivateLinkResourceImpl
                     resourceGroupName,
                     searchServiceName,
                     sharedPrivateLinkResourceName,
-                    innerObject,
+                    this.innerModel(),
                     updateClientRequestId,
                     Context.NONE);
         return this;
@@ -123,7 +123,7 @@ public final class SharedPrivateLinkResourceImpl
                     resourceGroupName,
                     searchServiceName,
                     sharedPrivateLinkResourceName,
-                    innerObject,
+                    this.innerModel(),
                     updateClientRequestId,
                     context);
         return this;
@@ -138,7 +138,7 @@ public final class SharedPrivateLinkResourceImpl
     }
 
     public SharedPrivateLinkResource refresh() {
-        UUID refreshClientRequestId = null;
+        UUID localClientRequestId = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
@@ -147,24 +147,20 @@ public final class SharedPrivateLinkResourceImpl
                     resourceGroupName,
                     searchServiceName,
                     sharedPrivateLinkResourceName,
-                    refreshClientRequestId,
+                    localClientRequestId,
                     Context.NONE)
                 .getValue();
         return this;
     }
 
     public SharedPrivateLinkResource refresh(Context context) {
-        UUID refreshClientRequestId = null;
+        UUID localClientRequestId = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getSharedPrivateLinkResources()
                 .getWithResponse(
-                    resourceGroupName,
-                    searchServiceName,
-                    sharedPrivateLinkResourceName,
-                    refreshClientRequestId,
-                    context)
+                    resourceGroupName, searchServiceName, sharedPrivateLinkResourceName, localClientRequestId, context)
                 .getValue();
         return this;
     }

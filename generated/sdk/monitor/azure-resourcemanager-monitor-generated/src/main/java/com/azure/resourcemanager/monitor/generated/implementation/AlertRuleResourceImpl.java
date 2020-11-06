@@ -109,7 +109,7 @@ public final class AlertRuleResourceImpl
             serviceManager
                 .serviceClient()
                 .getAlertRules()
-                .createOrUpdateWithResponse(resourceGroupName, ruleName, innerObject, Context.NONE)
+                .createOrUpdateWithResponse(resourceGroupName, ruleName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -119,7 +119,7 @@ public final class AlertRuleResourceImpl
             serviceManager
                 .serviceClient()
                 .getAlertRules()
-                .createOrUpdateWithResponse(resourceGroupName, ruleName, innerObject, context)
+                .createOrUpdateWithResponse(resourceGroupName, ruleName, this.innerModel(), context)
                 .getValue();
         return this;
     }

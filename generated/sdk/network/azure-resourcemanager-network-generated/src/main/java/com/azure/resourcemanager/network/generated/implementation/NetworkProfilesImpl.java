@@ -76,6 +76,21 @@ public final class NetworkProfilesImpl implements NetworkProfiles {
         return inner.mapPage(inner1 -> new NetworkProfileImpl(inner1, this.manager()));
     }
 
+    public NetworkProfile getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String networkProfileName = Utils.getValueFromIdByName(id, "networkProfiles");
+        String localExpand = null;
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, networkProfileName, localExpand, Context.NONE)
+            .getValue();
+    }
+
+    public Response<NetworkProfile> getByIdWithResponse(String id, String expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String networkProfileName = Utils.getValueFromIdByName(id, "networkProfiles");
+        return this.getByResourceGroupWithResponse(resourceGroupName, networkProfileName, expand, context);
+    }
+
     private NetworkProfilesClient serviceClient() {
         return this.innerClient;
     }

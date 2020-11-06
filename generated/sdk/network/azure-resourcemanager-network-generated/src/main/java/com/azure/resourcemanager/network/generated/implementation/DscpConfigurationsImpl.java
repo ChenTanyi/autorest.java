@@ -78,6 +78,18 @@ public final class DscpConfigurationsImpl implements DscpConfigurations {
         return inner.mapPage(inner1 -> new DscpConfigurationImpl(inner1, this.manager()));
     }
 
+    public DscpConfiguration getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String dscpConfigurationName = Utils.getValueFromIdByName(id, "dscpConfigurations");
+        return this.getByResourceGroupWithResponse(resourceGroupName, dscpConfigurationName, Context.NONE).getValue();
+    }
+
+    public Response<DscpConfiguration> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String dscpConfigurationName = Utils.getValueFromIdByName(id, "dscpConfigurations");
+        return this.getByResourceGroupWithResponse(resourceGroupName, dscpConfigurationName, context);
+    }
+
     private DscpConfigurationsClient serviceClient() {
         return this.innerClient;
     }

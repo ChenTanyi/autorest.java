@@ -89,6 +89,29 @@ public interface ExpressRouteCircuitPeerings {
     PagedIterable<ExpressRouteCircuitPeering> list(String resourceGroupName, String circuitName, Context context);
 
     /**
+     * Gets the specified peering for the express route circuit.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified peering for the express route circuit.
+     */
+    ExpressRouteCircuitPeering getById(String id);
+
+    /**
+     * Gets the specified peering for the express route circuit.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified peering for the express route circuit.
+     */
+    Response<ExpressRouteCircuitPeering> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new ExpressRouteCircuitPeering resource.
      *
      * @param name resource name.

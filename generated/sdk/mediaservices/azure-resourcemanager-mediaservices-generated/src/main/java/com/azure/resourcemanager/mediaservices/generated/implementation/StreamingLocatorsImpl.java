@@ -126,6 +126,20 @@ public final class StreamingLocatorsImpl implements StreamingLocators {
         }
     }
 
+    public StreamingLocator getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        String streamingLocatorName = Utils.getValueFromIdByName(id, "streamingLocators");
+        return this.getWithResponse(resourceGroupName, accountName, streamingLocatorName, Context.NONE).getValue();
+    }
+
+    public Response<StreamingLocator> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        String streamingLocatorName = Utils.getValueFromIdByName(id, "streamingLocators");
+        return this.getWithResponse(resourceGroupName, accountName, streamingLocatorName, context);
+    }
+
     private StreamingLocatorsClient serviceClient() {
         return this.innerClient;
     }

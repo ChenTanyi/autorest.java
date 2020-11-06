@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnClientConnectionHealthDetailListResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of VpnClientConnectionHealthDetailListResult. */
-@Immutable
 public interface VpnClientConnectionHealthDetailListResult {
     /**
      * Gets the value property: List of vpn client connection health.

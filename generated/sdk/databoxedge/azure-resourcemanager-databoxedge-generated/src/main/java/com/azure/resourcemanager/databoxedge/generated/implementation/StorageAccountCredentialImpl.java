@@ -87,7 +87,7 @@ public final class StorageAccountCredentialImpl
             serviceManager
                 .serviceClient()
                 .getStorageAccountCredentials()
-                .createOrUpdate(deviceName, name, resourceGroupName, innerObject, Context.NONE);
+                .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -96,7 +96,7 @@ public final class StorageAccountCredentialImpl
             serviceManager
                 .serviceClient()
                 .getStorageAccountCredentials()
-                .createOrUpdate(deviceName, name, resourceGroupName, innerObject, context);
+                .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), context);
         return this;
     }
 
@@ -115,7 +115,7 @@ public final class StorageAccountCredentialImpl
             serviceManager
                 .serviceClient()
                 .getStorageAccountCredentials()
-                .createOrUpdate(deviceName, name, resourceGroupName, innerObject, Context.NONE);
+                .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -124,7 +124,7 @@ public final class StorageAccountCredentialImpl
             serviceManager
                 .serviceClient()
                 .getStorageAccountCredentials()
-                .createOrUpdate(deviceName, name, resourceGroupName, innerObject, context);
+                .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), context);
         return this;
     }
 

@@ -71,7 +71,8 @@ public final class VirtualApplianceSiteImpl
             serviceManager
                 .serviceClient()
                 .getVirtualApplianceSites()
-                .createOrUpdate(resourceGroupName, networkVirtualApplianceName, siteName, innerObject, Context.NONE);
+                .createOrUpdate(
+                    resourceGroupName, networkVirtualApplianceName, siteName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -80,7 +81,7 @@ public final class VirtualApplianceSiteImpl
             serviceManager
                 .serviceClient()
                 .getVirtualApplianceSites()
-                .createOrUpdate(resourceGroupName, networkVirtualApplianceName, siteName, innerObject, context);
+                .createOrUpdate(resourceGroupName, networkVirtualApplianceName, siteName, this.innerModel(), context);
         return this;
     }
 
@@ -99,7 +100,8 @@ public final class VirtualApplianceSiteImpl
             serviceManager
                 .serviceClient()
                 .getVirtualApplianceSites()
-                .createOrUpdate(resourceGroupName, networkVirtualApplianceName, siteName, innerObject, Context.NONE);
+                .createOrUpdate(
+                    resourceGroupName, networkVirtualApplianceName, siteName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -108,7 +110,7 @@ public final class VirtualApplianceSiteImpl
             serviceManager
                 .serviceClient()
                 .getVirtualApplianceSites()
-                .createOrUpdate(resourceGroupName, networkVirtualApplianceName, siteName, innerObject, context);
+                .createOrUpdate(resourceGroupName, networkVirtualApplianceName, siteName, this.innerModel(), context);
         return this;
     }
 

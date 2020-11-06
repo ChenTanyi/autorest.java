@@ -262,6 +262,21 @@ public final class StorageAccountsImpl implements StorageAccounts {
         return this.serviceClient().revokeUserDelegationKeysWithResponse(resourceGroupName, accountName, context);
     }
 
+    public StorageAccount getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        StorageAccountExpand localExpand = null;
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, accountName, localExpand, Context.NONE)
+            .getValue();
+    }
+
+    public Response<StorageAccount> getByIdWithResponse(String id, StorageAccountExpand expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        return this.getByResourceGroupWithResponse(resourceGroupName, accountName, expand, context);
+    }
+
     private StorageAccountsClient serviceClient() {
         return this.innerClient;
     }

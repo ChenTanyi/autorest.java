@@ -94,7 +94,7 @@ public final class ImageImpl implements Image, Image.Definition, Image.Update {
             serviceManager
                 .serviceClient()
                 .getImages()
-                .createOrUpdate(resourceGroupName, imageName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, imageName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -103,7 +103,7 @@ public final class ImageImpl implements Image, Image.Definition, Image.Update {
             serviceManager
                 .serviceClient()
                 .getImages()
-                .createOrUpdate(resourceGroupName, imageName, innerObject, context);
+                .createOrUpdate(resourceGroupName, imageName, this.innerModel(), context);
         return this;
     }
 
@@ -141,23 +141,23 @@ public final class ImageImpl implements Image, Image.Definition, Image.Update {
     }
 
     public Image refresh() {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getImages()
-                .getByResourceGroupWithResponse(resourceGroupName, imageName, refreshExpand, Context.NONE)
+                .getByResourceGroupWithResponse(resourceGroupName, imageName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public Image refresh(Context context) {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getImages()
-                .getByResourceGroupWithResponse(resourceGroupName, imageName, refreshExpand, context)
+                .getByResourceGroupWithResponse(resourceGroupName, imageName, localExpand, context)
                 .getValue();
         return this;
     }

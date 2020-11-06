@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.iothub.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.iothub.generated.fluent.models.RegistryStatisticsInner;
 
 /** An immutable client-side representation of RegistryStatistics. */
-@Immutable
 public interface RegistryStatistics {
     /**
      * Gets the totalDeviceCount property: The total count of devices in the identity registry.

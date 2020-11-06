@@ -180,6 +180,31 @@ public interface Certificates {
         Context context);
 
     /**
+     * Returns the certificate.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     *     by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the X509 Certificate.
+     */
+    CertificateDescription getById(String id);
+
+    /**
+     * Returns the certificate.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     *     by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the X509 Certificate.
+     */
+    Response<CertificateDescription> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new CertificateDescription resource.
      *
      * @param name resource name.

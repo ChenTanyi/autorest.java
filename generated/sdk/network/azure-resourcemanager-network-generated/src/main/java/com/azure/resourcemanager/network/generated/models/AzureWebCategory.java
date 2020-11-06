@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.AzureWebCategoryInner;
 
 /** An immutable client-side representation of AzureWebCategory. */
-@Immutable
 public interface AzureWebCategory {
     /**
      * Gets the id property: Resource ID.

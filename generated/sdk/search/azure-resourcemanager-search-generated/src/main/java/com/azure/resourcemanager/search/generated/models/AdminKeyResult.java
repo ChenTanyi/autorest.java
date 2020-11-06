@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.search.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.search.generated.fluent.models.AdminKeyResultInner;
 
 /** An immutable client-side representation of AdminKeyResult. */
-@Immutable
 public interface AdminKeyResult {
     /**
      * Gets the primaryKey property: The primary admin API key of the search service.

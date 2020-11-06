@@ -77,6 +77,18 @@ public final class ContainerServicesImpl implements ContainerServices {
         return inner.mapPage(inner1 -> new ContainerServiceImpl(inner1, this.manager()));
     }
 
+    public ContainerService getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String containerServiceName = Utils.getValueFromIdByName(id, "containerServices");
+        return this.getByResourceGroupWithResponse(resourceGroupName, containerServiceName, Context.NONE).getValue();
+    }
+
+    public Response<ContainerService> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String containerServiceName = Utils.getValueFromIdByName(id, "containerServices");
+        return this.getByResourceGroupWithResponse(resourceGroupName, containerServiceName, context);
+    }
+
     private ContainerServicesClient serviceClient() {
         return this.innerClient;
     }

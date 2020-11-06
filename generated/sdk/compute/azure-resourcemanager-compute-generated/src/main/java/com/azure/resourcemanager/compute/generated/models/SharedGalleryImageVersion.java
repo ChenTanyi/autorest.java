@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.compute.generated.fluent.models.SharedGalleryImageVersionInner;
 import java.time.OffsetDateTime;
 
 /** An immutable client-side representation of SharedGalleryImageVersion. */
-@Immutable
 public interface SharedGalleryImageVersion {
     /**
      * Gets the name property: Resource name.

@@ -192,6 +192,20 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
         return this.serviceClient().failOverWithResponse(resourceGroupName, namespaceName, alias, context);
     }
 
+    public ArmDisasterRecovery getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String alias = Utils.getValueFromIdByName(id, "disasterRecoveryConfigs");
+        return this.getWithResponse(resourceGroupName, namespaceName, alias, Context.NONE).getValue();
+    }
+
+    public Response<ArmDisasterRecovery> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String alias = Utils.getValueFromIdByName(id, "disasterRecoveryConfigs");
+        return this.getWithResponse(resourceGroupName, namespaceName, alias, context);
+    }
+
     private DisasterRecoveryConfigsClient serviceClient() {
         return this.innerClient;
     }

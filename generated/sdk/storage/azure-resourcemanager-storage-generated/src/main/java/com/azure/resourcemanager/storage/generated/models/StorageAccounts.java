@@ -370,6 +370,33 @@ public interface StorageAccounts {
     Response<Void> revokeUserDelegationKeysWithResponse(String resourceGroupName, String accountName, Context context);
 
     /**
+     * Returns the properties for the specified storage account including but not limited to name, SKU name, location,
+     * and account status. The ListKeys operation should be used to retrieve storage keys.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the storage account.
+     */
+    StorageAccount getById(String id);
+
+    /**
+     * Returns the properties for the specified storage account including but not limited to name, SKU name, location,
+     * and account status. The ListKeys operation should be used to retrieve storage keys.
+     *
+     * @param id the id of the resource.
+     * @param expand May be used to expand the properties within account's properties. By default, data is not included
+     *     when fetching properties. Currently we only support geoReplicationStats and blobRestoreStatus.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the storage account.
+     */
+    Response<StorageAccount> getByIdWithResponse(String id, StorageAccountExpand expand, Context context);
+
+    /**
      * Begins definition for a new StorageAccount resource.
      *
      * @param name resource name.

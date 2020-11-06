@@ -4,14 +4,12 @@
 
 package com.azure.resourcemanager.monitor.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.monitor.generated.fluent.models.BaselineResponseInner;
 import java.time.Duration;
 import java.time.OffsetDateTime;
 import java.util.List;
 
 /** An immutable client-side representation of BaselineResponse. */
-@Immutable
 public interface BaselineResponse {
     /**
      * Gets the id property: the metric baseline Id.

@@ -76,6 +76,21 @@ public final class CustomIpPrefixesImpl implements CustomIpPrefixes {
         return inner.mapPage(inner1 -> new CustomIpPrefixImpl(inner1, this.manager()));
     }
 
+    public CustomIpPrefix getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String customIpPrefixName = Utils.getValueFromIdByName(id, "customIpPrefixes");
+        String localExpand = null;
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, customIpPrefixName, localExpand, Context.NONE)
+            .getValue();
+    }
+
+    public Response<CustomIpPrefix> getByIdWithResponse(String id, String expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String customIpPrefixName = Utils.getValueFromIdByName(id, "customIpPrefixes");
+        return this.getByResourceGroupWithResponse(resourceGroupName, customIpPrefixName, expand, context);
+    }
+
     private CustomIpPrefixesClient serviceClient() {
         return this.innerClient;
     }

@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.storage.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.storage.generated.fluent.models.UsageInner;
 
 /** An immutable client-side representation of Usage. */
-@Immutable
 public interface Usage {
     /**
      * Gets the unit property: Gets the unit of measurement.

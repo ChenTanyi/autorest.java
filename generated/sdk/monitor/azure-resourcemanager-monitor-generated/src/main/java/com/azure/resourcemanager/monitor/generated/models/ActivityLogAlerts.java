@@ -104,6 +104,29 @@ public interface ActivityLogAlerts {
     PagedIterable<ActivityLogAlertResource> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
+     * Get an activity log alert.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an activity log alert.
+     */
+    ActivityLogAlertResource getById(String id);
+
+    /**
+     * Get an activity log alert.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an activity log alert.
+     */
+    Response<ActivityLogAlertResource> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new ActivityLogAlertResource resource.
      *
      * @param name resource name.

@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.TopologyInner;
 import java.time.OffsetDateTime;
 import java.util.List;
 
 /** An immutable client-side representation of Topology. */
-@Immutable
 public interface Topology {
     /**
      * Gets the id property: GUID representing the operation id.

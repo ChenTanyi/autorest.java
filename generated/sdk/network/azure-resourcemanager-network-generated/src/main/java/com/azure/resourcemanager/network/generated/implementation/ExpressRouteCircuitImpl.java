@@ -171,7 +171,7 @@ public final class ExpressRouteCircuitImpl
             serviceManager
                 .serviceClient()
                 .getExpressRouteCircuits()
-                .createOrUpdate(resourceGroupName, circuitName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, circuitName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -180,7 +180,7 @@ public final class ExpressRouteCircuitImpl
             serviceManager
                 .serviceClient()
                 .getExpressRouteCircuits()
-                .createOrUpdate(resourceGroupName, circuitName, innerObject, context);
+                .createOrUpdate(resourceGroupName, circuitName, this.innerModel(), context);
         return this;
     }
 

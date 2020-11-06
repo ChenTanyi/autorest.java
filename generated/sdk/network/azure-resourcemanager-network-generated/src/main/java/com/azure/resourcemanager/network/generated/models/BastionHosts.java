@@ -103,6 +103,29 @@ public interface BastionHosts {
     PagedIterable<BastionHost> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
+     * Gets the specified Bastion Host.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified Bastion Host.
+     */
+    BastionHost getById(String id);
+
+    /**
+     * Gets the specified Bastion Host.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified Bastion Host.
+     */
+    Response<BastionHost> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new BastionHost resource.
      *
      * @param name resource name.

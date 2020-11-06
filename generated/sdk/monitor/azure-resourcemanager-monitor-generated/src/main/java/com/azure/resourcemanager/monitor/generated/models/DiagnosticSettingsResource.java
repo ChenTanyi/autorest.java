@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.monitor.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSettingsResourceInner;
 import java.util.List;
 
 /** An immutable client-side representation of DiagnosticSettingsResource. */
-@Immutable
 public interface DiagnosticSettingsResource {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

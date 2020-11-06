@@ -179,6 +179,29 @@ public interface ExpressRouteCrossConnections {
         String resourceGroupName, String crossConnectionName, String peeringName, String devicePath, Context context);
 
     /**
+     * Gets details about the specified ExpressRouteCrossConnection.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return details about the specified ExpressRouteCrossConnection.
+     */
+    ExpressRouteCrossConnection getById(String id);
+
+    /**
+     * Gets details about the specified ExpressRouteCrossConnection.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return details about the specified ExpressRouteCrossConnection.
+     */
+    Response<ExpressRouteCrossConnection> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new ExpressRouteCrossConnection resource.
      *
      * @param name resource name.

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteArmResourceInner;
@@ -12,7 +11,6 @@ import java.util.List;
 import java.util.Map;
 
 /** An immutable client-side representation of StaticSiteArmResource. */
-@Immutable
 public interface StaticSiteArmResource {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

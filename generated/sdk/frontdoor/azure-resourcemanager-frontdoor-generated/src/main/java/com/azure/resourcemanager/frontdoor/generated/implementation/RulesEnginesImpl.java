@@ -67,6 +67,20 @@ public final class RulesEnginesImpl implements RulesEngines {
         this.serviceClient().delete(resourceGroupName, frontDoorName, rulesEngineName, context);
     }
 
+    public RulesEngine getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String frontDoorName = Utils.getValueFromIdByName(id, "frontDoors");
+        String rulesEngineName = Utils.getValueFromIdByName(id, "rulesEngines");
+        return this.getWithResponse(resourceGroupName, frontDoorName, rulesEngineName, Context.NONE).getValue();
+    }
+
+    public Response<RulesEngine> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String frontDoorName = Utils.getValueFromIdByName(id, "frontDoors");
+        String rulesEngineName = Utils.getValueFromIdByName(id, "rulesEngines");
+        return this.getWithResponse(resourceGroupName, frontDoorName, rulesEngineName, context);
+    }
+
     private RulesEnginesClient serviceClient() {
         return this.innerClient;
     }

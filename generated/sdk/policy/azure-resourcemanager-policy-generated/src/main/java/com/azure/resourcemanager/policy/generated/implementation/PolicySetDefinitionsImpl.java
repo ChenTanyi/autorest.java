@@ -179,6 +179,16 @@ public final class PolicySetDefinitionsImpl implements PolicySetDefinitions {
         return inner.mapPage(inner1 -> new PolicySetDefinitionImpl(inner1, this.manager()));
     }
 
+    public PolicySetDefinition getById(String id) {
+        String policySetDefinitionName = Utils.getValueFromIdByName(id, "policySetDefinitions");
+        return this.getWithResponse(policySetDefinitionName, Context.NONE).getValue();
+    }
+
+    public Response<PolicySetDefinition> getByIdWithResponse(String id, Context context) {
+        String policySetDefinitionName = Utils.getValueFromIdByName(id, "policySetDefinitions");
+        return this.getWithResponse(policySetDefinitionName, context);
+    }
+
     private PolicySetDefinitionsClient serviceClient() {
         return this.innerClient;
     }

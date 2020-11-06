@@ -90,6 +90,29 @@ public interface PrivateEndpointConnections {
     Response<Void> deleteWithResponse(String resourceGroupName, String accountName, String name, Context context);
 
     /**
+     * Get private endpoint connection.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return private endpoint connection.
+     */
+    PrivateEndpointConnection getById(String id);
+
+    /**
+     * Get private endpoint connection.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return private endpoint connection.
+     */
+    Response<PrivateEndpointConnection> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new PrivateEndpointConnection resource.
      *
      * @param name resource name.

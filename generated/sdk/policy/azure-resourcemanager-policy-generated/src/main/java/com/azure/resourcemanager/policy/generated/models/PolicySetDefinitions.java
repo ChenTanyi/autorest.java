@@ -223,6 +223,29 @@ public interface PolicySetDefinitions {
     PagedIterable<PolicySetDefinition> listByManagementGroup(String managementGroupId, Context context);
 
     /**
+     * This operation retrieves the policy set definition in the given subscription with the given name.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the policy set definition.
+     */
+    PolicySetDefinition getById(String id);
+
+    /**
+     * This operation retrieves the policy set definition in the given subscription with the given name.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the policy set definition.
+     */
+    Response<PolicySetDefinition> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new PolicySetDefinition resource.
      *
      * @param name resource name.

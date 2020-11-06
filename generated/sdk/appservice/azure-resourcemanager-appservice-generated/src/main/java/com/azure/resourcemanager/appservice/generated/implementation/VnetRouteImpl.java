@@ -72,7 +72,7 @@ public final class VnetRouteImpl implements VnetRoute, VnetRoute.Definition, Vne
                 .serviceClient()
                 .getAppServicePlans()
                 .createOrUpdateVnetRouteWithResponse(
-                    resourceGroupName, name, vnetName, routeName, innerObject, Context.NONE)
+                    resourceGroupName, name, vnetName, routeName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -82,7 +82,8 @@ public final class VnetRouteImpl implements VnetRoute, VnetRoute.Definition, Vne
             serviceManager
                 .serviceClient()
                 .getAppServicePlans()
-                .createOrUpdateVnetRouteWithResponse(resourceGroupName, name, vnetName, routeName, innerObject, context)
+                .createOrUpdateVnetRouteWithResponse(
+                    resourceGroupName, name, vnetName, routeName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -102,7 +103,8 @@ public final class VnetRouteImpl implements VnetRoute, VnetRoute.Definition, Vne
             serviceManager
                 .serviceClient()
                 .getAppServicePlans()
-                .updateVnetRouteWithResponse(resourceGroupName, name, vnetName, routeName, innerObject, Context.NONE)
+                .updateVnetRouteWithResponse(
+                    resourceGroupName, name, vnetName, routeName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -112,7 +114,7 @@ public final class VnetRouteImpl implements VnetRoute, VnetRoute.Definition, Vne
             serviceManager
                 .serviceClient()
                 .getAppServicePlans()
-                .updateVnetRouteWithResponse(resourceGroupName, name, vnetName, routeName, innerObject, context)
+                .updateVnetRouteWithResponse(resourceGroupName, name, vnetName, routeName, this.innerModel(), context)
                 .getValue();
         return this;
     }

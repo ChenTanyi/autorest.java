@@ -85,6 +85,22 @@ public final class JobsImpl implements Jobs {
             .cancelJobWithResponse(resourceGroupName, accountName, transformName, jobName, context);
     }
 
+    public Job getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        String transformName = Utils.getValueFromIdByName(id, "transforms");
+        String jobName = Utils.getValueFromIdByName(id, "jobs");
+        return this.getWithResponse(resourceGroupName, accountName, transformName, jobName, Context.NONE).getValue();
+    }
+
+    public Response<Job> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        String transformName = Utils.getValueFromIdByName(id, "transforms");
+        String jobName = Utils.getValueFromIdByName(id, "jobs");
+        return this.getWithResponse(resourceGroupName, accountName, transformName, jobName, context);
+    }
+
     private JobsClient serviceClient() {
         return this.innerClient;
     }

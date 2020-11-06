@@ -151,6 +151,31 @@ public interface DiskEncryptionSets {
         String resourceGroupName, String diskEncryptionSetName, Context context);
 
     /**
+     * Gets information about a disk encryption set.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about a disk encryption set.
+     */
+    DiskEncryptionSet getById(String id);
+
+    /**
+     * Gets information about a disk encryption set.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about a disk encryption set.
+     */
+    Response<DiskEncryptionSet> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new DiskEncryptionSet resource.
      *
      * @param name resource name.

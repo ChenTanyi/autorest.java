@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.eventhubs.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ClusterQuotaConfigurationPropertiesInner;
 import java.util.Map;
 
 /** An immutable client-side representation of ClusterQuotaConfigurationProperties. */
-@Immutable
 public interface ClusterQuotaConfigurationProperties {
     /**
      * Gets the settings property: All possible Cluster settings - a collection of key/value paired settings which apply

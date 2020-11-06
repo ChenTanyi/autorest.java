@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.eventhubs.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.CheckNameAvailabilityResultInner;
 
 /** An immutable client-side representation of CheckNameAvailabilityResult. */
-@Immutable
 public interface CheckNameAvailabilityResult {
     /**
      * Gets the message property: The detailed info regarding the reason associated with the Namespace.

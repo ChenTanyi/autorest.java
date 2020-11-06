@@ -616,6 +616,30 @@ public interface VirtualMachines {
     RunCommandResult runCommand(String resourceGroupName, String vmName, RunCommandInput parameters, Context context);
 
     /**
+     * Retrieves information about the model view or the instance view of a virtual machine.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return describes a Virtual Machine.
+     */
+    VirtualMachine getById(String id);
+
+    /**
+     * Retrieves information about the model view or the instance view of a virtual machine.
+     *
+     * @param id the id of the resource.
+     * @param expand The expand expression to apply on the operation.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return describes a Virtual Machine.
+     */
+    Response<VirtualMachine> getByIdWithResponse(String id, InstanceViewTypes expand, Context context);
+
+    /**
      * Begins definition for a new VirtualMachine resource.
      *
      * @param name resource name.

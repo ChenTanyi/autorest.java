@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.AvailablePrivateEndpointTypeInner;
 
 /** An immutable client-side representation of AvailablePrivateEndpointType. */
-@Immutable
 public interface AvailablePrivateEndpointType {
     /**
      * Gets the name property: The name of the service and resource.

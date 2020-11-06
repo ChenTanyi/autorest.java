@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.ConnectionMonitorQueryResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of ConnectionMonitorQueryResult. */
-@Immutable
 public interface ConnectionMonitorQueryResult {
     /**
      * Gets the sourceStatus property: Status of connection monitor source.

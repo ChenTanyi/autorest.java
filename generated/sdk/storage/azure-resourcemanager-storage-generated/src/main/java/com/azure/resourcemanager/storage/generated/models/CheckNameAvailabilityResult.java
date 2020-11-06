@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.storage.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.storage.generated.fluent.models.CheckNameAvailabilityResultInner;
 
 /** An immutable client-side representation of CheckNameAvailabilityResult. */
-@Immutable
 public interface CheckNameAvailabilityResult {
     /**
      * Gets the nameAvailable property: Gets a boolean value that indicates whether the name is available for you to

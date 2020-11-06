@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.TroubleshootingResultInner;
 import java.time.OffsetDateTime;
 import java.util.List;
 
 /** An immutable client-side representation of TroubleshootingResult. */
-@Immutable
 public interface TroubleshootingResult {
     /**
      * Gets the startTime property: The start time of the troubleshooting.

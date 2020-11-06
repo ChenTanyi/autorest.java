@@ -79,6 +79,18 @@ public final class AutoscaleSettingsImpl implements AutoscaleSettings {
         return inner.mapPage(inner1 -> new AutoscaleSettingResourceImpl(inner1, this.manager()));
     }
 
+    public AutoscaleSettingResource getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        String autoscaleSettingName = Utils.getValueFromIdByName(id, "autoscalesettings");
+        return this.getByResourceGroupWithResponse(resourceGroupName, autoscaleSettingName, Context.NONE).getValue();
+    }
+
+    public Response<AutoscaleSettingResource> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        String autoscaleSettingName = Utils.getValueFromIdByName(id, "autoscalesettings");
+        return this.getByResourceGroupWithResponse(resourceGroupName, autoscaleSettingName, context);
+    }
+
     private AutoscaleSettingsClient serviceClient() {
         return this.innerClient;
     }

@@ -133,7 +133,7 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
             serviceManager
                 .serviceClient()
                 .getBlobContainers()
-                .createWithResponse(resourceGroupName, accountName, containerName, innerObject, Context.NONE)
+                .createWithResponse(resourceGroupName, accountName, containerName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -143,7 +143,7 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
             serviceManager
                 .serviceClient()
                 .getBlobContainers()
-                .createWithResponse(resourceGroupName, accountName, containerName, innerObject, context)
+                .createWithResponse(resourceGroupName, accountName, containerName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -163,7 +163,7 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
             serviceManager
                 .serviceClient()
                 .getBlobContainers()
-                .updateWithResponse(resourceGroupName, accountName, containerName, innerObject, Context.NONE)
+                .updateWithResponse(resourceGroupName, accountName, containerName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -173,7 +173,7 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
             serviceManager
                 .serviceClient()
                 .getBlobContainers()
-                .updateWithResponse(resourceGroupName, accountName, containerName, innerObject, context)
+                .updateWithResponse(resourceGroupName, accountName, containerName, this.innerModel(), context)
                 .getValue();
         return this;
     }

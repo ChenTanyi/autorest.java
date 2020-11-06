@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.databoxedge.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.TriggerInner;
 
 /** An immutable client-side representation of Trigger. */
-@Immutable
 public interface Trigger {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

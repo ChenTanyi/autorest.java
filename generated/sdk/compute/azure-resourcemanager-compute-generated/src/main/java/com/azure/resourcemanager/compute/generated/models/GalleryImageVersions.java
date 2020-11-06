@@ -117,6 +117,32 @@ public interface GalleryImageVersions {
         String resourceGroupName, String galleryName, String galleryImageName, Context context);
 
     /**
+     * Retrieves information about a gallery image version.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies information about the gallery image version that you want to create or update.
+     */
+    GalleryImageVersion getById(String id);
+
+    /**
+     * Retrieves information about a gallery image version.
+     *
+     * @param id the id of the resource.
+     * @param expand The expand expression to apply on the operation.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies information about the gallery image version that you want to create or update.
+     */
+    Response<GalleryImageVersion> getByIdWithResponse(String id, ReplicationStatusTypes expand, Context context);
+
+    /**
      * Begins definition for a new GalleryImageVersion resource.
      *
      * @param name resource name.

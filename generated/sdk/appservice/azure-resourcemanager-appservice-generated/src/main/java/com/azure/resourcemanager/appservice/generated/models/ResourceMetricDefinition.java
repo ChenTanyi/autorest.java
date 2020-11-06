@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ResourceMetricDefinitionInner;
 import java.util.List;
 import java.util.Map;
 
 /** An immutable client-side representation of ResourceMetricDefinition. */
-@Immutable
 public interface ResourceMetricDefinition {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

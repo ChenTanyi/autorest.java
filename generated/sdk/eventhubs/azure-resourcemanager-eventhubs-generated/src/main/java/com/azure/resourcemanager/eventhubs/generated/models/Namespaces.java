@@ -495,6 +495,98 @@ public interface Namespaces {
         CheckNameAvailabilityParameter parameters, Context context);
 
     /**
+     * Gets an IpFilterRule for a Namespace by rule name.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an IpFilterRule for a Namespace by rule name.
+     */
+    IpFilterRule getIpFilterRuleById(String id);
+
+    /**
+     * Gets an IpFilterRule for a Namespace by rule name.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an IpFilterRule for a Namespace by rule name.
+     */
+    Response<IpFilterRule> getIpFilterRuleByIdWithResponse(String id, Context context);
+
+    /**
+     * Gets the description of the specified namespace.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the description of the specified namespace.
+     */
+    EHNamespace getById(String id);
+
+    /**
+     * Gets the description of the specified namespace.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the description of the specified namespace.
+     */
+    Response<EHNamespace> getByIdWithResponse(String id, Context context);
+
+    /**
+     * Gets an VirtualNetworkRule for a Namespace by rule name.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an VirtualNetworkRule for a Namespace by rule name.
+     */
+    VirtualNetworkRule getVirtualNetworkRuleById(String id);
+
+    /**
+     * Gets an VirtualNetworkRule for a Namespace by rule name.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an VirtualNetworkRule for a Namespace by rule name.
+     */
+    Response<VirtualNetworkRule> getVirtualNetworkRuleByIdWithResponse(String id, Context context);
+
+    /**
+     * Gets an AuthorizationRule for a Namespace by rule name.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an AuthorizationRule for a Namespace by rule name.
+     */
+    AuthorizationRule getAuthorizationRuleById(String id);
+
+    /**
+     * Gets an AuthorizationRule for a Namespace by rule name.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an AuthorizationRule for a Namespace by rule name.
+     */
+    Response<AuthorizationRule> getAuthorizationRuleByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new EHNamespace resource.
      *
      * @param name resource name.

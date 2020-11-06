@@ -109,6 +109,23 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
         return inner.mapPage(inner1 -> new VirtualMachineRunCommandImpl(inner1, this.manager()));
     }
 
+    public VirtualMachineRunCommand getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String vmName = Utils.getValueFromIdByName(id, "virtualMachines");
+        String runCommandName = Utils.getValueFromIdByName(id, "runCommands");
+        String localExpand = null;
+        return this
+            .getByVirtualMachineWithResponse(resourceGroupName, vmName, runCommandName, localExpand, Context.NONE)
+            .getValue();
+    }
+
+    public Response<VirtualMachineRunCommand> getByIdWithResponse(String id, String expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String vmName = Utils.getValueFromIdByName(id, "virtualMachines");
+        String runCommandName = Utils.getValueFromIdByName(id, "runCommands");
+        return this.getByVirtualMachineWithResponse(resourceGroupName, vmName, runCommandName, expand, context);
+    }
+
     private VirtualMachineRunCommandsClient serviceClient() {
         return this.innerClient;
     }

@@ -93,7 +93,7 @@ public final class HybridConnectionImpl
                 .serviceClient()
                 .getWebApps()
                 .createOrUpdateHybridConnectionWithResponse(
-                    resourceGroupName, name, namespaceName, relayName, innerObject, Context.NONE)
+                    resourceGroupName, name, namespaceName, relayName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -104,7 +104,7 @@ public final class HybridConnectionImpl
                 .serviceClient()
                 .getWebApps()
                 .createOrUpdateHybridConnectionWithResponse(
-                    resourceGroupName, name, namespaceName, relayName, innerObject, context)
+                    resourceGroupName, name, namespaceName, relayName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -125,7 +125,7 @@ public final class HybridConnectionImpl
                 .serviceClient()
                 .getWebApps()
                 .updateHybridConnectionWithResponse(
-                    resourceGroupName, name, namespaceName, relayName, innerObject, Context.NONE)
+                    resourceGroupName, name, namespaceName, relayName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -136,7 +136,7 @@ public final class HybridConnectionImpl
                 .serviceClient()
                 .getWebApps()
                 .updateHybridConnectionWithResponse(
-                    resourceGroupName, name, namespaceName, relayName, innerObject, context)
+                    resourceGroupName, name, namespaceName, relayName, this.innerModel(), context)
                 .getValue();
         return this;
     }

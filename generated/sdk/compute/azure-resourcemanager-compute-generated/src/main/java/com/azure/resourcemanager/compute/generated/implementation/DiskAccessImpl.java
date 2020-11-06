@@ -95,7 +95,7 @@ public final class DiskAccessImpl implements DiskAccess, DiskAccess.Definition, 
             serviceManager
                 .serviceClient()
                 .getDiskAccesses()
-                .createOrUpdate(resourceGroupName, diskAccessName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, diskAccessName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -104,7 +104,7 @@ public final class DiskAccessImpl implements DiskAccess, DiskAccess.Definition, 
             serviceManager
                 .serviceClient()
                 .getDiskAccesses()
-                .createOrUpdate(resourceGroupName, diskAccessName, innerObject, context);
+                .createOrUpdate(resourceGroupName, diskAccessName, this.innerModel(), context);
         return this;
     }
 

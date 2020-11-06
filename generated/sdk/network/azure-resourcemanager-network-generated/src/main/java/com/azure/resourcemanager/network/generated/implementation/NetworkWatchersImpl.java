@@ -385,6 +385,18 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
     }
 
+    public NetworkWatcher getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
+        return this.getByResourceGroupWithResponse(resourceGroupName, networkWatcherName, Context.NONE).getValue();
+    }
+
+    public Response<NetworkWatcher> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
+        return this.getByResourceGroupWithResponse(resourceGroupName, networkWatcherName, context);
+    }
+
     private NetworkWatchersClient serviceClient() {
         return this.innerClient;
     }

@@ -136,6 +136,18 @@ public final class MediaservicesImpl implements Mediaservices {
         }
     }
 
+    public MediaService getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "mediaservices");
+        return this.getByResourceGroupWithResponse(resourceGroupName, accountName, Context.NONE).getValue();
+    }
+
+    public Response<MediaService> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String accountName = Utils.getValueFromIdByName(id, "mediaservices");
+        return this.getByResourceGroupWithResponse(resourceGroupName, accountName, context);
+    }
+
     private MediaservicesClient serviceClient() {
         return this.innerClient;
     }

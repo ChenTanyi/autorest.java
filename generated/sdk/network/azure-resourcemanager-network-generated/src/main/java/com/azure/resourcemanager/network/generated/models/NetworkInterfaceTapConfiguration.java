@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceTapConfigurationInner;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkTapInner;
 
 /** An immutable client-side representation of NetworkInterfaceTapConfiguration. */
-@Immutable
 public interface NetworkInterfaceTapConfiguration {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

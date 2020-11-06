@@ -150,7 +150,7 @@ public final class DataBoxEdgeDeviceImpl
             serviceManager
                 .serviceClient()
                 .getDevices()
-                .createOrUpdate(deviceName, resourceGroupName, innerObject, Context.NONE);
+                .createOrUpdate(deviceName, resourceGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -159,7 +159,7 @@ public final class DataBoxEdgeDeviceImpl
             serviceManager
                 .serviceClient()
                 .getDevices()
-                .createOrUpdate(deviceName, resourceGroupName, innerObject, context);
+                .createOrUpdate(deviceName, resourceGroupName, this.innerModel(), context);
         return this;
     }
 

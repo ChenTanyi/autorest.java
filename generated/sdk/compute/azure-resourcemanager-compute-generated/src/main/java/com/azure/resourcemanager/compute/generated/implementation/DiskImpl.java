@@ -197,13 +197,16 @@ public final class DiskImpl implements Disk, Disk.Definition, Disk.Update {
             serviceManager
                 .serviceClient()
                 .getDisks()
-                .createOrUpdate(resourceGroupName, diskName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, diskName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public Disk create(Context context) {
         this.innerObject =
-            serviceManager.serviceClient().getDisks().createOrUpdate(resourceGroupName, diskName, innerObject, context);
+            serviceManager
+                .serviceClient()
+                .getDisks()
+                .createOrUpdate(resourceGroupName, diskName, this.innerModel(), context);
         return this;
     }
 

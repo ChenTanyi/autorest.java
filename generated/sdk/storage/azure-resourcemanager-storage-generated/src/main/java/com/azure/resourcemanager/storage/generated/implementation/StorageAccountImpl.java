@@ -277,23 +277,23 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
     }
 
     public StorageAccount refresh() {
-        StorageAccountExpand refreshExpand = null;
+        StorageAccountExpand localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getStorageAccounts()
-                .getByResourceGroupWithResponse(resourceGroupName, accountName, refreshExpand, Context.NONE)
+                .getByResourceGroupWithResponse(resourceGroupName, accountName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public StorageAccount refresh(Context context) {
-        StorageAccountExpand refreshExpand = null;
+        StorageAccountExpand localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getStorageAccounts()
-                .getByResourceGroupWithResponse(resourceGroupName, accountName, refreshExpand, context)
+                .getByResourceGroupWithResponse(resourceGroupName, accountName, localExpand, context)
                 .getValue();
         return this;
     }

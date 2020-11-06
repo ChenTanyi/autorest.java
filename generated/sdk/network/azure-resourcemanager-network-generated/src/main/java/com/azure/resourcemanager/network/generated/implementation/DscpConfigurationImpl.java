@@ -160,7 +160,7 @@ public final class DscpConfigurationImpl
             serviceManager
                 .serviceClient()
                 .getDscpConfigurations()
-                .createOrUpdate(resourceGroupName, dscpConfigurationName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, dscpConfigurationName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -169,7 +169,7 @@ public final class DscpConfigurationImpl
             serviceManager
                 .serviceClient()
                 .getDscpConfigurations()
-                .createOrUpdate(resourceGroupName, dscpConfigurationName, innerObject, context);
+                .createOrUpdate(resourceGroupName, dscpConfigurationName, this.innerModel(), context);
         return this;
     }
 
@@ -188,7 +188,7 @@ public final class DscpConfigurationImpl
             serviceManager
                 .serviceClient()
                 .getDscpConfigurations()
-                .createOrUpdate(resourceGroupName, dscpConfigurationName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, dscpConfigurationName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -197,7 +197,7 @@ public final class DscpConfigurationImpl
             serviceManager
                 .serviceClient()
                 .getDscpConfigurations()
-                .createOrUpdate(resourceGroupName, dscpConfigurationName, innerObject, context);
+                .createOrUpdate(resourceGroupName, dscpConfigurationName, this.innerModel(), context);
         return this;
     }
 

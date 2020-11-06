@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.mysql.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.mysql.generated.fluent.models.RecommendationActionInner;
 import java.time.OffsetDateTime;
 import java.util.Map;
 
 /** An immutable client-side representation of RecommendationAction. */
-@Immutable
 public interface RecommendationAction {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

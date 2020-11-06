@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.AvailableDelegationInner;
 import java.util.List;
 
 /** An immutable client-side representation of AvailableDelegation. */
-@Immutable
 public interface AvailableDelegation {
     /**
      * Gets the name property: The name of the AvailableDelegation resource.

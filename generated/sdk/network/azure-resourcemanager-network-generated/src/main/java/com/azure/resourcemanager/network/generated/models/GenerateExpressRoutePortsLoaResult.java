@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.GenerateExpressRoutePortsLoaResultInner;
 
 /** An immutable client-side representation of GenerateExpressRoutePortsLoaResult. */
-@Immutable
 public interface GenerateExpressRoutePortsLoaResult {
     /**
      * Gets the encodedContent property: The content as a base64 encoded string.

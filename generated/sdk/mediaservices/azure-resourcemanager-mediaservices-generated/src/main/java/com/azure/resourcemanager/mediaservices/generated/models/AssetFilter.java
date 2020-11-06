@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.mediaservices.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.AssetFilterInner;
 import java.util.List;
 
 /** An immutable client-side representation of AssetFilter. */
-@Immutable
 public interface AssetFilter {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

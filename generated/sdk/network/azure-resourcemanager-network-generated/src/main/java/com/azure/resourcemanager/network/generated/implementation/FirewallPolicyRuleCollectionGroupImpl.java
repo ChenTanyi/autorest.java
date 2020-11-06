@@ -81,7 +81,7 @@ public final class FirewallPolicyRuleCollectionGroupImpl
                 .serviceClient()
                 .getFirewallPolicyRuleCollectionGroups()
                 .createOrUpdate(
-                    resourceGroupName, firewallPolicyName, ruleCollectionGroupName, innerObject, Context.NONE);
+                    resourceGroupName, firewallPolicyName, ruleCollectionGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -90,7 +90,8 @@ public final class FirewallPolicyRuleCollectionGroupImpl
             serviceManager
                 .serviceClient()
                 .getFirewallPolicyRuleCollectionGroups()
-                .createOrUpdate(resourceGroupName, firewallPolicyName, ruleCollectionGroupName, innerObject, context);
+                .createOrUpdate(
+                    resourceGroupName, firewallPolicyName, ruleCollectionGroupName, this.innerModel(), context);
         return this;
     }
 
@@ -110,7 +111,7 @@ public final class FirewallPolicyRuleCollectionGroupImpl
                 .serviceClient()
                 .getFirewallPolicyRuleCollectionGroups()
                 .createOrUpdate(
-                    resourceGroupName, firewallPolicyName, ruleCollectionGroupName, innerObject, Context.NONE);
+                    resourceGroupName, firewallPolicyName, ruleCollectionGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -119,7 +120,8 @@ public final class FirewallPolicyRuleCollectionGroupImpl
             serviceManager
                 .serviceClient()
                 .getFirewallPolicyRuleCollectionGroups()
-                .createOrUpdate(resourceGroupName, firewallPolicyName, ruleCollectionGroupName, innerObject, context);
+                .createOrUpdate(
+                    resourceGroupName, firewallPolicyName, ruleCollectionGroupName, this.innerModel(), context);
         return this;
     }
 

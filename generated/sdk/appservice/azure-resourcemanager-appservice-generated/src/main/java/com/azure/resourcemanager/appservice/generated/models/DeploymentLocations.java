@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DeploymentLocationsInner;
 import java.util.List;
 
 /** An immutable client-side representation of DeploymentLocations. */
-@Immutable
 public interface DeploymentLocations {
     /**
      * Gets the locations property: Available regions.

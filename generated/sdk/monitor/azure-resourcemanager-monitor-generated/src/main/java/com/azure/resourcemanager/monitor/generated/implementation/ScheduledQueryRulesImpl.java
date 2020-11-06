@@ -78,6 +78,18 @@ public final class ScheduledQueryRulesImpl implements ScheduledQueryRules {
         return inner.mapPage(inner1 -> new LogSearchRuleResourceImpl(inner1, this.manager()));
     }
 
+    public LogSearchRuleResource getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        String ruleName = Utils.getValueFromIdByName(id, "scheduledQueryRules");
+        return this.getByResourceGroupWithResponse(resourceGroupName, ruleName, Context.NONE).getValue();
+    }
+
+    public Response<LogSearchRuleResource> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        String ruleName = Utils.getValueFromIdByName(id, "scheduledQueryRules");
+        return this.getByResourceGroupWithResponse(resourceGroupName, ruleName, context);
+    }
+
     private ScheduledQueryRulesClient serviceClient() {
         return this.innerClient;
     }

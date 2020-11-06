@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.compute.generated.fluent.models.SharingUpdateInner;
 import java.util.List;
 
 /** An immutable client-side representation of SharingUpdate. */
-@Immutable
 public interface SharingUpdate {
     /**
      * Gets the operationType property: This property allows you to specify the operation type of gallery sharing

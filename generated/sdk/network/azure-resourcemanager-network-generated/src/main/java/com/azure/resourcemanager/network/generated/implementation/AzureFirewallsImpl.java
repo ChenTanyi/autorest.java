@@ -76,6 +76,18 @@ public final class AzureFirewallsImpl implements AzureFirewalls {
         return inner.mapPage(inner1 -> new AzureFirewallImpl(inner1, this.manager()));
     }
 
+    public AzureFirewall getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String azureFirewallName = Utils.getValueFromIdByName(id, "azureFirewalls");
+        return this.getByResourceGroupWithResponse(resourceGroupName, azureFirewallName, Context.NONE).getValue();
+    }
+
+    public Response<AzureFirewall> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String azureFirewallName = Utils.getValueFromIdByName(id, "azureFirewalls");
+        return this.getByResourceGroupWithResponse(resourceGroupName, azureFirewallName, context);
+    }
+
     private AzureFirewallsClient serviceClient() {
         return this.innerClient;
     }

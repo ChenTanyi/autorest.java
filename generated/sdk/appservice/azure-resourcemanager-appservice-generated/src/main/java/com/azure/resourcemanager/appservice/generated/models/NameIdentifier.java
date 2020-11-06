@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.NameIdentifierInner;
 
 /** An immutable client-side representation of NameIdentifier. */
-@Immutable
 public interface NameIdentifier {
     /**
      * Gets the name property: Name of the object.

@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SlotConfigNamesResourceInner;
 import java.util.List;
 
 /** An immutable client-side representation of SlotConfigNamesResource. */
-@Immutable
 public interface SlotConfigNamesResource {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

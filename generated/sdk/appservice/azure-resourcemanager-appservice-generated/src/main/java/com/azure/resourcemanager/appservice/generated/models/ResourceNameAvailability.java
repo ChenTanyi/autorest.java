@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ResourceNameAvailabilityInner;
 
 /** An immutable client-side representation of ResourceNameAvailability. */
-@Immutable
 public interface ResourceNameAvailability {
     /**
      * Gets the nameAvailable property: &lt;code&gt;true&lt;/code&gt; indicates name is valid and available.

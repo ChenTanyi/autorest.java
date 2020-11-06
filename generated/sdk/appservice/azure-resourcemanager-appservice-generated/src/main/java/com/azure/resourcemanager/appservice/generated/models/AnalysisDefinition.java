@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AnalysisDefinitionInner;
 
 /** An immutable client-side representation of AnalysisDefinition. */
-@Immutable
 public interface AnalysisDefinition {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

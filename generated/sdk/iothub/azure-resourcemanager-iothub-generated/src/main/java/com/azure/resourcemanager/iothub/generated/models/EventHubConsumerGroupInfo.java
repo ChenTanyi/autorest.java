@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.iothub.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.iothub.generated.fluent.models.EventHubConsumerGroupInfoInner;
 import java.util.Map;
 
 /** An immutable client-side representation of EventHubConsumerGroupInfo. */
-@Immutable
 public interface EventHubConsumerGroupInfo {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

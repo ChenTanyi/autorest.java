@@ -74,7 +74,7 @@ public final class ArmDisasterRecoveryImpl
             serviceManager
                 .serviceClient()
                 .getDisasterRecoveryConfigs()
-                .createOrUpdateWithResponse(resourceGroupName, namespaceName, alias, innerObject, Context.NONE)
+                .createOrUpdateWithResponse(resourceGroupName, namespaceName, alias, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -84,7 +84,7 @@ public final class ArmDisasterRecoveryImpl
             serviceManager
                 .serviceClient()
                 .getDisasterRecoveryConfigs()
-                .createOrUpdateWithResponse(resourceGroupName, namespaceName, alias, innerObject, context)
+                .createOrUpdateWithResponse(resourceGroupName, namespaceName, alias, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -104,7 +104,7 @@ public final class ArmDisasterRecoveryImpl
             serviceManager
                 .serviceClient()
                 .getDisasterRecoveryConfigs()
-                .createOrUpdateWithResponse(resourceGroupName, namespaceName, alias, innerObject, Context.NONE)
+                .createOrUpdateWithResponse(resourceGroupName, namespaceName, alias, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -114,7 +114,7 @@ public final class ArmDisasterRecoveryImpl
             serviceManager
                 .serviceClient()
                 .getDisasterRecoveryConfigs()
-                .createOrUpdateWithResponse(resourceGroupName, namespaceName, alias, innerObject, context)
+                .createOrUpdateWithResponse(resourceGroupName, namespaceName, alias, this.innerModel(), context)
                 .getValue();
         return this;
     }

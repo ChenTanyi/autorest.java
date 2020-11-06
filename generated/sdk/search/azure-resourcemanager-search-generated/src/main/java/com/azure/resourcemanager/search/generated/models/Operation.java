@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.search.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.search.generated.fluent.models.OperationInner;
 
 /** An immutable client-side representation of Operation. */
-@Immutable
 public interface Operation {
     /**
      * Gets the name property: The name of the operation. This name is of the form {provider}/{resource}/{operation}.

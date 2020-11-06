@@ -181,7 +181,7 @@ public final class AzureFirewallImpl implements AzureFirewall, AzureFirewall.Def
             serviceManager
                 .serviceClient()
                 .getAzureFirewalls()
-                .createOrUpdate(resourceGroupName, azureFirewallName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, azureFirewallName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -190,7 +190,7 @@ public final class AzureFirewallImpl implements AzureFirewall, AzureFirewall.Def
             serviceManager
                 .serviceClient()
                 .getAzureFirewalls()
-                .createOrUpdate(resourceGroupName, azureFirewallName, innerObject, context);
+                .createOrUpdate(resourceGroupName, azureFirewallName, this.innerModel(), context);
         return this;
     }
 

@@ -200,6 +200,29 @@ public interface LiveEvents {
     void reset(String resourceGroupName, String accountName, String liveEventName, Context context);
 
     /**
+     * Gets properties of a live event.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties of a live event.
+     */
+    LiveEvent getById(String id);
+
+    /**
+     * Gets properties of a live event.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return properties of a live event.
+     */
+    Response<LiveEvent> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new LiveEvent resource.
      *
      * @param name resource name.

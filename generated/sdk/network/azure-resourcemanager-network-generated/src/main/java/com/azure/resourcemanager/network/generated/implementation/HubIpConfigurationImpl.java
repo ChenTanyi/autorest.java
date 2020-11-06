@@ -92,7 +92,7 @@ public final class HubIpConfigurationImpl
             serviceManager
                 .serviceClient()
                 .getVirtualHubIpConfigurations()
-                .createOrUpdate(resourceGroupName, virtualHubName, ipConfigName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, virtualHubName, ipConfigName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -101,7 +101,7 @@ public final class HubIpConfigurationImpl
             serviceManager
                 .serviceClient()
                 .getVirtualHubIpConfigurations()
-                .createOrUpdate(resourceGroupName, virtualHubName, ipConfigName, innerObject, context);
+                .createOrUpdate(resourceGroupName, virtualHubName, ipConfigName, this.innerModel(), context);
         return this;
     }
 
@@ -120,7 +120,7 @@ public final class HubIpConfigurationImpl
             serviceManager
                 .serviceClient()
                 .getVirtualHubIpConfigurations()
-                .createOrUpdate(resourceGroupName, virtualHubName, ipConfigName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, virtualHubName, ipConfigName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -129,7 +129,7 @@ public final class HubIpConfigurationImpl
             serviceManager
                 .serviceClient()
                 .getVirtualHubIpConfigurations()
-                .createOrUpdate(resourceGroupName, virtualHubName, ipConfigName, innerObject, context);
+                .createOrUpdate(resourceGroupName, virtualHubName, ipConfigName, this.innerModel(), context);
         return this;
     }
 

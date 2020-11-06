@@ -69,7 +69,7 @@ public final class ServerKeyImpl implements ServerKey, ServerKey.Definition, Ser
             serviceManager
                 .serviceClient()
                 .getServerKeys()
-                .createOrUpdate(serverName, keyName, resourceGroupName, innerObject, Context.NONE);
+                .createOrUpdate(serverName, keyName, resourceGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -78,7 +78,7 @@ public final class ServerKeyImpl implements ServerKey, ServerKey.Definition, Ser
             serviceManager
                 .serviceClient()
                 .getServerKeys()
-                .createOrUpdate(serverName, keyName, resourceGroupName, innerObject, context);
+                .createOrUpdate(serverName, keyName, resourceGroupName, this.innerModel(), context);
         return this;
     }
 
@@ -97,7 +97,7 @@ public final class ServerKeyImpl implements ServerKey, ServerKey.Definition, Ser
             serviceManager
                 .serviceClient()
                 .getServerKeys()
-                .createOrUpdate(serverName, keyName, resourceGroupName, innerObject, Context.NONE);
+                .createOrUpdate(serverName, keyName, resourceGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -106,7 +106,7 @@ public final class ServerKeyImpl implements ServerKey, ServerKey.Definition, Ser
             serviceManager
                 .serviceClient()
                 .getServerKeys()
-                .createOrUpdate(serverName, keyName, resourceGroupName, innerObject, context);
+                .createOrUpdate(serverName, keyName, resourceGroupName, this.innerModel(), context);
         return this;
     }
 

@@ -435,6 +435,38 @@ public final class IotHubResourcesImpl implements IotHubResources {
         }
     }
 
+    public IotHubDescription getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceName = Utils.getValueFromIdByName(id, "IotHubs");
+        return this.getByResourceGroupWithResponse(resourceGroupName, resourceName, Context.NONE).getValue();
+    }
+
+    public Response<IotHubDescription> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceName = Utils.getValueFromIdByName(id, "IotHubs");
+        return this.getByResourceGroupWithResponse(resourceGroupName, resourceName, context);
+    }
+
+    public EventHubConsumerGroupInfo getEventHubConsumerGroupById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceName = Utils.getValueFromIdByName(id, "IotHubs");
+        String eventHubEndpointName = Utils.getValueFromIdByName(id, "eventHubEndpoints");
+        String name = Utils.getValueFromIdByName(id, "ConsumerGroups");
+        return this
+            .getEventHubConsumerGroupWithResponse(
+                resourceGroupName, resourceName, eventHubEndpointName, name, Context.NONE)
+            .getValue();
+    }
+
+    public Response<EventHubConsumerGroupInfo> getEventHubConsumerGroupByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String resourceName = Utils.getValueFromIdByName(id, "IotHubs");
+        String eventHubEndpointName = Utils.getValueFromIdByName(id, "eventHubEndpoints");
+        String name = Utils.getValueFromIdByName(id, "ConsumerGroups");
+        return this
+            .getEventHubConsumerGroupWithResponse(resourceGroupName, resourceName, eventHubEndpointName, name, context);
+    }
+
     private IotHubResourcesClient serviceClient() {
         return this.innerClient;
     }

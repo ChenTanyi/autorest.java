@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.compute.generated.fluent.models.AccessUriInner;
 
 /** An immutable client-side representation of AccessUri. */
-@Immutable
 public interface AccessUri {
     /**
      * Gets the accessSas property: A SAS uri for accessing a disk.

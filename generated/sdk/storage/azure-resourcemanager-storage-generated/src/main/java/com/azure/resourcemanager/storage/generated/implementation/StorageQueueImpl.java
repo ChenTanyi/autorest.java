@@ -66,7 +66,7 @@ public final class StorageQueueImpl implements StorageQueue, StorageQueue.Defini
             serviceManager
                 .serviceClient()
                 .getQueues()
-                .createWithResponse(resourceGroupName, accountName, queueName, innerObject, Context.NONE)
+                .createWithResponse(resourceGroupName, accountName, queueName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -76,7 +76,7 @@ public final class StorageQueueImpl implements StorageQueue, StorageQueue.Defini
             serviceManager
                 .serviceClient()
                 .getQueues()
-                .createWithResponse(resourceGroupName, accountName, queueName, innerObject, context)
+                .createWithResponse(resourceGroupName, accountName, queueName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -96,7 +96,7 @@ public final class StorageQueueImpl implements StorageQueue, StorageQueue.Defini
             serviceManager
                 .serviceClient()
                 .getQueues()
-                .updateWithResponse(resourceGroupName, accountName, queueName, innerObject, Context.NONE)
+                .updateWithResponse(resourceGroupName, accountName, queueName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -106,7 +106,7 @@ public final class StorageQueueImpl implements StorageQueue, StorageQueue.Defini
             serviceManager
                 .serviceClient()
                 .getQueues()
-                .updateWithResponse(resourceGroupName, accountName, queueName, innerObject, context)
+                .updateWithResponse(resourceGroupName, accountName, queueName, this.innerModel(), context)
                 .getValue();
         return this;
     }

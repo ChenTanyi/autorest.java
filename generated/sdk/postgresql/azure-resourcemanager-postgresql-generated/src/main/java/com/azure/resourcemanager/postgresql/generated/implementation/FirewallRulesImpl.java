@@ -67,6 +67,20 @@ public final class FirewallRulesImpl implements FirewallRules {
         return inner.mapPage(inner1 -> new FirewallRuleImpl(inner1, this.manager()));
     }
 
+    public FirewallRule getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String serverName = Utils.getValueFromIdByName(id, "servers");
+        String firewallRuleName = Utils.getValueFromIdByName(id, "firewallRules");
+        return this.getWithResponse(resourceGroupName, serverName, firewallRuleName, Context.NONE).getValue();
+    }
+
+    public Response<FirewallRule> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String serverName = Utils.getValueFromIdByName(id, "servers");
+        String firewallRuleName = Utils.getValueFromIdByName(id, "firewallRules");
+        return this.getWithResponse(resourceGroupName, serverName, firewallRuleName, context);
+    }
+
     private FirewallRulesClient serviceClient() {
         return this.innerClient;
     }

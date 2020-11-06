@@ -92,6 +92,20 @@ public final class KeysImpl implements Keys {
         return inner.mapPage(inner1 -> new KeyImpl(inner1, this.manager()));
     }
 
+    public Key getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String vaultName = Utils.getValueFromIdByName(id, "vaults");
+        String keyName = Utils.getValueFromIdByName(id, "keys");
+        return this.getWithResponse(resourceGroupName, vaultName, keyName, Context.NONE).getValue();
+    }
+
+    public Response<Key> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String vaultName = Utils.getValueFromIdByName(id, "vaults");
+        String keyName = Utils.getValueFromIdByName(id, "keys");
+        return this.getWithResponse(resourceGroupName, vaultName, keyName, context);
+    }
+
     private KeysClient serviceClient() {
         return this.innerClient;
     }

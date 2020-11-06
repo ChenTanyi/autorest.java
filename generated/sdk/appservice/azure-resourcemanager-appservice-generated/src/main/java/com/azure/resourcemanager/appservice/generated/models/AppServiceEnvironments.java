@@ -933,6 +933,56 @@ public interface AppServiceEnvironments {
         String resourceGroupName, String name, String workerPoolName, Context context);
 
     /**
+     * Description for Get the properties of an App Service Environment.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return app Service Environment ARM resource.
+     */
+    AppServiceEnvironmentResource getById(String id);
+
+    /**
+     * Description for Get the properties of an App Service Environment.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return app Service Environment ARM resource.
+     */
+    Response<AppServiceEnvironmentResource> getByIdWithResponse(String id, Context context);
+
+    /**
+     * Description for Get properties of a worker pool.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return worker pool of an App Service Environment ARM resource.
+     */
+    WorkerPoolResource getWorkerPoolById(String id);
+
+    /**
+     * Description for Get properties of a worker pool.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return worker pool of an App Service Environment ARM resource.
+     */
+    Response<WorkerPoolResource> getWorkerPoolByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new AppServiceEnvironmentResource resource.
      *
      * @param name resource name.

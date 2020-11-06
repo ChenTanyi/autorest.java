@@ -87,6 +87,18 @@ public final class DiskEncryptionSetsImpl implements DiskEncryptionSets {
         return this.serviceClient().listAssociatedResources(resourceGroupName, diskEncryptionSetName, context);
     }
 
+    public DiskEncryptionSet getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String diskEncryptionSetName = Utils.getValueFromIdByName(id, "diskEncryptionSets");
+        return this.getByResourceGroupWithResponse(resourceGroupName, diskEncryptionSetName, Context.NONE).getValue();
+    }
+
+    public Response<DiskEncryptionSet> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String diskEncryptionSetName = Utils.getValueFromIdByName(id, "diskEncryptionSets");
+        return this.getByResourceGroupWithResponse(resourceGroupName, diskEncryptionSetName, context);
+    }
+
     private DiskEncryptionSetsClient serviceClient() {
         return this.innerClient;
     }

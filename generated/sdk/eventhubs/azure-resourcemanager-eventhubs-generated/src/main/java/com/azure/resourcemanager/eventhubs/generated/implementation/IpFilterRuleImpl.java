@@ -65,7 +65,7 @@ public final class IpFilterRuleImpl implements IpFilterRule, IpFilterRule.Defini
                 .serviceClient()
                 .getNamespaces()
                 .createOrUpdateIpFilterRuleWithResponse(
-                    resourceGroupName, namespaceName, ipFilterRuleName, innerObject, Context.NONE)
+                    resourceGroupName, namespaceName, ipFilterRuleName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -76,7 +76,7 @@ public final class IpFilterRuleImpl implements IpFilterRule, IpFilterRule.Defini
                 .serviceClient()
                 .getNamespaces()
                 .createOrUpdateIpFilterRuleWithResponse(
-                    resourceGroupName, namespaceName, ipFilterRuleName, innerObject, context)
+                    resourceGroupName, namespaceName, ipFilterRuleName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -97,7 +97,7 @@ public final class IpFilterRuleImpl implements IpFilterRule, IpFilterRule.Defini
                 .serviceClient()
                 .getNamespaces()
                 .createOrUpdateIpFilterRuleWithResponse(
-                    resourceGroupName, namespaceName, ipFilterRuleName, innerObject, Context.NONE)
+                    resourceGroupName, namespaceName, ipFilterRuleName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -108,7 +108,7 @@ public final class IpFilterRuleImpl implements IpFilterRule, IpFilterRule.Defini
                 .serviceClient()
                 .getNamespaces()
                 .createOrUpdateIpFilterRuleWithResponse(
-                    resourceGroupName, namespaceName, ipFilterRuleName, innerObject, context)
+                    resourceGroupName, namespaceName, ipFilterRuleName, this.innerModel(), context)
                 .getValue();
         return this;
     }

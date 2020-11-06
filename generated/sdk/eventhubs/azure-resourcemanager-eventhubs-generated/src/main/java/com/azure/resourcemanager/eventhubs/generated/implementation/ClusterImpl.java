@@ -93,7 +93,7 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
             serviceManager
                 .serviceClient()
                 .getClusters()
-                .createOrUpdate(resourceGroupName, clusterName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, clusterName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -102,7 +102,7 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
             serviceManager
                 .serviceClient()
                 .getClusters()
-                .createOrUpdate(resourceGroupName, clusterName, innerObject, context);
+                .createOrUpdate(resourceGroupName, clusterName, this.innerModel(), context);
         return this;
     }
 
@@ -121,13 +121,16 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
             serviceManager
                 .serviceClient()
                 .getClusters()
-                .update(resourceGroupName, clusterName, innerObject, Context.NONE);
+                .update(resourceGroupName, clusterName, this.innerModel(), Context.NONE);
         return this;
     }
 
     public Cluster apply(Context context) {
         this.innerObject =
-            serviceManager.serviceClient().getClusters().update(resourceGroupName, clusterName, innerObject, context);
+            serviceManager
+                .serviceClient()
+                .getClusters()
+                .update(resourceGroupName, clusterName, this.innerModel(), context);
         return this;
     }
 

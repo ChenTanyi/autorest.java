@@ -95,6 +95,16 @@ public final class ResourceGroupsImpl implements ResourceGroups {
         return inner.mapPage(inner1 -> new ResourceGroupImpl(inner1, this.manager()));
     }
 
+    public ResourceGroup getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        return this.getWithResponse(resourceGroupName, Context.NONE).getValue();
+    }
+
+    public Response<ResourceGroup> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        return this.getWithResponse(resourceGroupName, context);
+    }
+
     private ResourceGroupsClient serviceClient() {
         return this.innerClient;
     }

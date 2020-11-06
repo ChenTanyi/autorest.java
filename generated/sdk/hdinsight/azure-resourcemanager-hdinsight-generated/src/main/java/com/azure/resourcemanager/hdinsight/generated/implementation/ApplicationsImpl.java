@@ -67,6 +67,20 @@ public final class ApplicationsImpl implements Applications {
         this.serviceClient().delete(resourceGroupName, clusterName, applicationName, context);
     }
 
+    public Application getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String clusterName = Utils.getValueFromIdByName(id, "clusters");
+        String applicationName = Utils.getValueFromIdByName(id, "applications");
+        return this.getWithResponse(resourceGroupName, clusterName, applicationName, Context.NONE).getValue();
+    }
+
+    public Response<Application> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String clusterName = Utils.getValueFromIdByName(id, "clusters");
+        String applicationName = Utils.getValueFromIdByName(id, "applications");
+        return this.getWithResponse(resourceGroupName, clusterName, applicationName, context);
+    }
+
     private ApplicationsClient serviceClient() {
         return this.innerClient;
     }

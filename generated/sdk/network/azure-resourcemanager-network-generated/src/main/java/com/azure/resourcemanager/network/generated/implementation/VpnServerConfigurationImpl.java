@@ -203,7 +203,7 @@ public final class VpnServerConfigurationImpl
             serviceManager
                 .serviceClient()
                 .getVpnServerConfigurations()
-                .createOrUpdate(resourceGroupName, vpnServerConfigurationName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, vpnServerConfigurationName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -212,7 +212,7 @@ public final class VpnServerConfigurationImpl
             serviceManager
                 .serviceClient()
                 .getVpnServerConfigurations()
-                .createOrUpdate(resourceGroupName, vpnServerConfigurationName, innerObject, context);
+                .createOrUpdate(resourceGroupName, vpnServerConfigurationName, this.innerModel(), context);
         return this;
     }
 

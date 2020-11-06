@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.compute.generated.fluent.models.RunCommandResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of RunCommandResult. */
-@Immutable
 public interface RunCommandResult {
     /**
      * Gets the value property: Run command operation response.

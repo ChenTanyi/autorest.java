@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DeletedSiteInner;
 
 /** An immutable client-side representation of DeletedSite. */
-@Immutable
 public interface DeletedSite {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

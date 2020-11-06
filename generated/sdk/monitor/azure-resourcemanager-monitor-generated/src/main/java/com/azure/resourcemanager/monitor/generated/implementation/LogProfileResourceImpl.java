@@ -101,7 +101,7 @@ public final class LogProfileResourceImpl
             serviceManager
                 .serviceClient()
                 .getLogProfiles()
-                .createOrUpdateWithResponse(logProfileName, innerObject, Context.NONE)
+                .createOrUpdateWithResponse(logProfileName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -111,7 +111,7 @@ public final class LogProfileResourceImpl
             serviceManager
                 .serviceClient()
                 .getLogProfiles()
-                .createOrUpdateWithResponse(logProfileName, innerObject, context)
+                .createOrUpdateWithResponse(logProfileName, this.innerModel(), context)
                 .getValue();
         return this;
     }

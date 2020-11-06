@@ -89,6 +89,29 @@ public interface HubRouteTables {
     PagedIterable<HubRouteTable> list(String resourceGroupName, String virtualHubName, Context context);
 
     /**
+     * Retrieves the details of a RouteTable.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return routeTable resource in a virtual hub.
+     */
+    HubRouteTable getById(String id);
+
+    /**
+     * Retrieves the details of a RouteTable.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return routeTable resource in a virtual hub.
+     */
+    Response<HubRouteTable> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new HubRouteTable resource.
      *
      * @param name resource name.

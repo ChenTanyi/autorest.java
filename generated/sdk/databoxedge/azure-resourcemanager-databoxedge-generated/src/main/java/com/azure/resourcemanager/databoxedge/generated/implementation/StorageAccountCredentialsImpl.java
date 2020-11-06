@@ -71,6 +71,20 @@ public final class StorageAccountCredentialsImpl implements StorageAccountCreden
         this.serviceClient().delete(deviceName, name, resourceGroupName, context);
     }
 
+    public StorageAccountCredential getById(String id) {
+        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        String name = Utils.getValueFromIdByName(id, "storageAccountCredentials");
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        return this.getWithResponse(deviceName, name, resourceGroupName, Context.NONE).getValue();
+    }
+
+    public Response<StorageAccountCredential> getByIdWithResponse(String id, Context context) {
+        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        String name = Utils.getValueFromIdByName(id, "storageAccountCredentials");
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        return this.getWithResponse(deviceName, name, resourceGroupName, context);
+    }
+
     private StorageAccountCredentialsClient serviceClient() {
         return this.innerClient;
     }

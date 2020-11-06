@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.eventhubs.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.MessagingRegionsInner;
 import java.util.Map;
 
 /** An immutable client-side representation of MessagingRegions. */
-@Immutable
 public interface MessagingRegions {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

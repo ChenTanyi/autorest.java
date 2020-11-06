@@ -80,6 +80,21 @@ public final class NetworkSecurityGroupsImpl implements NetworkSecurityGroups {
         return inner.mapPage(inner1 -> new NetworkSecurityGroupImpl(inner1, this.manager()));
     }
 
+    public NetworkSecurityGroup getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String networkSecurityGroupName = Utils.getValueFromIdByName(id, "networkSecurityGroups");
+        String localExpand = null;
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, networkSecurityGroupName, localExpand, Context.NONE)
+            .getValue();
+    }
+
+    public Response<NetworkSecurityGroup> getByIdWithResponse(String id, String expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String networkSecurityGroupName = Utils.getValueFromIdByName(id, "networkSecurityGroups");
+        return this.getByResourceGroupWithResponse(resourceGroupName, networkSecurityGroupName, expand, context);
+    }
+
     private NetworkSecurityGroupsClient serviceClient() {
         return this.innerClient;
     }

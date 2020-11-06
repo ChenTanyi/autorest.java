@@ -262,6 +262,29 @@ public interface DisasterRecoveryConfigs {
     Response<Void> failOverWithResponse(String resourceGroupName, String namespaceName, String alias, Context context);
 
     /**
+     * Retrieves Alias(Disaster Recovery configuration) for primary or secondary namespace.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return single item in List or Get Alias(Disaster Recovery configuration) operation.
+     */
+    ArmDisasterRecovery getById(String id);
+
+    /**
+     * Retrieves Alias(Disaster Recovery configuration) for primary or secondary namespace.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return single item in List or Get Alias(Disaster Recovery configuration) operation.
+     */
+    Response<ArmDisasterRecovery> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new ArmDisasterRecovery resource.
      *
      * @param name resource name.

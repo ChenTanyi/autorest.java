@@ -382,6 +382,67 @@ public final class NamespacesImpl implements Namespaces {
         }
     }
 
+    public IpFilterRule getIpFilterRuleById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String ipFilterRuleName = Utils.getValueFromIdByName(id, "ipfilterrules");
+        return this
+            .getIpFilterRuleWithResponse(resourceGroupName, namespaceName, ipFilterRuleName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<IpFilterRule> getIpFilterRuleByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String ipFilterRuleName = Utils.getValueFromIdByName(id, "ipfilterrules");
+        return this.getIpFilterRuleWithResponse(resourceGroupName, namespaceName, ipFilterRuleName, context);
+    }
+
+    public EHNamespace getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        return this.getByResourceGroupWithResponse(resourceGroupName, namespaceName, Context.NONE).getValue();
+    }
+
+    public Response<EHNamespace> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        return this.getByResourceGroupWithResponse(resourceGroupName, namespaceName, context);
+    }
+
+    public VirtualNetworkRule getVirtualNetworkRuleById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String virtualNetworkRuleName = Utils.getValueFromIdByName(id, "virtualnetworkrules");
+        return this
+            .getVirtualNetworkRuleWithResponse(resourceGroupName, namespaceName, virtualNetworkRuleName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<VirtualNetworkRule> getVirtualNetworkRuleByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String virtualNetworkRuleName = Utils.getValueFromIdByName(id, "virtualnetworkrules");
+        return this
+            .getVirtualNetworkRuleWithResponse(resourceGroupName, namespaceName, virtualNetworkRuleName, context);
+    }
+
+    public AuthorizationRule getAuthorizationRuleById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String authorizationRuleName = Utils.getValueFromIdByName(id, "authorizationRules");
+        return this
+            .getAuthorizationRuleWithResponse(resourceGroupName, namespaceName, authorizationRuleName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<AuthorizationRule> getAuthorizationRuleByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String authorizationRuleName = Utils.getValueFromIdByName(id, "authorizationRules");
+        return this.getAuthorizationRuleWithResponse(resourceGroupName, namespaceName, authorizationRuleName, context);
+    }
+
     private NamespacesClient serviceClient() {
         return this.innerClient;
     }

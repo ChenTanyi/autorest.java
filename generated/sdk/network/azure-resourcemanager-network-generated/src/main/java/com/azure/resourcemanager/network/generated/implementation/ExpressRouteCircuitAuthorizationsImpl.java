@@ -72,6 +72,20 @@ public final class ExpressRouteCircuitAuthorizationsImpl implements ExpressRoute
         return inner.mapPage(inner1 -> new ExpressRouteCircuitAuthorizationImpl(inner1, this.manager()));
     }
 
+    public ExpressRouteCircuitAuthorization getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
+        String authorizationName = Utils.getValueFromIdByName(id, "authorizations");
+        return this.getWithResponse(resourceGroupName, circuitName, authorizationName, Context.NONE).getValue();
+    }
+
+    public Response<ExpressRouteCircuitAuthorization> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
+        String authorizationName = Utils.getValueFromIdByName(id, "authorizations");
+        return this.getWithResponse(resourceGroupName, circuitName, authorizationName, context);
+    }
+
     private ExpressRouteCircuitAuthorizationsClient serviceClient() {
         return this.innerClient;
     }

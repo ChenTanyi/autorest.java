@@ -76,6 +76,21 @@ public final class NatGatewaysImpl implements NatGateways {
         return inner.mapPage(inner1 -> new NatGatewayImpl(inner1, this.manager()));
     }
 
+    public NatGateway getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String natGatewayName = Utils.getValueFromIdByName(id, "natGateways");
+        String localExpand = null;
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, natGatewayName, localExpand, Context.NONE)
+            .getValue();
+    }
+
+    public Response<NatGateway> getByIdWithResponse(String id, String expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String natGatewayName = Utils.getValueFromIdByName(id, "natGateways");
+        return this.getByResourceGroupWithResponse(resourceGroupName, natGatewayName, expand, context);
+    }
+
     private NatGatewaysClient serviceClient() {
         return this.innerClient;
     }

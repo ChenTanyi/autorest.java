@@ -94,6 +94,25 @@ public final class VirtualMachineScaleSetVMExtensionsImpl implements VirtualMach
         }
     }
 
+    public VirtualMachineScaleSetVMExtension getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
+        String instanceId = Utils.getValueFromIdByName(id, "virtualMachines");
+        String vmExtensionName = Utils.getValueFromIdByName(id, "extensions");
+        String localExpand = null;
+        return this
+            .getWithResponse(resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, localExpand, Context.NONE)
+            .getValue();
+    }
+
+    public Response<VirtualMachineScaleSetVMExtension> getByIdWithResponse(String id, String expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
+        String instanceId = Utils.getValueFromIdByName(id, "virtualMachines");
+        String vmExtensionName = Utils.getValueFromIdByName(id, "extensions");
+        return this.getWithResponse(resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, expand, context);
+    }
+
     private VirtualMachineScaleSetVMExtensionsClient serviceClient() {
         return this.innerClient;
     }

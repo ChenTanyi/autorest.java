@@ -125,6 +125,29 @@ public interface ContentKeyPolicies {
         String resourceGroupName, String accountName, String contentKeyPolicyName, Context context);
 
     /**
+     * Get the details of a Content Key Policy in the Media Services account.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the details of a Content Key Policy in the Media Services account.
+     */
+    ContentKeyPolicy getById(String id);
+
+    /**
+     * Get the details of a Content Key Policy in the Media Services account.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the details of a Content Key Policy in the Media Services account.
+     */
+    Response<ContentKeyPolicy> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new ContentKeyPolicy resource.
      *
      * @param name resource name.

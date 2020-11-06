@@ -97,7 +97,7 @@ public final class DeploymentImpl implements Deployment, Deployment.Definition {
             serviceManager
                 .serviceClient()
                 .getWebApps()
-                .createDeploymentWithResponse(resourceGroupName, name, id, innerObject, Context.NONE)
+                .createDeploymentWithResponse(resourceGroupName, name, id, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -107,7 +107,7 @@ public final class DeploymentImpl implements Deployment, Deployment.Definition {
             serviceManager
                 .serviceClient()
                 .getWebApps()
-                .createDeploymentWithResponse(resourceGroupName, name, id, innerObject, context)
+                .createDeploymentWithResponse(resourceGroupName, name, id, this.innerModel(), context)
                 .getValue();
         return this;
     }

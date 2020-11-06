@@ -75,6 +75,22 @@ public final class PrivateEndpointConnectionsImpl implements PrivateEndpointConn
         }
     }
 
+    public PrivateEndpointConnection getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
+        return this
+            .getWithResponse(resourceGroupName, namespaceName, privateEndpointConnectionName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<PrivateEndpointConnection> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
+        return this.getWithResponse(resourceGroupName, namespaceName, privateEndpointConnectionName, context);
+    }
+
     private PrivateEndpointConnectionsClient serviceClient() {
         return this.innerClient;
     }

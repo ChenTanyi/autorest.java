@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CapabilityInner;
 
 /** An immutable client-side representation of Capability. */
-@Immutable
 public interface Capability {
     /**
      * Gets the name property: Name of the SKU capability.

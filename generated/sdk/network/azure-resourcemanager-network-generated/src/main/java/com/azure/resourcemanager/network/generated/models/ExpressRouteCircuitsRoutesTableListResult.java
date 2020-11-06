@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitsRoutesTableListResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of ExpressRouteCircuitsRoutesTableListResult. */
-@Immutable
 public interface ExpressRouteCircuitsRoutesTableListResult {
     /**
      * Gets the value property: The list of routes table.

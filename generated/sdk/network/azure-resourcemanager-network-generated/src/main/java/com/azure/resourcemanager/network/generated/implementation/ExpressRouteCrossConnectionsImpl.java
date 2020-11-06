@@ -150,6 +150,18 @@ public final class ExpressRouteCrossConnectionsImpl implements ExpressRouteCross
         }
     }
 
+    public ExpressRouteCrossConnection getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String crossConnectionName = Utils.getValueFromIdByName(id, "expressRouteCrossConnections");
+        return this.getByResourceGroupWithResponse(resourceGroupName, crossConnectionName, Context.NONE).getValue();
+    }
+
+    public Response<ExpressRouteCrossConnection> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String crossConnectionName = Utils.getValueFromIdByName(id, "expressRouteCrossConnections");
+        return this.getByResourceGroupWithResponse(resourceGroupName, crossConnectionName, context);
+    }
+
     private ExpressRouteCrossConnectionsClient serviceClient() {
         return this.innerClient;
     }

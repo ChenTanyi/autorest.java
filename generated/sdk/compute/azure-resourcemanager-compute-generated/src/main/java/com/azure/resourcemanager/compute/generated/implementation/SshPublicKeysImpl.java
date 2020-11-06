@@ -104,6 +104,18 @@ public final class SshPublicKeysImpl implements SshPublicKeys {
         }
     }
 
+    public SshPublicKeyResource getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String sshPublicKeyName = Utils.getValueFromIdByName(id, "sshPublicKeys");
+        return this.getByResourceGroupWithResponse(resourceGroupName, sshPublicKeyName, Context.NONE).getValue();
+    }
+
+    public Response<SshPublicKeyResource> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String sshPublicKeyName = Utils.getValueFromIdByName(id, "sshPublicKeys");
+        return this.getByResourceGroupWithResponse(resourceGroupName, sshPublicKeyName, context);
+    }
+
     private SshPublicKeysClient serviceClient() {
         return this.innerClient;
     }

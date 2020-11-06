@@ -100,7 +100,7 @@ public final class SecurityPartnerProviderImpl
             serviceManager
                 .serviceClient()
                 .getSecurityPartnerProviders()
-                .createOrUpdate(resourceGroupName, securityPartnerProviderName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, securityPartnerProviderName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -109,7 +109,7 @@ public final class SecurityPartnerProviderImpl
             serviceManager
                 .serviceClient()
                 .getSecurityPartnerProviders()
-                .createOrUpdate(resourceGroupName, securityPartnerProviderName, innerObject, context);
+                .createOrUpdate(resourceGroupName, securityPartnerProviderName, this.innerModel(), context);
         return this;
     }
 

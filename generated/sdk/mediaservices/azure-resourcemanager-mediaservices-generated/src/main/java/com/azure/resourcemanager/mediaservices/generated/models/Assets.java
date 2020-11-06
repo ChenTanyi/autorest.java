@@ -188,6 +188,29 @@ public interface Assets {
         String resourceGroupName, String accountName, String assetName, Context context);
 
     /**
+     * Get the details of an Asset in the Media Services account.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the details of an Asset in the Media Services account.
+     */
+    Asset getById(String id);
+
+    /**
+     * Get the details of an Asset in the Media Services account.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the details of an Asset in the Media Services account.
+     */
+    Response<Asset> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new Asset resource.
      *
      * @param name resource name.

@@ -89,6 +89,29 @@ public interface Databases {
     PagedIterable<Database> listByServer(String resourceGroupName, String serverName, Context context);
 
     /**
+     * Gets information about a database.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about a database.
+     */
+    Database getById(String id);
+
+    /**
+     * Gets information about a database.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about a database.
+     */
+    Response<Database> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new Database resource.
      *
      * @param name resource name.

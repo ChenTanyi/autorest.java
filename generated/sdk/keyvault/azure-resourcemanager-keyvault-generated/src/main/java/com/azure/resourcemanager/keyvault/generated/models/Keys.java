@@ -120,6 +120,29 @@ public interface Keys {
     PagedIterable<Key> listVersions(String resourceGroupName, String vaultName, String keyName, Context context);
 
     /**
+     * Gets the current version of the specified key from the specified key vault.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the current version of the specified key from the specified key vault.
+     */
+    Key getById(String id);
+
+    /**
+     * Gets the current version of the specified key from the specified key vault.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the current version of the specified key from the specified key vault.
+     */
+    Response<Key> getByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new Key resource.
      *
      * @param name resource name.

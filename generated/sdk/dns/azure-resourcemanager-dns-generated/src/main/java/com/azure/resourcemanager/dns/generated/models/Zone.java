@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.dns.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
@@ -13,7 +12,6 @@ import java.util.List;
 import java.util.Map;
 
 /** An immutable client-side representation of Zone. */
-@Immutable
 public interface Zone {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

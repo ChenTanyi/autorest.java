@@ -598,6 +598,56 @@ public interface IotHubResources {
         String resourceGroupName, String resourceName, ImportDevicesRequest importDevicesParameters, Context context);
 
     /**
+     * Get the non-security related metadata of an IoT hub.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     *     by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the non-security related metadata of an IoT hub.
+     */
+    IotHubDescription getById(String id);
+
+    /**
+     * Get the non-security related metadata of an IoT hub.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     *     by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the non-security related metadata of an IoT hub.
+     */
+    Response<IotHubDescription> getByIdWithResponse(String id, Context context);
+
+    /**
+     * Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     *     by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
+     */
+    EventHubConsumerGroupInfo getEventHubConsumerGroupById(String id);
+
+    /**
+     * Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
+     *
+     * @param id the id of the resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     *     by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
+     */
+    Response<EventHubConsumerGroupInfo> getEventHubConsumerGroupByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new IotHubDescription resource.
      *
      * @param name resource name.

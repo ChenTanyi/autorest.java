@@ -71,7 +71,7 @@ public final class VnetGatewayImpl implements VnetGateway, VnetGateway.Definitio
                 .serviceClient()
                 .getWebApps()
                 .createOrUpdateVnetConnectionGatewaySlotWithResponse(
-                    resourceGroupName, name, vnetName, gatewayName, slot, innerObject, Context.NONE)
+                    resourceGroupName, name, vnetName, gatewayName, slot, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -82,7 +82,7 @@ public final class VnetGatewayImpl implements VnetGateway, VnetGateway.Definitio
                 .serviceClient()
                 .getWebApps()
                 .createOrUpdateVnetConnectionGatewaySlotWithResponse(
-                    resourceGroupName, name, vnetName, gatewayName, slot, innerObject, context)
+                    resourceGroupName, name, vnetName, gatewayName, slot, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -103,7 +103,7 @@ public final class VnetGatewayImpl implements VnetGateway, VnetGateway.Definitio
                 .serviceClient()
                 .getWebApps()
                 .updateVnetConnectionGatewaySlotWithResponse(
-                    resourceGroupName, name, vnetName, gatewayName, slot, innerObject, Context.NONE)
+                    resourceGroupName, name, vnetName, gatewayName, slot, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -114,7 +114,7 @@ public final class VnetGatewayImpl implements VnetGateway, VnetGateway.Definitio
                 .serviceClient()
                 .getWebApps()
                 .updateVnetConnectionGatewaySlotWithResponse(
-                    resourceGroupName, name, vnetName, gatewayName, slot, innerObject, context)
+                    resourceGroupName, name, vnetName, gatewayName, slot, this.innerModel(), context)
                 .getValue();
         return this;
     }

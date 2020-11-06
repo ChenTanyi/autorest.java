@@ -117,7 +117,7 @@ public final class ShareImpl implements Share, Share.Definition, Share.Update {
             serviceManager
                 .serviceClient()
                 .getShares()
-                .createOrUpdate(deviceName, name, resourceGroupName, innerObject, Context.NONE);
+                .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -126,7 +126,7 @@ public final class ShareImpl implements Share, Share.Definition, Share.Update {
             serviceManager
                 .serviceClient()
                 .getShares()
-                .createOrUpdate(deviceName, name, resourceGroupName, innerObject, context);
+                .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), context);
         return this;
     }
 
@@ -145,7 +145,7 @@ public final class ShareImpl implements Share, Share.Definition, Share.Update {
             serviceManager
                 .serviceClient()
                 .getShares()
-                .createOrUpdate(deviceName, name, resourceGroupName, innerObject, Context.NONE);
+                .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -154,7 +154,7 @@ public final class ShareImpl implements Share, Share.Definition, Share.Update {
             serviceManager
                 .serviceClient()
                 .getShares()
-                .createOrUpdate(deviceName, name, resourceGroupName, innerObject, context);
+                .createOrUpdate(deviceName, name, resourceGroupName, this.innerModel(), context);
         return this;
     }
 

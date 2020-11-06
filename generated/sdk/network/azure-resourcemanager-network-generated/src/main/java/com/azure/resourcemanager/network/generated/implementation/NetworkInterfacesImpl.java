@@ -296,6 +296,21 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
         }
     }
 
+    public NetworkInterface getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String networkInterfaceName = Utils.getValueFromIdByName(id, "networkInterfaces");
+        String localExpand = null;
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, networkInterfaceName, localExpand, Context.NONE)
+            .getValue();
+    }
+
+    public Response<NetworkInterface> getByIdWithResponse(String id, String expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String networkInterfaceName = Utils.getValueFromIdByName(id, "networkInterfaces");
+        return this.getByResourceGroupWithResponse(resourceGroupName, networkInterfaceName, expand, context);
+    }
+
     private NetworkInterfacesClient serviceClient() {
         return this.innerClient;
     }

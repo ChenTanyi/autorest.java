@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.mysql.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.mysql.generated.fluent.models.ServerAdministratorResourceInner;
 import java.util.UUID;
 
 /** An immutable client-side representation of ServerAdministratorResource. */
-@Immutable
 public interface ServerAdministratorResource {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

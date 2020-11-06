@@ -65,7 +65,7 @@ public final class VirtualNetworkRuleImpl
             serviceManager
                 .serviceClient()
                 .getVirtualNetworkRules()
-                .createOrUpdate(resourceGroupName, serverName, virtualNetworkRuleName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, serverName, virtualNetworkRuleName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -74,7 +74,7 @@ public final class VirtualNetworkRuleImpl
             serviceManager
                 .serviceClient()
                 .getVirtualNetworkRules()
-                .createOrUpdate(resourceGroupName, serverName, virtualNetworkRuleName, innerObject, context);
+                .createOrUpdate(resourceGroupName, serverName, virtualNetworkRuleName, this.innerModel(), context);
         return this;
     }
 
@@ -93,7 +93,7 @@ public final class VirtualNetworkRuleImpl
             serviceManager
                 .serviceClient()
                 .getVirtualNetworkRules()
-                .createOrUpdate(resourceGroupName, serverName, virtualNetworkRuleName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, serverName, virtualNetworkRuleName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -102,7 +102,7 @@ public final class VirtualNetworkRuleImpl
             serviceManager
                 .serviceClient()
                 .getVirtualNetworkRules()
-                .createOrUpdate(resourceGroupName, serverName, virtualNetworkRuleName, innerObject, context);
+                .createOrUpdate(resourceGroupName, serverName, virtualNetworkRuleName, this.innerModel(), context);
         return this;
     }
 

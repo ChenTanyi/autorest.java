@@ -114,6 +114,22 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
         return inner.mapPage(inner1 -> new ConnectionMonitorResultImpl(inner1, this.manager()));
     }
 
+    public ConnectionMonitorResult getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
+        String connectionMonitorName = Utils.getValueFromIdByName(id, "connectionMonitors");
+        return this
+            .getWithResponse(resourceGroupName, networkWatcherName, connectionMonitorName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<ConnectionMonitorResult> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
+        String connectionMonitorName = Utils.getValueFromIdByName(id, "connectionMonitors");
+        return this.getWithResponse(resourceGroupName, networkWatcherName, connectionMonitorName, context);
+    }
+
     private ConnectionMonitorsClient serviceClient() {
         return this.innerClient;
     }

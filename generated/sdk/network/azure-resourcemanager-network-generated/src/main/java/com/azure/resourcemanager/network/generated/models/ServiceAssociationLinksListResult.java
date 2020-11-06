@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.ServiceAssociationLinksListResultInner;
 import java.util.List;
 
 /** An immutable client-side representation of ServiceAssociationLinksListResult. */
-@Immutable
 public interface ServiceAssociationLinksListResult {
     /**
      * Gets the value property: The service association links in a subnet.

@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.HostingEnvironmentDiagnosticsInner;
 
 /** An immutable client-side representation of HostingEnvironmentDiagnostics. */
-@Immutable
 public interface HostingEnvironmentDiagnostics {
     /**
      * Gets the name property: Name/identifier of the diagnostics.

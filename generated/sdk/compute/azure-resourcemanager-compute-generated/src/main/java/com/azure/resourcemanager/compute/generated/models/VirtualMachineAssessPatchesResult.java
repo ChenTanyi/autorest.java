@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineAssessPatchesResultInner;
 import java.time.OffsetDateTime;
 import java.util.List;
 
 /** An immutable client-side representation of VirtualMachineAssessPatchesResult. */
-@Immutable
 public interface VirtualMachineAssessPatchesResult {
     /**
      * Gets the status property: The overall success or failure status of the operation. It remains "InProgress" until

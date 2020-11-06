@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.eventhubs.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.AuthorizationRuleInner;
 import java.util.List;
 
 /** An immutable client-side representation of AuthorizationRule. */
-@Immutable
 public interface AuthorizationRule {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

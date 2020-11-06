@@ -61,7 +61,7 @@ public final class DomainOwnershipIdentifierImpl
                 .serviceClient()
                 .getDomains()
                 .createOrUpdateOwnershipIdentifierWithResponse(
-                    resourceGroupName, domainName, name, innerObject, Context.NONE)
+                    resourceGroupName, domainName, name, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -72,7 +72,7 @@ public final class DomainOwnershipIdentifierImpl
                 .serviceClient()
                 .getDomains()
                 .createOrUpdateOwnershipIdentifierWithResponse(
-                    resourceGroupName, domainName, name, innerObject, context)
+                    resourceGroupName, domainName, name, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -92,7 +92,8 @@ public final class DomainOwnershipIdentifierImpl
             serviceManager
                 .serviceClient()
                 .getDomains()
-                .updateOwnershipIdentifierWithResponse(resourceGroupName, domainName, name, innerObject, Context.NONE)
+                .updateOwnershipIdentifierWithResponse(
+                    resourceGroupName, domainName, name, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -102,7 +103,7 @@ public final class DomainOwnershipIdentifierImpl
             serviceManager
                 .serviceClient()
                 .getDomains()
-                .updateOwnershipIdentifierWithResponse(resourceGroupName, domainName, name, innerObject, context)
+                .updateOwnershipIdentifierWithResponse(resourceGroupName, domainName, name, this.innerModel(), context)
                 .getValue();
         return this;
     }

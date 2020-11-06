@@ -65,7 +65,7 @@ public final class AuthorizationRuleImpl
                 .serviceClient()
                 .getNamespaces()
                 .createOrUpdateAuthorizationRuleWithResponse(
-                    resourceGroupName, namespaceName, authorizationRuleName, innerObject, Context.NONE)
+                    resourceGroupName, namespaceName, authorizationRuleName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -76,7 +76,7 @@ public final class AuthorizationRuleImpl
                 .serviceClient()
                 .getNamespaces()
                 .createOrUpdateAuthorizationRuleWithResponse(
-                    resourceGroupName, namespaceName, authorizationRuleName, innerObject, context)
+                    resourceGroupName, namespaceName, authorizationRuleName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -97,7 +97,7 @@ public final class AuthorizationRuleImpl
                 .serviceClient()
                 .getNamespaces()
                 .createOrUpdateAuthorizationRuleWithResponse(
-                    resourceGroupName, namespaceName, authorizationRuleName, innerObject, Context.NONE)
+                    resourceGroupName, namespaceName, authorizationRuleName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -108,7 +108,7 @@ public final class AuthorizationRuleImpl
                 .serviceClient()
                 .getNamespaces()
                 .createOrUpdateAuthorizationRuleWithResponse(
-                    resourceGroupName, namespaceName, authorizationRuleName, innerObject, context)
+                    resourceGroupName, namespaceName, authorizationRuleName, this.innerModel(), context)
                 .getValue();
         return this;
     }

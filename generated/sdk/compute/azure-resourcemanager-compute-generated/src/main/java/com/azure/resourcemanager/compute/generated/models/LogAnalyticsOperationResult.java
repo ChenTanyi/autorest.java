@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.compute.generated.fluent.models.LogAnalyticsOperationResultInner;
 
 /** An immutable client-side representation of LogAnalyticsOperationResult. */
-@Immutable
 public interface LogAnalyticsOperationResult {
     /**
      * Gets the properties property: LogAnalyticsOutput.

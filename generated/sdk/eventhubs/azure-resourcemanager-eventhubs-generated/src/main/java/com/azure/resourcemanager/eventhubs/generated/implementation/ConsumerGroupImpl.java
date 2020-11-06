@@ -68,7 +68,7 @@ public final class ConsumerGroupImpl implements ConsumerGroup, ConsumerGroup.Def
                 .serviceClient()
                 .getConsumerGroups()
                 .createOrUpdateWithResponse(
-                    resourceGroupName, namespaceName, eventHubName, consumerGroupName, innerObject, Context.NONE)
+                    resourceGroupName, namespaceName, eventHubName, consumerGroupName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -79,7 +79,7 @@ public final class ConsumerGroupImpl implements ConsumerGroup, ConsumerGroup.Def
                 .serviceClient()
                 .getConsumerGroups()
                 .createOrUpdateWithResponse(
-                    resourceGroupName, namespaceName, eventHubName, consumerGroupName, innerObject, context)
+                    resourceGroupName, namespaceName, eventHubName, consumerGroupName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -100,7 +100,7 @@ public final class ConsumerGroupImpl implements ConsumerGroup, ConsumerGroup.Def
                 .serviceClient()
                 .getConsumerGroups()
                 .createOrUpdateWithResponse(
-                    resourceGroupName, namespaceName, eventHubName, consumerGroupName, innerObject, Context.NONE)
+                    resourceGroupName, namespaceName, eventHubName, consumerGroupName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -111,7 +111,7 @@ public final class ConsumerGroupImpl implements ConsumerGroup, ConsumerGroup.Def
                 .serviceClient()
                 .getConsumerGroups()
                 .createOrUpdateWithResponse(
-                    resourceGroupName, namespaceName, eventHubName, consumerGroupName, innerObject, context)
+                    resourceGroupName, namespaceName, eventHubName, consumerGroupName, this.innerModel(), context)
                 .getValue();
         return this;
     }

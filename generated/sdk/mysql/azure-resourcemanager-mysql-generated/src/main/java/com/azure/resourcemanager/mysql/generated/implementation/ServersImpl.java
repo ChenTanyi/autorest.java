@@ -110,6 +110,18 @@ public final class ServersImpl implements Servers {
         this.serviceClient().upgrade(resourceGroupName, serverName, parameters, context);
     }
 
+    public Server getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String serverName = Utils.getValueFromIdByName(id, "servers");
+        return this.getByResourceGroupWithResponse(resourceGroupName, serverName, Context.NONE).getValue();
+    }
+
+    public Response<Server> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String serverName = Utils.getValueFromIdByName(id, "servers");
+        return this.getByResourceGroupWithResponse(resourceGroupName, serverName, context);
+    }
+
     private ServersClient serviceClient() {
         return this.innerClient;
     }

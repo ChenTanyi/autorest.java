@@ -68,7 +68,7 @@ public final class PrivateEndpointConnectionImpl
                 .serviceClient()
                 .getPrivateEndpointConnections()
                 .putWithResponse(
-                    resourceGroupName, accountName, privateEndpointConnectionName, innerObject, Context.NONE)
+                    resourceGroupName, accountName, privateEndpointConnectionName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -78,7 +78,8 @@ public final class PrivateEndpointConnectionImpl
             serviceManager
                 .serviceClient()
                 .getPrivateEndpointConnections()
-                .putWithResponse(resourceGroupName, accountName, privateEndpointConnectionName, innerObject, context)
+                .putWithResponse(
+                    resourceGroupName, accountName, privateEndpointConnectionName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -99,7 +100,7 @@ public final class PrivateEndpointConnectionImpl
                 .serviceClient()
                 .getPrivateEndpointConnections()
                 .putWithResponse(
-                    resourceGroupName, accountName, privateEndpointConnectionName, innerObject, Context.NONE)
+                    resourceGroupName, accountName, privateEndpointConnectionName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -109,7 +110,8 @@ public final class PrivateEndpointConnectionImpl
             serviceManager
                 .serviceClient()
                 .getPrivateEndpointConnections()
-                .putWithResponse(resourceGroupName, accountName, privateEndpointConnectionName, innerObject, context)
+                .putWithResponse(
+                    resourceGroupName, accountName, privateEndpointConnectionName, this.innerModel(), context)
                 .getValue();
         return this;
     }

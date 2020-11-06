@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.compute.generated.fluent.models.RecoveryWalkResponseInner;
 
 /** An immutable client-side representation of RecoveryWalkResponse. */
-@Immutable
 public interface RecoveryWalkResponse {
     /**
      * Gets the walkPerformed property: Whether the recovery walk was performed.

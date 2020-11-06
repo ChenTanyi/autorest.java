@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.commerce.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.commerce.generated.fluent.models.ResourceRateCardInfoInner;
 import java.util.List;
 
 /** An immutable client-side representation of ResourceRateCardInfo. */
-@Immutable
 public interface ResourceRateCardInfo {
     /**
      * Gets the currency property: The currency in which the rates are provided.

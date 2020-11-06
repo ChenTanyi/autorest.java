@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.keyvault.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.DeletedVaultInner;
 
 /** An immutable client-side representation of DeletedVault. */
-@Immutable
 public interface DeletedVault {
     /**
      * Gets the id property: The resource ID for the deleted key vault.

@@ -80,7 +80,7 @@ public final class SshPublicKeyResourceImpl
             serviceManager
                 .serviceClient()
                 .getSshPublicKeys()
-                .createWithResponse(resourceGroupName, sshPublicKeyName, innerObject, Context.NONE)
+                .createWithResponse(resourceGroupName, sshPublicKeyName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -90,7 +90,7 @@ public final class SshPublicKeyResourceImpl
             serviceManager
                 .serviceClient()
                 .getSshPublicKeys()
-                .createWithResponse(resourceGroupName, sshPublicKeyName, innerObject, context)
+                .createWithResponse(resourceGroupName, sshPublicKeyName, this.innerModel(), context)
                 .getValue();
         return this;
     }

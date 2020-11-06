@@ -4,13 +4,11 @@
 
 package com.azure.resourcemanager.storage.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.storage.generated.fluent.models.FileShareItemInner;
 import java.time.OffsetDateTime;
 import java.util.Map;
 
 /** An immutable client-side representation of FileShareItem. */
-@Immutable
 public interface FileShareItem {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

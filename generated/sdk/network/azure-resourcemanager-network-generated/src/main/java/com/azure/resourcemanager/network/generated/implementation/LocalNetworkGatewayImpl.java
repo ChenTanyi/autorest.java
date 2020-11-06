@@ -107,7 +107,7 @@ public final class LocalNetworkGatewayImpl
             serviceManager
                 .serviceClient()
                 .getLocalNetworkGateways()
-                .createOrUpdate(resourceGroupName, localNetworkGatewayName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, localNetworkGatewayName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -116,7 +116,7 @@ public final class LocalNetworkGatewayImpl
             serviceManager
                 .serviceClient()
                 .getLocalNetworkGateways()
-                .createOrUpdate(resourceGroupName, localNetworkGatewayName, innerObject, context);
+                .createOrUpdate(resourceGroupName, localNetworkGatewayName, this.innerModel(), context);
         return this;
     }
 

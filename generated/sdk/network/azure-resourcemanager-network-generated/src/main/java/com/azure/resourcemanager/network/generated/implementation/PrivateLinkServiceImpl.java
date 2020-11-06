@@ -174,7 +174,7 @@ public final class PrivateLinkServiceImpl
             serviceManager
                 .serviceClient()
                 .getPrivateLinkServices()
-                .createOrUpdate(resourceGroupName, serviceName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, serviceName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -183,7 +183,7 @@ public final class PrivateLinkServiceImpl
             serviceManager
                 .serviceClient()
                 .getPrivateLinkServices()
-                .createOrUpdate(resourceGroupName, serviceName, innerObject, context);
+                .createOrUpdate(resourceGroupName, serviceName, this.innerModel(), context);
         return this;
     }
 
@@ -202,7 +202,7 @@ public final class PrivateLinkServiceImpl
             serviceManager
                 .serviceClient()
                 .getPrivateLinkServices()
-                .createOrUpdate(resourceGroupName, serviceName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, serviceName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -211,7 +211,7 @@ public final class PrivateLinkServiceImpl
             serviceManager
                 .serviceClient()
                 .getPrivateLinkServices()
-                .createOrUpdate(resourceGroupName, serviceName, innerObject, context);
+                .createOrUpdate(resourceGroupName, serviceName, this.innerModel(), context);
         return this;
     }
 
@@ -223,23 +223,23 @@ public final class PrivateLinkServiceImpl
     }
 
     public PrivateLinkService refresh() {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getPrivateLinkServices()
-                .getByResourceGroupWithResponse(resourceGroupName, serviceName, refreshExpand, Context.NONE)
+                .getByResourceGroupWithResponse(resourceGroupName, serviceName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public PrivateLinkService refresh(Context context) {
-        String refreshExpand = null;
+        String localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getPrivateLinkServices()
-                .getByResourceGroupWithResponse(resourceGroupName, serviceName, refreshExpand, context)
+                .getByResourceGroupWithResponse(resourceGroupName, serviceName, localExpand, context)
                 .getValue();
         return this;
     }

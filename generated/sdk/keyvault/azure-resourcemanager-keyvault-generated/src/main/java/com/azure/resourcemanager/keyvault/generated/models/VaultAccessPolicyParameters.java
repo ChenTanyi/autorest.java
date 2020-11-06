@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.keyvault.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.VaultAccessPolicyParametersInner;
 
 /** An immutable client-side representation of VaultAccessPolicyParameters. */
-@Immutable
 public interface VaultAccessPolicyParameters {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

@@ -95,7 +95,7 @@ public final class GalleryImpl implements Gallery, Gallery.Definition, Gallery.U
             serviceManager
                 .serviceClient()
                 .getGalleries()
-                .createOrUpdate(resourceGroupName, galleryName, innerObject, Context.NONE);
+                .createOrUpdate(resourceGroupName, galleryName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -104,7 +104,7 @@ public final class GalleryImpl implements Gallery, Gallery.Definition, Gallery.U
             serviceManager
                 .serviceClient()
                 .getGalleries()
-                .createOrUpdate(resourceGroupName, galleryName, innerObject, context);
+                .createOrUpdate(resourceGroupName, galleryName, this.innerModel(), context);
         return this;
     }
 
@@ -145,23 +145,23 @@ public final class GalleryImpl implements Gallery, Gallery.Definition, Gallery.U
     }
 
     public Gallery refresh() {
-        SelectPermissions refreshSelect = null;
+        SelectPermissions localSelect = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getGalleries()
-                .getByResourceGroupWithResponse(resourceGroupName, galleryName, refreshSelect, Context.NONE)
+                .getByResourceGroupWithResponse(resourceGroupName, galleryName, localSelect, Context.NONE)
                 .getValue();
         return this;
     }
 
     public Gallery refresh(Context context) {
-        SelectPermissions refreshSelect = null;
+        SelectPermissions localSelect = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getGalleries()
-                .getByResourceGroupWithResponse(resourceGroupName, galleryName, refreshSelect, context)
+                .getByResourceGroupWithResponse(resourceGroupName, galleryName, localSelect, context)
                 .getValue();
         return this;
     }

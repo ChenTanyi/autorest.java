@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.FlowLogInformationInner;
 
 /** An immutable client-side representation of FlowLogInformation. */
-@Immutable
 public interface FlowLogInformation {
     /**
      * Gets the targetResourceId property: The ID of the resource to configure for flow log and traffic analytics

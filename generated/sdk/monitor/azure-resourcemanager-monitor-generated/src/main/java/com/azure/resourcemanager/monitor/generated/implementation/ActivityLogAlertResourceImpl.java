@@ -104,7 +104,7 @@ public final class ActivityLogAlertResourceImpl
             serviceManager
                 .serviceClient()
                 .getActivityLogAlerts()
-                .createOrUpdateWithResponse(resourceGroupName, activityLogAlertName, innerObject, Context.NONE)
+                .createOrUpdateWithResponse(resourceGroupName, activityLogAlertName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -114,7 +114,7 @@ public final class ActivityLogAlertResourceImpl
             serviceManager
                 .serviceClient()
                 .getActivityLogAlerts()
-                .createOrUpdateWithResponse(resourceGroupName, activityLogAlertName, innerObject, context)
+                .createOrUpdateWithResponse(resourceGroupName, activityLogAlertName, this.innerModel(), context)
                 .getValue();
         return this;
     }

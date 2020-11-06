@@ -103,7 +103,7 @@ public final class LiveOutputImpl implements LiveOutput, LiveOutput.Definition {
             serviceManager
                 .serviceClient()
                 .getLiveOutputs()
-                .create(resourceGroupName, accountName, liveEventName, liveOutputName, innerObject, Context.NONE);
+                .create(resourceGroupName, accountName, liveEventName, liveOutputName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -112,7 +112,7 @@ public final class LiveOutputImpl implements LiveOutput, LiveOutput.Definition {
             serviceManager
                 .serviceClient()
                 .getLiveOutputs()
-                .create(resourceGroupName, accountName, liveEventName, liveOutputName, innerObject, context);
+                .create(resourceGroupName, accountName, liveEventName, liveOutputName, this.innerModel(), context);
         return this;
     }
 

@@ -4,14 +4,12 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.HubIpConfigurationInner;
 import com.azure.resourcemanager.network.generated.fluent.models.PublicIpAddressInner;
 import com.azure.resourcemanager.network.generated.fluent.models.SubnetInner;
 
 /** An immutable client-side representation of HubIpConfiguration. */
-@Immutable
 public interface HubIpConfiguration {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

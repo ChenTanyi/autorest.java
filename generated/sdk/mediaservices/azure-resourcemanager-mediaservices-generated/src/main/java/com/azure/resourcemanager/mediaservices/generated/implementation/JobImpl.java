@@ -112,7 +112,8 @@ public final class JobImpl implements Job, Job.Definition, Job.Update {
             serviceManager
                 .serviceClient()
                 .getJobs()
-                .createWithResponse(resourceGroupName, accountName, transformName, jobName, innerObject, Context.NONE)
+                .createWithResponse(
+                    resourceGroupName, accountName, transformName, jobName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -122,7 +123,7 @@ public final class JobImpl implements Job, Job.Definition, Job.Update {
             serviceManager
                 .serviceClient()
                 .getJobs()
-                .createWithResponse(resourceGroupName, accountName, transformName, jobName, innerObject, context)
+                .createWithResponse(resourceGroupName, accountName, transformName, jobName, this.innerModel(), context)
                 .getValue();
         return this;
     }
@@ -142,7 +143,8 @@ public final class JobImpl implements Job, Job.Definition, Job.Update {
             serviceManager
                 .serviceClient()
                 .getJobs()
-                .updateWithResponse(resourceGroupName, accountName, transformName, jobName, innerObject, Context.NONE)
+                .updateWithResponse(
+                    resourceGroupName, accountName, transformName, jobName, this.innerModel(), Context.NONE)
                 .getValue();
         return this;
     }
@@ -152,7 +154,7 @@ public final class JobImpl implements Job, Job.Definition, Job.Update {
             serviceManager
                 .serviceClient()
                 .getJobs()
-                .updateWithResponse(resourceGroupName, accountName, transformName, jobName, innerObject, context)
+                .updateWithResponse(resourceGroupName, accountName, transformName, jobName, this.innerModel(), context)
                 .getValue();
         return this;
     }

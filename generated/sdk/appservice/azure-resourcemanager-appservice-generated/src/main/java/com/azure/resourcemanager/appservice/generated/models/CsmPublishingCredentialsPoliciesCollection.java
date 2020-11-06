@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmPublishingCredentialsPoliciesCollectionInner;
 
 /** An immutable client-side representation of CsmPublishingCredentialsPoliciesCollection. */
-@Immutable
 public interface CsmPublishingCredentialsPoliciesCollection {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

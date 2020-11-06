@@ -70,6 +70,22 @@ public final class LoadBalancerBackendAddressPoolsImpl implements LoadBalancerBa
         this.serviceClient().delete(resourceGroupName, loadBalancerName, backendAddressPoolName, context);
     }
 
+    public BackendAddressPool getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String loadBalancerName = Utils.getValueFromIdByName(id, "loadBalancers");
+        String backendAddressPoolName = Utils.getValueFromIdByName(id, "backendAddressPools");
+        return this
+            .getWithResponse(resourceGroupName, loadBalancerName, backendAddressPoolName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<BackendAddressPool> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String loadBalancerName = Utils.getValueFromIdByName(id, "loadBalancers");
+        String backendAddressPoolName = Utils.getValueFromIdByName(id, "backendAddressPools");
+        return this.getWithResponse(resourceGroupName, loadBalancerName, backendAddressPoolName, context);
+    }
+
     private LoadBalancerBackendAddressPoolsClient serviceClient() {
         return this.innerClient;
     }

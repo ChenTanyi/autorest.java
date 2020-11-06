@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.storage.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.storage.generated.fluent.models.BlobRestoreStatusInner;
 
 /** An immutable client-side representation of BlobRestoreStatus. */
-@Immutable
 public interface BlobRestoreStatus {
     /**
      * Gets the status property: The status of blob restore progress. Possible values are: - InProgress: Indicates that

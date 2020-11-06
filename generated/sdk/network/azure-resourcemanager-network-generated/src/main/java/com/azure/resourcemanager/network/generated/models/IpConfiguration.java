@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.network.generated.fluent.models.IpConfigurationInner;
 
 /** An immutable client-side representation of IpConfiguration. */
-@Immutable
 public interface IpConfiguration {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.

@@ -304,6 +304,18 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
         }
     }
 
+    public ApplicationGateway getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String applicationGatewayName = Utils.getValueFromIdByName(id, "applicationGateways");
+        return this.getByResourceGroupWithResponse(resourceGroupName, applicationGatewayName, Context.NONE).getValue();
+    }
+
+    public Response<ApplicationGateway> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String applicationGatewayName = Utils.getValueFromIdByName(id, "applicationGateways");
+        return this.getByResourceGroupWithResponse(resourceGroupName, applicationGatewayName, context);
+    }
+
     private ApplicationGatewaysClient serviceClient() {
         return this.innerClient;
     }

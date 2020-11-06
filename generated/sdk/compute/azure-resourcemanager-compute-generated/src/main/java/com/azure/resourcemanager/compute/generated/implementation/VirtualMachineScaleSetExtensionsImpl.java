@@ -72,6 +72,23 @@ public final class VirtualMachineScaleSetExtensionsImpl implements VirtualMachin
         return inner.mapPage(inner1 -> new VirtualMachineScaleSetExtensionImpl(inner1, this.manager()));
     }
 
+    public VirtualMachineScaleSetExtension getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
+        String vmssExtensionName = Utils.getValueFromIdByName(id, "extensions");
+        String localExpand = null;
+        return this
+            .getWithResponse(resourceGroupName, vmScaleSetName, vmssExtensionName, localExpand, Context.NONE)
+            .getValue();
+    }
+
+    public Response<VirtualMachineScaleSetExtension> getByIdWithResponse(String id, String expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
+        String vmssExtensionName = Utils.getValueFromIdByName(id, "extensions");
+        return this.getWithResponse(resourceGroupName, vmScaleSetName, vmssExtensionName, expand, context);
+    }
+
     private VirtualMachineScaleSetExtensionsClient serviceClient() {
         return this.innerClient;
     }

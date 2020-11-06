@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.hdinsight.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.ExtensionInner;
 
 /** An immutable client-side representation of Extension. */
-@Immutable
 public interface Extension {
     /**
      * Gets the workspaceId property: The workspace ID for the cluster monitoring extension.

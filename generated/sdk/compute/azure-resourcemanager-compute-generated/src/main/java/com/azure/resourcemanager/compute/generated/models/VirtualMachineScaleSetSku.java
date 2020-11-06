@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetSkuInner;
 
 /** An immutable client-side representation of VirtualMachineScaleSetSku. */
-@Immutable
 public interface VirtualMachineScaleSetSku {
     /**
      * Gets the resourceType property: The type of resource the sku applies to.

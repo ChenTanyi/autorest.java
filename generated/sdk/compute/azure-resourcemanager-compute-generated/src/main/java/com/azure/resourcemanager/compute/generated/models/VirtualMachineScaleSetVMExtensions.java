@@ -111,6 +111,32 @@ public interface VirtualMachineScaleSetVMExtensions {
         String resourceGroupName, String vmScaleSetName, String instanceId, String expand, Context context);
 
     /**
+     * The operation to get the VMSS VM extension.
+     *
+     * @param id the id of the resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return describes a VMSS VM Extension.
+     */
+    VirtualMachineScaleSetVMExtension getById(String id);
+
+    /**
+     * The operation to get the VMSS VM extension.
+     *
+     * @param id the id of the resource.
+     * @param expand The expand expression to apply on the operation.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return describes a VMSS VM Extension.
+     */
+    Response<VirtualMachineScaleSetVMExtension> getByIdWithResponse(String id, String expand, Context context);
+
+    /**
      * Begins definition for a new VirtualMachineScaleSetVMExtension resource.
      *
      * @param name resource name.

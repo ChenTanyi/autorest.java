@@ -128,7 +128,7 @@ public final class ZoneImpl implements Zone, Zone.Definition, Zone.Update {
                 .serviceClient()
                 .getZones()
                 .createOrUpdateWithResponse(
-                    resourceGroupName, zoneName, innerObject, createIfMatch, createIfNoneMatch, Context.NONE)
+                    resourceGroupName, zoneName, this.innerModel(), createIfMatch, createIfNoneMatch, Context.NONE)
                 .getValue();
         return this;
     }
@@ -139,7 +139,7 @@ public final class ZoneImpl implements Zone, Zone.Definition, Zone.Update {
                 .serviceClient()
                 .getZones()
                 .createOrUpdateWithResponse(
-                    resourceGroupName, zoneName, innerObject, createIfMatch, createIfNoneMatch, context)
+                    resourceGroupName, zoneName, this.innerModel(), createIfMatch, createIfNoneMatch, context)
                 .getValue();
         return this;
     }

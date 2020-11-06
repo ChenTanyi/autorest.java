@@ -108,6 +108,21 @@ public final class ServicesImpl implements Services {
         }
     }
 
+    public SearchService getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String searchServiceName = Utils.getValueFromIdByName(id, "searchServices");
+        UUID localClientRequestId = null;
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, searchServiceName, localClientRequestId, Context.NONE)
+            .getValue();
+    }
+
+    public Response<SearchService> getByIdWithResponse(String id, UUID clientRequestId, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        String searchServiceName = Utils.getValueFromIdByName(id, "searchServices");
+        return this.getByResourceGroupWithResponse(resourceGroupName, searchServiceName, clientRequestId, context);
+    }
+
     private ServicesClient serviceClient() {
         return this.innerClient;
     }

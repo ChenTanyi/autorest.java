@@ -4,12 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.annotation.Immutable;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteCloneabilityInner;
 import java.util.List;
 
 /** An immutable client-side representation of SiteCloneability. */
-@Immutable
 public interface SiteCloneability {
     /**
      * Gets the result property: Name of app.
