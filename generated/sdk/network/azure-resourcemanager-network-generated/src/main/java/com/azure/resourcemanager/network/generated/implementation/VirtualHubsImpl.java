@@ -8,14 +8,18 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.VirtualHubsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualHubInner;
 import com.azure.resourcemanager.network.generated.models.EffectiveRoutesParameters;
 import com.azure.resourcemanager.network.generated.models.VirtualHub;
 import com.azure.resourcemanager.network.generated.models.VirtualHubs;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualHubsImpl implements VirtualHubs {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualHubsImpl.class);
+
     private final VirtualHubsClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -98,13 +102,39 @@ public final class VirtualHubsImpl implements VirtualHubs {
 
     public VirtualHub getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
+        if (virtualHubName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, virtualHubName, Context.NONE).getValue();
     }
 
     public Response<VirtualHub> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
+        if (virtualHubName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, virtualHubName, context);
     }
 

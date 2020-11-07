@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.keyvault.generated.KeyVaultManager;
 import com.azure.resourcemanager.keyvault.generated.fluent.KeysClient;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.KeyInner;
 import com.azure.resourcemanager.keyvault.generated.models.Key;
 import com.azure.resourcemanager.keyvault.generated.models.Keys;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class KeysImpl implements Keys {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(KeysImpl.class);
+
     private final KeysClient innerClient;
 
     private final KeyVaultManager serviceManager;
@@ -94,15 +98,53 @@ public final class KeysImpl implements Keys {
 
     public Key getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String vaultName = Utils.getValueFromIdByName(id, "vaults");
+        if (vaultName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'vaults'.", id)));
+        }
         String keyName = Utils.getValueFromIdByName(id, "keys");
+        if (keyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'keys'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, vaultName, keyName, Context.NONE).getValue();
     }
 
     public Response<Key> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String vaultName = Utils.getValueFromIdByName(id, "vaults");
+        if (vaultName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'vaults'.", id)));
+        }
         String keyName = Utils.getValueFromIdByName(id, "keys");
+        if (keyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'keys'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, vaultName, keyName, context);
     }
 

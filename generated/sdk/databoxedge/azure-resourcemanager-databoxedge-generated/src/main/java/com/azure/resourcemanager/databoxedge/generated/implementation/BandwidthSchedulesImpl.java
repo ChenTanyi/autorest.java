@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.BandwidthSchedulesClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.BandwidthScheduleInner;
 import com.azure.resourcemanager.databoxedge.generated.models.BandwidthSchedule;
 import com.azure.resourcemanager.databoxedge.generated.models.BandwidthSchedules;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class BandwidthSchedulesImpl implements BandwidthSchedules {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(BandwidthSchedulesImpl.class);
+
     private final BandwidthSchedulesClient innerClient;
 
     private final DataBoxEdgeManager serviceManager;
@@ -71,15 +75,61 @@ public final class BandwidthSchedulesImpl implements BandwidthSchedules {
 
     public BandwidthSchedule getById(String id) {
         String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        if (deviceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'dataBoxEdgeDevices'.", id)));
+        }
         String name = Utils.getValueFromIdByName(id, "bandwidthSchedules");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'bandwidthSchedules'.", id)));
+        }
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         return this.getWithResponse(deviceName, name, resourceGroupName, Context.NONE).getValue();
     }
 
     public Response<BandwidthSchedule> getByIdWithResponse(String id, Context context) {
         String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        if (deviceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'dataBoxEdgeDevices'.", id)));
+        }
         String name = Utils.getValueFromIdByName(id, "bandwidthSchedules");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'bandwidthSchedules'.", id)));
+        }
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         return this.getWithResponse(deviceName, name, resourceGroupName, context);
     }
 

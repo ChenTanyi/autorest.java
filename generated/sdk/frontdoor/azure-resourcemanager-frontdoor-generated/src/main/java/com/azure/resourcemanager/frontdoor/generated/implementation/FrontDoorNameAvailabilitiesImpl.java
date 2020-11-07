@@ -7,14 +7,18 @@ package com.azure.resourcemanager.frontdoor.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.FrontDoorManager;
 import com.azure.resourcemanager.frontdoor.generated.fluent.FrontDoorNameAvailabilitiesClient;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.CheckNameAvailabilityOutputInner;
 import com.azure.resourcemanager.frontdoor.generated.models.CheckNameAvailabilityInput;
 import com.azure.resourcemanager.frontdoor.generated.models.CheckNameAvailabilityOutput;
 import com.azure.resourcemanager.frontdoor.generated.models.FrontDoorNameAvailabilities;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class FrontDoorNameAvailabilitiesImpl implements FrontDoorNameAvailabilities {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(FrontDoorNameAvailabilitiesImpl.class);
+
     private final FrontDoorNameAvailabilitiesClient innerClient;
 
     private final FrontDoorManager serviceManager;

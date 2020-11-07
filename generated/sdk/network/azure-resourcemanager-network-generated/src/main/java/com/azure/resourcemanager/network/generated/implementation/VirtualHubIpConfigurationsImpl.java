@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.VirtualHubIpConfigurationsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.HubIpConfigurationInner;
 import com.azure.resourcemanager.network.generated.models.HubIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.VirtualHubIpConfigurations;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualHubIpConfigurationsImpl implements VirtualHubIpConfigurations {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualHubIpConfigurationsImpl.class);
+
     private final VirtualHubIpConfigurationsClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -69,15 +73,57 @@ public final class VirtualHubIpConfigurationsImpl implements VirtualHubIpConfigu
 
     public HubIpConfiguration getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
+        if (virtualHubName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
+        }
         String ipConfigName = Utils.getValueFromIdByName(id, "ipConfigurations");
+        if (ipConfigName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'ipConfigurations'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, virtualHubName, ipConfigName, Context.NONE).getValue();
     }
 
     public Response<HubIpConfiguration> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
+        if (virtualHubName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
+        }
         String ipConfigName = Utils.getValueFromIdByName(id, "ipConfigurations");
+        if (ipConfigName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'ipConfigurations'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, virtualHubName, ipConfigName, context);
     }
 

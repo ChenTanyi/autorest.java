@@ -6,13 +6,17 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.AvailableServiceAliasesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.AvailableServiceAliasInner;
 import com.azure.resourcemanager.network.generated.models.AvailableServiceAlias;
 import com.azure.resourcemanager.network.generated.models.AvailableServiceAliases;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AvailableServiceAliasesImpl implements AvailableServiceAliases {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(AvailableServiceAliasesImpl.class);
+
     private final AvailableServiceAliasesClient innerClient;
 
     private final NetworkManager serviceManager;

@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.AlertRuleIncidentsClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.IncidentInner;
 import com.azure.resourcemanager.monitor.generated.models.AlertRuleIncidents;
 import com.azure.resourcemanager.monitor.generated.models.Incident;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AlertRuleIncidentsImpl implements AlertRuleIncidents {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(AlertRuleIncidentsImpl.class);
+
     private final AlertRuleIncidentsClient innerClient;
 
     private final MonitorManager serviceManager;

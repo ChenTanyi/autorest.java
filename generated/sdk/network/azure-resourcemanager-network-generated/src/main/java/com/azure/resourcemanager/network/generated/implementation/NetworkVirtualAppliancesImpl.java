@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.NetworkVirtualAppliancesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkVirtualApplianceInner;
 import com.azure.resourcemanager.network.generated.models.NetworkVirtualAppliance;
 import com.azure.resourcemanager.network.generated.models.NetworkVirtualAppliances;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class NetworkVirtualAppliancesImpl implements NetworkVirtualAppliances {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(NetworkVirtualAppliancesImpl.class);
+
     private final NetworkVirtualAppliancesClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -82,7 +86,23 @@ public final class NetworkVirtualAppliancesImpl implements NetworkVirtualApplian
 
     public NetworkVirtualAppliance getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String networkVirtualApplianceName = Utils.getValueFromIdByName(id, "networkVirtualAppliances");
+        if (networkVirtualApplianceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'networkVirtualAppliances'.",
+                                id)));
+        }
         String localExpand = null;
         return this
             .getByResourceGroupWithResponse(resourceGroupName, networkVirtualApplianceName, localExpand, Context.NONE)
@@ -91,7 +111,23 @@ public final class NetworkVirtualAppliancesImpl implements NetworkVirtualApplian
 
     public Response<NetworkVirtualAppliance> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String networkVirtualApplianceName = Utils.getValueFromIdByName(id, "networkVirtualAppliances");
+        if (networkVirtualApplianceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'networkVirtualAppliances'.",
+                                id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, networkVirtualApplianceName, expand, context);
     }
 

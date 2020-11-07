@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.ScheduledQueryRulesClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.LogSearchRuleResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.LogSearchRuleResource;
 import com.azure.resourcemanager.monitor.generated.models.ScheduledQueryRules;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ScheduledQueryRulesImpl implements ScheduledQueryRules {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ScheduledQueryRulesImpl.class);
+
     private final ScheduledQueryRulesClient innerClient;
 
     private final MonitorManager serviceManager;
@@ -80,13 +84,43 @@ public final class ScheduledQueryRulesImpl implements ScheduledQueryRules {
 
     public LogSearchRuleResource getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
+        }
         String ruleName = Utils.getValueFromIdByName(id, "scheduledQueryRules");
+        if (ruleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'scheduledQueryRules'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, ruleName, Context.NONE).getValue();
     }
 
     public Response<LogSearchRuleResource> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
+        }
         String ruleName = Utils.getValueFromIdByName(id, "scheduledQueryRules");
+        if (ruleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'scheduledQueryRules'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, ruleName, context);
     }
 

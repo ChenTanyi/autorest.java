@@ -7,14 +7,18 @@ package com.azure.resourcemanager.postgresql.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.postgresql.generated.PostgreSqlManager;
 import com.azure.resourcemanager.postgresql.generated.fluent.CheckNameAvailabilitiesClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.NameAvailabilityInner;
 import com.azure.resourcemanager.postgresql.generated.models.CheckNameAvailabilities;
 import com.azure.resourcemanager.postgresql.generated.models.NameAvailability;
 import com.azure.resourcemanager.postgresql.generated.models.NameAvailabilityRequest;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class CheckNameAvailabilitiesImpl implements CheckNameAvailabilities {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(CheckNameAvailabilitiesImpl.class);
+
     private final CheckNameAvailabilitiesClient innerClient;
 
     private final PostgreSqlManager serviceManager;

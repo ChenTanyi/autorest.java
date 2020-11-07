@@ -7,6 +7,7 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.ExpressRouteConnectionsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteConnectionInner;
@@ -14,8 +15,11 @@ import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCon
 import com.azure.resourcemanager.network.generated.models.ExpressRouteConnection;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteConnectionList;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteConnections;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ExpressRouteConnectionsImpl implements ExpressRouteConnections {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExpressRouteConnectionsImpl.class);
+
     private final ExpressRouteConnectionsClient innerClient;
 
     private final NetworkManager serviceManager;

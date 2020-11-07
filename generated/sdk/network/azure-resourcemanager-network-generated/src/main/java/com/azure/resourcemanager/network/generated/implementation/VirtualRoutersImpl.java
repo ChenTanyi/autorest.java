@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.VirtualRoutersClient;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualRouterInner;
 import com.azure.resourcemanager.network.generated.models.VirtualRouter;
 import com.azure.resourcemanager.network.generated.models.VirtualRouters;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualRoutersImpl implements VirtualRouters {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualRoutersImpl.class);
+
     private final VirtualRoutersClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -78,7 +82,21 @@ public final class VirtualRoutersImpl implements VirtualRouters {
 
     public VirtualRouter getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String virtualRouterName = Utils.getValueFromIdByName(id, "virtualRouters");
+        if (virtualRouterName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualRouters'.", id)));
+        }
         String localExpand = null;
         return this
             .getByResourceGroupWithResponse(resourceGroupName, virtualRouterName, localExpand, Context.NONE)
@@ -87,7 +105,21 @@ public final class VirtualRoutersImpl implements VirtualRouters {
 
     public Response<VirtualRouter> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String virtualRouterName = Utils.getValueFromIdByName(id, "virtualRouters");
+        if (virtualRouterName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualRouters'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, virtualRouterName, expand, context);
     }
 

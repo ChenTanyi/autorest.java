@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.AvailabilitySetsClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.AvailabilitySetInner;
@@ -15,8 +16,11 @@ import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineS
 import com.azure.resourcemanager.compute.generated.models.AvailabilitySet;
 import com.azure.resourcemanager.compute.generated.models.AvailabilitySets;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineSize;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AvailabilitySetsImpl implements AvailabilitySets {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(AvailabilitySetsImpl.class);
+
     private final AvailabilitySetsClient innerClient;
 
     private final ComputeManager serviceManager;
@@ -94,13 +98,43 @@ public final class AvailabilitySetsImpl implements AvailabilitySets {
 
     public AvailabilitySet getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String availabilitySetName = Utils.getValueFromIdByName(id, "availabilitySets");
+        if (availabilitySetName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'availabilitySets'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, availabilitySetName, Context.NONE).getValue();
     }
 
     public Response<AvailabilitySet> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String availabilitySetName = Utils.getValueFromIdByName(id, "availabilitySets");
+        if (availabilitySetName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'availabilitySets'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, availabilitySetName, context);
     }
 

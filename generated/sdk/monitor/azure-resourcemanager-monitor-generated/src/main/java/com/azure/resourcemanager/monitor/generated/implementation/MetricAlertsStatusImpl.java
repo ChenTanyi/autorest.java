@@ -7,13 +7,17 @@ package com.azure.resourcemanager.monitor.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.MetricAlertsStatusClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricAlertStatusCollectionInner;
 import com.azure.resourcemanager.monitor.generated.models.MetricAlertStatusCollection;
 import com.azure.resourcemanager.monitor.generated.models.MetricAlertsStatus;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class MetricAlertsStatusImpl implements MetricAlertsStatus {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(MetricAlertsStatusImpl.class);
+
     private final MetricAlertsStatusClient innerClient;
 
     private final MonitorManager serviceManager;

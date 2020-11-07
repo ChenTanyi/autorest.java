@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.LoadBalancersClient;
 import com.azure.resourcemanager.network.generated.fluent.models.LoadBalancerInner;
 import com.azure.resourcemanager.network.generated.models.LoadBalancer;
 import com.azure.resourcemanager.network.generated.models.LoadBalancers;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LoadBalancersImpl implements LoadBalancers {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(LoadBalancersImpl.class);
+
     private final LoadBalancersClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -78,7 +82,20 @@ public final class LoadBalancersImpl implements LoadBalancers {
 
     public LoadBalancer getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String loadBalancerName = Utils.getValueFromIdByName(id, "loadBalancers");
+        if (loadBalancerName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'loadBalancers'.", id)));
+        }
         String localExpand = null;
         return this
             .getByResourceGroupWithResponse(resourceGroupName, loadBalancerName, localExpand, Context.NONE)
@@ -87,7 +104,20 @@ public final class LoadBalancersImpl implements LoadBalancers {
 
     public Response<LoadBalancer> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String loadBalancerName = Utils.getValueFromIdByName(id, "loadBalancers");
+        if (loadBalancerName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'loadBalancers'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, loadBalancerName, expand, context);
     }
 

@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.RecommendationsClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RecommendationInner;
@@ -15,8 +16,11 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.Recommendati
 import com.azure.resourcemanager.appservice.generated.models.Recommendation;
 import com.azure.resourcemanager.appservice.generated.models.RecommendationRule;
 import com.azure.resourcemanager.appservice.generated.models.Recommendations;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class RecommendationsImpl implements Recommendations {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(RecommendationsImpl.class);
+
     private final RecommendationsClient innerClient;
 
     private final WebSiteManager serviceManager;

@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineScaleSetExtensionsClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetExtensionInner;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetExtension;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetExtensions;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualMachineScaleSetExtensionsImpl implements VirtualMachineScaleSetExtensions {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualMachineScaleSetExtensionsImpl.class);
+
     private final VirtualMachineScaleSetExtensionsClient innerClient;
 
     private final ComputeManager serviceManager;
@@ -74,8 +78,30 @@ public final class VirtualMachineScaleSetExtensionsImpl implements VirtualMachin
 
     public VirtualMachineScaleSetExtension getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
+        if (vmScaleSetName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'virtualMachineScaleSets'.",
+                                id)));
+        }
         String vmssExtensionName = Utils.getValueFromIdByName(id, "extensions");
+        if (vmssExtensionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'extensions'.", id)));
+        }
         String localExpand = null;
         return this
             .getWithResponse(resourceGroupName, vmScaleSetName, vmssExtensionName, localExpand, Context.NONE)
@@ -84,8 +110,30 @@ public final class VirtualMachineScaleSetExtensionsImpl implements VirtualMachin
 
     public Response<VirtualMachineScaleSetExtension> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
+        if (vmScaleSetName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'virtualMachineScaleSets'.",
+                                id)));
+        }
         String vmssExtensionName = Utils.getValueFromIdByName(id, "extensions");
+        if (vmssExtensionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'extensions'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, vmScaleSetName, vmssExtensionName, expand, context);
     }
 

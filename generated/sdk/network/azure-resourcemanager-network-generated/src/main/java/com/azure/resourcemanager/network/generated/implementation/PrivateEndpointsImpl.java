@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.PrivateEndpointsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.PrivateEndpointInner;
 import com.azure.resourcemanager.network.generated.models.PrivateEndpoint;
 import com.azure.resourcemanager.network.generated.models.PrivateEndpoints;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PrivateEndpointsImpl implements PrivateEndpoints {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(PrivateEndpointsImpl.class);
+
     private final PrivateEndpointsClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -81,7 +85,22 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
 
     public PrivateEndpoint getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String privateEndpointName = Utils.getValueFromIdByName(id, "privateEndpoints");
+        if (privateEndpointName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpoints'.", id)));
+        }
         String localExpand = null;
         return this
             .getByResourceGroupWithResponse(resourceGroupName, privateEndpointName, localExpand, Context.NONE)
@@ -90,7 +109,22 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
 
     public Response<PrivateEndpoint> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String privateEndpointName = Utils.getValueFromIdByName(id, "privateEndpoints");
+        if (privateEndpointName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpoints'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, privateEndpointName, expand, context);
     }
 

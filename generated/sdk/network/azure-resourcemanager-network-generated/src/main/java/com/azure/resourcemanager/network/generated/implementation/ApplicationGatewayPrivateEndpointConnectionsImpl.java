@@ -8,14 +8,19 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.ApplicationGatewayPrivateEndpointConnectionsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayPrivateEndpointConnectionInner;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayPrivateEndpointConnection;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayPrivateEndpointConnections;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ApplicationGatewayPrivateEndpointConnectionsImpl
     implements ApplicationGatewayPrivateEndpointConnections {
+    @JsonIgnore
+    private final ClientLogger logger = new ClientLogger(ApplicationGatewayPrivateEndpointConnectionsImpl.class);
+
     private final ApplicationGatewayPrivateEndpointConnectionsClient innerClient;
 
     private final NetworkManager serviceManager;

@@ -6,13 +6,17 @@ package com.azure.resourcemanager.frontdoor.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.FrontDoorManager;
 import com.azure.resourcemanager.frontdoor.generated.fluent.ManagedRuleSetsClient;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.ManagedRuleSetDefinitionInner;
 import com.azure.resourcemanager.frontdoor.generated.models.ManagedRuleSetDefinition;
 import com.azure.resourcemanager.frontdoor.generated.models.ManagedRuleSets;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ManagedRuleSetsImpl implements ManagedRuleSets {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ManagedRuleSetsImpl.class);
+
     private final ManagedRuleSetsClient innerClient;
 
     private final FrontDoorManager serviceManager;

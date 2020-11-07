@@ -6,13 +6,17 @@ package com.azure.resourcemanager.storage.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.UsagesClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.UsageInner;
 import com.azure.resourcemanager.storage.generated.models.Usage;
 import com.azure.resourcemanager.storage.generated.models.Usages;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class UsagesImpl implements Usages {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(UsagesImpl.class);
+
     private final UsagesClient innerClient;
 
     private final StorageManager serviceManager;

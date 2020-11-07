@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.LoadBalancerLoadBalancingRulesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.LoadBalancingRuleInner;
 import com.azure.resourcemanager.network.generated.models.LoadBalancerLoadBalancingRules;
 import com.azure.resourcemanager.network.generated.models.LoadBalancingRule;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LoadBalancerLoadBalancingRulesImpl implements LoadBalancerLoadBalancingRules {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(LoadBalancerLoadBalancingRulesImpl.class);
+
     private final LoadBalancerLoadBalancingRulesClient innerClient;
 
     private final NetworkManager serviceManager;

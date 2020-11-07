@@ -7,13 +7,17 @@ package com.azure.resourcemanager.eventhubs.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.PrivateLinkResourcesClient;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.PrivateLinkResourcesListResultInner;
 import com.azure.resourcemanager.eventhubs.generated.models.PrivateLinkResources;
 import com.azure.resourcemanager.eventhubs.generated.models.PrivateLinkResourcesListResult;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(PrivateLinkResourcesImpl.class);
+
     private final PrivateLinkResourcesClient innerClient;
 
     private final EventHubsManager serviceManager;

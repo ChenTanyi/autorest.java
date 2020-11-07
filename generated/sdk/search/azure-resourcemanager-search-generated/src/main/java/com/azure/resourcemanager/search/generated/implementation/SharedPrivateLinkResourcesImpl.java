@@ -8,14 +8,18 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.search.generated.SearchManager;
 import com.azure.resourcemanager.search.generated.fluent.SharedPrivateLinkResourcesClient;
 import com.azure.resourcemanager.search.generated.fluent.models.SharedPrivateLinkResourceInner;
 import com.azure.resourcemanager.search.generated.models.SharedPrivateLinkResource;
 import com.azure.resourcemanager.search.generated.models.SharedPrivateLinkResources;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.UUID;
 
 public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkResources {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(SharedPrivateLinkResourcesImpl.class);
+
     private final SharedPrivateLinkResourcesClient innerClient;
 
     private final SearchManager serviceManager;
@@ -98,8 +102,31 @@ public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkRe
 
     public SharedPrivateLinkResource getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String searchServiceName = Utils.getValueFromIdByName(id, "searchServices");
+        if (searchServiceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'searchServices'.", id)));
+        }
         String sharedPrivateLinkResourceName = Utils.getValueFromIdByName(id, "sharedPrivateLinkResources");
+        if (sharedPrivateLinkResourceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'sharedPrivateLinkResources'.",
+                                id)));
+        }
         UUID localClientRequestId = null;
         return this
             .getWithResponse(
@@ -109,8 +136,31 @@ public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkRe
 
     public Response<SharedPrivateLinkResource> getByIdWithResponse(String id, UUID clientRequestId, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String searchServiceName = Utils.getValueFromIdByName(id, "searchServices");
+        if (searchServiceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'searchServices'.", id)));
+        }
         String sharedPrivateLinkResourceName = Utils.getValueFromIdByName(id, "sharedPrivateLinkResources");
+        if (sharedPrivateLinkResourceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'sharedPrivateLinkResources'.",
+                                id)));
+        }
         return this
             .getWithResponse(
                 resourceGroupName, searchServiceName, sharedPrivateLinkResourceName, clientRequestId, context);

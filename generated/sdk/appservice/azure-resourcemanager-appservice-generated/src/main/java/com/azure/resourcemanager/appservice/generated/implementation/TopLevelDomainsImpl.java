@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.TopLevelDomainsClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.TldLegalAgreementInner;
@@ -16,8 +17,11 @@ import com.azure.resourcemanager.appservice.generated.models.TldLegalAgreement;
 import com.azure.resourcemanager.appservice.generated.models.TopLevelDomain;
 import com.azure.resourcemanager.appservice.generated.models.TopLevelDomainAgreementOption;
 import com.azure.resourcemanager.appservice.generated.models.TopLevelDomains;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class TopLevelDomainsImpl implements TopLevelDomains {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(TopLevelDomainsImpl.class);
+
     private final TopLevelDomainsClient innerClient;
 
     private final WebSiteManager serviceManager;

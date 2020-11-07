@@ -7,15 +7,19 @@ package com.azure.resourcemanager.search.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.search.generated.SearchManager;
 import com.azure.resourcemanager.search.generated.fluent.AdminKeysClient;
 import com.azure.resourcemanager.search.generated.fluent.models.AdminKeyResultInner;
 import com.azure.resourcemanager.search.generated.models.AdminKeyKind;
 import com.azure.resourcemanager.search.generated.models.AdminKeyResult;
 import com.azure.resourcemanager.search.generated.models.AdminKeys;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.UUID;
 
 public final class AdminKeysImpl implements AdminKeys {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(AdminKeysImpl.class);
+
     private final AdminKeysClient innerClient;
 
     private final SearchManager serviceManager;

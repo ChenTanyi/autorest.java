@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.hdinsight.generated.HDInsightManager;
 import com.azure.resourcemanager.hdinsight.generated.fluent.ApplicationsClient;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.ApplicationInner;
 import com.azure.resourcemanager.hdinsight.generated.models.Application;
 import com.azure.resourcemanager.hdinsight.generated.models.Applications;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ApplicationsImpl implements Applications {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ApplicationsImpl.class);
+
     private final ApplicationsClient innerClient;
 
     private final HDInsightManager serviceManager;
@@ -69,15 +73,53 @@ public final class ApplicationsImpl implements Applications {
 
     public Application getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String clusterName = Utils.getValueFromIdByName(id, "clusters");
+        if (clusterName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'clusters'.", id)));
+        }
         String applicationName = Utils.getValueFromIdByName(id, "applications");
+        if (applicationName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'applications'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, clusterName, applicationName, Context.NONE).getValue();
     }
 
     public Response<Application> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String clusterName = Utils.getValueFromIdByName(id, "clusters");
+        if (clusterName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'clusters'.", id)));
+        }
         String applicationName = Utils.getValueFromIdByName(id, "applications");
+        if (applicationName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'applications'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, clusterName, applicationName, context);
     }
 

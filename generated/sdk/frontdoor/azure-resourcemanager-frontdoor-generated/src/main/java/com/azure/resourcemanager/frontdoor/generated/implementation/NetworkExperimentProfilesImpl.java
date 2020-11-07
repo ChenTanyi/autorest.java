@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.FrontDoorManager;
 import com.azure.resourcemanager.frontdoor.generated.fluent.NetworkExperimentProfilesClient;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.ProfileInner;
 import com.azure.resourcemanager.frontdoor.generated.models.NetworkExperimentProfiles;
 import com.azure.resourcemanager.frontdoor.generated.models.Profile;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class NetworkExperimentProfilesImpl implements NetworkExperimentProfiles {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(NetworkExperimentProfilesImpl.class);
+
     private final NetworkExperimentProfilesClient innerClient;
 
     private final FrontDoorManager serviceManager;
@@ -78,13 +82,45 @@ public final class NetworkExperimentProfilesImpl implements NetworkExperimentPro
 
     public Profile getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String profileName = Utils.getValueFromIdByName(id, "NetworkExperimentProfiles");
+        if (profileName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'NetworkExperimentProfiles'.",
+                                id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, profileName, Context.NONE).getValue();
     }
 
     public Response<Profile> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String profileName = Utils.getValueFromIdByName(id, "NetworkExperimentProfiles");
+        if (profileName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'NetworkExperimentProfiles'.",
+                                id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, profileName, context);
     }
 

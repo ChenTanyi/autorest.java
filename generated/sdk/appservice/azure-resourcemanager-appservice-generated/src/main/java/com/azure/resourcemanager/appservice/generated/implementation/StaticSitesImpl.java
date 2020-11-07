@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.StaticSitesClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteArmResourceInner;
@@ -27,8 +28,11 @@ import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserInvit
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserInvitationResponseResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSites;
 import com.azure.resourcemanager.appservice.generated.models.StringDictionary;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class StaticSitesImpl implements StaticSites {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(StaticSitesImpl.class);
+
     private final StaticSitesClient innerClient;
 
     private final WebSiteManager serviceManager;
@@ -489,13 +493,39 @@ public final class StaticSitesImpl implements StaticSites {
 
     public StaticSiteArmResource getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String name = Utils.getValueFromIdByName(id, "staticSites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE).getValue();
     }
 
     public Response<StaticSiteArmResource> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String name = Utils.getValueFromIdByName(id, "staticSites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, name, context);
     }
 

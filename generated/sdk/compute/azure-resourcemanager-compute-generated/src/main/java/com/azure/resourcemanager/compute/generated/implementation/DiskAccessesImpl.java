@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.DiskAccessesClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.DiskAccessInner;
@@ -15,8 +16,11 @@ import com.azure.resourcemanager.compute.generated.fluent.models.PrivateLinkReso
 import com.azure.resourcemanager.compute.generated.models.DiskAccess;
 import com.azure.resourcemanager.compute.generated.models.DiskAccesses;
 import com.azure.resourcemanager.compute.generated.models.PrivateLinkResourceListResult;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DiskAccessesImpl implements DiskAccesses {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(DiskAccessesImpl.class);
+
     private final DiskAccessesClient innerClient;
 
     private final ComputeManager serviceManager;
@@ -105,13 +109,39 @@ public final class DiskAccessesImpl implements DiskAccesses {
 
     public DiskAccess getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String diskAccessName = Utils.getValueFromIdByName(id, "diskAccesses");
+        if (diskAccessName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'diskAccesses'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, diskAccessName, Context.NONE).getValue();
     }
 
     public Response<DiskAccess> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String diskAccessName = Utils.getValueFromIdByName(id, "diskAccesses");
+        if (diskAccessName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'diskAccesses'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, diskAccessName, context);
     }
 

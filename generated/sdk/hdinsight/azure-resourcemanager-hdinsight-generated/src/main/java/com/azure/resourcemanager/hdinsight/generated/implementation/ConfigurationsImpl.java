@@ -7,15 +7,19 @@ package com.azure.resourcemanager.hdinsight.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.hdinsight.generated.HDInsightManager;
 import com.azure.resourcemanager.hdinsight.generated.fluent.ConfigurationsClient;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.ClusterConfigurationsInner;
 import com.azure.resourcemanager.hdinsight.generated.models.ClusterConfigurations;
 import com.azure.resourcemanager.hdinsight.generated.models.Configurations;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Collections;
 import java.util.Map;
 
 public final class ConfigurationsImpl implements Configurations {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ConfigurationsImpl.class);
+
     private final ConfigurationsClient innerClient;
 
     private final HDInsightManager serviceManager;

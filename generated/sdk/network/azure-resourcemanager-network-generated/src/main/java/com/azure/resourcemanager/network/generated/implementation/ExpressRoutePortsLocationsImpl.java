@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.ExpressRoutePortsLocationsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRoutePortsLocationInner;
 import com.azure.resourcemanager.network.generated.models.ExpressRoutePortsLocation;
 import com.azure.resourcemanager.network.generated.models.ExpressRoutePortsLocations;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ExpressRoutePortsLocationsImpl implements ExpressRoutePortsLocations {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExpressRoutePortsLocationsImpl.class);
+
     private final ExpressRoutePortsLocationsClient innerClient;
 
     private final NetworkManager serviceManager;

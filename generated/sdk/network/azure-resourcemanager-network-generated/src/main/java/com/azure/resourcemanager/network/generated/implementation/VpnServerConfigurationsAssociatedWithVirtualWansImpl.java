@@ -5,14 +5,19 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.VpnServerConfigurationsAssociatedWithVirtualWansClient;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnServerConfigurationsResponseInner;
 import com.azure.resourcemanager.network.generated.models.VpnServerConfigurationsAssociatedWithVirtualWans;
 import com.azure.resourcemanager.network.generated.models.VpnServerConfigurationsResponse;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VpnServerConfigurationsAssociatedWithVirtualWansImpl
     implements VpnServerConfigurationsAssociatedWithVirtualWans {
+    @JsonIgnore
+    private final ClientLogger logger = new ClientLogger(VpnServerConfigurationsAssociatedWithVirtualWansImpl.class);
+
     private final VpnServerConfigurationsAssociatedWithVirtualWansClient innerClient;
 
     private final NetworkManager serviceManager;

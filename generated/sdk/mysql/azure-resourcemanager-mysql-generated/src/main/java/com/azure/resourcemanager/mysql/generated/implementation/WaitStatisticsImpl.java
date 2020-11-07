@@ -8,14 +8,18 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.WaitStatisticsClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.WaitStatisticInner;
 import com.azure.resourcemanager.mysql.generated.models.WaitStatistic;
 import com.azure.resourcemanager.mysql.generated.models.WaitStatistics;
 import com.azure.resourcemanager.mysql.generated.models.WaitStatisticsInput;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class WaitStatisticsImpl implements WaitStatistics {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(WaitStatisticsImpl.class);
+
     private final WaitStatisticsClient innerClient;
 
     private final MySqlManager serviceManager;

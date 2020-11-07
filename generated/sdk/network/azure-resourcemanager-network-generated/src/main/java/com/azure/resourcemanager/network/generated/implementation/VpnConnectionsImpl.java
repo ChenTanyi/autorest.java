@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.VpnConnectionsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnConnectionInner;
@@ -15,8 +16,11 @@ import com.azure.resourcemanager.network.generated.models.VpnConnection;
 import com.azure.resourcemanager.network.generated.models.VpnConnectionPacketCaptureStartParameters;
 import com.azure.resourcemanager.network.generated.models.VpnConnectionPacketCaptureStopParameters;
 import com.azure.resourcemanager.network.generated.models.VpnConnections;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VpnConnectionsImpl implements VpnConnections {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VpnConnectionsImpl.class);
+
     private final VpnConnectionsClient innerClient;
 
     private final NetworkManager serviceManager;

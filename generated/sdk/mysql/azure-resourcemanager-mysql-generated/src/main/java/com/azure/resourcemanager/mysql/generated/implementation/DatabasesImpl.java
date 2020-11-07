@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.DatabasesClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.DatabaseInner;
 import com.azure.resourcemanager.mysql.generated.models.Database;
 import com.azure.resourcemanager.mysql.generated.models.Databases;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DatabasesImpl implements Databases {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(DatabasesImpl.class);
+
     private final DatabasesClient innerClient;
 
     private final MySqlManager serviceManager;
@@ -68,15 +72,53 @@ public final class DatabasesImpl implements Databases {
 
     public Database getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String serverName = Utils.getValueFromIdByName(id, "servers");
+        if (serverName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'servers'.", id)));
+        }
         String databaseName = Utils.getValueFromIdByName(id, "databases");
+        if (databaseName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'databases'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, serverName, databaseName, Context.NONE).getValue();
     }
 
     public Response<Database> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String serverName = Utils.getValueFromIdByName(id, "servers");
+        if (serverName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'servers'.", id)));
+        }
         String databaseName = Utils.getValueFromIdByName(id, "databases");
+        if (databaseName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'databases'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, serverName, databaseName, context);
     }
 

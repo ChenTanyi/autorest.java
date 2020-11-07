@@ -6,13 +6,17 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.DomainRegistrationProvidersClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmOperationDescriptionInner;
 import com.azure.resourcemanager.appservice.generated.models.CsmOperationDescription;
 import com.azure.resourcemanager.appservice.generated.models.DomainRegistrationProviders;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DomainRegistrationProvidersImpl implements DomainRegistrationProviders {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(DomainRegistrationProvidersImpl.class);
+
     private final DomainRegistrationProvidersClient innerClient;
 
     private final WebSiteManager serviceManager;

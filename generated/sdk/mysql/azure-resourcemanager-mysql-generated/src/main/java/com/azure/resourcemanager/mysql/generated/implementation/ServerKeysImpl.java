@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.ServerKeysClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.ServerKeyInner;
 import com.azure.resourcemanager.mysql.generated.models.ServerKey;
 import com.azure.resourcemanager.mysql.generated.models.ServerKeys;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ServerKeysImpl implements ServerKeys {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ServerKeysImpl.class);
+
     private final ServerKeysClient innerClient;
 
     private final MySqlManager serviceManager;
@@ -68,15 +72,53 @@ public final class ServerKeysImpl implements ServerKeys {
 
     public ServerKey getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String serverName = Utils.getValueFromIdByName(id, "servers");
+        if (serverName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'servers'.", id)));
+        }
         String keyName = Utils.getValueFromIdByName(id, "keys");
+        if (keyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'keys'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, serverName, keyName, Context.NONE).getValue();
     }
 
     public Response<ServerKey> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String serverName = Utils.getValueFromIdByName(id, "servers");
+        if (serverName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'servers'.", id)));
+        }
         String keyName = Utils.getValueFromIdByName(id, "keys");
+        if (keyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'keys'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, serverName, keyName, context);
     }
 

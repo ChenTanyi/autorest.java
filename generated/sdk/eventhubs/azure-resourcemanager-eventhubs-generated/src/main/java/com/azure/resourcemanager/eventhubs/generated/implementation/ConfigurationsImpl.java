@@ -7,13 +7,17 @@ package com.azure.resourcemanager.eventhubs.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.ConfigurationsClient;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ClusterQuotaConfigurationPropertiesInner;
 import com.azure.resourcemanager.eventhubs.generated.models.ClusterQuotaConfigurationProperties;
 import com.azure.resourcemanager.eventhubs.generated.models.Configurations;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ConfigurationsImpl implements Configurations {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ConfigurationsImpl.class);
+
     private final ConfigurationsClient innerClient;
 
     private final EventHubsManager serviceManager;

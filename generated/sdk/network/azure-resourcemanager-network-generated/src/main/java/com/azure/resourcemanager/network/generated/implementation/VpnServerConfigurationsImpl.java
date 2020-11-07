@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.VpnServerConfigurationsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnServerConfigurationInner;
 import com.azure.resourcemanager.network.generated.models.VpnServerConfiguration;
 import com.azure.resourcemanager.network.generated.models.VpnServerConfigurations;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VpnServerConfigurationsImpl implements VpnServerConfigurations {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VpnServerConfigurationsImpl.class);
+
     private final VpnServerConfigurationsClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -80,7 +84,23 @@ public final class VpnServerConfigurationsImpl implements VpnServerConfiguration
 
     public VpnServerConfiguration getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String vpnServerConfigurationName = Utils.getValueFromIdByName(id, "vpnServerConfigurations");
+        if (vpnServerConfigurationName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'vpnServerConfigurations'.",
+                                id)));
+        }
         return this
             .getByResourceGroupWithResponse(resourceGroupName, vpnServerConfigurationName, Context.NONE)
             .getValue();
@@ -88,7 +108,23 @@ public final class VpnServerConfigurationsImpl implements VpnServerConfiguration
 
     public Response<VpnServerConfiguration> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String vpnServerConfigurationName = Utils.getValueFromIdByName(id, "vpnServerConfigurations");
+        if (vpnServerConfigurationName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'vpnServerConfigurations'.",
+                                id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, vpnServerConfigurationName, context);
     }
 

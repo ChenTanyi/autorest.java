@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.ProximityPlacementGroupsClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.ProximityPlacementGroupInner;
 import com.azure.resourcemanager.compute.generated.models.ProximityPlacementGroup;
 import com.azure.resourcemanager.compute.generated.models.ProximityPlacementGroups;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ProximityPlacementGroupsImpl implements ProximityPlacementGroups {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ProximityPlacementGroupsImpl.class);
+
     private final ProximityPlacementGroupsClient innerClient;
 
     private final ComputeManager serviceManager;
@@ -84,7 +88,23 @@ public final class ProximityPlacementGroupsImpl implements ProximityPlacementGro
 
     public ProximityPlacementGroup getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String proximityPlacementGroupName = Utils.getValueFromIdByName(id, "proximityPlacementGroups");
+        if (proximityPlacementGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'proximityPlacementGroups'.",
+                                id)));
+        }
         String localIncludeColocationStatus = null;
         return this
             .getByResourceGroupWithResponse(
@@ -95,7 +115,23 @@ public final class ProximityPlacementGroupsImpl implements ProximityPlacementGro
     public Response<ProximityPlacementGroup> getByIdWithResponse(
         String id, String includeColocationStatus, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String proximityPlacementGroupName = Utils.getValueFromIdByName(id, "proximityPlacementGroups");
+        if (proximityPlacementGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'proximityPlacementGroups'.",
+                                id)));
+        }
         return this
             .getByResourceGroupWithResponse(
                 resourceGroupName, proximityPlacementGroupName, includeColocationStatus, context);

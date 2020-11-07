@@ -7,14 +7,18 @@ package com.azure.resourcemanager.mysql.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.CheckNameAvailabilitiesClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.NameAvailabilityInner;
 import com.azure.resourcemanager.mysql.generated.models.CheckNameAvailabilities;
 import com.azure.resourcemanager.mysql.generated.models.NameAvailability;
 import com.azure.resourcemanager.mysql.generated.models.NameAvailabilityRequest;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class CheckNameAvailabilitiesImpl implements CheckNameAvailabilities {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(CheckNameAvailabilitiesImpl.class);
+
     private final CheckNameAvailabilitiesClient innerClient;
 
     private final MySqlManager serviceManager;

@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mediaservices.generated.MediaservicesManager;
 import com.azure.resourcemanager.mediaservices.generated.fluent.ContentKeyPoliciesClient;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.ContentKeyPolicyInner;
@@ -15,8 +16,11 @@ import com.azure.resourcemanager.mediaservices.generated.fluent.models.ContentKe
 import com.azure.resourcemanager.mediaservices.generated.models.ContentKeyPolicies;
 import com.azure.resourcemanager.mediaservices.generated.models.ContentKeyPolicy;
 import com.azure.resourcemanager.mediaservices.generated.models.ContentKeyPolicyProperties;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ContentKeyPoliciesImpl implements ContentKeyPolicies {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ContentKeyPoliciesImpl.class);
+
     private final ContentKeyPoliciesClient innerClient;
 
     private final MediaservicesManager serviceManager;
@@ -102,15 +106,57 @@ public final class ContentKeyPoliciesImpl implements ContentKeyPolicies {
 
     public ContentKeyPolicy getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'mediaServices'.", id)));
+        }
         String contentKeyPolicyName = Utils.getValueFromIdByName(id, "contentKeyPolicies");
+        if (contentKeyPolicyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'contentKeyPolicies'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, accountName, contentKeyPolicyName, Context.NONE).getValue();
     }
 
     public Response<ContentKeyPolicy> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'mediaServices'.", id)));
+        }
         String contentKeyPolicyName = Utils.getValueFromIdByName(id, "contentKeyPolicies");
+        if (contentKeyPolicyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'contentKeyPolicies'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, accountName, contentKeyPolicyName, context);
     }
 

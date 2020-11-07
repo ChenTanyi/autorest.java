@@ -6,13 +6,17 @@ package com.azure.resourcemanager.storage.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.SkusClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.SkuInformationInner;
 import com.azure.resourcemanager.storage.generated.models.SkuInformation;
 import com.azure.resourcemanager.storage.generated.models.Skus;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class SkusImpl implements Skus {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(SkusImpl.class);
+
     private final SkusClient innerClient;
 
     private final StorageManager serviceManager;

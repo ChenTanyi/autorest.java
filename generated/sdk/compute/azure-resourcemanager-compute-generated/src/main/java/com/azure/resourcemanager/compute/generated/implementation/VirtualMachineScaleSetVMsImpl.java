@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineScaleSetVMsClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.RetrieveBootDiagnosticsDataResultInner;
@@ -22,8 +23,11 @@ import com.azure.resourcemanager.compute.generated.models.VirtualMachineReimageP
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVM;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMInstanceView;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMs;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualMachineScaleSetVMsImpl implements VirtualMachineScaleSetVMs {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualMachineScaleSetVMsImpl.class);
+
     private final VirtualMachineScaleSetVMsClient innerClient;
 
     private final ComputeManager serviceManager;

@@ -7,16 +7,20 @@ package com.azure.resourcemanager.compute.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineExtensionImagesClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineExtensionImageInner;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineExtensionImage;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineExtensionImages;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public final class VirtualMachineExtensionImagesImpl implements VirtualMachineExtensionImages {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualMachineExtensionImagesImpl.class);
+
     private final VirtualMachineExtensionImagesClient innerClient;
 
     private final ComputeManager serviceManager;

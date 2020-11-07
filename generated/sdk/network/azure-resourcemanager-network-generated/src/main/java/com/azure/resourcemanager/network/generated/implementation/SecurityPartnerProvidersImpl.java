@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.SecurityPartnerProvidersClient;
 import com.azure.resourcemanager.network.generated.fluent.models.SecurityPartnerProviderInner;
 import com.azure.resourcemanager.network.generated.models.SecurityPartnerProvider;
 import com.azure.resourcemanager.network.generated.models.SecurityPartnerProviders;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class SecurityPartnerProvidersImpl implements SecurityPartnerProviders {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(SecurityPartnerProvidersImpl.class);
+
     private final SecurityPartnerProvidersClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -82,7 +86,23 @@ public final class SecurityPartnerProvidersImpl implements SecurityPartnerProvid
 
     public SecurityPartnerProvider getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String securityPartnerProviderName = Utils.getValueFromIdByName(id, "securityPartnerProviders");
+        if (securityPartnerProviderName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'securityPartnerProviders'.",
+                                id)));
+        }
         return this
             .getByResourceGroupWithResponse(resourceGroupName, securityPartnerProviderName, Context.NONE)
             .getValue();
@@ -90,7 +110,23 @@ public final class SecurityPartnerProvidersImpl implements SecurityPartnerProvid
 
     public Response<SecurityPartnerProvider> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String securityPartnerProviderName = Utils.getValueFromIdByName(id, "securityPartnerProviders");
+        if (securityPartnerProviderName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'securityPartnerProviders'.",
+                                id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, securityPartnerProviderName, context);
     }
 

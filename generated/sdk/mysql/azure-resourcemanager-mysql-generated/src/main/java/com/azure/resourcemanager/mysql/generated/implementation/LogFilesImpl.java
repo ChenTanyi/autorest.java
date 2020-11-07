@@ -6,13 +6,17 @@ package com.azure.resourcemanager.mysql.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.LogFilesClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.LogFileInner;
 import com.azure.resourcemanager.mysql.generated.models.LogFile;
 import com.azure.resourcemanager.mysql.generated.models.LogFiles;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LogFilesImpl implements LogFiles {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(LogFilesImpl.class);
+
     private final LogFilesClient innerClient;
 
     private final MySqlManager serviceManager;

@@ -303,7 +303,7 @@ public interface Domains {
     /**
      * Description for Get a domain.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -315,7 +315,7 @@ public interface Domains {
     /**
      * Description for Get a domain.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -328,7 +328,7 @@ public interface Domains {
     /**
      * Description for Get ownership identifier for domain.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -340,7 +340,7 @@ public interface Domains {
     /**
      * Description for Get ownership identifier for domain.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the

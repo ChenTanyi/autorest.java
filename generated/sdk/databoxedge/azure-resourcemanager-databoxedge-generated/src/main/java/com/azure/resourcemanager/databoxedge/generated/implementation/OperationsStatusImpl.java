@@ -7,13 +7,17 @@ package com.azure.resourcemanager.databoxedge.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.OperationsStatusClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.JobInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Job;
 import com.azure.resourcemanager.databoxedge.generated.models.OperationsStatus;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class OperationsStatusImpl implements OperationsStatus {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(OperationsStatusImpl.class);
+
     private final OperationsStatusClient innerClient;
 
     private final DataBoxEdgeManager serviceManager;

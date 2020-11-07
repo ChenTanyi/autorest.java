@@ -7,14 +7,20 @@ package com.azure.resourcemanager.mysql.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.LocationBasedRecommendedActionSessionsOperationStatusClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.RecommendedActionSessionsOperationStatusInner;
 import com.azure.resourcemanager.mysql.generated.models.LocationBasedRecommendedActionSessionsOperationStatus;
 import com.azure.resourcemanager.mysql.generated.models.RecommendedActionSessionsOperationStatus;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LocationBasedRecommendedActionSessionsOperationStatusImpl
     implements LocationBasedRecommendedActionSessionsOperationStatus {
+    @JsonIgnore
+    private final ClientLogger logger =
+        new ClientLogger(LocationBasedRecommendedActionSessionsOperationStatusImpl.class);
+
     private final LocationBasedRecommendedActionSessionsOperationStatusClient innerClient;
 
     private final MySqlManager serviceManager;

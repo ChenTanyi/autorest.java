@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.DisksClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.AccessUriInner;
@@ -16,8 +17,11 @@ import com.azure.resourcemanager.compute.generated.models.AccessUri;
 import com.azure.resourcemanager.compute.generated.models.Disk;
 import com.azure.resourcemanager.compute.generated.models.Disks;
 import com.azure.resourcemanager.compute.generated.models.GrantAccessData;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DisksImpl implements Disks {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(DisksImpl.class);
+
     private final DisksClient innerClient;
 
     private final ComputeManager serviceManager;
@@ -107,13 +111,39 @@ public final class DisksImpl implements Disks {
 
     public Disk getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String diskName = Utils.getValueFromIdByName(id, "disks");
+        if (diskName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'disks'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, diskName, Context.NONE).getValue();
     }
 
     public Response<Disk> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String diskName = Utils.getValueFromIdByName(id, "disks");
+        if (diskName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'disks'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, diskName, context);
     }
 

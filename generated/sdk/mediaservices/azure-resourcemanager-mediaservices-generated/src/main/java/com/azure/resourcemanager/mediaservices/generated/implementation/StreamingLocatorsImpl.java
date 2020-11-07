@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mediaservices.generated.MediaservicesManager;
 import com.azure.resourcemanager.mediaservices.generated.fluent.StreamingLocatorsClient;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.ListContentKeysResponseInner;
@@ -17,8 +18,11 @@ import com.azure.resourcemanager.mediaservices.generated.models.ListContentKeysR
 import com.azure.resourcemanager.mediaservices.generated.models.ListPathsResponse;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingLocator;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingLocators;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class StreamingLocatorsImpl implements StreamingLocators {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(StreamingLocatorsImpl.class);
+
     private final StreamingLocatorsClient innerClient;
 
     private final MediaservicesManager serviceManager;
@@ -128,15 +132,57 @@ public final class StreamingLocatorsImpl implements StreamingLocators {
 
     public StreamingLocator getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'mediaServices'.", id)));
+        }
         String streamingLocatorName = Utils.getValueFromIdByName(id, "streamingLocators");
+        if (streamingLocatorName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'streamingLocators'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, accountName, streamingLocatorName, Context.NONE).getValue();
     }
 
     public Response<StreamingLocator> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'mediaServices'.", id)));
+        }
         String streamingLocatorName = Utils.getValueFromIdByName(id, "streamingLocators");
+        if (streamingLocatorName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'streamingLocators'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, accountName, streamingLocatorName, context);
     }
 

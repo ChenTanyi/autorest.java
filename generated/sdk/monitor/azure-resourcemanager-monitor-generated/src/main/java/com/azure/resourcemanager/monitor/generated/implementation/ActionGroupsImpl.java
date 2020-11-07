@@ -8,14 +8,18 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.ActionGroupsClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.ActionGroupResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.ActionGroupResource;
 import com.azure.resourcemanager.monitor.generated.models.ActionGroups;
 import com.azure.resourcemanager.monitor.generated.models.EnableRequest;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ActionGroupsImpl implements ActionGroups {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ActionGroupsImpl.class);
+
     private final ActionGroupsClient innerClient;
 
     private final MonitorManager serviceManager;
@@ -91,13 +95,39 @@ public final class ActionGroupsImpl implements ActionGroups {
 
     public ActionGroupResource getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String actionGroupName = Utils.getValueFromIdByName(id, "actionGroups");
+        if (actionGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'actionGroups'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, actionGroupName, Context.NONE).getValue();
     }
 
     public Response<ActionGroupResource> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String actionGroupName = Utils.getValueFromIdByName(id, "actionGroups");
+        if (actionGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'actionGroups'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, actionGroupName, context);
     }
 

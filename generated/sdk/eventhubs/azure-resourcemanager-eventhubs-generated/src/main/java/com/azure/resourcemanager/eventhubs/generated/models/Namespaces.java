@@ -497,7 +497,7 @@ public interface Namespaces {
     /**
      * Gets an IpFilterRule for a Namespace by rule name.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -508,7 +508,7 @@ public interface Namespaces {
     /**
      * Gets an IpFilterRule for a Namespace by rule name.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -520,7 +520,7 @@ public interface Namespaces {
     /**
      * Gets the description of the specified namespace.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -531,7 +531,7 @@ public interface Namespaces {
     /**
      * Gets the description of the specified namespace.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -543,7 +543,7 @@ public interface Namespaces {
     /**
      * Gets an VirtualNetworkRule for a Namespace by rule name.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -554,7 +554,7 @@ public interface Namespaces {
     /**
      * Gets an VirtualNetworkRule for a Namespace by rule name.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -566,7 +566,7 @@ public interface Namespaces {
     /**
      * Gets an AuthorizationRule for a Namespace by rule name.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -577,7 +577,7 @@ public interface Namespaces {
     /**
      * Gets an AuthorizationRule for a Namespace by rule name.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

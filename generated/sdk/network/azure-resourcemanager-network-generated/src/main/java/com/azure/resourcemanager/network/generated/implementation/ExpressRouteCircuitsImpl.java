@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.ExpressRouteCircuitsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitInner;
@@ -21,8 +22,11 @@ import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuits;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuitsArpTableListResult;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuitsRoutesTableListResult;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuitsRoutesTableSummaryListResult;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExpressRouteCircuitsImpl.class);
+
     private final ExpressRouteCircuitsClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -204,13 +208,45 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
 
     public ExpressRouteCircuit getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
+        if (circuitName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.",
+                                id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, circuitName, Context.NONE).getValue();
     }
 
     public Response<ExpressRouteCircuit> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
+        if (circuitName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.",
+                                id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, circuitName, context);
     }
 

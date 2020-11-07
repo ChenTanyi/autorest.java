@@ -7,6 +7,7 @@ package com.azure.resourcemanager.monitor.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.DiagnosticSettingsCategoriesClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSettingsCategoryResourceCollectionInner;
@@ -14,8 +15,11 @@ import com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSetti
 import com.azure.resourcemanager.monitor.generated.models.DiagnosticSettingsCategories;
 import com.azure.resourcemanager.monitor.generated.models.DiagnosticSettingsCategoryResource;
 import com.azure.resourcemanager.monitor.generated.models.DiagnosticSettingsCategoryResourceCollection;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DiagnosticSettingsCategoriesImpl implements DiagnosticSettingsCategories {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(DiagnosticSettingsCategoriesImpl.class);
+
     private final DiagnosticSettingsCategoriesClient innerClient;
 
     private final MonitorManager serviceManager;

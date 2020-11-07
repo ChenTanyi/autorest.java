@@ -7,13 +7,17 @@ package com.azure.resourcemanager.keyvault.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.keyvault.generated.KeyVaultManager;
 import com.azure.resourcemanager.keyvault.generated.fluent.PrivateLinkResourcesClient;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.PrivateLinkResourceListResultInner;
 import com.azure.resourcemanager.keyvault.generated.models.PrivateLinkResourceListResult;
 import com.azure.resourcemanager.keyvault.generated.models.PrivateLinkResources;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(PrivateLinkResourcesImpl.class);
+
     private final PrivateLinkResourcesClient innerClient;
 
     private final KeyVaultManager serviceManager;

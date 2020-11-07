@@ -8,14 +8,18 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.ServersClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.ServerInner;
 import com.azure.resourcemanager.mysql.generated.models.Server;
 import com.azure.resourcemanager.mysql.generated.models.ServerUpgradeParameters;
 import com.azure.resourcemanager.mysql.generated.models.Servers;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ServersImpl implements Servers {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ServersImpl.class);
+
     private final ServersClient innerClient;
 
     private final MySqlManager serviceManager;
@@ -112,13 +116,39 @@ public final class ServersImpl implements Servers {
 
     public Server getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String serverName = Utils.getValueFromIdByName(id, "servers");
+        if (serverName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'servers'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, serverName, Context.NONE).getValue();
     }
 
     public Response<Server> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String serverName = Utils.getValueFromIdByName(id, "servers");
+        if (serverName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'servers'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, serverName, context);
     }
 

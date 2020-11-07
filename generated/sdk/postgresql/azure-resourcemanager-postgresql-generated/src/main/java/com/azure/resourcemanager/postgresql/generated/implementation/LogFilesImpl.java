@@ -6,13 +6,17 @@ package com.azure.resourcemanager.postgresql.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.postgresql.generated.PostgreSqlManager;
 import com.azure.resourcemanager.postgresql.generated.fluent.LogFilesClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.LogFileInner;
 import com.azure.resourcemanager.postgresql.generated.models.LogFile;
 import com.azure.resourcemanager.postgresql.generated.models.LogFiles;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LogFilesImpl implements LogFiles {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(LogFilesImpl.class);
+
     private final LogFilesClient innerClient;
 
     private final PostgreSqlManager serviceManager;

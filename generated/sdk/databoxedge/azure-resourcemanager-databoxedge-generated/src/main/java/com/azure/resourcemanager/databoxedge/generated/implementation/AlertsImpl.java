@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.AlertsClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.AlertInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Alert;
 import com.azure.resourcemanager.databoxedge.generated.models.Alerts;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AlertsImpl implements Alerts {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(AlertsImpl.class);
+
     private final AlertsClient innerClient;
 
     private final DataBoxEdgeManager serviceManager;

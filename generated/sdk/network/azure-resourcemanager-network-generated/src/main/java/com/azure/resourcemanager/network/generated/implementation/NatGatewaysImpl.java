@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.NatGatewaysClient;
 import com.azure.resourcemanager.network.generated.fluent.models.NatGatewayInner;
 import com.azure.resourcemanager.network.generated.models.NatGateway;
 import com.azure.resourcemanager.network.generated.models.NatGateways;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class NatGatewaysImpl implements NatGateways {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(NatGatewaysImpl.class);
+
     private final NatGatewaysClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -78,7 +82,20 @@ public final class NatGatewaysImpl implements NatGateways {
 
     public NatGateway getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String natGatewayName = Utils.getValueFromIdByName(id, "natGateways");
+        if (natGatewayName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'natGateways'.", id)));
+        }
         String localExpand = null;
         return this
             .getByResourceGroupWithResponse(resourceGroupName, natGatewayName, localExpand, Context.NONE)
@@ -87,7 +104,20 @@ public final class NatGatewaysImpl implements NatGateways {
 
     public Response<NatGateway> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String natGatewayName = Utils.getValueFromIdByName(id, "natGateways");
+        if (natGatewayName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'natGateways'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, natGatewayName, expand, context);
     }
 

@@ -8,14 +8,18 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.DedicatedHostsClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.DedicatedHostInner;
 import com.azure.resourcemanager.compute.generated.models.DedicatedHost;
 import com.azure.resourcemanager.compute.generated.models.DedicatedHosts;
 import com.azure.resourcemanager.compute.generated.models.InstanceViewTypes;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DedicatedHostsImpl implements DedicatedHosts {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(DedicatedHostsImpl.class);
+
     private final DedicatedHostsClient innerClient;
 
     private final ComputeManager serviceManager;
@@ -72,16 +76,54 @@ public final class DedicatedHostsImpl implements DedicatedHosts {
 
     public DedicatedHost getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String hostGroupName = Utils.getValueFromIdByName(id, "hostGroups");
+        if (hostGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'hostGroups'.", id)));
+        }
         String hostname = Utils.getValueFromIdByName(id, "hosts");
+        if (hostname == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'hosts'.", id)));
+        }
         InstanceViewTypes localExpand = null;
         return this.getWithResponse(resourceGroupName, hostGroupName, hostname, localExpand, Context.NONE).getValue();
     }
 
     public Response<DedicatedHost> getByIdWithResponse(String id, InstanceViewTypes expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String hostGroupName = Utils.getValueFromIdByName(id, "hostGroups");
+        if (hostGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'hostGroups'.", id)));
+        }
         String hostname = Utils.getValueFromIdByName(id, "hosts");
+        if (hostname == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'hosts'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, hostGroupName, hostname, expand, context);
     }
 

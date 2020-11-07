@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.postgresql.generated.PostgreSqlManager;
 import com.azure.resourcemanager.postgresql.generated.fluent.FirewallRulesClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.FirewallRuleInner;
 import com.azure.resourcemanager.postgresql.generated.models.FirewallRule;
 import com.azure.resourcemanager.postgresql.generated.models.FirewallRules;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class FirewallRulesImpl implements FirewallRules {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(FirewallRulesImpl.class);
+
     private final FirewallRulesClient innerClient;
 
     private final PostgreSqlManager serviceManager;
@@ -69,15 +73,53 @@ public final class FirewallRulesImpl implements FirewallRules {
 
     public FirewallRule getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String serverName = Utils.getValueFromIdByName(id, "servers");
+        if (serverName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'servers'.", id)));
+        }
         String firewallRuleName = Utils.getValueFromIdByName(id, "firewallRules");
+        if (firewallRuleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'firewallRules'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, serverName, firewallRuleName, Context.NONE).getValue();
     }
 
     public Response<FirewallRule> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String serverName = Utils.getValueFromIdByName(id, "servers");
+        if (serverName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'servers'.", id)));
+        }
         String firewallRuleName = Utils.getValueFromIdByName(id, "firewallRules");
+        if (firewallRuleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'firewallRules'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, serverName, firewallRuleName, context);
     }
 

@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.BastionHostsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.BastionHostInner;
 import com.azure.resourcemanager.network.generated.models.BastionHost;
 import com.azure.resourcemanager.network.generated.models.BastionHosts;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class BastionHostsImpl implements BastionHosts {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(BastionHostsImpl.class);
+
     private final BastionHostsClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -78,13 +82,39 @@ public final class BastionHostsImpl implements BastionHosts {
 
     public BastionHost getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String bastionHostname = Utils.getValueFromIdByName(id, "bastionHosts");
+        if (bastionHostname == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'bastionHosts'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, bastionHostname, Context.NONE).getValue();
     }
 
     public Response<BastionHost> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String bastionHostname = Utils.getValueFromIdByName(id, "bastionHosts");
+        if (bastionHostname == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'bastionHosts'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, bastionHostname, context);
     }
 

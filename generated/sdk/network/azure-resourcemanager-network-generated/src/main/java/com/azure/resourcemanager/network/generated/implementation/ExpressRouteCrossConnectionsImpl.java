@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.ExpressRouteCrossConnectionsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitsArpTableListResultInner;
@@ -19,8 +20,11 @@ import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuitsRo
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCrossConnection;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCrossConnections;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCrossConnectionsRoutesTableSummaryListResult;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ExpressRouteCrossConnectionsImpl implements ExpressRouteCrossConnections {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExpressRouteCrossConnectionsImpl.class);
+
     private final ExpressRouteCrossConnectionsClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -152,13 +156,47 @@ public final class ExpressRouteCrossConnectionsImpl implements ExpressRouteCross
 
     public ExpressRouteCrossConnection getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String crossConnectionName = Utils.getValueFromIdByName(id, "expressRouteCrossConnections");
+        if (crossConnectionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment"
+                                    + " 'expressRouteCrossConnections'.",
+                                id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, crossConnectionName, Context.NONE).getValue();
     }
 
     public Response<ExpressRouteCrossConnection> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String crossConnectionName = Utils.getValueFromIdByName(id, "expressRouteCrossConnections");
+        if (crossConnectionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment"
+                                    + " 'expressRouteCrossConnections'.",
+                                id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, crossConnectionName, context);
     }
 

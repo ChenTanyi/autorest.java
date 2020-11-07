@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.ImagesClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.ImageInner;
 import com.azure.resourcemanager.compute.generated.models.Image;
 import com.azure.resourcemanager.compute.generated.models.Images;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ImagesImpl implements Images {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ImagesImpl.class);
+
     private final ImagesClient innerClient;
 
     private final ComputeManager serviceManager;
@@ -78,14 +82,40 @@ public final class ImagesImpl implements Images {
 
     public Image getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String imageName = Utils.getValueFromIdByName(id, "images");
+        if (imageName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'images'.", id)));
+        }
         String localExpand = null;
         return this.getByResourceGroupWithResponse(resourceGroupName, imageName, localExpand, Context.NONE).getValue();
     }
 
     public Response<Image> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String imageName = Utils.getValueFromIdByName(id, "images");
+        if (imageName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'images'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, imageName, expand, context);
     }
 

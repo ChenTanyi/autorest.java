@@ -9,6 +9,7 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.management.Resource;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.keyvault.generated.KeyVaultManager;
 import com.azure.resourcemanager.keyvault.generated.fluent.VaultsClient;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.CheckNameAvailabilityResultInner;
@@ -22,8 +23,11 @@ import com.azure.resourcemanager.keyvault.generated.models.Vault;
 import com.azure.resourcemanager.keyvault.generated.models.VaultAccessPolicyParameters;
 import com.azure.resourcemanager.keyvault.generated.models.VaultCheckNameAvailabilityParameters;
 import com.azure.resourcemanager.keyvault.generated.models.Vaults;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VaultsImpl implements Vaults {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VaultsImpl.class);
+
     private final VaultsClient innerClient;
 
     private final KeyVaultManager serviceManager;
@@ -193,13 +197,39 @@ public final class VaultsImpl implements Vaults {
 
     public Vault getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String vaultName = Utils.getValueFromIdByName(id, "vaults");
+        if (vaultName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'vaults'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, vaultName, Context.NONE).getValue();
     }
 
     public Response<Vault> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String vaultName = Utils.getValueFromIdByName(id, "vaults");
+        if (vaultName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'vaults'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, vaultName, context);
     }
 

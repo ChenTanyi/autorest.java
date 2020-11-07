@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.RouteFilterRulesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.RouteFilterRuleInner;
 import com.azure.resourcemanager.network.generated.models.RouteFilterRule;
 import com.azure.resourcemanager.network.generated.models.RouteFilterRules;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class RouteFilterRulesImpl implements RouteFilterRules {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(RouteFilterRulesImpl.class);
+
     private final RouteFilterRulesClient innerClient;
 
     private final NetworkManager serviceManager;

@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.VirtualNetworkTapsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkTapInner;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkTap;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkTaps;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualNetworkTapsImpl implements VirtualNetworkTaps {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualNetworkTapsImpl.class);
+
     private final VirtualNetworkTapsClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -79,13 +83,43 @@ public final class VirtualNetworkTapsImpl implements VirtualNetworkTaps {
 
     public VirtualNetworkTap getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String tapName = Utils.getValueFromIdByName(id, "virtualNetworkTaps");
+        if (tapName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'virtualNetworkTaps'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, tapName, Context.NONE).getValue();
     }
 
     public Response<VirtualNetworkTap> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String tapName = Utils.getValueFromIdByName(id, "virtualNetworkTaps");
+        if (tapName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'virtualNetworkTaps'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, tapName, context);
     }
 

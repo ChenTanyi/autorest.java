@@ -6,13 +6,17 @@ package com.azure.resourcemanager.locks.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.locks.generated.LocksManager;
 import com.azure.resourcemanager.locks.generated.fluent.AuthorizationOperationsClient;
 import com.azure.resourcemanager.locks.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.locks.generated.models.AuthorizationOperations;
 import com.azure.resourcemanager.locks.generated.models.Operation;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AuthorizationOperationsImpl implements AuthorizationOperations {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(AuthorizationOperationsImpl.class);
+
     private final AuthorizationOperationsClient innerClient;
 
     private final LocksManager serviceManager;

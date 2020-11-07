@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.PrivateEndpointConnectionsClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.storage.generated.models.PrivateEndpointConnection;
 import com.azure.resourcemanager.storage.generated.models.PrivateEndpointConnections;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PrivateEndpointConnectionsImpl implements PrivateEndpointConnections {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(PrivateEndpointConnectionsImpl.class);
+
     private final PrivateEndpointConnectionsClient innerClient;
 
     private final StorageManager serviceManager;
@@ -77,8 +81,31 @@ public final class PrivateEndpointConnectionsImpl implements PrivateEndpointConn
 
     public PrivateEndpointConnection getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
         String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
+        if (privateEndpointConnectionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.",
+                                id)));
+        }
         return this
             .getWithResponse(resourceGroupName, accountName, privateEndpointConnectionName, Context.NONE)
             .getValue();
@@ -86,8 +113,31 @@ public final class PrivateEndpointConnectionsImpl implements PrivateEndpointConn
 
     public Response<PrivateEndpointConnection> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
         String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
+        if (privateEndpointConnectionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.",
+                                id)));
+        }
         return this.getWithResponse(resourceGroupName, accountName, privateEndpointConnectionName, context);
     }
 

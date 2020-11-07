@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.CustomIpPrefixesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.CustomIpPrefixInner;
 import com.azure.resourcemanager.network.generated.models.CustomIpPrefix;
 import com.azure.resourcemanager.network.generated.models.CustomIpPrefixes;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class CustomIpPrefixesImpl implements CustomIpPrefixes {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(CustomIpPrefixesImpl.class);
+
     private final CustomIpPrefixesClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -78,7 +82,22 @@ public final class CustomIpPrefixesImpl implements CustomIpPrefixes {
 
     public CustomIpPrefix getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String customIpPrefixName = Utils.getValueFromIdByName(id, "customIpPrefixes");
+        if (customIpPrefixName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'customIpPrefixes'.", id)));
+        }
         String localExpand = null;
         return this
             .getByResourceGroupWithResponse(resourceGroupName, customIpPrefixName, localExpand, Context.NONE)
@@ -87,7 +106,22 @@ public final class CustomIpPrefixesImpl implements CustomIpPrefixes {
 
     public Response<CustomIpPrefix> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String customIpPrefixName = Utils.getValueFromIdByName(id, "customIpPrefixes");
+        if (customIpPrefixName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'customIpPrefixes'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, customIpPrefixName, expand, context);
     }
 

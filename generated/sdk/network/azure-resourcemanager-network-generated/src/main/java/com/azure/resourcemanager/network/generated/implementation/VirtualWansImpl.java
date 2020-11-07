@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.VirtualWansClient;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualWanInner;
 import com.azure.resourcemanager.network.generated.models.VirtualWan;
 import com.azure.resourcemanager.network.generated.models.VirtualWans;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualWansImpl implements VirtualWans {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualWansImpl.class);
+
     private final VirtualWansClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -78,13 +82,39 @@ public final class VirtualWansImpl implements VirtualWans {
 
     public VirtualWan getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String virtualWanName = Utils.getValueFromIdByName(id, "virtualWans");
+        if (virtualWanName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualWans'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, virtualWanName, Context.NONE).getValue();
     }
 
     public Response<VirtualWan> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String virtualWanName = Utils.getValueFromIdByName(id, "virtualWans");
+        if (virtualWanName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualWans'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, virtualWanName, context);
     }
 

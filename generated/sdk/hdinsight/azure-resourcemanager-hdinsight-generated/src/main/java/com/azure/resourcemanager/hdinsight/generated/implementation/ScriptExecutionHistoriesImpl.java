@@ -7,13 +7,17 @@ package com.azure.resourcemanager.hdinsight.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.hdinsight.generated.HDInsightManager;
 import com.azure.resourcemanager.hdinsight.generated.fluent.ScriptExecutionHistoriesClient;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.RuntimeScriptActionDetailInner;
 import com.azure.resourcemanager.hdinsight.generated.models.RuntimeScriptActionDetail;
 import com.azure.resourcemanager.hdinsight.generated.models.ScriptExecutionHistories;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ScriptExecutionHistoriesImpl implements ScriptExecutionHistories {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ScriptExecutionHistoriesImpl.class);
+
     private final ScriptExecutionHistoriesClient innerClient;
 
     private final HDInsightManager serviceManager;

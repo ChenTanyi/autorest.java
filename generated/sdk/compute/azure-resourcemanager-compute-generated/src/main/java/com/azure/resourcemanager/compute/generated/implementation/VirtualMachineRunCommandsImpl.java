@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineRunCommandsClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.RunCommandDocumentBaseInner;
@@ -17,8 +18,11 @@ import com.azure.resourcemanager.compute.generated.models.RunCommandDocument;
 import com.azure.resourcemanager.compute.generated.models.RunCommandDocumentBase;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineRunCommand;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineRunCommands;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCommands {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualMachineRunCommandsImpl.class);
+
     private final VirtualMachineRunCommandsClient innerClient;
 
     private final ComputeManager serviceManager;
@@ -111,8 +115,28 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
 
     public VirtualMachineRunCommand getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String vmName = Utils.getValueFromIdByName(id, "virtualMachines");
+        if (vmName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualMachines'.", id)));
+        }
         String runCommandName = Utils.getValueFromIdByName(id, "runCommands");
+        if (runCommandName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'runCommands'.", id)));
+        }
         String localExpand = null;
         return this
             .getByVirtualMachineWithResponse(resourceGroupName, vmName, runCommandName, localExpand, Context.NONE)
@@ -121,8 +145,28 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
 
     public Response<VirtualMachineRunCommand> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String vmName = Utils.getValueFromIdByName(id, "virtualMachines");
+        if (vmName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualMachines'.", id)));
+        }
         String runCommandName = Utils.getValueFromIdByName(id, "runCommands");
+        if (runCommandName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'runCommands'.", id)));
+        }
         return this.getByVirtualMachineWithResponse(resourceGroupName, vmName, runCommandName, expand, context);
     }
 

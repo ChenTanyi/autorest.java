@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.postgresql.generated.PostgreSqlManager;
 import com.azure.resourcemanager.postgresql.generated.fluent.ServerAdministratorsClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.ServerAdministratorResourceInner;
 import com.azure.resourcemanager.postgresql.generated.models.ServerAdministratorResource;
 import com.azure.resourcemanager.postgresql.generated.models.ServerAdministrators;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ServerAdministratorsImpl implements ServerAdministrators {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ServerAdministratorsImpl.class);
+
     private final ServerAdministratorsClient innerClient;
 
     private final PostgreSqlManager serviceManager;

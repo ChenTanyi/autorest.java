@@ -8,14 +8,18 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.QueryTextsClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.QueryTextInner;
 import com.azure.resourcemanager.mysql.generated.models.QueryText;
 import com.azure.resourcemanager.mysql.generated.models.QueryTexts;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.List;
 
 public final class QueryTextsImpl implements QueryTexts {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(QueryTextsImpl.class);
+
     private final QueryTextsClient innerClient;
 
     private final MySqlManager serviceManager;

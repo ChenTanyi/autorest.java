@@ -8,14 +8,18 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.DedicatedHostGroupsClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.DedicatedHostGroupInner;
 import com.azure.resourcemanager.compute.generated.models.DedicatedHostGroup;
 import com.azure.resourcemanager.compute.generated.models.DedicatedHostGroups;
 import com.azure.resourcemanager.compute.generated.models.InstanceViewTypes;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DedicatedHostGroupsImpl implements DedicatedHostGroups {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(DedicatedHostGroupsImpl.class);
+
     private final DedicatedHostGroupsClient innerClient;
 
     private final ComputeManager serviceManager;
@@ -80,7 +84,20 @@ public final class DedicatedHostGroupsImpl implements DedicatedHostGroups {
 
     public DedicatedHostGroup getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String hostGroupName = Utils.getValueFromIdByName(id, "hostGroups");
+        if (hostGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'hostGroups'.", id)));
+        }
         InstanceViewTypes localExpand = null;
         return this
             .getByResourceGroupWithResponse(resourceGroupName, hostGroupName, localExpand, Context.NONE)
@@ -89,7 +106,20 @@ public final class DedicatedHostGroupsImpl implements DedicatedHostGroups {
 
     public Response<DedicatedHostGroup> getByIdWithResponse(String id, InstanceViewTypes expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String hostGroupName = Utils.getValueFromIdByName(id, "hostGroups");
+        if (hostGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'hostGroups'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, hostGroupName, expand, context);
     }
 

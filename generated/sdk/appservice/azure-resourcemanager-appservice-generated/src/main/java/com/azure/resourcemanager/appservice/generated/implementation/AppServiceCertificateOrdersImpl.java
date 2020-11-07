@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.AppServiceCertificateOrdersClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceCertificateOrderInner;
@@ -25,11 +26,14 @@ import com.azure.resourcemanager.appservice.generated.models.ReissueCertificateO
 import com.azure.resourcemanager.appservice.generated.models.RenewCertificateOrderRequest;
 import com.azure.resourcemanager.appservice.generated.models.SiteSeal;
 import com.azure.resourcemanager.appservice.generated.models.SiteSealRequest;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public final class AppServiceCertificateOrdersImpl implements AppServiceCertificateOrders {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(AppServiceCertificateOrdersImpl.class);
+
     private final AppServiceCertificateOrdersClient innerClient;
 
     private final WebSiteManager serviceManager;
@@ -317,27 +321,99 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
 
     public AppServiceCertificateOrder getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
+        if (certificateOrderName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, certificateOrderName, Context.NONE).getValue();
     }
 
     public Response<AppServiceCertificateOrder> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
+        if (certificateOrderName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, certificateOrderName, context);
     }
 
     public AppServiceCertificateResource getCertificateById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
+        if (certificateOrderName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
+        }
         String name = Utils.getValueFromIdByName(id, "certificates");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'certificates'.", id)));
+        }
         return this.getCertificateWithResponse(resourceGroupName, certificateOrderName, name, Context.NONE).getValue();
     }
 
     public Response<AppServiceCertificateResource> getCertificateByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String certificateOrderName = Utils.getValueFromIdByName(id, "certificateOrders");
+        if (certificateOrderName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'certificateOrders'.", id)));
+        }
         String name = Utils.getValueFromIdByName(id, "certificates");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'certificates'.", id)));
+        }
         return this.getCertificateWithResponse(resourceGroupName, certificateOrderName, name, context);
     }
 

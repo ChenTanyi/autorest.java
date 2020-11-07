@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.SshPublicKeysClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.SshPublicKeyGenerateKeyPairResultInner;
@@ -15,8 +16,11 @@ import com.azure.resourcemanager.compute.generated.fluent.models.SshPublicKeyRes
 import com.azure.resourcemanager.compute.generated.models.SshPublicKeyGenerateKeyPairResult;
 import com.azure.resourcemanager.compute.generated.models.SshPublicKeyResource;
 import com.azure.resourcemanager.compute.generated.models.SshPublicKeys;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class SshPublicKeysImpl implements SshPublicKeys {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(SshPublicKeysImpl.class);
+
     private final SshPublicKeysClient innerClient;
 
     private final ComputeManager serviceManager;
@@ -106,13 +110,39 @@ public final class SshPublicKeysImpl implements SshPublicKeys {
 
     public SshPublicKeyResource getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String sshPublicKeyName = Utils.getValueFromIdByName(id, "sshPublicKeys");
+        if (sshPublicKeyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sshPublicKeys'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, sshPublicKeyName, Context.NONE).getValue();
     }
 
     public Response<SshPublicKeyResource> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String sshPublicKeyName = Utils.getValueFromIdByName(id, "sshPublicKeys");
+        if (sshPublicKeyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sshPublicKeys'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, sshPublicKeyName, context);
     }
 

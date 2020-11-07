@@ -7,13 +7,17 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.DdosCustomPoliciesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.DdosCustomPolicyInner;
 import com.azure.resourcemanager.network.generated.models.DdosCustomPolicies;
 import com.azure.resourcemanager.network.generated.models.DdosCustomPolicy;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DdosCustomPoliciesImpl implements DdosCustomPolicies {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(DdosCustomPoliciesImpl.class);
+
     private final DdosCustomPoliciesClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -57,13 +61,43 @@ public final class DdosCustomPoliciesImpl implements DdosCustomPolicies {
 
     public DdosCustomPolicy getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String ddosCustomPolicyName = Utils.getValueFromIdByName(id, "ddosCustomPolicies");
+        if (ddosCustomPolicyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'ddosCustomPolicies'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, ddosCustomPolicyName, Context.NONE).getValue();
     }
 
     public Response<DdosCustomPolicy> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String ddosCustomPolicyName = Utils.getValueFromIdByName(id, "ddosCustomPolicies");
+        if (ddosCustomPolicyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'ddosCustomPolicies'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, ddosCustomPolicyName, context);
     }
 

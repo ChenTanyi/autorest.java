@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.BlobContainersClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.BlobContainerInner;
@@ -23,8 +24,11 @@ import com.azure.resourcemanager.storage.generated.models.LeaseContainerResponse
 import com.azure.resourcemanager.storage.generated.models.LegalHold;
 import com.azure.resourcemanager.storage.generated.models.ListContainerItem;
 import com.azure.resourcemanager.storage.generated.models.ListContainersInclude;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class BlobContainersImpl implements BlobContainers {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(BlobContainersImpl.class);
+
     private final BlobContainersClient innerClient;
 
     private final StorageManager serviceManager;
@@ -288,22 +292,82 @@ public final class BlobContainersImpl implements BlobContainers {
 
     public BlobContainer getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
         String containerName = Utils.getValueFromIdByName(id, "containers");
+        if (containerName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'containers'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, accountName, containerName, Context.NONE).getValue();
     }
 
     public Response<BlobContainer> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
         String containerName = Utils.getValueFromIdByName(id, "containers");
+        if (containerName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'containers'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, accountName, containerName, context);
     }
 
     public ImmutabilityPolicy getImmutabilityPolicyById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
         String containerName = Utils.getValueFromIdByName(id, "containers");
+        if (containerName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'containers'.", id)));
+        }
         String localIfMatch = null;
         return this
             .getImmutabilityPolicyWithResponse(
@@ -314,8 +378,28 @@ public final class BlobContainersImpl implements BlobContainers {
     public Response<ImmutabilityPolicy> getImmutabilityPolicyByIdWithResponse(
         String id, String ifMatch, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
         String containerName = Utils.getValueFromIdByName(id, "containers");
+        if (containerName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'containers'.", id)));
+        }
         return this.getImmutabilityPolicyWithResponse(resourceGroupName, accountName, containerName, ifMatch, context);
     }
 

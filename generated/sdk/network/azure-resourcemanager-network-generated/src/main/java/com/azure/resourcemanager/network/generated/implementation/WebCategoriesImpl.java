@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.WebCategoriesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.AzureWebCategoryInner;
 import com.azure.resourcemanager.network.generated.models.AzureWebCategory;
 import com.azure.resourcemanager.network.generated.models.WebCategories;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class WebCategoriesImpl implements WebCategories {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(WebCategoriesImpl.class);
+
     private final WebCategoriesClient innerClient;
 
     private final NetworkManager serviceManager;

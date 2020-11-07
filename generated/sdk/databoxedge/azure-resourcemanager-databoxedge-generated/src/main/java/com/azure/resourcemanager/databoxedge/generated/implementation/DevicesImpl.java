@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.DevicesClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.DataBoxEdgeDeviceExtendedInfoInner;
@@ -23,8 +24,11 @@ import com.azure.resourcemanager.databoxedge.generated.models.SecuritySettings;
 import com.azure.resourcemanager.databoxedge.generated.models.UpdateSummary;
 import com.azure.resourcemanager.databoxedge.generated.models.UploadCertificateRequest;
 import com.azure.resourcemanager.databoxedge.generated.models.UploadCertificateResponse;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DevicesImpl implements Devices {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(DevicesImpl.class);
+
     private final DevicesClient innerClient;
 
     private final DataBoxEdgeManager serviceManager;
@@ -223,13 +227,43 @@ public final class DevicesImpl implements Devices {
 
     public DataBoxEdgeDevice getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        if (deviceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'dataBoxEdgeDevices'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, deviceName, Context.NONE).getValue();
     }
 
     public Response<DataBoxEdgeDevice> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        if (deviceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'dataBoxEdgeDevices'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, deviceName, context);
     }
 

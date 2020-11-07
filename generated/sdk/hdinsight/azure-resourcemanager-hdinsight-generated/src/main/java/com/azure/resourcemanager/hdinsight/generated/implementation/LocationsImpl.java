@@ -7,6 +7,7 @@ package com.azure.resourcemanager.hdinsight.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.hdinsight.generated.HDInsightManager;
 import com.azure.resourcemanager.hdinsight.generated.fluent.LocationsClient;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.BillingResponseListResultInner;
@@ -16,8 +17,11 @@ import com.azure.resourcemanager.hdinsight.generated.models.BillingResponseListR
 import com.azure.resourcemanager.hdinsight.generated.models.CapabilitiesResult;
 import com.azure.resourcemanager.hdinsight.generated.models.Locations;
 import com.azure.resourcemanager.hdinsight.generated.models.UsagesListResult;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LocationsImpl implements Locations {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(LocationsImpl.class);
+
     private final LocationsClient innerClient;
 
     private final HDInsightManager serviceManager;

@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.DscpConfigurationsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.DscpConfigurationInner;
 import com.azure.resourcemanager.network.generated.models.DscpConfiguration;
 import com.azure.resourcemanager.network.generated.models.DscpConfigurations;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DscpConfigurationsImpl implements DscpConfigurations {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(DscpConfigurationsImpl.class);
+
     private final DscpConfigurationsClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -80,13 +84,43 @@ public final class DscpConfigurationsImpl implements DscpConfigurations {
 
     public DscpConfiguration getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String dscpConfigurationName = Utils.getValueFromIdByName(id, "dscpConfigurations");
+        if (dscpConfigurationName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'dscpConfigurations'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, dscpConfigurationName, Context.NONE).getValue();
     }
 
     public Response<DscpConfiguration> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String dscpConfigurationName = Utils.getValueFromIdByName(id, "dscpConfigurations");
+        if (dscpConfigurationName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'dscpConfigurations'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, dscpConfigurationName, context);
     }
 

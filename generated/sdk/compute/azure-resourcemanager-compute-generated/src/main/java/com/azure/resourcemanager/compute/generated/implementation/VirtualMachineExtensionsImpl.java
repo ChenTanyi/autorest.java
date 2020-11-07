@@ -7,6 +7,7 @@ package com.azure.resourcemanager.compute.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineExtensionsClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineExtensionInner;
@@ -14,8 +15,11 @@ import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineE
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineExtension;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineExtensions;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineExtensionsListResult;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualMachineExtensionsImpl implements VirtualMachineExtensions {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualMachineExtensionsImpl.class);
+
     private final VirtualMachineExtensionsClient innerClient;
 
     private final ComputeManager serviceManager;
@@ -83,16 +87,56 @@ public final class VirtualMachineExtensionsImpl implements VirtualMachineExtensi
 
     public VirtualMachineExtension getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String vmName = Utils.getValueFromIdByName(id, "virtualMachines");
+        if (vmName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualMachines'.", id)));
+        }
         String vmExtensionName = Utils.getValueFromIdByName(id, "extensions");
+        if (vmExtensionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'extensions'.", id)));
+        }
         String localExpand = null;
         return this.getWithResponse(resourceGroupName, vmName, vmExtensionName, localExpand, Context.NONE).getValue();
     }
 
     public Response<VirtualMachineExtension> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String vmName = Utils.getValueFromIdByName(id, "virtualMachines");
+        if (vmName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualMachines'.", id)));
+        }
         String vmExtensionName = Utils.getValueFromIdByName(id, "extensions");
+        if (vmExtensionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'extensions'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, vmName, vmExtensionName, expand, context);
     }
 

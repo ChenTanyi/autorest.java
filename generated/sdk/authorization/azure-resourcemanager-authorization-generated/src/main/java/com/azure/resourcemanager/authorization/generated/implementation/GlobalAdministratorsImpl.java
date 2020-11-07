@@ -6,11 +6,15 @@ package com.azure.resourcemanager.authorization.generated.implementation;
 
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.authorization.generated.AuthorizationManager;
 import com.azure.resourcemanager.authorization.generated.fluent.GlobalAdministratorsClient;
 import com.azure.resourcemanager.authorization.generated.models.GlobalAdministrators;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class GlobalAdministratorsImpl implements GlobalAdministrators {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(GlobalAdministratorsImpl.class);
+
     private final GlobalAdministratorsClient innerClient;
 
     private final AuthorizationManager serviceManager;

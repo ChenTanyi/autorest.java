@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.HubVirtualNetworkConnectionsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.HubVirtualNetworkConnectionInner;
 import com.azure.resourcemanager.network.generated.models.HubVirtualNetworkConnection;
 import com.azure.resourcemanager.network.generated.models.HubVirtualNetworkConnections;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class HubVirtualNetworkConnectionsImpl implements HubVirtualNetworkConnections {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(HubVirtualNetworkConnectionsImpl.class);
+
     private final HubVirtualNetworkConnectionsClient innerClient;
 
     private final NetworkManager serviceManager;

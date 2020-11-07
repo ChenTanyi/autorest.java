@@ -7,6 +7,7 @@ package com.azure.resourcemanager.storage.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.TableServicesClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.ListTableServicesInner;
@@ -14,8 +15,11 @@ import com.azure.resourcemanager.storage.generated.fluent.models.TableServicePro
 import com.azure.resourcemanager.storage.generated.models.ListTableServices;
 import com.azure.resourcemanager.storage.generated.models.TableServiceProperties;
 import com.azure.resourcemanager.storage.generated.models.TableServices;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class TableServicesImpl implements TableServices {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(TableServicesImpl.class);
+
     private final TableServicesClient innerClient;
 
     private final StorageManager serviceManager;
@@ -74,13 +78,41 @@ public final class TableServicesImpl implements TableServices {
 
     public TableServiceProperties getServicePropertiesById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
         return this.getServicePropertiesWithResponse(resourceGroupName, accountName, Context.NONE).getValue();
     }
 
     public Response<TableServiceProperties> getServicePropertiesByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
         return this.getServicePropertiesWithResponse(resourceGroupName, accountName, context);
     }
 

@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.TriggersClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.TriggerInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Trigger;
 import com.azure.resourcemanager.databoxedge.generated.models.Triggers;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class TriggersImpl implements Triggers {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(TriggersImpl.class);
+
     private final TriggersClient innerClient;
 
     private final DataBoxEdgeManager serviceManager;

@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.ActivityLogAlertsClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.ActivityLogAlertResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.ActivityLogAlertResource;
 import com.azure.resourcemanager.monitor.generated.models.ActivityLogAlerts;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ActivityLogAlertsImpl implements ActivityLogAlerts {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ActivityLogAlertsImpl.class);
+
     private final ActivityLogAlertsClient innerClient;
 
     private final MonitorManager serviceManager;
@@ -81,13 +85,43 @@ public final class ActivityLogAlertsImpl implements ActivityLogAlerts {
 
     public ActivityLogAlertResource getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String activityLogAlertName = Utils.getValueFromIdByName(id, "activityLogAlerts");
+        if (activityLogAlertName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'activityLogAlerts'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, activityLogAlertName, Context.NONE).getValue();
     }
 
     public Response<ActivityLogAlertResource> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String activityLogAlertName = Utils.getValueFromIdByName(id, "activityLogAlerts");
+        if (activityLogAlertName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'activityLogAlerts'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, activityLogAlertName, context);
     }
 

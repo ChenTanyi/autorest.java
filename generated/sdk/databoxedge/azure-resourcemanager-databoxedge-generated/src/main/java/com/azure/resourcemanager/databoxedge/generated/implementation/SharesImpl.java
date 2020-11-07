@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.SharesClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.ShareInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Share;
 import com.azure.resourcemanager.databoxedge.generated.models.Shares;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class SharesImpl implements Shares {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(SharesImpl.class);
+
     private final SharesClient innerClient;
 
     private final DataBoxEdgeManager serviceManager;
@@ -75,15 +79,57 @@ public final class SharesImpl implements Shares {
 
     public Share getById(String id) {
         String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        if (deviceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'dataBoxEdgeDevices'.", id)));
+        }
         String name = Utils.getValueFromIdByName(id, "shares");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'shares'.", id)));
+        }
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         return this.getWithResponse(deviceName, name, resourceGroupName, Context.NONE).getValue();
     }
 
     public Response<Share> getByIdWithResponse(String id, Context context) {
         String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        if (deviceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'dataBoxEdgeDevices'.", id)));
+        }
         String name = Utils.getValueFromIdByName(id, "shares");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'shares'.", id)));
+        }
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         return this.getWithResponse(deviceName, name, resourceGroupName, context);
     }
 

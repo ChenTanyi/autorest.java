@@ -159,7 +159,7 @@ public interface FileShares {
     /**
      * Gets properties of a specified share.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -170,7 +170,7 @@ public interface FileShares {
     /**
      * Gets properties of a specified share.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param expand Optional, used to expand the properties within share's properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

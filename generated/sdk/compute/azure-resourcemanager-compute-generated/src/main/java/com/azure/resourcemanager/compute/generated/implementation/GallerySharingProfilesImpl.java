@@ -5,13 +5,17 @@
 package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.GallerySharingProfilesClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.SharingUpdateInner;
 import com.azure.resourcemanager.compute.generated.models.GallerySharingProfiles;
 import com.azure.resourcemanager.compute.generated.models.SharingUpdate;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class GallerySharingProfilesImpl implements GallerySharingProfiles {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(GallerySharingProfilesImpl.class);
+
     private final GallerySharingProfilesClient innerClient;
 
     private final ComputeManager serviceManager;

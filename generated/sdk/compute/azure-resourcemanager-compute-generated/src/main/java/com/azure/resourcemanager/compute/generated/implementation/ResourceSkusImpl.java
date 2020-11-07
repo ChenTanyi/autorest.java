@@ -6,13 +6,17 @@ package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.ResourceSkusClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.ResourceSkuInner;
 import com.azure.resourcemanager.compute.generated.models.ResourceSku;
 import com.azure.resourcemanager.compute.generated.models.ResourceSkus;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ResourceSkusImpl implements ResourceSkus {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ResourceSkusImpl.class);
+
     private final ResourceSkusClient innerClient;
 
     private final ComputeManager serviceManager;

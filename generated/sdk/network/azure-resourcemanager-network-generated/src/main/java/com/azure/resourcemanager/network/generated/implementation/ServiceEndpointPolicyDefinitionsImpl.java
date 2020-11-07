@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.ServiceEndpointPolicyDefinitionsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.ServiceEndpointPolicyDefinitionInner;
 import com.azure.resourcemanager.network.generated.models.ServiceEndpointPolicyDefinition;
 import com.azure.resourcemanager.network.generated.models.ServiceEndpointPolicyDefinitions;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ServiceEndpointPolicyDefinitionsImpl implements ServiceEndpointPolicyDefinitions {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ServiceEndpointPolicyDefinitionsImpl.class);
+
     private final ServiceEndpointPolicyDefinitionsClient innerClient;
 
     private final NetworkManager serviceManager;

@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachinesClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.RetrieveBootDiagnosticsDataResultInner;
@@ -29,8 +30,11 @@ import com.azure.resourcemanager.compute.generated.models.VirtualMachineInstance
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineReimageParameters;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineSize;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachines;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualMachinesImpl implements VirtualMachines {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualMachinesImpl.class);
+
     private final VirtualMachinesClient innerClient;
 
     private final ComputeManager serviceManager;
@@ -329,14 +333,42 @@ public final class VirtualMachinesImpl implements VirtualMachines {
 
     public VirtualMachine getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String vmName = Utils.getValueFromIdByName(id, "virtualMachines");
+        if (vmName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualMachines'.", id)));
+        }
         InstanceViewTypes localExpand = null;
         return this.getByResourceGroupWithResponse(resourceGroupName, vmName, localExpand, Context.NONE).getValue();
     }
 
     public Response<VirtualMachine> getByIdWithResponse(String id, InstanceViewTypes expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String vmName = Utils.getValueFromIdByName(id, "virtualMachines");
+        if (vmName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualMachines'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, vmName, expand, context);
     }
 

@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mediaservices.generated.MediaservicesManager;
 import com.azure.resourcemanager.mediaservices.generated.fluent.AssetFiltersClient;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.AssetFilterInner;
 import com.azure.resourcemanager.mediaservices.generated.models.AssetFilter;
 import com.azure.resourcemanager.mediaservices.generated.models.AssetFilters;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AssetFiltersImpl implements AssetFilters {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(AssetFiltersImpl.class);
+
     private final AssetFiltersClient innerClient;
 
     private final MediaservicesManager serviceManager;
@@ -71,17 +75,67 @@ public final class AssetFiltersImpl implements AssetFilters {
 
     public AssetFilter getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'mediaServices'.", id)));
+        }
         String assetName = Utils.getValueFromIdByName(id, "assets");
+        if (assetName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'assets'.", id)));
+        }
         String filterName = Utils.getValueFromIdByName(id, "assetFilters");
+        if (filterName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'assetFilters'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, accountName, assetName, filterName, Context.NONE).getValue();
     }
 
     public Response<AssetFilter> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'mediaServices'.", id)));
+        }
         String assetName = Utils.getValueFromIdByName(id, "assets");
+        if (assetName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'assets'.", id)));
+        }
         String filterName = Utils.getValueFromIdByName(id, "assetFilters");
+        if (filterName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'assetFilters'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, accountName, assetName, filterName, context);
     }
 

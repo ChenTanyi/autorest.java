@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.SnapshotsClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.AccessUriInner;
@@ -16,8 +17,11 @@ import com.azure.resourcemanager.compute.generated.models.AccessUri;
 import com.azure.resourcemanager.compute.generated.models.GrantAccessData;
 import com.azure.resourcemanager.compute.generated.models.Snapshot;
 import com.azure.resourcemanager.compute.generated.models.Snapshots;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class SnapshotsImpl implements Snapshots {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(SnapshotsImpl.class);
+
     private final SnapshotsClient innerClient;
 
     private final ComputeManager serviceManager;
@@ -109,13 +113,39 @@ public final class SnapshotsImpl implements Snapshots {
 
     public Snapshot getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String snapshotName = Utils.getValueFromIdByName(id, "snapshots");
+        if (snapshotName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'snapshots'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, snapshotName, Context.NONE).getValue();
     }
 
     public Response<Snapshot> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String snapshotName = Utils.getValueFromIdByName(id, "snapshots");
+        if (snapshotName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'snapshots'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, snapshotName, context);
     }
 

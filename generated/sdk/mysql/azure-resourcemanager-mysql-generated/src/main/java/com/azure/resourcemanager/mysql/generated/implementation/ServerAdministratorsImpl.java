@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.ServerAdministratorsClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.ServerAdministratorResourceInner;
 import com.azure.resourcemanager.mysql.generated.models.ServerAdministratorResource;
 import com.azure.resourcemanager.mysql.generated.models.ServerAdministrators;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ServerAdministratorsImpl implements ServerAdministrators {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ServerAdministratorsImpl.class);
+
     private final ServerAdministratorsClient innerClient;
 
     private final MySqlManager serviceManager;

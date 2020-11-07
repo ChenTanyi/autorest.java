@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.authorization.generated.AuthorizationManager;
 import com.azure.resourcemanager.authorization.generated.fluent.RoleDefinitionsClient;
 import com.azure.resourcemanager.authorization.generated.fluent.models.RoleDefinitionInner;
 import com.azure.resourcemanager.authorization.generated.models.RoleDefinition;
 import com.azure.resourcemanager.authorization.generated.models.RoleDefinitions;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class RoleDefinitionsImpl implements RoleDefinitions {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(RoleDefinitionsImpl.class);
+
     private final RoleDefinitionsClient innerClient;
 
     private final AuthorizationManager serviceManager;

@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.ServiceEndpointPoliciesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.ServiceEndpointPolicyInner;
 import com.azure.resourcemanager.network.generated.models.ServiceEndpointPolicies;
 import com.azure.resourcemanager.network.generated.models.ServiceEndpointPolicy;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ServiceEndpointPoliciesImpl implements ServiceEndpointPolicies {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ServiceEndpointPoliciesImpl.class);
+
     private final ServiceEndpointPoliciesClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -82,7 +86,23 @@ public final class ServiceEndpointPoliciesImpl implements ServiceEndpointPolicie
 
     public ServiceEndpointPolicy getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String serviceEndpointPolicyName = Utils.getValueFromIdByName(id, "serviceEndpointPolicies");
+        if (serviceEndpointPolicyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'serviceEndpointPolicies'.",
+                                id)));
+        }
         String localExpand = null;
         return this
             .getByResourceGroupWithResponse(resourceGroupName, serviceEndpointPolicyName, localExpand, Context.NONE)
@@ -91,7 +111,23 @@ public final class ServiceEndpointPoliciesImpl implements ServiceEndpointPolicie
 
     public Response<ServiceEndpointPolicy> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String serviceEndpointPolicyName = Utils.getValueFromIdByName(id, "serviceEndpointPolicies");
+        if (serviceEndpointPolicyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'serviceEndpointPolicies'.",
+                                id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, serviceEndpointPolicyName, expand, context);
     }
 

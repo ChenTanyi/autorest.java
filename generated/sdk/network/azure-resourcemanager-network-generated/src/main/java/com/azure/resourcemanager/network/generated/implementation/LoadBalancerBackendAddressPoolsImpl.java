@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.LoadBalancerBackendAddressPoolsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.BackendAddressPoolInner;
 import com.azure.resourcemanager.network.generated.models.BackendAddressPool;
 import com.azure.resourcemanager.network.generated.models.LoadBalancerBackendAddressPools;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LoadBalancerBackendAddressPoolsImpl implements LoadBalancerBackendAddressPools {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(LoadBalancerBackendAddressPoolsImpl.class);
+
     private final LoadBalancerBackendAddressPoolsClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -72,8 +76,29 @@ public final class LoadBalancerBackendAddressPoolsImpl implements LoadBalancerBa
 
     public BackendAddressPool getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String loadBalancerName = Utils.getValueFromIdByName(id, "loadBalancers");
+        if (loadBalancerName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'loadBalancers'.", id)));
+        }
         String backendAddressPoolName = Utils.getValueFromIdByName(id, "backendAddressPools");
+        if (backendAddressPoolName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'backendAddressPools'.", id)));
+        }
         return this
             .getWithResponse(resourceGroupName, loadBalancerName, backendAddressPoolName, Context.NONE)
             .getValue();
@@ -81,8 +106,29 @@ public final class LoadBalancerBackendAddressPoolsImpl implements LoadBalancerBa
 
     public Response<BackendAddressPool> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String loadBalancerName = Utils.getValueFromIdByName(id, "loadBalancers");
+        if (loadBalancerName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'loadBalancers'.", id)));
+        }
         String backendAddressPoolName = Utils.getValueFromIdByName(id, "backendAddressPools");
+        if (backendAddressPoolName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'backendAddressPools'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, loadBalancerName, backendAddressPoolName, context);
     }
 

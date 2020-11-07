@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.StorageAccountsClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.BlobRestoreStatusInner;
@@ -30,8 +31,11 @@ import com.azure.resourcemanager.storage.generated.models.StorageAccountExpand;
 import com.azure.resourcemanager.storage.generated.models.StorageAccountListKeysResult;
 import com.azure.resourcemanager.storage.generated.models.StorageAccountRegenerateKeyParameters;
 import com.azure.resourcemanager.storage.generated.models.StorageAccounts;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class StorageAccountsImpl implements StorageAccounts {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(StorageAccountsImpl.class);
+
     private final StorageAccountsClient innerClient;
 
     private final StorageManager serviceManager;
@@ -264,7 +268,21 @@ public final class StorageAccountsImpl implements StorageAccounts {
 
     public StorageAccount getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
         StorageAccountExpand localExpand = null;
         return this
             .getByResourceGroupWithResponse(resourceGroupName, accountName, localExpand, Context.NONE)
@@ -273,7 +291,21 @@ public final class StorageAccountsImpl implements StorageAccounts {
 
     public Response<StorageAccount> getByIdWithResponse(String id, StorageAccountExpand expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, accountName, expand, context);
     }
 

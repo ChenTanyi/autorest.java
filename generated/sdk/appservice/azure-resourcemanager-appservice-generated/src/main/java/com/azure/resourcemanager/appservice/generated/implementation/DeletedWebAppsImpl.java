@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.DeletedWebAppsClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DeletedSiteInner;
 import com.azure.resourcemanager.appservice.generated.models.DeletedSite;
 import com.azure.resourcemanager.appservice.generated.models.DeletedWebApps;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DeletedWebAppsImpl implements DeletedWebApps {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(DeletedWebAppsImpl.class);
+
     private final DeletedWebAppsClient innerClient;
 
     private final WebSiteManager serviceManager;

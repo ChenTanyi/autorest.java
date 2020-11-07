@@ -5,12 +5,16 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.VpnSitesConfigurationsClient;
 import com.azure.resourcemanager.network.generated.models.GetVpnSitesConfigurationRequest;
 import com.azure.resourcemanager.network.generated.models.VpnSitesConfigurations;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VpnSitesConfigurationsImpl implements VpnSitesConfigurations {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VpnSitesConfigurationsImpl.class);
+
     private final VpnSitesConfigurationsClient innerClient;
 
     private final NetworkManager serviceManager;

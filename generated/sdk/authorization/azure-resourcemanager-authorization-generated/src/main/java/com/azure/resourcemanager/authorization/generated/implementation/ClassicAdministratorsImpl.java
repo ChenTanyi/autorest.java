@@ -6,13 +6,17 @@ package com.azure.resourcemanager.authorization.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.authorization.generated.AuthorizationManager;
 import com.azure.resourcemanager.authorization.generated.fluent.ClassicAdministratorsClient;
 import com.azure.resourcemanager.authorization.generated.fluent.models.ClassicAdministratorInner;
 import com.azure.resourcemanager.authorization.generated.models.ClassicAdministrator;
 import com.azure.resourcemanager.authorization.generated.models.ClassicAdministrators;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ClassicAdministratorsImpl implements ClassicAdministrators {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ClassicAdministratorsImpl.class);
+
     private final ClassicAdministratorsClient innerClient;
 
     private final AuthorizationManager serviceManager;

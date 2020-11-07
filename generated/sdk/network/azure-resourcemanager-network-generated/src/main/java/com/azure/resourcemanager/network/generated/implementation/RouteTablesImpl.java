@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.RouteTablesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.RouteTableInner;
 import com.azure.resourcemanager.network.generated.models.RouteTable;
 import com.azure.resourcemanager.network.generated.models.RouteTables;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class RouteTablesImpl implements RouteTables {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(RouteTablesImpl.class);
+
     private final RouteTablesClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -78,7 +82,20 @@ public final class RouteTablesImpl implements RouteTables {
 
     public RouteTable getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String routeTableName = Utils.getValueFromIdByName(id, "routeTables");
+        if (routeTableName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'routeTables'.", id)));
+        }
         String localExpand = null;
         return this
             .getByResourceGroupWithResponse(resourceGroupName, routeTableName, localExpand, Context.NONE)
@@ -87,7 +104,20 @@ public final class RouteTablesImpl implements RouteTables {
 
     public Response<RouteTable> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String routeTableName = Utils.getValueFromIdByName(id, "routeTables");
+        if (routeTableName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'routeTables'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, routeTableName, expand, context);
     }
 

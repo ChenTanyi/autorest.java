@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.FirewallPoliciesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.FirewallPolicyInner;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicies;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicy;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class FirewallPoliciesImpl implements FirewallPolicies {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(FirewallPoliciesImpl.class);
+
     private final FirewallPoliciesClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -78,7 +82,22 @@ public final class FirewallPoliciesImpl implements FirewallPolicies {
 
     public FirewallPolicy getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String firewallPolicyName = Utils.getValueFromIdByName(id, "firewallPolicies");
+        if (firewallPolicyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'firewallPolicies'.", id)));
+        }
         String localExpand = null;
         return this
             .getByResourceGroupWithResponse(resourceGroupName, firewallPolicyName, localExpand, Context.NONE)
@@ -87,7 +106,22 @@ public final class FirewallPoliciesImpl implements FirewallPolicies {
 
     public Response<FirewallPolicy> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String firewallPolicyName = Utils.getValueFromIdByName(id, "firewallPolicies");
+        if (firewallPolicyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'firewallPolicies'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, firewallPolicyName, expand, context);
     }
 

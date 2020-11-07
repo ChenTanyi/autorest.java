@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.DisasterRecoveryConfigsClient;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.AccessKeysInner;
@@ -20,8 +21,11 @@ import com.azure.resourcemanager.eventhubs.generated.models.AuthorizationRule;
 import com.azure.resourcemanager.eventhubs.generated.models.CheckNameAvailabilityParameter;
 import com.azure.resourcemanager.eventhubs.generated.models.CheckNameAvailabilityResult;
 import com.azure.resourcemanager.eventhubs.generated.models.DisasterRecoveryConfigs;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfigs {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(DisasterRecoveryConfigsImpl.class);
+
     private final DisasterRecoveryConfigsClient innerClient;
 
     private final EventHubsManager serviceManager;
@@ -194,15 +198,59 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
 
     public ArmDisasterRecovery getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+        }
         String alias = Utils.getValueFromIdByName(id, "disasterRecoveryConfigs");
+        if (alias == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'disasterRecoveryConfigs'.",
+                                id)));
+        }
         return this.getWithResponse(resourceGroupName, namespaceName, alias, Context.NONE).getValue();
     }
 
     public Response<ArmDisasterRecovery> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+        }
         String alias = Utils.getValueFromIdByName(id, "disasterRecoveryConfigs");
+        if (alias == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'disasterRecoveryConfigs'.",
+                                id)));
+        }
         return this.getWithResponse(resourceGroupName, namespaceName, alias, context);
     }
 

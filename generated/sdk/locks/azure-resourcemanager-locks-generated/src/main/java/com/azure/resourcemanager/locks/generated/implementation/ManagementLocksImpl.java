@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.locks.generated.LocksManager;
 import com.azure.resourcemanager.locks.generated.fluent.ManagementLocksClient;
 import com.azure.resourcemanager.locks.generated.fluent.models.ManagementLockObjectInner;
 import com.azure.resourcemanager.locks.generated.models.ManagementLockObject;
 import com.azure.resourcemanager.locks.generated.models.ManagementLocks;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ManagementLocksImpl implements ManagementLocks {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ManagementLocksImpl.class);
+
     private final ManagementLocksClient innerClient;
 
     private final LocksManager serviceManager;
@@ -384,13 +388,39 @@ public final class ManagementLocksImpl implements ManagementLocks {
 
     public ManagementLockObject getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String lockName = Utils.getValueFromIdByName(id, "locks");
+        if (lockName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'locks'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, lockName, Context.NONE).getValue();
     }
 
     public Response<ManagementLockObject> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String lockName = Utils.getValueFromIdByName(id, "locks");
+        if (lockName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'locks'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, lockName, context);
     }
 

@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mediaservices.generated.MediaservicesManager;
 import com.azure.resourcemanager.mediaservices.generated.fluent.StreamingPoliciesClient;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.StreamingPolicyInner;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingPolicies;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingPolicy;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class StreamingPoliciesImpl implements StreamingPolicies {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(StreamingPoliciesImpl.class);
+
     private final StreamingPoliciesClient innerClient;
 
     private final MediaservicesManager serviceManager;
@@ -71,15 +75,57 @@ public final class StreamingPoliciesImpl implements StreamingPolicies {
 
     public StreamingPolicy getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'mediaServices'.", id)));
+        }
         String streamingPolicyName = Utils.getValueFromIdByName(id, "streamingPolicies");
+        if (streamingPolicyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'streamingPolicies'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, accountName, streamingPolicyName, Context.NONE).getValue();
     }
 
     public Response<StreamingPolicy> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'mediaServices'.", id)));
+        }
         String streamingPolicyName = Utils.getValueFromIdByName(id, "streamingPolicies");
+        if (streamingPolicyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'streamingPolicies'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, accountName, streamingPolicyName, context);
     }
 

@@ -8,14 +8,18 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.SharedGalleryImageVersionsClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.SharedGalleryImageVersionInner;
 import com.azure.resourcemanager.compute.generated.models.SharedGalleryImageVersion;
 import com.azure.resourcemanager.compute.generated.models.SharedGalleryImageVersions;
 import com.azure.resourcemanager.compute.generated.models.SharedToValues;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class SharedGalleryImageVersionsImpl implements SharedGalleryImageVersions {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(SharedGalleryImageVersionsImpl.class);
+
     private final SharedGalleryImageVersionsClient innerClient;
 
     private final ComputeManager serviceManager;

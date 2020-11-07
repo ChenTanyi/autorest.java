@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.policy.generated.PolicyManager;
 import com.azure.resourcemanager.policy.generated.fluent.PolicyAssignmentsClient;
 import com.azure.resourcemanager.policy.generated.fluent.models.PolicyAssignmentInner;
 import com.azure.resourcemanager.policy.generated.models.PolicyAssignment;
 import com.azure.resourcemanager.policy.generated.models.PolicyAssignments;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PolicyAssignmentsImpl implements PolicyAssignments {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(PolicyAssignmentsImpl.class);
+
     private final PolicyAssignmentsClient innerClient;
 
     private final PolicyManager serviceManager;

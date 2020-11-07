@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.dns.generated.DnsManager;
 import com.azure.resourcemanager.dns.generated.fluent.ZonesClient;
 import com.azure.resourcemanager.dns.generated.fluent.models.ZoneInner;
 import com.azure.resourcemanager.dns.generated.models.Zone;
 import com.azure.resourcemanager.dns.generated.models.Zones;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ZonesImpl implements Zones {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ZonesImpl.class);
+
     private final ZonesClient innerClient;
 
     private final DnsManager serviceManager;
@@ -81,13 +85,39 @@ public final class ZonesImpl implements Zones {
 
     public Zone getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String zoneName = Utils.getValueFromIdByName(id, "dnsZones");
+        if (zoneName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'dnsZones'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, zoneName, Context.NONE).getValue();
     }
 
     public Response<Zone> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String zoneName = Utils.getValueFromIdByName(id, "dnsZones");
+        if (zoneName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'dnsZones'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, zoneName, context);
     }
 

@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.NetworkInterfacesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.EffectiveNetworkSecurityGroupListResultInner;
@@ -19,8 +20,11 @@ import com.azure.resourcemanager.network.generated.models.EffectiveRouteListResu
 import com.azure.resourcemanager.network.generated.models.NetworkInterface;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaces;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class NetworkInterfacesImpl implements NetworkInterfaces {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(NetworkInterfacesImpl.class);
+
     private final NetworkInterfacesClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -298,7 +302,22 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
 
     public NetworkInterface getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String networkInterfaceName = Utils.getValueFromIdByName(id, "networkInterfaces");
+        if (networkInterfaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'networkInterfaces'.", id)));
+        }
         String localExpand = null;
         return this
             .getByResourceGroupWithResponse(resourceGroupName, networkInterfaceName, localExpand, Context.NONE)
@@ -307,7 +326,22 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
 
     public Response<NetworkInterface> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String networkInterfaceName = Utils.getValueFromIdByName(id, "networkInterfaces");
+        if (networkInterfaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'networkInterfaces'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, networkInterfaceName, expand, context);
     }
 

@@ -468,7 +468,7 @@ public interface AppServiceCertificateOrders {
     /**
      * Description for Get a certificate order.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -480,7 +480,7 @@ public interface AppServiceCertificateOrders {
     /**
      * Description for Get a certificate order.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -493,7 +493,7 @@ public interface AppServiceCertificateOrders {
     /**
      * Description for Get the certificate associated with a certificate order.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -505,7 +505,7 @@ public interface AppServiceCertificateOrders {
     /**
      * Description for Get the certificate associated with a certificate order.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the

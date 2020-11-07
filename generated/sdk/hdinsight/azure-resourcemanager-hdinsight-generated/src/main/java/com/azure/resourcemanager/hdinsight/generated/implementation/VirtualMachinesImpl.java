@@ -7,16 +7,20 @@ package com.azure.resourcemanager.hdinsight.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.hdinsight.generated.HDInsightManager;
 import com.azure.resourcemanager.hdinsight.generated.fluent.VirtualMachinesClient;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.HostInfoInner;
 import com.azure.resourcemanager.hdinsight.generated.models.HostInfo;
 import com.azure.resourcemanager.hdinsight.generated.models.VirtualMachines;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public final class VirtualMachinesImpl implements VirtualMachines {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualMachinesImpl.class);
+
     private final VirtualMachinesClient innerClient;
 
     private final HDInsightManager serviceManager;

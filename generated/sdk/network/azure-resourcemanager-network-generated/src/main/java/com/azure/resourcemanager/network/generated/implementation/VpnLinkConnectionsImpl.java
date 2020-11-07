@@ -6,13 +6,17 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.VpnLinkConnectionsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnSiteLinkConnectionInner;
 import com.azure.resourcemanager.network.generated.models.VpnLinkConnections;
 import com.azure.resourcemanager.network.generated.models.VpnSiteLinkConnection;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VpnLinkConnectionsImpl implements VpnLinkConnections {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VpnLinkConnectionsImpl.class);
+
     private final VpnLinkConnectionsClient innerClient;
 
     private final NetworkManager serviceManager;

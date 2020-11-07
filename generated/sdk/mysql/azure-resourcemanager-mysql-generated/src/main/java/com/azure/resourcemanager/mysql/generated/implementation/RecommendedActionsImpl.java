@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.RecommendedActionsClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.RecommendationActionInner;
 import com.azure.resourcemanager.mysql.generated.models.RecommendationAction;
 import com.azure.resourcemanager.mysql.generated.models.RecommendedActions;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class RecommendedActionsImpl implements RecommendedActions {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(RecommendedActionsImpl.class);
+
     private final RecommendedActionsClient innerClient;
 
     private final MySqlManager serviceManager;

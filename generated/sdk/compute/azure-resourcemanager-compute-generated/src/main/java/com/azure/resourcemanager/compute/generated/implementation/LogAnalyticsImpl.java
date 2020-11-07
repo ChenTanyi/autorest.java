@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.LogAnalyticsClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.LogAnalyticsOperationResultInner;
@@ -12,8 +13,11 @@ import com.azure.resourcemanager.compute.generated.models.LogAnalytics;
 import com.azure.resourcemanager.compute.generated.models.LogAnalyticsInputBase;
 import com.azure.resourcemanager.compute.generated.models.LogAnalyticsOperationResult;
 import com.azure.resourcemanager.compute.generated.models.RequestRateByIntervalInput;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LogAnalyticsImpl implements LogAnalytics {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(LogAnalyticsImpl.class);
+
     private final LogAnalyticsClient innerClient;
 
     private final ComputeManager serviceManager;

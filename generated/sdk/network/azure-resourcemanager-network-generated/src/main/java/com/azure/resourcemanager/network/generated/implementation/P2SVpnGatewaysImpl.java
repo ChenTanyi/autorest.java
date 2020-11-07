@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.P2SVpnGatewaysClient;
 import com.azure.resourcemanager.network.generated.fluent.models.P2SVpnConnectionHealthInner;
@@ -20,8 +21,11 @@ import com.azure.resourcemanager.network.generated.models.P2SVpnGateway;
 import com.azure.resourcemanager.network.generated.models.P2SVpnGateways;
 import com.azure.resourcemanager.network.generated.models.P2SVpnProfileParameters;
 import com.azure.resourcemanager.network.generated.models.VpnProfileResponse;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class P2SVpnGatewaysImpl implements P2SVpnGateways {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(P2SVpnGatewaysImpl.class);
+
     private final P2SVpnGatewaysClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -176,13 +180,41 @@ public final class P2SVpnGatewaysImpl implements P2SVpnGateways {
 
     public P2SVpnGateway getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String gatewayName = Utils.getValueFromIdByName(id, "p2svpnGateways");
+        if (gatewayName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'p2svpnGateways'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, gatewayName, Context.NONE).getValue();
     }
 
     public Response<P2SVpnGateway> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String gatewayName = Utils.getValueFromIdByName(id, "p2svpnGateways");
+        if (gatewayName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'p2svpnGateways'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, gatewayName, context);
     }
 

@@ -731,7 +731,7 @@ public interface StaticSites {
     /**
      * Description for Gets the details of a static site.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -743,7 +743,7 @@ public interface StaticSites {
     /**
      * Description for Gets the details of a static site.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the

@@ -7,13 +7,17 @@ package com.azure.resourcemanager.databoxedge.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.JobsClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.JobInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Job;
 import com.azure.resourcemanager.databoxedge.generated.models.Jobs;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class JobsImpl implements Jobs {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(JobsImpl.class);
+
     private final JobsClient innerClient;
 
     private final DataBoxEdgeManager serviceManager;

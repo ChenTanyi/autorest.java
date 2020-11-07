@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.ExpressRouteCircuitAuthorizationsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitAuthorizationInner;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuitAuthorization;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuitAuthorizations;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ExpressRouteCircuitAuthorizationsImpl implements ExpressRouteCircuitAuthorizations {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExpressRouteCircuitAuthorizationsImpl.class);
+
     private final ExpressRouteCircuitAuthorizationsClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -74,15 +78,61 @@ public final class ExpressRouteCircuitAuthorizationsImpl implements ExpressRoute
 
     public ExpressRouteCircuitAuthorization getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
+        if (circuitName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.",
+                                id)));
+        }
         String authorizationName = Utils.getValueFromIdByName(id, "authorizations");
+        if (authorizationName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'authorizations'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, circuitName, authorizationName, Context.NONE).getValue();
     }
 
     public Response<ExpressRouteCircuitAuthorization> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
+        if (circuitName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.",
+                                id)));
+        }
         String authorizationName = Utils.getValueFromIdByName(id, "authorizations");
+        if (authorizationName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'authorizations'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, circuitName, authorizationName, context);
     }
 

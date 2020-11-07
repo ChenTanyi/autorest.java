@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.IpAllocationsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.IpAllocationInner;
 import com.azure.resourcemanager.network.generated.models.IpAllocation;
 import com.azure.resourcemanager.network.generated.models.IpAllocations;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class IpAllocationsImpl implements IpAllocations {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(IpAllocationsImpl.class);
+
     private final IpAllocationsClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -78,7 +82,20 @@ public final class IpAllocationsImpl implements IpAllocations {
 
     public IpAllocation getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String ipAllocationName = Utils.getValueFromIdByName(id, "IpAllocations");
+        if (ipAllocationName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'IpAllocations'.", id)));
+        }
         String localExpand = null;
         return this
             .getByResourceGroupWithResponse(resourceGroupName, ipAllocationName, localExpand, Context.NONE)
@@ -87,7 +104,20 @@ public final class IpAllocationsImpl implements IpAllocations {
 
     public Response<IpAllocation> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String ipAllocationName = Utils.getValueFromIdByName(id, "IpAllocations");
+        if (ipAllocationName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'IpAllocations'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, ipAllocationName, expand, context);
     }
 

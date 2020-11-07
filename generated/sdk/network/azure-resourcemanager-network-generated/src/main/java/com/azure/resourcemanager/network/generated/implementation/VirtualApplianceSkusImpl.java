@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.VirtualApplianceSkusClient;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkVirtualApplianceSkuInner;
 import com.azure.resourcemanager.network.generated.models.NetworkVirtualApplianceSku;
 import com.azure.resourcemanager.network.generated.models.VirtualApplianceSkus;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualApplianceSkusImpl implements VirtualApplianceSkus {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualApplianceSkusImpl.class);
+
     private final VirtualApplianceSkusClient innerClient;
 
     private final NetworkManager serviceManager;

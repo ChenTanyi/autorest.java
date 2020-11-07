@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.BlobServicesClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.BlobServicePropertiesInner;
 import com.azure.resourcemanager.storage.generated.models.BlobServiceProperties;
 import com.azure.resourcemanager.storage.generated.models.BlobServices;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class BlobServicesImpl implements BlobServices {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(BlobServicesImpl.class);
+
     private final BlobServicesClient innerClient;
 
     private final StorageManager serviceManager;
@@ -61,13 +65,41 @@ public final class BlobServicesImpl implements BlobServices {
 
     public BlobServiceProperties getServicePropertiesById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
         return this.getServicePropertiesWithResponse(resourceGroupName, accountName, Context.NONE).getValue();
     }
 
     public Response<BlobServiceProperties> getServicePropertiesByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
         return this.getServicePropertiesWithResponse(resourceGroupName, accountName, context);
     }
 

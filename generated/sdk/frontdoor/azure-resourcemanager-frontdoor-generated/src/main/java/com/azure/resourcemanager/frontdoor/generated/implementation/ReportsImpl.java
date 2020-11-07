@@ -7,6 +7,7 @@ package com.azure.resourcemanager.frontdoor.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.FrontDoorManager;
 import com.azure.resourcemanager.frontdoor.generated.fluent.ReportsClient;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.LatencyScorecardInner;
@@ -17,9 +18,12 @@ import com.azure.resourcemanager.frontdoor.generated.models.Reports;
 import com.azure.resourcemanager.frontdoor.generated.models.Timeseries;
 import com.azure.resourcemanager.frontdoor.generated.models.TimeseriesAggregationInterval;
 import com.azure.resourcemanager.frontdoor.generated.models.TimeseriesType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.time.OffsetDateTime;
 
 public final class ReportsImpl implements Reports {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ReportsImpl.class);
+
     private final ReportsClient innerClient;
 
     private final FrontDoorManager serviceManager;

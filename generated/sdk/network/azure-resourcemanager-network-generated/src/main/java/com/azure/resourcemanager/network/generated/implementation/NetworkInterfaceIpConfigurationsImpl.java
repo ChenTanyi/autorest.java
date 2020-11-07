@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.NetworkInterfaceIpConfigurationsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceIpConfigurationInner;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceIpConfigurations;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class NetworkInterfaceIpConfigurationsImpl implements NetworkInterfaceIpConfigurations {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(NetworkInterfaceIpConfigurationsImpl.class);
+
     private final NetworkInterfaceIpConfigurationsClient innerClient;
 
     private final NetworkManager serviceManager;

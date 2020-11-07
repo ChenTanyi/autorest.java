@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.VpnSiteLinksClient;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnSiteLinkInner;
 import com.azure.resourcemanager.network.generated.models.VpnSiteLink;
 import com.azure.resourcemanager.network.generated.models.VpnSiteLinks;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VpnSiteLinksImpl implements VpnSiteLinks {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VpnSiteLinksImpl.class);
+
     private final VpnSiteLinksClient innerClient;
 
     private final NetworkManager serviceManager;

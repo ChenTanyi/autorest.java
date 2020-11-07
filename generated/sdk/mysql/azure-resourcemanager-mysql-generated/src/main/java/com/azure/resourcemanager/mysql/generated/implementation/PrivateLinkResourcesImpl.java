@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.PrivateLinkResourcesClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.PrivateLinkResourceInner;
 import com.azure.resourcemanager.mysql.generated.models.PrivateLinkResource;
 import com.azure.resourcemanager.mysql.generated.models.PrivateLinkResources;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(PrivateLinkResourcesImpl.class);
+
     private final PrivateLinkResourcesClient innerClient;
 
     private final MySqlManager serviceManager;

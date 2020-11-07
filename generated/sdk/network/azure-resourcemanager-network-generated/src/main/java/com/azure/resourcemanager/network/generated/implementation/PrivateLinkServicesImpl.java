@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.PrivateLinkServicesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.AutoApprovedPrivateLinkServiceInner;
@@ -20,8 +21,11 @@ import com.azure.resourcemanager.network.generated.models.PrivateEndpointConnect
 import com.azure.resourcemanager.network.generated.models.PrivateLinkService;
 import com.azure.resourcemanager.network.generated.models.PrivateLinkServiceVisibility;
 import com.azure.resourcemanager.network.generated.models.PrivateLinkServices;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PrivateLinkServicesImpl implements PrivateLinkServices {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(PrivateLinkServicesImpl.class);
+
     private final PrivateLinkServicesClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -256,7 +260,22 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
 
     public PrivateLinkService getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String serviceName = Utils.getValueFromIdByName(id, "privateLinkServices");
+        if (serviceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'privateLinkServices'.", id)));
+        }
         String localExpand = null;
         return this
             .getByResourceGroupWithResponse(resourceGroupName, serviceName, localExpand, Context.NONE)
@@ -265,7 +284,22 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
 
     public Response<PrivateLinkService> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String serviceName = Utils.getValueFromIdByName(id, "privateLinkServices");
+        if (serviceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'privateLinkServices'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, serviceName, expand, context);
     }
 

@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.VpnGatewaysClient;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnGatewayInner;
@@ -15,8 +16,11 @@ import com.azure.resourcemanager.network.generated.models.VpnGateway;
 import com.azure.resourcemanager.network.generated.models.VpnGatewayPacketCaptureStartParameters;
 import com.azure.resourcemanager.network.generated.models.VpnGatewayPacketCaptureStopParameters;
 import com.azure.resourcemanager.network.generated.models.VpnGateways;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VpnGatewaysImpl implements VpnGateways {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VpnGatewaysImpl.class);
+
     private final VpnGatewaysClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -132,13 +136,39 @@ public final class VpnGatewaysImpl implements VpnGateways {
 
     public VpnGateway getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String gatewayName = Utils.getValueFromIdByName(id, "vpnGateways");
+        if (gatewayName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'vpnGateways'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, gatewayName, Context.NONE).getValue();
     }
 
     public Response<VpnGateway> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String gatewayName = Utils.getValueFromIdByName(id, "vpnGateways");
+        if (gatewayName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'vpnGateways'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, gatewayName, context);
     }
 

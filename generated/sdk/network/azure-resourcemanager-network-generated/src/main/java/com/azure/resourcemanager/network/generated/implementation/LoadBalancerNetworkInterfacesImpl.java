@@ -6,13 +6,17 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.LoadBalancerNetworkInterfacesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceInner;
 import com.azure.resourcemanager.network.generated.models.LoadBalancerNetworkInterfaces;
 import com.azure.resourcemanager.network.generated.models.NetworkInterface;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LoadBalancerNetworkInterfacesImpl implements LoadBalancerNetworkInterfaces {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(LoadBalancerNetworkInterfacesImpl.class);
+
     private final LoadBalancerNetworkInterfacesClient innerClient;
 
     private final NetworkManager serviceManager;

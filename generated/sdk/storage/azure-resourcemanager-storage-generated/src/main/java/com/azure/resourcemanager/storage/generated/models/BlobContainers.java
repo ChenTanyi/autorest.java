@@ -434,7 +434,7 @@ public interface BlobContainers {
     /**
      * Gets properties of a specified container.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -445,7 +445,7 @@ public interface BlobContainers {
     /**
      * Gets properties of a specified container.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -457,7 +457,7 @@ public interface BlobContainers {
     /**
      * Gets the existing immutability policy along with the corresponding ETag in response headers and body.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -468,7 +468,7 @@ public interface BlobContainers {
     /**
      * Gets the existing immutability policy along with the corresponding ETag in response headers and body.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param ifMatch The entity state (ETag) version of the immutability policy to update. A value of "*" can be used
      *     to apply the operation only if the immutability policy already exists. If omitted, this operation will always
      *     be applied.

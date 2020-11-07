@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.NetworkSecurityGroupsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkSecurityGroupInner;
 import com.azure.resourcemanager.network.generated.models.NetworkSecurityGroup;
 import com.azure.resourcemanager.network.generated.models.NetworkSecurityGroups;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class NetworkSecurityGroupsImpl implements NetworkSecurityGroups {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(NetworkSecurityGroupsImpl.class);
+
     private final NetworkSecurityGroupsClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -82,7 +86,23 @@ public final class NetworkSecurityGroupsImpl implements NetworkSecurityGroups {
 
     public NetworkSecurityGroup getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String networkSecurityGroupName = Utils.getValueFromIdByName(id, "networkSecurityGroups");
+        if (networkSecurityGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'networkSecurityGroups'.",
+                                id)));
+        }
         String localExpand = null;
         return this
             .getByResourceGroupWithResponse(resourceGroupName, networkSecurityGroupName, localExpand, Context.NONE)
@@ -91,7 +111,23 @@ public final class NetworkSecurityGroupsImpl implements NetworkSecurityGroups {
 
     public Response<NetworkSecurityGroup> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String networkSecurityGroupName = Utils.getValueFromIdByName(id, "networkSecurityGroups");
+        if (networkSecurityGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'networkSecurityGroups'.",
+                                id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, networkSecurityGroupName, expand, context);
     }
 

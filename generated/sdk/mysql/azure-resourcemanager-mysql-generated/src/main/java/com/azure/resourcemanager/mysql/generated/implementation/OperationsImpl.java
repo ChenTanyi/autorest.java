@@ -7,13 +7,17 @@ package com.azure.resourcemanager.mysql.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.OperationsClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.OperationListResultInner;
 import com.azure.resourcemanager.mysql.generated.models.OperationListResult;
 import com.azure.resourcemanager.mysql.generated.models.Operations;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class OperationsImpl implements Operations {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(OperationsImpl.class);
+
     private final OperationsClient innerClient;
 
     private final MySqlManager serviceManager;

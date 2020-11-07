@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.ExpressRouteCrossConnectionPeeringsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCrossConnectionPeeringInner;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCrossConnectionPeering;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCrossConnectionPeerings;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ExpressRouteCrossConnectionPeeringsImpl implements ExpressRouteCrossConnectionPeerings {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExpressRouteCrossConnectionPeeringsImpl.class);
+
     private final ExpressRouteCrossConnectionPeeringsClient innerClient;
 
     private final NetworkManager serviceManager;

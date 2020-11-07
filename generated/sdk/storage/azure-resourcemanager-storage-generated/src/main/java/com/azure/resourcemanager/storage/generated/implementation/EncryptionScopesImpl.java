@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.EncryptionScopesClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.EncryptionScopeInner;
 import com.azure.resourcemanager.storage.generated.models.EncryptionScope;
 import com.azure.resourcemanager.storage.generated.models.EncryptionScopes;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class EncryptionScopesImpl implements EncryptionScopes {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(EncryptionScopesImpl.class);
+
     private final EncryptionScopesClient innerClient;
 
     private final StorageManager serviceManager;
@@ -60,15 +64,59 @@ public final class EncryptionScopesImpl implements EncryptionScopes {
 
     public EncryptionScope getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
         String encryptionScopeName = Utils.getValueFromIdByName(id, "encryptionScopes");
+        if (encryptionScopeName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'encryptionScopes'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, accountName, encryptionScopeName, Context.NONE).getValue();
     }
 
     public Response<EncryptionScope> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
         String encryptionScopeName = Utils.getValueFromIdByName(id, "encryptionScopes");
+        if (encryptionScopeName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'encryptionScopes'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, accountName, encryptionScopeName, context);
     }
 

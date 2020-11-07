@@ -6,13 +6,17 @@ package com.azure.resourcemanager.frontdoor.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.FrontDoorManager;
 import com.azure.resourcemanager.frontdoor.generated.fluent.PreconfiguredEndpointsClient;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.PreconfiguredEndpointInner;
 import com.azure.resourcemanager.frontdoor.generated.models.PreconfiguredEndpoint;
 import com.azure.resourcemanager.frontdoor.generated.models.PreconfiguredEndpoints;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PreconfiguredEndpointsImpl implements PreconfiguredEndpoints {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(PreconfiguredEndpointsImpl.class);
+
     private final PreconfiguredEndpointsClient innerClient;
 
     private final FrontDoorManager serviceManager;

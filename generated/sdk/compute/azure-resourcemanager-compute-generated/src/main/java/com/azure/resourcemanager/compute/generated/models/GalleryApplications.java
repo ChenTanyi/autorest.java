@@ -103,7 +103,7 @@ public interface GalleryApplications {
     /**
      * Retrieves information about a gallery Application Definition.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -115,7 +115,7 @@ public interface GalleryApplications {
     /**
      * Retrieves information about a gallery Application Definition.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by

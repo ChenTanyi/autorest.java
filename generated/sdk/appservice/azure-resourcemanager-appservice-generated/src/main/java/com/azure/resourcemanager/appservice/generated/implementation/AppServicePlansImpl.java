@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.AppServicePlansClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServicePlanInner;
@@ -31,11 +32,14 @@ import com.azure.resourcemanager.appservice.generated.models.Site;
 import com.azure.resourcemanager.appservice.generated.models.VnetGateway;
 import com.azure.resourcemanager.appservice.generated.models.VnetInfo;
 import com.azure.resourcemanager.appservice.generated.models.VnetRoute;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public final class AppServicePlansImpl implements AppServicePlans {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(AppServicePlansImpl.class);
+
     private final AppServicePlansClient innerClient;
 
     private final WebSiteManager serviceManager;
@@ -491,13 +495,39 @@ public final class AppServicePlansImpl implements AppServicePlans {
 
     public AppServicePlan getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String name = Utils.getValueFromIdByName(id, "serverfarms");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'serverfarms'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE).getValue();
     }
 
     public Response<AppServicePlan> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String name = Utils.getValueFromIdByName(id, "serverfarms");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'serverfarms'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, name, context);
     }
 

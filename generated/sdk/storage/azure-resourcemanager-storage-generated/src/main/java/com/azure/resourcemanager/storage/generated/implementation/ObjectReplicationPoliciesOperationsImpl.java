@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.ObjectReplicationPoliciesOperationsClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.ObjectReplicationPolicyInner;
 import com.azure.resourcemanager.storage.generated.models.ObjectReplicationPoliciesOperations;
 import com.azure.resourcemanager.storage.generated.models.ObjectReplicationPolicy;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ObjectReplicationPoliciesOperationsImpl implements ObjectReplicationPoliciesOperations {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ObjectReplicationPoliciesOperationsImpl.class);
+
     private final ObjectReplicationPoliciesOperationsClient innerClient;
 
     private final StorageManager serviceManager;
@@ -74,15 +78,61 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
 
     public ObjectReplicationPolicy getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
         String objectReplicationPolicyId = Utils.getValueFromIdByName(id, "objectReplicationPolicies");
+        if (objectReplicationPolicyId == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'objectReplicationPolicies'.",
+                                id)));
+        }
         return this.getWithResponse(resourceGroupName, accountName, objectReplicationPolicyId, Context.NONE).getValue();
     }
 
     public Response<ObjectReplicationPolicy> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
         String objectReplicationPolicyId = Utils.getValueFromIdByName(id, "objectReplicationPolicies");
+        if (objectReplicationPolicyId == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'objectReplicationPolicies'.",
+                                id)));
+        }
         return this.getWithResponse(resourceGroupName, accountName, objectReplicationPolicyId, context);
     }
 

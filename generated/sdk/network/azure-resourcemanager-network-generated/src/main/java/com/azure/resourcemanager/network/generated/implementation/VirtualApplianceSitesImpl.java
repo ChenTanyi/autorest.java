@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.VirtualApplianceSitesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualApplianceSiteInner;
 import com.azure.resourcemanager.network.generated.models.VirtualApplianceSite;
 import com.azure.resourcemanager.network.generated.models.VirtualApplianceSites;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualApplianceSitesImpl.class);
+
     private final VirtualApplianceSitesClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -72,15 +76,65 @@ public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
 
     public VirtualApplianceSite getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String networkVirtualApplianceName = Utils.getValueFromIdByName(id, "networkVirtualAppliances");
+        if (networkVirtualApplianceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'networkVirtualAppliances'.",
+                                id)));
+        }
         String siteName = Utils.getValueFromIdByName(id, "virtualApplianceSites");
+        if (siteName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'virtualApplianceSites'.",
+                                id)));
+        }
         return this.getWithResponse(resourceGroupName, networkVirtualApplianceName, siteName, Context.NONE).getValue();
     }
 
     public Response<VirtualApplianceSite> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String networkVirtualApplianceName = Utils.getValueFromIdByName(id, "networkVirtualAppliances");
+        if (networkVirtualApplianceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'networkVirtualAppliances'.",
+                                id)));
+        }
         String siteName = Utils.getValueFromIdByName(id, "virtualApplianceSites");
+        if (siteName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'virtualApplianceSites'.",
+                                id)));
+        }
         return this.getWithResponse(resourceGroupName, networkVirtualApplianceName, siteName, context);
     }
 

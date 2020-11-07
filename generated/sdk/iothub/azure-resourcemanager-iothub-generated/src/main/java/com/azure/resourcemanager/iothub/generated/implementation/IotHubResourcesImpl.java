@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.iothub.generated.IotHubManager;
 import com.azure.resourcemanager.iothub.generated.fluent.IotHubResourcesClient;
 import com.azure.resourcemanager.iothub.generated.fluent.models.EndpointHealthDataInner;
@@ -38,8 +39,11 @@ import com.azure.resourcemanager.iothub.generated.models.TestAllRoutesInput;
 import com.azure.resourcemanager.iothub.generated.models.TestAllRoutesResult;
 import com.azure.resourcemanager.iothub.generated.models.TestRouteInput;
 import com.azure.resourcemanager.iothub.generated.models.TestRouteResult;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class IotHubResourcesImpl implements IotHubResources {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(IotHubResourcesImpl.class);
+
     private final IotHubResourcesClient innerClient;
 
     private final IotHubManager serviceManager;
@@ -437,21 +441,75 @@ public final class IotHubResourcesImpl implements IotHubResources {
 
     public IotHubDescription getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String resourceName = Utils.getValueFromIdByName(id, "IotHubs");
+        if (resourceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'IotHubs'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, resourceName, Context.NONE).getValue();
     }
 
     public Response<IotHubDescription> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String resourceName = Utils.getValueFromIdByName(id, "IotHubs");
+        if (resourceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'IotHubs'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, resourceName, context);
     }
 
     public EventHubConsumerGroupInfo getEventHubConsumerGroupById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String resourceName = Utils.getValueFromIdByName(id, "IotHubs");
+        if (resourceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'IotHubs'.", id)));
+        }
         String eventHubEndpointName = Utils.getValueFromIdByName(id, "eventHubEndpoints");
+        if (eventHubEndpointName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'eventHubEndpoints'.", id)));
+        }
         String name = Utils.getValueFromIdByName(id, "ConsumerGroups");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'ConsumerGroups'.", id)));
+        }
         return this
             .getEventHubConsumerGroupWithResponse(
                 resourceGroupName, resourceName, eventHubEndpointName, name, Context.NONE)
@@ -460,9 +518,37 @@ public final class IotHubResourcesImpl implements IotHubResources {
 
     public Response<EventHubConsumerGroupInfo> getEventHubConsumerGroupByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String resourceName = Utils.getValueFromIdByName(id, "IotHubs");
+        if (resourceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'IotHubs'.", id)));
+        }
         String eventHubEndpointName = Utils.getValueFromIdByName(id, "eventHubEndpoints");
+        if (eventHubEndpointName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'eventHubEndpoints'.", id)));
+        }
         String name = Utils.getValueFromIdByName(id, "ConsumerGroups");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'ConsumerGroups'.", id)));
+        }
         return this
             .getEventHubConsumerGroupWithResponse(resourceGroupName, resourceName, eventHubEndpointName, name, context);
     }

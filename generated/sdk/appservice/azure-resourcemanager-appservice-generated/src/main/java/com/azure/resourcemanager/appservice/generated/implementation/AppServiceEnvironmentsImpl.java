@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.AppServiceEnvironmentsClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AddressResponseInner;
@@ -40,11 +41,14 @@ import com.azure.resourcemanager.appservice.generated.models.StampCapacity;
 import com.azure.resourcemanager.appservice.generated.models.Usage;
 import com.azure.resourcemanager.appservice.generated.models.VirtualNetworkProfile;
 import com.azure.resourcemanager.appservice.generated.models.WorkerPoolResource;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(AppServiceEnvironmentsImpl.class);
+
     private final AppServiceEnvironmentsClient innerClient;
 
     private final WebSiteManager serviceManager;
@@ -569,27 +573,99 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
 
     public AppServiceEnvironmentResource getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE).getValue();
     }
 
     public Response<AppServiceEnvironmentResource> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, name, context);
     }
 
     public WorkerPoolResource getWorkerPoolById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
+        }
         String workerPoolName = Utils.getValueFromIdByName(id, "workerPools");
+        if (workerPoolName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'workerPools'.", id)));
+        }
         return this.getWorkerPoolWithResponse(resourceGroupName, name, workerPoolName, Context.NONE).getValue();
     }
 
     public Response<WorkerPoolResource> getWorkerPoolByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
+        }
         String workerPoolName = Utils.getValueFromIdByName(id, "workerPools");
+        if (workerPoolName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'workerPools'.", id)));
+        }
         return this.getWorkerPoolWithResponse(resourceGroupName, name, workerPoolName, context);
     }
 

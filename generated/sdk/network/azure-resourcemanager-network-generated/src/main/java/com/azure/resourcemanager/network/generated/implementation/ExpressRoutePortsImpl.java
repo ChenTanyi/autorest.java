@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.ExpressRoutePortsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRoutePortInner;
@@ -16,8 +17,11 @@ import com.azure.resourcemanager.network.generated.models.ExpressRoutePort;
 import com.azure.resourcemanager.network.generated.models.ExpressRoutePorts;
 import com.azure.resourcemanager.network.generated.models.GenerateExpressRoutePortsLoaRequest;
 import com.azure.resourcemanager.network.generated.models.GenerateExpressRoutePortsLoaResult;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ExpressRoutePortsImpl implements ExpressRoutePorts {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExpressRoutePortsImpl.class);
+
     private final ExpressRoutePortsClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -111,13 +115,43 @@ public final class ExpressRoutePortsImpl implements ExpressRoutePorts {
 
     public ExpressRoutePort getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String expressRoutePortName = Utils.getValueFromIdByName(id, "ExpressRoutePorts");
+        if (expressRoutePortName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'ExpressRoutePorts'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, expressRoutePortName, Context.NONE).getValue();
     }
 
     public Response<ExpressRoutePort> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String expressRoutePortName = Utils.getValueFromIdByName(id, "ExpressRoutePorts");
+        if (expressRoutePortName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'ExpressRoutePorts'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, expressRoutePortName, context);
     }
 

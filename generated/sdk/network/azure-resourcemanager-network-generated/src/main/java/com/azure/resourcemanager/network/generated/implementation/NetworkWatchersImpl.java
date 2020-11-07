@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.NetworkWatchersClient;
 import com.azure.resourcemanager.network.generated.fluent.models.AvailableProvidersListInner;
@@ -44,8 +45,11 @@ import com.azure.resourcemanager.network.generated.models.TroubleshootingParamet
 import com.azure.resourcemanager.network.generated.models.TroubleshootingResult;
 import com.azure.resourcemanager.network.generated.models.VerificationIpFlowParameters;
 import com.azure.resourcemanager.network.generated.models.VerificationIpFlowResult;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class NetworkWatchersImpl implements NetworkWatchers {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(NetworkWatchersImpl.class);
+
     private final NetworkWatchersClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -387,13 +391,41 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
 
     public NetworkWatcher getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
+        if (networkWatcherName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, networkWatcherName, Context.NONE).getValue();
     }
 
     public Response<NetworkWatcher> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
+        if (networkWatcherName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, networkWatcherName, context);
     }
 

@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.RolesClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.RoleInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Role;
 import com.azure.resourcemanager.databoxedge.generated.models.Roles;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class RolesImpl implements Roles {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(RolesImpl.class);
+
     private final RolesClient innerClient;
 
     private final DataBoxEdgeManager serviceManager;

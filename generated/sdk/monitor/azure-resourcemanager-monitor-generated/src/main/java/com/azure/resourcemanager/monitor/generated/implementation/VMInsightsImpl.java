@@ -7,13 +7,17 @@ package com.azure.resourcemanager.monitor.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.VMInsightsClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.VMInsightsOnboardingStatusInner;
 import com.azure.resourcemanager.monitor.generated.models.VMInsights;
 import com.azure.resourcemanager.monitor.generated.models.VMInsightsOnboardingStatus;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VMInsightsImpl implements VMInsights {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VMInsightsImpl.class);
+
     private final VMInsightsClient innerClient;
 
     private final MonitorManager serviceManager;

@@ -8,14 +8,18 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineScaleSetVMRunCommandsClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineRunCommandInner;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineRunCommand;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineRunCommandUpdate;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMRunCommands;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualMachineScaleSetVMRunCommandsImpl implements VirtualMachineScaleSetVMRunCommands {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualMachineScaleSetVMRunCommandsImpl.class);
+
     private final VirtualMachineScaleSetVMRunCommandsClient innerClient;
 
     private final ComputeManager serviceManager;

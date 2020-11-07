@@ -6,14 +6,19 @@ package com.azure.resourcemanager.mysql.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.LocationBasedRecommendedActionSessionsResultsClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.RecommendationActionInner;
 import com.azure.resourcemanager.mysql.generated.models.LocationBasedRecommendedActionSessionsResults;
 import com.azure.resourcemanager.mysql.generated.models.RecommendationAction;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LocationBasedRecommendedActionSessionsResultsImpl
     implements LocationBasedRecommendedActionSessionsResults {
+    @JsonIgnore
+    private final ClientLogger logger = new ClientLogger(LocationBasedRecommendedActionSessionsResultsImpl.class);
+
     private final LocationBasedRecommendedActionSessionsResultsClient innerClient;
 
     private final MySqlManager serviceManager;

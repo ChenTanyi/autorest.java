@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.PublicIpAddressesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.PublicIpAddressInner;
 import com.azure.resourcemanager.network.generated.models.PublicIpAddress;
 import com.azure.resourcemanager.network.generated.models.PublicIpAddresses;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PublicIpAddressesImpl implements PublicIpAddresses {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(PublicIpAddressesImpl.class);
+
     private final PublicIpAddressesClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -193,7 +197,22 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
 
     public PublicIpAddress getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String publicIpAddressName = Utils.getValueFromIdByName(id, "publicIPAddresses");
+        if (publicIpAddressName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'publicIPAddresses'.", id)));
+        }
         String localExpand = null;
         return this
             .getByResourceGroupWithResponse(resourceGroupName, publicIpAddressName, localExpand, Context.NONE)
@@ -202,7 +221,22 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
 
     public Response<PublicIpAddress> getByIdWithResponse(String id, String expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String publicIpAddressName = Utils.getValueFromIdByName(id, "publicIPAddresses");
+        if (publicIpAddressName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'publicIPAddresses'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, publicIpAddressName, expand, context);
     }
 

@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.FlowLogsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.FlowLogInner;
 import com.azure.resourcemanager.network.generated.models.FlowLog;
 import com.azure.resourcemanager.network.generated.models.FlowLogs;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class FlowLogsImpl implements FlowLogs {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(FlowLogsImpl.class);
+
     private final FlowLogsClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -68,15 +72,55 @@ public final class FlowLogsImpl implements FlowLogs {
 
     public FlowLog getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
+        if (networkWatcherName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
+        }
         String flowLogName = Utils.getValueFromIdByName(id, "flowLogs");
+        if (flowLogName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'flowLogs'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, networkWatcherName, flowLogName, Context.NONE).getValue();
     }
 
     public Response<FlowLog> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
+        if (networkWatcherName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
+        }
         String flowLogName = Utils.getValueFromIdByName(id, "flowLogs");
+        if (flowLogName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'flowLogs'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, networkWatcherName, flowLogName, context);
     }
 

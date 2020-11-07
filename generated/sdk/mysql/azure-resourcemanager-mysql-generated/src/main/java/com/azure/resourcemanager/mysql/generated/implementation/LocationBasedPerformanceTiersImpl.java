@@ -6,13 +6,17 @@ package com.azure.resourcemanager.mysql.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.LocationBasedPerformanceTiersClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.PerformanceTierPropertiesInner;
 import com.azure.resourcemanager.mysql.generated.models.LocationBasedPerformanceTiers;
 import com.azure.resourcemanager.mysql.generated.models.PerformanceTierProperties;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LocationBasedPerformanceTiersImpl implements LocationBasedPerformanceTiers {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(LocationBasedPerformanceTiersImpl.class);
+
     private final LocationBasedPerformanceTiersClient innerClient;
 
     private final MySqlManager serviceManager;

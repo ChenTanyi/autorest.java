@@ -7,13 +7,17 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.ResourceNavigationLinksClient;
 import com.azure.resourcemanager.network.generated.fluent.models.ResourceNavigationLinksListResultInner;
 import com.azure.resourcemanager.network.generated.models.ResourceNavigationLinks;
 import com.azure.resourcemanager.network.generated.models.ResourceNavigationLinksListResult;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ResourceNavigationLinksImpl implements ResourceNavigationLinks {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ResourceNavigationLinksImpl.class);
+
     private final ResourceNavigationLinksClient innerClient;
 
     private final NetworkManager serviceManager;

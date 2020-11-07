@@ -6,13 +6,17 @@ package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineSizesClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineSizeInner;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineSize;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineSizes;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualMachineSizesImpl implements VirtualMachineSizes {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualMachineSizesImpl.class);
+
     private final VirtualMachineSizesClient innerClient;
 
     private final ComputeManager serviceManager;

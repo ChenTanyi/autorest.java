@@ -7,6 +7,7 @@ package com.azure.resourcemanager.iothub.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.iothub.generated.IotHubManager;
 import com.azure.resourcemanager.iothub.generated.fluent.PrivateLinkResourcesOperationsClient;
 import com.azure.resourcemanager.iothub.generated.fluent.models.GroupIdInformationInner;
@@ -14,8 +15,11 @@ import com.azure.resourcemanager.iothub.generated.fluent.models.PrivateLinkResou
 import com.azure.resourcemanager.iothub.generated.models.GroupIdInformation;
 import com.azure.resourcemanager.iothub.generated.models.PrivateLinkResources;
 import com.azure.resourcemanager.iothub.generated.models.PrivateLinkResourcesOperations;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PrivateLinkResourcesOperationsImpl implements PrivateLinkResourcesOperations {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(PrivateLinkResourcesOperationsImpl.class);
+
     private final PrivateLinkResourcesOperationsClient innerClient;
 
     private final IotHubManager serviceManager;

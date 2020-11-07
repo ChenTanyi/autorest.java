@@ -8,14 +8,18 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.authorization.generated.AuthorizationManager;
 import com.azure.resourcemanager.authorization.generated.fluent.RoleAssignmentsClient;
 import com.azure.resourcemanager.authorization.generated.fluent.models.RoleAssignmentInner;
 import com.azure.resourcemanager.authorization.generated.models.RoleAssignment;
 import com.azure.resourcemanager.authorization.generated.models.RoleAssignmentCreateParameters;
 import com.azure.resourcemanager.authorization.generated.models.RoleAssignments;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class RoleAssignmentsImpl implements RoleAssignments {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(RoleAssignmentsImpl.class);
+
     private final RoleAssignmentsClient innerClient;
 
     private final AuthorizationManager serviceManager;

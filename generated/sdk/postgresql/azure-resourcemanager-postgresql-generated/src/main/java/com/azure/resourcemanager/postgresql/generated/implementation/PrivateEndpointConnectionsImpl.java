@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.postgresql.generated.PostgreSqlManager;
 import com.azure.resourcemanager.postgresql.generated.fluent.PrivateEndpointConnectionsClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.postgresql.generated.models.PrivateEndpointConnection;
 import com.azure.resourcemanager.postgresql.generated.models.PrivateEndpointConnections;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PrivateEndpointConnectionsImpl implements PrivateEndpointConnections {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(PrivateEndpointConnectionsImpl.class);
+
     private final PrivateEndpointConnectionsClient innerClient;
 
     private final PostgreSqlManager serviceManager;
@@ -75,8 +79,30 @@ public final class PrivateEndpointConnectionsImpl implements PrivateEndpointConn
 
     public PrivateEndpointConnection getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String serverName = Utils.getValueFromIdByName(id, "servers");
+        if (serverName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'servers'.", id)));
+        }
         String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
+        if (privateEndpointConnectionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.",
+                                id)));
+        }
         return this
             .getWithResponse(resourceGroupName, serverName, privateEndpointConnectionName, Context.NONE)
             .getValue();
@@ -84,8 +110,30 @@ public final class PrivateEndpointConnectionsImpl implements PrivateEndpointConn
 
     public Response<PrivateEndpointConnection> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String serverName = Utils.getValueFromIdByName(id, "servers");
+        if (serverName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'servers'.", id)));
+        }
         String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
+        if (privateEndpointConnectionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.",
+                                id)));
+        }
         return this.getWithResponse(resourceGroupName, serverName, privateEndpointConnectionName, context);
     }
 

@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.VirtualNetworkPeeringsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkPeeringInner;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkPeering;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkPeerings;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualNetworkPeeringsImpl implements VirtualNetworkPeerings {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualNetworkPeeringsImpl.class);
+
     private final VirtualNetworkPeeringsClient innerClient;
 
     private final NetworkManager serviceManager;

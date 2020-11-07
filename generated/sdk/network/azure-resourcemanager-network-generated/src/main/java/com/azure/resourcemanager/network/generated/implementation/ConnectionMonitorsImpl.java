@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.ConnectionMonitorsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.ConnectionMonitorQueryResultInner;
@@ -15,8 +16,11 @@ import com.azure.resourcemanager.network.generated.fluent.models.ConnectionMonit
 import com.azure.resourcemanager.network.generated.models.ConnectionMonitorQueryResult;
 import com.azure.resourcemanager.network.generated.models.ConnectionMonitorResult;
 import com.azure.resourcemanager.network.generated.models.ConnectionMonitors;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ConnectionMonitorsImpl implements ConnectionMonitors {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ConnectionMonitorsImpl.class);
+
     private final ConnectionMonitorsClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -116,8 +120,30 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
 
     public ConnectionMonitorResult getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
+        if (networkWatcherName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
+        }
         String connectionMonitorName = Utils.getValueFromIdByName(id, "connectionMonitors");
+        if (connectionMonitorName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'connectionMonitors'.", id)));
+        }
         return this
             .getWithResponse(resourceGroupName, networkWatcherName, connectionMonitorName, Context.NONE)
             .getValue();
@@ -125,8 +151,30 @@ public final class ConnectionMonitorsImpl implements ConnectionMonitors {
 
     public Response<ConnectionMonitorResult> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
+        if (networkWatcherName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
+        }
         String connectionMonitorName = Utils.getValueFromIdByName(id, "connectionMonitors");
+        if (connectionMonitorName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'connectionMonitors'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, networkWatcherName, connectionMonitorName, context);
     }
 

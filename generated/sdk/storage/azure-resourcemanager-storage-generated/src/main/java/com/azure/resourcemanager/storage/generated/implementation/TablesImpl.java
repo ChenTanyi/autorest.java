@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.TablesClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.TableInner;
 import com.azure.resourcemanager.storage.generated.models.Table;
 import com.azure.resourcemanager.storage.generated.models.Tables;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class TablesImpl implements Tables {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(TablesImpl.class);
+
     private final TablesClient innerClient;
 
     private final StorageManager serviceManager;

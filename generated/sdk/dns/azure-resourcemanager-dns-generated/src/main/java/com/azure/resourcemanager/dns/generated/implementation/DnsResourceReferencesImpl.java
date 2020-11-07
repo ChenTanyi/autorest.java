@@ -7,14 +7,18 @@ package com.azure.resourcemanager.dns.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.dns.generated.DnsManager;
 import com.azure.resourcemanager.dns.generated.fluent.DnsResourceReferencesClient;
 import com.azure.resourcemanager.dns.generated.fluent.models.DnsResourceReferenceResultInner;
 import com.azure.resourcemanager.dns.generated.models.DnsResourceReferenceRequest;
 import com.azure.resourcemanager.dns.generated.models.DnsResourceReferenceResult;
 import com.azure.resourcemanager.dns.generated.models.DnsResourceReferences;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DnsResourceReferencesImpl implements DnsResourceReferences {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(DnsResourceReferencesImpl.class);
+
     private final DnsResourceReferencesClient innerClient;
 
     private final DnsManager serviceManager;

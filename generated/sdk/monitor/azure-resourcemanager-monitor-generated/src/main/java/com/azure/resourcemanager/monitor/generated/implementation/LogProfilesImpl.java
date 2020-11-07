@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.LogProfilesClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.LogProfileResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.LogProfileResource;
 import com.azure.resourcemanager.monitor.generated.models.LogProfiles;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LogProfilesImpl implements LogProfiles {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(LogProfilesImpl.class);
+
     private final LogProfilesClient innerClient;
 
     private final MonitorManager serviceManager;
@@ -66,11 +70,23 @@ public final class LogProfilesImpl implements LogProfiles {
 
     public LogProfileResource getById(String id) {
         String logProfileName = Utils.getValueFromIdByName(id, "logprofiles");
+        if (logProfileName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'logprofiles'.", id)));
+        }
         return this.getWithResponse(logProfileName, Context.NONE).getValue();
     }
 
     public Response<LogProfileResource> getByIdWithResponse(String id, Context context) {
         String logProfileName = Utils.getValueFromIdByName(id, "logprofiles");
+        if (logProfileName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'logprofiles'.", id)));
+        }
         return this.getWithResponse(logProfileName, context);
     }
 

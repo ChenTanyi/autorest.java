@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.SubnetsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.SubnetInner;
@@ -15,8 +16,11 @@ import com.azure.resourcemanager.network.generated.models.PrepareNetworkPolicies
 import com.azure.resourcemanager.network.generated.models.Subnet;
 import com.azure.resourcemanager.network.generated.models.Subnets;
 import com.azure.resourcemanager.network.generated.models.UnprepareNetworkPoliciesRequest;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class SubnetsImpl implements Subnets {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(SubnetsImpl.class);
+
     private final SubnetsClient innerClient;
 
     private final NetworkManager serviceManager;

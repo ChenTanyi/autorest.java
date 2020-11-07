@@ -7,13 +7,17 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.ServiceAssociationLinksClient;
 import com.azure.resourcemanager.network.generated.fluent.models.ServiceAssociationLinksListResultInner;
 import com.azure.resourcemanager.network.generated.models.ServiceAssociationLinks;
 import com.azure.resourcemanager.network.generated.models.ServiceAssociationLinksListResult;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ServiceAssociationLinksImpl implements ServiceAssociationLinks {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ServiceAssociationLinksImpl.class);
+
     private final ServiceAssociationLinksClient innerClient;
 
     private final NetworkManager serviceManager;

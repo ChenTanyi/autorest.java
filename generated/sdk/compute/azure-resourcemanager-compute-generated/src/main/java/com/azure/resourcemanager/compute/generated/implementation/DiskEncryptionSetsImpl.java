@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.DiskEncryptionSetsClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.DiskEncryptionSetInner;
 import com.azure.resourcemanager.compute.generated.models.DiskEncryptionSet;
 import com.azure.resourcemanager.compute.generated.models.DiskEncryptionSets;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DiskEncryptionSetsImpl implements DiskEncryptionSets {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(DiskEncryptionSetsImpl.class);
+
     private final DiskEncryptionSetsClient innerClient;
 
     private final ComputeManager serviceManager;
@@ -89,13 +93,43 @@ public final class DiskEncryptionSetsImpl implements DiskEncryptionSets {
 
     public DiskEncryptionSet getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String diskEncryptionSetName = Utils.getValueFromIdByName(id, "diskEncryptionSets");
+        if (diskEncryptionSetName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'diskEncryptionSets'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, diskEncryptionSetName, Context.NONE).getValue();
     }
 
     public Response<DiskEncryptionSet> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String diskEncryptionSetName = Utils.getValueFromIdByName(id, "diskEncryptionSets");
+        if (diskEncryptionSetName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'diskEncryptionSets'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, diskEncryptionSetName, context);
     }
 

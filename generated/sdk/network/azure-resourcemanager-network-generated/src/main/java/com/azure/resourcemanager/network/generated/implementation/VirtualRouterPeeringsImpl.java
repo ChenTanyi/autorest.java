@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.VirtualRouterPeeringsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualRouterPeeringInner;
 import com.azure.resourcemanager.network.generated.models.VirtualRouterPeering;
 import com.azure.resourcemanager.network.generated.models.VirtualRouterPeerings;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualRouterPeeringsImpl implements VirtualRouterPeerings {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualRouterPeeringsImpl.class);
+
     private final VirtualRouterPeeringsClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -71,15 +75,55 @@ public final class VirtualRouterPeeringsImpl implements VirtualRouterPeerings {
 
     public VirtualRouterPeering getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String virtualRouterName = Utils.getValueFromIdByName(id, "virtualRouters");
+        if (virtualRouterName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualRouters'.", id)));
+        }
         String peeringName = Utils.getValueFromIdByName(id, "peerings");
+        if (peeringName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'peerings'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, virtualRouterName, peeringName, Context.NONE).getValue();
     }
 
     public Response<VirtualRouterPeering> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String virtualRouterName = Utils.getValueFromIdByName(id, "virtualRouters");
+        if (virtualRouterName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualRouters'.", id)));
+        }
         String peeringName = Utils.getValueFromIdByName(id, "peerings");
+        if (peeringName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'peerings'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, virtualRouterName, peeringName, context);
     }
 

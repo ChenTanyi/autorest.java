@@ -6,13 +6,17 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.AvailablePrivateEndpointTypesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.AvailablePrivateEndpointTypeInner;
 import com.azure.resourcemanager.network.generated.models.AvailablePrivateEndpointType;
 import com.azure.resourcemanager.network.generated.models.AvailablePrivateEndpointTypes;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AvailablePrivateEndpointTypesImpl implements AvailablePrivateEndpointTypes {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(AvailablePrivateEndpointTypesImpl.class);
+
     private final AvailablePrivateEndpointTypesClient innerClient;
 
     private final NetworkManager serviceManager;

@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.CertificatesClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CertificateInner;
 import com.azure.resourcemanager.appservice.generated.models.Certificate;
 import com.azure.resourcemanager.appservice.generated.models.Certificates;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class CertificatesImpl implements Certificates {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(CertificatesImpl.class);
+
     private final CertificatesClient innerClient;
 
     private final WebSiteManager serviceManager;
@@ -78,13 +82,39 @@ public final class CertificatesImpl implements Certificates {
 
     public Certificate getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String name = Utils.getValueFromIdByName(id, "certificates");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'certificates'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, name, Context.NONE).getValue();
     }
 
     public Response<Certificate> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String name = Utils.getValueFromIdByName(id, "certificates");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'certificates'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, name, context);
     }
 

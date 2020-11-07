@@ -7,13 +7,17 @@ package com.azure.resourcemanager.iothub.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.iothub.generated.IotHubManager;
 import com.azure.resourcemanager.iothub.generated.fluent.ResourceProviderCommonsClient;
 import com.azure.resourcemanager.iothub.generated.fluent.models.UserSubscriptionQuotaListResultInner;
 import com.azure.resourcemanager.iothub.generated.models.ResourceProviderCommons;
 import com.azure.resourcemanager.iothub.generated.models.UserSubscriptionQuotaListResult;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ResourceProviderCommonsImpl implements ResourceProviderCommons {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ResourceProviderCommonsImpl.class);
+
     private final ResourceProviderCommonsClient innerClient;
 
     private final IotHubManager serviceManager;

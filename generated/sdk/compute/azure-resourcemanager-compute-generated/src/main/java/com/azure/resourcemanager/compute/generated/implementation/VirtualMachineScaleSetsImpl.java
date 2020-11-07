@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineScaleSetsClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.RecoveryWalkResponseInner;
@@ -26,8 +27,11 @@ import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSet
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMInstanceIDs;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMInstanceRequiredIDs;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSets;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSets {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualMachineScaleSetsImpl.class);
+
     private final VirtualMachineScaleSetsClient innerClient;
 
     private final ComputeManager serviceManager;
@@ -369,13 +373,45 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
 
     public VirtualMachineScaleSet getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
+        if (vmScaleSetName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'virtualMachineScaleSets'.",
+                                id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, vmScaleSetName, Context.NONE).getValue();
     }
 
     public Response<VirtualMachineScaleSet> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
+        if (vmScaleSetName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'virtualMachineScaleSets'.",
+                                id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, vmScaleSetName, context);
     }
 

@@ -7,6 +7,7 @@ package com.azure.resourcemanager.monitor.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.MetricBaselinesClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.BaselineResponseInner;
@@ -16,9 +17,12 @@ import com.azure.resourcemanager.monitor.generated.models.CalculateBaselineRespo
 import com.azure.resourcemanager.monitor.generated.models.MetricBaselines;
 import com.azure.resourcemanager.monitor.generated.models.ResultType;
 import com.azure.resourcemanager.monitor.generated.models.TimeSeriesInformation;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.time.Duration;
 
 public final class MetricBaselinesImpl implements MetricBaselines {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(MetricBaselinesImpl.class);
+
     private final MetricBaselinesClient innerClient;
 
     private final MonitorManager serviceManager;

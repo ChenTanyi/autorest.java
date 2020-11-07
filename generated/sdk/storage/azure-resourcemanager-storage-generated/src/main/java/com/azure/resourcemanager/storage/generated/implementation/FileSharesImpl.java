@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.FileSharesClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.FileShareInner;
@@ -18,8 +19,11 @@ import com.azure.resourcemanager.storage.generated.models.FileShareItem;
 import com.azure.resourcemanager.storage.generated.models.FileShares;
 import com.azure.resourcemanager.storage.generated.models.GetShareExpand;
 import com.azure.resourcemanager.storage.generated.models.ListSharesExpand;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class FileSharesImpl implements FileShares {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(FileSharesImpl.class);
+
     private final FileSharesClient innerClient;
 
     private final StorageManager serviceManager;
@@ -92,16 +96,56 @@ public final class FileSharesImpl implements FileShares {
 
     public FileShare getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
         String shareName = Utils.getValueFromIdByName(id, "shares");
+        if (shareName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'shares'.", id)));
+        }
         GetShareExpand localExpand = null;
         return this.getWithResponse(resourceGroupName, accountName, shareName, localExpand, Context.NONE).getValue();
     }
 
     public Response<FileShare> getByIdWithResponse(String id, GetShareExpand expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
         String shareName = Utils.getValueFromIdByName(id, "shares");
+        if (shareName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'shares'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, accountName, shareName, expand, context);
     }
 

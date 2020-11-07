@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.PeerExpressRouteCircuitConnectionsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.PeerExpressRouteCircuitConnectionInner;
 import com.azure.resourcemanager.network.generated.models.PeerExpressRouteCircuitConnection;
 import com.azure.resourcemanager.network.generated.models.PeerExpressRouteCircuitConnections;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PeerExpressRouteCircuitConnectionsImpl implements PeerExpressRouteCircuitConnections {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(PeerExpressRouteCircuitConnectionsImpl.class);
+
     private final PeerExpressRouteCircuitConnectionsClient innerClient;
 
     private final NetworkManager serviceManager;

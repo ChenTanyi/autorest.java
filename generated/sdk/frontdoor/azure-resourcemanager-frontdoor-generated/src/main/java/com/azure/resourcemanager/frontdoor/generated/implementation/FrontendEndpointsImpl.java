@@ -8,14 +8,18 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.FrontDoorManager;
 import com.azure.resourcemanager.frontdoor.generated.fluent.FrontendEndpointsClient;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.FrontendEndpointInner;
 import com.azure.resourcemanager.frontdoor.generated.models.CustomHttpsConfiguration;
 import com.azure.resourcemanager.frontdoor.generated.models.FrontendEndpoint;
 import com.azure.resourcemanager.frontdoor.generated.models.FrontendEndpoints;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class FrontendEndpointsImpl implements FrontendEndpoints {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(FrontendEndpointsImpl.class);
+
     private final FrontendEndpointsClient innerClient;
 
     private final FrontDoorManager serviceManager;

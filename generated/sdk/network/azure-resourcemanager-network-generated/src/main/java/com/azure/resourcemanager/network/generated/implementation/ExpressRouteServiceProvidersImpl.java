@@ -6,13 +6,17 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.ExpressRouteServiceProvidersClient;
 import com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteServiceProviderInner;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteServiceProvider;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteServiceProviders;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ExpressRouteServiceProvidersImpl implements ExpressRouteServiceProviders {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ExpressRouteServiceProvidersImpl.class);
+
     private final ExpressRouteServiceProvidersClient innerClient;
 
     private final NetworkManager serviceManager;

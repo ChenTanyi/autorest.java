@@ -373,7 +373,7 @@ public interface StorageAccounts {
      * Returns the properties for the specified storage account including but not limited to name, SKU name, location,
      * and account status. The ListKeys operation should be used to retrieve storage keys.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -385,7 +385,7 @@ public interface StorageAccounts {
      * Returns the properties for the specified storage account including but not limited to name, SKU name, location,
      * and account status. The ListKeys operation should be used to retrieve storage keys.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param expand May be used to expand the properties within account's properties. By default, data is not included
      *     when fetching properties. Currently we only support geoReplicationStats and blobRestoreStatus.
      * @param context The context to associate with this operation.

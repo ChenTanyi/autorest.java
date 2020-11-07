@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.ConsumerGroupsClient;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ConsumerGroupInner;
 import com.azure.resourcemanager.eventhubs.generated.models.ConsumerGroup;
 import com.azure.resourcemanager.eventhubs.generated.models.ConsumerGroups;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ConsumerGroupsImpl implements ConsumerGroups {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ConsumerGroupsImpl.class);
+
     private final ConsumerGroupsClient innerClient;
 
     private final EventHubsManager serviceManager;
@@ -92,9 +96,35 @@ public final class ConsumerGroupsImpl implements ConsumerGroups {
 
     public ConsumerGroup getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+        }
         String eventHubName = Utils.getValueFromIdByName(id, "eventhubs");
+        if (eventHubName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'eventhubs'.", id)));
+        }
         String consumerGroupName = Utils.getValueFromIdByName(id, "consumergroups");
+        if (consumerGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'consumergroups'.", id)));
+        }
         return this
             .getWithResponse(resourceGroupName, namespaceName, eventHubName, consumerGroupName, Context.NONE)
             .getValue();
@@ -102,9 +132,35 @@ public final class ConsumerGroupsImpl implements ConsumerGroups {
 
     public Response<ConsumerGroup> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+        }
         String eventHubName = Utils.getValueFromIdByName(id, "eventhubs");
+        if (eventHubName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'eventhubs'.", id)));
+        }
         String consumerGroupName = Utils.getValueFromIdByName(id, "consumergroups");
+        if (consumerGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'consumergroups'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, namespaceName, eventHubName, consumerGroupName, context);
     }
 

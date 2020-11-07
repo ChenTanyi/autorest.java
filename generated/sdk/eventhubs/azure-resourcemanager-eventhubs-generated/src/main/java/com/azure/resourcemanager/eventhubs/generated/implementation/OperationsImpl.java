@@ -6,13 +6,17 @@ package com.azure.resourcemanager.eventhubs.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.OperationsClient;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.eventhubs.generated.models.Operation;
 import com.azure.resourcemanager.eventhubs.generated.models.Operations;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class OperationsImpl implements Operations {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(OperationsImpl.class);
+
     private final OperationsClient innerClient;
 
     private final EventHubsManager serviceManager;

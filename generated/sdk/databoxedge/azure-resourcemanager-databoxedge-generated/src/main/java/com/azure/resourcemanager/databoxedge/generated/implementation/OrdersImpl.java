@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.OrdersClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.OrderInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Order;
 import com.azure.resourcemanager.databoxedge.generated.models.Orders;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class OrdersImpl implements Orders {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(OrdersImpl.class);
+
     private final OrdersClient innerClient;
 
     private final DataBoxEdgeManager serviceManager;

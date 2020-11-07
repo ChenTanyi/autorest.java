@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.HubRouteTablesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.HubRouteTableInner;
 import com.azure.resourcemanager.network.generated.models.HubRouteTable;
 import com.azure.resourcemanager.network.generated.models.HubRouteTables;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class HubRouteTablesImpl implements HubRouteTables {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(HubRouteTablesImpl.class);
+
     private final HubRouteTablesClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -68,15 +72,55 @@ public final class HubRouteTablesImpl implements HubRouteTables {
 
     public HubRouteTable getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
+        if (virtualHubName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
+        }
         String routeTableName = Utils.getValueFromIdByName(id, "hubRouteTables");
+        if (routeTableName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'hubRouteTables'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, virtualHubName, routeTableName, Context.NONE).getValue();
     }
 
     public Response<HubRouteTable> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String virtualHubName = Utils.getValueFromIdByName(id, "virtualHubs");
+        if (virtualHubName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'virtualHubs'.", id)));
+        }
         String routeTableName = Utils.getValueFromIdByName(id, "hubRouteTables");
+        if (routeTableName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'hubRouteTables'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, virtualHubName, routeTableName, context);
     }
 

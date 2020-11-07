@@ -6,13 +6,17 @@ package com.azure.resourcemanager.monitor.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.EventCategoriesClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.LocalizableStringInner;
 import com.azure.resourcemanager.monitor.generated.models.EventCategories;
 import com.azure.resourcemanager.monitor.generated.models.LocalizableString;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class EventCategoriesImpl implements EventCategories {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(EventCategoriesImpl.class);
+
     private final EventCategoriesClient innerClient;
 
     private final MonitorManager serviceManager;

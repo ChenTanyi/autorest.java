@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.LoadBalancerProbesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.ProbeInner;
 import com.azure.resourcemanager.network.generated.models.LoadBalancerProbes;
 import com.azure.resourcemanager.network.generated.models.Probe;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LoadBalancerProbesImpl implements LoadBalancerProbes {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(LoadBalancerProbesImpl.class);
+
     private final LoadBalancerProbesClient innerClient;
 
     private final NetworkManager serviceManager;

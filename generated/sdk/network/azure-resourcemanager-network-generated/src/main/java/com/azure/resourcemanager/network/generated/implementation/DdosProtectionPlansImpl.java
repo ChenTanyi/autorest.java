@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.DdosProtectionPlansClient;
 import com.azure.resourcemanager.network.generated.fluent.models.DdosProtectionPlanInner;
 import com.azure.resourcemanager.network.generated.models.DdosProtectionPlan;
 import com.azure.resourcemanager.network.generated.models.DdosProtectionPlans;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DdosProtectionPlansImpl implements DdosProtectionPlans {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(DdosProtectionPlansImpl.class);
+
     private final DdosProtectionPlansClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -80,13 +84,43 @@ public final class DdosProtectionPlansImpl implements DdosProtectionPlans {
 
     public DdosProtectionPlan getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String ddosProtectionPlanName = Utils.getValueFromIdByName(id, "ddosProtectionPlans");
+        if (ddosProtectionPlanName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'ddosProtectionPlans'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, ddosProtectionPlanName, Context.NONE).getValue();
     }
 
     public Response<DdosProtectionPlan> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String ddosProtectionPlanName = Utils.getValueFromIdByName(id, "ddosProtectionPlans");
+        if (ddosProtectionPlanName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'ddosProtectionPlans'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, ddosProtectionPlanName, context);
     }
 

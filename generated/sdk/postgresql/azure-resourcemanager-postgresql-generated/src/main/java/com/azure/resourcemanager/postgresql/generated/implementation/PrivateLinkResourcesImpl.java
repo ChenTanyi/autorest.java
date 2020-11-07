@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.postgresql.generated.PostgreSqlManager;
 import com.azure.resourcemanager.postgresql.generated.fluent.PrivateLinkResourcesClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.PrivateLinkResourceInner;
 import com.azure.resourcemanager.postgresql.generated.models.PrivateLinkResource;
 import com.azure.resourcemanager.postgresql.generated.models.PrivateLinkResources;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(PrivateLinkResourcesImpl.class);
+
     private final PrivateLinkResourcesClient innerClient;
 
     private final PostgreSqlManager serviceManager;

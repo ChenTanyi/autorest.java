@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.LoadBalancerFrontendIpConfigurationsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.FrontendIpConfigurationInner;
 import com.azure.resourcemanager.network.generated.models.FrontendIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.LoadBalancerFrontendIpConfigurations;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LoadBalancerFrontendIpConfigurationsImpl implements LoadBalancerFrontendIpConfigurations {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(LoadBalancerFrontendIpConfigurationsImpl.class);
+
     private final LoadBalancerFrontendIpConfigurationsClient innerClient;
 
     private final NetworkManager serviceManager;

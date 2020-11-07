@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.ResourceHealthMetadatasClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ResourceHealthMetadataInner;
 import com.azure.resourcemanager.appservice.generated.models.ResourceHealthMetadata;
 import com.azure.resourcemanager.appservice.generated.models.ResourceHealthMetadatas;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ResourceHealthMetadatasImpl implements ResourceHealthMetadatas {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ResourceHealthMetadatasImpl.class);
+
     private final ResourceHealthMetadatasClient innerClient;
 
     private final WebSiteManager serviceManager;

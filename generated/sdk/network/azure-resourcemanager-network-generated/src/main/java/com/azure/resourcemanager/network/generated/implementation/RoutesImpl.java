@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.RoutesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.RouteInner;
 import com.azure.resourcemanager.network.generated.models.Route;
 import com.azure.resourcemanager.network.generated.models.Routes;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class RoutesImpl implements Routes {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(RoutesImpl.class);
+
     private final RoutesClient innerClient;
 
     private final NetworkManager serviceManager;

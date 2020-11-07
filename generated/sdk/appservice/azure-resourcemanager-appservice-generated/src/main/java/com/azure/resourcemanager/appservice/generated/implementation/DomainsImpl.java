@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.DomainsClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DomainAvailabilityCheckResultInner;
@@ -22,8 +23,11 @@ import com.azure.resourcemanager.appservice.generated.models.DomainOwnershipIden
 import com.azure.resourcemanager.appservice.generated.models.DomainRecommendationSearchParameters;
 import com.azure.resourcemanager.appservice.generated.models.Domains;
 import com.azure.resourcemanager.appservice.generated.models.NameIdentifier;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DomainsImpl implements Domains {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(DomainsImpl.class);
+
     private final DomainsClient innerClient;
 
     private final WebSiteManager serviceManager;
@@ -202,27 +206,97 @@ public final class DomainsImpl implements Domains {
 
     public Domain getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String domainName = Utils.getValueFromIdByName(id, "domains");
+        if (domainName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, domainName, Context.NONE).getValue();
     }
 
     public Response<Domain> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String domainName = Utils.getValueFromIdByName(id, "domains");
+        if (domainName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, domainName, context);
     }
 
     public DomainOwnershipIdentifier getOwnershipIdentifierById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String domainName = Utils.getValueFromIdByName(id, "domains");
+        if (domainName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
+        }
         String name = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'domainOwnershipIdentifiers'.",
+                                id)));
+        }
         return this.getOwnershipIdentifierWithResponse(resourceGroupName, domainName, name, Context.NONE).getValue();
     }
 
     public Response<DomainOwnershipIdentifier> getOwnershipIdentifierByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String domainName = Utils.getValueFromIdByName(id, "domains");
+        if (domainName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
+        }
         String name = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'domainOwnershipIdentifiers'.",
+                                id)));
+        }
         return this.getOwnershipIdentifierWithResponse(resourceGroupName, domainName, name, context);
     }
 

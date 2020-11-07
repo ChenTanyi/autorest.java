@@ -6,13 +6,17 @@ package com.azure.resourcemanager.authorization.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.authorization.generated.AuthorizationManager;
 import com.azure.resourcemanager.authorization.generated.fluent.PermissionsClient;
 import com.azure.resourcemanager.authorization.generated.fluent.models.PermissionInner;
 import com.azure.resourcemanager.authorization.generated.models.Permission;
 import com.azure.resourcemanager.authorization.generated.models.Permissions;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PermissionsImpl implements Permissions {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(PermissionsImpl.class);
+
     private final PermissionsClient innerClient;
 
     private final AuthorizationManager serviceManager;

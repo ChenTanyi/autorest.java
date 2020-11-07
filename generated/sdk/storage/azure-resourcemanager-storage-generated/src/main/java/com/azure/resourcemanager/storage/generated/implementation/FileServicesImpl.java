@@ -7,6 +7,7 @@ package com.azure.resourcemanager.storage.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.FileServicesClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.FileServiceItemsInner;
@@ -14,8 +15,11 @@ import com.azure.resourcemanager.storage.generated.fluent.models.FileServiceProp
 import com.azure.resourcemanager.storage.generated.models.FileServiceItems;
 import com.azure.resourcemanager.storage.generated.models.FileServiceProperties;
 import com.azure.resourcemanager.storage.generated.models.FileServices;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class FileServicesImpl implements FileServices {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(FileServicesImpl.class);
+
     private final FileServicesClient innerClient;
 
     private final StorageManager serviceManager;
@@ -74,13 +78,41 @@ public final class FileServicesImpl implements FileServices {
 
     public FileServiceProperties getServicePropertiesById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
         return this.getServicePropertiesWithResponse(resourceGroupName, accountName, Context.NONE).getValue();
     }
 
     public Response<FileServiceProperties> getServicePropertiesByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
         return this.getServicePropertiesWithResponse(resourceGroupName, accountName, context);
     }
 

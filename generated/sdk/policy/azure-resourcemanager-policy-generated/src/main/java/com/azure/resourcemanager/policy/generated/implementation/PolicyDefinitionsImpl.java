@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.policy.generated.PolicyManager;
 import com.azure.resourcemanager.policy.generated.fluent.PolicyDefinitionsClient;
 import com.azure.resourcemanager.policy.generated.fluent.models.PolicyDefinitionInner;
 import com.azure.resourcemanager.policy.generated.models.PolicyDefinition;
 import com.azure.resourcemanager.policy.generated.models.PolicyDefinitions;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PolicyDefinitionsImpl implements PolicyDefinitions {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(PolicyDefinitionsImpl.class);
+
     private final PolicyDefinitionsClient innerClient;
 
     private final PolicyManager serviceManager;
@@ -175,11 +179,27 @@ public final class PolicyDefinitionsImpl implements PolicyDefinitions {
 
     public PolicyDefinition getById(String id) {
         String policyDefinitionName = Utils.getValueFromIdByName(id, "policyDefinitions");
+        if (policyDefinitionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'policyDefinitions'.", id)));
+        }
         return this.getWithResponse(policyDefinitionName, Context.NONE).getValue();
     }
 
     public Response<PolicyDefinition> getByIdWithResponse(String id, Context context) {
         String policyDefinitionName = Utils.getValueFromIdByName(id, "policyDefinitions");
+        if (policyDefinitionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'policyDefinitions'.", id)));
+        }
         return this.getWithResponse(policyDefinitionName, context);
     }
 

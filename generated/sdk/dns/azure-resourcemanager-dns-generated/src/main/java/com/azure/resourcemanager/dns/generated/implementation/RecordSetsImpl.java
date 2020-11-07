@@ -8,14 +8,18 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.dns.generated.DnsManager;
 import com.azure.resourcemanager.dns.generated.fluent.RecordSetsClient;
 import com.azure.resourcemanager.dns.generated.fluent.models.RecordSetInner;
 import com.azure.resourcemanager.dns.generated.models.RecordSet;
 import com.azure.resourcemanager.dns.generated.models.RecordSets;
 import com.azure.resourcemanager.dns.generated.models.RecordType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class RecordSetsImpl implements RecordSets {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(RecordSetsImpl.class);
+
     private final RecordSetsClient innerClient;
 
     private final DnsManager serviceManager;

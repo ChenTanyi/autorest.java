@@ -6,13 +6,17 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.ApplicationGatewayPrivateLinkResourcesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayPrivateLinkResourceInner;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayPrivateLinkResource;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayPrivateLinkResources;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ApplicationGatewayPrivateLinkResourcesImpl implements ApplicationGatewayPrivateLinkResources {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ApplicationGatewayPrivateLinkResourcesImpl.class);
+
     private final ApplicationGatewayPrivateLinkResourcesClient innerClient;
 
     private final NetworkManager serviceManager;

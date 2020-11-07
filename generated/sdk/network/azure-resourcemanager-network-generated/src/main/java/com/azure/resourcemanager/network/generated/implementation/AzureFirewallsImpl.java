@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.AzureFirewallsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.AzureFirewallInner;
 import com.azure.resourcemanager.network.generated.models.AzureFirewall;
 import com.azure.resourcemanager.network.generated.models.AzureFirewalls;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AzureFirewallsImpl implements AzureFirewalls {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(AzureFirewallsImpl.class);
+
     private final AzureFirewallsClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -78,13 +82,41 @@ public final class AzureFirewallsImpl implements AzureFirewalls {
 
     public AzureFirewall getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String azureFirewallName = Utils.getValueFromIdByName(id, "azureFirewalls");
+        if (azureFirewallName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'azureFirewalls'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, azureFirewallName, Context.NONE).getValue();
     }
 
     public Response<AzureFirewall> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String azureFirewallName = Utils.getValueFromIdByName(id, "azureFirewalls");
+        if (azureFirewallName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'azureFirewalls'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, azureFirewallName, context);
     }
 

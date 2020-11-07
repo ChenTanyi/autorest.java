@@ -6,6 +6,7 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.ProvidersClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ApplicationStackResourceInner;
@@ -14,8 +15,11 @@ import com.azure.resourcemanager.appservice.generated.models.ApplicationStackRes
 import com.azure.resourcemanager.appservice.generated.models.CsmOperationDescription;
 import com.azure.resourcemanager.appservice.generated.models.ProviderOsTypeSelected;
 import com.azure.resourcemanager.appservice.generated.models.Providers;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ProvidersImpl implements Providers {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ProvidersImpl.class);
+
     private final ProvidersClient innerClient;
 
     private final WebSiteManager serviceManager;

@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.MetricAlertsClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricAlertResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.MetricAlertResource;
 import com.azure.resourcemanager.monitor.generated.models.MetricAlerts;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class MetricAlertsImpl implements MetricAlerts {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(MetricAlertsImpl.class);
+
     private final MetricAlertsClient innerClient;
 
     private final MonitorManager serviceManager;
@@ -79,13 +83,39 @@ public final class MetricAlertsImpl implements MetricAlerts {
 
     public MetricAlertResource getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String ruleName = Utils.getValueFromIdByName(id, "metricAlerts");
+        if (ruleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'metricAlerts'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, ruleName, Context.NONE).getValue();
     }
 
     public Response<MetricAlertResource> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String ruleName = Utils.getValueFromIdByName(id, "metricAlerts");
+        if (ruleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'metricAlerts'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, ruleName, context);
     }
 

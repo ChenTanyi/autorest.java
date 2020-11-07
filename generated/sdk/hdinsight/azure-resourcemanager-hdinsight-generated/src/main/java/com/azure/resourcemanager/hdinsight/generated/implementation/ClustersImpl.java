@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.hdinsight.generated.HDInsightManager;
 import com.azure.resourcemanager.hdinsight.generated.fluent.ClustersClient;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.ClusterInner;
@@ -21,8 +22,11 @@ import com.azure.resourcemanager.hdinsight.generated.models.ExecuteScriptActionP
 import com.azure.resourcemanager.hdinsight.generated.models.GatewaySettings;
 import com.azure.resourcemanager.hdinsight.generated.models.RoleName;
 import com.azure.resourcemanager.hdinsight.generated.models.UpdateGatewaySettingsParameters;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ClustersImpl implements Clusters {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ClustersImpl.class);
+
     private final ClustersClient innerClient;
 
     private final HDInsightManager serviceManager;
@@ -173,13 +177,39 @@ public final class ClustersImpl implements Clusters {
 
     public Cluster getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String clusterName = Utils.getValueFromIdByName(id, "clusters");
+        if (clusterName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'clusters'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, clusterName, Context.NONE).getValue();
     }
 
     public Response<Cluster> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String clusterName = Utils.getValueFromIdByName(id, "clusters");
+        if (clusterName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'clusters'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, clusterName, context);
     }
 

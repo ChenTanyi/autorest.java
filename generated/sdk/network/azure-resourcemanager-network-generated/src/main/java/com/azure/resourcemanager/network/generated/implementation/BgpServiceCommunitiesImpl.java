@@ -6,13 +6,17 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.BgpServiceCommunitiesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.BgpServiceCommunityInner;
 import com.azure.resourcemanager.network.generated.models.BgpServiceCommunities;
 import com.azure.resourcemanager.network.generated.models.BgpServiceCommunity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class BgpServiceCommunitiesImpl implements BgpServiceCommunities {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(BgpServiceCommunitiesImpl.class);
+
     private final BgpServiceCommunitiesClient innerClient;
 
     private final NetworkManager serviceManager;

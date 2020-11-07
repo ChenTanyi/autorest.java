@@ -7,14 +7,18 @@ package com.azure.resourcemanager.mediaservices.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mediaservices.generated.MediaservicesManager;
 import com.azure.resourcemanager.mediaservices.generated.fluent.LocationsClient;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.EntityNameAvailabilityCheckOutputInner;
 import com.azure.resourcemanager.mediaservices.generated.models.CheckNameAvailabilityInput;
 import com.azure.resourcemanager.mediaservices.generated.models.EntityNameAvailabilityCheckOutput;
 import com.azure.resourcemanager.mediaservices.generated.models.Locations;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LocationsImpl implements Locations {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(LocationsImpl.class);
+
     private final LocationsClient innerClient;
 
     private final MediaservicesManager serviceManager;

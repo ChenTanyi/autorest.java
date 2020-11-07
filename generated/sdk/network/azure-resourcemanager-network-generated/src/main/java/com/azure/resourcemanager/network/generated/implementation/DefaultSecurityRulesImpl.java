@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.DefaultSecurityRulesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.SecurityRuleInner;
 import com.azure.resourcemanager.network.generated.models.DefaultSecurityRules;
 import com.azure.resourcemanager.network.generated.models.SecurityRule;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DefaultSecurityRulesImpl implements DefaultSecurityRules {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(DefaultSecurityRulesImpl.class);
+
     private final DefaultSecurityRulesClient innerClient;
 
     private final NetworkManager serviceManager;

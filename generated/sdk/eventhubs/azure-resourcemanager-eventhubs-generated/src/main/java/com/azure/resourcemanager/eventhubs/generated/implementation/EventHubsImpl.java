@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.EventHubsClient;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.AccessKeysInner;
@@ -18,8 +19,11 @@ import com.azure.resourcemanager.eventhubs.generated.models.AuthorizationRule;
 import com.azure.resourcemanager.eventhubs.generated.models.EventHubs;
 import com.azure.resourcemanager.eventhubs.generated.models.Eventhub;
 import com.azure.resourcemanager.eventhubs.generated.models.RegenerateAccessKeyParameters;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class EventHubsImpl implements EventHubs {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(EventHubsImpl.class);
+
     private final EventHubsClient innerClient;
 
     private final EventHubsManager serviceManager;
@@ -257,15 +261,53 @@ public final class EventHubsImpl implements EventHubs {
 
     public Eventhub getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+        }
         String eventHubName = Utils.getValueFromIdByName(id, "eventhubs");
+        if (eventHubName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'eventhubs'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, namespaceName, eventHubName, Context.NONE).getValue();
     }
 
     public Response<Eventhub> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+        }
         String eventHubName = Utils.getValueFromIdByName(id, "eventhubs");
+        if (eventHubName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'eventhubs'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, namespaceName, eventHubName, context);
     }
 

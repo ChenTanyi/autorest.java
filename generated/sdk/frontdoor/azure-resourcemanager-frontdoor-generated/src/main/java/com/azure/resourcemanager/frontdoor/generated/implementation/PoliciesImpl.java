@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.FrontDoorManager;
 import com.azure.resourcemanager.frontdoor.generated.fluent.PoliciesClient;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.WebApplicationFirewallPolicyInner;
 import com.azure.resourcemanager.frontdoor.generated.models.Policies;
 import com.azure.resourcemanager.frontdoor.generated.models.WebApplicationFirewallPolicy;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class PoliciesImpl implements Policies {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(PoliciesImpl.class);
+
     private final PoliciesClient innerClient;
 
     private final FrontDoorManager serviceManager;
@@ -71,13 +75,47 @@ public final class PoliciesImpl implements Policies {
 
     public WebApplicationFirewallPolicy getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String policyName = Utils.getValueFromIdByName(id, "FrontDoorWebApplicationFirewallPolicies");
+        if (policyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment"
+                                    + " 'FrontDoorWebApplicationFirewallPolicies'.",
+                                id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, policyName, Context.NONE).getValue();
     }
 
     public Response<WebApplicationFirewallPolicy> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String policyName = Utils.getValueFromIdByName(id, "FrontDoorWebApplicationFirewallPolicies");
+        if (policyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment"
+                                    + " 'FrontDoorWebApplicationFirewallPolicies'.",
+                                id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, policyName, context);
     }
 

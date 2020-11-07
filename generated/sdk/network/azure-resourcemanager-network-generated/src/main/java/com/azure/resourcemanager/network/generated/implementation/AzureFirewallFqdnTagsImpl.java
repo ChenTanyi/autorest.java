@@ -6,13 +6,17 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.AzureFirewallFqdnTagsClient;
 import com.azure.resourcemanager.network.generated.fluent.models.AzureFirewallFqdnTagInner;
 import com.azure.resourcemanager.network.generated.models.AzureFirewallFqdnTag;
 import com.azure.resourcemanager.network.generated.models.AzureFirewallFqdnTags;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AzureFirewallFqdnTagsImpl implements AzureFirewallFqdnTags {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(AzureFirewallFqdnTagsImpl.class);
+
     private final AzureFirewallFqdnTagsClient innerClient;
 
     private final NetworkManager serviceManager;

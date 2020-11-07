@@ -6,13 +6,17 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.AvailableEndpointServicesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.EndpointServiceResultInner;
 import com.azure.resourcemanager.network.generated.models.AvailableEndpointServices;
 import com.azure.resourcemanager.network.generated.models.EndpointServiceResult;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class AvailableEndpointServicesImpl implements AvailableEndpointServices {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(AvailableEndpointServicesImpl.class);
+
     private final AvailableEndpointServicesClient innerClient;
 
     private final NetworkManager serviceManager;

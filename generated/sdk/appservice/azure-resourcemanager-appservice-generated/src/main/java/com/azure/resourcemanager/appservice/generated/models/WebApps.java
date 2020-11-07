@@ -11409,7 +11409,7 @@ public interface WebApps {
     /**
      * Description for Get domain ownership identifier for web app.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -11421,7 +11421,7 @@ public interface WebApps {
     /**
      * Description for Get domain ownership identifier for web app.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -11434,7 +11434,7 @@ public interface WebApps {
     /**
      * Description for Gets the details of a web, mobile, or API app.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -11446,7 +11446,7 @@ public interface WebApps {
     /**
      * Description for Gets the details of a web, mobile, or API app.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -11459,7 +11459,7 @@ public interface WebApps {
     /**
      * Description for Get a deployment by its ID for an app, or a deployment slot.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -11471,7 +11471,7 @@ public interface WebApps {
     /**
      * Description for Get a deployment by its ID for an app, or a deployment slot.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -11484,7 +11484,7 @@ public interface WebApps {
     /**
      * Description for Get function information by its ID for web site, or a deployment slot.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -11496,7 +11496,7 @@ public interface WebApps {
     /**
      * Description for Get function information by its ID for web site, or a deployment slot.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -11509,7 +11509,7 @@ public interface WebApps {
     /**
      * Description for Get the named hostname binding for an app (or deployment slot, if specified).
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -11521,7 +11521,7 @@ public interface WebApps {
     /**
      * Description for Get the named hostname binding for an app (or deployment slot, if specified).
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -11534,7 +11534,7 @@ public interface WebApps {
     /**
      * Description for Retrieves a specific Service Bus Hybrid Connection used by this Web App.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -11546,7 +11546,7 @@ public interface WebApps {
     /**
      * Description for Retrieves a specific Service Bus Hybrid Connection used by this Web App.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -11559,7 +11559,7 @@ public interface WebApps {
     /**
      * Description for Gets a hybrid connection configuration by its name.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -11571,7 +11571,7 @@ public interface WebApps {
     /**
      * Description for Gets a hybrid connection configuration by its name.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -11584,7 +11584,7 @@ public interface WebApps {
     /**
      * Description for Gets a virtual network the app (or deployment slot) is connected to by name.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -11596,7 +11596,7 @@ public interface WebApps {
     /**
      * Description for Gets a virtual network the app (or deployment slot) is connected to by name.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -11609,7 +11609,7 @@ public interface WebApps {
     /**
      * Description for Gets a named add-on of an app.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -11621,7 +11621,7 @@ public interface WebApps {
     /**
      * Description for Gets a named add-on of an app.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -11634,7 +11634,7 @@ public interface WebApps {
     /**
      * Description for Get the named public certificate for an app (or deployment slot, if specified).
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -11646,7 +11646,7 @@ public interface WebApps {
     /**
      * Description for Get the named public certificate for an app (or deployment slot, if specified).
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -11659,7 +11659,7 @@ public interface WebApps {
     /**
      * Description for Gets a private endpoint connection.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -11671,7 +11671,7 @@ public interface WebApps {
     /**
      * Description for Gets a private endpoint connection.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -11685,7 +11685,7 @@ public interface WebApps {
     /**
      * Description for Gets an app's Virtual Network gateway.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -11697,7 +11697,7 @@ public interface WebApps {
     /**
      * Description for Gets an app's Virtual Network gateway.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the

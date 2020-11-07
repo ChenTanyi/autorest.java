@@ -6,13 +6,17 @@ package com.azure.resourcemanager.mysql.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.ReplicasClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.ServerInner;
 import com.azure.resourcemanager.mysql.generated.models.Replicas;
 import com.azure.resourcemanager.mysql.generated.models.Server;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ReplicasImpl implements Replicas {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ReplicasImpl.class);
+
     private final ReplicasClient innerClient;
 
     private final MySqlManager serviceManager;

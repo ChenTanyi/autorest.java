@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.postgresql.generated.PostgreSqlManager;
 import com.azure.resourcemanager.postgresql.generated.fluent.ConfigurationsClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.ConfigurationInner;
 import com.azure.resourcemanager.postgresql.generated.models.Configuration;
 import com.azure.resourcemanager.postgresql.generated.models.Configurations;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ConfigurationsImpl implements Configurations {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ConfigurationsImpl.class);
+
     private final ConfigurationsClient innerClient;
 
     private final PostgreSqlManager serviceManager;
@@ -61,15 +65,55 @@ public final class ConfigurationsImpl implements Configurations {
 
     public Configuration getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String serverName = Utils.getValueFromIdByName(id, "servers");
+        if (serverName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'servers'.", id)));
+        }
         String configurationName = Utils.getValueFromIdByName(id, "configurations");
+        if (configurationName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'configurations'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, serverName, configurationName, Context.NONE).getValue();
     }
 
     public Response<Configuration> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String serverName = Utils.getValueFromIdByName(id, "servers");
+        if (serverName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'servers'.", id)));
+        }
         String configurationName = Utils.getValueFromIdByName(id, "configurations");
+        if (configurationName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'configurations'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, serverName, configurationName, context);
     }
 

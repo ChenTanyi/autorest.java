@@ -6,13 +6,17 @@ package com.azure.resourcemanager.monitor.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.TenantActivityLogsClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.EventDataInner;
 import com.azure.resourcemanager.monitor.generated.models.EventData;
 import com.azure.resourcemanager.monitor.generated.models.TenantActivityLogs;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class TenantActivityLogsImpl implements TenantActivityLogs {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(TenantActivityLogsImpl.class);
+
     private final TenantActivityLogsClient innerClient;
 
     private final MonitorManager serviceManager;

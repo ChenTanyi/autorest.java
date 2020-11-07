@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.StorageAccountsClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.StorageAccountInner;
 import com.azure.resourcemanager.databoxedge.generated.models.StorageAccount;
 import com.azure.resourcemanager.databoxedge.generated.models.StorageAccounts;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class StorageAccountsImpl implements StorageAccounts {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(StorageAccountsImpl.class);
+
     private final StorageAccountsClient innerClient;
 
     private final DataBoxEdgeManager serviceManager;
@@ -71,15 +75,59 @@ public final class StorageAccountsImpl implements StorageAccounts {
 
     public StorageAccount getById(String id) {
         String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        if (deviceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'dataBoxEdgeDevices'.", id)));
+        }
         String storageAccountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (storageAccountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         return this.getWithResponse(deviceName, storageAccountName, resourceGroupName, Context.NONE).getValue();
     }
 
     public Response<StorageAccount> getByIdWithResponse(String id, Context context) {
         String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        if (deviceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'dataBoxEdgeDevices'.", id)));
+        }
         String storageAccountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (storageAccountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         return this.getWithResponse(deviceName, storageAccountName, resourceGroupName, context);
     }
 

@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.hdinsight.generated.HDInsightManager;
 import com.azure.resourcemanager.hdinsight.generated.fluent.ScriptActionsClient;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.RuntimeScriptActionDetailInner;
 import com.azure.resourcemanager.hdinsight.generated.models.RuntimeScriptActionDetail;
 import com.azure.resourcemanager.hdinsight.generated.models.ScriptActions;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ScriptActionsImpl implements ScriptActions {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ScriptActionsImpl.class);
+
     private final ScriptActionsClient innerClient;
 
     private final HDInsightManager serviceManager;

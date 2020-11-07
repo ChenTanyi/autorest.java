@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.LocalNetworkGatewaysClient;
 import com.azure.resourcemanager.network.generated.fluent.models.LocalNetworkGatewayInner;
 import com.azure.resourcemanager.network.generated.models.LocalNetworkGateway;
 import com.azure.resourcemanager.network.generated.models.LocalNetworkGateways;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LocalNetworkGatewaysImpl implements LocalNetworkGateways {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(LocalNetworkGatewaysImpl.class);
+
     private final LocalNetworkGatewaysClient innerClient;
 
     private final NetworkManager serviceManager;
@@ -70,13 +74,45 @@ public final class LocalNetworkGatewaysImpl implements LocalNetworkGateways {
 
     public LocalNetworkGateway getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String localNetworkGatewayName = Utils.getValueFromIdByName(id, "localNetworkGateways");
+        if (localNetworkGatewayName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'localNetworkGateways'.",
+                                id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, localNetworkGatewayName, Context.NONE).getValue();
     }
 
     public Response<LocalNetworkGateway> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String localNetworkGatewayName = Utils.getValueFromIdByName(id, "localNetworkGateways");
+        if (localNetworkGatewayName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'localNetworkGateways'.",
+                                id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, localNetworkGatewayName, context);
     }
 

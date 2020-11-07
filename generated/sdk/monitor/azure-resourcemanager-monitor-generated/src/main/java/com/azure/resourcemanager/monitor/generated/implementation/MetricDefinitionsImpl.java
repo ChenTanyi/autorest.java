@@ -6,13 +6,17 @@ package com.azure.resourcemanager.monitor.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.MetricDefinitionsClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricDefinitionInner;
 import com.azure.resourcemanager.monitor.generated.models.MetricDefinition;
 import com.azure.resourcemanager.monitor.generated.models.MetricDefinitions;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class MetricDefinitionsImpl implements MetricDefinitions {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(MetricDefinitionsImpl.class);
+
     private final MetricDefinitionsClient innerClient;
 
     private final MonitorManager serviceManager;

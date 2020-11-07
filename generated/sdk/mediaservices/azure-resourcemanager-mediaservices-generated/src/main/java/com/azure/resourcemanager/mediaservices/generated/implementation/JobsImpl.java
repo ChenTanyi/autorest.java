@@ -8,13 +8,17 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mediaservices.generated.MediaservicesManager;
 import com.azure.resourcemanager.mediaservices.generated.fluent.JobsClient;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.JobInner;
 import com.azure.resourcemanager.mediaservices.generated.models.Job;
 import com.azure.resourcemanager.mediaservices.generated.models.Jobs;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class JobsImpl implements Jobs {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(JobsImpl.class);
+
     private final JobsClient innerClient;
 
     private final MediaservicesManager serviceManager;
@@ -87,17 +91,67 @@ public final class JobsImpl implements Jobs {
 
     public Job getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'mediaServices'.", id)));
+        }
         String transformName = Utils.getValueFromIdByName(id, "transforms");
+        if (transformName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'transforms'.", id)));
+        }
         String jobName = Utils.getValueFromIdByName(id, "jobs");
+        if (jobName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'jobs'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, accountName, transformName, jobName, Context.NONE).getValue();
     }
 
     public Response<Job> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'mediaServices'.", id)));
+        }
         String transformName = Utils.getValueFromIdByName(id, "transforms");
+        if (transformName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'transforms'.", id)));
+        }
         String jobName = Utils.getValueFromIdByName(id, "jobs");
+        if (jobName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'jobs'.", id)));
+        }
         return this.getWithResponse(resourceGroupName, accountName, transformName, jobName, context);
     }
 

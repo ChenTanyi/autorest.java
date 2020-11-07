@@ -7,14 +7,18 @@ package com.azure.resourcemanager.mysql.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.ServerSecurityAlertPoliciesClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.ServerSecurityAlertPolicyInner;
 import com.azure.resourcemanager.mysql.generated.models.SecurityAlertPolicyName;
 import com.azure.resourcemanager.mysql.generated.models.ServerSecurityAlertPolicies;
 import com.azure.resourcemanager.mysql.generated.models.ServerSecurityAlertPolicy;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ServerSecurityAlertPoliciesImpl implements ServerSecurityAlertPolicies {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ServerSecurityAlertPoliciesImpl.class);
+
     private final ServerSecurityAlertPoliciesClient innerClient;
 
     private final MySqlManager serviceManager;
@@ -52,17 +56,61 @@ public final class ServerSecurityAlertPoliciesImpl implements ServerSecurityAler
 
     public ServerSecurityAlertPolicy getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String serverName = Utils.getValueFromIdByName(id, "servers");
+        if (serverName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'servers'.", id)));
+        }
         SecurityAlertPolicyName securityAlertPolicyName =
             SecurityAlertPolicyName.fromString(Utils.getValueFromIdByName(id, "securityAlertPolicies"));
+        if (securityAlertPolicyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'securityAlertPolicies'.",
+                                id)));
+        }
         return this.getWithResponse(resourceGroupName, serverName, securityAlertPolicyName, Context.NONE).getValue();
     }
 
     public Response<ServerSecurityAlertPolicy> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String serverName = Utils.getValueFromIdByName(id, "servers");
+        if (serverName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'servers'.", id)));
+        }
         SecurityAlertPolicyName securityAlertPolicyName =
             SecurityAlertPolicyName.fromString(Utils.getValueFromIdByName(id, "securityAlertPolicies"));
+        if (securityAlertPolicyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'securityAlertPolicies'.",
+                                id)));
+        }
         return this.getWithResponse(resourceGroupName, serverName, securityAlertPolicyName, context);
     }
 

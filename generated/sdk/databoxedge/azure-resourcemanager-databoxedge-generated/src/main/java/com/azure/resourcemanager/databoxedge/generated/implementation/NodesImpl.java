@@ -6,13 +6,17 @@ package com.azure.resourcemanager.databoxedge.generated.implementation;
 
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.NodesClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.NodeInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Node;
 import com.azure.resourcemanager.databoxedge.generated.models.Nodes;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class NodesImpl implements Nodes {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(NodesImpl.class);
+
     private final NodesClient innerClient;
 
     private final DataBoxEdgeManager serviceManager;

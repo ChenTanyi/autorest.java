@@ -600,7 +600,7 @@ public interface IotHubResources {
     /**
      * Get the non-security related metadata of an IoT hub.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
      *     by server.
@@ -612,7 +612,7 @@ public interface IotHubResources {
     /**
      * Get the non-security related metadata of an IoT hub.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
@@ -625,7 +625,7 @@ public interface IotHubResources {
     /**
      * Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
      *     by server.
@@ -637,7 +637,7 @@ public interface IotHubResources {
     /**
      * Get a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub.
      *
-     * @param id the id of the resource.
+     * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected

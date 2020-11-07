@@ -8,6 +8,7 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mediaservices.generated.MediaservicesManager;
 import com.azure.resourcemanager.mediaservices.generated.fluent.MediaservicesClient;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.EdgePoliciesInner;
@@ -17,8 +18,11 @@ import com.azure.resourcemanager.mediaservices.generated.models.ListEdgePolicies
 import com.azure.resourcemanager.mediaservices.generated.models.MediaService;
 import com.azure.resourcemanager.mediaservices.generated.models.Mediaservices;
 import com.azure.resourcemanager.mediaservices.generated.models.SyncStorageKeysInput;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class MediaservicesImpl implements Mediaservices {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(MediaservicesImpl.class);
+
     private final MediaservicesClient innerClient;
 
     private final MediaservicesManager serviceManager;
@@ -138,13 +142,39 @@ public final class MediaservicesImpl implements Mediaservices {
 
     public MediaService getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "mediaservices");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'mediaservices'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, accountName, Context.NONE).getValue();
     }
 
     public Response<MediaService> getByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String accountName = Utils.getValueFromIdByName(id, "mediaservices");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'mediaservices'.", id)));
+        }
         return this.getByResourceGroupWithResponse(resourceGroupName, accountName, context);
     }
 
