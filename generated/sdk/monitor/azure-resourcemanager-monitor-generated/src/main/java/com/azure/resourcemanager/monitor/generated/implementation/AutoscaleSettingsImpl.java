@@ -125,6 +125,48 @@ public final class AutoscaleSettingsImpl implements AutoscaleSettings {
         return this.getByResourceGroupWithResponse(resourceGroupName, autoscaleSettingName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
+        }
+        String autoscaleSettingName = Utils.getValueFromIdByName(id, "autoscalesettings");
+        if (autoscaleSettingName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'autoscalesettings'.", id)));
+        }
+        this.deleteWithResponse(resourceGroupName, autoscaleSettingName, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
+        }
+        String autoscaleSettingName = Utils.getValueFromIdByName(id, "autoscalesettings");
+        if (autoscaleSettingName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'autoscalesettings'.", id)));
+        }
+        return this.deleteWithResponse(resourceGroupName, autoscaleSettingName, context);
+    }
+
     private AutoscaleSettingsClient serviceClient() {
         return this.innerClient;
     }

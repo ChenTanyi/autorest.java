@@ -176,6 +176,29 @@ public interface DiskEncryptionSets {
     Response<DiskEncryptionSet> getByIdWithResponse(String id, Context context);
 
     /**
+     * Deletes a disk encryption set.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteById(String id);
+
+    /**
+     * Deletes a disk encryption set.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new DiskEncryptionSet resource.
      *
      * @param name resource name.

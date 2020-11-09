@@ -123,6 +123,48 @@ public final class ContainerServicesImpl implements ContainerServices {
         return this.getByResourceGroupWithResponse(resourceGroupName, containerServiceName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String containerServiceName = Utils.getValueFromIdByName(id, "containerServices");
+        if (containerServiceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'containerServices'.", id)));
+        }
+        this.delete(resourceGroupName, containerServiceName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String containerServiceName = Utils.getValueFromIdByName(id, "containerServices");
+        if (containerServiceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'containerServices'.", id)));
+        }
+        this.delete(resourceGroupName, containerServiceName, context);
+    }
+
     private ContainerServicesClient serviceClient() {
         return this.innerClient;
     }

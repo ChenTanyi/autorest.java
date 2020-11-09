@@ -124,6 +124,48 @@ public final class ScheduledQueryRulesImpl implements ScheduledQueryRules {
         return this.getByResourceGroupWithResponse(resourceGroupName, ruleName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
+        }
+        String ruleName = Utils.getValueFromIdByName(id, "scheduledQueryRules");
+        if (ruleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'scheduledQueryRules'.", id)));
+        }
+        this.deleteWithResponse(resourceGroupName, ruleName, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
+        }
+        String ruleName = Utils.getValueFromIdByName(id, "scheduledQueryRules");
+        if (ruleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'scheduledQueryRules'.", id)));
+        }
+        return this.deleteWithResponse(resourceGroupName, ruleName, context);
+    }
+
     private ScheduledQueryRulesClient serviceClient() {
         return this.innerClient;
     }

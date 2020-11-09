@@ -7136,68 +7136,6 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public Identifier getDomainOwnershipIdentifierById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
-        if (resourceGroupName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
-        }
-        String name = Utils.getValueFromIdByName(id, "sites");
-        if (name == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
-        }
-        String domainOwnershipIdentifierName = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
-        if (domainOwnershipIdentifierName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'domainOwnershipIdentifiers'.",
-                                id)));
-        }
-        return this
-            .getDomainOwnershipIdentifierWithResponse(
-                resourceGroupName, name, domainOwnershipIdentifierName, Context.NONE)
-            .getValue();
-    }
-
-    public Response<Identifier> getDomainOwnershipIdentifierByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
-        if (resourceGroupName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
-        }
-        String name = Utils.getValueFromIdByName(id, "sites");
-        if (name == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
-        }
-        String domainOwnershipIdentifierName = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
-        if (domainOwnershipIdentifierName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'domainOwnershipIdentifiers'.",
-                                id)));
-        }
-        return this
-            .getDomainOwnershipIdentifierWithResponse(resourceGroupName, name, domainOwnershipIdentifierName, context);
-    }
-
     public Site getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
@@ -7286,6 +7224,68 @@ public final class WebAppsImpl implements WebApps {
                         String.format("The resource ID '%s' is not valid. Missing path segment 'deployments'.", id)));
         }
         return this.getDeploymentWithResponse(resourceGroupName, name, varId, context);
+    }
+
+    public Identifier getDomainOwnershipIdentifierById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String domainOwnershipIdentifierName = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
+        if (domainOwnershipIdentifierName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'domainOwnershipIdentifiers'.",
+                                id)));
+        }
+        return this
+            .getDomainOwnershipIdentifierWithResponse(
+                resourceGroupName, name, domainOwnershipIdentifierName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<Identifier> getDomainOwnershipIdentifierByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String domainOwnershipIdentifierName = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
+        if (domainOwnershipIdentifierName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'domainOwnershipIdentifiers'.",
+                                id)));
+        }
+        return this
+            .getDomainOwnershipIdentifierWithResponse(resourceGroupName, name, domainOwnershipIdentifierName, context);
     }
 
     public FunctionEnvelope getFunctionById(String id) {
@@ -7527,78 +7527,6 @@ public final class WebAppsImpl implements WebApps {
         return this.getRelayServiceConnectionWithResponse(resourceGroupName, name, entityName, context);
     }
 
-    public VnetInfo getVnetConnectionSlotById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
-        if (resourceGroupName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
-        }
-        String name = Utils.getValueFromIdByName(id, "sites");
-        if (name == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
-        }
-        String vnetName = Utils.getValueFromIdByName(id, "virtualNetworkConnections");
-        if (vnetName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'virtualNetworkConnections'.",
-                                id)));
-        }
-        String slot = Utils.getValueFromIdByName(id, "slots");
-        if (slot == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'slots'.", id)));
-        }
-        return this.getVnetConnectionSlotWithResponse(resourceGroupName, name, vnetName, slot, Context.NONE).getValue();
-    }
-
-    public Response<VnetInfo> getVnetConnectionSlotByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
-        if (resourceGroupName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
-        }
-        String name = Utils.getValueFromIdByName(id, "sites");
-        if (name == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
-        }
-        String vnetName = Utils.getValueFromIdByName(id, "virtualNetworkConnections");
-        if (vnetName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'virtualNetworkConnections'.",
-                                id)));
-        }
-        String slot = Utils.getValueFromIdByName(id, "slots");
-        if (slot == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'slots'.", id)));
-        }
-        return this.getVnetConnectionSlotWithResponse(resourceGroupName, name, vnetName, slot, context);
-    }
-
     public PremierAddOn getPremierAddOnById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
@@ -7772,6 +7700,78 @@ public final class WebAppsImpl implements WebApps {
             .getPrivateEndpointConnectionWithResponse(resourceGroupName, name, privateEndpointConnectionName, context);
     }
 
+    public VnetInfo getVnetConnectionSlotById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String vnetName = Utils.getValueFromIdByName(id, "virtualNetworkConnections");
+        if (vnetName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'virtualNetworkConnections'.",
+                                id)));
+        }
+        String slot = Utils.getValueFromIdByName(id, "slots");
+        if (slot == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'slots'.", id)));
+        }
+        return this.getVnetConnectionSlotWithResponse(resourceGroupName, name, vnetName, slot, Context.NONE).getValue();
+    }
+
+    public Response<VnetInfo> getVnetConnectionSlotByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String vnetName = Utils.getValueFromIdByName(id, "virtualNetworkConnections");
+        if (vnetName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'virtualNetworkConnections'.",
+                                id)));
+        }
+        String slot = Utils.getValueFromIdByName(id, "slots");
+        if (slot == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'slots'.", id)));
+        }
+        return this.getVnetConnectionSlotWithResponse(resourceGroupName, name, vnetName, slot, context);
+    }
+
     public VnetGateway getVnetConnectionGatewaySlotById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
@@ -7860,6 +7860,584 @@ public final class WebAppsImpl implements WebApps {
         }
         return this
             .getVnetConnectionGatewaySlotWithResponse(resourceGroupName, name, vnetName, gatewayName, slot, context);
+    }
+
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        Boolean localDeleteMetrics = null;
+        Boolean localDeleteEmptyServerFarm = null;
+        this
+            .deleteWithResponse(resourceGroupName, name, localDeleteMetrics, localDeleteEmptyServerFarm, Context.NONE)
+            .getValue();
+    }
+
+    public Response<Void> deleteByIdWithResponse(
+        String id, Boolean deleteMetrics, Boolean deleteEmptyServerFarm, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        return this.deleteWithResponse(resourceGroupName, name, deleteMetrics, deleteEmptyServerFarm, context);
+    }
+
+    public void deleteDeploymentById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String varId = Utils.getValueFromIdByName(id, "deployments");
+        if (varId == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'deployments'.", id)));
+        }
+        this.deleteDeploymentWithResponse(resourceGroupName, name, varId, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteDeploymentByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String varId = Utils.getValueFromIdByName(id, "deployments");
+        if (varId == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'deployments'.", id)));
+        }
+        return this.deleteDeploymentWithResponse(resourceGroupName, name, varId, context);
+    }
+
+    public void deleteDomainOwnershipIdentifierById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String domainOwnershipIdentifierName = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
+        if (domainOwnershipIdentifierName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'domainOwnershipIdentifiers'.",
+                                id)));
+        }
+        this
+            .deleteDomainOwnershipIdentifierWithResponse(
+                resourceGroupName, name, domainOwnershipIdentifierName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<Void> deleteDomainOwnershipIdentifierByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String domainOwnershipIdentifierName = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
+        if (domainOwnershipIdentifierName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'domainOwnershipIdentifiers'.",
+                                id)));
+        }
+        return this
+            .deleteDomainOwnershipIdentifierWithResponse(
+                resourceGroupName, name, domainOwnershipIdentifierName, context);
+    }
+
+    public void deleteFunctionById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String functionName = Utils.getValueFromIdByName(id, "functions");
+        if (functionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'functions'.", id)));
+        }
+        this.deleteFunctionWithResponse(resourceGroupName, name, functionName, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteFunctionByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String functionName = Utils.getValueFromIdByName(id, "functions");
+        if (functionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'functions'.", id)));
+        }
+        return this.deleteFunctionWithResponse(resourceGroupName, name, functionName, context);
+    }
+
+    public void deleteHostnameBindingById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String hostname = Utils.getValueFromIdByName(id, "hostNameBindings");
+        if (hostname == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'hostNameBindings'.", id)));
+        }
+        this.deleteHostnameBindingWithResponse(resourceGroupName, name, hostname, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteHostnameBindingByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String hostname = Utils.getValueFromIdByName(id, "hostNameBindings");
+        if (hostname == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'hostNameBindings'.", id)));
+        }
+        return this.deleteHostnameBindingWithResponse(resourceGroupName, name, hostname, context);
+    }
+
+    public void deleteHybridConnectionById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String namespaceName = Utils.getValueFromIdByName(id, "hybridConnectionNamespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'hybridConnectionNamespaces'.",
+                                id)));
+        }
+        String relayName = Utils.getValueFromIdByName(id, "relays");
+        if (relayName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'relays'.", id)));
+        }
+        this
+            .deleteHybridConnectionWithResponse(resourceGroupName, name, namespaceName, relayName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<Void> deleteHybridConnectionByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String namespaceName = Utils.getValueFromIdByName(id, "hybridConnectionNamespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'hybridConnectionNamespaces'.",
+                                id)));
+        }
+        String relayName = Utils.getValueFromIdByName(id, "relays");
+        if (relayName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'relays'.", id)));
+        }
+        return this.deleteHybridConnectionWithResponse(resourceGroupName, name, namespaceName, relayName, context);
+    }
+
+    public void deleteRelayServiceConnectionById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String entityName = Utils.getValueFromIdByName(id, "hybridconnection");
+        if (entityName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'hybridconnection'.", id)));
+        }
+        this.deleteRelayServiceConnectionWithResponse(resourceGroupName, name, entityName, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteRelayServiceConnectionByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String entityName = Utils.getValueFromIdByName(id, "hybridconnection");
+        if (entityName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'hybridconnection'.", id)));
+        }
+        return this.deleteRelayServiceConnectionWithResponse(resourceGroupName, name, entityName, context);
+    }
+
+    public void deletePremierAddOnById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String premierAddOnName = Utils.getValueFromIdByName(id, "premieraddons");
+        if (premierAddOnName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'premieraddons'.", id)));
+        }
+        this.deletePremierAddOnWithResponse(resourceGroupName, name, premierAddOnName, Context.NONE).getValue();
+    }
+
+    public Response<Void> deletePremierAddOnByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String premierAddOnName = Utils.getValueFromIdByName(id, "premieraddons");
+        if (premierAddOnName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'premieraddons'.", id)));
+        }
+        return this.deletePremierAddOnWithResponse(resourceGroupName, name, premierAddOnName, context);
+    }
+
+    public void deletePublicCertificateById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String publicCertificateName = Utils.getValueFromIdByName(id, "publicCertificates");
+        if (publicCertificateName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'publicCertificates'.", id)));
+        }
+        this
+            .deletePublicCertificateWithResponse(resourceGroupName, name, publicCertificateName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<Void> deletePublicCertificateByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String publicCertificateName = Utils.getValueFromIdByName(id, "publicCertificates");
+        if (publicCertificateName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'publicCertificates'.", id)));
+        }
+        return this.deletePublicCertificateWithResponse(resourceGroupName, name, publicCertificateName, context);
+    }
+
+    public void deleteVnetConnectionSlotById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String vnetName = Utils.getValueFromIdByName(id, "virtualNetworkConnections");
+        if (vnetName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'virtualNetworkConnections'.",
+                                id)));
+        }
+        String slot = Utils.getValueFromIdByName(id, "slots");
+        if (slot == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'slots'.", id)));
+        }
+        this.deleteVnetConnectionSlotWithResponse(resourceGroupName, name, vnetName, slot, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteVnetConnectionSlotByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String vnetName = Utils.getValueFromIdByName(id, "virtualNetworkConnections");
+        if (vnetName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'virtualNetworkConnections'.",
+                                id)));
+        }
+        String slot = Utils.getValueFromIdByName(id, "slots");
+        if (slot == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'slots'.", id)));
+        }
+        return this.deleteVnetConnectionSlotWithResponse(resourceGroupName, name, vnetName, slot, context);
     }
 
     private WebAppsClient serviceClient() {

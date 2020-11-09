@@ -136,6 +136,30 @@ public interface Certificates {
     Response<Certificate> getByIdWithResponse(String id, Context context);
 
     /**
+     * Description for Delete a certificate.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteById(String id);
+
+    /**
+     * Description for Delete a certificate.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    Response<Void> deleteByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new Certificate resource.
      *
      * @param name resource name.

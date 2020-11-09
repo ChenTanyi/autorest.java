@@ -424,6 +424,44 @@ public final class ManagementLocksImpl implements ManagementLocks {
         return this.getByResourceGroupWithResponse(resourceGroupName, lockName, context);
     }
 
+    public void deleteAtResourceGroupLevelById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String lockName = Utils.getValueFromIdByName(id, "locks");
+        if (lockName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'locks'.", id)));
+        }
+        this.deleteAtResourceGroupLevelWithResponse(resourceGroupName, lockName, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteAtResourceGroupLevelByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String lockName = Utils.getValueFromIdByName(id, "locks");
+        if (lockName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'locks'.", id)));
+        }
+        return this.deleteAtResourceGroupLevelWithResponse(resourceGroupName, lockName, context);
+    }
+
     private ManagementLocksClient serviceClient() {
         return this.innerClient;
     }

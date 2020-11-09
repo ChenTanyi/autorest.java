@@ -121,6 +121,45 @@ public final class ZonesImpl implements Zones {
         return this.getByResourceGroupWithResponse(resourceGroupName, zoneName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String zoneName = Utils.getValueFromIdByName(id, "dnsZones");
+        if (zoneName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'dnsZones'.", id)));
+        }
+        String localIfMatch = null;
+        this.delete(resourceGroupName, zoneName, localIfMatch, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, String ifMatch, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String zoneName = Utils.getValueFromIdByName(id, "dnsZones");
+        if (zoneName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'dnsZones'.", id)));
+        }
+        this.delete(resourceGroupName, zoneName, ifMatch, context);
+    }
+
     private ZonesClient serviceClient() {
         return this.innerClient;
     }

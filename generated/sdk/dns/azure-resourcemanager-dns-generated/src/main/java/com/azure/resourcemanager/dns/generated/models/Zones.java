@@ -142,6 +142,29 @@ public interface Zones {
     Response<Zone> getByIdWithResponse(String id, Context context);
 
     /**
+     * Deletes a DNS zone. WARNING: All DNS records in the zone will also be deleted. This operation cannot be undone.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteById(String id);
+
+    /**
+     * Deletes a DNS zone. WARNING: All DNS records in the zone will also be deleted. This operation cannot be undone.
+     *
+     * @param id the resource ID.
+     * @param ifMatch The etag of the DNS zone. Omit this value to always delete the current zone. Specify the last-seen
+     *     etag value to prevent accidentally deleting any concurrent changes.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteByIdWithResponse(String id, String ifMatch, Context context);
+
+    /**
      * Begins definition for a new Zone resource.
      *
      * @param name resource name.

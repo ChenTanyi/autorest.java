@@ -300,6 +300,103 @@ public final class DomainsImpl implements Domains {
         return this.getOwnershipIdentifierWithResponse(resourceGroupName, domainName, name, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String domainName = Utils.getValueFromIdByName(id, "domains");
+        if (domainName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
+        }
+        Boolean localForceHardDeleteDomain = null;
+        this.deleteWithResponse(resourceGroupName, domainName, localForceHardDeleteDomain, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteByIdWithResponse(String id, Boolean forceHardDeleteDomain, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String domainName = Utils.getValueFromIdByName(id, "domains");
+        if (domainName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
+        }
+        return this.deleteWithResponse(resourceGroupName, domainName, forceHardDeleteDomain, context);
+    }
+
+    public void deleteOwnershipIdentifierById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String domainName = Utils.getValueFromIdByName(id, "domains");
+        if (domainName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'domainOwnershipIdentifiers'.",
+                                id)));
+        }
+        this.deleteOwnershipIdentifierWithResponse(resourceGroupName, domainName, name, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteOwnershipIdentifierByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String domainName = Utils.getValueFromIdByName(id, "domains");
+        if (domainName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'domains'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "domainOwnershipIdentifiers");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'domainOwnershipIdentifiers'.",
+                                id)));
+        }
+        return this.deleteOwnershipIdentifierWithResponse(resourceGroupName, domainName, name, context);
+    }
+
     private DomainsClient serviceClient() {
         return this.innerClient;
     }

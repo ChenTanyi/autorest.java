@@ -124,6 +124,48 @@ public final class DscpConfigurationsImpl implements DscpConfigurations {
         return this.getByResourceGroupWithResponse(resourceGroupName, dscpConfigurationName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String dscpConfigurationName = Utils.getValueFromIdByName(id, "dscpConfigurations");
+        if (dscpConfigurationName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'dscpConfigurations'.", id)));
+        }
+        this.delete(resourceGroupName, dscpConfigurationName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String dscpConfigurationName = Utils.getValueFromIdByName(id, "dscpConfigurations");
+        if (dscpConfigurationName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'dscpConfigurations'.", id)));
+        }
+        this.delete(resourceGroupName, dscpConfigurationName, context);
+    }
+
     private DscpConfigurationsClient serviceClient() {
         return this.innerClient;
     }

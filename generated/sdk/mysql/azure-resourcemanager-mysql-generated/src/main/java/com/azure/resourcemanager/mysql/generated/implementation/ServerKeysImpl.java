@@ -122,6 +122,58 @@ public final class ServerKeysImpl implements ServerKeys {
         return this.getWithResponse(resourceGroupName, serverName, keyName, context);
     }
 
+    public void deleteById(String id) {
+        String serverName = Utils.getValueFromIdByName(id, "servers");
+        if (serverName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'servers'.", id)));
+        }
+        String keyName = Utils.getValueFromIdByName(id, "keys");
+        if (keyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'keys'.", id)));
+        }
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        this.delete(serverName, keyName, resourceGroupName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String serverName = Utils.getValueFromIdByName(id, "servers");
+        if (serverName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'servers'.", id)));
+        }
+        String keyName = Utils.getValueFromIdByName(id, "keys");
+        if (keyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'keys'.", id)));
+        }
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        this.delete(serverName, keyName, resourceGroupName, context);
+    }
+
     private ServerKeysClient serviceClient() {
         return this.innerClient;
     }

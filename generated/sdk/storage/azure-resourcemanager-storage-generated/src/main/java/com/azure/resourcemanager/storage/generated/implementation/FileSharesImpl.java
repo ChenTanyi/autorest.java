@@ -149,6 +149,60 @@ public final class FileSharesImpl implements FileShares {
         return this.getWithResponse(resourceGroupName, accountName, shareName, expand, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
+        String shareName = Utils.getValueFromIdByName(id, "shares");
+        if (shareName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'shares'.", id)));
+        }
+        this.deleteWithResponse(resourceGroupName, accountName, shareName, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
+        String shareName = Utils.getValueFromIdByName(id, "shares");
+        if (shareName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'shares'.", id)));
+        }
+        return this.deleteWithResponse(resourceGroupName, accountName, shareName, context);
+    }
+
     private FileSharesClient serviceClient() {
         return this.innerClient;
     }

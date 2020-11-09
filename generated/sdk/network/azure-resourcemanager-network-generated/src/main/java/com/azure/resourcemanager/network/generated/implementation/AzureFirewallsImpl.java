@@ -120,6 +120,46 @@ public final class AzureFirewallsImpl implements AzureFirewalls {
         return this.getByResourceGroupWithResponse(resourceGroupName, azureFirewallName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String azureFirewallName = Utils.getValueFromIdByName(id, "azureFirewalls");
+        if (azureFirewallName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'azureFirewalls'.", id)));
+        }
+        this.delete(resourceGroupName, azureFirewallName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String azureFirewallName = Utils.getValueFromIdByName(id, "azureFirewalls");
+        if (azureFirewallName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'azureFirewalls'.", id)));
+        }
+        this.delete(resourceGroupName, azureFirewallName, context);
+    }
+
     private AzureFirewallsClient serviceClient() {
         return this.innerClient;
     }

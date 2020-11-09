@@ -119,6 +119,44 @@ public final class ImagesImpl implements Images {
         return this.getByResourceGroupWithResponse(resourceGroupName, imageName, expand, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String imageName = Utils.getValueFromIdByName(id, "images");
+        if (imageName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'images'.", id)));
+        }
+        this.delete(resourceGroupName, imageName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String imageName = Utils.getValueFromIdByName(id, "images");
+        if (imageName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'images'.", id)));
+        }
+        this.delete(resourceGroupName, imageName, context);
+    }
+
     private ImagesClient serviceClient() {
         return this.innerClient;
     }

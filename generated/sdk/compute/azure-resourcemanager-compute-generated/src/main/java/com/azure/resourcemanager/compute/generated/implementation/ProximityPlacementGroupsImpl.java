@@ -137,6 +137,50 @@ public final class ProximityPlacementGroupsImpl implements ProximityPlacementGro
                 resourceGroupName, proximityPlacementGroupName, includeColocationStatus, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String proximityPlacementGroupName = Utils.getValueFromIdByName(id, "proximityPlacementGroups");
+        if (proximityPlacementGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'proximityPlacementGroups'.",
+                                id)));
+        }
+        this.deleteWithResponse(resourceGroupName, proximityPlacementGroupName, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String proximityPlacementGroupName = Utils.getValueFromIdByName(id, "proximityPlacementGroups");
+        if (proximityPlacementGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'proximityPlacementGroups'.",
+                                id)));
+        }
+        return this.deleteWithResponse(resourceGroupName, proximityPlacementGroupName, context);
+    }
+
     private ProximityPlacementGroupsClient serviceClient() {
         return this.innerClient;
     }

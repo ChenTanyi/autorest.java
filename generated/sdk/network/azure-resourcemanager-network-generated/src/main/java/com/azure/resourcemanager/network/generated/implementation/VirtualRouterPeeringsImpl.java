@@ -127,6 +127,60 @@ public final class VirtualRouterPeeringsImpl implements VirtualRouterPeerings {
         return this.getWithResponse(resourceGroupName, virtualRouterName, peeringName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String virtualRouterName = Utils.getValueFromIdByName(id, "virtualRouters");
+        if (virtualRouterName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualRouters'.", id)));
+        }
+        String peeringName = Utils.getValueFromIdByName(id, "peerings");
+        if (peeringName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'peerings'.", id)));
+        }
+        this.delete(resourceGroupName, virtualRouterName, peeringName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String virtualRouterName = Utils.getValueFromIdByName(id, "virtualRouters");
+        if (virtualRouterName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualRouters'.", id)));
+        }
+        String peeringName = Utils.getValueFromIdByName(id, "peerings");
+        if (peeringName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'peerings'.", id)));
+        }
+        this.delete(resourceGroupName, virtualRouterName, peeringName, context);
+    }
+
     private VirtualRouterPeeringsClient serviceClient() {
         return this.innerClient;
     }

@@ -138,6 +138,48 @@ public final class AvailabilitySetsImpl implements AvailabilitySets {
         return this.getByResourceGroupWithResponse(resourceGroupName, availabilitySetName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String availabilitySetName = Utils.getValueFromIdByName(id, "availabilitySets");
+        if (availabilitySetName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'availabilitySets'.", id)));
+        }
+        this.deleteWithResponse(resourceGroupName, availabilitySetName, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String availabilitySetName = Utils.getValueFromIdByName(id, "availabilitySets");
+        if (availabilitySetName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'availabilitySets'.", id)));
+        }
+        return this.deleteWithResponse(resourceGroupName, availabilitySetName, context);
+    }
+
     private AvailabilitySetsClient serviceClient() {
         return this.innerClient;
     }

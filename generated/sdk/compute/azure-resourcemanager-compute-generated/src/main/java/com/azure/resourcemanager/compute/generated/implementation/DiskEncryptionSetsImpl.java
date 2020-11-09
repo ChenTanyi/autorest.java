@@ -133,6 +133,48 @@ public final class DiskEncryptionSetsImpl implements DiskEncryptionSets {
         return this.getByResourceGroupWithResponse(resourceGroupName, diskEncryptionSetName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String diskEncryptionSetName = Utils.getValueFromIdByName(id, "diskEncryptionSets");
+        if (diskEncryptionSetName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'diskEncryptionSets'.", id)));
+        }
+        this.delete(resourceGroupName, diskEncryptionSetName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String diskEncryptionSetName = Utils.getValueFromIdByName(id, "diskEncryptionSets");
+        if (diskEncryptionSetName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'diskEncryptionSets'.", id)));
+        }
+        this.delete(resourceGroupName, diskEncryptionSetName, context);
+    }
+
     private DiskEncryptionSetsClient serviceClient() {
         return this.innerClient;
     }

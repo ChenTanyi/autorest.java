@@ -123,6 +123,46 @@ public final class VirtualRoutersImpl implements VirtualRouters {
         return this.getByResourceGroupWithResponse(resourceGroupName, virtualRouterName, expand, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String virtualRouterName = Utils.getValueFromIdByName(id, "virtualRouters");
+        if (virtualRouterName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualRouters'.", id)));
+        }
+        this.delete(resourceGroupName, virtualRouterName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String virtualRouterName = Utils.getValueFromIdByName(id, "virtualRouters");
+        if (virtualRouterName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualRouters'.", id)));
+        }
+        this.delete(resourceGroupName, virtualRouterName, context);
+    }
+
     private VirtualRoutersClient serviceClient() {
         return this.innerClient;
     }

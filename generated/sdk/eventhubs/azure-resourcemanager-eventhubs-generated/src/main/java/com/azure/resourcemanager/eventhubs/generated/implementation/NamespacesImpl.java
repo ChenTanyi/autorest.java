@@ -386,6 +386,44 @@ public final class NamespacesImpl implements Namespaces {
         }
     }
 
+    public EHNamespace getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+        }
+        return this.getByResourceGroupWithResponse(resourceGroupName, namespaceName, Context.NONE).getValue();
+    }
+
+    public Response<EHNamespace> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+        }
+        return this.getByResourceGroupWithResponse(resourceGroupName, namespaceName, context);
+    }
+
     public IpFilterRule getIpFilterRuleById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
@@ -438,44 +476,6 @@ public final class NamespacesImpl implements Namespaces {
                         String.format("The resource ID '%s' is not valid. Missing path segment 'ipfilterrules'.", id)));
         }
         return this.getIpFilterRuleWithResponse(resourceGroupName, namespaceName, ipFilterRuleName, context);
-    }
-
-    public EHNamespace getById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
-        if (resourceGroupName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
-        }
-        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
-        if (namespaceName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
-        }
-        return this.getByResourceGroupWithResponse(resourceGroupName, namespaceName, Context.NONE).getValue();
-    }
-
-    public Response<EHNamespace> getByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
-        if (resourceGroupName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
-        }
-        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
-        if (namespaceName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
-        }
-        return this.getByResourceGroupWithResponse(resourceGroupName, namespaceName, context);
     }
 
     public VirtualNetworkRule getVirtualNetworkRuleById(String id) {
@@ -593,6 +593,217 @@ public final class NamespacesImpl implements Namespaces {
                                 "The resource ID '%s' is not valid. Missing path segment 'authorizationRules'.", id)));
         }
         return this.getAuthorizationRuleWithResponse(resourceGroupName, namespaceName, authorizationRuleName, context);
+    }
+
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+        }
+        this.delete(resourceGroupName, namespaceName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+        }
+        this.delete(resourceGroupName, namespaceName, context);
+    }
+
+    public void deleteIpFilterRuleById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+        }
+        String ipFilterRuleName = Utils.getValueFromIdByName(id, "ipfilterrules");
+        if (ipFilterRuleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'ipfilterrules'.", id)));
+        }
+        this
+            .deleteIpFilterRuleWithResponse(resourceGroupName, namespaceName, ipFilterRuleName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<Void> deleteIpFilterRuleByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+        }
+        String ipFilterRuleName = Utils.getValueFromIdByName(id, "ipfilterrules");
+        if (ipFilterRuleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'ipfilterrules'.", id)));
+        }
+        return this.deleteIpFilterRuleWithResponse(resourceGroupName, namespaceName, ipFilterRuleName, context);
+    }
+
+    public void deleteVirtualNetworkRuleById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+        }
+        String virtualNetworkRuleName = Utils.getValueFromIdByName(id, "virtualnetworkrules");
+        if (virtualNetworkRuleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'virtualnetworkrules'.", id)));
+        }
+        this
+            .deleteVirtualNetworkRuleWithResponse(
+                resourceGroupName, namespaceName, virtualNetworkRuleName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<Void> deleteVirtualNetworkRuleByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+        }
+        String virtualNetworkRuleName = Utils.getValueFromIdByName(id, "virtualnetworkrules");
+        if (virtualNetworkRuleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'virtualnetworkrules'.", id)));
+        }
+        return this
+            .deleteVirtualNetworkRuleWithResponse(resourceGroupName, namespaceName, virtualNetworkRuleName, context);
+    }
+
+    public void deleteAuthorizationRuleById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+        }
+        String authorizationRuleName = Utils.getValueFromIdByName(id, "authorizationRules");
+        if (authorizationRuleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'authorizationRules'.", id)));
+        }
+        this
+            .deleteAuthorizationRuleWithResponse(resourceGroupName, namespaceName, authorizationRuleName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<Void> deleteAuthorizationRuleByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+        }
+        String authorizationRuleName = Utils.getValueFromIdByName(id, "authorizationRules");
+        if (authorizationRuleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'authorizationRules'.", id)));
+        }
+        return this
+            .deleteAuthorizationRuleWithResponse(resourceGroupName, namespaceName, authorizationRuleName, context);
     }
 
     private NamespacesClient serviceClient() {

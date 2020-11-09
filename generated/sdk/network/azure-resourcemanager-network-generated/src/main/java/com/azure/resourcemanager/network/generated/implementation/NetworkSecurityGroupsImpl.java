@@ -131,6 +131,50 @@ public final class NetworkSecurityGroupsImpl implements NetworkSecurityGroups {
         return this.getByResourceGroupWithResponse(resourceGroupName, networkSecurityGroupName, expand, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String networkSecurityGroupName = Utils.getValueFromIdByName(id, "networkSecurityGroups");
+        if (networkSecurityGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'networkSecurityGroups'.",
+                                id)));
+        }
+        this.delete(resourceGroupName, networkSecurityGroupName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String networkSecurityGroupName = Utils.getValueFromIdByName(id, "networkSecurityGroups");
+        if (networkSecurityGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'networkSecurityGroups'.",
+                                id)));
+        }
+        this.delete(resourceGroupName, networkSecurityGroupName, context);
+    }
+
     private NetworkSecurityGroupsClient serviceClient() {
         return this.innerClient;
     }

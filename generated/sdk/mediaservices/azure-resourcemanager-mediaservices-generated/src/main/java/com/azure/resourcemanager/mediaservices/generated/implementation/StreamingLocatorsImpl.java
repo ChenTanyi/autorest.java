@@ -186,6 +186,62 @@ public final class StreamingLocatorsImpl implements StreamingLocators {
         return this.getWithResponse(resourceGroupName, accountName, streamingLocatorName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'mediaServices'.", id)));
+        }
+        String streamingLocatorName = Utils.getValueFromIdByName(id, "streamingLocators");
+        if (streamingLocatorName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'streamingLocators'.", id)));
+        }
+        this.deleteWithResponse(resourceGroupName, accountName, streamingLocatorName, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'mediaServices'.", id)));
+        }
+        String streamingLocatorName = Utils.getValueFromIdByName(id, "streamingLocators");
+        if (streamingLocatorName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'streamingLocators'.", id)));
+        }
+        return this.deleteWithResponse(resourceGroupName, accountName, streamingLocatorName, context);
+    }
+
     private StreamingLocatorsClient serviceClient() {
         return this.innerClient;
     }

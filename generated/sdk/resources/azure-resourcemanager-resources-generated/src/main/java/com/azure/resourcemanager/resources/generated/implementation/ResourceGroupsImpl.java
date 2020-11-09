@@ -123,6 +123,30 @@ public final class ResourceGroupsImpl implements ResourceGroups {
         return this.getWithResponse(resourceGroupName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
+        }
+        this.delete(resourceGroupName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
+        }
+        this.delete(resourceGroupName, context);
+    }
+
     private ResourceGroupsClient serviceClient() {
         return this.innerClient;
     }

@@ -124,6 +124,50 @@ public final class NetworkExperimentProfilesImpl implements NetworkExperimentPro
         return this.getByResourceGroupWithResponse(resourceGroupName, profileName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String profileName = Utils.getValueFromIdByName(id, "NetworkExperimentProfiles");
+        if (profileName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'NetworkExperimentProfiles'.",
+                                id)));
+        }
+        this.delete(resourceGroupName, profileName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String profileName = Utils.getValueFromIdByName(id, "NetworkExperimentProfiles");
+        if (profileName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'NetworkExperimentProfiles'.",
+                                id)));
+        }
+        this.delete(resourceGroupName, profileName, context);
+    }
+
     private NetworkExperimentProfilesClient serviceClient() {
         return this.innerClient;
     }

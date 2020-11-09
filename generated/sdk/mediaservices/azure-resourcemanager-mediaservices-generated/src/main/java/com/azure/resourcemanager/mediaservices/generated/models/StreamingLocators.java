@@ -175,6 +175,28 @@ public interface StreamingLocators {
     Response<StreamingLocator> getByIdWithResponse(String id, Context context);
 
     /**
+     * Deletes a Streaming Locator in the Media Services account.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteById(String id);
+
+    /**
+     * Deletes a Streaming Locator in the Media Services account.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    Response<Void> deleteByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new StreamingLocator resource.
      *
      * @param name resource name.

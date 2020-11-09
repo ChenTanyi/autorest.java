@@ -124,6 +124,48 @@ public final class DdosProtectionPlansImpl implements DdosProtectionPlans {
         return this.getByResourceGroupWithResponse(resourceGroupName, ddosProtectionPlanName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String ddosProtectionPlanName = Utils.getValueFromIdByName(id, "ddosProtectionPlans");
+        if (ddosProtectionPlanName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'ddosProtectionPlans'.", id)));
+        }
+        this.delete(resourceGroupName, ddosProtectionPlanName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String ddosProtectionPlanName = Utils.getValueFromIdByName(id, "ddosProtectionPlans");
+        if (ddosProtectionPlanName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'ddosProtectionPlans'.", id)));
+        }
+        this.delete(resourceGroupName, ddosProtectionPlanName, context);
+    }
+
     private DdosProtectionPlansClient serviceClient() {
         return this.innerClient;
     }

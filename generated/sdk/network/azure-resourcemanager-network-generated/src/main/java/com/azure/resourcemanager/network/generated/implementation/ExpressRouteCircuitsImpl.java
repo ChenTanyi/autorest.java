@@ -250,6 +250,50 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
         return this.getByResourceGroupWithResponse(resourceGroupName, circuitName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
+        if (circuitName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.",
+                                id)));
+        }
+        this.delete(resourceGroupName, circuitName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String circuitName = Utils.getValueFromIdByName(id, "expressRouteCircuits");
+        if (circuitName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'expressRouteCircuits'.",
+                                id)));
+        }
+        this.delete(resourceGroupName, circuitName, context);
+    }
+
     private ExpressRouteCircuitsClient serviceClient() {
         return this.innerClient;
     }

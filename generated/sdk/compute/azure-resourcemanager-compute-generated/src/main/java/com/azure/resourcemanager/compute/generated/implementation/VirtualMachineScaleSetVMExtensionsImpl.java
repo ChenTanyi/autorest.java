@@ -175,6 +175,80 @@ public final class VirtualMachineScaleSetVMExtensionsImpl implements VirtualMach
         return this.getWithResponse(resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, expand, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
+        if (vmScaleSetName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'virtualMachineScaleSets'.",
+                                id)));
+        }
+        String instanceId = Utils.getValueFromIdByName(id, "virtualMachines");
+        if (instanceId == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualMachines'.", id)));
+        }
+        String vmExtensionName = Utils.getValueFromIdByName(id, "extensions");
+        if (vmExtensionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'extensions'.", id)));
+        }
+        this.delete(resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String vmScaleSetName = Utils.getValueFromIdByName(id, "virtualMachineScaleSets");
+        if (vmScaleSetName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'virtualMachineScaleSets'.",
+                                id)));
+        }
+        String instanceId = Utils.getValueFromIdByName(id, "virtualMachines");
+        if (instanceId == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualMachines'.", id)));
+        }
+        String vmExtensionName = Utils.getValueFromIdByName(id, "extensions");
+        if (vmExtensionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'extensions'.", id)));
+        }
+        this.delete(resourceGroupName, vmScaleSetName, instanceId, vmExtensionName, context);
+    }
+
     private VirtualMachineScaleSetVMExtensionsClient serviceClient() {
         return this.innerClient;
     }

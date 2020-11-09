@@ -130,6 +130,50 @@ public final class SecurityPartnerProvidersImpl implements SecurityPartnerProvid
         return this.getByResourceGroupWithResponse(resourceGroupName, securityPartnerProviderName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String securityPartnerProviderName = Utils.getValueFromIdByName(id, "securityPartnerProviders");
+        if (securityPartnerProviderName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'securityPartnerProviders'.",
+                                id)));
+        }
+        this.delete(resourceGroupName, securityPartnerProviderName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String securityPartnerProviderName = Utils.getValueFromIdByName(id, "securityPartnerProviders");
+        if (securityPartnerProviderName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'securityPartnerProviders'.",
+                                id)));
+        }
+        this.delete(resourceGroupName, securityPartnerProviderName, context);
+    }
+
     private SecurityPartnerProvidersClient serviceClient() {
         return this.innerClient;
     }

@@ -240,6 +240,48 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
         return this.getByResourceGroupWithResponse(resourceGroupName, publicIpAddressName, expand, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String publicIpAddressName = Utils.getValueFromIdByName(id, "publicIPAddresses");
+        if (publicIpAddressName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'publicIPAddresses'.", id)));
+        }
+        this.delete(resourceGroupName, publicIpAddressName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String publicIpAddressName = Utils.getValueFromIdByName(id, "publicIPAddresses");
+        if (publicIpAddressName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'publicIPAddresses'.", id)));
+        }
+        this.delete(resourceGroupName, publicIpAddressName, context);
+    }
+
     private PublicIpAddressesClient serviceClient() {
         return this.innerClient;
     }

@@ -11407,31 +11407,6 @@ public interface WebApps {
     Response<WebJob> getWebJobWithResponse(String resourceGroupName, String name, String webJobName, Context context);
 
     /**
-     * Description for Get domain ownership identifier for web app.
-     *
-     * @param id the resource ID.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a domain specific resource identifier.
-     */
-    Identifier getDomainOwnershipIdentifierById(String id);
-
-    /**
-     * Description for Get domain ownership identifier for web app.
-     *
-     * @param id the resource ID.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a domain specific resource identifier.
-     */
-    Response<Identifier> getDomainOwnershipIdentifierByIdWithResponse(String id, Context context);
-
-    /**
      * Description for Gets the details of a web, mobile, or API app.
      *
      * @param id the resource ID.
@@ -11480,6 +11455,31 @@ public interface WebApps {
      * @return user credentials used for publishing activity.
      */
     Response<Deployment> getDeploymentByIdWithResponse(String id, Context context);
+
+    /**
+     * Description for Get domain ownership identifier for web app.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a domain specific resource identifier.
+     */
+    Identifier getDomainOwnershipIdentifierById(String id);
+
+    /**
+     * Description for Get domain ownership identifier for web app.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a domain specific resource identifier.
+     */
+    Response<Identifier> getDomainOwnershipIdentifierByIdWithResponse(String id, Context context);
 
     /**
      * Description for Get function information by its ID for web site, or a deployment slot.
@@ -11582,31 +11582,6 @@ public interface WebApps {
     Response<RelayServiceConnectionEntity> getRelayServiceConnectionByIdWithResponse(String id, Context context);
 
     /**
-     * Description for Gets a virtual network the app (or deployment slot) is connected to by name.
-     *
-     * @param id the resource ID.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network information contract.
-     */
-    VnetInfo getVnetConnectionSlotById(String id);
-
-    /**
-     * Description for Gets a virtual network the app (or deployment slot) is connected to by name.
-     *
-     * @param id the resource ID.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network information contract.
-     */
-    Response<VnetInfo> getVnetConnectionSlotByIdWithResponse(String id, Context context);
-
-    /**
      * Description for Gets a named add-on of an app.
      *
      * @param id the resource ID.
@@ -11683,6 +11658,31 @@ public interface WebApps {
         String id, Context context);
 
     /**
+     * Description for Gets a virtual network the app (or deployment slot) is connected to by name.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return virtual Network information contract.
+     */
+    VnetInfo getVnetConnectionSlotById(String id);
+
+    /**
+     * Description for Gets a virtual network the app (or deployment slot) is connected to by name.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return virtual Network information contract.
+     */
+    Response<VnetInfo> getVnetConnectionSlotByIdWithResponse(String id, Context context);
+
+    /**
      * Description for Gets an app's Virtual Network gateway.
      *
      * @param id the resource ID.
@@ -11706,6 +11706,250 @@ public interface WebApps {
      * @return the Virtual Network gateway contract.
      */
     Response<VnetGateway> getVnetConnectionGatewaySlotByIdWithResponse(String id, Context context);
+
+    /**
+     * Description for Deletes a web, mobile, or API app, or one of the deployment slots.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteById(String id);
+
+    /**
+     * Description for Deletes a web, mobile, or API app, or one of the deployment slots.
+     *
+     * @param id the resource ID.
+     * @param deleteMetrics If true, web app metrics are also deleted.
+     * @param deleteEmptyServerFarm Specify false if you want to keep empty App Service plan. By default, empty App
+     *     Service plan is deleted.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    Response<Void> deleteByIdWithResponse(
+        String id, Boolean deleteMetrics, Boolean deleteEmptyServerFarm, Context context);
+
+    /**
+     * Description for Delete a deployment by its ID for an app, or a deployment slot.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteDeploymentById(String id);
+
+    /**
+     * Description for Delete a deployment by its ID for an app, or a deployment slot.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    Response<Void> deleteDeploymentByIdWithResponse(String id, Context context);
+
+    /**
+     * Description for Deletes a domain ownership identifier for a web app.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteDomainOwnershipIdentifierById(String id);
+
+    /**
+     * Description for Deletes a domain ownership identifier for a web app.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    Response<Void> deleteDomainOwnershipIdentifierByIdWithResponse(String id, Context context);
+
+    /**
+     * Description for Delete a function for web site, or a deployment slot.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteFunctionById(String id);
+
+    /**
+     * Description for Delete a function for web site, or a deployment slot.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    Response<Void> deleteFunctionByIdWithResponse(String id, Context context);
+
+    /**
+     * Description for Deletes a hostname binding for an app.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteHostnameBindingById(String id);
+
+    /**
+     * Description for Deletes a hostname binding for an app.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    Response<Void> deleteHostnameBindingByIdWithResponse(String id, Context context);
+
+    /**
+     * Description for Removes a Hybrid Connection from this site.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteHybridConnectionById(String id);
+
+    /**
+     * Description for Removes a Hybrid Connection from this site.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    Response<Void> deleteHybridConnectionByIdWithResponse(String id, Context context);
+
+    /**
+     * Description for Deletes a relay service connection by its name.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteRelayServiceConnectionById(String id);
+
+    /**
+     * Description for Deletes a relay service connection by its name.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    Response<Void> deleteRelayServiceConnectionByIdWithResponse(String id, Context context);
+
+    /**
+     * Description for Delete a premier add-on from an app.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deletePremierAddOnById(String id);
+
+    /**
+     * Description for Delete a premier add-on from an app.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    Response<Void> deletePremierAddOnByIdWithResponse(String id, Context context);
+
+    /**
+     * Description for Deletes a hostname binding for an app.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deletePublicCertificateById(String id);
+
+    /**
+     * Description for Deletes a hostname binding for an app.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    Response<Void> deletePublicCertificateByIdWithResponse(String id, Context context);
+
+    /**
+     * Description for Deletes a connection from an app (or deployment slot to a named virtual network.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteVnetConnectionSlotById(String id);
+
+    /**
+     * Description for Deletes a connection from an app (or deployment slot to a named virtual network.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    Response<Void> deleteVnetConnectionSlotByIdWithResponse(String id, Context context);
 
     /**
      * Begins definition for a new Site resource.

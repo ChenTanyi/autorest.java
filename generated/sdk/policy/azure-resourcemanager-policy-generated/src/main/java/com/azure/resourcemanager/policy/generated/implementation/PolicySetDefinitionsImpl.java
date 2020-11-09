@@ -211,6 +211,34 @@ public final class PolicySetDefinitionsImpl implements PolicySetDefinitions {
         return this.getWithResponse(policySetDefinitionName, context);
     }
 
+    public void deleteById(String id) {
+        String policySetDefinitionName = Utils.getValueFromIdByName(id, "policySetDefinitions");
+        if (policySetDefinitionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'policySetDefinitions'.",
+                                id)));
+        }
+        this.deleteWithResponse(policySetDefinitionName, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteByIdWithResponse(String id, Context context) {
+        String policySetDefinitionName = Utils.getValueFromIdByName(id, "policySetDefinitions");
+        if (policySetDefinitionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'policySetDefinitions'.",
+                                id)));
+        }
+        return this.deleteWithResponse(policySetDefinitionName, context);
+    }
+
     private PolicySetDefinitionsClient serviceClient() {
         return this.innerClient;
     }

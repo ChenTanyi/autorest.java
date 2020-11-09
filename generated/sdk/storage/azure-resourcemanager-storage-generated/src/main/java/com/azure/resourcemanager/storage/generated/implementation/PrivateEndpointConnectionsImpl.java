@@ -141,6 +141,66 @@ public final class PrivateEndpointConnectionsImpl implements PrivateEndpointConn
         return this.getWithResponse(resourceGroupName, accountName, privateEndpointConnectionName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
+        String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
+        if (privateEndpointConnectionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.",
+                                id)));
+        }
+        this.deleteWithResponse(resourceGroupName, accountName, privateEndpointConnectionName, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
+        String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
+        if (privateEndpointConnectionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.",
+                                id)));
+        }
+        return this.deleteWithResponse(resourceGroupName, accountName, privateEndpointConnectionName, context);
+    }
+
     private PrivateEndpointConnectionsClient serviceClient() {
         return this.innerClient;
     }

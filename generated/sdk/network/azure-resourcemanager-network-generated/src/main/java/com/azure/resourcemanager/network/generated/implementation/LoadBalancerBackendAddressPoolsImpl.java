@@ -132,6 +132,62 @@ public final class LoadBalancerBackendAddressPoolsImpl implements LoadBalancerBa
         return this.getWithResponse(resourceGroupName, loadBalancerName, backendAddressPoolName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String loadBalancerName = Utils.getValueFromIdByName(id, "loadBalancers");
+        if (loadBalancerName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'loadBalancers'.", id)));
+        }
+        String backendAddressPoolName = Utils.getValueFromIdByName(id, "backendAddressPools");
+        if (backendAddressPoolName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'backendAddressPools'.", id)));
+        }
+        this.delete(resourceGroupName, loadBalancerName, backendAddressPoolName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String loadBalancerName = Utils.getValueFromIdByName(id, "loadBalancers");
+        if (loadBalancerName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'loadBalancers'.", id)));
+        }
+        String backendAddressPoolName = Utils.getValueFromIdByName(id, "backendAddressPools");
+        if (backendAddressPoolName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'backendAddressPools'.", id)));
+        }
+        this.delete(resourceGroupName, loadBalancerName, backendAddressPoolName, context);
+    }
+
     private LoadBalancerBackendAddressPoolsClient serviceClient() {
         return this.innerClient;
     }

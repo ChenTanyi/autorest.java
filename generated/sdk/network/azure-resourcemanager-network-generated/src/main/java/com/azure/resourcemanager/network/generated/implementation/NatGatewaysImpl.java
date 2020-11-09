@@ -121,6 +121,44 @@ public final class NatGatewaysImpl implements NatGateways {
         return this.getByResourceGroupWithResponse(resourceGroupName, natGatewayName, expand, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String natGatewayName = Utils.getValueFromIdByName(id, "natGateways");
+        if (natGatewayName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'natGateways'.", id)));
+        }
+        this.delete(resourceGroupName, natGatewayName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String natGatewayName = Utils.getValueFromIdByName(id, "natGateways");
+        if (natGatewayName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'natGateways'.", id)));
+        }
+        this.delete(resourceGroupName, natGatewayName, context);
+    }
+
     private NatGatewaysClient serviceClient() {
         return this.innerClient;
     }

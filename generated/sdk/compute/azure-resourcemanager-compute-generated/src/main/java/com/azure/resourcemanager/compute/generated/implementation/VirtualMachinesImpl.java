@@ -372,6 +372,47 @@ public final class VirtualMachinesImpl implements VirtualMachines {
         return this.getByResourceGroupWithResponse(resourceGroupName, vmName, expand, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String vmName = Utils.getValueFromIdByName(id, "virtualMachines");
+        if (vmName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualMachines'.", id)));
+        }
+        Boolean localForceDeletion = null;
+        this.delete(resourceGroupName, vmName, localForceDeletion, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Boolean forceDeletion, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String vmName = Utils.getValueFromIdByName(id, "virtualMachines");
+        if (vmName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualMachines'.", id)));
+        }
+        this.delete(resourceGroupName, vmName, forceDeletion, context);
+    }
+
     private VirtualMachinesClient serviceClient() {
         return this.innerClient;
     }

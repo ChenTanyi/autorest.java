@@ -155,6 +155,48 @@ public final class ExpressRoutePortsImpl implements ExpressRoutePorts {
         return this.getByResourceGroupWithResponse(resourceGroupName, expressRoutePortName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String expressRoutePortName = Utils.getValueFromIdByName(id, "ExpressRoutePorts");
+        if (expressRoutePortName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'ExpressRoutePorts'.", id)));
+        }
+        this.delete(resourceGroupName, expressRoutePortName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String expressRoutePortName = Utils.getValueFromIdByName(id, "ExpressRoutePorts");
+        if (expressRoutePortName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'ExpressRoutePorts'.", id)));
+        }
+        this.delete(resourceGroupName, expressRoutePortName, context);
+    }
+
     private ExpressRoutePortsClient serviceClient() {
         return this.innerClient;
     }

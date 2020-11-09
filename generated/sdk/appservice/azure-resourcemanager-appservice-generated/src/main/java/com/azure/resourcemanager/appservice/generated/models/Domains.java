@@ -351,6 +351,56 @@ public interface Domains {
     Response<DomainOwnershipIdentifier> getOwnershipIdentifierByIdWithResponse(String id, Context context);
 
     /**
+     * Description for Delete a domain.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteById(String id);
+
+    /**
+     * Description for Delete a domain.
+     *
+     * @param id the resource ID.
+     * @param forceHardDeleteDomain Specify &lt;code&gt;true&lt;/code&gt; to delete the domain immediately. The default
+     *     is &lt;code&gt;false&lt;/code&gt; which deletes the domain after 24 hours.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    Response<Void> deleteByIdWithResponse(String id, Boolean forceHardDeleteDomain, Context context);
+
+    /**
+     * Description for Delete ownership identifier for domain.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteOwnershipIdentifierById(String id);
+
+    /**
+     * Description for Delete ownership identifier for domain.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    Response<Void> deleteOwnershipIdentifierByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new Domain resource.
      *
      * @param name resource name.

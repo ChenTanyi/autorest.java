@@ -118,6 +118,44 @@ public final class VpnSitesImpl implements VpnSites {
         return this.getByResourceGroupWithResponse(resourceGroupName, vpnSiteName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String vpnSiteName = Utils.getValueFromIdByName(id, "vpnSites");
+        if (vpnSiteName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'vpnSites'.", id)));
+        }
+        this.delete(resourceGroupName, vpnSiteName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String vpnSiteName = Utils.getValueFromIdByName(id, "vpnSites");
+        if (vpnSiteName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'vpnSites'.", id)));
+        }
+        this.delete(resourceGroupName, vpnSiteName, context);
+    }
+
     private VpnSitesClient serviceClient() {
         return this.innerClient;
     }

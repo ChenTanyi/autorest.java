@@ -309,6 +309,46 @@ public final class StorageAccountsImpl implements StorageAccounts {
         return this.getByResourceGroupWithResponse(resourceGroupName, accountName, expand, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
+        this.deleteWithResponse(resourceGroupName, accountName, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
+        return this.deleteWithResponse(resourceGroupName, accountName, context);
+    }
+
     private StorageAccountsClient serviceClient() {
         return this.innerClient;
     }

@@ -785,6 +785,44 @@ public final class DeploymentsImpl implements Deployments {
         return this.getByResourceGroupWithResponse(resourceGroupName, deploymentName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
+        }
+        String deploymentName = Utils.getValueFromIdByName(id, "deployments");
+        if (deploymentName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'deployments'.", id)));
+        }
+        this.delete(resourceGroupName, deploymentName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
+        }
+        String deploymentName = Utils.getValueFromIdByName(id, "deployments");
+        if (deploymentName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'deployments'.", id)));
+        }
+        this.delete(resourceGroupName, deploymentName, context);
+    }
+
     private DeploymentsClient serviceClient() {
         return this.innerClient;
     }

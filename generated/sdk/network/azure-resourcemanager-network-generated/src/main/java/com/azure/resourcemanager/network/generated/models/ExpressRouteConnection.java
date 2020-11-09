@@ -58,13 +58,6 @@ public interface ExpressRouteConnection {
     Boolean enableInternetSecurity();
 
     /**
-     * Gets the expressRouteGatewayBypass property: Enable FastPath to vWan Firewall hub.
-     *
-     * @return the expressRouteGatewayBypass value.
-     */
-    Boolean expressRouteGatewayBypass();
-
-    /**
      * Gets the routingConfiguration property: The Routing Configuration indicating the associated and propagated route
      * tables on this connection.
      *

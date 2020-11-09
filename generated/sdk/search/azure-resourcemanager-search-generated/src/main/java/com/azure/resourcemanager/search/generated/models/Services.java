@@ -181,6 +181,30 @@ public interface Services {
     Response<SearchService> getByIdWithResponse(String id, UUID clientRequestId, Context context);
 
     /**
+     * Deletes a search service in the given resource group, along with its associated resources.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteById(String id);
+
+    /**
+     * Deletes a search service in the given resource group, along with its associated resources.
+     *
+     * @param id the resource ID.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     *     included in response information as a way to track the request.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    Response<Void> deleteByIdWithResponse(String id, UUID clientRequestId, Context context);
+
+    /**
      * Begins definition for a new SearchService resource.
      *
      * @param name resource name.

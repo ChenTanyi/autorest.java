@@ -983,6 +983,31 @@ public interface AppServiceEnvironments {
     Response<WorkerPoolResource> getWorkerPoolByIdWithResponse(String id, Context context);
 
     /**
+     * Description for Delete an App Service Environment.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteById(String id);
+
+    /**
+     * Description for Delete an App Service Environment.
+     *
+     * @param id the resource ID.
+     * @param forceDelete Specify &lt;code&gt;true&lt;/code&gt; to force the deletion even if the App Service
+     *     Environment contains resources. The default is &lt;code&gt;false&lt;/code&gt;.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteByIdWithResponse(String id, Boolean forceDelete, Context context);
+
+    /**
      * Begins definition for a new AppServiceEnvironmentResource resource.
      *
      * @param name resource name.

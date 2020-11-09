@@ -131,6 +131,44 @@ public final class ActionGroupsImpl implements ActionGroups {
         return this.getByResourceGroupWithResponse(resourceGroupName, actionGroupName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String actionGroupName = Utils.getValueFromIdByName(id, "actionGroups");
+        if (actionGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'actionGroups'.", id)));
+        }
+        this.deleteWithResponse(resourceGroupName, actionGroupName, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String actionGroupName = Utils.getValueFromIdByName(id, "actionGroups");
+        if (actionGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'actionGroups'.", id)));
+        }
+        return this.deleteWithResponse(resourceGroupName, actionGroupName, context);
+    }
+
     private ActionGroupsClient serviceClient() {
         return this.innerClient;
     }

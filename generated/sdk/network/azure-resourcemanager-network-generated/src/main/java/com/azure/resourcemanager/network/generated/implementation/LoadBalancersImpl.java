@@ -121,6 +121,44 @@ public final class LoadBalancersImpl implements LoadBalancers {
         return this.getByResourceGroupWithResponse(resourceGroupName, loadBalancerName, expand, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String loadBalancerName = Utils.getValueFromIdByName(id, "loadBalancers");
+        if (loadBalancerName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'loadBalancers'.", id)));
+        }
+        this.delete(resourceGroupName, loadBalancerName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String loadBalancerName = Utils.getValueFromIdByName(id, "loadBalancers");
+        if (loadBalancerName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'loadBalancers'.", id)));
+        }
+        this.delete(resourceGroupName, loadBalancerName, context);
+    }
+
     private LoadBalancersClient serviceClient() {
         return this.innerClient;
     }

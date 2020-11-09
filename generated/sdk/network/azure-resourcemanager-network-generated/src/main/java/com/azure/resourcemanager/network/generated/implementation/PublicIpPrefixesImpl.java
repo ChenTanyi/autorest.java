@@ -125,6 +125,48 @@ public final class PublicIpPrefixesImpl implements PublicIpPrefixes {
         return this.getByResourceGroupWithResponse(resourceGroupName, publicIpPrefixName, expand, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String publicIpPrefixName = Utils.getValueFromIdByName(id, "publicIPPrefixes");
+        if (publicIpPrefixName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'publicIPPrefixes'.", id)));
+        }
+        this.delete(resourceGroupName, publicIpPrefixName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String publicIpPrefixName = Utils.getValueFromIdByName(id, "publicIPPrefixes");
+        if (publicIpPrefixName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'publicIPPrefixes'.", id)));
+        }
+        this.delete(resourceGroupName, publicIpPrefixName, context);
+    }
+
     private PublicIpPrefixesClient serviceClient() {
         return this.innerClient;
     }

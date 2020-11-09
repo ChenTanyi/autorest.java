@@ -125,6 +125,60 @@ public final class AccountFiltersImpl implements AccountFilters {
         return this.getWithResponse(resourceGroupName, accountName, filterName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'mediaServices'.", id)));
+        }
+        String filterName = Utils.getValueFromIdByName(id, "accountFilters");
+        if (filterName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'accountFilters'.", id)));
+        }
+        this.deleteWithResponse(resourceGroupName, accountName, filterName, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String accountName = Utils.getValueFromIdByName(id, "mediaServices");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'mediaServices'.", id)));
+        }
+        String filterName = Utils.getValueFromIdByName(id, "accountFilters");
+        if (filterName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'accountFilters'.", id)));
+        }
+        return this.deleteWithResponse(resourceGroupName, accountName, filterName, context);
+    }
+
     private AccountFiltersClient serviceClient() {
         return this.innerClient;
     }

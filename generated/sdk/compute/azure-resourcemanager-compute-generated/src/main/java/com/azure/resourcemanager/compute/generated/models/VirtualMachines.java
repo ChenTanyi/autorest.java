@@ -640,6 +640,28 @@ public interface VirtualMachines {
     Response<VirtualMachine> getByIdWithResponse(String id, InstanceViewTypes expand, Context context);
 
     /**
+     * The operation to delete a virtual machine.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteById(String id);
+
+    /**
+     * The operation to delete a virtual machine.
+     *
+     * @param id the resource ID.
+     * @param forceDeletion Optional parameter to force delete virtual machines.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteByIdWithResponse(String id, Boolean forceDeletion, Context context);
+
+    /**
      * Begins definition for a new VirtualMachine resource.
      *
      * @param name resource name.

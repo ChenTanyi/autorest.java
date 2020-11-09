@@ -495,29 +495,6 @@ public interface Namespaces {
         CheckNameAvailabilityParameter parameters, Context context);
 
     /**
-     * Gets an IpFilterRule for a Namespace by rule name.
-     *
-     * @param id the resource ID.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an IpFilterRule for a Namespace by rule name.
-     */
-    IpFilterRule getIpFilterRuleById(String id);
-
-    /**
-     * Gets an IpFilterRule for a Namespace by rule name.
-     *
-     * @param id the resource ID.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an IpFilterRule for a Namespace by rule name.
-     */
-    Response<IpFilterRule> getIpFilterRuleByIdWithResponse(String id, Context context);
-
-    /**
      * Gets the description of the specified namespace.
      *
      * @param id the resource ID.
@@ -539,6 +516,29 @@ public interface Namespaces {
      * @return the description of the specified namespace.
      */
     Response<EHNamespace> getByIdWithResponse(String id, Context context);
+
+    /**
+     * Gets an IpFilterRule for a Namespace by rule name.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an IpFilterRule for a Namespace by rule name.
+     */
+    IpFilterRule getIpFilterRuleById(String id);
+
+    /**
+     * Gets an IpFilterRule for a Namespace by rule name.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an IpFilterRule for a Namespace by rule name.
+     */
+    Response<IpFilterRule> getIpFilterRuleByIdWithResponse(String id, Context context);
 
     /**
      * Gets an VirtualNetworkRule for a Namespace by rule name.
@@ -585,6 +585,93 @@ public interface Namespaces {
      * @return an AuthorizationRule for a Namespace by rule name.
      */
     Response<AuthorizationRule> getAuthorizationRuleByIdWithResponse(String id, Context context);
+
+    /**
+     * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteById(String id);
+
+    /**
+     * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteByIdWithResponse(String id, Context context);
+
+    /**
+     * Deletes an IpFilterRule for a Namespace.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteIpFilterRuleById(String id);
+
+    /**
+     * Deletes an IpFilterRule for a Namespace.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    Response<Void> deleteIpFilterRuleByIdWithResponse(String id, Context context);
+
+    /**
+     * Deletes an VirtualNetworkRule for a Namespace.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteVirtualNetworkRuleById(String id);
+
+    /**
+     * Deletes an VirtualNetworkRule for a Namespace.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    Response<Void> deleteVirtualNetworkRuleByIdWithResponse(String id, Context context);
+
+    /**
+     * Deletes an AuthorizationRule for a Namespace.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteAuthorizationRuleById(String id);
+
+    /**
+     * Deletes an AuthorizationRule for a Namespace.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    Response<Void> deleteAuthorizationRuleByIdWithResponse(String id, Context context);
 
     /**
      * Begins definition for a new EHNamespace resource.

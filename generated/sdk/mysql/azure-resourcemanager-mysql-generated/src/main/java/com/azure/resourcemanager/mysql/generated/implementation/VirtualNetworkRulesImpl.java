@@ -128,6 +128,62 @@ public final class VirtualNetworkRulesImpl implements VirtualNetworkRules {
         return this.getWithResponse(resourceGroupName, serverName, virtualNetworkRuleName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String serverName = Utils.getValueFromIdByName(id, "servers");
+        if (serverName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'servers'.", id)));
+        }
+        String virtualNetworkRuleName = Utils.getValueFromIdByName(id, "virtualNetworkRules");
+        if (virtualNetworkRuleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'virtualNetworkRules'.", id)));
+        }
+        this.delete(resourceGroupName, serverName, virtualNetworkRuleName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String serverName = Utils.getValueFromIdByName(id, "servers");
+        if (serverName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'servers'.", id)));
+        }
+        String virtualNetworkRuleName = Utils.getValueFromIdByName(id, "virtualNetworkRules");
+        if (virtualNetworkRuleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'virtualNetworkRules'.", id)));
+        }
+        this.delete(resourceGroupName, serverName, virtualNetworkRuleName, context);
+    }
+
     private VirtualNetworkRulesClient serviceClient() {
         return this.innerClient;
     }

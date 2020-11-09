@@ -143,6 +143,72 @@ public final class LiveOutputsImpl implements LiveOutputs {
         return this.getWithResponse(resourceGroupName, accountName, liveEventName, liveOutputName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String accountName = Utils.getValueFromIdByName(id, "mediaservices");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'mediaservices'.", id)));
+        }
+        String liveEventName = Utils.getValueFromIdByName(id, "liveEvents");
+        if (liveEventName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'liveEvents'.", id)));
+        }
+        String liveOutputName = Utils.getValueFromIdByName(id, "liveOutputs");
+        if (liveOutputName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'liveOutputs'.", id)));
+        }
+        this.delete(resourceGroupName, accountName, liveEventName, liveOutputName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String accountName = Utils.getValueFromIdByName(id, "mediaservices");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'mediaservices'.", id)));
+        }
+        String liveEventName = Utils.getValueFromIdByName(id, "liveEvents");
+        if (liveEventName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'liveEvents'.", id)));
+        }
+        String liveOutputName = Utils.getValueFromIdByName(id, "liveOutputs");
+        if (liveOutputName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'liveOutputs'.", id)));
+        }
+        this.delete(resourceGroupName, accountName, liveEventName, liveOutputName, context);
+    }
+
     private LiveOutputsClient serviceClient() {
         return this.innerClient;
     }

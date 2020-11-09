@@ -146,6 +146,33 @@ public interface ContainerServices {
     Response<ContainerService> getByIdWithResponse(String id, Context context);
 
     /**
+     * Deletes the specified container service in the specified subscription and resource group. The operation does not
+     * delete other resources created as part of creating a container service, including storage accounts, VMs, and
+     * availability sets. All the other resources created with the container service are part of the same resource group
+     * and can be deleted individually.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteById(String id);
+
+    /**
+     * Deletes the specified container service in the specified subscription and resource group. The operation does not
+     * delete other resources created as part of creating a container service, including storage accounts, VMs, and
+     * availability sets. All the other resources created with the container service are part of the same resource group
+     * and can be deleted individually.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new ContainerService resource.
      *
      * @param name resource name.

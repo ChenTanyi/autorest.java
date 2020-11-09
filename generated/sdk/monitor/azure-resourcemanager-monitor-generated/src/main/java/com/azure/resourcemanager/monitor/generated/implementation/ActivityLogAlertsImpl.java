@@ -125,6 +125,48 @@ public final class ActivityLogAlertsImpl implements ActivityLogAlerts {
         return this.getByResourceGroupWithResponse(resourceGroupName, activityLogAlertName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String activityLogAlertName = Utils.getValueFromIdByName(id, "activityLogAlerts");
+        if (activityLogAlertName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'activityLogAlerts'.", id)));
+        }
+        this.deleteWithResponse(resourceGroupName, activityLogAlertName, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String activityLogAlertName = Utils.getValueFromIdByName(id, "activityLogAlerts");
+        if (activityLogAlertName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'activityLogAlerts'.", id)));
+        }
+        return this.deleteWithResponse(resourceGroupName, activityLogAlertName, context);
+    }
+
     private ActivityLogAlertsClient serviceClient() {
         return this.innerClient;
     }

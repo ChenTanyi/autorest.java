@@ -130,6 +130,52 @@ public final class WebApplicationFirewallPoliciesImpl implements WebApplicationF
         return this.getByResourceGroupWithResponse(resourceGroupName, policyName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String policyName = Utils.getValueFromIdByName(id, "ApplicationGatewayWebApplicationFirewallPolicies");
+        if (policyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment"
+                                    + " 'ApplicationGatewayWebApplicationFirewallPolicies'.",
+                                id)));
+        }
+        this.delete(resourceGroupName, policyName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String policyName = Utils.getValueFromIdByName(id, "ApplicationGatewayWebApplicationFirewallPolicies");
+        if (policyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment"
+                                    + " 'ApplicationGatewayWebApplicationFirewallPolicies'.",
+                                id)));
+        }
+        this.delete(resourceGroupName, policyName, context);
+    }
+
     private WebApplicationFirewallPoliciesClient serviceClient() {
         return this.innerClient;
     }

@@ -170,6 +170,29 @@ public interface SharedPrivateLinkResources {
     Response<SharedPrivateLinkResource> getByIdWithResponse(String id, UUID clientRequestId, Context context);
 
     /**
+     * Initiates the deletion of the shared private link resource from the search service.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteById(String id);
+
+    /**
+     * Initiates the deletion of the shared private link resource from the search service.
+     *
+     * @param id the resource ID.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     *     included in response information as a way to track the request.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteByIdWithResponse(String id, UUID clientRequestId, Context context);
+
+    /**
      * Begins definition for a new SharedPrivateLinkResource resource.
      *
      * @param name resource name.

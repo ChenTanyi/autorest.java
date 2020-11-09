@@ -128,6 +128,48 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
         return this.getByResourceGroupWithResponse(resourceGroupName, privateEndpointName, expand, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String privateEndpointName = Utils.getValueFromIdByName(id, "privateEndpoints");
+        if (privateEndpointName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpoints'.", id)));
+        }
+        this.delete(resourceGroupName, privateEndpointName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String privateEndpointName = Utils.getValueFromIdByName(id, "privateEndpoints");
+        if (privateEndpointName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpoints'.", id)));
+        }
+        this.delete(resourceGroupName, privateEndpointName, context);
+    }
+
     private PrivateEndpointsClient serviceClient() {
         return this.innerClient;
     }

@@ -119,6 +119,52 @@ public final class PoliciesImpl implements Policies {
         return this.getByResourceGroupWithResponse(resourceGroupName, policyName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String policyName = Utils.getValueFromIdByName(id, "FrontDoorWebApplicationFirewallPolicies");
+        if (policyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment"
+                                    + " 'FrontDoorWebApplicationFirewallPolicies'.",
+                                id)));
+        }
+        this.delete(resourceGroupName, policyName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String policyName = Utils.getValueFromIdByName(id, "FrontDoorWebApplicationFirewallPolicies");
+        if (policyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment"
+                                    + " 'FrontDoorWebApplicationFirewallPolicies'.",
+                                id)));
+        }
+        this.delete(resourceGroupName, policyName, context);
+    }
+
     private PoliciesClient serviceClient() {
         return this.innerClient;
     }

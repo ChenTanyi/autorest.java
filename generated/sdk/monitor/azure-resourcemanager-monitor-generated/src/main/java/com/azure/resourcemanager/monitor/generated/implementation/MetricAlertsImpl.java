@@ -119,6 +119,44 @@ public final class MetricAlertsImpl implements MetricAlerts {
         return this.getByResourceGroupWithResponse(resourceGroupName, ruleName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String ruleName = Utils.getValueFromIdByName(id, "metricAlerts");
+        if (ruleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'metricAlerts'.", id)));
+        }
+        this.deleteWithResponse(resourceGroupName, ruleName, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String ruleName = Utils.getValueFromIdByName(id, "metricAlerts");
+        if (ruleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'metricAlerts'.", id)));
+        }
+        return this.deleteWithResponse(resourceGroupName, ruleName, context);
+    }
+
     private MetricAlertsClient serviceClient() {
         return this.innerClient;
     }

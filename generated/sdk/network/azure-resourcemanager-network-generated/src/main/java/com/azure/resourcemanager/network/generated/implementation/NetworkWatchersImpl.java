@@ -429,6 +429,46 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         return this.getByResourceGroupWithResponse(resourceGroupName, networkWatcherName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
+        if (networkWatcherName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
+        }
+        this.delete(resourceGroupName, networkWatcherName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String networkWatcherName = Utils.getValueFromIdByName(id, "networkWatchers");
+        if (networkWatcherName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'networkWatchers'.", id)));
+        }
+        this.delete(resourceGroupName, networkWatcherName, context);
+    }
+
     private NetworkWatchersClient serviceClient() {
         return this.innerClient;
     }

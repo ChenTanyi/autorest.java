@@ -669,6 +669,49 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         return this.getWorkerPoolWithResponse(resourceGroupName, name, workerPoolName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
+        }
+        Boolean localForceDelete = null;
+        this.delete(resourceGroupName, name, localForceDelete, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Boolean forceDelete, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
+        }
+        this.delete(resourceGroupName, name, forceDelete, context);
+    }
+
     private AppServiceEnvironmentsClient serviceClient() {
         return this.innerClient;
     }

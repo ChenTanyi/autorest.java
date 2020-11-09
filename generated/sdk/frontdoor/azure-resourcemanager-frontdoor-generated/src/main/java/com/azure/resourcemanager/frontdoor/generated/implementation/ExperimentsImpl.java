@@ -129,6 +129,64 @@ public final class ExperimentsImpl implements Experiments {
         return this.getWithResponse(resourceGroupName, profileName, experimentName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String profileName = Utils.getValueFromIdByName(id, "NetworkExperimentProfiles");
+        if (profileName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'NetworkExperimentProfiles'.",
+                                id)));
+        }
+        String experimentName = Utils.getValueFromIdByName(id, "Experiments");
+        if (experimentName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'Experiments'.", id)));
+        }
+        this.delete(resourceGroupName, profileName, experimentName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String profileName = Utils.getValueFromIdByName(id, "NetworkExperimentProfiles");
+        if (profileName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'NetworkExperimentProfiles'.",
+                                id)));
+        }
+        String experimentName = Utils.getValueFromIdByName(id, "Experiments");
+        if (experimentName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'Experiments'.", id)));
+        }
+        this.delete(resourceGroupName, profileName, experimentName, context);
+    }
+
     private ExperimentsClient serviceClient() {
         return this.innerClient;
     }

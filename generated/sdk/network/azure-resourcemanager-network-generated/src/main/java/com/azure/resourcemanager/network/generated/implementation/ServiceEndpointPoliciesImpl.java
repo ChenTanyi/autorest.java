@@ -131,6 +131,50 @@ public final class ServiceEndpointPoliciesImpl implements ServiceEndpointPolicie
         return this.getByResourceGroupWithResponse(resourceGroupName, serviceEndpointPolicyName, expand, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String serviceEndpointPolicyName = Utils.getValueFromIdByName(id, "serviceEndpointPolicies");
+        if (serviceEndpointPolicyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'serviceEndpointPolicies'.",
+                                id)));
+        }
+        this.delete(resourceGroupName, serviceEndpointPolicyName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String serviceEndpointPolicyName = Utils.getValueFromIdByName(id, "serviceEndpointPolicies");
+        if (serviceEndpointPolicyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'serviceEndpointPolicies'.",
+                                id)));
+        }
+        this.delete(resourceGroupName, serviceEndpointPolicyName, context);
+    }
+
     private ServiceEndpointPoliciesClient serviceClient() {
         return this.innerClient;
     }

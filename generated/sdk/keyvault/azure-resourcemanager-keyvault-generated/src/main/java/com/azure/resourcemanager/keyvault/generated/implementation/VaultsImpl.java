@@ -233,6 +233,44 @@ public final class VaultsImpl implements Vaults {
         return this.getByResourceGroupWithResponse(resourceGroupName, vaultName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String vaultName = Utils.getValueFromIdByName(id, "vaults");
+        if (vaultName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'vaults'.", id)));
+        }
+        this.deleteWithResponse(resourceGroupName, vaultName, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String vaultName = Utils.getValueFromIdByName(id, "vaults");
+        if (vaultName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'vaults'.", id)));
+        }
+        return this.deleteWithResponse(resourceGroupName, vaultName, context);
+    }
+
     private VaultsClient serviceClient() {
         return this.innerClient;
     }

@@ -146,6 +146,44 @@ public final class SshPublicKeysImpl implements SshPublicKeys {
         return this.getByResourceGroupWithResponse(resourceGroupName, sshPublicKeyName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String sshPublicKeyName = Utils.getValueFromIdByName(id, "sshPublicKeys");
+        if (sshPublicKeyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sshPublicKeys'.", id)));
+        }
+        this.deleteWithResponse(resourceGroupName, sshPublicKeyName, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String sshPublicKeyName = Utils.getValueFromIdByName(id, "sshPublicKeys");
+        if (sshPublicKeyName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sshPublicKeys'.", id)));
+        }
+        return this.deleteWithResponse(resourceGroupName, sshPublicKeyName, context);
+    }
+
     private SshPublicKeysClient serviceClient() {
         return this.innerClient;
     }

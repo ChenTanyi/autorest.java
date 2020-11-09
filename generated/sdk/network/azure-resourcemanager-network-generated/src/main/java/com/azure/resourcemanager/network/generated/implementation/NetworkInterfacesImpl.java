@@ -345,6 +345,48 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
         return this.getByResourceGroupWithResponse(resourceGroupName, networkInterfaceName, expand, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String networkInterfaceName = Utils.getValueFromIdByName(id, "networkInterfaces");
+        if (networkInterfaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'networkInterfaces'.", id)));
+        }
+        this.delete(resourceGroupName, networkInterfaceName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String networkInterfaceName = Utils.getValueFromIdByName(id, "networkInterfaces");
+        if (networkInterfaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'networkInterfaces'.", id)));
+        }
+        this.delete(resourceGroupName, networkInterfaceName, context);
+    }
+
     private NetworkInterfacesClient serviceClient() {
         return this.innerClient;
     }

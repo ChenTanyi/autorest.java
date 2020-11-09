@@ -122,6 +122,44 @@ public final class GalleriesImpl implements Galleries {
         return this.getByResourceGroupWithResponse(resourceGroupName, galleryName, select, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String galleryName = Utils.getValueFromIdByName(id, "galleries");
+        if (galleryName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'galleries'.", id)));
+        }
+        this.delete(resourceGroupName, galleryName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String galleryName = Utils.getValueFromIdByName(id, "galleries");
+        if (galleryName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'galleries'.", id)));
+        }
+        this.delete(resourceGroupName, galleryName, context);
+    }
+
     private GalleriesClient serviceClient() {
         return this.innerClient;
     }

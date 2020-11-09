@@ -49,10 +49,6 @@ public final class ExpressRouteConnectionImpl implements ExpressRouteConnection 
         return this.innerModel().enableInternetSecurity();
     }
 
-    public Boolean expressRouteGatewayBypass() {
-        return this.innerModel().expressRouteGatewayBypass();
-    }
-
     public RoutingConfiguration routingConfiguration() {
         return this.innerModel().routingConfiguration();
     }

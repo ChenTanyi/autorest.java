@@ -149,6 +149,44 @@ public final class SnapshotsImpl implements Snapshots {
         return this.getByResourceGroupWithResponse(resourceGroupName, snapshotName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String snapshotName = Utils.getValueFromIdByName(id, "snapshots");
+        if (snapshotName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'snapshots'.", id)));
+        }
+        this.delete(resourceGroupName, snapshotName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String snapshotName = Utils.getValueFromIdByName(id, "snapshots");
+        if (snapshotName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'snapshots'.", id)));
+        }
+        this.delete(resourceGroupName, snapshotName, context);
+    }
+
     private SnapshotsClient serviceClient() {
         return this.innerClient;
     }

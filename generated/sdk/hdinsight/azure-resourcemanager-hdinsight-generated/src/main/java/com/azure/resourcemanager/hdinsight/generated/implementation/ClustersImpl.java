@@ -213,6 +213,44 @@ public final class ClustersImpl implements Clusters {
         return this.getByResourceGroupWithResponse(resourceGroupName, clusterName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String clusterName = Utils.getValueFromIdByName(id, "clusters");
+        if (clusterName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'clusters'.", id)));
+        }
+        this.delete(resourceGroupName, clusterName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String clusterName = Utils.getValueFromIdByName(id, "clusters");
+        if (clusterName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'clusters'.", id)));
+        }
+        this.delete(resourceGroupName, clusterName, context);
+    }
+
     private ClustersClient serviceClient() {
         return this.innerClient;
     }

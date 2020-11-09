@@ -218,6 +218,46 @@ public final class P2SVpnGatewaysImpl implements P2SVpnGateways {
         return this.getByResourceGroupWithResponse(resourceGroupName, gatewayName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String gatewayName = Utils.getValueFromIdByName(id, "p2svpnGateways");
+        if (gatewayName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'p2svpnGateways'.", id)));
+        }
+        this.delete(resourceGroupName, gatewayName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String gatewayName = Utils.getValueFromIdByName(id, "p2svpnGateways");
+        if (gatewayName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'p2svpnGateways'.", id)));
+        }
+        this.delete(resourceGroupName, gatewayName, context);
+    }
+
     private P2SVpnGatewaysClient serviceClient() {
         return this.innerClient;
     }

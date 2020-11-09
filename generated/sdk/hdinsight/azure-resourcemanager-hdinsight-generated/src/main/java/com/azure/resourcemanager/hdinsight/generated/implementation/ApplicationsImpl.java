@@ -123,6 +123,58 @@ public final class ApplicationsImpl implements Applications {
         return this.getWithResponse(resourceGroupName, clusterName, applicationName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String clusterName = Utils.getValueFromIdByName(id, "clusters");
+        if (clusterName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'clusters'.", id)));
+        }
+        String applicationName = Utils.getValueFromIdByName(id, "applications");
+        if (applicationName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'applications'.", id)));
+        }
+        this.delete(resourceGroupName, clusterName, applicationName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String clusterName = Utils.getValueFromIdByName(id, "clusters");
+        if (clusterName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'clusters'.", id)));
+        }
+        String applicationName = Utils.getValueFromIdByName(id, "applications");
+        if (applicationName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'applications'.", id)));
+        }
+        this.delete(resourceGroupName, clusterName, applicationName, context);
+    }
+
     private ApplicationsClient serviceClient() {
         return this.innerClient;
     }

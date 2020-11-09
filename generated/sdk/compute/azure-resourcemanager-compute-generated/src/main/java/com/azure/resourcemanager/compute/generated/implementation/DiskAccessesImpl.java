@@ -145,6 +145,44 @@ public final class DiskAccessesImpl implements DiskAccesses {
         return this.getByResourceGroupWithResponse(resourceGroupName, diskAccessName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String diskAccessName = Utils.getValueFromIdByName(id, "diskAccesses");
+        if (diskAccessName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'diskAccesses'.", id)));
+        }
+        this.delete(resourceGroupName, diskAccessName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String diskAccessName = Utils.getValueFromIdByName(id, "diskAccesses");
+        if (diskAccessName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'diskAccesses'.", id)));
+        }
+        this.delete(resourceGroupName, diskAccessName, context);
+    }
+
     private DiskAccessesClient serviceClient() {
         return this.innerClient;
     }

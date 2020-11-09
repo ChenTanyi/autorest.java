@@ -350,6 +350,48 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
         return this.getByResourceGroupWithResponse(resourceGroupName, applicationGatewayName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String applicationGatewayName = Utils.getValueFromIdByName(id, "applicationGateways");
+        if (applicationGatewayName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'applicationGateways'.", id)));
+        }
+        this.delete(resourceGroupName, applicationGatewayName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String applicationGatewayName = Utils.getValueFromIdByName(id, "applicationGateways");
+        if (applicationGatewayName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'applicationGateways'.", id)));
+        }
+        this.delete(resourceGroupName, applicationGatewayName, context);
+    }
+
     private ApplicationGatewaysClient serviceClient() {
         return this.innerClient;
     }

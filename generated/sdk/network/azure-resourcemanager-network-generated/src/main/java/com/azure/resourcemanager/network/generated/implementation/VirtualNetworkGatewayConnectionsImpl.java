@@ -249,6 +249,44 @@ public final class VirtualNetworkGatewayConnectionsImpl implements VirtualNetwor
         return this.getByResourceGroupWithResponse(resourceGroupName, virtualNetworkGatewayConnectionName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String virtualNetworkGatewayConnectionName = Utils.getValueFromIdByName(id, "connections");
+        if (virtualNetworkGatewayConnectionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'connections'.", id)));
+        }
+        this.delete(resourceGroupName, virtualNetworkGatewayConnectionName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String virtualNetworkGatewayConnectionName = Utils.getValueFromIdByName(id, "connections");
+        if (virtualNetworkGatewayConnectionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'connections'.", id)));
+        }
+        this.delete(resourceGroupName, virtualNetworkGatewayConnectionName, context);
+    }
+
     private VirtualNetworkGatewayConnectionsClient serviceClient() {
         return this.innerClient;
     }

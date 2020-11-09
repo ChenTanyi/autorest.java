@@ -121,6 +121,44 @@ public final class IpAllocationsImpl implements IpAllocations {
         return this.getByResourceGroupWithResponse(resourceGroupName, ipAllocationName, expand, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String ipAllocationName = Utils.getValueFromIdByName(id, "IpAllocations");
+        if (ipAllocationName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'IpAllocations'.", id)));
+        }
+        this.delete(resourceGroupName, ipAllocationName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String ipAllocationName = Utils.getValueFromIdByName(id, "IpAllocations");
+        if (ipAllocationName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'IpAllocations'.", id)));
+        }
+        this.delete(resourceGroupName, ipAllocationName, context);
+    }
+
     private IpAllocationsClient serviceClient() {
         return this.innerClient;
     }

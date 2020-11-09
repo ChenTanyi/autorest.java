@@ -133,6 +133,66 @@ public final class BandwidthSchedulesImpl implements BandwidthSchedules {
         return this.getWithResponse(deviceName, name, resourceGroupName, context);
     }
 
+    public void deleteById(String id) {
+        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        if (deviceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'dataBoxEdgeDevices'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "bandwidthSchedules");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'bandwidthSchedules'.", id)));
+        }
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        this.delete(deviceName, name, resourceGroupName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        if (deviceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'dataBoxEdgeDevices'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "bandwidthSchedules");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'bandwidthSchedules'.", id)));
+        }
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        this.delete(deviceName, name, resourceGroupName, context);
+    }
+
     private BandwidthSchedulesClient serviceClient() {
         return this.innerClient;
     }

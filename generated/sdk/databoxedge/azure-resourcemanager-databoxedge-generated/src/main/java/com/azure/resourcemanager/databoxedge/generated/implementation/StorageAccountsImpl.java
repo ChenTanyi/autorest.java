@@ -131,6 +131,64 @@ public final class StorageAccountsImpl implements StorageAccounts {
         return this.getWithResponse(deviceName, storageAccountName, resourceGroupName, context);
     }
 
+    public void deleteById(String id) {
+        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        if (deviceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'dataBoxEdgeDevices'.", id)));
+        }
+        String storageAccountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (storageAccountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        this.delete(deviceName, storageAccountName, resourceGroupName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        if (deviceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'dataBoxEdgeDevices'.", id)));
+        }
+        String storageAccountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (storageAccountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        this.delete(deviceName, storageAccountName, resourceGroupName, context);
+    }
+
     private StorageAccountsClient serviceClient() {
         return this.innerClient;
     }

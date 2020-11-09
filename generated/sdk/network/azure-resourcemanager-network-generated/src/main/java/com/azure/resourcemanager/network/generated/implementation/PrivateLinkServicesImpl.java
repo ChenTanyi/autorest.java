@@ -303,6 +303,48 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
         return this.getByResourceGroupWithResponse(resourceGroupName, serviceName, expand, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String serviceName = Utils.getValueFromIdByName(id, "privateLinkServices");
+        if (serviceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'privateLinkServices'.", id)));
+        }
+        this.delete(resourceGroupName, serviceName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String serviceName = Utils.getValueFromIdByName(id, "privateLinkServices");
+        if (serviceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'privateLinkServices'.", id)));
+        }
+        this.delete(resourceGroupName, serviceName, context);
+    }
+
     private PrivateLinkServicesClient serviceClient() {
         return this.innerClient;
     }

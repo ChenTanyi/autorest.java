@@ -121,6 +121,44 @@ public final class RouteTablesImpl implements RouteTables {
         return this.getByResourceGroupWithResponse(resourceGroupName, routeTableName, expand, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String routeTableName = Utils.getValueFromIdByName(id, "routeTables");
+        if (routeTableName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'routeTables'.", id)));
+        }
+        this.delete(resourceGroupName, routeTableName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String routeTableName = Utils.getValueFromIdByName(id, "routeTables");
+        if (routeTableName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'routeTables'.", id)));
+        }
+        this.delete(resourceGroupName, routeTableName, context);
+    }
+
     private RouteTablesClient serviceClient() {
         return this.innerClient;
     }

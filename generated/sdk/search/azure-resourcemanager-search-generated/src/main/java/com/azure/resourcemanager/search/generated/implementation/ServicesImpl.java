@@ -155,6 +155,47 @@ public final class ServicesImpl implements Services {
         return this.getByResourceGroupWithResponse(resourceGroupName, searchServiceName, clientRequestId, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String searchServiceName = Utils.getValueFromIdByName(id, "searchServices");
+        if (searchServiceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'searchServices'.", id)));
+        }
+        UUID localClientRequestId = null;
+        this.deleteWithResponse(resourceGroupName, searchServiceName, localClientRequestId, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteByIdWithResponse(String id, UUID clientRequestId, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String searchServiceName = Utils.getValueFromIdByName(id, "searchServices");
+        if (searchServiceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'searchServices'.", id)));
+        }
+        return this.deleteWithResponse(resourceGroupName, searchServiceName, clientRequestId, context);
+    }
+
     private ServicesClient serviceClient() {
         return this.innerClient;
     }

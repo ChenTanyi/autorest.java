@@ -166,6 +166,73 @@ public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkRe
                 resourceGroupName, searchServiceName, sharedPrivateLinkResourceName, clientRequestId, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String searchServiceName = Utils.getValueFromIdByName(id, "searchServices");
+        if (searchServiceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'searchServices'.", id)));
+        }
+        String sharedPrivateLinkResourceName = Utils.getValueFromIdByName(id, "sharedPrivateLinkResources");
+        if (sharedPrivateLinkResourceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'sharedPrivateLinkResources'.",
+                                id)));
+        }
+        UUID localClientRequestId = null;
+        this
+            .delete(
+                resourceGroupName,
+                searchServiceName,
+                sharedPrivateLinkResourceName,
+                localClientRequestId,
+                Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, UUID clientRequestId, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String searchServiceName = Utils.getValueFromIdByName(id, "searchServices");
+        if (searchServiceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'searchServices'.", id)));
+        }
+        String sharedPrivateLinkResourceName = Utils.getValueFromIdByName(id, "sharedPrivateLinkResources");
+        if (sharedPrivateLinkResourceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'sharedPrivateLinkResources'.",
+                                id)));
+        }
+        this.delete(resourceGroupName, searchServiceName, sharedPrivateLinkResourceName, clientRequestId, context);
+    }
+
     private SharedPrivateLinkResourcesClient serviceClient() {
         return this.innerClient;
     }

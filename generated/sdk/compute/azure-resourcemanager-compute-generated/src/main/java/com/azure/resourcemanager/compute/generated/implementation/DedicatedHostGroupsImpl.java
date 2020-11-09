@@ -123,6 +123,44 @@ public final class DedicatedHostGroupsImpl implements DedicatedHostGroups {
         return this.getByResourceGroupWithResponse(resourceGroupName, hostGroupName, expand, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String hostGroupName = Utils.getValueFromIdByName(id, "hostGroups");
+        if (hostGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'hostGroups'.", id)));
+        }
+        this.deleteWithResponse(resourceGroupName, hostGroupName, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String hostGroupName = Utils.getValueFromIdByName(id, "hostGroups");
+        if (hostGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'hostGroups'.", id)));
+        }
+        return this.deleteWithResponse(resourceGroupName, hostGroupName, context);
+    }
+
     private DedicatedHostGroupsClient serviceClient() {
         return this.innerClient;
     }

@@ -172,6 +172,44 @@ public final class VpnGatewaysImpl implements VpnGateways {
         return this.getByResourceGroupWithResponse(resourceGroupName, gatewayName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String gatewayName = Utils.getValueFromIdByName(id, "vpnGateways");
+        if (gatewayName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'vpnGateways'.", id)));
+        }
+        this.delete(resourceGroupName, gatewayName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String gatewayName = Utils.getValueFromIdByName(id, "vpnGateways");
+        if (gatewayName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'vpnGateways'.", id)));
+        }
+        this.delete(resourceGroupName, gatewayName, context);
+    }
+
     private VpnGatewaysClient serviceClient() {
         return this.innerClient;
     }

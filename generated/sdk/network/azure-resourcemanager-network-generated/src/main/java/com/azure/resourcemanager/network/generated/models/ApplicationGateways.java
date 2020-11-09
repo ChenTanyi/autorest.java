@@ -422,6 +422,27 @@ public interface ApplicationGateways {
     Response<ApplicationGateway> getByIdWithResponse(String id, Context context);
 
     /**
+     * Deletes the specified application gateway.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteById(String id);
+
+    /**
+     * Deletes the specified application gateway.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteByIdWithResponse(String id, Context context);
+
+    /**
      * Begins definition for a new ApplicationGateway resource.
      *
      * @param name resource name.

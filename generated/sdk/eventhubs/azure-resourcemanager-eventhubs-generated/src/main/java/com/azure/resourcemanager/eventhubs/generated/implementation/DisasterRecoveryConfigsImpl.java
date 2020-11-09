@@ -254,6 +254,64 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
         return this.getWithResponse(resourceGroupName, namespaceName, alias, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+        }
+        String alias = Utils.getValueFromIdByName(id, "disasterRecoveryConfigs");
+        if (alias == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'disasterRecoveryConfigs'.",
+                                id)));
+        }
+        this.deleteWithResponse(resourceGroupName, namespaceName, alias, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String namespaceName = Utils.getValueFromIdByName(id, "namespaces");
+        if (namespaceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'namespaces'.", id)));
+        }
+        String alias = Utils.getValueFromIdByName(id, "disasterRecoveryConfigs");
+        if (alias == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'disasterRecoveryConfigs'.",
+                                id)));
+        }
+        return this.deleteWithResponse(resourceGroupName, namespaceName, alias, context);
+    }
+
     private DisasterRecoveryConfigsClient serviceClient() {
         return this.innerClient;
     }

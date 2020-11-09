@@ -128,6 +128,50 @@ public final class VpnServerConfigurationsImpl implements VpnServerConfiguration
         return this.getByResourceGroupWithResponse(resourceGroupName, vpnServerConfigurationName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String vpnServerConfigurationName = Utils.getValueFromIdByName(id, "vpnServerConfigurations");
+        if (vpnServerConfigurationName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'vpnServerConfigurations'.",
+                                id)));
+        }
+        this.delete(resourceGroupName, vpnServerConfigurationName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String vpnServerConfigurationName = Utils.getValueFromIdByName(id, "vpnServerConfigurations");
+        if (vpnServerConfigurationName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'vpnServerConfigurations'.",
+                                id)));
+        }
+        this.delete(resourceGroupName, vpnServerConfigurationName, context);
+    }
+
     private VpnServerConfigurationsClient serviceClient() {
         return this.innerClient;
     }

@@ -90,6 +90,28 @@ public final class LogProfilesImpl implements LogProfiles {
         return this.getWithResponse(logProfileName, context);
     }
 
+    public void deleteById(String id) {
+        String logProfileName = Utils.getValueFromIdByName(id, "logprofiles");
+        if (logProfileName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'logprofiles'.", id)));
+        }
+        this.deleteWithResponse(logProfileName, Context.NONE).getValue();
+    }
+
+    public Response<Void> deleteByIdWithResponse(String id, Context context) {
+        String logProfileName = Utils.getValueFromIdByName(id, "logprofiles");
+        if (logProfileName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'logprofiles'.", id)));
+        }
+        return this.deleteWithResponse(logProfileName, context);
+    }
+
     private LogProfilesClient serviceClient() {
         return this.innerClient;
     }

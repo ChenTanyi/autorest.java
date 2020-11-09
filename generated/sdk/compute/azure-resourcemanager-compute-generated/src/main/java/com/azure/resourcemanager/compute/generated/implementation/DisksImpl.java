@@ -147,6 +147,44 @@ public final class DisksImpl implements Disks {
         return this.getByResourceGroupWithResponse(resourceGroupName, diskName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String diskName = Utils.getValueFromIdByName(id, "disks");
+        if (diskName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'disks'.", id)));
+        }
+        this.delete(resourceGroupName, diskName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String diskName = Utils.getValueFromIdByName(id, "disks");
+        if (diskName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'disks'.", id)));
+        }
+        this.delete(resourceGroupName, diskName, context);
+    }
+
     private DisksClient serviceClient() {
         return this.innerClient;
     }

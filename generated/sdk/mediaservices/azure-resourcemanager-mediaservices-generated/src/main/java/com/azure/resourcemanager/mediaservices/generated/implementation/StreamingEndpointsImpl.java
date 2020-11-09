@@ -161,6 +161,62 @@ public final class StreamingEndpointsImpl implements StreamingEndpoints {
         return this.getWithResponse(resourceGroupName, accountName, streamingEndpointName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String accountName = Utils.getValueFromIdByName(id, "mediaservices");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'mediaservices'.", id)));
+        }
+        String streamingEndpointName = Utils.getValueFromIdByName(id, "streamingEndpoints");
+        if (streamingEndpointName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'streamingEndpoints'.", id)));
+        }
+        this.delete(resourceGroupName, accountName, streamingEndpointName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String accountName = Utils.getValueFromIdByName(id, "mediaservices");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'mediaservices'.", id)));
+        }
+        String streamingEndpointName = Utils.getValueFromIdByName(id, "streamingEndpoints");
+        if (streamingEndpointName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'streamingEndpoints'.", id)));
+        }
+        this.delete(resourceGroupName, accountName, streamingEndpointName, context);
+    }
+
     private StreamingEndpointsClient serviceClient() {
         return this.innerClient;
     }

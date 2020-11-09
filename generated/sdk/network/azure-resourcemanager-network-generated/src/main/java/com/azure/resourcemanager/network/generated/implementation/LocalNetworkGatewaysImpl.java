@@ -116,6 +116,50 @@ public final class LocalNetworkGatewaysImpl implements LocalNetworkGateways {
         return this.getByResourceGroupWithResponse(resourceGroupName, localNetworkGatewayName, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String localNetworkGatewayName = Utils.getValueFromIdByName(id, "localNetworkGateways");
+        if (localNetworkGatewayName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'localNetworkGateways'.",
+                                id)));
+        }
+        this.delete(resourceGroupName, localNetworkGatewayName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String localNetworkGatewayName = Utils.getValueFromIdByName(id, "localNetworkGateways");
+        if (localNetworkGatewayName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'localNetworkGateways'.",
+                                id)));
+        }
+        this.delete(resourceGroupName, localNetworkGatewayName, context);
+    }
+
     private LocalNetworkGatewaysClient serviceClient() {
         return this.innerClient;
     }

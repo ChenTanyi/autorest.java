@@ -131,6 +131,50 @@ public final class NetworkVirtualAppliancesImpl implements NetworkVirtualApplian
         return this.getByResourceGroupWithResponse(resourceGroupName, networkVirtualApplianceName, expand, context);
     }
 
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String networkVirtualApplianceName = Utils.getValueFromIdByName(id, "networkVirtualAppliances");
+        if (networkVirtualApplianceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'networkVirtualAppliances'.",
+                                id)));
+        }
+        this.delete(resourceGroupName, networkVirtualApplianceName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String networkVirtualApplianceName = Utils.getValueFromIdByName(id, "networkVirtualAppliances");
+        if (networkVirtualApplianceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'networkVirtualAppliances'.",
+                                id)));
+        }
+        this.delete(resourceGroupName, networkVirtualApplianceName, context);
+    }
+
     private NetworkVirtualAppliancesClient serviceClient() {
         return this.innerClient;
     }

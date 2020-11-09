@@ -267,6 +267,48 @@ public final class DevicesImpl implements Devices {
         return this.getByResourceGroupWithResponse(resourceGroupName, deviceName, context);
     }
 
+    public void deleteById(String id) {
+        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        if (deviceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'dataBoxEdgeDevices'.", id)));
+        }
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        this.delete(deviceName, resourceGroupName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
+        if (deviceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'dataBoxEdgeDevices'.", id)));
+        }
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        this.delete(deviceName, resourceGroupName, context);
+    }
+
     private DevicesClient serviceClient() {
         return this.innerClient;
     }
