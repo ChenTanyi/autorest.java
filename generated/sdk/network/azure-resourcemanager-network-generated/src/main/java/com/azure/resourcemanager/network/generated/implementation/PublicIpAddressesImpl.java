@@ -195,6 +195,110 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
         }
     }
 
+    public PagedIterable<PublicIpAddress> listCloudServicePublicIpAddresses(
+        String resourceGroupName, String cloudServiceName) {
+        PagedIterable<PublicIpAddressInner> inner =
+            this.serviceClient().listCloudServicePublicIpAddresses(resourceGroupName, cloudServiceName);
+        return inner.mapPage(inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<PublicIpAddress> listCloudServicePublicIpAddresses(
+        String resourceGroupName, String cloudServiceName, Context context) {
+        PagedIterable<PublicIpAddressInner> inner =
+            this.serviceClient().listCloudServicePublicIpAddresses(resourceGroupName, cloudServiceName, context);
+        return inner.mapPage(inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<PublicIpAddress> listCloudServiceRoleInstancePublicIpAddresses(
+        String resourceGroupName,
+        String cloudServiceName,
+        String roleInstanceName,
+        String networkInterfaceName,
+        String ipConfigurationName) {
+        PagedIterable<PublicIpAddressInner> inner =
+            this
+                .serviceClient()
+                .listCloudServiceRoleInstancePublicIpAddresses(
+                    resourceGroupName, cloudServiceName, roleInstanceName, networkInterfaceName, ipConfigurationName);
+        return inner.mapPage(inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<PublicIpAddress> listCloudServiceRoleInstancePublicIpAddresses(
+        String resourceGroupName,
+        String cloudServiceName,
+        String roleInstanceName,
+        String networkInterfaceName,
+        String ipConfigurationName,
+        Context context) {
+        PagedIterable<PublicIpAddressInner> inner =
+            this
+                .serviceClient()
+                .listCloudServiceRoleInstancePublicIpAddresses(
+                    resourceGroupName,
+                    cloudServiceName,
+                    roleInstanceName,
+                    networkInterfaceName,
+                    ipConfigurationName,
+                    context);
+        return inner.mapPage(inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+    }
+
+    public PublicIpAddress getCloudServicePublicIpAddress(
+        String resourceGroupName,
+        String cloudServiceName,
+        String roleInstanceName,
+        String networkInterfaceName,
+        String ipConfigurationName,
+        String publicIpAddressName) {
+        PublicIpAddressInner inner =
+            this
+                .serviceClient()
+                .getCloudServicePublicIpAddress(
+                    resourceGroupName,
+                    cloudServiceName,
+                    roleInstanceName,
+                    networkInterfaceName,
+                    ipConfigurationName,
+                    publicIpAddressName);
+        if (inner != null) {
+            return new PublicIpAddressImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<PublicIpAddress> getCloudServicePublicIpAddressWithResponse(
+        String resourceGroupName,
+        String cloudServiceName,
+        String roleInstanceName,
+        String networkInterfaceName,
+        String ipConfigurationName,
+        String publicIpAddressName,
+        String expand,
+        Context context) {
+        Response<PublicIpAddressInner> inner =
+            this
+                .serviceClient()
+                .getCloudServicePublicIpAddressWithResponse(
+                    resourceGroupName,
+                    cloudServiceName,
+                    roleInstanceName,
+                    networkInterfaceName,
+                    ipConfigurationName,
+                    publicIpAddressName,
+                    expand,
+                    context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new PublicIpAddressImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
     public PublicIpAddress getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
