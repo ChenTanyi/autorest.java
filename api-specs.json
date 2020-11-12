@@ -91,6 +91,11 @@
         "source": "specification/postgresql/resource-manager/readme.md",
         "namespace": "com.azure.resourcemanager.postgresql.generated",
         "output": "sdk/postgresql/azure-resourcemanager-postgresql-generated"
+    },
+	"resourcegraph": {
+        "source": "specification/resourcegraph/resource-manager/readme.md",
+        "namespace": "com.azure.resourcemanager.resourcegraph.generated",
+        "output": "sdk/resourcegraph/azure-resourcemanager-resourcegraph-generated"
     },	
 	"resources": {
         "source": "specification/resources/resource-manager/readme.md",
