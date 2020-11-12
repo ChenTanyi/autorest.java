@@ -24,6 +24,7 @@
         <module>../generated/sdk/network/azure-resourcemanager-network-generated</module>
         <module>../generated/sdk/policy/azure-resourcemanager-policy-generated</module>
         <module>../generated/sdk/postgresql/azure-resourcemanager-postgresql-generated</module>
+        <module>../generated/sdk/resourcegraph/azure-resourcemanager-resourcegraph-generated</module>
         <module>../generated/sdk/resources/azure-resourcemanager-resources-generated</module>
         <module>../generated/sdk/search/azure-resourcemanager-search-generated</module>
         <module>../generated/sdk/storage/azure-resourcemanager-storage-generated</module>

@@ -140,6 +140,12 @@
     </dependency>
     <dependency>
       <groupId>com.azure.resourcemanager</groupId>
+      <artifactId>azure-resourcemanager-resourcegraph-generated</artifactId>
+      <version>1.0.0-beta.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.azure.resourcemanager</groupId>
       <artifactId>azure-resourcemanager-resources-generated</artifactId>
       <version>1.0.0-beta.1</version>
       <scope>test</scope>
