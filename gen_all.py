@@ -36,7 +36,8 @@ def parse_args() -> argparse.Namespace:
 def codegen(autorest_java: str, specs_dir: str, sdk: str, output_sdk_dir: str):
     logging.info(f'generate code for RP: {sdk}')
 
-    readme_dir = os.path.join(specs_dir, sdk, 'resource-manager', 'readme.md')
+    # readme_dir = os.path.join(specs_dir, sdk, 'resource-manager', 'readme.md')
+    readme_dir = f'https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/specification/{sdk}/resource-manager/readme.md'
     namespace = f'azure.resourcemanager.{sdk}.generated'
 
     command = [
