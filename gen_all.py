@@ -36,8 +36,8 @@ def parse_args() -> argparse.Namespace:
 def codegen(autorest_java: str, specs_dir: str, sdk: str, output_sdk_dir: str):
     logging.info(f'generate code for RP: {sdk}')
 
-    # readme_dir = os.path.join(specs_dir, sdk, 'resource-manager', 'readme.md')
-    readme_dir = f'https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/specification/{sdk}/resource-manager/readme.md'
+    readme_dir = os.path.join(specs_dir, sdk, 'resource-manager', 'readme.md')
+    # readme_dir = f'https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/specification/{sdk}/resource-manager/readme.md'
     namespace = f'azure.resourcemanager.{sdk}.generated'
 
     command = [
@@ -58,7 +58,7 @@ def codegen(autorest_java: str, specs_dir: str, sdk: str, output_sdk_dir: str):
         readme_dir]
 
     logging.info(' '.join(command))
-    result = subprocess.run(command, shell=True)
+    result = subprocess.run(command, shell=True, capture_output=True, text=True, encoding='utf-8')
     if result.returncode:
         logging.error(f'generate code failed for RP: {sdk}')
     return result
@@ -73,7 +73,7 @@ def maven_build(output_sdk_dir: str, sdk: str):
     ]
 
     logging.info(' '.join(command))
-    result = subprocess.run(command, shell=True, cwd=output_sdk_dir)
+    result = subprocess.run(command, shell=True, capture_output=True, text=True, encoding='utf-8', cwd=output_sdk_dir)
     if result.returncode:
         logging.error(f'maven build failed for RP: {sdk}')
     return result
@@ -84,6 +84,8 @@ class CodegenResult:
     sdk: str
     success: bool
     failure_cause: str = ''
+    stdout: str = ''
+    stderr: str = ''
 
 
 def main():
@@ -109,6 +111,8 @@ def main():
     autorest_java = args['use']
     output_dir = args['test_output']
 
+    sdks = sdks[0:2]
+
     logging.info(f'prepare to generate for RPs: {sdks}')
 
     results = []
@@ -120,16 +124,27 @@ def main():
             if not build_result.returncode:
                 results.append(CodegenResult(sdk=sdk, success=True))
             else:
-                results.append(CodegenResult(sdk=sdk, success=False, failure_cause='build'))
+                results.append(CodegenResult(sdk=sdk, success=False, failure_cause='build',
+                                             stdout=build_result.stdout, stderr=build_result.stderr))
+                logging.error(build_result.stderr)
         else:
-            results.append(CodegenResult(sdk=sdk, success=False, failure_cause='codegen'))
+            error_log = codegen_result.stderr
+            if 'fluentnamer' in error_log or 'fluentgen' in error_log:
+                cause = 'codegen_java'
+            else:
+                cause = 'codegen'
+            results.append(CodegenResult(sdk=sdk, success=False, failure_cause=cause,
+                                         stdout=codegen_result.stdout, stderr=error_log))
+            logging.error(error_log)
 
     sdks_success = [result.sdk for result in results if result.success]
-    sdks_failure_codegen = [result.sdk for result in results if not result.success and result.failure_cause.startswith('codegen')]
-    sdks_failure_build = [result.sdk for result in results if not result.success and result.failure_cause.startswith('build')]
+    sdks_failure_codegen_java = [result.sdk for result in results
+                                 if not result.success and result.failure_cause.startswith('codegen_java')]
+    sdks_failure_build = [result.sdk for result in results
+                          if not result.success and result.failure_cause.startswith('build')]
     logging.info(f'success for PRs: {sdks_success}')
-    if sdks_failure_codegen:
-        logging.error(f'failure at codegen for PRs: {sdks_failure_codegen}')
+    if sdks_failure_codegen_java:
+        logging.error(f'failure at java codegen for PRs: {sdks_failure_codegen_java}')
     if sdks_failure_build:
         logging.error(f'failure at build for PRs: {sdks_failure_build}')
 
