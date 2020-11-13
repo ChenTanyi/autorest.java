@@ -16,7 +16,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         '-u',
         '--use',
-        default=os.path.join(os.environ['HOME'], 'autorest.java'),
+        default=os.path.join('.', 'autorest.java'),
         help='autorest.java source or tgz',
     )
     parser.add_argument(
@@ -27,7 +27,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         '-t',
         '--test-output',
-        default=os.path.join(os.environ['HOME'], 'generated_all'),
+        default=os.path.join('.', 'generated_all'),
         help='Output for manual test',
     )
     return parser.parse_args()
@@ -36,7 +36,7 @@ def parse_args() -> argparse.Namespace:
 def codegen(autorest_java: str, specs_dir: str, sdk: str, output_sdk_dir: str):
     logging.info(f'generate code for RP: {sdk}')
 
-    readme_dir = os.path.join(specs_dir, sdk, 'resource-manager', 'readme.md')
+    readme_dir = os.path.abspath(os.path.join(specs_dir, sdk, 'resource-manager', 'readme.md'))
     namespace = f'azure.resourcemanager.{sdk}.generated'
 
     command = [
@@ -96,7 +96,7 @@ def main():
             exclude_sdks.append(sdk)
 
     sdks = []
-    specs_dir = os.path.join(os.environ['HOME'], args['specs'], 'specification')
+    specs_dir = os.path.join(args['specs'], 'specification')
     for sdk in os.listdir(specs_dir):
         sdk_dir = os.path.join(specs_dir, sdk)
         if os.path.exists(os.path.join(sdk_dir, 'resource-manager', 'readme.md')):
