@@ -16,7 +16,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         '-u',
         '--use',
-        default=os.path.join('.', 'autorest.java'),
+        default=os.path.join(os.environ['HOME'], 'autorest.java'),
         help='autorest.java source or tgz',
     )
     parser.add_argument(
@@ -27,7 +27,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         '-t',
         '--test-output',
-        default=os.path.join('.', 'generated_all'),
+        default=os.path.join(os.environ['HOME'], 'generated_all'),
         help='Output for manual test',
     )
     return parser.parse_args()
@@ -96,7 +96,7 @@ def main():
             exclude_sdks.append(sdk)
 
     sdks = []
-    specs_dir = os.path.join(args['specs'], 'specification')
+    specs_dir = os.path.join(os.environ['HOME'], args['specs'], 'specification')
     for sdk in os.listdir(specs_dir):
         sdk_dir = os.path.join(specs_dir, sdk)
         if os.path.exists(os.path.join(sdk_dir, 'resource-manager', 'readme.md')):
@@ -106,8 +106,6 @@ def main():
 
     autorest_java = args['use']
     output_dir = args['test_output']
-
-    sdks = sdks[0:2]
 
     logging.info(f'prepare to generate for RPs: {sdks}')
 

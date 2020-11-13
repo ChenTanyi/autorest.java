@@ -48,4 +48,4 @@ jobs:
         run: git clone --depth 1 https://github.com/azure/azure-rest-api-specs
       - name: Generate and Compile
         run: |
-          ./gen_all.py -u . -s ./azure-rest-api-specs
+          ./gen_all.py -u . -s azure-rest-api-specs
