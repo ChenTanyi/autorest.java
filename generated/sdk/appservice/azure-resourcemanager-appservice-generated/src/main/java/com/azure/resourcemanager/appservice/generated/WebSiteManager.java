@@ -33,6 +33,7 @@ import com.azure.resourcemanager.appservice.generated.implementation.DomainsImpl
 import com.azure.resourcemanager.appservice.generated.implementation.ProvidersImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.RecommendationsImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.ResourceHealthMetadatasImpl;
+import com.azure.resourcemanager.appservice.generated.implementation.ResourceProvidersImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.StaticSitesImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.TopLevelDomainsImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.WebAppsImpl;
@@ -49,6 +50,7 @@ import com.azure.resourcemanager.appservice.generated.models.Domains;
 import com.azure.resourcemanager.appservice.generated.models.Providers;
 import com.azure.resourcemanager.appservice.generated.models.Recommendations;
 import com.azure.resourcemanager.appservice.generated.models.ResourceHealthMetadatas;
+import com.azure.resourcemanager.appservice.generated.models.ResourceProviders;
 import com.azure.resourcemanager.appservice.generated.models.StaticSites;
 import com.azure.resourcemanager.appservice.generated.models.TopLevelDomains;
 import com.azure.resourcemanager.appservice.generated.models.WebApps;
@@ -79,6 +81,8 @@ public final class WebSiteManager {
     private Providers providers;
 
     private Recommendations recommendations;
+
+    private ResourceProviders resourceProviders;
 
     private WebApps webApps;
 
@@ -319,6 +323,14 @@ public final class WebSiteManager {
             this.recommendations = new RecommendationsImpl(clientObject.getRecommendations(), this);
         }
         return recommendations;
+    }
+
+    /** @return Resource collection API of ResourceProviders. */
+    public ResourceProviders resourceProviders() {
+        if (this.resourceProviders == null) {
+            this.resourceProviders = new ResourceProvidersImpl(clientObject.getResourceProviders(), this);
+        }
+        return resourceProviders;
     }
 
     /** @return Resource collection API of WebApps. */

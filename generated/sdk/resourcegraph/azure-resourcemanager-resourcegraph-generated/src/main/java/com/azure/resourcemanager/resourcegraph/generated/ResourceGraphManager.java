@@ -23,7 +23,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.resourcegraph.generated.fluent.ResourceGraphClient;
 import com.azure.resourcemanager.resourcegraph.generated.implementation.OperationsImpl;
 import com.azure.resourcemanager.resourcegraph.generated.implementation.ResourceGraphClientBuilder;
+import com.azure.resourcemanager.resourcegraph.generated.implementation.ResourceProvidersImpl;
 import com.azure.resourcemanager.resourcegraph.generated.models.Operations;
+import com.azure.resourcemanager.resourcegraph.generated.models.ResourceProviders;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -32,6 +34,8 @@ import java.util.Objects;
 
 /** Entry point to ResourceGraphManager. Azure Resource Graph API Reference. */
 public final class ResourceGraphManager {
+    private ResourceProviders resourceProviders;
+
     private Operations operations;
 
     private final ResourceGraphClient clientObject;
@@ -179,6 +183,14 @@ public final class ResourceGraphManager {
                     .build();
             return new ResourceGraphManager(httpPipeline, profile, defaultPollInterval);
         }
+    }
+
+    /** @return Resource collection API of ResourceProviders. */
+    public ResourceProviders resourceProviders() {
+        if (this.resourceProviders == null) {
+            this.resourceProviders = new ResourceProvidersImpl(clientObject.getResourceProviders(), this);
+        }
+        return resourceProviders;
     }
 
     /** @return Resource collection API of Operations. */

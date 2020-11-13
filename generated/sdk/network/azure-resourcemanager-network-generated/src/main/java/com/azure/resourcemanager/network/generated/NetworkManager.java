@@ -89,6 +89,7 @@ import com.azure.resourcemanager.network.generated.implementation.PrivateLinkSer
 import com.azure.resourcemanager.network.generated.implementation.PublicIpAddressesImpl;
 import com.azure.resourcemanager.network.generated.implementation.PublicIpPrefixesImpl;
 import com.azure.resourcemanager.network.generated.implementation.ResourceNavigationLinksImpl;
+import com.azure.resourcemanager.network.generated.implementation.ResourceProvidersImpl;
 import com.azure.resourcemanager.network.generated.implementation.RouteFilterRulesImpl;
 import com.azure.resourcemanager.network.generated.implementation.RouteFiltersImpl;
 import com.azure.resourcemanager.network.generated.implementation.RouteTablesImpl;
@@ -193,6 +194,7 @@ import com.azure.resourcemanager.network.generated.models.PrivateLinkServices;
 import com.azure.resourcemanager.network.generated.models.PublicIpAddresses;
 import com.azure.resourcemanager.network.generated.models.PublicIpPrefixes;
 import com.azure.resourcemanager.network.generated.models.ResourceNavigationLinks;
+import com.azure.resourcemanager.network.generated.models.ResourceProviders;
 import com.azure.resourcemanager.network.generated.models.RouteFilterRules;
 import com.azure.resourcemanager.network.generated.models.RouteFilters;
 import com.azure.resourcemanager.network.generated.models.RouteTables;
@@ -259,6 +261,8 @@ public final class NetworkManager {
     private WebCategories webCategories;
 
     private BastionHosts bastionHosts;
+
+    private ResourceProviders resourceProviders;
 
     private CustomIpPrefixes customIpPrefixes;
 
@@ -687,6 +691,14 @@ public final class NetworkManager {
             this.bastionHosts = new BastionHostsImpl(clientObject.getBastionHosts(), this);
         }
         return bastionHosts;
+    }
+
+    /** @return Resource collection API of ResourceProviders. */
+    public ResourceProviders resourceProviders() {
+        if (this.resourceProviders == null) {
+            this.resourceProviders = new ResourceProvidersImpl(clientObject.getResourceProviders(), this);
+        }
+        return resourceProviders;
     }
 
     /** @return Resource collection API of CustomIpPrefixes. */

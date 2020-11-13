@@ -37,6 +37,7 @@ import com.azure.resourcemanager.mysql.generated.implementation.PrivateLinkResou
 import com.azure.resourcemanager.mysql.generated.implementation.QueryTextsImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.RecommendedActionsImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.ReplicasImpl;
+import com.azure.resourcemanager.mysql.generated.implementation.ResourceProvidersImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.ServerAdministratorsImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.ServerKeysImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.ServerSecurityAlertPoliciesImpl;
@@ -59,6 +60,7 @@ import com.azure.resourcemanager.mysql.generated.models.PrivateLinkResources;
 import com.azure.resourcemanager.mysql.generated.models.QueryTexts;
 import com.azure.resourcemanager.mysql.generated.models.RecommendedActions;
 import com.azure.resourcemanager.mysql.generated.models.Replicas;
+import com.azure.resourcemanager.mysql.generated.models.ResourceProviders;
 import com.azure.resourcemanager.mysql.generated.models.ServerAdministrators;
 import com.azure.resourcemanager.mysql.generated.models.ServerKeys;
 import com.azure.resourcemanager.mysql.generated.models.ServerSecurityAlertPolicies;
@@ -109,6 +111,8 @@ public final class MySqlManager {
     private WaitStatistics waitStatistics;
 
     private Advisors advisors;
+
+    private ResourceProviders resourceProviders;
 
     private RecommendedActions recommendedActions;
 
@@ -399,6 +403,14 @@ public final class MySqlManager {
             this.advisors = new AdvisorsImpl(clientObject.getAdvisors(), this);
         }
         return advisors;
+    }
+
+    /** @return Resource collection API of ResourceProviders. */
+    public ResourceProviders resourceProviders() {
+        if (this.resourceProviders == null) {
+            this.resourceProviders = new ResourceProvidersImpl(clientObject.getResourceProviders(), this);
+        }
+        return resourceProviders;
     }
 
     /** @return Resource collection API of RecommendedActions. */

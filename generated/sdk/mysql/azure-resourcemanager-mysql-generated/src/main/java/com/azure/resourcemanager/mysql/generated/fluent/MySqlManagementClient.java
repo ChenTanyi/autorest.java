@@ -4,12 +4,7 @@
 
 package com.azure.resourcemanager.mysql.generated.fluent;
 
-import com.azure.core.annotation.ReturnType;
-import com.azure.core.annotation.ServiceMethod;
 import com.azure.core.http.HttpPipeline;
-import com.azure.core.management.polling.PollResult;
-import com.azure.core.util.Context;
-import com.azure.core.util.polling.SyncPoller;
 import java.time.Duration;
 
 /** The interface for MySqlManagementClient class. */
@@ -155,6 +150,13 @@ public interface MySqlManagementClient {
     AdvisorsClient getAdvisors();
 
     /**
+     * Gets the ResourceProvidersClient object to access its operations.
+     *
+     * @return the ResourceProvidersClient object.
+     */
+    ResourceProvidersClient getResourceProviders();
+
+    /**
      * Gets the RecommendedActionsClient object to access its operations.
      *
      * @return the RecommendedActionsClient object.
@@ -196,68 +198,4 @@ public interface MySqlManagementClient {
      * @return the ServerKeysClient object.
      */
     ServerKeysClient getServerKeys();
-
-    /**
-     * Create recommendation action session for the advisor.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
-     * @param advisorName The advisor name for recommendation action.
-     * @param databaseName The name of the database.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    SyncPoller<PollResult<Void>, Void> beginCreateRecommendedActionSession(
-        String resourceGroupName, String serverName, String advisorName, String databaseName);
-
-    /**
-     * Create recommendation action session for the advisor.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
-     * @param advisorName The advisor name for recommendation action.
-     * @param databaseName The name of the database.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the completion.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    SyncPoller<PollResult<Void>, Void> beginCreateRecommendedActionSession(
-        String resourceGroupName, String serverName, String advisorName, String databaseName, Context context);
-
-    /**
-     * Create recommendation action session for the advisor.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
-     * @param advisorName The advisor name for recommendation action.
-     * @param databaseName The name of the database.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    void createRecommendedActionSession(
-        String resourceGroupName, String serverName, String advisorName, String databaseName);
-
-    /**
-     * Create recommendation action session for the advisor.
-     *
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
-     * @param advisorName The advisor name for recommendation action.
-     * @param databaseName The name of the database.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    void createRecommendedActionSession(
-        String resourceGroupName, String serverName, String advisorName, String databaseName, Context context);
 }
