@@ -111,8 +111,6 @@ def main():
     autorest_java = args['use']
     output_dir = args['test_output']
 
-    sdks = sdks[0:2]
-
     logging.info(f'prepare to generate for RPs: {sdks}')
 
     results = []
