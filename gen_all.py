@@ -7,6 +7,7 @@ import subprocess
 import logging
 import argparse
 import dataclasses
+import re
 
 AUTOREST_CORE_VERSION = '3.0.6326'
 
@@ -38,7 +39,8 @@ def codegen(autorest_java: str, specs_dir: str, sdk: str, output_sdk_dir: str):
 
     readme_dir = os.path.join(specs_dir, sdk, 'resource-manager', 'readme.md')
     # readme_dir = f'https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/specification/{sdk}/resource-manager/readme.md'
-    namespace = f'azure.resourcemanager.{sdk}.generated'
+    namespace = f'azure.resourcemanager.{sdk}.generated'.lower()
+    namespace = re.sub('[^a-z.]', '', namespace)
 
     command = [
         'autorest',
