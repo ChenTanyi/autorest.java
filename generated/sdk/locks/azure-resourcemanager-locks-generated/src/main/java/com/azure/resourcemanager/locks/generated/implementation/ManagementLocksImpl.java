@@ -9,7 +9,7 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.locks.generated.LocksManager;
+import com.azure.resourcemanager.locks.generated.ManagementLockManager;
 import com.azure.resourcemanager.locks.generated.fluent.ManagementLocksClient;
 import com.azure.resourcemanager.locks.generated.fluent.models.ManagementLockObjectInner;
 import com.azure.resourcemanager.locks.generated.models.ManagementLockObject;
@@ -21,9 +21,9 @@ public final class ManagementLocksImpl implements ManagementLocks {
 
     private final ManagementLocksClient innerClient;
 
-    private final LocksManager serviceManager;
+    private final ManagementLockManager serviceManager;
 
-    public ManagementLocksImpl(ManagementLocksClient innerClient, LocksManager serviceManager) {
+    public ManagementLocksImpl(ManagementLocksClient innerClient, ManagementLockManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -466,7 +466,7 @@ public final class ManagementLocksImpl implements ManagementLocks {
         return this.innerClient;
     }
 
-    private LocksManager manager() {
+    private ManagementLockManager manager() {
         return this.serviceManager;
     }
 

@@ -33,17 +33,17 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Entry point to LocksManager. Azure resources can be locked to prevent other users in your organization from deleting
- * or modifying resources.
+ * Entry point to ManagementLockManager. Azure resources can be locked to prevent other users in your organization from
+ * deleting or modifying resources.
  */
-public final class LocksManager {
+public final class ManagementLockManager {
     private AuthorizationOperations authorizationOperations;
 
     private ManagementLocks managementLocks;
 
     private final ManagementLockClient clientObject;
 
-    private LocksManager(HttpPipeline httpPipeline, AzureProfile profile, Duration defaultPollInterval) {
+    private ManagementLockManager(HttpPipeline httpPipeline, AzureProfile profile, Duration defaultPollInterval) {
         Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
         Objects.requireNonNull(profile, "'profile' cannot be null.");
         this.clientObject =
@@ -56,25 +56,25 @@ public final class LocksManager {
     }
 
     /**
-     * Creates an instance of Locks service API entry point.
+     * Creates an instance of ManagementLock service API entry point.
      *
      * @param credential the credential to use.
      * @param profile the Azure profile for client.
-     * @return the Locks service API instance.
+     * @return the ManagementLock service API instance.
      */
-    public static LocksManager authenticate(TokenCredential credential, AzureProfile profile) {
+    public static ManagementLockManager authenticate(TokenCredential credential, AzureProfile profile) {
         Objects.requireNonNull(credential, "'credential' cannot be null.");
         Objects.requireNonNull(profile, "'profile' cannot be null.");
         return configure().authenticate(credential, profile);
     }
 
     /**
-     * Gets a Configurable instance that can be used to create LocksManager with optional configuration.
+     * Gets a Configurable instance that can be used to create ManagementLockManager with optional configuration.
      *
      * @return the Configurable instance allowing configurations.
      */
     public static Configurable configure() {
-        return new LocksManager.Configurable();
+        return new ManagementLockManager.Configurable();
     }
 
     /** The Configurable allowing configurations to be set. */
@@ -149,13 +149,13 @@ public final class LocksManager {
         }
 
         /**
-         * Creates an instance of Locks service API entry point.
+         * Creates an instance of ManagementLock service API entry point.
          *
          * @param credential the credential to use.
          * @param profile the Azure profile for client.
-         * @return the Locks service API instance.
+         * @return the ManagementLock service API instance.
          */
-        public LocksManager authenticate(TokenCredential credential, AzureProfile profile) {
+        public ManagementLockManager authenticate(TokenCredential credential, AzureProfile profile) {
             Objects.requireNonNull(credential, "'credential' cannot be null.");
             Objects.requireNonNull(profile, "'profile' cannot be null.");
 
@@ -185,7 +185,7 @@ public final class LocksManager {
                     .httpClient(httpClient)
                     .policies(policies.toArray(new HttpPipelinePolicy[0]))
                     .build();
-            return new LocksManager(httpPipeline, profile, defaultPollInterval);
+            return new ManagementLockManager(httpPipeline, profile, defaultPollInterval);
         }
     }
 

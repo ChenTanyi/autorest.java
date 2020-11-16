@@ -5,7 +5,7 @@
 package com.azure.resourcemanager.locks.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.locks.generated.LocksManager;
+import com.azure.resourcemanager.locks.generated.ManagementLockManager;
 import com.azure.resourcemanager.locks.generated.fluent.models.ManagementLockObjectInner;
 import com.azure.resourcemanager.locks.generated.models.LockLevel;
 import com.azure.resourcemanager.locks.generated.models.ManagementLockObject;
@@ -17,7 +17,7 @@ public final class ManagementLockObjectImpl
     implements ManagementLockObject, ManagementLockObject.Definition, ManagementLockObject.Update {
     private ManagementLockObjectInner innerObject;
 
-    private final LocksManager serviceManager;
+    private final ManagementLockManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -52,7 +52,7 @@ public final class ManagementLockObjectImpl
         return this.innerObject;
     }
 
-    private LocksManager manager() {
+    private ManagementLockManager manager() {
         return this.serviceManager;
     }
 
@@ -86,7 +86,7 @@ public final class ManagementLockObjectImpl
         return this;
     }
 
-    public ManagementLockObjectImpl(String name, LocksManager serviceManager) {
+    public ManagementLockObjectImpl(String name, ManagementLockManager serviceManager) {
         this.innerObject = new ManagementLockObjectInner();
         this.serviceManager = serviceManager;
         this.lockName = name;
@@ -117,7 +117,7 @@ public final class ManagementLockObjectImpl
         return this;
     }
 
-    public ManagementLockObjectImpl(ManagementLockObjectInner innerObject, LocksManager serviceManager) {
+    public ManagementLockObjectImpl(ManagementLockObjectInner innerObject, ManagementLockManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
