@@ -37,6 +37,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class ClientMethodMapper implements IMapper<Operation, List<ClientMethod>> {
@@ -75,9 +76,14 @@ public class ClientMethodMapper implements IMapper<Operation, List<ClientMethod>
             Schema responseBodySchema = SchemaUtil.getLowestCommonParent(
                     operation.getResponses().stream().map(Response::getSchema).filter(Objects::nonNull).collect(Collectors.toList()));
             ClientModel responseBodyModel = Mappers.getModelMapper().map((ObjectSchema) responseBodySchema);
-            IType listType = responseBodyModel.getProperties().stream()
+            Optional<ClientModelProperty> itemPropertyOpt = responseBodyModel.getProperties().stream()
                     .filter(p -> p.getSerializedName().equals(operation.getExtensions().getXmsPageable().getItemName()))
-                    .findFirst().get().getWireType();
+                    .findFirst();
+            if (!itemPropertyOpt.isPresent()) {
+                throw new IllegalArgumentException(String.format("[JavaCheck/SchemaError] item name %s not found among properties of client model %s",
+                        operation.getExtensions().getXmsPageable().getItemName(), responseBodyModel.getName()));
+            }
+            IType listType = itemPropertyOpt.get().getWireType();
             IType elementType = ((ListType) listType).getElementType();
             asyncRestResponseReturnType = GenericType.Mono(GenericType.PagedResponse(elementType));
             asyncReturnType = GenericType.PagedFlux(elementType);
@@ -308,7 +314,8 @@ public class ClientMethodMapper implements IMapper<Operation, List<ClientMethod>
                         }
                     }
                 }
-            } else if (operation.getExtensions() != null && operation.getExtensions().isXmsLongRunningOperation() && settings.isFluent()) {
+            } else if (operation.getExtensions() != null && operation.getExtensions().isXmsLongRunningOperation() && settings.isFluent()
+                    && !syncReturnType.equals(ClassType.InputStream)) {         // temporary skip InputStream, no idea how to do this in PollerFlux
                 // WithResponseAsync, with required and optional parameters
                 methods.add(builder
                         .returnValue(new ReturnValue(returnTypeDescription(operation, proxyMethod.getReturnType().getClientType(), syncReturnType),
