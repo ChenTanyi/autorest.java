@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.locks.generated.implementation;
 
-import com.azure.resourcemanager.locks.generated.LocksManager;
+import com.azure.resourcemanager.locks.generated.ManagementLockManager;
 import com.azure.resourcemanager.locks.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.locks.generated.models.Operation;
 import com.azure.resourcemanager.locks.generated.models.OperationDisplay;
@@ -12,9 +12,9 @@ import com.azure.resourcemanager.locks.generated.models.OperationDisplay;
 public final class OperationImpl implements Operation {
     private OperationInner innerObject;
 
-    private final LocksManager serviceManager;
+    private final ManagementLockManager serviceManager;
 
-    public OperationImpl(OperationInner innerObject, LocksManager serviceManager) {
+    public OperationImpl(OperationInner innerObject, ManagementLockManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -31,7 +31,7 @@ public final class OperationImpl implements Operation {
         return this.innerObject;
     }
 
-    private LocksManager manager() {
+    private ManagementLockManager manager() {
         return this.serviceManager;
     }
 }
