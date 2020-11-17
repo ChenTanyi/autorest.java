@@ -2,6 +2,7 @@
 
 import os
 import sys
+import platform
 import json
 import subprocess
 import logging
@@ -10,6 +11,7 @@ import dataclasses
 import re
 
 AUTOREST_CORE_VERSION = '3.0.6326'
+OS_WINDOWS = platform.system().lower() == 'windows'
 
 
 def parse_args() -> argparse.Namespace:
@@ -38,12 +40,11 @@ def codegen(autorest_java: str, specs_dir: str, sdk: str, output_sdk_dir: str):
     logging.info(f'generate code for RP: {sdk}')
 
     readme_dir = os.path.join(specs_dir, sdk, 'resource-manager', 'readme.md')
-    # readme_dir = f'https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/specification/{sdk}/resource-manager/readme.md'
     namespace = f'azure.resourcemanager.{sdk}.generated'.lower()
     namespace = re.sub('[^a-z.]', '', namespace)
 
     command = [
-        'autorest',
+        'autorest' + '.cmd' if OS_WINDOWS else '',
         '--verbose',
         '--version=' + AUTOREST_CORE_VERSION,
         '--java',
@@ -60,7 +61,7 @@ def codegen(autorest_java: str, specs_dir: str, sdk: str, output_sdk_dir: str):
         readme_dir]
 
     logging.info(' '.join(command))
-    result = subprocess.run(command, shell=True, capture_output=True, text=True, encoding='utf-8')
+    result = subprocess.run(command, capture_output=True, text=True, encoding='utf-8')
     if result.returncode:
         logging.error(f'generate code failed for RP: {sdk}')
     return result
@@ -70,12 +71,12 @@ def maven_build(output_sdk_dir: str, sdk: str):
     logging.info(f'maven build for RP: {sdk}')
 
     command = [
-        'mvn',
+        'mvn' + '.cmd' if OS_WINDOWS else '',
         'package'
     ]
 
     logging.info(' '.join(command))
-    result = subprocess.run(command, shell=True, capture_output=True, text=True, encoding='utf-8', cwd=output_sdk_dir)
+    result = subprocess.run(command, capture_output=True, text=True, encoding='utf-8', cwd=output_sdk_dir)
     if result.returncode:
         logging.error(f'maven build failed for RP: {sdk}')
     return result
@@ -119,8 +120,10 @@ def main():
     for sdk in sdks:
         output_sdk_dir = os.path.join(output_dir, f'azure-resourcemanager-{sdk}-generated')
         codegen_result = codegen(autorest_java, specs_dir, sdk, output_sdk_dir)
+        logging.info(codegen_result.stdout)
         if not codegen_result.returncode:
             build_result = maven_build(output_sdk_dir, sdk)
+            logging.info(build_result.stdout)
             if not build_result.returncode:
                 results.append(CodegenResult(sdk=sdk, success=True))
             else:
