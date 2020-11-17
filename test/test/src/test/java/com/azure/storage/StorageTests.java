@@ -13,6 +13,7 @@ import com.azure.resourcemanager.storage.generated.models.PublicAccess;
 import com.azure.resourcemanager.storage.generated.models.Sku;
 import com.azure.resourcemanager.storage.generated.models.SkuName;
 import com.azure.resourcemanager.storage.generated.models.StorageAccount;
+import com.azure.resourcemanager.storage.generated.models.StorageAccountListKeysResult;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -58,6 +59,9 @@ public class StorageTests extends Base {
                 .apply();
         Assertions.assertEquals(AccessTier.COOL, storageAccount2.accessTier());
         Assertions.assertEquals("value2", storageAccount2.tags().get("tag2"));
+
+        StorageAccountListKeysResult saKeys = storageManager.storageAccounts().listKeys(rgName, saName);
+        Assertions.assertFalse(saKeys.keys().isEmpty());
 
         BlobContainer blobContainer = storageManager.blobContainers()
                 .define(blobContainerName)

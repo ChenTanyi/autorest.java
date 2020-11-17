@@ -2,7 +2,7 @@ package com.azure.locks;
 
 import com.azure.Base;
 import com.azure.core.management.exception.ManagementException;
-import com.azure.resourcemanager.locks.generated.LocksManager;
+import com.azure.resourcemanager.locks.generated.ManagementLockManager;
 import com.azure.resourcemanager.locks.generated.models.LockLevel;
 import com.azure.resourcemanager.locks.generated.models.ManagementLockObject;
 import org.junit.jupiter.api.Assertions;
@@ -12,7 +12,7 @@ public class LocksTest extends Base {
     @Test
     public void testLock() {
         String lockName = randomString("lock", 10);
-        LocksManager locksManager = LocksManager
+        ManagementLockManager locksManager = ManagementLockManager
                 .configure()
                 .withHttpClient(client)
                 .authenticate(credential, profile);
