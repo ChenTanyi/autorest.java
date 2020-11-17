@@ -153,7 +153,7 @@ public interface AlertRuleResource {
              * @param resourceGroupName The name of the resource group.
              * @return the next definition stage.
              */
-            WithNamePropertiesName withExistingResourcegroup(String resourceGroupName);
+            WithNamePropertiesName withExistingResourceGroup(String resourceGroupName);
         }
         /** The stage of the AlertRuleResource definition allowing to specify namePropertiesName. */
         interface WithNamePropertiesName {

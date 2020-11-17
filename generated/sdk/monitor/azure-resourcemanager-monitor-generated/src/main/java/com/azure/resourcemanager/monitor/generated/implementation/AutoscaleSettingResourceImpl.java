@@ -99,7 +99,7 @@ public final class AutoscaleSettingResourceImpl
 
     private AutoscaleSettingResourcePatch updateAutoscaleSettingResource;
 
-    public AutoscaleSettingResourceImpl withExistingResourcegroup(String resourceGroupName) {
+    public AutoscaleSettingResourceImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
         return this;
     }

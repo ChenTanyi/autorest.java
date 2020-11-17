@@ -127,23 +127,19 @@ public interface Services {
      * Checks whether or not the given search service name is available for use. Search service names must be globally
      * unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net).
      *
-     * @param name The search service name to validate. Search service names must only contain lowercase letters, digits
-     *     or dashes, cannot use dash as the first two or last one characters, cannot contain consecutive dashes, and
-     *     must be between 2 and 60 characters in length.
+     * @param checkNameAvailabilityInput Input of check name availability API.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return output of check name availability API.
      */
-    CheckNameAvailabilityOutput checkNameAvailability(String name);
+    CheckNameAvailabilityOutput checkNameAvailability(CheckNameAvailabilityInput checkNameAvailabilityInput);
 
     /**
      * Checks whether or not the given search service name is available for use. Search service names must be globally
      * unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net).
      *
-     * @param name The search service name to validate. Search service names must only contain lowercase letters, digits
-     *     or dashes, cannot use dash as the first two or last one characters, cannot contain consecutive dashes, and
-     *     must be between 2 and 60 characters in length.
+     * @param checkNameAvailabilityInput Input of check name availability API.
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
      * @param context The context to associate with this operation.
@@ -153,7 +149,7 @@ public interface Services {
      * @return output of check name availability API.
      */
     Response<CheckNameAvailabilityOutput> checkNameAvailabilityWithResponse(
-        String name, UUID clientRequestId, Context context);
+        CheckNameAvailabilityInput checkNameAvailabilityInput, UUID clientRequestId, Context context);
 
     /**
      * Gets the search service with the given name in the given resource group.

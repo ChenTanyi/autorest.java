@@ -99,7 +99,7 @@ public final class AlertRuleResourceImpl
 
     private AlertRuleResourcePatch updateAlertRulesResource;
 
-    public AlertRuleResourceImpl withExistingResourcegroup(String resourceGroupName) {
+    public AlertRuleResourceImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
         return this;
     }

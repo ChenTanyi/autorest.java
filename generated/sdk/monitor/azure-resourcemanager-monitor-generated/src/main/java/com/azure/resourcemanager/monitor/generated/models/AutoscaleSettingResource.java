@@ -145,7 +145,7 @@ public interface AutoscaleSettingResource {
              * @param resourceGroupName The name of the resource group.
              * @return the next definition stage.
              */
-            WithProfiles withExistingResourcegroup(String resourceGroupName);
+            WithProfiles withExistingResourceGroup(String resourceGroupName);
         }
         /** The stage of the AutoscaleSettingResource definition allowing to specify profiles. */
         interface WithProfiles {

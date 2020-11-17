@@ -159,7 +159,7 @@ public interface LogSearchRuleResource {
              * @param resourceGroupName The name of the resource group.
              * @return the next definition stage.
              */
-            WithSource withExistingResourcegroup(String resourceGroupName);
+            WithSource withExistingResourceGroup(String resourceGroupName);
         }
         /** The stage of the LogSearchRuleResource definition allowing to specify source. */
         interface WithSource {

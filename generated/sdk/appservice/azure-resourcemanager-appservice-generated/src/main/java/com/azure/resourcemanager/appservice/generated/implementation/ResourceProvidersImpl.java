@@ -24,13 +24,13 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.UserInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ValidateResponseInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetValidationFailureDetailsInner;
 import com.azure.resourcemanager.appservice.generated.models.BillingMeter;
-import com.azure.resourcemanager.appservice.generated.models.CheckNameResourceTypes;
 import com.azure.resourcemanager.appservice.generated.models.CsmMoveResourceEnvelope;
 import com.azure.resourcemanager.appservice.generated.models.DeploymentLocations;
 import com.azure.resourcemanager.appservice.generated.models.GeoRegion;
 import com.azure.resourcemanager.appservice.generated.models.Identifier;
 import com.azure.resourcemanager.appservice.generated.models.PremierAddOnOffer;
 import com.azure.resourcemanager.appservice.generated.models.ResourceNameAvailability;
+import com.azure.resourcemanager.appservice.generated.models.ResourceNameAvailabilityRequest;
 import com.azure.resourcemanager.appservice.generated.models.ResourceProviders;
 import com.azure.resourcemanager.appservice.generated.models.SkuInfos;
 import com.azure.resourcemanager.appservice.generated.models.SkuName;
@@ -165,8 +165,8 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         return inner.mapPage(inner1 -> new BillingMeterImpl(inner1, this.manager()));
     }
 
-    public ResourceNameAvailability checkNameAvailability(String name, CheckNameResourceTypes type) {
-        ResourceNameAvailabilityInner inner = this.serviceClient().checkNameAvailability(name, type);
+    public ResourceNameAvailability checkNameAvailability(ResourceNameAvailabilityRequest request) {
+        ResourceNameAvailabilityInner inner = this.serviceClient().checkNameAvailability(request);
         if (inner != null) {
             return new ResourceNameAvailabilityImpl(inner, this.manager());
         } else {
@@ -175,9 +175,9 @@ public final class ResourceProvidersImpl implements ResourceProviders {
     }
 
     public Response<ResourceNameAvailability> checkNameAvailabilityWithResponse(
-        String name, CheckNameResourceTypes type, Boolean isFqdn, Context context) {
+        ResourceNameAvailabilityRequest request, Context context) {
         Response<ResourceNameAvailabilityInner> inner =
-            this.serviceClient().checkNameAvailabilityWithResponse(name, type, isFqdn, context);
+            this.serviceClient().checkNameAvailabilityWithResponse(request, context);
         if (inner != null) {
             return new SimpleResponse<>(
                 inner.getRequest(),

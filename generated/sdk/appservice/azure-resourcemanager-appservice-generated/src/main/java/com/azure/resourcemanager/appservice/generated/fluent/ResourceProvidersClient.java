@@ -21,8 +21,8 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.SourceContro
 import com.azure.resourcemanager.appservice.generated.fluent.models.UserInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ValidateResponseInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetValidationFailureDetailsInner;
-import com.azure.resourcemanager.appservice.generated.models.CheckNameResourceTypes;
 import com.azure.resourcemanager.appservice.generated.models.CsmMoveResourceEnvelope;
+import com.azure.resourcemanager.appservice.generated.models.ResourceNameAvailabilityRequest;
 import com.azure.resourcemanager.appservice.generated.models.SkuName;
 import com.azure.resourcemanager.appservice.generated.models.ValidateRequest;
 import com.azure.resourcemanager.appservice.generated.models.VnetParameters;
@@ -190,8 +190,7 @@ public interface ResourceProvidersClient {
     /**
      * Description for Check if a resource name is available.
      *
-     * @param name Resource name to verify.
-     * @param type Resource type used for verification.
+     * @param request Resource name availability request content.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -199,14 +198,12 @@ public interface ResourceProvidersClient {
      * @return information regarding availability of a resource name.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    ResourceNameAvailabilityInner checkNameAvailability(String name, CheckNameResourceTypes type);
+    ResourceNameAvailabilityInner checkNameAvailability(ResourceNameAvailabilityRequest request);
 
     /**
      * Description for Check if a resource name is available.
      *
-     * @param name Resource name to verify.
-     * @param type Resource type used for verification.
-     * @param isFqdn Is fully qualified domain name.
+     * @param request Resource name availability request content.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -216,7 +213,7 @@ public interface ResourceProvidersClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ResourceNameAvailabilityInner> checkNameAvailabilityWithResponse(
-        String name, CheckNameResourceTypes type, Boolean isFqdn, Context context);
+        ResourceNameAvailabilityRequest request, Context context);
 
     /**
      * Description for Gets list of available geo regions plus ministamps.

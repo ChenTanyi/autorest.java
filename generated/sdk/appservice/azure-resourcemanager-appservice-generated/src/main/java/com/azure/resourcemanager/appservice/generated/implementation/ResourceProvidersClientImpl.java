@@ -42,7 +42,6 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.UserInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ValidateResponseInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetValidationFailureDetailsInner;
 import com.azure.resourcemanager.appservice.generated.models.BillingMeterCollection;
-import com.azure.resourcemanager.appservice.generated.models.CheckNameResourceTypes;
 import com.azure.resourcemanager.appservice.generated.models.CsmMoveResourceEnvelope;
 import com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException;
 import com.azure.resourcemanager.appservice.generated.models.GeoRegionCollection;
@@ -1079,9 +1078,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * Description for Check if a resource name is available.
      *
-     * @param name Resource name to verify.
-     * @param type Resource type used for verification.
-     * @param isFqdn Is fully qualified domain name.
+     * @param request Resource name availability request content.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1089,7 +1086,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ResourceNameAvailabilityInner>> checkNameAvailabilityWithResponseAsync(
-        String name, CheckNameResourceTypes type, Boolean isFqdn) {
+        ResourceNameAvailabilityRequest request) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -1102,17 +1099,12 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        if (name == null) {
-            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
-        }
-        if (type == null) {
-            return Mono.error(new IllegalArgumentException("Parameter type is required and cannot be null."));
+        if (request == null) {
+            return Mono.error(new IllegalArgumentException("Parameter request is required and cannot be null."));
+        } else {
+            request.validate();
         }
         final String accept = "application/json";
-        ResourceNameAvailabilityRequest request = new ResourceNameAvailabilityRequest();
-        request.withName(name);
-        request.withType(type);
-        request.withIsFqdn(isFqdn);
         return FluxUtil
             .withContext(
                 context ->
@@ -1130,9 +1122,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * Description for Check if a resource name is available.
      *
-     * @param name Resource name to verify.
-     * @param type Resource type used for verification.
-     * @param isFqdn Is fully qualified domain name.
+     * @param request Resource name availability request content.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1141,7 +1131,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ResourceNameAvailabilityInner>> checkNameAvailabilityWithResponseAsync(
-        String name, CheckNameResourceTypes type, Boolean isFqdn, Context context) {
+        ResourceNameAvailabilityRequest request, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -1154,17 +1144,12 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        if (name == null) {
-            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
-        }
-        if (type == null) {
-            return Mono.error(new IllegalArgumentException("Parameter type is required and cannot be null."));
+        if (request == null) {
+            return Mono.error(new IllegalArgumentException("Parameter request is required and cannot be null."));
+        } else {
+            request.validate();
         }
         final String accept = "application/json";
-        ResourceNameAvailabilityRequest request = new ResourceNameAvailabilityRequest();
-        request.withName(name);
-        request.withType(type);
-        request.withIsFqdn(isFqdn);
         context = this.client.mergeContext(context);
         return service
             .checkNameAvailability(
@@ -1179,18 +1164,15 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * Description for Check if a resource name is available.
      *
-     * @param name Resource name to verify.
-     * @param type Resource type used for verification.
-     * @param isFqdn Is fully qualified domain name.
+     * @param request Resource name availability request content.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information regarding availability of a resource name.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ResourceNameAvailabilityInner> checkNameAvailabilityAsync(
-        String name, CheckNameResourceTypes type, Boolean isFqdn) {
-        return checkNameAvailabilityWithResponseAsync(name, type, isFqdn)
+    private Mono<ResourceNameAvailabilityInner> checkNameAvailabilityAsync(ResourceNameAvailabilityRequest request) {
+        return checkNameAvailabilityWithResponseAsync(request)
             .flatMap(
                 (Response<ResourceNameAvailabilityInner> res) -> {
                     if (res.getValue() != null) {
@@ -1204,49 +1186,21 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * Description for Check if a resource name is available.
      *
-     * @param name Resource name to verify.
-     * @param type Resource type used for verification.
+     * @param request Resource name availability request content.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information regarding availability of a resource name.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ResourceNameAvailabilityInner> checkNameAvailabilityAsync(String name, CheckNameResourceTypes type) {
-        final Boolean isFqdn = null;
-        return checkNameAvailabilityWithResponseAsync(name, type, isFqdn)
-            .flatMap(
-                (Response<ResourceNameAvailabilityInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
+    public ResourceNameAvailabilityInner checkNameAvailability(ResourceNameAvailabilityRequest request) {
+        return checkNameAvailabilityAsync(request).block();
     }
 
     /**
      * Description for Check if a resource name is available.
      *
-     * @param name Resource name to verify.
-     * @param type Resource type used for verification.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information regarding availability of a resource name.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public ResourceNameAvailabilityInner checkNameAvailability(String name, CheckNameResourceTypes type) {
-        final Boolean isFqdn = null;
-        return checkNameAvailabilityAsync(name, type, isFqdn).block();
-    }
-
-    /**
-     * Description for Check if a resource name is available.
-     *
-     * @param name Resource name to verify.
-     * @param type Resource type used for verification.
-     * @param isFqdn Is fully qualified domain name.
+     * @param request Resource name availability request content.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1255,8 +1209,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<ResourceNameAvailabilityInner> checkNameAvailabilityWithResponse(
-        String name, CheckNameResourceTypes type, Boolean isFqdn, Context context) {
-        return checkNameAvailabilityWithResponseAsync(name, type, isFqdn, context).block();
+        ResourceNameAvailabilityRequest request, Context context) {
+        return checkNameAvailabilityWithResponseAsync(request, context).block();
     }
 
     /**

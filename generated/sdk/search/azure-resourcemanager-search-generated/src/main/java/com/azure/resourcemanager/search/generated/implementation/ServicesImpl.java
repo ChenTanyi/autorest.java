@@ -13,6 +13,7 @@ import com.azure.resourcemanager.search.generated.SearchManager;
 import com.azure.resourcemanager.search.generated.fluent.ServicesClient;
 import com.azure.resourcemanager.search.generated.fluent.models.CheckNameAvailabilityOutputInner;
 import com.azure.resourcemanager.search.generated.fluent.models.SearchServiceInner;
+import com.azure.resourcemanager.search.generated.models.CheckNameAvailabilityInput;
 import com.azure.resourcemanager.search.generated.models.CheckNameAvailabilityOutput;
 import com.azure.resourcemanager.search.generated.models.SearchService;
 import com.azure.resourcemanager.search.generated.models.Services;
@@ -88,8 +89,8 @@ public final class ServicesImpl implements Services {
         return inner.mapPage(inner1 -> new SearchServiceImpl(inner1, this.manager()));
     }
 
-    public CheckNameAvailabilityOutput checkNameAvailability(String name) {
-        CheckNameAvailabilityOutputInner inner = this.serviceClient().checkNameAvailability(name);
+    public CheckNameAvailabilityOutput checkNameAvailability(CheckNameAvailabilityInput checkNameAvailabilityInput) {
+        CheckNameAvailabilityOutputInner inner = this.serviceClient().checkNameAvailability(checkNameAvailabilityInput);
         if (inner != null) {
             return new CheckNameAvailabilityOutputImpl(inner, this.manager());
         } else {
@@ -98,9 +99,11 @@ public final class ServicesImpl implements Services {
     }
 
     public Response<CheckNameAvailabilityOutput> checkNameAvailabilityWithResponse(
-        String name, UUID clientRequestId, Context context) {
+        CheckNameAvailabilityInput checkNameAvailabilityInput, UUID clientRequestId, Context context) {
         Response<CheckNameAvailabilityOutputInner> inner =
-            this.serviceClient().checkNameAvailabilityWithResponse(name, clientRequestId, context);
+            this
+                .serviceClient()
+                .checkNameAvailabilityWithResponse(checkNameAvailabilityInput, clientRequestId, context);
         if (inner != null) {
             return new SimpleResponse<>(
                 inner.getRequest(),

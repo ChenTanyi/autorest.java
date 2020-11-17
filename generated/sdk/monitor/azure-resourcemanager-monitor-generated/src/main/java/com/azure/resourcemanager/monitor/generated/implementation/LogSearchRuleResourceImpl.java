@@ -100,7 +100,7 @@ public final class LogSearchRuleResourceImpl
 
     private LogSearchRuleResourcePatch updateParameters;
 
-    public LogSearchRuleResourceImpl withExistingResourcegroup(String resourceGroupName) {
+    public LogSearchRuleResourceImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
         return this;
     }

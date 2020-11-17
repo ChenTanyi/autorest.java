@@ -162,22 +162,19 @@ public interface ResourceProviders {
     /**
      * Description for Check if a resource name is available.
      *
-     * @param name Resource name to verify.
-     * @param type Resource type used for verification.
+     * @param request Resource name availability request content.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return information regarding availability of a resource name.
      */
-    ResourceNameAvailability checkNameAvailability(String name, CheckNameResourceTypes type);
+    ResourceNameAvailability checkNameAvailability(ResourceNameAvailabilityRequest request);
 
     /**
      * Description for Check if a resource name is available.
      *
-     * @param name Resource name to verify.
-     * @param type Resource type used for verification.
-     * @param isFqdn Is fully qualified domain name.
+     * @param request Resource name availability request content.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -186,7 +183,7 @@ public interface ResourceProviders {
      * @return information regarding availability of a resource name.
      */
     Response<ResourceNameAvailability> checkNameAvailabilityWithResponse(
-        String name, CheckNameResourceTypes type, Boolean isFqdn, Context context);
+        ResourceNameAvailabilityRequest request, Context context);
 
     /**
      * Description for Gets list of available geo regions plus ministamps.
