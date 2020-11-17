@@ -120,25 +120,25 @@ def main():
     for sdk in sdks:
         output_sdk_dir = os.path.join(output_dir, f'azure-resourcemanager-{sdk}-generated')
         codegen_result = codegen(autorest_java, specs_dir, sdk, output_sdk_dir)
-        logging.info(codegen_result.stdout)
         if not codegen_result.returncode:
             build_result = maven_build(output_sdk_dir, sdk)
-            logging.info(build_result.stdout)
             if not build_result.returncode:
                 results.append(CodegenResult(sdk=sdk, success=True))
             else:
+                logging.warning(build_result.stdout)
+                logging.error(build_result.stderr)
                 results.append(CodegenResult(sdk=sdk, success=False, failure_cause='build',
                                              stdout=build_result.stdout, stderr=build_result.stderr))
-                logging.error(build_result.stderr)
         else:
+            logging.warning(codegen_result.stdout)
             error_log = codegen_result.stderr
+            logging.error(error_log)
             if 'fluentnamer' in error_log or 'fluentgen' in error_log:
                 cause = 'codegen_java'
             else:
                 cause = 'codegen'
             results.append(CodegenResult(sdk=sdk, success=False, failure_cause=cause,
                                          stdout=codegen_result.stdout, stderr=error_log))
-            logging.error(error_log)
 
     sdks_success = [result.sdk for result in results if result.success]
     sdks_failure_codegen_java = [result.sdk for result in results
