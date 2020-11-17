@@ -44,7 +44,7 @@ def codegen(autorest_java: str, specs_dir: str, sdk: str, output_sdk_dir: str):
     namespace = re.sub('[^a-z.]', '', namespace)
 
     command = [
-        'autorest' + '.cmd' if OS_WINDOWS else '',
+        'autorest' + ('.cmd' if OS_WINDOWS else ''),
         '--verbose',
         '--version=' + AUTOREST_CORE_VERSION,
         '--java',
@@ -71,7 +71,7 @@ def maven_build(output_sdk_dir: str, sdk: str):
     logging.info(f'maven build for RP: {sdk}')
 
     command = [
-        'mvn' + '.cmd' if OS_WINDOWS else '',
+        'mvn' + ('.cmd' if OS_WINDOWS else ''),
         'package'
     ]
 
