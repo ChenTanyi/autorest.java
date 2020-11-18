@@ -47,7 +47,7 @@ def codegen(autorest_java: str, specs_dir: str, sdk: str, output_sdk_dir: str):
 
     command = [
         'autorest' + ('.cmd' if OS_WINDOWS else ''),
-        '--verbose',
+        # '--verbose',
         '--version=' + AUTOREST_CORE_VERSION,
         '--java',
         '--use=' + autorest_java,
@@ -123,11 +123,11 @@ def report_markdown(results: List[CodegenResult]):
             lines.append('<details>')
             lines.append(f'<summary>{result.sdk}</summary>')
             lines.append('')
-            lines.append('#### stdout')
+            lines.append('**stdout**')
             lines.append('```')
-            lines.extend(result.stdout.split('\n'))
+            lines.extend([line for line in result.stdout.split('\n') if not line.startswith('Progress (')])
             lines.append('```')
-            lines.append('#### stderr')
+            lines.append('**stderr**')
             lines.append('```')
             lines.extend(result.stderr.split('\n'))
             lines.append('```')
