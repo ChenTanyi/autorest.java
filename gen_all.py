@@ -117,6 +117,15 @@ def report_markdown(results: List[CodegenResult]):
         lines.append('- ' + sdk)
     lines.append('')
 
+    lines.append('## Logs')
+    for result in results:
+        if not result.success:
+            lines.append('<details>')
+            lines.append(f'<summary>{result.sdk}</summary>')
+            lines.append('')
+            lines.extend('\n'.split(result.stderr))
+            lines.append('</details>')
+            lines.append('')
 
     with open('report.md', 'w') as f:
         f.writelines(lines)
