@@ -11,7 +11,7 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v2
         with:
-          ref: ci_output-md
+          ref: ci
           fetch-depth: 0
 
       - name: Clone azure-rest-api-specs

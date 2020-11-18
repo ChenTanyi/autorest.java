@@ -162,9 +162,6 @@ def main():
             sdks.append(sdk)
 
     sdks = [sdk for sdk in sdks if sdk not in exclude_sdks]
-
-    sdks = ['storage', 'deploymentmanager', 'datalake-analytics']
-
     sdks.sort()
 
     autorest_java = args['use']
