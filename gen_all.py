@@ -123,7 +123,7 @@ def report_markdown(results: List[CodegenResult]):
             lines.append('<details>')
             lines.append(f'<summary>{result.sdk}</summary>')
             lines.append('')
-            lines.extend('\n'.split(result.stderr))
+            lines.extend(result.stderr.split('\n'))
             lines.append('</details>')
             lines.append('')
 
