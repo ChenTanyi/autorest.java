@@ -191,8 +191,8 @@ FATAL: Error: Name is empty!
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  3.691 s
-[INFO] Finished at: 2020-11-18T15:36:16Z
+[INFO] Total time:  3.212 s
+[INFO] Finished at: 2020-11-18T18:20:29Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-azurestack-generated: Compilation failure
 [ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-azurestack-generated/src/main/java/azure/resourcemanager/azurestack/generated/implementation/RegistrationImpl.java:[172,56] incompatible types: java.lang.String cannot be converted to azure.resourcemanager.azurestack.generated.models.Location
@@ -241,8 +241,8 @@ FATAL: Error: Name is empty!
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  4.045 s
-[INFO] Finished at: 2020-11-18T15:38:57Z
+[INFO] Total time:  3.698 s
+[INFO] Finished at: 2020-11-18T18:22:57Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-botservice-generated: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-botservice-generated/src/main/java/azure/resourcemanager/botservice/generated/implementation/BotChannelImpl.java:[156,67] incompatible types: azure.resourcemanager.botservice.generated.models.ChannelName cannot be converted to java.lang.String
@@ -962,8 +962,8 @@ FATAL: Error: Enum types of 'object' and format 'undefined' are not supported. C
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  4.054 s
-[INFO] Finished at: 2020-11-18T15:46:18Z
+[INFO] Total time:  3.305 s
+[INFO] Finished at: 2020-11-18T18:29:40Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-datalakeanalytics-generated: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-analytics-generated/src/main/java/azure/resourcemanager/datalakeanalytics/generated/implementation/DataLakeAnalyticsAccountImpl.java:[434,41] name clash: withDataLakeStoreAccounts(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.UpdateDataLakeStoreWithAccountParameters>) and withDataLakeStoreAccounts(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.AddDataLakeStoreWithAccountParameters>) have the same erasure
@@ -1021,8 +1021,8 @@ FATAL: Error: Enum types of 'object' and format 'undefined' are not supported. C
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  3.986 s
-[INFO] Finished at: 2020-11-18T15:46:37Z
+[INFO] Total time:  3.436 s
+[INFO] Finished at: 2020-11-18T18:29:57Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-datalakestore-generated: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-store-generated/src/main/java/azure/resourcemanager/datalakestore/generated/implementation/DataLakeStoreAccountImpl.java:[392,37] name clash: withFirewallRules(java.util.List<azure.resourcemanager.datalakestore.generated.models.UpdateFirewallRuleWithAccountParameters>) and withFirewallRules(java.util.List<azure.resourcemanager.datalakestore.generated.models.CreateFirewallRuleWithAccountParameters>) have the same erasure
@@ -1226,54 +1226,54 @@ WARNING (PreNamer/DeduplicateName): Deduplicating schema name: 'ArtifactSourcePr
 [pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from TrackedResource to Resource, for ArtifactSource
 [pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaCleanup - Remove unused schema TrackedResource
 [pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaCleanup - Remove unused schema Resource
-[pool-1-thread-2] INFO com.azure.autorest.fluent.FluentGen - Read YAML
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, add-inner : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, remove-inner : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, rename-model : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, track1-naming : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, resource-property-as-subresource : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, name-for-ungrouped-operations : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, pom-file : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, package-version : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, sdk-integration : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, tag : package-2019-11-01-preview
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, base-folder : .
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, output-folder : /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-deploymentmanager-generated
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, azure-libraries-for-java-folder : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.FluentGen - Map code model to client model
-[pool-1-thread-2] INFO com.azure.autorest.fluent.mapper.FluentMapper - Add Inner to response types: [ServiceUnitResource, Rollout, StepResource, RolloutRequest, OperationsList, ArtifactSource, ServiceTopologyResource, ServiceResource]
-[pool-1-thread-2] INFO com.azure.autorest.fluent.FluentGen - Java template for client model
-[pool-1-thread-2] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.create.ResourceCreate - ResourceCreate: Fluent model ServiceTopologyResource, method reference createOrUpdate, body parameter ServiceTopologyResourceInner
-[pool-1-thread-2] INFO com.azure.autorest.fluent.mapper.ResourceParser - Fluent model ServiceTopologyResource as category RESOURCE_GROUP_AS_PARENT
-[pool-1-thread-2] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.update.ResourceUpdate - ResourceUpdate: Fluent model ServiceTopologyResource, method reference createOrUpdate, body parameter ServiceTopologyResourceInner
-[pool-1-thread-2] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.get.ResourceRefresh - ResourceRefresh: Fluent model ServiceTopologyResource, method reference getByResourceGroup
-[pool-1-thread-2] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.delete.ResourceDelete - ResourceDelete: Fluent model ServiceTopologyResource, method reference delete
-[pool-1-thread-2] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.create.ResourceCreate - ResourceCreate: Fluent model ServiceResource, method reference createOrUpdate, body parameter ServiceResourceInner
-[pool-1-thread-2] INFO com.azure.autorest.fluent.mapper.ResourceParser - Fluent model ServiceResource as category NESTED_CHILD
-[pool-1-thread-2] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.update.ResourceUpdate - ResourceUpdate: Fluent model ServiceResource, method reference createOrUpdate, body parameter ServiceResourceInner
-[pool-1-thread-2] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.get.ResourceRefresh - ResourceRefresh: Fluent model ServiceResource, method reference get
-[pool-1-thread-2] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.delete.ResourceDelete - ResourceDelete: Fluent model ServiceResource, method reference delete
-[pool-1-thread-2] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.create.ResourceCreate - ResourceCreate: Fluent model ServiceUnitResource, method reference createOrUpdate, body parameter ServiceUnitResourceInner
-[pool-1-thread-2] INFO com.azure.autorest.fluent.mapper.ResourceParser - Fluent model ServiceUnitResource as category NESTED_CHILD
-[pool-1-thread-2] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.update.ResourceUpdate - ResourceUpdate: Fluent model ServiceUnitResource, method reference createOrUpdate, body parameter ServiceUnitResourceInner
-[pool-1-thread-2] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.get.ResourceRefresh - ResourceRefresh: Fluent model ServiceUnitResource, method reference get
-[pool-1-thread-2] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.delete.ResourceDelete - ResourceDelete: Fluent model ServiceUnitResource, method reference delete
-[pool-1-thread-2] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.create.ResourceCreate - ResourceCreate: Fluent model StepResource, method reference createOrUpdate, body parameter StepResourceInner
-[pool-1-thread-2] INFO com.azure.autorest.fluent.mapper.ResourceParser - Fluent model StepResource as category RESOURCE_GROUP_AS_PARENT
-[pool-1-thread-2] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.update.ResourceUpdate - ResourceUpdate: Fluent model StepResource, method reference createOrUpdate, body parameter StepResourceInner
-[pool-1-thread-2] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.get.ResourceRefresh - ResourceRefresh: Fluent model StepResource, method reference getByResourceGroup
-[pool-1-thread-2] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.delete.ResourceDelete - ResourceDelete: Fluent model StepResource, method reference delete
-[pool-1-thread-2] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.create.ResourceCreate - ResourceCreate: Fluent model RolloutRequest, method reference createOrUpdate, body parameter RolloutRequestInner
-[pool-1-thread-2] INFO com.azure.autorest.fluent.mapper.ResourceParser - Fluent model RolloutRequest as category RESOURCE_GROUP_AS_PARENT
-[pool-1-thread-2] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.update.ResourceUpdate - ResourceUpdate: Fluent model RolloutRequest, method reference createOrUpdate, body parameter RolloutRequestInner
-[pool-1-thread-2] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.delete.ResourceDelete - ResourceDelete: Fluent model RolloutRequest, method reference delete
-[pool-1-thread-2] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.create.ResourceCreate - ResourceCreate: Fluent model ArtifactSource, method reference createOrUpdate, body parameter ArtifactSourceInner
-[pool-1-thread-2] INFO com.azure.autorest.fluent.mapper.ResourceParser - Fluent model ArtifactSource as category RESOURCE_GROUP_AS_PARENT
-[pool-1-thread-2] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.update.ResourceUpdate - ResourceUpdate: Fluent model ArtifactSource, method reference createOrUpdate, body parameter ArtifactSourceInner
-[pool-1-thread-2] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.get.ResourceRefresh - ResourceRefresh: Fluent model ArtifactSource, method reference getByResourceGroup
-[pool-1-thread-2] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.delete.ResourceDelete - ResourceDelete: Fluent model ArtifactSource, method reference delete
-[pool-1-thread-2] ERROR com.azure.autorest.fluent.FluentGen - Failed to successfully run fluentgen plugin java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@29434a10 and com.azure.autorest.model.clientmodel.ProxyMethodParameter@19ca3c91)
-java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@29434a10 and com.azure.autorest.model.clientmodel.ProxyMethodParameter@19ca3c91)
+[pool-1-thread-1] INFO com.azure.autorest.fluent.FluentGen - Read YAML
+[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, add-inner : null
+[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, remove-inner : null
+[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, rename-model : null
+[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, track1-naming : null
+[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, resource-property-as-subresource : null
+[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, name-for-ungrouped-operations : null
+[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, pom-file : null
+[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, package-version : null
+[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, sdk-integration : null
+[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, tag : package-2019-11-01-preview
+[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, base-folder : .
+[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, output-folder : /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-deploymentmanager-generated
+[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, azure-libraries-for-java-folder : null
+[pool-1-thread-1] INFO com.azure.autorest.fluent.FluentGen - Map code model to client model
+[pool-1-thread-1] INFO com.azure.autorest.fluent.mapper.FluentMapper - Add Inner to response types: [Rollout, StepResource, RolloutRequest, ServiceTopologyResource, ServiceUnitResource, OperationsList, ServiceResource, ArtifactSource]
+[pool-1-thread-1] INFO com.azure.autorest.fluent.FluentGen - Java template for client model
+[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.create.ResourceCreate - ResourceCreate: Fluent model ServiceTopologyResource, method reference createOrUpdate, body parameter ServiceTopologyResourceInner
+[pool-1-thread-1] INFO com.azure.autorest.fluent.mapper.ResourceParser - Fluent model ServiceTopologyResource as category RESOURCE_GROUP_AS_PARENT
+[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.update.ResourceUpdate - ResourceUpdate: Fluent model ServiceTopologyResource, method reference createOrUpdate, body parameter ServiceTopologyResourceInner
+[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.get.ResourceRefresh - ResourceRefresh: Fluent model ServiceTopologyResource, method reference getByResourceGroup
+[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.delete.ResourceDelete - ResourceDelete: Fluent model ServiceTopologyResource, method reference delete
+[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.create.ResourceCreate - ResourceCreate: Fluent model ServiceResource, method reference createOrUpdate, body parameter ServiceResourceInner
+[pool-1-thread-1] INFO com.azure.autorest.fluent.mapper.ResourceParser - Fluent model ServiceResource as category NESTED_CHILD
+[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.update.ResourceUpdate - ResourceUpdate: Fluent model ServiceResource, method reference createOrUpdate, body parameter ServiceResourceInner
+[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.get.ResourceRefresh - ResourceRefresh: Fluent model ServiceResource, method reference get
+[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.delete.ResourceDelete - ResourceDelete: Fluent model ServiceResource, method reference delete
+[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.create.ResourceCreate - ResourceCreate: Fluent model ServiceUnitResource, method reference createOrUpdate, body parameter ServiceUnitResourceInner
+[pool-1-thread-1] INFO com.azure.autorest.fluent.mapper.ResourceParser - Fluent model ServiceUnitResource as category NESTED_CHILD
+[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.update.ResourceUpdate - ResourceUpdate: Fluent model ServiceUnitResource, method reference createOrUpdate, body parameter ServiceUnitResourceInner
+[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.get.ResourceRefresh - ResourceRefresh: Fluent model ServiceUnitResource, method reference get
+[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.delete.ResourceDelete - ResourceDelete: Fluent model ServiceUnitResource, method reference delete
+[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.create.ResourceCreate - ResourceCreate: Fluent model StepResource, method reference createOrUpdate, body parameter StepResourceInner
+[pool-1-thread-1] INFO com.azure.autorest.fluent.mapper.ResourceParser - Fluent model StepResource as category RESOURCE_GROUP_AS_PARENT
+[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.update.ResourceUpdate - ResourceUpdate: Fluent model StepResource, method reference createOrUpdate, body parameter StepResourceInner
+[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.get.ResourceRefresh - ResourceRefresh: Fluent model StepResource, method reference getByResourceGroup
+[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.delete.ResourceDelete - ResourceDelete: Fluent model StepResource, method reference delete
+[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.create.ResourceCreate - ResourceCreate: Fluent model RolloutRequest, method reference createOrUpdate, body parameter RolloutRequestInner
+[pool-1-thread-1] INFO com.azure.autorest.fluent.mapper.ResourceParser - Fluent model RolloutRequest as category RESOURCE_GROUP_AS_PARENT
+[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.update.ResourceUpdate - ResourceUpdate: Fluent model RolloutRequest, method reference createOrUpdate, body parameter RolloutRequestInner
+[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.delete.ResourceDelete - ResourceDelete: Fluent model RolloutRequest, method reference delete
+[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.create.ResourceCreate - ResourceCreate: Fluent model ArtifactSource, method reference createOrUpdate, body parameter ArtifactSourceInner
+[pool-1-thread-1] INFO com.azure.autorest.fluent.mapper.ResourceParser - Fluent model ArtifactSource as category RESOURCE_GROUP_AS_PARENT
+[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.update.ResourceUpdate - ResourceUpdate: Fluent model ArtifactSource, method reference createOrUpdate, body parameter ArtifactSourceInner
+[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.get.ResourceRefresh - ResourceRefresh: Fluent model ArtifactSource, method reference getByResourceGroup
+[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.delete.ResourceDelete - ResourceDelete: Fluent model ArtifactSource, method reference delete
+[pool-1-thread-1] ERROR com.azure.autorest.fluent.FluentGen - Failed to successfully run fluentgen plugin java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@7b44e8fd and com.azure.autorest.model.clientmodel.ProxyMethodParameter@6b0d9c65)
+java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@7b44e8fd and com.azure.autorest.model.clientmodel.ProxyMethodParameter@6b0d9c65)
 	at java.base/java.util.stream.Collectors.duplicateKeyException(Collectors.java:133)
 	at java.base/java.util.stream.Collectors.lambda$uniqKeysMapAccumulator$1(Collectors.java:180)
 	at java.base/java.util.stream.ReduceOps$3ReducingSink.accept(ReduceOps.java:169)
@@ -1355,8 +1355,8 @@ java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  6.538 s
-[INFO] Finished at: 2020-11-18T15:49:17Z
+[INFO] Total time:  5.749 s
+[INFO] Finished at: 2020-11-18T18:32:24Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-devtestlabs-generated: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/LabVirtualMachineImpl.java:[636,34] name clash: withArtifacts(java.util.List<azure.resourcemanager.devtestlabs.generated.models.ArtifactInstallPropertiesFragment>) and withArtifacts(java.util.List<azure.resourcemanager.devtestlabs.generated.models.ArtifactInstallProperties>) have the same erasure
@@ -1552,7 +1552,7 @@ WARNING (PreCheck/CheckDuplicateSchemas): Checking for duplicate schemas, this c
 [pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, output-folder : /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-intune-generated
 [pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, azure-libraries-for-java-folder : null
 [pool-1-thread-2] INFO com.azure.autorest.fluent.FluentGen - Map code model to client model
-[pool-1-thread-2] INFO com.azure.autorest.fluent.mapper.FluentMapper - Add Inner to response types: [IOsmamPolicy, Device, AndroidMamPolicy, Location, FlaggedUser, Application, OperationResult, GroupItem, FlaggedEnrolledApp, WipeDeviceOperationResult]
+[pool-1-thread-2] INFO com.azure.autorest.fluent.mapper.FluentMapper - Add Inner to response types: [WipeDeviceOperationResult, AndroidMamPolicy, Application, FlaggedUser, OperationResult, FlaggedEnrolledApp, Device, IOsmamPolicy, Location, GroupItem]
 [pool-1-thread-2] ERROR com.azure.autorest.fluent.FluentGen - Failed to successfully run fluentgen plugin java.lang.IllegalArgumentException: [JavaCheck/SchemaError] item name value not found among properties of client model StatusesDefault
 java.lang.IllegalArgumentException: [JavaCheck/SchemaError] item name value not found among properties of client model StatusesDefault
 	at com.azure.autorest.mapper.ClientMethodMapper.map(ClientMethodMapper.java:83)
@@ -1898,8 +1898,8 @@ java.lang.IllegalArgumentException: [JavaCheck/SchemaError] item name value not 
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  3.309 s
-[INFO] Finished at: 2020-11-18T15:53:55Z
+[INFO] Total time:  2.649 s
+[INFO] Finished at: 2020-11-18T18:36:36Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-iotspaces-generated: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/IoTSpacesManager.java:[52,58] incompatible types: java.lang.String cannot be converted to java.util.UUID
@@ -2242,8 +2242,8 @@ java.lang.IllegalArgumentException: [JavaCheck/SchemaError] item name value not 
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  2.630 s
-[INFO] Finished at: 2020-11-18T15:55:11Z
+[INFO] Total time:  2.123 s
+[INFO] Finished at: 2020-11-18T18:37:46Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-logic-generated: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-logic-generated/src/main/java/azure/resourcemanager/logic/generated/implementation/IntegrationServiceEnvironmentNetworkHealthsImpl.java:[49,206] ')' expected
@@ -2424,8 +2424,8 @@ https://aka.ms/autorest
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  2.292 s
-[INFO] Finished at: 2020-11-18T15:59:23Z
+[INFO] Total time:  2.101 s
+[INFO] Finished at: 2020-11-18T18:41:37Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-netapp-generated: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-netapp-generated/src/main/java/azure/resourcemanager/netapp/generated/models/ReplicationSchedule.java:[18,44] <identifier> expected
@@ -2808,8 +2808,8 @@ FATAL: Error: 1 errors occured -- cannot continue.
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  3.695 s
-[INFO] Finished at: 2020-11-18T16:02:45Z
+[INFO] Total time:  3.321 s
+[INFO] Finished at: 2020-11-18T18:44:37Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-recoveryservices-generated: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/RecoveryServicesManager.java:[220,76] cannot find symbol
@@ -3174,8 +3174,8 @@ FATAL: Error: 1 errors occured -- cannot continue.
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  4.280 s
-[INFO] Finished at: 2020-11-18T16:06:11Z
+[INFO] Total time:  3.427 s
+[INFO] Finished at: 2020-11-18T18:47:41Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-reservations-generated: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsImpl.java:[153,88] reference to Patch is ambiguous
@@ -3439,7 +3439,7 @@ WARNING (PreCheck/DuplicateSchema): Duplicate Schema named AadConnectivityState 
 [pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, output-folder : /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-security-generated
 [pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, azure-libraries-for-java-folder : null
 [pool-1-thread-1] INFO com.azure.autorest.fluent.FluentGen - Map code model to client model
-[pool-1-thread-1] INFO com.azure.autorest.fluent.mapper.FluentMapper - Add Inner to response types: [IoTSecuritySolutionAnalyticsModelList, IotAlert, WorkspaceSetting, IotDefenderSettingsList, RegulatoryComplianceAssessment, SecureScoreControlDetails, SecurityTask, ServerVulnerabilityAssessment, PackageDownloads, JitNetworkAccessPolicy, DiscoveredSecuritySolution, ConnectorSetting, IotRecommendationModel, AutoProvisioningSetting, AdaptiveApplicationControlGroups, RuleResults, Alert, AdvancedThreatProtectionSetting, Scans, IotRecommendationTypeList, RegulatoryComplianceControl, SecuritySubAssessment, JitNetworkAccessRequest, OnPremiseIotSensor, PricingList, SecureScoreControlDefinitionItem, IotAlertTypeList, SecureScoreItem, AdaptiveNetworkHardening, IotSensorsList, TopologyResource, AlertsSuppressionRule, IotRecommendation, RulesResults, AutomationValidationStatus, SecuritySolution, InformationProtectionPolicy, ComplianceResult, IoTSecurityAggregatedAlert, SecurityContact, IoTSecurityAggregatedRecommendation, Operation, AllowedConnectionsResource, SecurityAssessmentMetadata, ServerVulnerabilityAssessmentsList, Pricing, ScanResults, AdaptiveApplicationControlGroup, IoTSecuritySolutionModel, Device, SecuritySolutionsReferenceDataList, ScanResult, DeviceSecurityGroup, IoTSecuritySolutionAnalyticsModel, Scan, AscLocation, OnPremiseIotSensorsList, RegulatoryComplianceStandard, ExternalSecuritySolution, IotSensor, Compliance, Automation, IotAlertModel, IotRecommendationType, SettingResource, SecurityAssessment, IotAlertType, IotDefenderSettingsModel]
+[pool-1-thread-1] INFO com.azure.autorest.fluent.mapper.FluentMapper - Add Inner to response types: [Alert, SecuritySolutionsReferenceDataList, IotAlertTypeList, IoTSecuritySolutionAnalyticsModelList, SecuritySubAssessment, IotAlert, Device, Scans, AdaptiveNetworkHardening, ConnectorSetting, IoTSecuritySolutionModel, SecuritySolution, PackageDownloads, IotAlertType, TopologyResource, SecureScoreItem, AutoProvisioningSetting, SecurityContact, AdaptiveApplicationControlGroup, RegulatoryComplianceStandard, Compliance, SecurityTask, ServerVulnerabilityAssessmentsList, ServerVulnerabilityAssessment, JitNetworkAccessPolicy, IoTSecurityAggregatedRecommendation, JitNetworkAccessRequest, PricingList, AdvancedThreatProtectionSetting, Automation, IotRecommendation, IotSensorsList, Operation, OnPremiseIotSensorsList, Scan, IotDefenderSettingsList, IotDefenderSettingsModel, SecureScoreControlDetails, AlertsSuppressionRule, Pricing, AllowedConnectionsResource, IotRecommendationTypeList, ScanResults, DiscoveredSecuritySolution, DeviceSecurityGroup, RegulatoryComplianceAssessment, SecurityAssessment, RuleResults, ScanResult, RulesResults, IotAlertModel, AutomationValidationStatus, OnPremiseIotSensor, SecureScoreControlDefinitionItem, RegulatoryComplianceControl, IoTSecurityAggregatedAlert, AdaptiveApplicationControlGroups, SettingResource, IotRecommendationType, InformationProtectionPolicy, ExternalSecuritySolution, IotSensor, ComplianceResult, IoTSecuritySolutionAnalyticsModel, IotRecommendationModel, WorkspaceSetting, AscLocation, SecurityAssessmentMetadata]
 [pool-1-thread-1] INFO com.azure.autorest.fluent.mapper.FluentMapper - Add Inner for type SecureScoreControlDefinitionItem: []
 [pool-1-thread-1] ERROR com.azure.autorest.fluent.FluentGen - Failed to successfully run fluentgen plugin java.lang.IllegalStateException: discriminator not found in type ExternalSecuritySolution and its parents
 java.lang.IllegalStateException: discriminator not found in type ExternalSecuritySolution and its parents
@@ -3492,12 +3492,6 @@ https://aka.ms/autorest
    Loading local AutoRest extension '@autorest/java.fluentnamer' (/home/runner/work/autorest.java/autorest.java/fluentgen/../fluentnamer)
    Loading AutoRest extension '@autorest/modelerfour' (4.15.423->4.15.423)
 
-WARNING (PostOperationIdContainsUrlVerb/R2066/SDKViolation): OperationId should contain the verb: 'generatemap' in:'Maps_Generate'. Consider updating the operationId
-    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
-
-WARNING (PostOperationIdContainsUrlVerb/R2066/SDKViolation): OperationId should contain the verb: 'machinegroups' in:'MachineGroups_Create'. Consider updating the operationId
-    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
-
 WARNING (PreCheck/AllOfWhenYouMeantRef): Schema 'MachineReference' is using an 'allOf' instead of a $ref. This creates a wasteful anonymous type when generating code.
 
 WARNING (PreCheck/AllOfWhenYouMeantRef): Schema 'ClientGroupReference' is using an 'allOf' instead of a $ref. This creates a wasteful anonymous type when generating code.
@@ -3548,7 +3542,13 @@ WARNING (PreCheck/SchemaMissingType): The schema 'ConnectionProperties' with an 
 
 WARNING (PreCheck/SchemaMissingType): The schema 'AcceptorProperties' with an undefined type and decalared properties is a bit ambigious. This has been auto-corrected to 'type:object'
 
+WARNING (PostOperationIdContainsUrlVerb/R2066/SDKViolation): OperationId should contain the verb: 'generatemap' in:'Maps_Generate'. Consider updating the operationId
+    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
+
 WARNING (PreCheck/SchemaMissingType): The schema 'Ipv4NetworkInterface' with an undefined type and decalared properties is a bit ambigious. This has been auto-corrected to 'type:object'
+
+WARNING (PostOperationIdContainsUrlVerb/R2066/SDKViolation): OperationId should contain the verb: 'machinegroups' in:'MachineGroups_Create'. Consider updating the operationId
+    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
 WARNING (PreCheck/SchemaMissingType): The schema 'Ipv6NetworkInterface' with an undefined type and decalared properties is a bit ambigious. This has been auto-corrected to 'type:object'
 
@@ -3606,12 +3606,6 @@ WARNING (EnumInsteadOfBoolean/R3018/ARMViolation): Booleans are not descriptive 
 WARNING (EnumInsteadOfBoolean/R3018/ARMViolation): Booleans are not descriptive and make them hard to use. Consider using string enums with allowed set of values defined. Property: live
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
-WARNING (OperationIdNounVerb/R1001/SDKViolation): Per the Noun_Verb convention for Operation Ids, the noun 'Machines' should not appear after the underscore. Note: If you have already shipped an SDK on top of this spec, fixing this warning may introduce a breaking change.
-    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
-
-WARNING (PutInOperationName/R1006/SDKViolation): 'PUT' operation 'MachineGroups_Update' should use method name 'Create'. Note: If you have already shipped an SDK on top of this spec, fixing this warning may introduce a breaking change.
-    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
-
 WARNING (XmsEnumValidation/R2018/SDKViolation): The enum types should have x-ms-enum type extension set with appropriate options. Property name: kind
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
@@ -3657,17 +3651,23 @@ WARNING (EnumInsteadOfBoolean/R3018/ARMViolation): Booleans are not descriptive 
 WARNING (EnumInsteadOfBoolean/R3018/ARMViolation): Booleans are not descriptive and make them hard to use. Consider using string enums with allowed set of values defined. Property: filterProcesses
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
+WARNING (OperationIdNounVerb/R1001/SDKViolation): Per the Noun_Verb convention for Operation Ids, the noun 'Machines' should not appear after the underscore. Note: If you have already shipped an SDK on top of this spec, fixing this warning may introduce a breaking change.
+    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
+
+WARNING (PutInOperationName/R1006/SDKViolation): 'PUT' operation 'MachineGroups_Update' should use method name 'Create'. Note: If you have already shipped an SDK on top of this spec, fixing this warning may introduce a breaking change.
+    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
+
 ```
 **stderr**
 ```
 FATAL: Failed validating: 'file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json', error encountered: TypeError: Cannot read property 'properties' of undefined
 FATAL: [object Object]
-(node:20082) UnhandledPromiseRejectionWarning: Error: Plugin model-validator reported failure.
+(node:19645) UnhandledPromiseRejectionWarning: Error: Plugin model-validator reported failure.
     at /home/runner/.autorest/@autorest_core@3.0.6326/node_modules/@autorest/core/dist/lib/pipeline/plugins/external.js:26:19
     at async ScheduleNode (/home/runner/.autorest/@autorest_core@3.0.6326/node_modules/@autorest/core/dist/lib/pipeline/pipeline.js:294:33)
 (Use `node --trace-warnings ...` to show where the warning was created)
-(node:20082) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 60)
-(node:20082) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:19645) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 60)
+(node:19645) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
 [pool-1-thread-1] INFO com.azure.autorest.fluentnamer.FluentNamer - Load fluent settings
 [pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, add-inner : null
 [pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, remove-inner : null
@@ -3693,28 +3693,28 @@ FATAL: [object Object]
 [pool-1-thread-1] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for Summary
 [pool-1-thread-1] INFO com.azure.autorest.fluent.transformer.SchemaCleanup - Remove unused schema Resource
 [pool-1-thread-1] INFO com.azure.autorest.fluent.transformer.SchemaCleanup - Remove unused schema Summary
-[pool-1-thread-2] INFO com.azure.autorest.fluent.FluentGen - Read YAML
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, add-inner : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, remove-inner : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, rename-model : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, track1-naming : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, resource-property-as-subresource : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, name-for-ungrouped-operations : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, pom-file : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, package-version : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, sdk-integration : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, tag : package-2015-11-preview
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, base-folder : .
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, output-folder : /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-service-map-generated
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, azure-libraries-for-java-folder : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.FluentGen - Map code model to client model
-[pool-1-thread-2] INFO com.azure.autorest.fluent.mapper.FluentMapper - Add Inner to response types: [Port, MachineGroup, Connection, ClientGroupMember, Process, Machine, MachinesSummary, ClientGroup, ClientGroupMembersCount, Liveness, MapResponse]
-[pool-1-thread-2] INFO com.azure.autorest.fluent.FluentGen - Java template for client model
-[pool-1-thread-2] INFO com.azure.autorest.fluent.FluentGen - Write Java
-[pool-1-thread-2] INFO com.azure.autorest.fluent.checker.JavaFormatter - Java version: 11.0.9
-[pool-1-thread-2] INFO com.azure.autorest.fluent.checker.JavaFormatter - Java formatter enabled
-[pool-1-thread-2] INFO com.azure.autorest.fluent.FluentGen - Write Xml
-[pool-1-thread-2] INFO com.azure.autorest.fluent.FluentGen - Write Text
+[pool-1-thread-1] INFO com.azure.autorest.fluent.FluentGen - Read YAML
+[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, add-inner : null
+[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, remove-inner : null
+[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, rename-model : null
+[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, track1-naming : null
+[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, resource-property-as-subresource : null
+[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, name-for-ungrouped-operations : null
+[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, pom-file : null
+[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, package-version : null
+[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, sdk-integration : null
+[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, tag : package-2015-11-preview
+[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, base-folder : .
+[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, output-folder : /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-service-map-generated
+[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, azure-libraries-for-java-folder : null
+[pool-1-thread-1] INFO com.azure.autorest.fluent.FluentGen - Map code model to client model
+[pool-1-thread-1] INFO com.azure.autorest.fluent.mapper.FluentMapper - Add Inner to response types: [ClientGroupMembersCount, Process, ClientGroup, MachinesSummary, MapResponse, Liveness, ClientGroupMember, Port, MachineGroup, Machine, Connection]
+[pool-1-thread-1] INFO com.azure.autorest.fluent.FluentGen - Java template for client model
+[pool-1-thread-1] INFO com.azure.autorest.fluent.FluentGen - Write Java
+[pool-1-thread-1] INFO com.azure.autorest.fluent.checker.JavaFormatter - Java version: 11.0.9
+[pool-1-thread-1] INFO com.azure.autorest.fluent.checker.JavaFormatter - Java formatter enabled
+[pool-1-thread-1] INFO com.azure.autorest.fluent.FluentGen - Write Xml
+[pool-1-thread-1] INFO com.azure.autorest.fluent.FluentGen - Write Text
   Error: Plugin model-validator reported failure.
 
 ```
@@ -3785,8 +3785,8 @@ FATAL: [object Object]
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  4.723 s
-[INFO] Finished at: 2020-11-18T16:10:06Z
+[INFO] Total time:  4.288 s
+[INFO] Finished at: 2020-11-18T18:51:08Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-servicefabric-generated: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/fluent/OperationsClient.java:[45,41] method list() is already defined in interface azure.resourcemanager.servicefabric.generated.fluent.OperationsClient
