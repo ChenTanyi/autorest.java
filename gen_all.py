@@ -107,6 +107,11 @@ def report_markdown(results: List[CodegenResult]):
         logging.error(f'failure at build for PRs: {sdks_failure_build}')
 
     lines = ['# Java Codegen Report']
+    lines.append('## Success')
+    for sdk in sdks_success:
+        lines.append('- ' + sdk)
+    lines.append('')
+
     lines.append('## Failure at Codegen')
     for sdk in sdks_failure_codegen_java:
         lines.append('- ' + sdk)
