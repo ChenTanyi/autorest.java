@@ -9,6 +9,8 @@ import logging
 import argparse
 import dataclasses
 import re
+from typing import List
+
 
 AUTOREST_CORE_VERSION = '3.0.6326'
 OS_WINDOWS = platform.system().lower() == 'windows'
@@ -45,7 +47,7 @@ def codegen(autorest_java: str, specs_dir: str, sdk: str, output_sdk_dir: str):
 
     command = [
         'autorest' + ('.cmd' if OS_WINDOWS else ''),
-        '--verbose',
+        # '--verbose',
         '--version=' + AUTOREST_CORE_VERSION,
         '--java',
         '--use=' + autorest_java,
@@ -92,6 +94,55 @@ class CodegenResult:
     stderr: str = ''
 
 
+def report_markdown(results: List[CodegenResult]):
+    sdks_success = [result.sdk for result in results if result.success]
+    sdks_failure_codegen_java = [result.sdk for result in results
+                                 if not result.success and result.failure_cause.startswith('codegen_java')]
+    sdks_failure_build = [result.sdk for result in results
+                          if not result.success and result.failure_cause.startswith('build')]
+    logging.info(f'success for PRs: {sdks_success}')
+    if sdks_failure_codegen_java:
+        logging.error(f'failure at java codegen for PRs: {sdks_failure_codegen_java}')
+    if sdks_failure_build:
+        logging.error(f'failure at build for PRs: {sdks_failure_build}')
+
+    lines = ['# Java Codegen Report']
+    lines.append('## Success')
+    for sdk in sdks_success:
+        lines.append('- ' + sdk)
+    lines.append('')
+
+    lines.append('## Failure at Codegen')
+    for sdk in sdks_failure_codegen_java:
+        lines.append('- ' + sdk)
+    lines.append('')
+
+    lines.append('## Failure at Build')
+    for sdk in sdks_failure_build:
+        lines.append('- ' + sdk)
+    lines.append('')
+
+    lines.append('## Logs')
+    for result in results:
+        if not result.success:
+            lines.append('<details>')
+            lines.append(f'<summary>{result.sdk}</summary>')
+            lines.append('')
+            lines.append('**stdout**')
+            lines.append('```')
+            lines.extend([line for line in result.stdout.split('\n') if not line.startswith('Progress (')])
+            lines.append('```')
+            lines.append('**stderr**')
+            lines.append('```')
+            lines.extend(result.stderr.split('\n'))
+            lines.append('```')
+            lines.append('</details>')
+            lines.append('')
+
+    with open('report.md', 'w') as f:
+        f.write('\n'.join(lines))
+
+
 def main():
     args = vars(parse_args())
 
@@ -111,6 +162,7 @@ def main():
             sdks.append(sdk)
 
     sdks = [sdk for sdk in sdks if sdk not in exclude_sdks]
+    sdks.sort()
 
     autorest_java = args['use']
     output_dir = args['test_output']
@@ -141,16 +193,7 @@ def main():
             results.append(CodegenResult(sdk=sdk, success=False, failure_cause=cause,
                                          stdout=codegen_result.stdout, stderr=error_log))
 
-    sdks_success = [result.sdk for result in results if result.success]
-    sdks_failure_codegen_java = [result.sdk for result in results
-                                 if not result.success and result.failure_cause.startswith('codegen_java')]
-    sdks_failure_build = [result.sdk for result in results
-                          if not result.success and result.failure_cause.startswith('build')]
-    logging.info(f'success for PRs: {sdks_success}')
-    if sdks_failure_codegen_java:
-        logging.error(f'failure at java codegen for PRs: {sdks_failure_codegen_java}')
-    if sdks_failure_build:
-        logging.error(f'failure at build for PRs: {sdks_failure_build}')
+    report_markdown(results)
 
 
 if __name__ == "__main__":
