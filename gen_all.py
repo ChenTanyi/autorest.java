@@ -123,12 +123,15 @@ def report_markdown(results: List[CodegenResult]):
             lines.append('<details>')
             lines.append(f'<summary>{result.sdk}</summary>')
             lines.append('')
+            lines.append('###### stdout')
+            lines.extend(result.stdout.split('\n'))
+            lines.append('###### stderr')
             lines.extend(result.stderr.split('\n'))
             lines.append('</details>')
             lines.append('')
 
     with open('report.md', 'w') as f:
-        f.writelines(lines)
+        f.write('\n'.join(lines))
 
 
 def main():
@@ -152,6 +155,8 @@ def main():
     sdks = [sdk for sdk in sdks if sdk not in exclude_sdks]
 
     sdks = ['storage', 'deploymentmanager', 'datalake-analytics']
+
+    sdks.sort()
 
     autorest_java = args['use']
     output_dir = args['test_output']
