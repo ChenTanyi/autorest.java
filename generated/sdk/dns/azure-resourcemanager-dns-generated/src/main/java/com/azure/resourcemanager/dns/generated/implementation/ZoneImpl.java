@@ -54,6 +54,10 @@ public final class ZoneImpl implements Zone, Zone.Definition, Zone.Update {
         return this.innerModel().maxNumberOfRecordSets();
     }
 
+    public Long maxNumberOfRecordsPerRecordSet() {
+        return this.innerModel().maxNumberOfRecordsPerRecordSet();
+    }
+
     public Long numberOfRecordSets() {
         return this.innerModel().numberOfRecordSets();
     }
