@@ -1,4 +1,5 @@
 # Java Codegen Report
+Generated on 2020-11-19T03:53:03.922821
 ## Success
 - EnterpriseKnowledgeGraph
 - addons
@@ -42,11 +43,14 @@
 - databricks
 - datacatalog
 - datadog
+- datalake-analytics
+- datalake-store
 - datashare
 - desktopvirtualization
 - deviceprovisioningservices
 - devops
 - devspaces
+- devtestlabs
 - digitaltwins
 - dnc
 - domainservices
@@ -104,6 +108,7 @@
 - storSimple1200Series
 - storagecache
 - storageimportexport
+- storagepool
 - storagesync
 - storsimple8000series
 - streamanalytics
@@ -119,15 +124,11 @@
 
 ## Failure at Codegen
 - deploymentmanager
-- intune
 - security
 
 ## Failure at Build
 - azurestack
 - botservice
-- datalake-analytics
-- datalake-store
-- devtestlabs
 - iotspaces
 - logic
 - machinelearningcompute
@@ -191,8 +192,8 @@ FATAL: Error: Name is empty!
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  3.212 s
-[INFO] Finished at: 2020-11-18T18:20:29Z
+[INFO] Total time:  2.949 s
+[INFO] Finished at: 2020-11-19T03:13:42Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-azurestack-generated: Compilation failure
 [ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-azurestack-generated/src/main/java/azure/resourcemanager/azurestack/generated/implementation/RegistrationImpl.java:[172,56] incompatible types: java.lang.String cannot be converted to azure.resourcemanager.azurestack.generated.models.Location
@@ -241,8 +242,8 @@ FATAL: Error: Name is empty!
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  3.698 s
-[INFO] Finished at: 2020-11-18T18:22:57Z
+[INFO] Total time:  3.298 s
+[INFO] Finished at: 2020-11-19T03:16:02Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-botservice-generated: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-botservice-generated/src/main/java/azure/resourcemanager/botservice/generated/implementation/BotChannelImpl.java:[156,67] incompatible types: azure.resourcemanager.botservice.generated.models.ChannelName cannot be converted to java.lang.String
@@ -929,124 +930,6 @@ FATAL: Error: Enum types of 'object' and format 'undefined' are not supported. C
 </details>
 
 <details>
-<summary>datalake-analytics</summary>
-
-**stdout**
-```
-[INFO] Scanning for projects...
-[INFO] 
-[INFO] --< com.azure.resourcemanager:azure-resourcemanager-datalakeanalytics-generated >--
-[INFO] Building Microsoft Azure SDK for DataLakeAnalytics Management 1.0.0-beta.1
-[INFO] --------------------------------[ jar ]---------------------------------
-[INFO] 
-[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ azure-resourcemanager-datalakeanalytics-generated ---
-[INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-analytics-generated/src/main/resources
-[INFO] 
-[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ azure-resourcemanager-datalakeanalytics-generated ---
-[INFO] Changes detected - recompiling the module!
-[INFO] Compiling 109 source files to /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-analytics-generated/target/classes
-[INFO] -------------------------------------------------------------
-[ERROR] COMPILATION ERROR : 
-[INFO] -------------------------------------------------------------
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-analytics-generated/src/main/java/azure/resourcemanager/datalakeanalytics/generated/implementation/DataLakeAnalyticsAccountImpl.java:[434,41] name clash: withDataLakeStoreAccounts(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.UpdateDataLakeStoreWithAccountParameters>) and withDataLakeStoreAccounts(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.AddDataLakeStoreWithAccountParameters>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-analytics-generated/src/main/java/azure/resourcemanager/datalakeanalytics/generated/implementation/DataLakeAnalyticsAccountImpl.java:[440,41] name clash: withStorageAccounts(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.UpdateStorageAccountWithAccountParameters>) and withStorageAccounts(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.AddStorageAccountWithAccountParameters>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-analytics-generated/src/main/java/azure/resourcemanager/datalakeanalytics/generated/implementation/DataLakeAnalyticsAccountImpl.java:[446,41] name clash: withComputePolicies(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.UpdateComputePolicyWithAccountParameters>) and withComputePolicies(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.CreateComputePolicyWithAccountParameters>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-analytics-generated/src/main/java/azure/resourcemanager/datalakeanalytics/generated/implementation/DataLakeAnalyticsAccountImpl.java:[452,41] name clash: withFirewallRules(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.UpdateFirewallRuleWithAccountParameters>) and withFirewallRules(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.CreateFirewallRuleWithAccountParameters>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-analytics-generated/src/main/java/azure/resourcemanager/datalakeanalytics/generated/implementation/DataLakeAnalyticsAccountImpl.java:[321,41] name clash: withDataLakeStoreAccounts(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.AddDataLakeStoreWithAccountParameters>) in azure.resourcemanager.datalakeanalytics.generated.implementation.DataLakeAnalyticsAccountImpl and withDataLakeStoreAccounts(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.UpdateDataLakeStoreWithAccountParameters>) in azure.resourcemanager.datalakeanalytics.generated.models.DataLakeAnalyticsAccount.UpdateStages.WithDataLakeStoreAccounts have the same erasure, yet neither overrides the other
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-analytics-generated/src/main/java/azure/resourcemanager/datalakeanalytics/generated/implementation/DataLakeAnalyticsAccountImpl.java:[337,41] name clash: withStorageAccounts(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.AddStorageAccountWithAccountParameters>) in azure.resourcemanager.datalakeanalytics.generated.implementation.DataLakeAnalyticsAccountImpl and withStorageAccounts(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.UpdateStorageAccountWithAccountParameters>) in azure.resourcemanager.datalakeanalytics.generated.models.DataLakeAnalyticsAccount.UpdateStages.WithStorageAccounts have the same erasure, yet neither overrides the other
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-analytics-generated/src/main/java/azure/resourcemanager/datalakeanalytics/generated/implementation/DataLakeAnalyticsAccountImpl.java:[343,41] name clash: withComputePolicies(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.CreateComputePolicyWithAccountParameters>) in azure.resourcemanager.datalakeanalytics.generated.implementation.DataLakeAnalyticsAccountImpl and withComputePolicies(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.UpdateComputePolicyWithAccountParameters>) in azure.resourcemanager.datalakeanalytics.generated.models.DataLakeAnalyticsAccount.UpdateStages.WithComputePolicies have the same erasure, yet neither overrides the other
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-analytics-generated/src/main/java/azure/resourcemanager/datalakeanalytics/generated/implementation/DataLakeAnalyticsAccountImpl.java:[349,41] name clash: withFirewallRules(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.CreateFirewallRuleWithAccountParameters>) in azure.resourcemanager.datalakeanalytics.generated.implementation.DataLakeAnalyticsAccountImpl and withFirewallRules(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.UpdateFirewallRuleWithAccountParameters>) in azure.resourcemanager.datalakeanalytics.generated.models.DataLakeAnalyticsAccount.UpdateStages.WithFirewallRules have the same erasure, yet neither overrides the other
-[INFO] 8 errors 
-[INFO] -------------------------------------------------------------
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  3.305 s
-[INFO] Finished at: 2020-11-18T18:29:40Z
-[INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-datalakeanalytics-generated: Compilation failure: Compilation failure: 
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-analytics-generated/src/main/java/azure/resourcemanager/datalakeanalytics/generated/implementation/DataLakeAnalyticsAccountImpl.java:[434,41] name clash: withDataLakeStoreAccounts(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.UpdateDataLakeStoreWithAccountParameters>) and withDataLakeStoreAccounts(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.AddDataLakeStoreWithAccountParameters>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-analytics-generated/src/main/java/azure/resourcemanager/datalakeanalytics/generated/implementation/DataLakeAnalyticsAccountImpl.java:[440,41] name clash: withStorageAccounts(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.UpdateStorageAccountWithAccountParameters>) and withStorageAccounts(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.AddStorageAccountWithAccountParameters>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-analytics-generated/src/main/java/azure/resourcemanager/datalakeanalytics/generated/implementation/DataLakeAnalyticsAccountImpl.java:[446,41] name clash: withComputePolicies(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.UpdateComputePolicyWithAccountParameters>) and withComputePolicies(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.CreateComputePolicyWithAccountParameters>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-analytics-generated/src/main/java/azure/resourcemanager/datalakeanalytics/generated/implementation/DataLakeAnalyticsAccountImpl.java:[452,41] name clash: withFirewallRules(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.UpdateFirewallRuleWithAccountParameters>) and withFirewallRules(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.CreateFirewallRuleWithAccountParameters>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-analytics-generated/src/main/java/azure/resourcemanager/datalakeanalytics/generated/implementation/DataLakeAnalyticsAccountImpl.java:[321,41] name clash: withDataLakeStoreAccounts(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.AddDataLakeStoreWithAccountParameters>) in azure.resourcemanager.datalakeanalytics.generated.implementation.DataLakeAnalyticsAccountImpl and withDataLakeStoreAccounts(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.UpdateDataLakeStoreWithAccountParameters>) in azure.resourcemanager.datalakeanalytics.generated.models.DataLakeAnalyticsAccount.UpdateStages.WithDataLakeStoreAccounts have the same erasure, yet neither overrides the other
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-analytics-generated/src/main/java/azure/resourcemanager/datalakeanalytics/generated/implementation/DataLakeAnalyticsAccountImpl.java:[337,41] name clash: withStorageAccounts(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.AddStorageAccountWithAccountParameters>) in azure.resourcemanager.datalakeanalytics.generated.implementation.DataLakeAnalyticsAccountImpl and withStorageAccounts(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.UpdateStorageAccountWithAccountParameters>) in azure.resourcemanager.datalakeanalytics.generated.models.DataLakeAnalyticsAccount.UpdateStages.WithStorageAccounts have the same erasure, yet neither overrides the other
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-analytics-generated/src/main/java/azure/resourcemanager/datalakeanalytics/generated/implementation/DataLakeAnalyticsAccountImpl.java:[343,41] name clash: withComputePolicies(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.CreateComputePolicyWithAccountParameters>) in azure.resourcemanager.datalakeanalytics.generated.implementation.DataLakeAnalyticsAccountImpl and withComputePolicies(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.UpdateComputePolicyWithAccountParameters>) in azure.resourcemanager.datalakeanalytics.generated.models.DataLakeAnalyticsAccount.UpdateStages.WithComputePolicies have the same erasure, yet neither overrides the other
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-analytics-generated/src/main/java/azure/resourcemanager/datalakeanalytics/generated/implementation/DataLakeAnalyticsAccountImpl.java:[349,41] name clash: withFirewallRules(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.CreateFirewallRuleWithAccountParameters>) in azure.resourcemanager.datalakeanalytics.generated.implementation.DataLakeAnalyticsAccountImpl and withFirewallRules(java.util.List<azure.resourcemanager.datalakeanalytics.generated.models.UpdateFirewallRuleWithAccountParameters>) in azure.resourcemanager.datalakeanalytics.generated.models.DataLakeAnalyticsAccount.UpdateStages.WithFirewallRules have the same erasure, yet neither overrides the other
-[ERROR] -> [Help 1]
-[ERROR] 
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
-
-```
-**stderr**
-```
-
-```
-</details>
-
-<details>
-<summary>datalake-store</summary>
-
-**stdout**
-```
-[INFO] Scanning for projects...
-[INFO] 
-[INFO] --< com.azure.resourcemanager:azure-resourcemanager-datalakestore-generated >--
-[INFO] Building Microsoft Azure SDK for DataLakeStore Management 1.0.0-beta.1
-[INFO] --------------------------------[ jar ]---------------------------------
-[INFO] 
-[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ azure-resourcemanager-datalakestore-generated ---
-[INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-store-generated/src/main/resources
-[INFO] 
-[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ azure-resourcemanager-datalakestore-generated ---
-[INFO] Changes detected - recompiling the module!
-[INFO] Compiling 104 source files to /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-store-generated/target/classes
-[INFO] -------------------------------------------------------------
-[ERROR] COMPILATION ERROR : 
-[INFO] -------------------------------------------------------------
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-store-generated/src/main/java/azure/resourcemanager/datalakestore/generated/implementation/DataLakeStoreAccountImpl.java:[392,37] name clash: withFirewallRules(java.util.List<azure.resourcemanager.datalakestore.generated.models.UpdateFirewallRuleWithAccountParameters>) and withFirewallRules(java.util.List<azure.resourcemanager.datalakestore.generated.models.CreateFirewallRuleWithAccountParameters>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-store-generated/src/main/java/azure/resourcemanager/datalakestore/generated/implementation/DataLakeStoreAccountImpl.java:[397,37] name clash: withVirtualNetworkRules(java.util.List<azure.resourcemanager.datalakestore.generated.models.UpdateVirtualNetworkRuleWithAccountParameters>) and withVirtualNetworkRules(java.util.List<azure.resourcemanager.datalakestore.generated.models.CreateVirtualNetworkRuleWithAccountParameters>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-store-generated/src/main/java/azure/resourcemanager/datalakestore/generated/implementation/DataLakeStoreAccountImpl.java:[403,37] name clash: withTrustedIdProviders(java.util.List<azure.resourcemanager.datalakestore.generated.models.UpdateTrustedIdProviderWithAccountParameters>) and withTrustedIdProviders(java.util.List<azure.resourcemanager.datalakestore.generated.models.CreateTrustedIdProviderWithAccountParameters>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-store-generated/src/main/java/azure/resourcemanager/datalakestore/generated/implementation/DataLakeStoreAccountImpl.java:[330,37] name clash: withFirewallRules(java.util.List<azure.resourcemanager.datalakestore.generated.models.CreateFirewallRuleWithAccountParameters>) in azure.resourcemanager.datalakestore.generated.implementation.DataLakeStoreAccountImpl and withFirewallRules(java.util.List<azure.resourcemanager.datalakestore.generated.models.UpdateFirewallRuleWithAccountParameters>) in azure.resourcemanager.datalakestore.generated.models.DataLakeStoreAccount.UpdateStages.WithFirewallRules have the same erasure, yet neither overrides the other
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-store-generated/src/main/java/azure/resourcemanager/datalakestore/generated/implementation/DataLakeStoreAccountImpl.java:[335,37] name clash: withVirtualNetworkRules(java.util.List<azure.resourcemanager.datalakestore.generated.models.CreateVirtualNetworkRuleWithAccountParameters>) in azure.resourcemanager.datalakestore.generated.implementation.DataLakeStoreAccountImpl and withVirtualNetworkRules(java.util.List<azure.resourcemanager.datalakestore.generated.models.UpdateVirtualNetworkRuleWithAccountParameters>) in azure.resourcemanager.datalakestore.generated.models.DataLakeStoreAccount.UpdateStages.WithVirtualNetworkRules have the same erasure, yet neither overrides the other
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-store-generated/src/main/java/azure/resourcemanager/datalakestore/generated/implementation/DataLakeStoreAccountImpl.java:[361,37] name clash: withTrustedIdProviders(java.util.List<azure.resourcemanager.datalakestore.generated.models.CreateTrustedIdProviderWithAccountParameters>) in azure.resourcemanager.datalakestore.generated.implementation.DataLakeStoreAccountImpl and withTrustedIdProviders(java.util.List<azure.resourcemanager.datalakestore.generated.models.UpdateTrustedIdProviderWithAccountParameters>) in azure.resourcemanager.datalakestore.generated.models.DataLakeStoreAccount.UpdateStages.WithTrustedIdProviders have the same erasure, yet neither overrides the other
-[INFO] 6 errors 
-[INFO] -------------------------------------------------------------
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  3.436 s
-[INFO] Finished at: 2020-11-18T18:29:57Z
-[INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-datalakestore-generated: Compilation failure: Compilation failure: 
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-store-generated/src/main/java/azure/resourcemanager/datalakestore/generated/implementation/DataLakeStoreAccountImpl.java:[392,37] name clash: withFirewallRules(java.util.List<azure.resourcemanager.datalakestore.generated.models.UpdateFirewallRuleWithAccountParameters>) and withFirewallRules(java.util.List<azure.resourcemanager.datalakestore.generated.models.CreateFirewallRuleWithAccountParameters>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-store-generated/src/main/java/azure/resourcemanager/datalakestore/generated/implementation/DataLakeStoreAccountImpl.java:[397,37] name clash: withVirtualNetworkRules(java.util.List<azure.resourcemanager.datalakestore.generated.models.UpdateVirtualNetworkRuleWithAccountParameters>) and withVirtualNetworkRules(java.util.List<azure.resourcemanager.datalakestore.generated.models.CreateVirtualNetworkRuleWithAccountParameters>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-store-generated/src/main/java/azure/resourcemanager/datalakestore/generated/implementation/DataLakeStoreAccountImpl.java:[403,37] name clash: withTrustedIdProviders(java.util.List<azure.resourcemanager.datalakestore.generated.models.UpdateTrustedIdProviderWithAccountParameters>) and withTrustedIdProviders(java.util.List<azure.resourcemanager.datalakestore.generated.models.CreateTrustedIdProviderWithAccountParameters>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-store-generated/src/main/java/azure/resourcemanager/datalakestore/generated/implementation/DataLakeStoreAccountImpl.java:[330,37] name clash: withFirewallRules(java.util.List<azure.resourcemanager.datalakestore.generated.models.CreateFirewallRuleWithAccountParameters>) in azure.resourcemanager.datalakestore.generated.implementation.DataLakeStoreAccountImpl and withFirewallRules(java.util.List<azure.resourcemanager.datalakestore.generated.models.UpdateFirewallRuleWithAccountParameters>) in azure.resourcemanager.datalakestore.generated.models.DataLakeStoreAccount.UpdateStages.WithFirewallRules have the same erasure, yet neither overrides the other
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-store-generated/src/main/java/azure/resourcemanager/datalakestore/generated/implementation/DataLakeStoreAccountImpl.java:[335,37] name clash: withVirtualNetworkRules(java.util.List<azure.resourcemanager.datalakestore.generated.models.CreateVirtualNetworkRuleWithAccountParameters>) in azure.resourcemanager.datalakestore.generated.implementation.DataLakeStoreAccountImpl and withVirtualNetworkRules(java.util.List<azure.resourcemanager.datalakestore.generated.models.UpdateVirtualNetworkRuleWithAccountParameters>) in azure.resourcemanager.datalakestore.generated.models.DataLakeStoreAccount.UpdateStages.WithVirtualNetworkRules have the same erasure, yet neither overrides the other
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-datalake-store-generated/src/main/java/azure/resourcemanager/datalakestore/generated/implementation/DataLakeStoreAccountImpl.java:[361,37] name clash: withTrustedIdProviders(java.util.List<azure.resourcemanager.datalakestore.generated.models.CreateTrustedIdProviderWithAccountParameters>) in azure.resourcemanager.datalakestore.generated.implementation.DataLakeStoreAccountImpl and withTrustedIdProviders(java.util.List<azure.resourcemanager.datalakestore.generated.models.UpdateTrustedIdProviderWithAccountParameters>) in azure.resourcemanager.datalakestore.generated.models.DataLakeStoreAccount.UpdateStages.WithTrustedIdProviders have the same erasure, yet neither overrides the other
-[ERROR] -> [Help 1]
-[ERROR] 
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
-
-```
-**stderr**
-```
-
-```
-</details>
-
-<details>
 <summary>datamigration</summary>
 
 **stdout**
@@ -1192,88 +1075,92 @@ WARNING (PreCheck/CheckDuplicateSchemas): Checking for duplicate schemas, this c
 WARNING (PreNamer/DeduplicateName): Deduplicating schema name: 'RolloutProperties' -> 'RolloutPropertiesAutoGenerated'
 
 WARNING (PreNamer/DeduplicateName): Deduplicating schema name: 'ArtifactSourceProperties' -> 'ArtifactSourcePropertiesAutoGenerated'
+INFORMATION (FluentNamer): Load fluent settings
+INFORMATION (FluentJavaSettings): Option, string, add-inner : null
+INFORMATION (FluentJavaSettings): Option, string, remove-inner : null
+INFORMATION (FluentJavaSettings): Option, string, rename-model : null
+INFORMATION (FluentJavaSettings): Option, boolean, track1-naming : null
+INFORMATION (FluentJavaSettings): Option, boolean, resource-property-as-subresource : null
+INFORMATION (FluentJavaSettings): Option, string, name-for-ungrouped-operations : null
+INFORMATION (FluentJavaSettings): Option, string, pom-file : null
+INFORMATION (FluentJavaSettings): Option, string, package-version : null
+INFORMATION (FluentJavaSettings): Option, boolean, sdk-integration : null
+INFORMATION (FluentJavaSettings): Option, string, tag : package-2019-11-01-preview
+INFORMATION (FluentJavaSettings): Option, string, base-folder : .
+INFORMATION (FluentJavaSettings): Option, string, output-folder : $(azure-libraries-for-java-folder)/azure-mgmt-deploymentmanager
+INFORMATION (FluentJavaSettings): Option, string, azure-libraries-for-java-folder : null
+INFORMATION (FluentNamer): Transform code model
+INFORMATION (SchemaNameNormalization): Override default name, from timeStamp to timestamp
+INFORMATION (OperationNameNormalization): Rename operation from get to getByResourceGroup, in operation group ServiceTopologies
+INFORMATION (OperationNameNormalization): Rename operation from get to getByResourceGroup, in operation group Steps
+INFORMATION (OperationNameNormalization): Rename operation from get to getByResourceGroup, in operation group Rollouts
+INFORMATION (OperationNameNormalization): Rename operation from get to getByResourceGroup, in operation group ArtifactSources
+INFORMATION (ResourceTypeNormalization): Change parent from TrackedResource to Resource, for ServiceTopologyResource
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for TrackedResource
+INFORMATION (ResourceTypeNormalization): Change parent from TrackedResource to Resource, for ServiceResource
+INFORMATION (ResourceTypeNormalization): Change parent from TrackedResource to Resource, for ServiceUnitResource
+INFORMATION (ResourceTypeNormalization): Change parent from TrackedResource to Resource, for StepResource
+INFORMATION (ResourceTypeNormalization): Change parent from TrackedResource to Resource, for RolloutRequest
+INFORMATION (ResourceTypeNormalization): Change parent from TrackedResource to Resource, for Rollout
+INFORMATION (ResourceTypeNormalization): Change parent from TrackedResource to Resource, for ArtifactSource
+INFORMATION (SchemaCleanup): Remove unused schema TrackedResource
+INFORMATION (SchemaCleanup): Remove unused schema Resource
+INFORMATION (FluentGen): Read YAML
+INFORMATION (FluentJavaSettings): Option, string, add-inner : null
+INFORMATION (FluentJavaSettings): Option, string, remove-inner : null
+INFORMATION (FluentJavaSettings): Option, string, rename-model : null
+INFORMATION (FluentJavaSettings): Option, boolean, track1-naming : null
+INFORMATION (FluentJavaSettings): Option, boolean, resource-property-as-subresource : null
+INFORMATION (FluentJavaSettings): Option, string, name-for-ungrouped-operations : null
+INFORMATION (FluentJavaSettings): Option, string, pom-file : null
+INFORMATION (FluentJavaSettings): Option, string, package-version : null
+INFORMATION (FluentJavaSettings): Option, boolean, sdk-integration : null
+INFORMATION (FluentJavaSettings): Option, string, tag : package-2019-11-01-preview
+INFORMATION (FluentJavaSettings): Option, string, base-folder : .
+INFORMATION (FluentJavaSettings): Option, string, output-folder : /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-deploymentmanager-generated
+INFORMATION (FluentJavaSettings): Option, string, azure-libraries-for-java-folder : null
+INFORMATION (FluentGen): Map code model to client model
+INFORMATION (FluentMapper): Add Inner to response types: [ArtifactSource, ServiceTopologyResource, Rollout, ServiceResource, RolloutRequest, OperationsList, StepResource, ServiceUnitResource]
+INFORMATION (FluentGen): Java template for client model
+INFORMATION (ResourceCreate): ResourceCreate: Fluent model ServiceTopologyResource, method reference createOrUpdate, body parameter ServiceTopologyResourceInner
+INFORMATION (ResourceParser): Fluent model ServiceTopologyResource as category RESOURCE_GROUP_AS_PARENT
+INFORMATION (ResourceUpdate): ResourceUpdate: Fluent model ServiceTopologyResource, method reference createOrUpdate, body parameter ServiceTopologyResourceInner
+INFORMATION (ResourceRefresh): ResourceRefresh: Fluent model ServiceTopologyResource, method reference getByResourceGroup
+INFORMATION (ResourceDelete): ResourceDelete: Fluent model ServiceTopologyResource, method reference delete
+INFORMATION (ResourceCreate): ResourceCreate: Fluent model ServiceResource, method reference createOrUpdate, body parameter ServiceResourceInner
+INFORMATION (ResourceParser): Fluent model ServiceResource as category NESTED_CHILD
+INFORMATION (ResourceUpdate): ResourceUpdate: Fluent model ServiceResource, method reference createOrUpdate, body parameter ServiceResourceInner
+INFORMATION (ResourceRefresh): ResourceRefresh: Fluent model ServiceResource, method reference get
+INFORMATION (ResourceDelete): ResourceDelete: Fluent model ServiceResource, method reference delete
+INFORMATION (ResourceCreate): ResourceCreate: Fluent model ServiceUnitResource, method reference createOrUpdate, body parameter ServiceUnitResourceInner
+INFORMATION (ResourceParser): Fluent model ServiceUnitResource as category NESTED_CHILD
+INFORMATION (ResourceUpdate): ResourceUpdate: Fluent model ServiceUnitResource, method reference createOrUpdate, body parameter ServiceUnitResourceInner
+INFORMATION (ResourceRefresh): ResourceRefresh: Fluent model ServiceUnitResource, method reference get
+INFORMATION (ResourceDelete): ResourceDelete: Fluent model ServiceUnitResource, method reference delete
+INFORMATION (ResourceCreate): ResourceCreate: Fluent model StepResource, method reference createOrUpdate, body parameter StepResourceInner
+INFORMATION (ResourceParser): Fluent model StepResource as category RESOURCE_GROUP_AS_PARENT
+INFORMATION (ResourceUpdate): ResourceUpdate: Fluent model StepResource, method reference createOrUpdate, body parameter StepResourceInner
+INFORMATION (ResourceRefresh): ResourceRefresh: Fluent model StepResource, method reference getByResourceGroup
+INFORMATION (ResourceDelete): ResourceDelete: Fluent model StepResource, method reference delete
+INFORMATION (ResourceCreate): ResourceCreate: Fluent model RolloutRequest, method reference createOrUpdate, body parameter RolloutRequestInner
+INFORMATION (ResourceParser): Fluent model RolloutRequest as category RESOURCE_GROUP_AS_PARENT
+INFORMATION (ResourceUpdate): ResourceUpdate: Fluent model RolloutRequest, method reference createOrUpdate, body parameter RolloutRequestInner
+INFORMATION (ResourceDelete): ResourceDelete: Fluent model RolloutRequest, method reference delete
+INFORMATION (ResourceCreate): ResourceCreate: Fluent model ArtifactSource, method reference createOrUpdate, body parameter ArtifactSourceInner
+INFORMATION (ResourceParser): Fluent model ArtifactSource as category RESOURCE_GROUP_AS_PARENT
+INFORMATION (ResourceUpdate): ResourceUpdate: Fluent model ArtifactSource, method reference createOrUpdate, body parameter ArtifactSourceInner
+INFORMATION (ResourceRefresh): ResourceRefresh: Fluent model ArtifactSource, method reference getByResourceGroup
+INFORMATION (ResourceDelete): ResourceDelete: Fluent model ArtifactSource, method reference delete
 
 ```
 **stderr**
 ```
-[pool-1-thread-2] INFO com.azure.autorest.fluentnamer.FluentNamer - Load fluent settings
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, add-inner : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, remove-inner : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, rename-model : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, track1-naming : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, resource-property-as-subresource : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, name-for-ungrouped-operations : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, pom-file : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, package-version : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, sdk-integration : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, tag : package-2019-11-01-preview
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, base-folder : .
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, output-folder : $(azure-libraries-for-java-folder)/azure-mgmt-deploymentmanager
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, azure-libraries-for-java-folder : null
-[pool-1-thread-2] INFO com.azure.autorest.fluentnamer.FluentNamer - Transform code model
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from timeStamp to timestamp
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.OperationNameNormalization - Rename operation from get to getByResourceGroup, in operation group ServiceTopologies
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.OperationNameNormalization - Rename operation from get to getByResourceGroup, in operation group Steps
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.OperationNameNormalization - Rename operation from get to getByResourceGroup, in operation group Rollouts
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.OperationNameNormalization - Rename operation from get to getByResourceGroup, in operation group ArtifactSources
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from TrackedResource to Resource, for ServiceTopologyResource
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for TrackedResource
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from TrackedResource to Resource, for ServiceResource
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from TrackedResource to Resource, for ServiceUnitResource
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from TrackedResource to Resource, for StepResource
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from TrackedResource to Resource, for RolloutRequest
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from TrackedResource to Resource, for Rollout
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from TrackedResource to Resource, for ArtifactSource
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaCleanup - Remove unused schema TrackedResource
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaCleanup - Remove unused schema Resource
-[pool-1-thread-1] INFO com.azure.autorest.fluent.FluentGen - Read YAML
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, add-inner : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, remove-inner : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, rename-model : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, track1-naming : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, resource-property-as-subresource : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, name-for-ungrouped-operations : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, pom-file : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, package-version : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, sdk-integration : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, tag : package-2019-11-01-preview
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, base-folder : .
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, output-folder : /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-deploymentmanager-generated
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, azure-libraries-for-java-folder : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.FluentGen - Map code model to client model
-[pool-1-thread-1] INFO com.azure.autorest.fluent.mapper.FluentMapper - Add Inner to response types: [Rollout, StepResource, RolloutRequest, ServiceTopologyResource, ServiceUnitResource, OperationsList, ServiceResource, ArtifactSource]
-[pool-1-thread-1] INFO com.azure.autorest.fluent.FluentGen - Java template for client model
-[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.create.ResourceCreate - ResourceCreate: Fluent model ServiceTopologyResource, method reference createOrUpdate, body parameter ServiceTopologyResourceInner
-[pool-1-thread-1] INFO com.azure.autorest.fluent.mapper.ResourceParser - Fluent model ServiceTopologyResource as category RESOURCE_GROUP_AS_PARENT
-[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.update.ResourceUpdate - ResourceUpdate: Fluent model ServiceTopologyResource, method reference createOrUpdate, body parameter ServiceTopologyResourceInner
-[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.get.ResourceRefresh - ResourceRefresh: Fluent model ServiceTopologyResource, method reference getByResourceGroup
-[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.delete.ResourceDelete - ResourceDelete: Fluent model ServiceTopologyResource, method reference delete
-[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.create.ResourceCreate - ResourceCreate: Fluent model ServiceResource, method reference createOrUpdate, body parameter ServiceResourceInner
-[pool-1-thread-1] INFO com.azure.autorest.fluent.mapper.ResourceParser - Fluent model ServiceResource as category NESTED_CHILD
-[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.update.ResourceUpdate - ResourceUpdate: Fluent model ServiceResource, method reference createOrUpdate, body parameter ServiceResourceInner
-[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.get.ResourceRefresh - ResourceRefresh: Fluent model ServiceResource, method reference get
-[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.delete.ResourceDelete - ResourceDelete: Fluent model ServiceResource, method reference delete
-[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.create.ResourceCreate - ResourceCreate: Fluent model ServiceUnitResource, method reference createOrUpdate, body parameter ServiceUnitResourceInner
-[pool-1-thread-1] INFO com.azure.autorest.fluent.mapper.ResourceParser - Fluent model ServiceUnitResource as category NESTED_CHILD
-[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.update.ResourceUpdate - ResourceUpdate: Fluent model ServiceUnitResource, method reference createOrUpdate, body parameter ServiceUnitResourceInner
-[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.get.ResourceRefresh - ResourceRefresh: Fluent model ServiceUnitResource, method reference get
-[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.delete.ResourceDelete - ResourceDelete: Fluent model ServiceUnitResource, method reference delete
-[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.create.ResourceCreate - ResourceCreate: Fluent model StepResource, method reference createOrUpdate, body parameter StepResourceInner
-[pool-1-thread-1] INFO com.azure.autorest.fluent.mapper.ResourceParser - Fluent model StepResource as category RESOURCE_GROUP_AS_PARENT
-[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.update.ResourceUpdate - ResourceUpdate: Fluent model StepResource, method reference createOrUpdate, body parameter StepResourceInner
-[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.get.ResourceRefresh - ResourceRefresh: Fluent model StepResource, method reference getByResourceGroup
-[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.delete.ResourceDelete - ResourceDelete: Fluent model StepResource, method reference delete
-[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.create.ResourceCreate - ResourceCreate: Fluent model RolloutRequest, method reference createOrUpdate, body parameter RolloutRequestInner
-[pool-1-thread-1] INFO com.azure.autorest.fluent.mapper.ResourceParser - Fluent model RolloutRequest as category RESOURCE_GROUP_AS_PARENT
-[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.update.ResourceUpdate - ResourceUpdate: Fluent model RolloutRequest, method reference createOrUpdate, body parameter RolloutRequestInner
-[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.delete.ResourceDelete - ResourceDelete: Fluent model RolloutRequest, method reference delete
-[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.create.ResourceCreate - ResourceCreate: Fluent model ArtifactSource, method reference createOrUpdate, body parameter ArtifactSourceInner
-[pool-1-thread-1] INFO com.azure.autorest.fluent.mapper.ResourceParser - Fluent model ArtifactSource as category RESOURCE_GROUP_AS_PARENT
-[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.update.ResourceUpdate - ResourceUpdate: Fluent model ArtifactSource, method reference createOrUpdate, body parameter ArtifactSourceInner
-[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.get.ResourceRefresh - ResourceRefresh: Fluent model ArtifactSource, method reference getByResourceGroup
-[pool-1-thread-1] INFO com.azure.autorest.fluent.model.clientmodel.fluentmodel.delete.ResourceDelete - ResourceDelete: Fluent model ArtifactSource, method reference delete
-[pool-1-thread-1] ERROR com.azure.autorest.fluent.FluentGen - Failed to successfully run fluentgen plugin java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@7b44e8fd and com.azure.autorest.model.clientmodel.ProxyMethodParameter@6b0d9c65)
-java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@7b44e8fd and com.azure.autorest.model.clientmodel.ProxyMethodParameter@6b0d9c65)
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+
+ERROR (FluentGen): Failed to successfully run fluentgen plugin java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@553ab899 and com.azure.autorest.model.clientmodel.ProxyMethodParameter@27463a20)
+java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@553ab899 and com.azure.autorest.model.clientmodel.ProxyMethodParameter@27463a20)
 	at java.base/java.util.stream.Collectors.duplicateKeyException(Collectors.java:133)
 	at java.base/java.util.stream.Collectors.lambda$uniqKeysMapAccumulator$1(Collectors.java:180)
 	at java.base/java.util.stream.ReduceOps$3ReducingSink.accept(ReduceOps.java:169)
@@ -1284,11 +1171,11 @@ java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging
 	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
 	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
 	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
-	at com.azure.autorest.fluent.model.clientmodel.fluentmodel.ResourceOperation.getParametersByLocation(ResourceOperation.java:136)
-	at com.azure.autorest.fluent.model.clientmodel.fluentmodel.ResourceOperation.getParametersByLocation(ResourceOperation.java:129)
-	at com.azure.autorest.fluent.model.clientmodel.fluentmodel.ResourceOperation.getPathParameters(ResourceOperation.java:149)
-	at com.azure.autorest.fluent.model.clientmodel.fluentmodel.get.ResourceRefresh.getGetByIdCollectionMethods(ResourceRefresh.java:93)
-	at com.azure.autorest.fluent.mapper.ResourceParser.lambda$processAdditionalCollectionMethods$7(ResourceParser.java:108)
+	at com.azure.autorest.fluent.model.clientmodel.fluentmodel.ResourceOperation.getParametersByLocation(ResourceOperation.java:137)
+	at com.azure.autorest.fluent.model.clientmodel.fluentmodel.ResourceOperation.getParametersByLocation(ResourceOperation.java:130)
+	at com.azure.autorest.fluent.model.clientmodel.fluentmodel.ResourceOperation.getPathParameters(ResourceOperation.java:150)
+	at com.azure.autorest.fluent.model.clientmodel.fluentmodel.get.ResourceRefresh.getGetByIdCollectionMethods(ResourceRefresh.java:94)
+	at com.azure.autorest.fluent.mapper.ResourceParser.lambda$processAdditionalCollectionMethods$7(ResourceParser.java:109)
 	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:271)
 	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
 	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
@@ -1296,12 +1183,12 @@ java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging
 	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
 	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
 	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
-	at com.azure.autorest.fluent.mapper.ResourceParser.processAdditionalCollectionMethods(ResourceParser.java:109)
+	at com.azure.autorest.fluent.mapper.ResourceParser.processAdditionalCollectionMethods(ResourceParser.java:110)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-	at com.azure.autorest.fluent.mapper.ResourceParser.processAdditionalMethods(ResourceParser.java:71)
+	at com.azure.autorest.fluent.mapper.ResourceParser.processAdditionalMethods(ResourceParser.java:72)
 	at com.azure.autorest.fluent.mapper.FluentMapper.map(FluentMapper.java:79)
-	at com.azure.autorest.fluent.FluentGen.processInternal(FluentGen.java:185)
-	at com.azure.autorest.extension.base.plugin.NewPlugin.process(NewPlugin.java:186)
+	at com.azure.autorest.fluent.FluentGen.processInternal(FluentGen.java:191)
+	at com.azure.autorest.extension.base.plugin.NewPlugin.process(NewPlugin.java:202)
 	at com.azure.autorest.fluent.Main.lambda$main$1(Main.java:18)
 	at com.azure.autorest.extension.base.jsonrpc.Connection.lambda$dispatch$2(Connection.java:151)
 	at com.azure.autorest.extension.base.jsonrpc.Connection.lambda$process$3(Connection.java:270)
@@ -1310,80 +1197,47 @@ java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:834)
+
+FATAL (FluentGen): Unhandled error: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@553ab899 and com.azure.autorest.model.clientmodel.ProxyMethodParameter@27463a20)
+java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@553ab899 and com.azure.autorest.model.clientmodel.ProxyMethodParameter@27463a20)
+	at java.base/java.util.stream.Collectors.duplicateKeyException(Collectors.java:133)
+	at java.base/java.util.stream.Collectors.lambda$uniqKeysMapAccumulator$1(Collectors.java:180)
+	at java.base/java.util.stream.ReduceOps$3ReducingSink.accept(ReduceOps.java:169)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.azure.autorest.fluent.model.clientmodel.fluentmodel.ResourceOperation.getParametersByLocation(ResourceOperation.java:137)
+	at com.azure.autorest.fluent.model.clientmodel.fluentmodel.ResourceOperation.getParametersByLocation(ResourceOperation.java:130)
+	at com.azure.autorest.fluent.model.clientmodel.fluentmodel.ResourceOperation.getPathParameters(ResourceOperation.java:150)
+	at com.azure.autorest.fluent.model.clientmodel.fluentmodel.get.ResourceRefresh.getGetByIdCollectionMethods(ResourceRefresh.java:94)
+	at com.azure.autorest.fluent.mapper.ResourceParser.lambda$processAdditionalCollectionMethods$7(ResourceParser.java:109)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:271)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.azure.autorest.fluent.mapper.ResourceParser.processAdditionalCollectionMethods(ResourceParser.java:110)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at com.azure.autorest.fluent.mapper.ResourceParser.processAdditionalMethods(ResourceParser.java:72)
+	at com.azure.autorest.fluent.mapper.FluentMapper.map(FluentMapper.java:79)
+	at com.azure.autorest.fluent.FluentGen.processInternal(FluentGen.java:191)
+	at com.azure.autorest.extension.base.plugin.NewPlugin.process(NewPlugin.java:202)
+	at com.azure.autorest.fluent.Main.lambda$main$1(Main.java:18)
+	at com.azure.autorest.extension.base.jsonrpc.Connection.lambda$dispatch$2(Connection.java:151)
+	at com.azure.autorest.extension.base.jsonrpc.Connection.lambda$process$3(Connection.java:270)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
   Error: Plugin fluentgen reported failure.
-
-```
-</details>
-
-<details>
-<summary>devtestlabs</summary>
-
-**stdout**
-```
-[INFO] Scanning for projects...
-[INFO] 
-[INFO] --< com.azure.resourcemanager:azure-resourcemanager-devtestlabs-generated >--
-[INFO] Building Microsoft Azure SDK for DevTestLabs Management 1.0.0-beta.1
-[INFO] --------------------------------[ jar ]---------------------------------
-[INFO] 
-[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ azure-resourcemanager-devtestlabs-generated ---
-[INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/resources
-[INFO] 
-[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ azure-resourcemanager-devtestlabs-generated ---
-[INFO] Changes detected - recompiling the module!
-[INFO] Compiling 349 source files to /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/target/classes
-[INFO] -------------------------------------------------------------
-[ERROR] COMPILATION ERROR : 
-[INFO] -------------------------------------------------------------
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/LabVirtualMachineImpl.java:[636,34] name clash: withArtifacts(java.util.List<azure.resourcemanager.devtestlabs.generated.models.ArtifactInstallPropertiesFragment>) and withArtifacts(java.util.List<azure.resourcemanager.devtestlabs.generated.models.ArtifactInstallProperties>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/LabVirtualMachineImpl.java:[657,34] name clash: withDataDiskParameters(java.util.List<azure.resourcemanager.devtestlabs.generated.models.DataDiskPropertiesFragment>) and withDataDiskParameters(java.util.List<azure.resourcemanager.devtestlabs.generated.models.DataDiskProperties>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/LabVirtualMachineImpl.java:[662,34] name clash: withScheduleParameters(java.util.List<azure.resourcemanager.devtestlabs.generated.models.ScheduleCreationParameterFragment>) and withScheduleParameters(java.util.List<azure.resourcemanager.devtestlabs.generated.models.ScheduleCreationParameter>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/NotificationChannelImpl.java:[264,36] name clash: withEvents(java.util.List<azure.resourcemanager.devtestlabs.generated.models.EventFragment>) and withEvents(java.util.List<azure.resourcemanager.devtestlabs.generated.models.Event>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/CustomImageImpl.java:[318,28] name clash: withDataDiskStorageInfo(java.util.List<azure.resourcemanager.devtestlabs.generated.models.DataDiskStorageTypeInfoFragment>) and withDataDiskStorageInfo(java.util.List<azure.resourcemanager.devtestlabs.generated.models.DataDiskStorageTypeInfo>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/VirtualNetworkImpl.java:[259,31] name clash: withAllowedSubnets(java.util.List<azure.resourcemanager.devtestlabs.generated.models.SubnetFragment>) and withAllowedSubnets(java.util.List<azure.resourcemanager.devtestlabs.generated.models.Subnet>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/VirtualNetworkImpl.java:[264,31] name clash: withSubnetOverrides(java.util.List<azure.resourcemanager.devtestlabs.generated.models.SubnetOverrideFragment>) and withSubnetOverrides(java.util.List<azure.resourcemanager.devtestlabs.generated.models.SubnetOverride>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/LabVirtualMachineImpl.java:[534,34] name clash: withArtifacts(java.util.List<azure.resourcemanager.devtestlabs.generated.models.ArtifactInstallProperties>) in azure.resourcemanager.devtestlabs.generated.implementation.LabVirtualMachineImpl and withArtifacts(java.util.List<azure.resourcemanager.devtestlabs.generated.models.ArtifactInstallPropertiesFragment>) in azure.resourcemanager.devtestlabs.generated.models.LabVirtualMachine.UpdateStages.WithArtifacts have the same erasure, yet neither overrides the other
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/LabVirtualMachineImpl.java:[616,34] name clash: withDataDiskParameters(java.util.List<azure.resourcemanager.devtestlabs.generated.models.DataDiskProperties>) in azure.resourcemanager.devtestlabs.generated.implementation.LabVirtualMachineImpl and withDataDiskParameters(java.util.List<azure.resourcemanager.devtestlabs.generated.models.DataDiskPropertiesFragment>) in azure.resourcemanager.devtestlabs.generated.models.LabVirtualMachine.UpdateStages.WithDataDiskParameters have the same erasure, yet neither overrides the other
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/LabVirtualMachineImpl.java:[621,34] name clash: withScheduleParameters(java.util.List<azure.resourcemanager.devtestlabs.generated.models.ScheduleCreationParameter>) in azure.resourcemanager.devtestlabs.generated.implementation.LabVirtualMachineImpl and withScheduleParameters(java.util.List<azure.resourcemanager.devtestlabs.generated.models.ScheduleCreationParameterFragment>) in azure.resourcemanager.devtestlabs.generated.models.LabVirtualMachine.UpdateStages.WithScheduleParameters have the same erasure, yet neither overrides the other
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/NotificationChannelImpl.java:[259,36] name clash: withEvents(java.util.List<azure.resourcemanager.devtestlabs.generated.models.Event>) in azure.resourcemanager.devtestlabs.generated.implementation.NotificationChannelImpl and withEvents(java.util.List<azure.resourcemanager.devtestlabs.generated.models.EventFragment>) in azure.resourcemanager.devtestlabs.generated.models.NotificationChannel.UpdateStages.WithEvents have the same erasure, yet neither overrides the other
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/CustomImageImpl.java:[288,28] name clash: withDataDiskStorageInfo(java.util.List<azure.resourcemanager.devtestlabs.generated.models.DataDiskStorageTypeInfo>) in azure.resourcemanager.devtestlabs.generated.implementation.CustomImageImpl and withDataDiskStorageInfo(java.util.List<azure.resourcemanager.devtestlabs.generated.models.DataDiskStorageTypeInfoFragment>) in azure.resourcemanager.devtestlabs.generated.models.CustomImage.UpdateStages.WithDataDiskStorageInfo have the same erasure, yet neither overrides the other
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/VirtualNetworkImpl.java:[229,31] name clash: withAllowedSubnets(java.util.List<azure.resourcemanager.devtestlabs.generated.models.Subnet>) in azure.resourcemanager.devtestlabs.generated.implementation.VirtualNetworkImpl and withAllowedSubnets(java.util.List<azure.resourcemanager.devtestlabs.generated.models.SubnetFragment>) in azure.resourcemanager.devtestlabs.generated.models.VirtualNetwork.UpdateStages.WithAllowedSubnets have the same erasure, yet neither overrides the other
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/VirtualNetworkImpl.java:[254,31] name clash: withSubnetOverrides(java.util.List<azure.resourcemanager.devtestlabs.generated.models.SubnetOverride>) in azure.resourcemanager.devtestlabs.generated.implementation.VirtualNetworkImpl and withSubnetOverrides(java.util.List<azure.resourcemanager.devtestlabs.generated.models.SubnetOverrideFragment>) in azure.resourcemanager.devtestlabs.generated.models.VirtualNetwork.UpdateStages.WithSubnetOverrides have the same erasure, yet neither overrides the other
-[INFO] 14 errors 
-[INFO] -------------------------------------------------------------
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  5.749 s
-[INFO] Finished at: 2020-11-18T18:32:24Z
-[INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-devtestlabs-generated: Compilation failure: Compilation failure: 
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/LabVirtualMachineImpl.java:[636,34] name clash: withArtifacts(java.util.List<azure.resourcemanager.devtestlabs.generated.models.ArtifactInstallPropertiesFragment>) and withArtifacts(java.util.List<azure.resourcemanager.devtestlabs.generated.models.ArtifactInstallProperties>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/LabVirtualMachineImpl.java:[657,34] name clash: withDataDiskParameters(java.util.List<azure.resourcemanager.devtestlabs.generated.models.DataDiskPropertiesFragment>) and withDataDiskParameters(java.util.List<azure.resourcemanager.devtestlabs.generated.models.DataDiskProperties>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/LabVirtualMachineImpl.java:[662,34] name clash: withScheduleParameters(java.util.List<azure.resourcemanager.devtestlabs.generated.models.ScheduleCreationParameterFragment>) and withScheduleParameters(java.util.List<azure.resourcemanager.devtestlabs.generated.models.ScheduleCreationParameter>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/NotificationChannelImpl.java:[264,36] name clash: withEvents(java.util.List<azure.resourcemanager.devtestlabs.generated.models.EventFragment>) and withEvents(java.util.List<azure.resourcemanager.devtestlabs.generated.models.Event>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/CustomImageImpl.java:[318,28] name clash: withDataDiskStorageInfo(java.util.List<azure.resourcemanager.devtestlabs.generated.models.DataDiskStorageTypeInfoFragment>) and withDataDiskStorageInfo(java.util.List<azure.resourcemanager.devtestlabs.generated.models.DataDiskStorageTypeInfo>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/VirtualNetworkImpl.java:[259,31] name clash: withAllowedSubnets(java.util.List<azure.resourcemanager.devtestlabs.generated.models.SubnetFragment>) and withAllowedSubnets(java.util.List<azure.resourcemanager.devtestlabs.generated.models.Subnet>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/VirtualNetworkImpl.java:[264,31] name clash: withSubnetOverrides(java.util.List<azure.resourcemanager.devtestlabs.generated.models.SubnetOverrideFragment>) and withSubnetOverrides(java.util.List<azure.resourcemanager.devtestlabs.generated.models.SubnetOverride>) have the same erasure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/LabVirtualMachineImpl.java:[534,34] name clash: withArtifacts(java.util.List<azure.resourcemanager.devtestlabs.generated.models.ArtifactInstallProperties>) in azure.resourcemanager.devtestlabs.generated.implementation.LabVirtualMachineImpl and withArtifacts(java.util.List<azure.resourcemanager.devtestlabs.generated.models.ArtifactInstallPropertiesFragment>) in azure.resourcemanager.devtestlabs.generated.models.LabVirtualMachine.UpdateStages.WithArtifacts have the same erasure, yet neither overrides the other
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/LabVirtualMachineImpl.java:[616,34] name clash: withDataDiskParameters(java.util.List<azure.resourcemanager.devtestlabs.generated.models.DataDiskProperties>) in azure.resourcemanager.devtestlabs.generated.implementation.LabVirtualMachineImpl and withDataDiskParameters(java.util.List<azure.resourcemanager.devtestlabs.generated.models.DataDiskPropertiesFragment>) in azure.resourcemanager.devtestlabs.generated.models.LabVirtualMachine.UpdateStages.WithDataDiskParameters have the same erasure, yet neither overrides the other
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/LabVirtualMachineImpl.java:[621,34] name clash: withScheduleParameters(java.util.List<azure.resourcemanager.devtestlabs.generated.models.ScheduleCreationParameter>) in azure.resourcemanager.devtestlabs.generated.implementation.LabVirtualMachineImpl and withScheduleParameters(java.util.List<azure.resourcemanager.devtestlabs.generated.models.ScheduleCreationParameterFragment>) in azure.resourcemanager.devtestlabs.generated.models.LabVirtualMachine.UpdateStages.WithScheduleParameters have the same erasure, yet neither overrides the other
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/NotificationChannelImpl.java:[259,36] name clash: withEvents(java.util.List<azure.resourcemanager.devtestlabs.generated.models.Event>) in azure.resourcemanager.devtestlabs.generated.implementation.NotificationChannelImpl and withEvents(java.util.List<azure.resourcemanager.devtestlabs.generated.models.EventFragment>) in azure.resourcemanager.devtestlabs.generated.models.NotificationChannel.UpdateStages.WithEvents have the same erasure, yet neither overrides the other
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/CustomImageImpl.java:[288,28] name clash: withDataDiskStorageInfo(java.util.List<azure.resourcemanager.devtestlabs.generated.models.DataDiskStorageTypeInfo>) in azure.resourcemanager.devtestlabs.generated.implementation.CustomImageImpl and withDataDiskStorageInfo(java.util.List<azure.resourcemanager.devtestlabs.generated.models.DataDiskStorageTypeInfoFragment>) in azure.resourcemanager.devtestlabs.generated.models.CustomImage.UpdateStages.WithDataDiskStorageInfo have the same erasure, yet neither overrides the other
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/VirtualNetworkImpl.java:[229,31] name clash: withAllowedSubnets(java.util.List<azure.resourcemanager.devtestlabs.generated.models.Subnet>) in azure.resourcemanager.devtestlabs.generated.implementation.VirtualNetworkImpl and withAllowedSubnets(java.util.List<azure.resourcemanager.devtestlabs.generated.models.SubnetFragment>) in azure.resourcemanager.devtestlabs.generated.models.VirtualNetwork.UpdateStages.WithAllowedSubnets have the same erasure, yet neither overrides the other
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-devtestlabs-generated/src/main/java/azure/resourcemanager/devtestlabs/generated/implementation/VirtualNetworkImpl.java:[254,31] name clash: withSubnetOverrides(java.util.List<azure.resourcemanager.devtestlabs.generated.models.SubnetOverride>) in azure.resourcemanager.devtestlabs.generated.implementation.VirtualNetworkImpl and withSubnetOverrides(java.util.List<azure.resourcemanager.devtestlabs.generated.models.SubnetOverrideFragment>) in azure.resourcemanager.devtestlabs.generated.models.VirtualNetwork.UpdateStages.WithSubnetOverrides have the same erasure, yet neither overrides the other
-[ERROR] -> [Help 1]
-[ERROR] 
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
-
-```
-**stderr**
-```
 
 ```
 </details>
@@ -1479,88 +1333,92 @@ WARNING (PreCheck/SchemaMissingType): The schema 'FlaggedEnrolledAppProperties' 
 WARNING (PreCheck/SchemaMissingType): The schema 'FlaggedEnrolledAppError' with an undefined type and decalared properties is a bit ambigious. This has been auto-corrected to 'type:object'
 
 WARNING (PreCheck/CheckDuplicateSchemas): Checking for duplicate schemas, this could take a (long) while.  Run with --verbose for more detail.
+INFORMATION (FluentNamer): Load fluent settings
+INFORMATION (FluentJavaSettings): Option, string, add-inner : null
+INFORMATION (FluentJavaSettings): Option, string, remove-inner : null
+INFORMATION (FluentJavaSettings): Option, string, rename-model : null
+INFORMATION (FluentJavaSettings): Option, boolean, track1-naming : null
+INFORMATION (FluentJavaSettings): Option, boolean, resource-property-as-subresource : null
+INFORMATION (FluentJavaSettings): Option, string, name-for-ungrouped-operations : null
+INFORMATION (FluentJavaSettings): Option, string, pom-file : null
+INFORMATION (FluentJavaSettings): Option, string, package-version : null
+INFORMATION (FluentJavaSettings): Option, boolean, sdk-integration : null
+INFORMATION (FluentJavaSettings): Option, string, tag : package-2015-01-preview
+INFORMATION (FluentJavaSettings): Option, string, base-folder : .
+INFORMATION (FluentJavaSettings): Option, string, output-folder : $(azure-libraries-for-java-folder)/azure-mgmt-intune
+INFORMATION (FluentJavaSettings): Option, string, azure-libraries-for-java-folder : null
+INFORMATION (FluentNamer): Transform code model
+INFORMATION (FluentTransformer): Rename ungrouped operation group to ResourceProvider
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from GetLocationByHostName to GetLocationByHostname
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from userName to username
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from userName to username
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from userName to username
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from userName to username
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from userName to username
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (SchemaNameNormalization): Override default name, from hostName to hostname
+INFORMATION (FluentGen): Read YAML
+INFORMATION (FluentJavaSettings): Option, string, add-inner : null
+INFORMATION (FluentJavaSettings): Option, string, remove-inner : null
+INFORMATION (FluentJavaSettings): Option, string, rename-model : null
+INFORMATION (FluentJavaSettings): Option, boolean, track1-naming : null
+INFORMATION (FluentJavaSettings): Option, boolean, resource-property-as-subresource : null
+INFORMATION (FluentJavaSettings): Option, string, name-for-ungrouped-operations : null
+INFORMATION (FluentJavaSettings): Option, string, pom-file : null
+INFORMATION (FluentJavaSettings): Option, string, package-version : null
+INFORMATION (FluentJavaSettings): Option, boolean, sdk-integration : null
+INFORMATION (FluentJavaSettings): Option, string, tag : package-2015-01-preview
+INFORMATION (FluentJavaSettings): Option, string, base-folder : .
+INFORMATION (FluentJavaSettings): Option, string, output-folder : /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-intune-generated
+INFORMATION (FluentJavaSettings): Option, string, azure-libraries-for-java-folder : null
+INFORMATION (FluentGen): Map code model to client model
+INFORMATION (FluentMapper): Add Inner to response types: [GroupItem, WipeDeviceOperationResult, FlaggedUser, OperationResult, AndroidMamPolicy, IOsmamPolicy, Application, FlaggedEnrolledApp, Location, Device]
 
 ```
 **stderr**
 ```
-[pool-1-thread-2] INFO com.azure.autorest.fluentnamer.FluentNamer - Load fluent settings
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, add-inner : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, remove-inner : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, rename-model : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, track1-naming : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, resource-property-as-subresource : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, name-for-ungrouped-operations : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, pom-file : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, package-version : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, sdk-integration : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, tag : package-2015-01-preview
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, base-folder : .
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, output-folder : $(azure-libraries-for-java-folder)/azure-mgmt-intune
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, azure-libraries-for-java-folder : null
-[pool-1-thread-2] INFO com.azure.autorest.fluentnamer.FluentNamer - Transform code model
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.FluentTransformer - Rename ungrouped operation group to ResourceProvider
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from GetLocationByHostName to GetLocationByHostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from userName to username
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from userName to username
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from userName to username
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from userName to username
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from userName to username
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from hostName to hostname
-[pool-1-thread-2] INFO com.azure.autorest.fluent.FluentGen - Read YAML
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, add-inner : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, remove-inner : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, rename-model : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, track1-naming : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, resource-property-as-subresource : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, name-for-ungrouped-operations : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, pom-file : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, package-version : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, sdk-integration : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, tag : package-2015-01-preview
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, base-folder : .
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, output-folder : /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-intune-generated
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, azure-libraries-for-java-folder : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.FluentGen - Map code model to client model
-[pool-1-thread-2] INFO com.azure.autorest.fluent.mapper.FluentMapper - Add Inner to response types: [WipeDeviceOperationResult, AndroidMamPolicy, Application, FlaggedUser, OperationResult, FlaggedEnrolledApp, Device, IOsmamPolicy, Location, GroupItem]
-[pool-1-thread-2] ERROR com.azure.autorest.fluent.FluentGen - Failed to successfully run fluentgen plugin java.lang.IllegalArgumentException: [JavaCheck/SchemaError] item name value not found among properties of client model StatusesDefault
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+
+ERROR (FluentGen): Failed to successfully run fluentgen plugin java.lang.IllegalArgumentException: [JavaCheck/SchemaError] item name value not found among properties of client model StatusesDefault
 java.lang.IllegalArgumentException: [JavaCheck/SchemaError] item name value not found among properties of client model StatusesDefault
 	at com.azure.autorest.mapper.ClientMethodMapper.map(ClientMethodMapper.java:83)
 	at com.azure.autorest.mapper.MethodGroupMapper.map(MethodGroupMapper.java:115)
 	at com.azure.autorest.mapper.ServiceClientMapper.map(ServiceClientMapper.java:88)
 	at com.azure.autorest.mapper.ClientMapper.map(ClientMapper.java:116)
-	at com.azure.autorest.fluent.FluentGen.processInternal(FluentGen.java:100)
-	at com.azure.autorest.extension.base.plugin.NewPlugin.process(NewPlugin.java:186)
+	at com.azure.autorest.fluent.FluentGen.processInternal(FluentGen.java:106)
+	at com.azure.autorest.extension.base.plugin.NewPlugin.process(NewPlugin.java:202)
 	at com.azure.autorest.fluent.Main.lambda$main$1(Main.java:18)
 	at com.azure.autorest.extension.base.jsonrpc.Connection.lambda$dispatch$2(Connection.java:151)
 	at com.azure.autorest.extension.base.jsonrpc.Connection.lambda$process$3(Connection.java:270)
@@ -1569,6 +1427,24 @@ java.lang.IllegalArgumentException: [JavaCheck/SchemaError] item name value not 
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:834)
+
+FATAL (FluentGen): Unhandled error: [JavaCheck/SchemaError] item name value not found among properties of client model StatusesDefault
+java.lang.IllegalArgumentException: [JavaCheck/SchemaError] item name value not found among properties of client model StatusesDefault
+	at com.azure.autorest.mapper.ClientMethodMapper.map(ClientMethodMapper.java:83)
+	at com.azure.autorest.mapper.MethodGroupMapper.map(MethodGroupMapper.java:115)
+	at com.azure.autorest.mapper.ServiceClientMapper.map(ServiceClientMapper.java:88)
+	at com.azure.autorest.mapper.ClientMapper.map(ClientMapper.java:116)
+	at com.azure.autorest.fluent.FluentGen.processInternal(FluentGen.java:106)
+	at com.azure.autorest.extension.base.plugin.NewPlugin.process(NewPlugin.java:202)
+	at com.azure.autorest.fluent.Main.lambda$main$1(Main.java:18)
+	at com.azure.autorest.extension.base.jsonrpc.Connection.lambda$dispatch$2(Connection.java:151)
+	at com.azure.autorest.extension.base.jsonrpc.Connection.lambda$process$3(Connection.java:270)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
   Error: Plugin fluentgen reported failure.
 
 ```
@@ -1898,8 +1774,8 @@ java.lang.IllegalArgumentException: [JavaCheck/SchemaError] item name value not 
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  2.649 s
-[INFO] Finished at: 2020-11-18T18:36:36Z
+[INFO] Total time:  2.443 s
+[INFO] Finished at: 2020-11-19T03:29:08Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-iotspaces-generated: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/IoTSpacesManager.java:[52,58] incompatible types: java.lang.String cannot be converted to java.util.UUID
@@ -2242,8 +2118,8 @@ java.lang.IllegalArgumentException: [JavaCheck/SchemaError] item name value not 
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  2.123 s
-[INFO] Finished at: 2020-11-18T18:37:46Z
+[INFO] Total time:  2.363 s
+[INFO] Finished at: 2020-11-19T03:30:16Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-logic-generated: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-logic-generated/src/main/java/azure/resourcemanager/logic/generated/implementation/IntegrationServiceEnvironmentNetworkHealthsImpl.java:[49,206] ')' expected
@@ -2424,8 +2300,8 @@ https://aka.ms/autorest
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  2.101 s
-[INFO] Finished at: 2020-11-18T18:41:37Z
+[INFO] Total time:  1.769 s
+[INFO] Finished at: 2020-11-19T03:33:56Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-netapp-generated: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-netapp-generated/src/main/java/azure/resourcemanager/netapp/generated/models/ReplicationSchedule.java:[18,44] <identifier> expected
@@ -2808,8 +2684,8 @@ FATAL: Error: 1 errors occured -- cannot continue.
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  3.321 s
-[INFO] Finished at: 2020-11-18T18:44:37Z
+[INFO] Total time:  3.133 s
+[INFO] Finished at: 2020-11-19T03:36:47Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-recoveryservices-generated: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/RecoveryServicesManager.java:[220,76] cannot find symbol
@@ -3174,8 +3050,8 @@ FATAL: Error: 1 errors occured -- cannot continue.
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  3.427 s
-[INFO] Finished at: 2020-11-18T18:47:41Z
+[INFO] Total time:  2.948 s
+[INFO] Finished at: 2020-11-19T03:39:41Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-reservations-generated: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsImpl.java:[153,88] reference to Patch is ambiguous
@@ -3331,117 +3207,127 @@ WARNING (PreCheck/CheckDuplicateSchemas): Checking for duplicate schemas, this c
 WARNING (PreCheck/DuplicateSchema): Duplicate Schema named ExternalSecuritySolutionKind -- type: undefined => "string",properties: {"kind":{"description":"The kind of the external solution","$ref":"#/components/schemas/ExternalSecuritySolutionKind"}} => <none>,enum: undefined => ["CEF","ATA","AAD"],x-ms-enum: undefined => {"name":"ExternalSecuritySolutionKind","modelAsString":true,"values":[{"value":"CEF"},{"value":"ATA"},{"value":"AAD"}]} 
 
 WARNING (PreCheck/DuplicateSchema): Duplicate Schema named AadConnectivityState -- type: undefined => "string",properties: {"connectivityState":{"$ref":"#/components/schemas/AadConnectivityState"}} => <none>,title: undefined => "The connectivity state of the external AAD solution ",enum: undefined => ["Discovered","NotLicensed","Connected"],x-ms-enum: undefined => {"name":"AadConnectivityState","modelAsString":true,"values":[{"value":"Discovered"},{"value":"NotLicensed"},{"value":"Connected"}]} 
+INFORMATION (FluentNamer): Load fluent settings
+INFORMATION (FluentJavaSettings): Option, string, add-inner : null
+INFORMATION (FluentJavaSettings): Option, string, remove-inner : null
+INFORMATION (FluentJavaSettings): Option, string, rename-model : null
+INFORMATION (FluentJavaSettings): Option, boolean, track1-naming : null
+INFORMATION (FluentJavaSettings): Option, boolean, resource-property-as-subresource : null
+INFORMATION (FluentJavaSettings): Option, string, name-for-ungrouped-operations : null
+INFORMATION (FluentJavaSettings): Option, string, pom-file : null
+INFORMATION (FluentJavaSettings): Option, string, package-version : null
+INFORMATION (FluentJavaSettings): Option, boolean, sdk-integration : null
+INFORMATION (FluentJavaSettings): Option, string, tag : package-composite-v3
+INFORMATION (FluentJavaSettings): Option, string, base-folder : .
+INFORMATION (FluentJavaSettings): Option, string, output-folder : generated
+INFORMATION (FluentJavaSettings): Option, string, azure-libraries-for-java-folder : null
+INFORMATION (FluentNamer): Transform code model
+INFORMATION (SchemaNameNormalization): Override default name, from ETag to Etag
+INFORMATION (SchemaNameNormalization): Rename schema from Enum3 to SettingsSettingName, based on operation group Settings
+INFORMATION (SchemaNameNormalization): Rename schema from Enum15 to TasksTaskUpdateActionType, based on operation group Tasks
+INFORMATION (SchemaNameNormalization): Rename schema from Enum17 to InformationProtectionPoliciesInformationProtectionPolicyName, based on operation group InformationProtectionPolicies
+INFORMATION (SchemaNameNormalization): Rename schema from Enum37 to AdaptiveApplicationControlsIncludePathRecommendations, based on operation group AdaptiveApplicationControls
+INFORMATION (SchemaNameNormalization): Rename schema from Enum38 to AdaptiveApplicationControlsSummary, based on operation group AdaptiveApplicationControls
+
+WARNING (NamingConflictResolver): Name conflict of choice with object Protocol
+INFORMATION (NamingConflictResolver): Rename choice from Protocol to ProtocolValue
+
+WARNING (NamingConflictResolver): Name conflict of choice with object ExternalSecuritySolutionKind
+INFORMATION (NamingConflictResolver): Rename choice from ExternalSecuritySolutionKind to ExternalSecuritySolutionKindValue
+
+WARNING (NamingConflictResolver): Name conflict of choice with object AadConnectivityState
+INFORMATION (NamingConflictResolver): Rename choice from AadConnectivityState to AadConnectivityStateValue
+INFORMATION (OperationNameNormalization): Rename operation from listBySubscription to list, in operation group IotSecuritySolution
+INFORMATION (OperationNameNormalization): Rename operation from get to getByResourceGroup, in operation group IotSecuritySolution
+
+WARNING (OperationNameNormalization): Conflict operation name found after attempted rename [get, list], in operation group IotAlertTypes
+
+WARNING (OperationNameNormalization): Conflict operation name found after attempted rename [get, list], in operation group IotAlerts
+
+WARNING (OperationNameNormalization): Conflict operation name found after attempted rename [get, list], in operation group IotRecommendationTypes
+
+WARNING (OperationNameNormalization): Conflict operation name found after attempted rename [get, list], in operation group IotRecommendations
+INFORMATION (OperationNameNormalization): Rename operation from get to getByResourceGroup, in operation group Automations
+
+WARNING (OperationNameNormalization): Conflict operation name found after attempted rename [list], in operation group AssessmentsMetadata
+
+WARNING (OperationNameNormalization): Conflict operation name found after attempted rename [list], in operation group SecureScoreControlDefinitions
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for ComplianceResult
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for Pricing
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for SettingResource
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for AdvancedThreatProtectionSetting
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for DeviceSecurityGroup
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for IoTSecuritySolutionModel
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for IoTSecuritySolutionAnalyticsModel
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for IoTSecurityAggregatedAlert
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for IoTSecurityAggregatedRecommendation
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for IotAlertType
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for IotRecommendationType
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for IotRecommendation
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for AscLocation
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for SecurityTask
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for AutoProvisioningSetting
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for Compliance
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for InformationProtectionPolicy
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for SecurityContact
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for WorkspaceSetting
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for RegulatoryComplianceStandard
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for RegulatoryComplianceControl
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for RegulatoryComplianceAssessment
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for SecuritySubAssessment
+INFORMATION (ResourceTypeNormalization): Change parent from TrackedResource to Resource, for Automation
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for TrackedResource
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for AlertsSuppressionRule
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for ServerVulnerabilityAssessment
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for SecurityAssessmentMetadata
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for SecurityAssessment
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for AdaptiveApplicationControlGroup
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for AdaptiveNetworkHardening
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for AllowedConnectionsResource
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for TopologyResource
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for Alert
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for JitNetworkAccessPolicy
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for DiscoveredSecuritySolution
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for SecuritySolutionsReferenceData
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for ExternalSecuritySolution
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for SecureScoreItem
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for SecureScoreControlDetails
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for SecureScoreControlDefinitionItem
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for SecuritySolution
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for ConnectorSetting
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for Scan
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for ScanResult
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for RuleResults
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for IotDefenderSettingsModel
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for IotSensor
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for Device
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for OnPremiseIotSensor
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for IotRecommendationModel
+INFORMATION (SchemaCleanup): Remove unused schema Resource
+INFORMATION (SchemaCleanup): Remove unused schema SecureScoreControlScore
+INFORMATION (FluentGen): Read YAML
+INFORMATION (FluentJavaSettings): Option, string, add-inner : null
+INFORMATION (FluentJavaSettings): Option, string, remove-inner : null
+INFORMATION (FluentJavaSettings): Option, string, rename-model : null
+INFORMATION (FluentJavaSettings): Option, boolean, track1-naming : null
+INFORMATION (FluentJavaSettings): Option, boolean, resource-property-as-subresource : null
+INFORMATION (FluentJavaSettings): Option, string, name-for-ungrouped-operations : null
+INFORMATION (FluentJavaSettings): Option, string, pom-file : null
+INFORMATION (FluentJavaSettings): Option, string, package-version : null
+INFORMATION (FluentJavaSettings): Option, boolean, sdk-integration : null
+INFORMATION (FluentJavaSettings): Option, string, tag : package-composite-v3
+INFORMATION (FluentJavaSettings): Option, string, base-folder : .
+INFORMATION (FluentJavaSettings): Option, string, output-folder : /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-security-generated
+INFORMATION (FluentJavaSettings): Option, string, azure-libraries-for-java-folder : null
+INFORMATION (FluentGen): Map code model to client model
+INFORMATION (FluentMapper): Add Inner to response types: [SecurityTask, OnPremiseIotSensor, AdaptiveApplicationControlGroups, ConnectorSetting, ExternalSecuritySolution, ComplianceResult, SecuritySubAssessment, RegulatoryComplianceStandard, IotAlert, SecurityAssessmentMetadata, AllowedConnectionsResource, TopologyResource, AutoProvisioningSetting, AdaptiveNetworkHardening, IotAlertTypeList, AlertsSuppressionRule, DiscoveredSecuritySolution, IotSensorsList, AscLocation, SettingResource, SecurityContact, IotSensor, ServerVulnerabilityAssessment, DeviceSecurityGroup, SecureScoreItem, SecuritySolution, Device, IotRecommendationType, Automation, RuleResults, SecureScoreControlDefinitionItem, Pricing, RegulatoryComplianceAssessment, IoTSecuritySolutionAnalyticsModelList, ServerVulnerabilityAssessmentsList, Scan, Alert, IotDefenderSettingsModel, OnPremiseIotSensorsList, SecureScoreControlDetails, Scans, IotAlertModel, IoTSecurityAggregatedAlert, RegulatoryComplianceControl, IotRecommendation, JitNetworkAccessRequest, Operation, PackageDownloads, SecuritySolutionsReferenceDataList, Compliance, AutomationValidationStatus, InformationProtectionPolicy, JitNetworkAccessPolicy, IotAlertType, ScanResults, SecurityAssessment, IoTSecurityAggregatedRecommendation, AdaptiveApplicationControlGroup, IoTSecuritySolutionModel, IotRecommendationTypeList, RulesResults, PricingList, IoTSecuritySolutionAnalyticsModel, IotDefenderSettingsList, WorkspaceSetting, IotRecommendationModel, AdvancedThreatProtectionSetting, ScanResult]
+INFORMATION (FluentMapper): Add Inner for type SecureScoreControlDefinitionItem: []
 
 ```
 **stderr**
 ```
-[pool-1-thread-2] INFO com.azure.autorest.fluentnamer.FluentNamer - Load fluent settings
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, add-inner : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, remove-inner : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, rename-model : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, track1-naming : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, resource-property-as-subresource : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, name-for-ungrouped-operations : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, pom-file : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, package-version : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, sdk-integration : null
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, tag : package-composite-v3
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, base-folder : .
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, output-folder : generated
-[pool-1-thread-2] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, azure-libraries-for-java-folder : null
-[pool-1-thread-2] INFO com.azure.autorest.fluentnamer.FluentNamer - Transform code model
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from ETag to Etag
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Rename schema from Enum3 to SettingsSettingName, based on operation group Settings
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Rename schema from Enum15 to TasksTaskUpdateActionType, based on operation group Tasks
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Rename schema from Enum17 to InformationProtectionPoliciesInformationProtectionPolicyName, based on operation group InformationProtectionPolicies
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Rename schema from Enum37 to AdaptiveApplicationControlsIncludePathRecommendations, based on operation group AdaptiveApplicationControls
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Rename schema from Enum38 to AdaptiveApplicationControlsSummary, based on operation group AdaptiveApplicationControls
-[pool-1-thread-2] WARN com.azure.autorest.fluent.transformer.NamingConflictResolver - Name conflict of choice with object Protocol
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.NamingConflictResolver - Rename choice from Protocol to ProtocolValue
-[pool-1-thread-2] WARN com.azure.autorest.fluent.transformer.NamingConflictResolver - Name conflict of choice with object ExternalSecuritySolutionKind
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.NamingConflictResolver - Rename choice from ExternalSecuritySolutionKind to ExternalSecuritySolutionKindValue
-[pool-1-thread-2] WARN com.azure.autorest.fluent.transformer.NamingConflictResolver - Name conflict of choice with object AadConnectivityState
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.NamingConflictResolver - Rename choice from AadConnectivityState to AadConnectivityStateValue
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.OperationNameNormalization - Rename operation from listBySubscription to list, in operation group IotSecuritySolution
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.OperationNameNormalization - Rename operation from get to getByResourceGroup, in operation group IotSecuritySolution
-[pool-1-thread-2] WARN com.azure.autorest.fluent.transformer.OperationNameNormalization - Conflict operation name found after attempted rename [get, list], in operation group IotAlertTypes
-[pool-1-thread-2] WARN com.azure.autorest.fluent.transformer.OperationNameNormalization - Conflict operation name found after attempted rename [get, list], in operation group IotAlerts
-[pool-1-thread-2] WARN com.azure.autorest.fluent.transformer.OperationNameNormalization - Conflict operation name found after attempted rename [get, list], in operation group IotRecommendationTypes
-[pool-1-thread-2] WARN com.azure.autorest.fluent.transformer.OperationNameNormalization - Conflict operation name found after attempted rename [get, list], in operation group IotRecommendations
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.OperationNameNormalization - Rename operation from get to getByResourceGroup, in operation group Automations
-[pool-1-thread-2] WARN com.azure.autorest.fluent.transformer.OperationNameNormalization - Conflict operation name found after attempted rename [list], in operation group AssessmentsMetadata
-[pool-1-thread-2] WARN com.azure.autorest.fluent.transformer.OperationNameNormalization - Conflict operation name found after attempted rename [list], in operation group SecureScoreControlDefinitions
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for ComplianceResult
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for Pricing
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for SettingResource
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for AdvancedThreatProtectionSetting
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for DeviceSecurityGroup
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for IoTSecuritySolutionModel
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for IoTSecuritySolutionAnalyticsModel
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for IoTSecurityAggregatedAlert
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for IoTSecurityAggregatedRecommendation
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for IotAlertType
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for IotRecommendationType
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for IotRecommendation
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for AscLocation
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for SecurityTask
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for AutoProvisioningSetting
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for Compliance
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for InformationProtectionPolicy
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for SecurityContact
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for WorkspaceSetting
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for RegulatoryComplianceStandard
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for RegulatoryComplianceControl
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for RegulatoryComplianceAssessment
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for SecuritySubAssessment
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from TrackedResource to Resource, for Automation
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for TrackedResource
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for AlertsSuppressionRule
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for ServerVulnerabilityAssessment
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for SecurityAssessmentMetadata
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for SecurityAssessment
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for AdaptiveApplicationControlGroup
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for AdaptiveNetworkHardening
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for AllowedConnectionsResource
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for TopologyResource
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for Alert
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for JitNetworkAccessPolicy
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for DiscoveredSecuritySolution
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for SecuritySolutionsReferenceData
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for ExternalSecuritySolution
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for SecureScoreItem
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for SecureScoreControlDetails
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for SecureScoreControlDefinitionItem
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for SecuritySolution
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for ConnectorSetting
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for Scan
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for ScanResult
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for RuleResults
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for IotDefenderSettingsModel
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for IotSensor
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for Device
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for OnPremiseIotSensor
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for IotRecommendationModel
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaCleanup - Remove unused schema Resource
-[pool-1-thread-2] INFO com.azure.autorest.fluent.transformer.SchemaCleanup - Remove unused schema SecureScoreControlScore
-[pool-1-thread-1] INFO com.azure.autorest.fluent.FluentGen - Read YAML
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, add-inner : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, remove-inner : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, rename-model : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, track1-naming : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, resource-property-as-subresource : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, name-for-ungrouped-operations : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, pom-file : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, package-version : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, sdk-integration : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, tag : package-composite-v3
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, base-folder : .
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, output-folder : /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-security-generated
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, azure-libraries-for-java-folder : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.FluentGen - Map code model to client model
-[pool-1-thread-1] INFO com.azure.autorest.fluent.mapper.FluentMapper - Add Inner to response types: [Alert, SecuritySolutionsReferenceDataList, IotAlertTypeList, IoTSecuritySolutionAnalyticsModelList, SecuritySubAssessment, IotAlert, Device, Scans, AdaptiveNetworkHardening, ConnectorSetting, IoTSecuritySolutionModel, SecuritySolution, PackageDownloads, IotAlertType, TopologyResource, SecureScoreItem, AutoProvisioningSetting, SecurityContact, AdaptiveApplicationControlGroup, RegulatoryComplianceStandard, Compliance, SecurityTask, ServerVulnerabilityAssessmentsList, ServerVulnerabilityAssessment, JitNetworkAccessPolicy, IoTSecurityAggregatedRecommendation, JitNetworkAccessRequest, PricingList, AdvancedThreatProtectionSetting, Automation, IotRecommendation, IotSensorsList, Operation, OnPremiseIotSensorsList, Scan, IotDefenderSettingsList, IotDefenderSettingsModel, SecureScoreControlDetails, AlertsSuppressionRule, Pricing, AllowedConnectionsResource, IotRecommendationTypeList, ScanResults, DiscoveredSecuritySolution, DeviceSecurityGroup, RegulatoryComplianceAssessment, SecurityAssessment, RuleResults, ScanResult, RulesResults, IotAlertModel, AutomationValidationStatus, OnPremiseIotSensor, SecureScoreControlDefinitionItem, RegulatoryComplianceControl, IoTSecurityAggregatedAlert, AdaptiveApplicationControlGroups, SettingResource, IotRecommendationType, InformationProtectionPolicy, ExternalSecuritySolution, IotSensor, ComplianceResult, IoTSecuritySolutionAnalyticsModel, IotRecommendationModel, WorkspaceSetting, AscLocation, SecurityAssessmentMetadata]
-[pool-1-thread-1] INFO com.azure.autorest.fluent.mapper.FluentMapper - Add Inner for type SecureScoreControlDefinitionItem: []
-[pool-1-thread-1] ERROR com.azure.autorest.fluent.FluentGen - Failed to successfully run fluentgen plugin java.lang.IllegalStateException: discriminator not found in type ExternalSecuritySolution and its parents
+
+ERROR (FluentGen): Failed to successfully run fluentgen plugin java.lang.IllegalStateException: discriminator not found in type ExternalSecuritySolution and its parents
 java.lang.IllegalStateException: discriminator not found in type ExternalSecuritySolution and its parents
 	at com.azure.autorest.util.SchemaUtil.getDiscriminatorSerializedName(SchemaUtil.java:100)
 	at com.azure.autorest.mapper.ModelMapper.map(ModelMapper.java:166)
@@ -3457,8 +3343,8 @@ java.lang.IllegalStateException: discriminator not found in type ExternalSecurit
 	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
 	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
 	at com.azure.autorest.mapper.ClientMapper.map(ClientMapper.java:100)
-	at com.azure.autorest.fluent.FluentGen.processInternal(FluentGen.java:100)
-	at com.azure.autorest.extension.base.plugin.NewPlugin.process(NewPlugin.java:186)
+	at com.azure.autorest.fluent.FluentGen.processInternal(FluentGen.java:106)
+	at com.azure.autorest.extension.base.plugin.NewPlugin.process(NewPlugin.java:202)
 	at com.azure.autorest.fluent.Main.lambda$main$1(Main.java:18)
 	at com.azure.autorest.extension.base.jsonrpc.Connection.lambda$dispatch$2(Connection.java:151)
 	at com.azure.autorest.extension.base.jsonrpc.Connection.lambda$process$3(Connection.java:270)
@@ -3467,6 +3353,34 @@ java.lang.IllegalStateException: discriminator not found in type ExternalSecurit
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:834)
+
+FATAL (FluentGen): Unhandled error: discriminator not found in type ExternalSecuritySolution and its parents
+java.lang.IllegalStateException: discriminator not found in type ExternalSecuritySolution and its parents
+	at com.azure.autorest.util.SchemaUtil.getDiscriminatorSerializedName(SchemaUtil.java:100)
+	at com.azure.autorest.mapper.ModelMapper.map(ModelMapper.java:166)
+	at com.azure.autorest.mapper.ModelMapper.map(ModelMapper.java:182)
+	at com.azure.autorest.mapper.ClientMapper.lambda$map$5(ClientMapper.java:97)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.DistinctOps$1$2.accept(DistinctOps.java:175)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:913)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:578)
+	at com.azure.autorest.mapper.ClientMapper.map(ClientMapper.java:100)
+	at com.azure.autorest.fluent.FluentGen.processInternal(FluentGen.java:106)
+	at com.azure.autorest.extension.base.plugin.NewPlugin.process(NewPlugin.java:202)
+	at com.azure.autorest.fluent.Main.lambda$main$1(Main.java:18)
+	at com.azure.autorest.extension.base.jsonrpc.Connection.lambda$dispatch$2(Connection.java:151)
+	at com.azure.autorest.extension.base.jsonrpc.Connection.lambda$process$3(Connection.java:270)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
   Error: Plugin fluentgen reported failure.
 
 ```
@@ -3542,17 +3456,17 @@ WARNING (PreCheck/SchemaMissingType): The schema 'ConnectionProperties' with an 
 
 WARNING (PreCheck/SchemaMissingType): The schema 'AcceptorProperties' with an undefined type and decalared properties is a bit ambigious. This has been auto-corrected to 'type:object'
 
-WARNING (PostOperationIdContainsUrlVerb/R2066/SDKViolation): OperationId should contain the verb: 'generatemap' in:'Maps_Generate'. Consider updating the operationId
-    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
-
 WARNING (PreCheck/SchemaMissingType): The schema 'Ipv4NetworkInterface' with an undefined type and decalared properties is a bit ambigious. This has been auto-corrected to 'type:object'
-
-WARNING (PostOperationIdContainsUrlVerb/R2066/SDKViolation): OperationId should contain the verb: 'machinegroups' in:'MachineGroups_Create'. Consider updating the operationId
-    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
 WARNING (PreCheck/SchemaMissingType): The schema 'Ipv6NetworkInterface' with an undefined type and decalared properties is a bit ambigious. This has been auto-corrected to 'type:object'
 
+WARNING (PostOperationIdContainsUrlVerb/R2066/SDKViolation): OperationId should contain the verb: 'generatemap' in:'Maps_Generate'. Consider updating the operationId
+    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
+
 WARNING (PreCheck/SchemaMissingType): The schema 'NetworkConfiguration' with an undefined type and decalared properties is a bit ambigious. This has been auto-corrected to 'type:object'
+
+WARNING (PostOperationIdContainsUrlVerb/R2066/SDKViolation): OperationId should contain the verb: 'machinegroups' in:'MachineGroups_Create'. Consider updating the operationId
+    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
 WARNING (PreCheck/SchemaMissingType): The schema 'AgentConfiguration' with an undefined type and decalared properties is a bit ambigious. This has been auto-corrected to 'type:object'
 
@@ -3618,25 +3532,25 @@ WARNING (XmsEnumValidation/R2018/SDKViolation): The enum types should have x-ms-
 WARNING (XmsEnumValidation/R2018/SDKViolation): The enum types should have x-ms-enum type extension set with appropriate options. Property name: provider
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
+WARNING (DescriptionAndTitleMissing/R4000/SDKViolation): 'properties' model/property lacks 'description' and 'title' property. Consider adding a 'description'/'title' element. Accurate description/title is essential for maintaining reference documentation.
+    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
+
 WARNING (XmsEnumValidation/R2018/SDKViolation): The enum types should have x-ms-enum type extension set with appropriate options. Property name: kind
+    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
+
+WARNING (DescriptionAndTitleMissing/R4000/SDKViolation): 'properties' model/property lacks 'description' and 'title' property. Consider adding a 'description'/'title' element. Accurate description/title is essential for maintaining reference documentation.
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
 WARNING (XmsEnumValidation/R2018/SDKViolation): The enum types should have x-ms-enum type extension set with appropriate options. Property name: provider
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
+WARNING (DescriptionAndTitleMissing/R4000/SDKViolation): 'properties' model/property lacks 'description' and 'title' property. Consider adding a 'description'/'title' element. Accurate description/title is essential for maintaining reference documentation.
+    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
+
 WARNING (XmsEnumValidation/R2018/SDKViolation): The enum types should have x-ms-enum type extension set with appropriate options. Property name: kind
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
 WARNING (XmsEnumValidation/R2018/SDKViolation): The enum types should have x-ms-enum type extension set with appropriate options. Property name: kind
-    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
-
-WARNING (DescriptionAndTitleMissing/R4000/SDKViolation): 'properties' model/property lacks 'description' and 'title' property. Consider adding a 'description'/'title' element. Accurate description/title is essential for maintaining reference documentation.
-    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
-
-WARNING (DescriptionAndTitleMissing/R4000/SDKViolation): 'properties' model/property lacks 'description' and 'title' property. Consider adding a 'description'/'title' element. Accurate description/title is essential for maintaining reference documentation.
-    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
-
-WARNING (DescriptionAndTitleMissing/R4000/SDKViolation): 'properties' model/property lacks 'description' and 'title' property. Consider adding a 'description'/'title' element. Accurate description/title is essential for maintaining reference documentation.
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
 WARNING (DescriptionAndTitleMissing/R4000/SDKViolation): 'nodes' model/property lacks 'description' and 'title' property. Consider adding a 'description'/'title' element. Accurate description/title is essential for maintaining reference documentation.
@@ -3656,65 +3570,68 @@ WARNING (OperationIdNounVerb/R1001/SDKViolation): Per the Noun_Verb convention f
 
 WARNING (PutInOperationName/R1006/SDKViolation): 'PUT' operation 'MachineGroups_Update' should use method name 'Create'. Note: If you have already shipped an SDK on top of this spec, fixing this warning may introduce a breaking change.
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
+INFORMATION (FluentNamer): Load fluent settings
+INFORMATION (FluentJavaSettings): Option, string, add-inner : null
+INFORMATION (FluentJavaSettings): Option, string, remove-inner : null
+INFORMATION (FluentJavaSettings): Option, string, rename-model : null
+INFORMATION (FluentJavaSettings): Option, boolean, track1-naming : null
+INFORMATION (FluentJavaSettings): Option, boolean, resource-property-as-subresource : null
+INFORMATION (FluentJavaSettings): Option, string, name-for-ungrouped-operations : null
+INFORMATION (FluentJavaSettings): Option, string, pom-file : null
+INFORMATION (FluentJavaSettings): Option, string, package-version : null
+INFORMATION (FluentJavaSettings): Option, boolean, sdk-integration : null
+INFORMATION (FluentJavaSettings): Option, string, tag : package-2015-11-preview
+INFORMATION (FluentJavaSettings): Option, string, base-folder : .
+INFORMATION (FluentJavaSettings): Option, string, output-folder : $(azure-libraries-for-java-folder)/azure-mgmt-operationalinsights/servicemap
+INFORMATION (FluentJavaSettings): Option, string, azure-libraries-for-java-folder : null
+INFORMATION (FluentNamer): Transform code model
+INFORMATION (SchemaNameNormalization): Override default name, from userName to username
+INFORMATION (SchemaNameNormalization): Create sealed choice HostingConfigurationProvider
+INFORMATION (SchemaNameNormalization): Create sealed choice ProcessHostingConfigurationProvider
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for CoreResource
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for Relationship
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for ClientGroupMember
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for MachinesSummary
+INFORMATION (ResourceTypeNormalization): Change parent from Resource to ProxyResource, for Summary
+INFORMATION (SchemaCleanup): Remove unused schema Resource
+INFORMATION (SchemaCleanup): Remove unused schema Summary
+INFORMATION (FluentGen): Read YAML
+INFORMATION (FluentJavaSettings): Option, string, add-inner : null
+INFORMATION (FluentJavaSettings): Option, string, remove-inner : null
+INFORMATION (FluentJavaSettings): Option, string, rename-model : null
+INFORMATION (FluentJavaSettings): Option, boolean, track1-naming : null
+INFORMATION (FluentJavaSettings): Option, boolean, resource-property-as-subresource : null
+INFORMATION (FluentJavaSettings): Option, string, name-for-ungrouped-operations : null
+INFORMATION (FluentJavaSettings): Option, string, pom-file : null
+INFORMATION (FluentJavaSettings): Option, string, package-version : null
+INFORMATION (FluentJavaSettings): Option, boolean, sdk-integration : null
+INFORMATION (FluentJavaSettings): Option, string, tag : package-2015-11-preview
+INFORMATION (FluentJavaSettings): Option, string, base-folder : .
+INFORMATION (FluentJavaSettings): Option, string, output-folder : /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-service-map-generated
+INFORMATION (FluentJavaSettings): Option, string, azure-libraries-for-java-folder : null
+INFORMATION (FluentGen): Map code model to client model
+INFORMATION (FluentMapper): Add Inner to response types: [Machine, MachinesSummary, MachineGroup, Process, Port, ClientGroup, Liveness, MapResponse, ClientGroupMembersCount, Connection, ClientGroupMember]
+INFORMATION (FluentGen): Java template for client model
+INFORMATION (FluentGen): Write Java
+INFORMATION (JavaFormatter): Java version: 11.0.9
+INFORMATION (JavaFormatter): Java formatter enabled
+INFORMATION (FluentGen): Write Xml
+INFORMATION (FluentGen): Write Text
 
 ```
 **stderr**
 ```
 FATAL: Failed validating: 'file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json', error encountered: TypeError: Cannot read property 'properties' of undefined
 FATAL: [object Object]
-(node:19645) UnhandledPromiseRejectionWarning: Error: Plugin model-validator reported failure.
+(node:19953) UnhandledPromiseRejectionWarning: Error: Plugin model-validator reported failure.
     at /home/runner/.autorest/@autorest_core@3.0.6326/node_modules/@autorest/core/dist/lib/pipeline/plugins/external.js:26:19
     at async ScheduleNode (/home/runner/.autorest/@autorest_core@3.0.6326/node_modules/@autorest/core/dist/lib/pipeline/pipeline.js:294:33)
 (Use `node --trace-warnings ...` to show where the warning was created)
-(node:19645) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 60)
-(node:19645) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
-[pool-1-thread-1] INFO com.azure.autorest.fluentnamer.FluentNamer - Load fluent settings
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, add-inner : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, remove-inner : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, rename-model : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, track1-naming : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, resource-property-as-subresource : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, name-for-ungrouped-operations : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, pom-file : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, package-version : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, sdk-integration : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, tag : package-2015-11-preview
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, base-folder : .
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, output-folder : $(azure-libraries-for-java-folder)/azure-mgmt-operationalinsights/servicemap
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, azure-libraries-for-java-folder : null
-[pool-1-thread-1] INFO com.azure.autorest.fluentnamer.FluentNamer - Transform code model
-[pool-1-thread-1] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Override default name, from userName to username
-[pool-1-thread-1] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Create sealed choice HostingConfigurationProvider
-[pool-1-thread-1] INFO com.azure.autorest.fluent.transformer.SchemaNameNormalization - Create sealed choice ProcessHostingConfigurationProvider
-[pool-1-thread-1] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for CoreResource
-[pool-1-thread-1] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for Relationship
-[pool-1-thread-1] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for ClientGroupMember
-[pool-1-thread-1] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for MachinesSummary
-[pool-1-thread-1] INFO com.azure.autorest.fluent.transformer.ResourceTypeNormalization - Change parent from Resource to ProxyResource, for Summary
-[pool-1-thread-1] INFO com.azure.autorest.fluent.transformer.SchemaCleanup - Remove unused schema Resource
-[pool-1-thread-1] INFO com.azure.autorest.fluent.transformer.SchemaCleanup - Remove unused schema Summary
-[pool-1-thread-1] INFO com.azure.autorest.fluent.FluentGen - Read YAML
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, add-inner : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, remove-inner : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, rename-model : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, track1-naming : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, resource-property-as-subresource : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, name-for-ungrouped-operations : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, pom-file : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, package-version : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, boolean, sdk-integration : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, tag : package-2015-11-preview
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, base-folder : .
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, output-folder : /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-service-map-generated
-[pool-1-thread-1] INFO com.azure.autorest.fluent.util.FluentJavaSettings - Option, string, azure-libraries-for-java-folder : null
-[pool-1-thread-1] INFO com.azure.autorest.fluent.FluentGen - Map code model to client model
-[pool-1-thread-1] INFO com.azure.autorest.fluent.mapper.FluentMapper - Add Inner to response types: [ClientGroupMembersCount, Process, ClientGroup, MachinesSummary, MapResponse, Liveness, ClientGroupMember, Port, MachineGroup, Machine, Connection]
-[pool-1-thread-1] INFO com.azure.autorest.fluent.FluentGen - Java template for client model
-[pool-1-thread-1] INFO com.azure.autorest.fluent.FluentGen - Write Java
-[pool-1-thread-1] INFO com.azure.autorest.fluent.checker.JavaFormatter - Java version: 11.0.9
-[pool-1-thread-1] INFO com.azure.autorest.fluent.checker.JavaFormatter - Java formatter enabled
-[pool-1-thread-1] INFO com.azure.autorest.fluent.FluentGen - Write Xml
-[pool-1-thread-1] INFO com.azure.autorest.fluent.FluentGen - Write Text
+(node:19953) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 60)
+(node:19953) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
   Error: Plugin model-validator reported failure.
 
 ```
@@ -3785,8 +3702,8 @@ FATAL: [object Object]
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  4.288 s
-[INFO] Finished at: 2020-11-18T18:51:08Z
+[INFO] Total time:  4.045 s
+[INFO] Finished at: 2020-11-19T03:43:00Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-servicefabric-generated: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/fluent/OperationsClient.java:[45,41] method list() is already defined in interface azure.resourcemanager.servicefabric.generated.fluent.OperationsClient
