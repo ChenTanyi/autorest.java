@@ -189,7 +189,9 @@ def main():
             logging.warning(codegen_result.stdout)
             error_log = codegen_result.stderr
             logging.error(error_log)
-            if 'Error: Plugin fluentnamer reported failure' in error_log or 'Error: Plugin fluentgen reported failure' in error_log:
+            if 'JavaCheck' not in error_log \
+                    and ('Error: Plugin fluentnamer reported failure' in error_log
+                         or 'Error: Plugin fluentgen reported failure' in error_log):
                 cause = 'codegen_java'
             else:
                 cause = 'codegen'
