@@ -11,7 +11,6 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.models.AddressSpace;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkBgpCommunities;
-import com.azure.resourcemanager.network.generated.models.VirtualNetworkPeeringLevel;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkPeeringState;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -76,18 +75,10 @@ public class VirtualNetworkPeeringInner extends SubResource {
     private SubResource remoteVirtualNetwork;
 
     /*
-     * The reference to the address space peered with the remote virtual
-     * network.
+     * The reference to the remote virtual network address space.
      */
     @JsonProperty(value = "properties.remoteAddressSpace")
     private AddressSpace remoteAddressSpace;
-
-    /*
-     * The reference to the current address space of the remote virtual
-     * network.
-     */
-    @JsonProperty(value = "properties.remoteVirtualNetworkAddressSpace")
-    private AddressSpace remoteVirtualNetworkAddressSpace;
 
     /*
      * The reference to the remote virtual network's Bgp Communities.
@@ -100,19 +91,6 @@ public class VirtualNetworkPeeringInner extends SubResource {
      */
     @JsonProperty(value = "properties.peeringState")
     private VirtualNetworkPeeringState peeringState;
-
-    /*
-     * The peering sync status of the virtual network peering.
-     */
-    @JsonProperty(value = "properties.peeringSyncLevel")
-    private VirtualNetworkPeeringLevel peeringSyncLevel;
-
-    /*
-     * Provided when user wants to sync the peering with address space on the
-     * remote virtual network after the address space is updated.
-     */
-    @JsonProperty(value = "properties.syncRemoteAddressSpace")
-    private Boolean syncRemoteAddressSpace;
 
     /*
      * The provisioning state of the virtual network peering resource.
@@ -268,7 +246,7 @@ public class VirtualNetworkPeeringInner extends SubResource {
     }
 
     /**
-     * Get the remoteAddressSpace property: The reference to the address space peered with the remote virtual network.
+     * Get the remoteAddressSpace property: The reference to the remote virtual network address space.
      *
      * @return the remoteAddressSpace value.
      */
@@ -277,36 +255,13 @@ public class VirtualNetworkPeeringInner extends SubResource {
     }
 
     /**
-     * Set the remoteAddressSpace property: The reference to the address space peered with the remote virtual network.
+     * Set the remoteAddressSpace property: The reference to the remote virtual network address space.
      *
      * @param remoteAddressSpace the remoteAddressSpace value to set.
      * @return the VirtualNetworkPeeringInner object itself.
      */
     public VirtualNetworkPeeringInner withRemoteAddressSpace(AddressSpace remoteAddressSpace) {
         this.remoteAddressSpace = remoteAddressSpace;
-        return this;
-    }
-
-    /**
-     * Get the remoteVirtualNetworkAddressSpace property: The reference to the current address space of the remote
-     * virtual network.
-     *
-     * @return the remoteVirtualNetworkAddressSpace value.
-     */
-    public AddressSpace remoteVirtualNetworkAddressSpace() {
-        return this.remoteVirtualNetworkAddressSpace;
-    }
-
-    /**
-     * Set the remoteVirtualNetworkAddressSpace property: The reference to the current address space of the remote
-     * virtual network.
-     *
-     * @param remoteVirtualNetworkAddressSpace the remoteVirtualNetworkAddressSpace value to set.
-     * @return the VirtualNetworkPeeringInner object itself.
-     */
-    public VirtualNetworkPeeringInner withRemoteVirtualNetworkAddressSpace(
-        AddressSpace remoteVirtualNetworkAddressSpace) {
-        this.remoteVirtualNetworkAddressSpace = remoteVirtualNetworkAddressSpace;
         return this;
     }
 
@@ -351,48 +306,6 @@ public class VirtualNetworkPeeringInner extends SubResource {
     }
 
     /**
-     * Get the peeringSyncLevel property: The peering sync status of the virtual network peering.
-     *
-     * @return the peeringSyncLevel value.
-     */
-    public VirtualNetworkPeeringLevel peeringSyncLevel() {
-        return this.peeringSyncLevel;
-    }
-
-    /**
-     * Set the peeringSyncLevel property: The peering sync status of the virtual network peering.
-     *
-     * @param peeringSyncLevel the peeringSyncLevel value to set.
-     * @return the VirtualNetworkPeeringInner object itself.
-     */
-    public VirtualNetworkPeeringInner withPeeringSyncLevel(VirtualNetworkPeeringLevel peeringSyncLevel) {
-        this.peeringSyncLevel = peeringSyncLevel;
-        return this;
-    }
-
-    /**
-     * Get the syncRemoteAddressSpace property: Provided when user wants to sync the peering with address space on the
-     * remote virtual network after the address space is updated.
-     *
-     * @return the syncRemoteAddressSpace value.
-     */
-    public Boolean syncRemoteAddressSpace() {
-        return this.syncRemoteAddressSpace;
-    }
-
-    /**
-     * Set the syncRemoteAddressSpace property: Provided when user wants to sync the peering with address space on the
-     * remote virtual network after the address space is updated.
-     *
-     * @param syncRemoteAddressSpace the syncRemoteAddressSpace value to set.
-     * @return the VirtualNetworkPeeringInner object itself.
-     */
-    public VirtualNetworkPeeringInner withSyncRemoteAddressSpace(Boolean syncRemoteAddressSpace) {
-        this.syncRemoteAddressSpace = syncRemoteAddressSpace;
-        return this;
-    }
-
-    /**
      * Get the provisioningState property: The provisioning state of the virtual network peering resource.
      *
      * @return the provisioningState value.
@@ -416,9 +329,6 @@ public class VirtualNetworkPeeringInner extends SubResource {
     public void validate() {
         if (remoteAddressSpace() != null) {
             remoteAddressSpace().validate();
-        }
-        if (remoteVirtualNetworkAddressSpace() != null) {
-            remoteVirtualNetworkAddressSpace().validate();
         }
         if (remoteBgpCommunities() != null) {
             remoteBgpCommunities().validate();

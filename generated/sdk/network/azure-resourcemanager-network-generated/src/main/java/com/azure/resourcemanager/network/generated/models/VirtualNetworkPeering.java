@@ -75,19 +75,11 @@ public interface VirtualNetworkPeering {
     SubResource remoteVirtualNetwork();
 
     /**
-     * Gets the remoteAddressSpace property: The reference to the address space peered with the remote virtual network.
+     * Gets the remoteAddressSpace property: The reference to the remote virtual network address space.
      *
      * @return the remoteAddressSpace value.
      */
     AddressSpace remoteAddressSpace();
-
-    /**
-     * Gets the remoteVirtualNetworkAddressSpace property: The reference to the current address space of the remote
-     * virtual network.
-     *
-     * @return the remoteVirtualNetworkAddressSpace value.
-     */
-    AddressSpace remoteVirtualNetworkAddressSpace();
 
     /**
      * Gets the remoteBgpCommunities property: The reference to the remote virtual network's Bgp Communities.
@@ -102,21 +94,6 @@ public interface VirtualNetworkPeering {
      * @return the peeringState value.
      */
     VirtualNetworkPeeringState peeringState();
-
-    /**
-     * Gets the peeringSyncLevel property: The peering sync status of the virtual network peering.
-     *
-     * @return the peeringSyncLevel value.
-     */
-    VirtualNetworkPeeringLevel peeringSyncLevel();
-
-    /**
-     * Gets the syncRemoteAddressSpace property: Provided when user wants to sync the peering with address space on the
-     * remote virtual network after the address space is updated.
-     *
-     * @return the syncRemoteAddressSpace value.
-     */
-    Boolean syncRemoteAddressSpace();
 
     /**
      * Gets the provisioningState property: The provisioning state of the virtual network peering resource.
