@@ -9,6 +9,7 @@ import logging
 import argparse
 import dataclasses
 import re
+import datetime
 from typing import List
 
 
@@ -106,7 +107,9 @@ def report_markdown(results: List[CodegenResult]):
     if sdks_failure_build:
         logging.error(f'failure at build for PRs: {sdks_failure_build}')
 
-    lines = ['# Java Codegen Report']
+    lines = []
+    lines.append('# Java Codegen Report')
+    lines.append('Generated on ' + datetime.datetime.now().isoformat())
     lines.append('## Success')
     for sdk in sdks_success:
         lines.append('- ' + sdk)
