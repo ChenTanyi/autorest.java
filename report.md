@@ -1,5 +1,5 @@
 # Java Codegen Report
-Generated on 2020-11-19T03:53:03.922821
+Generated on 2020-11-19T10:07:43.956880
 ## Success
 - EnterpriseKnowledgeGraph
 - addons
@@ -17,6 +17,7 @@ Generated on 2020-11-19T03:53:03.922821
 - azure-kusto
 - azureactivedirectory
 - azuredata
+- azurestack
 - azurestackhci
 - baremetalinfrastructure
 - batch
@@ -24,6 +25,7 @@ Generated on 2020-11-19T03:53:03.922821
 - billing
 - blockchain
 - blueprint
+- botservice
 - cdn
 - cloudshell
 - cognitiveservices
@@ -80,6 +82,7 @@ Generated on 2020-11-19T03:53:03.922821
 - marketplaceordering
 - migrateprojects
 - msi
+- netapp
 - notificationhubs
 - operationalinsights
 - operationsmanagement
@@ -89,6 +92,7 @@ Generated on 2020-11-19T03:53:03.922821
 - powerbidedicated
 - powerbiembedded
 - privatedns
+- recoveryservices
 - recoveryservicesbackup
 - recoveryservicessiterecovery
 - redhatopenshift
@@ -127,13 +131,9 @@ Generated on 2020-11-19T03:53:03.922821
 - security
 
 ## Failure at Build
-- azurestack
-- botservice
 - iotspaces
 - logic
 - machinelearningcompute
-- netapp
-- recoveryservices
 - reservations
 - servicefabric
 - sqlvirtualmachine
@@ -160,105 +160,6 @@ WARNING (PreCheck/CheckDuplicateSchemas): Checking for duplicate schemas, this c
 ```
 FATAL: Error: Name is empty!
   Error: Plugin pre-namer reported failure.
-
-```
-</details>
-
-<details>
-<summary>azurestack</summary>
-
-**stdout**
-```
-[INFO] Scanning for projects...
-[INFO] 
-[INFO] --< com.azure.resourcemanager:azure-resourcemanager-azurestack-generated >--
-[INFO] Building Microsoft Azure SDK for AzureStack Management 1.0.0-beta.1
-[INFO] --------------------------------[ jar ]---------------------------------
-[INFO] 
-[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ azure-resourcemanager-azurestack-generated ---
-[INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-azurestack-generated/src/main/resources
-[INFO] 
-[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ azure-resourcemanager-azurestack-generated ---
-[INFO] Changes detected - recompiling the module!
-[INFO] Compiling 82 source files to /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-azurestack-generated/target/classes
-[INFO] Some messages have been simplified; recompile with -Xdiags:verbose to get full output
-[INFO] -------------------------------------------------------------
-[ERROR] COMPILATION ERROR : 
-[INFO] -------------------------------------------------------------
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-azurestack-generated/src/main/java/azure/resourcemanager/azurestack/generated/implementation/RegistrationImpl.java:[172,56] incompatible types: java.lang.String cannot be converted to azure.resourcemanager.azurestack.generated.models.Location
-[INFO] 1 error
-[INFO] -------------------------------------------------------------
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  2.949 s
-[INFO] Finished at: 2020-11-19T03:13:42Z
-[INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-azurestack-generated: Compilation failure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-azurestack-generated/src/main/java/azure/resourcemanager/azurestack/generated/implementation/RegistrationImpl.java:[172,56] incompatible types: java.lang.String cannot be converted to azure.resourcemanager.azurestack.generated.models.Location
-[ERROR] 
-[ERROR] -> [Help 1]
-[ERROR] 
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
-
-```
-**stderr**
-```
-
-```
-</details>
-
-<details>
-<summary>botservice</summary>
-
-**stdout**
-```
-[INFO] Scanning for projects...
-[INFO] 
-[INFO] --< com.azure.resourcemanager:azure-resourcemanager-botservice-generated >--
-[INFO] Building Microsoft Azure SDK for Botservice Management 1.0.0-beta.1
-[INFO] --------------------------------[ jar ]---------------------------------
-[INFO] 
-[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ azure-resourcemanager-botservice-generated ---
-[INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-botservice-generated/src/main/resources
-[INFO] 
-[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ azure-resourcemanager-botservice-generated ---
-[INFO] Changes detected - recompiling the module!
-[INFO] Compiling 100 source files to /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-botservice-generated/target/classes
-[INFO] Some messages have been simplified; recompile with -Xdiags:verbose to get full output
-[INFO] -------------------------------------------------------------
-[ERROR] COMPILATION ERROR : 
-[INFO] -------------------------------------------------------------
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-botservice-generated/src/main/java/azure/resourcemanager/botservice/generated/implementation/BotChannelImpl.java:[156,67] incompatible types: azure.resourcemanager.botservice.generated.models.ChannelName cannot be converted to java.lang.String
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-botservice-generated/src/main/java/azure/resourcemanager/botservice/generated/implementation/BotChannelImpl.java:[166,67] incompatible types: azure.resourcemanager.botservice.generated.models.ChannelName cannot be converted to java.lang.String
-[INFO] 2 errors 
-[INFO] -------------------------------------------------------------
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  3.298 s
-[INFO] Finished at: 2020-11-19T03:16:02Z
-[INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-botservice-generated: Compilation failure: Compilation failure: 
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-botservice-generated/src/main/java/azure/resourcemanager/botservice/generated/implementation/BotChannelImpl.java:[156,67] incompatible types: azure.resourcemanager.botservice.generated.models.ChannelName cannot be converted to java.lang.String
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-botservice-generated/src/main/java/azure/resourcemanager/botservice/generated/implementation/BotChannelImpl.java:[166,67] incompatible types: azure.resourcemanager.botservice.generated.models.ChannelName cannot be converted to java.lang.String
-[ERROR] -> [Help 1]
-[ERROR] 
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
-
-```
-**stderr**
-```
 
 ```
 </details>
@@ -1120,7 +1021,7 @@ INFORMATION (FluentJavaSettings): Option, string, base-folder : .
 INFORMATION (FluentJavaSettings): Option, string, output-folder : /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-deploymentmanager-generated
 INFORMATION (FluentJavaSettings): Option, string, azure-libraries-for-java-folder : null
 INFORMATION (FluentGen): Map code model to client model
-INFORMATION (FluentMapper): Add Inner to response types: [ArtifactSource, ServiceTopologyResource, Rollout, ServiceResource, RolloutRequest, OperationsList, StepResource, ServiceUnitResource]
+INFORMATION (FluentMapper): Add Inner to response types: [Rollout, StepResource, ServiceUnitResource, OperationsList, ServiceResource, ServiceTopologyResource, RolloutRequest, ArtifactSource]
 INFORMATION (FluentGen): Java template for client model
 INFORMATION (ResourceCreate): ResourceCreate: Fluent model ServiceTopologyResource, method reference createOrUpdate, body parameter ServiceTopologyResourceInner
 INFORMATION (ResourceParser): Fluent model ServiceTopologyResource as category RESOURCE_GROUP_AS_PARENT
@@ -1155,12 +1056,9 @@ INFORMATION (ResourceDelete): ResourceDelete: Fluent model ArtifactSource, metho
 ```
 **stderr**
 ```
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 
-ERROR (FluentGen): Failed to successfully run fluentgen plugin java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@553ab899 and com.azure.autorest.model.clientmodel.ProxyMethodParameter@27463a20)
-java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@553ab899 and com.azure.autorest.model.clientmodel.ProxyMethodParameter@27463a20)
+ERROR (FluentGen): Failed to successfully run fluentgen plugin java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@150f5255 and com.azure.autorest.model.clientmodel.ProxyMethodParameter@2e195d70)
+java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@150f5255 and com.azure.autorest.model.clientmodel.ProxyMethodParameter@2e195d70)
 	at java.base/java.util.stream.Collectors.duplicateKeyException(Collectors.java:133)
 	at java.base/java.util.stream.Collectors.lambda$uniqKeysMapAccumulator$1(Collectors.java:180)
 	at java.base/java.util.stream.ReduceOps$3ReducingSink.accept(ReduceOps.java:169)
@@ -1198,8 +1096,8 @@ java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:834)
 
-FATAL (FluentGen): Unhandled error: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@553ab899 and com.azure.autorest.model.clientmodel.ProxyMethodParameter@27463a20)
-java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@553ab899 and com.azure.autorest.model.clientmodel.ProxyMethodParameter@27463a20)
+FATAL (FluentGen): Unhandled error: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@150f5255 and com.azure.autorest.model.clientmodel.ProxyMethodParameter@2e195d70)
+java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@150f5255 and com.azure.autorest.model.clientmodel.ProxyMethodParameter@2e195d70)
 	at java.base/java.util.stream.Collectors.duplicateKeyException(Collectors.java:133)
 	at java.base/java.util.stream.Collectors.lambda$uniqKeysMapAccumulator$1(Collectors.java:180)
 	at java.base/java.util.stream.ReduceOps$3ReducingSink.accept(ReduceOps.java:169)
@@ -1402,14 +1300,11 @@ INFORMATION (FluentJavaSettings): Option, string, base-folder : .
 INFORMATION (FluentJavaSettings): Option, string, output-folder : /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-intune-generated
 INFORMATION (FluentJavaSettings): Option, string, azure-libraries-for-java-folder : null
 INFORMATION (FluentGen): Map code model to client model
-INFORMATION (FluentMapper): Add Inner to response types: [GroupItem, WipeDeviceOperationResult, FlaggedUser, OperationResult, AndroidMamPolicy, IOsmamPolicy, Application, FlaggedEnrolledApp, Location, Device]
+INFORMATION (FluentMapper): Add Inner to response types: [WipeDeviceOperationResult, IOsmamPolicy, Application, AndroidMamPolicy, Device, OperationResult, Location, GroupItem, FlaggedUser, FlaggedEnrolledApp]
 
 ```
 **stderr**
 ```
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 
 ERROR (FluentGen): Failed to successfully run fluentgen plugin java.lang.IllegalArgumentException: [JavaCheck/SchemaError] item name value not found among properties of client model StatusesDefault
 java.lang.IllegalArgumentException: [JavaCheck/SchemaError] item name value not found among properties of client model StatusesDefault
@@ -1467,614 +1362,23 @@ java.lang.IllegalArgumentException: [JavaCheck/SchemaError] item name value not 
 [INFO] 
 [INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ azure-resourcemanager-iotspaces-generated ---
 [INFO] Changes detected - recompiling the module!
-[INFO] Compiling 37 source files to /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/target/classes
+[INFO] Compiling 39 source files to /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/target/classes
 [INFO] Some messages have been simplified; recompile with -Xdiags:verbose to get full output
 [INFO] -------------------------------------------------------------
 [ERROR] COMPILATION ERROR : 
 [INFO] -------------------------------------------------------------
 [ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/IoTSpacesManager.java:[52,58] incompatible types: java.lang.String cannot be converted to java.util.UUID
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/IoTSpacesManager.java:[194,60] cannot find symbol
-  symbol:   method getIoTSpaces()
-  location: variable clientObject of type azure.resourcemanager.iotspaces.generated.fluent.IoTSpacesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/IoTSpacesManager.java:[202,62] cannot find symbol
-  symbol:   method getOperations()
-  location: variable clientObject of type azure.resourcemanager.iotspaces.generated.fluent.IoTSpacesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesDescriptionImpl.java:[88,17] cannot find symbol
-  symbol:   method getIoTSpaces()
-  location: interface azure.resourcemanager.iotspaces.generated.fluent.IoTSpacesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesDescriptionImpl.java:[97,17] cannot find symbol
-  symbol:   method getIoTSpaces()
-  location: interface azure.resourcemanager.iotspaces.generated.fluent.IoTSpacesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesDescriptionImpl.java:[117,17] cannot find symbol
-  symbol:   method getIoTSpaces()
-  location: interface azure.resourcemanager.iotspaces.generated.fluent.IoTSpacesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesDescriptionImpl.java:[126,17] cannot find symbol
-  symbol:   method getIoTSpaces()
-  location: interface azure.resourcemanager.iotspaces.generated.fluent.IoTSpacesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesDescriptionImpl.java:[142,17] cannot find symbol
-  symbol:   method getIoTSpaces()
-  location: interface azure.resourcemanager.iotspaces.generated.fluent.IoTSpacesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesDescriptionImpl.java:[152,17] cannot find symbol
-  symbol:   method getIoTSpaces()
-  location: interface azure.resourcemanager.iotspaces.generated.fluent.IoTSpacesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientBuilder.java:[143,13] constructor IoTSpacesClientImpl in class azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl cannot be applied to given types;
-  required: azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-  found: com.azure.core.http.HttpPipeline,com.azure.core.util.serializer.SerializerAdapter,java.time.Duration,com.azure.core.management.AzureEnvironment,java.util.UUID,java.lang.String
-  reason: actual and formal argument lists differ in length
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[65,60] cannot find symbol
-  symbol:   method getHttpPipeline()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[65,86] cannot find symbol
-  symbol:   method getSerializerAdapter()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[207,24] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[213,24] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[232,40] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[233,40] cannot find symbol
-  symbol:   method getApiVersion()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[234,40] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[239,95] cannot find symbol
-  symbol:   method getContext()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[239,31] incompatible types: reactor.core.publisher.Mono<java.lang.Object> cannot be converted to reactor.core.publisher.Mono<com.azure.core.http.rest.Response<azure.resourcemanager.iotspaces.generated.fluent.models.IoTSpacesDescriptionInner>>
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[256,24] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[262,24] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[276,30] cannot find symbol
-  symbol:   method mergeContext(com.azure.core.util.Context)
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[279,28] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[280,28] cannot find symbol
-  symbol:   method getApiVersion()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[281,28] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[359,24] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[365,24] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[390,40] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[391,40] cannot find symbol
-  symbol:   method getApiVersion()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[392,40] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[398,95] cannot find symbol
-  symbol:   method getContext()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[398,31] incompatible types: reactor.core.publisher.Mono<java.lang.Object> cannot be converted to reactor.core.publisher.Mono<com.azure.core.http.rest.Response<reactor.core.publisher.Flux<java.nio.ByteBuffer>>>
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[418,24] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[424,24] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[444,30] cannot find symbol
-  symbol:   method mergeContext(com.azure.core.util.Context)
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[447,28] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[448,28] cannot find symbol
-  symbol:   method getApiVersion()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[449,28] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[479,28] cannot find symbol
-  symbol:   method getHttpPipeline()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[502,30] cannot find symbol
-  symbol:   method mergeContext(com.azure.core.util.Context)
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[509,28] cannot find symbol
-  symbol:   method getHttpPipeline()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[572,22] invalid method reference
-  cannot find symbol
-    symbol:   method getLroFinalResultOrError()
-    location: class azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[594,22] invalid method reference
-  cannot find symbol
-    symbol:   method getLroFinalResultOrError()
-    location: class azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[650,24] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[656,24] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[682,40] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[683,40] cannot find symbol
-  symbol:   method getApiVersion()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[684,40] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[690,95] cannot find symbol
-  symbol:   method getContext()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[690,31] incompatible types: reactor.core.publisher.Mono<java.lang.Object> cannot be converted to reactor.core.publisher.Mono<com.azure.core.http.rest.Response<reactor.core.publisher.Flux<java.nio.ByteBuffer>>>
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[711,24] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[717,24] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[738,30] cannot find symbol
-  symbol:   method mergeContext(com.azure.core.util.Context)
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[741,28] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[742,28] cannot find symbol
-  symbol:   method getApiVersion()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[743,28] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[771,28] cannot find symbol
-  symbol:   method getHttpPipeline()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[795,30] cannot find symbol
-  symbol:   method mergeContext(com.azure.core.util.Context)
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[802,28] cannot find symbol
-  symbol:   method getHttpPipeline()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[862,22] invalid method reference
-  cannot find symbol
-    symbol:   method getLroFinalResultOrError()
-    location: class azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[885,22] invalid method reference
-  cannot find symbol
-    symbol:   method getLroFinalResultOrError()
-    location: class azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[938,24] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[944,24] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[963,40] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[964,40] cannot find symbol
-  symbol:   method getApiVersion()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[965,40] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[970,95] cannot find symbol
-  symbol:   method getContext()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[970,31] incompatible types: reactor.core.publisher.Mono<java.lang.Object> cannot be converted to reactor.core.publisher.Mono<com.azure.core.http.rest.Response<reactor.core.publisher.Flux<java.nio.ByteBuffer>>>
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[987,24] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[993,24] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1007,30] cannot find symbol
-  symbol:   method mergeContext(com.azure.core.util.Context)
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1010,28] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1011,28] cannot find symbol
-  symbol:   method getApiVersion()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1012,28] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1037,28] cannot find symbol
-  symbol:   method getHttpPipeline()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1057,30] cannot find symbol
-  symbol:   method mergeContext(com.azure.core.util.Context)
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1063,28] cannot find symbol
-  symbol:   method getHttpPipeline()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1114,81] invalid method reference
-  cannot find symbol
-    symbol:   method getLroFinalResultOrError()
-    location: class azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1133,22] invalid method reference
-  cannot find symbol
-    symbol:   method getLroFinalResultOrError()
-    location: class azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1176,24] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1182,24] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1194,40] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1195,40] cannot find symbol
-  symbol:   method getApiVersion()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1196,40] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1202,28] cannot find symbol
-  symbol:   method getRequest()
-  location: variable res of type java.lang.Object
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1203,28] cannot find symbol
-  symbol:   method getStatusCode()
-  location: variable res of type java.lang.Object
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1204,28] cannot find symbol
-  symbol:   method getHeaders()
-  location: variable res of type java.lang.Object
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1205,28] cannot find symbol
-  symbol:   method getValue()
-  location: variable res of type java.lang.Object
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1206,28] cannot find symbol
-  symbol:   method getValue()
-  location: variable res of type java.lang.Object
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1208,95] cannot find symbol
-  symbol:   method getContext()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1222,24] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1228,24] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1235,30] cannot find symbol
-  symbol:   method mergeContext(com.azure.core.util.Context)
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1238,28] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1239,28] cannot find symbol
-  symbol:   method getApiVersion()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1240,28] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1319,24] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1325,24] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1341,40] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1342,40] cannot find symbol
-  symbol:   method getApiVersion()
-  location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[INFO] 100 errors 
+[INFO] 1 error
 [INFO] -------------------------------------------------------------
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  2.443 s
-[INFO] Finished at: 2020-11-19T03:29:08Z
+[INFO] Total time:  2.975 s
+[INFO] Finished at: 2020-11-19T09:40:35Z
 [INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-iotspaces-generated: Compilation failure: Compilation failure: 
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-iotspaces-generated: Compilation failure
 [ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/IoTSpacesManager.java:[52,58] incompatible types: java.lang.String cannot be converted to java.util.UUID
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/IoTSpacesManager.java:[194,60] cannot find symbol
-[ERROR]   symbol:   method getIoTSpaces()
-[ERROR]   location: variable clientObject of type azure.resourcemanager.iotspaces.generated.fluent.IoTSpacesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/IoTSpacesManager.java:[202,62] cannot find symbol
-[ERROR]   symbol:   method getOperations()
-[ERROR]   location: variable clientObject of type azure.resourcemanager.iotspaces.generated.fluent.IoTSpacesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesDescriptionImpl.java:[88,17] cannot find symbol
-[ERROR]   symbol:   method getIoTSpaces()
-[ERROR]   location: interface azure.resourcemanager.iotspaces.generated.fluent.IoTSpacesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesDescriptionImpl.java:[97,17] cannot find symbol
-[ERROR]   symbol:   method getIoTSpaces()
-[ERROR]   location: interface azure.resourcemanager.iotspaces.generated.fluent.IoTSpacesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesDescriptionImpl.java:[117,17] cannot find symbol
-[ERROR]   symbol:   method getIoTSpaces()
-[ERROR]   location: interface azure.resourcemanager.iotspaces.generated.fluent.IoTSpacesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesDescriptionImpl.java:[126,17] cannot find symbol
-[ERROR]   symbol:   method getIoTSpaces()
-[ERROR]   location: interface azure.resourcemanager.iotspaces.generated.fluent.IoTSpacesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesDescriptionImpl.java:[142,17] cannot find symbol
-[ERROR]   symbol:   method getIoTSpaces()
-[ERROR]   location: interface azure.resourcemanager.iotspaces.generated.fluent.IoTSpacesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesDescriptionImpl.java:[152,17] cannot find symbol
-[ERROR]   symbol:   method getIoTSpaces()
-[ERROR]   location: interface azure.resourcemanager.iotspaces.generated.fluent.IoTSpacesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientBuilder.java:[143,13] constructor IoTSpacesClientImpl in class azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl cannot be applied to given types;
-[ERROR]   required: azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR]   found: com.azure.core.http.HttpPipeline,com.azure.core.util.serializer.SerializerAdapter,java.time.Duration,com.azure.core.management.AzureEnvironment,java.util.UUID,java.lang.String
-[ERROR]   reason: actual and formal argument lists differ in length
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[65,60] cannot find symbol
-[ERROR]   symbol:   method getHttpPipeline()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[65,86] cannot find symbol
-[ERROR]   symbol:   method getSerializerAdapter()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[207,24] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[213,24] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[232,40] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[233,40] cannot find symbol
-[ERROR]   symbol:   method getApiVersion()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[234,40] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[239,95] cannot find symbol
-[ERROR]   symbol:   method getContext()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[239,31] incompatible types: reactor.core.publisher.Mono<java.lang.Object> cannot be converted to reactor.core.publisher.Mono<com.azure.core.http.rest.Response<azure.resourcemanager.iotspaces.generated.fluent.models.IoTSpacesDescriptionInner>>
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[256,24] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[262,24] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[276,30] cannot find symbol
-[ERROR]   symbol:   method mergeContext(com.azure.core.util.Context)
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[279,28] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[280,28] cannot find symbol
-[ERROR]   symbol:   method getApiVersion()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[281,28] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[359,24] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[365,24] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[390,40] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[391,40] cannot find symbol
-[ERROR]   symbol:   method getApiVersion()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[392,40] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[398,95] cannot find symbol
-[ERROR]   symbol:   method getContext()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[398,31] incompatible types: reactor.core.publisher.Mono<java.lang.Object> cannot be converted to reactor.core.publisher.Mono<com.azure.core.http.rest.Response<reactor.core.publisher.Flux<java.nio.ByteBuffer>>>
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[418,24] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[424,24] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[444,30] cannot find symbol
-[ERROR]   symbol:   method mergeContext(com.azure.core.util.Context)
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[447,28] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[448,28] cannot find symbol
-[ERROR]   symbol:   method getApiVersion()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[449,28] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[479,28] cannot find symbol
-[ERROR]   symbol:   method getHttpPipeline()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[502,30] cannot find symbol
-[ERROR]   symbol:   method mergeContext(com.azure.core.util.Context)
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[509,28] cannot find symbol
-[ERROR]   symbol:   method getHttpPipeline()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[572,22] invalid method reference
-[ERROR]   cannot find symbol
-[ERROR]     symbol:   method getLroFinalResultOrError()
-[ERROR]     location: class azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[594,22] invalid method reference
-[ERROR]   cannot find symbol
-[ERROR]     symbol:   method getLroFinalResultOrError()
-[ERROR]     location: class azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[650,24] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[656,24] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[682,40] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[683,40] cannot find symbol
-[ERROR]   symbol:   method getApiVersion()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[684,40] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[690,95] cannot find symbol
-[ERROR]   symbol:   method getContext()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[690,31] incompatible types: reactor.core.publisher.Mono<java.lang.Object> cannot be converted to reactor.core.publisher.Mono<com.azure.core.http.rest.Response<reactor.core.publisher.Flux<java.nio.ByteBuffer>>>
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[711,24] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[717,24] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[738,30] cannot find symbol
-[ERROR]   symbol:   method mergeContext(com.azure.core.util.Context)
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[741,28] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[742,28] cannot find symbol
-[ERROR]   symbol:   method getApiVersion()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[743,28] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[771,28] cannot find symbol
-[ERROR]   symbol:   method getHttpPipeline()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[795,30] cannot find symbol
-[ERROR]   symbol:   method mergeContext(com.azure.core.util.Context)
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[802,28] cannot find symbol
-[ERROR]   symbol:   method getHttpPipeline()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[862,22] invalid method reference
-[ERROR]   cannot find symbol
-[ERROR]     symbol:   method getLroFinalResultOrError()
-[ERROR]     location: class azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[885,22] invalid method reference
-[ERROR]   cannot find symbol
-[ERROR]     symbol:   method getLroFinalResultOrError()
-[ERROR]     location: class azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[938,24] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[944,24] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[963,40] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[964,40] cannot find symbol
-[ERROR]   symbol:   method getApiVersion()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[965,40] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[970,95] cannot find symbol
-[ERROR]   symbol:   method getContext()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[970,31] incompatible types: reactor.core.publisher.Mono<java.lang.Object> cannot be converted to reactor.core.publisher.Mono<com.azure.core.http.rest.Response<reactor.core.publisher.Flux<java.nio.ByteBuffer>>>
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[987,24] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[993,24] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1007,30] cannot find symbol
-[ERROR]   symbol:   method mergeContext(com.azure.core.util.Context)
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1010,28] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1011,28] cannot find symbol
-[ERROR]   symbol:   method getApiVersion()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1012,28] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1037,28] cannot find symbol
-[ERROR]   symbol:   method getHttpPipeline()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1057,30] cannot find symbol
-[ERROR]   symbol:   method mergeContext(com.azure.core.util.Context)
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1063,28] cannot find symbol
-[ERROR]   symbol:   method getHttpPipeline()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1114,81] invalid method reference
-[ERROR]   cannot find symbol
-[ERROR]     symbol:   method getLroFinalResultOrError()
-[ERROR]     location: class azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1133,22] invalid method reference
-[ERROR]   cannot find symbol
-[ERROR]     symbol:   method getLroFinalResultOrError()
-[ERROR]     location: class azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1176,24] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1182,24] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1194,40] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1195,40] cannot find symbol
-[ERROR]   symbol:   method getApiVersion()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1196,40] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1202,28] cannot find symbol
-[ERROR]   symbol:   method getRequest()
-[ERROR]   location: variable res of type java.lang.Object
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1203,28] cannot find symbol
-[ERROR]   symbol:   method getStatusCode()
-[ERROR]   location: variable res of type java.lang.Object
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1204,28] cannot find symbol
-[ERROR]   symbol:   method getHeaders()
-[ERROR]   location: variable res of type java.lang.Object
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1205,28] cannot find symbol
-[ERROR]   symbol:   method getValue()
-[ERROR]   location: variable res of type java.lang.Object
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1206,28] cannot find symbol
-[ERROR]   symbol:   method getValue()
-[ERROR]   location: variable res of type java.lang.Object
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1208,95] cannot find symbol
-[ERROR]   symbol:   method getContext()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1222,24] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1228,24] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1235,30] cannot find symbol
-[ERROR]   symbol:   method mergeContext(com.azure.core.util.Context)
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1238,28] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1239,28] cannot find symbol
-[ERROR]   symbol:   method getApiVersion()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1240,28] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1319,24] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1325,24] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1341,40] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/implementation/IoTSpacesClientImpl.java:[1342,40] cannot find symbol
-[ERROR]   symbol:   method getApiVersion()
-[ERROR]   location: variable client of type azure.resourcemanager.iotspaces.generated.implementation.IoTSpacesClientImpl
+[ERROR] 
 [ERROR] -> [Help 1]
 [ERROR] 
 [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
@@ -2118,8 +1422,8 @@ java.lang.IllegalArgumentException: [JavaCheck/SchemaError] item name value not 
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  2.363 s
-[INFO] Finished at: 2020-11-19T03:30:16Z
+[INFO] Total time:  2.483 s
+[INFO] Finished at: 2020-11-19T09:41:51Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-logic-generated: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-logic-generated/src/main/java/azure/resourcemanager/logic/generated/implementation/IntegrationServiceEnvironmentNetworkHealthsImpl.java:[49,206] ')' expected
@@ -2273,55 +1577,6 @@ https://aka.ms/autorest
 </details>
 
 <details>
-<summary>netapp</summary>
-
-**stdout**
-```
-[INFO] Scanning for projects...
-[INFO] 
-[INFO] --< com.azure.resourcemanager:azure-resourcemanager-netapp-generated >--
-[INFO] Building Microsoft Azure SDK for NetApp Management 1.0.0-beta.1
-[INFO] --------------------------------[ jar ]---------------------------------
-[INFO] 
-[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ azure-resourcemanager-netapp-generated ---
-[INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-netapp-generated/src/main/resources
-[INFO] 
-[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ azure-resourcemanager-netapp-generated ---
-[INFO] Changes detected - recompiling the module!
-[INFO] Compiling 144 source files to /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-netapp-generated/target/classes
-[INFO] -------------------------------------------------------------
-[ERROR] COMPILATION ERROR : 
-[INFO] -------------------------------------------------------------
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-netapp-generated/src/main/java/azure/resourcemanager/netapp/generated/models/ReplicationSchedule.java:[18,44] <identifier> expected
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-netapp-generated/src/main/java/azure/resourcemanager/netapp/generated/models/ReplicationSchedule.java:[18,55] <identifier> expected
-[INFO] 2 errors 
-[INFO] -------------------------------------------------------------
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  1.769 s
-[INFO] Finished at: 2020-11-19T03:33:56Z
-[INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-netapp-generated: Compilation failure: Compilation failure: 
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-netapp-generated/src/main/java/azure/resourcemanager/netapp/generated/models/ReplicationSchedule.java:[18,44] <identifier> expected
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-netapp-generated/src/main/java/azure/resourcemanager/netapp/generated/models/ReplicationSchedule.java:[18,55] <identifier> expected
-[ERROR] -> [Help 1]
-[ERROR] 
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
-
-```
-**stderr**
-```
-
-```
-</details>
-
-<details>
 <summary>powerplatform</summary>
 
 **stdout**
@@ -2369,631 +1624,6 @@ FATAL: Error: 1 errors occured -- cannot continue.
 </details>
 
 <details>
-<summary>recoveryservices</summary>
-
-**stdout**
-```
-[INFO] Scanning for projects...
-[INFO] 
-[INFO] --< com.azure.resourcemanager:azure-resourcemanager-recoveryservices-generated >--
-[INFO] Building Microsoft Azure SDK for RecoveryServices Management 1.0.0-beta.1
-[INFO] --------------------------------[ jar ]---------------------------------
-[INFO] 
-[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ azure-resourcemanager-recoveryservices-generated ---
-[INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/resources
-[INFO] 
-[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ azure-resourcemanager-recoveryservices-generated ---
-[INFO] Changes detected - recompiling the module!
-[INFO] Compiling 106 source files to /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/target/classes
-[INFO] -------------------------------------------------------------
-[ERROR] COMPILATION ERROR : 
-[INFO] -------------------------------------------------------------
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/RecoveryServicesManager.java:[220,76] cannot find symbol
-  symbol:   method getVaultCertificates()
-  location: variable clientObject of type azure.resourcemanager.recoveryservices.generated.fluent.RecoveryServicesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/RecoveryServicesManager.java:[228,82] cannot find symbol
-  symbol:   method getRegisteredIdentities()
-  location: variable clientObject of type azure.resourcemanager.recoveryservices.generated.fluent.RecoveryServicesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/RecoveryServicesManager.java:[236,76] cannot find symbol
-  symbol:   method getReplicationUsages()
-  location: variable clientObject of type azure.resourcemanager.recoveryservices.generated.fluent.RecoveryServicesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/RecoveryServicesManager.java:[245,68] cannot find symbol
-  symbol:   method getPrivateLinkResourcesOperations()
-  location: variable clientObject of type azure.resourcemanager.recoveryservices.generated.fluent.RecoveryServicesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/RecoveryServicesManager.java:[253,74] cannot find symbol
-  symbol:   method getRecoveryServices()
-  location: variable clientObject of type azure.resourcemanager.recoveryservices.generated.fluent.RecoveryServicesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/RecoveryServicesManager.java:[261,54] cannot find symbol
-  symbol:   method getVaults()
-  location: variable clientObject of type azure.resourcemanager.recoveryservices.generated.fluent.RecoveryServicesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/RecoveryServicesManager.java:[269,62] cannot find symbol
-  symbol:   method getOperations()
-  location: variable clientObject of type azure.resourcemanager.recoveryservices.generated.fluent.RecoveryServicesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/RecoveryServicesManager.java:[277,80] cannot find symbol
-  symbol:   method getVaultExtendedInfoes()
-  location: variable clientObject of type azure.resourcemanager.recoveryservices.generated.fluent.RecoveryServicesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/RecoveryServicesManager.java:[285,54] cannot find symbol
-  symbol:   method getUsages()
-  location: variable clientObject of type azure.resourcemanager.recoveryservices.generated.fluent.RecoveryServicesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[48,67] cannot find symbol
-  symbol:   method getHttpPipeline()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[48,93] cannot find symbol
-  symbol:   method getSerializerAdapter()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[92,24] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[98,24] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[122,40] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[123,40] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[125,40] cannot find symbol
-  symbol:   method getApiVersion()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[130,95] cannot find symbol
-  symbol:   method getContext()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[130,31] incompatible types: reactor.core.publisher.Mono<java.lang.Object> cannot be converted to reactor.core.publisher.Mono<com.azure.core.http.rest.Response<azure.resourcemanager.recoveryservices.generated.fluent.models.CheckNameAvailabilityResultInner>>
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[150,24] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[156,24] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[175,30] cannot find symbol
-  symbol:   method mergeContext(com.azure.core.util.Context)
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[178,28] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[179,28] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[181,28] cannot find symbol
-  symbol:   method getApiVersion()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[48,68] cannot find symbol
-  symbol:   method getHttpPipeline()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[48,94] cannot find symbol
-  symbol:   method getSerializerAdapter()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[92,24] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[98,24] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[127,40] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[128,40] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[129,40] cannot find symbol
-  symbol:   method getApiVersion()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[136,95] cannot find symbol
-  symbol:   method getContext()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[136,31] incompatible types: reactor.core.publisher.Mono<java.lang.Object> cannot be converted to reactor.core.publisher.Mono<com.azure.core.http.rest.Response<azure.resourcemanager.recoveryservices.generated.fluent.models.VaultCertificateResponseInner>>
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[159,24] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[165,24] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[189,30] cannot find symbol
-  symbol:   method mergeContext(com.azure.core.util.Context)
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[192,28] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[193,28] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[194,28] cannot find symbol
-  symbol:   method getApiVersion()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[49,70] cannot find symbol
-  symbol:   method getHttpPipeline()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[49,96] cannot find symbol
-  symbol:   method getSerializerAdapter()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[121,24] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[127,24] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[146,40] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[147,40] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[148,40] cannot find symbol
-  symbol:   method getApiVersion()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[153,95] cannot find symbol
-  symbol:   method getContext()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[153,31] incompatible types: reactor.core.publisher.Mono<java.lang.Object> cannot be converted to reactor.core.publisher.Mono<com.azure.core.http.rest.Response<azure.resourcemanager.recoveryservices.generated.fluent.models.VaultExtendedInfoResourceInner>>
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[170,24] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[176,24] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[190,30] cannot find symbol
-  symbol:   method mergeContext(com.azure.core.util.Context)
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[193,28] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[194,28] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[195,28] cannot find symbol
-  symbol:   method getApiVersion()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[271,24] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[277,24] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[304,40] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[305,40] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[308,40] cannot find symbol
-  symbol:   method getApiVersion()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[312,95] cannot find symbol
-  symbol:   method getContext()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[312,31] incompatible types: reactor.core.publisher.Mono<java.lang.Object> cannot be converted to reactor.core.publisher.Mono<com.azure.core.http.rest.Response<azure.resourcemanager.recoveryservices.generated.fluent.models.VaultExtendedInfoResourceInner>>
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[333,24] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[339,24] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[361,30] cannot find symbol
-  symbol:   method mergeContext(com.azure.core.util.Context)
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[364,28] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[365,28] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[368,28] cannot find symbol
-  symbol:   method getApiVersion()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[452,24] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[458,24] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[485,40] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[486,40] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[489,40] cannot find symbol
-  symbol:   method getApiVersion()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[493,95] cannot find symbol
-  symbol:   method getContext()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[493,31] incompatible types: reactor.core.publisher.Mono<java.lang.Object> cannot be converted to reactor.core.publisher.Mono<com.azure.core.http.rest.Response<azure.resourcemanager.recoveryservices.generated.fluent.models.VaultExtendedInfoResourceInner>>
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[514,24] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[520,24] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[542,30] cannot find symbol
-  symbol:   method mergeContext(com.azure.core.util.Context)
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[545,28] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[546,28] cannot find symbol
-  symbol:   method getSubscriptionId()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[549,28] cannot find symbol
-  symbol:   method getApiVersion()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[51,61] cannot find symbol
-  symbol:   method getHttpPipeline()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[51,87] cannot find symbol
-  symbol:   method getSerializerAdapter()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[92,24] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[101,52] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[101,79] cannot find symbol
-  symbol:   method getApiVersion()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[105,28] cannot find symbol
-  symbol:   method getRequest()
-  location: variable res of type java.lang.Object
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[106,28] cannot find symbol
-  symbol:   method getStatusCode()
-  location: variable res of type java.lang.Object
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[107,28] cannot find symbol
-  symbol:   method getHeaders()
-  location: variable res of type java.lang.Object
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[108,28] cannot find symbol
-  symbol:   method getValue()
-  location: variable res of type java.lang.Object
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[109,28] cannot find symbol
-  symbol:   method getValue()
-  location: variable res of type java.lang.Object
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[111,95] cannot find symbol
-  symbol:   method getContext()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[125,24] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[132,30] cannot find symbol
-  symbol:   method mergeContext(com.azure.core.util.Context)
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[134,30] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[134,57] cannot find symbol
-  symbol:   method getApiVersion()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[213,24] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[221,75] cannot find symbol
-  symbol:   method getEndpoint()
-  location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[225,28] cannot find symbol
-  symbol:   method getRequest()
-  location: variable res of type java.lang.Object
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[226,28] cannot find symbol
-  symbol:   method getStatusCode()
-  location: variable res of type java.lang.Object
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[227,28] cannot find symbol
-  symbol:   method getHeaders()
-  location: variable res of type java.lang.Object
-[INFO] 100 errors 
-[INFO] -------------------------------------------------------------
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  3.133 s
-[INFO] Finished at: 2020-11-19T03:36:47Z
-[INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-recoveryservices-generated: Compilation failure: Compilation failure: 
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/RecoveryServicesManager.java:[220,76] cannot find symbol
-[ERROR]   symbol:   method getVaultCertificates()
-[ERROR]   location: variable clientObject of type azure.resourcemanager.recoveryservices.generated.fluent.RecoveryServicesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/RecoveryServicesManager.java:[228,82] cannot find symbol
-[ERROR]   symbol:   method getRegisteredIdentities()
-[ERROR]   location: variable clientObject of type azure.resourcemanager.recoveryservices.generated.fluent.RecoveryServicesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/RecoveryServicesManager.java:[236,76] cannot find symbol
-[ERROR]   symbol:   method getReplicationUsages()
-[ERROR]   location: variable clientObject of type azure.resourcemanager.recoveryservices.generated.fluent.RecoveryServicesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/RecoveryServicesManager.java:[245,68] cannot find symbol
-[ERROR]   symbol:   method getPrivateLinkResourcesOperations()
-[ERROR]   location: variable clientObject of type azure.resourcemanager.recoveryservices.generated.fluent.RecoveryServicesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/RecoveryServicesManager.java:[253,74] cannot find symbol
-[ERROR]   symbol:   method getRecoveryServices()
-[ERROR]   location: variable clientObject of type azure.resourcemanager.recoveryservices.generated.fluent.RecoveryServicesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/RecoveryServicesManager.java:[261,54] cannot find symbol
-[ERROR]   symbol:   method getVaults()
-[ERROR]   location: variable clientObject of type azure.resourcemanager.recoveryservices.generated.fluent.RecoveryServicesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/RecoveryServicesManager.java:[269,62] cannot find symbol
-[ERROR]   symbol:   method getOperations()
-[ERROR]   location: variable clientObject of type azure.resourcemanager.recoveryservices.generated.fluent.RecoveryServicesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/RecoveryServicesManager.java:[277,80] cannot find symbol
-[ERROR]   symbol:   method getVaultExtendedInfoes()
-[ERROR]   location: variable clientObject of type azure.resourcemanager.recoveryservices.generated.fluent.RecoveryServicesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/RecoveryServicesManager.java:[285,54] cannot find symbol
-[ERROR]   symbol:   method getUsages()
-[ERROR]   location: variable clientObject of type azure.resourcemanager.recoveryservices.generated.fluent.RecoveryServicesClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[48,67] cannot find symbol
-[ERROR]   symbol:   method getHttpPipeline()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[48,93] cannot find symbol
-[ERROR]   symbol:   method getSerializerAdapter()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[92,24] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[98,24] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[122,40] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[123,40] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[125,40] cannot find symbol
-[ERROR]   symbol:   method getApiVersion()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[130,95] cannot find symbol
-[ERROR]   symbol:   method getContext()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[130,31] incompatible types: reactor.core.publisher.Mono<java.lang.Object> cannot be converted to reactor.core.publisher.Mono<com.azure.core.http.rest.Response<azure.resourcemanager.recoveryservices.generated.fluent.models.CheckNameAvailabilityResultInner>>
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[150,24] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[156,24] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[175,30] cannot find symbol
-[ERROR]   symbol:   method mergeContext(com.azure.core.util.Context)
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[178,28] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[179,28] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/RecoveryServicesClientImpl.java:[181,28] cannot find symbol
-[ERROR]   symbol:   method getApiVersion()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[48,68] cannot find symbol
-[ERROR]   symbol:   method getHttpPipeline()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[48,94] cannot find symbol
-[ERROR]   symbol:   method getSerializerAdapter()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[92,24] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[98,24] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[127,40] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[128,40] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[129,40] cannot find symbol
-[ERROR]   symbol:   method getApiVersion()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[136,95] cannot find symbol
-[ERROR]   symbol:   method getContext()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[136,31] incompatible types: reactor.core.publisher.Mono<java.lang.Object> cannot be converted to reactor.core.publisher.Mono<com.azure.core.http.rest.Response<azure.resourcemanager.recoveryservices.generated.fluent.models.VaultCertificateResponseInner>>
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[159,24] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[165,24] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[189,30] cannot find symbol
-[ERROR]   symbol:   method mergeContext(com.azure.core.util.Context)
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[192,28] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[193,28] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultCertificatesClientImpl.java:[194,28] cannot find symbol
-[ERROR]   symbol:   method getApiVersion()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[49,70] cannot find symbol
-[ERROR]   symbol:   method getHttpPipeline()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[49,96] cannot find symbol
-[ERROR]   symbol:   method getSerializerAdapter()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[121,24] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[127,24] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[146,40] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[147,40] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[148,40] cannot find symbol
-[ERROR]   symbol:   method getApiVersion()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[153,95] cannot find symbol
-[ERROR]   symbol:   method getContext()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[153,31] incompatible types: reactor.core.publisher.Mono<java.lang.Object> cannot be converted to reactor.core.publisher.Mono<com.azure.core.http.rest.Response<azure.resourcemanager.recoveryservices.generated.fluent.models.VaultExtendedInfoResourceInner>>
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[170,24] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[176,24] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[190,30] cannot find symbol
-[ERROR]   symbol:   method mergeContext(com.azure.core.util.Context)
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[193,28] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[194,28] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[195,28] cannot find symbol
-[ERROR]   symbol:   method getApiVersion()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[271,24] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[277,24] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[304,40] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[305,40] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[308,40] cannot find symbol
-[ERROR]   symbol:   method getApiVersion()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[312,95] cannot find symbol
-[ERROR]   symbol:   method getContext()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[312,31] incompatible types: reactor.core.publisher.Mono<java.lang.Object> cannot be converted to reactor.core.publisher.Mono<com.azure.core.http.rest.Response<azure.resourcemanager.recoveryservices.generated.fluent.models.VaultExtendedInfoResourceInner>>
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[333,24] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[339,24] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[361,30] cannot find symbol
-[ERROR]   symbol:   method mergeContext(com.azure.core.util.Context)
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[364,28] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[365,28] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[368,28] cannot find symbol
-[ERROR]   symbol:   method getApiVersion()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[452,24] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[458,24] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[485,40] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[486,40] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[489,40] cannot find symbol
-[ERROR]   symbol:   method getApiVersion()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[493,95] cannot find symbol
-[ERROR]   symbol:   method getContext()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[493,31] incompatible types: reactor.core.publisher.Mono<java.lang.Object> cannot be converted to reactor.core.publisher.Mono<com.azure.core.http.rest.Response<azure.resourcemanager.recoveryservices.generated.fluent.models.VaultExtendedInfoResourceInner>>
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[514,24] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[520,24] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[542,30] cannot find symbol
-[ERROR]   symbol:   method mergeContext(com.azure.core.util.Context)
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[545,28] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[546,28] cannot find symbol
-[ERROR]   symbol:   method getSubscriptionId()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/VaultExtendedInfoesClientImpl.java:[549,28] cannot find symbol
-[ERROR]   symbol:   method getApiVersion()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[51,61] cannot find symbol
-[ERROR]   symbol:   method getHttpPipeline()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[51,87] cannot find symbol
-[ERROR]   symbol:   method getSerializerAdapter()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[92,24] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[101,52] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[101,79] cannot find symbol
-[ERROR]   symbol:   method getApiVersion()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[105,28] cannot find symbol
-[ERROR]   symbol:   method getRequest()
-[ERROR]   location: variable res of type java.lang.Object
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[106,28] cannot find symbol
-[ERROR]   symbol:   method getStatusCode()
-[ERROR]   location: variable res of type java.lang.Object
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[107,28] cannot find symbol
-[ERROR]   symbol:   method getHeaders()
-[ERROR]   location: variable res of type java.lang.Object
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[108,28] cannot find symbol
-[ERROR]   symbol:   method getValue()
-[ERROR]   location: variable res of type java.lang.Object
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[109,28] cannot find symbol
-[ERROR]   symbol:   method getValue()
-[ERROR]   location: variable res of type java.lang.Object
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[111,95] cannot find symbol
-[ERROR]   symbol:   method getContext()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[125,24] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[132,30] cannot find symbol
-[ERROR]   symbol:   method mergeContext(com.azure.core.util.Context)
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[134,30] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[134,57] cannot find symbol
-[ERROR]   symbol:   method getApiVersion()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[213,24] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[221,75] cannot find symbol
-[ERROR]   symbol:   method getEndpoint()
-[ERROR]   location: variable client of type azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[225,28] cannot find symbol
-[ERROR]   symbol:   method getRequest()
-[ERROR]   location: variable res of type java.lang.Object
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[226,28] cannot find symbol
-[ERROR]   symbol:   method getStatusCode()
-[ERROR]   location: variable res of type java.lang.Object
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-recoveryservices-generated/src/main/java/azure/resourcemanager/recoveryservices/generated/implementation/OperationsClientImpl.java:[227,28] cannot find symbol
-[ERROR]   symbol:   method getHeaders()
-[ERROR]   location: variable res of type java.lang.Object
-[ERROR] -> [Help 1]
-[ERROR] 
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
-
-```
-**stderr**
-```
-
-```
-</details>
-
-<details>
 <summary>reservations</summary>
 
 **stdout**
@@ -3010,7 +1640,7 @@ FATAL: Error: 1 errors occured -- cannot continue.
 [INFO] 
 [INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ azure-resourcemanager-reservations-generated ---
 [INFO] Changes detected - recompiling the module!
-[INFO] Compiling 176 source files to /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/target/classes
+[INFO] Compiling 175 source files to /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/target/classes
 [INFO] -------------------------------------------------------------
 [ERROR] COMPILATION ERROR : 
 [INFO] -------------------------------------------------------------
@@ -3050,8 +1680,8 @@ FATAL: Error: 1 errors occured -- cannot continue.
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  2.948 s
-[INFO] Finished at: 2020-11-19T03:39:41Z
+[INFO] Total time:  3.561 s
+[INFO] Finished at: 2020-11-19T09:52:42Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-reservations-generated: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsImpl.java:[153,88] reference to Patch is ambiguous
@@ -3320,7 +1950,7 @@ INFORMATION (FluentJavaSettings): Option, string, base-folder : .
 INFORMATION (FluentJavaSettings): Option, string, output-folder : /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-security-generated
 INFORMATION (FluentJavaSettings): Option, string, azure-libraries-for-java-folder : null
 INFORMATION (FluentGen): Map code model to client model
-INFORMATION (FluentMapper): Add Inner to response types: [SecurityTask, OnPremiseIotSensor, AdaptiveApplicationControlGroups, ConnectorSetting, ExternalSecuritySolution, ComplianceResult, SecuritySubAssessment, RegulatoryComplianceStandard, IotAlert, SecurityAssessmentMetadata, AllowedConnectionsResource, TopologyResource, AutoProvisioningSetting, AdaptiveNetworkHardening, IotAlertTypeList, AlertsSuppressionRule, DiscoveredSecuritySolution, IotSensorsList, AscLocation, SettingResource, SecurityContact, IotSensor, ServerVulnerabilityAssessment, DeviceSecurityGroup, SecureScoreItem, SecuritySolution, Device, IotRecommendationType, Automation, RuleResults, SecureScoreControlDefinitionItem, Pricing, RegulatoryComplianceAssessment, IoTSecuritySolutionAnalyticsModelList, ServerVulnerabilityAssessmentsList, Scan, Alert, IotDefenderSettingsModel, OnPremiseIotSensorsList, SecureScoreControlDetails, Scans, IotAlertModel, IoTSecurityAggregatedAlert, RegulatoryComplianceControl, IotRecommendation, JitNetworkAccessRequest, Operation, PackageDownloads, SecuritySolutionsReferenceDataList, Compliance, AutomationValidationStatus, InformationProtectionPolicy, JitNetworkAccessPolicy, IotAlertType, ScanResults, SecurityAssessment, IoTSecurityAggregatedRecommendation, AdaptiveApplicationControlGroup, IoTSecuritySolutionModel, IotRecommendationTypeList, RulesResults, PricingList, IoTSecuritySolutionAnalyticsModel, IotDefenderSettingsList, WorkspaceSetting, IotRecommendationModel, AdvancedThreatProtectionSetting, ScanResult]
+INFORMATION (FluentMapper): Add Inner to response types: [DeviceSecurityGroup, IotAlertType, TopologyResource, Scan, AscLocation, IoTSecurityAggregatedAlert, OnPremiseIotSensorsList, ComplianceResult, AutomationValidationStatus, InformationProtectionPolicy, OnPremiseIotSensor, JitNetworkAccessPolicy, IoTSecurityAggregatedRecommendation, SecurityContact, SecurityAssessmentMetadata, Pricing, IoTSecuritySolutionModel, AdaptiveNetworkHardening, WorkspaceSetting, IotRecommendation, IotDefenderSettingsModel, SecuritySolution, IotAlert, ServerVulnerabilityAssessmentsList, ServerVulnerabilityAssessment, RegulatoryComplianceAssessment, AutoProvisioningSetting, IoTSecuritySolutionAnalyticsModel, SecuritySolutionsReferenceDataList, SecurityAssessment, AdaptiveApplicationControlGroups, Automation, SecurityTask, ScanResults, AdaptiveApplicationControlGroup, Device, Operation, RegulatoryComplianceControl, Scans, PackageDownloads, SecureScoreItem, ScanResult, RulesResults, SettingResource, RegulatoryComplianceStandard, IotSensorsList, RuleResults, ConnectorSetting, DiscoveredSecuritySolution, IotDefenderSettingsList, IotAlertModel, IotAlertTypeList, Alert, SecureScoreControlDetails, AllowedConnectionsResource, ExternalSecuritySolution, AdvancedThreatProtectionSetting, Compliance, PricingList, IotRecommendationModel, SecureScoreControlDefinitionItem, IotRecommendationTypeList, AlertsSuppressionRule, IoTSecuritySolutionAnalyticsModelList, IotSensor, SecuritySubAssessment, JitNetworkAccessRequest, IotRecommendationType]
 INFORMATION (FluentMapper): Add Inner for type SecureScoreControlDefinitionItem: []
 
 ```
@@ -3460,13 +2090,7 @@ WARNING (PreCheck/SchemaMissingType): The schema 'Ipv4NetworkInterface' with an 
 
 WARNING (PreCheck/SchemaMissingType): The schema 'Ipv6NetworkInterface' with an undefined type and decalared properties is a bit ambigious. This has been auto-corrected to 'type:object'
 
-WARNING (PostOperationIdContainsUrlVerb/R2066/SDKViolation): OperationId should contain the verb: 'generatemap' in:'Maps_Generate'. Consider updating the operationId
-    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
-
 WARNING (PreCheck/SchemaMissingType): The schema 'NetworkConfiguration' with an undefined type and decalared properties is a bit ambigious. This has been auto-corrected to 'type:object'
-
-WARNING (PostOperationIdContainsUrlVerb/R2066/SDKViolation): OperationId should contain the verb: 'machinegroups' in:'MachineGroups_Create'. Consider updating the operationId
-    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
 WARNING (PreCheck/SchemaMissingType): The schema 'AgentConfiguration' with an undefined type and decalared properties is a bit ambigious. This has been auto-corrected to 'type:object'
 
@@ -3514,10 +2138,22 @@ WARNING (PreCheck/CheckDuplicateSchemas): Checking for duplicate schemas, this c
 
 WARNING (PreCheck/PropertyRedeclarationWarning): Schema 'MachineGroup' has a property 'etag' that is already declared the parent schema 'CoreResource' but isn't significantly different. The property has been removed from MachineGroup
 
+WARNING (PostOperationIdContainsUrlVerb/R2066/SDKViolation): OperationId should contain the verb: 'generatemap' in:'Maps_Generate'. Consider updating the operationId
+    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
+
+WARNING (PostOperationIdContainsUrlVerb/R2066/SDKViolation): OperationId should contain the verb: 'machinegroups' in:'MachineGroups_Create'. Consider updating the operationId
+    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
+
 WARNING (EnumInsteadOfBoolean/R3018/ARMViolation): Booleans are not descriptive and make them hard to use. Consider using string enums with allowed set of values defined. Property: live
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
 WARNING (EnumInsteadOfBoolean/R3018/ARMViolation): Booleans are not descriptive and make them hard to use. Consider using string enums with allowed set of values defined. Property: live
+    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
+
+WARNING (OperationIdNounVerb/R1001/SDKViolation): Per the Noun_Verb convention for Operation Ids, the noun 'Machines' should not appear after the underscore. Note: If you have already shipped an SDK on top of this spec, fixing this warning may introduce a breaking change.
+    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
+
+WARNING (PutInOperationName/R1006/SDKViolation): 'PUT' operation 'MachineGroups_Update' should use method name 'Create'. Note: If you have already shipped an SDK on top of this spec, fixing this warning may introduce a breaking change.
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
 WARNING (XmsEnumValidation/R2018/SDKViolation): The enum types should have x-ms-enum type extension set with appropriate options. Property name: kind
@@ -3532,25 +2168,25 @@ WARNING (XmsEnumValidation/R2018/SDKViolation): The enum types should have x-ms-
 WARNING (XmsEnumValidation/R2018/SDKViolation): The enum types should have x-ms-enum type extension set with appropriate options. Property name: provider
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
-WARNING (DescriptionAndTitleMissing/R4000/SDKViolation): 'properties' model/property lacks 'description' and 'title' property. Consider adding a 'description'/'title' element. Accurate description/title is essential for maintaining reference documentation.
-    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
-
 WARNING (XmsEnumValidation/R2018/SDKViolation): The enum types should have x-ms-enum type extension set with appropriate options. Property name: kind
-    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
-
-WARNING (DescriptionAndTitleMissing/R4000/SDKViolation): 'properties' model/property lacks 'description' and 'title' property. Consider adding a 'description'/'title' element. Accurate description/title is essential for maintaining reference documentation.
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
 WARNING (XmsEnumValidation/R2018/SDKViolation): The enum types should have x-ms-enum type extension set with appropriate options. Property name: provider
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
+WARNING (XmsEnumValidation/R2018/SDKViolation): The enum types should have x-ms-enum type extension set with appropriate options. Property name: kind
+    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
+
+WARNING (XmsEnumValidation/R2018/SDKViolation): The enum types should have x-ms-enum type extension set with appropriate options. Property name: kind
+    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
+
 WARNING (DescriptionAndTitleMissing/R4000/SDKViolation): 'properties' model/property lacks 'description' and 'title' property. Consider adding a 'description'/'title' element. Accurate description/title is essential for maintaining reference documentation.
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
-WARNING (XmsEnumValidation/R2018/SDKViolation): The enum types should have x-ms-enum type extension set with appropriate options. Property name: kind
+WARNING (DescriptionAndTitleMissing/R4000/SDKViolation): 'properties' model/property lacks 'description' and 'title' property. Consider adding a 'description'/'title' element. Accurate description/title is essential for maintaining reference documentation.
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
-WARNING (XmsEnumValidation/R2018/SDKViolation): The enum types should have x-ms-enum type extension set with appropriate options. Property name: kind
+WARNING (DescriptionAndTitleMissing/R4000/SDKViolation): 'properties' model/property lacks 'description' and 'title' property. Consider adding a 'description'/'title' element. Accurate description/title is essential for maintaining reference documentation.
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
 WARNING (DescriptionAndTitleMissing/R4000/SDKViolation): 'nodes' model/property lacks 'description' and 'title' property. Consider adding a 'description'/'title' element. Accurate description/title is essential for maintaining reference documentation.
@@ -3563,12 +2199,6 @@ WARNING (EnumInsteadOfBoolean/R3018/ARMViolation): Booleans are not descriptive 
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
 WARNING (EnumInsteadOfBoolean/R3018/ARMViolation): Booleans are not descriptive and make them hard to use. Consider using string enums with allowed set of values defined. Property: filterProcesses
-    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
-
-WARNING (OperationIdNounVerb/R1001/SDKViolation): Per the Noun_Verb convention for Operation Ids, the noun 'Machines' should not appear after the underscore. Note: If you have already shipped an SDK on top of this spec, fixing this warning may introduce a breaking change.
-    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
-
-WARNING (PutInOperationName/R1006/SDKViolation): 'PUT' operation 'MachineGroups_Update' should use method name 'Create'. Note: If you have already shipped an SDK on top of this spec, fixing this warning may introduce a breaking change.
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 INFORMATION (FluentNamer): Load fluent settings
 INFORMATION (FluentJavaSettings): Option, string, add-inner : null
@@ -3610,7 +2240,7 @@ INFORMATION (FluentJavaSettings): Option, string, base-folder : .
 INFORMATION (FluentJavaSettings): Option, string, output-folder : /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-service-map-generated
 INFORMATION (FluentJavaSettings): Option, string, azure-libraries-for-java-folder : null
 INFORMATION (FluentGen): Map code model to client model
-INFORMATION (FluentMapper): Add Inner to response types: [Machine, MachinesSummary, MachineGroup, Process, Port, ClientGroup, Liveness, MapResponse, ClientGroupMembersCount, Connection, ClientGroupMember]
+INFORMATION (FluentMapper): Add Inner to response types: [Process, Liveness, MapResponse, Connection, Machine, ClientGroup, MachineGroup, ClientGroupMember, Port, ClientGroupMembersCount, MachinesSummary]
 INFORMATION (FluentGen): Java template for client model
 INFORMATION (FluentGen): Write Java
 INFORMATION (JavaFormatter): Java version: 11.0.9
@@ -3623,15 +2253,12 @@ INFORMATION (FluentGen): Write Text
 ```
 FATAL: Failed validating: 'file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json', error encountered: TypeError: Cannot read property 'properties' of undefined
 FATAL: [object Object]
-(node:19953) UnhandledPromiseRejectionWarning: Error: Plugin model-validator reported failure.
+(node:19916) UnhandledPromiseRejectionWarning: Error: Plugin model-validator reported failure.
     at /home/runner/.autorest/@autorest_core@3.0.6326/node_modules/@autorest/core/dist/lib/pipeline/plugins/external.js:26:19
     at async ScheduleNode (/home/runner/.autorest/@autorest_core@3.0.6326/node_modules/@autorest/core/dist/lib/pipeline/pipeline.js:294:33)
 (Use `node --trace-warnings ...` to show where the warning was created)
-(node:19953) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 60)
-(node:19953) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
-SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-SLF4J: Defaulting to no-operation (NOP) logger implementation
-SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+(node:19916) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 60)
+(node:19916) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
   Error: Plugin model-validator reported failure.
 
 ```
@@ -3702,8 +2329,8 @@ SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further detail
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  4.045 s
-[INFO] Finished at: 2020-11-19T03:43:00Z
+[INFO] Total time:  4.453 s
+[INFO] Finished at: 2020-11-19T09:56:28Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-servicefabric-generated: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/fluent/OperationsClient.java:[45,41] method list() is already defined in interface azure.resourcemanager.servicefabric.generated.fluent.OperationsClient
