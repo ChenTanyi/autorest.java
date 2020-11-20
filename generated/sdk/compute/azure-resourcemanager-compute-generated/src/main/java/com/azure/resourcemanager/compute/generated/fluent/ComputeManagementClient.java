@@ -289,4 +289,32 @@ public interface ComputeManagementClient {
      * @return the ContainerServicesClient object.
      */
     ContainerServicesClient getContainerServices();
+
+    /**
+     * Gets the CloudServiceRoleInstancesClient object to access its operations.
+     *
+     * @return the CloudServiceRoleInstancesClient object.
+     */
+    CloudServiceRoleInstancesClient getCloudServiceRoleInstances();
+
+    /**
+     * Gets the CloudServiceRolesClient object to access its operations.
+     *
+     * @return the CloudServiceRolesClient object.
+     */
+    CloudServiceRolesClient getCloudServiceRoles();
+
+    /**
+     * Gets the CloudServicesClient object to access its operations.
+     *
+     * @return the CloudServicesClient object.
+     */
+    CloudServicesClient getCloudServices();
+
+    /**
+     * Gets the CloudServicesUpdateDomainsClient object to access its operations.
+     *
+     * @return the CloudServicesUpdateDomainsClient object.
+     */
+    CloudServicesUpdateDomainsClient getCloudServicesUpdateDomains();
 }

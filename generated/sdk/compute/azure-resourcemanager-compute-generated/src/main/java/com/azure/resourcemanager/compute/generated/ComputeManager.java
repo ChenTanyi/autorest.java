@@ -22,6 +22,10 @@ import com.azure.core.util.Configuration;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.fluent.ComputeManagementClient;
 import com.azure.resourcemanager.compute.generated.implementation.AvailabilitySetsImpl;
+import com.azure.resourcemanager.compute.generated.implementation.CloudServiceRoleInstancesImpl;
+import com.azure.resourcemanager.compute.generated.implementation.CloudServiceRolesImpl;
+import com.azure.resourcemanager.compute.generated.implementation.CloudServicesImpl;
+import com.azure.resourcemanager.compute.generated.implementation.CloudServicesUpdateDomainsImpl;
 import com.azure.resourcemanager.compute.generated.implementation.ComputeManagementClientBuilder;
 import com.azure.resourcemanager.compute.generated.implementation.ContainerServicesImpl;
 import com.azure.resourcemanager.compute.generated.implementation.DedicatedHostGroupsImpl;
@@ -59,6 +63,10 @@ import com.azure.resourcemanager.compute.generated.implementation.VirtualMachine
 import com.azure.resourcemanager.compute.generated.implementation.VirtualMachineSizesImpl;
 import com.azure.resourcemanager.compute.generated.implementation.VirtualMachinesImpl;
 import com.azure.resourcemanager.compute.generated.models.AvailabilitySets;
+import com.azure.resourcemanager.compute.generated.models.CloudServiceRoleInstances;
+import com.azure.resourcemanager.compute.generated.models.CloudServiceRoles;
+import com.azure.resourcemanager.compute.generated.models.CloudServices;
+import com.azure.resourcemanager.compute.generated.models.CloudServicesUpdateDomains;
 import com.azure.resourcemanager.compute.generated.models.ContainerServices;
 import com.azure.resourcemanager.compute.generated.models.DedicatedHostGroups;
 import com.azure.resourcemanager.compute.generated.models.DedicatedHosts;
@@ -173,6 +181,14 @@ public final class ComputeManager {
     private SharedGalleryImageVersions sharedGalleryImageVersions;
 
     private ContainerServices containerServices;
+
+    private CloudServiceRoleInstances cloudServiceRoleInstances;
+
+    private CloudServiceRoles cloudServiceRoles;
+
+    private CloudServices cloudServices;
+
+    private CloudServicesUpdateDomains cloudServicesUpdateDomains;
 
     private final ComputeManagementClient clientObject;
 
@@ -623,6 +639,40 @@ public final class ComputeManager {
             this.containerServices = new ContainerServicesImpl(clientObject.getContainerServices(), this);
         }
         return containerServices;
+    }
+
+    /** @return Resource collection API of CloudServiceRoleInstances. */
+    public CloudServiceRoleInstances cloudServiceRoleInstances() {
+        if (this.cloudServiceRoleInstances == null) {
+            this.cloudServiceRoleInstances =
+                new CloudServiceRoleInstancesImpl(clientObject.getCloudServiceRoleInstances(), this);
+        }
+        return cloudServiceRoleInstances;
+    }
+
+    /** @return Resource collection API of CloudServiceRoles. */
+    public CloudServiceRoles cloudServiceRoles() {
+        if (this.cloudServiceRoles == null) {
+            this.cloudServiceRoles = new CloudServiceRolesImpl(clientObject.getCloudServiceRoles(), this);
+        }
+        return cloudServiceRoles;
+    }
+
+    /** @return Resource collection API of CloudServices. */
+    public CloudServices cloudServices() {
+        if (this.cloudServices == null) {
+            this.cloudServices = new CloudServicesImpl(clientObject.getCloudServices(), this);
+        }
+        return cloudServices;
+    }
+
+    /** @return Resource collection API of CloudServicesUpdateDomains. */
+    public CloudServicesUpdateDomains cloudServicesUpdateDomains() {
+        if (this.cloudServicesUpdateDomains == null) {
+            this.cloudServicesUpdateDomains =
+                new CloudServicesUpdateDomainsImpl(clientObject.getCloudServicesUpdateDomains(), this);
+        }
+        return cloudServicesUpdateDomains;
     }
 
     /**
