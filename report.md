@@ -1,5 +1,5 @@
 # Java Codegen Report
-Generated on 2020-11-25T04:50:06.610007
+Generated on 2020-11-25T10:13:35.812042
 ## Success
 - EnterpriseKnowledgeGraph
 - addons
@@ -69,6 +69,7 @@ Generated on 2020-11-25T04:50:06.610007
 - hybridnetwork
 - imagebuilder
 - iotcentral
+- iotspaces
 - kubernetesconfiguration
 - labservices
 - logic
@@ -95,6 +96,7 @@ Generated on 2020-11-25T04:50:06.610007
 - powerbidedicated
 - powerbiembedded
 - privatedns
+- providerhub
 - recoveryservices
 - recoveryservicesbackup
 - recoveryservicessiterecovery
@@ -136,8 +138,7 @@ Generated on 2020-11-25T04:50:06.610007
 - security
 
 ## Failure at Build
-- iotspaces
-- providerhub
+- saas
 - servicefabric
 
 ## Logs
@@ -1023,7 +1024,7 @@ INFORMATION (FluentJavaSettings): Option, string, base-folder : .
 INFORMATION (FluentJavaSettings): Option, string, output-folder : /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-deploymentmanager-generated
 INFORMATION (FluentJavaSettings): Option, string, azure-libraries-for-java-folder : null
 INFORMATION (FluentGen): Map code model to client model
-INFORMATION (FluentMapper): Add Inner to response types: [ServiceTopologyResource, OperationsList, RolloutRequest, Rollout, ArtifactSource, ServiceUnitResource, ServiceResource, StepResource]
+INFORMATION (FluentMapper): Add Inner to response types: [Rollout, ServiceTopologyResource, ServiceResource, ArtifactSource, ServiceUnitResource, StepResource, OperationsList, RolloutRequest]
 INFORMATION (FluentGen): Java template for client model
 INFORMATION (ResourceCreate): ResourceCreate: Fluent model ServiceTopologyResource, method reference createOrUpdate, body parameter ServiceTopologyResourceInner
 INFORMATION (ResourceParser): Fluent model ServiceTopologyResource as category RESOURCE_GROUP_AS_PARENT
@@ -1059,8 +1060,8 @@ INFORMATION (ResourceDelete): ResourceDelete: Fluent model ArtifactSource, metho
 **stderr**
 ```
 
-ERROR (FluentGen): Failed to successfully run fluentgen plugin java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@2f9f8451 and com.azure.autorest.model.clientmodel.ProxyMethodParameter@625b35b4)
-java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@2f9f8451 and com.azure.autorest.model.clientmodel.ProxyMethodParameter@625b35b4)
+ERROR (FluentGen): Failed to successfully run fluentgen plugin java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@24fed71e and com.azure.autorest.model.clientmodel.ProxyMethodParameter@1260a529)
+java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@24fed71e and com.azure.autorest.model.clientmodel.ProxyMethodParameter@1260a529)
 	at java.base/java.util.stream.Collectors.duplicateKeyException(Collectors.java:133)
 	at java.base/java.util.stream.Collectors.lambda$uniqKeysMapAccumulator$1(Collectors.java:180)
 	at java.base/java.util.stream.ReduceOps$3ReducingSink.accept(ReduceOps.java:169)
@@ -1098,8 +1099,8 @@ java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:834)
 
-FATAL (FluentGen): Unhandled error: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@2f9f8451 and com.azure.autorest.model.clientmodel.ProxyMethodParameter@625b35b4)
-java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@2f9f8451 and com.azure.autorest.model.clientmodel.ProxyMethodParameter@625b35b4)
+FATAL (FluentGen): Unhandled error: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@24fed71e and com.azure.autorest.model.clientmodel.ProxyMethodParameter@1260a529)
+java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@24fed71e and com.azure.autorest.model.clientmodel.ProxyMethodParameter@1260a529)
 	at java.base/java.util.stream.Collectors.duplicateKeyException(Collectors.java:133)
 	at java.base/java.util.stream.Collectors.lambda$uniqKeysMapAccumulator$1(Collectors.java:180)
 	at java.base/java.util.stream.ReduceOps$3ReducingSink.accept(ReduceOps.java:169)
@@ -1348,55 +1349,6 @@ java.lang.IllegalArgumentException: [JavaCheck/SchemaError] item name value not 
 </details>
 
 <details>
-<summary>iotspaces</summary>
-
-**stdout**
-```
-[INFO] Scanning for projects...
-[INFO] 
-[INFO] --< com.azure.resourcemanager:azure-resourcemanager-iotspaces-generated >--
-[INFO] Building Microsoft Azure SDK for IoTSpaces Management 1.0.0-beta.1
-[INFO] --------------------------------[ jar ]---------------------------------
-[INFO] 
-[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ azure-resourcemanager-iotspaces-generated ---
-[INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/resources
-[INFO] 
-[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ azure-resourcemanager-iotspaces-generated ---
-[INFO] Changes detected - recompiling the module!
-[INFO] Compiling 39 source files to /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/target/classes
-[INFO] Some messages have been simplified; recompile with -Xdiags:verbose to get full output
-[INFO] -------------------------------------------------------------
-[ERROR] COMPILATION ERROR : 
-[INFO] -------------------------------------------------------------
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/IoTSpacesManager.java:[52,58] incompatible types: java.lang.String cannot be converted to java.util.UUID
-[INFO] 1 error
-[INFO] -------------------------------------------------------------
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  2.614 s
-[INFO] Finished at: 2020-11-25T04:23:43Z
-[INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-iotspaces-generated: Compilation failure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/IoTSpacesManager.java:[52,58] incompatible types: java.lang.String cannot be converted to java.util.UUID
-[ERROR] 
-[ERROR] -> [Help 1]
-[ERROR] 
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
-
-```
-**stderr**
-```
-
-```
-</details>
-
-<details>
 <summary>machinelearning</summary>
 
 **stdout**
@@ -1549,38 +1501,65 @@ FATAL: Error: 1 errors occured -- cannot continue.
 </details>
 
 <details>
-<summary>providerhub</summary>
+<summary>saas</summary>
 
 **stdout**
 ```
 [INFO] Scanning for projects...
 [INFO] 
-[INFO] --< com.azure.resourcemanager:azure-resourcemanager-providerhub-generated >--
-[INFO] Building Microsoft Azure SDK for Providerhub Management 1.0.0-beta.1
+[INFO] ---< com.azure.resourcemanager:azure-resourcemanager-saas-generated >---
+[INFO] Building Microsoft Azure SDK for SaaS Management 1.0.0-beta.1
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO] 
-[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ azure-resourcemanager-providerhub-generated ---
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ azure-resourcemanager-saas-generated ---
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-providerhub-generated/src/main/resources
+[INFO] skip non existing resourceDirectory /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-saas-generated/src/main/resources
 [INFO] 
-[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ azure-resourcemanager-providerhub-generated ---
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ azure-resourcemanager-saas-generated ---
 [INFO] Changes detected - recompiling the module!
-[INFO] Compiling 238 source files to /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-providerhub-generated/target/classes
+[INFO] Compiling 72 source files to /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-saas-generated/target/classes
 [INFO] -------------------------------------------------------------
 [ERROR] COMPILATION ERROR : 
 [INFO] -------------------------------------------------------------
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-providerhub-generated/src/main/java/azure/resourcemanager/providerhub/generated/models/ErrorResponseError.java:[13,47] cannot inherit from final azure.resourcemanager.providerhub.generated.models.Error
-[INFO] 1 error
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-saas-generated/src/main/java/azure/resourcemanager/saas/implementation/SaaSManagementClientImpl.java:[167,19] cannot find symbol
+  symbol:   class SaasClient
+  location: class azure.resourcemanager.saas.implementation.SaaSManagementClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-saas-generated/src/main/java/azure/resourcemanager/saas/implementation/SaaSManagementClientImpl.java:[174,12] cannot find symbol
+  symbol:   class SaasClient
+  location: class azure.resourcemanager.saas.implementation.SaaSManagementClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-saas-generated/src/main/java/azure/resourcemanager/saas/SaaSManager.java:[53,13] cannot find symbol
+  symbol:   class Saas
+  location: class azure.resourcemanager.saas.SaaSManager
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-saas-generated/src/main/java/azure/resourcemanager/saas/SaaSManager.java:[238,12] cannot find symbol
+  symbol:   class Saas
+  location: class azure.resourcemanager.saas.SaaSManager
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-saas-generated/src/main/java/azure/resourcemanager/saas/SaaSManager.java:[232,29] cannot find symbol
+  symbol:   class SaaSImpl
+  location: class azure.resourcemanager.saas.SaaSManager
+[INFO] 5 errors 
 [INFO] -------------------------------------------------------------
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  3.950 s
-[INFO] Finished at: 2020-11-25T04:32:11Z
+[INFO] Total time:  3.069 s
+[INFO] Finished at: 2020-11-25T09:58:24Z
 [INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-providerhub-generated: Compilation failure
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-providerhub-generated/src/main/java/azure/resourcemanager/providerhub/generated/models/ErrorResponseError.java:[13,47] cannot inherit from final azure.resourcemanager.providerhub.generated.models.Error
-[ERROR] 
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-saas-generated: Compilation failure: Compilation failure: 
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-saas-generated/src/main/java/azure/resourcemanager/saas/implementation/SaaSManagementClientImpl.java:[167,19] cannot find symbol
+[ERROR]   symbol:   class SaasClient
+[ERROR]   location: class azure.resourcemanager.saas.implementation.SaaSManagementClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-saas-generated/src/main/java/azure/resourcemanager/saas/implementation/SaaSManagementClientImpl.java:[174,12] cannot find symbol
+[ERROR]   symbol:   class SaasClient
+[ERROR]   location: class azure.resourcemanager.saas.implementation.SaaSManagementClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-saas-generated/src/main/java/azure/resourcemanager/saas/SaaSManager.java:[53,13] cannot find symbol
+[ERROR]   symbol:   class Saas
+[ERROR]   location: class azure.resourcemanager.saas.SaaSManager
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-saas-generated/src/main/java/azure/resourcemanager/saas/SaaSManager.java:[238,12] cannot find symbol
+[ERROR]   symbol:   class Saas
+[ERROR]   location: class azure.resourcemanager.saas.SaaSManager
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-saas-generated/src/main/java/azure/resourcemanager/saas/SaaSManager.java:[232,29] cannot find symbol
+[ERROR]   symbol:   class SaaSImpl
+[ERROR]   location: class azure.resourcemanager.saas.SaaSManager
 [ERROR] -> [Help 1]
 [ERROR] 
 [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
@@ -1816,7 +1795,7 @@ INFORMATION (FluentJavaSettings): Option, string, base-folder : .
 INFORMATION (FluentJavaSettings): Option, string, output-folder : /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-security-generated
 INFORMATION (FluentJavaSettings): Option, string, azure-libraries-for-java-folder : null
 INFORMATION (FluentGen): Map code model to client model
-INFORMATION (FluentMapper): Add Inner to response types: [WorkspaceSetting, SecurityAssessment, IoTSecurityAggregatedAlert, IotAlert, RegulatoryComplianceStandard, IotDefenderSettingsModel, Operation, Scan, IotSensor, AlertsSuppressionRule, AutoProvisioningSetting, AllowedConnectionsResource, RegulatoryComplianceAssessment, SecuritySolution, IotRecommendationType, SecureScoreControlDetails, IoTSecuritySolutionAnalyticsModelList, SecurityContact, AdaptiveApplicationControlGroup, IoTSecurityAggregatedRecommendation, Compliance, IoTSecuritySolutionAnalyticsModel, ScanResults, SettingResource, IotRecommendation, JitNetworkAccessRequest, DeviceSecurityGroup, SecuritySubAssessment, SecurityAssessmentMetadata, AdvancedThreatProtectionSetting, AscLocation, IoTSecuritySolutionModel, IotAlertTypeList, IotRecommendationModel, RuleResults, ComplianceResult, SecuritySolutionsReferenceDataList, Scans, IotAlertModel, PackageDownloads, IotDefenderSettingsList, AdaptiveApplicationControlGroups, SecurityTask, ServerVulnerabilityAssessment, Alert, OnPremiseIotSensor, ServerVulnerabilityAssessmentsList, Pricing, ScanResult, IotRecommendationTypeList, RegulatoryComplianceControl, OnPremiseIotSensorsList, InformationProtectionPolicy, PricingList, TopologyResource, JitNetworkAccessPolicy, IotSensorsList, ConnectorSetting, DiscoveredSecuritySolution, ExternalSecuritySolution, RulesResults, AutomationValidationStatus, IotAlertType, SecureScoreControlDefinitionItem, Automation, SecureScoreItem, AdaptiveNetworkHardening, Device]
+INFORMATION (FluentMapper): Add Inner to response types: [AdaptiveNetworkHardening, TopologyResource, IotSensorsList, SecuritySolution, SecureScoreControlDetails, OnPremiseIotSensor, IotRecommendationModel, Scans, SecuritySolutionsReferenceDataList, RuleResults, SecureScoreItem, ScanResults, Alert, IotDefenderSettingsModel, IotRecommendationTypeList, AdaptiveApplicationControlGroups, OnPremiseIotSensorsList, AutoProvisioningSetting, SettingResource, Operation, IotRecommendationType, AdvancedThreatProtectionSetting, IoTSecurityAggregatedRecommendation, Device, IotAlertType, PackageDownloads, InformationProtectionPolicy, AlertsSuppressionRule, DiscoveredSecuritySolution, Scan, IotAlertModel, AllowedConnectionsResource, RegulatoryComplianceControl, JitNetworkAccessRequest, ServerVulnerabilityAssessment, SecurityAssessmentMetadata, ScanResult, SecurityContact, RegulatoryComplianceAssessment, SecureScoreControlDefinitionItem, RegulatoryComplianceStandard, IoTSecuritySolutionModel, IoTSecuritySolutionAnalyticsModelList, JitNetworkAccessPolicy, ComplianceResult, IotAlert, SecurityTask, WorkspaceSetting, ExternalSecuritySolution, ServerVulnerabilityAssessmentsList, DeviceSecurityGroup, IotSensor, IotRecommendation, AscLocation, SecuritySubAssessment, AutomationValidationStatus, SecurityAssessment, ConnectorSetting, IoTSecurityAggregatedAlert, RulesResults, IotAlertTypeList, Compliance, IotDefenderSettingsList, Pricing, AdaptiveApplicationControlGroup, IoTSecuritySolutionAnalyticsModel, PricingList, Automation]
 INFORMATION (FluentMapper): Add Inner for type SecureScoreControlDefinitionItem: []
 
 ```
@@ -1905,12 +1884,6 @@ https://aka.ms/autorest
 WARNING (PreCheck/AllOfWhenYouMeantRef): Schema 'MachineReference' is using an 'allOf' instead of a $ref. This creates a wasteful anonymous type when generating code.
 
 WARNING (PreCheck/AllOfWhenYouMeantRef): Schema 'ClientGroupReference' is using an 'allOf' instead of a $ref. This creates a wasteful anonymous type when generating code.
-
-WARNING (PostOperationIdContainsUrlVerb/R2066/SDKViolation): OperationId should contain the verb: 'generatemap' in:'Maps_Generate'. Consider updating the operationId
-    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
-
-WARNING (PostOperationIdContainsUrlVerb/R2066/SDKViolation): OperationId should contain the verb: 'machinegroups' in:'MachineGroups_Create'. Consider updating the operationId
-    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
 WARNING (PreCheck/AllOfWhenYouMeantRef): Schema 'Summary' is using an 'allOf' instead of a $ref. This creates a wasteful anonymous type when generating code.
 
@@ -2010,16 +1983,22 @@ WARNING (PreCheck/CheckDuplicateSchemas): Checking for duplicate schemas, this c
 
 WARNING (PreCheck/PropertyRedeclarationWarning): Schema 'MachineGroup' has a property 'etag' that is already declared the parent schema 'CoreResource' but isn't significantly different. The property has been removed from MachineGroup
 
-WARNING (EnumInsteadOfBoolean/R3018/ARMViolation): Booleans are not descriptive and make them hard to use. Consider using string enums with allowed set of values defined. Property: live
+WARNING (PostOperationIdContainsUrlVerb/R2066/SDKViolation): OperationId should contain the verb: 'generatemap' in:'Maps_Generate'. Consider updating the operationId
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
-WARNING (EnumInsteadOfBoolean/R3018/ARMViolation): Booleans are not descriptive and make them hard to use. Consider using string enums with allowed set of values defined. Property: live
+WARNING (PostOperationIdContainsUrlVerb/R2066/SDKViolation): OperationId should contain the verb: 'machinegroups' in:'MachineGroups_Create'. Consider updating the operationId
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
 WARNING (OperationIdNounVerb/R1001/SDKViolation): Per the Noun_Verb convention for Operation Ids, the noun 'Machines' should not appear after the underscore. Note: If you have already shipped an SDK on top of this spec, fixing this warning may introduce a breaking change.
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
 WARNING (PutInOperationName/R1006/SDKViolation): 'PUT' operation 'MachineGroups_Update' should use method name 'Create'. Note: If you have already shipped an SDK on top of this spec, fixing this warning may introduce a breaking change.
+    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
+
+WARNING (EnumInsteadOfBoolean/R3018/ARMViolation): Booleans are not descriptive and make them hard to use. Consider using string enums with allowed set of values defined. Property: live
+    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
+
+WARNING (EnumInsteadOfBoolean/R3018/ARMViolation): Booleans are not descriptive and make them hard to use. Consider using string enums with allowed set of values defined. Property: live
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
 WARNING (XmsEnumValidation/R2018/SDKViolation): The enum types should have x-ms-enum type extension set with appropriate options. Property name: kind
@@ -2106,7 +2085,7 @@ INFORMATION (FluentJavaSettings): Option, string, base-folder : .
 INFORMATION (FluentJavaSettings): Option, string, output-folder : /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-service-map-generated
 INFORMATION (FluentJavaSettings): Option, string, azure-libraries-for-java-folder : null
 INFORMATION (FluentGen): Map code model to client model
-INFORMATION (FluentMapper): Add Inner to response types: [MachinesSummary, MapResponse, Liveness, ClientGroup, ClientGroupMember, Process, Machine, Port, MachineGroup, Connection, ClientGroupMembersCount]
+INFORMATION (FluentMapper): Add Inner to response types: [Machine, MachinesSummary, MachineGroup, Process, Port, ClientGroup, Liveness, MapResponse, ClientGroupMembersCount, Connection, ClientGroupMember]
 INFORMATION (FluentGen): Java template for client model
 INFORMATION (FluentGen): Write Java
 INFORMATION (JavaFormatter): Java version: 11.0.9
@@ -2119,12 +2098,12 @@ INFORMATION (FluentGen): Write Text
 ```
 FATAL: Failed validating: 'file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json', error encountered: TypeError: Cannot read property 'properties' of undefined
 FATAL: [object Object]
-(node:19928) UnhandledPromiseRejectionWarning: Error: Plugin model-validator reported failure.
+(node:20388) UnhandledPromiseRejectionWarning: Error: Plugin model-validator reported failure.
     at /home/runner/.autorest/@autorest_core@3.0.6326/node_modules/@autorest/core/dist/lib/pipeline/plugins/external.js:26:19
     at async ScheduleNode (/home/runner/.autorest/@autorest_core@3.0.6326/node_modules/@autorest/core/dist/lib/pipeline/pipeline.js:294:33)
 (Use `node --trace-warnings ...` to show where the warning was created)
-(node:19928) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 60)
-(node:19928) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:20388) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 60)
+(node:20388) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
   Error: Plugin model-validator reported failure.
 
 ```
@@ -2151,93 +2130,93 @@ FATAL: [object Object]
 [INFO] -------------------------------------------------------------
 [ERROR] COMPILATION ERROR : 
 [INFO] -------------------------------------------------------------
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/fluent/OperationsClient.java:[45,41] method list() is already defined in interface azure.resourcemanager.servicefabric.generated.fluent.OperationsClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/fluent/OperationsClient.java:[57,41] method list(com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.generated.fluent.OperationsClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/fluent/OperationsClient.java:[67,41] method list() is already defined in interface azure.resourcemanager.servicefabric.generated.fluent.OperationsClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/fluent/OperationsClient.java:[79,41] method list(com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.generated.fluent.OperationsClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/fluent/OperationsClient.java:[89,41] method list() is already defined in interface azure.resourcemanager.servicefabric.generated.fluent.OperationsClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/fluent/OperationsClient.java:[101,41] method list(com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.generated.fluent.OperationsClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/models/Operations.java:[39,36] method list() is already defined in interface azure.resourcemanager.servicefabric.generated.models.Operations
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/models/Operations.java:[50,36] method list(com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.generated.models.Operations
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/models/Operations.java:[59,36] method list() is already defined in interface azure.resourcemanager.servicefabric.generated.models.Operations
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/models/Operations.java:[70,36] method list(com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.generated.models.Operations
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/models/Operations.java:[79,36] method list() is already defined in interface azure.resourcemanager.servicefabric.generated.models.Operations
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/models/Operations.java:[90,36] method list(com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.generated.models.Operations
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[238,55] method listSinglePageAsync() is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[271,55] method listSinglePageAsync(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[302,45] method listAsync() is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[316,45] method listAsync(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[329,48] method list() is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[343,48] method list(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[355,55] method listSinglePageAsync() is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[388,55] method listSinglePageAsync(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[419,45] method listAsync() is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[433,45] method listAsync(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[446,48] method list() is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[460,48] method list(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[472,55] method listSinglePageAsync() is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[505,55] method listSinglePageAsync(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[536,45] method listAsync() is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[550,45] method listAsync(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[563,48] method list() is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[577,48] method list(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[76,45] method list(java.lang.String,java.lang.String,java.lang.String,com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl.OperationsService
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[86,45] method list(java.lang.String,java.lang.String,java.lang.String,com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl.OperationsService
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[96,45] method list(java.lang.String,java.lang.String,java.lang.String,com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl.OperationsService
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsImpl.java:[39,43] method list() is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsImpl.java:[44,43] method list(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsImpl.java:[49,43] method list() is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsImpl.java:[54,43] method list(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsImpl.java:[59,43] method list() is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsImpl.java:[64,43] method list(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsImpl.java:[39,43] method list() is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsImpl.java:[44,43] method list(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsImpl.java:[49,43] method list() is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsImpl.java:[54,43] method list(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsImpl.java:[59,43] method list() is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsImpl.java:[64,43] method list(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/fluent/OperationsClient.java:[45,41] method list() is already defined in interface azure.resourcemanager.servicefabric.fluent.OperationsClient
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/fluent/OperationsClient.java:[57,41] method list(com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.fluent.OperationsClient
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/fluent/OperationsClient.java:[67,41] method list() is already defined in interface azure.resourcemanager.servicefabric.fluent.OperationsClient
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/fluent/OperationsClient.java:[79,41] method list(com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.fluent.OperationsClient
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/fluent/OperationsClient.java:[89,41] method list() is already defined in interface azure.resourcemanager.servicefabric.fluent.OperationsClient
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/fluent/OperationsClient.java:[101,41] method list(com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.fluent.OperationsClient
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/models/Operations.java:[39,36] method list() is already defined in interface azure.resourcemanager.servicefabric.models.Operations
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/models/Operations.java:[50,36] method list(com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.models.Operations
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/models/Operations.java:[59,36] method list() is already defined in interface azure.resourcemanager.servicefabric.models.Operations
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/models/Operations.java:[70,36] method list(com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.models.Operations
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/models/Operations.java:[79,36] method list() is already defined in interface azure.resourcemanager.servicefabric.models.Operations
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/models/Operations.java:[90,36] method list(com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.models.Operations
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[238,55] method listSinglePageAsync() is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[271,55] method listSinglePageAsync(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[302,45] method listAsync() is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[316,45] method listAsync(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[329,48] method list() is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[343,48] method list(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[355,55] method listSinglePageAsync() is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[388,55] method listSinglePageAsync(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[419,45] method listAsync() is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[433,45] method listAsync(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[446,48] method list() is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[460,48] method list(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[472,55] method listSinglePageAsync() is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[505,55] method listSinglePageAsync(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[536,45] method listAsync() is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[550,45] method listAsync(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[563,48] method list() is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[577,48] method list(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[76,45] method list(java.lang.String,java.lang.String,java.lang.String,com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.implementation.OperationsClientImpl.OperationsService
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[86,45] method list(java.lang.String,java.lang.String,java.lang.String,com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.implementation.OperationsClientImpl.OperationsService
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[96,45] method list(java.lang.String,java.lang.String,java.lang.String,com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.implementation.OperationsClientImpl.OperationsService
 [INFO] 39 errors 
 [INFO] -------------------------------------------------------------
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  4.380 s
-[INFO] Finished at: 2020-11-25T04:39:09Z
+[INFO] Total time:  4.802 s
+[INFO] Finished at: 2020-11-25T10:01:42Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-servicefabric-generated: Compilation failure: Compilation failure: 
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/fluent/OperationsClient.java:[45,41] method list() is already defined in interface azure.resourcemanager.servicefabric.generated.fluent.OperationsClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/fluent/OperationsClient.java:[57,41] method list(com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.generated.fluent.OperationsClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/fluent/OperationsClient.java:[67,41] method list() is already defined in interface azure.resourcemanager.servicefabric.generated.fluent.OperationsClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/fluent/OperationsClient.java:[79,41] method list(com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.generated.fluent.OperationsClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/fluent/OperationsClient.java:[89,41] method list() is already defined in interface azure.resourcemanager.servicefabric.generated.fluent.OperationsClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/fluent/OperationsClient.java:[101,41] method list(com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.generated.fluent.OperationsClient
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/models/Operations.java:[39,36] method list() is already defined in interface azure.resourcemanager.servicefabric.generated.models.Operations
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/models/Operations.java:[50,36] method list(com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.generated.models.Operations
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/models/Operations.java:[59,36] method list() is already defined in interface azure.resourcemanager.servicefabric.generated.models.Operations
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/models/Operations.java:[70,36] method list(com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.generated.models.Operations
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/models/Operations.java:[79,36] method list() is already defined in interface azure.resourcemanager.servicefabric.generated.models.Operations
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/models/Operations.java:[90,36] method list(com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.generated.models.Operations
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[238,55] method listSinglePageAsync() is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[271,55] method listSinglePageAsync(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[302,45] method listAsync() is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[316,45] method listAsync(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[329,48] method list() is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[343,48] method list(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[355,55] method listSinglePageAsync() is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[388,55] method listSinglePageAsync(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[419,45] method listAsync() is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[433,45] method listAsync(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[446,48] method list() is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[460,48] method list(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[472,55] method listSinglePageAsync() is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[505,55] method listSinglePageAsync(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[536,45] method listAsync() is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[550,45] method listAsync(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[563,48] method list() is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[577,48] method list(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[76,45] method list(java.lang.String,java.lang.String,java.lang.String,com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl.OperationsService
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[86,45] method list(java.lang.String,java.lang.String,java.lang.String,com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl.OperationsService
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsClientImpl.java:[96,45] method list(java.lang.String,java.lang.String,java.lang.String,com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.generated.implementation.OperationsClientImpl.OperationsService
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsImpl.java:[39,43] method list() is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsImpl.java:[44,43] method list(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsImpl.java:[49,43] method list() is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsImpl.java:[54,43] method list(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsImpl.java:[59,43] method list() is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsImpl
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/implementation/OperationsImpl.java:[64,43] method list(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.generated.implementation.OperationsImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsImpl.java:[39,43] method list() is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsImpl.java:[44,43] method list(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsImpl.java:[49,43] method list() is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsImpl.java:[54,43] method list(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsImpl.java:[59,43] method list() is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsImpl.java:[64,43] method list(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/fluent/OperationsClient.java:[45,41] method list() is already defined in interface azure.resourcemanager.servicefabric.fluent.OperationsClient
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/fluent/OperationsClient.java:[57,41] method list(com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.fluent.OperationsClient
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/fluent/OperationsClient.java:[67,41] method list() is already defined in interface azure.resourcemanager.servicefabric.fluent.OperationsClient
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/fluent/OperationsClient.java:[79,41] method list(com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.fluent.OperationsClient
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/fluent/OperationsClient.java:[89,41] method list() is already defined in interface azure.resourcemanager.servicefabric.fluent.OperationsClient
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/fluent/OperationsClient.java:[101,41] method list(com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.fluent.OperationsClient
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/models/Operations.java:[39,36] method list() is already defined in interface azure.resourcemanager.servicefabric.models.Operations
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/models/Operations.java:[50,36] method list(com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.models.Operations
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/models/Operations.java:[59,36] method list() is already defined in interface azure.resourcemanager.servicefabric.models.Operations
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/models/Operations.java:[70,36] method list(com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.models.Operations
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/models/Operations.java:[79,36] method list() is already defined in interface azure.resourcemanager.servicefabric.models.Operations
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/models/Operations.java:[90,36] method list(com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.models.Operations
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[238,55] method listSinglePageAsync() is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[271,55] method listSinglePageAsync(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[302,45] method listAsync() is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[316,45] method listAsync(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[329,48] method list() is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[343,48] method list(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[355,55] method listSinglePageAsync() is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[388,55] method listSinglePageAsync(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[419,45] method listAsync() is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[433,45] method listAsync(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[446,48] method list() is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[460,48] method list(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[472,55] method listSinglePageAsync() is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[505,55] method listSinglePageAsync(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[536,45] method listAsync() is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[550,45] method listAsync(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[563,48] method list() is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[577,48] method list(com.azure.core.util.Context) is already defined in class azure.resourcemanager.servicefabric.implementation.OperationsClientImpl
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[76,45] method list(java.lang.String,java.lang.String,java.lang.String,com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.implementation.OperationsClientImpl.OperationsService
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[86,45] method list(java.lang.String,java.lang.String,java.lang.String,com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.implementation.OperationsClientImpl.OperationsService
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/implementation/OperationsClientImpl.java:[96,45] method list(java.lang.String,java.lang.String,java.lang.String,com.azure.core.util.Context) is already defined in interface azure.resourcemanager.servicefabric.implementation.OperationsClientImpl.OperationsService
 [ERROR] -> [Help 1]
 [ERROR] 
 [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
