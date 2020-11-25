@@ -1,5 +1,5 @@
 # Java Codegen Report
-Generated on 2020-11-24T19:02:41.739454
+Generated on 2020-11-25T04:50:06.610007
 ## Success
 - EnterpriseKnowledgeGraph
 - addons
@@ -71,6 +71,7 @@ Generated on 2020-11-24T19:02:41.739454
 - iotcentral
 - kubernetesconfiguration
 - labservices
+- logic
 - machinelearningcompute
 - machinelearningexperimentation
 - machinelearningservices
@@ -101,6 +102,7 @@ Generated on 2020-11-24T19:02:41.739454
 - redis
 - redisenterprise
 - relay
+- reservations
 - resourcehealth
 - resourcemover
 - scheduler
@@ -135,8 +137,7 @@ Generated on 2020-11-24T19:02:41.739454
 
 ## Failure at Build
 - iotspaces
-- logic
-- reservations
+- providerhub
 - servicefabric
 
 ## Logs
@@ -1022,7 +1023,7 @@ INFORMATION (FluentJavaSettings): Option, string, base-folder : .
 INFORMATION (FluentJavaSettings): Option, string, output-folder : /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-deploymentmanager-generated
 INFORMATION (FluentJavaSettings): Option, string, azure-libraries-for-java-folder : null
 INFORMATION (FluentGen): Map code model to client model
-INFORMATION (FluentMapper): Add Inner to response types: [ArtifactSource, ServiceTopologyResource, Rollout, ServiceResource, RolloutRequest, OperationsList, StepResource, ServiceUnitResource]
+INFORMATION (FluentMapper): Add Inner to response types: [ServiceTopologyResource, OperationsList, RolloutRequest, Rollout, ArtifactSource, ServiceUnitResource, ServiceResource, StepResource]
 INFORMATION (FluentGen): Java template for client model
 INFORMATION (ResourceCreate): ResourceCreate: Fluent model ServiceTopologyResource, method reference createOrUpdate, body parameter ServiceTopologyResourceInner
 INFORMATION (ResourceParser): Fluent model ServiceTopologyResource as category RESOURCE_GROUP_AS_PARENT
@@ -1058,8 +1059,8 @@ INFORMATION (ResourceDelete): ResourceDelete: Fluent model ArtifactSource, metho
 **stderr**
 ```
 
-ERROR (FluentGen): Failed to successfully run fluentgen plugin java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@2cb4d4ed and com.azure.autorest.model.clientmodel.ProxyMethodParameter@158f1998)
-java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@2cb4d4ed and com.azure.autorest.model.clientmodel.ProxyMethodParameter@158f1998)
+ERROR (FluentGen): Failed to successfully run fluentgen plugin java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@2f9f8451 and com.azure.autorest.model.clientmodel.ProxyMethodParameter@625b35b4)
+java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@2f9f8451 and com.azure.autorest.model.clientmodel.ProxyMethodParameter@625b35b4)
 	at java.base/java.util.stream.Collectors.duplicateKeyException(Collectors.java:133)
 	at java.base/java.util.stream.Collectors.lambda$uniqKeysMapAccumulator$1(Collectors.java:180)
 	at java.base/java.util.stream.ReduceOps$3ReducingSink.accept(ReduceOps.java:169)
@@ -1097,8 +1098,8 @@ java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:834)
 
-FATAL (FluentGen): Unhandled error: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@2cb4d4ed and com.azure.autorest.model.clientmodel.ProxyMethodParameter@158f1998)
-java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@2cb4d4ed and com.azure.autorest.model.clientmodel.ProxyMethodParameter@158f1998)
+FATAL (FluentGen): Unhandled error: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@2f9f8451 and com.azure.autorest.model.clientmodel.ProxyMethodParameter@625b35b4)
+java.lang.IllegalStateException: Duplicate key subscriptionId (attempted merging values com.azure.autorest.model.clientmodel.ProxyMethodParameter@2f9f8451 and com.azure.autorest.model.clientmodel.ProxyMethodParameter@625b35b4)
 	at java.base/java.util.stream.Collectors.duplicateKeyException(Collectors.java:133)
 	at java.base/java.util.stream.Collectors.lambda$uniqKeysMapAccumulator$1(Collectors.java:180)
 	at java.base/java.util.stream.ReduceOps$3ReducingSink.accept(ReduceOps.java:169)
@@ -1301,7 +1302,7 @@ INFORMATION (FluentJavaSettings): Option, string, base-folder : .
 INFORMATION (FluentJavaSettings): Option, string, output-folder : /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-intune-generated
 INFORMATION (FluentJavaSettings): Option, string, azure-libraries-for-java-folder : null
 INFORMATION (FluentGen): Map code model to client model
-INFORMATION (FluentMapper): Add Inner to response types: [FlaggedEnrolledApp, GroupItem, IOsmamPolicy, OperationResult, Device, WipeDeviceOperationResult, FlaggedUser, Location, AndroidMamPolicy, Application]
+INFORMATION (FluentMapper): Add Inner to response types: [WipeDeviceOperationResult, IOsmamPolicy, Application, AndroidMamPolicy, Device, OperationResult, Location, GroupItem, FlaggedUser, FlaggedEnrolledApp]
 
 ```
 **stderr**
@@ -1374,61 +1375,12 @@ java.lang.IllegalArgumentException: [JavaCheck/SchemaError] item name value not 
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  2.608 s
-[INFO] Finished at: 2020-11-24T18:37:33Z
+[INFO] Total time:  2.614 s
+[INFO] Finished at: 2020-11-25T04:23:43Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-iotspaces-generated: Compilation failure
 [ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-iotspaces-generated/src/main/java/azure/resourcemanager/iotspaces/generated/IoTSpacesManager.java:[52,58] incompatible types: java.lang.String cannot be converted to java.util.UUID
 [ERROR] 
-[ERROR] -> [Help 1]
-[ERROR] 
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
-
-```
-**stderr**
-```
-
-```
-</details>
-
-<details>
-<summary>logic</summary>
-
-**stdout**
-```
-[INFO] Scanning for projects...
-[INFO] 
-[INFO] --< com.azure.resourcemanager:azure-resourcemanager-logic-generated >---
-[INFO] Building Microsoft Azure SDK for Logic Management 1.0.0-beta.1
-[INFO] --------------------------------[ jar ]---------------------------------
-[INFO] 
-[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ azure-resourcemanager-logic-generated ---
-[INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-logic-generated/src/main/resources
-[INFO] 
-[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ azure-resourcemanager-logic-generated ---
-[INFO] Changes detected - recompiling the module!
-[INFO] Compiling 401 source files to /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-logic-generated/target/classes
-[INFO] -------------------------------------------------------------
-[ERROR] COMPILATION ERROR : 
-[INFO] -------------------------------------------------------------
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-logic-generated/src/main/java/azure/resourcemanager/logic/generated/implementation/IntegrationServiceEnvironmentNetworkHealthsImpl.java:[49,206] ')' expected
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-logic-generated/src/main/java/azure/resourcemanager/logic/generated/implementation/IntegrationServiceEnvironmentNetworkHealthsImpl.java:[58,273] ')' expected
-[INFO] 2 errors 
-[INFO] -------------------------------------------------------------
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  2.354 s
-[INFO] Finished at: 2020-11-24T18:38:42Z
-[INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-logic-generated: Compilation failure: Compilation failure: 
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-logic-generated/src/main/java/azure/resourcemanager/logic/generated/implementation/IntegrationServiceEnvironmentNetworkHealthsImpl.java:[49,206] ')' expected
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-logic-generated/src/main/java/azure/resourcemanager/logic/generated/implementation/IntegrationServiceEnvironmentNetworkHealthsImpl.java:[58,273] ')' expected
 [ERROR] -> [Help 1]
 [ERROR] 
 [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
@@ -1597,97 +1549,38 @@ FATAL: Error: 1 errors occured -- cannot continue.
 </details>
 
 <details>
-<summary>reservations</summary>
+<summary>providerhub</summary>
 
 **stdout**
 ```
 [INFO] Scanning for projects...
 [INFO] 
-[INFO] --< com.azure.resourcemanager:azure-resourcemanager-reservations-generated >--
-[INFO] Building Microsoft Azure SDK for Reservations Management 1.0.0-beta.1
+[INFO] --< com.azure.resourcemanager:azure-resourcemanager-providerhub-generated >--
+[INFO] Building Microsoft Azure SDK for Providerhub Management 1.0.0-beta.1
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO] 
-[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ azure-resourcemanager-reservations-generated ---
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ azure-resourcemanager-providerhub-generated ---
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/resources
+[INFO] skip non existing resourceDirectory /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-providerhub-generated/src/main/resources
 [INFO] 
-[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ azure-resourcemanager-reservations-generated ---
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ azure-resourcemanager-providerhub-generated ---
 [INFO] Changes detected - recompiling the module!
-[INFO] Compiling 180 source files to /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/target/classes
+[INFO] Compiling 238 source files to /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-providerhub-generated/target/classes
 [INFO] -------------------------------------------------------------
 [ERROR] COMPILATION ERROR : 
 [INFO] -------------------------------------------------------------
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsImpl.java:[153,88] reference to Patch is ambiguous
-  both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsImpl.java:[163,58] reference to Patch is ambiguous
-  both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsImpl.java:[18,1] a type with the same simple name is already defined by the single-type-import of azure.resourcemanager.reservations.generated.models.Patch
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[1206,58] reference to Patch is ambiguous
-  both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[1256,58] reference to Patch is ambiguous
-  both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[1296,58] reference to Patch is ambiguous
-  both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[1322,58] reference to Patch is ambiguous
-  both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[1349,58] reference to Patch is ambiguous
-  both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[1367,58] reference to Patch is ambiguous
-  both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[1384,58] reference to Patch is ambiguous
-  both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[1404,58] reference to Patch is ambiguous
-  both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[1422,93] reference to Patch is ambiguous
-  both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[1440,58] reference to Patch is ambiguous
-  both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[149,44] reference to Patch is ambiguous
-  both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[22,1] a type with the same simple name is already defined by the single-type-import of azure.resourcemanager.reservations.generated.models.Patch
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[141,10] reference to Patch is ambiguous
-  both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[1239,31] incompatible types: reactor.core.publisher.Mono<java.lang.Object> cannot be converted to reactor.core.publisher.Mono<com.azure.core.http.rest.Response<reactor.core.publisher.Flux<java.nio.ByteBuffer>>>
-[INFO] 17 errors 
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-providerhub-generated/src/main/java/azure/resourcemanager/providerhub/generated/models/ErrorResponseError.java:[13,47] cannot inherit from final azure.resourcemanager.providerhub.generated.models.Error
+[INFO] 1 error
 [INFO] -------------------------------------------------------------
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  3.514 s
-[INFO] Finished at: 2020-11-24T18:48:38Z
+[INFO] Total time:  3.950 s
+[INFO] Finished at: 2020-11-25T04:32:11Z
 [INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-reservations-generated: Compilation failure: Compilation failure: 
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsImpl.java:[153,88] reference to Patch is ambiguous
-[ERROR]   both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsImpl.java:[163,58] reference to Patch is ambiguous
-[ERROR]   both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsImpl.java:[18,1] a type with the same simple name is already defined by the single-type-import of azure.resourcemanager.reservations.generated.models.Patch
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[1206,58] reference to Patch is ambiguous
-[ERROR]   both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[1256,58] reference to Patch is ambiguous
-[ERROR]   both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[1296,58] reference to Patch is ambiguous
-[ERROR]   both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[1322,58] reference to Patch is ambiguous
-[ERROR]   both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[1349,58] reference to Patch is ambiguous
-[ERROR]   both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[1367,58] reference to Patch is ambiguous
-[ERROR]   both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[1384,58] reference to Patch is ambiguous
-[ERROR]   both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[1404,58] reference to Patch is ambiguous
-[ERROR]   both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[1422,93] reference to Patch is ambiguous
-[ERROR]   both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[1440,58] reference to Patch is ambiguous
-[ERROR]   both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[149,44] reference to Patch is ambiguous
-[ERROR]   both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[22,1] a type with the same simple name is already defined by the single-type-import of azure.resourcemanager.reservations.generated.models.Patch
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[141,10] reference to Patch is ambiguous
-[ERROR]   both class azure.resourcemanager.reservations.generated.models.Patch in azure.resourcemanager.reservations.generated.models and class com.azure.core.annotation.Patch in com.azure.core.annotation match
-[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-reservations-generated/src/main/java/azure/resourcemanager/reservations/generated/implementation/ReservationsClientImpl.java:[1239,31] incompatible types: reactor.core.publisher.Mono<java.lang.Object> cannot be converted to reactor.core.publisher.Mono<com.azure.core.http.rest.Response<reactor.core.publisher.Flux<java.nio.ByteBuffer>>>
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-providerhub-generated: Compilation failure
+[ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-providerhub-generated/src/main/java/azure/resourcemanager/providerhub/generated/models/ErrorResponseError.java:[13,47] cannot inherit from final azure.resourcemanager.providerhub.generated.models.Error
+[ERROR] 
 [ERROR] -> [Help 1]
 [ERROR] 
 [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
@@ -1923,7 +1816,7 @@ INFORMATION (FluentJavaSettings): Option, string, base-folder : .
 INFORMATION (FluentJavaSettings): Option, string, output-folder : /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-security-generated
 INFORMATION (FluentJavaSettings): Option, string, azure-libraries-for-java-folder : null
 INFORMATION (FluentGen): Map code model to client model
-INFORMATION (FluentMapper): Add Inner to response types: [IoTSecuritySolutionModel, SettingResource, IotAlertTypeList, Scan, IotDefenderSettingsModel, IotRecommendation, ServerVulnerabilityAssessment, AlertsSuppressionRule, ServerVulnerabilityAssessmentsList, JitNetworkAccessRequest, DeviceSecurityGroup, SecurityContact, IotSensorsList, DiscoveredSecuritySolution, Compliance, RegulatoryComplianceControl, AdaptiveApplicationControlGroup, SecureScoreControlDefinitionItem, ConnectorSetting, IoTSecuritySolutionAnalyticsModelList, IoTSecuritySolutionAnalyticsModel, Pricing, Automation, AdaptiveApplicationControlGroups, ExternalSecuritySolution, IotRecommendationTypeList, IotRecommendationType, IotAlert, AutomationValidationStatus, OnPremiseIotSensor, ComplianceResult, SecurityTask, PackageDownloads, Alert, ScanResult, PricingList, Operation, SecuritySolutionsReferenceDataList, IotAlertModel, SecuritySolution, RegulatoryComplianceAssessment, ScanResults, JitNetworkAccessPolicy, InformationProtectionPolicy, AdaptiveNetworkHardening, TopologyResource, IotAlertType, AscLocation, IoTSecurityAggregatedRecommendation, SecureScoreItem, RuleResults, RegulatoryComplianceStandard, IotSensor, SecurityAssessment, IotDefenderSettingsList, IotRecommendationModel, WorkspaceSetting, SecurityAssessmentMetadata, SecuritySubAssessment, Scans, AdvancedThreatProtectionSetting, RulesResults, Device, AllowedConnectionsResource, AutoProvisioningSetting, IoTSecurityAggregatedAlert, OnPremiseIotSensorsList, SecureScoreControlDetails]
+INFORMATION (FluentMapper): Add Inner to response types: [WorkspaceSetting, SecurityAssessment, IoTSecurityAggregatedAlert, IotAlert, RegulatoryComplianceStandard, IotDefenderSettingsModel, Operation, Scan, IotSensor, AlertsSuppressionRule, AutoProvisioningSetting, AllowedConnectionsResource, RegulatoryComplianceAssessment, SecuritySolution, IotRecommendationType, SecureScoreControlDetails, IoTSecuritySolutionAnalyticsModelList, SecurityContact, AdaptiveApplicationControlGroup, IoTSecurityAggregatedRecommendation, Compliance, IoTSecuritySolutionAnalyticsModel, ScanResults, SettingResource, IotRecommendation, JitNetworkAccessRequest, DeviceSecurityGroup, SecuritySubAssessment, SecurityAssessmentMetadata, AdvancedThreatProtectionSetting, AscLocation, IoTSecuritySolutionModel, IotAlertTypeList, IotRecommendationModel, RuleResults, ComplianceResult, SecuritySolutionsReferenceDataList, Scans, IotAlertModel, PackageDownloads, IotDefenderSettingsList, AdaptiveApplicationControlGroups, SecurityTask, ServerVulnerabilityAssessment, Alert, OnPremiseIotSensor, ServerVulnerabilityAssessmentsList, Pricing, ScanResult, IotRecommendationTypeList, RegulatoryComplianceControl, OnPremiseIotSensorsList, InformationProtectionPolicy, PricingList, TopologyResource, JitNetworkAccessPolicy, IotSensorsList, ConnectorSetting, DiscoveredSecuritySolution, ExternalSecuritySolution, RulesResults, AutomationValidationStatus, IotAlertType, SecureScoreControlDefinitionItem, Automation, SecureScoreItem, AdaptiveNetworkHardening, Device]
 INFORMATION (FluentMapper): Add Inner for type SecureScoreControlDefinitionItem: []
 
 ```
@@ -2012,6 +1905,12 @@ https://aka.ms/autorest
 WARNING (PreCheck/AllOfWhenYouMeantRef): Schema 'MachineReference' is using an 'allOf' instead of a $ref. This creates a wasteful anonymous type when generating code.
 
 WARNING (PreCheck/AllOfWhenYouMeantRef): Schema 'ClientGroupReference' is using an 'allOf' instead of a $ref. This creates a wasteful anonymous type when generating code.
+
+WARNING (PostOperationIdContainsUrlVerb/R2066/SDKViolation): OperationId should contain the verb: 'generatemap' in:'Maps_Generate'. Consider updating the operationId
+    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
+
+WARNING (PostOperationIdContainsUrlVerb/R2066/SDKViolation): OperationId should contain the verb: 'machinegroups' in:'MachineGroups_Create'. Consider updating the operationId
+    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
 WARNING (PreCheck/AllOfWhenYouMeantRef): Schema 'Summary' is using an 'allOf' instead of a $ref. This creates a wasteful anonymous type when generating code.
 
@@ -2111,12 +2010,6 @@ WARNING (PreCheck/CheckDuplicateSchemas): Checking for duplicate schemas, this c
 
 WARNING (PreCheck/PropertyRedeclarationWarning): Schema 'MachineGroup' has a property 'etag' that is already declared the parent schema 'CoreResource' but isn't significantly different. The property has been removed from MachineGroup
 
-WARNING (PostOperationIdContainsUrlVerb/R2066/SDKViolation): OperationId should contain the verb: 'generatemap' in:'Maps_Generate'. Consider updating the operationId
-    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
-
-WARNING (PostOperationIdContainsUrlVerb/R2066/SDKViolation): OperationId should contain the verb: 'machinegroups' in:'MachineGroups_Create'. Consider updating the operationId
-    - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
-
 WARNING (EnumInsteadOfBoolean/R3018/ARMViolation): Booleans are not descriptive and make them hard to use. Consider using string enums with allowed set of values defined. Property: live
     - file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json:1:1
 
@@ -2213,7 +2106,7 @@ INFORMATION (FluentJavaSettings): Option, string, base-folder : .
 INFORMATION (FluentJavaSettings): Option, string, output-folder : /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-service-map-generated
 INFORMATION (FluentJavaSettings): Option, string, azure-libraries-for-java-folder : null
 INFORMATION (FluentGen): Map code model to client model
-INFORMATION (FluentMapper): Add Inner to response types: [MachinesSummary, MachineGroup, ClientGroupMember, MapResponse, Port, Connection, Machine, Liveness, Process, ClientGroupMembersCount, ClientGroup]
+INFORMATION (FluentMapper): Add Inner to response types: [MachinesSummary, MapResponse, Liveness, ClientGroup, ClientGroupMember, Process, Machine, Port, MachineGroup, Connection, ClientGroupMembersCount]
 INFORMATION (FluentGen): Java template for client model
 INFORMATION (FluentGen): Write Java
 INFORMATION (JavaFormatter): Java version: 11.0.9
@@ -2226,12 +2119,12 @@ INFORMATION (FluentGen): Write Text
 ```
 FATAL: Failed validating: 'file:///home/runner/work/autorest.java/autorest.java/azure-rest-api-specs/specification/service-map/resource-manager/Microsoft.OperationalInsights/preview/2015-11-01-preview/arm-service-map.json', error encountered: TypeError: Cannot read property 'properties' of undefined
 FATAL: [object Object]
-(node:19680) UnhandledPromiseRejectionWarning: Error: Plugin model-validator reported failure.
+(node:19928) UnhandledPromiseRejectionWarning: Error: Plugin model-validator reported failure.
     at /home/runner/.autorest/@autorest_core@3.0.6326/node_modules/@autorest/core/dist/lib/pipeline/plugins/external.js:26:19
     at async ScheduleNode (/home/runner/.autorest/@autorest_core@3.0.6326/node_modules/@autorest/core/dist/lib/pipeline/pipeline.js:294:33)
 (Use `node --trace-warnings ...` to show where the warning was created)
-(node:19680) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 60)
-(node:19680) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:19928) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 60)
+(node:19928) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
   Error: Plugin model-validator reported failure.
 
 ```
@@ -2302,8 +2195,8 @@ FATAL: [object Object]
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  4.272 s
-[INFO] Finished at: 2020-11-24T18:52:03Z
+[INFO] Total time:  4.380 s
+[INFO] Finished at: 2020-11-25T04:39:09Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.8.1:compile (default-compile) on project azure-resourcemanager-servicefabric-generated: Compilation failure: Compilation failure: 
 [ERROR] /home/runner/work/autorest.java/autorest.java/generated_all/azure-resourcemanager-servicefabric-generated/src/main/java/azure/resourcemanager/servicefabric/generated/fluent/OperationsClient.java:[45,41] method list() is already defined in interface azure.resourcemanager.servicefabric.generated.fluent.OperationsClient
