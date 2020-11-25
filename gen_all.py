@@ -108,7 +108,7 @@ def report_markdown(results: List[CodegenResult]):
 
     lines = []
     lines.append('# Java Codegen Report')
-    lines.append('Generated on ' + datetime.datetime.now().isoformat())
+    lines.append('Generated at ' + datetime.datetime.now().isoformat())
     lines.append('## Success')
     for sdk in sdks_success:
         lines.append('- ' + sdk)
