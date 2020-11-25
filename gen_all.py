@@ -110,8 +110,12 @@ def report_markdown(results: List[CodegenResult]):
     lines.append('# Java Codegen Report')
     lines.append('Generated at ' + datetime.datetime.now().isoformat())
     lines.append('## Success')
+    lines.append('<details>')
+    lines.append(f'<summary>RP count: {len(sdks_success)}</summary>')
+    lines.append('')
     for sdk in sdks_success:
         lines.append('- ' + sdk)
+    lines.append('</details>')
     lines.append('')
 
     lines.append('## Failure at Codegen')
