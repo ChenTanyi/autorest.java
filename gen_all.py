@@ -28,7 +28,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         '-s',
         '--specs',
-        help='specs folder (default github)',
+        help='specs folder',
     )
     parser.add_argument(
         '-t',
@@ -177,7 +177,7 @@ def main():
 
     results = []
     for sdk in sdks:
-        output_sdk_dir = os.path.join(output_dir, f'azure-resourcemanager-{sdk}-generated')
+        output_sdk_dir = os.path.join(output_dir, f'azure-resourcemanager-{sdk}')
         codegen_result = codegen(autorest_java, specs_dir, sdk, output_sdk_dir)
         if not codegen_result.returncode:
             build_result = maven_build(output_sdk_dir, sdk)
