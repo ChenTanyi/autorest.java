@@ -1,8 +1,9 @@
 name: Build and Test Generation for All RPs
-on:
-  schedule:
-    - cron: 0 18 * * *
-  workflow_dispatch:
+# on:
+#   schedule:
+#     - cron: 0 18 * * *
+#   workflow_dispatch:
+on: workflow_dispatch
 
 jobs:
   build:
