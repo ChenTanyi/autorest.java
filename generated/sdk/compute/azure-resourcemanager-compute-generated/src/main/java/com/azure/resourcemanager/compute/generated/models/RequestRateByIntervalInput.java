@@ -83,6 +83,20 @@ public final class RequestRateByIntervalInput extends LogAnalyticsInputBase {
         return this;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public RequestRateByIntervalInput withGroupByClientApplicationId(Boolean groupByClientApplicationId) {
+        super.withGroupByClientApplicationId(groupByClientApplicationId);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public RequestRateByIntervalInput withGroupByUserAgent(Boolean groupByUserAgent) {
+        super.withGroupByUserAgent(groupByUserAgent);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

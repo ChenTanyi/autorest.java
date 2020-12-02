@@ -56,6 +56,20 @@ public final class ThrottledRequestsInput extends LogAnalyticsInputBase {
         return this;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public ThrottledRequestsInput withGroupByClientApplicationId(Boolean groupByClientApplicationId) {
+        super.withGroupByClientApplicationId(groupByClientApplicationId);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public ThrottledRequestsInput withGroupByUserAgent(Boolean groupByUserAgent) {
+        super.withGroupByUserAgent(groupByUserAgent);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *
