@@ -348,8 +348,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param vmScaleSetVMReimageInput Parameters for Reimaging Virtual Machine. NOTE: Virtual Machine OS disk will
-     *     always be reimaged.
+     * @param vmScaleSetVMReimageInput Parameters for the Reimaging Virtual machine in ScaleSet.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -409,8 +408,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param vmScaleSetVMReimageInput Parameters for Reimaging Virtual Machine. NOTE: Virtual Machine OS disk will
-     *     always be reimaged.
+     * @param vmScaleSetVMReimageInput Parameters for the Reimaging Virtual machine in ScaleSet.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -469,8 +467,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param vmScaleSetVMReimageInput Parameters for Reimaging Virtual Machine. NOTE: Virtual Machine OS disk will
-     *     always be reimaged.
+     * @param vmScaleSetVMReimageInput Parameters for the Reimaging Virtual machine in ScaleSet.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -495,8 +492,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param vmScaleSetVMReimageInput Parameters for Reimaging Virtual Machine. NOTE: Virtual Machine OS disk will
-     *     always be reimaged.
+     * @param vmScaleSetVMReimageInput Parameters for the Reimaging Virtual machine in ScaleSet.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -524,8 +520,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param vmScaleSetVMReimageInput Parameters for Reimaging Virtual Machine. NOTE: Virtual Machine OS disk will
-     *     always be reimaged.
+     * @param vmScaleSetVMReimageInput Parameters for the Reimaging Virtual machine in ScaleSet.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -547,8 +542,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param vmScaleSetVMReimageInput Parameters for Reimaging Virtual Machine. NOTE: Virtual Machine OS disk will
-     *     always be reimaged.
+     * @param vmScaleSetVMReimageInput Parameters for the Reimaging Virtual machine in ScaleSet.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -572,8 +566,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param vmScaleSetVMReimageInput Parameters for Reimaging Virtual Machine. NOTE: Virtual Machine OS disk will
-     *     always be reimaged.
+     * @param vmScaleSetVMReimageInput Parameters for the Reimaging Virtual machine in ScaleSet.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -615,8 +608,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param vmScaleSetVMReimageInput Parameters for Reimaging Virtual Machine. NOTE: Virtual Machine OS disk will
-     *     always be reimaged.
+     * @param vmScaleSetVMReimageInput Parameters for the Reimaging Virtual machine in ScaleSet.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -641,8 +633,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param vmScaleSetVMReimageInput Parameters for Reimaging Virtual Machine. NOTE: Virtual Machine OS disk will
-     *     always be reimaged.
+     * @param vmScaleSetVMReimageInput Parameters for the Reimaging Virtual machine in ScaleSet.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -678,8 +669,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param vmScaleSetVMReimageInput Parameters for Reimaging Virtual Machine. NOTE: Virtual Machine OS disk will
-     *     always be reimaged.
+     * @param vmScaleSetVMReimageInput Parameters for the Reimaging Virtual machine in ScaleSet.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1221,7 +1211,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set where the extension should be create or updated.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Describes a virtual machine scale set virtual machine.
+     * @param parameters Parameters supplied to the Update Virtual Machine Scale Sets VM operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1282,7 +1272,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set where the extension should be create or updated.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Describes a virtual machine scale set virtual machine.
+     * @param parameters Parameters supplied to the Update Virtual Machine Scale Sets VM operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1345,7 +1335,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set where the extension should be create or updated.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Describes a virtual machine scale set virtual machine.
+     * @param parameters Parameters supplied to the Update Virtual Machine Scale Sets VM operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1372,7 +1362,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set where the extension should be create or updated.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Describes a virtual machine scale set virtual machine.
+     * @param parameters Parameters supplied to the Update Virtual Machine Scale Sets VM operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1405,7 +1395,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set where the extension should be create or updated.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Describes a virtual machine scale set virtual machine.
+     * @param parameters Parameters supplied to the Update Virtual Machine Scale Sets VM operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1423,7 +1413,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set where the extension should be create or updated.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Describes a virtual machine scale set virtual machine.
+     * @param parameters Parameters supplied to the Update Virtual Machine Scale Sets VM operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1446,7 +1436,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set where the extension should be create or updated.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Describes a virtual machine scale set virtual machine.
+     * @param parameters Parameters supplied to the Update Virtual Machine Scale Sets VM operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1466,7 +1456,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set where the extension should be create or updated.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Describes a virtual machine scale set virtual machine.
+     * @param parameters Parameters supplied to the Update Virtual Machine Scale Sets VM operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1491,7 +1481,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set where the extension should be create or updated.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Describes a virtual machine scale set virtual machine.
+     * @param parameters Parameters supplied to the Update Virtual Machine Scale Sets VM operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1509,7 +1499,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set where the extension should be create or updated.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Describes a virtual machine scale set virtual machine.
+     * @param parameters Parameters supplied to the Update Virtual Machine Scale Sets VM operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -4103,7 +4093,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Run command operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4164,7 +4154,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Run command operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -4227,7 +4217,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Run command operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4254,7 +4244,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Run command operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -4283,7 +4273,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Run command operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4301,7 +4291,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Run command operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -4324,7 +4314,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Run command operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4344,7 +4334,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Run command operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -4369,7 +4359,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Run command operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4387,7 +4377,7 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Run command operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

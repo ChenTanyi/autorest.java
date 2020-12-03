@@ -18,7 +18,7 @@ public interface VirtualMachineScaleSetVMRunCommands {
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
      * @param runCommandName The name of the virtual machine run command.
-     * @param runCommand Describes a Virtual Machine run command.
+     * @param runCommand Parameters supplied to the Create Virtual Machine RunCommand operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -39,7 +39,7 @@ public interface VirtualMachineScaleSetVMRunCommands {
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
      * @param runCommandName The name of the virtual machine run command.
-     * @param runCommand Describes a Virtual Machine run command.
+     * @param runCommand Parameters supplied to the Create Virtual Machine RunCommand operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -62,7 +62,7 @@ public interface VirtualMachineScaleSetVMRunCommands {
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
      * @param runCommandName The name of the virtual machine run command.
-     * @param runCommand Describes a Virtual Machine run command.
+     * @param runCommand Parameters supplied to the Update Virtual Machine RunCommand operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -83,7 +83,7 @@ public interface VirtualMachineScaleSetVMRunCommands {
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
      * @param runCommandName The name of the virtual machine run command.
-     * @param runCommand Describes a Virtual Machine run command.
+     * @param runCommand Parameters supplied to the Update Virtual Machine RunCommand operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by

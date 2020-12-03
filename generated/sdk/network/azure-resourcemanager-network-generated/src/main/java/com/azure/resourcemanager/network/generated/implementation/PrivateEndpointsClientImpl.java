@@ -584,7 +584,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      *
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
-     * @param parameters Private endpoint resource.
+     * @param parameters Parameters supplied to the create or update private endpoint operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -641,7 +641,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      *
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
-     * @param parameters Private endpoint resource.
+     * @param parameters Parameters supplied to the create or update private endpoint operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -696,7 +696,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      *
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
-     * @param parameters Private endpoint resource.
+     * @param parameters Parameters supplied to the create or update private endpoint operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -722,7 +722,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      *
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
-     * @param parameters Private endpoint resource.
+     * @param parameters Parameters supplied to the create or update private endpoint operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -746,7 +746,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      *
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
-     * @param parameters Private endpoint resource.
+     * @param parameters Parameters supplied to the create or update private endpoint operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -763,7 +763,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      *
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
-     * @param parameters Private endpoint resource.
+     * @param parameters Parameters supplied to the create or update private endpoint operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -781,7 +781,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      *
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
-     * @param parameters Private endpoint resource.
+     * @param parameters Parameters supplied to the create or update private endpoint operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -800,7 +800,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      *
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
-     * @param parameters Private endpoint resource.
+     * @param parameters Parameters supplied to the create or update private endpoint operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -820,7 +820,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      *
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
-     * @param parameters Private endpoint resource.
+     * @param parameters Parameters supplied to the create or update private endpoint operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -837,7 +837,7 @@ public final class PrivateEndpointsClientImpl implements PrivateEndpointsClient 
      *
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
-     * @param parameters Private endpoint resource.
+     * @param parameters Parameters supplied to the create or update private endpoint operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.

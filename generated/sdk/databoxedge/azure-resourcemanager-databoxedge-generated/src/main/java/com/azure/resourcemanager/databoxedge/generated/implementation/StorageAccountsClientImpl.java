@@ -492,7 +492,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @param deviceName The device name.
      * @param storageAccountName The StorageAccount name.
      * @param resourceGroupName The resource group name.
-     * @param storageAccount Represents a Storage Account on the Data Box Edge/Gateway device.
+     * @param storageAccount The StorageAccount properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -553,7 +553,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @param deviceName The device name.
      * @param storageAccountName The StorageAccount name.
      * @param resourceGroupName The resource group name.
-     * @param storageAccount Represents a Storage Account on the Data Box Edge/Gateway device.
+     * @param storageAccount The StorageAccount properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -616,7 +616,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @param deviceName The device name.
      * @param storageAccountName The StorageAccount name.
      * @param resourceGroupName The resource group name.
-     * @param storageAccount Represents a Storage Account on the Data Box Edge/Gateway device.
+     * @param storageAccount The StorageAccount properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -643,7 +643,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @param deviceName The device name.
      * @param storageAccountName The StorageAccount name.
      * @param resourceGroupName The resource group name.
-     * @param storageAccount Represents a Storage Account on the Data Box Edge/Gateway device.
+     * @param storageAccount The StorageAccount properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -672,7 +672,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @param deviceName The device name.
      * @param storageAccountName The StorageAccount name.
      * @param resourceGroupName The resource group name.
-     * @param storageAccount Represents a Storage Account on the Data Box Edge/Gateway device.
+     * @param storageAccount The StorageAccount properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -691,7 +691,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @param deviceName The device name.
      * @param storageAccountName The StorageAccount name.
      * @param resourceGroupName The resource group name.
-     * @param storageAccount Represents a Storage Account on the Data Box Edge/Gateway device.
+     * @param storageAccount The StorageAccount properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -715,7 +715,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @param deviceName The device name.
      * @param storageAccountName The StorageAccount name.
      * @param resourceGroupName The resource group name.
-     * @param storageAccount Represents a Storage Account on the Data Box Edge/Gateway device.
+     * @param storageAccount The StorageAccount properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -735,7 +735,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @param deviceName The device name.
      * @param storageAccountName The StorageAccount name.
      * @param resourceGroupName The resource group name.
-     * @param storageAccount Represents a Storage Account on the Data Box Edge/Gateway device.
+     * @param storageAccount The StorageAccount properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -760,7 +760,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @param deviceName The device name.
      * @param storageAccountName The StorageAccount name.
      * @param resourceGroupName The resource group name.
-     * @param storageAccount Represents a Storage Account on the Data Box Edge/Gateway device.
+     * @param storageAccount The StorageAccount properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -778,7 +778,7 @@ public final class StorageAccountsClientImpl implements StorageAccountsClient {
      * @param deviceName The device name.
      * @param storageAccountName The StorageAccount name.
      * @param resourceGroupName The resource group name.
-     * @param storageAccount Represents a Storage Account on the Data Box Edge/Gateway device.
+     * @param storageAccount The StorageAccount properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

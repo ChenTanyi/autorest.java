@@ -483,7 +483,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
      * @param certificateName The name of the certificate.
-     * @param certificateDescription The X509 Certificate.
+     * @param certificateDescription The certificate body.
      * @param ifMatch ETag of the Certificate. Do not specify for creating a brand new certificate. Required to update
      *     an existing certificate.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -553,7 +553,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
      * @param certificateName The name of the certificate.
-     * @param certificateDescription The X509 Certificate.
+     * @param certificateDescription The certificate body.
      * @param ifMatch ETag of the Certificate. Do not specify for creating a brand new certificate. Required to update
      *     an existing certificate.
      * @param context The context to associate with this operation.
@@ -622,7 +622,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
      * @param certificateName The name of the certificate.
-     * @param certificateDescription The X509 Certificate.
+     * @param certificateDescription The certificate body.
      * @param ifMatch ETag of the Certificate. Do not specify for creating a brand new certificate. Required to update
      *     an existing certificate.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -655,7 +655,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
      * @param certificateName The name of the certificate.
-     * @param certificateDescription The X509 Certificate.
+     * @param certificateDescription The certificate body.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -686,7 +686,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
      * @param certificateName The name of the certificate.
-     * @param certificateDescription The X509 Certificate.
+     * @param certificateDescription The certificate body.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -709,7 +709,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
      * @param certificateName The name of the certificate.
-     * @param certificateDescription The X509 Certificate.
+     * @param certificateDescription The certificate body.
      * @param ifMatch ETag of the Certificate. Do not specify for creating a brand new certificate. Required to update
      *     an existing certificate.
      * @param context The context to associate with this operation.
@@ -1095,7 +1095,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * @param resourceName The name of the IoT hub.
      * @param certificateName The name of the certificate.
      * @param ifMatch ETag of the Certificate.
-     * @param certificateVerificationBody The JSON-serialized leaf certificate.
+     * @param certificateVerificationBody The name of the certificate.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1169,7 +1169,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * @param resourceName The name of the IoT hub.
      * @param certificateName The name of the certificate.
      * @param ifMatch ETag of the Certificate.
-     * @param certificateVerificationBody The JSON-serialized leaf certificate.
+     * @param certificateVerificationBody The name of the certificate.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -1242,7 +1242,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * @param resourceName The name of the IoT hub.
      * @param certificateName The name of the certificate.
      * @param ifMatch ETag of the Certificate.
-     * @param certificateVerificationBody The JSON-serialized leaf certificate.
+     * @param certificateVerificationBody The name of the certificate.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1275,7 +1275,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * @param resourceName The name of the IoT hub.
      * @param certificateName The name of the certificate.
      * @param ifMatch ETag of the Certificate.
-     * @param certificateVerificationBody The JSON-serialized leaf certificate.
+     * @param certificateVerificationBody The name of the certificate.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1300,7 +1300,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * @param resourceName The name of the IoT hub.
      * @param certificateName The name of the certificate.
      * @param ifMatch ETag of the Certificate.
-     * @param certificateVerificationBody The JSON-serialized leaf certificate.
+     * @param certificateVerificationBody The name of the certificate.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.

@@ -15,7 +15,7 @@ public interface Extensions {
      *
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
-     * @param parameters The Operations Management Suite (OMS) parameters.
+     * @param parameters The Operations Management Suite (OMS) workspace parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -27,7 +27,7 @@ public interface Extensions {
      *
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
-     * @param parameters The Operations Management Suite (OMS) parameters.
+     * @param parameters The Operations Management Suite (OMS) workspace parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -91,7 +91,7 @@ public interface Extensions {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param extensionName The name of the cluster extension.
-     * @param parameters Cluster monitoring extensions.
+     * @param parameters The cluster extensions create request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -104,7 +104,7 @@ public interface Extensions {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param extensionName The name of the cluster extension.
-     * @param parameters Cluster monitoring extensions.
+     * @param parameters The cluster extensions create request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

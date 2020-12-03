@@ -610,7 +610,7 @@ public final class ClustersClientImpl implements ClustersClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
-     * @param parameters Single Event Hubs Cluster resource in List or Get operations.
+     * @param parameters Parameters for creating a eventhub cluster resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -666,7 +666,7 @@ public final class ClustersClientImpl implements ClustersClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
-     * @param parameters Single Event Hubs Cluster resource in List or Get operations.
+     * @param parameters Parameters for creating a eventhub cluster resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -720,7 +720,7 @@ public final class ClustersClientImpl implements ClustersClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
-     * @param parameters Single Event Hubs Cluster resource in List or Get operations.
+     * @param parameters Parameters for creating a eventhub cluster resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -742,7 +742,7 @@ public final class ClustersClientImpl implements ClustersClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
-     * @param parameters Single Event Hubs Cluster resource in List or Get operations.
+     * @param parameters Parameters for creating a eventhub cluster resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -766,7 +766,7 @@ public final class ClustersClientImpl implements ClustersClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
-     * @param parameters Single Event Hubs Cluster resource in List or Get operations.
+     * @param parameters Parameters for creating a eventhub cluster resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -783,7 +783,7 @@ public final class ClustersClientImpl implements ClustersClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
-     * @param parameters Single Event Hubs Cluster resource in List or Get operations.
+     * @param parameters Parameters for creating a eventhub cluster resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -801,7 +801,7 @@ public final class ClustersClientImpl implements ClustersClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
-     * @param parameters Single Event Hubs Cluster resource in List or Get operations.
+     * @param parameters Parameters for creating a eventhub cluster resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -820,7 +820,7 @@ public final class ClustersClientImpl implements ClustersClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
-     * @param parameters Single Event Hubs Cluster resource in List or Get operations.
+     * @param parameters Parameters for creating a eventhub cluster resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -840,7 +840,7 @@ public final class ClustersClientImpl implements ClustersClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
-     * @param parameters Single Event Hubs Cluster resource in List or Get operations.
+     * @param parameters Parameters for creating a eventhub cluster resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -856,7 +856,7 @@ public final class ClustersClientImpl implements ClustersClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
-     * @param parameters Single Event Hubs Cluster resource in List or Get operations.
+     * @param parameters Parameters for creating a eventhub cluster resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -874,7 +874,7 @@ public final class ClustersClientImpl implements ClustersClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
-     * @param parameters Single Event Hubs Cluster resource in List or Get operations.
+     * @param parameters The properties of the Event Hubs Cluster which should be updated.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -930,7 +930,7 @@ public final class ClustersClientImpl implements ClustersClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
-     * @param parameters Single Event Hubs Cluster resource in List or Get operations.
+     * @param parameters The properties of the Event Hubs Cluster which should be updated.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -984,7 +984,7 @@ public final class ClustersClientImpl implements ClustersClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
-     * @param parameters Single Event Hubs Cluster resource in List or Get operations.
+     * @param parameters The properties of the Event Hubs Cluster which should be updated.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1005,7 +1005,7 @@ public final class ClustersClientImpl implements ClustersClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
-     * @param parameters Single Event Hubs Cluster resource in List or Get operations.
+     * @param parameters The properties of the Event Hubs Cluster which should be updated.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1029,7 +1029,7 @@ public final class ClustersClientImpl implements ClustersClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
-     * @param parameters Single Event Hubs Cluster resource in List or Get operations.
+     * @param parameters The properties of the Event Hubs Cluster which should be updated.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1046,7 +1046,7 @@ public final class ClustersClientImpl implements ClustersClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
-     * @param parameters Single Event Hubs Cluster resource in List or Get operations.
+     * @param parameters The properties of the Event Hubs Cluster which should be updated.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1064,7 +1064,7 @@ public final class ClustersClientImpl implements ClustersClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
-     * @param parameters Single Event Hubs Cluster resource in List or Get operations.
+     * @param parameters The properties of the Event Hubs Cluster which should be updated.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1082,7 +1082,7 @@ public final class ClustersClientImpl implements ClustersClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
-     * @param parameters Single Event Hubs Cluster resource in List or Get operations.
+     * @param parameters The properties of the Event Hubs Cluster which should be updated.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1102,7 +1102,7 @@ public final class ClustersClientImpl implements ClustersClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
-     * @param parameters Single Event Hubs Cluster resource in List or Get operations.
+     * @param parameters The properties of the Event Hubs Cluster which should be updated.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1118,7 +1118,7 @@ public final class ClustersClientImpl implements ClustersClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param clusterName The name of the Event Hubs Cluster.
-     * @param parameters Single Event Hubs Cluster resource in List or Get operations.
+     * @param parameters The properties of the Event Hubs Cluster which should be updated.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

@@ -296,7 +296,8 @@ public final class BlobServicesClientImpl implements BlobServicesClient {
      *     insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param parameters The properties of a storage account’s Blob service.
+     * @param parameters The properties of a storage account’s Blob service, including properties for Storage Analytics
+     *     and CORS (Cross-Origin Resource Sharing) rules.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -356,7 +357,8 @@ public final class BlobServicesClientImpl implements BlobServicesClient {
      *     insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param parameters The properties of a storage account’s Blob service.
+     * @param parameters The properties of a storage account’s Blob service, including properties for Storage Analytics
+     *     and CORS (Cross-Origin Resource Sharing) rules.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -414,7 +416,8 @@ public final class BlobServicesClientImpl implements BlobServicesClient {
      *     insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param parameters The properties of a storage account’s Blob service.
+     * @param parameters The properties of a storage account’s Blob service, including properties for Storage Analytics
+     *     and CORS (Cross-Origin Resource Sharing) rules.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -442,7 +445,8 @@ public final class BlobServicesClientImpl implements BlobServicesClient {
      *     insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param parameters The properties of a storage account’s Blob service.
+     * @param parameters The properties of a storage account’s Blob service, including properties for Storage Analytics
+     *     and CORS (Cross-Origin Resource Sharing) rules.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -462,7 +466,8 @@ public final class BlobServicesClientImpl implements BlobServicesClient {
      *     insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param parameters The properties of a storage account’s Blob service.
+     * @param parameters The properties of a storage account’s Blob service, including properties for Storage Analytics
+     *     and CORS (Cross-Origin Resource Sharing) rules.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

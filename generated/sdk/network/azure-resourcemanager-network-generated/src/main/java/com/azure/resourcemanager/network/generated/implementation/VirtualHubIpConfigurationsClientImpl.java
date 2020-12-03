@@ -316,7 +316,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param ipConfigName The name of the ipconfig.
-     * @param parameters IpConfigurations.
+     * @param parameters Hub Ip Configuration parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -378,7 +378,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param ipConfigName The name of the ipconfig.
-     * @param parameters IpConfigurations.
+     * @param parameters Hub Ip Configuration parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -442,7 +442,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param ipConfigName The name of the ipconfig.
-     * @param parameters IpConfigurations.
+     * @param parameters Hub Ip Configuration parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -470,7 +470,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param ipConfigName The name of the ipconfig.
-     * @param parameters IpConfigurations.
+     * @param parameters Hub Ip Configuration parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -504,7 +504,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param ipConfigName The name of the ipconfig.
-     * @param parameters IpConfigurations.
+     * @param parameters Hub Ip Configuration parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -523,7 +523,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param ipConfigName The name of the ipconfig.
-     * @param parameters IpConfigurations.
+     * @param parameters Hub Ip Configuration parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -548,7 +548,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param ipConfigName The name of the ipconfig.
-     * @param parameters IpConfigurations.
+     * @param parameters Hub Ip Configuration parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -569,7 +569,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param ipConfigName The name of the ipconfig.
-     * @param parameters IpConfigurations.
+     * @param parameters Hub Ip Configuration parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -595,7 +595,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param ipConfigName The name of the ipconfig.
-     * @param parameters IpConfigurations.
+     * @param parameters Hub Ip Configuration parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -614,7 +614,7 @@ public final class VirtualHubIpConfigurationsClientImpl implements VirtualHubIpC
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param ipConfigName The name of the ipconfig.
-     * @param parameters IpConfigurations.
+     * @param parameters Hub Ip Configuration parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

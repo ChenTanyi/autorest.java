@@ -1067,7 +1067,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param appServicePlan App Service plan.
+     * @param appServicePlan Details of the App Service plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1122,7 +1122,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param appServicePlan App Service plan.
+     * @param appServicePlan Details of the App Service plan.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1175,7 +1175,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param appServicePlan App Service plan.
+     * @param appServicePlan Details of the App Service plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1201,7 +1201,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param appServicePlan App Service plan.
+     * @param appServicePlan Details of the App Service plan.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1225,7 +1225,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param appServicePlan App Service plan.
+     * @param appServicePlan Details of the App Service plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1242,7 +1242,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param appServicePlan App Service plan.
+     * @param appServicePlan Details of the App Service plan.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1260,7 +1260,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param appServicePlan App Service plan.
+     * @param appServicePlan Details of the App Service plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1279,7 +1279,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param appServicePlan App Service plan.
+     * @param appServicePlan Details of the App Service plan.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1299,7 +1299,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param appServicePlan App Service plan.
+     * @param appServicePlan Details of the App Service plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1316,7 +1316,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param appServicePlan App Service plan.
+     * @param appServicePlan Details of the App Service plan.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1471,7 +1471,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param appServicePlan ARM resource for a app service plan.
+     * @param appServicePlan Details of the App Service plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1526,7 +1526,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param appServicePlan ARM resource for a app service plan.
+     * @param appServicePlan Details of the App Service plan.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1579,7 +1579,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param appServicePlan ARM resource for a app service plan.
+     * @param appServicePlan Details of the App Service plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1604,7 +1604,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param appServicePlan ARM resource for a app service plan.
+     * @param appServicePlan Details of the App Service plan.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1621,7 +1621,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param appServicePlan ARM resource for a app service plan.
+     * @param appServicePlan Details of the App Service plan.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -4108,8 +4108,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param name Name of the App Service plan.
      * @param vnetName Name of the Virtual Network.
      * @param gatewayName Name of the gateway. Only the 'primary' gateway is supported.
-     * @param connectionEnvelope The Virtual Network gateway contract. This is used to give the Virtual Network gateway
-     *     access to the VPN package.
+     * @param connectionEnvelope Definition of the gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4179,8 +4178,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param name Name of the App Service plan.
      * @param vnetName Name of the Virtual Network.
      * @param gatewayName Name of the gateway. Only the 'primary' gateway is supported.
-     * @param connectionEnvelope The Virtual Network gateway contract. This is used to give the Virtual Network gateway
-     *     access to the VPN package.
+     * @param connectionEnvelope Definition of the gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -4249,8 +4247,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param name Name of the App Service plan.
      * @param vnetName Name of the Virtual Network.
      * @param gatewayName Name of the gateway. Only the 'primary' gateway is supported.
-     * @param connectionEnvelope The Virtual Network gateway contract. This is used to give the Virtual Network gateway
-     *     access to the VPN package.
+     * @param connectionEnvelope Definition of the gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4281,8 +4278,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param name Name of the App Service plan.
      * @param vnetName Name of the Virtual Network.
      * @param gatewayName Name of the gateway. Only the 'primary' gateway is supported.
-     * @param connectionEnvelope The Virtual Network gateway contract. This is used to give the Virtual Network gateway
-     *     access to the VPN package.
+     * @param connectionEnvelope Definition of the gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4305,8 +4301,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param name Name of the App Service plan.
      * @param vnetName Name of the Virtual Network.
      * @param gatewayName Name of the gateway. Only the 'primary' gateway is supported.
-     * @param connectionEnvelope The Virtual Network gateway contract. This is used to give the Virtual Network gateway
-     *     access to the VPN package.
+     * @param connectionEnvelope Definition of the gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -4672,7 +4667,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param name Name of the App Service plan.
      * @param vnetName Name of the Virtual Network.
      * @param routeName Name of the Virtual Network route.
-     * @param route Virtual Network route contract used to pass routing information for a Virtual Network.
+     * @param route Definition of the Virtual Network route.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4737,7 +4732,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param name Name of the App Service plan.
      * @param vnetName Name of the Virtual Network.
      * @param routeName Name of the Virtual Network route.
-     * @param route Virtual Network route contract used to pass routing information for a Virtual Network.
+     * @param route Definition of the Virtual Network route.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -4805,7 +4800,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param name Name of the App Service plan.
      * @param vnetName Name of the Virtual Network.
      * @param routeName Name of the Virtual Network route.
-     * @param route Virtual Network route contract used to pass routing information for a Virtual Network.
+     * @param route Definition of the Virtual Network route.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4832,7 +4827,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param name Name of the App Service plan.
      * @param vnetName Name of the Virtual Network.
      * @param routeName Name of the Virtual Network route.
-     * @param route Virtual Network route contract used to pass routing information for a Virtual Network.
+     * @param route Definition of the Virtual Network route.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4851,7 +4846,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param name Name of the App Service plan.
      * @param vnetName Name of the Virtual Network.
      * @param routeName Name of the Virtual Network route.
-     * @param route Virtual Network route contract used to pass routing information for a Virtual Network.
+     * @param route Definition of the Virtual Network route.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -5044,7 +5039,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param name Name of the App Service plan.
      * @param vnetName Name of the Virtual Network.
      * @param routeName Name of the Virtual Network route.
-     * @param route Virtual Network route contract used to pass routing information for a Virtual Network.
+     * @param route Definition of the Virtual Network route.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -5109,7 +5104,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param name Name of the App Service plan.
      * @param vnetName Name of the Virtual Network.
      * @param routeName Name of the Virtual Network route.
-     * @param route Virtual Network route contract used to pass routing information for a Virtual Network.
+     * @param route Definition of the Virtual Network route.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -5177,7 +5172,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param name Name of the App Service plan.
      * @param vnetName Name of the Virtual Network.
      * @param routeName Name of the Virtual Network route.
-     * @param route Virtual Network route contract used to pass routing information for a Virtual Network.
+     * @param route Definition of the Virtual Network route.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -5204,7 +5199,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param name Name of the App Service plan.
      * @param vnetName Name of the Virtual Network.
      * @param routeName Name of the Virtual Network route.
-     * @param route Virtual Network route contract used to pass routing information for a Virtual Network.
+     * @param route Definition of the Virtual Network route.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -5223,7 +5218,7 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @param name Name of the App Service plan.
      * @param vnetName Name of the Virtual Network.
      * @param routeName Name of the Virtual Network route.
-     * @param route Virtual Network route contract used to pass routing information for a Virtual Network.
+     * @param route Definition of the Virtual Network route.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.

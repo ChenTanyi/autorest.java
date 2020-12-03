@@ -270,7 +270,7 @@ public interface Namespaces {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @param parameters Description of topic resource.
+     * @param parameters The Namespace IpFilterRule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -284,7 +284,7 @@ public interface Namespaces {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @param parameters Description of topic resource.
+     * @param parameters The Namespace IpFilterRule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -436,8 +436,7 @@ public interface Namespaces {
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param authorizationRuleName The authorization rule name.
-     * @param parameters Parameters supplied to the Regenerate Authorization Rule operation, specifies which key needs
-     *     to be reset.
+     * @param parameters Parameters required to regenerate the connection string.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -455,8 +454,7 @@ public interface Namespaces {
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param authorizationRuleName The authorization rule name.
-     * @param parameters Parameters supplied to the Regenerate Authorization Rule operation, specifies which key needs
-     *     to be reset.
+     * @param parameters Parameters required to regenerate the connection string.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -473,7 +471,7 @@ public interface Namespaces {
     /**
      * Check the give Namespace name availability.
      *
-     * @param parameters Parameter supplied to check Namespace name availability operation.
+     * @param parameters Parameters to check availability of the given Namespace name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -484,7 +482,7 @@ public interface Namespaces {
     /**
      * Check the give Namespace name availability.
      *
-     * @param parameters Parameter supplied to check Namespace name availability operation.
+     * @param parameters Parameters to check availability of the given Namespace name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

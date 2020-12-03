@@ -53,7 +53,7 @@ public interface VirtualHubRouteTableV2SClient {
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param routeTableName The name of the VirtualHubRouteTableV2.
-     * @param virtualHubRouteTableV2Parameters VirtualHubRouteTableV2 Resource.
+     * @param virtualHubRouteTableV2Parameters Parameters supplied to create or update VirtualHubRouteTableV2.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
@@ -73,7 +73,7 @@ public interface VirtualHubRouteTableV2SClient {
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param routeTableName The name of the VirtualHubRouteTableV2.
-     * @param virtualHubRouteTableV2Parameters VirtualHubRouteTableV2 Resource.
+     * @param virtualHubRouteTableV2Parameters Parameters supplied to create or update VirtualHubRouteTableV2.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
@@ -95,7 +95,7 @@ public interface VirtualHubRouteTableV2SClient {
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param routeTableName The name of the VirtualHubRouteTableV2.
-     * @param virtualHubRouteTableV2Parameters VirtualHubRouteTableV2 Resource.
+     * @param virtualHubRouteTableV2Parameters Parameters supplied to create or update VirtualHubRouteTableV2.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
@@ -115,7 +115,7 @@ public interface VirtualHubRouteTableV2SClient {
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param routeTableName The name of the VirtualHubRouteTableV2.
-     * @param virtualHubRouteTableV2Parameters VirtualHubRouteTableV2 Resource.
+     * @param virtualHubRouteTableV2Parameters Parameters supplied to create or update VirtualHubRouteTableV2.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by

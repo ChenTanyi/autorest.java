@@ -102,7 +102,7 @@ public interface IpAllocationsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param ipAllocationName The name of the IpAllocation.
-     * @param parameters IpAllocation resource.
+     * @param parameters Parameters supplied to the create or update virtual network operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -117,7 +117,7 @@ public interface IpAllocationsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param ipAllocationName The name of the IpAllocation.
-     * @param parameters IpAllocation resource.
+     * @param parameters Parameters supplied to the create or update virtual network operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -133,7 +133,7 @@ public interface IpAllocationsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param ipAllocationName The name of the IpAllocation.
-     * @param parameters IpAllocation resource.
+     * @param parameters Parameters supplied to the create or update virtual network operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -147,7 +147,7 @@ public interface IpAllocationsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param ipAllocationName The name of the IpAllocation.
-     * @param parameters IpAllocation resource.
+     * @param parameters Parameters supplied to the create or update virtual network operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -163,7 +163,7 @@ public interface IpAllocationsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param ipAllocationName The name of the IpAllocation.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update IpAllocation tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -177,7 +177,7 @@ public interface IpAllocationsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param ipAllocationName The name of the IpAllocation.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update IpAllocation tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

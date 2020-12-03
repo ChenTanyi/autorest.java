@@ -107,7 +107,7 @@ public interface ExpressRoutePorts {
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of ExpressRoutePort.
-     * @param request The customer name to be printed on a letter of authorization.
+     * @param request Request parameters supplied to generate a letter of authorization.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -121,7 +121,7 @@ public interface ExpressRoutePorts {
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of ExpressRoutePort.
-     * @param request The customer name to be printed on a letter of authorization.
+     * @param request Request parameters supplied to generate a letter of authorization.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

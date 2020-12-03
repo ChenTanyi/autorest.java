@@ -182,7 +182,7 @@ public interface StaticSites {
      * @param name Name of the static site.
      * @param authprovider The auth provider for this user.
      * @param userid The user id of the user.
-     * @param staticSiteUserEnvelope Static Site User ARM resource.
+     * @param staticSiteUserEnvelope A JSON representation of the StaticSiteUser properties. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -203,7 +203,7 @@ public interface StaticSites {
      * @param name Name of the static site.
      * @param authprovider The auth provider for this user.
      * @param userid The user id of the user.
-     * @param staticSiteUserEnvelope Static Site User ARM resource.
+     * @param staticSiteUserEnvelope A JSON representation of the StaticSiteUser properties. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the

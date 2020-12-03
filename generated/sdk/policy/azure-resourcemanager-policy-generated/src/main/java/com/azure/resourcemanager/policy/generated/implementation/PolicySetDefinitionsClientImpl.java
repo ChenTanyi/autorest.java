@@ -229,7 +229,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      * This operation creates or updates a policy set definition in the given subscription with the given name.
      *
      * @param policySetDefinitionName The name of the policy set definition to create.
-     * @param parameters The policy set definition.
+     * @param parameters The policy set definition properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -280,7 +280,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      * This operation creates or updates a policy set definition in the given subscription with the given name.
      *
      * @param policySetDefinitionName The name of the policy set definition to create.
-     * @param parameters The policy set definition.
+     * @param parameters The policy set definition properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -329,7 +329,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      * This operation creates or updates a policy set definition in the given subscription with the given name.
      *
      * @param policySetDefinitionName The name of the policy set definition to create.
-     * @param parameters The policy set definition.
+     * @param parameters The policy set definition properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -353,7 +353,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      * This operation creates or updates a policy set definition in the given subscription with the given name.
      *
      * @param policySetDefinitionName The name of the policy set definition to create.
-     * @param parameters The policy set definition.
+     * @param parameters The policy set definition properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -369,7 +369,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      * This operation creates or updates a policy set definition in the given subscription with the given name.
      *
      * @param policySetDefinitionName The name of the policy set definition to create.
-     * @param parameters The policy set definition.
+     * @param parameters The policy set definition properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1024,7 +1024,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      *
      * @param policySetDefinitionName The name of the policy set definition to create.
      * @param managementGroupId The ID of the management group.
-     * @param parameters The policy set definition.
+     * @param parameters The policy set definition properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1074,7 +1074,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      *
      * @param policySetDefinitionName The name of the policy set definition to create.
      * @param managementGroupId The ID of the management group.
-     * @param parameters The policy set definition.
+     * @param parameters The policy set definition properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1125,7 +1125,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      *
      * @param policySetDefinitionName The name of the policy set definition to create.
      * @param managementGroupId The ID of the management group.
-     * @param parameters The policy set definition.
+     * @param parameters The policy set definition properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1150,7 +1150,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      *
      * @param policySetDefinitionName The name of the policy set definition to create.
      * @param managementGroupId The ID of the management group.
-     * @param parameters The policy set definition.
+     * @param parameters The policy set definition properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1167,7 +1167,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      *
      * @param policySetDefinitionName The name of the policy set definition to create.
      * @param managementGroupId The ID of the management group.
-     * @param parameters The policy set definition.
+     * @param parameters The policy set definition properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

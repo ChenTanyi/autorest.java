@@ -464,7 +464,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
      * @param authorizationRuleName The authorization rule name.
-     * @param parameters Single item in a List or Get AuthorizationRule operation.
+     * @param parameters The shared access AuthorizationRule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -536,7 +536,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
      * @param authorizationRuleName The authorization rule name.
-     * @param parameters Single item in a List or Get AuthorizationRule operation.
+     * @param parameters The shared access AuthorizationRule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -607,7 +607,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
      * @param authorizationRuleName The authorization rule name.
-     * @param parameters Single item in a List or Get AuthorizationRule operation.
+     * @param parameters The shared access AuthorizationRule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -640,7 +640,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
      * @param authorizationRuleName The authorization rule name.
-     * @param parameters Single item in a List or Get AuthorizationRule operation.
+     * @param parameters The shared access AuthorizationRule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -666,7 +666,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
      * @param authorizationRuleName The authorization rule name.
-     * @param parameters Single item in a List or Get AuthorizationRule operation.
+     * @param parameters The shared access AuthorizationRule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1259,8 +1259,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
      * @param authorizationRuleName The authorization rule name.
-     * @param parameters Parameters supplied to the Regenerate Authorization Rule operation, specifies which key needs
-     *     to be reset.
+     * @param parameters Parameters supplied to regenerate the AuthorizationRule Keys (PrimaryKey/SecondaryKey).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1331,8 +1330,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
      * @param authorizationRuleName The authorization rule name.
-     * @param parameters Parameters supplied to the Regenerate Authorization Rule operation, specifies which key needs
-     *     to be reset.
+     * @param parameters Parameters supplied to regenerate the AuthorizationRule Keys (PrimaryKey/SecondaryKey).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1402,8 +1400,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
      * @param authorizationRuleName The authorization rule name.
-     * @param parameters Parameters supplied to the Regenerate Authorization Rule operation, specifies which key needs
-     *     to be reset.
+     * @param parameters Parameters supplied to regenerate the AuthorizationRule Keys (PrimaryKey/SecondaryKey).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1435,8 +1432,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
      * @param authorizationRuleName The authorization rule name.
-     * @param parameters Parameters supplied to the Regenerate Authorization Rule operation, specifies which key needs
-     *     to be reset.
+     * @param parameters Parameters supplied to regenerate the AuthorizationRule Keys (PrimaryKey/SecondaryKey).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1460,8 +1456,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
      * @param authorizationRuleName The authorization rule name.
-     * @param parameters Parameters supplied to the Regenerate Authorization Rule operation, specifies which key needs
-     *     to be reset.
+     * @param parameters Parameters supplied to regenerate the AuthorizationRule Keys (PrimaryKey/SecondaryKey).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1715,7 +1710,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
-     * @param parameters Single item in List or Get Event Hub operation.
+     * @param parameters Parameters supplied to create an Event Hub resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1776,7 +1771,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
-     * @param parameters Single item in List or Get Event Hub operation.
+     * @param parameters Parameters supplied to create an Event Hub resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1839,7 +1834,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
-     * @param parameters Single item in List or Get Event Hub operation.
+     * @param parameters Parameters supplied to create an Event Hub resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1865,7 +1860,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
-     * @param parameters Single item in List or Get Event Hub operation.
+     * @param parameters Parameters supplied to create an Event Hub resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1883,7 +1878,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
-     * @param parameters Single item in List or Get Event Hub operation.
+     * @param parameters Parameters supplied to create an Event Hub resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

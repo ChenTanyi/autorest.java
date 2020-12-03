@@ -26,8 +26,7 @@ public interface SharedPrivateLinkResourcesClient {
      *     group.
      * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure Cognitive
      *     Search service within the specified resource group.
-     * @param sharedPrivateLinkResource Describes a Shared Private Link Resource managed by the Azure Cognitive Search
-     *     service.
+     * @param sharedPrivateLinkResource The definition of the shared private link resource to create or update.
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -53,8 +52,7 @@ public interface SharedPrivateLinkResourcesClient {
      *     group.
      * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure Cognitive
      *     Search service within the specified resource group.
-     * @param sharedPrivateLinkResource Describes a Shared Private Link Resource managed by the Azure Cognitive Search
-     *     service.
+     * @param sharedPrivateLinkResource The definition of the shared private link resource to create or update.
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
      * @param context The context to associate with this operation.
@@ -82,8 +80,7 @@ public interface SharedPrivateLinkResourcesClient {
      *     group.
      * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure Cognitive
      *     Search service within the specified resource group.
-     * @param sharedPrivateLinkResource Describes a Shared Private Link Resource managed by the Azure Cognitive Search
-     *     service.
+     * @param sharedPrivateLinkResource The definition of the shared private link resource to create or update.
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -109,8 +106,7 @@ public interface SharedPrivateLinkResourcesClient {
      *     group.
      * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure Cognitive
      *     Search service within the specified resource group.
-     * @param sharedPrivateLinkResource Describes a Shared Private Link Resource managed by the Azure Cognitive Search
-     *     service.
+     * @param sharedPrivateLinkResource The definition of the shared private link resource to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -133,8 +129,7 @@ public interface SharedPrivateLinkResourcesClient {
      *     group.
      * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure Cognitive
      *     Search service within the specified resource group.
-     * @param sharedPrivateLinkResource Describes a Shared Private Link Resource managed by the Azure Cognitive Search
-     *     service.
+     * @param sharedPrivateLinkResource The definition of the shared private link resource to create or update.
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
      * @param context The context to associate with this operation.

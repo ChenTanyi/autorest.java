@@ -272,7 +272,8 @@ public final class TableServicesClientImpl implements TableServicesClient {
      *     insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param parameters The properties of a storage account’s Table service.
+     * @param parameters The properties of a storage account’s Table service, only properties for Storage Analytics and
+     *     CORS (Cross-Origin Resource Sharing) rules can be specified.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -332,7 +333,8 @@ public final class TableServicesClientImpl implements TableServicesClient {
      *     insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param parameters The properties of a storage account’s Table service.
+     * @param parameters The properties of a storage account’s Table service, only properties for Storage Analytics and
+     *     CORS (Cross-Origin Resource Sharing) rules can be specified.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -390,7 +392,8 @@ public final class TableServicesClientImpl implements TableServicesClient {
      *     insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param parameters The properties of a storage account’s Table service.
+     * @param parameters The properties of a storage account’s Table service, only properties for Storage Analytics and
+     *     CORS (Cross-Origin Resource Sharing) rules can be specified.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -418,7 +421,8 @@ public final class TableServicesClientImpl implements TableServicesClient {
      *     insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param parameters The properties of a storage account’s Table service.
+     * @param parameters The properties of a storage account’s Table service, only properties for Storage Analytics and
+     *     CORS (Cross-Origin Resource Sharing) rules can be specified.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -438,7 +442,8 @@ public final class TableServicesClientImpl implements TableServicesClient {
      *     insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param parameters The properties of a storage account’s Table service.
+     * @param parameters The properties of a storage account’s Table service, only properties for Storage Analytics and
+     *     CORS (Cross-Origin Resource Sharing) rules can be specified.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

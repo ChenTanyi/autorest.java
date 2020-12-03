@@ -96,7 +96,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * Queries the resources managed by Azure Resource Manager for all subscriptions specified in the request.
      *
-     * @param query Describes a query to be executed.
+     * @param query Request specifying query and its options.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -126,7 +126,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * Queries the resources managed by Azure Resource Manager for all subscriptions specified in the request.
      *
-     * @param query Describes a query to be executed.
+     * @param query Request specifying query and its options.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -154,7 +154,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * Queries the resources managed by Azure Resource Manager for all subscriptions specified in the request.
      *
-     * @param query Describes a query to be executed.
+     * @param query Request specifying query and its options.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -176,7 +176,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * Queries the resources managed by Azure Resource Manager for all subscriptions specified in the request.
      *
-     * @param query Describes a query to be executed.
+     * @param query Request specifying query and its options.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -190,7 +190,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * Queries the resources managed by Azure Resource Manager for all subscriptions specified in the request.
      *
-     * @param query Describes a query to be executed.
+     * @param query Request specifying query and its options.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -205,7 +205,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * List changes to a resource for a given time interval.
      *
-     * @param parameters The parameters for a specific changes request.
+     * @param parameters the parameters for this request for changes.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -238,7 +238,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * List changes to a resource for a given time interval.
      *
-     * @param parameters The parameters for a specific changes request.
+     * @param parameters the parameters for this request for changes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -268,7 +268,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * List changes to a resource for a given time interval.
      *
-     * @param parameters The parameters for a specific changes request.
+     * @param parameters the parameters for this request for changes.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -290,7 +290,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * List changes to a resource for a given time interval.
      *
-     * @param parameters The parameters for a specific changes request.
+     * @param parameters the parameters for this request for changes.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -304,7 +304,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * List changes to a resource for a given time interval.
      *
-     * @param parameters The parameters for a specific changes request.
+     * @param parameters the parameters for this request for changes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -320,7 +320,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * Get resource change details.
      *
-     * @param parameters The parameters for a specific change details request.
+     * @param parameters The parameters for this request for resource change details.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -353,7 +353,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * Get resource change details.
      *
-     * @param parameters The parameters for a specific change details request.
+     * @param parameters The parameters for this request for resource change details.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -383,7 +383,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * Get resource change details.
      *
-     * @param parameters The parameters for a specific change details request.
+     * @param parameters The parameters for this request for resource change details.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -406,7 +406,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * Get resource change details.
      *
-     * @param parameters The parameters for a specific change details request.
+     * @param parameters The parameters for this request for resource change details.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -420,7 +420,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     /**
      * Get resource change details.
      *
-     * @param parameters The parameters for a specific change details request.
+     * @param parameters The parameters for this request for resource change details.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

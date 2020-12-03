@@ -942,7 +942,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to the Update private endpoint connection Tags operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1006,7 +1006,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to the Update private endpoint connection Tags operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1072,7 +1072,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to the Update private endpoint connection Tags operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1099,7 +1099,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to the Update private endpoint connection Tags operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1133,7 +1133,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to the Update private endpoint connection Tags operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1152,7 +1152,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to the Update private endpoint connection Tags operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1176,7 +1176,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to the Update private endpoint connection Tags operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1196,7 +1196,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to the Update private endpoint connection Tags operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1221,7 +1221,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to the Update private endpoint connection Tags operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1239,7 +1239,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to the Update private endpoint connection Tags operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

@@ -157,7 +157,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param activityLogAlertName The name of the activity log alert.
-     * @param activityLogAlert An activity log alert resource.
+     * @param activityLogAlert The activity log alert to create or use for the update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -215,7 +215,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param activityLogAlertName The name of the activity log alert.
-     * @param activityLogAlert An activity log alert resource.
+     * @param activityLogAlert The activity log alert to create or use for the update.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -274,7 +274,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param activityLogAlertName The name of the activity log alert.
-     * @param activityLogAlert An activity log alert resource.
+     * @param activityLogAlert The activity log alert to create or use for the update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -299,7 +299,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param activityLogAlertName The name of the activity log alert.
-     * @param activityLogAlert An activity log alert resource.
+     * @param activityLogAlert The activity log alert to create or use for the update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -316,7 +316,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param activityLogAlertName The name of the activity log alert.
-     * @param activityLogAlert An activity log alert resource.
+     * @param activityLogAlert The activity log alert to create or use for the update.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -635,7 +635,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param activityLogAlertName The name of the activity log alert.
-     * @param activityLogAlertPatch An activity log alert object for the body of patch operations.
+     * @param activityLogAlertPatch Parameters supplied to the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -693,7 +693,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param activityLogAlertName The name of the activity log alert.
-     * @param activityLogAlertPatch An activity log alert object for the body of patch operations.
+     * @param activityLogAlertPatch Parameters supplied to the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -752,7 +752,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param activityLogAlertName The name of the activity log alert.
-     * @param activityLogAlertPatch An activity log alert object for the body of patch operations.
+     * @param activityLogAlertPatch Parameters supplied to the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -777,7 +777,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param activityLogAlertName The name of the activity log alert.
-     * @param activityLogAlertPatch An activity log alert object for the body of patch operations.
+     * @param activityLogAlertPatch Parameters supplied to the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -794,7 +794,7 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param activityLogAlertName The name of the activity log alert.
-     * @param activityLogAlertPatch An activity log alert object for the body of patch operations.
+     * @param activityLogAlertPatch Parameters supplied to the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

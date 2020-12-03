@@ -640,7 +640,7 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param subnetParameters Subnet in a virtual network resource.
+     * @param subnetParameters Parameters supplied to the create or update subnet operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -703,7 +703,7 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param subnetParameters Subnet in a virtual network resource.
+     * @param subnetParameters Parameters supplied to the create or update subnet operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -768,7 +768,7 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param subnetParameters Subnet in a virtual network resource.
+     * @param subnetParameters Parameters supplied to the create or update subnet operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -791,7 +791,7 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param subnetParameters Subnet in a virtual network resource.
+     * @param subnetParameters Parameters supplied to the create or update subnet operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -821,7 +821,7 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param subnetParameters Subnet in a virtual network resource.
+     * @param subnetParameters Parameters supplied to the create or update subnet operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -840,7 +840,7 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param subnetParameters Subnet in a virtual network resource.
+     * @param subnetParameters Parameters supplied to the create or update subnet operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -864,7 +864,7 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param subnetParameters Subnet in a virtual network resource.
+     * @param subnetParameters Parameters supplied to the create or update subnet operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -884,7 +884,7 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param subnetParameters Subnet in a virtual network resource.
+     * @param subnetParameters Parameters supplied to the create or update subnet operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -909,7 +909,7 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param subnetParameters Subnet in a virtual network resource.
+     * @param subnetParameters Parameters supplied to the create or update subnet operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -927,7 +927,7 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param subnetParameters Subnet in a virtual network resource.
+     * @param subnetParameters Parameters supplied to the create or update subnet operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -951,7 +951,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param prepareNetworkPoliciesRequestParameters Details of PrepareNetworkPolicies for Subnet.
+     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent
+     *     policies.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1019,7 +1020,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param prepareNetworkPoliciesRequestParameters Details of PrepareNetworkPolicies for Subnet.
+     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent
+     *     policies.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1086,7 +1088,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param prepareNetworkPoliciesRequestParameters Details of PrepareNetworkPolicies for Subnet.
+     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent
+     *     policies.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1112,7 +1115,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param prepareNetworkPoliciesRequestParameters Details of PrepareNetworkPolicies for Subnet.
+     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent
+     *     policies.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1141,7 +1145,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param prepareNetworkPoliciesRequestParameters Details of PrepareNetworkPolicies for Subnet.
+     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent
+     *     policies.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1164,7 +1169,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param prepareNetworkPoliciesRequestParameters Details of PrepareNetworkPolicies for Subnet.
+     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent
+     *     policies.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1189,7 +1195,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param prepareNetworkPoliciesRequestParameters Details of PrepareNetworkPolicies for Subnet.
+     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent
+     *     policies.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1213,7 +1220,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param prepareNetworkPoliciesRequestParameters Details of PrepareNetworkPolicies for Subnet.
+     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent
+     *     policies.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1239,7 +1247,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param prepareNetworkPoliciesRequestParameters Details of PrepareNetworkPolicies for Subnet.
+     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent
+     *     policies.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1261,7 +1270,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param prepareNetworkPoliciesRequestParameters Details of PrepareNetworkPolicies for Subnet.
+     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent
+     *     policies.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1285,7 +1295,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param unprepareNetworkPoliciesRequestParameters Details of UnprepareNetworkPolicies for Subnet.
+     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent
+     *     policies.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1353,7 +1364,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param unprepareNetworkPoliciesRequestParameters Details of UnprepareNetworkPolicies for Subnet.
+     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent
+     *     policies.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1420,7 +1432,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param unprepareNetworkPoliciesRequestParameters Details of UnprepareNetworkPolicies for Subnet.
+     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent
+     *     policies.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1446,7 +1459,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param unprepareNetworkPoliciesRequestParameters Details of UnprepareNetworkPolicies for Subnet.
+     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent
+     *     policies.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1475,7 +1489,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param unprepareNetworkPoliciesRequestParameters Details of UnprepareNetworkPolicies for Subnet.
+     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent
+     *     policies.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1498,7 +1513,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param unprepareNetworkPoliciesRequestParameters Details of UnprepareNetworkPolicies for Subnet.
+     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent
+     *     policies.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1523,7 +1539,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param unprepareNetworkPoliciesRequestParameters Details of UnprepareNetworkPolicies for Subnet.
+     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent
+     *     policies.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1547,7 +1564,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param unprepareNetworkPoliciesRequestParameters Details of UnprepareNetworkPolicies for Subnet.
+     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent
+     *     policies.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1573,7 +1591,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param unprepareNetworkPoliciesRequestParameters Details of UnprepareNetworkPolicies for Subnet.
+     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent
+     *     policies.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1595,7 +1614,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param unprepareNetworkPoliciesRequestParameters Details of UnprepareNetworkPolicies for Subnet.
+     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent
+     *     policies.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

@@ -460,7 +460,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param policyName The name of the Web Application Firewall Policy.
-     * @param parameters Defines web application firewall policy.
+     * @param parameters Policy to be created.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -516,7 +516,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param policyName The name of the Web Application Firewall Policy.
-     * @param parameters Defines web application firewall policy.
+     * @param parameters Policy to be created.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -570,7 +570,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param policyName The name of the Web Application Firewall Policy.
-     * @param parameters Defines web application firewall policy.
+     * @param parameters Policy to be created.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -597,7 +597,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param policyName The name of the Web Application Firewall Policy.
-     * @param parameters Defines web application firewall policy.
+     * @param parameters Policy to be created.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -629,7 +629,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param policyName The name of the Web Application Firewall Policy.
-     * @param parameters Defines web application firewall policy.
+     * @param parameters Policy to be created.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -646,7 +646,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param policyName The name of the Web Application Firewall Policy.
-     * @param parameters Defines web application firewall policy.
+     * @param parameters Policy to be created.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -668,7 +668,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param policyName The name of the Web Application Firewall Policy.
-     * @param parameters Defines web application firewall policy.
+     * @param parameters Policy to be created.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -687,7 +687,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param policyName The name of the Web Application Firewall Policy.
-     * @param parameters Defines web application firewall policy.
+     * @param parameters Policy to be created.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -707,7 +707,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param policyName The name of the Web Application Firewall Policy.
-     * @param parameters Defines web application firewall policy.
+     * @param parameters Policy to be created.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -724,7 +724,7 @@ public final class PoliciesClientImpl implements PoliciesClient {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param policyName The name of the Web Application Firewall Policy.
-     * @param parameters Defines web application firewall policy.
+     * @param parameters Policy to be created.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

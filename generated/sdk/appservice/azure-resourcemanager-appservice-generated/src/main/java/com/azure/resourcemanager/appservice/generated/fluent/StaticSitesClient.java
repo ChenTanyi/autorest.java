@@ -108,7 +108,7 @@ public interface StaticSitesClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
-     * @param staticSiteEnvelope Static Site ARM resource.
+     * @param staticSiteEnvelope A JSON representation of the staticsite properties. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -124,7 +124,7 @@ public interface StaticSitesClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
-     * @param staticSiteEnvelope Static Site ARM resource.
+     * @param staticSiteEnvelope A JSON representation of the staticsite properties. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -169,7 +169,7 @@ public interface StaticSitesClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
-     * @param staticSiteEnvelope ARM resource for a static site when patching.
+     * @param staticSiteEnvelope A JSON representation of the staticsite properties. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -185,7 +185,7 @@ public interface StaticSitesClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the static site to create or update.
-     * @param staticSiteEnvelope ARM resource for a static site when patching.
+     * @param staticSiteEnvelope A JSON representation of the staticsite properties. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -270,7 +270,7 @@ public interface StaticSitesClient {
      * @param name Name of the static site.
      * @param authprovider The auth provider for this user.
      * @param userid The user id of the user.
-     * @param staticSiteUserEnvelope Static Site User ARM resource.
+     * @param staticSiteUserEnvelope A JSON representation of the StaticSiteUser properties. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -292,7 +292,7 @@ public interface StaticSitesClient {
      * @param name Name of the static site.
      * @param authprovider The auth provider for this user.
      * @param userid The user id of the user.
-     * @param staticSiteUserEnvelope Static Site User ARM resource.
+     * @param staticSiteUserEnvelope A JSON representation of the StaticSiteUser properties. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the

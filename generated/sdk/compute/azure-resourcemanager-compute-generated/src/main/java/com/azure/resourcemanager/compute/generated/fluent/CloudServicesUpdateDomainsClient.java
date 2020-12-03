@@ -22,7 +22,7 @@ public interface CloudServicesUpdateDomainsClient {
      * @param cloudServiceName Name of the cloud service.
      * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
      *     with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
-     * @param parameters Defines an update domain for the cloud service.
+     * @param parameters The update domain object.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -40,7 +40,7 @@ public interface CloudServicesUpdateDomainsClient {
      * @param cloudServiceName Name of the cloud service.
      * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
      *     with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
-     * @param parameters Defines an update domain for the cloud service.
+     * @param parameters The update domain object.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -63,7 +63,7 @@ public interface CloudServicesUpdateDomainsClient {
      * @param cloudServiceName Name of the cloud service.
      * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
      *     with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
-     * @param parameters Defines an update domain for the cloud service.
+     * @param parameters The update domain object.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -95,7 +95,7 @@ public interface CloudServicesUpdateDomainsClient {
      * @param cloudServiceName Name of the cloud service.
      * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
      *     with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
-     * @param parameters Defines an update domain for the cloud service.
+     * @param parameters The update domain object.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by

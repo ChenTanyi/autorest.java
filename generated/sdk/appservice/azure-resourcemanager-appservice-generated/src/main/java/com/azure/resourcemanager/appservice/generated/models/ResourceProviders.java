@@ -38,7 +38,7 @@ public interface ResourceProviders {
     /**
      * Description for Updates publishing user.
      *
-     * @param userDetails User credentials used for publishing activity.
+     * @param userDetails Details of publishing user.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -50,7 +50,7 @@ public interface ResourceProviders {
     /**
      * Description for Updates publishing user.
      *
-     * @param userDetails User credentials used for publishing activity.
+     * @param userDetails Details of publishing user.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -111,7 +111,7 @@ public interface ResourceProviders {
      * Description for Updates source control token.
      *
      * @param sourceControlType Type of source control.
-     * @param requestMessage The source control OAuth token.
+     * @param requestMessage Source control token information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -124,7 +124,7 @@ public interface ResourceProviders {
      * Description for Updates source control token.
      *
      * @param sourceControlType Type of source control.
-     * @param requestMessage The source control OAuth token.
+     * @param requestMessage Source control token information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -162,7 +162,7 @@ public interface ResourceProviders {
     /**
      * Description for Check if a resource name is available.
      *
-     * @param request Resource name availability request content.
+     * @param request Name availability request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -174,7 +174,7 @@ public interface ResourceProviders {
     /**
      * Description for Check if a resource name is available.
      *
-     * @param request Resource name availability request content.
+     * @param request Name availability request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -246,7 +246,7 @@ public interface ResourceProviders {
     /**
      * Description for List all apps that are assigned to a hostname.
      *
-     * @param nameIdentifier Identifies an object.
+     * @param nameIdentifier Hostname information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -258,7 +258,7 @@ public interface ResourceProviders {
     /**
      * Description for List all apps that are assigned to a hostname.
      *
-     * @param nameIdentifier Identifies an object.
+     * @param nameIdentifier Hostname information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -317,7 +317,7 @@ public interface ResourceProviders {
      * Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network
      * Security Group rules.
      *
-     * @param parameters The required set of inputs to validate a VNET.
+     * @param parameters VNET information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -330,7 +330,7 @@ public interface ResourceProviders {
      * Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network
      * Security Group rules.
      *
-     * @param parameters The required set of inputs to validate a VNET.
+     * @param parameters VNET information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -345,8 +345,7 @@ public interface ResourceProviders {
      * Description for Move resources between resource groups.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param moveResourceEnvelope Object with a list of the resources that need to be moved and the resource group they
-     *     should be moved to.
+     * @param moveResourceEnvelope Object that represents the resource to move.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -358,8 +357,7 @@ public interface ResourceProviders {
      * Description for Move resources between resource groups.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param moveResourceEnvelope Object with a list of the resources that need to be moved and the resource group they
-     *     should be moved to.
+     * @param moveResourceEnvelope Object that represents the resource to move.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -374,7 +372,7 @@ public interface ResourceProviders {
      * Description for Validate if a resource can be created.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param validateRequest Resource validation request content.
+     * @param validateRequest Request with the resources to validate.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -387,7 +385,7 @@ public interface ResourceProviders {
      * Description for Validate if a resource can be created.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param validateRequest Resource validation request content.
+     * @param validateRequest Request with the resources to validate.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -402,8 +400,7 @@ public interface ResourceProviders {
      * Description for Validate whether a resource can be moved.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param moveResourceEnvelope Object with a list of the resources that need to be moved and the resource group they
-     *     should be moved to.
+     * @param moveResourceEnvelope Object that represents the resource to move.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -415,8 +412,7 @@ public interface ResourceProviders {
      * Description for Validate whether a resource can be moved.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param moveResourceEnvelope Object with a list of the resources that need to be moved and the resource group they
-     *     should be moved to.
+     * @param moveResourceEnvelope Object that represents the resource to move.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the

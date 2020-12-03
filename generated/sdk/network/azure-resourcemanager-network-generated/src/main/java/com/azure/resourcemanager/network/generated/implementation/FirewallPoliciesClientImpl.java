@@ -583,7 +583,7 @@ public final class FirewallPoliciesClientImpl implements FirewallPoliciesClient 
      *
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
-     * @param parameters FirewallPolicy Resource.
+     * @param parameters Parameters supplied to the create or update Firewall Policy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -640,7 +640,7 @@ public final class FirewallPoliciesClientImpl implements FirewallPoliciesClient 
      *
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
-     * @param parameters FirewallPolicy Resource.
+     * @param parameters Parameters supplied to the create or update Firewall Policy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -695,7 +695,7 @@ public final class FirewallPoliciesClientImpl implements FirewallPoliciesClient 
      *
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
-     * @param parameters FirewallPolicy Resource.
+     * @param parameters Parameters supplied to the create or update Firewall Policy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -721,7 +721,7 @@ public final class FirewallPoliciesClientImpl implements FirewallPoliciesClient 
      *
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
-     * @param parameters FirewallPolicy Resource.
+     * @param parameters Parameters supplied to the create or update Firewall Policy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -745,7 +745,7 @@ public final class FirewallPoliciesClientImpl implements FirewallPoliciesClient 
      *
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
-     * @param parameters FirewallPolicy Resource.
+     * @param parameters Parameters supplied to the create or update Firewall Policy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -762,7 +762,7 @@ public final class FirewallPoliciesClientImpl implements FirewallPoliciesClient 
      *
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
-     * @param parameters FirewallPolicy Resource.
+     * @param parameters Parameters supplied to the create or update Firewall Policy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -780,7 +780,7 @@ public final class FirewallPoliciesClientImpl implements FirewallPoliciesClient 
      *
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
-     * @param parameters FirewallPolicy Resource.
+     * @param parameters Parameters supplied to the create or update Firewall Policy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -799,7 +799,7 @@ public final class FirewallPoliciesClientImpl implements FirewallPoliciesClient 
      *
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
-     * @param parameters FirewallPolicy Resource.
+     * @param parameters Parameters supplied to the create or update Firewall Policy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -819,7 +819,7 @@ public final class FirewallPoliciesClientImpl implements FirewallPoliciesClient 
      *
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
-     * @param parameters FirewallPolicy Resource.
+     * @param parameters Parameters supplied to the create or update Firewall Policy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -836,7 +836,7 @@ public final class FirewallPoliciesClientImpl implements FirewallPoliciesClient 
      *
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
-     * @param parameters FirewallPolicy Resource.
+     * @param parameters Parameters supplied to the create or update Firewall Policy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

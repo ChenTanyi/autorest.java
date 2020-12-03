@@ -148,7 +148,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param routeTableName The name of the RouteTable.
-     * @param routeTableParameters RouteTable resource in a virtual hub.
+     * @param routeTableParameters Parameters supplied to create or update RouteTable.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -213,7 +213,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param routeTableName The name of the RouteTable.
-     * @param routeTableParameters RouteTable resource in a virtual hub.
+     * @param routeTableParameters Parameters supplied to create or update RouteTable.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -277,7 +277,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param routeTableName The name of the RouteTable.
-     * @param routeTableParameters RouteTable resource in a virtual hub.
+     * @param routeTableParameters Parameters supplied to create or update RouteTable.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -303,7 +303,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param routeTableName The name of the RouteTable.
-     * @param routeTableParameters RouteTable resource in a virtual hub.
+     * @param routeTableParameters Parameters supplied to create or update RouteTable.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -333,7 +333,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param routeTableName The name of the RouteTable.
-     * @param routeTableParameters RouteTable resource in a virtual hub.
+     * @param routeTableParameters Parameters supplied to create or update RouteTable.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -355,7 +355,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param routeTableName The name of the RouteTable.
-     * @param routeTableParameters RouteTable resource in a virtual hub.
+     * @param routeTableParameters Parameters supplied to create or update RouteTable.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -380,7 +380,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param routeTableName The name of the RouteTable.
-     * @param routeTableParameters RouteTable resource in a virtual hub.
+     * @param routeTableParameters Parameters supplied to create or update RouteTable.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -403,7 +403,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param routeTableName The name of the RouteTable.
-     * @param routeTableParameters RouteTable resource in a virtual hub.
+     * @param routeTableParameters Parameters supplied to create or update RouteTable.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -429,7 +429,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param routeTableName The name of the RouteTable.
-     * @param routeTableParameters RouteTable resource in a virtual hub.
+     * @param routeTableParameters Parameters supplied to create or update RouteTable.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -450,7 +450,7 @@ public final class HubRouteTablesClientImpl implements HubRouteTablesClient {
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param routeTableName The name of the RouteTable.
-     * @param routeTableParameters RouteTable resource in a virtual hub.
+     * @param routeTableParameters Parameters supplied to create or update RouteTable.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

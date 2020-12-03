@@ -122,7 +122,8 @@ public interface ServiceEndpointPolicyDefinitionsClient {
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the service endpoint policy.
      * @param serviceEndpointPolicyDefinitionName The name of the service endpoint policy definition name.
-     * @param serviceEndpointPolicyDefinitions Service Endpoint policy definitions.
+     * @param serviceEndpointPolicyDefinitions Parameters supplied to the create or update service endpoint policy
+     *     operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -142,7 +143,8 @@ public interface ServiceEndpointPolicyDefinitionsClient {
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the service endpoint policy.
      * @param serviceEndpointPolicyDefinitionName The name of the service endpoint policy definition name.
-     * @param serviceEndpointPolicyDefinitions Service Endpoint policy definitions.
+     * @param serviceEndpointPolicyDefinitions Parameters supplied to the create or update service endpoint policy
+     *     operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -164,7 +166,8 @@ public interface ServiceEndpointPolicyDefinitionsClient {
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the service endpoint policy.
      * @param serviceEndpointPolicyDefinitionName The name of the service endpoint policy definition name.
-     * @param serviceEndpointPolicyDefinitions Service Endpoint policy definitions.
+     * @param serviceEndpointPolicyDefinitions Parameters supplied to the create or update service endpoint policy
+     *     operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -183,7 +186,8 @@ public interface ServiceEndpointPolicyDefinitionsClient {
      * @param resourceGroupName The name of the resource group.
      * @param serviceEndpointPolicyName The name of the service endpoint policy.
      * @param serviceEndpointPolicyDefinitionName The name of the service endpoint policy definition name.
-     * @param serviceEndpointPolicyDefinitions Service Endpoint policy definitions.
+     * @param serviceEndpointPolicyDefinitions Parameters supplied to the create or update service endpoint policy
+     *     operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

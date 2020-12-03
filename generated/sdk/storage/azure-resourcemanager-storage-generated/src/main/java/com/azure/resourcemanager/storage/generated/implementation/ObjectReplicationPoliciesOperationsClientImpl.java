@@ -499,8 +499,8 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param objectReplicationPolicyId The ID of object replication policy or 'default' if the policy ID is unknown.
-     * @param properties The replication policy between two storage accounts. Multiple rules can be defined in one
-     *     policy.
+     * @param properties The object replication policy set to a storage account. A unique policy ID will be created if
+     *     absent.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -568,8 +568,8 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param objectReplicationPolicyId The ID of object replication policy or 'default' if the policy ID is unknown.
-     * @param properties The replication policy between two storage accounts. Multiple rules can be defined in one
-     *     policy.
+     * @param properties The object replication policy set to a storage account. A unique policy ID will be created if
+     *     absent.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -636,8 +636,8 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param objectReplicationPolicyId The ID of object replication policy or 'default' if the policy ID is unknown.
-     * @param properties The replication policy between two storage accounts. Multiple rules can be defined in one
-     *     policy.
+     * @param properties The object replication policy set to a storage account. A unique policy ID will be created if
+     *     absent.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -668,8 +668,8 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param objectReplicationPolicyId The ID of object replication policy or 'default' if the policy ID is unknown.
-     * @param properties The replication policy between two storage accounts. Multiple rules can be defined in one
-     *     policy.
+     * @param properties The object replication policy set to a storage account. A unique policy ID will be created if
+     *     absent.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -692,8 +692,8 @@ public final class ObjectReplicationPoliciesOperationsClientImpl implements Obje
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param objectReplicationPolicyId The ID of object replication policy or 'default' if the policy ID is unknown.
-     * @param properties The replication policy between two storage accounts. Multiple rules can be defined in one
-     *     policy.
+     * @param properties The object replication policy set to a storage account. A unique policy ID will be created if
+     *     absent.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

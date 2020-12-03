@@ -578,7 +578,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * the operation. Write and delete operations are blocked on the groups until the move completes.
      *
      * @param sourceResourceGroupName The name of the resource group containing the resources to move.
-     * @param parameters Parameters of move resources.
+     * @param parameters Parameters for moving resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -631,7 +631,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * the operation. Write and delete operations are blocked on the groups until the move completes.
      *
      * @param sourceResourceGroupName The name of the resource group containing the resources to move.
-     * @param parameters Parameters of move resources.
+     * @param parameters Parameters for moving resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -682,7 +682,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * the operation. Write and delete operations are blocked on the groups until the move completes.
      *
      * @param sourceResourceGroupName The name of the resource group containing the resources to move.
-     * @param parameters Parameters of move resources.
+     * @param parameters Parameters for moving resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -703,7 +703,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * the operation. Write and delete operations are blocked on the groups until the move completes.
      *
      * @param sourceResourceGroupName The name of the resource group containing the resources to move.
-     * @param parameters Parameters of move resources.
+     * @param parameters Parameters for moving resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -727,7 +727,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * the operation. Write and delete operations are blocked on the groups until the move completes.
      *
      * @param sourceResourceGroupName The name of the resource group containing the resources to move.
-     * @param parameters Parameters of move resources.
+     * @param parameters Parameters for moving resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -745,7 +745,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * the operation. Write and delete operations are blocked on the groups until the move completes.
      *
      * @param sourceResourceGroupName The name of the resource group containing the resources to move.
-     * @param parameters Parameters of move resources.
+     * @param parameters Parameters for moving resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -764,7 +764,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * the operation. Write and delete operations are blocked on the groups until the move completes.
      *
      * @param sourceResourceGroupName The name of the resource group containing the resources to move.
-     * @param parameters Parameters of move resources.
+     * @param parameters Parameters for moving resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -783,7 +783,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * the operation. Write and delete operations are blocked on the groups until the move completes.
      *
      * @param sourceResourceGroupName The name of the resource group containing the resources to move.
-     * @param parameters Parameters of move resources.
+     * @param parameters Parameters for moving resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -804,7 +804,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * the operation. Write and delete operations are blocked on the groups until the move completes.
      *
      * @param sourceResourceGroupName The name of the resource group containing the resources to move.
-     * @param parameters Parameters of move resources.
+     * @param parameters Parameters for moving resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -820,7 +820,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * the operation. Write and delete operations are blocked on the groups until the move completes.
      *
      * @param sourceResourceGroupName The name of the resource group containing the resources to move.
-     * @param parameters Parameters of move resources.
+     * @param parameters Parameters for moving resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -839,7 +839,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * long-running operation.
      *
      * @param sourceResourceGroupName The name of the resource group containing the resources to validate for move.
-     * @param parameters Parameters of move resources.
+     * @param parameters Parameters for moving resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -894,7 +894,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * long-running operation.
      *
      * @param sourceResourceGroupName The name of the resource group containing the resources to validate for move.
-     * @param parameters Parameters of move resources.
+     * @param parameters Parameters for moving resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -947,7 +947,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * long-running operation.
      *
      * @param sourceResourceGroupName The name of the resource group containing the resources to validate for move.
-     * @param parameters Parameters of move resources.
+     * @param parameters Parameters for moving resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -971,7 +971,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * long-running operation.
      *
      * @param sourceResourceGroupName The name of the resource group containing the resources to validate for move.
-     * @param parameters Parameters of move resources.
+     * @param parameters Parameters for moving resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -997,7 +997,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * long-running operation.
      *
      * @param sourceResourceGroupName The name of the resource group containing the resources to validate for move.
-     * @param parameters Parameters of move resources.
+     * @param parameters Parameters for moving resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1017,7 +1017,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * long-running operation.
      *
      * @param sourceResourceGroupName The name of the resource group containing the resources to validate for move.
-     * @param parameters Parameters of move resources.
+     * @param parameters Parameters for moving resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1038,7 +1038,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * long-running operation.
      *
      * @param sourceResourceGroupName The name of the resource group containing the resources to validate for move.
-     * @param parameters Parameters of move resources.
+     * @param parameters Parameters for moving resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1059,7 +1059,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * long-running operation.
      *
      * @param sourceResourceGroupName The name of the resource group containing the resources to validate for move.
-     * @param parameters Parameters of move resources.
+     * @param parameters Parameters for moving resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1082,7 +1082,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * long-running operation.
      *
      * @param sourceResourceGroupName The name of the resource group containing the resources to validate for move.
-     * @param parameters Parameters of move resources.
+     * @param parameters Parameters for moving resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1100,7 +1100,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * long-running operation.
      *
      * @param sourceResourceGroupName The name of the resource group containing the resources to validate for move.
-     * @param parameters Parameters of move resources.
+     * @param parameters Parameters for moving resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2077,7 +2077,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * @param resourceType The resource type of the resource to create.
      * @param resourceName The name of the resource to create.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Parameters for creating or updating the resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2161,7 +2161,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * @param resourceType The resource type of the resource to create.
      * @param resourceName The name of the resource to create.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Parameters for creating or updating the resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2244,7 +2244,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * @param resourceType The resource type of the resource to create.
      * @param resourceName The name of the resource to create.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Parameters for creating or updating the resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2287,7 +2287,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * @param resourceType The resource type of the resource to create.
      * @param resourceName The name of the resource to create.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Parameters for creating or updating the resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2330,7 +2330,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * @param resourceType The resource type of the resource to create.
      * @param resourceName The name of the resource to create.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Parameters for creating or updating the resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2365,7 +2365,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * @param resourceType The resource type of the resource to create.
      * @param resourceName The name of the resource to create.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Parameters for creating or updating the resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2403,7 +2403,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * @param resourceType The resource type of the resource to create.
      * @param resourceName The name of the resource to create.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Parameters for creating or updating the resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2439,7 +2439,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * @param resourceType The resource type of the resource to create.
      * @param resourceName The name of the resource to create.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Parameters for creating or updating the resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2478,7 +2478,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * @param resourceType The resource type of the resource to create.
      * @param resourceName The name of the resource to create.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Parameters for creating or updating the resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2513,7 +2513,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * @param resourceType The resource type of the resource to create.
      * @param resourceName The name of the resource to create.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Parameters for creating or updating the resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2551,7 +2551,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * @param resourceType The resource type of the resource to update.
      * @param resourceName The name of the resource to update.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Parameters for updating the resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2635,7 +2635,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * @param resourceType The resource type of the resource to update.
      * @param resourceName The name of the resource to update.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Parameters for updating the resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2718,7 +2718,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * @param resourceType The resource type of the resource to update.
      * @param resourceName The name of the resource to update.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Parameters for updating the resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2761,7 +2761,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * @param resourceType The resource type of the resource to update.
      * @param resourceName The name of the resource to update.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Parameters for updating the resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2804,7 +2804,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * @param resourceType The resource type of the resource to update.
      * @param resourceName The name of the resource to update.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Parameters for updating the resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2839,7 +2839,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * @param resourceType The resource type of the resource to update.
      * @param resourceName The name of the resource to update.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Parameters for updating the resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2877,7 +2877,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * @param resourceType The resource type of the resource to update.
      * @param resourceName The name of the resource to update.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Parameters for updating the resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2913,7 +2913,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * @param resourceType The resource type of the resource to update.
      * @param resourceName The name of the resource to update.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Parameters for updating the resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2952,7 +2952,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * @param resourceType The resource type of the resource to update.
      * @param resourceName The name of the resource to update.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Parameters for updating the resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2987,7 +2987,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      * @param resourceType The resource type of the resource to update.
      * @param resourceName The name of the resource to update.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Parameters for updating the resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -3631,7 +3631,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     format,
      *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Create or update resource parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3674,7 +3674,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     format,
      *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Create or update resource parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -3714,7 +3714,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     format,
      *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Create or update resource parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3741,7 +3741,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     format,
      *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Create or update resource parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -3767,7 +3767,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     format,
      *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Create or update resource parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3786,7 +3786,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     format,
      *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Create or update resource parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -3806,7 +3806,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     format,
      *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Create or update resource parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3827,7 +3827,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     format,
      *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Create or update resource parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -3849,7 +3849,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     format,
      *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Create or update resource parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3868,7 +3868,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     format,
      *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Create or update resource parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -3888,7 +3888,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     format,
      *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Update resource parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3929,7 +3929,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     format,
      *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Update resource parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -3968,7 +3968,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     format,
      *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Update resource parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3995,7 +3995,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     format,
      *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Update resource parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -4021,7 +4021,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     format,
      *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Update resource parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4040,7 +4040,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     format,
      *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Update resource parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -4060,7 +4060,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     format,
      *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Update resource parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4081,7 +4081,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     format,
      *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Update resource parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -4103,7 +4103,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     format,
      *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Update resource parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4121,7 +4121,7 @@ public final class ResourcesClientImpl implements ResourcesClient {
      *     format,
      *     /subscriptions/{guid}/resourceGroups/{resource-group-name}/{resource-provider-namespace}/{resource-type}/{resource-name}.
      * @param apiVersion The API version to use for the operation.
-     * @param parameters Resource information.
+     * @param parameters Update resource parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

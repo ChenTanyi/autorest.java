@@ -103,7 +103,7 @@ public interface NetworkSecurityGroupsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkSecurityGroupName The name of the network security group.
-     * @param parameters NetworkSecurityGroup resource.
+     * @param parameters Parameters supplied to the create or update network security group operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -118,7 +118,7 @@ public interface NetworkSecurityGroupsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkSecurityGroupName The name of the network security group.
-     * @param parameters NetworkSecurityGroup resource.
+     * @param parameters Parameters supplied to the create or update network security group operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -137,7 +137,7 @@ public interface NetworkSecurityGroupsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkSecurityGroupName The name of the network security group.
-     * @param parameters NetworkSecurityGroup resource.
+     * @param parameters Parameters supplied to the create or update network security group operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -152,7 +152,7 @@ public interface NetworkSecurityGroupsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkSecurityGroupName The name of the network security group.
-     * @param parameters NetworkSecurityGroup resource.
+     * @param parameters Parameters supplied to the create or update network security group operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -171,7 +171,7 @@ public interface NetworkSecurityGroupsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkSecurityGroupName The name of the network security group.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update network security group tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -186,7 +186,7 @@ public interface NetworkSecurityGroupsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkSecurityGroupName The name of the network security group.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update network security group tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

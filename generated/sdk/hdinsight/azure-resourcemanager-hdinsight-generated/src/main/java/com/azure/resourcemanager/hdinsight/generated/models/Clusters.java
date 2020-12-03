@@ -87,7 +87,7 @@ public interface Clusters {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param roleName The constant value for the roleName.
-     * @param parameters The Resize Cluster request parameters.
+     * @param parameters The parameters for the resize operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -100,7 +100,7 @@ public interface Clusters {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param roleName The constant value for the roleName.
-     * @param parameters The Resize Cluster request parameters.
+     * @param parameters The parameters for the resize operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -119,7 +119,7 @@ public interface Clusters {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param roleName The constant value for the roleName.
-     * @param parameters The autoscale configuration update parameter.
+     * @param parameters The parameters for the update autoscale configuration operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -136,7 +136,7 @@ public interface Clusters {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param roleName The constant value for the roleName.
-     * @param parameters The autoscale configuration update parameter.
+     * @param parameters The parameters for the update autoscale configuration operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -174,7 +174,7 @@ public interface Clusters {
      *
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
-     * @param parameters The Disk Encryption Cluster request parameters.
+     * @param parameters The parameters for the disk encryption operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -187,7 +187,7 @@ public interface Clusters {
      *
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
-     * @param parameters The Disk Encryption Cluster request parameters.
+     * @param parameters The parameters for the disk encryption operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -227,7 +227,7 @@ public interface Clusters {
      *
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
-     * @param parameters The update gateway settings request parameters.
+     * @param parameters The cluster configurations.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -240,7 +240,7 @@ public interface Clusters {
      *
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
-     * @param parameters The update gateway settings request parameters.
+     * @param parameters The cluster configurations.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -254,7 +254,7 @@ public interface Clusters {
      *
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
-     * @param parameters The parameters for the script actions to execute on a running cluster.
+     * @param parameters The parameters for executing script actions.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -266,7 +266,7 @@ public interface Clusters {
      *
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
-     * @param parameters The parameters for the script actions to execute on a running cluster.
+     * @param parameters The parameters for executing script actions.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

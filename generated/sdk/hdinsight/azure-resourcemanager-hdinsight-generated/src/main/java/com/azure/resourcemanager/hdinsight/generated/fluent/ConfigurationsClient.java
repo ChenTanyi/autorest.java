@@ -50,7 +50,7 @@ public interface ConfigurationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param configurationName The name of the cluster configuration.
-     * @param parameters The configuration object for the specified configuration for the specified cluster.
+     * @param parameters The cluster configurations.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -67,7 +67,7 @@ public interface ConfigurationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param configurationName The name of the cluster configuration.
-     * @param parameters The configuration object for the specified configuration for the specified cluster.
+     * @param parameters The cluster configurations.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -89,7 +89,7 @@ public interface ConfigurationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param configurationName The name of the cluster configuration.
-     * @param parameters The configuration object for the specified configuration for the specified cluster.
+     * @param parameters The cluster configurations.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -104,7 +104,7 @@ public interface ConfigurationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param configurationName The name of the cluster configuration.
-     * @param parameters The configuration object for the specified configuration for the specified cluster.
+     * @param parameters The cluster configurations.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

@@ -54,7 +54,7 @@ public interface P2SVpnGatewaysClient {
      *
      * @param resourceGroupName The resource group name of the P2SVpnGateway.
      * @param gatewayName The name of the gateway.
-     * @param p2SVpnGatewayParameters P2SVpnGateway Resource.
+     * @param p2SVpnGatewayParameters Parameters supplied to create or Update a virtual wan p2s vpn gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -69,7 +69,7 @@ public interface P2SVpnGatewaysClient {
      *
      * @param resourceGroupName The resource group name of the P2SVpnGateway.
      * @param gatewayName The name of the gateway.
-     * @param p2SVpnGatewayParameters P2SVpnGateway Resource.
+     * @param p2SVpnGatewayParameters Parameters supplied to create or Update a virtual wan p2s vpn gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -85,7 +85,7 @@ public interface P2SVpnGatewaysClient {
      *
      * @param resourceGroupName The resource group name of the P2SVpnGateway.
      * @param gatewayName The name of the gateway.
-     * @param p2SVpnGatewayParameters P2SVpnGateway Resource.
+     * @param p2SVpnGatewayParameters Parameters supplied to create or Update a virtual wan p2s vpn gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -100,7 +100,7 @@ public interface P2SVpnGatewaysClient {
      *
      * @param resourceGroupName The resource group name of the P2SVpnGateway.
      * @param gatewayName The name of the gateway.
-     * @param p2SVpnGatewayParameters P2SVpnGateway Resource.
+     * @param p2SVpnGatewayParameters Parameters supplied to create or Update a virtual wan p2s vpn gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -116,7 +116,7 @@ public interface P2SVpnGatewaysClient {
      *
      * @param resourceGroupName The resource group name of the P2SVpnGateway.
      * @param gatewayName The name of the gateway.
-     * @param p2SVpnGatewayParameters Tags object for patch operations.
+     * @param p2SVpnGatewayParameters Parameters supplied to update a virtual wan p2s vpn gateway tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -131,7 +131,7 @@ public interface P2SVpnGatewaysClient {
      *
      * @param resourceGroupName The resource group name of the P2SVpnGateway.
      * @param gatewayName The name of the gateway.
-     * @param p2SVpnGatewayParameters Tags object for patch operations.
+     * @param p2SVpnGatewayParameters Parameters supplied to update a virtual wan p2s vpn gateway tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -147,7 +147,7 @@ public interface P2SVpnGatewaysClient {
      *
      * @param resourceGroupName The resource group name of the P2SVpnGateway.
      * @param gatewayName The name of the gateway.
-     * @param p2SVpnGatewayParameters Tags object for patch operations.
+     * @param p2SVpnGatewayParameters Parameters supplied to update a virtual wan p2s vpn gateway tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -161,7 +161,7 @@ public interface P2SVpnGatewaysClient {
      *
      * @param resourceGroupName The resource group name of the P2SVpnGateway.
      * @param gatewayName The name of the gateway.
-     * @param p2SVpnGatewayParameters Tags object for patch operations.
+     * @param p2SVpnGatewayParameters Parameters supplied to update a virtual wan p2s vpn gateway tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -332,7 +332,7 @@ public interface P2SVpnGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the P2SVpnGateway.
-     * @param parameters Vpn Client Parameters for package generation.
+     * @param parameters Parameters supplied to the generate P2SVpnGateway VPN client package operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -347,7 +347,7 @@ public interface P2SVpnGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the P2SVpnGateway.
-     * @param parameters Vpn Client Parameters for package generation.
+     * @param parameters Parameters supplied to the generate P2SVpnGateway VPN client package operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -363,7 +363,7 @@ public interface P2SVpnGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the P2SVpnGateway.
-     * @param parameters Vpn Client Parameters for package generation.
+     * @param parameters Parameters supplied to the generate P2SVpnGateway VPN client package operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -378,7 +378,7 @@ public interface P2SVpnGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the P2SVpnGateway.
-     * @param parameters Vpn Client Parameters for package generation.
+     * @param parameters Parameters supplied to the generate P2SVpnGateway VPN client package operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -451,7 +451,7 @@ public interface P2SVpnGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the P2SVpnGateway.
-     * @param request List of P2S Vpn connection health request.
+     * @param request Request parameters supplied to get p2s vpn connections detailed health.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -469,7 +469,7 @@ public interface P2SVpnGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the P2SVpnGateway.
-     * @param request List of P2S Vpn connection health request.
+     * @param request Request parameters supplied to get p2s vpn connections detailed health.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -488,7 +488,7 @@ public interface P2SVpnGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the P2SVpnGateway.
-     * @param request List of P2S Vpn connection health request.
+     * @param request Request parameters supplied to get p2s vpn connections detailed health.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -505,7 +505,7 @@ public interface P2SVpnGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the P2SVpnGateway.
-     * @param request List of P2S Vpn connection health request.
+     * @param request Request parameters supplied to get p2s vpn connections detailed health.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -522,7 +522,7 @@ public interface P2SVpnGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param p2SVpnGatewayName The name of the P2S Vpn Gateway.
-     * @param request List of p2s vpn connections to be disconnected.
+     * @param request The parameters are supplied to disconnect p2s vpn connections.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -537,7 +537,7 @@ public interface P2SVpnGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param p2SVpnGatewayName The name of the P2S Vpn Gateway.
-     * @param request List of p2s vpn connections to be disconnected.
+     * @param request The parameters are supplied to disconnect p2s vpn connections.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -553,7 +553,7 @@ public interface P2SVpnGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param p2SVpnGatewayName The name of the P2S Vpn Gateway.
-     * @param request List of p2s vpn connections to be disconnected.
+     * @param request The parameters are supplied to disconnect p2s vpn connections.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -567,7 +567,7 @@ public interface P2SVpnGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param p2SVpnGatewayName The name of the P2S Vpn Gateway.
-     * @param request List of p2s vpn connections to be disconnected.
+     * @param request The parameters are supplied to disconnect p2s vpn connections.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

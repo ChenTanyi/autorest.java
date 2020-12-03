@@ -512,7 +512,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param experimentName The Experiment identifier associated with the Experiment.
-     * @param parameters Defines the properties of an Experiment.
+     * @param parameters The Experiment resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -573,7 +573,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param experimentName The Experiment identifier associated with the Experiment.
-     * @param parameters Defines the properties of an Experiment.
+     * @param parameters The Experiment resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -636,7 +636,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param experimentName The Experiment identifier associated with the Experiment.
-     * @param parameters Defines the properties of an Experiment.
+     * @param parameters The Experiment resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -659,7 +659,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param experimentName The Experiment identifier associated with the Experiment.
-     * @param parameters Defines the properties of an Experiment.
+     * @param parameters The Experiment resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -688,7 +688,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param experimentName The Experiment identifier associated with the Experiment.
-     * @param parameters Defines the properties of an Experiment.
+     * @param parameters The Experiment resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -706,7 +706,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param experimentName The Experiment identifier associated with the Experiment.
-     * @param parameters Defines the properties of an Experiment.
+     * @param parameters The Experiment resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -730,7 +730,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param experimentName The Experiment identifier associated with the Experiment.
-     * @param parameters Defines the properties of an Experiment.
+     * @param parameters The Experiment resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -750,7 +750,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param experimentName The Experiment identifier associated with the Experiment.
-     * @param parameters Defines the properties of an Experiment.
+     * @param parameters The Experiment resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -775,7 +775,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param experimentName The Experiment identifier associated with the Experiment.
-     * @param parameters Defines the properties of an Experiment.
+     * @param parameters The Experiment resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -793,7 +793,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param experimentName The Experiment identifier associated with the Experiment.
-     * @param parameters Defines the properties of an Experiment.
+     * @param parameters The Experiment resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -816,7 +816,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param experimentName The Experiment identifier associated with the Experiment.
-     * @param parameters Defines modifiable attributes of an Experiment.
+     * @param parameters The Experiment Update Model.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -877,7 +877,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param experimentName The Experiment identifier associated with the Experiment.
-     * @param parameters Defines modifiable attributes of an Experiment.
+     * @param parameters The Experiment Update Model.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -940,7 +940,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param experimentName The Experiment identifier associated with the Experiment.
-     * @param parameters Defines modifiable attributes of an Experiment.
+     * @param parameters The Experiment Update Model.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -963,7 +963,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param experimentName The Experiment identifier associated with the Experiment.
-     * @param parameters Defines modifiable attributes of an Experiment.
+     * @param parameters The Experiment Update Model.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -992,7 +992,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param experimentName The Experiment identifier associated with the Experiment.
-     * @param parameters Defines modifiable attributes of an Experiment.
+     * @param parameters The Experiment Update Model.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1010,7 +1010,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param experimentName The Experiment identifier associated with the Experiment.
-     * @param parameters Defines modifiable attributes of an Experiment.
+     * @param parameters The Experiment Update Model.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1033,7 +1033,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param experimentName The Experiment identifier associated with the Experiment.
-     * @param parameters Defines modifiable attributes of an Experiment.
+     * @param parameters The Experiment Update Model.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1053,7 +1053,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param experimentName The Experiment identifier associated with the Experiment.
-     * @param parameters Defines modifiable attributes of an Experiment.
+     * @param parameters The Experiment Update Model.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1078,7 +1078,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param experimentName The Experiment identifier associated with the Experiment.
-     * @param parameters Defines modifiable attributes of an Experiment.
+     * @param parameters The Experiment Update Model.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1096,7 +1096,7 @@ public final class ExperimentsClientImpl implements ExperimentsClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param experimentName The Experiment identifier associated with the Experiment.
-     * @param parameters Defines modifiable attributes of an Experiment.
+     * @param parameters The Experiment Update Model.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

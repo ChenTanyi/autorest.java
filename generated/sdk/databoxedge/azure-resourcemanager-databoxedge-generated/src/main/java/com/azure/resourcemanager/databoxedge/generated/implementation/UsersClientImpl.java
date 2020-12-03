@@ -516,7 +516,7 @@ public final class UsersClientImpl implements UsersClient {
      * @param deviceName The device name.
      * @param name The user name.
      * @param resourceGroupName The resource group name.
-     * @param user Represents a user who has access to one or more shares on the Data Box Edge/Gateway device.
+     * @param user The user details.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -576,7 +576,7 @@ public final class UsersClientImpl implements UsersClient {
      * @param deviceName The device name.
      * @param name The user name.
      * @param resourceGroupName The resource group name.
-     * @param user Represents a user who has access to one or more shares on the Data Box Edge/Gateway device.
+     * @param user The user details.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -634,7 +634,7 @@ public final class UsersClientImpl implements UsersClient {
      * @param deviceName The device name.
      * @param name The user name.
      * @param resourceGroupName The resource group name.
-     * @param user Represents a user who has access to one or more shares on the Data Box Edge/Gateway device.
+     * @param user The user details.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -657,7 +657,7 @@ public final class UsersClientImpl implements UsersClient {
      * @param deviceName The device name.
      * @param name The user name.
      * @param resourceGroupName The resource group name.
-     * @param user Represents a user who has access to one or more shares on the Data Box Edge/Gateway device.
+     * @param user The user details.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -682,7 +682,7 @@ public final class UsersClientImpl implements UsersClient {
      * @param deviceName The device name.
      * @param name The user name.
      * @param resourceGroupName The resource group name.
-     * @param user Represents a user who has access to one or more shares on the Data Box Edge/Gateway device.
+     * @param user The user details.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -700,7 +700,7 @@ public final class UsersClientImpl implements UsersClient {
      * @param deviceName The device name.
      * @param name The user name.
      * @param resourceGroupName The resource group name.
-     * @param user Represents a user who has access to one or more shares on the Data Box Edge/Gateway device.
+     * @param user The user details.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -719,7 +719,7 @@ public final class UsersClientImpl implements UsersClient {
      * @param deviceName The device name.
      * @param name The user name.
      * @param resourceGroupName The resource group name.
-     * @param user Represents a user who has access to one or more shares on the Data Box Edge/Gateway device.
+     * @param user The user details.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -739,7 +739,7 @@ public final class UsersClientImpl implements UsersClient {
      * @param deviceName The device name.
      * @param name The user name.
      * @param resourceGroupName The resource group name.
-     * @param user Represents a user who has access to one or more shares on the Data Box Edge/Gateway device.
+     * @param user The user details.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -760,7 +760,7 @@ public final class UsersClientImpl implements UsersClient {
      * @param deviceName The device name.
      * @param name The user name.
      * @param resourceGroupName The resource group name.
-     * @param user Represents a user who has access to one or more shares on the Data Box Edge/Gateway device.
+     * @param user The user details.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -777,7 +777,7 @@ public final class UsersClientImpl implements UsersClient {
      * @param deviceName The device name.
      * @param name The user name.
      * @param resourceGroupName The resource group name.
-     * @param user Represents a user who has access to one or more shares on the Data Box Edge/Gateway device.
+     * @param user The user details.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

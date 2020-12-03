@@ -600,7 +600,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
-     * @param routeFilterParameters Route Filter Resource.
+     * @param routeFilterParameters Parameters supplied to the create or update route filter operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -658,7 +658,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
-     * @param routeFilterParameters Route Filter Resource.
+     * @param routeFilterParameters Parameters supplied to the create or update route filter operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -714,7 +714,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
-     * @param routeFilterParameters Route Filter Resource.
+     * @param routeFilterParameters Parameters supplied to the create or update route filter operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -736,7 +736,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
-     * @param routeFilterParameters Route Filter Resource.
+     * @param routeFilterParameters Parameters supplied to the create or update route filter operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -760,7 +760,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
-     * @param routeFilterParameters Route Filter Resource.
+     * @param routeFilterParameters Parameters supplied to the create or update route filter operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -777,7 +777,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
-     * @param routeFilterParameters Route Filter Resource.
+     * @param routeFilterParameters Parameters supplied to the create or update route filter operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -796,7 +796,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
-     * @param routeFilterParameters Route Filter Resource.
+     * @param routeFilterParameters Parameters supplied to the create or update route filter operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -815,7 +815,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
-     * @param routeFilterParameters Route Filter Resource.
+     * @param routeFilterParameters Parameters supplied to the create or update route filter operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -835,7 +835,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
-     * @param routeFilterParameters Route Filter Resource.
+     * @param routeFilterParameters Parameters supplied to the create or update route filter operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -852,7 +852,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
-     * @param routeFilterParameters Route Filter Resource.
+     * @param routeFilterParameters Parameters supplied to the create or update route filter operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -870,7 +870,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update route filter tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -927,7 +927,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update route filter tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -982,7 +982,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update route filter tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1007,7 +1007,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update route filter tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1023,7 +1023,7 @@ public final class RouteFiltersClientImpl implements RouteFiltersClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param routeFilterName The name of the route filter.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update route filter tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

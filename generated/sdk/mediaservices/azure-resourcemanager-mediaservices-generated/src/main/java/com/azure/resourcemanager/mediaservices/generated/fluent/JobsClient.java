@@ -89,8 +89,7 @@ public interface JobsClient {
      * @param accountName The Media Services account name.
      * @param transformName The Transform name.
      * @param jobName The Job name.
-     * @param parameters A Job resource type. The progress and state can be obtained by polling a Job or subscribing to
-     *     events using EventGrid.
+     * @param parameters The request parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -107,8 +106,7 @@ public interface JobsClient {
      * @param accountName The Media Services account name.
      * @param transformName The Transform name.
      * @param jobName The Job name.
-     * @param parameters A Job resource type. The progress and state can be obtained by polling a Job or subscribing to
-     *     events using EventGrid.
+     * @param parameters The request parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -163,8 +161,7 @@ public interface JobsClient {
      * @param accountName The Media Services account name.
      * @param transformName The Transform name.
      * @param jobName The Job name.
-     * @param parameters A Job resource type. The progress and state can be obtained by polling a Job or subscribing to
-     *     events using EventGrid.
+     * @param parameters The request parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -182,8 +179,7 @@ public interface JobsClient {
      * @param accountName The Media Services account name.
      * @param transformName The Transform name.
      * @param jobName The Job name.
-     * @param parameters A Job resource type. The progress and state can be obtained by polling a Job or subscribing to
-     *     events using EventGrid.
+     * @param parameters The request parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

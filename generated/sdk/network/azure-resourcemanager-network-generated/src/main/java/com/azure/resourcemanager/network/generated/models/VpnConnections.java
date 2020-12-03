@@ -45,7 +45,7 @@ public interface VpnConnections {
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param connectionName The name of the connection.
-     * @param vpnConnectionParameters VpnConnection Resource.
+     * @param vpnConnectionParameters Parameters supplied to create or Update a VPN Connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -63,7 +63,7 @@ public interface VpnConnections {
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
      * @param connectionName The name of the connection.
-     * @param vpnConnectionParameters VpnConnection Resource.
+     * @param vpnConnectionParameters Parameters supplied to create or Update a VPN Connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

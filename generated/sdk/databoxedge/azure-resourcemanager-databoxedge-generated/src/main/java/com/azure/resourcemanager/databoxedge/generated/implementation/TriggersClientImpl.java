@@ -517,7 +517,7 @@ public final class TriggersClientImpl implements TriggersClient {
      * @param deviceName Creates or updates a trigger.
      * @param name The trigger name.
      * @param resourceGroupName The resource group name.
-     * @param trigger Trigger details.
+     * @param trigger The trigger.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -577,7 +577,7 @@ public final class TriggersClientImpl implements TriggersClient {
      * @param deviceName Creates or updates a trigger.
      * @param name The trigger name.
      * @param resourceGroupName The resource group name.
-     * @param trigger Trigger details.
+     * @param trigger The trigger.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -635,7 +635,7 @@ public final class TriggersClientImpl implements TriggersClient {
      * @param deviceName Creates or updates a trigger.
      * @param name The trigger name.
      * @param resourceGroupName The resource group name.
-     * @param trigger Trigger details.
+     * @param trigger The trigger.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -658,7 +658,7 @@ public final class TriggersClientImpl implements TriggersClient {
      * @param deviceName Creates or updates a trigger.
      * @param name The trigger name.
      * @param resourceGroupName The resource group name.
-     * @param trigger Trigger details.
+     * @param trigger The trigger.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -683,7 +683,7 @@ public final class TriggersClientImpl implements TriggersClient {
      * @param deviceName Creates or updates a trigger.
      * @param name The trigger name.
      * @param resourceGroupName The resource group name.
-     * @param trigger Trigger details.
+     * @param trigger The trigger.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -701,7 +701,7 @@ public final class TriggersClientImpl implements TriggersClient {
      * @param deviceName Creates or updates a trigger.
      * @param name The trigger name.
      * @param resourceGroupName The resource group name.
-     * @param trigger Trigger details.
+     * @param trigger The trigger.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -720,7 +720,7 @@ public final class TriggersClientImpl implements TriggersClient {
      * @param deviceName Creates or updates a trigger.
      * @param name The trigger name.
      * @param resourceGroupName The resource group name.
-     * @param trigger Trigger details.
+     * @param trigger The trigger.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -740,7 +740,7 @@ public final class TriggersClientImpl implements TriggersClient {
      * @param deviceName Creates or updates a trigger.
      * @param name The trigger name.
      * @param resourceGroupName The resource group name.
-     * @param trigger Trigger details.
+     * @param trigger The trigger.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -761,7 +761,7 @@ public final class TriggersClientImpl implements TriggersClient {
      * @param deviceName Creates or updates a trigger.
      * @param name The trigger name.
      * @param resourceGroupName The resource group name.
-     * @param trigger Trigger details.
+     * @param trigger The trigger.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -778,7 +778,7 @@ public final class TriggersClientImpl implements TriggersClient {
      * @param deviceName Creates or updates a trigger.
      * @param name The trigger name.
      * @param resourceGroupName The resource group name.
-     * @param trigger Trigger details.
+     * @param trigger The trigger.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

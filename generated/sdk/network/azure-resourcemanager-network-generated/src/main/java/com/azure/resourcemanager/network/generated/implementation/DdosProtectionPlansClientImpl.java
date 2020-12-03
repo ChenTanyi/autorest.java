@@ -575,7 +575,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      *
      * @param resourceGroupName The name of the resource group.
      * @param ddosProtectionPlanName The name of the DDoS protection plan.
-     * @param parameters A DDoS protection plan in a resource group.
+     * @param parameters Parameters supplied to the create or update operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -633,7 +633,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      *
      * @param resourceGroupName The name of the resource group.
      * @param ddosProtectionPlanName The name of the DDoS protection plan.
-     * @param parameters A DDoS protection plan in a resource group.
+     * @param parameters Parameters supplied to the create or update operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -689,7 +689,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      *
      * @param resourceGroupName The name of the resource group.
      * @param ddosProtectionPlanName The name of the DDoS protection plan.
-     * @param parameters A DDoS protection plan in a resource group.
+     * @param parameters Parameters supplied to the create or update operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -715,7 +715,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      *
      * @param resourceGroupName The name of the resource group.
      * @param ddosProtectionPlanName The name of the DDoS protection plan.
-     * @param parameters A DDoS protection plan in a resource group.
+     * @param parameters Parameters supplied to the create or update operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -743,7 +743,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      *
      * @param resourceGroupName The name of the resource group.
      * @param ddosProtectionPlanName The name of the DDoS protection plan.
-     * @param parameters A DDoS protection plan in a resource group.
+     * @param parameters Parameters supplied to the create or update operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -760,7 +760,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      *
      * @param resourceGroupName The name of the resource group.
      * @param ddosProtectionPlanName The name of the DDoS protection plan.
-     * @param parameters A DDoS protection plan in a resource group.
+     * @param parameters Parameters supplied to the create or update operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -778,7 +778,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      *
      * @param resourceGroupName The name of the resource group.
      * @param ddosProtectionPlanName The name of the DDoS protection plan.
-     * @param parameters A DDoS protection plan in a resource group.
+     * @param parameters Parameters supplied to the create or update operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -797,7 +797,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      *
      * @param resourceGroupName The name of the resource group.
      * @param ddosProtectionPlanName The name of the DDoS protection plan.
-     * @param parameters A DDoS protection plan in a resource group.
+     * @param parameters Parameters supplied to the create or update operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -817,7 +817,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      *
      * @param resourceGroupName The name of the resource group.
      * @param ddosProtectionPlanName The name of the DDoS protection plan.
-     * @param parameters A DDoS protection plan in a resource group.
+     * @param parameters Parameters supplied to the create or update operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -834,7 +834,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      *
      * @param resourceGroupName The name of the resource group.
      * @param ddosProtectionPlanName The name of the DDoS protection plan.
-     * @param parameters A DDoS protection plan in a resource group.
+     * @param parameters Parameters supplied to the create or update operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -852,7 +852,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      *
      * @param resourceGroupName The name of the resource group.
      * @param ddosProtectionPlanName The name of the DDoS protection plan.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to the update DDoS protection plan resource tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -910,7 +910,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      *
      * @param resourceGroupName The name of the resource group.
      * @param ddosProtectionPlanName The name of the DDoS protection plan.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to the update DDoS protection plan resource tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -966,7 +966,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      *
      * @param resourceGroupName The name of the resource group.
      * @param ddosProtectionPlanName The name of the DDoS protection plan.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to the update DDoS protection plan resource tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -991,7 +991,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      *
      * @param resourceGroupName The name of the resource group.
      * @param ddosProtectionPlanName The name of the DDoS protection plan.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to the update DDoS protection plan resource tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1008,7 +1008,7 @@ public final class DdosProtectionPlansClientImpl implements DdosProtectionPlansC
      *
      * @param resourceGroupName The name of the resource group.
      * @param ddosProtectionPlanName The name of the DDoS protection plan.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to the update DDoS protection plan resource tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

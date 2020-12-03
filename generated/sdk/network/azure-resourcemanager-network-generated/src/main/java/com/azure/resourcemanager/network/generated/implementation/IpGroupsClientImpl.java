@@ -366,7 +366,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param ipGroupsName The name of the ipGroups.
-     * @param parameters The IpGroups resource information.
+     * @param parameters Parameters supplied to the create or update IpGroups operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -422,7 +422,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param ipGroupsName The name of the ipGroups.
-     * @param parameters The IpGroups resource information.
+     * @param parameters Parameters supplied to the create or update IpGroups operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -476,7 +476,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param ipGroupsName The name of the ipGroups.
-     * @param parameters The IpGroups resource information.
+     * @param parameters Parameters supplied to the create or update IpGroups operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -498,7 +498,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param ipGroupsName The name of the ipGroups.
-     * @param parameters The IpGroups resource information.
+     * @param parameters Parameters supplied to the create or update IpGroups operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -522,7 +522,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param ipGroupsName The name of the ipGroups.
-     * @param parameters The IpGroups resource information.
+     * @param parameters Parameters supplied to the create or update IpGroups operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -539,7 +539,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param ipGroupsName The name of the ipGroups.
-     * @param parameters The IpGroups resource information.
+     * @param parameters Parameters supplied to the create or update IpGroups operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -557,7 +557,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param ipGroupsName The name of the ipGroups.
-     * @param parameters The IpGroups resource information.
+     * @param parameters Parameters supplied to the create or update IpGroups operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -576,7 +576,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param ipGroupsName The name of the ipGroups.
-     * @param parameters The IpGroups resource information.
+     * @param parameters Parameters supplied to the create or update IpGroups operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -596,7 +596,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param ipGroupsName The name of the ipGroups.
-     * @param parameters The IpGroups resource information.
+     * @param parameters Parameters supplied to the create or update IpGroups operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -612,7 +612,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param ipGroupsName The name of the ipGroups.
-     * @param parameters The IpGroups resource information.
+     * @param parameters Parameters supplied to the create or update IpGroups operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -630,7 +630,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param ipGroupsName The name of the ipGroups.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to the update ipGroups operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -686,7 +686,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param ipGroupsName The name of the ipGroups.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to the update ipGroups operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -740,7 +740,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param ipGroupsName The name of the ipGroups.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to the update ipGroups operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -764,7 +764,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param ipGroupsName The name of the ipGroups.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to the update ipGroups operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -780,7 +780,7 @@ public final class IpGroupsClientImpl implements IpGroupsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param ipGroupsName The name of the ipGroups.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to the update ipGroups operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.

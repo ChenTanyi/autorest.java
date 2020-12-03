@@ -344,7 +344,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param autoscaleSettingName The autoscale setting name.
-     * @param parameters The autoscale setting resource.
+     * @param parameters Parameters supplied to the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -401,7 +401,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param autoscaleSettingName The autoscale setting name.
-     * @param parameters The autoscale setting resource.
+     * @param parameters Parameters supplied to the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -459,7 +459,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param autoscaleSettingName The autoscale setting name.
-     * @param parameters The autoscale setting resource.
+     * @param parameters Parameters supplied to the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -484,7 +484,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param autoscaleSettingName The autoscale setting name.
-     * @param parameters The autoscale setting resource.
+     * @param parameters Parameters supplied to the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -501,7 +501,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param autoscaleSettingName The autoscale setting name.
-     * @param parameters The autoscale setting resource.
+     * @param parameters Parameters supplied to the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -819,7 +819,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param autoscaleSettingName The autoscale setting name.
-     * @param autoscaleSettingResource The autoscale setting object for patch operations.
+     * @param autoscaleSettingResource Parameters supplied to the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -878,7 +878,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param autoscaleSettingName The autoscale setting name.
-     * @param autoscaleSettingResource The autoscale setting object for patch operations.
+     * @param autoscaleSettingResource Parameters supplied to the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -938,7 +938,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param autoscaleSettingName The autoscale setting name.
-     * @param autoscaleSettingResource The autoscale setting object for patch operations.
+     * @param autoscaleSettingResource Parameters supplied to the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -963,7 +963,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param autoscaleSettingName The autoscale setting name.
-     * @param autoscaleSettingResource The autoscale setting object for patch operations.
+     * @param autoscaleSettingResource Parameters supplied to the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -980,7 +980,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param autoscaleSettingName The autoscale setting name.
-     * @param autoscaleSettingResource The autoscale setting object for patch operations.
+     * @param autoscaleSettingResource Parameters supplied to the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

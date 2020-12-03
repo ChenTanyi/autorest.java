@@ -105,7 +105,7 @@ public interface ExpressRouteCircuitsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the circuit.
-     * @param parameters ExpressRouteCircuit resource.
+     * @param parameters Parameters supplied to the create or update express route circuit operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -120,7 +120,7 @@ public interface ExpressRouteCircuitsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the circuit.
-     * @param parameters ExpressRouteCircuit resource.
+     * @param parameters Parameters supplied to the create or update express route circuit operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -136,7 +136,7 @@ public interface ExpressRouteCircuitsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the circuit.
-     * @param parameters ExpressRouteCircuit resource.
+     * @param parameters Parameters supplied to the create or update express route circuit operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -151,7 +151,7 @@ public interface ExpressRouteCircuitsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the circuit.
-     * @param parameters ExpressRouteCircuit resource.
+     * @param parameters Parameters supplied to the create or update express route circuit operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -167,7 +167,7 @@ public interface ExpressRouteCircuitsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the circuit.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update express route circuit tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -181,7 +181,7 @@ public interface ExpressRouteCircuitsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the circuit.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update express route circuit tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

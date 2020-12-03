@@ -105,7 +105,7 @@ public interface DisasterRecoveryConfigs {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @param parameters Parameter supplied to check Namespace name availability operation.
+     * @param parameters Parameters to check availability of the given Alias name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -119,7 +119,7 @@ public interface DisasterRecoveryConfigs {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @param parameters Parameter supplied to check Namespace name availability operation.
+     * @param parameters Parameters to check availability of the given Alias name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

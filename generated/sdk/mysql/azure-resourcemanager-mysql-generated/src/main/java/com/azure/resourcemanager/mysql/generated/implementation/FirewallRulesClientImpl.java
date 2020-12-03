@@ -137,7 +137,7 @@ public final class FirewallRulesClientImpl implements FirewallRulesClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param firewallRuleName The name of the server firewall rule.
-     * @param parameters Represents a server firewall rule.
+     * @param parameters The required parameters for creating or updating a firewall rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -199,7 +199,7 @@ public final class FirewallRulesClientImpl implements FirewallRulesClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param firewallRuleName The name of the server firewall rule.
-     * @param parameters Represents a server firewall rule.
+     * @param parameters The required parameters for creating or updating a firewall rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -263,7 +263,7 @@ public final class FirewallRulesClientImpl implements FirewallRulesClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param firewallRuleName The name of the server firewall rule.
-     * @param parameters Represents a server firewall rule.
+     * @param parameters The required parameters for creating or updating a firewall rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -286,7 +286,7 @@ public final class FirewallRulesClientImpl implements FirewallRulesClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param firewallRuleName The name of the server firewall rule.
-     * @param parameters Represents a server firewall rule.
+     * @param parameters The required parameters for creating or updating a firewall rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -315,7 +315,7 @@ public final class FirewallRulesClientImpl implements FirewallRulesClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param firewallRuleName The name of the server firewall rule.
-     * @param parameters Represents a server firewall rule.
+     * @param parameters The required parameters for creating or updating a firewall rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -333,7 +333,7 @@ public final class FirewallRulesClientImpl implements FirewallRulesClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param firewallRuleName The name of the server firewall rule.
-     * @param parameters Represents a server firewall rule.
+     * @param parameters The required parameters for creating or updating a firewall rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -357,7 +357,7 @@ public final class FirewallRulesClientImpl implements FirewallRulesClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param firewallRuleName The name of the server firewall rule.
-     * @param parameters Represents a server firewall rule.
+     * @param parameters The required parameters for creating or updating a firewall rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -377,7 +377,7 @@ public final class FirewallRulesClientImpl implements FirewallRulesClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param firewallRuleName The name of the server firewall rule.
-     * @param parameters Represents a server firewall rule.
+     * @param parameters The required parameters for creating or updating a firewall rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -402,7 +402,7 @@ public final class FirewallRulesClientImpl implements FirewallRulesClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param firewallRuleName The name of the server firewall rule.
-     * @param parameters Represents a server firewall rule.
+     * @param parameters The required parameters for creating or updating a firewall rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -420,7 +420,7 @@ public final class FirewallRulesClientImpl implements FirewallRulesClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param firewallRuleName The name of the server firewall rule.
-     * @param parameters Represents a server firewall rule.
+     * @param parameters The required parameters for creating or updating a firewall rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

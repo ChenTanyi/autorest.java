@@ -21,7 +21,7 @@ public interface ZonesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param parameters Describes a DNS zone.
+     * @param parameters Parameters supplied to the CreateOrUpdate operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -35,7 +35,7 @@ public interface ZonesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param parameters Describes a DNS zone.
+     * @param parameters Parameters supplied to the CreateOrUpdate operation.
      * @param ifMatch The etag of the DNS zone. Omit this value to always overwrite the current zone. Specify the
      *     last-seen etag value to prevent accidentally overwriting any concurrent changes.
      * @param ifNoneMatch Set to '*' to allow a new DNS zone to be created, but to prevent updating an existing zone.
@@ -160,7 +160,7 @@ public interface ZonesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param parameters Describes a request to update a DNS zone.
+     * @param parameters Parameters supplied to the Update operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -174,7 +174,7 @@ public interface ZonesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param parameters Describes a request to update a DNS zone.
+     * @param parameters Parameters supplied to the Update operation.
      * @param ifMatch The etag of the DNS zone. Omit this value to always overwrite the current zone. Specify the
      *     last-seen etag value to prevent accidentally overwriting any concurrent changes.
      * @param context The context to associate with this operation.

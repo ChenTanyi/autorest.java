@@ -50,7 +50,7 @@ public interface VirtualHubsClient {
      *
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
-     * @param virtualHubParameters VirtualHub Resource.
+     * @param virtualHubParameters Parameters supplied to create or update VirtualHub.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -65,7 +65,7 @@ public interface VirtualHubsClient {
      *
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
-     * @param virtualHubParameters VirtualHub Resource.
+     * @param virtualHubParameters Parameters supplied to create or update VirtualHub.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -81,7 +81,7 @@ public interface VirtualHubsClient {
      *
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
-     * @param virtualHubParameters VirtualHub Resource.
+     * @param virtualHubParameters Parameters supplied to create or update VirtualHub.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -96,7 +96,7 @@ public interface VirtualHubsClient {
      *
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
-     * @param virtualHubParameters VirtualHub Resource.
+     * @param virtualHubParameters Parameters supplied to create or update VirtualHub.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -112,7 +112,7 @@ public interface VirtualHubsClient {
      *
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
-     * @param virtualHubParameters Tags object for patch operations.
+     * @param virtualHubParameters Parameters supplied to update VirtualHub tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -126,7 +126,7 @@ public interface VirtualHubsClient {
      *
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
-     * @param virtualHubParameters Tags object for patch operations.
+     * @param virtualHubParameters Parameters supplied to update VirtualHub tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -241,8 +241,7 @@ public interface VirtualHubsClient {
      *
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
-     * @param effectiveRoutesParameters The parameters specifying the resource whose effective routes are being
-     *     requested.
+     * @param effectiveRoutesParameters Parameters supplied to get the effective routes for a specific resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -257,8 +256,7 @@ public interface VirtualHubsClient {
      *
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
-     * @param effectiveRoutesParameters The parameters specifying the resource whose effective routes are being
-     *     requested.
+     * @param effectiveRoutesParameters Parameters supplied to get the effective routes for a specific resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -277,8 +275,7 @@ public interface VirtualHubsClient {
      *
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
-     * @param effectiveRoutesParameters The parameters specifying the resource whose effective routes are being
-     *     requested.
+     * @param effectiveRoutesParameters Parameters supplied to get the effective routes for a specific resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -304,8 +301,7 @@ public interface VirtualHubsClient {
      *
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
-     * @param effectiveRoutesParameters The parameters specifying the resource whose effective routes are being
-     *     requested.
+     * @param effectiveRoutesParameters Parameters supplied to get the effective routes for a specific resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

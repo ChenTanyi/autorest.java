@@ -79,9 +79,7 @@ public interface TransformsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param transformName The Transform name.
-     * @param parameters A Transform encapsulates the rules or instructions for generating desired outputs from input
-     *     media, such as by transcoding or by extracting insights. After the Transform is created, it can be applied to
-     *     input media by creating Jobs.
+     * @param parameters The request parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -98,9 +96,7 @@ public interface TransformsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param transformName The Transform name.
-     * @param parameters A Transform encapsulates the rules or instructions for generating desired outputs from input
-     *     media, such as by transcoding or by extracting insights. After the Transform is created, it can be applied to
-     *     input media by creating Jobs.
+     * @param parameters The request parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -147,9 +143,7 @@ public interface TransformsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param transformName The Transform name.
-     * @param parameters A Transform encapsulates the rules or instructions for generating desired outputs from input
-     *     media, such as by transcoding or by extracting insights. After the Transform is created, it can be applied to
-     *     input media by creating Jobs.
+     * @param parameters The request parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -166,9 +160,7 @@ public interface TransformsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param transformName The Transform name.
-     * @param parameters A Transform encapsulates the rules or instructions for generating desired outputs from input
-     *     media, such as by transcoding or by extracting insights. After the Transform is created, it can be applied to
-     *     input media by creating Jobs.
+     * @param parameters The request parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

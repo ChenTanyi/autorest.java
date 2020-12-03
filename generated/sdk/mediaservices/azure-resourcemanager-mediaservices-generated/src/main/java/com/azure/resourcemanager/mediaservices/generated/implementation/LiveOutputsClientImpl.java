@@ -524,7 +524,7 @@ public final class LiveOutputsClientImpl implements LiveOutputsClient {
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
      * @param liveOutputName The name of the live output.
-     * @param parameters The Live Output.
+     * @param parameters Live Output properties needed for creation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -593,7 +593,7 @@ public final class LiveOutputsClientImpl implements LiveOutputsClient {
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
      * @param liveOutputName The name of the live output.
-     * @param parameters The Live Output.
+     * @param parameters Live Output properties needed for creation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -661,7 +661,7 @@ public final class LiveOutputsClientImpl implements LiveOutputsClient {
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
      * @param liveOutputName The name of the live output.
-     * @param parameters The Live Output.
+     * @param parameters Live Output properties needed for creation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -689,7 +689,7 @@ public final class LiveOutputsClientImpl implements LiveOutputsClient {
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
      * @param liveOutputName The name of the live output.
-     * @param parameters The Live Output.
+     * @param parameters Live Output properties needed for creation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -720,7 +720,7 @@ public final class LiveOutputsClientImpl implements LiveOutputsClient {
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
      * @param liveOutputName The name of the live output.
-     * @param parameters The Live Output.
+     * @param parameters Live Output properties needed for creation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -744,7 +744,7 @@ public final class LiveOutputsClientImpl implements LiveOutputsClient {
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
      * @param liveOutputName The name of the live output.
-     * @param parameters The Live Output.
+     * @param parameters Live Output properties needed for creation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -770,7 +770,7 @@ public final class LiveOutputsClientImpl implements LiveOutputsClient {
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
      * @param liveOutputName The name of the live output.
-     * @param parameters The Live Output.
+     * @param parameters Live Output properties needed for creation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -795,7 +795,7 @@ public final class LiveOutputsClientImpl implements LiveOutputsClient {
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
      * @param liveOutputName The name of the live output.
-     * @param parameters The Live Output.
+     * @param parameters Live Output properties needed for creation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -822,7 +822,7 @@ public final class LiveOutputsClientImpl implements LiveOutputsClient {
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
      * @param liveOutputName The name of the live output.
-     * @param parameters The Live Output.
+     * @param parameters Live Output properties needed for creation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -845,7 +845,7 @@ public final class LiveOutputsClientImpl implements LiveOutputsClient {
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
      * @param liveOutputName The name of the live output.
-     * @param parameters The Live Output.
+     * @param parameters Live Output properties needed for creation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

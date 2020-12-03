@@ -150,7 +150,7 @@ public interface PrivateLinkServices {
      * @param resourceGroupName The name of the resource group.
      * @param serviceName The name of the private link service.
      * @param peConnectionName The name of the private end point connection.
-     * @param parameters PrivateEndpointConnection resource.
+     * @param parameters Parameters supplied to approve or reject the private end point connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
@@ -169,7 +169,7 @@ public interface PrivateLinkServices {
      * @param resourceGroupName The name of the resource group.
      * @param serviceName The name of the private link service.
      * @param peConnectionName The name of the private end point connection.
-     * @param parameters PrivateEndpointConnection resource.
+     * @param parameters Parameters supplied to approve or reject the private end point connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
@@ -245,7 +245,7 @@ public interface PrivateLinkServices {
      * Checks whether the subscription is visible to private link service.
      *
      * @param location The location of the domain name.
-     * @param parameters Request body of the CheckPrivateLinkServiceVisibility API service call.
+     * @param parameters The request body of CheckPrivateLinkService API call.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -258,7 +258,7 @@ public interface PrivateLinkServices {
      * Checks whether the subscription is visible to private link service.
      *
      * @param location The location of the domain name.
-     * @param parameters Request body of the CheckPrivateLinkServiceVisibility API service call.
+     * @param parameters The request body of CheckPrivateLinkService API call.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -273,7 +273,7 @@ public interface PrivateLinkServices {
      *
      * @param location The location of the domain name.
      * @param resourceGroupName The name of the resource group.
-     * @param parameters Request body of the CheckPrivateLinkServiceVisibility API service call.
+     * @param parameters The request body of CheckPrivateLinkService API call.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -287,7 +287,7 @@ public interface PrivateLinkServices {
      *
      * @param location The location of the domain name.
      * @param resourceGroupName The name of the resource group.
-     * @param parameters Request body of the CheckPrivateLinkServiceVisibility API service call.
+     * @param parameters The request body of CheckPrivateLinkService API call.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

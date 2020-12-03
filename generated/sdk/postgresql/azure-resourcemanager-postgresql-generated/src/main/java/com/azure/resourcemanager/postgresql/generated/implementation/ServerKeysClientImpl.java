@@ -490,7 +490,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be operated on (updated or created).
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param parameters A PostgreSQL Server key.
+     * @param parameters The requested PostgreSQL Server key resource state.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -551,7 +551,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be operated on (updated or created).
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param parameters A PostgreSQL Server key.
+     * @param parameters The requested PostgreSQL Server key resource state.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -610,7 +610,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be operated on (updated or created).
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param parameters A PostgreSQL Server key.
+     * @param parameters The requested PostgreSQL Server key resource state.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -633,7 +633,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be operated on (updated or created).
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param parameters A PostgreSQL Server key.
+     * @param parameters The requested PostgreSQL Server key resource state.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -658,7 +658,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be operated on (updated or created).
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param parameters A PostgreSQL Server key.
+     * @param parameters The requested PostgreSQL Server key resource state.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -676,7 +676,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be operated on (updated or created).
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param parameters A PostgreSQL Server key.
+     * @param parameters The requested PostgreSQL Server key resource state.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -695,7 +695,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be operated on (updated or created).
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param parameters A PostgreSQL Server key.
+     * @param parameters The requested PostgreSQL Server key resource state.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -715,7 +715,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be operated on (updated or created).
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param parameters A PostgreSQL Server key.
+     * @param parameters The requested PostgreSQL Server key resource state.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -736,7 +736,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be operated on (updated or created).
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param parameters A PostgreSQL Server key.
+     * @param parameters The requested PostgreSQL Server key resource state.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -754,7 +754,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      * @param serverName The name of the server.
      * @param keyName The name of the PostgreSQL Server key to be operated on (updated or created).
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param parameters A PostgreSQL Server key.
+     * @param parameters The requested PostgreSQL Server key resource state.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

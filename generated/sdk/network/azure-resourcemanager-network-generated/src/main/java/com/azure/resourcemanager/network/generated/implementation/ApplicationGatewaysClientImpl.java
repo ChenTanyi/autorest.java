@@ -741,7 +741,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param parameters Application gateway resource.
+     * @param parameters Parameters supplied to the create or update application gateway operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -799,7 +799,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param parameters Application gateway resource.
+     * @param parameters Parameters supplied to the create or update application gateway operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -855,7 +855,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param parameters Application gateway resource.
+     * @param parameters Parameters supplied to the create or update application gateway operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -881,7 +881,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param parameters Application gateway resource.
+     * @param parameters Parameters supplied to the create or update application gateway operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -909,7 +909,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param parameters Application gateway resource.
+     * @param parameters Parameters supplied to the create or update application gateway operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -926,7 +926,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param parameters Application gateway resource.
+     * @param parameters Parameters supplied to the create or update application gateway operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -944,7 +944,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param parameters Application gateway resource.
+     * @param parameters Parameters supplied to the create or update application gateway operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -963,7 +963,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param parameters Application gateway resource.
+     * @param parameters Parameters supplied to the create or update application gateway operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -983,7 +983,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param parameters Application gateway resource.
+     * @param parameters Parameters supplied to the create or update application gateway operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1000,7 +1000,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param parameters Application gateway resource.
+     * @param parameters Parameters supplied to the create or update application gateway operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1018,7 +1018,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update application gateway tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1076,7 +1076,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update application gateway tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1132,7 +1132,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update application gateway tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1157,7 +1157,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update application gateway tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1174,7 +1174,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update application gateway tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2265,7 +2265,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param probeRequest Details of on demand test probe request.
+     * @param probeRequest Request body for on-demand test probe operation.
      * @param expand Expands BackendAddressPool and BackendHttpSettings referenced in backend health.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2330,7 +2330,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param probeRequest Details of on demand test probe request.
+     * @param probeRequest Request body for on-demand test probe operation.
      * @param expand Expands BackendAddressPool and BackendHttpSettings referenced in backend health.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -2394,7 +2394,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param probeRequest Details of on demand test probe request.
+     * @param probeRequest Request body for on-demand test probe operation.
      * @param expand Expands BackendAddressPool and BackendHttpSettings referenced in backend health.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2428,7 +2428,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param probeRequest Details of on demand test probe request.
+     * @param probeRequest Request body for on-demand test probe operation.
      * @param expand Expands BackendAddressPool and BackendHttpSettings referenced in backend health.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -2466,7 +2466,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param probeRequest Details of on demand test probe request.
+     * @param probeRequest Request body for on-demand test probe operation.
      * @param expand Expands BackendAddressPool and BackendHttpSettings referenced in backend health.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2492,7 +2492,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param probeRequest Details of on demand test probe request.
+     * @param probeRequest Request body for on-demand test probe operation.
      * @param expand Expands BackendAddressPool and BackendHttpSettings referenced in backend health.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -2520,7 +2520,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param probeRequest Details of on demand test probe request.
+     * @param probeRequest Request body for on-demand test probe operation.
      * @param expand Expands BackendAddressPool and BackendHttpSettings referenced in backend health.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2545,7 +2545,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param probeRequest Details of on demand test probe request.
+     * @param probeRequest Request body for on-demand test probe operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2567,7 +2567,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param probeRequest Details of on demand test probe request.
+     * @param probeRequest Request body for on-demand test probe operation.
      * @param expand Expands BackendAddressPool and BackendHttpSettings referenced in backend health.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -2594,7 +2594,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param probeRequest Details of on demand test probe request.
+     * @param probeRequest Request body for on-demand test probe operation.
      * @param expand Expands BackendAddressPool and BackendHttpSettings referenced in backend health.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2617,7 +2617,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param probeRequest Details of on demand test probe request.
+     * @param probeRequest Request body for on-demand test probe operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2637,7 +2637,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationGatewayName The name of the application gateway.
-     * @param probeRequest Details of on demand test probe request.
+     * @param probeRequest Request body for on-demand test probe operation.
      * @param expand Expands BackendAddressPool and BackendHttpSettings referenced in backend health.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

@@ -144,7 +144,7 @@ public interface StreamingEndpoints {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param streamingEndpointName The name of the streaming endpoint, maximum length is 24.
-     * @param parameters scale units definition.
+     * @param parameters Streaming endpoint scale parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -161,7 +161,7 @@ public interface StreamingEndpoints {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param streamingEndpointName The name of the streaming endpoint, maximum length is 24.
-     * @param parameters scale units definition.
+     * @param parameters Streaming endpoint scale parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

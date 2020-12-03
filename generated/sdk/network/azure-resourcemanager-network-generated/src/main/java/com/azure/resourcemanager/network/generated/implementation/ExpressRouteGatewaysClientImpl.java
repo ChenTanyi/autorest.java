@@ -388,7 +388,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
-     * @param putExpressRouteGatewayParameters ExpressRoute gateway resource.
+     * @param putExpressRouteGatewayParameters Parameters required in an ExpressRoute gateway PUT operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -451,7 +451,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
-     * @param putExpressRouteGatewayParameters ExpressRoute gateway resource.
+     * @param putExpressRouteGatewayParameters Parameters required in an ExpressRoute gateway PUT operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -513,7 +513,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
-     * @param putExpressRouteGatewayParameters ExpressRoute gateway resource.
+     * @param putExpressRouteGatewayParameters Parameters required in an ExpressRoute gateway PUT operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -542,7 +542,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
-     * @param putExpressRouteGatewayParameters ExpressRoute gateway resource.
+     * @param putExpressRouteGatewayParameters Parameters required in an ExpressRoute gateway PUT operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -574,7 +574,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
-     * @param putExpressRouteGatewayParameters ExpressRoute gateway resource.
+     * @param putExpressRouteGatewayParameters Parameters required in an ExpressRoute gateway PUT operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -594,7 +594,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
-     * @param putExpressRouteGatewayParameters ExpressRoute gateway resource.
+     * @param putExpressRouteGatewayParameters Parameters required in an ExpressRoute gateway PUT operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -617,7 +617,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
-     * @param putExpressRouteGatewayParameters ExpressRoute gateway resource.
+     * @param putExpressRouteGatewayParameters Parameters required in an ExpressRoute gateway PUT operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -638,7 +638,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
-     * @param putExpressRouteGatewayParameters ExpressRoute gateway resource.
+     * @param putExpressRouteGatewayParameters Parameters required in an ExpressRoute gateway PUT operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -662,7 +662,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
-     * @param putExpressRouteGatewayParameters ExpressRoute gateway resource.
+     * @param putExpressRouteGatewayParameters Parameters required in an ExpressRoute gateway PUT operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -682,7 +682,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
-     * @param putExpressRouteGatewayParameters ExpressRoute gateway resource.
+     * @param putExpressRouteGatewayParameters Parameters required in an ExpressRoute gateway PUT operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

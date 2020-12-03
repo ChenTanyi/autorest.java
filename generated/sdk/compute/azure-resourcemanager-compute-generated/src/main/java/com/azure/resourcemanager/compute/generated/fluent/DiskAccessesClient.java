@@ -24,7 +24,7 @@ public interface DiskAccessesClient {
      * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
      *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The maximum
      *     name length is 80 characters.
-     * @param diskAccess disk access resource.
+     * @param diskAccess disk access object supplied in the body of the Put disk access operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -42,7 +42,7 @@ public interface DiskAccessesClient {
      * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
      *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The maximum
      *     name length is 80 characters.
-     * @param diskAccess disk access resource.
+     * @param diskAccess disk access object supplied in the body of the Put disk access operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -61,7 +61,7 @@ public interface DiskAccessesClient {
      * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
      *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The maximum
      *     name length is 80 characters.
-     * @param diskAccess disk access resource.
+     * @param diskAccess disk access object supplied in the body of the Put disk access operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -78,7 +78,7 @@ public interface DiskAccessesClient {
      * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
      *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The maximum
      *     name length is 80 characters.
-     * @param diskAccess disk access resource.
+     * @param diskAccess disk access object supplied in the body of the Put disk access operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -97,7 +97,7 @@ public interface DiskAccessesClient {
      * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
      *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The maximum
      *     name length is 80 characters.
-     * @param diskAccess Used for updating a disk access resource.
+     * @param diskAccess disk access object supplied in the body of the Patch disk access operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -115,7 +115,7 @@ public interface DiskAccessesClient {
      * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
      *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The maximum
      *     name length is 80 characters.
-     * @param diskAccess Used for updating a disk access resource.
+     * @param diskAccess disk access object supplied in the body of the Patch disk access operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -134,7 +134,7 @@ public interface DiskAccessesClient {
      * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
      *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The maximum
      *     name length is 80 characters.
-     * @param diskAccess Used for updating a disk access resource.
+     * @param diskAccess disk access object supplied in the body of the Patch disk access operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -151,7 +151,7 @@ public interface DiskAccessesClient {
      * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
      *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The maximum
      *     name length is 80 characters.
-     * @param diskAccess Used for updating a disk access resource.
+     * @param diskAccess disk access object supplied in the body of the Patch disk access operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by

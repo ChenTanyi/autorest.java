@@ -31,7 +31,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters A common class for general resource information.
+     * @param parameters Parameters supplied to create or update virtual network gateway operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -46,7 +46,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters A common class for general resource information.
+     * @param parameters Parameters supplied to create or update virtual network gateway operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -65,7 +65,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters A common class for general resource information.
+     * @param parameters Parameters supplied to create or update virtual network gateway operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -80,7 +80,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters A common class for general resource information.
+     * @param parameters Parameters supplied to create or update virtual network gateway operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -180,7 +180,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update virtual network gateway tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -195,7 +195,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update virtual network gateway tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -211,7 +211,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update virtual network gateway tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -226,7 +226,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update virtual network gateway tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -428,7 +428,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters Vpn Client Parameters for package generation.
+     * @param parameters Parameters supplied to the generate virtual network gateway VPN client package operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -443,7 +443,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters Vpn Client Parameters for package generation.
+     * @param parameters Parameters supplied to the generate virtual network gateway VPN client package operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -459,7 +459,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters Vpn Client Parameters for package generation.
+     * @param parameters Parameters supplied to the generate virtual network gateway VPN client package operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -474,7 +474,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters Vpn Client Parameters for package generation.
+     * @param parameters Parameters supplied to the generate virtual network gateway VPN client package operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -491,7 +491,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters Vpn Client Parameters for package generation.
+     * @param parameters Parameters supplied to the generate virtual network gateway VPN client package operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -507,7 +507,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters Vpn Client Parameters for package generation.
+     * @param parameters Parameters supplied to the generate virtual network gateway VPN client package operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -524,7 +524,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters Vpn Client Parameters for package generation.
+     * @param parameters Parameters supplied to the generate virtual network gateway VPN client package operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -540,7 +540,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters Vpn Client Parameters for package generation.
+     * @param parameters Parameters supplied to the generate virtual network gateway VPN client package operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -843,7 +843,8 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param vpnclientIpsecParams An IPSec parameters for a virtual network gateway P2S connection.
+     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network
+     *     Gateway P2S client operation through Network resource provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -862,7 +863,8 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param vpnclientIpsecParams An IPSec parameters for a virtual network gateway P2S connection.
+     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network
+     *     Gateway P2S client operation through Network resource provider.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -883,7 +885,8 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param vpnclientIpsecParams An IPSec parameters for a virtual network gateway P2S connection.
+     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network
+     *     Gateway P2S client operation through Network resource provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -899,7 +902,8 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param vpnclientIpsecParams An IPSec parameters for a virtual network gateway P2S connection.
+     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network
+     *     Gateway P2S client operation through Network resource provider.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -981,7 +985,7 @@ public interface VirtualNetworkGatewaysClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection for which the
      *     configuration script is generated.
-     * @param parameters Vpn device configuration script generation parameters.
+     * @param parameters Parameters supplied to the generate vpn device script operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -997,7 +1001,7 @@ public interface VirtualNetworkGatewaysClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection for which the
      *     configuration script is generated.
-     * @param parameters Vpn device configuration script generation parameters.
+     * @param parameters Parameters supplied to the generate vpn device script operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -1016,7 +1020,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters Start packet capture parameters on virtual network gateway.
+     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
@@ -1032,7 +1036,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters Start packet capture parameters on virtual network gateway.
+     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
@@ -1052,7 +1056,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters Start packet capture parameters on virtual network gateway.
+     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
@@ -1082,7 +1086,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters Start packet capture parameters on virtual network gateway.
+     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
@@ -1102,7 +1106,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters Stop packet capture parameters.
+     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
@@ -1118,7 +1122,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters Stop packet capture parameters.
+     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
@@ -1138,7 +1142,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters Stop packet capture parameters.
+     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
@@ -1154,7 +1158,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param parameters Stop packet capture parameters.
+     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
@@ -1242,7 +1246,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param request List of p2s vpn connections to be disconnected.
+     * @param request The parameters are supplied to disconnect vpn connections.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1257,7 +1261,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param request List of p2s vpn connections to be disconnected.
+     * @param request The parameters are supplied to disconnect vpn connections.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -1273,7 +1277,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param request List of p2s vpn connections to be disconnected.
+     * @param request The parameters are supplied to disconnect vpn connections.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1287,7 +1291,7 @@ public interface VirtualNetworkGatewaysClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param request List of p2s vpn connections to be disconnected.
+     * @param request The parameters are supplied to disconnect vpn connections.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

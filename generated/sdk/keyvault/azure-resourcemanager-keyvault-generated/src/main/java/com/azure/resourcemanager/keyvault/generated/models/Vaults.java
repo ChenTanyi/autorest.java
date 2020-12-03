@@ -67,7 +67,7 @@ public interface Vaults {
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName Name of the vault.
      * @param operationKind Name of the operation.
-     * @param parameters Parameters for updating the access policy in a vault.
+     * @param parameters Access policy to merge into the vault.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -85,7 +85,7 @@ public interface Vaults {
      * @param resourceGroupName The name of the Resource Group to which the vault belongs.
      * @param vaultName Name of the vault.
      * @param operationKind Name of the operation.
-     * @param parameters Parameters for updating the access policy in a vault.
+     * @param parameters Access policy to merge into the vault.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -238,7 +238,7 @@ public interface Vaults {
     /**
      * Checks that the vault name is valid and is not already in use.
      *
-     * @param vaultName The parameters used to check the availability of the vault name.
+     * @param vaultName The name of the vault.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -249,7 +249,7 @@ public interface Vaults {
     /**
      * Checks that the vault name is valid and is not already in use.
      *
-     * @param vaultName The parameters used to check the availability of the vault name.
+     * @param vaultName The name of the vault.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

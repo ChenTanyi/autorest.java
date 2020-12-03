@@ -101,7 +101,7 @@ public interface VirtualNetworkTapsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param tapName The name of the virtual network tap.
-     * @param parameters Virtual Network Tap resource.
+     * @param parameters Parameters supplied to the create or update virtual network tap operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -116,7 +116,7 @@ public interface VirtualNetworkTapsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param tapName The name of the virtual network tap.
-     * @param parameters Virtual Network Tap resource.
+     * @param parameters Parameters supplied to the create or update virtual network tap operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -132,7 +132,7 @@ public interface VirtualNetworkTapsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param tapName The name of the virtual network tap.
-     * @param parameters Virtual Network Tap resource.
+     * @param parameters Parameters supplied to the create or update virtual network tap operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -146,7 +146,7 @@ public interface VirtualNetworkTapsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param tapName The name of the virtual network tap.
-     * @param parameters Virtual Network Tap resource.
+     * @param parameters Parameters supplied to the create or update virtual network tap operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -162,7 +162,7 @@ public interface VirtualNetworkTapsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param tapName The name of the tap.
-     * @param tapParameters Tags object for patch operations.
+     * @param tapParameters Parameters supplied to update VirtualNetworkTap tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -176,7 +176,7 @@ public interface VirtualNetworkTapsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param tapName The name of the tap.
-     * @param tapParameters Tags object for patch operations.
+     * @param tapParameters Parameters supplied to update VirtualNetworkTap tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

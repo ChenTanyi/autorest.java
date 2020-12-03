@@ -80,7 +80,7 @@ public interface FrontendEndpointsClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
      * @param frontendEndpointName Name of the Frontend endpoint which is unique within the Front Door.
-     * @param customHttpsConfiguration Https settings for a domain.
+     * @param customHttpsConfiguration The configuration specifying how to enable HTTPS.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -99,7 +99,7 @@ public interface FrontendEndpointsClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
      * @param frontendEndpointName Name of the Frontend endpoint which is unique within the Front Door.
-     * @param customHttpsConfiguration Https settings for a domain.
+     * @param customHttpsConfiguration The configuration specifying how to enable HTTPS.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -120,7 +120,7 @@ public interface FrontendEndpointsClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
      * @param frontendEndpointName Name of the Frontend endpoint which is unique within the Front Door.
-     * @param customHttpsConfiguration Https settings for a domain.
+     * @param customHttpsConfiguration The configuration specifying how to enable HTTPS.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -138,7 +138,7 @@ public interface FrontendEndpointsClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
      * @param frontendEndpointName Name of the Frontend endpoint which is unique within the Front Door.
-     * @param customHttpsConfiguration Https settings for a domain.
+     * @param customHttpsConfiguration The configuration specifying how to enable HTTPS.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

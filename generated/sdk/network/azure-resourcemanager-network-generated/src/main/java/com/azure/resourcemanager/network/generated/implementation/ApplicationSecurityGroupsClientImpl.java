@@ -584,7 +584,7 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationSecurityGroupName The name of the application security group.
-     * @param parameters An application security group in a resource group.
+     * @param parameters Parameters supplied to the create or update ApplicationSecurityGroup operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -643,7 +643,7 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationSecurityGroupName The name of the application security group.
-     * @param parameters An application security group in a resource group.
+     * @param parameters Parameters supplied to the create or update ApplicationSecurityGroup operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -703,7 +703,7 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationSecurityGroupName The name of the application security group.
-     * @param parameters An application security group in a resource group.
+     * @param parameters Parameters supplied to the create or update ApplicationSecurityGroup operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -730,7 +730,7 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationSecurityGroupName The name of the application security group.
-     * @param parameters An application security group in a resource group.
+     * @param parameters Parameters supplied to the create or update ApplicationSecurityGroup operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -762,7 +762,7 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationSecurityGroupName The name of the application security group.
-     * @param parameters An application security group in a resource group.
+     * @param parameters Parameters supplied to the create or update ApplicationSecurityGroup operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -779,7 +779,7 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationSecurityGroupName The name of the application security group.
-     * @param parameters An application security group in a resource group.
+     * @param parameters Parameters supplied to the create or update ApplicationSecurityGroup operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -801,7 +801,7 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationSecurityGroupName The name of the application security group.
-     * @param parameters An application security group in a resource group.
+     * @param parameters Parameters supplied to the create or update ApplicationSecurityGroup operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -820,7 +820,7 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationSecurityGroupName The name of the application security group.
-     * @param parameters An application security group in a resource group.
+     * @param parameters Parameters supplied to the create or update ApplicationSecurityGroup operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -843,7 +843,7 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationSecurityGroupName The name of the application security group.
-     * @param parameters An application security group in a resource group.
+     * @param parameters Parameters supplied to the create or update ApplicationSecurityGroup operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -860,7 +860,7 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationSecurityGroupName The name of the application security group.
-     * @param parameters An application security group in a resource group.
+     * @param parameters Parameters supplied to the create or update ApplicationSecurityGroup operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -881,7 +881,7 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationSecurityGroupName The name of the application security group.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update application security group tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -940,7 +940,7 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationSecurityGroupName The name of the application security group.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update application security group tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -997,7 +997,7 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationSecurityGroupName The name of the application security group.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update application security group tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1022,7 +1022,7 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationSecurityGroupName The name of the application security group.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update application security group tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1039,7 +1039,7 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      *
      * @param resourceGroupName The name of the resource group.
      * @param applicationSecurityGroupName The name of the application security group.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update application security group tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

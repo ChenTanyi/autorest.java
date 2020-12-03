@@ -496,8 +496,8 @@ public final class RulesEnginesClientImpl implements RulesEnginesClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
      * @param rulesEngineName Name of the Rules Engine which is unique within the Front Door.
-     * @param rulesEngineParameters A rules engine configuration containing a list of rules that will run to modify the
-     *     runtime behavior of the request and response.
+     * @param rulesEngineParameters Rules Engine Configuration properties needed to create a new Rules Engine
+     *     Configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -564,8 +564,8 @@ public final class RulesEnginesClientImpl implements RulesEnginesClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
      * @param rulesEngineName Name of the Rules Engine which is unique within the Front Door.
-     * @param rulesEngineParameters A rules engine configuration containing a list of rules that will run to modify the
-     *     runtime behavior of the request and response.
+     * @param rulesEngineParameters Rules Engine Configuration properties needed to create a new Rules Engine
+     *     Configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -631,8 +631,8 @@ public final class RulesEnginesClientImpl implements RulesEnginesClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
      * @param rulesEngineName Name of the Rules Engine which is unique within the Front Door.
-     * @param rulesEngineParameters A rules engine configuration containing a list of rules that will run to modify the
-     *     runtime behavior of the request and response.
+     * @param rulesEngineParameters Rules Engine Configuration properties needed to create a new Rules Engine
+     *     Configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -659,8 +659,8 @@ public final class RulesEnginesClientImpl implements RulesEnginesClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
      * @param rulesEngineName Name of the Rules Engine which is unique within the Front Door.
-     * @param rulesEngineParameters A rules engine configuration containing a list of rules that will run to modify the
-     *     runtime behavior of the request and response.
+     * @param rulesEngineParameters Rules Engine Configuration properties needed to create a new Rules Engine
+     *     Configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -691,8 +691,8 @@ public final class RulesEnginesClientImpl implements RulesEnginesClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
      * @param rulesEngineName Name of the Rules Engine which is unique within the Front Door.
-     * @param rulesEngineParameters A rules engine configuration containing a list of rules that will run to modify the
-     *     runtime behavior of the request and response.
+     * @param rulesEngineParameters Rules Engine Configuration properties needed to create a new Rules Engine
+     *     Configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -715,8 +715,8 @@ public final class RulesEnginesClientImpl implements RulesEnginesClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
      * @param rulesEngineName Name of the Rules Engine which is unique within the Front Door.
-     * @param rulesEngineParameters A rules engine configuration containing a list of rules that will run to modify the
-     *     runtime behavior of the request and response.
+     * @param rulesEngineParameters Rules Engine Configuration properties needed to create a new Rules Engine
+     *     Configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -742,8 +742,8 @@ public final class RulesEnginesClientImpl implements RulesEnginesClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
      * @param rulesEngineName Name of the Rules Engine which is unique within the Front Door.
-     * @param rulesEngineParameters A rules engine configuration containing a list of rules that will run to modify the
-     *     runtime behavior of the request and response.
+     * @param rulesEngineParameters Rules Engine Configuration properties needed to create a new Rules Engine
+     *     Configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -767,8 +767,8 @@ public final class RulesEnginesClientImpl implements RulesEnginesClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
      * @param rulesEngineName Name of the Rules Engine which is unique within the Front Door.
-     * @param rulesEngineParameters A rules engine configuration containing a list of rules that will run to modify the
-     *     runtime behavior of the request and response.
+     * @param rulesEngineParameters Rules Engine Configuration properties needed to create a new Rules Engine
+     *     Configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -795,8 +795,8 @@ public final class RulesEnginesClientImpl implements RulesEnginesClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
      * @param rulesEngineName Name of the Rules Engine which is unique within the Front Door.
-     * @param rulesEngineParameters A rules engine configuration containing a list of rules that will run to modify the
-     *     runtime behavior of the request and response.
+     * @param rulesEngineParameters Rules Engine Configuration properties needed to create a new Rules Engine
+     *     Configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -818,8 +818,8 @@ public final class RulesEnginesClientImpl implements RulesEnginesClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
      * @param rulesEngineName Name of the Rules Engine which is unique within the Front Door.
-     * @param rulesEngineParameters A rules engine configuration containing a list of rules that will run to modify the
-     *     runtime behavior of the request and response.
+     * @param rulesEngineParameters Rules Engine Configuration properties needed to create a new Rules Engine
+     *     Configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

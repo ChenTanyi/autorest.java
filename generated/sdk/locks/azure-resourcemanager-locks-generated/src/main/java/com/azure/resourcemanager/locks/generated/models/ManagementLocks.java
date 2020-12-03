@@ -72,7 +72,7 @@ public interface ManagementLocks {
      *     '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}'
      *     for resources.
      * @param lockName The name of lock.
-     * @param parameters The lock information.
+     * @param parameters Create or update management lock parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -89,7 +89,7 @@ public interface ManagementLocks {
      *     '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}'
      *     for resources.
      * @param lockName The name of lock.
-     * @param parameters The lock information.
+     * @param parameters Create or update management lock parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -160,7 +160,7 @@ public interface ManagementLocks {
      * @param resourceName The name of the resource to lock.
      * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt;
      *     %, &amp;, :, \, ?, /, or any control characters.
-     * @param parameters The lock information.
+     * @param parameters Parameters for creating or updating a management lock.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -187,7 +187,7 @@ public interface ManagementLocks {
      * @param resourceName The name of the resource to lock.
      * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt;
      *     %, &amp;, :, \, ?, /, or any control characters.
-     * @param parameters The lock information.
+     * @param parameters Parameters for creating or updating a management lock.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -304,7 +304,7 @@ public interface ManagementLocks {
      *
      * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt;
      *     %, &amp;, :, \, ?, /, or any control characters.
-     * @param parameters The lock information.
+     * @param parameters The management lock parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -319,7 +319,7 @@ public interface ManagementLocks {
      *
      * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt;
      *     %, &amp;, :, \, ?, /, or any control characters.
-     * @param parameters The lock information.
+     * @param parameters The management lock parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

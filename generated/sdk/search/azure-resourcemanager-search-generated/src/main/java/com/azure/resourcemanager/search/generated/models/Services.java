@@ -127,7 +127,7 @@ public interface Services {
      * Checks whether or not the given search service name is available for use. Search service names must be globally
      * unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net).
      *
-     * @param checkNameAvailabilityInput Input of check name availability API.
+     * @param checkNameAvailabilityInput The resource name and type to check.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -139,7 +139,7 @@ public interface Services {
      * Checks whether or not the given search service name is available for use. Search service names must be globally
      * unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net).
      *
-     * @param checkNameAvailabilityInput Input of check name availability API.
+     * @param checkNameAvailabilityInput The resource name and type to check.
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
      * @param context The context to associate with this operation.

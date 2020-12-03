@@ -563,7 +563,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     /**
      * Description for Validate information for a certificate order.
      *
-     * @param appServiceCertificateOrder SSL certificate purchase order.
+     * @param appServiceCertificateOrder Information for a certificate order.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -610,7 +610,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     /**
      * Description for Validate information for a certificate order.
      *
-     * @param appServiceCertificateOrder SSL certificate purchase order.
+     * @param appServiceCertificateOrder Information for a certificate order.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -655,7 +655,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     /**
      * Description for Validate information for a certificate order.
      *
-     * @param appServiceCertificateOrder SSL certificate purchase order.
+     * @param appServiceCertificateOrder Information for a certificate order.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -670,7 +670,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     /**
      * Description for Validate information for a certificate order.
      *
-     * @param appServiceCertificateOrder SSL certificate purchase order.
+     * @param appServiceCertificateOrder Information for a certificate order.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -683,7 +683,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
     /**
      * Description for Validate information for a certificate order.
      *
-     * @param appServiceCertificateOrder SSL certificate purchase order.
+     * @param appServiceCertificateOrder Information for a certificate order.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1019,7 +1019,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param certificateDistinguishedName SSL certificate purchase order.
+     * @param certificateDistinguishedName Distinguished name to use for the certificate order.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1080,7 +1080,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param certificateDistinguishedName SSL certificate purchase order.
+     * @param certificateDistinguishedName Distinguished name to use for the certificate order.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1140,7 +1140,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param certificateDistinguishedName SSL certificate purchase order.
+     * @param certificateDistinguishedName Distinguished name to use for the certificate order.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1169,7 +1169,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param certificateDistinguishedName SSL certificate purchase order.
+     * @param certificateDistinguishedName Distinguished name to use for the certificate order.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1202,7 +1202,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param certificateDistinguishedName SSL certificate purchase order.
+     * @param certificateDistinguishedName Distinguished name to use for the certificate order.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1222,7 +1222,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param certificateDistinguishedName SSL certificate purchase order.
+     * @param certificateDistinguishedName Distinguished name to use for the certificate order.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1244,7 +1244,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param certificateDistinguishedName SSL certificate purchase order.
+     * @param certificateDistinguishedName Distinguished name to use for the certificate order.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1265,7 +1265,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param certificateDistinguishedName SSL certificate purchase order.
+     * @param certificateDistinguishedName Distinguished name to use for the certificate order.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1288,7 +1288,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param certificateDistinguishedName SSL certificate purchase order.
+     * @param certificateDistinguishedName Distinguished name to use for the certificate order.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1307,7 +1307,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param certificateDistinguishedName SSL certificate purchase order.
+     * @param certificateDistinguishedName Distinguished name to use for the certificate order.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1470,7 +1470,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param certificateDistinguishedName ARM resource for a certificate order that is purchased through Azure.
+     * @param certificateDistinguishedName Distinguished name to use for the certificate order.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1531,7 +1531,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param certificateDistinguishedName ARM resource for a certificate order that is purchased through Azure.
+     * @param certificateDistinguishedName Distinguished name to use for the certificate order.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1591,7 +1591,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param certificateDistinguishedName ARM resource for a certificate order that is purchased through Azure.
+     * @param certificateDistinguishedName Distinguished name to use for the certificate order.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1618,7 +1618,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param certificateDistinguishedName ARM resource for a certificate order that is purchased through Azure.
+     * @param certificateDistinguishedName Distinguished name to use for the certificate order.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1637,7 +1637,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param certificateDistinguishedName ARM resource for a certificate order that is purchased through Azure.
+     * @param certificateDistinguishedName Distinguished name to use for the certificate order.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2010,7 +2010,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
      * @param name Name of the certificate.
-     * @param keyVaultCertificate Key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @param keyVaultCertificate Key vault certificate resource Id.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2075,7 +2075,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
      * @param name Name of the certificate.
-     * @param keyVaultCertificate Key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @param keyVaultCertificate Key vault certificate resource Id.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2139,7 +2139,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
      * @param name Name of the certificate.
-     * @param keyVaultCertificate Key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @param keyVaultCertificate Key vault certificate resource Id.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2171,7 +2171,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
      * @param name Name of the certificate.
-     * @param keyVaultCertificate Key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @param keyVaultCertificate Key vault certificate resource Id.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2206,7 +2206,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
      * @param name Name of the certificate.
-     * @param keyVaultCertificate Key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @param keyVaultCertificate Key vault certificate resource Id.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2229,7 +2229,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
      * @param name Name of the certificate.
-     * @param keyVaultCertificate Key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @param keyVaultCertificate Key vault certificate resource Id.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2255,7 +2255,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
      * @param name Name of the certificate.
-     * @param keyVaultCertificate Key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @param keyVaultCertificate Key vault certificate resource Id.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2278,7 +2278,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
      * @param name Name of the certificate.
-     * @param keyVaultCertificate Key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @param keyVaultCertificate Key vault certificate resource Id.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2304,7 +2304,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
      * @param name Name of the certificate.
-     * @param keyVaultCertificate Key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @param keyVaultCertificate Key vault certificate resource Id.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2326,7 +2326,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
      * @param name Name of the certificate.
-     * @param keyVaultCertificate Key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @param keyVaultCertificate Key vault certificate resource Id.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2507,7 +2507,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
      * @param name Name of the certificate.
-     * @param keyVaultCertificate Key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @param keyVaultCertificate Key vault certificate resource Id.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2572,7 +2572,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
      * @param name Name of the certificate.
-     * @param keyVaultCertificate Key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @param keyVaultCertificate Key vault certificate resource Id.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2636,7 +2636,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
      * @param name Name of the certificate.
-     * @param keyVaultCertificate Key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @param keyVaultCertificate Key vault certificate resource Id.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2665,7 +2665,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
      * @param name Name of the certificate.
-     * @param keyVaultCertificate Key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @param keyVaultCertificate Key vault certificate resource Id.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2686,7 +2686,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
      * @param name Name of the certificate.
-     * @param keyVaultCertificate Key Vault container ARM resource for a certificate that is purchased through Azure.
+     * @param keyVaultCertificate Key vault certificate resource Id.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2710,7 +2710,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param reissueCertificateOrderRequest Class representing certificate reissue request.
+     * @param reissueCertificateOrderRequest Parameters for the reissue.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2771,7 +2771,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param reissueCertificateOrderRequest Class representing certificate reissue request.
+     * @param reissueCertificateOrderRequest Parameters for the reissue.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2831,7 +2831,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param reissueCertificateOrderRequest Class representing certificate reissue request.
+     * @param reissueCertificateOrderRequest Parameters for the reissue.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2851,7 +2851,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param reissueCertificateOrderRequest Class representing certificate reissue request.
+     * @param reissueCertificateOrderRequest Parameters for the reissue.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2869,7 +2869,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param reissueCertificateOrderRequest Class representing certificate reissue request.
+     * @param reissueCertificateOrderRequest Parameters for the reissue.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2892,7 +2892,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param renewCertificateOrderRequest Class representing certificate renew request.
+     * @param renewCertificateOrderRequest Renew parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2953,7 +2953,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param renewCertificateOrderRequest Class representing certificate renew request.
+     * @param renewCertificateOrderRequest Renew parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -3013,7 +3013,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param renewCertificateOrderRequest Class representing certificate renew request.
+     * @param renewCertificateOrderRequest Renew parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3033,7 +3033,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param renewCertificateOrderRequest Class representing certificate renew request.
+     * @param renewCertificateOrderRequest Renew parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3051,7 +3051,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param renewCertificateOrderRequest Class representing certificate renew request.
+     * @param renewCertificateOrderRequest Renew parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -3215,7 +3215,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param nameIdentifier Identifies an object.
+     * @param nameIdentifier Email address.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3271,7 +3271,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param nameIdentifier Identifies an object.
+     * @param nameIdentifier Email address.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -3325,7 +3325,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param nameIdentifier Identifies an object.
+     * @param nameIdentifier Email address.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3343,7 +3343,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param nameIdentifier Identifies an object.
+     * @param nameIdentifier Email address.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3359,7 +3359,7 @@ public final class AppServiceCertificateOrdersClientImpl implements AppServiceCe
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param certificateOrderName Name of the certificate order.
-     * @param nameIdentifier Identifies an object.
+     * @param nameIdentifier Email address.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.

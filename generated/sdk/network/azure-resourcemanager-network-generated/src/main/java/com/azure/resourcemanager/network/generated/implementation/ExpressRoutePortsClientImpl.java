@@ -588,7 +588,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
-     * @param parameters ExpressRoutePort resource definition.
+     * @param parameters Parameters supplied to the create ExpressRoutePort operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -645,7 +645,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
-     * @param parameters ExpressRoutePort resource definition.
+     * @param parameters Parameters supplied to the create ExpressRoutePort operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -700,7 +700,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
-     * @param parameters ExpressRoutePort resource definition.
+     * @param parameters Parameters supplied to the create ExpressRoutePort operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -726,7 +726,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
-     * @param parameters ExpressRoutePort resource definition.
+     * @param parameters Parameters supplied to the create ExpressRoutePort operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -750,7 +750,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
-     * @param parameters ExpressRoutePort resource definition.
+     * @param parameters Parameters supplied to the create ExpressRoutePort operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -767,7 +767,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
-     * @param parameters ExpressRoutePort resource definition.
+     * @param parameters Parameters supplied to the create ExpressRoutePort operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -785,7 +785,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
-     * @param parameters ExpressRoutePort resource definition.
+     * @param parameters Parameters supplied to the create ExpressRoutePort operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -804,7 +804,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
-     * @param parameters ExpressRoutePort resource definition.
+     * @param parameters Parameters supplied to the create ExpressRoutePort operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -824,7 +824,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
-     * @param parameters ExpressRoutePort resource definition.
+     * @param parameters Parameters supplied to the create ExpressRoutePort operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -841,7 +841,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
-     * @param parameters ExpressRoutePort resource definition.
+     * @param parameters Parameters supplied to the create ExpressRoutePort operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -859,7 +859,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update ExpressRoutePort resource tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -916,7 +916,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update ExpressRoutePort resource tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -971,7 +971,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update ExpressRoutePort resource tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -996,7 +996,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update ExpressRoutePort resource tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1013,7 +1013,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the ExpressRoutePort resource.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update ExpressRoutePort resource tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1328,7 +1328,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of ExpressRoutePort.
-     * @param request The customer name to be printed on a letter of authorization.
+     * @param request Request parameters supplied to generate a letter of authorization.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1385,7 +1385,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of ExpressRoutePort.
-     * @param request The customer name to be printed on a letter of authorization.
+     * @param request Request parameters supplied to generate a letter of authorization.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1443,7 +1443,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of ExpressRoutePort.
-     * @param request The customer name to be printed on a letter of authorization.
+     * @param request Request parameters supplied to generate a letter of authorization.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1468,7 +1468,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of ExpressRoutePort.
-     * @param request The customer name to be printed on a letter of authorization.
+     * @param request Request parameters supplied to generate a letter of authorization.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1485,7 +1485,7 @@ public final class ExpressRoutePortsClientImpl implements ExpressRoutePortsClien
      *
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of ExpressRoutePort.
-     * @param request The customer name to be printed on a letter of authorization.
+     * @param request Request parameters supplied to generate a letter of authorization.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

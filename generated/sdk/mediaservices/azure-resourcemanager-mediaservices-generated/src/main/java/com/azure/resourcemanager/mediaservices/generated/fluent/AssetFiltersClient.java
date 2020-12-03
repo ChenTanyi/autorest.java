@@ -82,7 +82,7 @@ public interface AssetFiltersClient {
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
      * @param filterName The Asset Filter name.
-     * @param parameters An Asset Filter.
+     * @param parameters The request parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -99,7 +99,7 @@ public interface AssetFiltersClient {
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
      * @param filterName The Asset Filter name.
-     * @param parameters An Asset Filter.
+     * @param parameters The request parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -153,7 +153,7 @@ public interface AssetFiltersClient {
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
      * @param filterName The Asset Filter name.
-     * @param parameters An Asset Filter.
+     * @param parameters The request parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -170,7 +170,7 @@ public interface AssetFiltersClient {
      * @param accountName The Media Services account name.
      * @param assetName The Asset name.
      * @param filterName The Asset Filter name.
-     * @param parameters An Asset Filter.
+     * @param parameters The request parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

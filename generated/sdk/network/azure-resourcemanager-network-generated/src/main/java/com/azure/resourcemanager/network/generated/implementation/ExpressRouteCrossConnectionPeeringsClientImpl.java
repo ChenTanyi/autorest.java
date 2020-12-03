@@ -764,7 +764,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
-     * @param peeringParameters Peering in an ExpressRoute Cross Connection resource.
+     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering
+     *     operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -830,7 +831,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
-     * @param peeringParameters Peering in an ExpressRoute Cross Connection resource.
+     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering
+     *     operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -895,7 +897,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
-     * @param peeringParameters Peering in an ExpressRoute Cross Connection resource.
+     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering
+     *     operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -926,7 +929,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
-     * @param peeringParameters Peering in an ExpressRoute Cross Connection resource.
+     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering
+     *     operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -961,7 +965,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
-     * @param peeringParameters Peering in an ExpressRoute Cross Connection resource.
+     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering
+     *     operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -984,7 +989,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
-     * @param peeringParameters Peering in an ExpressRoute Cross Connection resource.
+     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering
+     *     operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1009,7 +1015,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
-     * @param peeringParameters Peering in an ExpressRoute Cross Connection resource.
+     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering
+     *     operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1032,7 +1039,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
-     * @param peeringParameters Peering in an ExpressRoute Cross Connection resource.
+     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering
+     *     operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1057,7 +1065,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
-     * @param peeringParameters Peering in an ExpressRoute Cross Connection resource.
+     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering
+     *     operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1078,7 +1087,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
-     * @param peeringParameters Peering in an ExpressRoute Cross Connection resource.
+     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering
+     *     operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

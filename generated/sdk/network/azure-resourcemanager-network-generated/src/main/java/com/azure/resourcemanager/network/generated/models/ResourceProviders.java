@@ -126,7 +126,7 @@ public interface ResourceProviders {
      *
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
-     * @param sessionIds List of session IDs.
+     * @param sessionIds The list of sessionids to disconnect.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -140,7 +140,7 @@ public interface ResourceProviders {
      *
      * @param resourceGroupName The name of the resource group.
      * @param bastionHostname The name of the Bastion Host.
-     * @param sessionIds List of session IDs.
+     * @param sessionIds The list of sessionids to disconnect.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -210,7 +210,7 @@ public interface ResourceProviders {
      *
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN whose associated VpnServerConfigurations is needed.
-     * @param vpnClientParams Virtual Wan Vpn profile parameters Vpn profile generation.
+     * @param vpnClientParams Parameters supplied to the generate VirtualWan VPN profile generation operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -225,7 +225,7 @@ public interface ResourceProviders {
      *
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN whose associated VpnServerConfigurations is needed.
-     * @param vpnClientParams Virtual Wan Vpn profile parameters Vpn profile generation.
+     * @param vpnClientParams Parameters supplied to the generate VirtualWan VPN profile generation operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

@@ -97,8 +97,7 @@ public interface FrontDoorsClient {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
-     * @param frontDoorParameters Front Door represents a collection of backend endpoints to route traffic to along with
-     *     rules that specify how traffic is sent there.
+     * @param frontDoorParameters Front Door properties needed to create a new Front Door.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -114,8 +113,7 @@ public interface FrontDoorsClient {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
-     * @param frontDoorParameters Front Door represents a collection of backend endpoints to route traffic to along with
-     *     rules that specify how traffic is sent there.
+     * @param frontDoorParameters Front Door properties needed to create a new Front Door.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -132,8 +130,7 @@ public interface FrontDoorsClient {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
-     * @param frontDoorParameters Front Door represents a collection of backend endpoints to route traffic to along with
-     *     rules that specify how traffic is sent there.
+     * @param frontDoorParameters Front Door properties needed to create a new Front Door.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -148,8 +145,7 @@ public interface FrontDoorsClient {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
-     * @param frontDoorParameters Front Door represents a collection of backend endpoints to route traffic to along with
-     *     rules that specify how traffic is sent there.
+     * @param frontDoorParameters Front Door properties needed to create a new Front Door.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -218,7 +214,7 @@ public interface FrontDoorsClient {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
-     * @param customDomainProperties Input of the custom domain to be validated for DNS mapping.
+     * @param customDomainProperties Custom domain to be validated.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -233,7 +229,7 @@ public interface FrontDoorsClient {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
-     * @param customDomainProperties Input of the custom domain to be validated for DNS mapping.
+     * @param customDomainProperties Custom domain to be validated.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

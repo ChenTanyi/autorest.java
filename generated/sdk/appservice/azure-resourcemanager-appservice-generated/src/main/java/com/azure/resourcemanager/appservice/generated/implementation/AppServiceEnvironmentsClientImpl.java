@@ -1322,7 +1322,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param hostingEnvironmentEnvelope App Service Environment ARM resource.
+     * @param hostingEnvironmentEnvelope Configuration details of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1380,7 +1380,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param hostingEnvironmentEnvelope App Service Environment ARM resource.
+     * @param hostingEnvironmentEnvelope Configuration details of the App Service Environment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1439,7 +1439,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param hostingEnvironmentEnvelope App Service Environment ARM resource.
+     * @param hostingEnvironmentEnvelope Configuration details of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1466,7 +1466,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param hostingEnvironmentEnvelope App Service Environment ARM resource.
+     * @param hostingEnvironmentEnvelope Configuration details of the App Service Environment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1498,7 +1498,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param hostingEnvironmentEnvelope App Service Environment ARM resource.
+     * @param hostingEnvironmentEnvelope Configuration details of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1516,7 +1516,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param hostingEnvironmentEnvelope App Service Environment ARM resource.
+     * @param hostingEnvironmentEnvelope Configuration details of the App Service Environment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1538,7 +1538,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param hostingEnvironmentEnvelope App Service Environment ARM resource.
+     * @param hostingEnvironmentEnvelope Configuration details of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1557,7 +1557,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param hostingEnvironmentEnvelope App Service Environment ARM resource.
+     * @param hostingEnvironmentEnvelope Configuration details of the App Service Environment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1580,7 +1580,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param hostingEnvironmentEnvelope App Service Environment ARM resource.
+     * @param hostingEnvironmentEnvelope Configuration details of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1597,7 +1597,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param hostingEnvironmentEnvelope App Service Environment ARM resource.
+     * @param hostingEnvironmentEnvelope Configuration details of the App Service Environment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1903,7 +1903,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param hostingEnvironmentEnvelope ARM resource for a app service environment.
+     * @param hostingEnvironmentEnvelope Configuration details of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1961,7 +1961,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param hostingEnvironmentEnvelope ARM resource for a app service environment.
+     * @param hostingEnvironmentEnvelope Configuration details of the App Service Environment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2020,7 +2020,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param hostingEnvironmentEnvelope ARM resource for a app service environment.
+     * @param hostingEnvironmentEnvelope Configuration details of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2045,7 +2045,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param hostingEnvironmentEnvelope ARM resource for a app service environment.
+     * @param hostingEnvironmentEnvelope Configuration details of the App Service Environment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2062,7 +2062,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param hostingEnvironmentEnvelope ARM resource for a app service environment.
+     * @param hostingEnvironmentEnvelope Configuration details of the App Service Environment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2409,7 +2409,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param vnetInfo Specification for using a Virtual Network.
+     * @param vnetInfo Details for the new virtual network.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2489,7 +2489,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param vnetInfo Specification for using a Virtual Network.
+     * @param vnetInfo Details for the new virtual network.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2562,7 +2562,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param vnetInfo Specification for using a Virtual Network.
+     * @param vnetInfo Details for the new virtual network.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2581,7 +2581,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param vnetInfo Specification for using a Virtual Network.
+     * @param vnetInfo Details for the new virtual network.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2601,7 +2601,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param vnetInfo Specification for using a Virtual Network.
+     * @param vnetInfo Details for the new virtual network.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2617,7 +2617,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param vnetInfo Specification for using a Virtual Network.
+     * @param vnetInfo Details for the new virtual network.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -3461,7 +3461,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param multiRolePoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param multiRolePoolEnvelope Properties of the multi-role pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3517,7 +3517,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param multiRolePoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param multiRolePoolEnvelope Properties of the multi-role pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -3571,7 +3571,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param multiRolePoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param multiRolePoolEnvelope Properties of the multi-role pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3598,7 +3598,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param multiRolePoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param multiRolePoolEnvelope Properties of the multi-role pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -3627,7 +3627,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param multiRolePoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param multiRolePoolEnvelope Properties of the multi-role pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3644,7 +3644,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param multiRolePoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param multiRolePoolEnvelope Properties of the multi-role pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -3663,7 +3663,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param multiRolePoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param multiRolePoolEnvelope Properties of the multi-role pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3682,7 +3682,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param multiRolePoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param multiRolePoolEnvelope Properties of the multi-role pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -3702,7 +3702,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param multiRolePoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param multiRolePoolEnvelope Properties of the multi-role pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3719,7 +3719,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param multiRolePoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param multiRolePoolEnvelope Properties of the multi-role pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -3737,7 +3737,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param multiRolePoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param multiRolePoolEnvelope Properties of the multi-role pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3793,7 +3793,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param multiRolePoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param multiRolePoolEnvelope Properties of the multi-role pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -3847,7 +3847,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param multiRolePoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param multiRolePoolEnvelope Properties of the multi-role pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3872,7 +3872,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param multiRolePoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param multiRolePoolEnvelope Properties of the multi-role pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3889,7 +3889,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
-     * @param multiRolePoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param multiRolePoolEnvelope Properties of the multi-role pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -6469,7 +6469,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @param workerPoolName Name of the worker pool.
-     * @param workerPoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param workerPoolEnvelope Properties of the worker pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -6530,7 +6530,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @param workerPoolName Name of the worker pool.
-     * @param workerPoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param workerPoolEnvelope Properties of the worker pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -6593,7 +6593,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @param workerPoolName Name of the worker pool.
-     * @param workerPoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param workerPoolEnvelope Properties of the worker pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -6620,7 +6620,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @param workerPoolName Name of the worker pool.
-     * @param workerPoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param workerPoolEnvelope Properties of the worker pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -6654,7 +6654,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @param workerPoolName Name of the worker pool.
-     * @param workerPoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param workerPoolEnvelope Properties of the worker pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -6673,7 +6673,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @param workerPoolName Name of the worker pool.
-     * @param workerPoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param workerPoolEnvelope Properties of the worker pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -6697,7 +6697,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @param workerPoolName Name of the worker pool.
-     * @param workerPoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param workerPoolEnvelope Properties of the worker pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -6717,7 +6717,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @param workerPoolName Name of the worker pool.
-     * @param workerPoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param workerPoolEnvelope Properties of the worker pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -6742,7 +6742,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @param workerPoolName Name of the worker pool.
-     * @param workerPoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param workerPoolEnvelope Properties of the worker pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -6760,7 +6760,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @param workerPoolName Name of the worker pool.
-     * @param workerPoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param workerPoolEnvelope Properties of the worker pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -6784,7 +6784,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @param workerPoolName Name of the worker pool.
-     * @param workerPoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param workerPoolEnvelope Properties of the worker pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -6845,7 +6845,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @param workerPoolName Name of the worker pool.
-     * @param workerPoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param workerPoolEnvelope Properties of the worker pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -6908,7 +6908,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @param workerPoolName Name of the worker pool.
-     * @param workerPoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param workerPoolEnvelope Properties of the worker pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -6934,7 +6934,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @param workerPoolName Name of the worker pool.
-     * @param workerPoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param workerPoolEnvelope Properties of the worker pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -6952,7 +6952,7 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service Environment.
      * @param workerPoolName Name of the worker pool.
-     * @param workerPoolEnvelope Worker pool of an App Service Environment ARM resource.
+     * @param workerPoolEnvelope Properties of the worker pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.

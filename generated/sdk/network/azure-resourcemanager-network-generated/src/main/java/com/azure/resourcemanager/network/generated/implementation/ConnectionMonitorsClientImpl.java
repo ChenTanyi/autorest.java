@@ -1049,7 +1049,7 @@ public final class ConnectionMonitorsClientImpl implements ConnectionMonitorsCli
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param connectionMonitorName The name of the connection monitor.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update connection monitor tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1112,7 +1112,7 @@ public final class ConnectionMonitorsClientImpl implements ConnectionMonitorsCli
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param connectionMonitorName The name of the connection monitor.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update connection monitor tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1177,7 +1177,7 @@ public final class ConnectionMonitorsClientImpl implements ConnectionMonitorsCli
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param connectionMonitorName The name of the connection monitor.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update connection monitor tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1203,7 +1203,7 @@ public final class ConnectionMonitorsClientImpl implements ConnectionMonitorsCli
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param connectionMonitorName The name of the connection monitor.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update connection monitor tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1221,7 +1221,7 @@ public final class ConnectionMonitorsClientImpl implements ConnectionMonitorsCli
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
      * @param connectionMonitorName The name of the connection monitor.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update connection monitor tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

@@ -171,7 +171,7 @@ public final class KeysClientImpl implements KeysClient {
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the key vault which contains the key to be created.
      * @param keyName The name of the key to be created.
-     * @param parameters The parameters used to create a key.
+     * @param parameters The parameters used to create the specified key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -233,7 +233,7 @@ public final class KeysClientImpl implements KeysClient {
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the key vault which contains the key to be created.
      * @param keyName The name of the key to be created.
-     * @param parameters The parameters used to create a key.
+     * @param parameters The parameters used to create the specified key.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -293,7 +293,7 @@ public final class KeysClientImpl implements KeysClient {
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the key vault which contains the key to be created.
      * @param keyName The name of the key to be created.
-     * @param parameters The parameters used to create a key.
+     * @param parameters The parameters used to create the specified key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -321,7 +321,7 @@ public final class KeysClientImpl implements KeysClient {
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the key vault which contains the key to be created.
      * @param keyName The name of the key to be created.
-     * @param parameters The parameters used to create a key.
+     * @param parameters The parameters used to create the specified key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -341,7 +341,7 @@ public final class KeysClientImpl implements KeysClient {
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the key vault which contains the key to be created.
      * @param keyName The name of the key to be created.
-     * @param parameters The parameters used to create a key.
+     * @param parameters The parameters used to create the specified key.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

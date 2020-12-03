@@ -78,7 +78,7 @@ public interface ServerKeysClient {
      * @param serverName The name of the server.
      * @param keyName The name of the MySQL Server key to be operated on (updated or created).
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param parameters A MySQL Server key.
+     * @param parameters The requested MySQL Server key resource state.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -94,7 +94,7 @@ public interface ServerKeysClient {
      * @param serverName The name of the server.
      * @param keyName The name of the MySQL Server key to be operated on (updated or created).
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param parameters A MySQL Server key.
+     * @param parameters The requested MySQL Server key resource state.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -111,7 +111,7 @@ public interface ServerKeysClient {
      * @param serverName The name of the server.
      * @param keyName The name of the MySQL Server key to be operated on (updated or created).
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param parameters A MySQL Server key.
+     * @param parameters The requested MySQL Server key resource state.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -127,7 +127,7 @@ public interface ServerKeysClient {
      * @param serverName The name of the server.
      * @param keyName The name of the MySQL Server key to be operated on (updated or created).
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param parameters A MySQL Server key.
+     * @param parameters The requested MySQL Server key resource state.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

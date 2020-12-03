@@ -49,7 +49,7 @@ public interface ResourceGroupsClient {
      * @param resourceGroupName The name of the resource group to create or update. Can include alphanumeric,
      *     underscore, parentheses, hyphen, period (except at end), and Unicode characters that match the allowed
      *     characters.
-     * @param parameters Resource group information.
+     * @param parameters Parameters supplied to the create or update a resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -64,7 +64,7 @@ public interface ResourceGroupsClient {
      * @param resourceGroupName The name of the resource group to create or update. Can include alphanumeric,
      *     underscore, parentheses, hyphen, period (except at end), and Unicode characters that match the allowed
      *     characters.
-     * @param parameters Resource group information.
+     * @param parameters Parameters supplied to the create or update a resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -157,7 +157,7 @@ public interface ResourceGroupsClient {
      * the same as that for creating a resource group. If a field is unspecified, the current value is retained.
      *
      * @param resourceGroupName The name of the resource group to update. The name is case insensitive.
-     * @param parameters Resource group information.
+     * @param parameters Parameters supplied to update a resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -171,7 +171,7 @@ public interface ResourceGroupsClient {
      * the same as that for creating a resource group. If a field is unspecified, the current value is retained.
      *
      * @param resourceGroupName The name of the resource group to update. The name is case insensitive.
-     * @param parameters Resource group information.
+     * @param parameters Parameters supplied to update a resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -186,7 +186,7 @@ public interface ResourceGroupsClient {
      * Captures the specified resource group as a template.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param parameters Export resource group template request parameters.
+     * @param parameters Parameters for exporting the template.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -200,7 +200,7 @@ public interface ResourceGroupsClient {
      * Captures the specified resource group as a template.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param parameters Export resource group template request parameters.
+     * @param parameters Parameters for exporting the template.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -215,7 +215,7 @@ public interface ResourceGroupsClient {
      * Captures the specified resource group as a template.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param parameters Export resource group template request parameters.
+     * @param parameters Parameters for exporting the template.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -228,7 +228,7 @@ public interface ResourceGroupsClient {
      * Captures the specified resource group as a template.
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param parameters Export resource group template request parameters.
+     * @param parameters Parameters for exporting the template.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

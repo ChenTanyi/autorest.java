@@ -150,7 +150,7 @@ public final class EncryptionScopesClientImpl implements EncryptionScopesClient 
      * @param encryptionScopeName The name of the encryption scope within the specified storage account. Encryption
      *     scope names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-)
      *     only. Every dash (-) character must be immediately preceded and followed by a letter or number.
-     * @param encryptionScope The Encryption Scope resource.
+     * @param encryptionScope Encryption scope properties to be used for the create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -221,7 +221,7 @@ public final class EncryptionScopesClientImpl implements EncryptionScopesClient 
      * @param encryptionScopeName The name of the encryption scope within the specified storage account. Encryption
      *     scope names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-)
      *     only. Every dash (-) character must be immediately preceded and followed by a letter or number.
-     * @param encryptionScope The Encryption Scope resource.
+     * @param encryptionScope Encryption scope properties to be used for the create or update.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -291,7 +291,7 @@ public final class EncryptionScopesClientImpl implements EncryptionScopesClient 
      * @param encryptionScopeName The name of the encryption scope within the specified storage account. Encryption
      *     scope names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-)
      *     only. Every dash (-) character must be immediately preceded and followed by a letter or number.
-     * @param encryptionScope The Encryption Scope resource.
+     * @param encryptionScope Encryption scope properties to be used for the create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -326,7 +326,7 @@ public final class EncryptionScopesClientImpl implements EncryptionScopesClient 
      * @param encryptionScopeName The name of the encryption scope within the specified storage account. Encryption
      *     scope names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-)
      *     only. Every dash (-) character must be immediately preceded and followed by a letter or number.
-     * @param encryptionScope The Encryption Scope resource.
+     * @param encryptionScope Encryption scope properties to be used for the create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -353,7 +353,7 @@ public final class EncryptionScopesClientImpl implements EncryptionScopesClient 
      * @param encryptionScopeName The name of the encryption scope within the specified storage account. Encryption
      *     scope names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-)
      *     only. Every dash (-) character must be immediately preceded and followed by a letter or number.
-     * @param encryptionScope The Encryption Scope resource.
+     * @param encryptionScope Encryption scope properties to be used for the create or update.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -382,7 +382,7 @@ public final class EncryptionScopesClientImpl implements EncryptionScopesClient 
      * @param encryptionScopeName The name of the encryption scope within the specified storage account. Encryption
      *     scope names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-)
      *     only. Every dash (-) character must be immediately preceded and followed by a letter or number.
-     * @param encryptionScope The Encryption Scope resource.
+     * @param encryptionScope Encryption scope properties to be used for the update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -452,7 +452,7 @@ public final class EncryptionScopesClientImpl implements EncryptionScopesClient 
      * @param encryptionScopeName The name of the encryption scope within the specified storage account. Encryption
      *     scope names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-)
      *     only. Every dash (-) character must be immediately preceded and followed by a letter or number.
-     * @param encryptionScope The Encryption Scope resource.
+     * @param encryptionScope Encryption scope properties to be used for the update.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -521,7 +521,7 @@ public final class EncryptionScopesClientImpl implements EncryptionScopesClient 
      * @param encryptionScopeName The name of the encryption scope within the specified storage account. Encryption
      *     scope names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-)
      *     only. Every dash (-) character must be immediately preceded and followed by a letter or number.
-     * @param encryptionScope The Encryption Scope resource.
+     * @param encryptionScope Encryption scope properties to be used for the update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -555,7 +555,7 @@ public final class EncryptionScopesClientImpl implements EncryptionScopesClient 
      * @param encryptionScopeName The name of the encryption scope within the specified storage account. Encryption
      *     scope names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-)
      *     only. Every dash (-) character must be immediately preceded and followed by a letter or number.
-     * @param encryptionScope The Encryption Scope resource.
+     * @param encryptionScope Encryption scope properties to be used for the update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -581,7 +581,7 @@ public final class EncryptionScopesClientImpl implements EncryptionScopesClient 
      * @param encryptionScopeName The name of the encryption scope within the specified storage account. Encryption
      *     scope names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-)
      *     only. Every dash (-) character must be immediately preceded and followed by a letter or number.
-     * @param encryptionScope The Encryption Scope resource.
+     * @param encryptionScope Encryption scope properties to be used for the update.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

@@ -228,7 +228,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set.
-     * @param parameters Describes a DNS record set (a collection of DNS records with the same name and type).
+     * @param parameters Parameters supplied to the Update operation.
      * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify
      *     the last-seen etag value to prevent accidentally overwriting concurrent changes.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -302,7 +302,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set.
-     * @param parameters Describes a DNS record set (a collection of DNS records with the same name and type).
+     * @param parameters Parameters supplied to the Update operation.
      * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify
      *     the last-seen etag value to prevent accidentally overwriting concurrent changes.
      * @param context The context to associate with this operation.
@@ -375,7 +375,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set.
-     * @param parameters Describes a DNS record set (a collection of DNS records with the same name and type).
+     * @param parameters Parameters supplied to the Update operation.
      * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify
      *     the last-seen etag value to prevent accidentally overwriting concurrent changes.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -410,7 +410,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set.
-     * @param parameters Describes a DNS record set (a collection of DNS records with the same name and type).
+     * @param parameters Parameters supplied to the Update operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -443,7 +443,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set.
-     * @param parameters Describes a DNS record set (a collection of DNS records with the same name and type).
+     * @param parameters Parameters supplied to the Update operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -467,7 +467,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set.
-     * @param parameters Describes a DNS record set (a collection of DNS records with the same name and type).
+     * @param parameters Parameters supplied to the Update operation.
      * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify
      *     the last-seen etag value to prevent accidentally overwriting concurrent changes.
      * @param context The context to associate with this operation.
@@ -498,7 +498,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set. Record sets of type SOA can be updated but not
      *     created (they are created when the DNS zone is created).
-     * @param parameters Describes a DNS record set (a collection of DNS records with the same name and type).
+     * @param parameters Parameters supplied to the CreateOrUpdate operation.
      * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify
      *     the last-seen etag value to prevent accidentally overwriting any concurrent changes.
      * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
@@ -577,7 +577,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set. Record sets of type SOA can be updated but not
      *     created (they are created when the DNS zone is created).
-     * @param parameters Describes a DNS record set (a collection of DNS records with the same name and type).
+     * @param parameters Parameters supplied to the CreateOrUpdate operation.
      * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify
      *     the last-seen etag value to prevent accidentally overwriting any concurrent changes.
      * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
@@ -655,7 +655,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set. Record sets of type SOA can be updated but not
      *     created (they are created when the DNS zone is created).
-     * @param parameters Describes a DNS record set (a collection of DNS records with the same name and type).
+     * @param parameters Parameters supplied to the CreateOrUpdate operation.
      * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify
      *     the last-seen etag value to prevent accidentally overwriting any concurrent changes.
      * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
@@ -694,7 +694,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set. Record sets of type SOA can be updated but not
      *     created (they are created when the DNS zone is created).
-     * @param parameters Describes a DNS record set (a collection of DNS records with the same name and type).
+     * @param parameters Parameters supplied to the CreateOrUpdate operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -729,7 +729,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set. Record sets of type SOA can be updated but not
      *     created (they are created when the DNS zone is created).
-     * @param parameters Describes a DNS record set (a collection of DNS records with the same name and type).
+     * @param parameters Parameters supplied to the CreateOrUpdate operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -757,7 +757,7 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set. Record sets of type SOA can be updated but not
      *     created (they are created when the DNS zone is created).
-     * @param parameters Describes a DNS record set (a collection of DNS records with the same name and type).
+     * @param parameters Parameters supplied to the CreateOrUpdate operation.
      * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify
      *     the last-seen etag value to prevent accidentally overwriting any concurrent changes.
      * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record

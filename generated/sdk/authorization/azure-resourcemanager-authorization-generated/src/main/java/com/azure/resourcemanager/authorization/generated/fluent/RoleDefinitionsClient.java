@@ -72,7 +72,7 @@ public interface RoleDefinitionsClient {
      *
      * @param scope The scope of the role definition.
      * @param roleDefinitionId The ID of the role definition.
-     * @param roleDefinition Role definition.
+     * @param roleDefinition The values for the role definition.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -86,7 +86,7 @@ public interface RoleDefinitionsClient {
      *
      * @param scope The scope of the role definition.
      * @param roleDefinitionId The ID of the role definition.
-     * @param roleDefinition Role definition.
+     * @param roleDefinition The values for the role definition.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

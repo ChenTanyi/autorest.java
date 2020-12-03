@@ -118,8 +118,8 @@ public interface ExpressRouteCircuitConnectionsClient {
      * @param circuitName The name of the express route circuit.
      * @param peeringName The name of the peering.
      * @param connectionName The name of the express route circuit connection.
-     * @param expressRouteCircuitConnectionParameters Express Route Circuit Connection in an ExpressRouteCircuitPeering
-     *     resource.
+     * @param expressRouteCircuitConnectionParameters Parameters supplied to the create or update express route circuit
+     *     connection operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -140,8 +140,8 @@ public interface ExpressRouteCircuitConnectionsClient {
      * @param circuitName The name of the express route circuit.
      * @param peeringName The name of the peering.
      * @param connectionName The name of the express route circuit connection.
-     * @param expressRouteCircuitConnectionParameters Express Route Circuit Connection in an ExpressRouteCircuitPeering
-     *     resource.
+     * @param expressRouteCircuitConnectionParameters Parameters supplied to the create or update express route circuit
+     *     connection operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -164,8 +164,8 @@ public interface ExpressRouteCircuitConnectionsClient {
      * @param circuitName The name of the express route circuit.
      * @param peeringName The name of the peering.
      * @param connectionName The name of the express route circuit connection.
-     * @param expressRouteCircuitConnectionParameters Express Route Circuit Connection in an ExpressRouteCircuitPeering
-     *     resource.
+     * @param expressRouteCircuitConnectionParameters Parameters supplied to the create or update express route circuit
+     *     connection operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -186,8 +186,8 @@ public interface ExpressRouteCircuitConnectionsClient {
      * @param circuitName The name of the express route circuit.
      * @param peeringName The name of the peering.
      * @param connectionName The name of the express route circuit connection.
-     * @param expressRouteCircuitConnectionParameters Express Route Circuit Connection in an ExpressRouteCircuitPeering
-     *     resource.
+     * @param expressRouteCircuitConnectionParameters Parameters supplied to the create or update express route circuit
+     *     connection operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

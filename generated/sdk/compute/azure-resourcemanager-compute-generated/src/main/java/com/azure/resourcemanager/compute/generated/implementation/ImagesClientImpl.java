@@ -179,9 +179,7 @@ public final class ImagesClientImpl implements ImagesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param imageName The name of the image.
-     * @param parameters The source user image virtual hard disk. The virtual hard disk will be copied before being
-     *     attached to the virtual machine. If SourceImage is provided, the destination virtual hard drive must not
-     *     exist.
+     * @param parameters Parameters supplied to the Create Image operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -237,9 +235,7 @@ public final class ImagesClientImpl implements ImagesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param imageName The name of the image.
-     * @param parameters The source user image virtual hard disk. The virtual hard disk will be copied before being
-     *     attached to the virtual machine. If SourceImage is provided, the destination virtual hard drive must not
-     *     exist.
+     * @param parameters Parameters supplied to the Create Image operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -293,9 +289,7 @@ public final class ImagesClientImpl implements ImagesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param imageName The name of the image.
-     * @param parameters The source user image virtual hard disk. The virtual hard disk will be copied before being
-     *     attached to the virtual machine. If SourceImage is provided, the destination virtual hard drive must not
-     *     exist.
+     * @param parameters Parameters supplied to the Create Image operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -317,9 +311,7 @@ public final class ImagesClientImpl implements ImagesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param imageName The name of the image.
-     * @param parameters The source user image virtual hard disk. The virtual hard disk will be copied before being
-     *     attached to the virtual machine. If SourceImage is provided, the destination virtual hard drive must not
-     *     exist.
+     * @param parameters Parameters supplied to the Create Image operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -343,9 +335,7 @@ public final class ImagesClientImpl implements ImagesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param imageName The name of the image.
-     * @param parameters The source user image virtual hard disk. The virtual hard disk will be copied before being
-     *     attached to the virtual machine. If SourceImage is provided, the destination virtual hard drive must not
-     *     exist.
+     * @param parameters Parameters supplied to the Create Image operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -362,9 +352,7 @@ public final class ImagesClientImpl implements ImagesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param imageName The name of the image.
-     * @param parameters The source user image virtual hard disk. The virtual hard disk will be copied before being
-     *     attached to the virtual machine. If SourceImage is provided, the destination virtual hard drive must not
-     *     exist.
+     * @param parameters Parameters supplied to the Create Image operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -382,9 +370,7 @@ public final class ImagesClientImpl implements ImagesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param imageName The name of the image.
-     * @param parameters The source user image virtual hard disk. The virtual hard disk will be copied before being
-     *     attached to the virtual machine. If SourceImage is provided, the destination virtual hard drive must not
-     *     exist.
+     * @param parameters Parameters supplied to the Create Image operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -402,9 +388,7 @@ public final class ImagesClientImpl implements ImagesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param imageName The name of the image.
-     * @param parameters The source user image virtual hard disk. The virtual hard disk will be copied before being
-     *     attached to the virtual machine. If SourceImage is provided, the destination virtual hard drive must not
-     *     exist.
+     * @param parameters Parameters supplied to the Create Image operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -424,9 +408,7 @@ public final class ImagesClientImpl implements ImagesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param imageName The name of the image.
-     * @param parameters The source user image virtual hard disk. The virtual hard disk will be copied before being
-     *     attached to the virtual machine. If SourceImage is provided, the destination virtual hard drive must not
-     *     exist.
+     * @param parameters Parameters supplied to the Create Image operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -442,9 +424,7 @@ public final class ImagesClientImpl implements ImagesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param imageName The name of the image.
-     * @param parameters The source user image virtual hard disk. The virtual hard disk will be copied before being
-     *     attached to the virtual machine. If SourceImage is provided, the destination virtual hard drive must not
-     *     exist.
+     * @param parameters Parameters supplied to the Create Image operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -462,7 +442,7 @@ public final class ImagesClientImpl implements ImagesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param imageName The name of the image.
-     * @param parameters The source user image virtual hard disk. Only tags may be updated.
+     * @param parameters Parameters supplied to the Update Image operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -518,7 +498,7 @@ public final class ImagesClientImpl implements ImagesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param imageName The name of the image.
-     * @param parameters The source user image virtual hard disk. Only tags may be updated.
+     * @param parameters Parameters supplied to the Update Image operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -572,7 +552,7 @@ public final class ImagesClientImpl implements ImagesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param imageName The name of the image.
-     * @param parameters The source user image virtual hard disk. Only tags may be updated.
+     * @param parameters Parameters supplied to the Update Image operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -593,7 +573,7 @@ public final class ImagesClientImpl implements ImagesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param imageName The name of the image.
-     * @param parameters The source user image virtual hard disk. Only tags may be updated.
+     * @param parameters Parameters supplied to the Update Image operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -617,7 +597,7 @@ public final class ImagesClientImpl implements ImagesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param imageName The name of the image.
-     * @param parameters The source user image virtual hard disk. Only tags may be updated.
+     * @param parameters Parameters supplied to the Update Image operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -634,7 +614,7 @@ public final class ImagesClientImpl implements ImagesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param imageName The name of the image.
-     * @param parameters The source user image virtual hard disk. Only tags may be updated.
+     * @param parameters Parameters supplied to the Update Image operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -652,7 +632,7 @@ public final class ImagesClientImpl implements ImagesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param imageName The name of the image.
-     * @param parameters The source user image virtual hard disk. Only tags may be updated.
+     * @param parameters Parameters supplied to the Update Image operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -670,7 +650,7 @@ public final class ImagesClientImpl implements ImagesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param imageName The name of the image.
-     * @param parameters The source user image virtual hard disk. Only tags may be updated.
+     * @param parameters Parameters supplied to the Update Image operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -690,7 +670,7 @@ public final class ImagesClientImpl implements ImagesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param imageName The name of the image.
-     * @param parameters The source user image virtual hard disk. Only tags may be updated.
+     * @param parameters Parameters supplied to the Update Image operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -706,7 +686,7 @@ public final class ImagesClientImpl implements ImagesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param imageName The name of the image.
-     * @param parameters The source user image virtual hard disk. Only tags may be updated.
+     * @param parameters Parameters supplied to the Update Image operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

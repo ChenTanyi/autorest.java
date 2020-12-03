@@ -141,7 +141,7 @@ public interface Certificates {
      * @param resourceName The name of the IoT hub.
      * @param certificateName The name of the certificate.
      * @param ifMatch ETag of the Certificate.
-     * @param certificateVerificationBody The JSON-serialized leaf certificate.
+     * @param certificateVerificationBody The name of the certificate.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
      *     by server.
@@ -163,7 +163,7 @@ public interface Certificates {
      * @param resourceName The name of the IoT hub.
      * @param certificateName The name of the certificate.
      * @param ifMatch ETag of the Certificate.
-     * @param certificateVerificationBody The JSON-serialized leaf certificate.
+     * @param certificateVerificationBody The name of the certificate.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected

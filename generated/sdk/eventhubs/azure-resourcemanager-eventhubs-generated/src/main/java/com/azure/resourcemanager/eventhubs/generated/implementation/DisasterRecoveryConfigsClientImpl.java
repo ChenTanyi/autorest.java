@@ -821,7 +821,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @param parameters Parameter supplied to check Namespace name availability operation.
+     * @param parameters Parameters to check availability of the given Alias name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -877,7 +877,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @param parameters Parameter supplied to check Namespace name availability operation.
+     * @param parameters Parameters to check availability of the given Alias name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -931,7 +931,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @param parameters Parameter supplied to check Namespace name availability operation.
+     * @param parameters Parameters to check availability of the given Alias name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -956,7 +956,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @param parameters Parameter supplied to check Namespace name availability operation.
+     * @param parameters Parameters to check availability of the given Alias name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -973,7 +973,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @param parameters Parameter supplied to check Namespace name availability operation.
+     * @param parameters Parameters to check availability of the given Alias name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1173,7 +1173,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param alias The Disaster Recovery configuration name.
-     * @param parameters Single item in List or Get Alias(Disaster Recovery configuration) operation.
+     * @param parameters Parameters required to create an Alias(Disaster Recovery configuration).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1234,7 +1234,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param alias The Disaster Recovery configuration name.
-     * @param parameters Single item in List or Get Alias(Disaster Recovery configuration) operation.
+     * @param parameters Parameters required to create an Alias(Disaster Recovery configuration).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1297,7 +1297,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param alias The Disaster Recovery configuration name.
-     * @param parameters Single item in List or Get Alias(Disaster Recovery configuration) operation.
+     * @param parameters Parameters required to create an Alias(Disaster Recovery configuration).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1323,7 +1323,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param alias The Disaster Recovery configuration name.
-     * @param parameters Single item in List or Get Alias(Disaster Recovery configuration) operation.
+     * @param parameters Parameters required to create an Alias(Disaster Recovery configuration).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1341,7 +1341,7 @@ public final class DisasterRecoveryConfigsClientImpl implements DisasterRecovery
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param alias The Disaster Recovery configuration name.
-     * @param parameters Single item in List or Get Alias(Disaster Recovery configuration) operation.
+     * @param parameters Parameters required to create an Alias(Disaster Recovery configuration).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

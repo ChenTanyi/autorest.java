@@ -580,7 +580,7 @@ public final class SecurityRulesClientImpl implements SecurityRulesClient {
      * @param resourceGroupName The name of the resource group.
      * @param networkSecurityGroupName The name of the network security group.
      * @param securityRuleName The name of the security rule.
-     * @param securityRuleParameters Network security rule.
+     * @param securityRuleParameters Parameters supplied to the create or update network security rule operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -649,7 +649,7 @@ public final class SecurityRulesClientImpl implements SecurityRulesClient {
      * @param resourceGroupName The name of the resource group.
      * @param networkSecurityGroupName The name of the network security group.
      * @param securityRuleName The name of the security rule.
-     * @param securityRuleParameters Network security rule.
+     * @param securityRuleParameters Parameters supplied to the create or update network security rule operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -717,7 +717,7 @@ public final class SecurityRulesClientImpl implements SecurityRulesClient {
      * @param resourceGroupName The name of the resource group.
      * @param networkSecurityGroupName The name of the network security group.
      * @param securityRuleName The name of the security rule.
-     * @param securityRuleParameters Network security rule.
+     * @param securityRuleParameters Parameters supplied to the create or update network security rule operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -744,7 +744,7 @@ public final class SecurityRulesClientImpl implements SecurityRulesClient {
      * @param resourceGroupName The name of the resource group.
      * @param networkSecurityGroupName The name of the network security group.
      * @param securityRuleName The name of the security rule.
-     * @param securityRuleParameters Network security rule.
+     * @param securityRuleParameters Parameters supplied to the create or update network security rule operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -774,7 +774,7 @@ public final class SecurityRulesClientImpl implements SecurityRulesClient {
      * @param resourceGroupName The name of the resource group.
      * @param networkSecurityGroupName The name of the network security group.
      * @param securityRuleName The name of the security rule.
-     * @param securityRuleParameters Network security rule.
+     * @param securityRuleParameters Parameters supplied to the create or update network security rule operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -797,7 +797,7 @@ public final class SecurityRulesClientImpl implements SecurityRulesClient {
      * @param resourceGroupName The name of the resource group.
      * @param networkSecurityGroupName The name of the network security group.
      * @param securityRuleName The name of the security rule.
-     * @param securityRuleParameters Network security rule.
+     * @param securityRuleParameters Parameters supplied to the create or update network security rule operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -822,7 +822,7 @@ public final class SecurityRulesClientImpl implements SecurityRulesClient {
      * @param resourceGroupName The name of the resource group.
      * @param networkSecurityGroupName The name of the network security group.
      * @param securityRuleName The name of the security rule.
-     * @param securityRuleParameters Network security rule.
+     * @param securityRuleParameters Parameters supplied to the create or update network security rule operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -846,7 +846,7 @@ public final class SecurityRulesClientImpl implements SecurityRulesClient {
      * @param resourceGroupName The name of the resource group.
      * @param networkSecurityGroupName The name of the network security group.
      * @param securityRuleName The name of the security rule.
-     * @param securityRuleParameters Network security rule.
+     * @param securityRuleParameters Parameters supplied to the create or update network security rule operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -872,7 +872,7 @@ public final class SecurityRulesClientImpl implements SecurityRulesClient {
      * @param resourceGroupName The name of the resource group.
      * @param networkSecurityGroupName The name of the network security group.
      * @param securityRuleName The name of the security rule.
-     * @param securityRuleParameters Network security rule.
+     * @param securityRuleParameters Parameters supplied to the create or update network security rule operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -895,7 +895,7 @@ public final class SecurityRulesClientImpl implements SecurityRulesClient {
      * @param resourceGroupName The name of the resource group.
      * @param networkSecurityGroupName The name of the network security group.
      * @param securityRuleName The name of the security rule.
-     * @param securityRuleParameters Network security rule.
+     * @param securityRuleParameters Parameters supplied to the create or update network security rule operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

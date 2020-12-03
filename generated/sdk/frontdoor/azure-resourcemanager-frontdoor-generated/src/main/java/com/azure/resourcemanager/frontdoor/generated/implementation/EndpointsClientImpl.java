@@ -82,7 +82,9 @@ public final class EndpointsClientImpl implements EndpointsClient {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
-     * @param contentFilePaths Parameters required for content purge.
+     * @param contentFilePaths The path to the content to be purged. Path can be a full URL, e.g. '/pictures/city.png'
+     *     which removes a single file, or a directory with a wildcard, e.g. '/pictures/*' which removes all folders and
+     *     files in the directory.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -139,7 +141,9 @@ public final class EndpointsClientImpl implements EndpointsClient {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
-     * @param contentFilePaths Parameters required for content purge.
+     * @param contentFilePaths The path to the content to be purged. Path can be a full URL, e.g. '/pictures/city.png'
+     *     which removes a single file, or a directory with a wildcard, e.g. '/pictures/*' which removes all folders and
+     *     files in the directory.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -194,7 +198,9 @@ public final class EndpointsClientImpl implements EndpointsClient {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
-     * @param contentFilePaths Parameters required for content purge.
+     * @param contentFilePaths The path to the content to be purged. Path can be a full URL, e.g. '/pictures/city.png'
+     *     which removes a single file, or a directory with a wildcard, e.g. '/pictures/*' which removes all folders and
+     *     files in the directory.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -215,7 +221,9 @@ public final class EndpointsClientImpl implements EndpointsClient {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
-     * @param contentFilePaths Parameters required for content purge.
+     * @param contentFilePaths The path to the content to be purged. Path can be a full URL, e.g. '/pictures/city.png'
+     *     which removes a single file, or a directory with a wildcard, e.g. '/pictures/*' which removes all folders and
+     *     files in the directory.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -238,7 +246,9 @@ public final class EndpointsClientImpl implements EndpointsClient {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
-     * @param contentFilePaths Parameters required for content purge.
+     * @param contentFilePaths The path to the content to be purged. Path can be a full URL, e.g. '/pictures/city.png'
+     *     which removes a single file, or a directory with a wildcard, e.g. '/pictures/*' which removes all folders and
+     *     files in the directory.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -255,7 +265,9 @@ public final class EndpointsClientImpl implements EndpointsClient {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
-     * @param contentFilePaths Parameters required for content purge.
+     * @param contentFilePaths The path to the content to be purged. Path can be a full URL, e.g. '/pictures/city.png'
+     *     which removes a single file, or a directory with a wildcard, e.g. '/pictures/*' which removes all folders and
+     *     files in the directory.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -273,7 +285,9 @@ public final class EndpointsClientImpl implements EndpointsClient {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
-     * @param contentFilePaths Parameters required for content purge.
+     * @param contentFilePaths The path to the content to be purged. Path can be a full URL, e.g. '/pictures/city.png'
+     *     which removes a single file, or a directory with a wildcard, e.g. '/pictures/*' which removes all folders and
+     *     files in the directory.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -292,7 +306,9 @@ public final class EndpointsClientImpl implements EndpointsClient {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
-     * @param contentFilePaths Parameters required for content purge.
+     * @param contentFilePaths The path to the content to be purged. Path can be a full URL, e.g. '/pictures/city.png'
+     *     which removes a single file, or a directory with a wildcard, e.g. '/pictures/*' which removes all folders and
+     *     files in the directory.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -312,7 +328,9 @@ public final class EndpointsClientImpl implements EndpointsClient {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
-     * @param contentFilePaths Parameters required for content purge.
+     * @param contentFilePaths The path to the content to be purged. Path can be a full URL, e.g. '/pictures/city.png'
+     *     which removes a single file, or a directory with a wildcard, e.g. '/pictures/*' which removes all folders and
+     *     files in the directory.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -327,7 +345,9 @@ public final class EndpointsClientImpl implements EndpointsClient {
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
-     * @param contentFilePaths Parameters required for content purge.
+     * @param contentFilePaths The path to the content to be purged. Path can be a full URL, e.g. '/pictures/city.png'
+     *     which removes a single file, or a directory with a wildcard, e.g. '/pictures/*' which removes all folders and
+     *     files in the directory.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

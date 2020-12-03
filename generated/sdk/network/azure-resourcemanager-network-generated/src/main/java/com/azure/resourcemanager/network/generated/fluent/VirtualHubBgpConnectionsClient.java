@@ -52,7 +52,7 @@ public interface VirtualHubBgpConnectionsClient {
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param connectionName The name of the connection.
-     * @param parameters Virtual Appliance Site resource.
+     * @param parameters Parameters of Bgp connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -68,7 +68,7 @@ public interface VirtualHubBgpConnectionsClient {
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param connectionName The name of the connection.
-     * @param parameters Virtual Appliance Site resource.
+     * @param parameters Parameters of Bgp connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -89,7 +89,7 @@ public interface VirtualHubBgpConnectionsClient {
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param connectionName The name of the connection.
-     * @param parameters Virtual Appliance Site resource.
+     * @param parameters Parameters of Bgp connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -105,7 +105,7 @@ public interface VirtualHubBgpConnectionsClient {
      * @param resourceGroupName The resource group name of the VirtualHub.
      * @param virtualHubName The name of the VirtualHub.
      * @param connectionName The name of the connection.
-     * @param parameters Virtual Appliance Site resource.
+     * @param parameters Parameters of Bgp connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

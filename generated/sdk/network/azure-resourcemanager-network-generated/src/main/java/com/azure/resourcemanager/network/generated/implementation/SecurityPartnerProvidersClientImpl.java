@@ -582,7 +582,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      *
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
-     * @param parameters Security Partner Provider resource.
+     * @param parameters Parameters supplied to the create or update Security Partner Provider operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -641,7 +641,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      *
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
-     * @param parameters Security Partner Provider resource.
+     * @param parameters Parameters supplied to the create or update Security Partner Provider operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -701,7 +701,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      *
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
-     * @param parameters Security Partner Provider resource.
+     * @param parameters Parameters supplied to the create or update Security Partner Provider operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -727,7 +727,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      *
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
-     * @param parameters Security Partner Provider resource.
+     * @param parameters Parameters supplied to the create or update Security Partner Provider operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -758,7 +758,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      *
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
-     * @param parameters Security Partner Provider resource.
+     * @param parameters Parameters supplied to the create or update Security Partner Provider operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -775,7 +775,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      *
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
-     * @param parameters Security Partner Provider resource.
+     * @param parameters Parameters supplied to the create or update Security Partner Provider operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -797,7 +797,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      *
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
-     * @param parameters Security Partner Provider resource.
+     * @param parameters Parameters supplied to the create or update Security Partner Provider operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -816,7 +816,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      *
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
-     * @param parameters Security Partner Provider resource.
+     * @param parameters Parameters supplied to the create or update Security Partner Provider operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -839,7 +839,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      *
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
-     * @param parameters Security Partner Provider resource.
+     * @param parameters Parameters supplied to the create or update Security Partner Provider operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -856,7 +856,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      *
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
-     * @param parameters Security Partner Provider resource.
+     * @param parameters Parameters supplied to the create or update Security Partner Provider operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -877,7 +877,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      *
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update Security Partner Provider tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -936,7 +936,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      *
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update Security Partner Provider tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -993,7 +993,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      *
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update Security Partner Provider tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1018,7 +1018,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      *
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update Security Partner Provider tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1035,7 +1035,7 @@ public final class SecurityPartnerProvidersClientImpl implements SecurityPartner
      *
      * @param resourceGroupName The name of the resource group.
      * @param securityPartnerProviderName The name of the Security Partner Provider.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to update Security Partner Provider tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

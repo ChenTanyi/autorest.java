@@ -616,7 +616,7 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      *
      * @param resourceGroupName The resource group name of Network Virtual Appliance.
      * @param networkVirtualApplianceName The name of Network Virtual Appliance being updated.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to Update Network Virtual Appliance Tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -675,7 +675,7 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      *
      * @param resourceGroupName The resource group name of Network Virtual Appliance.
      * @param networkVirtualApplianceName The name of Network Virtual Appliance being updated.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to Update Network Virtual Appliance Tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -732,7 +732,7 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      *
      * @param resourceGroupName The resource group name of Network Virtual Appliance.
      * @param networkVirtualApplianceName The name of Network Virtual Appliance being updated.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to Update Network Virtual Appliance Tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -757,7 +757,7 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      *
      * @param resourceGroupName The resource group name of Network Virtual Appliance.
      * @param networkVirtualApplianceName The name of Network Virtual Appliance being updated.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to Update Network Virtual Appliance Tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -774,7 +774,7 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      *
      * @param resourceGroupName The resource group name of Network Virtual Appliance.
      * @param networkVirtualApplianceName The name of Network Virtual Appliance being updated.
-     * @param parameters Tags object for patch operations.
+     * @param parameters Parameters supplied to Update Network Virtual Appliance Tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -792,7 +792,7 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of Network Virtual Appliance.
-     * @param parameters NetworkVirtualAppliance Resource.
+     * @param parameters Parameters supplied to the create or update Network Virtual Appliance.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -851,7 +851,7 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of Network Virtual Appliance.
-     * @param parameters NetworkVirtualAppliance Resource.
+     * @param parameters Parameters supplied to the create or update Network Virtual Appliance.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -911,7 +911,7 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of Network Virtual Appliance.
-     * @param parameters NetworkVirtualAppliance Resource.
+     * @param parameters Parameters supplied to the create or update Network Virtual Appliance.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -937,7 +937,7 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of Network Virtual Appliance.
-     * @param parameters NetworkVirtualAppliance Resource.
+     * @param parameters Parameters supplied to the create or update Network Virtual Appliance.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -968,7 +968,7 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of Network Virtual Appliance.
-     * @param parameters NetworkVirtualAppliance Resource.
+     * @param parameters Parameters supplied to the create or update Network Virtual Appliance.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -985,7 +985,7 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of Network Virtual Appliance.
-     * @param parameters NetworkVirtualAppliance Resource.
+     * @param parameters Parameters supplied to the create or update Network Virtual Appliance.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1007,7 +1007,7 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of Network Virtual Appliance.
-     * @param parameters NetworkVirtualAppliance Resource.
+     * @param parameters Parameters supplied to the create or update Network Virtual Appliance.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1026,7 +1026,7 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of Network Virtual Appliance.
-     * @param parameters NetworkVirtualAppliance Resource.
+     * @param parameters Parameters supplied to the create or update Network Virtual Appliance.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1049,7 +1049,7 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of Network Virtual Appliance.
-     * @param parameters NetworkVirtualAppliance Resource.
+     * @param parameters Parameters supplied to the create or update Network Virtual Appliance.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1066,7 +1066,7 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      *
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of Network Virtual Appliance.
-     * @param parameters NetworkVirtualAppliance Resource.
+     * @param parameters Parameters supplied to the create or update Network Virtual Appliance.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

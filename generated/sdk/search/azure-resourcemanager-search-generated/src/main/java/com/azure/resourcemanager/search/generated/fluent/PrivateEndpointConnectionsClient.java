@@ -23,8 +23,7 @@ public interface PrivateEndpointConnectionsClient {
      *     group.
      * @param privateEndpointConnectionName The name of the private endpoint connection to the Azure Cognitive Search
      *     service with the specified resource group.
-     * @param privateEndpointConnection Describes an existing Private Endpoint connection to the Azure Cognitive Search
-     *     service.
+     * @param privateEndpointConnection The definition of the private endpoint connection to update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -46,8 +45,7 @@ public interface PrivateEndpointConnectionsClient {
      *     group.
      * @param privateEndpointConnectionName The name of the private endpoint connection to the Azure Cognitive Search
      *     service with the specified resource group.
-     * @param privateEndpointConnection Describes an existing Private Endpoint connection to the Azure Cognitive Search
-     *     service.
+     * @param privateEndpointConnection The definition of the private endpoint connection to update.
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
      * @param context The context to associate with this operation.

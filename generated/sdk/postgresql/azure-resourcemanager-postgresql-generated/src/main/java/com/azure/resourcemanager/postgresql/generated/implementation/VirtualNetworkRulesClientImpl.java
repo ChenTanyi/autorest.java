@@ -316,7 +316,7 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
-     * @param parameters A virtual network rule.
+     * @param parameters The requested virtual Network Rule Resource state.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -382,7 +382,7 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
-     * @param parameters A virtual network rule.
+     * @param parameters The requested virtual Network Rule Resource state.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -447,7 +447,7 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
-     * @param parameters A virtual network rule.
+     * @param parameters The requested virtual Network Rule Resource state.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -477,7 +477,7 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
-     * @param parameters A virtual network rule.
+     * @param parameters The requested virtual Network Rule Resource state.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -510,7 +510,7 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
-     * @param parameters A virtual network rule.
+     * @param parameters The requested virtual Network Rule Resource state.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -532,7 +532,7 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
-     * @param parameters A virtual network rule.
+     * @param parameters The requested virtual Network Rule Resource state.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -556,7 +556,7 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
-     * @param parameters A virtual network rule.
+     * @param parameters The requested virtual Network Rule Resource state.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -579,7 +579,7 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
-     * @param parameters A virtual network rule.
+     * @param parameters The requested virtual Network Rule Resource state.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -604,7 +604,7 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
-     * @param parameters A virtual network rule.
+     * @param parameters The requested virtual Network Rule Resource state.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -625,7 +625,7 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param virtualNetworkRuleName The name of the virtual network rule.
-     * @param parameters A virtual network rule.
+     * @param parameters The requested virtual Network Rule Resource state.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

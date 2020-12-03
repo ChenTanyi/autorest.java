@@ -381,7 +381,8 @@ public interface IotHubResources {
     /**
      * Check if an IoT hub name is available.
      *
-     * @param operationInputs Input values.
+     * @param operationInputs Set the name parameter in the OperationInputs structure to the name of the IoT hub to
+     *     check.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
      *     by server.
@@ -393,7 +394,8 @@ public interface IotHubResources {
     /**
      * Check if an IoT hub name is available.
      *
-     * @param operationInputs Input values.
+     * @param operationInputs Set the name parameter in the OperationInputs structure to the name of the IoT hub to
+     *     check.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
@@ -439,7 +441,7 @@ public interface IotHubResources {
      *
      * @param iotHubName IotHub to be tested.
      * @param resourceGroupName resource group which Iot Hub belongs to.
-     * @param input Input for testing route.
+     * @param input Route that needs to be tested.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
      *     by server.
@@ -453,7 +455,7 @@ public interface IotHubResources {
      *
      * @param iotHubName IotHub to be tested.
      * @param resourceGroupName resource group which Iot Hub belongs to.
-     * @param input Input for testing route.
+     * @param input Route that needs to be tested.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
@@ -534,7 +536,7 @@ public interface IotHubResources {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @param exportDevicesParameters Use to provide parameters when requesting an export of all devices in the IoT hub.
+     * @param exportDevicesParameters The parameters that specify the export devices operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
      *     by server.
@@ -551,7 +553,7 @@ public interface IotHubResources {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @param exportDevicesParameters Use to provide parameters when requesting an export of all devices in the IoT hub.
+     * @param exportDevicesParameters The parameters that specify the export devices operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
@@ -569,7 +571,7 @@ public interface IotHubResources {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @param importDevicesParameters Use to provide parameters when requesting an import of all devices in the hub.
+     * @param importDevicesParameters The parameters that specify the import devices operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
      *     by server.
@@ -586,7 +588,7 @@ public interface IotHubResources {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @param importDevicesParameters Use to provide parameters when requesting an import of all devices in the hub.
+     * @param importDevicesParameters The parameters that specify the import devices operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected

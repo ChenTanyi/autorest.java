@@ -42,7 +42,7 @@ public interface ServerAdministrators {
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
-     * @param properties Represents a and external administrator to be created.
+     * @param properties The required parameters for creating or updating an AAD server administrator.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -57,7 +57,7 @@ public interface ServerAdministrators {
      *
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
-     * @param properties Represents a and external administrator to be created.
+     * @param properties The required parameters for creating or updating an AAD server administrator.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

@@ -111,7 +111,8 @@ public interface ExpressRouteCircuitAuthorizationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param authorizationName The name of the authorization.
-     * @param authorizationParameters Authorization in an ExpressRouteCircuit resource.
+     * @param authorizationParameters Parameters supplied to the create or update express route circuit authorization
+     *     operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -131,7 +132,8 @@ public interface ExpressRouteCircuitAuthorizationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param authorizationName The name of the authorization.
-     * @param authorizationParameters Authorization in an ExpressRouteCircuit resource.
+     * @param authorizationParameters Parameters supplied to the create or update express route circuit authorization
+     *     operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -153,7 +155,8 @@ public interface ExpressRouteCircuitAuthorizationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param authorizationName The name of the authorization.
-     * @param authorizationParameters Authorization in an ExpressRouteCircuit resource.
+     * @param authorizationParameters Parameters supplied to the create or update express route circuit authorization
+     *     operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -172,7 +175,8 @@ public interface ExpressRouteCircuitAuthorizationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param authorizationName The name of the authorization.
-     * @param authorizationParameters Authorization in an ExpressRouteCircuit resource.
+     * @param authorizationParameters Parameters supplied to the create or update express route circuit authorization
+     *     operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

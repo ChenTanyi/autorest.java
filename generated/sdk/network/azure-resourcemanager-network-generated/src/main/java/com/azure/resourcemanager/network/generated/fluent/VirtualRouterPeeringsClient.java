@@ -115,7 +115,7 @@ public interface VirtualRouterPeeringsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
      * @param peeringName The name of the Virtual Router Peering.
-     * @param parameters Virtual Router Peering resource.
+     * @param parameters Parameters supplied to the create or update Virtual Router Peering operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
@@ -132,7 +132,7 @@ public interface VirtualRouterPeeringsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
      * @param peeringName The name of the Virtual Router Peering.
-     * @param parameters Virtual Router Peering resource.
+     * @param parameters Parameters supplied to the create or update Virtual Router Peering operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
@@ -154,7 +154,7 @@ public interface VirtualRouterPeeringsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
      * @param peeringName The name of the Virtual Router Peering.
-     * @param parameters Virtual Router Peering resource.
+     * @param parameters Parameters supplied to the create or update Virtual Router Peering operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
      *     server.
@@ -171,7 +171,7 @@ public interface VirtualRouterPeeringsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualRouterName The name of the Virtual Router.
      * @param peeringName The name of the Virtual Router Peering.
-     * @param parameters Virtual Router Peering resource.
+     * @param parameters Parameters supplied to the create or update Virtual Router Peering operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by

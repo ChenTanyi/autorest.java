@@ -23,7 +23,7 @@ public interface DedicatedHostsClient {
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
      * @param hostname The name of the dedicated host .
-     * @param parameters Specifies information about the Dedicated host.
+     * @param parameters Parameters supplied to the Create Dedicated Host.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -39,7 +39,7 @@ public interface DedicatedHostsClient {
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
      * @param hostname The name of the dedicated host .
-     * @param parameters Specifies information about the Dedicated host.
+     * @param parameters Parameters supplied to the Create Dedicated Host.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -60,7 +60,7 @@ public interface DedicatedHostsClient {
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
      * @param hostname The name of the dedicated host .
-     * @param parameters Specifies information about the Dedicated host.
+     * @param parameters Parameters supplied to the Create Dedicated Host.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -76,7 +76,7 @@ public interface DedicatedHostsClient {
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
      * @param hostname The name of the dedicated host .
-     * @param parameters Specifies information about the Dedicated host.
+     * @param parameters Parameters supplied to the Create Dedicated Host.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -97,8 +97,7 @@ public interface DedicatedHostsClient {
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
      * @param hostname The name of the dedicated host .
-     * @param parameters Specifies information about the dedicated host. Only tags, autoReplaceOnFailure and licenseType
-     *     may be updated.
+     * @param parameters Parameters supplied to the Update Dedicated Host operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -114,8 +113,7 @@ public interface DedicatedHostsClient {
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
      * @param hostname The name of the dedicated host .
-     * @param parameters Specifies information about the dedicated host. Only tags, autoReplaceOnFailure and licenseType
-     *     may be updated.
+     * @param parameters Parameters supplied to the Update Dedicated Host operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -136,8 +134,7 @@ public interface DedicatedHostsClient {
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
      * @param hostname The name of the dedicated host .
-     * @param parameters Specifies information about the dedicated host. Only tags, autoReplaceOnFailure and licenseType
-     *     may be updated.
+     * @param parameters Parameters supplied to the Update Dedicated Host operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -153,8 +150,7 @@ public interface DedicatedHostsClient {
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
      * @param hostname The name of the dedicated host .
-     * @param parameters Specifies information about the dedicated host. Only tags, autoReplaceOnFailure and licenseType
-     *     may be updated.
+     * @param parameters Parameters supplied to the Update Dedicated Host operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

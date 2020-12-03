@@ -23,7 +23,7 @@ public interface CloudServicesClient {
      *
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param parameters Describes the cloud service.
+     * @param parameters The cloud service object.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -39,7 +39,7 @@ public interface CloudServicesClient {
      *
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param parameters Describes the cloud service.
+     * @param parameters The cloud service object.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -56,7 +56,7 @@ public interface CloudServicesClient {
      *
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param parameters Describes the cloud service.
+     * @param parameters The cloud service object.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -85,7 +85,7 @@ public interface CloudServicesClient {
      *
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param parameters Describes the cloud service.
+     * @param parameters The cloud service object.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -471,7 +471,7 @@ public interface CloudServicesClient {
      *
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param parameters Specifies a list of role instances from the cloud service.
+     * @param parameters List of cloud service role instance names.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -487,7 +487,7 @@ public interface CloudServicesClient {
      *
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param parameters Specifies a list of role instances from the cloud service.
+     * @param parameters List of cloud service role instance names.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -504,7 +504,7 @@ public interface CloudServicesClient {
      *
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param parameters Specifies a list of role instances from the cloud service.
+     * @param parameters List of cloud service role instance names.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -531,7 +531,7 @@ public interface CloudServicesClient {
      *
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param parameters Specifies a list of role instances from the cloud service.
+     * @param parameters List of cloud service role instance names.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -546,7 +546,7 @@ public interface CloudServicesClient {
      *
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param parameters Specifies a list of role instances from the cloud service.
+     * @param parameters List of cloud service role instance names.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -562,7 +562,7 @@ public interface CloudServicesClient {
      *
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param parameters Specifies a list of role instances from the cloud service.
+     * @param parameters List of cloud service role instance names.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -579,7 +579,7 @@ public interface CloudServicesClient {
      *
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param parameters Specifies a list of role instances from the cloud service.
+     * @param parameters List of cloud service role instance names.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -606,7 +606,7 @@ public interface CloudServicesClient {
      *
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param parameters Specifies a list of role instances from the cloud service.
+     * @param parameters List of cloud service role instance names.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -623,7 +623,7 @@ public interface CloudServicesClient {
      *
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param parameters Specifies a list of role instances from the cloud service.
+     * @param parameters List of cloud service role instance names.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -641,7 +641,7 @@ public interface CloudServicesClient {
      *
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param parameters Specifies a list of role instances from the cloud service.
+     * @param parameters List of cloud service role instance names.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -660,7 +660,7 @@ public interface CloudServicesClient {
      *
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param parameters Specifies a list of role instances from the cloud service.
+     * @param parameters List of cloud service role instance names.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -691,7 +691,7 @@ public interface CloudServicesClient {
      *
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param parameters Specifies a list of role instances from the cloud service.
+     * @param parameters List of cloud service role instance names.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -706,7 +706,7 @@ public interface CloudServicesClient {
      *
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param parameters Specifies a list of role instances from the cloud service.
+     * @param parameters List of cloud service role instance names.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -722,7 +722,7 @@ public interface CloudServicesClient {
      *
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param parameters Specifies a list of role instances from the cloud service.
+     * @param parameters List of cloud service role instance names.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -739,7 +739,7 @@ public interface CloudServicesClient {
      *
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param parameters Specifies a list of role instances from the cloud service.
+     * @param parameters List of cloud service role instance names.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -766,7 +766,7 @@ public interface CloudServicesClient {
      *
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param parameters Specifies a list of role instances from the cloud service.
+     * @param parameters List of cloud service role instance names.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by

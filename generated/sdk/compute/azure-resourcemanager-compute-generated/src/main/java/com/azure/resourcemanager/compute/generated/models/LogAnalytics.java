@@ -13,7 +13,7 @@ public interface LogAnalytics {
      * activities.
      *
      * @param location The location upon which virtual-machine-sizes is queried.
-     * @param parameters Api request input for LogAnalytics getRequestRateByInterval Api.
+     * @param parameters Parameters supplied to the LogAnalytics getRequestRateByInterval Api.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -26,7 +26,7 @@ public interface LogAnalytics {
      * activities.
      *
      * @param location The location upon which virtual-machine-sizes is queried.
-     * @param parameters Api request input for LogAnalytics getRequestRateByInterval Api.
+     * @param parameters Parameters supplied to the LogAnalytics getRequestRateByInterval Api.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -40,7 +40,7 @@ public interface LogAnalytics {
      * Export logs that show total throttled Api requests for this subscription in the given time window.
      *
      * @param location The location upon which virtual-machine-sizes is queried.
-     * @param parameters Api input base class for LogAnalytics Api.
+     * @param parameters Parameters supplied to the LogAnalytics getThrottledRequests Api.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -52,7 +52,7 @@ public interface LogAnalytics {
      * Export logs that show total throttled Api requests for this subscription in the given time window.
      *
      * @param location The location upon which virtual-machine-sizes is queried.
-     * @param parameters Api input base class for LogAnalytics Api.
+     * @param parameters Parameters supplied to the LogAnalytics getThrottledRequests Api.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

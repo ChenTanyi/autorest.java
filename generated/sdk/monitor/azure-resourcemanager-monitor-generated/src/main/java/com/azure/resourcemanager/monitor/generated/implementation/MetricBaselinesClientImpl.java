@@ -346,7 +346,7 @@ public final class MetricBaselinesClientImpl implements MetricBaselinesClient {
      *     subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/{providerName}/{resourceName}.
      *     For example:
      *     subscriptions/b368ca2f-e298-46b7-b0ab-012281956afa/resourceGroups/vms/providers/Microsoft.Compute/virtualMachines/vm1.
-     * @param timeSeriesInformation The time series info needed for calculating the baseline.
+     * @param timeSeriesInformation Information that need to be specified to calculate a baseline on a time series.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -388,7 +388,7 @@ public final class MetricBaselinesClientImpl implements MetricBaselinesClient {
      *     subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/{providerName}/{resourceName}.
      *     For example:
      *     subscriptions/b368ca2f-e298-46b7-b0ab-012281956afa/resourceGroups/vms/providers/Microsoft.Compute/virtualMachines/vm1.
-     * @param timeSeriesInformation The time series info needed for calculating the baseline.
+     * @param timeSeriesInformation Information that need to be specified to calculate a baseline on a time series.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -428,7 +428,7 @@ public final class MetricBaselinesClientImpl implements MetricBaselinesClient {
      *     subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/{providerName}/{resourceName}.
      *     For example:
      *     subscriptions/b368ca2f-e298-46b7-b0ab-012281956afa/resourceGroups/vms/providers/Microsoft.Compute/virtualMachines/vm1.
-     * @param timeSeriesInformation The time series info needed for calculating the baseline.
+     * @param timeSeriesInformation Information that need to be specified to calculate a baseline on a time series.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -455,7 +455,7 @@ public final class MetricBaselinesClientImpl implements MetricBaselinesClient {
      *     subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/{providerName}/{resourceName}.
      *     For example:
      *     subscriptions/b368ca2f-e298-46b7-b0ab-012281956afa/resourceGroups/vms/providers/Microsoft.Compute/virtualMachines/vm1.
-     * @param timeSeriesInformation The time series info needed for calculating the baseline.
+     * @param timeSeriesInformation Information that need to be specified to calculate a baseline on a time series.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -474,7 +474,7 @@ public final class MetricBaselinesClientImpl implements MetricBaselinesClient {
      *     subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/{providerName}/{resourceName}.
      *     For example:
      *     subscriptions/b368ca2f-e298-46b7-b0ab-012281956afa/resourceGroups/vms/providers/Microsoft.Compute/virtualMachines/vm1.
-     * @param timeSeriesInformation The time series info needed for calculating the baseline.
+     * @param timeSeriesInformation Information that need to be specified to calculate a baseline on a time series.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

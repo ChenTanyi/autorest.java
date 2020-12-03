@@ -7301,7 +7301,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
      *     parameter.
-     * @param siteEnvelope A web app, a mobile app backend, or an API app.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -7357,7 +7357,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
      *     parameter.
-     * @param siteEnvelope A web app, a mobile app backend, or an API app.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -7411,7 +7411,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
      *     parameter.
-     * @param siteEnvelope A web app, a mobile app backend, or an API app.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -7433,7 +7433,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
      *     parameter.
-     * @param siteEnvelope A web app, a mobile app backend, or an API app.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -7458,7 +7458,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
      *     parameter.
-     * @param siteEnvelope A web app, a mobile app backend, or an API app.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -7476,7 +7476,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
      *     parameter.
-     * @param siteEnvelope A web app, a mobile app backend, or an API app.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -7495,7 +7495,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
      *     parameter.
-     * @param siteEnvelope A web app, a mobile app backend, or an API app.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -7514,7 +7514,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
      *     parameter.
-     * @param siteEnvelope A web app, a mobile app backend, or an API app.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -7535,7 +7535,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
      *     parameter.
-     * @param siteEnvelope A web app, a mobile app backend, or an API app.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -7552,7 +7552,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
      *     parameter.
-     * @param siteEnvelope A web app, a mobile app backend, or an API app.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -7748,7 +7748,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
      *     parameter.
-     * @param siteEnvelope ARM resource for a site.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -7804,7 +7804,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
      *     parameter.
-     * @param siteEnvelope ARM resource for a site.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -7858,7 +7858,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
      *     parameter.
-     * @param siteEnvelope ARM resource for a site.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -7883,7 +7883,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
      *     parameter.
-     * @param siteEnvelope ARM resource for a site.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -7900,7 +7900,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Unique name of the app to create or update. To create or update a deployment slot, use the {slot}
      *     parameter.
-     * @param siteEnvelope ARM resource for a site.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -8099,7 +8099,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -8154,7 +8154,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -8207,7 +8207,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -8225,7 +8225,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -8240,7 +8240,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -8258,7 +8258,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param request Description of a backup which will be performed.
+     * @param request Backup configuration. You can use the JSON response from the POST action as input here.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -8313,7 +8313,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param request Description of a backup which will be performed.
+     * @param request Backup configuration. You can use the JSON response from the POST action as input here.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -8366,7 +8366,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param request Description of a backup which will be performed.
+     * @param request Backup configuration. You can use the JSON response from the POST action as input here.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -8390,7 +8390,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param request Description of a backup which will be performed.
+     * @param request Backup configuration. You can use the JSON response from the POST action as input here.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -8406,7 +8406,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param request Description of a backup which will be performed.
+     * @param request Backup configuration. You can use the JSON response from the POST action as input here.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -8919,7 +8919,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param backupId ID of backup.
-     * @param request Description of a backup which will be performed.
+     * @param request Information on backup request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -8981,7 +8981,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param backupId ID of backup.
-     * @param request Description of a backup which will be performed.
+     * @param request Information on backup request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -9041,7 +9041,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param backupId ID of backup.
-     * @param request Description of a backup which will be performed.
+     * @param request Information on backup request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -9069,7 +9069,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param backupId ID of backup.
-     * @param request Description of a backup which will be performed.
+     * @param request Information on backup request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -9089,7 +9089,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param backupId ID of backup.
-     * @param request Description of a backup which will be performed.
+     * @param request Information on backup request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -9108,7 +9108,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param backupId ID of the backup.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -9168,7 +9168,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param backupId ID of the backup.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -9226,7 +9226,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param backupId ID of the backup.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -9247,7 +9247,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param backupId ID of the backup.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -9271,7 +9271,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param backupId ID of the backup.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -9289,7 +9289,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param backupId ID of the backup.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -9308,7 +9308,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param backupId ID of the backup.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -9328,7 +9328,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param backupId ID of the backup.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -9349,7 +9349,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param backupId ID of the backup.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -9365,7 +9365,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param backupId ID of the backup.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -10387,7 +10387,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param appSettings String dictionary resource.
+     * @param appSettings Application settings of the app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -10442,7 +10442,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param appSettings String dictionary resource.
+     * @param appSettings Application settings of the app.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -10495,7 +10495,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param appSettings String dictionary resource.
+     * @param appSettings Application settings of the app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -10520,7 +10520,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param appSettings String dictionary resource.
+     * @param appSettings Application settings of the app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -10537,7 +10537,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param appSettings String dictionary resource.
+     * @param appSettings Application settings of the app.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -10704,7 +10704,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param siteAuthSettings Configuration settings for the Azure App Service Authentication / Authorization feature.
+     * @param siteAuthSettings Auth settings associated with web app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -10760,7 +10760,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param siteAuthSettings Configuration settings for the Azure App Service Authentication / Authorization feature.
+     * @param siteAuthSettings Auth settings associated with web app.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -10814,7 +10814,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param siteAuthSettings Configuration settings for the Azure App Service Authentication / Authorization feature.
+     * @param siteAuthSettings Auth settings associated with web app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -10839,7 +10839,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param siteAuthSettings Configuration settings for the Azure App Service Authentication / Authorization feature.
+     * @param siteAuthSettings Auth settings associated with web app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -10856,7 +10856,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param siteAuthSettings Configuration settings for the Azure App Service Authentication / Authorization feature.
+     * @param siteAuthSettings Auth settings associated with web app.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -11023,7 +11023,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param azureStorageAccounts AzureStorageInfo dictionary resource.
+     * @param azureStorageAccounts Azure storage accounts of the app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -11079,7 +11079,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param azureStorageAccounts AzureStorageInfo dictionary resource.
+     * @param azureStorageAccounts Azure storage accounts of the app.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -11136,7 +11136,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param azureStorageAccounts AzureStorageInfo dictionary resource.
+     * @param azureStorageAccounts Azure storage accounts of the app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -11161,7 +11161,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param azureStorageAccounts AzureStorageInfo dictionary resource.
+     * @param azureStorageAccounts Azure storage accounts of the app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -11178,7 +11178,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param azureStorageAccounts AzureStorageInfo dictionary resource.
+     * @param azureStorageAccounts Azure storage accounts of the app.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -11350,7 +11350,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param request Description of a backup which will be performed.
+     * @param request Edited backup configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -11405,7 +11405,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param request Description of a backup which will be performed.
+     * @param request Edited backup configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -11458,7 +11458,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param request Description of a backup which will be performed.
+     * @param request Edited backup configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -11483,7 +11483,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param request Description of a backup which will be performed.
+     * @param request Edited backup configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -11500,7 +11500,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param request Description of a backup which will be performed.
+     * @param request Edited backup configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -12121,7 +12121,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param connectionStrings String dictionary resource.
+     * @param connectionStrings Connection strings of the app or deployment slot. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -12177,7 +12177,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param connectionStrings String dictionary resource.
+     * @param connectionStrings Connection strings of the app or deployment slot. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -12231,7 +12231,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param connectionStrings String dictionary resource.
+     * @param connectionStrings Connection strings of the app or deployment slot. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -12256,7 +12256,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param connectionStrings String dictionary resource.
+     * @param connectionStrings Connection strings of the app or deployment slot. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -12273,7 +12273,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param connectionStrings String dictionary resource.
+     * @param connectionStrings Connection strings of the app or deployment slot. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -12589,7 +12589,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteLogsConfig Configuration of App Service site logs.
+     * @param siteLogsConfig A SiteLogsConfig JSON object that contains the logging configuration to change in the
+     *     "properties" property.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -12644,7 +12645,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteLogsConfig Configuration of App Service site logs.
+     * @param siteLogsConfig A SiteLogsConfig JSON object that contains the logging configuration to change in the
+     *     "properties" property.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -12697,7 +12699,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteLogsConfig Configuration of App Service site logs.
+     * @param siteLogsConfig A SiteLogsConfig JSON object that contains the logging configuration to change in the
+     *     "properties" property.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -12722,7 +12725,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteLogsConfig Configuration of App Service site logs.
+     * @param siteLogsConfig A SiteLogsConfig JSON object that contains the logging configuration to change in the
+     *     "properties" property.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -12739,7 +12743,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteLogsConfig Configuration of App Service site logs.
+     * @param siteLogsConfig A SiteLogsConfig JSON object that contains the logging configuration to change in the
+     *     "properties" property.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -12757,7 +12762,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param metadata String dictionary resource.
+     * @param metadata Edited metadata of the app or deployment slot. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -12812,7 +12817,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param metadata String dictionary resource.
+     * @param metadata Edited metadata of the app or deployment slot. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -12865,7 +12870,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param metadata String dictionary resource.
+     * @param metadata Edited metadata of the app or deployment slot. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -12890,7 +12895,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param metadata String dictionary resource.
+     * @param metadata Edited metadata of the app or deployment slot. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -12906,7 +12911,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param metadata String dictionary resource.
+     * @param metadata Edited metadata of the app or deployment slot. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -13308,7 +13313,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param pushSettings Push settings for the App.
+     * @param pushSettings Push settings associated with web app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -13363,7 +13368,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param pushSettings Push settings for the App.
+     * @param pushSettings Push settings associated with web app.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -13416,7 +13421,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param pushSettings Push settings for the App.
+     * @param pushSettings Push settings associated with web app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -13441,7 +13446,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param pushSettings Push settings for the App.
+     * @param pushSettings Push settings associated with web app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -13458,7 +13463,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param pushSettings Push settings for the App.
+     * @param pushSettings Push settings associated with web app.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -13775,7 +13780,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param slotConfigNames Slot Config names azure resource.
+     * @param slotConfigNames Names of application settings and connection strings. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -13832,7 +13837,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param slotConfigNames Slot Config names azure resource.
+     * @param slotConfigNames Names of application settings and connection strings. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -13887,7 +13892,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param slotConfigNames Slot Config names azure resource.
+     * @param slotConfigNames Names of application settings and connection strings. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -13913,7 +13918,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param slotConfigNames Slot Config names azure resource.
+     * @param slotConfigNames Names of application settings and connection strings. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -13931,7 +13936,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param slotConfigNames Slot Config names azure resource.
+     * @param slotConfigNames Names of application settings and connection strings. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -14103,7 +14108,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteConfig Web app configuration ARM resource.
+     * @param siteConfig JSON representation of a SiteConfig object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -14158,7 +14163,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteConfig Web app configuration ARM resource.
+     * @param siteConfig JSON representation of a SiteConfig object. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -14211,7 +14216,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteConfig Web app configuration ARM resource.
+     * @param siteConfig JSON representation of a SiteConfig object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -14236,7 +14241,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteConfig Web app configuration ARM resource.
+     * @param siteConfig JSON representation of a SiteConfig object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -14253,7 +14258,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteConfig Web app configuration ARM resource.
+     * @param siteConfig JSON representation of a SiteConfig object. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -14271,7 +14276,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteConfig Web app configuration ARM resource.
+     * @param siteConfig JSON representation of a SiteConfig object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -14326,7 +14331,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteConfig Web app configuration ARM resource.
+     * @param siteConfig JSON representation of a SiteConfig object. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -14379,7 +14384,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteConfig Web app configuration ARM resource.
+     * @param siteConfig JSON representation of a SiteConfig object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -14404,7 +14409,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteConfig Web app configuration ARM resource.
+     * @param siteConfig JSON representation of a SiteConfig object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -14421,7 +14426,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteConfig Web app configuration ARM resource.
+     * @param siteConfig JSON representation of a SiteConfig object. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -16401,7 +16406,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param id ID of an existing deployment.
-     * @param deployment User credentials used for publishing activity.
+     * @param deployment Deployment details.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -16461,7 +16466,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param id ID of an existing deployment.
-     * @param deployment User credentials used for publishing activity.
+     * @param deployment Deployment details.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -16519,7 +16524,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param id ID of an existing deployment.
-     * @param deployment User credentials used for publishing activity.
+     * @param deployment Deployment details.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -16545,7 +16550,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param id ID of an existing deployment.
-     * @param deployment User credentials used for publishing activity.
+     * @param deployment Deployment details.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -16563,7 +16568,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param id ID of an existing deployment.
-     * @param deployment User credentials used for publishing activity.
+     * @param deployment Deployment details.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -16902,7 +16907,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param request Description of a restore request.
+     * @param request A RestoreRequest object that includes Azure storage URL and blog name for discovery of backup.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -16958,7 +16963,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param request Description of a restore request.
+     * @param request A RestoreRequest object that includes Azure storage URL and blog name for discovery of backup.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -17012,7 +17017,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param request Description of a restore request.
+     * @param request A RestoreRequest object that includes Azure storage URL and blog name for discovery of backup.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -17038,7 +17043,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param request Description of a restore request.
+     * @param request A RestoreRequest object that includes Azure storage URL and blog name for discovery of backup.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -17055,7 +17060,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param request Description of a restore request.
+     * @param request A RestoreRequest object that includes Azure storage URL and blog name for discovery of backup.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -17426,7 +17431,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param domainOwnershipIdentifierName Name of domain ownership identifier.
-     * @param domainOwnershipIdentifier A domain specific resource identifier.
+     * @param domainOwnershipIdentifier A JSON representation of the domain ownership properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -17495,7 +17500,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param domainOwnershipIdentifierName Name of domain ownership identifier.
-     * @param domainOwnershipIdentifier A domain specific resource identifier.
+     * @param domainOwnershipIdentifier A JSON representation of the domain ownership properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -17563,7 +17568,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param domainOwnershipIdentifierName Name of domain ownership identifier.
-     * @param domainOwnershipIdentifier A domain specific resource identifier.
+     * @param domainOwnershipIdentifier A JSON representation of the domain ownership properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -17593,7 +17598,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param domainOwnershipIdentifierName Name of domain ownership identifier.
-     * @param domainOwnershipIdentifier A domain specific resource identifier.
+     * @param domainOwnershipIdentifier A JSON representation of the domain ownership properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -17616,7 +17621,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param domainOwnershipIdentifierName Name of domain ownership identifier.
-     * @param domainOwnershipIdentifier A domain specific resource identifier.
+     * @param domainOwnershipIdentifier A JSON representation of the domain ownership properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -17805,7 +17810,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param domainOwnershipIdentifierName Name of domain ownership identifier.
-     * @param domainOwnershipIdentifier A domain specific resource identifier.
+     * @param domainOwnershipIdentifier A JSON representation of the domain ownership properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -17874,7 +17879,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param domainOwnershipIdentifierName Name of domain ownership identifier.
-     * @param domainOwnershipIdentifier A domain specific resource identifier.
+     * @param domainOwnershipIdentifier A JSON representation of the domain ownership properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -17942,7 +17947,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param domainOwnershipIdentifierName Name of domain ownership identifier.
-     * @param domainOwnershipIdentifier A domain specific resource identifier.
+     * @param domainOwnershipIdentifier A JSON representation of the domain ownership properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -17972,7 +17977,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param domainOwnershipIdentifierName Name of domain ownership identifier.
-     * @param domainOwnershipIdentifier A domain specific resource identifier.
+     * @param domainOwnershipIdentifier A JSON representation of the domain ownership properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -17995,7 +18000,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param domainOwnershipIdentifierName Name of domain ownership identifier.
-     * @param domainOwnershipIdentifier A domain specific resource identifier.
+     * @param domainOwnershipIdentifier A JSON representation of the domain ownership properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -18168,7 +18173,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -18223,7 +18228,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -18276,7 +18281,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -18302,7 +18307,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -18326,7 +18331,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -18343,7 +18348,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -18361,7 +18366,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -18380,7 +18385,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -18400,7 +18405,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -18416,7 +18421,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -19071,7 +19076,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param functionName Function name.
-     * @param functionEnvelope Function information.
+     * @param functionEnvelope Function details.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -19132,7 +19137,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param functionName Function name.
-     * @param functionEnvelope Function information.
+     * @param functionEnvelope Function details.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -19195,7 +19200,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param functionName Function name.
-     * @param functionEnvelope Function information.
+     * @param functionEnvelope Function details.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -19222,7 +19227,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param functionName Function name.
-     * @param functionEnvelope Function information.
+     * @param functionEnvelope Function details.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -19251,7 +19256,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param functionName Function name.
-     * @param functionEnvelope Function information.
+     * @param functionEnvelope Function details.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -19269,7 +19274,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param functionName Function name.
-     * @param functionEnvelope Function information.
+     * @param functionEnvelope Function details.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -19293,7 +19298,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param functionName Function name.
-     * @param functionEnvelope Function information.
+     * @param functionEnvelope Function details.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -19313,7 +19318,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param functionName Function name.
-     * @param functionEnvelope Function information.
+     * @param functionEnvelope Function details.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -19338,7 +19343,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param functionName Function name.
-     * @param functionEnvelope Function information.
+     * @param functionEnvelope Function details.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -19356,7 +19361,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Site name.
      * @param functionName Function name.
-     * @param functionEnvelope Function information.
+     * @param functionEnvelope Function details.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -19534,7 +19539,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Site name.
      * @param functionName The name of the function.
      * @param keyName The name of the key.
-     * @param key Function key info.
+     * @param key The key to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -19599,7 +19604,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Site name.
      * @param functionName The name of the function.
      * @param keyName The name of the key.
-     * @param key Function key info.
+     * @param key The key to create or update.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -19662,7 +19667,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Site name.
      * @param functionName The name of the function.
      * @param keyName The name of the key.
-     * @param key Function key info.
+     * @param key The key to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -19689,7 +19694,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Site name.
      * @param functionName The name of the function.
      * @param keyName The name of the key.
-     * @param key Function key info.
+     * @param key The key to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -19708,7 +19713,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Site name.
      * @param functionName The name of the function.
      * @param keyName The name of the key.
-     * @param key Function key info.
+     * @param key The key to create or update.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -20647,7 +20652,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Site name.
      * @param keyType The type of host key.
      * @param keyName The name of the key.
-     * @param key Function key info.
+     * @param key The key to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -20712,7 +20717,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Site name.
      * @param keyType The type of host key.
      * @param keyName The name of the key.
-     * @param key Function key info.
+     * @param key The key to create or update.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -20775,7 +20780,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Site name.
      * @param keyType The type of host key.
      * @param keyName The name of the key.
-     * @param key Function key info.
+     * @param key The key to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -20802,7 +20807,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Site name.
      * @param keyType The type of host key.
      * @param keyName The name of the key.
-     * @param key Function key info.
+     * @param key The key to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -20821,7 +20826,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Site name.
      * @param keyType The type of host key.
      * @param keyName The name of the key.
-     * @param key Function key info.
+     * @param key The key to create or update.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -21350,7 +21355,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param hostname Hostname in the hostname binding.
-     * @param hostnameBinding A hostname binding object.
+     * @param hostnameBinding Binding details. This is the JSON representation of a HostNameBinding object.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -21411,7 +21416,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param hostname Hostname in the hostname binding.
-     * @param hostnameBinding A hostname binding object.
+     * @param hostnameBinding Binding details. This is the JSON representation of a HostNameBinding object.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -21470,7 +21475,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param hostname Hostname in the hostname binding.
-     * @param hostnameBinding A hostname binding object.
+     * @param hostnameBinding Binding details. This is the JSON representation of a HostNameBinding object.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -21496,7 +21501,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param hostname Hostname in the hostname binding.
-     * @param hostnameBinding A hostname binding object.
+     * @param hostnameBinding Binding details. This is the JSON representation of a HostNameBinding object.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -21514,7 +21519,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param hostname Hostname in the hostname binding.
-     * @param hostnameBinding A hostname binding object.
+     * @param hostnameBinding Binding details. This is the JSON representation of a HostNameBinding object.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -21867,7 +21872,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name The name of the web app.
      * @param namespaceName The namespace for this hybrid connection.
      * @param relayName The relay name for this hybrid connection.
-     * @param connectionEnvelope Hybrid Connection contract. This is used to configure a Hybrid Connection.
+     * @param connectionEnvelope The details of the hybrid connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -21937,7 +21942,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name The name of the web app.
      * @param namespaceName The namespace for this hybrid connection.
      * @param relayName The relay name for this hybrid connection.
-     * @param connectionEnvelope Hybrid Connection contract. This is used to configure a Hybrid Connection.
+     * @param connectionEnvelope The details of the hybrid connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -22006,7 +22011,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name The name of the web app.
      * @param namespaceName The namespace for this hybrid connection.
      * @param relayName The relay name for this hybrid connection.
-     * @param connectionEnvelope Hybrid Connection contract. This is used to configure a Hybrid Connection.
+     * @param connectionEnvelope The details of the hybrid connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -22038,7 +22043,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name The name of the web app.
      * @param namespaceName The namespace for this hybrid connection.
      * @param relayName The relay name for this hybrid connection.
-     * @param connectionEnvelope Hybrid Connection contract. This is used to configure a Hybrid Connection.
+     * @param connectionEnvelope The details of the hybrid connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -22063,7 +22068,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name The name of the web app.
      * @param namespaceName The namespace for this hybrid connection.
      * @param relayName The relay name for this hybrid connection.
-     * @param connectionEnvelope Hybrid Connection contract. This is used to configure a Hybrid Connection.
+     * @param connectionEnvelope The details of the hybrid connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -22259,7 +22264,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name The name of the web app.
      * @param namespaceName The namespace for this hybrid connection.
      * @param relayName The relay name for this hybrid connection.
-     * @param connectionEnvelope Hybrid Connection contract. This is used to configure a Hybrid Connection.
+     * @param connectionEnvelope The details of the hybrid connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -22329,7 +22334,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name The name of the web app.
      * @param namespaceName The namespace for this hybrid connection.
      * @param relayName The relay name for this hybrid connection.
-     * @param connectionEnvelope Hybrid Connection contract. This is used to configure a Hybrid Connection.
+     * @param connectionEnvelope The details of the hybrid connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -22398,7 +22403,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name The name of the web app.
      * @param namespaceName The namespace for this hybrid connection.
      * @param relayName The relay name for this hybrid connection.
-     * @param connectionEnvelope Hybrid Connection contract. This is used to configure a Hybrid Connection.
+     * @param connectionEnvelope The details of the hybrid connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -22430,7 +22435,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name The name of the web app.
      * @param namespaceName The namespace for this hybrid connection.
      * @param relayName The relay name for this hybrid connection.
-     * @param connectionEnvelope Hybrid Connection contract. This is used to configure a Hybrid Connection.
+     * @param connectionEnvelope The details of the hybrid connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -22454,7 +22459,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name The name of the web app.
      * @param namespaceName The namespace for this hybrid connection.
      * @param relayName The relay name for this hybrid connection.
-     * @param connectionEnvelope Hybrid Connection contract. This is used to configure a Hybrid Connection.
+     * @param connectionEnvelope The details of the hybrid connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -22943,7 +22948,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param entityName Name of the hybrid connection configuration.
-     * @param connectionEnvelope Hybrid Connection for an App Service app.
+     * @param connectionEnvelope Details of the hybrid connection configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -23007,7 +23012,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param entityName Name of the hybrid connection configuration.
-     * @param connectionEnvelope Hybrid Connection for an App Service app.
+     * @param connectionEnvelope Details of the hybrid connection configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -23070,7 +23075,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param entityName Name of the hybrid connection configuration.
-     * @param connectionEnvelope Hybrid Connection for an App Service app.
+     * @param connectionEnvelope Details of the hybrid connection configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -23100,7 +23105,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param entityName Name of the hybrid connection configuration.
-     * @param connectionEnvelope Hybrid Connection for an App Service app.
+     * @param connectionEnvelope Details of the hybrid connection configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -23122,7 +23127,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param entityName Name of the hybrid connection configuration.
-     * @param connectionEnvelope Hybrid Connection for an App Service app.
+     * @param connectionEnvelope Details of the hybrid connection configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -23301,7 +23306,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param entityName Name of the hybrid connection configuration.
-     * @param connectionEnvelope Hybrid Connection for an App Service app.
+     * @param connectionEnvelope Details of the hybrid connection configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -23365,7 +23370,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param entityName Name of the hybrid connection configuration.
-     * @param connectionEnvelope Hybrid Connection for an App Service app.
+     * @param connectionEnvelope Details of the hybrid connection configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -23428,7 +23433,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param entityName Name of the hybrid connection configuration.
-     * @param connectionEnvelope Hybrid Connection for an App Service app.
+     * @param connectionEnvelope Details of the hybrid connection configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -23457,7 +23462,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param entityName Name of the hybrid connection configuration.
-     * @param connectionEnvelope Hybrid Connection for an App Service app.
+     * @param connectionEnvelope Details of the hybrid connection configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -23478,7 +23483,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param entityName Name of the hybrid connection configuration.
-     * @param connectionEnvelope Hybrid Connection for an App Service app.
+     * @param connectionEnvelope Details of the hybrid connection configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -24009,7 +24014,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param instanceId ID of web app instance.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -24069,7 +24074,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param instanceId ID of web app instance.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -24127,7 +24132,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param instanceId ID of web app instance.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -24154,7 +24159,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param instanceId ID of web app instance.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -24179,7 +24184,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param instanceId ID of web app instance.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -24197,7 +24202,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param instanceId ID of web app instance.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -24217,7 +24222,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param instanceId ID of web app instance.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -24237,7 +24242,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param instanceId ID of web app instance.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -24258,7 +24263,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param instanceId ID of web app instance.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -24276,7 +24281,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param instanceId ID of web app instance.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -26333,7 +26338,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param subscriptionName Azure subscription.
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param migrationOptions Options for app content migration.
+     * @param migrationOptions Migration migrationOptions.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -26395,7 +26400,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param subscriptionName Azure subscription.
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param migrationOptions Options for app content migration.
+     * @param migrationOptions Migration migrationOptions.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -26459,7 +26464,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param subscriptionName Azure subscription.
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param migrationOptions Options for app content migration.
+     * @param migrationOptions Migration migrationOptions.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -26487,7 +26492,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param subscriptionName Azure subscription.
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param migrationOptions Options for app content migration.
+     * @param migrationOptions Migration migrationOptions.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -26521,7 +26526,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param subscriptionName Azure subscription.
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param migrationOptions Options for app content migration.
+     * @param migrationOptions Migration migrationOptions.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -26539,7 +26544,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param subscriptionName Azure subscription.
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param migrationOptions Options for app content migration.
+     * @param migrationOptions Migration migrationOptions.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -26563,7 +26568,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param subscriptionName Azure subscription.
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param migrationOptions Options for app content migration.
+     * @param migrationOptions Migration migrationOptions.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -26583,7 +26588,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param subscriptionName Azure subscription.
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param migrationOptions Options for app content migration.
+     * @param migrationOptions Migration migrationOptions.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -26608,7 +26613,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param subscriptionName Azure subscription.
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param migrationOptions Options for app content migration.
+     * @param migrationOptions Migration migrationOptions.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -26626,7 +26631,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param subscriptionName Azure subscription.
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param migrationOptions Options for app content migration.
+     * @param migrationOptions Migration migrationOptions.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -26648,7 +26653,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param migrationRequestEnvelope MySQL migration request.
+     * @param migrationRequestEnvelope MySql migration options.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -26705,7 +26710,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param migrationRequestEnvelope MySQL migration request.
+     * @param migrationRequestEnvelope MySql migration options.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -26760,7 +26765,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param migrationRequestEnvelope MySQL migration request.
+     * @param migrationRequestEnvelope MySql migration options.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -26782,7 +26787,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param migrationRequestEnvelope MySQL migration request.
+     * @param migrationRequestEnvelope MySql migration options.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -26806,7 +26811,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param migrationRequestEnvelope MySQL migration request.
+     * @param migrationRequestEnvelope MySql migration options.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -26823,7 +26828,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param migrationRequestEnvelope MySQL migration request.
+     * @param migrationRequestEnvelope MySql migration options.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -26841,7 +26846,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param migrationRequestEnvelope MySQL migration request.
+     * @param migrationRequestEnvelope MySql migration options.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -26860,7 +26865,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param migrationRequestEnvelope MySQL migration request.
+     * @param migrationRequestEnvelope MySql migration options.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -26880,7 +26885,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param migrationRequestEnvelope MySQL migration request.
+     * @param migrationRequestEnvelope MySql migration options.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -26897,7 +26902,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param migrationRequestEnvelope MySQL migration request.
+     * @param migrationRequestEnvelope MySql migration options.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -27221,8 +27226,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param connectionEnvelope Swift Virtual Network Contract. This is used to enable the new Swift way of doing
-     *     virtual network integration.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -27280,8 +27284,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param connectionEnvelope Swift Virtual Network Contract. This is used to enable the new Swift way of doing
-     *     virtual network integration.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -27337,8 +27340,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param connectionEnvelope Swift Virtual Network Contract. This is used to enable the new Swift way of doing
-     *     virtual network integration.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -27365,8 +27367,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param connectionEnvelope Swift Virtual Network Contract. This is used to enable the new Swift way of doing
-     *     virtual network integration.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -27385,8 +27386,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param connectionEnvelope Swift Virtual Network Contract. This is used to enable the new Swift way of doing
-     *     virtual network integration.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -27548,8 +27548,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param connectionEnvelope Swift Virtual Network Contract. This is used to enable the new Swift way of doing
-     *     virtual network integration.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -27607,8 +27606,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param connectionEnvelope Swift Virtual Network Contract. This is used to enable the new Swift way of doing
-     *     virtual network integration.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -27664,8 +27662,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param connectionEnvelope Swift Virtual Network Contract. This is used to enable the new Swift way of doing
-     *     virtual network integration.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -27692,8 +27689,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param connectionEnvelope Swift Virtual Network Contract. This is used to enable the new Swift way of doing
-     *     virtual network integration.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -27712,8 +27708,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param connectionEnvelope Swift Virtual Network Contract. This is used to enable the new Swift way of doing
-     *     virtual network integration.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -30072,7 +30067,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param premierAddOnName Add-on name.
-     * @param premierAddOn Premier add-on.
+     * @param premierAddOn A JSON representation of the edited premier add-on.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -30133,7 +30128,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param premierAddOnName Add-on name.
-     * @param premierAddOn Premier add-on.
+     * @param premierAddOn A JSON representation of the edited premier add-on.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -30196,7 +30191,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param premierAddOnName Add-on name.
-     * @param premierAddOn Premier add-on.
+     * @param premierAddOn A JSON representation of the edited premier add-on.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -30222,7 +30217,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param premierAddOnName Add-on name.
-     * @param premierAddOn Premier add-on.
+     * @param premierAddOn A JSON representation of the edited premier add-on.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -30240,7 +30235,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param premierAddOnName Add-on name.
-     * @param premierAddOn Premier add-on.
+     * @param premierAddOn A JSON representation of the edited premier add-on.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -30420,7 +30415,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param premierAddOnName Add-on name.
-     * @param premierAddOn ARM resource for a PremierAddOn.
+     * @param premierAddOn A JSON representation of the edited premier add-on.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -30481,7 +30476,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param premierAddOnName Add-on name.
-     * @param premierAddOn ARM resource for a PremierAddOn.
+     * @param premierAddOn A JSON representation of the edited premier add-on.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -30544,7 +30539,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param premierAddOnName Add-on name.
-     * @param premierAddOn ARM resource for a PremierAddOn.
+     * @param premierAddOn A JSON representation of the edited premier add-on.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -30570,7 +30565,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param premierAddOnName Add-on name.
-     * @param premierAddOn ARM resource for a PremierAddOn.
+     * @param premierAddOn A JSON representation of the edited premier add-on.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -30588,7 +30583,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param premierAddOnName Add-on name.
-     * @param premierAddOn ARM resource for a PremierAddOn.
+     * @param premierAddOn A JSON representation of the edited premier add-on.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -30766,7 +30761,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
-     * @param access Description of the parameters of Private Access for a Web Site.
+     * @param access The information for the private access.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -30822,7 +30817,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
-     * @param access Description of the parameters of Private Access for a Web Site.
+     * @param access The information for the private access.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -30876,7 +30871,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
-     * @param access Description of the parameters of Private Access for a Web Site.
+     * @param access The information for the private access.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -30902,7 +30897,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
-     * @param access Description of the parameters of Private Access for a Web Site.
+     * @param access The information for the private access.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -30919,7 +30914,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
-     * @param access Description of the parameters of Private Access for a Web Site.
+     * @param access The information for the private access.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -32529,7 +32524,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param publicCertificateName Public certificate name.
-     * @param publicCertificate Public certificate object.
+     * @param publicCertificate Public certificate details. This is the JSON representation of a PublicCertificate
+     *     object.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -32591,7 +32587,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param publicCertificateName Public certificate name.
-     * @param publicCertificate Public certificate object.
+     * @param publicCertificate Public certificate details. This is the JSON representation of a PublicCertificate
+     *     object.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -32655,7 +32652,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param publicCertificateName Public certificate name.
-     * @param publicCertificate Public certificate object.
+     * @param publicCertificate Public certificate details. This is the JSON representation of a PublicCertificate
+     *     object.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -32682,7 +32680,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param publicCertificateName Public certificate name.
-     * @param publicCertificate Public certificate object.
+     * @param publicCertificate Public certificate details. This is the JSON representation of a PublicCertificate
+     *     object.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -32701,7 +32700,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param publicCertificateName Public certificate name.
-     * @param publicCertificate Public certificate object.
+     * @param publicCertificate Public certificate details. This is the JSON representation of a PublicCertificate
+     *     object.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -32883,7 +32883,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param publishingProfileOptions Publishing options for requested profile.
+     * @param publishingProfileOptions Specifies publishingProfileOptions for publishing profile. For example, use
+     *     {"format": "FileZilla3"} to get a FileZilla publishing profile.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -32940,7 +32941,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param publishingProfileOptions Publishing options for requested profile.
+     * @param publishingProfileOptions Specifies publishingProfileOptions for publishing profile. For example, use
+     *     {"format": "FileZilla3"} to get a FileZilla publishing profile.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -32995,7 +32997,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param publishingProfileOptions Publishing options for requested profile.
+     * @param publishingProfileOptions Specifies publishingProfileOptions for publishing profile. For example, use
+     *     {"format": "FileZilla3"} to get a FileZilla publishing profile.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -33013,7 +33016,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param publishingProfileOptions Publishing options for requested profile.
+     * @param publishingProfileOptions Specifies publishingProfileOptions for publishing profile. For example, use
+     *     {"format": "FileZilla3"} to get a FileZilla publishing profile.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -33047,7 +33051,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param publishingProfileOptions Publishing options for requested profile.
+     * @param publishingProfileOptions Specifies publishingProfileOptions for publishing profile. For example, use
+     *     {"format": "FileZilla3"} to get a FileZilla publishing profile.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -33393,7 +33398,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -33448,7 +33453,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -33501,7 +33506,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -33522,7 +33527,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -33545,7 +33550,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -33562,7 +33567,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -33580,7 +33585,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -33598,7 +33603,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -33618,7 +33623,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -33633,7 +33638,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -33650,7 +33655,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param restoreRequest Details about restoring a deleted app.
+     * @param restoreRequest Deleted web app restore information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -33705,7 +33710,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param restoreRequest Details about restoring a deleted app.
+     * @param restoreRequest Deleted web app restore information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -33758,7 +33763,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param restoreRequest Details about restoring a deleted app.
+     * @param restoreRequest Deleted web app restore information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -33779,7 +33784,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param restoreRequest Details about restoring a deleted app.
+     * @param restoreRequest Deleted web app restore information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -33802,7 +33807,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param restoreRequest Details about restoring a deleted app.
+     * @param restoreRequest Deleted web app restore information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -33819,7 +33824,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param restoreRequest Details about restoring a deleted app.
+     * @param restoreRequest Deleted web app restore information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -33837,7 +33842,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param restoreRequest Details about restoring a deleted app.
+     * @param restoreRequest Deleted web app restore information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -33856,7 +33861,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param restoreRequest Details about restoring a deleted app.
+     * @param restoreRequest Deleted web app restore information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -33876,7 +33881,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param restoreRequest Details about restoring a deleted app.
+     * @param restoreRequest Deleted web app restore information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -33891,7 +33896,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param restoreRequest Details about restoring a deleted app.
+     * @param restoreRequest Deleted web app restore information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -33908,7 +33913,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param restoreRequest Details about app recovery operation.
+     * @param restoreRequest Snapshot restore settings. Snapshot information can be obtained by calling GetDeletedSites
+     *     or GetSiteSnapshots API.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -33963,7 +33969,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param restoreRequest Details about app recovery operation.
+     * @param restoreRequest Snapshot restore settings. Snapshot information can be obtained by calling GetDeletedSites
+     *     or GetSiteSnapshots API.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -34016,7 +34023,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param restoreRequest Details about app recovery operation.
+     * @param restoreRequest Snapshot restore settings. Snapshot information can be obtained by calling GetDeletedSites
+     *     or GetSiteSnapshots API.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -34037,7 +34045,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param restoreRequest Details about app recovery operation.
+     * @param restoreRequest Snapshot restore settings. Snapshot information can be obtained by calling GetDeletedSites
+     *     or GetSiteSnapshots API.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -34060,7 +34069,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param restoreRequest Details about app recovery operation.
+     * @param restoreRequest Snapshot restore settings. Snapshot information can be obtained by calling GetDeletedSites
+     *     or GetSiteSnapshots API.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -34077,7 +34087,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param restoreRequest Details about app recovery operation.
+     * @param restoreRequest Snapshot restore settings. Snapshot information can be obtained by calling GetDeletedSites
+     *     or GetSiteSnapshots API.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -34095,7 +34106,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param restoreRequest Details about app recovery operation.
+     * @param restoreRequest Snapshot restore settings. Snapshot information can be obtained by calling GetDeletedSites
+     *     or GetSiteSnapshots API.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -34114,7 +34126,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param restoreRequest Details about app recovery operation.
+     * @param restoreRequest Snapshot restore settings. Snapshot information can be obtained by calling GetDeletedSites
+     *     or GetSiteSnapshots API.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -34134,7 +34147,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param restoreRequest Details about app recovery operation.
+     * @param restoreRequest Snapshot restore settings. Snapshot information can be obtained by calling GetDeletedSites
+     *     or GetSiteSnapshots API.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -34149,7 +34163,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
-     * @param restoreRequest Details about app recovery operation.
+     * @param restoreRequest Snapshot restore settings. Snapshot information can be obtained by calling GetDeletedSites
+     *     or GetSiteSnapshots API.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -34935,7 +34950,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param copySlotEntity Copy deployment slot parameters.
+     * @param copySlotEntity JSON object that contains the target slot name and site config properties to override the
+     *     source slot config. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -34990,7 +35006,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param copySlotEntity Copy deployment slot parameters.
+     * @param copySlotEntity JSON object that contains the target slot name and site config properties to override the
+     *     source slot config. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -35043,7 +35060,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param copySlotEntity Copy deployment slot parameters.
+     * @param copySlotEntity JSON object that contains the target slot name and site config properties to override the
+     *     source slot config. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -35064,7 +35082,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param copySlotEntity Copy deployment slot parameters.
+     * @param copySlotEntity JSON object that contains the target slot name and site config properties to override the
+     *     source slot config. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -35087,7 +35106,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param copySlotEntity Copy deployment slot parameters.
+     * @param copySlotEntity JSON object that contains the target slot name and site config properties to override the
+     *     source slot config. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -35104,7 +35124,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param copySlotEntity Copy deployment slot parameters.
+     * @param copySlotEntity JSON object that contains the target slot name and site config properties to override the
+     *     source slot config. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -35122,7 +35143,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param copySlotEntity Copy deployment slot parameters.
+     * @param copySlotEntity JSON object that contains the target slot name and site config properties to override the
+     *     source slot config. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -35141,7 +35163,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param copySlotEntity Copy deployment slot parameters.
+     * @param copySlotEntity JSON object that contains the target slot name and site config properties to override the
+     *     source slot config. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -35161,7 +35184,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param copySlotEntity Copy deployment slot parameters.
+     * @param copySlotEntity JSON object that contains the target slot name and site config properties to override the
+     *     source slot config. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -35176,7 +35200,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param copySlotEntity Copy deployment slot parameters.
+     * @param copySlotEntity JSON object that contains the target slot name and site config properties to override the
+     *     source slot config. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -35534,7 +35559,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *     parameter.
      * @param slot Name of the deployment slot to create or update. By default, this API attempts to create or modify
      *     the production slot.
-     * @param siteEnvelope A web app, a mobile app backend, or an API app.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -35596,7 +35621,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *     parameter.
      * @param slot Name of the deployment slot to create or update. By default, this API attempts to create or modify
      *     the production slot.
-     * @param siteEnvelope A web app, a mobile app backend, or an API app.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -35656,7 +35681,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *     parameter.
      * @param slot Name of the deployment slot to create or update. By default, this API attempts to create or modify
      *     the production slot.
-     * @param siteEnvelope A web app, a mobile app backend, or an API app.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -35681,7 +35706,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *     parameter.
      * @param slot Name of the deployment slot to create or update. By default, this API attempts to create or modify
      *     the production slot.
-     * @param siteEnvelope A web app, a mobile app backend, or an API app.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -35708,7 +35733,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *     parameter.
      * @param slot Name of the deployment slot to create or update. By default, this API attempts to create or modify
      *     the production slot.
-     * @param siteEnvelope A web app, a mobile app backend, or an API app.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -35728,7 +35753,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *     parameter.
      * @param slot Name of the deployment slot to create or update. By default, this API attempts to create or modify
      *     the production slot.
-     * @param siteEnvelope A web app, a mobile app backend, or an API app.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -35749,7 +35774,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *     parameter.
      * @param slot Name of the deployment slot to create or update. By default, this API attempts to create or modify
      *     the production slot.
-     * @param siteEnvelope A web app, a mobile app backend, or an API app.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -35771,7 +35796,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *     parameter.
      * @param slot Name of the deployment slot to create or update. By default, this API attempts to create or modify
      *     the production slot.
-     * @param siteEnvelope A web app, a mobile app backend, or an API app.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -35794,7 +35819,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *     parameter.
      * @param slot Name of the deployment slot to create or update. By default, this API attempts to create or modify
      *     the production slot.
-     * @param siteEnvelope A web app, a mobile app backend, or an API app.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -35813,7 +35838,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *     parameter.
      * @param slot Name of the deployment slot to create or update. By default, this API attempts to create or modify
      *     the production slot.
-     * @param siteEnvelope A web app, a mobile app backend, or an API app.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -36037,7 +36062,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *     parameter.
      * @param slot Name of the deployment slot to create or update. By default, this API attempts to create or modify
      *     the production slot.
-     * @param siteEnvelope ARM resource for a site.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -36099,7 +36124,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *     parameter.
      * @param slot Name of the deployment slot to create or update. By default, this API attempts to create or modify
      *     the production slot.
-     * @param siteEnvelope ARM resource for a site.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -36159,7 +36184,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *     parameter.
      * @param slot Name of the deployment slot to create or update. By default, this API attempts to create or modify
      *     the production slot.
-     * @param siteEnvelope ARM resource for a site.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -36187,7 +36212,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *     parameter.
      * @param slot Name of the deployment slot to create or update. By default, this API attempts to create or modify
      *     the production slot.
-     * @param siteEnvelope ARM resource for a site.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -36207,7 +36232,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *     parameter.
      * @param slot Name of the deployment slot to create or update. By default, this API attempts to create or modify
      *     the production slot.
-     * @param siteEnvelope ARM resource for a site.
+     * @param siteEnvelope A JSON representation of the app properties. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -36423,7 +36448,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -36483,7 +36508,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -36541,7 +36566,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -36560,7 +36585,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -36577,7 +36602,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -36598,7 +36623,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will create a backup for the
      *     production slot.
-     * @param request Description of a backup which will be performed.
+     * @param request Backup configuration. You can use the JSON response from the POST action as input here.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -36659,7 +36684,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will create a backup for the
      *     production slot.
-     * @param request Description of a backup which will be performed.
+     * @param request Backup configuration. You can use the JSON response from the POST action as input here.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -36718,7 +36743,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will create a backup for the
      *     production slot.
-     * @param request Description of a backup which will be performed.
+     * @param request Backup configuration. You can use the JSON response from the POST action as input here.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -36745,7 +36770,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will create a backup for the
      *     production slot.
-     * @param request Description of a backup which will be performed.
+     * @param request Backup configuration. You can use the JSON response from the POST action as input here.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -36763,7 +36788,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will create a backup for the
      *     production slot.
-     * @param request Description of a backup which will be performed.
+     * @param request Backup configuration. You can use the JSON response from the POST action as input here.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -37338,7 +37363,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of web app.
      * @param backupId ID of backup.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param request Description of a backup which will be performed.
+     * @param request Information on backup request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -37405,7 +37430,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of web app.
      * @param backupId ID of backup.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param request Description of a backup which will be performed.
+     * @param request Information on backup request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -37475,7 +37500,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of web app.
      * @param backupId ID of backup.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param request Description of a backup which will be performed.
+     * @param request Information on backup request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -37504,7 +37529,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of web app.
      * @param backupId ID of backup.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param request Description of a backup which will be performed.
+     * @param request Information on backup request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -37525,7 +37550,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of web app.
      * @param backupId ID of backup.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param request Description of a backup which will be performed.
+     * @param request Information on backup request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -37552,7 +37577,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param backupId ID of the backup.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will restore a backup of the
      *     production slot.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -37618,7 +37643,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param backupId ID of the backup.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will restore a backup of the
      *     production slot.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -37687,7 +37712,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param backupId ID of the backup.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will restore a backup of the
      *     production slot.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -37711,7 +37736,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param backupId ID of the backup.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will restore a backup of the
      *     production slot.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -37742,7 +37767,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param backupId ID of the backup.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will restore a backup of the
      *     production slot.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -37762,7 +37787,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param backupId ID of the backup.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will restore a backup of the
      *     production slot.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -37788,7 +37813,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param backupId ID of the backup.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will restore a backup of the
      *     production slot.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -37810,7 +37835,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param backupId ID of the backup.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will restore a backup of the
      *     production slot.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -37838,7 +37863,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param backupId ID of the backup.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will restore a backup of the
      *     production slot.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -37857,7 +37882,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param backupId ID of the backup.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will restore a backup of the
      *     production slot.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -38083,7 +38108,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the application settings
      *     for the production slot.
-     * @param appSettings String dictionary resource.
+     * @param appSettings Application settings of the app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -38144,7 +38169,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the application settings
      *     for the production slot.
-     * @param appSettings String dictionary resource.
+     * @param appSettings Application settings of the app.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -38203,7 +38228,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the application settings
      *     for the production slot.
-     * @param appSettings String dictionary resource.
+     * @param appSettings Application settings of the app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -38230,7 +38255,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the application settings
      *     for the production slot.
-     * @param appSettings String dictionary resource.
+     * @param appSettings Application settings of the app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -38249,7 +38274,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the application settings
      *     for the production slot.
-     * @param appSettings String dictionary resource.
+     * @param appSettings Application settings of the app.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -38437,7 +38462,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param siteAuthSettings Configuration settings for the Azure App Service Authentication / Authorization feature.
+     * @param siteAuthSettings Auth settings associated with web app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -38498,7 +38523,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param siteAuthSettings Configuration settings for the Azure App Service Authentication / Authorization feature.
+     * @param siteAuthSettings Auth settings associated with web app.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -38557,7 +38582,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param siteAuthSettings Configuration settings for the Azure App Service Authentication / Authorization feature.
+     * @param siteAuthSettings Auth settings associated with web app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -38583,7 +38608,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param siteAuthSettings Configuration settings for the Azure App Service Authentication / Authorization feature.
+     * @param siteAuthSettings Auth settings associated with web app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -38601,7 +38626,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param siteAuthSettings Configuration settings for the Azure App Service Authentication / Authorization feature.
+     * @param siteAuthSettings Auth settings associated with web app.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -38789,7 +38814,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the Azure storage
      *     account configurations for the production slot.
-     * @param azureStorageAccounts AzureStorageInfo dictionary resource.
+     * @param azureStorageAccounts Azure storage accounts of the app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -38854,7 +38879,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the Azure storage
      *     account configurations for the production slot.
-     * @param azureStorageAccounts AzureStorageInfo dictionary resource.
+     * @param azureStorageAccounts Azure storage accounts of the app.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -38918,7 +38943,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the Azure storage
      *     account configurations for the production slot.
-     * @param azureStorageAccounts AzureStorageInfo dictionary resource.
+     * @param azureStorageAccounts Azure storage accounts of the app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -38948,7 +38973,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the Azure storage
      *     account configurations for the production slot.
-     * @param azureStorageAccounts AzureStorageInfo dictionary resource.
+     * @param azureStorageAccounts Azure storage accounts of the app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -38970,7 +38995,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the Azure storage
      *     account configurations for the production slot.
-     * @param azureStorageAccounts AzureStorageInfo dictionary resource.
+     * @param azureStorageAccounts Azure storage accounts of the app.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -39165,7 +39190,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the backup configuration
      *     for the production slot.
-     * @param request Description of a backup which will be performed.
+     * @param request Edited backup configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -39226,7 +39251,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the backup configuration
      *     for the production slot.
-     * @param request Description of a backup which will be performed.
+     * @param request Edited backup configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -39285,7 +39310,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the backup configuration
      *     for the production slot.
-     * @param request Description of a backup which will be performed.
+     * @param request Edited backup configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -39312,7 +39337,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the backup configuration
      *     for the production slot.
-     * @param request Description of a backup which will be performed.
+     * @param request Edited backup configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -39331,7 +39356,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the backup configuration
      *     for the production slot.
-     * @param request Description of a backup which will be performed.
+     * @param request Edited backup configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -39678,7 +39703,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the connection settings
      *     for the production slot.
-     * @param connectionStrings String dictionary resource.
+     * @param connectionStrings Connection strings of the app or deployment slot. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -39740,7 +39765,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the connection settings
      *     for the production slot.
-     * @param connectionStrings String dictionary resource.
+     * @param connectionStrings Connection strings of the app or deployment slot. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -39804,7 +39829,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the connection settings
      *     for the production slot.
-     * @param connectionStrings String dictionary resource.
+     * @param connectionStrings Connection strings of the app or deployment slot. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -39831,7 +39856,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the connection settings
      *     for the production slot.
-     * @param connectionStrings String dictionary resource.
+     * @param connectionStrings Connection strings of the app or deployment slot. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -39850,7 +39875,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the connection settings
      *     for the production slot.
-     * @param connectionStrings String dictionary resource.
+     * @param connectionStrings Connection strings of the app or deployment slot. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -40212,7 +40237,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the logging
      *     configuration for the production slot.
-     * @param siteLogsConfig Configuration of App Service site logs.
+     * @param siteLogsConfig A SiteLogsConfig JSON object that contains the logging configuration to change in the
+     *     "properties" property.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -40273,7 +40299,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the logging
      *     configuration for the production slot.
-     * @param siteLogsConfig Configuration of App Service site logs.
+     * @param siteLogsConfig A SiteLogsConfig JSON object that contains the logging configuration to change in the
+     *     "properties" property.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -40332,7 +40359,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the logging
      *     configuration for the production slot.
-     * @param siteLogsConfig Configuration of App Service site logs.
+     * @param siteLogsConfig A SiteLogsConfig JSON object that contains the logging configuration to change in the
+     *     "properties" property.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -40359,7 +40387,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the logging
      *     configuration for the production slot.
-     * @param siteLogsConfig Configuration of App Service site logs.
+     * @param siteLogsConfig A SiteLogsConfig JSON object that contains the logging configuration to change in the
+     *     "properties" property.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -40378,7 +40407,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the logging
      *     configuration for the production slot.
-     * @param siteLogsConfig Configuration of App Service site logs.
+     * @param siteLogsConfig A SiteLogsConfig JSON object that contains the logging configuration to change in the
+     *     "properties" property.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -40399,7 +40429,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the metadata for the
      *     production slot.
-     * @param metadata String dictionary resource.
+     * @param metadata Edited metadata of the app or deployment slot. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -40460,7 +40490,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the metadata for the
      *     production slot.
-     * @param metadata String dictionary resource.
+     * @param metadata Edited metadata of the app or deployment slot. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -40519,7 +40549,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the metadata for the
      *     production slot.
-     * @param metadata String dictionary resource.
+     * @param metadata Edited metadata of the app or deployment slot. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -40546,7 +40576,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the metadata for the
      *     production slot.
-     * @param metadata String dictionary resource.
+     * @param metadata Edited metadata of the app or deployment slot. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -40565,7 +40595,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the metadata for the
      *     production slot.
-     * @param metadata String dictionary resource.
+     * @param metadata Edited metadata of the app or deployment slot. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -41018,7 +41048,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param pushSettings Push settings for the App.
+     * @param pushSettings Push settings associated with web app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -41078,7 +41108,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param pushSettings Push settings for the App.
+     * @param pushSettings Push settings associated with web app.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -41136,7 +41166,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param pushSettings Push settings for the App.
+     * @param pushSettings Push settings associated with web app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -41162,7 +41192,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param pushSettings Push settings for the App.
+     * @param pushSettings Push settings associated with web app.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -41180,7 +41210,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param pushSettings Push settings for the App.
+     * @param pushSettings Push settings associated with web app.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -41536,7 +41566,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update configuration for the
      *     production slot.
-     * @param siteConfig Web app configuration ARM resource.
+     * @param siteConfig JSON representation of a SiteConfig object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -41597,7 +41627,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update configuration for the
      *     production slot.
-     * @param siteConfig Web app configuration ARM resource.
+     * @param siteConfig JSON representation of a SiteConfig object. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -41656,7 +41686,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update configuration for the
      *     production slot.
-     * @param siteConfig Web app configuration ARM resource.
+     * @param siteConfig JSON representation of a SiteConfig object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -41683,7 +41713,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update configuration for the
      *     production slot.
-     * @param siteConfig Web app configuration ARM resource.
+     * @param siteConfig JSON representation of a SiteConfig object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -41702,7 +41732,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update configuration for the
      *     production slot.
-     * @param siteConfig Web app configuration ARM resource.
+     * @param siteConfig JSON representation of a SiteConfig object. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -41723,7 +41753,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update configuration for the
      *     production slot.
-     * @param siteConfig Web app configuration ARM resource.
+     * @param siteConfig JSON representation of a SiteConfig object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -41784,7 +41814,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update configuration for the
      *     production slot.
-     * @param siteConfig Web app configuration ARM resource.
+     * @param siteConfig JSON representation of a SiteConfig object. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -41843,7 +41873,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update configuration for the
      *     production slot.
-     * @param siteConfig Web app configuration ARM resource.
+     * @param siteConfig JSON representation of a SiteConfig object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -41870,7 +41900,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update configuration for the
      *     production slot.
-     * @param siteConfig Web app configuration ARM resource.
+     * @param siteConfig JSON representation of a SiteConfig object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -41889,7 +41919,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update configuration for the
      *     production slot.
-     * @param siteConfig Web app configuration ARM resource.
+     * @param siteConfig JSON representation of a SiteConfig object. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -44104,7 +44134,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param id ID of an existing deployment.
      * @param slot Name of the deployment slot. If a slot is not specified, the API creates a deployment for the
      *     production slot.
-     * @param deployment User credentials used for publishing activity.
+     * @param deployment Deployment details.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -44170,7 +44200,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param id ID of an existing deployment.
      * @param slot Name of the deployment slot. If a slot is not specified, the API creates a deployment for the
      *     production slot.
-     * @param deployment User credentials used for publishing activity.
+     * @param deployment Deployment details.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -44234,7 +44264,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param id ID of an existing deployment.
      * @param slot Name of the deployment slot. If a slot is not specified, the API creates a deployment for the
      *     production slot.
-     * @param deployment User credentials used for publishing activity.
+     * @param deployment Deployment details.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -44262,7 +44292,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param id ID of an existing deployment.
      * @param slot Name of the deployment slot. If a slot is not specified, the API creates a deployment for the
      *     production slot.
-     * @param deployment User credentials used for publishing activity.
+     * @param deployment Deployment details.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -44282,7 +44312,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param id ID of an existing deployment.
      * @param slot Name of the deployment slot. If a slot is not specified, the API creates a deployment for the
      *     production slot.
-     * @param deployment User credentials used for publishing activity.
+     * @param deployment Deployment details.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -44661,7 +44691,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will perform discovery for the
      *     production slot.
-     * @param request Description of a restore request.
+     * @param request A RestoreRequest object that includes Azure storage URL and blog name for discovery of backup.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -44723,7 +44753,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will perform discovery for the
      *     production slot.
-     * @param request Description of a restore request.
+     * @param request A RestoreRequest object that includes Azure storage URL and blog name for discovery of backup.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -44783,7 +44813,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will perform discovery for the
      *     production slot.
-     * @param request Description of a restore request.
+     * @param request A RestoreRequest object that includes Azure storage URL and blog name for discovery of backup.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -44811,7 +44841,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will perform discovery for the
      *     production slot.
-     * @param request Description of a restore request.
+     * @param request A RestoreRequest object that includes Azure storage URL and blog name for discovery of backup.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -44831,7 +44861,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will perform discovery for the
      *     production slot.
-     * @param request Description of a restore request.
+     * @param request A RestoreRequest object that includes Azure storage URL and blog name for discovery of backup.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -45246,7 +45276,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param domainOwnershipIdentifierName Name of domain ownership identifier.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will delete the binding for the
      *     production slot.
-     * @param domainOwnershipIdentifier A domain specific resource identifier.
+     * @param domainOwnershipIdentifier A JSON representation of the domain ownership properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -45322,7 +45352,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param domainOwnershipIdentifierName Name of domain ownership identifier.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will delete the binding for the
      *     production slot.
-     * @param domainOwnershipIdentifier A domain specific resource identifier.
+     * @param domainOwnershipIdentifier A JSON representation of the domain ownership properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -45397,7 +45427,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param domainOwnershipIdentifierName Name of domain ownership identifier.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will delete the binding for the
      *     production slot.
-     * @param domainOwnershipIdentifier A domain specific resource identifier.
+     * @param domainOwnershipIdentifier A JSON representation of the domain ownership properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -45430,7 +45460,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param domainOwnershipIdentifierName Name of domain ownership identifier.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will delete the binding for the
      *     production slot.
-     * @param domainOwnershipIdentifier A domain specific resource identifier.
+     * @param domainOwnershipIdentifier A JSON representation of the domain ownership properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -45456,7 +45486,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param domainOwnershipIdentifierName Name of domain ownership identifier.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will delete the binding for the
      *     production slot.
-     * @param domainOwnershipIdentifier A domain specific resource identifier.
+     * @param domainOwnershipIdentifier A JSON representation of the domain ownership properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -45667,7 +45697,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param domainOwnershipIdentifierName Name of domain ownership identifier.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will delete the binding for the
      *     production slot.
-     * @param domainOwnershipIdentifier A domain specific resource identifier.
+     * @param domainOwnershipIdentifier A JSON representation of the domain ownership properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -45743,7 +45773,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param domainOwnershipIdentifierName Name of domain ownership identifier.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will delete the binding for the
      *     production slot.
-     * @param domainOwnershipIdentifier A domain specific resource identifier.
+     * @param domainOwnershipIdentifier A JSON representation of the domain ownership properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -45818,7 +45848,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param domainOwnershipIdentifierName Name of domain ownership identifier.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will delete the binding for the
      *     production slot.
-     * @param domainOwnershipIdentifier A domain specific resource identifier.
+     * @param domainOwnershipIdentifier A JSON representation of the domain ownership properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -45851,7 +45881,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param domainOwnershipIdentifierName Name of domain ownership identifier.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will delete the binding for the
      *     production slot.
-     * @param domainOwnershipIdentifier A domain specific resource identifier.
+     * @param domainOwnershipIdentifier A JSON representation of the domain ownership properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -45877,7 +45907,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param domainOwnershipIdentifierName Name of domain ownership identifier.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will delete the binding for the
      *     production slot.
-     * @param domainOwnershipIdentifier A domain specific resource identifier.
+     * @param domainOwnershipIdentifier A JSON representation of the domain ownership properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -46065,7 +46095,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -46125,7 +46155,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -46183,7 +46213,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -46210,7 +46240,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -46235,7 +46265,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -46253,7 +46283,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -46272,7 +46302,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -46292,7 +46322,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -46313,7 +46343,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -46331,7 +46361,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -47048,7 +47078,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Site name.
      * @param functionName Function name.
      * @param slot Name of the deployment slot.
-     * @param functionEnvelope Function information.
+     * @param functionEnvelope Function details.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -47118,7 +47148,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Site name.
      * @param functionName Function name.
      * @param slot Name of the deployment slot.
-     * @param functionEnvelope Function information.
+     * @param functionEnvelope Function details.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -47187,7 +47217,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Site name.
      * @param functionName Function name.
      * @param slot Name of the deployment slot.
-     * @param functionEnvelope Function information.
+     * @param functionEnvelope Function details.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -47219,7 +47249,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Site name.
      * @param functionName Function name.
      * @param slot Name of the deployment slot.
-     * @param functionEnvelope Function information.
+     * @param functionEnvelope Function details.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -47251,7 +47281,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Site name.
      * @param functionName Function name.
      * @param slot Name of the deployment slot.
-     * @param functionEnvelope Function information.
+     * @param functionEnvelope Function details.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -47275,7 +47305,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Site name.
      * @param functionName Function name.
      * @param slot Name of the deployment slot.
-     * @param functionEnvelope Function information.
+     * @param functionEnvelope Function details.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -47302,7 +47332,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Site name.
      * @param functionName Function name.
      * @param slot Name of the deployment slot.
-     * @param functionEnvelope Function information.
+     * @param functionEnvelope Function details.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -47327,7 +47357,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Site name.
      * @param functionName Function name.
      * @param slot Name of the deployment slot.
-     * @param functionEnvelope Function information.
+     * @param functionEnvelope Function details.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -47355,7 +47385,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Site name.
      * @param functionName Function name.
      * @param slot Name of the deployment slot.
-     * @param functionEnvelope Function information.
+     * @param functionEnvelope Function details.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -47378,7 +47408,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Site name.
      * @param functionName Function name.
      * @param slot Name of the deployment slot.
-     * @param functionEnvelope Function information.
+     * @param functionEnvelope Function details.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -47574,7 +47604,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param functionName The name of the function.
      * @param keyName The name of the key.
      * @param slot Name of the deployment slot.
-     * @param key Function key info.
+     * @param key The key to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -47644,7 +47674,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param functionName The name of the function.
      * @param keyName The name of the key.
      * @param slot Name of the deployment slot.
-     * @param key Function key info.
+     * @param key The key to create or update.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -47718,7 +47748,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param functionName The name of the function.
      * @param keyName The name of the key.
      * @param slot Name of the deployment slot.
-     * @param key Function key info.
+     * @param key The key to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -47747,7 +47777,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param functionName The name of the function.
      * @param keyName The name of the key.
      * @param slot Name of the deployment slot.
-     * @param key Function key info.
+     * @param key The key to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -47767,7 +47797,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param functionName The name of the function.
      * @param keyName The name of the key.
      * @param slot Name of the deployment slot.
-     * @param key Function key info.
+     * @param key The key to create or update.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -48803,7 +48833,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param keyType The type of host key.
      * @param keyName The name of the key.
      * @param slot Name of the deployment slot.
-     * @param key Function key info.
+     * @param key The key to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -48873,7 +48903,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param keyType The type of host key.
      * @param keyName The name of the key.
      * @param slot Name of the deployment slot.
-     * @param key Function key info.
+     * @param key The key to create or update.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -48947,7 +48977,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param keyType The type of host key.
      * @param keyName The name of the key.
      * @param slot Name of the deployment slot.
-     * @param key Function key info.
+     * @param key The key to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -48975,7 +49005,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param keyType The type of host key.
      * @param keyName The name of the key.
      * @param slot Name of the deployment slot.
-     * @param key Function key info.
+     * @param key The key to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -48995,7 +49025,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param keyType The type of host key.
      * @param keyName The name of the key.
      * @param slot Name of the deployment slot.
-     * @param key Function key info.
+     * @param key The key to create or update.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -49590,7 +49620,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param hostname Hostname in the hostname binding.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will create a binding for the
      *     production slot.
-     * @param hostnameBinding A hostname binding object.
+     * @param hostnameBinding Binding details. This is the JSON representation of a HostNameBinding object.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -49657,7 +49687,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param hostname Hostname in the hostname binding.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will create a binding for the
      *     production slot.
-     * @param hostnameBinding A hostname binding object.
+     * @param hostnameBinding Binding details. This is the JSON representation of a HostNameBinding object.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -49727,7 +49757,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param hostname Hostname in the hostname binding.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will create a binding for the
      *     production slot.
-     * @param hostnameBinding A hostname binding object.
+     * @param hostnameBinding Binding details. This is the JSON representation of a HostNameBinding object.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -49756,7 +49786,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param hostname Hostname in the hostname binding.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will create a binding for the
      *     production slot.
-     * @param hostnameBinding A hostname binding object.
+     * @param hostnameBinding Binding details. This is the JSON representation of a HostNameBinding object.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -49776,7 +49806,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param hostname Hostname in the hostname binding.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will create a binding for the
      *     production slot.
-     * @param hostnameBinding A hostname binding object.
+     * @param hostnameBinding Binding details. This is the JSON representation of a HostNameBinding object.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -50169,7 +50199,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param namespaceName The namespace for this hybrid connection.
      * @param relayName The relay name for this hybrid connection.
      * @param slot The name of the slot for the web app.
-     * @param connectionEnvelope Hybrid Connection contract. This is used to configure a Hybrid Connection.
+     * @param connectionEnvelope The details of the hybrid connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -50245,7 +50275,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param namespaceName The namespace for this hybrid connection.
      * @param relayName The relay name for this hybrid connection.
      * @param slot The name of the slot for the web app.
-     * @param connectionEnvelope Hybrid Connection contract. This is used to configure a Hybrid Connection.
+     * @param connectionEnvelope The details of the hybrid connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -50320,7 +50350,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param namespaceName The namespace for this hybrid connection.
      * @param relayName The relay name for this hybrid connection.
      * @param slot The name of the slot for the web app.
-     * @param connectionEnvelope Hybrid Connection contract. This is used to configure a Hybrid Connection.
+     * @param connectionEnvelope The details of the hybrid connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -50354,7 +50384,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param namespaceName The namespace for this hybrid connection.
      * @param relayName The relay name for this hybrid connection.
      * @param slot The name of the slot for the web app.
-     * @param connectionEnvelope Hybrid Connection contract. This is used to configure a Hybrid Connection.
+     * @param connectionEnvelope The details of the hybrid connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -50381,7 +50411,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param namespaceName The namespace for this hybrid connection.
      * @param relayName The relay name for this hybrid connection.
      * @param slot The name of the slot for the web app.
-     * @param connectionEnvelope Hybrid Connection contract. This is used to configure a Hybrid Connection.
+     * @param connectionEnvelope The details of the hybrid connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -50594,7 +50624,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param namespaceName The namespace for this hybrid connection.
      * @param relayName The relay name for this hybrid connection.
      * @param slot The name of the slot for the web app.
-     * @param connectionEnvelope Hybrid Connection contract. This is used to configure a Hybrid Connection.
+     * @param connectionEnvelope The details of the hybrid connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -50670,7 +50700,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param namespaceName The namespace for this hybrid connection.
      * @param relayName The relay name for this hybrid connection.
      * @param slot The name of the slot for the web app.
-     * @param connectionEnvelope Hybrid Connection contract. This is used to configure a Hybrid Connection.
+     * @param connectionEnvelope The details of the hybrid connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -50745,7 +50775,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param namespaceName The namespace for this hybrid connection.
      * @param relayName The relay name for this hybrid connection.
      * @param slot The name of the slot for the web app.
-     * @param connectionEnvelope Hybrid Connection contract. This is used to configure a Hybrid Connection.
+     * @param connectionEnvelope The details of the hybrid connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -50779,7 +50809,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param namespaceName The namespace for this hybrid connection.
      * @param relayName The relay name for this hybrid connection.
      * @param slot The name of the slot for the web app.
-     * @param connectionEnvelope Hybrid Connection contract. This is used to configure a Hybrid Connection.
+     * @param connectionEnvelope The details of the hybrid connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -50806,7 +50836,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param namespaceName The namespace for this hybrid connection.
      * @param relayName The relay name for this hybrid connection.
      * @param slot The name of the slot for the web app.
-     * @param connectionEnvelope Hybrid Connection contract. This is used to configure a Hybrid Connection.
+     * @param connectionEnvelope The details of the hybrid connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -51350,7 +51380,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param entityName Name of the hybrid connection configuration.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will create or update a hybrid
      *     connection for the production slot.
-     * @param connectionEnvelope Hybrid Connection for an App Service app.
+     * @param connectionEnvelope Details of the hybrid connection configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -51421,7 +51451,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param entityName Name of the hybrid connection configuration.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will create or update a hybrid
      *     connection for the production slot.
-     * @param connectionEnvelope Hybrid Connection for an App Service app.
+     * @param connectionEnvelope Details of the hybrid connection configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -51491,7 +51521,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param entityName Name of the hybrid connection configuration.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will create or update a hybrid
      *     connection for the production slot.
-     * @param connectionEnvelope Hybrid Connection for an App Service app.
+     * @param connectionEnvelope Details of the hybrid connection configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -51524,7 +51554,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param entityName Name of the hybrid connection configuration.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will create or update a hybrid
      *     connection for the production slot.
-     * @param connectionEnvelope Hybrid Connection for an App Service app.
+     * @param connectionEnvelope Details of the hybrid connection configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -51550,7 +51580,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param entityName Name of the hybrid connection configuration.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will create or update a hybrid
      *     connection for the production slot.
-     * @param connectionEnvelope Hybrid Connection for an App Service app.
+     * @param connectionEnvelope Details of the hybrid connection configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -51753,7 +51783,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param entityName Name of the hybrid connection configuration.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will create or update a hybrid
      *     connection for the production slot.
-     * @param connectionEnvelope Hybrid Connection for an App Service app.
+     * @param connectionEnvelope Details of the hybrid connection configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -51824,7 +51854,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param entityName Name of the hybrid connection configuration.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will create or update a hybrid
      *     connection for the production slot.
-     * @param connectionEnvelope Hybrid Connection for an App Service app.
+     * @param connectionEnvelope Details of the hybrid connection configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -51894,7 +51924,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param entityName Name of the hybrid connection configuration.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will create or update a hybrid
      *     connection for the production slot.
-     * @param connectionEnvelope Hybrid Connection for an App Service app.
+     * @param connectionEnvelope Details of the hybrid connection configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -51927,7 +51957,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param entityName Name of the hybrid connection configuration.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will create or update a hybrid
      *     connection for the production slot.
-     * @param connectionEnvelope Hybrid Connection for an App Service app.
+     * @param connectionEnvelope Details of the hybrid connection configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -51952,7 +51982,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param entityName Name of the hybrid connection configuration.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will create or update a hybrid
      *     connection for the production slot.
-     * @param connectionEnvelope Hybrid Connection for an App Service app.
+     * @param connectionEnvelope Details of the hybrid connection configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -52530,7 +52560,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
      * @param instanceId ID of web app instance.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -52595,7 +52625,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
      * @param instanceId ID of web app instance.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -52658,7 +52688,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
      * @param instanceId ID of web app instance.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -52687,7 +52717,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
      * @param instanceId ID of web app instance.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -52715,7 +52745,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
      * @param instanceId ID of web app instance.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -52735,7 +52765,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
      * @param instanceId ID of web app instance.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -52757,7 +52787,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
      * @param instanceId ID of web app instance.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -52778,7 +52808,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
      * @param instanceId ID of web app instance.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -52801,7 +52831,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
      * @param instanceId ID of web app instance.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -52820,7 +52850,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
      * @param instanceId ID of web app instance.
-     * @param mSDeploy MSDeploy ARM PUT information.
+     * @param mSDeploy Details of MSDeploy operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -55430,8 +55460,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update connections for
      *     the production slot.
-     * @param connectionEnvelope Swift Virtual Network Contract. This is used to enable the new Swift way of doing
-     *     virtual network integration.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -55495,8 +55524,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update connections for
      *     the production slot.
-     * @param connectionEnvelope Swift Virtual Network Contract. This is used to enable the new Swift way of doing
-     *     virtual network integration.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -55562,8 +55590,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update connections for
      *     the production slot.
-     * @param connectionEnvelope Swift Virtual Network Contract. This is used to enable the new Swift way of doing
-     *     virtual network integration.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -55593,8 +55620,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update connections for
      *     the production slot.
-     * @param connectionEnvelope Swift Virtual Network Contract. This is used to enable the new Swift way of doing
-     *     virtual network integration.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -55616,8 +55642,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update connections for
      *     the production slot.
-     * @param connectionEnvelope Swift Virtual Network Contract. This is used to enable the new Swift way of doing
-     *     virtual network integration.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -55804,8 +55829,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update connections for
      *     the production slot.
-     * @param connectionEnvelope Swift Virtual Network Contract. This is used to enable the new Swift way of doing
-     *     virtual network integration.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -55869,8 +55893,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update connections for
      *     the production slot.
-     * @param connectionEnvelope Swift Virtual Network Contract. This is used to enable the new Swift way of doing
-     *     virtual network integration.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -55936,8 +55959,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update connections for
      *     the production slot.
-     * @param connectionEnvelope Swift Virtual Network Contract. This is used to enable the new Swift way of doing
-     *     virtual network integration.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -55967,8 +55989,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update connections for
      *     the production slot.
-     * @param connectionEnvelope Swift Virtual Network Contract. This is used to enable the new Swift way of doing
-     *     virtual network integration.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -55989,8 +56010,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update connections for
      *     the production slot.
-     * @param connectionEnvelope Swift Virtual Network Contract. This is used to enable the new Swift way of doing
-     *     virtual network integration.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -58633,7 +58653,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param premierAddOnName Add-on name.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the named add-on for the
      *     production slot.
-     * @param premierAddOn Premier add-on.
+     * @param premierAddOn A JSON representation of the edited premier add-on.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -58700,7 +58720,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param premierAddOnName Add-on name.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the named add-on for the
      *     production slot.
-     * @param premierAddOn Premier add-on.
+     * @param premierAddOn A JSON representation of the edited premier add-on.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -58770,7 +58790,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param premierAddOnName Add-on name.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the named add-on for the
      *     production slot.
-     * @param premierAddOn Premier add-on.
+     * @param premierAddOn A JSON representation of the edited premier add-on.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -58798,7 +58818,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param premierAddOnName Add-on name.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the named add-on for the
      *     production slot.
-     * @param premierAddOn Premier add-on.
+     * @param premierAddOn A JSON representation of the edited premier add-on.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -58818,7 +58838,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param premierAddOnName Add-on name.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the named add-on for the
      *     production slot.
-     * @param premierAddOn Premier add-on.
+     * @param premierAddOn A JSON representation of the edited premier add-on.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -59022,7 +59042,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param premierAddOnName Add-on name.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the named add-on for the
      *     production slot.
-     * @param premierAddOn ARM resource for a PremierAddOn.
+     * @param premierAddOn A JSON representation of the edited premier add-on.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -59093,7 +59113,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param premierAddOnName Add-on name.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the named add-on for the
      *     production slot.
-     * @param premierAddOn ARM resource for a PremierAddOn.
+     * @param premierAddOn A JSON representation of the edited premier add-on.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -59163,7 +59183,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param premierAddOnName Add-on name.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the named add-on for the
      *     production slot.
-     * @param premierAddOn ARM resource for a PremierAddOn.
+     * @param premierAddOn A JSON representation of the edited premier add-on.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -59195,7 +59215,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param premierAddOnName Add-on name.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the named add-on for the
      *     production slot.
-     * @param premierAddOn ARM resource for a PremierAddOn.
+     * @param premierAddOn A JSON representation of the edited premier add-on.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -59219,7 +59239,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param premierAddOnName Add-on name.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the named add-on for the
      *     production slot.
-     * @param premierAddOn ARM resource for a PremierAddOn.
+     * @param premierAddOn A JSON representation of the edited premier add-on.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -59413,7 +59433,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
      * @param slot The name of the slot for the web app.
-     * @param access Description of the parameters of Private Access for a Web Site.
+     * @param access The information for the private access.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -59474,7 +59494,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
      * @param slot The name of the slot for the web app.
-     * @param access Description of the parameters of Private Access for a Web Site.
+     * @param access The information for the private access.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -59533,7 +59553,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
      * @param slot The name of the slot for the web app.
-     * @param access Description of the parameters of Private Access for a Web Site.
+     * @param access The information for the private access.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -59560,7 +59580,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
      * @param slot The name of the slot for the web app.
-     * @param access Description of the parameters of Private Access for a Web Site.
+     * @param access The information for the private access.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -59579,7 +59599,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name The name of the web app.
      * @param slot The name of the slot for the web app.
-     * @param access Description of the parameters of Private Access for a Web Site.
+     * @param access The information for the private access.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -62311,7 +62331,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param publicCertificateName Public certificate name.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will create a binding for the
      *     production slot.
-     * @param publicCertificate Public certificate object.
+     * @param publicCertificate Public certificate details. This is the JSON representation of a PublicCertificate
+     *     object.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -62383,7 +62404,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param publicCertificateName Public certificate name.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will create a binding for the
      *     production slot.
-     * @param publicCertificate Public certificate object.
+     * @param publicCertificate Public certificate details. This is the JSON representation of a PublicCertificate
+     *     object.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -62454,7 +62476,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param publicCertificateName Public certificate name.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will create a binding for the
      *     production slot.
-     * @param publicCertificate Public certificate object.
+     * @param publicCertificate Public certificate details. This is the JSON representation of a PublicCertificate
+     *     object.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -62487,7 +62510,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param publicCertificateName Public certificate name.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will create a binding for the
      *     production slot.
-     * @param publicCertificate Public certificate object.
+     * @param publicCertificate Public certificate details. This is the JSON representation of a PublicCertificate
+     *     object.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -62513,7 +62537,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param publicCertificateName Public certificate name.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will create a binding for the
      *     production slot.
-     * @param publicCertificate Public certificate object.
+     * @param publicCertificate Public certificate details. This is the JSON representation of a PublicCertificate
+     *     object.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -62718,7 +62743,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will get the publishing profile for
      *     the production slot.
-     * @param publishingProfileOptions Publishing options for requested profile.
+     * @param publishingProfileOptions Specifies publishingProfileOptions for publishing profile. For example, use
+     *     {"format": "FileZilla3"} to get a FileZilla publishing profile.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -62781,7 +62807,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will get the publishing profile for
      *     the production slot.
-     * @param publishingProfileOptions Publishing options for requested profile.
+     * @param publishingProfileOptions Specifies publishingProfileOptions for publishing profile. For example, use
+     *     {"format": "FileZilla3"} to get a FileZilla publishing profile.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -62846,7 +62873,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will get the publishing profile for
      *     the production slot.
-     * @param publishingProfileOptions Publishing options for requested profile.
+     * @param publishingProfileOptions Specifies publishingProfileOptions for publishing profile. For example, use
+     *     {"format": "FileZilla3"} to get a FileZilla publishing profile.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -62867,7 +62895,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will get the publishing profile for
      *     the production slot.
-     * @param publishingProfileOptions Publishing options for requested profile.
+     * @param publishingProfileOptions Specifies publishingProfileOptions for publishing profile. For example, use
+     *     {"format": "FileZilla3"} to get a FileZilla publishing profile.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -62903,7 +62932,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will get the publishing profile for
      *     the production slot.
-     * @param publishingProfileOptions Publishing options for requested profile.
+     * @param publishingProfileOptions Specifies publishingProfileOptions for publishing profile. For example, use
+     *     {"format": "FileZilla3"} to get a FileZilla publishing profile.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -63289,7 +63319,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will restore a backup of the
      *     production slot.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -63350,7 +63380,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will restore a backup of the
      *     production slot.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -63409,7 +63439,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will restore a backup of the
      *     production slot.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -63432,7 +63462,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will restore a backup of the
      *     production slot.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -63457,7 +63487,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will restore a backup of the
      *     production slot.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -63476,7 +63506,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will restore a backup of the
      *     production slot.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -63496,7 +63526,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will restore a backup of the
      *     production slot.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -63517,7 +63547,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will restore a backup of the
      *     production slot.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -63539,7 +63569,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will restore a backup of the
      *     production slot.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -63557,7 +63587,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will restore a backup of the
      *     production slot.
-     * @param request Description of a restore request.
+     * @param request Information on restore request .
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -63575,7 +63605,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param restoreRequest Details about restoring a deleted app.
+     * @param restoreRequest Deleted web app restore information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -63635,7 +63665,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param restoreRequest Details about restoring a deleted app.
+     * @param restoreRequest Deleted web app restore information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -63693,7 +63723,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param restoreRequest Details about restoring a deleted app.
+     * @param restoreRequest Deleted web app restore information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -63715,7 +63745,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param restoreRequest Details about restoring a deleted app.
+     * @param restoreRequest Deleted web app restore information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -63739,7 +63769,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param restoreRequest Details about restoring a deleted app.
+     * @param restoreRequest Deleted web app restore information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -63757,7 +63787,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param restoreRequest Details about restoring a deleted app.
+     * @param restoreRequest Deleted web app restore information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -63777,7 +63807,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param restoreRequest Details about restoring a deleted app.
+     * @param restoreRequest Deleted web app restore information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -63797,7 +63827,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param restoreRequest Details about restoring a deleted app.
+     * @param restoreRequest Deleted web app restore information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -63818,7 +63848,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param restoreRequest Details about restoring a deleted app.
+     * @param restoreRequest Deleted web app restore information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -63835,7 +63865,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param restoreRequest Details about restoring a deleted app.
+     * @param restoreRequest Deleted web app restore information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -63853,7 +63883,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param restoreRequest Details about app recovery operation.
+     * @param restoreRequest Snapshot restore settings. Snapshot information can be obtained by calling GetDeletedSites
+     *     or GetSiteSnapshots API.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -63913,7 +63944,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param restoreRequest Details about app recovery operation.
+     * @param restoreRequest Snapshot restore settings. Snapshot information can be obtained by calling GetDeletedSites
+     *     or GetSiteSnapshots API.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -63971,7 +64003,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param restoreRequest Details about app recovery operation.
+     * @param restoreRequest Snapshot restore settings. Snapshot information can be obtained by calling GetDeletedSites
+     *     or GetSiteSnapshots API.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -63993,7 +64026,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param restoreRequest Details about app recovery operation.
+     * @param restoreRequest Snapshot restore settings. Snapshot information can be obtained by calling GetDeletedSites
+     *     or GetSiteSnapshots API.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -64017,7 +64051,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param restoreRequest Details about app recovery operation.
+     * @param restoreRequest Snapshot restore settings. Snapshot information can be obtained by calling GetDeletedSites
+     *     or GetSiteSnapshots API.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -64035,7 +64070,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param restoreRequest Details about app recovery operation.
+     * @param restoreRequest Snapshot restore settings. Snapshot information can be obtained by calling GetDeletedSites
+     *     or GetSiteSnapshots API.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -64054,7 +64090,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param restoreRequest Details about app recovery operation.
+     * @param restoreRequest Snapshot restore settings. Snapshot information can be obtained by calling GetDeletedSites
+     *     or GetSiteSnapshots API.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -64074,7 +64111,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param restoreRequest Details about app recovery operation.
+     * @param restoreRequest Snapshot restore settings. Snapshot information can be obtained by calling GetDeletedSites
+     *     or GetSiteSnapshots API.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -64095,7 +64133,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param restoreRequest Details about app recovery operation.
+     * @param restoreRequest Snapshot restore settings. Snapshot information can be obtained by calling GetDeletedSites
+     *     or GetSiteSnapshots API.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -64112,7 +64151,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of web app.
      * @param slot Name of web app slot. If not specified then will default to production slot.
-     * @param restoreRequest Details about app recovery operation.
+     * @param restoreRequest Snapshot restore settings. Snapshot information can be obtained by calling GetDeletedSites
+     *     or GetSiteSnapshots API.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -64969,7 +65009,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param copySlotEntity Copy deployment slot parameters.
+     * @param copySlotEntity JSON object that contains the target slot name and site config properties to override the
+     *     source slot config. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -65029,7 +65070,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param copySlotEntity Copy deployment slot parameters.
+     * @param copySlotEntity JSON object that contains the target slot name and site config properties to override the
+     *     source slot config. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -65087,7 +65129,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param copySlotEntity Copy deployment slot parameters.
+     * @param copySlotEntity JSON object that contains the target slot name and site config properties to override the
+     *     source slot config. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -65109,7 +65152,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param copySlotEntity Copy deployment slot parameters.
+     * @param copySlotEntity JSON object that contains the target slot name and site config properties to override the
+     *     source slot config. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -65133,7 +65177,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param copySlotEntity Copy deployment slot parameters.
+     * @param copySlotEntity JSON object that contains the target slot name and site config properties to override the
+     *     source slot config. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -65151,7 +65196,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param copySlotEntity Copy deployment slot parameters.
+     * @param copySlotEntity JSON object that contains the target slot name and site config properties to override the
+     *     source slot config. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -65170,7 +65216,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param copySlotEntity Copy deployment slot parameters.
+     * @param copySlotEntity JSON object that contains the target slot name and site config properties to override the
+     *     source slot config. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -65190,7 +65237,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param copySlotEntity Copy deployment slot parameters.
+     * @param copySlotEntity JSON object that contains the target slot name and site config properties to override the
+     *     source slot config. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -65211,7 +65259,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param copySlotEntity Copy deployment slot parameters.
+     * @param copySlotEntity JSON object that contains the target slot name and site config properties to override the
+     *     source slot config. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -65227,7 +65276,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param copySlotEntity Copy deployment slot parameters.
+     * @param copySlotEntity JSON object that contains the target slot name and site config properties to override the
+     *     source slot config. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -65245,7 +65295,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -65314,7 +65364,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -65381,7 +65431,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -65401,7 +65451,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -65422,7 +65472,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -65440,7 +65490,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -65460,7 +65510,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -65520,7 +65570,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -65578,7 +65628,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -65600,7 +65650,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -65624,7 +65674,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -65642,7 +65692,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -65661,7 +65711,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -65680,7 +65730,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -65701,7 +65751,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -65717,7 +65767,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -66293,7 +66343,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the source control
      *     configuration for the production slot.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -66355,7 +66405,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the source control
      *     configuration for the production slot.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -66415,7 +66465,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the source control
      *     configuration for the production slot.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -66444,7 +66494,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the source control
      *     configuration for the production slot.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -66479,7 +66529,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the source control
      *     configuration for the production slot.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -66499,7 +66549,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the source control
      *     configuration for the production slot.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -66520,7 +66570,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the source control
      *     configuration for the production slot.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -66541,7 +66591,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the source control
      *     configuration for the production slot.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -66563,7 +66613,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the source control
      *     configuration for the production slot.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -66582,7 +66632,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the source control
      *     configuration for the production slot.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -66761,7 +66811,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the source control
      *     configuration for the production slot.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -66823,7 +66873,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the source control
      *     configuration for the production slot.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -66883,7 +66933,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the source control
      *     configuration for the production slot.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -66910,7 +66960,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the source control
      *     configuration for the production slot.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -66929,7 +66979,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will update the source control
      *     configuration for the production slot.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -69824,7 +69874,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param vnetName Name of an existing Virtual Network.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update connections for
      *     the production slot.
-     * @param connectionEnvelope Virtual Network information contract.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -69892,7 +69942,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param vnetName Name of an existing Virtual Network.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update connections for
      *     the production slot.
-     * @param connectionEnvelope Virtual Network information contract.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -69963,7 +70013,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param vnetName Name of an existing Virtual Network.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update connections for
      *     the production slot.
-     * @param connectionEnvelope Virtual Network information contract.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -69993,7 +70043,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param vnetName Name of an existing Virtual Network.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update connections for
      *     the production slot.
-     * @param connectionEnvelope Virtual Network information contract.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -70015,7 +70065,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param vnetName Name of an existing Virtual Network.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update connections for
      *     the production slot.
-     * @param connectionEnvelope Virtual Network information contract.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -70217,7 +70267,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param vnetName Name of an existing Virtual Network.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update connections for
      *     the production slot.
-     * @param connectionEnvelope Virtual Network information contract.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -70285,7 +70335,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param vnetName Name of an existing Virtual Network.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update connections for
      *     the production slot.
-     * @param connectionEnvelope Virtual Network information contract.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -70356,7 +70406,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param vnetName Name of an existing Virtual Network.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update connections for
      *     the production slot.
-     * @param connectionEnvelope Virtual Network information contract.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -70385,7 +70435,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param vnetName Name of an existing Virtual Network.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update connections for
      *     the production slot.
-     * @param connectionEnvelope Virtual Network information contract.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -70406,7 +70456,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param vnetName Name of an existing Virtual Network.
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update connections for
      *     the production slot.
-     * @param connectionEnvelope Virtual Network information contract.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -70632,8 +70682,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param gatewayName Name of the gateway. Currently, the only supported string is "primary".
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update a gateway for the
      *     production slot's Virtual Network.
-     * @param connectionEnvelope The Virtual Network gateway contract. This is used to give the Virtual Network gateway
-     *     access to the VPN package.
+     * @param connectionEnvelope The properties to update this gateway with.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -70710,8 +70759,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param gatewayName Name of the gateway. Currently, the only supported string is "primary".
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update a gateway for the
      *     production slot's Virtual Network.
-     * @param connectionEnvelope The Virtual Network gateway contract. This is used to give the Virtual Network gateway
-     *     access to the VPN package.
+     * @param connectionEnvelope The properties to update this gateway with.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -70787,8 +70835,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param gatewayName Name of the gateway. Currently, the only supported string is "primary".
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update a gateway for the
      *     production slot's Virtual Network.
-     * @param connectionEnvelope The Virtual Network gateway contract. This is used to give the Virtual Network gateway
-     *     access to the VPN package.
+     * @param connectionEnvelope The properties to update this gateway with.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -70823,8 +70870,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param gatewayName Name of the gateway. Currently, the only supported string is "primary".
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update a gateway for the
      *     production slot's Virtual Network.
-     * @param connectionEnvelope The Virtual Network gateway contract. This is used to give the Virtual Network gateway
-     *     access to the VPN package.
+     * @param connectionEnvelope The properties to update this gateway with.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -70852,8 +70898,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param gatewayName Name of the gateway. Currently, the only supported string is "primary".
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update a gateway for the
      *     production slot's Virtual Network.
-     * @param connectionEnvelope The Virtual Network gateway contract. This is used to give the Virtual Network gateway
-     *     access to the VPN package.
+     * @param connectionEnvelope The properties to update this gateway with.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -70883,8 +70928,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param gatewayName Name of the gateway. Currently, the only supported string is "primary".
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update a gateway for the
      *     production slot's Virtual Network.
-     * @param connectionEnvelope The Virtual Network gateway contract. This is used to give the Virtual Network gateway
-     *     access to the VPN package.
+     * @param connectionEnvelope The properties to update this gateway with.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -70961,8 +71005,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param gatewayName Name of the gateway. Currently, the only supported string is "primary".
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update a gateway for the
      *     production slot's Virtual Network.
-     * @param connectionEnvelope The Virtual Network gateway contract. This is used to give the Virtual Network gateway
-     *     access to the VPN package.
+     * @param connectionEnvelope The properties to update this gateway with.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -71038,8 +71081,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param gatewayName Name of the gateway. Currently, the only supported string is "primary".
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update a gateway for the
      *     production slot's Virtual Network.
-     * @param connectionEnvelope The Virtual Network gateway contract. This is used to give the Virtual Network gateway
-     *     access to the VPN package.
+     * @param connectionEnvelope The properties to update this gateway with.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -71074,8 +71116,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param gatewayName Name of the gateway. Currently, the only supported string is "primary".
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update a gateway for the
      *     production slot's Virtual Network.
-     * @param connectionEnvelope The Virtual Network gateway contract. This is used to give the Virtual Network gateway
-     *     access to the VPN package.
+     * @param connectionEnvelope The properties to update this gateway with.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -71103,8 +71144,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param gatewayName Name of the gateway. Currently, the only supported string is "primary".
      * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update a gateway for the
      *     production slot's Virtual Network.
-     * @param connectionEnvelope The Virtual Network gateway contract. This is used to give the Virtual Network gateway
-     *     access to the VPN package.
+     * @param connectionEnvelope The properties to update this gateway with.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -71511,7 +71551,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -71575,7 +71615,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -71637,7 +71677,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -71656,7 +71696,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -71676,7 +71716,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -71693,7 +71733,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -71712,7 +71752,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -71767,7 +71807,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -71820,7 +71860,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -71841,7 +71881,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -71864,7 +71904,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -71881,7 +71921,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -71899,7 +71939,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -71918,7 +71958,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -71938,7 +71978,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -71953,7 +71993,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param slotSwapEntity Deployment slot parameters.
+     * @param slotSwapEntity JSON object that contains the target slot name. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -72476,7 +72516,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -72532,7 +72572,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -72586,7 +72626,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -72613,7 +72653,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -72642,7 +72682,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -72659,7 +72699,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -72678,7 +72718,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -72697,7 +72737,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -72717,7 +72757,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -72734,7 +72774,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -72891,7 +72931,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -72947,7 +72987,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -73001,7 +73041,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -73026,7 +73066,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -73043,7 +73083,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param siteSourceControl Source control configuration for an app.
+     * @param siteSourceControl JSON representation of a SiteSourceControl object. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -75646,7 +75686,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param vnetName Name of an existing Virtual Network.
-     * @param connectionEnvelope Virtual Network information contract.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -75708,7 +75748,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param vnetName Name of an existing Virtual Network.
-     * @param connectionEnvelope Virtual Network information contract.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -75768,7 +75808,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param vnetName Name of an existing Virtual Network.
-     * @param connectionEnvelope Virtual Network information contract.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -75795,7 +75835,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param vnetName Name of an existing Virtual Network.
-     * @param connectionEnvelope Virtual Network information contract.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -75814,7 +75854,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param vnetName Name of an existing Virtual Network.
-     * @param connectionEnvelope Virtual Network information contract.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -75990,7 +76030,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param vnetName Name of an existing Virtual Network.
-     * @param connectionEnvelope Virtual Network information contract.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -76052,7 +76092,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param vnetName Name of an existing Virtual Network.
-     * @param connectionEnvelope Virtual Network information contract.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -76112,7 +76152,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param vnetName Name of an existing Virtual Network.
-     * @param connectionEnvelope Virtual Network information contract.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -76139,7 +76179,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param vnetName Name of an existing Virtual Network.
-     * @param connectionEnvelope Virtual Network information contract.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -76158,7 +76198,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param vnetName Name of an existing Virtual Network.
-     * @param connectionEnvelope Virtual Network information contract.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -76357,8 +76397,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param vnetName Name of the Virtual Network.
      * @param gatewayName Name of the gateway. Currently, the only supported string is "primary".
-     * @param connectionEnvelope The Virtual Network gateway contract. This is used to give the Virtual Network gateway
-     *     access to the VPN package.
+     * @param connectionEnvelope The properties to update this gateway with.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -76428,8 +76467,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param vnetName Name of the Virtual Network.
      * @param gatewayName Name of the gateway. Currently, the only supported string is "primary".
-     * @param connectionEnvelope The Virtual Network gateway contract. This is used to give the Virtual Network gateway
-     *     access to the VPN package.
+     * @param connectionEnvelope The properties to update this gateway with.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -76498,8 +76536,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param vnetName Name of the Virtual Network.
      * @param gatewayName Name of the gateway. Currently, the only supported string is "primary".
-     * @param connectionEnvelope The Virtual Network gateway contract. This is used to give the Virtual Network gateway
-     *     access to the VPN package.
+     * @param connectionEnvelope The properties to update this gateway with.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -76531,8 +76568,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param vnetName Name of the Virtual Network.
      * @param gatewayName Name of the gateway. Currently, the only supported string is "primary".
-     * @param connectionEnvelope The Virtual Network gateway contract. This is used to give the Virtual Network gateway
-     *     access to the VPN package.
+     * @param connectionEnvelope The properties to update this gateway with.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -76557,8 +76593,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param vnetName Name of the Virtual Network.
      * @param gatewayName Name of the gateway. Currently, the only supported string is "primary".
-     * @param connectionEnvelope The Virtual Network gateway contract. This is used to give the Virtual Network gateway
-     *     access to the VPN package.
+     * @param connectionEnvelope The properties to update this gateway with.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -76585,8 +76620,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param vnetName Name of the Virtual Network.
      * @param gatewayName Name of the gateway. Currently, the only supported string is "primary".
-     * @param connectionEnvelope The Virtual Network gateway contract. This is used to give the Virtual Network gateway
-     *     access to the VPN package.
+     * @param connectionEnvelope The properties to update this gateway with.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -76656,8 +76690,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param vnetName Name of the Virtual Network.
      * @param gatewayName Name of the gateway. Currently, the only supported string is "primary".
-     * @param connectionEnvelope The Virtual Network gateway contract. This is used to give the Virtual Network gateway
-     *     access to the VPN package.
+     * @param connectionEnvelope The properties to update this gateway with.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -76726,8 +76759,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param vnetName Name of the Virtual Network.
      * @param gatewayName Name of the gateway. Currently, the only supported string is "primary".
-     * @param connectionEnvelope The Virtual Network gateway contract. This is used to give the Virtual Network gateway
-     *     access to the VPN package.
+     * @param connectionEnvelope The properties to update this gateway with.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -76759,8 +76791,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param vnetName Name of the Virtual Network.
      * @param gatewayName Name of the gateway. Currently, the only supported string is "primary".
-     * @param connectionEnvelope The Virtual Network gateway contract. This is used to give the Virtual Network gateway
-     *     access to the VPN package.
+     * @param connectionEnvelope The properties to update this gateway with.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -76784,8 +76815,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @param name Name of the app.
      * @param vnetName Name of the Virtual Network.
      * @param gatewayName Name of the gateway. Currently, the only supported string is "primary".
-     * @param connectionEnvelope The Virtual Network gateway contract. This is used to give the Virtual Network gateway
-     *     access to the VPN package.
+     * @param connectionEnvelope The properties to update this gateway with.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.

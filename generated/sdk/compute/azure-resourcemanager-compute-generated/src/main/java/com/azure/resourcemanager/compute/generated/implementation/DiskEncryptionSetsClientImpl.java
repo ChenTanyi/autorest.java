@@ -210,7 +210,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
      *     after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The
      *     maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set resource.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set
+     *     operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -270,7 +271,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
      *     after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The
      *     maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set resource.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set
+     *     operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -331,7 +333,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
      *     after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The
      *     maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set resource.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set
+     *     operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -359,7 +362,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
      *     after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The
      *     maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set resource.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set
+     *     operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -392,7 +396,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
      *     after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The
      *     maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set resource.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set
+     *     operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -411,7 +416,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
      *     after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The
      *     maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set resource.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set
+     *     operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -435,7 +441,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
      *     after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The
      *     maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set resource.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set
+     *     operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -456,7 +463,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
      *     after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The
      *     maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set resource.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set
+     *     operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -481,7 +489,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
      *     after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The
      *     maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set resource.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set
+     *     operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -500,7 +509,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
      *     after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The
      *     maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set resource.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Put disk encryption set
+     *     operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -523,7 +533,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
      *     after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The
      *     maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set update resource.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set
+     *     operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -583,7 +594,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
      *     after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The
      *     maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set update resource.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set
+     *     operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -644,7 +656,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
      *     after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The
      *     maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set update resource.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set
+     *     operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -672,7 +685,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
      *     after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The
      *     maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set update resource.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set
+     *     operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -705,7 +719,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
      *     after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The
      *     maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set update resource.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set
+     *     operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -724,7 +739,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
      *     after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The
      *     maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set update resource.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set
+     *     operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -747,7 +763,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
      *     after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The
      *     maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set update resource.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set
+     *     operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -768,7 +785,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
      *     after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The
      *     maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set update resource.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set
+     *     operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -793,7 +811,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
      *     after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The
      *     maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set update resource.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set
+     *     operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -812,7 +831,8 @@ public final class DiskEncryptionSetsClientImpl implements DiskEncryptionSetsCli
      * @param diskEncryptionSetName The name of the disk encryption set that is being created. The name can't be changed
      *     after the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The
      *     maximum name length is 80 characters.
-     * @param diskEncryptionSet disk encryption set update resource.
+     * @param diskEncryptionSet disk encryption set object supplied in the body of the Patch disk encryption set
+     *     operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.

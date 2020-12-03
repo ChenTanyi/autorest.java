@@ -109,7 +109,7 @@ public interface ActionGroups {
      *
      * @param resourceGroupName The name of the resource group.
      * @param actionGroupName The name of the action group.
-     * @param enableRequest Describes a receiver that should be resubscribed.
+     * @param enableRequest The receiver to re-enable.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -122,7 +122,7 @@ public interface ActionGroups {
      *
      * @param resourceGroupName The name of the resource group.
      * @param actionGroupName The name of the action group.
-     * @param enableRequest Describes a receiver that should be resubscribed.
+     * @param enableRequest The receiver to re-enable.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

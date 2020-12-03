@@ -510,7 +510,7 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine where the run command should be created or updated.
      * @param runCommandName The name of the virtual machine run command.
-     * @param runCommand Describes a Virtual Machine run command.
+     * @param runCommand Parameters supplied to the Create Virtual Machine RunCommand operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -571,7 +571,7 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine where the run command should be created or updated.
      * @param runCommandName The name of the virtual machine run command.
-     * @param runCommand Describes a Virtual Machine run command.
+     * @param runCommand Parameters supplied to the Create Virtual Machine RunCommand operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -634,7 +634,7 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine where the run command should be created or updated.
      * @param runCommandName The name of the virtual machine run command.
-     * @param runCommand Describes a Virtual Machine run command.
+     * @param runCommand Parameters supplied to the Create Virtual Machine RunCommand operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -662,7 +662,7 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine where the run command should be created or updated.
      * @param runCommandName The name of the virtual machine run command.
-     * @param runCommand Describes a Virtual Machine run command.
+     * @param runCommand Parameters supplied to the Create Virtual Machine RunCommand operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -696,7 +696,7 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine where the run command should be created or updated.
      * @param runCommandName The name of the virtual machine run command.
-     * @param runCommand Describes a Virtual Machine run command.
+     * @param runCommand Parameters supplied to the Create Virtual Machine RunCommand operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -714,7 +714,7 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine where the run command should be created or updated.
      * @param runCommandName The name of the virtual machine run command.
-     * @param runCommand Describes a Virtual Machine run command.
+     * @param runCommand Parameters supplied to the Create Virtual Machine RunCommand operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -737,7 +737,7 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine where the run command should be created or updated.
      * @param runCommandName The name of the virtual machine run command.
-     * @param runCommand Describes a Virtual Machine run command.
+     * @param runCommand Parameters supplied to the Create Virtual Machine RunCommand operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -757,7 +757,7 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine where the run command should be created or updated.
      * @param runCommandName The name of the virtual machine run command.
-     * @param runCommand Describes a Virtual Machine run command.
+     * @param runCommand Parameters supplied to the Create Virtual Machine RunCommand operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -782,7 +782,7 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine where the run command should be created or updated.
      * @param runCommandName The name of the virtual machine run command.
-     * @param runCommand Describes a Virtual Machine run command.
+     * @param runCommand Parameters supplied to the Create Virtual Machine RunCommand operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -800,7 +800,7 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine where the run command should be created or updated.
      * @param runCommandName The name of the virtual machine run command.
-     * @param runCommand Describes a Virtual Machine run command.
+     * @param runCommand Parameters supplied to the Create Virtual Machine RunCommand operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -823,7 +823,7 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine where the run command should be updated.
      * @param runCommandName The name of the virtual machine run command.
-     * @param runCommand Describes a Virtual Machine run command.
+     * @param runCommand Parameters supplied to the Update Virtual Machine RunCommand operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -884,7 +884,7 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine where the run command should be updated.
      * @param runCommandName The name of the virtual machine run command.
-     * @param runCommand Describes a Virtual Machine run command.
+     * @param runCommand Parameters supplied to the Update Virtual Machine RunCommand operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -947,7 +947,7 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine where the run command should be updated.
      * @param runCommandName The name of the virtual machine run command.
-     * @param runCommand Describes a Virtual Machine run command.
+     * @param runCommand Parameters supplied to the Update Virtual Machine RunCommand operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -974,7 +974,7 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine where the run command should be updated.
      * @param runCommandName The name of the virtual machine run command.
-     * @param runCommand Describes a Virtual Machine run command.
+     * @param runCommand Parameters supplied to the Update Virtual Machine RunCommand operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1007,7 +1007,7 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine where the run command should be updated.
      * @param runCommandName The name of the virtual machine run command.
-     * @param runCommand Describes a Virtual Machine run command.
+     * @param runCommand Parameters supplied to the Update Virtual Machine RunCommand operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1025,7 +1025,7 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine where the run command should be updated.
      * @param runCommandName The name of the virtual machine run command.
-     * @param runCommand Describes a Virtual Machine run command.
+     * @param runCommand Parameters supplied to the Update Virtual Machine RunCommand operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1048,7 +1048,7 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine where the run command should be updated.
      * @param runCommandName The name of the virtual machine run command.
-     * @param runCommand Describes a Virtual Machine run command.
+     * @param runCommand Parameters supplied to the Update Virtual Machine RunCommand operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1068,7 +1068,7 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine where the run command should be updated.
      * @param runCommandName The name of the virtual machine run command.
-     * @param runCommand Describes a Virtual Machine run command.
+     * @param runCommand Parameters supplied to the Update Virtual Machine RunCommand operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1093,7 +1093,7 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine where the run command should be updated.
      * @param runCommandName The name of the virtual machine run command.
-     * @param runCommand Describes a Virtual Machine run command.
+     * @param runCommand Parameters supplied to the Update Virtual Machine RunCommand operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1111,7 +1111,7 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine where the run command should be updated.
      * @param runCommandName The name of the virtual machine run command.
-     * @param runCommand Describes a Virtual Machine run command.
+     * @param runCommand Parameters supplied to the Update Virtual Machine RunCommand operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.

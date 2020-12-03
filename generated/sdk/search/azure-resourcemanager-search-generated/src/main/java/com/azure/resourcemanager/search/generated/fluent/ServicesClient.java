@@ -30,7 +30,7 @@ public interface ServicesClient {
      *     characters, cannot contain consecutive dashes, and must be between 2 and 60 characters in length. Search
      *     service names must be globally unique since they are part of the service URI
      *     (https://&lt;name&gt;.search.windows.net). You cannot change the service name after the service is created.
-     * @param serviceParam Describes an Azure Cognitive Search service and its current state.
+     * @param serviceParam The definition of the search service to create or update.
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -53,7 +53,7 @@ public interface ServicesClient {
      *     characters, cannot contain consecutive dashes, and must be between 2 and 60 characters in length. Search
      *     service names must be globally unique since they are part of the service URI
      *     (https://&lt;name&gt;.search.windows.net). You cannot change the service name after the service is created.
-     * @param serviceParam Describes an Azure Cognitive Search service and its current state.
+     * @param serviceParam The definition of the search service to create or update.
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
      * @param context The context to associate with this operation.
@@ -81,7 +81,7 @@ public interface ServicesClient {
      *     characters, cannot contain consecutive dashes, and must be between 2 and 60 characters in length. Search
      *     service names must be globally unique since they are part of the service URI
      *     (https://&lt;name&gt;.search.windows.net). You cannot change the service name after the service is created.
-     * @param serviceParam Describes an Azure Cognitive Search service and its current state.
+     * @param serviceParam The definition of the search service to create or update.
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -104,7 +104,7 @@ public interface ServicesClient {
      *     characters, cannot contain consecutive dashes, and must be between 2 and 60 characters in length. Search
      *     service names must be globally unique since they are part of the service URI
      *     (https://&lt;name&gt;.search.windows.net). You cannot change the service name after the service is created.
-     * @param serviceParam Describes an Azure Cognitive Search service and its current state.
+     * @param serviceParam The definition of the search service to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -125,7 +125,7 @@ public interface ServicesClient {
      *     characters, cannot contain consecutive dashes, and must be between 2 and 60 characters in length. Search
      *     service names must be globally unique since they are part of the service URI
      *     (https://&lt;name&gt;.search.windows.net). You cannot change the service name after the service is created.
-     * @param serviceParam Describes an Azure Cognitive Search service and its current state.
+     * @param serviceParam The definition of the search service to create or update.
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
      * @param context The context to associate with this operation.
@@ -148,7 +148,7 @@ public interface ServicesClient {
      * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
      *     value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure Cognitive Search service to update.
-     * @param serviceParam The parameters used to update an Azure Cognitive Search service.
+     * @param serviceParam The definition of the search service to update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -163,7 +163,7 @@ public interface ServicesClient {
      * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
      *     value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure Cognitive Search service to update.
-     * @param serviceParam The parameters used to update an Azure Cognitive Search service.
+     * @param serviceParam The definition of the search service to update.
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
      * @param context The context to associate with this operation.
@@ -305,7 +305,7 @@ public interface ServicesClient {
      * Checks whether or not the given search service name is available for use. Search service names must be globally
      * unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net).
      *
-     * @param checkNameAvailabilityInput Input of check name availability API.
+     * @param checkNameAvailabilityInput The resource name and type to check.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -318,7 +318,7 @@ public interface ServicesClient {
      * Checks whether or not the given search service name is available for use. Search service names must be globally
      * unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net).
      *
-     * @param checkNameAvailabilityInput Input of check name availability API.
+     * @param checkNameAvailabilityInput The resource name and type to check.
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      *     included in response information as a way to track the request.
      * @param context The context to associate with this operation.

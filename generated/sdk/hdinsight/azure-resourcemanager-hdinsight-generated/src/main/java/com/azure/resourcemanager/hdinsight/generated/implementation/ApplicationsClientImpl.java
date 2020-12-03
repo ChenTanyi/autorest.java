@@ -492,7 +492,7 @@ public final class ApplicationsClientImpl implements ApplicationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param applicationName The constant value for the application name.
-     * @param parameters The HDInsight cluster application.
+     * @param parameters The application create request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -553,7 +553,7 @@ public final class ApplicationsClientImpl implements ApplicationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param applicationName The constant value for the application name.
-     * @param parameters The HDInsight cluster application.
+     * @param parameters The application create request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -616,7 +616,7 @@ public final class ApplicationsClientImpl implements ApplicationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param applicationName The constant value for the application name.
-     * @param parameters The HDInsight cluster application.
+     * @param parameters The application create request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -639,7 +639,7 @@ public final class ApplicationsClientImpl implements ApplicationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param applicationName The constant value for the application name.
-     * @param parameters The HDInsight cluster application.
+     * @param parameters The application create request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -668,7 +668,7 @@ public final class ApplicationsClientImpl implements ApplicationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param applicationName The constant value for the application name.
-     * @param parameters The HDInsight cluster application.
+     * @param parameters The application create request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -686,7 +686,7 @@ public final class ApplicationsClientImpl implements ApplicationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param applicationName The constant value for the application name.
-     * @param parameters The HDInsight cluster application.
+     * @param parameters The application create request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -709,7 +709,7 @@ public final class ApplicationsClientImpl implements ApplicationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param applicationName The constant value for the application name.
-     * @param parameters The HDInsight cluster application.
+     * @param parameters The application create request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -729,7 +729,7 @@ public final class ApplicationsClientImpl implements ApplicationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param applicationName The constant value for the application name.
-     * @param parameters The HDInsight cluster application.
+     * @param parameters The application create request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -754,7 +754,7 @@ public final class ApplicationsClientImpl implements ApplicationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param applicationName The constant value for the application name.
-     * @param parameters The HDInsight cluster application.
+     * @param parameters The application create request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -772,7 +772,7 @@ public final class ApplicationsClientImpl implements ApplicationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param clusterName The name of the cluster.
      * @param applicationName The constant value for the application name.
-     * @param parameters The HDInsight cluster application.
+     * @param parameters The application create request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

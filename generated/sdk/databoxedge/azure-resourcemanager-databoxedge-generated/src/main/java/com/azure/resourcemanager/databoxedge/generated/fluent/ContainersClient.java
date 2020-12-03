@@ -85,7 +85,7 @@ public interface ContainersClient {
      * @param storageAccountName The Storage Account Name.
      * @param containerName The container name.
      * @param resourceGroupName The resource group name.
-     * @param container Represents a container on the Data Box Edge/Gateway device.
+     * @param container The container properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -106,7 +106,7 @@ public interface ContainersClient {
      * @param storageAccountName The Storage Account Name.
      * @param containerName The container name.
      * @param resourceGroupName The resource group name.
-     * @param container Represents a container on the Data Box Edge/Gateway device.
+     * @param container The container properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -129,7 +129,7 @@ public interface ContainersClient {
      * @param storageAccountName The Storage Account Name.
      * @param containerName The container name.
      * @param resourceGroupName The resource group name.
-     * @param container Represents a container on the Data Box Edge/Gateway device.
+     * @param container The container properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -150,7 +150,7 @@ public interface ContainersClient {
      * @param storageAccountName The Storage Account Name.
      * @param containerName The container name.
      * @param resourceGroupName The resource group name.
-     * @param container Represents a container on the Data Box Edge/Gateway device.
+     * @param container The container properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

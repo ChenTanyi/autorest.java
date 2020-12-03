@@ -572,7 +572,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The live event.
+     * @param parameters Live event properties needed for creation.
      * @param autoStart The flag indicates if the resource should be automatically started on creation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -638,7 +638,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The live event.
+     * @param parameters Live event properties needed for creation.
      * @param autoStart The flag indicates if the resource should be automatically started on creation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -703,7 +703,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The live event.
+     * @param parameters Live event properties needed for creation.
      * @param autoStart The flag indicates if the resource should be automatically started on creation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -731,7 +731,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The live event.
+     * @param parameters Live event properties needed for creation.
      * @param autoStart The flag indicates if the resource should be automatically started on creation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -762,7 +762,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The live event.
+     * @param parameters Live event properties needed for creation.
      * @param autoStart The flag indicates if the resource should be automatically started on creation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -785,7 +785,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The live event.
+     * @param parameters Live event properties needed for creation.
      * @param autoStart The flag indicates if the resource should be automatically started on creation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -811,7 +811,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The live event.
+     * @param parameters Live event properties needed for creation.
      * @param autoStart The flag indicates if the resource should be automatically started on creation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -836,7 +836,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The live event.
+     * @param parameters Live event properties needed for creation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -857,7 +857,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The live event.
+     * @param parameters Live event properties needed for creation.
      * @param autoStart The flag indicates if the resource should be automatically started on creation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -884,7 +884,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The live event.
+     * @param parameters Live event properties needed for creation.
      * @param autoStart The flag indicates if the resource should be automatically started on creation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -907,7 +907,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The live event.
+     * @param parameters Live event properties needed for creation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -926,7 +926,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The live event.
+     * @param parameters Live event properties needed for creation.
      * @param autoStart The flag indicates if the resource should be automatically started on creation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -951,7 +951,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The live event.
+     * @param parameters Live event properties needed for patch.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1011,7 +1011,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The live event.
+     * @param parameters Live event properties needed for patch.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1073,7 +1073,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The live event.
+     * @param parameters Live event properties needed for patch.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1096,7 +1096,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The live event.
+     * @param parameters Live event properties needed for patch.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1125,7 +1125,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The live event.
+     * @param parameters Live event properties needed for patch.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1143,7 +1143,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The live event.
+     * @param parameters Live event properties needed for patch.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1166,7 +1166,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The live event.
+     * @param parameters Live event properties needed for patch.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1186,7 +1186,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The live event.
+     * @param parameters Live event properties needed for patch.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1211,7 +1211,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The live event.
+     * @param parameters Live event properties needed for patch.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1229,7 +1229,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The live event.
+     * @param parameters Live event properties needed for patch.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2005,7 +2005,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The LiveEvent action input parameter definition.
+     * @param parameters LiveEvent stop parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2065,7 +2065,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The LiveEvent action input parameter definition.
+     * @param parameters LiveEvent stop parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2127,7 +2127,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The LiveEvent action input parameter definition.
+     * @param parameters LiveEvent stop parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2149,7 +2149,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The LiveEvent action input parameter definition.
+     * @param parameters LiveEvent stop parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2177,7 +2177,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The LiveEvent action input parameter definition.
+     * @param parameters LiveEvent stop parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2195,7 +2195,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The LiveEvent action input parameter definition.
+     * @param parameters LiveEvent stop parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2218,7 +2218,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The LiveEvent action input parameter definition.
+     * @param parameters LiveEvent stop parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2238,7 +2238,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The LiveEvent action input parameter definition.
+     * @param parameters LiveEvent stop parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2263,7 +2263,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The LiveEvent action input parameter definition.
+     * @param parameters LiveEvent stop parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2280,7 +2280,7 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param liveEventName The name of the live event, maximum length is 32.
-     * @param parameters The LiveEvent action input parameter definition.
+     * @param parameters LiveEvent stop parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

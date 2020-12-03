@@ -14,7 +14,7 @@ public interface Domains {
     /**
      * Description for Check if a domain is available for registration.
      *
-     * @param identifier Identifies an object.
+     * @param identifier Name of the domain.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -26,7 +26,7 @@ public interface Domains {
     /**
      * Description for Check if a domain is available for registration.
      *
-     * @param identifier Identifies an object.
+     * @param identifier Name of the domain.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -84,7 +84,7 @@ public interface Domains {
     /**
      * Description for Get domain name recommendations based on keywords.
      *
-     * @param parameters Domain recommendation search parameters.
+     * @param parameters Search parameters for domain name recommendations.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -96,7 +96,7 @@ public interface Domains {
     /**
      * Description for Get domain name recommendations based on keywords.
      *
-     * @param parameters Domain recommendation search parameters.
+     * @param parameters Search parameters for domain name recommendations.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the

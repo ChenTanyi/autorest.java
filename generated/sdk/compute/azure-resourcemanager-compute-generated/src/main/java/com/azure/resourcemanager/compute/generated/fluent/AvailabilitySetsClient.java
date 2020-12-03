@@ -20,15 +20,7 @@ public interface AvailabilitySetsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param availabilitySetName The name of the availability set.
-     * @param parameters Specifies information about the availability set that the virtual machine should be assigned
-     *     to. Virtual machines specified in the same availability set are allocated to different nodes to maximize
-     *     availability. For more information about availability sets, see [Manage the availability of virtual
-     *     machines](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-manage-availability?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
-     *     &lt;br&gt;&lt;br&gt; For more information on Azure planned maintenance, see [Planned maintenance for virtual
-     *     machines in
-     *     Azure](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-planned-maintenance?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
-     *     &lt;br&gt;&lt;br&gt; Currently, a VM can only be added to availability set at creation time. An existing VM
-     *     cannot be added to an availability set.
+     * @param parameters Parameters supplied to the Create Availability Set operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -43,15 +35,7 @@ public interface AvailabilitySetsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param availabilitySetName The name of the availability set.
-     * @param parameters Specifies information about the availability set that the virtual machine should be assigned
-     *     to. Virtual machines specified in the same availability set are allocated to different nodes to maximize
-     *     availability. For more information about availability sets, see [Manage the availability of virtual
-     *     machines](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-manage-availability?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
-     *     &lt;br&gt;&lt;br&gt; For more information on Azure planned maintenance, see [Planned maintenance for virtual
-     *     machines in
-     *     Azure](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-planned-maintenance?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
-     *     &lt;br&gt;&lt;br&gt; Currently, a VM can only be added to availability set at creation time. An existing VM
-     *     cannot be added to an availability set.
+     * @param parameters Parameters supplied to the Create Availability Set operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -67,8 +51,7 @@ public interface AvailabilitySetsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param availabilitySetName The name of the availability set.
-     * @param parameters Specifies information about the availability set that the virtual machine should be assigned
-     *     to. Only tags may be updated.
+     * @param parameters Parameters supplied to the Update Availability Set operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -82,8 +65,7 @@ public interface AvailabilitySetsClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param availabilitySetName The name of the availability set.
-     * @param parameters Specifies information about the availability set that the virtual machine should be assigned
-     *     to. Only tags may be updated.
+     * @param parameters Parameters supplied to the Update Availability Set operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

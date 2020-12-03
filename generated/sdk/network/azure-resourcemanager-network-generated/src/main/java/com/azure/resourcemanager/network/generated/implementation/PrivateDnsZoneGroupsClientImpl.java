@@ -585,7 +585,7 @@ public final class PrivateDnsZoneGroupsClientImpl implements PrivateDnsZoneGroup
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
      * @param privateDnsZoneGroupName The name of the private dns zone group.
-     * @param parameters Private dns zone group resource.
+     * @param parameters Parameters supplied to the create or update private dns zone group operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -652,7 +652,7 @@ public final class PrivateDnsZoneGroupsClientImpl implements PrivateDnsZoneGroup
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
      * @param privateDnsZoneGroupName The name of the private dns zone group.
-     * @param parameters Private dns zone group resource.
+     * @param parameters Parameters supplied to the create or update private dns zone group operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -718,7 +718,7 @@ public final class PrivateDnsZoneGroupsClientImpl implements PrivateDnsZoneGroup
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
      * @param privateDnsZoneGroupName The name of the private dns zone group.
-     * @param parameters Private dns zone group resource.
+     * @param parameters Parameters supplied to the create or update private dns zone group operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -749,7 +749,7 @@ public final class PrivateDnsZoneGroupsClientImpl implements PrivateDnsZoneGroup
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
      * @param privateDnsZoneGroupName The name of the private dns zone group.
-     * @param parameters Private dns zone group resource.
+     * @param parameters Parameters supplied to the create or update private dns zone group operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -783,7 +783,7 @@ public final class PrivateDnsZoneGroupsClientImpl implements PrivateDnsZoneGroup
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
      * @param privateDnsZoneGroupName The name of the private dns zone group.
-     * @param parameters Private dns zone group resource.
+     * @param parameters Parameters supplied to the create or update private dns zone group operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -805,7 +805,7 @@ public final class PrivateDnsZoneGroupsClientImpl implements PrivateDnsZoneGroup
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
      * @param privateDnsZoneGroupName The name of the private dns zone group.
-     * @param parameters Private dns zone group resource.
+     * @param parameters Parameters supplied to the create or update private dns zone group operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -830,7 +830,7 @@ public final class PrivateDnsZoneGroupsClientImpl implements PrivateDnsZoneGroup
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
      * @param privateDnsZoneGroupName The name of the private dns zone group.
-     * @param parameters Private dns zone group resource.
+     * @param parameters Parameters supplied to the create or update private dns zone group operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -853,7 +853,7 @@ public final class PrivateDnsZoneGroupsClientImpl implements PrivateDnsZoneGroup
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
      * @param privateDnsZoneGroupName The name of the private dns zone group.
-     * @param parameters Private dns zone group resource.
+     * @param parameters Parameters supplied to the create or update private dns zone group operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -879,7 +879,7 @@ public final class PrivateDnsZoneGroupsClientImpl implements PrivateDnsZoneGroup
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
      * @param privateDnsZoneGroupName The name of the private dns zone group.
-     * @param parameters Private dns zone group resource.
+     * @param parameters Parameters supplied to the create or update private dns zone group operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -900,7 +900,7 @@ public final class PrivateDnsZoneGroupsClientImpl implements PrivateDnsZoneGroup
      * @param resourceGroupName The name of the resource group.
      * @param privateEndpointName The name of the private endpoint.
      * @param privateDnsZoneGroupName The name of the private dns zone group.
-     * @param parameters Private dns zone group resource.
+     * @param parameters Parameters supplied to the create or update private dns zone group operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

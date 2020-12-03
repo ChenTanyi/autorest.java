@@ -56,7 +56,7 @@ public interface NamespacesClient {
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param ipFilterRuleName The IP Filter Rule name.
-     * @param parameters Single item in a List or Get IpFilterRules operation.
+     * @param parameters The Namespace IpFilterRule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -72,7 +72,7 @@ public interface NamespacesClient {
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param ipFilterRuleName The IP Filter Rule name.
-     * @param parameters Single item in a List or Get IpFilterRules operation.
+     * @param parameters The Namespace IpFilterRule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -199,7 +199,7 @@ public interface NamespacesClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @param parameters Single Namespace item in List or Get Operation.
+     * @param parameters Parameters for creating a namespace resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -215,7 +215,7 @@ public interface NamespacesClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @param parameters Single Namespace item in List or Get Operation.
+     * @param parameters Parameters for creating a namespace resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -232,7 +232,7 @@ public interface NamespacesClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @param parameters Single Namespace item in List or Get Operation.
+     * @param parameters Parameters for creating a namespace resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -247,7 +247,7 @@ public interface NamespacesClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @param parameters Single Namespace item in List or Get Operation.
+     * @param parameters Parameters for creating a namespace resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -344,7 +344,7 @@ public interface NamespacesClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @param parameters Single Namespace item in List or Get Operation.
+     * @param parameters Parameters for updating a namespace resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -359,7 +359,7 @@ public interface NamespacesClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @param parameters Single Namespace item in List or Get Operation.
+     * @param parameters Parameters for updating a namespace resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -404,7 +404,7 @@ public interface NamespacesClient {
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param virtualNetworkRuleName The Virtual Network Rule name.
-     * @param parameters Single item in a List or Get VirtualNetworkRules operation.
+     * @param parameters The Namespace VirtualNetworkRule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -423,7 +423,7 @@ public interface NamespacesClient {
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param virtualNetworkRuleName The Virtual Network Rule name.
-     * @param parameters Single item in a List or Get VirtualNetworkRules operation.
+     * @param parameters The Namespace VirtualNetworkRule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -503,7 +503,7 @@ public interface NamespacesClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @param parameters Description of topic resource.
+     * @param parameters The Namespace IpFilterRule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -518,7 +518,7 @@ public interface NamespacesClient {
      *
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @param parameters Description of topic resource.
+     * @param parameters The Namespace IpFilterRule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -591,7 +591,7 @@ public interface NamespacesClient {
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param authorizationRuleName The authorization rule name.
-     * @param parameters Single item in a List or Get AuthorizationRule operation.
+     * @param parameters The shared access AuthorizationRule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -610,7 +610,7 @@ public interface NamespacesClient {
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param authorizationRuleName The authorization rule name.
-     * @param parameters Single item in a List or Get AuthorizationRule operation.
+     * @param parameters The shared access AuthorizationRule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -721,8 +721,7 @@ public interface NamespacesClient {
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param authorizationRuleName The authorization rule name.
-     * @param parameters Parameters supplied to the Regenerate Authorization Rule operation, specifies which key needs
-     *     to be reset.
+     * @param parameters Parameters required to regenerate the connection string.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -741,8 +740,7 @@ public interface NamespacesClient {
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param authorizationRuleName The authorization rule name.
-     * @param parameters Parameters supplied to the Regenerate Authorization Rule operation, specifies which key needs
-     *     to be reset.
+     * @param parameters Parameters required to regenerate the connection string.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -760,7 +758,7 @@ public interface NamespacesClient {
     /**
      * Check the give Namespace name availability.
      *
-     * @param parameters Parameter supplied to check Namespace name availability operation.
+     * @param parameters Parameters to check availability of the given Namespace name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -772,7 +770,7 @@ public interface NamespacesClient {
     /**
      * Check the give Namespace name availability.
      *
-     * @param parameters Parameter supplied to check Namespace name availability operation.
+     * @param parameters Parameters to check availability of the given Namespace name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

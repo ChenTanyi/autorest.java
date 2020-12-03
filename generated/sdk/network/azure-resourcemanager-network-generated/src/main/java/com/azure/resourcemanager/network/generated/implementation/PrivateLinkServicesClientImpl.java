@@ -739,7 +739,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      *
      * @param resourceGroupName The name of the resource group.
      * @param serviceName The name of the private link service.
-     * @param parameters Private link service resource.
+     * @param parameters Parameters supplied to the create or update private link service operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -795,7 +795,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      *
      * @param resourceGroupName The name of the resource group.
      * @param serviceName The name of the private link service.
-     * @param parameters Private link service resource.
+     * @param parameters Parameters supplied to the create or update private link service operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -849,7 +849,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      *
      * @param resourceGroupName The name of the resource group.
      * @param serviceName The name of the private link service.
-     * @param parameters Private link service resource.
+     * @param parameters Parameters supplied to the create or update private link service operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -875,7 +875,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      *
      * @param resourceGroupName The name of the resource group.
      * @param serviceName The name of the private link service.
-     * @param parameters Private link service resource.
+     * @param parameters Parameters supplied to the create or update private link service operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -903,7 +903,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      *
      * @param resourceGroupName The name of the resource group.
      * @param serviceName The name of the private link service.
-     * @param parameters Private link service resource.
+     * @param parameters Parameters supplied to the create or update private link service operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -920,7 +920,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      *
      * @param resourceGroupName The name of the resource group.
      * @param serviceName The name of the private link service.
-     * @param parameters Private link service resource.
+     * @param parameters Parameters supplied to the create or update private link service operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -938,7 +938,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      *
      * @param resourceGroupName The name of the resource group.
      * @param serviceName The name of the private link service.
-     * @param parameters Private link service resource.
+     * @param parameters Parameters supplied to the create or update private link service operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -957,7 +957,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      *
      * @param resourceGroupName The name of the resource group.
      * @param serviceName The name of the private link service.
-     * @param parameters Private link service resource.
+     * @param parameters Parameters supplied to the create or update private link service operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -977,7 +977,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      *
      * @param resourceGroupName The name of the resource group.
      * @param serviceName The name of the private link service.
-     * @param parameters Private link service resource.
+     * @param parameters Parameters supplied to the create or update private link service operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -994,7 +994,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      *
      * @param resourceGroupName The name of the resource group.
      * @param serviceName The name of the private link service.
-     * @param parameters Private link service resource.
+     * @param parameters Parameters supplied to the create or update private link service operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -1513,7 +1513,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @param resourceGroupName The name of the resource group.
      * @param serviceName The name of the private link service.
      * @param peConnectionName The name of the private end point connection.
-     * @param parameters PrivateEndpointConnection resource.
+     * @param parameters Parameters supplied to approve or reject the private end point connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1578,7 +1578,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @param resourceGroupName The name of the resource group.
      * @param serviceName The name of the private link service.
      * @param peConnectionName The name of the private end point connection.
-     * @param parameters PrivateEndpointConnection resource.
+     * @param parameters Parameters supplied to approve or reject the private end point connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -1642,7 +1642,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @param resourceGroupName The name of the resource group.
      * @param serviceName The name of the private link service.
      * @param peConnectionName The name of the private end point connection.
-     * @param parameters PrivateEndpointConnection resource.
+     * @param parameters Parameters supplied to approve or reject the private end point connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1672,7 +1672,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @param resourceGroupName The name of the resource group.
      * @param serviceName The name of the private link service.
      * @param peConnectionName The name of the private end point connection.
-     * @param parameters PrivateEndpointConnection resource.
+     * @param parameters Parameters supplied to approve or reject the private end point connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1694,7 +1694,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * @param resourceGroupName The name of the resource group.
      * @param serviceName The name of the private link service.
      * @param peConnectionName The name of the private end point connection.
-     * @param parameters PrivateEndpointConnection resource.
+     * @param parameters Parameters supplied to approve or reject the private end point connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -2161,7 +2161,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * Checks whether the subscription is visible to private link service.
      *
      * @param location The location of the domain name.
-     * @param parameters Request body of the CheckPrivateLinkServiceVisibility API service call.
+     * @param parameters The request body of CheckPrivateLinkService API call.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2211,7 +2211,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * Checks whether the subscription is visible to private link service.
      *
      * @param location The location of the domain name.
-     * @param parameters Request body of the CheckPrivateLinkServiceVisibility API service call.
+     * @param parameters The request body of CheckPrivateLinkService API call.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2259,7 +2259,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * Checks whether the subscription is visible to private link service.
      *
      * @param location The location of the domain name.
-     * @param parameters Request body of the CheckPrivateLinkServiceVisibility API service call.
+     * @param parameters The request body of CheckPrivateLinkService API call.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2285,7 +2285,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * Checks whether the subscription is visible to private link service.
      *
      * @param location The location of the domain name.
-     * @param parameters Request body of the CheckPrivateLinkServiceVisibility API service call.
+     * @param parameters The request body of CheckPrivateLinkService API call.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2313,7 +2313,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * Checks whether the subscription is visible to private link service.
      *
      * @param location The location of the domain name.
-     * @param parameters Request body of the CheckPrivateLinkServiceVisibility API service call.
+     * @param parameters The request body of CheckPrivateLinkService API call.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2329,7 +2329,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * Checks whether the subscription is visible to private link service.
      *
      * @param location The location of the domain name.
-     * @param parameters Request body of the CheckPrivateLinkServiceVisibility API service call.
+     * @param parameters The request body of CheckPrivateLinkService API call.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2347,7 +2347,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * Checks whether the subscription is visible to private link service.
      *
      * @param location The location of the domain name.
-     * @param parameters Request body of the CheckPrivateLinkServiceVisibility API service call.
+     * @param parameters The request body of CheckPrivateLinkService API call.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2365,7 +2365,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * Checks whether the subscription is visible to private link service.
      *
      * @param location The location of the domain name.
-     * @param parameters Request body of the CheckPrivateLinkServiceVisibility API service call.
+     * @param parameters The request body of CheckPrivateLinkService API call.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2384,7 +2384,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * Checks whether the subscription is visible to private link service.
      *
      * @param location The location of the domain name.
-     * @param parameters Request body of the CheckPrivateLinkServiceVisibility API service call.
+     * @param parameters The request body of CheckPrivateLinkService API call.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2400,7 +2400,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      * Checks whether the subscription is visible to private link service.
      *
      * @param location The location of the domain name.
-     * @param parameters Request body of the CheckPrivateLinkServiceVisibility API service call.
+     * @param parameters The request body of CheckPrivateLinkService API call.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2418,7 +2418,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      *
      * @param location The location of the domain name.
      * @param resourceGroupName The name of the resource group.
-     * @param parameters Request body of the CheckPrivateLinkServiceVisibility API service call.
+     * @param parameters The request body of CheckPrivateLinkService API call.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2474,7 +2474,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      *
      * @param location The location of the domain name.
      * @param resourceGroupName The name of the resource group.
-     * @param parameters Request body of the CheckPrivateLinkServiceVisibility API service call.
+     * @param parameters The request body of CheckPrivateLinkService API call.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2531,7 +2531,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      *
      * @param location The location of the domain name.
      * @param resourceGroupName The name of the resource group.
-     * @param parameters Request body of the CheckPrivateLinkServiceVisibility API service call.
+     * @param parameters The request body of CheckPrivateLinkService API call.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2558,7 +2558,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      *
      * @param location The location of the domain name.
      * @param resourceGroupName The name of the resource group.
-     * @param parameters Request body of the CheckPrivateLinkServiceVisibility API service call.
+     * @param parameters The request body of CheckPrivateLinkService API call.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2591,7 +2591,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      *
      * @param location The location of the domain name.
      * @param resourceGroupName The name of the resource group.
-     * @param parameters Request body of the CheckPrivateLinkServiceVisibility API service call.
+     * @param parameters The request body of CheckPrivateLinkService API call.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2610,7 +2610,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      *
      * @param location The location of the domain name.
      * @param resourceGroupName The name of the resource group.
-     * @param parameters Request body of the CheckPrivateLinkServiceVisibility API service call.
+     * @param parameters The request body of CheckPrivateLinkService API call.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2634,7 +2634,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      *
      * @param location The location of the domain name.
      * @param resourceGroupName The name of the resource group.
-     * @param parameters Request body of the CheckPrivateLinkServiceVisibility API service call.
+     * @param parameters The request body of CheckPrivateLinkService API call.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2653,7 +2653,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      *
      * @param location The location of the domain name.
      * @param resourceGroupName The name of the resource group.
-     * @param parameters Request body of the CheckPrivateLinkServiceVisibility API service call.
+     * @param parameters The request body of CheckPrivateLinkService API call.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2677,7 +2677,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      *
      * @param location The location of the domain name.
      * @param resourceGroupName The name of the resource group.
-     * @param parameters Request body of the CheckPrivateLinkServiceVisibility API service call.
+     * @param parameters The request body of CheckPrivateLinkService API call.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2694,7 +2694,7 @@ public final class PrivateLinkServicesClientImpl implements PrivateLinkServicesC
      *
      * @param location The location of the domain name.
      * @param resourceGroupName The name of the resource group.
-     * @param parameters Request body of the CheckPrivateLinkServiceVisibility API service call.
+     * @param parameters The request body of CheckPrivateLinkService API call.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

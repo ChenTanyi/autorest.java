@@ -331,7 +331,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param privateEndpointConnectionName The PrivateEndpointConnection name.
-     * @param parameters Properties of the PrivateEndpointConnection.
+     * @param parameters Parameters supplied to update Status of PrivateEndPoint Connection to namespace resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -398,7 +398,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param privateEndpointConnectionName The PrivateEndpointConnection name.
-     * @param parameters Properties of the PrivateEndpointConnection.
+     * @param parameters Parameters supplied to update Status of PrivateEndPoint Connection to namespace resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -464,7 +464,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param privateEndpointConnectionName The PrivateEndpointConnection name.
-     * @param parameters Properties of the PrivateEndpointConnection.
+     * @param parameters Parameters supplied to update Status of PrivateEndPoint Connection to namespace resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -494,7 +494,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param privateEndpointConnectionName The PrivateEndpointConnection name.
-     * @param parameters Properties of the PrivateEndpointConnection.
+     * @param parameters Parameters supplied to update Status of PrivateEndPoint Connection to namespace resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -515,7 +515,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param privateEndpointConnectionName The PrivateEndpointConnection name.
-     * @param parameters Properties of the PrivateEndpointConnection.
+     * @param parameters Parameters supplied to update Status of PrivateEndPoint Connection to namespace resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

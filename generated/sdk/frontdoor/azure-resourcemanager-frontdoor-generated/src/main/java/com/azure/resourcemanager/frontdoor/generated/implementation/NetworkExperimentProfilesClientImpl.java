@@ -632,7 +632,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      *
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param parameters Defines an Network Experiment Profile and lists of Experiments.
+     * @param parameters An Network Experiment Profile.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -688,7 +688,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      *
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param parameters Defines an Network Experiment Profile and lists of Experiments.
+     * @param parameters An Network Experiment Profile.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -742,7 +742,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      *
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param parameters Defines an Network Experiment Profile and lists of Experiments.
+     * @param parameters An Network Experiment Profile.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -764,7 +764,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      *
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param parameters Defines an Network Experiment Profile and lists of Experiments.
+     * @param parameters An Network Experiment Profile.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -788,7 +788,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      *
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param parameters Defines an Network Experiment Profile and lists of Experiments.
+     * @param parameters An Network Experiment Profile.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -805,7 +805,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      *
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param parameters Defines an Network Experiment Profile and lists of Experiments.
+     * @param parameters An Network Experiment Profile.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -823,7 +823,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      *
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param parameters Defines an Network Experiment Profile and lists of Experiments.
+     * @param parameters An Network Experiment Profile.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -842,7 +842,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      *
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param parameters Defines an Network Experiment Profile and lists of Experiments.
+     * @param parameters An Network Experiment Profile.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -862,7 +862,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      *
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param parameters Defines an Network Experiment Profile and lists of Experiments.
+     * @param parameters An Network Experiment Profile.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -878,7 +878,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      *
      * @param profileName The Profile identifier associated with the Tenant and Partner.
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
-     * @param parameters Defines an Network Experiment Profile and lists of Experiments.
+     * @param parameters An Network Experiment Profile.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -896,7 +896,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
-     * @param parameters Defines modifiable attributes of a Profile.
+     * @param parameters The Profile Update Model.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -952,7 +952,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
-     * @param parameters Defines modifiable attributes of a Profile.
+     * @param parameters The Profile Update Model.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1006,7 +1006,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
-     * @param parameters Defines modifiable attributes of a Profile.
+     * @param parameters The Profile Update Model.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1027,7 +1027,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
-     * @param parameters Defines modifiable attributes of a Profile.
+     * @param parameters The Profile Update Model.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1051,7 +1051,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
-     * @param parameters Defines modifiable attributes of a Profile.
+     * @param parameters The Profile Update Model.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1068,7 +1068,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
-     * @param parameters Defines modifiable attributes of a Profile.
+     * @param parameters The Profile Update Model.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1086,7 +1086,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
-     * @param parameters Defines modifiable attributes of a Profile.
+     * @param parameters The Profile Update Model.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1105,7 +1105,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
-     * @param parameters Defines modifiable attributes of a Profile.
+     * @param parameters The Profile Update Model.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1125,7 +1125,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
-     * @param parameters Defines modifiable attributes of a Profile.
+     * @param parameters The Profile Update Model.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1141,7 +1141,7 @@ public final class NetworkExperimentProfilesClientImpl implements NetworkExperim
      *
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param profileName The Profile identifier associated with the Tenant and Partner.
-     * @param parameters Defines modifiable attributes of a Profile.
+     * @param parameters The Profile Update Model.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

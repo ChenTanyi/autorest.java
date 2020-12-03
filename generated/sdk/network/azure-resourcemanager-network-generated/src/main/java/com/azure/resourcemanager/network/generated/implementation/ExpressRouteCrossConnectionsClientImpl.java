@@ -678,7 +678,7 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      *
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
-     * @param parameters ExpressRouteCrossConnection resource.
+     * @param parameters Parameters supplied to the update express route crossConnection operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -735,7 +735,7 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      *
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
-     * @param parameters ExpressRouteCrossConnection resource.
+     * @param parameters Parameters supplied to the update express route crossConnection operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -793,7 +793,7 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      *
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
-     * @param parameters ExpressRouteCrossConnection resource.
+     * @param parameters Parameters supplied to the update express route crossConnection operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -820,7 +820,7 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      *
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
-     * @param parameters ExpressRouteCrossConnection resource.
+     * @param parameters Parameters supplied to the update express route crossConnection operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -852,7 +852,7 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      *
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
-     * @param parameters ExpressRouteCrossConnection resource.
+     * @param parameters Parameters supplied to the update express route crossConnection operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -870,7 +870,7 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      *
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
-     * @param parameters ExpressRouteCrossConnection resource.
+     * @param parameters Parameters supplied to the update express route crossConnection operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -892,7 +892,7 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      *
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
-     * @param parameters ExpressRouteCrossConnection resource.
+     * @param parameters Parameters supplied to the update express route crossConnection operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -911,7 +911,7 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      *
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
-     * @param parameters ExpressRouteCrossConnection resource.
+     * @param parameters Parameters supplied to the update express route crossConnection operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -934,7 +934,7 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      *
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
-     * @param parameters ExpressRouteCrossConnection resource.
+     * @param parameters Parameters supplied to the update express route crossConnection operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -951,7 +951,7 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      *
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
-     * @param parameters ExpressRouteCrossConnection resource.
+     * @param parameters Parameters supplied to the update express route crossConnection operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -972,7 +972,7 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      *
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the cross connection.
-     * @param crossConnectionParameters Tags object for patch operations.
+     * @param crossConnectionParameters Parameters supplied to update express route cross connection tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1032,7 +1032,7 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      *
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the cross connection.
-     * @param crossConnectionParameters Tags object for patch operations.
+     * @param crossConnectionParameters Parameters supplied to update express route cross connection tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1090,7 +1090,7 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      *
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the cross connection.
-     * @param crossConnectionParameters Tags object for patch operations.
+     * @param crossConnectionParameters Parameters supplied to update express route cross connection tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1115,7 +1115,7 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      *
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the cross connection.
-     * @param crossConnectionParameters Tags object for patch operations.
+     * @param crossConnectionParameters Parameters supplied to update express route cross connection tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1132,7 +1132,7 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      *
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the cross connection.
-     * @param crossConnectionParameters Tags object for patch operations.
+     * @param crossConnectionParameters Parameters supplied to update express route cross connection tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

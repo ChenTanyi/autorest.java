@@ -79,7 +79,7 @@ public interface BandwidthSchedulesClient {
      * @param deviceName The device name.
      * @param name The bandwidth schedule name which needs to be added/updated.
      * @param resourceGroupName The resource group name.
-     * @param parameters The bandwidth schedule details.
+     * @param parameters The bandwidth schedule to be added or updated.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -95,7 +95,7 @@ public interface BandwidthSchedulesClient {
      * @param deviceName The device name.
      * @param name The bandwidth schedule name which needs to be added/updated.
      * @param resourceGroupName The resource group name.
-     * @param parameters The bandwidth schedule details.
+     * @param parameters The bandwidth schedule to be added or updated.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -112,7 +112,7 @@ public interface BandwidthSchedulesClient {
      * @param deviceName The device name.
      * @param name The bandwidth schedule name which needs to be added/updated.
      * @param resourceGroupName The resource group name.
-     * @param parameters The bandwidth schedule details.
+     * @param parameters The bandwidth schedule to be added or updated.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -128,7 +128,7 @@ public interface BandwidthSchedulesClient {
      * @param deviceName The device name.
      * @param name The bandwidth schedule name which needs to be added/updated.
      * @param resourceGroupName The resource group name.
-     * @param parameters The bandwidth schedule details.
+     * @param parameters The bandwidth schedule to be added or updated.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

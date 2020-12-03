@@ -66,7 +66,7 @@ public interface Orders {
      *
      * @param deviceName The order details of a device.
      * @param resourceGroupName The resource group name.
-     * @param order The order details.
+     * @param order The order to be created or updated.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -79,7 +79,7 @@ public interface Orders {
      *
      * @param deviceName The order details of a device.
      * @param resourceGroupName The resource group name.
-     * @param order The order details.
+     * @param order The order to be created or updated.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

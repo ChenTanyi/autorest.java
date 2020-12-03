@@ -83,7 +83,7 @@ public final class GallerySharingProfilesClientImpl implements GallerySharingPro
      *
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery.
-     * @param sharingUpdate Specifies information about the gallery sharing profile update.
+     * @param sharingUpdate Parameters supplied to the update gallery sharing profile.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -139,7 +139,7 @@ public final class GallerySharingProfilesClientImpl implements GallerySharingPro
      *
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery.
-     * @param sharingUpdate Specifies information about the gallery sharing profile update.
+     * @param sharingUpdate Parameters supplied to the update gallery sharing profile.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -193,7 +193,7 @@ public final class GallerySharingProfilesClientImpl implements GallerySharingPro
      *
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery.
-     * @param sharingUpdate Specifies information about the gallery sharing profile update.
+     * @param sharingUpdate Parameters supplied to the update gallery sharing profile.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -214,7 +214,7 @@ public final class GallerySharingProfilesClientImpl implements GallerySharingPro
      *
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery.
-     * @param sharingUpdate Specifies information about the gallery sharing profile update.
+     * @param sharingUpdate Parameters supplied to the update gallery sharing profile.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -238,7 +238,7 @@ public final class GallerySharingProfilesClientImpl implements GallerySharingPro
      *
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery.
-     * @param sharingUpdate Specifies information about the gallery sharing profile update.
+     * @param sharingUpdate Parameters supplied to the update gallery sharing profile.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -255,7 +255,7 @@ public final class GallerySharingProfilesClientImpl implements GallerySharingPro
      *
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery.
-     * @param sharingUpdate Specifies information about the gallery sharing profile update.
+     * @param sharingUpdate Parameters supplied to the update gallery sharing profile.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -273,7 +273,7 @@ public final class GallerySharingProfilesClientImpl implements GallerySharingPro
      *
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery.
-     * @param sharingUpdate Specifies information about the gallery sharing profile update.
+     * @param sharingUpdate Parameters supplied to the update gallery sharing profile.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -292,7 +292,7 @@ public final class GallerySharingProfilesClientImpl implements GallerySharingPro
      *
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery.
-     * @param sharingUpdate Specifies information about the gallery sharing profile update.
+     * @param sharingUpdate Parameters supplied to the update gallery sharing profile.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -312,7 +312,7 @@ public final class GallerySharingProfilesClientImpl implements GallerySharingPro
      *
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery.
-     * @param sharingUpdate Specifies information about the gallery sharing profile update.
+     * @param sharingUpdate Parameters supplied to the update gallery sharing profile.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -328,7 +328,7 @@ public final class GallerySharingProfilesClientImpl implements GallerySharingPro
      *
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery.
-     * @param sharingUpdate Specifies information about the gallery sharing profile update.
+     * @param sharingUpdate Parameters supplied to the update gallery sharing profile.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.

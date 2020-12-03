@@ -626,7 +626,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Capture Virtual Machine operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -683,7 +683,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Capture Virtual Machine operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -738,7 +738,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Capture Virtual Machine operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -764,7 +764,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Capture Virtual Machine operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -794,7 +794,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Capture Virtual Machine operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -812,7 +812,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Capture Virtual Machine operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -831,7 +831,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Capture Virtual Machine operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -851,7 +851,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Capture Virtual Machine operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -872,7 +872,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Capture Virtual Machine operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -890,7 +890,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Capture Virtual Machine operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -909,7 +909,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Describes a Virtual Machine.
+     * @param parameters Parameters supplied to the Create Virtual Machine operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -966,7 +966,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Describes a Virtual Machine.
+     * @param parameters Parameters supplied to the Create Virtual Machine operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1021,7 +1021,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Describes a Virtual Machine.
+     * @param parameters Parameters supplied to the Create Virtual Machine operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1047,7 +1047,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Describes a Virtual Machine.
+     * @param parameters Parameters supplied to the Create Virtual Machine operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1072,7 +1072,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Describes a Virtual Machine.
+     * @param parameters Parameters supplied to the Create Virtual Machine operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1090,7 +1090,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Describes a Virtual Machine.
+     * @param parameters Parameters supplied to the Create Virtual Machine operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1109,7 +1109,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Describes a Virtual Machine.
+     * @param parameters Parameters supplied to the Create Virtual Machine operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1129,7 +1129,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Describes a Virtual Machine.
+     * @param parameters Parameters supplied to the Create Virtual Machine operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1150,7 +1150,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Describes a Virtual Machine.
+     * @param parameters Parameters supplied to the Create Virtual Machine operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1167,7 +1167,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Describes a Virtual Machine.
+     * @param parameters Parameters supplied to the Create Virtual Machine operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1185,7 +1185,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Describes a Virtual Machine Update.
+     * @param parameters Parameters supplied to the Update Virtual Machine operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1241,7 +1241,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Describes a Virtual Machine Update.
+     * @param parameters Parameters supplied to the Update Virtual Machine operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1295,7 +1295,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Describes a Virtual Machine Update.
+     * @param parameters Parameters supplied to the Update Virtual Machine operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1320,7 +1320,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Describes a Virtual Machine Update.
+     * @param parameters Parameters supplied to the Update Virtual Machine operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1343,7 +1343,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Describes a Virtual Machine Update.
+     * @param parameters Parameters supplied to the Update Virtual Machine operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1360,7 +1360,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Describes a Virtual Machine Update.
+     * @param parameters Parameters supplied to the Update Virtual Machine operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1378,7 +1378,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Describes a Virtual Machine Update.
+     * @param parameters Parameters supplied to the Update Virtual Machine operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1397,7 +1397,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Describes a Virtual Machine Update.
+     * @param parameters Parameters supplied to the Update Virtual Machine operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1417,7 +1417,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Describes a Virtual Machine Update.
+     * @param parameters Parameters supplied to the Update Virtual Machine operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1433,7 +1433,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Describes a Virtual Machine Update.
+     * @param parameters Parameters supplied to the Update Virtual Machine operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -4395,8 +4395,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Parameters for Reimaging Virtual Machine. NOTE: Virtual Machine OS disk will always be
-     *     reimaged.
+     * @param parameters Parameters supplied to the Reimage Virtual Machine operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4448,8 +4447,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Parameters for Reimaging Virtual Machine. NOTE: Virtual Machine OS disk will always be
-     *     reimaged.
+     * @param parameters Parameters supplied to the Reimage Virtual Machine operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -4499,8 +4497,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Parameters for Reimaging Virtual Machine. NOTE: Virtual Machine OS disk will always be
-     *     reimaged.
+     * @param parameters Parameters supplied to the Reimage Virtual Machine operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4520,8 +4517,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Parameters for Reimaging Virtual Machine. NOTE: Virtual Machine OS disk will always be
-     *     reimaged.
+     * @param parameters Parameters supplied to the Reimage Virtual Machine operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -4544,8 +4540,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Parameters for Reimaging Virtual Machine. NOTE: Virtual Machine OS disk will always be
-     *     reimaged.
+     * @param parameters Parameters supplied to the Reimage Virtual Machine operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4562,8 +4557,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Parameters for Reimaging Virtual Machine. NOTE: Virtual Machine OS disk will always be
-     *     reimaged.
+     * @param parameters Parameters supplied to the Reimage Virtual Machine operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -4581,8 +4575,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Parameters for Reimaging Virtual Machine. NOTE: Virtual Machine OS disk will always be
-     *     reimaged.
+     * @param parameters Parameters supplied to the Reimage Virtual Machine operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4619,8 +4612,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Parameters for Reimaging Virtual Machine. NOTE: Virtual Machine OS disk will always be
-     *     reimaged.
+     * @param parameters Parameters supplied to the Reimage Virtual Machine operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -4640,8 +4632,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Parameters for Reimaging Virtual Machine. NOTE: Virtual Machine OS disk will always be
-     *     reimaged.
+     * @param parameters Parameters supplied to the Reimage Virtual Machine operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4671,8 +4662,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Parameters for Reimaging Virtual Machine. NOTE: Virtual Machine OS disk will always be
-     *     reimaged.
+     * @param parameters Parameters supplied to the Reimage Virtual Machine operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -5491,7 +5481,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Run command operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -5547,7 +5537,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Run command operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -5601,7 +5591,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Run command operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -5626,7 +5616,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Run command operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -5650,7 +5640,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Run command operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -5667,7 +5657,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Run command operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -5685,7 +5675,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Run command operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -5704,7 +5694,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Run command operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -5724,7 +5714,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Run command operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -5740,7 +5730,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param parameters Capture Virtual Machine parameters.
+     * @param parameters Parameters supplied to the Run command operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

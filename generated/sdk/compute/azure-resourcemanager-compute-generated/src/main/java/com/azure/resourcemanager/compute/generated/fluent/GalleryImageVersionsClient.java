@@ -26,8 +26,7 @@ public interface GalleryImageVersionsClient {
      * @param galleryImageVersionName The name of the gallery image version to be created. Needs to follow semantic
      *     version name pattern: The allowed characters are digit and period. Digits must be within the range of a
      *     32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
-     * @param galleryImageVersion Specifies information about the gallery image version that you want to create or
-     *     update.
+     * @param galleryImageVersion Parameters supplied to the create or update gallery image version operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -51,8 +50,7 @@ public interface GalleryImageVersionsClient {
      * @param galleryImageVersionName The name of the gallery image version to be created. Needs to follow semantic
      *     version name pattern: The allowed characters are digit and period. Digits must be within the range of a
      *     32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
-     * @param galleryImageVersion Specifies information about the gallery image version that you want to create or
-     *     update.
+     * @param galleryImageVersion Parameters supplied to the create or update gallery image version operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -78,8 +76,7 @@ public interface GalleryImageVersionsClient {
      * @param galleryImageVersionName The name of the gallery image version to be created. Needs to follow semantic
      *     version name pattern: The allowed characters are digit and period. Digits must be within the range of a
      *     32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
-     * @param galleryImageVersion Specifies information about the gallery image version that you want to create or
-     *     update.
+     * @param galleryImageVersion Parameters supplied to the create or update gallery image version operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -103,8 +100,7 @@ public interface GalleryImageVersionsClient {
      * @param galleryImageVersionName The name of the gallery image version to be created. Needs to follow semantic
      *     version name pattern: The allowed characters are digit and period. Digits must be within the range of a
      *     32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
-     * @param galleryImageVersion Specifies information about the gallery image version that you want to create or
-     *     update.
+     * @param galleryImageVersion Parameters supplied to the create or update gallery image version operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -130,7 +126,7 @@ public interface GalleryImageVersionsClient {
      * @param galleryImageVersionName The name of the gallery image version to be updated. Needs to follow semantic
      *     version name pattern: The allowed characters are digit and period. Digits must be within the range of a
      *     32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
-     * @param galleryImageVersion Specifies information about the gallery image version that you want to update.
+     * @param galleryImageVersion Parameters supplied to the update gallery image version operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -154,7 +150,7 @@ public interface GalleryImageVersionsClient {
      * @param galleryImageVersionName The name of the gallery image version to be updated. Needs to follow semantic
      *     version name pattern: The allowed characters are digit and period. Digits must be within the range of a
      *     32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
-     * @param galleryImageVersion Specifies information about the gallery image version that you want to update.
+     * @param galleryImageVersion Parameters supplied to the update gallery image version operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -180,7 +176,7 @@ public interface GalleryImageVersionsClient {
      * @param galleryImageVersionName The name of the gallery image version to be updated. Needs to follow semantic
      *     version name pattern: The allowed characters are digit and period. Digits must be within the range of a
      *     32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
-     * @param galleryImageVersion Specifies information about the gallery image version that you want to update.
+     * @param galleryImageVersion Parameters supplied to the update gallery image version operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
      *     server.
@@ -204,7 +200,7 @@ public interface GalleryImageVersionsClient {
      * @param galleryImageVersionName The name of the gallery image version to be updated. Needs to follow semantic
      *     version name pattern: The allowed characters are digit and period. Digits must be within the range of a
      *     32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
-     * @param galleryImageVersion Specifies information about the gallery image version that you want to update.
+     * @param galleryImageVersion Parameters supplied to the update gallery image version operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by

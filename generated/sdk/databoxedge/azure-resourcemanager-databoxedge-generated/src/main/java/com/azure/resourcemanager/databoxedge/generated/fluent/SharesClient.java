@@ -77,7 +77,7 @@ public interface SharesClient {
      * @param deviceName The device name.
      * @param name The share name.
      * @param resourceGroupName The resource group name.
-     * @param share Represents a share on the Data Box Edge/Gateway device.
+     * @param share The share properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -93,7 +93,7 @@ public interface SharesClient {
      * @param deviceName The device name.
      * @param name The share name.
      * @param resourceGroupName The resource group name.
-     * @param share Represents a share on the Data Box Edge/Gateway device.
+     * @param share The share properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -110,7 +110,7 @@ public interface SharesClient {
      * @param deviceName The device name.
      * @param name The share name.
      * @param resourceGroupName The resource group name.
-     * @param share Represents a share on the Data Box Edge/Gateway device.
+     * @param share The share properties.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -125,7 +125,7 @@ public interface SharesClient {
      * @param deviceName The device name.
      * @param name The share name.
      * @param resourceGroupName The resource group name.
-     * @param share Represents a share on the Data Box Edge/Gateway device.
+     * @param share The share properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

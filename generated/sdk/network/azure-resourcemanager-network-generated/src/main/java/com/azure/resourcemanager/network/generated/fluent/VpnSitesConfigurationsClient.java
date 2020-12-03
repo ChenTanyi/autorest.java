@@ -18,7 +18,7 @@ public interface VpnSitesConfigurationsClient {
      *
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN for which configuration of all vpn-sites is needed.
-     * @param request List of Vpn-Sites.
+     * @param request Parameters supplied to download vpn-sites configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -33,7 +33,7 @@ public interface VpnSitesConfigurationsClient {
      *
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN for which configuration of all vpn-sites is needed.
-     * @param request List of Vpn-Sites.
+     * @param request Parameters supplied to download vpn-sites configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -49,7 +49,7 @@ public interface VpnSitesConfigurationsClient {
      *
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN for which configuration of all vpn-sites is needed.
-     * @param request List of Vpn-Sites.
+     * @param request Parameters supplied to download vpn-sites configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -62,7 +62,7 @@ public interface VpnSitesConfigurationsClient {
      *
      * @param resourceGroupName The resource group name.
      * @param virtualWanName The name of the VirtualWAN for which configuration of all vpn-sites is needed.
-     * @param request List of Vpn-Sites.
+     * @param request Parameters supplied to download vpn-sites configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

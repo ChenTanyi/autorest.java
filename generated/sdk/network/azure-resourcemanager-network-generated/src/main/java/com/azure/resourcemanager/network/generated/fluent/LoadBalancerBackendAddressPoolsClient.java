@@ -78,7 +78,7 @@ public interface LoadBalancerBackendAddressPoolsClient {
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param backendAddressPoolName The name of the backend address pool.
-     * @param parameters Pool of backend IP addresses.
+     * @param parameters Parameters supplied to the create or update load balancer backend address pool operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -97,7 +97,7 @@ public interface LoadBalancerBackendAddressPoolsClient {
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param backendAddressPoolName The name of the backend address pool.
-     * @param parameters Pool of backend IP addresses.
+     * @param parameters Parameters supplied to the create or update load balancer backend address pool operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -118,7 +118,7 @@ public interface LoadBalancerBackendAddressPoolsClient {
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param backendAddressPoolName The name of the backend address pool.
-     * @param parameters Pool of backend IP addresses.
+     * @param parameters Parameters supplied to the create or update load balancer backend address pool operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -137,7 +137,7 @@ public interface LoadBalancerBackendAddressPoolsClient {
      * @param resourceGroupName The name of the resource group.
      * @param loadBalancerName The name of the load balancer.
      * @param backendAddressPoolName The name of the backend address pool.
-     * @param parameters Pool of backend IP addresses.
+     * @param parameters Parameters supplied to the create or update load balancer backend address pool operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

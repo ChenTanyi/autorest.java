@@ -55,7 +55,7 @@ public interface ManagementPoliciesClient {
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param managementPolicyName The name of the Storage Account Management Policy. It should always be 'default'.
-     * @param properties The Get Storage Account ManagementPolicies operation response.
+     * @param properties The ManagementPolicy set to a storage account.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -76,7 +76,7 @@ public interface ManagementPoliciesClient {
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param managementPolicyName The name of the Storage Account Management Policy. It should always be 'default'.
-     * @param properties The Get Storage Account ManagementPolicies operation response.
+     * @param properties The ManagementPolicy set to a storage account.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

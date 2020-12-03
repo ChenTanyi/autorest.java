@@ -682,7 +682,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @param iotHubDescription The description of the IoT hub.
+     * @param iotHubDescription The IoT hub metadata and security metadata.
      * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an
      *     existing IoT Hub.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -743,7 +743,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @param iotHubDescription The description of the IoT hub.
+     * @param iotHubDescription The IoT hub metadata and security metadata.
      * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an
      *     existing IoT Hub.
      * @param context The context to associate with this operation.
@@ -806,7 +806,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @param iotHubDescription The description of the IoT hub.
+     * @param iotHubDescription The IoT hub metadata and security metadata.
      * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an
      *     existing IoT Hub.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -836,7 +836,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @param iotHubDescription The description of the IoT hub.
+     * @param iotHubDescription The IoT hub metadata and security metadata.
      * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an
      *     existing IoT Hub.
      * @param context The context to associate with this operation.
@@ -872,7 +872,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @param iotHubDescription The description of the IoT hub.
+     * @param iotHubDescription The IoT hub metadata and security metadata.
      * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an
      *     existing IoT Hub.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -893,7 +893,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @param iotHubDescription The description of the IoT hub.
+     * @param iotHubDescription The IoT hub metadata and security metadata.
      * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an
      *     existing IoT Hub.
      * @param context The context to associate with this operation.
@@ -920,7 +920,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @param iotHubDescription The description of the IoT hub.
+     * @param iotHubDescription The IoT hub metadata and security metadata.
      * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an
      *     existing IoT Hub.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -943,7 +943,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @param iotHubDescription The description of the IoT hub.
+     * @param iotHubDescription The IoT hub metadata and security metadata.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -965,7 +965,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @param iotHubDescription The description of the IoT hub.
+     * @param iotHubDescription The IoT hub metadata and security metadata.
      * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an
      *     existing IoT Hub.
      * @param context The context to associate with this operation.
@@ -993,7 +993,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @param iotHubDescription The description of the IoT hub.
+     * @param iotHubDescription The IoT hub metadata and security metadata.
      * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an
      *     existing IoT Hub.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1014,7 +1014,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @param iotHubDescription The description of the IoT hub.
+     * @param iotHubDescription The IoT hub metadata and security metadata.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1034,7 +1034,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @param iotHubDescription The description of the IoT hub.
+     * @param iotHubDescription The IoT hub metadata and security metadata.
      * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an
      *     existing IoT Hub.
      * @param context The context to associate with this operation.
@@ -1058,8 +1058,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName Resource group identifier.
      * @param resourceName Name of iot hub to update.
-     * @param iotHubTags A container holding only the Tags for a resource, allowing the user to update the tags on an
-     *     IoT Hub instance.
+     * @param iotHubTags Updated tag information to set into the iot hub instance.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1114,8 +1113,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName Resource group identifier.
      * @param resourceName Name of iot hub to update.
-     * @param iotHubTags A container holding only the Tags for a resource, allowing the user to update the tags on an
-     *     IoT Hub instance.
+     * @param iotHubTags Updated tag information to set into the iot hub instance.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1168,8 +1166,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName Resource group identifier.
      * @param resourceName Name of iot hub to update.
-     * @param iotHubTags A container holding only the Tags for a resource, allowing the user to update the tags on an
-     *     IoT Hub instance.
+     * @param iotHubTags Updated tag information to set into the iot hub instance.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1194,8 +1191,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName Resource group identifier.
      * @param resourceName Name of iot hub to update.
-     * @param iotHubTags A container holding only the Tags for a resource, allowing the user to update the tags on an
-     *     IoT Hub instance.
+     * @param iotHubTags Updated tag information to set into the iot hub instance.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1223,8 +1219,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName Resource group identifier.
      * @param resourceName Name of iot hub to update.
-     * @param iotHubTags A container holding only the Tags for a resource, allowing the user to update the tags on an
-     *     IoT Hub instance.
+     * @param iotHubTags Updated tag information to set into the iot hub instance.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1241,8 +1236,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName Resource group identifier.
      * @param resourceName Name of iot hub to update.
-     * @param iotHubTags A container holding only the Tags for a resource, allowing the user to update the tags on an
-     *     IoT Hub instance.
+     * @param iotHubTags Updated tag information to set into the iot hub instance.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1260,8 +1254,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName Resource group identifier.
      * @param resourceName Name of iot hub to update.
-     * @param iotHubTags A container holding only the Tags for a resource, allowing the user to update the tags on an
-     *     IoT Hub instance.
+     * @param iotHubTags Updated tag information to set into the iot hub instance.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1280,8 +1273,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName Resource group identifier.
      * @param resourceName Name of iot hub to update.
-     * @param iotHubTags A container holding only the Tags for a resource, allowing the user to update the tags on an
-     *     IoT Hub instance.
+     * @param iotHubTags Updated tag information to set into the iot hub instance.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1301,8 +1293,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName Resource group identifier.
      * @param resourceName Name of iot hub to update.
-     * @param iotHubTags A container holding only the Tags for a resource, allowing the user to update the tags on an
-     *     IoT Hub instance.
+     * @param iotHubTags Updated tag information to set into the iot hub instance.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1318,8 +1309,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName Resource group identifier.
      * @param resourceName Name of iot hub to update.
-     * @param iotHubTags A container holding only the Tags for a resource, allowing the user to update the tags on an
-     *     IoT Hub instance.
+     * @param iotHubTags Updated tag information to set into the iot hub instance.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2595,7 +2585,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @param resourceName The name of the IoT hub.
      * @param eventHubEndpointName The name of the Event Hub-compatible endpoint in the IoT hub.
      * @param name The name of the consumer group to add.
-     * @param consumerGroupBody The EventHub consumer group.
+     * @param consumerGroupBody The consumer group to add.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2666,7 +2656,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @param resourceName The name of the IoT hub.
      * @param eventHubEndpointName The name of the Event Hub-compatible endpoint in the IoT hub.
      * @param name The name of the consumer group to add.
-     * @param consumerGroupBody The EventHub consumer group.
+     * @param consumerGroupBody The consumer group to add.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -2736,7 +2726,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @param resourceName The name of the IoT hub.
      * @param eventHubEndpointName The name of the Event Hub-compatible endpoint in the IoT hub.
      * @param name The name of the consumer group to add.
-     * @param consumerGroupBody The EventHub consumer group.
+     * @param consumerGroupBody The consumer group to add.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2768,7 +2758,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @param resourceName The name of the IoT hub.
      * @param eventHubEndpointName The name of the Event Hub-compatible endpoint in the IoT hub.
      * @param name The name of the consumer group to add.
-     * @param consumerGroupBody The EventHub consumer group.
+     * @param consumerGroupBody The consumer group to add.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2793,7 +2783,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @param resourceName The name of the IoT hub.
      * @param eventHubEndpointName The name of the Event Hub-compatible endpoint in the IoT hub.
      * @param name The name of the consumer group to add.
-     * @param consumerGroupBody The EventHub consumer group.
+     * @param consumerGroupBody The consumer group to add.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -3700,7 +3690,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Check if an IoT hub name is available.
      *
-     * @param operationInputs Input values.
+     * @param operationInputs Set the name parameter in the OperationInputs structure to the name of the IoT hub to
+     *     check.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3745,7 +3736,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Check if an IoT hub name is available.
      *
-     * @param operationInputs Input values.
+     * @param operationInputs Set the name parameter in the OperationInputs structure to the name of the IoT hub to
+     *     check.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -3788,7 +3780,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Check if an IoT hub name is available.
      *
-     * @param operationInputs Input values.
+     * @param operationInputs Set the name parameter in the OperationInputs structure to the name of the IoT hub to
+     *     check.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3810,7 +3803,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Check if an IoT hub name is available.
      *
-     * @param operationInputs Input values.
+     * @param operationInputs Set the name parameter in the OperationInputs structure to the name of the IoT hub to
+     *     check.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3824,7 +3818,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Check if an IoT hub name is available.
      *
-     * @param operationInputs Input values.
+     * @param operationInputs Set the name parameter in the OperationInputs structure to the name of the IoT hub to
+     *     check.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -4010,7 +4005,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param iotHubName IotHub to be tested.
      * @param resourceGroupName resource group which Iot Hub belongs to.
-     * @param input Input for testing route.
+     * @param input Route that needs to be tested.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4065,7 +4060,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param iotHubName IotHub to be tested.
      * @param resourceGroupName resource group which Iot Hub belongs to.
-     * @param input Input for testing route.
+     * @param input Route that needs to be tested.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -4118,7 +4113,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param iotHubName IotHub to be tested.
      * @param resourceGroupName resource group which Iot Hub belongs to.
-     * @param input Input for testing route.
+     * @param input Route that needs to be tested.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4143,7 +4138,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param iotHubName IotHub to be tested.
      * @param resourceGroupName resource group which Iot Hub belongs to.
-     * @param input Input for testing route.
+     * @param input Route that needs to be tested.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4159,7 +4154,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param iotHubName IotHub to be tested.
      * @param resourceGroupName resource group which Iot Hub belongs to.
-     * @param input Input for testing route.
+     * @param input Route that needs to be tested.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -4536,7 +4531,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @param exportDevicesParameters Use to provide parameters when requesting an export of all devices in the IoT hub.
+     * @param exportDevicesParameters The parameters that specify the export devices operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4595,7 +4590,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @param exportDevicesParameters Use to provide parameters when requesting an export of all devices in the IoT hub.
+     * @param exportDevicesParameters The parameters that specify the export devices operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -4652,7 +4647,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @param exportDevicesParameters Use to provide parameters when requesting an export of all devices in the IoT hub.
+     * @param exportDevicesParameters The parameters that specify the export devices operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4679,7 +4674,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @param exportDevicesParameters Use to provide parameters when requesting an export of all devices in the IoT hub.
+     * @param exportDevicesParameters The parameters that specify the export devices operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4698,7 +4693,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @param exportDevicesParameters Use to provide parameters when requesting an export of all devices in the IoT hub.
+     * @param exportDevicesParameters The parameters that specify the export devices operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -4719,7 +4714,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @param importDevicesParameters Use to provide parameters when requesting an import of all devices in the hub.
+     * @param importDevicesParameters The parameters that specify the import devices operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4778,7 +4773,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @param importDevicesParameters Use to provide parameters when requesting an import of all devices in the hub.
+     * @param importDevicesParameters The parameters that specify the import devices operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -4835,7 +4830,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @param importDevicesParameters Use to provide parameters when requesting an import of all devices in the hub.
+     * @param importDevicesParameters The parameters that specify the import devices operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4862,7 +4857,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @param importDevicesParameters Use to provide parameters when requesting an import of all devices in the hub.
+     * @param importDevicesParameters The parameters that specify the import devices operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -4881,7 +4876,7 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      *
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
-     * @param importDevicesParameters Use to provide parameters when requesting an import of all devices in the hub.
+     * @param importDevicesParameters The parameters that specify the import devices operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.

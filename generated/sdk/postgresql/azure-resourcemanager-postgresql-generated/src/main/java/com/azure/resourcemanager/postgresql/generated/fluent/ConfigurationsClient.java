@@ -21,7 +21,7 @@ public interface ConfigurationsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param configurationName The name of the server configuration.
-     * @param parameters Represents a Configuration.
+     * @param parameters The required parameters for updating a server configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -37,7 +37,7 @@ public interface ConfigurationsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param configurationName The name of the server configuration.
-     * @param parameters Represents a Configuration.
+     * @param parameters The required parameters for updating a server configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -58,7 +58,7 @@ public interface ConfigurationsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param configurationName The name of the server configuration.
-     * @param parameters Represents a Configuration.
+     * @param parameters The required parameters for updating a server configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -74,7 +74,7 @@ public interface ConfigurationsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @param configurationName The name of the server configuration.
-     * @param parameters Represents a Configuration.
+     * @param parameters The required parameters for updating a server configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

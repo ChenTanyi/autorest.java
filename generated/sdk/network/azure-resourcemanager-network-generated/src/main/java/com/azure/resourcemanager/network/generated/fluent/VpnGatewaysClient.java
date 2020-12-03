@@ -51,7 +51,7 @@ public interface VpnGatewaysClient {
      *
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
-     * @param vpnGatewayParameters VpnGateway Resource.
+     * @param vpnGatewayParameters Parameters supplied to create or Update a virtual wan vpn gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -66,7 +66,7 @@ public interface VpnGatewaysClient {
      *
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
-     * @param vpnGatewayParameters VpnGateway Resource.
+     * @param vpnGatewayParameters Parameters supplied to create or Update a virtual wan vpn gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -82,7 +82,7 @@ public interface VpnGatewaysClient {
      *
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
-     * @param vpnGatewayParameters VpnGateway Resource.
+     * @param vpnGatewayParameters Parameters supplied to create or Update a virtual wan vpn gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -96,7 +96,7 @@ public interface VpnGatewaysClient {
      *
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
-     * @param vpnGatewayParameters VpnGateway Resource.
+     * @param vpnGatewayParameters Parameters supplied to create or Update a virtual wan vpn gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -112,7 +112,7 @@ public interface VpnGatewaysClient {
      *
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
-     * @param vpnGatewayParameters Tags object for patch operations.
+     * @param vpnGatewayParameters Parameters supplied to update a virtual wan vpn gateway tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -127,7 +127,7 @@ public interface VpnGatewaysClient {
      *
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
-     * @param vpnGatewayParameters Tags object for patch operations.
+     * @param vpnGatewayParameters Parameters supplied to update a virtual wan vpn gateway tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -143,7 +143,7 @@ public interface VpnGatewaysClient {
      *
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
-     * @param vpnGatewayParameters Tags object for patch operations.
+     * @param vpnGatewayParameters Parameters supplied to update a virtual wan vpn gateway tags.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -157,7 +157,7 @@ public interface VpnGatewaysClient {
      *
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
-     * @param vpnGatewayParameters Tags object for patch operations.
+     * @param vpnGatewayParameters Parameters supplied to update a virtual wan vpn gateway tags.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -280,7 +280,7 @@ public interface VpnGatewaysClient {
      *
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
-     * @param parameters Start packet capture parameters.
+     * @param parameters Vpn gateway packet capture parameters supplied to start packet capture on vpn gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -295,7 +295,7 @@ public interface VpnGatewaysClient {
      *
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
-     * @param parameters Start packet capture parameters.
+     * @param parameters Vpn gateway packet capture parameters supplied to start packet capture on vpn gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -314,7 +314,7 @@ public interface VpnGatewaysClient {
      *
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
-     * @param parameters Start packet capture parameters.
+     * @param parameters Vpn gateway packet capture parameters supplied to start packet capture on vpn gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -342,7 +342,7 @@ public interface VpnGatewaysClient {
      *
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
-     * @param parameters Start packet capture parameters.
+     * @param parameters Vpn gateway packet capture parameters supplied to start packet capture on vpn gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -361,7 +361,7 @@ public interface VpnGatewaysClient {
      *
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
-     * @param parameters Stop packet capture parameters.
+     * @param parameters Vpn gateway packet capture parameters supplied to stop packet capture on vpn gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -376,7 +376,7 @@ public interface VpnGatewaysClient {
      *
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
-     * @param parameters Stop packet capture parameters.
+     * @param parameters Vpn gateway packet capture parameters supplied to stop packet capture on vpn gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -395,7 +395,7 @@ public interface VpnGatewaysClient {
      *
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
-     * @param parameters Stop packet capture parameters.
+     * @param parameters Vpn gateway packet capture parameters supplied to stop packet capture on vpn gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -423,7 +423,7 @@ public interface VpnGatewaysClient {
      *
      * @param resourceGroupName The resource group name of the VpnGateway.
      * @param gatewayName The name of the gateway.
-     * @param parameters Stop packet capture parameters.
+     * @param parameters Vpn gateway packet capture parameters supplied to stop packet capture on vpn gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
