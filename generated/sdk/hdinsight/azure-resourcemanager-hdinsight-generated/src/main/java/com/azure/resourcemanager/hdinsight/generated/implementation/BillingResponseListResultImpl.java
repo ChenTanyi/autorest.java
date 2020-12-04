@@ -17,7 +17,7 @@ public final class BillingResponseListResultImpl implements BillingResponseListR
 
     private final HDInsightManager serviceManager;
 
-    public BillingResponseListResultImpl(BillingResponseListResultInner innerObject, HDInsightManager serviceManager) {
+    BillingResponseListResultImpl(BillingResponseListResultInner innerObject, HDInsightManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

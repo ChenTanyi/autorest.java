@@ -13,8 +13,7 @@ public final class PrivateLinkServiceVisibilityImpl implements PrivateLinkServic
 
     private final NetworkManager serviceManager;
 
-    public PrivateLinkServiceVisibilityImpl(
-        PrivateLinkServiceVisibilityInner innerObject, NetworkManager serviceManager) {
+    PrivateLinkServiceVisibilityImpl(PrivateLinkServiceVisibilityInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -15,7 +15,7 @@ public final class OperationImpl implements Operation {
 
     private final StorageManager serviceManager;
 
-    public OperationImpl(OperationInner innerObject, StorageManager serviceManager) {
+    OperationImpl(OperationInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

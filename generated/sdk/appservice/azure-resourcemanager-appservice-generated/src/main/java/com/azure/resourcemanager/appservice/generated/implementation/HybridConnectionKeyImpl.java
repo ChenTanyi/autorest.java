@@ -13,7 +13,7 @@ public final class HybridConnectionKeyImpl implements HybridConnectionKey {
 
     private final WebSiteManager serviceManager;
 
-    public HybridConnectionKeyImpl(HybridConnectionKeyInner innerObject, WebSiteManager serviceManager) {
+    HybridConnectionKeyImpl(HybridConnectionKeyInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

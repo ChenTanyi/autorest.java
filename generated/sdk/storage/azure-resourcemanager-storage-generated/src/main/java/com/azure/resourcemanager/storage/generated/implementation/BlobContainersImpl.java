@@ -457,6 +457,66 @@ public final class BlobContainersImpl implements BlobContainers {
         return this.deleteWithResponse(resourceGroupName, accountName, containerName, context);
     }
 
+    public ImmutabilityPolicy deleteImmutabilityPolicyById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
+        String containerName = Utils.getValueFromIdByName(id, "containers");
+        if (containerName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'containers'.", id)));
+        }
+        String localIfMatch = null;
+        return this
+            .deleteImmutabilityPolicyWithResponse(
+                resourceGroupName, accountName, containerName, localIfMatch, Context.NONE)
+            .getValue();
+    }
+
+    public Response<ImmutabilityPolicy> deleteImmutabilityPolicyByIdWithResponse(
+        String id, String ifMatch, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String accountName = Utils.getValueFromIdByName(id, "storageAccounts");
+        if (accountName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'storageAccounts'.", id)));
+        }
+        String containerName = Utils.getValueFromIdByName(id, "containers");
+        if (containerName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'containers'.", id)));
+        }
+        return this
+            .deleteImmutabilityPolicyWithResponse(resourceGroupName, accountName, containerName, ifMatch, context);
+    }
+
     private BlobContainersClient serviceClient() {
         return this.innerClient;
     }

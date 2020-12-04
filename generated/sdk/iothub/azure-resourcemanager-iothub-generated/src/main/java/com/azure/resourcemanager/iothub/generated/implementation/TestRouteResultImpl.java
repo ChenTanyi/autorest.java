@@ -15,7 +15,7 @@ public final class TestRouteResultImpl implements TestRouteResult {
 
     private final IotHubManager serviceManager;
 
-    public TestRouteResultImpl(TestRouteResultInner innerObject, IotHubManager serviceManager) {
+    TestRouteResultImpl(TestRouteResultInner innerObject, IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -13,7 +13,7 @@ public final class ProcessModuleInfoImpl implements ProcessModuleInfo {
 
     private final WebSiteManager serviceManager;
 
-    public ProcessModuleInfoImpl(ProcessModuleInfoInner innerObject, WebSiteManager serviceManager) {
+    ProcessModuleInfoImpl(ProcessModuleInfoInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -35,7 +35,7 @@ public final class SiteConfigImpl implements SiteConfig {
 
     private final WebSiteManager serviceManager;
 
-    public SiteConfigImpl(SiteConfigInner innerObject, WebSiteManager serviceManager) {
+    SiteConfigImpl(SiteConfigInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

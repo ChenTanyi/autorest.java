@@ -18,7 +18,7 @@ public final class ExpressRoutePortsLocationImpl implements ExpressRoutePortsLoc
 
     private final NetworkManager serviceManager;
 
-    public ExpressRoutePortsLocationImpl(ExpressRoutePortsLocationInner innerObject, NetworkManager serviceManager) {
+    ExpressRoutePortsLocationImpl(ExpressRoutePortsLocationInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -115,7 +115,7 @@ public final class InboundNatRuleImpl implements InboundNatRule, InboundNatRule.
         return this;
     }
 
-    public InboundNatRuleImpl(String name, NetworkManager serviceManager) {
+    InboundNatRuleImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new InboundNatRuleInner();
         this.serviceManager = serviceManager;
         this.inboundNatRuleName = name;
@@ -144,7 +144,7 @@ public final class InboundNatRuleImpl implements InboundNatRule, InboundNatRule.
         return this;
     }
 
-    public InboundNatRuleImpl(InboundNatRuleInner innerObject, NetworkManager serviceManager) {
+    InboundNatRuleImpl(InboundNatRuleInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -19,7 +19,7 @@ public final class OperationImpl implements Operation {
 
     private final WebSiteManager serviceManager;
 
-    public OperationImpl(OperationInner innerObject, WebSiteManager serviceManager) {
+    OperationImpl(OperationInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

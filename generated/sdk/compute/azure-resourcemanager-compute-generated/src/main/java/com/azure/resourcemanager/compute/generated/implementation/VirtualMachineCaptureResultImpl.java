@@ -15,8 +15,7 @@ public final class VirtualMachineCaptureResultImpl implements VirtualMachineCapt
 
     private final ComputeManager serviceManager;
 
-    public VirtualMachineCaptureResultImpl(
-        VirtualMachineCaptureResultInner innerObject, ComputeManager serviceManager) {
+    VirtualMachineCaptureResultImpl(VirtualMachineCaptureResultInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

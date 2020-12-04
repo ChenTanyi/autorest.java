@@ -24,7 +24,7 @@ public final class VpnConnectionImpl implements VpnConnection {
 
     private final NetworkManager serviceManager;
 
-    public VpnConnectionImpl(VpnConnectionInner innerObject, NetworkManager serviceManager) {
+    VpnConnectionImpl(VpnConnectionInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

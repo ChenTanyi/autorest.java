@@ -143,7 +143,7 @@ public final class VpnGatewayImpl implements VpnGateway, VpnGateway.Definition, 
         return this;
     }
 
-    public VpnGatewayImpl(String name, NetworkManager serviceManager) {
+    VpnGatewayImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new VpnGatewayInner();
         this.serviceManager = serviceManager;
         this.gatewayName = name;
@@ -172,7 +172,7 @@ public final class VpnGatewayImpl implements VpnGateway, VpnGateway.Definition, 
         return this;
     }
 
-    public VpnGatewayImpl(VpnGatewayInner innerObject, NetworkManager serviceManager) {
+    VpnGatewayImpl(VpnGatewayInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -15,8 +15,7 @@ public final class VirtualMachineExtensionImageImpl implements VirtualMachineExt
 
     private final ComputeManager serviceManager;
 
-    public VirtualMachineExtensionImageImpl(
-        VirtualMachineExtensionImageInner innerObject, ComputeManager serviceManager) {
+    VirtualMachineExtensionImageImpl(VirtualMachineExtensionImageInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

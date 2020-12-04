@@ -17,7 +17,7 @@ public final class CloudServiceInstanceViewImpl implements CloudServiceInstanceV
 
     private final ComputeManager serviceManager;
 
-    public CloudServiceInstanceViewImpl(CloudServiceInstanceViewInner innerObject, ComputeManager serviceManager) {
+    CloudServiceInstanceViewImpl(CloudServiceInstanceViewInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

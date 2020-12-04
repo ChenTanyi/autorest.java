@@ -14,8 +14,7 @@ public final class CheckNameAvailabilityOutputImpl implements CheckNameAvailabil
 
     private final FrontDoorManager serviceManager;
 
-    public CheckNameAvailabilityOutputImpl(
-        CheckNameAvailabilityOutputInner innerObject, FrontDoorManager serviceManager) {
+    CheckNameAvailabilityOutputImpl(CheckNameAvailabilityOutputInner innerObject, FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

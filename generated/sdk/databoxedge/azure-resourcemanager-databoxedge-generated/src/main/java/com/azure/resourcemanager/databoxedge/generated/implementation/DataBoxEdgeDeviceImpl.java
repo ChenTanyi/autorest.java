@@ -163,7 +163,7 @@ public final class DataBoxEdgeDeviceImpl
         return this;
     }
 
-    public DataBoxEdgeDeviceImpl(String name, DataBoxEdgeManager serviceManager) {
+    DataBoxEdgeDeviceImpl(String name, DataBoxEdgeManager serviceManager) {
         this.innerObject = new DataBoxEdgeDeviceInner();
         this.serviceManager = serviceManager;
         this.deviceName = name;
@@ -194,7 +194,7 @@ public final class DataBoxEdgeDeviceImpl
         return this;
     }
 
-    public DataBoxEdgeDeviceImpl(DataBoxEdgeDeviceInner innerObject, DataBoxEdgeManager serviceManager) {
+    DataBoxEdgeDeviceImpl(DataBoxEdgeDeviceInner innerObject, DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");

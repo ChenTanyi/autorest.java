@@ -15,7 +15,7 @@ public final class OperationImpl implements Operation {
 
     private final KeyVaultManager serviceManager;
 
-    public OperationImpl(OperationInner innerObject, KeyVaultManager serviceManager) {
+    OperationImpl(OperationInner innerObject, KeyVaultManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -15,7 +15,7 @@ public final class DeploymentImpl implements Deployment, Deployment.Definition {
 
     private final WebSiteManager serviceManager;
 
-    public DeploymentImpl(DeploymentInner innerObject, WebSiteManager serviceManager) {
+    DeploymentImpl(DeploymentInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -112,7 +112,7 @@ public final class DeploymentImpl implements Deployment, Deployment.Definition {
         return this;
     }
 
-    public DeploymentImpl(String name, WebSiteManager serviceManager) {
+    DeploymentImpl(String name, WebSiteManager serviceManager) {
         this.innerObject = new DeploymentInner();
         this.serviceManager = serviceManager;
         this.id = name;

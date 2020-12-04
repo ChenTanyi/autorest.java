@@ -202,7 +202,7 @@ public final class NetworkInterfaceImpl
         return this;
     }
 
-    public NetworkInterfaceImpl(String name, NetworkManager serviceManager) {
+    NetworkInterfaceImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new NetworkInterfaceInner();
         this.serviceManager = serviceManager;
         this.networkInterfaceName = name;
@@ -233,7 +233,7 @@ public final class NetworkInterfaceImpl
         return this;
     }
 
-    public NetworkInterfaceImpl(NetworkInterfaceInner innerObject, NetworkManager serviceManager) {
+    NetworkInterfaceImpl(NetworkInterfaceInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

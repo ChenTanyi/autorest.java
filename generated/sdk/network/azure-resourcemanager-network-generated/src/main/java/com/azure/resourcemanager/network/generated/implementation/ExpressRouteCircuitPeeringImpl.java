@@ -191,7 +191,7 @@ public final class ExpressRouteCircuitPeeringImpl
         return this;
     }
 
-    public ExpressRouteCircuitPeeringImpl(String name, NetworkManager serviceManager) {
+    ExpressRouteCircuitPeeringImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new ExpressRouteCircuitPeeringInner();
         this.serviceManager = serviceManager;
         this.peeringName = name;
@@ -219,7 +219,7 @@ public final class ExpressRouteCircuitPeeringImpl
         return this;
     }
 
-    public ExpressRouteCircuitPeeringImpl(ExpressRouteCircuitPeeringInner innerObject, NetworkManager serviceManager) {
+    ExpressRouteCircuitPeeringImpl(ExpressRouteCircuitPeeringInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

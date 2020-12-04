@@ -15,8 +15,7 @@ public final class VirtualMachineImageResourceImpl implements VirtualMachineImag
 
     private final ComputeManager serviceManager;
 
-    public VirtualMachineImageResourceImpl(
-        VirtualMachineImageResourceInner innerObject, ComputeManager serviceManager) {
+    VirtualMachineImageResourceImpl(VirtualMachineImageResourceInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

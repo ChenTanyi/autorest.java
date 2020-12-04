@@ -17,7 +17,7 @@ public final class ExpressRouteLinkImpl implements ExpressRouteLink {
 
     private final NetworkManager serviceManager;
 
-    public ExpressRouteLinkImpl(ExpressRouteLinkInner innerObject, NetworkManager serviceManager) {
+    ExpressRouteLinkImpl(ExpressRouteLinkInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

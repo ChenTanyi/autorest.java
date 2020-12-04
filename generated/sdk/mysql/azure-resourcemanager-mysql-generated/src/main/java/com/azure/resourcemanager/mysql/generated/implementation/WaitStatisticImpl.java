@@ -14,7 +14,7 @@ public final class WaitStatisticImpl implements WaitStatistic {
 
     private final MySqlManager serviceManager;
 
-    public WaitStatisticImpl(WaitStatisticInner innerObject, MySqlManager serviceManager) {
+    WaitStatisticImpl(WaitStatisticInner innerObject, MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

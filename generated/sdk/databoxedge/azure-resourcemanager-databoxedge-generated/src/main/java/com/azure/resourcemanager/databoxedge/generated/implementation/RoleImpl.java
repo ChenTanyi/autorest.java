@@ -13,7 +13,7 @@ public final class RoleImpl implements Role {
 
     private final DataBoxEdgeManager serviceManager;
 
-    public RoleImpl(RoleInner innerObject, DataBoxEdgeManager serviceManager) {
+    RoleImpl(RoleInner innerObject, DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

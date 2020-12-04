@@ -13,7 +13,7 @@ public final class ComputeOperationValueImpl implements ComputeOperationValue {
 
     private final ComputeManager serviceManager;
 
-    public ComputeOperationValueImpl(ComputeOperationValueInner innerObject, ComputeManager serviceManager) {
+    ComputeOperationValueImpl(ComputeOperationValueInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

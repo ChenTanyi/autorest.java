@@ -17,7 +17,7 @@ public final class TroubleshootingResultImpl implements TroubleshootingResult {
 
     private final NetworkManager serviceManager;
 
-    public TroubleshootingResultImpl(TroubleshootingResultInner innerObject, NetworkManager serviceManager) {
+    TroubleshootingResultImpl(TroubleshootingResultInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

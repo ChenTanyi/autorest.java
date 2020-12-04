@@ -16,7 +16,7 @@ public final class ProviderImpl implements Provider {
 
     private final ResourceManager serviceManager;
 
-    public ProviderImpl(ProviderInner innerObject, ResourceManager serviceManager) {
+    ProviderImpl(ProviderInner innerObject, ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

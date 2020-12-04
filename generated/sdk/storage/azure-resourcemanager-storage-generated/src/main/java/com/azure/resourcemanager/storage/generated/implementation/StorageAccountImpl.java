@@ -237,7 +237,7 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this;
     }
 
-    public StorageAccountImpl(String name, StorageManager serviceManager) {
+    StorageAccountImpl(String name, StorageManager serviceManager) {
         this.innerObject = new StorageAccountInner();
         this.serviceManager = serviceManager;
         this.accountName = name;
@@ -269,7 +269,7 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this;
     }
 
-    public StorageAccountImpl(StorageAccountInner innerObject, StorageManager serviceManager) {
+    StorageAccountImpl(StorageAccountInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

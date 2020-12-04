@@ -17,7 +17,7 @@ public final class TopologyImpl implements Topology {
 
     private final NetworkManager serviceManager;
 
-    public TopologyImpl(TopologyInner innerObject, NetworkManager serviceManager) {
+    TopologyImpl(TopologyInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -13,7 +13,7 @@ public final class DeletedSiteImpl implements DeletedSite {
 
     private final WebSiteManager serviceManager;
 
-    public DeletedSiteImpl(DeletedSiteInner innerObject, WebSiteManager serviceManager) {
+    DeletedSiteImpl(DeletedSiteInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

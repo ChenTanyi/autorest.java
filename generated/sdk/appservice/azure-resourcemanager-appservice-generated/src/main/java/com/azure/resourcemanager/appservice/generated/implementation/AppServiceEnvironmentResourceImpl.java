@@ -298,7 +298,7 @@ public final class AppServiceEnvironmentResourceImpl
         return this;
     }
 
-    public AppServiceEnvironmentResourceImpl(String name, WebSiteManager serviceManager) {
+    AppServiceEnvironmentResourceImpl(String name, WebSiteManager serviceManager) {
         this.innerObject = new AppServiceEnvironmentResourceInner();
         this.serviceManager = serviceManager;
         this.name = name;
@@ -329,8 +329,7 @@ public final class AppServiceEnvironmentResourceImpl
         return this;
     }
 
-    public AppServiceEnvironmentResourceImpl(
-        AppServiceEnvironmentResourceInner innerObject, WebSiteManager serviceManager) {
+    AppServiceEnvironmentResourceImpl(AppServiceEnvironmentResourceInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

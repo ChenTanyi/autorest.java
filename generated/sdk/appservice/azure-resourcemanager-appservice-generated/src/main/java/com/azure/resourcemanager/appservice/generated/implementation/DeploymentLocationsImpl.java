@@ -20,7 +20,7 @@ public final class DeploymentLocationsImpl implements DeploymentLocations {
 
     private final WebSiteManager serviceManager;
 
-    public DeploymentLocationsImpl(DeploymentLocationsInner innerObject, WebSiteManager serviceManager) {
+    DeploymentLocationsImpl(DeploymentLocationsInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

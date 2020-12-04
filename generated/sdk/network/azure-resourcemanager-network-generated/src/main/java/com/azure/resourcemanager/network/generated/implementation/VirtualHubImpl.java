@@ -197,7 +197,7 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
         return this;
     }
 
-    public VirtualHubImpl(String name, NetworkManager serviceManager) {
+    VirtualHubImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new VirtualHubInner();
         this.serviceManager = serviceManager;
         this.virtualHubName = name;
@@ -228,7 +228,7 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
         return this;
     }
 
-    public VirtualHubImpl(VirtualHubInner innerObject, NetworkManager serviceManager) {
+    VirtualHubImpl(VirtualHubInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

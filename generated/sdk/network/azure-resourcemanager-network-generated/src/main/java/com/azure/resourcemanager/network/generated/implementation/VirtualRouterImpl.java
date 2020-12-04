@@ -126,7 +126,7 @@ public final class VirtualRouterImpl implements VirtualRouter, VirtualRouter.Def
         return this;
     }
 
-    public VirtualRouterImpl(String name, NetworkManager serviceManager) {
+    VirtualRouterImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new VirtualRouterInner();
         this.serviceManager = serviceManager;
         this.virtualRouterName = name;
@@ -154,7 +154,7 @@ public final class VirtualRouterImpl implements VirtualRouter, VirtualRouter.Def
         return this;
     }
 
-    public VirtualRouterImpl(VirtualRouterInner innerObject, NetworkManager serviceManager) {
+    VirtualRouterImpl(VirtualRouterInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

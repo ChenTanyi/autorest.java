@@ -4,17 +4,19 @@
 
 package com.azure.resourcemanager.authorization.generated.implementation;
 
+import com.azure.core.util.Context;
 import com.azure.resourcemanager.authorization.generated.AuthorizationManager;
 import com.azure.resourcemanager.authorization.generated.fluent.models.RoleAssignmentInner;
 import com.azure.resourcemanager.authorization.generated.models.PrincipalType;
 import com.azure.resourcemanager.authorization.generated.models.RoleAssignment;
+import com.azure.resourcemanager.authorization.generated.models.RoleAssignmentCreateParameters;
 
-public final class RoleAssignmentImpl implements RoleAssignment {
+public final class RoleAssignmentImpl implements RoleAssignment, RoleAssignment.Definition {
     private RoleAssignmentInner innerObject;
 
     private final AuthorizationManager serviceManager;
 
-    public RoleAssignmentImpl(RoleAssignmentInner innerObject, AuthorizationManager serviceManager) {
+    RoleAssignmentImpl(RoleAssignmentInner innerObject, AuthorizationManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -57,5 +59,83 @@ public final class RoleAssignmentImpl implements RoleAssignment {
 
     private AuthorizationManager manager() {
         return this.serviceManager;
+    }
+
+    private String scope;
+
+    private String roleAssignmentName;
+
+    private RoleAssignmentCreateParameters createParameters;
+
+    public RoleAssignmentImpl withExistingScope(String scope) {
+        this.scope = scope;
+        return this;
+    }
+
+    public RoleAssignment create() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getRoleAssignments()
+                .createWithResponse(scope, roleAssignmentName, createParameters, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public RoleAssignment create(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getRoleAssignments()
+                .createWithResponse(scope, roleAssignmentName, createParameters, context)
+                .getValue();
+        return this;
+    }
+
+    RoleAssignmentImpl(String name, AuthorizationManager serviceManager) {
+        this.innerObject = new RoleAssignmentInner();
+        this.serviceManager = serviceManager;
+        this.roleAssignmentName = name;
+        this.createParameters = new RoleAssignmentCreateParameters();
+    }
+
+    public RoleAssignment refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getRoleAssignments()
+                .getWithResponse(scope, roleAssignmentName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public RoleAssignment refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getRoleAssignments()
+                .getWithResponse(scope, roleAssignmentName, context)
+                .getValue();
+        return this;
+    }
+
+    public RoleAssignmentImpl withRoleDefinitionId(String roleDefinitionId) {
+        this.createParameters.withRoleDefinitionId(roleDefinitionId);
+        return this;
+    }
+
+    public RoleAssignmentImpl withPrincipalId(String principalId) {
+        this.createParameters.withPrincipalId(principalId);
+        return this;
+    }
+
+    public RoleAssignmentImpl withPrincipalType(PrincipalType principalType) {
+        this.createParameters.withPrincipalType(principalType);
+        return this;
+    }
+
+    public RoleAssignmentImpl withCanDelegate(Boolean canDelegate) {
+        this.createParameters.withCanDelegate(canDelegate);
+        return this;
     }
 }

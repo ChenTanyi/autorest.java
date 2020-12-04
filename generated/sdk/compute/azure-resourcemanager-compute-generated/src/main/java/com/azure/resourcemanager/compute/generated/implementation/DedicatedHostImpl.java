@@ -139,7 +139,7 @@ public final class DedicatedHostImpl implements DedicatedHost, DedicatedHost.Def
         return this;
     }
 
-    public DedicatedHostImpl(String name, ComputeManager serviceManager) {
+    DedicatedHostImpl(String name, ComputeManager serviceManager) {
         this.innerObject = new DedicatedHostInner();
         this.serviceManager = serviceManager;
         this.hostname = name;
@@ -168,7 +168,7 @@ public final class DedicatedHostImpl implements DedicatedHost, DedicatedHost.Def
         return this;
     }
 
-    public DedicatedHostImpl(DedicatedHostInner innerObject, ComputeManager serviceManager) {
+    DedicatedHostImpl(DedicatedHostInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

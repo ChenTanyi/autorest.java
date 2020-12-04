@@ -13,7 +13,7 @@ public final class FunctionSecretsImpl implements FunctionSecrets {
 
     private final WebSiteManager serviceManager;
 
-    public FunctionSecretsImpl(FunctionSecretsInner innerObject, WebSiteManager serviceManager) {
+    FunctionSecretsImpl(FunctionSecretsInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

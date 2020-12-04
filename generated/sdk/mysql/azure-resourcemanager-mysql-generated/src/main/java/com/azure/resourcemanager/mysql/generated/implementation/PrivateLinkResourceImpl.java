@@ -14,7 +14,7 @@ public final class PrivateLinkResourceImpl implements PrivateLinkResource {
 
     private final MySqlManager serviceManager;
 
-    public PrivateLinkResourceImpl(PrivateLinkResourceInner innerObject, MySqlManager serviceManager) {
+    PrivateLinkResourceImpl(PrivateLinkResourceInner innerObject, MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

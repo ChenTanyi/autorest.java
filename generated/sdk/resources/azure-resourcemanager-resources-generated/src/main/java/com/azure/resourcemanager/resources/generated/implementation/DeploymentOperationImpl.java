@@ -14,7 +14,7 @@ public final class DeploymentOperationImpl implements DeploymentOperation {
 
     private final ResourceManager serviceManager;
 
-    public DeploymentOperationImpl(DeploymentOperationInner innerObject, ResourceManager serviceManager) {
+    DeploymentOperationImpl(DeploymentOperationInner innerObject, ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

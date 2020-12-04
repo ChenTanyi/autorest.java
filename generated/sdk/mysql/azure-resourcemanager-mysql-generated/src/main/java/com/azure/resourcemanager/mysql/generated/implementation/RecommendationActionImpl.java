@@ -16,7 +16,7 @@ public final class RecommendationActionImpl implements RecommendationAction {
 
     private final MySqlManager serviceManager;
 
-    public RecommendationActionImpl(RecommendationActionInner innerObject, MySqlManager serviceManager) {
+    RecommendationActionImpl(RecommendationActionInner innerObject, MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -16,7 +16,7 @@ public final class UsagesListResultImpl implements UsagesListResult {
 
     private final HDInsightManager serviceManager;
 
-    public UsagesListResultImpl(UsagesListResultInner innerObject, HDInsightManager serviceManager) {
+    UsagesListResultImpl(UsagesListResultInner innerObject, HDInsightManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

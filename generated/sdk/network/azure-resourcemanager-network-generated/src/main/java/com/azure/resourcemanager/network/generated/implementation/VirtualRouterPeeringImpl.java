@@ -82,7 +82,7 @@ public final class VirtualRouterPeeringImpl
         return this;
     }
 
-    public VirtualRouterPeeringImpl(String name, NetworkManager serviceManager) {
+    VirtualRouterPeeringImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new VirtualRouterPeeringInner();
         this.serviceManager = serviceManager;
         this.peeringName = name;
@@ -110,7 +110,7 @@ public final class VirtualRouterPeeringImpl
         return this;
     }
 
-    public VirtualRouterPeeringImpl(VirtualRouterPeeringInner innerObject, NetworkManager serviceManager) {
+    VirtualRouterPeeringImpl(VirtualRouterPeeringInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

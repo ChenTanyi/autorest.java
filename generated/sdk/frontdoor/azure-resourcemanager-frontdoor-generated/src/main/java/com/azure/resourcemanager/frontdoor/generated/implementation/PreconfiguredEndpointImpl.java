@@ -16,7 +16,7 @@ public final class PreconfiguredEndpointImpl implements PreconfiguredEndpoint {
 
     private final FrontDoorManager serviceManager;
 
-    public PreconfiguredEndpointImpl(PreconfiguredEndpointInner innerObject, FrontDoorManager serviceManager) {
+    PreconfiguredEndpointImpl(PreconfiguredEndpointInner innerObject, FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

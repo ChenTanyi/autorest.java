@@ -13,7 +13,7 @@ public final class TopLevelDomainImpl implements TopLevelDomain {
 
     private final WebSiteManager serviceManager;
 
-    public TopLevelDomainImpl(TopLevelDomainInner innerObject, WebSiteManager serviceManager) {
+    TopLevelDomainImpl(TopLevelDomainInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -15,7 +15,7 @@ public final class ListQueueImpl implements ListQueue {
 
     private final StorageManager serviceManager;
 
-    public ListQueueImpl(ListQueueInner innerObject, StorageManager serviceManager) {
+    ListQueueImpl(ListQueueInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

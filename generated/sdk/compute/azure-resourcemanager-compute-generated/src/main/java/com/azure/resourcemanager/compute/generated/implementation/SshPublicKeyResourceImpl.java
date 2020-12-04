@@ -95,7 +95,7 @@ public final class SshPublicKeyResourceImpl
         return this;
     }
 
-    public SshPublicKeyResourceImpl(String name, ComputeManager serviceManager) {
+    SshPublicKeyResourceImpl(String name, ComputeManager serviceManager) {
         this.innerObject = new SshPublicKeyResourceInner();
         this.serviceManager = serviceManager;
         this.sshPublicKeyName = name;
@@ -126,7 +126,7 @@ public final class SshPublicKeyResourceImpl
         return this;
     }
 
-    public SshPublicKeyResourceImpl(SshPublicKeyResourceInner innerObject, ComputeManager serviceManager) {
+    SshPublicKeyResourceImpl(SshPublicKeyResourceInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

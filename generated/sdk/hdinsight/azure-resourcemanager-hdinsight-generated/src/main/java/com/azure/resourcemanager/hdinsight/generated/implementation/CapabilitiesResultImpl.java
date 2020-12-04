@@ -21,7 +21,7 @@ public final class CapabilitiesResultImpl implements CapabilitiesResult {
 
     private final HDInsightManager serviceManager;
 
-    public CapabilitiesResultImpl(CapabilitiesResultInner innerObject, HDInsightManager serviceManager) {
+    CapabilitiesResultImpl(CapabilitiesResultInner innerObject, HDInsightManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

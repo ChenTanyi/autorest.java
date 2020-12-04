@@ -13,7 +13,7 @@ public final class QueryKeyImpl implements QueryKey {
 
     private final SearchManager serviceManager;
 
-    public QueryKeyImpl(QueryKeyInner innerObject, SearchManager serviceManager) {
+    QueryKeyImpl(QueryKeyInner innerObject, SearchManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

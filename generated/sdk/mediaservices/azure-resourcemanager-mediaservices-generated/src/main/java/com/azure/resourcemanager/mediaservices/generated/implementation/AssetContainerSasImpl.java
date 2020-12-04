@@ -15,7 +15,7 @@ public final class AssetContainerSasImpl implements AssetContainerSas {
 
     private final MediaservicesManager serviceManager;
 
-    public AssetContainerSasImpl(AssetContainerSasInner innerObject, MediaservicesManager serviceManager) {
+    AssetContainerSasImpl(AssetContainerSasInner innerObject, MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

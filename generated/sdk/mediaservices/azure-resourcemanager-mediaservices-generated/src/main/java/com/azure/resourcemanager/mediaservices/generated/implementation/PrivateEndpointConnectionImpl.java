@@ -82,7 +82,7 @@ public final class PrivateEndpointConnectionImpl
         return this;
     }
 
-    public PrivateEndpointConnectionImpl(String name, MediaservicesManager serviceManager) {
+    PrivateEndpointConnectionImpl(String name, MediaservicesManager serviceManager) {
         this.innerObject = new PrivateEndpointConnectionInner();
         this.serviceManager = serviceManager;
         this.name = name;
@@ -112,8 +112,7 @@ public final class PrivateEndpointConnectionImpl
         return this;
     }
 
-    public PrivateEndpointConnectionImpl(
-        PrivateEndpointConnectionInner innerObject, MediaservicesManager serviceManager) {
+    PrivateEndpointConnectionImpl(PrivateEndpointConnectionInner innerObject, MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

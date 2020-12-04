@@ -16,7 +16,7 @@ public final class BgpPeerStatusListResultImpl implements BgpPeerStatusListResul
 
     private final NetworkManager serviceManager;
 
-    public BgpPeerStatusListResultImpl(BgpPeerStatusListResultInner innerObject, NetworkManager serviceManager) {
+    BgpPeerStatusListResultImpl(BgpPeerStatusListResultInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

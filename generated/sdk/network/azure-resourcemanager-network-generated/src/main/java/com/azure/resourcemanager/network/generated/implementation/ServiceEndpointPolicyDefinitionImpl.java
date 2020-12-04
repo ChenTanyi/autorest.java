@@ -16,7 +16,7 @@ public final class ServiceEndpointPolicyDefinitionImpl implements ServiceEndpoin
 
     private final NetworkManager serviceManager;
 
-    public ServiceEndpointPolicyDefinitionImpl(
+    ServiceEndpointPolicyDefinitionImpl(
         ServiceEndpointPolicyDefinitionInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

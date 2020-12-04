@@ -90,7 +90,7 @@ public final class NetworkInterfaceTapConfigurationImpl
         return this;
     }
 
-    public NetworkInterfaceTapConfigurationImpl(String name, NetworkManager serviceManager) {
+    NetworkInterfaceTapConfigurationImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new NetworkInterfaceTapConfigurationInner();
         this.serviceManager = serviceManager;
         this.tapConfigurationName = name;
@@ -120,7 +120,7 @@ public final class NetworkInterfaceTapConfigurationImpl
         return this;
     }
 
-    public NetworkInterfaceTapConfigurationImpl(
+    NetworkInterfaceTapConfigurationImpl(
         NetworkInterfaceTapConfigurationInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

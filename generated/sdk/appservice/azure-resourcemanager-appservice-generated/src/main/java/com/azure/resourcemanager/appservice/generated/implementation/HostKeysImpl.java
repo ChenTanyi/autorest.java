@@ -15,7 +15,7 @@ public final class HostKeysImpl implements HostKeys {
 
     private final WebSiteManager serviceManager;
 
-    public HostKeysImpl(HostKeysInner innerObject, WebSiteManager serviceManager) {
+    HostKeysImpl(HostKeysInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

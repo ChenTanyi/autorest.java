@@ -107,7 +107,7 @@ public final class PolicySetDefinitionImpl
         return this;
     }
 
-    public PolicySetDefinitionImpl(String name, PolicyManager serviceManager) {
+    PolicySetDefinitionImpl(String name, PolicyManager serviceManager) {
         this.innerObject = new PolicySetDefinitionInner();
         this.serviceManager = serviceManager;
         this.policySetDefinitionName = name;
@@ -137,7 +137,7 @@ public final class PolicySetDefinitionImpl
         return this;
     }
 
-    public PolicySetDefinitionImpl(PolicySetDefinitionInner innerObject, PolicyManager serviceManager) {
+    PolicySetDefinitionImpl(PolicySetDefinitionInner innerObject, PolicyManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.policySetDefinitionName = Utils.getValueFromIdByName(innerObject.id(), "policySetDefinitions");

@@ -19,7 +19,7 @@ public final class EventHubConsumerGroupInfoImpl
 
     private final IotHubManager serviceManager;
 
-    public EventHubConsumerGroupInfoImpl(EventHubConsumerGroupInfoInner innerObject, IotHubManager serviceManager) {
+    EventHubConsumerGroupInfoImpl(EventHubConsumerGroupInfoInner innerObject, IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -97,7 +97,7 @@ public final class EventHubConsumerGroupInfoImpl
         return this;
     }
 
-    public EventHubConsumerGroupInfoImpl(String name, IotHubManager serviceManager) {
+    EventHubConsumerGroupInfoImpl(String name, IotHubManager serviceManager) {
         this.innerObject = new EventHubConsumerGroupInfoInner();
         this.serviceManager = serviceManager;
         this.name = name;

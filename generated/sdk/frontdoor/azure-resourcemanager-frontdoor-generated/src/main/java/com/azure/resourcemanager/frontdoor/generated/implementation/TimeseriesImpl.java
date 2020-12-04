@@ -19,7 +19,7 @@ public final class TimeseriesImpl implements Timeseries {
 
     private final FrontDoorManager serviceManager;
 
-    public TimeseriesImpl(TimeseriesInner innerObject, FrontDoorManager serviceManager) {
+    TimeseriesImpl(TimeseriesInner innerObject, FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

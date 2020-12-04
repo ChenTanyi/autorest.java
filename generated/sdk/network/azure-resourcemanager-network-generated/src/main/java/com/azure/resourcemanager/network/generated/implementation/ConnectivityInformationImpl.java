@@ -17,7 +17,7 @@ public final class ConnectivityInformationImpl implements ConnectivityInformatio
 
     private final NetworkManager serviceManager;
 
-    public ConnectivityInformationImpl(ConnectivityInformationInner innerObject, NetworkManager serviceManager) {
+    ConnectivityInformationImpl(ConnectivityInformationInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

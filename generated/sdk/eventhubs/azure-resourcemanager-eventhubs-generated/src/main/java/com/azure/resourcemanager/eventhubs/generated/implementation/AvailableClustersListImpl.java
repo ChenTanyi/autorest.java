@@ -16,7 +16,7 @@ public final class AvailableClustersListImpl implements AvailableClustersList {
 
     private final EventHubsManager serviceManager;
 
-    public AvailableClustersListImpl(AvailableClustersListInner innerObject, EventHubsManager serviceManager) {
+    AvailableClustersListImpl(AvailableClustersListInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

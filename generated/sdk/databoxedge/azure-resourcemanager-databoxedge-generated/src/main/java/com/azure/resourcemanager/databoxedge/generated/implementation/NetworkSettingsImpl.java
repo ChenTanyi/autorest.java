@@ -16,7 +16,7 @@ public final class NetworkSettingsImpl implements NetworkSettings {
 
     private final DataBoxEdgeManager serviceManager;
 
-    public NetworkSettingsImpl(NetworkSettingsInner innerObject, DataBoxEdgeManager serviceManager) {
+    NetworkSettingsImpl(NetworkSettingsInner innerObject, DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

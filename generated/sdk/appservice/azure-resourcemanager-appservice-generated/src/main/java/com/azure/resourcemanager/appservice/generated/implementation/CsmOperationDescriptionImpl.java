@@ -15,7 +15,7 @@ public final class CsmOperationDescriptionImpl implements CsmOperationDescriptio
 
     private final WebSiteManager serviceManager;
 
-    public CsmOperationDescriptionImpl(CsmOperationDescriptionInner innerObject, WebSiteManager serviceManager) {
+    CsmOperationDescriptionImpl(CsmOperationDescriptionInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -112,7 +112,7 @@ public final class HostnameBindingImpl implements HostnameBinding, HostnameBindi
         return this;
     }
 
-    public HostnameBindingImpl(String name, WebSiteManager serviceManager) {
+    HostnameBindingImpl(String name, WebSiteManager serviceManager) {
         this.innerObject = new HostnameBindingInner();
         this.serviceManager = serviceManager;
         this.hostname = name;
@@ -144,7 +144,7 @@ public final class HostnameBindingImpl implements HostnameBinding, HostnameBindi
         return this;
     }
 
-    public HostnameBindingImpl(HostnameBindingInner innerObject, WebSiteManager serviceManager) {
+    HostnameBindingImpl(HostnameBindingInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

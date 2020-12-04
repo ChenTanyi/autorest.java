@@ -13,7 +13,7 @@ public final class IotHubQuotaMetricInfoImpl implements IotHubQuotaMetricInfo {
 
     private final IotHubManager serviceManager;
 
-    public IotHubQuotaMetricInfoImpl(IotHubQuotaMetricInfoInner innerObject, IotHubManager serviceManager) {
+    IotHubQuotaMetricInfoImpl(IotHubQuotaMetricInfoInner innerObject, IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

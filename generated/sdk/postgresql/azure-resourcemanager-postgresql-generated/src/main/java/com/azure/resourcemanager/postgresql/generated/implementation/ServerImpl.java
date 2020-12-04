@@ -177,7 +177,7 @@ public final class ServerImpl implements Server, Server.Definition, Server.Updat
         return this;
     }
 
-    public ServerImpl(String name, PostgreSqlManager serviceManager) {
+    ServerImpl(String name, PostgreSqlManager serviceManager) {
         this.innerObject = new ServerInner();
         this.serviceManager = serviceManager;
         this.serverName = name;
@@ -207,7 +207,7 @@ public final class ServerImpl implements Server, Server.Definition, Server.Updat
         return this;
     }
 
-    public ServerImpl(ServerInner innerObject, PostgreSqlManager serviceManager) {
+    ServerImpl(ServerInner innerObject, PostgreSqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

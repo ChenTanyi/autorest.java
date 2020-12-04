@@ -113,7 +113,7 @@ public final class SecurityPartnerProviderImpl
         return this;
     }
 
-    public SecurityPartnerProviderImpl(String name, NetworkManager serviceManager) {
+    SecurityPartnerProviderImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new SecurityPartnerProviderInner();
         this.serviceManager = serviceManager;
         this.securityPartnerProviderName = name;
@@ -144,7 +144,7 @@ public final class SecurityPartnerProviderImpl
         return this;
     }
 
-    public SecurityPartnerProviderImpl(SecurityPartnerProviderInner innerObject, NetworkManager serviceManager) {
+    SecurityPartnerProviderImpl(SecurityPartnerProviderInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

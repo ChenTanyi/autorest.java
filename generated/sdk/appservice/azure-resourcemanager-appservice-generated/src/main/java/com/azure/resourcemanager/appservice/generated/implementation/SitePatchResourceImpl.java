@@ -27,7 +27,7 @@ public final class SitePatchResourceImpl implements SitePatchResource {
 
     private final WebSiteManager serviceManager;
 
-    public SitePatchResourceImpl(SitePatchResourceInner innerObject, WebSiteManager serviceManager) {
+    SitePatchResourceImpl(SitePatchResourceInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

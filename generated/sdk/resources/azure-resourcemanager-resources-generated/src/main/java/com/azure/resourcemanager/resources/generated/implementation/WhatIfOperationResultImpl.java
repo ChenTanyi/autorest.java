@@ -17,7 +17,7 @@ public final class WhatIfOperationResultImpl implements WhatIfOperationResult {
 
     private final ResourceManager serviceManager;
 
-    public WhatIfOperationResultImpl(WhatIfOperationResultInner innerObject, ResourceManager serviceManager) {
+    WhatIfOperationResultImpl(WhatIfOperationResultInner innerObject, ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -16,7 +16,7 @@ public final class PerformanceTierPropertiesImpl implements PerformanceTierPrope
 
     private final MySqlManager serviceManager;
 
-    public PerformanceTierPropertiesImpl(PerformanceTierPropertiesInner innerObject, MySqlManager serviceManager) {
+    PerformanceTierPropertiesImpl(PerformanceTierPropertiesInner innerObject, MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

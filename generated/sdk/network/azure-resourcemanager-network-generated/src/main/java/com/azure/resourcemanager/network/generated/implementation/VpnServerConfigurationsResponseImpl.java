@@ -15,7 +15,7 @@ public final class VpnServerConfigurationsResponseImpl implements VpnServerConfi
 
     private final NetworkManager serviceManager;
 
-    public VpnServerConfigurationsResponseImpl(
+    VpnServerConfigurationsResponseImpl(
         VpnServerConfigurationsResponseInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

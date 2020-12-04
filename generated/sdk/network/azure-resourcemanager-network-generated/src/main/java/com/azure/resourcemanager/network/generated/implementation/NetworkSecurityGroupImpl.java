@@ -176,7 +176,7 @@ public final class NetworkSecurityGroupImpl
         return this;
     }
 
-    public NetworkSecurityGroupImpl(String name, NetworkManager serviceManager) {
+    NetworkSecurityGroupImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new NetworkSecurityGroupInner();
         this.serviceManager = serviceManager;
         this.networkSecurityGroupName = name;
@@ -207,7 +207,7 @@ public final class NetworkSecurityGroupImpl
         return this;
     }
 
-    public NetworkSecurityGroupImpl(NetworkSecurityGroupInner innerObject, NetworkManager serviceManager) {
+    NetworkSecurityGroupImpl(NetworkSecurityGroupInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -13,7 +13,7 @@ public final class DeploymentExportResultImpl implements DeploymentExportResult 
 
     private final ResourceManager serviceManager;
 
-    public DeploymentExportResultImpl(DeploymentExportResultInner innerObject, ResourceManager serviceManager) {
+    DeploymentExportResultImpl(DeploymentExportResultInner innerObject, ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

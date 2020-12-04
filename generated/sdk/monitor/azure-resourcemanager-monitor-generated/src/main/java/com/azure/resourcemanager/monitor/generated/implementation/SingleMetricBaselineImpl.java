@@ -17,7 +17,7 @@ public final class SingleMetricBaselineImpl implements SingleMetricBaseline {
 
     private final MonitorManager serviceManager;
 
-    public SingleMetricBaselineImpl(SingleMetricBaselineInner innerObject, MonitorManager serviceManager) {
+    SingleMetricBaselineImpl(SingleMetricBaselineInner innerObject, MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

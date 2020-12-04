@@ -18,7 +18,7 @@ public final class ProbeImpl implements Probe {
 
     private final NetworkManager serviceManager;
 
-    public ProbeImpl(ProbeInner innerObject, NetworkManager serviceManager) {
+    ProbeImpl(ProbeInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

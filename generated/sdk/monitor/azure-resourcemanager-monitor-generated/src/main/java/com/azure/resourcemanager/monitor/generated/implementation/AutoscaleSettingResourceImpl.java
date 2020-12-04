@@ -124,7 +124,7 @@ public final class AutoscaleSettingResourceImpl
         return this;
     }
 
-    public AutoscaleSettingResourceImpl(String name, MonitorManager serviceManager) {
+    AutoscaleSettingResourceImpl(String name, MonitorManager serviceManager) {
         this.innerObject = new AutoscaleSettingResourceInner();
         this.serviceManager = serviceManager;
         this.autoscaleSettingName = name;
@@ -156,7 +156,7 @@ public final class AutoscaleSettingResourceImpl
         return this;
     }
 
-    public AutoscaleSettingResourceImpl(AutoscaleSettingResourceInner innerObject, MonitorManager serviceManager) {
+    AutoscaleSettingResourceImpl(AutoscaleSettingResourceInner innerObject, MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourcegroups");

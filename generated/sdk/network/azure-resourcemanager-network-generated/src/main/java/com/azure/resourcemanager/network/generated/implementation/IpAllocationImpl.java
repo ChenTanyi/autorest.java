@@ -132,7 +132,7 @@ public final class IpAllocationImpl implements IpAllocation, IpAllocation.Defini
         return this;
     }
 
-    public IpAllocationImpl(String name, NetworkManager serviceManager) {
+    IpAllocationImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new IpAllocationInner();
         this.serviceManager = serviceManager;
         this.ipAllocationName = name;
@@ -163,7 +163,7 @@ public final class IpAllocationImpl implements IpAllocation, IpAllocation.Defini
         return this;
     }
 
-    public IpAllocationImpl(IpAllocationInner innerObject, NetworkManager serviceManager) {
+    IpAllocationImpl(IpAllocationInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -18,7 +18,7 @@ public final class GenericResourceImpl implements GenericResource {
 
     private final ResourceManager serviceManager;
 
-    public GenericResourceImpl(GenericResourceInner innerObject, ResourceManager serviceManager) {
+    GenericResourceImpl(GenericResourceInner innerObject, ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

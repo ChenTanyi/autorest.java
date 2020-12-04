@@ -82,7 +82,7 @@ public final class ServerKeyImpl implements ServerKey, ServerKey.Definition, Ser
         return this;
     }
 
-    public ServerKeyImpl(String name, MySqlManager serviceManager) {
+    ServerKeyImpl(String name, MySqlManager serviceManager) {
         this.innerObject = new ServerKeyInner();
         this.serviceManager = serviceManager;
         this.keyName = name;
@@ -110,7 +110,7 @@ public final class ServerKeyImpl implements ServerKey, ServerKey.Definition, Ser
         return this;
     }
 
-    public ServerKeyImpl(ServerKeyInner innerObject, MySqlManager serviceManager) {
+    ServerKeyImpl(ServerKeyInner innerObject, MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.serverName = Utils.getValueFromIdByName(innerObject.id(), "servers");

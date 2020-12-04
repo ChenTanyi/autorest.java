@@ -16,7 +16,7 @@ public final class PeerExpressRouteCircuitConnectionImpl implements PeerExpressR
 
     private final NetworkManager serviceManager;
 
-    public PeerExpressRouteCircuitConnectionImpl(
+    PeerExpressRouteCircuitConnectionImpl(
         PeerExpressRouteCircuitConnectionInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

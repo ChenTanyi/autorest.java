@@ -14,7 +14,7 @@ public final class ValidateResponseImpl implements ValidateResponse {
 
     private final WebSiteManager serviceManager;
 
-    public ValidateResponseImpl(ValidateResponseInner innerObject, WebSiteManager serviceManager) {
+    ValidateResponseImpl(ValidateResponseInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

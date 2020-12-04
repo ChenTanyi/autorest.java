@@ -16,7 +16,7 @@ public final class SecurityGroupViewResultImpl implements SecurityGroupViewResul
 
     private final NetworkManager serviceManager;
 
-    public SecurityGroupViewResultImpl(SecurityGroupViewResultInner innerObject, NetworkManager serviceManager) {
+    SecurityGroupViewResultImpl(SecurityGroupViewResultInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

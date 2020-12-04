@@ -16,8 +16,7 @@ public final class OutboundEnvironmentEndpointImpl implements OutboundEnvironmen
 
     private final WebSiteManager serviceManager;
 
-    public OutboundEnvironmentEndpointImpl(
-        OutboundEnvironmentEndpointInner innerObject, WebSiteManager serviceManager) {
+    OutboundEnvironmentEndpointImpl(OutboundEnvironmentEndpointInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

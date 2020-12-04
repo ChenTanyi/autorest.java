@@ -85,7 +85,7 @@ public final class VirtualApplianceSiteImpl
         return this;
     }
 
-    public VirtualApplianceSiteImpl(String name, NetworkManager serviceManager) {
+    VirtualApplianceSiteImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new VirtualApplianceSiteInner();
         this.serviceManager = serviceManager;
         this.siteName = name;
@@ -114,7 +114,7 @@ public final class VirtualApplianceSiteImpl
         return this;
     }
 
-    public VirtualApplianceSiteImpl(VirtualApplianceSiteInner innerObject, NetworkManager serviceManager) {
+    VirtualApplianceSiteImpl(VirtualApplianceSiteInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

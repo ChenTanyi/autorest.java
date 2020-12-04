@@ -13,7 +13,7 @@ public final class AdminKeyResultImpl implements AdminKeyResult {
 
     private final SearchManager serviceManager;
 
-    public AdminKeyResultImpl(AdminKeyResultInner innerObject, SearchManager serviceManager) {
+    AdminKeyResultImpl(AdminKeyResultInner innerObject, SearchManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

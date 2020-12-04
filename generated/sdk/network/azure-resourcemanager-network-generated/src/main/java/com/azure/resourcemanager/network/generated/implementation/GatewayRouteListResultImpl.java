@@ -16,7 +16,7 @@ public final class GatewayRouteListResultImpl implements GatewayRouteListResult 
 
     private final NetworkManager serviceManager;
 
-    public GatewayRouteListResultImpl(GatewayRouteListResultInner innerObject, NetworkManager serviceManager) {
+    GatewayRouteListResultImpl(GatewayRouteListResultInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

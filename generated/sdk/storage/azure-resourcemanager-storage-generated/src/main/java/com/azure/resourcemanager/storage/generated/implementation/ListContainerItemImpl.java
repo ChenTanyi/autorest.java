@@ -22,7 +22,7 @@ public final class ListContainerItemImpl implements ListContainerItem {
 
     private final StorageManager serviceManager;
 
-    public ListContainerItemImpl(ListContainerItemInner innerObject, StorageManager serviceManager) {
+    ListContainerItemImpl(ListContainerItemInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

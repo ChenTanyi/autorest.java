@@ -17,7 +17,7 @@ public final class ManagedRuleSetDefinitionImpl implements ManagedRuleSetDefinit
 
     private final FrontDoorManager serviceManager;
 
-    public ManagedRuleSetDefinitionImpl(ManagedRuleSetDefinitionInner innerObject, FrontDoorManager serviceManager) {
+    ManagedRuleSetDefinitionImpl(ManagedRuleSetDefinitionInner innerObject, FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

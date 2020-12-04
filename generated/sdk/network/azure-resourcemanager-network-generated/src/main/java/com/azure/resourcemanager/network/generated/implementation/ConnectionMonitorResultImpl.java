@@ -195,7 +195,7 @@ public final class ConnectionMonitorResultImpl
         return this;
     }
 
-    public ConnectionMonitorResultImpl(String name, NetworkManager serviceManager) {
+    ConnectionMonitorResultImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new ConnectionMonitorResultInner();
         this.serviceManager = serviceManager;
         this.connectionMonitorName = name;
@@ -230,7 +230,7 @@ public final class ConnectionMonitorResultImpl
         return this;
     }
 
-    public ConnectionMonitorResultImpl(ConnectionMonitorResultInner innerObject, NetworkManager serviceManager) {
+    ConnectionMonitorResultImpl(ConnectionMonitorResultInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -19,7 +19,7 @@ public final class IpConfigurationImpl implements IpConfiguration {
 
     private final NetworkManager serviceManager;
 
-    public IpConfigurationImpl(IpConfigurationInner innerObject, NetworkManager serviceManager) {
+    IpConfigurationImpl(IpConfigurationInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

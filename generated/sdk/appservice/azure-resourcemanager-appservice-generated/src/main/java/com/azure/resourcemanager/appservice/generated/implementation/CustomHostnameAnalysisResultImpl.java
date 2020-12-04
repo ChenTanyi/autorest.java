@@ -17,8 +17,7 @@ public final class CustomHostnameAnalysisResultImpl implements CustomHostnameAna
 
     private final WebSiteManager serviceManager;
 
-    public CustomHostnameAnalysisResultImpl(
-        CustomHostnameAnalysisResultInner innerObject, WebSiteManager serviceManager) {
+    CustomHostnameAnalysisResultImpl(CustomHostnameAnalysisResultInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

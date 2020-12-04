@@ -163,7 +163,7 @@ public final class GalleryImageImpl implements GalleryImage, GalleryImage.Defini
         return this;
     }
 
-    public GalleryImageImpl(String name, ComputeManager serviceManager) {
+    GalleryImageImpl(String name, ComputeManager serviceManager) {
         this.innerObject = new GalleryImageInner();
         this.serviceManager = serviceManager;
         this.galleryImageName = name;
@@ -192,7 +192,7 @@ public final class GalleryImageImpl implements GalleryImage, GalleryImage.Defini
         return this;
     }
 
-    public GalleryImageImpl(GalleryImageInner innerObject, ComputeManager serviceManager) {
+    GalleryImageImpl(GalleryImageInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

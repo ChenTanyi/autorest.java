@@ -13,7 +13,7 @@ public final class SlotDifferenceImpl implements SlotDifference {
 
     private final WebSiteManager serviceManager;
 
-    public SlotDifferenceImpl(SlotDifferenceInner innerObject, WebSiteManager serviceManager) {
+    SlotDifferenceImpl(SlotDifferenceInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

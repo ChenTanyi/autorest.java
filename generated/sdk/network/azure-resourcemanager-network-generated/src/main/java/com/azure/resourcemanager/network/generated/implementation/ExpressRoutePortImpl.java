@@ -164,7 +164,7 @@ public final class ExpressRoutePortImpl
         return this;
     }
 
-    public ExpressRoutePortImpl(String name, NetworkManager serviceManager) {
+    ExpressRoutePortImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new ExpressRoutePortInner();
         this.serviceManager = serviceManager;
         this.expressRoutePortName = name;
@@ -195,7 +195,7 @@ public final class ExpressRoutePortImpl
         return this;
     }
 
-    public ExpressRoutePortImpl(ExpressRoutePortInner innerObject, NetworkManager serviceManager) {
+    ExpressRoutePortImpl(ExpressRoutePortInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

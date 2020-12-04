@@ -15,7 +15,7 @@ public final class UsageImpl implements Usage {
 
     private final WebSiteManager serviceManager;
 
-    public UsageImpl(UsageInner innerObject, WebSiteManager serviceManager) {
+    UsageImpl(UsageInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -6,7 +6,6 @@ package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSettingsResourceInner;
 
 /** Resource collection API of DiagnosticSettings. */
 public interface DiagnosticSettings {
@@ -34,35 +33,6 @@ public interface DiagnosticSettings {
      * @return the active diagnostic settings for the specified resource.
      */
     Response<DiagnosticSettingsResource> getWithResponse(String resourceUri, String name, Context context);
-
-    /**
-     * Creates or updates diagnostic settings for the specified resource.
-     *
-     * @param resourceUri The identifier of the resource.
-     * @param name The name of the diagnostic setting.
-     * @param parameters Parameters supplied to the operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the diagnostic setting resource.
-     */
-    DiagnosticSettingsResource createOrUpdate(
-        String resourceUri, String name, DiagnosticSettingsResourceInner parameters);
-
-    /**
-     * Creates or updates diagnostic settings for the specified resource.
-     *
-     * @param resourceUri The identifier of the resource.
-     * @param name The name of the diagnostic setting.
-     * @param parameters Parameters supplied to the operation.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the diagnostic setting resource.
-     */
-    Response<DiagnosticSettingsResource> createOrUpdateWithResponse(
-        String resourceUri, String name, DiagnosticSettingsResourceInner parameters, Context context);
 
     /**
      * Deletes existing diagnostic settings for the specified resource.
@@ -110,4 +80,57 @@ public interface DiagnosticSettings {
      * @return the active diagnostic settings list for the specified resource.
      */
     Response<DiagnosticSettingsResourceCollection> listWithResponse(String resourceUri, Context context);
+
+    /**
+     * Gets the active diagnostic settings for the specified resource.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the active diagnostic settings for the specified resource.
+     */
+    DiagnosticSettingsResource getById(String id);
+
+    /**
+     * Gets the active diagnostic settings for the specified resource.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the active diagnostic settings for the specified resource.
+     */
+    Response<DiagnosticSettingsResource> getByIdWithResponse(String id, Context context);
+
+    /**
+     * Deletes existing diagnostic settings for the specified resource.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteById(String id);
+
+    /**
+     * Deletes existing diagnostic settings for the specified resource.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    Response<Void> deleteByIdWithResponse(String id, Context context);
+
+    /**
+     * Begins definition for a new DiagnosticSettingsResource resource.
+     *
+     * @param name resource name.
+     * @return the first stage of the new DiagnosticSettingsResource definition.
+     */
+    DiagnosticSettingsResource.DefinitionStages.Blank define(String name);
 }

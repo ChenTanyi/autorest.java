@@ -51,30 +51,6 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
         }
     }
 
-    public PolicyAssignment create(String scope, String policyAssignmentName, PolicyAssignmentInner parameters) {
-        PolicyAssignmentInner inner = this.serviceClient().create(scope, policyAssignmentName, parameters);
-        if (inner != null) {
-            return new PolicyAssignmentImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<PolicyAssignment> createWithResponse(
-        String scope, String policyAssignmentName, PolicyAssignmentInner parameters, Context context) {
-        Response<PolicyAssignmentInner> inner =
-            this.serviceClient().createWithResponse(scope, policyAssignmentName, parameters, context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new PolicyAssignmentImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
-    }
-
     public PolicyAssignment get(String scope, String policyAssignmentName) {
         PolicyAssignmentInner inner = this.serviceClient().get(scope, policyAssignmentName);
         if (inner != null) {
@@ -244,5 +220,9 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
 
     private PolicyManager manager() {
         return this.serviceManager;
+    }
+
+    public PolicyAssignmentImpl define(String name) {
+        return new PolicyAssignmentImpl(name, this.manager());
     }
 }

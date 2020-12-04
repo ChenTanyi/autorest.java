@@ -129,7 +129,7 @@ public final class RouteTableImpl implements RouteTable, RouteTable.Definition, 
         return this;
     }
 
-    public RouteTableImpl(String name, NetworkManager serviceManager) {
+    RouteTableImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new RouteTableInner();
         this.serviceManager = serviceManager;
         this.routeTableName = name;
@@ -160,7 +160,7 @@ public final class RouteTableImpl implements RouteTable, RouteTable.Definition, 
         return this;
     }
 
-    public RouteTableImpl(RouteTableInner innerObject, NetworkManager serviceManager) {
+    RouteTableImpl(RouteTableInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

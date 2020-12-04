@@ -17,7 +17,7 @@ public final class ResourceRateCardInfoImpl implements ResourceRateCardInfo {
 
     private final UsageManager serviceManager;
 
-    public ResourceRateCardInfoImpl(ResourceRateCardInfoInner innerObject, UsageManager serviceManager) {
+    ResourceRateCardInfoImpl(ResourceRateCardInfoInner innerObject, UsageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

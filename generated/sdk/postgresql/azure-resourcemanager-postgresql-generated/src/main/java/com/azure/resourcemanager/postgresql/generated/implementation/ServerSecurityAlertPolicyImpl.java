@@ -108,7 +108,7 @@ public final class ServerSecurityAlertPolicyImpl
         return this;
     }
 
-    public ServerSecurityAlertPolicyImpl(SecurityAlertPolicyName name, PostgreSqlManager serviceManager) {
+    ServerSecurityAlertPolicyImpl(SecurityAlertPolicyName name, PostgreSqlManager serviceManager) {
         this.innerObject = new ServerSecurityAlertPolicyInner();
         this.serviceManager = serviceManager;
         this.securityAlertPolicyName = name;
@@ -137,7 +137,7 @@ public final class ServerSecurityAlertPolicyImpl
         return this;
     }
 
-    public ServerSecurityAlertPolicyImpl(ServerSecurityAlertPolicyInner innerObject, PostgreSqlManager serviceManager) {
+    ServerSecurityAlertPolicyImpl(ServerSecurityAlertPolicyInner innerObject, PostgreSqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

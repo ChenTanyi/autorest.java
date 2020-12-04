@@ -13,7 +13,7 @@ public final class HybridConnectionLimitsImpl implements HybridConnectionLimits 
 
     private final WebSiteManager serviceManager;
 
-    public HybridConnectionLimitsImpl(HybridConnectionLimitsInner innerObject, WebSiteManager serviceManager) {
+    HybridConnectionLimitsImpl(HybridConnectionLimitsInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

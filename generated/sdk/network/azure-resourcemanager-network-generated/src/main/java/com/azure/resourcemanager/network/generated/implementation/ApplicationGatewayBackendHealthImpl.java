@@ -16,7 +16,7 @@ public final class ApplicationGatewayBackendHealthImpl implements ApplicationGat
 
     private final NetworkManager serviceManager;
 
-    public ApplicationGatewayBackendHealthImpl(
+    ApplicationGatewayBackendHealthImpl(
         ApplicationGatewayBackendHealthInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

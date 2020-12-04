@@ -16,7 +16,7 @@ public final class ResourceNavigationLinksListResultImpl implements ResourceNavi
 
     private final NetworkManager serviceManager;
 
-    public ResourceNavigationLinksListResultImpl(
+    ResourceNavigationLinksListResultImpl(
         ResourceNavigationLinksListResultInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

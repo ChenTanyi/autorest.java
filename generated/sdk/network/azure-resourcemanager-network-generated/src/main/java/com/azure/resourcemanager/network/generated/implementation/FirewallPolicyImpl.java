@@ -162,7 +162,7 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
         return this;
     }
 
-    public FirewallPolicyImpl(String name, NetworkManager serviceManager) {
+    FirewallPolicyImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new FirewallPolicyInner();
         this.serviceManager = serviceManager;
         this.firewallPolicyName = name;
@@ -190,7 +190,7 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
         return this;
     }
 
-    public FirewallPolicyImpl(FirewallPolicyInner innerObject, NetworkManager serviceManager) {
+    FirewallPolicyImpl(FirewallPolicyInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

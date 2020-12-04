@@ -16,8 +16,7 @@ public final class HubVirtualNetworkConnectionImpl implements HubVirtualNetworkC
 
     private final NetworkManager serviceManager;
 
-    public HubVirtualNetworkConnectionImpl(
-        HubVirtualNetworkConnectionInner innerObject, NetworkManager serviceManager) {
+    HubVirtualNetworkConnectionImpl(HubVirtualNetworkConnectionInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

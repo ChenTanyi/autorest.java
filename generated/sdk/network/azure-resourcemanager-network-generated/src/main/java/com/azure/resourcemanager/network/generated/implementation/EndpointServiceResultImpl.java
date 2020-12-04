@@ -13,7 +13,7 @@ public final class EndpointServiceResultImpl implements EndpointServiceResult {
 
     private final NetworkManager serviceManager;
 
-    public EndpointServiceResultImpl(EndpointServiceResultInner innerObject, NetworkManager serviceManager) {
+    EndpointServiceResultImpl(EndpointServiceResultInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

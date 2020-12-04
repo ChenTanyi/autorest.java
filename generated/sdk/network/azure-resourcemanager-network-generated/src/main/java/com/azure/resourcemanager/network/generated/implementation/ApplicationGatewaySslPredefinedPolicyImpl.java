@@ -17,7 +17,7 @@ public final class ApplicationGatewaySslPredefinedPolicyImpl implements Applicat
 
     private final NetworkManager serviceManager;
 
-    public ApplicationGatewaySslPredefinedPolicyImpl(
+    ApplicationGatewaySslPredefinedPolicyImpl(
         ApplicationGatewaySslPredefinedPolicyInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

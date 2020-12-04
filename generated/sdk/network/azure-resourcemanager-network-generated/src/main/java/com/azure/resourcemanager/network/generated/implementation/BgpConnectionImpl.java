@@ -86,7 +86,7 @@ public final class BgpConnectionImpl implements BgpConnection, BgpConnection.Def
         return this;
     }
 
-    public BgpConnectionImpl(String name, NetworkManager serviceManager) {
+    BgpConnectionImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new BgpConnectionInner();
         this.serviceManager = serviceManager;
         this.connectionName = name;
@@ -114,7 +114,7 @@ public final class BgpConnectionImpl implements BgpConnection, BgpConnection.Def
         return this;
     }
 
-    public BgpConnectionImpl(BgpConnectionInner innerObject, NetworkManager serviceManager) {
+    BgpConnectionImpl(BgpConnectionInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

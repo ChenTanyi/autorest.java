@@ -131,7 +131,7 @@ public final class ProximityPlacementGroupImpl
         return this;
     }
 
-    public ProximityPlacementGroupImpl(String name, ComputeManager serviceManager) {
+    ProximityPlacementGroupImpl(String name, ComputeManager serviceManager) {
         this.innerObject = new ProximityPlacementGroupInner();
         this.serviceManager = serviceManager;
         this.proximityPlacementGroupName = name;
@@ -162,7 +162,7 @@ public final class ProximityPlacementGroupImpl
         return this;
     }
 
-    public ProximityPlacementGroupImpl(ProximityPlacementGroupInner innerObject, ComputeManager serviceManager) {
+    ProximityPlacementGroupImpl(ProximityPlacementGroupInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

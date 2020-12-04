@@ -20,7 +20,7 @@ public final class AnalysisDataImpl implements AnalysisData {
 
     private final WebSiteManager serviceManager;
 
-    public AnalysisDataImpl(AnalysisDataInner innerObject, WebSiteManager serviceManager) {
+    AnalysisDataImpl(AnalysisDataInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

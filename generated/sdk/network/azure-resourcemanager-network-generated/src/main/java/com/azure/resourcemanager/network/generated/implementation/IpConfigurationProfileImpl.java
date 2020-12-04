@@ -16,7 +16,7 @@ public final class IpConfigurationProfileImpl implements IpConfigurationProfile 
 
     private final NetworkManager serviceManager;
 
-    public IpConfigurationProfileImpl(IpConfigurationProfileInner innerObject, NetworkManager serviceManager) {
+    IpConfigurationProfileImpl(IpConfigurationProfileInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

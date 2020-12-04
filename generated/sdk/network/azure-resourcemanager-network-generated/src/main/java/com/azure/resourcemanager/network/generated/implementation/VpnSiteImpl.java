@@ -152,7 +152,7 @@ public final class VpnSiteImpl implements VpnSite, VpnSite.Definition, VpnSite.U
         return this;
     }
 
-    public VpnSiteImpl(String name, NetworkManager serviceManager) {
+    VpnSiteImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new VpnSiteInner();
         this.serviceManager = serviceManager;
         this.vpnSiteName = name;
@@ -183,7 +183,7 @@ public final class VpnSiteImpl implements VpnSite, VpnSite.Definition, VpnSite.U
         return this;
     }
 
-    public VpnSiteImpl(VpnSiteInner innerObject, NetworkManager serviceManager) {
+    VpnSiteImpl(VpnSiteInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

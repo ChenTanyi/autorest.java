@@ -13,7 +13,7 @@ public final class PushSettingsImpl implements PushSettings {
 
     private final WebSiteManager serviceManager;
 
-    public PushSettingsImpl(PushSettingsInner innerObject, WebSiteManager serviceManager) {
+    PushSettingsImpl(PushSettingsInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

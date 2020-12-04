@@ -23,7 +23,7 @@ public final class BaselineResponseImpl implements BaselineResponse {
 
     private final MonitorManager serviceManager;
 
-    public BaselineResponseImpl(BaselineResponseInner innerObject, MonitorManager serviceManager) {
+    BaselineResponseImpl(BaselineResponseInner innerObject, MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

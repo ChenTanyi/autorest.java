@@ -19,7 +19,7 @@ public final class TagDetailsImpl implements TagDetails {
 
     private final ResourceManager serviceManager;
 
-    public TagDetailsImpl(TagDetailsInner innerObject, ResourceManager serviceManager) {
+    TagDetailsImpl(TagDetailsInner innerObject, ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

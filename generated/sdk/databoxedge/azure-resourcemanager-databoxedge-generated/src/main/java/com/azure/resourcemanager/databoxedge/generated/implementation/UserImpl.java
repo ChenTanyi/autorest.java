@@ -86,7 +86,7 @@ public final class UserImpl implements User, User.Definition, User.Update {
         return this;
     }
 
-    public UserImpl(String name, DataBoxEdgeManager serviceManager) {
+    UserImpl(String name, DataBoxEdgeManager serviceManager) {
         this.innerObject = new UserInner();
         this.serviceManager = serviceManager;
         this.name = name;
@@ -114,7 +114,7 @@ public final class UserImpl implements User, User.Definition, User.Update {
         return this;
     }
 
-    public UserImpl(UserInner innerObject, DataBoxEdgeManager serviceManager) {
+    UserImpl(UserInner innerObject, DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");

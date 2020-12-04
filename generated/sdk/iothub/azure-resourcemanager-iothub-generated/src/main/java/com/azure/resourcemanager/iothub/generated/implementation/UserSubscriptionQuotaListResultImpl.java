@@ -16,7 +16,7 @@ public final class UserSubscriptionQuotaListResultImpl implements UserSubscripti
 
     private final IotHubManager serviceManager;
 
-    public UserSubscriptionQuotaListResultImpl(
+    UserSubscriptionQuotaListResultImpl(
         UserSubscriptionQuotaListResultInner innerObject, IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

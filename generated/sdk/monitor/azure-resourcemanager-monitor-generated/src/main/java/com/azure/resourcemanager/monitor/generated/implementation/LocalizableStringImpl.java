@@ -13,7 +13,7 @@ public final class LocalizableStringImpl implements LocalizableString {
 
     private final MonitorManager serviceManager;
 
-    public LocalizableStringImpl(LocalizableStringInner innerObject, MonitorManager serviceManager) {
+    LocalizableStringImpl(LocalizableStringInner innerObject, MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

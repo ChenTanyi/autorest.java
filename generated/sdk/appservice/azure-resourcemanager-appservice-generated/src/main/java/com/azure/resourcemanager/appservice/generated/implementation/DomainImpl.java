@@ -196,7 +196,7 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
         return this;
     }
 
-    public DomainImpl(String name, WebSiteManager serviceManager) {
+    DomainImpl(String name, WebSiteManager serviceManager) {
         this.innerObject = new DomainInner();
         this.serviceManager = serviceManager;
         this.domainName = name;
@@ -227,7 +227,7 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
         return this;
     }
 
-    public DomainImpl(DomainInner innerObject, WebSiteManager serviceManager) {
+    DomainImpl(DomainInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

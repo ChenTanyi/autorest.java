@@ -13,7 +13,7 @@ public final class RecoveryWalkResponseImpl implements RecoveryWalkResponse {
 
     private final ComputeManager serviceManager;
 
-    public RecoveryWalkResponseImpl(RecoveryWalkResponseInner innerObject, ComputeManager serviceManager) {
+    RecoveryWalkResponseImpl(RecoveryWalkResponseInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

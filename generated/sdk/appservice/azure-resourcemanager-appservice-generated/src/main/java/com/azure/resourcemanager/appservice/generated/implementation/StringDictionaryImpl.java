@@ -15,7 +15,7 @@ public final class StringDictionaryImpl implements StringDictionary {
 
     private final WebSiteManager serviceManager;
 
-    public StringDictionaryImpl(StringDictionaryInner innerObject, WebSiteManager serviceManager) {
+    StringDictionaryImpl(StringDictionaryInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

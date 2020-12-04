@@ -130,7 +130,7 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
         return this;
     }
 
-    public CustomIpPrefixImpl(String name, NetworkManager serviceManager) {
+    CustomIpPrefixImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new CustomIpPrefixInner();
         this.serviceManager = serviceManager;
         this.customIpPrefixName = name;
@@ -161,7 +161,7 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
         return this;
     }
 
-    public CustomIpPrefixImpl(CustomIpPrefixInner innerObject, NetworkManager serviceManager) {
+    CustomIpPrefixImpl(CustomIpPrefixInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -13,7 +13,7 @@ public final class ExtensionImpl implements Extension {
 
     private final HDInsightManager serviceManager;
 
-    public ExtensionImpl(ExtensionInner innerObject, HDInsightManager serviceManager) {
+    ExtensionImpl(ExtensionInner innerObject, HDInsightManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

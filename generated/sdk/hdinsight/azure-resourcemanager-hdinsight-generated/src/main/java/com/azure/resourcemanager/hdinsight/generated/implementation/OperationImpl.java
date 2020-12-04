@@ -14,7 +14,7 @@ public final class OperationImpl implements Operation {
 
     private final HDInsightManager serviceManager;
 
-    public OperationImpl(OperationInner innerObject, HDInsightManager serviceManager) {
+    OperationImpl(OperationInner innerObject, HDInsightManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -92,7 +92,7 @@ public final class ResourceGroupImpl implements ResourceGroup, ResourceGroup.Def
         return this;
     }
 
-    public ResourceGroupImpl(String name, ResourceManager serviceManager) {
+    ResourceGroupImpl(String name, ResourceManager serviceManager) {
         this.innerObject = new ResourceGroupInner();
         this.serviceManager = serviceManager;
         this.resourceGroupName = name;
@@ -123,7 +123,7 @@ public final class ResourceGroupImpl implements ResourceGroup, ResourceGroup.Def
         return this;
     }
 
-    public ResourceGroupImpl(ResourceGroupInner innerObject, ResourceManager serviceManager) {
+    ResourceGroupImpl(ResourceGroupInner innerObject, ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourcegroups");

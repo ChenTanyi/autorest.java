@@ -16,8 +16,7 @@ public final class VnetValidationFailureDetailsImpl implements VnetValidationFai
 
     private final WebSiteManager serviceManager;
 
-    public VnetValidationFailureDetailsImpl(
-        VnetValidationFailureDetailsInner innerObject, WebSiteManager serviceManager) {
+    VnetValidationFailureDetailsImpl(VnetValidationFailureDetailsInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

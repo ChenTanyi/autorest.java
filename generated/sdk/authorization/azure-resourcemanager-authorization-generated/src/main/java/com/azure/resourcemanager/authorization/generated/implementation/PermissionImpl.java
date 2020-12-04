@@ -15,7 +15,7 @@ public final class PermissionImpl implements Permission {
 
     private final AuthorizationManager serviceManager;
 
-    public PermissionImpl(PermissionInner innerObject, AuthorizationManager serviceManager) {
+    PermissionImpl(PermissionInner innerObject, AuthorizationManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -17,7 +17,7 @@ public final class SiteCloneabilityImpl implements SiteCloneability {
 
     private final WebSiteManager serviceManager;
 
-    public SiteCloneabilityImpl(SiteCloneabilityInner innerObject, WebSiteManager serviceManager) {
+    SiteCloneabilityImpl(SiteCloneabilityInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

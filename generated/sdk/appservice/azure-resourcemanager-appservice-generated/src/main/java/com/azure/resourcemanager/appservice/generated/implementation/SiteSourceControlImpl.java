@@ -13,7 +13,7 @@ public final class SiteSourceControlImpl implements SiteSourceControl {
 
     private final WebSiteManager serviceManager;
 
-    public SiteSourceControlImpl(SiteSourceControlInner innerObject, WebSiteManager serviceManager) {
+    SiteSourceControlImpl(SiteSourceControlInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -13,7 +13,7 @@ public final class GenerateExpressRoutePortsLoaResultImpl implements GenerateExp
 
     private final NetworkManager serviceManager;
 
-    public GenerateExpressRoutePortsLoaResultImpl(
+    GenerateExpressRoutePortsLoaResultImpl(
         GenerateExpressRoutePortsLoaResultInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

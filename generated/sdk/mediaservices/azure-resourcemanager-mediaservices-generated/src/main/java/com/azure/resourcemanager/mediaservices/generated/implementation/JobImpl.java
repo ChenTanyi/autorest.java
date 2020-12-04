@@ -128,7 +128,7 @@ public final class JobImpl implements Job, Job.Definition, Job.Update {
         return this;
     }
 
-    public JobImpl(String name, MediaservicesManager serviceManager) {
+    JobImpl(String name, MediaservicesManager serviceManager) {
         this.innerObject = new JobInner();
         this.serviceManager = serviceManager;
         this.jobName = name;
@@ -159,7 +159,7 @@ public final class JobImpl implements Job, Job.Definition, Job.Update {
         return this;
     }
 
-    public JobImpl(JobInner innerObject, MediaservicesManager serviceManager) {
+    JobImpl(JobInner innerObject, MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

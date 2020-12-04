@@ -13,8 +13,7 @@ public final class ValidateCustomDomainOutputImpl implements ValidateCustomDomai
 
     private final FrontDoorManager serviceManager;
 
-    public ValidateCustomDomainOutputImpl(
-        ValidateCustomDomainOutputInner innerObject, FrontDoorManager serviceManager) {
+    ValidateCustomDomainOutputImpl(ValidateCustomDomainOutputInner innerObject, FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

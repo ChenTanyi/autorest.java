@@ -128,7 +128,7 @@ public final class BackendAddressPoolImpl
         return this;
     }
 
-    public BackendAddressPoolImpl(String name, NetworkManager serviceManager) {
+    BackendAddressPoolImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new BackendAddressPoolInner();
         this.serviceManager = serviceManager;
         this.backendAddressPoolName = name;
@@ -158,7 +158,7 @@ public final class BackendAddressPoolImpl
         return this;
     }
 
-    public BackendAddressPoolImpl(BackendAddressPoolInner innerObject, NetworkManager serviceManager) {
+    BackendAddressPoolImpl(BackendAddressPoolInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

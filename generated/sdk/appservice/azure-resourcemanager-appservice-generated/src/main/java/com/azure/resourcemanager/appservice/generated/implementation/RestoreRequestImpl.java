@@ -17,7 +17,7 @@ public final class RestoreRequestImpl implements RestoreRequest {
 
     private final WebSiteManager serviceManager;
 
-    public RestoreRequestImpl(RestoreRequestInner innerObject, WebSiteManager serviceManager) {
+    RestoreRequestImpl(RestoreRequestInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

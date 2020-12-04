@@ -13,7 +13,7 @@ public final class TriggerImpl implements Trigger {
 
     private final DataBoxEdgeManager serviceManager;
 
-    public TriggerImpl(TriggerInner innerObject, DataBoxEdgeManager serviceManager) {
+    TriggerImpl(TriggerInner innerObject, DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -15,7 +15,7 @@ public final class OperationImpl implements Operation {
 
     private final DataBoxEdgeManager serviceManager;
 
-    public OperationImpl(OperationInner innerObject, DataBoxEdgeManager serviceManager) {
+    OperationImpl(OperationInner innerObject, DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

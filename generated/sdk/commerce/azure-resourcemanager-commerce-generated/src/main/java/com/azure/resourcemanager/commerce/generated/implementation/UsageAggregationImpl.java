@@ -16,7 +16,7 @@ public final class UsageAggregationImpl implements UsageAggregation {
 
     private final UsageManager serviceManager;
 
-    public UsageAggregationImpl(UsageAggregationInner innerObject, UsageManager serviceManager) {
+    UsageAggregationImpl(UsageAggregationInner innerObject, UsageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

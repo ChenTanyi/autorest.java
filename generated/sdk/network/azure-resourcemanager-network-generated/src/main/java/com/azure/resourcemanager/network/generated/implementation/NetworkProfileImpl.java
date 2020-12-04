@@ -125,7 +125,7 @@ public final class NetworkProfileImpl implements NetworkProfile, NetworkProfile.
         return this;
     }
 
-    public NetworkProfileImpl(String name, NetworkManager serviceManager) {
+    NetworkProfileImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new NetworkProfileInner();
         this.serviceManager = serviceManager;
         this.networkProfileName = name;
@@ -156,7 +156,7 @@ public final class NetworkProfileImpl implements NetworkProfile, NetworkProfile.
         return this;
     }
 
-    public NetworkProfileImpl(NetworkProfileInner innerObject, NetworkManager serviceManager) {
+    NetworkProfileImpl(NetworkProfileInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

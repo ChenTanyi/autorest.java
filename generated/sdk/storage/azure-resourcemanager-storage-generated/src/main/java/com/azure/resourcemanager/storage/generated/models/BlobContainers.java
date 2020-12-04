@@ -502,6 +502,36 @@ public interface BlobContainers {
     Response<Void> deleteByIdWithResponse(String id, Context context);
 
     /**
+     * Aborts an unlocked immutability policy. The response of delete has immutabilityPeriodSinceCreationInDays set to
+     * 0. ETag in If-Match is required for this operation. Deleting a locked immutability policy is not allowed, the
+     * only way is to delete the container after deleting all expired blobs inside the policy locked container.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the ImmutabilityPolicy property of a blob container, including Id, resource name, resource type, Etag.
+     */
+    ImmutabilityPolicy deleteImmutabilityPolicyById(String id);
+
+    /**
+     * Aborts an unlocked immutability policy. The response of delete has immutabilityPeriodSinceCreationInDays set to
+     * 0. ETag in If-Match is required for this operation. Deleting a locked immutability policy is not allowed, the
+     * only way is to delete the container after deleting all expired blobs inside the policy locked container.
+     *
+     * @param id the resource ID.
+     * @param ifMatch The entity state (ETag) version of the immutability policy to update. A value of "*" can be used
+     *     to apply the operation only if the immutability policy already exists. If omitted, this operation will always
+     *     be applied.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the ImmutabilityPolicy property of a blob container, including Id, resource name, resource type, Etag.
+     */
+    Response<ImmutabilityPolicy> deleteImmutabilityPolicyByIdWithResponse(String id, String ifMatch, Context context);
+
+    /**
      * Begins definition for a new BlobContainer resource.
      *
      * @param name resource name.

@@ -72,30 +72,6 @@ public final class RoleDefinitionsImpl implements RoleDefinitions {
         }
     }
 
-    public RoleDefinition createOrUpdate(String scope, String roleDefinitionId, RoleDefinitionInner roleDefinition) {
-        RoleDefinitionInner inner = this.serviceClient().createOrUpdate(scope, roleDefinitionId, roleDefinition);
-        if (inner != null) {
-            return new RoleDefinitionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<RoleDefinition> createOrUpdateWithResponse(
-        String scope, String roleDefinitionId, RoleDefinitionInner roleDefinition, Context context) {
-        Response<RoleDefinitionInner> inner =
-            this.serviceClient().createOrUpdateWithResponse(scope, roleDefinitionId, roleDefinition, context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new RoleDefinitionImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
-    }
-
     public PagedIterable<RoleDefinition> list(String scope) {
         PagedIterable<RoleDefinitionInner> inner = this.serviceClient().list(scope);
         return inner.mapPage(inner1 -> new RoleDefinitionImpl(inner1, this.manager()));
@@ -128,11 +104,69 @@ public final class RoleDefinitionsImpl implements RoleDefinitions {
         }
     }
 
+    public RoleDefinition deleteById(String id) {
+        String scope =
+            Utils
+                .getValueFromIdByParameterName(
+                    id, "/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}", "scope");
+        if (scope == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
+        }
+        String roleDefinitionId =
+            Utils
+                .getValueFromIdByParameterName(
+                    id,
+                    "/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}",
+                    "roleDefinitionId");
+        if (roleDefinitionId == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'roleDefinitions'.", id)));
+        }
+        return this.deleteWithResponse(scope, roleDefinitionId, Context.NONE).getValue();
+    }
+
+    public Response<RoleDefinition> deleteByIdWithResponse(String id, Context context) {
+        String scope =
+            Utils
+                .getValueFromIdByParameterName(
+                    id, "/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}", "scope");
+        if (scope == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'scope'.", id)));
+        }
+        String roleDefinitionId =
+            Utils
+                .getValueFromIdByParameterName(
+                    id,
+                    "/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}",
+                    "roleDefinitionId");
+        if (roleDefinitionId == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'roleDefinitions'.", id)));
+        }
+        return this.deleteWithResponse(scope, roleDefinitionId, context);
+    }
+
     private RoleDefinitionsClient serviceClient() {
         return this.innerClient;
     }
 
     private AuthorizationManager manager() {
         return this.serviceManager;
+    }
+
+    public RoleDefinitionImpl define(String name) {
+        return new RoleDefinitionImpl(name, this.manager());
     }
 }

@@ -22,7 +22,7 @@ public final class DiagnosticAnalysisImpl implements DiagnosticAnalysis {
 
     private final WebSiteManager serviceManager;
 
-    public DiagnosticAnalysisImpl(DiagnosticAnalysisInner innerObject, WebSiteManager serviceManager) {
+    DiagnosticAnalysisImpl(DiagnosticAnalysisInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

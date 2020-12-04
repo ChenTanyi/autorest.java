@@ -14,8 +14,7 @@ public final class VaultAccessPolicyParametersImpl implements VaultAccessPolicyP
 
     private final KeyVaultManager serviceManager;
 
-    public VaultAccessPolicyParametersImpl(
-        VaultAccessPolicyParametersInner innerObject, KeyVaultManager serviceManager) {
+    VaultAccessPolicyParametersImpl(VaultAccessPolicyParametersInner innerObject, KeyVaultManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -33,7 +33,7 @@ public final class NetworkInterfaceIpConfigurationImpl implements NetworkInterfa
 
     private final NetworkManager serviceManager;
 
-    public NetworkInterfaceIpConfigurationImpl(
+    NetworkInterfaceIpConfigurationImpl(
         NetworkInterfaceIpConfigurationInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

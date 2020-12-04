@@ -18,7 +18,7 @@ public final class VMInsightsOnboardingStatusImpl implements VMInsightsOnboardin
 
     private final MonitorManager serviceManager;
 
-    public VMInsightsOnboardingStatusImpl(VMInsightsOnboardingStatusInner innerObject, MonitorManager serviceManager) {
+    VMInsightsOnboardingStatusImpl(VMInsightsOnboardingStatusInner innerObject, MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

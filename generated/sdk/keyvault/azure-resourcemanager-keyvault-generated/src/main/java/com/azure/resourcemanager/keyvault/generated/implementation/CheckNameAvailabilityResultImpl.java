@@ -14,8 +14,7 @@ public final class CheckNameAvailabilityResultImpl implements CheckNameAvailabil
 
     private final KeyVaultManager serviceManager;
 
-    public CheckNameAvailabilityResultImpl(
-        CheckNameAvailabilityResultInner innerObject, KeyVaultManager serviceManager) {
+    CheckNameAvailabilityResultImpl(CheckNameAvailabilityResultInner innerObject, KeyVaultManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

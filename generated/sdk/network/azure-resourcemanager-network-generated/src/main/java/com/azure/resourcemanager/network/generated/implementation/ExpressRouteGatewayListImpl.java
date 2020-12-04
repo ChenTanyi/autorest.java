@@ -18,7 +18,7 @@ public final class ExpressRouteGatewayListImpl implements ExpressRouteGatewayLis
 
     private final NetworkManager serviceManager;
 
-    public ExpressRouteGatewayListImpl(ExpressRouteGatewayListInner innerObject, NetworkManager serviceManager) {
+    ExpressRouteGatewayListImpl(ExpressRouteGatewayListInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -99,30 +99,6 @@ public final class RoleAssignmentsImpl implements RoleAssignments {
         }
     }
 
-    public RoleAssignment create(String scope, String roleAssignmentName, RoleAssignmentCreateParameters parameters) {
-        RoleAssignmentInner inner = this.serviceClient().create(scope, roleAssignmentName, parameters);
-        if (inner != null) {
-            return new RoleAssignmentImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<RoleAssignment> createWithResponse(
-        String scope, String roleAssignmentName, RoleAssignmentCreateParameters parameters, Context context) {
-        Response<RoleAssignmentInner> inner =
-            this.serviceClient().createWithResponse(scope, roleAssignmentName, parameters, context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new RoleAssignmentImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
-    }
-
     public RoleAssignment get(String scope, String roleAssignmentName) {
         RoleAssignmentInner inner = this.serviceClient().get(scope, roleAssignmentName);
         if (inner != null) {
@@ -238,5 +214,9 @@ public final class RoleAssignmentsImpl implements RoleAssignments {
 
     private AuthorizationManager manager() {
         return this.serviceManager;
+    }
+
+    public RoleAssignmentImpl define(String name) {
+        return new RoleAssignmentImpl(name, this.manager());
     }
 }

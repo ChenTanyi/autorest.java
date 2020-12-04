@@ -17,7 +17,7 @@ public final class DenyAssignmentImpl implements DenyAssignment {
 
     private final AuthorizationManager serviceManager;
 
-    public DenyAssignmentImpl(DenyAssignmentInner innerObject, AuthorizationManager serviceManager) {
+    DenyAssignmentImpl(DenyAssignmentInner innerObject, AuthorizationManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

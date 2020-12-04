@@ -16,7 +16,7 @@ public final class NetworkConfigurationDiagnosticResponseImpl implements Network
 
     private final NetworkManager serviceManager;
 
-    public NetworkConfigurationDiagnosticResponseImpl(
+    NetworkConfigurationDiagnosticResponseImpl(
         NetworkConfigurationDiagnosticResponseInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

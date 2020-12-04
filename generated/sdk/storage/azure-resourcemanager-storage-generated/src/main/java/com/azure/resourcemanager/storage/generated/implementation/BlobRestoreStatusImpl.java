@@ -15,7 +15,7 @@ public final class BlobRestoreStatusImpl implements BlobRestoreStatus {
 
     private final StorageManager serviceManager;
 
-    public BlobRestoreStatusImpl(BlobRestoreStatusInner innerObject, StorageManager serviceManager) {
+    BlobRestoreStatusImpl(BlobRestoreStatusInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

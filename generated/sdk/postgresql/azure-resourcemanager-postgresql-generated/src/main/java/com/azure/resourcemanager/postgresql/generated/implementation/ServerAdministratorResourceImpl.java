@@ -15,8 +15,7 @@ public final class ServerAdministratorResourceImpl implements ServerAdministrato
 
     private final PostgreSqlManager serviceManager;
 
-    public ServerAdministratorResourceImpl(
-        ServerAdministratorResourceInner innerObject, PostgreSqlManager serviceManager) {
+    ServerAdministratorResourceImpl(ServerAdministratorResourceInner innerObject, PostgreSqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

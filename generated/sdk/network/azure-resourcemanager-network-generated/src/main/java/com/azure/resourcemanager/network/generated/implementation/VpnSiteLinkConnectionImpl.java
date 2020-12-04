@@ -20,7 +20,7 @@ public final class VpnSiteLinkConnectionImpl implements VpnSiteLinkConnection {
 
     private final NetworkManager serviceManager;
 
-    public VpnSiteLinkConnectionImpl(VpnSiteLinkConnectionInner innerObject, NetworkManager serviceManager) {
+    VpnSiteLinkConnectionImpl(VpnSiteLinkConnectionInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -16,7 +16,7 @@ public final class RuntimeScriptActionDetailImpl implements RuntimeScriptActionD
 
     private final HDInsightManager serviceManager;
 
-    public RuntimeScriptActionDetailImpl(RuntimeScriptActionDetailInner innerObject, HDInsightManager serviceManager) {
+    RuntimeScriptActionDetailImpl(RuntimeScriptActionDetailInner innerObject, HDInsightManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

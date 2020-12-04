@@ -14,7 +14,7 @@ public final class SourceControlImpl implements SourceControl {
 
     private final WebSiteManager serviceManager;
 
-    public SourceControlImpl(SourceControlInner innerObject, WebSiteManager serviceManager) {
+    SourceControlImpl(SourceControlInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

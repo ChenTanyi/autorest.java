@@ -14,7 +14,7 @@ public final class BastionShareableLinkImpl implements BastionShareableLink {
 
     private final NetworkManager serviceManager;
 
-    public BastionShareableLinkImpl(BastionShareableLinkInner innerObject, NetworkManager serviceManager) {
+    BastionShareableLinkImpl(BastionShareableLinkInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

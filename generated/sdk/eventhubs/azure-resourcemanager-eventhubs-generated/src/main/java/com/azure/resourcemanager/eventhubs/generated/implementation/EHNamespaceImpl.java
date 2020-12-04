@@ -141,7 +141,7 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
         return this;
     }
 
-    public EHNamespaceImpl(String name, EventHubsManager serviceManager) {
+    EHNamespaceImpl(String name, EventHubsManager serviceManager) {
         this.innerObject = new EHNamespaceInner();
         this.serviceManager = serviceManager;
         this.namespaceName = name;
@@ -171,7 +171,7 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
         return this;
     }
 
-    public EHNamespaceImpl(EHNamespaceInner innerObject, EventHubsManager serviceManager) {
+    EHNamespaceImpl(EHNamespaceInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

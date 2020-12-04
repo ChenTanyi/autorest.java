@@ -16,8 +16,7 @@ public final class StorageAccountListKeysResultImpl implements StorageAccountLis
 
     private final StorageManager serviceManager;
 
-    public StorageAccountListKeysResultImpl(
-        StorageAccountListKeysResultInner innerObject, StorageManager serviceManager) {
+    StorageAccountListKeysResultImpl(StorageAccountListKeysResultInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

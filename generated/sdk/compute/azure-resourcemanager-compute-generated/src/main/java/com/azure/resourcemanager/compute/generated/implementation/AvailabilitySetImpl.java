@@ -128,7 +128,7 @@ public final class AvailabilitySetImpl implements AvailabilitySet, AvailabilityS
         return this;
     }
 
-    public AvailabilitySetImpl(String name, ComputeManager serviceManager) {
+    AvailabilitySetImpl(String name, ComputeManager serviceManager) {
         this.innerObject = new AvailabilitySetInner();
         this.serviceManager = serviceManager;
         this.availabilitySetName = name;
@@ -159,7 +159,7 @@ public final class AvailabilitySetImpl implements AvailabilitySet, AvailabilityS
         return this;
     }
 
-    public AvailabilitySetImpl(AvailabilitySetInner innerObject, ComputeManager serviceManager) {
+    AvailabilitySetImpl(AvailabilitySetInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

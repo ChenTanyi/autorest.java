@@ -120,7 +120,7 @@ public final class LocalNetworkGatewayImpl
         return this;
     }
 
-    public LocalNetworkGatewayImpl(String name, NetworkManager serviceManager) {
+    LocalNetworkGatewayImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new LocalNetworkGatewayInner();
         this.serviceManager = serviceManager;
         this.localNetworkGatewayName = name;
@@ -151,7 +151,7 @@ public final class LocalNetworkGatewayImpl
         return this;
     }
 
-    public LocalNetworkGatewayImpl(LocalNetworkGatewayInner innerObject, NetworkManager serviceManager) {
+    LocalNetworkGatewayImpl(LocalNetworkGatewayInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -15,7 +15,7 @@ public final class BaselineMetadataValueImpl implements BaselineMetadataValue {
 
     private final MonitorManager serviceManager;
 
-    public BaselineMetadataValueImpl(BaselineMetadataValueInner innerObject, MonitorManager serviceManager) {
+    BaselineMetadataValueImpl(BaselineMetadataValueInner innerObject, MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

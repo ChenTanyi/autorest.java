@@ -19,7 +19,7 @@ public final class GenericResourceExpandedImpl implements GenericResourceExpande
 
     private final ResourceManager serviceManager;
 
-    public GenericResourceExpandedImpl(GenericResourceExpandedInner innerObject, ResourceManager serviceManager) {
+    GenericResourceExpandedImpl(GenericResourceExpandedInner innerObject, ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

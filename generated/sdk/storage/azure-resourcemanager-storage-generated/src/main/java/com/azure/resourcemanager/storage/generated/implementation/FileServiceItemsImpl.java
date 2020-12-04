@@ -18,7 +18,7 @@ public final class FileServiceItemsImpl implements FileServiceItems {
 
     private final StorageManager serviceManager;
 
-    public FileServiceItemsImpl(FileServiceItemsInner innerObject, StorageManager serviceManager) {
+    FileServiceItemsImpl(FileServiceItemsInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

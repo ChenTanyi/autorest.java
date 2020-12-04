@@ -16,7 +16,7 @@ public final class OperationListResultImpl implements OperationListResult {
 
     private final MonitorManager serviceManager;
 
-    public OperationListResultImpl(OperationListResultInner innerObject, MonitorManager serviceManager) {
+    OperationListResultImpl(OperationListResultInner innerObject, MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

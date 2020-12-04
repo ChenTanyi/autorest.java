@@ -16,7 +16,7 @@ public final class ListPathsResponseImpl implements ListPathsResponse {
 
     private final MediaservicesManager serviceManager;
 
-    public ListPathsResponseImpl(ListPathsResponseInner innerObject, MediaservicesManager serviceManager) {
+    ListPathsResponseImpl(ListPathsResponseInner innerObject, MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

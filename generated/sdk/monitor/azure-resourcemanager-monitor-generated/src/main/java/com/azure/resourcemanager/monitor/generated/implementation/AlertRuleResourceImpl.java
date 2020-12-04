@@ -124,7 +124,7 @@ public final class AlertRuleResourceImpl
         return this;
     }
 
-    public AlertRuleResourceImpl(String name, MonitorManager serviceManager) {
+    AlertRuleResourceImpl(String name, MonitorManager serviceManager) {
         this.innerObject = new AlertRuleResourceInner();
         this.serviceManager = serviceManager;
         this.ruleName = name;
@@ -155,7 +155,7 @@ public final class AlertRuleResourceImpl
         return this;
     }
 
-    public AlertRuleResourceImpl(AlertRuleResourceInner innerObject, MonitorManager serviceManager) {
+    AlertRuleResourceImpl(AlertRuleResourceInner innerObject, MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourcegroups");

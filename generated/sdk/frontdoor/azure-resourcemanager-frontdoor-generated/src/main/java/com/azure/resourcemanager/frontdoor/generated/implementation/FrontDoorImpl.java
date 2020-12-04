@@ -190,7 +190,7 @@ public final class FrontDoorImpl implements FrontDoor, FrontDoor.Definition, Fro
         return this;
     }
 
-    public FrontDoorImpl(String name, FrontDoorManager serviceManager) {
+    FrontDoorImpl(String name, FrontDoorManager serviceManager) {
         this.innerObject = new FrontDoorInner();
         this.serviceManager = serviceManager;
         this.frontDoorName = name;
@@ -218,7 +218,7 @@ public final class FrontDoorImpl implements FrontDoor, FrontDoor.Definition, Fro
         return this;
     }
 
-    public FrontDoorImpl(FrontDoorInner innerObject, FrontDoorManager serviceManager) {
+    FrontDoorImpl(FrontDoorInner innerObject, FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -13,7 +13,7 @@ public final class RegistryStatisticsImpl implements RegistryStatistics {
 
     private final IotHubManager serviceManager;
 
-    public RegistryStatisticsImpl(RegistryStatisticsInner innerObject, IotHubManager serviceManager) {
+    RegistryStatisticsImpl(RegistryStatisticsInner innerObject, IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

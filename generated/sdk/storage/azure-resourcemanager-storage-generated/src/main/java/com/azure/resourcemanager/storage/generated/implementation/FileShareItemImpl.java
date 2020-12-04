@@ -19,7 +19,7 @@ public final class FileShareItemImpl implements FileShareItem {
 
     private final StorageManager serviceManager;
 
-    public FileShareItemImpl(FileShareItemInner innerObject, StorageManager serviceManager) {
+    FileShareItemImpl(FileShareItemInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

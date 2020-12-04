@@ -13,7 +13,7 @@ public final class TableImpl implements Table {
 
     private final StorageManager serviceManager;
 
-    public TableImpl(TableInner innerObject, StorageManager serviceManager) {
+    TableImpl(TableInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

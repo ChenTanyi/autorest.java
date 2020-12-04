@@ -16,8 +16,7 @@ public final class PrivateLinkResourcesWrapperImpl implements PrivateLinkResourc
 
     private final WebSiteManager serviceManager;
 
-    public PrivateLinkResourcesWrapperImpl(
-        PrivateLinkResourcesWrapperInner innerObject, WebSiteManager serviceManager) {
+    PrivateLinkResourcesWrapperImpl(PrivateLinkResourcesWrapperInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

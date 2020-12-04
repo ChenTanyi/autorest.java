@@ -16,7 +16,7 @@ public final class ExpressRouteConnectionImpl implements ExpressRouteConnection 
 
     private final NetworkManager serviceManager;
 
-    public ExpressRouteConnectionImpl(ExpressRouteConnectionInner innerObject, NetworkManager serviceManager) {
+    ExpressRouteConnectionImpl(ExpressRouteConnectionInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

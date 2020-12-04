@@ -15,7 +15,7 @@ public final class MetadataValueImpl implements MetadataValue {
 
     private final MonitorManager serviceManager;
 
-    public MetadataValueImpl(MetadataValueInner innerObject, MonitorManager serviceManager) {
+    MetadataValueImpl(MetadataValueInner innerObject, MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

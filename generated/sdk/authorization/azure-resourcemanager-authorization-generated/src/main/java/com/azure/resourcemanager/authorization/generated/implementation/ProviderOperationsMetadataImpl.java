@@ -17,8 +17,7 @@ public final class ProviderOperationsMetadataImpl implements ProviderOperationsM
 
     private final AuthorizationManager serviceManager;
 
-    public ProviderOperationsMetadataImpl(
-        ProviderOperationsMetadataInner innerObject, AuthorizationManager serviceManager) {
+    ProviderOperationsMetadataImpl(ProviderOperationsMetadataInner innerObject, AuthorizationManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

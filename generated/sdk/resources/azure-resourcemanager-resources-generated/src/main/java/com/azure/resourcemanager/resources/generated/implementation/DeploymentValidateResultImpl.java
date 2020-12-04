@@ -15,7 +15,7 @@ public final class DeploymentValidateResultImpl implements DeploymentValidateRes
 
     private final ResourceManager serviceManager;
 
-    public DeploymentValidateResultImpl(DeploymentValidateResultInner innerObject, ResourceManager serviceManager) {
+    DeploymentValidateResultImpl(DeploymentValidateResultInner innerObject, ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

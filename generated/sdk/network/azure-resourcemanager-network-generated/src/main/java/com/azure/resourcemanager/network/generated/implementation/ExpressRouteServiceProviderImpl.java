@@ -18,8 +18,7 @@ public final class ExpressRouteServiceProviderImpl implements ExpressRouteServic
 
     private final NetworkManager serviceManager;
 
-    public ExpressRouteServiceProviderImpl(
-        ExpressRouteServiceProviderInner innerObject, NetworkManager serviceManager) {
+    ExpressRouteServiceProviderImpl(ExpressRouteServiceProviderInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

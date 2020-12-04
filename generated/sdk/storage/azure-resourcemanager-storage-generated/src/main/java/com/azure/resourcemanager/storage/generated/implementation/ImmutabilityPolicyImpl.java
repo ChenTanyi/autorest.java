@@ -90,7 +90,7 @@ public final class ImmutabilityPolicyImpl
         return this;
     }
 
-    public ImmutabilityPolicyImpl(String name, StorageManager serviceManager) {
+    ImmutabilityPolicyImpl(String name, StorageManager serviceManager) {
         this.innerObject = new ImmutabilityPolicyInner();
         this.serviceManager = serviceManager;
         this.containerName = name;
@@ -124,7 +124,7 @@ public final class ImmutabilityPolicyImpl
         return this;
     }
 
-    public ImmutabilityPolicyImpl(ImmutabilityPolicyInner innerObject, StorageManager serviceManager) {
+    ImmutabilityPolicyImpl(ImmutabilityPolicyInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

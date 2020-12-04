@@ -22,7 +22,7 @@ public final class NetworkFeaturesImpl implements NetworkFeatures {
 
     private final WebSiteManager serviceManager;
 
-    public NetworkFeaturesImpl(NetworkFeaturesInner innerObject, WebSiteManager serviceManager) {
+    NetworkFeaturesImpl(NetworkFeaturesInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -183,7 +183,7 @@ public final class CertificateImpl implements Certificate, Certificate.Definitio
         return this;
     }
 
-    public CertificateImpl(String name, WebSiteManager serviceManager) {
+    CertificateImpl(String name, WebSiteManager serviceManager) {
         this.innerObject = new CertificateInner();
         this.serviceManager = serviceManager;
         this.name = name;
@@ -214,7 +214,7 @@ public final class CertificateImpl implements Certificate, Certificate.Definitio
         return this;
     }
 
-    public CertificateImpl(CertificateInner innerObject, WebSiteManager serviceManager) {
+    CertificateImpl(CertificateInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

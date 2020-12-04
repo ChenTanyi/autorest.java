@@ -16,7 +16,7 @@ public final class PrivateAccessImpl implements PrivateAccess {
 
     private final WebSiteManager serviceManager;
 
-    public PrivateAccessImpl(PrivateAccessInner innerObject, WebSiteManager serviceManager) {
+    PrivateAccessImpl(PrivateAccessInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

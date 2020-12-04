@@ -22,7 +22,7 @@ public final class DiagnosticDetectorResponseImpl implements DiagnosticDetectorR
 
     private final WebSiteManager serviceManager;
 
-    public DiagnosticDetectorResponseImpl(DiagnosticDetectorResponseInner innerObject, WebSiteManager serviceManager) {
+    DiagnosticDetectorResponseImpl(DiagnosticDetectorResponseInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

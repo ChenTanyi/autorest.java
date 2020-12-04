@@ -19,7 +19,7 @@ public final class VpnClientIPsecParametersImpl implements VpnClientIPsecParamet
 
     private final NetworkManager serviceManager;
 
-    public VpnClientIPsecParametersImpl(VpnClientIPsecParametersInner innerObject, NetworkManager serviceManager) {
+    VpnClientIPsecParametersImpl(VpnClientIPsecParametersInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

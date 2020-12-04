@@ -80,7 +80,7 @@ public final class ManagementPolicyImpl
         return this;
     }
 
-    public ManagementPolicyImpl(ManagementPolicyName name, StorageManager serviceManager) {
+    ManagementPolicyImpl(ManagementPolicyName name, StorageManager serviceManager) {
         this.innerObject = new ManagementPolicyInner();
         this.serviceManager = serviceManager;
         this.managementPolicyName = name;
@@ -112,7 +112,7 @@ public final class ManagementPolicyImpl
         return this;
     }
 
-    public ManagementPolicyImpl(ManagementPolicyInner innerObject, StorageManager serviceManager) {
+    ManagementPolicyImpl(ManagementPolicyInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

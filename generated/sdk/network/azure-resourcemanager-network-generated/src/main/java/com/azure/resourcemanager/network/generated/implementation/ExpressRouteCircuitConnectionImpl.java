@@ -109,7 +109,7 @@ public final class ExpressRouteCircuitConnectionImpl
         return this;
     }
 
-    public ExpressRouteCircuitConnectionImpl(String name, NetworkManager serviceManager) {
+    ExpressRouteCircuitConnectionImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new ExpressRouteCircuitConnectionInner();
         this.serviceManager = serviceManager;
         this.connectionName = name;
@@ -139,8 +139,7 @@ public final class ExpressRouteCircuitConnectionImpl
         return this;
     }
 
-    public ExpressRouteCircuitConnectionImpl(
-        ExpressRouteCircuitConnectionInner innerObject, NetworkManager serviceManager) {
+    ExpressRouteCircuitConnectionImpl(ExpressRouteCircuitConnectionInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

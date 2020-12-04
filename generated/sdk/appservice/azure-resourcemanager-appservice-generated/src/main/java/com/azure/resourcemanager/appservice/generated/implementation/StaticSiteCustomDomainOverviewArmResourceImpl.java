@@ -14,7 +14,7 @@ public final class StaticSiteCustomDomainOverviewArmResourceImpl implements Stat
 
     private final WebSiteManager serviceManager;
 
-    public StaticSiteCustomDomainOverviewArmResourceImpl(
+    StaticSiteCustomDomainOverviewArmResourceImpl(
         StaticSiteCustomDomainOverviewArmResourceInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

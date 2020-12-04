@@ -17,8 +17,7 @@ public final class ConnectionMonitorQueryResultImpl implements ConnectionMonitor
 
     private final NetworkManager serviceManager;
 
-    public ConnectionMonitorQueryResultImpl(
-        ConnectionMonitorQueryResultInner innerObject, NetworkManager serviceManager) {
+    ConnectionMonitorQueryResultImpl(ConnectionMonitorQueryResultInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

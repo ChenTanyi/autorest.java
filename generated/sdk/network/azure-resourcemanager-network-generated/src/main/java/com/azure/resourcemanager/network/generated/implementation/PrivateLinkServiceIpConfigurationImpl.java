@@ -18,7 +18,7 @@ public final class PrivateLinkServiceIpConfigurationImpl implements PrivateLinkS
 
     private final NetworkManager serviceManager;
 
-    public PrivateLinkServiceIpConfigurationImpl(
+    PrivateLinkServiceIpConfigurationImpl(
         PrivateLinkServiceIpConfigurationInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

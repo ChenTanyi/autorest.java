@@ -81,7 +81,7 @@ public final class RulesEngineImpl implements RulesEngine, RulesEngine.Definitio
         return this;
     }
 
-    public RulesEngineImpl(String name, FrontDoorManager serviceManager) {
+    RulesEngineImpl(String name, FrontDoorManager serviceManager) {
         this.innerObject = new RulesEngineInner();
         this.serviceManager = serviceManager;
         this.rulesEngineName = name;
@@ -109,7 +109,7 @@ public final class RulesEngineImpl implements RulesEngine, RulesEngine.Definitio
         return this;
     }
 
-    public RulesEngineImpl(RulesEngineInner innerObject, FrontDoorManager serviceManager) {
+    RulesEngineImpl(RulesEngineInner innerObject, FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

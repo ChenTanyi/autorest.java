@@ -86,7 +86,7 @@ public final class ExpressRouteCircuitAuthorizationImpl
         return this;
     }
 
-    public ExpressRouteCircuitAuthorizationImpl(String name, NetworkManager serviceManager) {
+    ExpressRouteCircuitAuthorizationImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new ExpressRouteCircuitAuthorizationInner();
         this.serviceManager = serviceManager;
         this.authorizationName = name;
@@ -114,7 +114,7 @@ public final class ExpressRouteCircuitAuthorizationImpl
         return this;
     }
 
-    public ExpressRouteCircuitAuthorizationImpl(
+    ExpressRouteCircuitAuthorizationImpl(
         ExpressRouteCircuitAuthorizationInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

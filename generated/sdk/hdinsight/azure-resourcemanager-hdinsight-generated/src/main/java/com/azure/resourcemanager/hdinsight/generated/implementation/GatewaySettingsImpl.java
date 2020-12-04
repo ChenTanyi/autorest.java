@@ -13,7 +13,7 @@ public final class GatewaySettingsImpl implements GatewaySettings {
 
     private final HDInsightManager serviceManager;
 
-    public GatewaySettingsImpl(GatewaySettingsInner innerObject, HDInsightManager serviceManager) {
+    GatewaySettingsImpl(GatewaySettingsInner innerObject, HDInsightManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

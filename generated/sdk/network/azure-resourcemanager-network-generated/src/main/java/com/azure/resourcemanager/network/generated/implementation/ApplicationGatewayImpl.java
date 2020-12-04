@@ -356,7 +356,7 @@ public final class ApplicationGatewayImpl
         return this;
     }
 
-    public ApplicationGatewayImpl(String name, NetworkManager serviceManager) {
+    ApplicationGatewayImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new ApplicationGatewayInner();
         this.serviceManager = serviceManager;
         this.applicationGatewayName = name;
@@ -387,7 +387,7 @@ public final class ApplicationGatewayImpl
         return this;
     }
 
-    public ApplicationGatewayImpl(ApplicationGatewayInner innerObject, NetworkManager serviceManager) {
+    ApplicationGatewayImpl(ApplicationGatewayInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

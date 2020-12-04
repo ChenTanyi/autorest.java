@@ -13,7 +13,7 @@ public final class UserImpl implements User {
 
     private final WebSiteManager serviceManager;
 
-    public UserImpl(UserInner innerObject, WebSiteManager serviceManager) {
+    UserImpl(UserInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

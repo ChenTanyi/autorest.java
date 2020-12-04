@@ -86,7 +86,7 @@ public final class PublicCertificateImpl
         return this;
     }
 
-    public PublicCertificateImpl(String name, WebSiteManager serviceManager) {
+    PublicCertificateImpl(String name, WebSiteManager serviceManager) {
         this.innerObject = new PublicCertificateInner();
         this.serviceManager = serviceManager;
         this.publicCertificateName = name;
@@ -118,7 +118,7 @@ public final class PublicCertificateImpl
         return this;
     }
 
-    public PublicCertificateImpl(PublicCertificateInner innerObject, WebSiteManager serviceManager) {
+    PublicCertificateImpl(PublicCertificateInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

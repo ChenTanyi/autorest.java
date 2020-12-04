@@ -200,7 +200,7 @@ public final class ActionGroupResourceImpl
         return this;
     }
 
-    public ActionGroupResourceImpl(String name, MonitorManager serviceManager) {
+    ActionGroupResourceImpl(String name, MonitorManager serviceManager) {
         this.innerObject = new ActionGroupResourceInner();
         this.serviceManager = serviceManager;
         this.actionGroupName = name;
@@ -231,7 +231,7 @@ public final class ActionGroupResourceImpl
         return this;
     }
 
-    public ActionGroupResourceImpl(ActionGroupResourceInner innerObject, MonitorManager serviceManager) {
+    ActionGroupResourceImpl(ActionGroupResourceInner innerObject, MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

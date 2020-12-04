@@ -216,7 +216,7 @@ public final class VpnServerConfigurationImpl
         return this;
     }
 
-    public VpnServerConfigurationImpl(String name, NetworkManager serviceManager) {
+    VpnServerConfigurationImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new VpnServerConfigurationInner();
         this.serviceManager = serviceManager;
         this.vpnServerConfigurationName = name;
@@ -249,7 +249,7 @@ public final class VpnServerConfigurationImpl
         return this;
     }
 
-    public VpnServerConfigurationImpl(VpnServerConfigurationInner innerObject, NetworkManager serviceManager) {
+    VpnServerConfigurationImpl(VpnServerConfigurationInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

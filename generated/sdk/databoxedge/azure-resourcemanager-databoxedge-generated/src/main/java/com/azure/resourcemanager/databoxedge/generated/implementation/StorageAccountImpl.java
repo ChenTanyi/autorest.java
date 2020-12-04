@@ -90,7 +90,7 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this;
     }
 
-    public StorageAccountImpl(String name, DataBoxEdgeManager serviceManager) {
+    StorageAccountImpl(String name, DataBoxEdgeManager serviceManager) {
         this.innerObject = new StorageAccountInner();
         this.serviceManager = serviceManager;
         this.storageAccountName = name;
@@ -118,7 +118,7 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this;
     }
 
-    public StorageAccountImpl(StorageAccountInner innerObject, DataBoxEdgeManager serviceManager) {
+    StorageAccountImpl(StorageAccountInner innerObject, DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");

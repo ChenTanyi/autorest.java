@@ -176,7 +176,7 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
         return this;
     }
 
-    public SearchServiceImpl(String name, SearchManager serviceManager) {
+    SearchServiceImpl(String name, SearchManager serviceManager) {
         this.innerObject = new SearchServiceInner();
         this.serviceManager = serviceManager;
         this.searchServiceName = name;
@@ -211,7 +211,7 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
         return this;
     }
 
-    public SearchServiceImpl(SearchServiceInner innerObject, SearchManager serviceManager) {
+    SearchServiceImpl(SearchServiceInner innerObject, SearchManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

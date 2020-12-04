@@ -16,7 +16,7 @@ public final class AvailableProvidersListImpl implements AvailableProvidersList 
 
     private final NetworkManager serviceManager;
 
-    public AvailableProvidersListImpl(AvailableProvidersListInner innerObject, NetworkManager serviceManager) {
+    AvailableProvidersListImpl(AvailableProvidersListInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

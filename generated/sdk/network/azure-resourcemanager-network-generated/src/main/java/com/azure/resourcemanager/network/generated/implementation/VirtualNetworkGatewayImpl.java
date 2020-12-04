@@ -182,7 +182,7 @@ public final class VirtualNetworkGatewayImpl
         return this;
     }
 
-    public VirtualNetworkGatewayImpl(String name, NetworkManager serviceManager) {
+    VirtualNetworkGatewayImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new VirtualNetworkGatewayInner();
         this.serviceManager = serviceManager;
         this.virtualNetworkGatewayName = name;
@@ -211,7 +211,7 @@ public final class VirtualNetworkGatewayImpl
         return this;
     }
 
-    public VirtualNetworkGatewayImpl(VirtualNetworkGatewayInner innerObject, NetworkManager serviceManager) {
+    VirtualNetworkGatewayImpl(VirtualNetworkGatewayInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

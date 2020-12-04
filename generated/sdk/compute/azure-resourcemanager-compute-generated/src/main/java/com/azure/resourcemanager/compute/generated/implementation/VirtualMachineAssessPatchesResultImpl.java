@@ -19,7 +19,7 @@ public final class VirtualMachineAssessPatchesResultImpl implements VirtualMachi
 
     private final ComputeManager serviceManager;
 
-    public VirtualMachineAssessPatchesResultImpl(
+    VirtualMachineAssessPatchesResultImpl(
         VirtualMachineAssessPatchesResultInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

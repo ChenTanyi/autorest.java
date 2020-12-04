@@ -78,7 +78,7 @@ public final class VirtualNetworkRuleImpl
         return this;
     }
 
-    public VirtualNetworkRuleImpl(String name, MySqlManager serviceManager) {
+    VirtualNetworkRuleImpl(String name, MySqlManager serviceManager) {
         this.innerObject = new VirtualNetworkRuleInner();
         this.serviceManager = serviceManager;
         this.virtualNetworkRuleName = name;
@@ -106,7 +106,7 @@ public final class VirtualNetworkRuleImpl
         return this;
     }
 
-    public VirtualNetworkRuleImpl(VirtualNetworkRuleInner innerObject, MySqlManager serviceManager) {
+    VirtualNetworkRuleImpl(VirtualNetworkRuleInner innerObject, MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

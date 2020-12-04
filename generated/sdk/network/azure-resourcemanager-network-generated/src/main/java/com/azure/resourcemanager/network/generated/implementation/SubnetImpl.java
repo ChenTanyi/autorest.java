@@ -34,7 +34,7 @@ public final class SubnetImpl implements Subnet {
 
     private final NetworkManager serviceManager;
 
-    public SubnetImpl(SubnetInner innerObject, NetworkManager serviceManager) {
+    SubnetImpl(SubnetInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

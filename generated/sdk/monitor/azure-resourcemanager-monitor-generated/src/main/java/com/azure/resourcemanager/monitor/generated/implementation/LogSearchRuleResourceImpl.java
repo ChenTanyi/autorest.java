@@ -125,7 +125,7 @@ public final class LogSearchRuleResourceImpl
         return this;
     }
 
-    public LogSearchRuleResourceImpl(String name, MonitorManager serviceManager) {
+    LogSearchRuleResourceImpl(String name, MonitorManager serviceManager) {
         this.innerObject = new LogSearchRuleResourceInner();
         this.serviceManager = serviceManager;
         this.ruleName = name;
@@ -156,7 +156,7 @@ public final class LogSearchRuleResourceImpl
         return this;
     }
 
-    public LogSearchRuleResourceImpl(LogSearchRuleResourceInner innerObject, MonitorManager serviceManager) {
+    LogSearchRuleResourceImpl(LogSearchRuleResourceInner innerObject, MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourcegroups");

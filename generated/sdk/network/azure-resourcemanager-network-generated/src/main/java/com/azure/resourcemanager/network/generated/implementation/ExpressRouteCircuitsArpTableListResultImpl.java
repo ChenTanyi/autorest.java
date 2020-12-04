@@ -16,7 +16,7 @@ public final class ExpressRouteCircuitsArpTableListResultImpl implements Express
 
     private final NetworkManager serviceManager;
 
-    public ExpressRouteCircuitsArpTableListResultImpl(
+    ExpressRouteCircuitsArpTableListResultImpl(
         ExpressRouteCircuitsArpTableListResultInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

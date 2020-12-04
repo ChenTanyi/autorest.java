@@ -18,7 +18,7 @@ public final class ListTableServicesImpl implements ListTableServices {
 
     private final StorageManager serviceManager;
 
-    public ListTableServicesImpl(ListTableServicesInner innerObject, StorageManager serviceManager) {
+    ListTableServicesImpl(ListTableServicesInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -16,7 +16,7 @@ public final class ListContentKeysResponseImpl implements ListContentKeysRespons
 
     private final MediaservicesManager serviceManager;
 
-    public ListContentKeysResponseImpl(ListContentKeysResponseInner innerObject, MediaservicesManager serviceManager) {
+    ListContentKeysResponseImpl(ListContentKeysResponseInner innerObject, MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

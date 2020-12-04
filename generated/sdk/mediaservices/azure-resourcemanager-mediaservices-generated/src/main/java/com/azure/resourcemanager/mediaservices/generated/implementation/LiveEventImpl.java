@@ -162,7 +162,7 @@ public final class LiveEventImpl implements LiveEvent, LiveEvent.Definition, Liv
         return this;
     }
 
-    public LiveEventImpl(String name, MediaservicesManager serviceManager) {
+    LiveEventImpl(String name, MediaservicesManager serviceManager) {
         this.innerObject = new LiveEventInner();
         this.serviceManager = serviceManager;
         this.liveEventName = name;
@@ -191,7 +191,7 @@ public final class LiveEventImpl implements LiveEvent, LiveEvent.Definition, Liv
         return this;
     }
 
-    public LiveEventImpl(LiveEventInner innerObject, MediaservicesManager serviceManager) {
+    LiveEventImpl(LiveEventInner innerObject, MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

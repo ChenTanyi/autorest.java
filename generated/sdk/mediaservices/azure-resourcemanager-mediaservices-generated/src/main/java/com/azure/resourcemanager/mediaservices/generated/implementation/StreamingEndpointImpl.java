@@ -172,7 +172,7 @@ public final class StreamingEndpointImpl
         return this;
     }
 
-    public StreamingEndpointImpl(String name, MediaservicesManager serviceManager) {
+    StreamingEndpointImpl(String name, MediaservicesManager serviceManager) {
         this.innerObject = new StreamingEndpointInner();
         this.serviceManager = serviceManager;
         this.streamingEndpointName = name;
@@ -201,7 +201,7 @@ public final class StreamingEndpointImpl
         return this;
     }
 
-    public StreamingEndpointImpl(StreamingEndpointInner innerObject, MediaservicesManager serviceManager) {
+    StreamingEndpointImpl(StreamingEndpointInner innerObject, MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

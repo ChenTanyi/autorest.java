@@ -13,8 +13,7 @@ public final class AvailablePrivateEndpointTypeImpl implements AvailablePrivateE
 
     private final NetworkManager serviceManager;
 
-    public AvailablePrivateEndpointTypeImpl(
-        AvailablePrivateEndpointTypeInner innerObject, NetworkManager serviceManager) {
+    AvailablePrivateEndpointTypeImpl(AvailablePrivateEndpointTypeInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

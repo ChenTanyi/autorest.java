@@ -14,7 +14,7 @@ public final class SharedAccessSignatureAuthorizationRuleImpl implements SharedA
 
     private final IotHubManager serviceManager;
 
-    public SharedAccessSignatureAuthorizationRuleImpl(
+    SharedAccessSignatureAuthorizationRuleImpl(
         SharedAccessSignatureAuthorizationRuleInner innerObject, IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

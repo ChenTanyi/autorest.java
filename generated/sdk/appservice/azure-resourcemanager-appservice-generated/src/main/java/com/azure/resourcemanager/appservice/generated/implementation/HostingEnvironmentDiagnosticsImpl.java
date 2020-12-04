@@ -13,8 +13,7 @@ public final class HostingEnvironmentDiagnosticsImpl implements HostingEnvironme
 
     private final WebSiteManager serviceManager;
 
-    public HostingEnvironmentDiagnosticsImpl(
-        HostingEnvironmentDiagnosticsInner innerObject, WebSiteManager serviceManager) {
+    HostingEnvironmentDiagnosticsImpl(HostingEnvironmentDiagnosticsInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

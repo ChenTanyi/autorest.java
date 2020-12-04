@@ -15,7 +15,7 @@ public final class RouteImpl implements Route {
 
     private final NetworkManager serviceManager;
 
-    public RouteImpl(RouteInner innerObject, NetworkManager serviceManager) {
+    RouteImpl(RouteInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

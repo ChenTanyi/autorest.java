@@ -16,7 +16,7 @@ public final class EffectiveRouteListResultImpl implements EffectiveRouteListRes
 
     private final NetworkManager serviceManager;
 
-    public EffectiveRouteListResultImpl(EffectiveRouteListResultInner innerObject, NetworkManager serviceManager) {
+    EffectiveRouteListResultImpl(EffectiveRouteListResultInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -90,7 +90,7 @@ public final class ContainerImpl implements Container, Container.Definition, Con
         return this;
     }
 
-    public ContainerImpl(String name, DataBoxEdgeManager serviceManager) {
+    ContainerImpl(String name, DataBoxEdgeManager serviceManager) {
         this.innerObject = new ContainerInner();
         this.serviceManager = serviceManager;
         this.containerName = name;
@@ -120,7 +120,7 @@ public final class ContainerImpl implements Container, Container.Definition, Con
         return this;
     }
 
-    public ContainerImpl(ContainerInner innerObject, DataBoxEdgeManager serviceManager) {
+    ContainerImpl(ContainerInner innerObject, DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");

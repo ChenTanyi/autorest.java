@@ -18,7 +18,7 @@ public final class NetworkRuleSetImpl implements NetworkRuleSet {
 
     private final EventHubsManager serviceManager;
 
-    public NetworkRuleSetImpl(NetworkRuleSetInner innerObject, EventHubsManager serviceManager) {
+    NetworkRuleSetImpl(NetworkRuleSetInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

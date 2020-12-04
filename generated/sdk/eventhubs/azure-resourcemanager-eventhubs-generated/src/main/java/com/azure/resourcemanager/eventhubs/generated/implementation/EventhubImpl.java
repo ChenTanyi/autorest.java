@@ -105,7 +105,7 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
         return this;
     }
 
-    public EventhubImpl(String name, EventHubsManager serviceManager) {
+    EventhubImpl(String name, EventHubsManager serviceManager) {
         this.innerObject = new EventhubInner();
         this.serviceManager = serviceManager;
         this.eventHubName = name;
@@ -136,7 +136,7 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
         return this;
     }
 
-    public EventhubImpl(EventhubInner innerObject, EventHubsManager serviceManager) {
+    EventhubImpl(EventhubInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

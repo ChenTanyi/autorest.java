@@ -14,7 +14,7 @@ public final class MigrateMySqlStatusImpl implements MigrateMySqlStatus {
 
     private final WebSiteManager serviceManager;
 
-    public MigrateMySqlStatusImpl(MigrateMySqlStatusInner innerObject, WebSiteManager serviceManager) {
+    MigrateMySqlStatusImpl(MigrateMySqlStatusInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

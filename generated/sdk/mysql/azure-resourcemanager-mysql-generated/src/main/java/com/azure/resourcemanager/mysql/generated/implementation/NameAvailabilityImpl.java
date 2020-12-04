@@ -13,7 +13,7 @@ public final class NameAvailabilityImpl implements NameAvailability {
 
     private final MySqlManager serviceManager;
 
-    public NameAvailabilityImpl(NameAvailabilityInner innerObject, MySqlManager serviceManager) {
+    NameAvailabilityImpl(NameAvailabilityInner innerObject, MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

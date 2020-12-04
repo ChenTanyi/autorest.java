@@ -16,7 +16,7 @@ public final class MSDeployLogImpl implements MSDeployLog {
 
     private final WebSiteManager serviceManager;
 
-    public MSDeployLogImpl(MSDeployLogInner innerObject, WebSiteManager serviceManager) {
+    MSDeployLogImpl(MSDeployLogInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

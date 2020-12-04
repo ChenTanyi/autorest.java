@@ -77,7 +77,7 @@ public final class DomainOwnershipIdentifierImpl
         return this;
     }
 
-    public DomainOwnershipIdentifierImpl(String name, WebSiteManager serviceManager) {
+    DomainOwnershipIdentifierImpl(String name, WebSiteManager serviceManager) {
         this.innerObject = new DomainOwnershipIdentifierInner();
         this.serviceManager = serviceManager;
         this.name = name;
@@ -108,7 +108,7 @@ public final class DomainOwnershipIdentifierImpl
         return this;
     }
 
-    public DomainOwnershipIdentifierImpl(DomainOwnershipIdentifierInner innerObject, WebSiteManager serviceManager) {
+    DomainOwnershipIdentifierImpl(DomainOwnershipIdentifierInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

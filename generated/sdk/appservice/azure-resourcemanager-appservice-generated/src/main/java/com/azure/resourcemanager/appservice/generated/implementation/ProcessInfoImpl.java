@@ -22,7 +22,7 @@ public final class ProcessInfoImpl implements ProcessInfo {
 
     private final WebSiteManager serviceManager;
 
-    public ProcessInfoImpl(ProcessInfoInner innerObject, WebSiteManager serviceManager) {
+    ProcessInfoImpl(ProcessInfoInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

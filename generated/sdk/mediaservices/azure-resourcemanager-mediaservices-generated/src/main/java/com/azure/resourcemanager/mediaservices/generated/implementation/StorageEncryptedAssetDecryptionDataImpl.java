@@ -16,7 +16,7 @@ public final class StorageEncryptedAssetDecryptionDataImpl implements StorageEnc
 
     private final MediaservicesManager serviceManager;
 
-    public StorageEncryptedAssetDecryptionDataImpl(
+    StorageEncryptedAssetDecryptionDataImpl(
         StorageEncryptedAssetDecryptionDataInner innerObject, MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

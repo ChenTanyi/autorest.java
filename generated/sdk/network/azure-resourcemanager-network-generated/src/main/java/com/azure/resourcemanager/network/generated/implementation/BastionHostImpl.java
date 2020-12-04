@@ -109,7 +109,7 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
         return this;
     }
 
-    public BastionHostImpl(String name, NetworkManager serviceManager) {
+    BastionHostImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new BastionHostInner();
         this.serviceManager = serviceManager;
         this.bastionHostname = name;
@@ -137,7 +137,7 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
         return this;
     }
 
-    public BastionHostImpl(BastionHostInner innerObject, NetworkManager serviceManager) {
+    BastionHostImpl(BastionHostInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

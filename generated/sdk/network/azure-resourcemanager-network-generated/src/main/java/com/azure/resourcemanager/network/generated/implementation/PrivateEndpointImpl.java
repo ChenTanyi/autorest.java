@@ -152,7 +152,7 @@ public final class PrivateEndpointImpl implements PrivateEndpoint, PrivateEndpoi
         return this;
     }
 
-    public PrivateEndpointImpl(String name, NetworkManager serviceManager) {
+    PrivateEndpointImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new PrivateEndpointInner();
         this.serviceManager = serviceManager;
         this.privateEndpointName = name;
@@ -180,7 +180,7 @@ public final class PrivateEndpointImpl implements PrivateEndpoint, PrivateEndpoi
         return this;
     }
 
-    public PrivateEndpointImpl(PrivateEndpointInner innerObject, NetworkManager serviceManager) {
+    PrivateEndpointImpl(PrivateEndpointInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

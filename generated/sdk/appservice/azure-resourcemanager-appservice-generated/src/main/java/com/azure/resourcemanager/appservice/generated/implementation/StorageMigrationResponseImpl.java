@@ -13,7 +13,7 @@ public final class StorageMigrationResponseImpl implements StorageMigrationRespo
 
     private final WebSiteManager serviceManager;
 
-    public StorageMigrationResponseImpl(StorageMigrationResponseInner innerObject, WebSiteManager serviceManager) {
+    StorageMigrationResponseImpl(StorageMigrationResponseInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

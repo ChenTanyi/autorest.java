@@ -49,46 +49,6 @@ public interface PolicyAssignments {
     Response<PolicyAssignment> deleteWithResponse(String scope, String policyAssignmentName, Context context);
 
     /**
-     * This operation creates or updates a policy assignment with the given scope and name. Policy assignments apply to
-     * all resources contained within their scope. For example, when you assign a policy at resource group scope, that
-     * policy applies to all resources in the group.
-     *
-     * @param scope The scope of the policy assignment. Valid scopes are: management group (format:
-     *     '/providers/Microsoft.Management/managementGroups/{managementGroup}'), subscription (format:
-     *     '/subscriptions/{subscriptionId}'), resource group (format:
-     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}', or resource (format:
-     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/[{parentResourcePath}/]{resourceType}/{resourceName}'.
-     * @param policyAssignmentName The name of the policy assignment.
-     * @param parameters Parameters for the policy assignment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
-     */
-    PolicyAssignment create(String scope, String policyAssignmentName, PolicyAssignmentInner parameters);
-
-    /**
-     * This operation creates or updates a policy assignment with the given scope and name. Policy assignments apply to
-     * all resources contained within their scope. For example, when you assign a policy at resource group scope, that
-     * policy applies to all resources in the group.
-     *
-     * @param scope The scope of the policy assignment. Valid scopes are: management group (format:
-     *     '/providers/Microsoft.Management/managementGroups/{managementGroup}'), subscription (format:
-     *     '/subscriptions/{subscriptionId}'), resource group (format:
-     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}', or resource (format:
-     *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/[{parentResourcePath}/]{resourceType}/{resourceName}'.
-     * @param policyAssignmentName The name of the policy assignment.
-     * @param parameters Parameters for the policy assignment.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the policy assignment.
-     */
-    Response<PolicyAssignment> createWithResponse(
-        String scope, String policyAssignmentName, PolicyAssignmentInner parameters, Context context);
-
-    /**
      * This operation retrieves a single policy assignment, given its name and the scope it was created at.
      *
      * @param scope The scope of the policy assignment. Valid scopes are: management group (format:
@@ -433,4 +393,12 @@ public interface PolicyAssignments {
      * @return the policy assignment.
      */
     Response<PolicyAssignment> getByIdWithResponse(String policyAssignmentId, Context context);
+
+    /**
+     * Begins definition for a new PolicyAssignment resource.
+     *
+     * @param name resource name.
+     * @return the first stage of the new PolicyAssignment definition.
+     */
+    PolicyAssignment.DefinitionStages.Blank define(String name);
 }

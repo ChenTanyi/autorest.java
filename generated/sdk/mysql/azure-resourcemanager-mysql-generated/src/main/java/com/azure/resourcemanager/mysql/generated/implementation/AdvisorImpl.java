@@ -13,7 +13,7 @@ public final class AdvisorImpl implements Advisor {
 
     private final MySqlManager serviceManager;
 
-    public AdvisorImpl(AdvisorInner innerObject, MySqlManager serviceManager) {
+    AdvisorImpl(AdvisorInner innerObject, MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

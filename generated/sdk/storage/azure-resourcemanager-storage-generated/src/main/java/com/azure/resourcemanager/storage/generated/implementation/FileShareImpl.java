@@ -134,7 +134,7 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
         return this;
     }
 
-    public FileShareImpl(String name, StorageManager serviceManager) {
+    FileShareImpl(String name, StorageManager serviceManager) {
         this.innerObject = new FileShareInner();
         this.serviceManager = serviceManager;
         this.shareName = name;
@@ -164,7 +164,7 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
         return this;
     }
 
-    public FileShareImpl(FileShareInner innerObject, StorageManager serviceManager) {
+    FileShareImpl(FileShareInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

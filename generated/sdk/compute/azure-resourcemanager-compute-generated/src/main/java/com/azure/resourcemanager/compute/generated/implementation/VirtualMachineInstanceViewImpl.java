@@ -24,7 +24,7 @@ public final class VirtualMachineInstanceViewImpl implements VirtualMachineInsta
 
     private final ComputeManager serviceManager;
 
-    public VirtualMachineInstanceViewImpl(VirtualMachineInstanceViewInner innerObject, ComputeManager serviceManager) {
+    VirtualMachineInstanceViewImpl(VirtualMachineInstanceViewInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -21,7 +21,7 @@ public final class EventDataImpl implements EventData {
 
     private final MonitorManager serviceManager;
 
-    public EventDataImpl(EventDataInner innerObject, MonitorManager serviceManager) {
+    EventDataImpl(EventDataInner innerObject, MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

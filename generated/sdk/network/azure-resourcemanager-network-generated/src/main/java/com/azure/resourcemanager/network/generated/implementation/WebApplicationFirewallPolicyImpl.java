@@ -161,7 +161,7 @@ public final class WebApplicationFirewallPolicyImpl
         return this;
     }
 
-    public WebApplicationFirewallPolicyImpl(String name, NetworkManager serviceManager) {
+    WebApplicationFirewallPolicyImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new WebApplicationFirewallPolicyInner();
         this.serviceManager = serviceManager;
         this.policyName = name;
@@ -191,8 +191,7 @@ public final class WebApplicationFirewallPolicyImpl
         return this;
     }
 
-    public WebApplicationFirewallPolicyImpl(
-        WebApplicationFirewallPolicyInner innerObject, NetworkManager serviceManager) {
+    WebApplicationFirewallPolicyImpl(WebApplicationFirewallPolicyInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

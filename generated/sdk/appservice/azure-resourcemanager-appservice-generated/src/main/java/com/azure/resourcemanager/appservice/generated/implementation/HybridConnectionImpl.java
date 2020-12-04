@@ -109,7 +109,7 @@ public final class HybridConnectionImpl
         return this;
     }
 
-    public HybridConnectionImpl(String name, WebSiteManager serviceManager) {
+    HybridConnectionImpl(String name, WebSiteManager serviceManager) {
         this.innerObject = new HybridConnectionInner();
         this.serviceManager = serviceManager;
         this.relayName = name;
@@ -141,7 +141,7 @@ public final class HybridConnectionImpl
         return this;
     }
 
-    public HybridConnectionImpl(HybridConnectionInner innerObject, WebSiteManager serviceManager) {
+    HybridConnectionImpl(HybridConnectionInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

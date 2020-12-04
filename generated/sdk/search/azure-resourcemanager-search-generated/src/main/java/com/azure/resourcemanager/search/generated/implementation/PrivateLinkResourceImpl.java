@@ -14,7 +14,7 @@ public final class PrivateLinkResourceImpl implements PrivateLinkResource {
 
     private final SearchManager serviceManager;
 
-    public PrivateLinkResourceImpl(PrivateLinkResourceInner innerObject, SearchManager serviceManager) {
+    PrivateLinkResourceImpl(PrivateLinkResourceInner innerObject, SearchManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

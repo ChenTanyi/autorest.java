@@ -31,7 +31,7 @@ public final class VirtualMachineUpdateImpl implements VirtualMachineUpdate {
 
     private final ComputeManager serviceManager;
 
-    public VirtualMachineUpdateImpl(VirtualMachineUpdateInner innerObject, ComputeManager serviceManager) {
+    VirtualMachineUpdateImpl(VirtualMachineUpdateInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -163,7 +163,7 @@ public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.
         return this;
     }
 
-    public PublicIpPrefixImpl(String name, NetworkManager serviceManager) {
+    PublicIpPrefixImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new PublicIpPrefixInner();
         this.serviceManager = serviceManager;
         this.publicIpPrefixName = name;
@@ -194,7 +194,7 @@ public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.
         return this;
     }
 
-    public PublicIpPrefixImpl(PublicIpPrefixInner innerObject, NetworkManager serviceManager) {
+    PublicIpPrefixImpl(PublicIpPrefixInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

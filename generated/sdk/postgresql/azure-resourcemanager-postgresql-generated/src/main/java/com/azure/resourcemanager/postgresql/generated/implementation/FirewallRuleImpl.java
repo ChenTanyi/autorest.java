@@ -72,7 +72,7 @@ public final class FirewallRuleImpl implements FirewallRule, FirewallRule.Defini
         return this;
     }
 
-    public FirewallRuleImpl(String name, PostgreSqlManager serviceManager) {
+    FirewallRuleImpl(String name, PostgreSqlManager serviceManager) {
         this.innerObject = new FirewallRuleInner();
         this.serviceManager = serviceManager;
         this.firewallRuleName = name;
@@ -100,7 +100,7 @@ public final class FirewallRuleImpl implements FirewallRule, FirewallRule.Defini
         return this;
     }
 
-    public FirewallRuleImpl(FirewallRuleInner innerObject, PostgreSqlManager serviceManager) {
+    FirewallRuleImpl(FirewallRuleInner innerObject, PostgreSqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

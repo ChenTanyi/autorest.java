@@ -16,7 +16,7 @@ public final class FunctionEnvelopeImpl implements FunctionEnvelope, FunctionEnv
 
     private final WebSiteManager serviceManager;
 
-    public FunctionEnvelopeImpl(FunctionEnvelopeInner innerObject, WebSiteManager serviceManager) {
+    FunctionEnvelopeImpl(FunctionEnvelopeInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -132,7 +132,7 @@ public final class FunctionEnvelopeImpl implements FunctionEnvelope, FunctionEnv
         return this;
     }
 
-    public FunctionEnvelopeImpl(String name, WebSiteManager serviceManager) {
+    FunctionEnvelopeImpl(String name, WebSiteManager serviceManager) {
         this.innerObject = new FunctionEnvelopeInner();
         this.serviceManager = serviceManager;
         this.functionName = name;

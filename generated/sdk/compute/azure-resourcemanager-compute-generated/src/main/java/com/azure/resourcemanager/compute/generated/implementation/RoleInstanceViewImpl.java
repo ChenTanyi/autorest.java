@@ -16,7 +16,7 @@ public final class RoleInstanceViewImpl implements RoleInstanceView {
 
     private final ComputeManager serviceManager;
 
-    public RoleInstanceViewImpl(RoleInstanceViewInner innerObject, ComputeManager serviceManager) {
+    RoleInstanceViewImpl(RoleInstanceViewInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

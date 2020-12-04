@@ -16,7 +16,7 @@ public final class TriggeredJobHistoryImpl implements TriggeredJobHistory {
 
     private final WebSiteManager serviceManager;
 
-    public TriggeredJobHistoryImpl(TriggeredJobHistoryInner innerObject, WebSiteManager serviceManager) {
+    TriggeredJobHistoryImpl(TriggeredJobHistoryInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

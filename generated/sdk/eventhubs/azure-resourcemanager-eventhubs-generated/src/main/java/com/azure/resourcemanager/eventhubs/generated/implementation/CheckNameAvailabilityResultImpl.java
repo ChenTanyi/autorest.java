@@ -14,8 +14,7 @@ public final class CheckNameAvailabilityResultImpl implements CheckNameAvailabil
 
     private final EventHubsManager serviceManager;
 
-    public CheckNameAvailabilityResultImpl(
-        CheckNameAvailabilityResultInner innerObject, EventHubsManager serviceManager) {
+    CheckNameAvailabilityResultImpl(CheckNameAvailabilityResultInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

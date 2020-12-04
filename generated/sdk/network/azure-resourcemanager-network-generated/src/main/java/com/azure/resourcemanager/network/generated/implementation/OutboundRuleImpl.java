@@ -18,7 +18,7 @@ public final class OutboundRuleImpl implements OutboundRule {
 
     private final NetworkManager serviceManager;
 
-    public OutboundRuleImpl(OutboundRuleInner innerObject, NetworkManager serviceManager) {
+    OutboundRuleImpl(OutboundRuleInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

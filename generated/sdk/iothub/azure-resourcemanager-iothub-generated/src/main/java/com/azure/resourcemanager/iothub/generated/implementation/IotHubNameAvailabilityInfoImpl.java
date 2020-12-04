@@ -14,7 +14,7 @@ public final class IotHubNameAvailabilityInfoImpl implements IotHubNameAvailabil
 
     private final IotHubManager serviceManager;
 
-    public IotHubNameAvailabilityInfoImpl(IotHubNameAvailabilityInfoInner innerObject, IotHubManager serviceManager) {
+    IotHubNameAvailabilityInfoImpl(IotHubNameAvailabilityInfoInner innerObject, IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

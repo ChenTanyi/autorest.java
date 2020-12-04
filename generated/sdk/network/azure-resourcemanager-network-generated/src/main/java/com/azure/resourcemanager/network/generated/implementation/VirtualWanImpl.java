@@ -138,7 +138,7 @@ public final class VirtualWanImpl implements VirtualWan, VirtualWan.Definition, 
         return this;
     }
 
-    public VirtualWanImpl(String name, NetworkManager serviceManager) {
+    VirtualWanImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new VirtualWanInner();
         this.serviceManager = serviceManager;
         this.virtualWanName = name;
@@ -169,7 +169,7 @@ public final class VirtualWanImpl implements VirtualWan, VirtualWan.Definition, 
         return this;
     }
 
-    public VirtualWanImpl(VirtualWanInner innerObject, NetworkManager serviceManager) {
+    VirtualWanImpl(VirtualWanInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

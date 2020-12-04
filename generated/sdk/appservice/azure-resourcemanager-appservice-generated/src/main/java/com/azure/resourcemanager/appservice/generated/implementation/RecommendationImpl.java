@@ -20,7 +20,7 @@ public final class RecommendationImpl implements Recommendation {
 
     private final WebSiteManager serviceManager;
 
-    public RecommendationImpl(RecommendationInner innerObject, WebSiteManager serviceManager) {
+    RecommendationImpl(RecommendationInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

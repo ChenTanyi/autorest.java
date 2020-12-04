@@ -105,7 +105,7 @@ public final class IotHubDescriptionImpl
         return this;
     }
 
-    public IotHubDescriptionImpl(String name, IotHubManager serviceManager) {
+    IotHubDescriptionImpl(String name, IotHubManager serviceManager) {
         this.innerObject = new IotHubDescriptionInner();
         this.serviceManager = serviceManager;
         this.resourceName = name;
@@ -135,7 +135,7 @@ public final class IotHubDescriptionImpl
         return this;
     }
 
-    public IotHubDescriptionImpl(IotHubDescriptionInner innerObject, IotHubManager serviceManager) {
+    IotHubDescriptionImpl(IotHubDescriptionInner innerObject, IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

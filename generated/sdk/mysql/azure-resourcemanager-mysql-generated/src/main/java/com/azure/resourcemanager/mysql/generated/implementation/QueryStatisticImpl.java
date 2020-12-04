@@ -16,7 +16,7 @@ public final class QueryStatisticImpl implements QueryStatistic {
 
     private final MySqlManager serviceManager;
 
-    public QueryStatisticImpl(QueryStatisticInner innerObject, MySqlManager serviceManager) {
+    QueryStatisticImpl(QueryStatisticInner innerObject, MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

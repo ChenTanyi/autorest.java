@@ -18,7 +18,7 @@ public final class RecommendationRuleImpl implements RecommendationRule {
 
     private final WebSiteManager serviceManager;
 
-    public RecommendationRuleImpl(RecommendationRuleInner innerObject, WebSiteManager serviceManager) {
+    RecommendationRuleImpl(RecommendationRuleInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

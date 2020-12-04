@@ -90,7 +90,7 @@ public final class EncryptionScopeImpl implements EncryptionScope, EncryptionSco
         return this;
     }
 
-    public EncryptionScopeImpl(String name, StorageManager serviceManager) {
+    EncryptionScopeImpl(String name, StorageManager serviceManager) {
         this.innerObject = new EncryptionScopeInner();
         this.serviceManager = serviceManager;
         this.encryptionScopeName = name;
@@ -120,7 +120,7 @@ public final class EncryptionScopeImpl implements EncryptionScope, EncryptionSco
         return this;
     }
 
-    public EncryptionScopeImpl(EncryptionScopeInner innerObject, StorageManager serviceManager) {
+    EncryptionScopeImpl(EncryptionScopeInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

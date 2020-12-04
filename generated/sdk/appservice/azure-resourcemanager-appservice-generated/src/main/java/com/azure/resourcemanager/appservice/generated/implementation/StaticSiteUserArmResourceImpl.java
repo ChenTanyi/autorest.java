@@ -13,7 +13,7 @@ public final class StaticSiteUserArmResourceImpl implements StaticSiteUserArmRes
 
     private final WebSiteManager serviceManager;
 
-    public StaticSiteUserArmResourceImpl(StaticSiteUserArmResourceInner innerObject, WebSiteManager serviceManager) {
+    StaticSiteUserArmResourceImpl(StaticSiteUserArmResourceInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

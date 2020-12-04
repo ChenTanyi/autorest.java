@@ -650,6 +650,31 @@ public interface IotHubResources {
     Response<EventHubConsumerGroupInfo> getEventHubConsumerGroupByIdWithResponse(String id, Context context);
 
     /**
+     * Delete an IoT hub.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     *     by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the description of the IoT hub.
+     */
+    IotHubDescription deleteById(String id);
+
+    /**
+     * Delete an IoT hub.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     *     by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the description of the IoT hub.
+     */
+    IotHubDescription deleteByIdWithResponse(String id, Context context);
+
+    /**
      * Delete a consumer group from an Event Hub-compatible endpoint in an IoT hub.
      *
      * @param id the resource ID.

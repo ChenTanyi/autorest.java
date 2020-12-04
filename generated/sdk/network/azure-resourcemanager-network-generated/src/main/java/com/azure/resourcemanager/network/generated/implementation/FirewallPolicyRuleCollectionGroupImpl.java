@@ -95,7 +95,7 @@ public final class FirewallPolicyRuleCollectionGroupImpl
         return this;
     }
 
-    public FirewallPolicyRuleCollectionGroupImpl(String name, NetworkManager serviceManager) {
+    FirewallPolicyRuleCollectionGroupImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new FirewallPolicyRuleCollectionGroupInner();
         this.serviceManager = serviceManager;
         this.ruleCollectionGroupName = name;
@@ -125,7 +125,7 @@ public final class FirewallPolicyRuleCollectionGroupImpl
         return this;
     }
 
-    public FirewallPolicyRuleCollectionGroupImpl(
+    FirewallPolicyRuleCollectionGroupImpl(
         FirewallPolicyRuleCollectionGroupInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

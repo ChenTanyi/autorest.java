@@ -13,8 +13,7 @@ public final class DomainControlCenterSsoRequestImpl implements DomainControlCen
 
     private final WebSiteManager serviceManager;
 
-    public DomainControlCenterSsoRequestImpl(
-        DomainControlCenterSsoRequestInner innerObject, WebSiteManager serviceManager) {
+    DomainControlCenterSsoRequestImpl(DomainControlCenterSsoRequestInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

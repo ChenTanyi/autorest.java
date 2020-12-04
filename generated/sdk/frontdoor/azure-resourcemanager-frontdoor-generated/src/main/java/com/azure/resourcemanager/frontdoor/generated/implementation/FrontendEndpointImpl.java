@@ -19,7 +19,7 @@ public final class FrontendEndpointImpl implements FrontendEndpoint {
 
     private final FrontDoorManager serviceManager;
 
-    public FrontendEndpointImpl(FrontendEndpointInner innerObject, FrontDoorManager serviceManager) {
+    FrontendEndpointImpl(FrontendEndpointInner innerObject, FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

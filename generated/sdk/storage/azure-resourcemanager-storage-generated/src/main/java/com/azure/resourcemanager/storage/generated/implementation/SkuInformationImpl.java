@@ -20,7 +20,7 @@ public final class SkuInformationImpl implements SkuInformation {
 
     private final StorageManager serviceManager;
 
-    public SkuInformationImpl(SkuInformationInner innerObject, StorageManager serviceManager) {
+    SkuInformationImpl(SkuInformationInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -117,7 +117,7 @@ public final class VirtualMachineScaleSetVMExtensionImpl
         return this;
     }
 
-    public VirtualMachineScaleSetVMExtensionImpl(String name, ComputeManager serviceManager) {
+    VirtualMachineScaleSetVMExtensionImpl(String name, ComputeManager serviceManager) {
         this.innerObject = new VirtualMachineScaleSetVMExtensionInner();
         this.serviceManager = serviceManager;
         this.vmExtensionName = name;
@@ -153,7 +153,7 @@ public final class VirtualMachineScaleSetVMExtensionImpl
         return this;
     }
 
-    public VirtualMachineScaleSetVMExtensionImpl(
+    VirtualMachineScaleSetVMExtensionImpl(
         VirtualMachineScaleSetVMExtensionInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

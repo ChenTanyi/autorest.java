@@ -148,7 +148,7 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
         return this;
     }
 
-    public BlobContainerImpl(String name, StorageManager serviceManager) {
+    BlobContainerImpl(String name, StorageManager serviceManager) {
         this.innerObject = new BlobContainerInner();
         this.serviceManager = serviceManager;
         this.containerName = name;
@@ -178,7 +178,7 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
         return this;
     }
 
-    public BlobContainerImpl(BlobContainerInner innerObject, StorageManager serviceManager) {
+    BlobContainerImpl(BlobContainerInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

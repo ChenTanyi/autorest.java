@@ -14,7 +14,7 @@ public final class LogFileImpl implements LogFile {
 
     private final PostgreSqlManager serviceManager;
 
-    public LogFileImpl(LogFileInner innerObject, PostgreSqlManager serviceManager) {
+    LogFileImpl(LogFileInner innerObject, PostgreSqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

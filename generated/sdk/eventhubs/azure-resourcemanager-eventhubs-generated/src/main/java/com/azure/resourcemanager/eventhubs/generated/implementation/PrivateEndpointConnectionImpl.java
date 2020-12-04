@@ -84,7 +84,7 @@ public final class PrivateEndpointConnectionImpl
         return this;
     }
 
-    public PrivateEndpointConnectionImpl(String name, EventHubsManager serviceManager) {
+    PrivateEndpointConnectionImpl(String name, EventHubsManager serviceManager) {
         this.innerObject = new PrivateEndpointConnectionInner();
         this.serviceManager = serviceManager;
         this.privateEndpointConnectionName = name;
@@ -116,7 +116,7 @@ public final class PrivateEndpointConnectionImpl
         return this;
     }
 
-    public PrivateEndpointConnectionImpl(PrivateEndpointConnectionInner innerObject, EventHubsManager serviceManager) {
+    PrivateEndpointConnectionImpl(PrivateEndpointConnectionInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

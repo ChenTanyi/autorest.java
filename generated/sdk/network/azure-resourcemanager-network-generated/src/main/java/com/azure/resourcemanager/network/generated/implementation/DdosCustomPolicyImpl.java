@@ -123,7 +123,7 @@ public final class DdosCustomPolicyImpl
         return this;
     }
 
-    public DdosCustomPolicyImpl(String name, NetworkManager serviceManager) {
+    DdosCustomPolicyImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new DdosCustomPolicyInner();
         this.serviceManager = serviceManager;
         this.ddosCustomPolicyName = name;
@@ -154,7 +154,7 @@ public final class DdosCustomPolicyImpl
         return this;
     }
 
-    public DdosCustomPolicyImpl(DdosCustomPolicyInner innerObject, NetworkManager serviceManager) {
+    DdosCustomPolicyImpl(DdosCustomPolicyInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

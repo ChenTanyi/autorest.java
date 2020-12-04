@@ -13,7 +13,7 @@ public final class EntityNameAvailabilityCheckOutputImpl implements EntityNameAv
 
     private final MediaservicesManager serviceManager;
 
-    public EntityNameAvailabilityCheckOutputImpl(
+    EntityNameAvailabilityCheckOutputImpl(
         EntityNameAvailabilityCheckOutputInner innerObject, MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

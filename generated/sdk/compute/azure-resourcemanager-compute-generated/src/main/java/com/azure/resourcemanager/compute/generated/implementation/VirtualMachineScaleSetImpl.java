@@ -177,7 +177,7 @@ public final class VirtualMachineScaleSetImpl
         return this;
     }
 
-    public VirtualMachineScaleSetImpl(String name, ComputeManager serviceManager) {
+    VirtualMachineScaleSetImpl(String name, ComputeManager serviceManager) {
         this.innerObject = new VirtualMachineScaleSetInner();
         this.serviceManager = serviceManager;
         this.vmScaleSetName = name;
@@ -206,7 +206,7 @@ public final class VirtualMachineScaleSetImpl
         return this;
     }
 
-    public VirtualMachineScaleSetImpl(VirtualMachineScaleSetInner innerObject, ComputeManager serviceManager) {
+    VirtualMachineScaleSetImpl(VirtualMachineScaleSetInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

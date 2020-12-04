@@ -19,7 +19,7 @@ public final class MetricImpl implements Metric {
 
     private final MonitorManager serviceManager;
 
-    public MetricImpl(MetricInner innerObject, MonitorManager serviceManager) {
+    MetricImpl(MetricInner innerObject, MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

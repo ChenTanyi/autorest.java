@@ -33,7 +33,7 @@ public final class VirtualMachineScaleSetVMImpl implements VirtualMachineScaleSe
 
     private final ComputeManager serviceManager;
 
-    public VirtualMachineScaleSetVMImpl(VirtualMachineScaleSetVMInner innerObject, ComputeManager serviceManager) {
+    VirtualMachineScaleSetVMImpl(VirtualMachineScaleSetVMInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -16,8 +16,7 @@ public final class VirtualWanSecurityProvidersImpl implements VirtualWanSecurity
 
     private final NetworkManager serviceManager;
 
-    public VirtualWanSecurityProvidersImpl(
-        VirtualWanSecurityProvidersInner innerObject, NetworkManager serviceManager) {
+    VirtualWanSecurityProvidersImpl(VirtualWanSecurityProvidersInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

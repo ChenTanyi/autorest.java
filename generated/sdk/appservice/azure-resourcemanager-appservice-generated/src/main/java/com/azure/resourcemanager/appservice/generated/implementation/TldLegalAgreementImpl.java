@@ -13,7 +13,7 @@ public final class TldLegalAgreementImpl implements TldLegalAgreement {
 
     private final WebSiteManager serviceManager;
 
-    public TldLegalAgreementImpl(TldLegalAgreementInner innerObject, WebSiteManager serviceManager) {
+    TldLegalAgreementImpl(TldLegalAgreementInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

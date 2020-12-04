@@ -17,7 +17,7 @@ public final class QueryResponseImpl implements QueryResponse {
 
     private final ResourceGraphManager serviceManager;
 
-    public QueryResponseImpl(QueryResponseInner innerObject, ResourceGraphManager serviceManager) {
+    QueryResponseImpl(QueryResponseInner innerObject, ResourceGraphManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

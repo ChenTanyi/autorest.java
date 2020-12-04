@@ -102,7 +102,7 @@ public final class ApplicationSecurityGroupImpl
         return this;
     }
 
-    public ApplicationSecurityGroupImpl(String name, NetworkManager serviceManager) {
+    ApplicationSecurityGroupImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new ApplicationSecurityGroupInner();
         this.serviceManager = serviceManager;
         this.applicationSecurityGroupName = name;
@@ -133,7 +133,7 @@ public final class ApplicationSecurityGroupImpl
         return this;
     }
 
-    public ApplicationSecurityGroupImpl(ApplicationSecurityGroupInner innerObject, NetworkManager serviceManager) {
+    ApplicationSecurityGroupImpl(ApplicationSecurityGroupInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -13,7 +13,7 @@ public final class AccessKeysImpl implements AccessKeys {
 
     private final EventHubsManager serviceManager;
 
-    public AccessKeysImpl(AccessKeysInner innerObject, EventHubsManager serviceManager) {
+    AccessKeysImpl(AccessKeysInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

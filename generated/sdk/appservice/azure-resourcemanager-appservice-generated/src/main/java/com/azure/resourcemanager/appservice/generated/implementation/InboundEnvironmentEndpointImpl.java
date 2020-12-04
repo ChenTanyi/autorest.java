@@ -15,7 +15,7 @@ public final class InboundEnvironmentEndpointImpl implements InboundEnvironmentE
 
     private final WebSiteManager serviceManager;
 
-    public InboundEnvironmentEndpointImpl(InboundEnvironmentEndpointInner innerObject, WebSiteManager serviceManager) {
+    InboundEnvironmentEndpointImpl(InboundEnvironmentEndpointInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

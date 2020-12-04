@@ -15,7 +15,7 @@ public final class CloudServiceRoleImpl implements CloudServiceRole {
 
     private final ComputeManager serviceManager;
 
-    public CloudServiceRoleImpl(CloudServiceRoleInner innerObject, ComputeManager serviceManager) {
+    CloudServiceRoleImpl(CloudServiceRoleInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

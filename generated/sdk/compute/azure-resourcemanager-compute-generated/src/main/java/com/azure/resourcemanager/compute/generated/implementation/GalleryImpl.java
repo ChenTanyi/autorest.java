@@ -108,7 +108,7 @@ public final class GalleryImpl implements Gallery, Gallery.Definition, Gallery.U
         return this;
     }
 
-    public GalleryImpl(String name, ComputeManager serviceManager) {
+    GalleryImpl(String name, ComputeManager serviceManager) {
         this.innerObject = new GalleryInner();
         this.serviceManager = serviceManager;
         this.galleryName = name;
@@ -137,7 +137,7 @@ public final class GalleryImpl implements Gallery, Gallery.Definition, Gallery.U
         return this;
     }
 
-    public GalleryImpl(GalleryInner innerObject, ComputeManager serviceManager) {
+    GalleryImpl(GalleryInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

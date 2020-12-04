@@ -148,7 +148,7 @@ public final class ZoneImpl implements Zone, Zone.Definition, Zone.Update {
         return this;
     }
 
-    public ZoneImpl(String name, DnsManager serviceManager) {
+    ZoneImpl(String name, DnsManager serviceManager) {
         this.innerObject = new ZoneInner();
         this.serviceManager = serviceManager;
         this.zoneName = name;
@@ -182,7 +182,7 @@ public final class ZoneImpl implements Zone, Zone.Definition, Zone.Update {
         return this;
     }
 
-    public ZoneImpl(ZoneInner innerObject, DnsManager serviceManager) {
+    ZoneImpl(ZoneInner innerObject, DnsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -14,8 +14,7 @@ public final class CheckNameAvailabilityResultImpl implements CheckNameAvailabil
 
     private final StorageManager serviceManager;
 
-    public CheckNameAvailabilityResultImpl(
-        CheckNameAvailabilityResultInner innerObject, StorageManager serviceManager) {
+    CheckNameAvailabilityResultImpl(CheckNameAvailabilityResultInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -14,7 +14,7 @@ public final class RecommendedActionSessionsOperationStatusImpl implements Recom
 
     private final MySqlManager serviceManager;
 
-    public RecommendedActionSessionsOperationStatusImpl(
+    RecommendedActionSessionsOperationStatusImpl(
         RecommendedActionSessionsOperationStatusInner innerObject, MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

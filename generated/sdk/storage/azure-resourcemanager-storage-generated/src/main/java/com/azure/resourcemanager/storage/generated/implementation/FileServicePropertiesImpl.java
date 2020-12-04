@@ -79,7 +79,7 @@ public final class FileServicePropertiesImpl
         return this;
     }
 
-    public FileServicePropertiesImpl(String name, StorageManager serviceManager) {
+    FileServicePropertiesImpl(String name, StorageManager serviceManager) {
         this.innerObject = new FileServicePropertiesInner();
         this.serviceManager = serviceManager;
         this.accountName = name;
@@ -109,7 +109,7 @@ public final class FileServicePropertiesImpl
         return this;
     }
 
-    public FileServicePropertiesImpl(FileServicePropertiesInner innerObject, StorageManager serviceManager) {
+    FileServicePropertiesImpl(FileServicePropertiesInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

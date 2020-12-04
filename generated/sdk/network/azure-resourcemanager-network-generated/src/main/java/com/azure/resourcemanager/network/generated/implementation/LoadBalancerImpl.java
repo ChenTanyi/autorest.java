@@ -216,7 +216,7 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
         return this;
     }
 
-    public LoadBalancerImpl(String name, NetworkManager serviceManager) {
+    LoadBalancerImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new LoadBalancerInner();
         this.serviceManager = serviceManager;
         this.loadBalancerName = name;
@@ -247,7 +247,7 @@ public final class LoadBalancerImpl implements LoadBalancer, LoadBalancer.Defini
         return this;
     }
 
-    public LoadBalancerImpl(LoadBalancerInner innerObject, NetworkManager serviceManager) {
+    LoadBalancerImpl(LoadBalancerInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

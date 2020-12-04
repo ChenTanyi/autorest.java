@@ -14,8 +14,7 @@ public final class DomainAvailabilityCheckResultImpl implements DomainAvailabili
 
     private final WebSiteManager serviceManager;
 
-    public DomainAvailabilityCheckResultImpl(
-        DomainAvailabilityCheckResultInner innerObject, WebSiteManager serviceManager) {
+    DomainAvailabilityCheckResultImpl(DomainAvailabilityCheckResultInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

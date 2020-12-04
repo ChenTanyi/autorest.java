@@ -18,7 +18,7 @@ public final class LatencyScorecardImpl implements LatencyScorecard {
 
     private final FrontDoorManager serviceManager;
 
-    public LatencyScorecardImpl(LatencyScorecardInner innerObject, FrontDoorManager serviceManager) {
+    LatencyScorecardImpl(LatencyScorecardInner innerObject, FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -14,7 +14,7 @@ public final class ResourceNameAvailabilityImpl implements ResourceNameAvailabil
 
     private final WebSiteManager serviceManager;
 
-    public ResourceNameAvailabilityImpl(ResourceNameAvailabilityInner innerObject, WebSiteManager serviceManager) {
+    ResourceNameAvailabilityImpl(ResourceNameAvailabilityInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -14,7 +14,7 @@ public final class OperationImpl implements Operation {
 
     private final IotHubManager serviceManager;
 
-    public OperationImpl(OperationInner innerObject, IotHubManager serviceManager) {
+    OperationImpl(OperationInner innerObject, IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

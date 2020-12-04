@@ -15,7 +15,7 @@ public final class UsageImpl implements Usage {
 
     private final StorageManager serviceManager;
 
-    public UsageImpl(UsageInner innerObject, StorageManager serviceManager) {
+    UsageImpl(UsageInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

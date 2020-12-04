@@ -232,7 +232,7 @@ public final class VirtualNetworkGatewayConnectionImpl
         return this;
     }
 
-    public VirtualNetworkGatewayConnectionImpl(String name, NetworkManager serviceManager) {
+    VirtualNetworkGatewayConnectionImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new VirtualNetworkGatewayConnectionInner();
         this.serviceManager = serviceManager;
         this.virtualNetworkGatewayConnectionName = name;
@@ -261,7 +261,7 @@ public final class VirtualNetworkGatewayConnectionImpl
         return this;
     }
 
-    public VirtualNetworkGatewayConnectionImpl(
+    VirtualNetworkGatewayConnectionImpl(
         VirtualNetworkGatewayConnectionInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

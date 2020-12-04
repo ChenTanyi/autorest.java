@@ -14,7 +14,7 @@ public final class UpgradeOperationHistoricalStatusInfoImpl implements UpgradeOp
 
     private final ComputeManager serviceManager;
 
-    public UpgradeOperationHistoricalStatusInfoImpl(
+    UpgradeOperationHistoricalStatusInfoImpl(
         UpgradeOperationHistoricalStatusInfoInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

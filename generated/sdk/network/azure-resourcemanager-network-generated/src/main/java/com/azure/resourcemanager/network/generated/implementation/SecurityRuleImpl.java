@@ -22,7 +22,7 @@ public final class SecurityRuleImpl implements SecurityRule {
 
     private final NetworkManager serviceManager;
 
-    public SecurityRuleImpl(SecurityRuleInner innerObject, NetworkManager serviceManager) {
+    SecurityRuleImpl(SecurityRuleInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

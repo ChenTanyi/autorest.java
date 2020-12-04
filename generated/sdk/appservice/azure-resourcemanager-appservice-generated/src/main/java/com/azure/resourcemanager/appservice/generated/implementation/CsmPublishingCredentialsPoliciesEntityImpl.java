@@ -13,7 +13,7 @@ public final class CsmPublishingCredentialsPoliciesEntityImpl implements CsmPubl
 
     private final WebSiteManager serviceManager;
 
-    public CsmPublishingCredentialsPoliciesEntityImpl(
+    CsmPublishingCredentialsPoliciesEntityImpl(
         CsmPublishingCredentialsPoliciesEntityInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

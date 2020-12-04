@@ -210,7 +210,7 @@ public final class DiskImpl implements Disk, Disk.Definition, Disk.Update {
         return this;
     }
 
-    public DiskImpl(String name, ComputeManager serviceManager) {
+    DiskImpl(String name, ComputeManager serviceManager) {
         this.innerObject = new DiskInner();
         this.serviceManager = serviceManager;
         this.diskName = name;
@@ -233,7 +233,7 @@ public final class DiskImpl implements Disk, Disk.Definition, Disk.Update {
         return this;
     }
 
-    public DiskImpl(DiskInner innerObject, ComputeManager serviceManager) {
+    DiskImpl(DiskInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

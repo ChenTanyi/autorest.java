@@ -88,7 +88,7 @@ public final class AccountFilterImpl implements AccountFilter, AccountFilter.Def
         return this;
     }
 
-    public AccountFilterImpl(String name, MediaservicesManager serviceManager) {
+    AccountFilterImpl(String name, MediaservicesManager serviceManager) {
         this.innerObject = new AccountFilterInner();
         this.serviceManager = serviceManager;
         this.filterName = name;
@@ -118,7 +118,7 @@ public final class AccountFilterImpl implements AccountFilter, AccountFilter.Def
         return this;
     }
 
-    public AccountFilterImpl(AccountFilterInner innerObject, MediaservicesManager serviceManager) {
+    AccountFilterImpl(AccountFilterInner innerObject, MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

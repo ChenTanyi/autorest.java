@@ -154,7 +154,7 @@ public final class MetricAlertResourceImpl
         return this;
     }
 
-    public MetricAlertResourceImpl(String name, MonitorManager serviceManager) {
+    MetricAlertResourceImpl(String name, MonitorManager serviceManager) {
         this.innerObject = new MetricAlertResourceInner();
         this.serviceManager = serviceManager;
         this.ruleName = name;
@@ -185,7 +185,7 @@ public final class MetricAlertResourceImpl
         return this;
     }
 
-    public MetricAlertResourceImpl(MetricAlertResourceInner innerObject, MonitorManager serviceManager) {
+    MetricAlertResourceImpl(MetricAlertResourceInner innerObject, MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

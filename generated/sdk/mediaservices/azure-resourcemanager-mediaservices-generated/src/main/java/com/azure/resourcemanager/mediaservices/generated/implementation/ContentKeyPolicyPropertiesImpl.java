@@ -18,8 +18,7 @@ public final class ContentKeyPolicyPropertiesImpl implements ContentKeyPolicyPro
 
     private final MediaservicesManager serviceManager;
 
-    public ContentKeyPolicyPropertiesImpl(
-        ContentKeyPolicyPropertiesInner innerObject, MediaservicesManager serviceManager) {
+    ContentKeyPolicyPropertiesImpl(ContentKeyPolicyPropertiesInner innerObject, MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

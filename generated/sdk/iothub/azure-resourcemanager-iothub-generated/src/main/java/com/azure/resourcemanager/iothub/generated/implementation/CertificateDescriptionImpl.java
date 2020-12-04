@@ -82,7 +82,7 @@ public final class CertificateDescriptionImpl
         return this;
     }
 
-    public CertificateDescriptionImpl(String name, IotHubManager serviceManager) {
+    CertificateDescriptionImpl(String name, IotHubManager serviceManager) {
         this.innerObject = new CertificateDescriptionInner();
         this.serviceManager = serviceManager;
         this.certificateName = name;
@@ -116,7 +116,7 @@ public final class CertificateDescriptionImpl
         return this;
     }
 
-    public CertificateDescriptionImpl(CertificateDescriptionInner innerObject, IotHubManager serviceManager) {
+    CertificateDescriptionImpl(CertificateDescriptionInner innerObject, IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

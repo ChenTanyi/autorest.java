@@ -14,7 +14,7 @@ public final class NextHopResultImpl implements NextHopResult {
 
     private final NetworkManager serviceManager;
 
-    public NextHopResultImpl(NextHopResultInner innerObject, NetworkManager serviceManager) {
+    NextHopResultImpl(NextHopResultInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

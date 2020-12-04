@@ -20,7 +20,7 @@ public final class ResourceSkuImpl implements ResourceSku {
 
     private final ComputeManager serviceManager;
 
-    public ResourceSkuImpl(ResourceSkuInner innerObject, ComputeManager serviceManager) {
+    ResourceSkuImpl(ResourceSkuInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

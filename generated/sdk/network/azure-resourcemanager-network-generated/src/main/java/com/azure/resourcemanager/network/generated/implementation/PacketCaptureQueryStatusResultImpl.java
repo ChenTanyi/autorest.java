@@ -18,8 +18,7 @@ public final class PacketCaptureQueryStatusResultImpl implements PacketCaptureQu
 
     private final NetworkManager serviceManager;
 
-    public PacketCaptureQueryStatusResultImpl(
-        PacketCaptureQueryStatusResultInner innerObject, NetworkManager serviceManager) {
+    PacketCaptureQueryStatusResultImpl(PacketCaptureQueryStatusResultInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

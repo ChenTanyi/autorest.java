@@ -13,7 +13,7 @@ public final class SnapshotImpl implements Snapshot {
 
     private final WebSiteManager serviceManager;
 
-    public SnapshotImpl(SnapshotInner innerObject, WebSiteManager serviceManager) {
+    SnapshotImpl(SnapshotInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

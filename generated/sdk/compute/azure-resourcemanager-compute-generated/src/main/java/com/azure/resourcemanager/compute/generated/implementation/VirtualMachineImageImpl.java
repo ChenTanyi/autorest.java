@@ -22,7 +22,7 @@ public final class VirtualMachineImageImpl implements VirtualMachineImage {
 
     private final ComputeManager serviceManager;
 
-    public VirtualMachineImageImpl(VirtualMachineImageInner innerObject, ComputeManager serviceManager) {
+    VirtualMachineImageImpl(VirtualMachineImageInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -16,7 +16,7 @@ public final class PeerRouteListImpl implements PeerRouteList {
 
     private final NetworkManager serviceManager;
 
-    public PeerRouteListImpl(PeerRouteListInner innerObject, NetworkManager serviceManager) {
+    PeerRouteListImpl(PeerRouteListInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -177,7 +177,7 @@ public final class AppServicePlanImpl implements AppServicePlan, AppServicePlan.
         return this;
     }
 
-    public AppServicePlanImpl(String name, WebSiteManager serviceManager) {
+    AppServicePlanImpl(String name, WebSiteManager serviceManager) {
         this.innerObject = new AppServicePlanInner();
         this.serviceManager = serviceManager;
         this.name = name;
@@ -208,7 +208,7 @@ public final class AppServicePlanImpl implements AppServicePlan, AppServicePlan.
         return this;
     }
 
-    public AppServicePlanImpl(AppServicePlanInner innerObject, WebSiteManager serviceManager) {
+    AppServicePlanImpl(AppServicePlanInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

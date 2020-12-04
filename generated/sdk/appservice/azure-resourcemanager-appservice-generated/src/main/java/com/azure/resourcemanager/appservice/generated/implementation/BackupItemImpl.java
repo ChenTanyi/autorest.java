@@ -18,7 +18,7 @@ public final class BackupItemImpl implements BackupItem {
 
     private final WebSiteManager serviceManager;
 
-    public BackupItemImpl(BackupItemInner innerObject, WebSiteManager serviceManager) {
+    BackupItemImpl(BackupItemInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

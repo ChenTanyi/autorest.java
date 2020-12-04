@@ -553,6 +553,44 @@ public final class IotHubResourcesImpl implements IotHubResources {
             .getEventHubConsumerGroupWithResponse(resourceGroupName, resourceName, eventHubEndpointName, name, context);
     }
 
+    public IotHubDescription deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String resourceName = Utils.getValueFromIdByName(id, "IotHubs");
+        if (resourceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'IotHubs'.", id)));
+        }
+        return this.delete(resourceGroupName, resourceName, Context.NONE);
+    }
+
+    public IotHubDescription deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String resourceName = Utils.getValueFromIdByName(id, "IotHubs");
+        if (resourceName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'IotHubs'.", id)));
+        }
+        return this.delete(resourceGroupName, resourceName, context);
+    }
+
     public void deleteEventHubConsumerGroupById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {

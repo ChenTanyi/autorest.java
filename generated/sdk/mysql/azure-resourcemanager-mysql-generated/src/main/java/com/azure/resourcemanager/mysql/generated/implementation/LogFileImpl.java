@@ -14,7 +14,7 @@ public final class LogFileImpl implements LogFile {
 
     private final MySqlManager serviceManager;
 
-    public LogFileImpl(LogFileInner innerObject, MySqlManager serviceManager) {
+    LogFileImpl(LogFileInner innerObject, MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

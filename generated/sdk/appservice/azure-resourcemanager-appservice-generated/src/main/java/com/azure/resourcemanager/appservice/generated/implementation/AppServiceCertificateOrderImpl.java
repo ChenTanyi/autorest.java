@@ -189,7 +189,7 @@ public final class AppServiceCertificateOrderImpl
         return this;
     }
 
-    public AppServiceCertificateOrderImpl(String name, WebSiteManager serviceManager) {
+    AppServiceCertificateOrderImpl(String name, WebSiteManager serviceManager) {
         this.innerObject = new AppServiceCertificateOrderInner();
         this.serviceManager = serviceManager;
         this.certificateOrderName = name;
@@ -222,7 +222,7 @@ public final class AppServiceCertificateOrderImpl
         return this;
     }
 
-    public AppServiceCertificateOrderImpl(AppServiceCertificateOrderInner innerObject, WebSiteManager serviceManager) {
+    AppServiceCertificateOrderImpl(AppServiceCertificateOrderInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

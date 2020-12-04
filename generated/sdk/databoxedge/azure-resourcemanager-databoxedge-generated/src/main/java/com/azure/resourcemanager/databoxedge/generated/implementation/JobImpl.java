@@ -20,7 +20,7 @@ public final class JobImpl implements Job {
 
     private final DataBoxEdgeManager serviceManager;
 
-    public JobImpl(JobInner innerObject, DataBoxEdgeManager serviceManager) {
+    JobImpl(JobInner innerObject, DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

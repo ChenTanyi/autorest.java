@@ -73,7 +73,7 @@ public final class VirtualNetworkRuleImpl
         return this;
     }
 
-    public VirtualNetworkRuleImpl(String name, EventHubsManager serviceManager) {
+    VirtualNetworkRuleImpl(String name, EventHubsManager serviceManager) {
         this.innerObject = new VirtualNetworkRuleInner();
         this.serviceManager = serviceManager;
         this.virtualNetworkRuleName = name;
@@ -105,7 +105,7 @@ public final class VirtualNetworkRuleImpl
         return this;
     }
 
-    public VirtualNetworkRuleImpl(VirtualNetworkRuleInner innerObject, EventHubsManager serviceManager) {
+    VirtualNetworkRuleImpl(VirtualNetworkRuleInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

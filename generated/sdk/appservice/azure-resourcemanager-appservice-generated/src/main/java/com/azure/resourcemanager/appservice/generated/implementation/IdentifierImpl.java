@@ -76,7 +76,7 @@ public final class IdentifierImpl implements Identifier, Identifier.Definition, 
         return this;
     }
 
-    public IdentifierImpl(String name, WebSiteManager serviceManager) {
+    IdentifierImpl(String name, WebSiteManager serviceManager) {
         this.innerObject = new IdentifierInner();
         this.serviceManager = serviceManager;
         this.domainOwnershipIdentifierName = name;
@@ -108,7 +108,7 @@ public final class IdentifierImpl implements Identifier, Identifier.Definition, 
         return this;
     }
 
-    public IdentifierImpl(IdentifierInner innerObject, WebSiteManager serviceManager) {
+    IdentifierImpl(IdentifierInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

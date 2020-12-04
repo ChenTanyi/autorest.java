@@ -129,7 +129,7 @@ public final class GalleryImageVersionImpl
         return this;
     }
 
-    public GalleryImageVersionImpl(String name, ComputeManager serviceManager) {
+    GalleryImageVersionImpl(String name, ComputeManager serviceManager) {
         this.innerObject = new GalleryImageVersionInner();
         this.serviceManager = serviceManager;
         this.galleryImageVersionName = name;
@@ -170,7 +170,7 @@ public final class GalleryImageVersionImpl
         return this;
     }
 
-    public GalleryImageVersionImpl(GalleryImageVersionInner innerObject, ComputeManager serviceManager) {
+    GalleryImageVersionImpl(GalleryImageVersionInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

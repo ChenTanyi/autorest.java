@@ -16,7 +16,7 @@ public final class ConnectionStringDictionaryImpl implements ConnectionStringDic
 
     private final WebSiteManager serviceManager;
 
-    public ConnectionStringDictionaryImpl(ConnectionStringDictionaryInner innerObject, WebSiteManager serviceManager) {
+    ConnectionStringDictionaryImpl(ConnectionStringDictionaryInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

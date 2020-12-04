@@ -14,7 +14,7 @@ public final class ResourceGroupExportResultImpl implements ResourceGroupExportR
 
     private final ResourceManager serviceManager;
 
-    public ResourceGroupExportResultImpl(ResourceGroupExportResultInner innerObject, ResourceManager serviceManager) {
+    ResourceGroupExportResultImpl(ResourceGroupExportResultInner innerObject, ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

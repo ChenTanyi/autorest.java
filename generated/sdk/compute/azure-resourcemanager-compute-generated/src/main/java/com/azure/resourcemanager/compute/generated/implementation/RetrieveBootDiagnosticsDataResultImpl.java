@@ -13,7 +13,7 @@ public final class RetrieveBootDiagnosticsDataResultImpl implements RetrieveBoot
 
     private final ComputeManager serviceManager;
 
-    public RetrieveBootDiagnosticsDataResultImpl(
+    RetrieveBootDiagnosticsDataResultImpl(
         RetrieveBootDiagnosticsDataResultInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -16,7 +16,7 @@ public final class WebJobImpl implements WebJob {
 
     private final WebSiteManager serviceManager;
 
-    public WebJobImpl(WebJobInner innerObject, WebSiteManager serviceManager) {
+    WebJobImpl(WebJobInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

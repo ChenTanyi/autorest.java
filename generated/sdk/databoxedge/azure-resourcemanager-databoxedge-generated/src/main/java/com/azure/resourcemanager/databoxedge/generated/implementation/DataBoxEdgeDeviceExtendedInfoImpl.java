@@ -13,7 +13,7 @@ public final class DataBoxEdgeDeviceExtendedInfoImpl implements DataBoxEdgeDevic
 
     private final DataBoxEdgeManager serviceManager;
 
-    public DataBoxEdgeDeviceExtendedInfoImpl(
+    DataBoxEdgeDeviceExtendedInfoImpl(
         DataBoxEdgeDeviceExtendedInfoInner innerObject, DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

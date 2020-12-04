@@ -18,7 +18,7 @@ public final class ResourceChangeDataImpl implements ResourceChangeData {
 
     private final ResourceGraphManager serviceManager;
 
-    public ResourceChangeDataImpl(ResourceChangeDataInner innerObject, ResourceGraphManager serviceManager) {
+    ResourceChangeDataImpl(ResourceChangeDataInner innerObject, ResourceGraphManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -13,7 +13,7 @@ public final class ExpressRouteCircuitStatsImpl implements ExpressRouteCircuitSt
 
     private final NetworkManager serviceManager;
 
-    public ExpressRouteCircuitStatsImpl(ExpressRouteCircuitStatsInner innerObject, NetworkManager serviceManager) {
+    ExpressRouteCircuitStatsImpl(ExpressRouteCircuitStatsInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

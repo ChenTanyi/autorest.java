@@ -15,7 +15,7 @@ public final class LegalHoldImpl implements LegalHold {
 
     private final StorageManager serviceManager;
 
-    public LegalHoldImpl(LegalHoldInner innerObject, StorageManager serviceManager) {
+    LegalHoldImpl(LegalHoldInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -13,7 +13,7 @@ public final class AzureWebCategoryImpl implements AzureWebCategory {
 
     private final NetworkManager serviceManager;
 
-    public AzureWebCategoryImpl(AzureWebCategoryInner innerObject, NetworkManager serviceManager) {
+    AzureWebCategoryImpl(AzureWebCategoryInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

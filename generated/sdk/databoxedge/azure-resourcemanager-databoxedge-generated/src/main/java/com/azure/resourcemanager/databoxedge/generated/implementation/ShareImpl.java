@@ -130,7 +130,7 @@ public final class ShareImpl implements Share, Share.Definition, Share.Update {
         return this;
     }
 
-    public ShareImpl(String name, DataBoxEdgeManager serviceManager) {
+    ShareImpl(String name, DataBoxEdgeManager serviceManager) {
         this.innerObject = new ShareInner();
         this.serviceManager = serviceManager;
         this.name = name;
@@ -158,7 +158,7 @@ public final class ShareImpl implements Share, Share.Definition, Share.Update {
         return this;
     }
 
-    public ShareImpl(ShareInner innerObject, DataBoxEdgeManager serviceManager) {
+    ShareImpl(ShareInner innerObject, DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");

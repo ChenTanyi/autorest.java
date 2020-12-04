@@ -16,7 +16,7 @@ public final class OperationListResultImpl implements OperationListResult {
 
     private final MySqlManager serviceManager;
 
-    public OperationListResultImpl(OperationListResultInner innerObject, MySqlManager serviceManager) {
+    OperationListResultImpl(OperationListResultInner innerObject, MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

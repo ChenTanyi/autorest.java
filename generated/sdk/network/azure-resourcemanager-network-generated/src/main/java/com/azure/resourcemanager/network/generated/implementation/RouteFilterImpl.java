@@ -145,7 +145,7 @@ public final class RouteFilterImpl implements RouteFilter, RouteFilter.Definitio
         return this;
     }
 
-    public RouteFilterImpl(String name, NetworkManager serviceManager) {
+    RouteFilterImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new RouteFilterInner();
         this.serviceManager = serviceManager;
         this.routeFilterName = name;
@@ -176,7 +176,7 @@ public final class RouteFilterImpl implements RouteFilter, RouteFilter.Definitio
         return this;
     }
 
-    public RouteFilterImpl(RouteFilterInner innerObject, NetworkManager serviceManager) {
+    RouteFilterImpl(RouteFilterInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

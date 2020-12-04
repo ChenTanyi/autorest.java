@@ -278,7 +278,7 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         return this;
     }
 
-    public SiteImpl(String name, WebSiteManager serviceManager) {
+    SiteImpl(String name, WebSiteManager serviceManager) {
         this.innerObject = new SiteInner();
         this.serviceManager = serviceManager;
         this.name = name;
@@ -309,7 +309,7 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         return this;
     }
 
-    public SiteImpl(SiteInner innerObject, WebSiteManager serviceManager) {
+    SiteImpl(SiteInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

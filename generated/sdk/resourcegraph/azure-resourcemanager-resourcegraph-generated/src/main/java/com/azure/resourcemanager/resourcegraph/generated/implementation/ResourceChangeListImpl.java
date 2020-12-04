@@ -18,7 +18,7 @@ public final class ResourceChangeListImpl implements ResourceChangeList {
 
     private final ResourceGraphManager serviceManager;
 
-    public ResourceChangeListImpl(ResourceChangeListInner innerObject, ResourceGraphManager serviceManager) {
+    ResourceChangeListImpl(ResourceChangeListInner innerObject, ResourceGraphManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

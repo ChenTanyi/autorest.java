@@ -93,7 +93,7 @@ public final class AssetFilterImpl implements AssetFilter, AssetFilter.Definitio
         return this;
     }
 
-    public AssetFilterImpl(String name, MediaservicesManager serviceManager) {
+    AssetFilterImpl(String name, MediaservicesManager serviceManager) {
         this.innerObject = new AssetFilterInner();
         this.serviceManager = serviceManager;
         this.filterName = name;
@@ -124,7 +124,7 @@ public final class AssetFilterImpl implements AssetFilter, AssetFilter.Definitio
         return this;
     }
 
-    public AssetFilterImpl(AssetFilterInner innerObject, MediaservicesManager serviceManager) {
+    AssetFilterImpl(AssetFilterInner innerObject, MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

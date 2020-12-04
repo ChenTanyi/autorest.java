@@ -84,7 +84,7 @@ public final class ConsumerGroupImpl implements ConsumerGroup, ConsumerGroup.Def
         return this;
     }
 
-    public ConsumerGroupImpl(String name, EventHubsManager serviceManager) {
+    ConsumerGroupImpl(String name, EventHubsManager serviceManager) {
         this.innerObject = new ConsumerGroupInner();
         this.serviceManager = serviceManager;
         this.consumerGroupName = name;
@@ -116,7 +116,7 @@ public final class ConsumerGroupImpl implements ConsumerGroup, ConsumerGroup.Def
         return this;
     }
 
-    public ConsumerGroupImpl(ConsumerGroupInner innerObject, EventHubsManager serviceManager) {
+    ConsumerGroupImpl(ConsumerGroupInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

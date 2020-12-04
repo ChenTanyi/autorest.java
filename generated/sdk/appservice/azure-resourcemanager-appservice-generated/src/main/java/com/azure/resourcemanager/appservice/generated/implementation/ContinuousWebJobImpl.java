@@ -17,7 +17,7 @@ public final class ContinuousWebJobImpl implements ContinuousWebJob {
 
     private final WebSiteManager serviceManager;
 
-    public ContinuousWebJobImpl(ContinuousWebJobInner innerObject, WebSiteManager serviceManager) {
+    ContinuousWebJobImpl(ContinuousWebJobInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -13,7 +13,7 @@ public final class KeyInfoImpl implements KeyInfo {
 
     private final WebSiteManager serviceManager;
 
-    public KeyInfoImpl(KeyInfoInner innerObject, WebSiteManager serviceManager) {
+    KeyInfoImpl(KeyInfoInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

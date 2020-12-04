@@ -16,7 +16,7 @@ public final class ServiceTagsListResultImpl implements ServiceTagsListResult {
 
     private final NetworkManager serviceManager;
 
-    public ServiceTagsListResultImpl(ServiceTagsListResultInner innerObject, NetworkManager serviceManager) {
+    ServiceTagsListResultImpl(ServiceTagsListResultInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

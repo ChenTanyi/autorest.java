@@ -18,7 +18,7 @@ public final class PacketCaptureResultImpl implements PacketCaptureResult {
 
     private final NetworkManager serviceManager;
 
-    public PacketCaptureResultImpl(PacketCaptureResultInner innerObject, NetworkManager serviceManager) {
+    PacketCaptureResultImpl(PacketCaptureResultInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

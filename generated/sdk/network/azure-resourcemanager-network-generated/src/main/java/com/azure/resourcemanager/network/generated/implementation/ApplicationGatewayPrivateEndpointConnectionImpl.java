@@ -18,7 +18,7 @@ public final class ApplicationGatewayPrivateEndpointConnectionImpl
 
     private final NetworkManager serviceManager;
 
-    public ApplicationGatewayPrivateEndpointConnectionImpl(
+    ApplicationGatewayPrivateEndpointConnectionImpl(
         ApplicationGatewayPrivateEndpointConnectionInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

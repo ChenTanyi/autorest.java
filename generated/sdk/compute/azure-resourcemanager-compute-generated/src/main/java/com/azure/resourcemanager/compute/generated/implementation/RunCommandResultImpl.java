@@ -16,7 +16,7 @@ public final class RunCommandResultImpl implements RunCommandResult {
 
     private final ComputeManager serviceManager;
 
-    public RunCommandResultImpl(RunCommandResultInner innerObject, ComputeManager serviceManager) {
+    RunCommandResultImpl(RunCommandResultInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -13,7 +13,7 @@ public final class PirSharedGalleryResourceImpl implements PirSharedGalleryResou
 
     private final ComputeManager serviceManager;
 
-    public PirSharedGalleryResourceImpl(PirSharedGalleryResourceInner innerObject, ComputeManager serviceManager) {
+    PirSharedGalleryResourceImpl(PirSharedGalleryResourceInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

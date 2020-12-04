@@ -15,7 +15,7 @@ public final class IotHubSkuDescriptionImpl implements IotHubSkuDescription {
 
     private final IotHubManager serviceManager;
 
-    public IotHubSkuDescriptionImpl(IotHubSkuDescriptionInner innerObject, IotHubManager serviceManager) {
+    IotHubSkuDescriptionImpl(IotHubSkuDescriptionInner innerObject, IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

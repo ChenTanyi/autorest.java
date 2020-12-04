@@ -103,7 +103,7 @@ public final class RelayServiceConnectionEntityImpl
         return this;
     }
 
-    public RelayServiceConnectionEntityImpl(String name, WebSiteManager serviceManager) {
+    RelayServiceConnectionEntityImpl(String name, WebSiteManager serviceManager) {
         this.innerObject = new RelayServiceConnectionEntityInner();
         this.serviceManager = serviceManager;
         this.entityName = name;
@@ -135,8 +135,7 @@ public final class RelayServiceConnectionEntityImpl
         return this;
     }
 
-    public RelayServiceConnectionEntityImpl(
-        RelayServiceConnectionEntityInner innerObject, WebSiteManager serviceManager) {
+    RelayServiceConnectionEntityImpl(RelayServiceConnectionEntityInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

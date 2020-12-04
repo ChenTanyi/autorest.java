@@ -4,6 +4,8 @@
 
 package com.azure.resourcemanager.policy.generated.implementation;
 
+import com.azure.core.management.Region;
+import com.azure.core.util.Context;
 import com.azure.resourcemanager.policy.generated.PolicyManager;
 import com.azure.resourcemanager.policy.generated.fluent.models.PolicyAssignmentInner;
 import com.azure.resourcemanager.policy.generated.models.EnforcementMode;
@@ -15,12 +17,12 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-public final class PolicyAssignmentImpl implements PolicyAssignment {
+public final class PolicyAssignmentImpl implements PolicyAssignment, PolicyAssignment.Definition {
     private PolicyAssignmentInner innerObject;
 
     private final PolicyManager serviceManager;
 
-    public PolicyAssignmentImpl(PolicyAssignmentInner innerObject, PolicyManager serviceManager) {
+    PolicyAssignmentImpl(PolicyAssignmentInner innerObject, PolicyManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -91,11 +93,134 @@ public final class PolicyAssignmentImpl implements PolicyAssignment {
         return this.innerModel().enforcementMode();
     }
 
+    public Region region() {
+        return Region.fromName(this.regionName());
+    }
+
+    public String regionName() {
+        return this.location();
+    }
+
     public PolicyAssignmentInner innerModel() {
         return this.innerObject;
     }
 
     private PolicyManager manager() {
         return this.serviceManager;
+    }
+
+    private String scope;
+
+    private String policyAssignmentName;
+
+    public PolicyAssignmentImpl withExistingScope(String scope) {
+        this.scope = scope;
+        return this;
+    }
+
+    public PolicyAssignment create() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getPolicyAssignments()
+                .createWithResponse(scope, policyAssignmentName, this.innerModel(), Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public PolicyAssignment create(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getPolicyAssignments()
+                .createWithResponse(scope, policyAssignmentName, this.innerModel(), context)
+                .getValue();
+        return this;
+    }
+
+    PolicyAssignmentImpl(String name, PolicyManager serviceManager) {
+        this.innerObject = new PolicyAssignmentInner();
+        this.serviceManager = serviceManager;
+        this.policyAssignmentName = name;
+    }
+
+    public PolicyAssignment refresh() {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getPolicyAssignments()
+                .getWithResponse(scope, policyAssignmentName, Context.NONE)
+                .getValue();
+        return this;
+    }
+
+    public PolicyAssignment refresh(Context context) {
+        this.innerObject =
+            serviceManager
+                .serviceClient()
+                .getPolicyAssignments()
+                .getWithResponse(scope, policyAssignmentName, context)
+                .getValue();
+        return this;
+    }
+
+    public PolicyAssignmentImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
+    public PolicyAssignmentImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
+        return this;
+    }
+
+    public PolicyAssignmentImpl withSku(PolicySku sku) {
+        this.innerModel().withSku(sku);
+        return this;
+    }
+
+    public PolicyAssignmentImpl withIdentity(Identity identity) {
+        this.innerModel().withIdentity(identity);
+        return this;
+    }
+
+    public PolicyAssignmentImpl withDisplayName(String displayName) {
+        this.innerModel().withDisplayName(displayName);
+        return this;
+    }
+
+    public PolicyAssignmentImpl withPolicyDefinitionId(String policyDefinitionId) {
+        this.innerModel().withPolicyDefinitionId(policyDefinitionId);
+        return this;
+    }
+
+    public PolicyAssignmentImpl withScope(String scope) {
+        this.innerModel().withScope(scope);
+        return this;
+    }
+
+    public PolicyAssignmentImpl withNotScopes(List<String> notScopes) {
+        this.innerModel().withNotScopes(notScopes);
+        return this;
+    }
+
+    public PolicyAssignmentImpl withParameters(Map<String, ParameterValuesValue> parameters) {
+        this.innerModel().withParameters(parameters);
+        return this;
+    }
+
+    public PolicyAssignmentImpl withDescription(String description) {
+        this.innerModel().withDescription(description);
+        return this;
+    }
+
+    public PolicyAssignmentImpl withMetadata(Object metadata) {
+        this.innerModel().withMetadata(metadata);
+        return this;
+    }
+
+    public PolicyAssignmentImpl withEnforcementMode(EnforcementMode enforcementMode) {
+        this.innerModel().withEnforcementMode(enforcementMode);
+        return this;
     }
 }

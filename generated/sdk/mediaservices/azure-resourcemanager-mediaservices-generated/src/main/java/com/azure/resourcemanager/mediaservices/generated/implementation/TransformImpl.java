@@ -92,7 +92,7 @@ public final class TransformImpl implements Transform, Transform.Definition, Tra
         return this;
     }
 
-    public TransformImpl(String name, MediaservicesManager serviceManager) {
+    TransformImpl(String name, MediaservicesManager serviceManager) {
         this.innerObject = new TransformInner();
         this.serviceManager = serviceManager;
         this.transformName = name;
@@ -122,7 +122,7 @@ public final class TransformImpl implements Transform, Transform.Definition, Tra
         return this;
     }
 
-    public TransformImpl(TransformInner innerObject, MediaservicesManager serviceManager) {
+    TransformImpl(TransformInner innerObject, MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

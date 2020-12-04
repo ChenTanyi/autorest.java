@@ -18,7 +18,7 @@ public final class UpdateSummaryImpl implements UpdateSummary {
 
     private final DataBoxEdgeManager serviceManager;
 
-    public UpdateSummaryImpl(UpdateSummaryInner innerObject, DataBoxEdgeManager serviceManager) {
+    UpdateSummaryImpl(UpdateSummaryInner innerObject, DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

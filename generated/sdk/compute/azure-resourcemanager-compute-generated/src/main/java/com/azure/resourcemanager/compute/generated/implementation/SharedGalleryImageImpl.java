@@ -24,7 +24,7 @@ public final class SharedGalleryImageImpl implements SharedGalleryImage {
 
     private final ComputeManager serviceManager;
 
-    public SharedGalleryImageImpl(SharedGalleryImageInner innerObject, ComputeManager serviceManager) {
+    SharedGalleryImageImpl(SharedGalleryImageInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

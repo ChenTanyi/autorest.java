@@ -118,7 +118,7 @@ public final class VnetInfoImpl implements VnetInfo, VnetInfo.Definition, VnetIn
         return this;
     }
 
-    public VnetInfoImpl(String name, WebSiteManager serviceManager) {
+    VnetInfoImpl(String name, WebSiteManager serviceManager) {
         this.innerObject = new VnetInfoInner();
         this.serviceManager = serviceManager;
         this.vnetName = name;
@@ -150,7 +150,7 @@ public final class VnetInfoImpl implements VnetInfo, VnetInfo.Definition, VnetIn
         return this;
     }
 
-    public VnetInfoImpl(VnetInfoInner innerObject, WebSiteManager serviceManager) {
+    VnetInfoImpl(VnetInfoInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

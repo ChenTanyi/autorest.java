@@ -194,7 +194,7 @@ public final class AzureFirewallImpl implements AzureFirewall, AzureFirewall.Def
         return this;
     }
 
-    public AzureFirewallImpl(String name, NetworkManager serviceManager) {
+    AzureFirewallImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new AzureFirewallInner();
         this.serviceManager = serviceManager;
         this.azureFirewallName = name;
@@ -223,7 +223,7 @@ public final class AzureFirewallImpl implements AzureFirewall, AzureFirewall.Def
         return this;
     }
 
-    public AzureFirewallImpl(AzureFirewallInner innerObject, NetworkManager serviceManager) {
+    AzureFirewallImpl(AzureFirewallInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

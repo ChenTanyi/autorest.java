@@ -15,7 +15,7 @@ public final class ApplicationGatewayPrivateLinkResourceImpl implements Applicat
 
     private final NetworkManager serviceManager;
 
-    public ApplicationGatewayPrivateLinkResourceImpl(
+    ApplicationGatewayPrivateLinkResourceImpl(
         ApplicationGatewayPrivateLinkResourceInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

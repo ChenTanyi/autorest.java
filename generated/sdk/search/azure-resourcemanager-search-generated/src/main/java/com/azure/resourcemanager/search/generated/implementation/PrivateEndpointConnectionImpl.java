@@ -14,7 +14,7 @@ public final class PrivateEndpointConnectionImpl implements PrivateEndpointConne
 
     private final SearchManager serviceManager;
 
-    public PrivateEndpointConnectionImpl(PrivateEndpointConnectionInner innerObject, SearchManager serviceManager) {
+    PrivateEndpointConnectionImpl(PrivateEndpointConnectionInner innerObject, SearchManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

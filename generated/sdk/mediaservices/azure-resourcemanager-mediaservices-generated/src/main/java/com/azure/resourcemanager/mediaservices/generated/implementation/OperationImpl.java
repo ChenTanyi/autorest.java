@@ -15,7 +15,7 @@ public final class OperationImpl implements Operation {
 
     private final MediaservicesManager serviceManager;
 
-    public OperationImpl(OperationInner innerObject, MediaservicesManager serviceManager) {
+    OperationImpl(OperationInner innerObject, MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -16,7 +16,7 @@ public final class DnsResourceReferenceResultImpl implements DnsResourceReferenc
 
     private final DnsManager serviceManager;
 
-    public DnsResourceReferenceResultImpl(DnsResourceReferenceResultInner innerObject, DnsManager serviceManager) {
+    DnsResourceReferenceResultImpl(DnsResourceReferenceResultInner innerObject, DnsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

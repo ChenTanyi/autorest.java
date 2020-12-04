@@ -14,7 +14,7 @@ public final class PremierAddOnOfferImpl implements PremierAddOnOffer {
 
     private final WebSiteManager serviceManager;
 
-    public PremierAddOnOfferImpl(PremierAddOnOfferInner innerObject, WebSiteManager serviceManager) {
+    PremierAddOnOfferImpl(PremierAddOnOfferInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

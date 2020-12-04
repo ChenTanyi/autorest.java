@@ -93,7 +93,7 @@ public final class InboundSecurityRuleImpl
         return this;
     }
 
-    public InboundSecurityRuleImpl(String name, NetworkManager serviceManager) {
+    InboundSecurityRuleImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new InboundSecurityRuleInner();
         this.serviceManager = serviceManager;
         this.ruleCollectionName = name;
@@ -127,7 +127,7 @@ public final class InboundSecurityRuleImpl
         return this;
     }
 
-    public InboundSecurityRuleImpl(InboundSecurityRuleInner innerObject, NetworkManager serviceManager) {
+    InboundSecurityRuleImpl(InboundSecurityRuleInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

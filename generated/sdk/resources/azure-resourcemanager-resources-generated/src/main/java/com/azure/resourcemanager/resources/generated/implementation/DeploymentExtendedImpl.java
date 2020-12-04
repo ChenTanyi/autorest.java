@@ -97,7 +97,7 @@ public final class DeploymentExtendedImpl
         return this;
     }
 
-    public DeploymentExtendedImpl(String name, ResourceManager serviceManager) {
+    DeploymentExtendedImpl(String name, ResourceManager serviceManager) {
         this.innerObject = new DeploymentExtendedInner();
         this.serviceManager = serviceManager;
         this.deploymentName = name;
@@ -127,7 +127,7 @@ public final class DeploymentExtendedImpl
         return this;
     }
 
-    public DeploymentExtendedImpl(DeploymentExtendedInner innerObject, ResourceManager serviceManager) {
+    DeploymentExtendedImpl(DeploymentExtendedInner innerObject, ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourcegroups");

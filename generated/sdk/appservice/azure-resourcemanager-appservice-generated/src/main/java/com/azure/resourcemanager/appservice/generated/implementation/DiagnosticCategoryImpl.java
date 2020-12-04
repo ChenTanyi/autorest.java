@@ -13,7 +13,7 @@ public final class DiagnosticCategoryImpl implements DiagnosticCategory {
 
     private final WebSiteManager serviceManager;
 
-    public DiagnosticCategoryImpl(DiagnosticCategoryInner innerObject, WebSiteManager serviceManager) {
+    DiagnosticCategoryImpl(DiagnosticCategoryInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

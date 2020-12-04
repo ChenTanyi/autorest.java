@@ -107,7 +107,7 @@ public final class ImageImpl implements Image, Image.Definition, Image.Update {
         return this;
     }
 
-    public ImageImpl(String name, ComputeManager serviceManager) {
+    ImageImpl(String name, ComputeManager serviceManager) {
         this.innerObject = new ImageInner();
         this.serviceManager = serviceManager;
         this.imageName = name;
@@ -133,7 +133,7 @@ public final class ImageImpl implements Image, Image.Definition, Image.Update {
         return this;
     }
 
-    public ImageImpl(ImageInner innerObject, ComputeManager serviceManager) {
+    ImageImpl(ImageInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -19,7 +19,7 @@ public final class ResponseModelImpl implements ResponseModel {
 
     private final MonitorManager serviceManager;
 
-    public ResponseModelImpl(ResponseInner innerObject, MonitorManager serviceManager) {
+    ResponseModelImpl(ResponseInner innerObject, MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -118,7 +118,7 @@ public final class MediaServiceImpl implements MediaService, MediaService.Defini
         return this;
     }
 
-    public MediaServiceImpl(String name, MediaservicesManager serviceManager) {
+    MediaServiceImpl(String name, MediaservicesManager serviceManager) {
         this.innerObject = new MediaServiceInner();
         this.serviceManager = serviceManager;
         this.accountName = name;
@@ -148,7 +148,7 @@ public final class MediaServiceImpl implements MediaService, MediaService.Defini
         return this;
     }
 
-    public MediaServiceImpl(MediaServiceInner innerObject, MediaservicesManager serviceManager) {
+    MediaServiceImpl(MediaServiceInner innerObject, MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

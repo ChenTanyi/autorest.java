@@ -16,7 +16,7 @@ public final class EffectiveNetworkSecurityGroupListResultImpl implements Effect
 
     private final NetworkManager serviceManager;
 
-    public EffectiveNetworkSecurityGroupListResultImpl(
+    EffectiveNetworkSecurityGroupListResultImpl(
         EffectiveNetworkSecurityGroupListResultInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

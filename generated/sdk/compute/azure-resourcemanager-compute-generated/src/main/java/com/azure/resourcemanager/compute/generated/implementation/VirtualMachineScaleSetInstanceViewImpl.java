@@ -19,7 +19,7 @@ public final class VirtualMachineScaleSetInstanceViewImpl implements VirtualMach
 
     private final ComputeManager serviceManager;
 
-    public VirtualMachineScaleSetInstanceViewImpl(
+    VirtualMachineScaleSetInstanceViewImpl(
         VirtualMachineScaleSetInstanceViewInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

@@ -16,8 +16,7 @@ public final class PrivateLinkResourceListResultImpl implements PrivateLinkResou
 
     private final StorageManager serviceManager;
 
-    public PrivateLinkResourceListResultImpl(
-        PrivateLinkResourceListResultInner innerObject, StorageManager serviceManager) {
+    PrivateLinkResourceListResultImpl(PrivateLinkResourceListResultInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

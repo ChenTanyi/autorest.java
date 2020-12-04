@@ -17,7 +17,7 @@ public final class ApplicationGatewayAvailableWafRuleSetsResultImpl
 
     private final NetworkManager serviceManager;
 
-    public ApplicationGatewayAvailableWafRuleSetsResultImpl(
+    ApplicationGatewayAvailableWafRuleSetsResultImpl(
         ApplicationGatewayAvailableWafRuleSetsResultInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

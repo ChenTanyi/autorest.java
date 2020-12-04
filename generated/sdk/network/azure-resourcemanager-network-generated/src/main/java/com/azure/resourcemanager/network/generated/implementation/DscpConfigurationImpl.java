@@ -173,7 +173,7 @@ public final class DscpConfigurationImpl
         return this;
     }
 
-    public DscpConfigurationImpl(String name, NetworkManager serviceManager) {
+    DscpConfigurationImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new DscpConfigurationInner();
         this.serviceManager = serviceManager;
         this.dscpConfigurationName = name;
@@ -201,7 +201,7 @@ public final class DscpConfigurationImpl
         return this;
     }
 
-    public DscpConfigurationImpl(DscpConfigurationInner innerObject, NetworkManager serviceManager) {
+    DscpConfigurationImpl(DscpConfigurationInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

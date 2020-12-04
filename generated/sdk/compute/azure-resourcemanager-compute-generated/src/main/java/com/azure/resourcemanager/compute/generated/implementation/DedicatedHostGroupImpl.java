@@ -125,7 +125,7 @@ public final class DedicatedHostGroupImpl
         return this;
     }
 
-    public DedicatedHostGroupImpl(String name, ComputeManager serviceManager) {
+    DedicatedHostGroupImpl(String name, ComputeManager serviceManager) {
         this.innerObject = new DedicatedHostGroupInner();
         this.serviceManager = serviceManager;
         this.hostGroupName = name;
@@ -156,7 +156,7 @@ public final class DedicatedHostGroupImpl
         return this;
     }
 
-    public DedicatedHostGroupImpl(DedicatedHostGroupInner innerObject, ComputeManager serviceManager) {
+    DedicatedHostGroupImpl(DedicatedHostGroupInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

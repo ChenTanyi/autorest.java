@@ -13,7 +13,7 @@ public final class HostInfoImpl implements HostInfo {
 
     private final HDInsightManager serviceManager;
 
-    public HostInfoImpl(HostInfoInner innerObject, HDInsightManager serviceManager) {
+    HostInfoImpl(HostInfoInner innerObject, HDInsightManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

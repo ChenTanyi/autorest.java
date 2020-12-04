@@ -18,7 +18,7 @@ public final class VirtualMachineExtensionsListResultImpl implements VirtualMach
 
     private final ComputeManager serviceManager;
 
-    public VirtualMachineExtensionsListResultImpl(
+    VirtualMachineExtensionsListResultImpl(
         VirtualMachineExtensionsListResultInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

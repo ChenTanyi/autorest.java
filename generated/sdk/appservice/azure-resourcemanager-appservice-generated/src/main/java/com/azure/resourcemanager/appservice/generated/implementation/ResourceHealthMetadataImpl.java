@@ -13,7 +13,7 @@ public final class ResourceHealthMetadataImpl implements ResourceHealthMetadata 
 
     private final WebSiteManager serviceManager;
 
-    public ResourceHealthMetadataImpl(ResourceHealthMetadataInner innerObject, WebSiteManager serviceManager) {
+    ResourceHealthMetadataImpl(ResourceHealthMetadataInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

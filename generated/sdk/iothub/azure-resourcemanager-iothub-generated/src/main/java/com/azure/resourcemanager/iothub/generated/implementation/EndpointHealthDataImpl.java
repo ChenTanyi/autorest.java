@@ -15,7 +15,7 @@ public final class EndpointHealthDataImpl implements EndpointHealthData {
 
     private final IotHubManager serviceManager;
 
-    public EndpointHealthDataImpl(EndpointHealthDataInner innerObject, IotHubManager serviceManager) {
+    EndpointHealthDataImpl(EndpointHealthDataInner innerObject, IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

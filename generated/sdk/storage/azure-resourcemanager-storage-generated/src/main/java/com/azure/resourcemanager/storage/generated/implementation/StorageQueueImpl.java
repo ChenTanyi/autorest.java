@@ -81,7 +81,7 @@ public final class StorageQueueImpl implements StorageQueue, StorageQueue.Defini
         return this;
     }
 
-    public StorageQueueImpl(String name, StorageManager serviceManager) {
+    StorageQueueImpl(String name, StorageManager serviceManager) {
         this.innerObject = new StorageQueueInner();
         this.serviceManager = serviceManager;
         this.queueName = name;
@@ -111,7 +111,7 @@ public final class StorageQueueImpl implements StorageQueue, StorageQueue.Defini
         return this;
     }
 
-    public StorageQueueImpl(StorageQueueInner innerObject, StorageManager serviceManager) {
+    StorageQueueImpl(StorageQueueInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -13,7 +13,7 @@ public final class SiteInstanceImpl implements SiteInstance {
 
     private final WebSiteManager serviceManager;
 
-    public SiteInstanceImpl(SiteInstanceInner innerObject, WebSiteManager serviceManager) {
+    SiteInstanceImpl(SiteInstanceInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

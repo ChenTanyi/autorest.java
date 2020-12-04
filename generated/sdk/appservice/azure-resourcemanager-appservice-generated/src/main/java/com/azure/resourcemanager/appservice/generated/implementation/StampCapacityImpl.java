@@ -15,7 +15,7 @@ public final class StampCapacityImpl implements StampCapacity {
 
     private final WebSiteManager serviceManager;
 
-    public StampCapacityImpl(StampCapacityInner innerObject, WebSiteManager serviceManager) {
+    StampCapacityImpl(StampCapacityInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

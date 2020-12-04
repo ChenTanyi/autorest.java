@@ -93,7 +93,7 @@ public final class CloudServiceImpl implements CloudService, CloudService.Defini
         return this;
     }
 
-    public CloudServiceImpl(String name, ComputeManager serviceManager) {
+    CloudServiceImpl(String name, ComputeManager serviceManager) {
         this.innerObject = new CloudServiceInner();
         this.serviceManager = serviceManager;
         this.cloudServiceName = name;
@@ -122,7 +122,7 @@ public final class CloudServiceImpl implements CloudService, CloudService.Defini
         return this;
     }
 
-    public CloudServiceImpl(CloudServiceInner innerObject, ComputeManager serviceManager) {
+    CloudServiceImpl(CloudServiceInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

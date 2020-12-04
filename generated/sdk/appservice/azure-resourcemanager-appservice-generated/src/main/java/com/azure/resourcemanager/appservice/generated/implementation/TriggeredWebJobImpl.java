@@ -17,7 +17,7 @@ public final class TriggeredWebJobImpl implements TriggeredWebJob {
 
     private final WebSiteManager serviceManager;
 
-    public TriggeredWebJobImpl(TriggeredWebJobInner innerObject, WebSiteManager serviceManager) {
+    TriggeredWebJobImpl(TriggeredWebJobInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

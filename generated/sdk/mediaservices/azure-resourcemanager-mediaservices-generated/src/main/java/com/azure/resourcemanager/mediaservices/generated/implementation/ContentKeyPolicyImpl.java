@@ -99,7 +99,7 @@ public final class ContentKeyPolicyImpl
         return this;
     }
 
-    public ContentKeyPolicyImpl(String name, MediaservicesManager serviceManager) {
+    ContentKeyPolicyImpl(String name, MediaservicesManager serviceManager) {
         this.innerObject = new ContentKeyPolicyInner();
         this.serviceManager = serviceManager;
         this.contentKeyPolicyName = name;
@@ -130,7 +130,7 @@ public final class ContentKeyPolicyImpl
         return this;
     }
 
-    public ContentKeyPolicyImpl(ContentKeyPolicyInner innerObject, MediaservicesManager serviceManager) {
+    ContentKeyPolicyImpl(ContentKeyPolicyInner innerObject, MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

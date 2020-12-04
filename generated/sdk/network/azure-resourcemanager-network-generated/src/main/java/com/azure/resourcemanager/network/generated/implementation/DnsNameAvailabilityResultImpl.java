@@ -13,7 +13,7 @@ public final class DnsNameAvailabilityResultImpl implements DnsNameAvailabilityR
 
     private final NetworkManager serviceManager;
 
-    public DnsNameAvailabilityResultImpl(DnsNameAvailabilityResultInner innerObject, NetworkManager serviceManager) {
+    DnsNameAvailabilityResultImpl(DnsNameAvailabilityResultInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

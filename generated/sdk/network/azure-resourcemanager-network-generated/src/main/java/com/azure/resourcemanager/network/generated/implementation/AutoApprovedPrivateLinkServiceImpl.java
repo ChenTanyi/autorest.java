@@ -13,8 +13,7 @@ public final class AutoApprovedPrivateLinkServiceImpl implements AutoApprovedPri
 
     private final NetworkManager serviceManager;
 
-    public AutoApprovedPrivateLinkServiceImpl(
-        AutoApprovedPrivateLinkServiceInner innerObject, NetworkManager serviceManager) {
+    AutoApprovedPrivateLinkServiceImpl(AutoApprovedPrivateLinkServiceInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

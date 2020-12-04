@@ -14,7 +14,7 @@ public final class CertificateWithNonceDescriptionImpl implements CertificateWit
 
     private final IotHubManager serviceManager;
 
-    public CertificateWithNonceDescriptionImpl(
+    CertificateWithNonceDescriptionImpl(
         CertificateWithNonceDescriptionInner innerObject, IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

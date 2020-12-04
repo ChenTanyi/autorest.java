@@ -14,7 +14,7 @@ public final class PrivateLinkResourceImpl implements PrivateLinkResource {
 
     private final PostgreSqlManager serviceManager;
 
-    public PrivateLinkResourceImpl(PrivateLinkResourceInner innerObject, PostgreSqlManager serviceManager) {
+    PrivateLinkResourceImpl(PrivateLinkResourceInner innerObject, PostgreSqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

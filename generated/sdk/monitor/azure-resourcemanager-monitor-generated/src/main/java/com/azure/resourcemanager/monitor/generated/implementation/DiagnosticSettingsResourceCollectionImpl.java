@@ -18,7 +18,7 @@ public final class DiagnosticSettingsResourceCollectionImpl implements Diagnosti
 
     private final MonitorManager serviceManager;
 
-    public DiagnosticSettingsResourceCollectionImpl(
+    DiagnosticSettingsResourceCollectionImpl(
         DiagnosticSettingsResourceCollectionInner innerObject, MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

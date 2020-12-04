@@ -13,7 +13,7 @@ public final class GeoRegionImpl implements GeoRegion {
 
     private final WebSiteManager serviceManager;
 
-    public GeoRegionImpl(GeoRegionInner innerObject, WebSiteManager serviceManager) {
+    GeoRegionImpl(GeoRegionInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

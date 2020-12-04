@@ -15,7 +15,7 @@ public final class PrivateLinkResourceImpl implements PrivateLinkResource {
 
     private final MediaservicesManager serviceManager;
 
-    public PrivateLinkResourceImpl(PrivateLinkResourceInner innerObject, MediaservicesManager serviceManager) {
+    PrivateLinkResourceImpl(PrivateLinkResourceInner innerObject, MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

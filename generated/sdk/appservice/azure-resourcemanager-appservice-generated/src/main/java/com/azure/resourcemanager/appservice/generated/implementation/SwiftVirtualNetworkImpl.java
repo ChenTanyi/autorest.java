@@ -13,7 +13,7 @@ public final class SwiftVirtualNetworkImpl implements SwiftVirtualNetwork {
 
     private final WebSiteManager serviceManager;
 
-    public SwiftVirtualNetworkImpl(SwiftVirtualNetworkInner innerObject, WebSiteManager serviceManager) {
+    SwiftVirtualNetworkImpl(SwiftVirtualNetworkInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

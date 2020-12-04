@@ -18,7 +18,7 @@ public final class CertificateListDescriptionImpl implements CertificateListDesc
 
     private final IotHubManager serviceManager;
 
-    public CertificateListDescriptionImpl(CertificateListDescriptionInner innerObject, IotHubManager serviceManager) {
+    CertificateListDescriptionImpl(CertificateListDescriptionInner innerObject, IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

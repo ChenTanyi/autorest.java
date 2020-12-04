@@ -18,7 +18,7 @@ public final class PrivateEndpointConnectionListResultImpl implements PrivateEnd
 
     private final MediaservicesManager serviceManager;
 
-    public PrivateEndpointConnectionListResultImpl(
+    PrivateEndpointConnectionListResultImpl(
         PrivateEndpointConnectionListResultInner innerObject, MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

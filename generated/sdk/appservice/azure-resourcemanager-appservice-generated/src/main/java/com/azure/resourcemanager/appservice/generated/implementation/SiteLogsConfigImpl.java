@@ -16,7 +16,7 @@ public final class SiteLogsConfigImpl implements SiteLogsConfig {
 
     private final WebSiteManager serviceManager;
 
-    public SiteLogsConfigImpl(SiteLogsConfigInner innerObject, WebSiteManager serviceManager) {
+    SiteLogsConfigImpl(SiteLogsConfigInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

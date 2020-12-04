@@ -20,7 +20,7 @@ public final class ResourceTypeSkuImpl implements ResourceTypeSku {
 
     private final DataBoxEdgeManager serviceManager;
 
-    public ResourceTypeSkuImpl(ResourceTypeSkuInner innerObject, DataBoxEdgeManager serviceManager) {
+    ResourceTypeSkuImpl(ResourceTypeSkuInner innerObject, DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -14,7 +14,7 @@ public final class VirtualNetworkUsageImpl implements VirtualNetworkUsage {
 
     private final NetworkManager serviceManager;
 
-    public VirtualNetworkUsageImpl(VirtualNetworkUsageInner innerObject, NetworkManager serviceManager) {
+    VirtualNetworkUsageImpl(VirtualNetworkUsageInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

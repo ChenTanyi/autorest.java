@@ -16,7 +16,7 @@ public final class ListStreamingLocatorsResponseImpl implements ListStreamingLoc
 
     private final MediaservicesManager serviceManager;
 
-    public ListStreamingLocatorsResponseImpl(
+    ListStreamingLocatorsResponseImpl(
         ListStreamingLocatorsResponseInner innerObject, MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

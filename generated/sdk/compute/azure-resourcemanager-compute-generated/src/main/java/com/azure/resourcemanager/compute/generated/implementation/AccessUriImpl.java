@@ -13,7 +13,7 @@ public final class AccessUriImpl implements AccessUri {
 
     private final ComputeManager serviceManager;
 
-    public AccessUriImpl(AccessUriInner innerObject, ComputeManager serviceManager) {
+    AccessUriImpl(AccessUriInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

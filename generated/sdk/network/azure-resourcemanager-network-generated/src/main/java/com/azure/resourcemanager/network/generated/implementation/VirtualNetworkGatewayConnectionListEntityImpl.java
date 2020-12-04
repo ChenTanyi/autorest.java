@@ -26,7 +26,7 @@ public final class VirtualNetworkGatewayConnectionListEntityImpl implements Virt
 
     private final NetworkManager serviceManager;
 
-    public VirtualNetworkGatewayConnectionListEntityImpl(
+    VirtualNetworkGatewayConnectionListEntityImpl(
         VirtualNetworkGatewayConnectionListEntityInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

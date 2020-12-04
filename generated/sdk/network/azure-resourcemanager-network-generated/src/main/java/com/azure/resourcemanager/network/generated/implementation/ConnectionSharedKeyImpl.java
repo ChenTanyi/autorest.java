@@ -13,7 +13,7 @@ public final class ConnectionSharedKeyImpl implements ConnectionSharedKey {
 
     private final NetworkManager serviceManager;
 
-    public ConnectionSharedKeyImpl(ConnectionSharedKeyInner innerObject, NetworkManager serviceManager) {
+    ConnectionSharedKeyImpl(ConnectionSharedKeyInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

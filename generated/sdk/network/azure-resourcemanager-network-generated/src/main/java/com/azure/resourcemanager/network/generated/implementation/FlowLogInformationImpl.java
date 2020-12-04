@@ -16,7 +16,7 @@ public final class FlowLogInformationImpl implements FlowLogInformation {
 
     private final NetworkManager serviceManager;
 
-    public FlowLogInformationImpl(FlowLogInformationInner innerObject, NetworkManager serviceManager) {
+    FlowLogInformationImpl(FlowLogInformationInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

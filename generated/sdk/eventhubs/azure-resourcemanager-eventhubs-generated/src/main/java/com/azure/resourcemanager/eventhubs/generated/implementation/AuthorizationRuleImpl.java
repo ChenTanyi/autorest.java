@@ -81,7 +81,7 @@ public final class AuthorizationRuleImpl
         return this;
     }
 
-    public AuthorizationRuleImpl(String name, EventHubsManager serviceManager) {
+    AuthorizationRuleImpl(String name, EventHubsManager serviceManager) {
         this.innerObject = new AuthorizationRuleInner();
         this.serviceManager = serviceManager;
         this.authorizationRuleName = name;
@@ -113,7 +113,7 @@ public final class AuthorizationRuleImpl
         return this;
     }
 
-    public AuthorizationRuleImpl(AuthorizationRuleInner innerObject, EventHubsManager serviceManager) {
+    AuthorizationRuleImpl(AuthorizationRuleInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -89,7 +89,7 @@ public final class BandwidthScheduleImpl
         return this;
     }
 
-    public BandwidthScheduleImpl(String name, DataBoxEdgeManager serviceManager) {
+    BandwidthScheduleImpl(String name, DataBoxEdgeManager serviceManager) {
         this.innerObject = new BandwidthScheduleInner();
         this.serviceManager = serviceManager;
         this.name = name;
@@ -117,7 +117,7 @@ public final class BandwidthScheduleImpl
         return this;
     }
 
-    public BandwidthScheduleImpl(BandwidthScheduleInner innerObject, DataBoxEdgeManager serviceManager) {
+    BandwidthScheduleImpl(BandwidthScheduleInner innerObject, DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");

@@ -17,7 +17,7 @@ public final class BgpServiceCommunityImpl implements BgpServiceCommunity {
 
     private final NetworkManager serviceManager;
 
-    public BgpServiceCommunityImpl(BgpServiceCommunityInner innerObject, NetworkManager serviceManager) {
+    BgpServiceCommunityImpl(BgpServiceCommunityInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

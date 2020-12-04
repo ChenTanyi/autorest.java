@@ -16,7 +16,7 @@ public final class MessagingRegionsImpl implements MessagingRegions {
 
     private final EventHubsManager serviceManager;
 
-    public MessagingRegionsImpl(MessagingRegionsInner innerObject, EventHubsManager serviceManager) {
+    MessagingRegionsImpl(MessagingRegionsInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

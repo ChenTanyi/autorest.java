@@ -15,7 +15,7 @@ public final class ClusterConfigurationsImpl implements ClusterConfigurations {
 
     private final HDInsightManager serviceManager;
 
-    public ClusterConfigurationsImpl(ClusterConfigurationsInner innerObject, HDInsightManager serviceManager) {
+    ClusterConfigurationsImpl(ClusterConfigurationsInner innerObject, HDInsightManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

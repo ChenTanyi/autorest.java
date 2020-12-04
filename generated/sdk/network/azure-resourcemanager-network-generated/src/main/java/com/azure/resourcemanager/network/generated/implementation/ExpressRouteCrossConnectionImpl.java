@@ -150,7 +150,7 @@ public final class ExpressRouteCrossConnectionImpl
         return this;
     }
 
-    public ExpressRouteCrossConnectionImpl(String name, NetworkManager serviceManager) {
+    ExpressRouteCrossConnectionImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new ExpressRouteCrossConnectionInner();
         this.serviceManager = serviceManager;
         this.crossConnectionName = name;
@@ -183,8 +183,7 @@ public final class ExpressRouteCrossConnectionImpl
         return this;
     }
 
-    public ExpressRouteCrossConnectionImpl(
-        ExpressRouteCrossConnectionInner innerObject, NetworkManager serviceManager) {
+    ExpressRouteCrossConnectionImpl(ExpressRouteCrossConnectionInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

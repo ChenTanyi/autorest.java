@@ -16,7 +16,7 @@ public final class VpnClientConnectionHealthDetailListResultImpl implements VpnC
 
     private final NetworkManager serviceManager;
 
-    public VpnClientConnectionHealthDetailListResultImpl(
+    VpnClientConnectionHealthDetailListResultImpl(
         VpnClientConnectionHealthDetailListResultInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

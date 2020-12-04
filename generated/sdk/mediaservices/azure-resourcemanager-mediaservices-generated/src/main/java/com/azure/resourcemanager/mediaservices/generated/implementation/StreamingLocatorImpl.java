@@ -19,7 +19,7 @@ public final class StreamingLocatorImpl implements StreamingLocator, StreamingLo
 
     private final MediaservicesManager serviceManager;
 
-    public StreamingLocatorImpl(StreamingLocatorInner innerObject, MediaservicesManager serviceManager) {
+    StreamingLocatorImpl(StreamingLocatorInner innerObject, MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -127,7 +127,7 @@ public final class StreamingLocatorImpl implements StreamingLocator, StreamingLo
         return this;
     }
 
-    public StreamingLocatorImpl(String name, MediaservicesManager serviceManager) {
+    StreamingLocatorImpl(String name, MediaservicesManager serviceManager) {
         this.innerObject = new StreamingLocatorInner();
         this.serviceManager = serviceManager;
         this.streamingLocatorName = name;

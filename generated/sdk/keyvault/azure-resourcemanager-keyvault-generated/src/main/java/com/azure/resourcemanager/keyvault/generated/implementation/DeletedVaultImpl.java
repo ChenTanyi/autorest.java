@@ -14,7 +14,7 @@ public final class DeletedVaultImpl implements DeletedVault {
 
     private final KeyVaultManager serviceManager;
 
-    public DeletedVaultImpl(DeletedVaultInner innerObject, KeyVaultManager serviceManager) {
+    DeletedVaultImpl(DeletedVaultInner innerObject, KeyVaultManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -14,7 +14,7 @@ public final class CertificateEmailImpl implements CertificateEmail {
 
     private final WebSiteManager serviceManager;
 
-    public CertificateEmailImpl(CertificateEmailInner innerObject, WebSiteManager serviceManager) {
+    CertificateEmailImpl(CertificateEmailInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

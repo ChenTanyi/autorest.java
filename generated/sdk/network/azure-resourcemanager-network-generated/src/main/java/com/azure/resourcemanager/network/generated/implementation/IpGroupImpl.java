@@ -126,7 +126,7 @@ public final class IpGroupImpl implements IpGroup, IpGroup.Definition, IpGroup.U
         return this;
     }
 
-    public IpGroupImpl(String name, NetworkManager serviceManager) {
+    IpGroupImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new IpGroupInner();
         this.serviceManager = serviceManager;
         this.ipGroupsName = name;
@@ -157,7 +157,7 @@ public final class IpGroupImpl implements IpGroup, IpGroup.Definition, IpGroup.U
         return this;
     }
 
-    public IpGroupImpl(IpGroupInner innerObject, NetworkManager serviceManager) {
+    IpGroupImpl(IpGroupInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -119,7 +119,7 @@ public final class ActivityLogAlertResourceImpl
         return this;
     }
 
-    public ActivityLogAlertResourceImpl(String name, MonitorManager serviceManager) {
+    ActivityLogAlertResourceImpl(String name, MonitorManager serviceManager) {
         this.innerObject = new ActivityLogAlertResourceInner();
         this.serviceManager = serviceManager;
         this.activityLogAlertName = name;
@@ -150,7 +150,7 @@ public final class ActivityLogAlertResourceImpl
         return this;
     }
 
-    public ActivityLogAlertResourceImpl(ActivityLogAlertResourceInner innerObject, MonitorManager serviceManager) {
+    ActivityLogAlertResourceImpl(ActivityLogAlertResourceInner innerObject, MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

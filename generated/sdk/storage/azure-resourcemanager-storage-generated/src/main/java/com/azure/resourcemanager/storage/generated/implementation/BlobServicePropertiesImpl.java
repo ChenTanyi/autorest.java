@@ -105,7 +105,7 @@ public final class BlobServicePropertiesImpl
         return this;
     }
 
-    public BlobServicePropertiesImpl(String name, StorageManager serviceManager) {
+    BlobServicePropertiesImpl(String name, StorageManager serviceManager) {
         this.innerObject = new BlobServicePropertiesInner();
         this.serviceManager = serviceManager;
         this.accountName = name;
@@ -135,7 +135,7 @@ public final class BlobServicePropertiesImpl
         return this;
     }
 
-    public BlobServicePropertiesImpl(BlobServicePropertiesInner innerObject, StorageManager serviceManager) {
+    BlobServicePropertiesImpl(BlobServicePropertiesInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

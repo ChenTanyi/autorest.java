@@ -16,7 +16,7 @@ public final class ServiceAssociationLinksListResultImpl implements ServiceAssoc
 
     private final NetworkManager serviceManager;
 
-    public ServiceAssociationLinksListResultImpl(
+    ServiceAssociationLinksListResultImpl(
         ServiceAssociationLinksListResultInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

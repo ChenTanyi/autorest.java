@@ -108,7 +108,7 @@ public final class PrivateEndpointConnectionImpl
         return this;
     }
 
-    public PrivateEndpointConnectionImpl(String name, KeyVaultManager serviceManager) {
+    PrivateEndpointConnectionImpl(String name, KeyVaultManager serviceManager) {
         this.innerObject = new PrivateEndpointConnectionInner();
         this.serviceManager = serviceManager;
         this.privateEndpointConnectionName = name;
@@ -140,7 +140,7 @@ public final class PrivateEndpointConnectionImpl
         return this;
     }
 
-    public PrivateEndpointConnectionImpl(PrivateEndpointConnectionInner innerObject, KeyVaultManager serviceManager) {
+    PrivateEndpointConnectionImpl(PrivateEndpointConnectionInner innerObject, KeyVaultManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

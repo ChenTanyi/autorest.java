@@ -72,7 +72,7 @@ public final class DatabaseImpl implements Database, Database.Definition, Databa
         return this;
     }
 
-    public DatabaseImpl(String name, MySqlManager serviceManager) {
+    DatabaseImpl(String name, MySqlManager serviceManager) {
         this.innerObject = new DatabaseInner();
         this.serviceManager = serviceManager;
         this.databaseName = name;
@@ -100,7 +100,7 @@ public final class DatabaseImpl implements Database, Database.Definition, Databa
         return this;
     }
 
-    public DatabaseImpl(DatabaseInner innerObject, MySqlManager serviceManager) {
+    DatabaseImpl(DatabaseInner innerObject, MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

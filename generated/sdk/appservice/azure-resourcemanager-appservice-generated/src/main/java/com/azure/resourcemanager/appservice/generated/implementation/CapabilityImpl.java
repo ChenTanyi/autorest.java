@@ -13,7 +13,7 @@ public final class CapabilityImpl implements Capability {
 
     private final WebSiteManager serviceManager;
 
-    public CapabilityImpl(CapabilityInner innerObject, WebSiteManager serviceManager) {
+    CapabilityImpl(CapabilityInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

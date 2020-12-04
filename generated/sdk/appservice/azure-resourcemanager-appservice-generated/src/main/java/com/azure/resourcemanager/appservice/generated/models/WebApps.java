@@ -11934,6 +11934,31 @@ public interface WebApps {
     Response<Void> deletePublicCertificateByIdWithResponse(String id, Context context);
 
     /**
+     * Description for Deletes a private endpoint connection.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object.
+     */
+    Object deletePrivateEndpointConnectionById(String id);
+
+    /**
+     * Description for Deletes a private endpoint connection.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object.
+     */
+    Object deletePrivateEndpointConnectionByIdWithResponse(String id, Context context);
+
+    /**
      * Description for Deletes a connection from an app (or deployment slot to a named virtual network.
      *
      * @param id the resource ID.

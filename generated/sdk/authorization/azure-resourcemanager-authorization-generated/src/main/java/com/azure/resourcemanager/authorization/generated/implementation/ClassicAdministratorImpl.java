@@ -13,7 +13,7 @@ public final class ClassicAdministratorImpl implements ClassicAdministrator {
 
     private final AuthorizationManager serviceManager;
 
-    public ClassicAdministratorImpl(ClassicAdministratorInner innerObject, AuthorizationManager serviceManager) {
+    ClassicAdministratorImpl(ClassicAdministratorInner innerObject, AuthorizationManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

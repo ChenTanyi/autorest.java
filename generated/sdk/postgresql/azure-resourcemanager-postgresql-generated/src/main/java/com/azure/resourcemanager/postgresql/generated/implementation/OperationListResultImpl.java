@@ -16,7 +16,7 @@ public final class OperationListResultImpl implements OperationListResult {
 
     private final PostgreSqlManager serviceManager;
 
-    public OperationListResultImpl(OperationListResultInner innerObject, PostgreSqlManager serviceManager) {
+    OperationListResultImpl(OperationListResultInner innerObject, PostgreSqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

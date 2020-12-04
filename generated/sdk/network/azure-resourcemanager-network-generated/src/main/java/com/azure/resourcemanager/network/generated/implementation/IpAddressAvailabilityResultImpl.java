@@ -15,8 +15,7 @@ public final class IpAddressAvailabilityResultImpl implements IpAddressAvailabil
 
     private final NetworkManager serviceManager;
 
-    public IpAddressAvailabilityResultImpl(
-        IpAddressAvailabilityResultInner innerObject, NetworkManager serviceManager) {
+    IpAddressAvailabilityResultImpl(IpAddressAvailabilityResultInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

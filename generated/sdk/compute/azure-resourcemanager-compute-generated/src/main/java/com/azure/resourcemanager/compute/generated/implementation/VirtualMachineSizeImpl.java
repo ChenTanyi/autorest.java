@@ -13,7 +13,7 @@ public final class VirtualMachineSizeImpl implements VirtualMachineSize {
 
     private final ComputeManager serviceManager;
 
-    public VirtualMachineSizeImpl(VirtualMachineSizeInner innerObject, ComputeManager serviceManager) {
+    VirtualMachineSizeImpl(VirtualMachineSizeInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

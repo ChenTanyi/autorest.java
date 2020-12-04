@@ -92,7 +92,7 @@ public final class PrivateEndpointConnectionResourceImpl
         return this;
     }
 
-    public PrivateEndpointConnectionResourceImpl(String name, WebSiteManager serviceManager) {
+    PrivateEndpointConnectionResourceImpl(String name, WebSiteManager serviceManager) {
         this.innerObject = new PrivateEndpointConnectionResourceInner();
         this.serviceManager = serviceManager;
         this.privateEndpointConnectionName = name;
@@ -124,7 +124,7 @@ public final class PrivateEndpointConnectionResourceImpl
         return this;
     }
 
-    public PrivateEndpointConnectionResourceImpl(
+    PrivateEndpointConnectionResourceImpl(
         PrivateEndpointConnectionResourceInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

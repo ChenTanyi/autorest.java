@@ -13,7 +13,7 @@ public final class VpnProfileResponseImpl implements VpnProfileResponse {
 
     private final NetworkManager serviceManager;
 
-    public VpnProfileResponseImpl(VpnProfileResponseInner innerObject, NetworkManager serviceManager) {
+    VpnProfileResponseImpl(VpnProfileResponseInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

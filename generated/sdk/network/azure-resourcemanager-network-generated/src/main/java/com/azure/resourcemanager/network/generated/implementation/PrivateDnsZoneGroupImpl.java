@@ -17,7 +17,7 @@ public final class PrivateDnsZoneGroupImpl implements PrivateDnsZoneGroup {
 
     private final NetworkManager serviceManager;
 
-    public PrivateDnsZoneGroupImpl(PrivateDnsZoneGroupInner innerObject, NetworkManager serviceManager) {
+    PrivateDnsZoneGroupImpl(PrivateDnsZoneGroupInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

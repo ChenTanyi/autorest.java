@@ -15,7 +15,7 @@ public final class SlotConfigNamesResourceImpl implements SlotConfigNamesResourc
 
     private final WebSiteManager serviceManager;
 
-    public SlotConfigNamesResourceImpl(SlotConfigNamesResourceInner innerObject, WebSiteManager serviceManager) {
+    SlotConfigNamesResourceImpl(SlotConfigNamesResourceInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

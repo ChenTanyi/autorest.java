@@ -14,7 +14,7 @@ public final class NodeImpl implements Node {
 
     private final DataBoxEdgeManager serviceManager;
 
-    public NodeImpl(NodeInner innerObject, DataBoxEdgeManager serviceManager) {
+    NodeImpl(NodeInner innerObject, DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

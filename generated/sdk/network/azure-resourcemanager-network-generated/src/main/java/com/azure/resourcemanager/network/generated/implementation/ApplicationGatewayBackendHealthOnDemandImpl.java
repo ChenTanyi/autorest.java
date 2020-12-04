@@ -15,7 +15,7 @@ public final class ApplicationGatewayBackendHealthOnDemandImpl implements Applic
 
     private final NetworkManager serviceManager;
 
-    public ApplicationGatewayBackendHealthOnDemandImpl(
+    ApplicationGatewayBackendHealthOnDemandImpl(
         ApplicationGatewayBackendHealthOnDemandInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

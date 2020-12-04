@@ -106,7 +106,7 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
         return this;
     }
 
-    public ClusterImpl(String name, HDInsightManager serviceManager) {
+    ClusterImpl(String name, HDInsightManager serviceManager) {
         this.innerObject = new ClusterInner();
         this.serviceManager = serviceManager;
         this.clusterName = name;
@@ -138,7 +138,7 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
         return this;
     }
 
-    public ClusterImpl(ClusterInner innerObject, HDInsightManager serviceManager) {
+    ClusterImpl(ClusterInner innerObject, HDInsightManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

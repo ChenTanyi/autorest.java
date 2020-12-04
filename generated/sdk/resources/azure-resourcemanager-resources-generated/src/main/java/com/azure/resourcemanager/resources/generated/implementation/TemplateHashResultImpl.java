@@ -13,7 +13,7 @@ public final class TemplateHashResultImpl implements TemplateHashResult {
 
     private final ResourceManager serviceManager;
 
-    public TemplateHashResultImpl(TemplateHashResultInner innerObject, ResourceManager serviceManager) {
+    TemplateHashResultImpl(TemplateHashResultInner innerObject, ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -19,7 +19,7 @@ public final class DiagnosticSettingsCategoryResourceCollectionImpl
 
     private final MonitorManager serviceManager;
 
-    public DiagnosticSettingsCategoryResourceCollectionImpl(
+    DiagnosticSettingsCategoryResourceCollectionImpl(
         DiagnosticSettingsCategoryResourceCollectionInner innerObject, MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

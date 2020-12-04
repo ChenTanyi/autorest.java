@@ -102,7 +102,7 @@ public final class ProfileImpl implements Profile, Profile.Definition, Profile.U
         return this;
     }
 
-    public ProfileImpl(String name, FrontDoorManager serviceManager) {
+    ProfileImpl(String name, FrontDoorManager serviceManager) {
         this.innerObject = new ProfileInner();
         this.serviceManager = serviceManager;
         this.profileName = name;
@@ -131,7 +131,7 @@ public final class ProfileImpl implements Profile, Profile.Definition, Profile.U
         return this;
     }
 
-    public ProfileImpl(ProfileInner innerObject, FrontDoorManager serviceManager) {
+    ProfileImpl(ProfileInner innerObject, FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

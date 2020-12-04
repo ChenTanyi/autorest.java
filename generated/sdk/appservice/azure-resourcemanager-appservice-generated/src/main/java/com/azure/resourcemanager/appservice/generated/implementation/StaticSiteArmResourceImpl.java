@@ -131,7 +131,7 @@ public final class StaticSiteArmResourceImpl
         return this;
     }
 
-    public StaticSiteArmResourceImpl(String name, WebSiteManager serviceManager) {
+    StaticSiteArmResourceImpl(String name, WebSiteManager serviceManager) {
         this.innerObject = new StaticSiteArmResourceInner();
         this.serviceManager = serviceManager;
         this.name = name;
@@ -162,7 +162,7 @@ public final class StaticSiteArmResourceImpl
         return this;
     }
 
-    public StaticSiteArmResourceImpl(StaticSiteArmResourceInner innerObject, WebSiteManager serviceManager) {
+    StaticSiteArmResourceImpl(StaticSiteArmResourceInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

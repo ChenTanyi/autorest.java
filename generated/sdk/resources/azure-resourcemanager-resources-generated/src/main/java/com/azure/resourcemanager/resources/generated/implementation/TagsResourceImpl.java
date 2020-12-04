@@ -14,7 +14,7 @@ public final class TagsResourceImpl implements TagsResource {
 
     private final ResourceManager serviceManager;
 
-    public TagsResourceImpl(TagsResourceInner innerObject, ResourceManager serviceManager) {
+    TagsResourceImpl(TagsResourceInner innerObject, ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

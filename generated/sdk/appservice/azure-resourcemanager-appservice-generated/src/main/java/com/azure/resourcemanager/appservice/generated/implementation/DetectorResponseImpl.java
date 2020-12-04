@@ -17,7 +17,7 @@ public final class DetectorResponseImpl implements DetectorResponse {
 
     private final WebSiteManager serviceManager;
 
-    public DetectorResponseImpl(DetectorResponseInner innerObject, WebSiteManager serviceManager) {
+    DetectorResponseImpl(DetectorResponseInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

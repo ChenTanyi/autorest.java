@@ -13,7 +13,7 @@ public final class LeaseContainerResponseImpl implements LeaseContainerResponse 
 
     private final StorageManager serviceManager;
 
-    public LeaseContainerResponseImpl(LeaseContainerResponseInner innerObject, StorageManager serviceManager) {
+    LeaseContainerResponseImpl(LeaseContainerResponseInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

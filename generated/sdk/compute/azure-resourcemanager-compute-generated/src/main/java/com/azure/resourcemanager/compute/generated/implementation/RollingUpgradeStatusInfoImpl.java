@@ -19,7 +19,7 @@ public final class RollingUpgradeStatusInfoImpl implements RollingUpgradeStatusI
 
     private final ComputeManager serviceManager;
 
-    public RollingUpgradeStatusInfoImpl(RollingUpgradeStatusInfoInner innerObject, ComputeManager serviceManager) {
+    RollingUpgradeStatusInfoImpl(RollingUpgradeStatusInfoInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

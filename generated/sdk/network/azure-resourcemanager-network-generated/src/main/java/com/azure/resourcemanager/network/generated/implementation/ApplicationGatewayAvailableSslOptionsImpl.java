@@ -20,7 +20,7 @@ public final class ApplicationGatewayAvailableSslOptionsImpl implements Applicat
 
     private final NetworkManager serviceManager;
 
-    public ApplicationGatewayAvailableSslOptionsImpl(
+    ApplicationGatewayAvailableSslOptionsImpl(
         ApplicationGatewayAvailableSslOptionsInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

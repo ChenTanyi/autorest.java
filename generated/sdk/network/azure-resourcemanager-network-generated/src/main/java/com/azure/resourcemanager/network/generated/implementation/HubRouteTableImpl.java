@@ -112,7 +112,7 @@ public final class HubRouteTableImpl implements HubRouteTable, HubRouteTable.Def
         return this;
     }
 
-    public HubRouteTableImpl(String name, NetworkManager serviceManager) {
+    HubRouteTableImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new HubRouteTableInner();
         this.serviceManager = serviceManager;
         this.routeTableName = name;
@@ -140,7 +140,7 @@ public final class HubRouteTableImpl implements HubRouteTable, HubRouteTable.Def
         return this;
     }
 
-    public HubRouteTableImpl(HubRouteTableInner innerObject, NetworkManager serviceManager) {
+    HubRouteTableImpl(HubRouteTableInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

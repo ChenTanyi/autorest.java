@@ -16,7 +16,7 @@ public final class SkuInfosImpl implements SkuInfos {
 
     private final WebSiteManager serviceManager;
 
-    public SkuInfosImpl(SkuInfosInner innerObject, WebSiteManager serviceManager) {
+    SkuInfosImpl(SkuInfosInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

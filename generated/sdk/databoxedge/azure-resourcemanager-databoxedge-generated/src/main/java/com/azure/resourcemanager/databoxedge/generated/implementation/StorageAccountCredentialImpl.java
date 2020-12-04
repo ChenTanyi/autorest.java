@@ -100,7 +100,7 @@ public final class StorageAccountCredentialImpl
         return this;
     }
 
-    public StorageAccountCredentialImpl(String name, DataBoxEdgeManager serviceManager) {
+    StorageAccountCredentialImpl(String name, DataBoxEdgeManager serviceManager) {
         this.innerObject = new StorageAccountCredentialInner();
         this.serviceManager = serviceManager;
         this.name = name;
@@ -128,7 +128,7 @@ public final class StorageAccountCredentialImpl
         return this;
     }
 
-    public StorageAccountCredentialImpl(StorageAccountCredentialInner innerObject, DataBoxEdgeManager serviceManager) {
+    StorageAccountCredentialImpl(StorageAccountCredentialInner innerObject, DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");

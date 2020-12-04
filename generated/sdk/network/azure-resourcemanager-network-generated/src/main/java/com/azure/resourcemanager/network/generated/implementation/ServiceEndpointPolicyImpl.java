@@ -133,7 +133,7 @@ public final class ServiceEndpointPolicyImpl
         return this;
     }
 
-    public ServiceEndpointPolicyImpl(String name, NetworkManager serviceManager) {
+    ServiceEndpointPolicyImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new ServiceEndpointPolicyInner();
         this.serviceManager = serviceManager;
         this.serviceEndpointPolicyName = name;
@@ -164,7 +164,7 @@ public final class ServiceEndpointPolicyImpl
         return this;
     }
 
-    public ServiceEndpointPolicyImpl(ServiceEndpointPolicyInner innerObject, NetworkManager serviceManager) {
+    ServiceEndpointPolicyImpl(ServiceEndpointPolicyInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

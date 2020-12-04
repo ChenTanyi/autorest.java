@@ -187,7 +187,7 @@ public final class PrivateLinkServiceImpl
         return this;
     }
 
-    public PrivateLinkServiceImpl(String name, NetworkManager serviceManager) {
+    PrivateLinkServiceImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new PrivateLinkServiceInner();
         this.serviceManager = serviceManager;
         this.serviceName = name;
@@ -215,7 +215,7 @@ public final class PrivateLinkServiceImpl
         return this;
     }
 
-    public PrivateLinkServiceImpl(PrivateLinkServiceInner innerObject, NetworkManager serviceManager) {
+    PrivateLinkServiceImpl(PrivateLinkServiceInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

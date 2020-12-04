@@ -13,7 +13,7 @@ public final class BillingMeterImpl implements BillingMeter {
 
     private final WebSiteManager serviceManager;
 
-    public BillingMeterImpl(BillingMeterInner innerObject, WebSiteManager serviceManager) {
+    BillingMeterImpl(BillingMeterInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

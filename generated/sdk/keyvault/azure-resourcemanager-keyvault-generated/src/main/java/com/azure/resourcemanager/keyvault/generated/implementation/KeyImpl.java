@@ -24,7 +24,7 @@ public final class KeyImpl implements Key, Key.Definition {
 
     private final KeyVaultManager serviceManager;
 
-    public KeyImpl(KeyInner innerObject, KeyVaultManager serviceManager) {
+    KeyImpl(KeyInner innerObject, KeyVaultManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -137,7 +137,7 @@ public final class KeyImpl implements Key, Key.Definition {
         return this;
     }
 
-    public KeyImpl(String name, KeyVaultManager serviceManager) {
+    KeyImpl(String name, KeyVaultManager serviceManager) {
         this.innerObject = new KeyInner();
         this.serviceManager = serviceManager;
         this.keyName = name;

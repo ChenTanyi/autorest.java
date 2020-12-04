@@ -13,7 +13,7 @@ public final class SitePhpErrorLogFlagImpl implements SitePhpErrorLogFlag {
 
     private final WebSiteManager serviceManager;
 
-    public SitePhpErrorLogFlagImpl(SitePhpErrorLogFlagInner innerObject, WebSiteManager serviceManager) {
+    SitePhpErrorLogFlagImpl(SitePhpErrorLogFlagInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

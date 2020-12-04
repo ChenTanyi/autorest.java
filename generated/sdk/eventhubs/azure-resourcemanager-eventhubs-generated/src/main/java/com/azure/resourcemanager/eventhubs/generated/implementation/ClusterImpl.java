@@ -106,7 +106,7 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
         return this;
     }
 
-    public ClusterImpl(String name, EventHubsManager serviceManager) {
+    ClusterImpl(String name, EventHubsManager serviceManager) {
         this.innerObject = new ClusterInner();
         this.serviceManager = serviceManager;
         this.clusterName = name;
@@ -134,7 +134,7 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
         return this;
     }
 
-    public ClusterImpl(ClusterInner innerObject, EventHubsManager serviceManager) {
+    ClusterImpl(ClusterInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

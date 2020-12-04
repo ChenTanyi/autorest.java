@@ -13,7 +13,7 @@ public final class SiteSealImpl implements SiteSeal {
 
     private final WebSiteManager serviceManager;
 
-    public SiteSealImpl(SiteSealInner innerObject, WebSiteManager serviceManager) {
+    SiteSealImpl(SiteSealInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -14,7 +14,7 @@ public final class StaticSiteUserInvitationResponseResourceImpl implements Stati
 
     private final WebSiteManager serviceManager;
 
-    public StaticSiteUserInvitationResponseResourceImpl(
+    StaticSiteUserInvitationResponseResourceImpl(
         StaticSiteUserInvitationResponseResourceInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

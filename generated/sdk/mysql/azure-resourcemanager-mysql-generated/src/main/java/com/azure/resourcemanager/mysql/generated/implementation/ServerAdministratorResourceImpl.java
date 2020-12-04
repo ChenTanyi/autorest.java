@@ -15,7 +15,7 @@ public final class ServerAdministratorResourceImpl implements ServerAdministrato
 
     private final MySqlManager serviceManager;
 
-    public ServerAdministratorResourceImpl(ServerAdministratorResourceInner innerObject, MySqlManager serviceManager) {
+    ServerAdministratorResourceImpl(ServerAdministratorResourceInner innerObject, MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

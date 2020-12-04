@@ -17,7 +17,7 @@ public final class VirtualHubRouteTableV2Impl implements VirtualHubRouteTableV2 
 
     private final NetworkManager serviceManager;
 
-    public VirtualHubRouteTableV2Impl(VirtualHubRouteTableV2Inner innerObject, NetworkManager serviceManager) {
+    VirtualHubRouteTableV2Impl(VirtualHubRouteTableV2Inner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

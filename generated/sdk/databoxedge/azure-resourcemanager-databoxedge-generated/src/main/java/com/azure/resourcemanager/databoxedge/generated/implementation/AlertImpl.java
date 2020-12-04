@@ -18,7 +18,7 @@ public final class AlertImpl implements Alert {
 
     private final DataBoxEdgeManager serviceManager;
 
-    public AlertImpl(AlertInner innerObject, DataBoxEdgeManager serviceManager) {
+    AlertImpl(AlertInner innerObject, DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -13,7 +13,7 @@ public final class NameIdentifierImpl implements NameIdentifier {
 
     private final WebSiteManager serviceManager;
 
-    public NameIdentifierImpl(NameIdentifierInner innerObject, WebSiteManager serviceManager) {
+    NameIdentifierImpl(NameIdentifierInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

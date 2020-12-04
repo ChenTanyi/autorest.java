@@ -13,7 +13,7 @@ public final class NameAvailabilityImpl implements NameAvailability {
 
     private final PostgreSqlManager serviceManager;
 
-    public NameAvailabilityImpl(NameAvailabilityInner innerObject, PostgreSqlManager serviceManager) {
+    NameAvailabilityImpl(NameAvailabilityInner innerObject, PostgreSqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

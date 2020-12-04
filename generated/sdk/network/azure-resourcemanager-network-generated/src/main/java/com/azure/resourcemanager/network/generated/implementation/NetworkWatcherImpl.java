@@ -99,7 +99,7 @@ public final class NetworkWatcherImpl implements NetworkWatcher, NetworkWatcher.
         return this;
     }
 
-    public NetworkWatcherImpl(String name, NetworkManager serviceManager) {
+    NetworkWatcherImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new NetworkWatcherInner();
         this.serviceManager = serviceManager;
         this.networkWatcherName = name;
@@ -130,7 +130,7 @@ public final class NetworkWatcherImpl implements NetworkWatcher, NetworkWatcher.
         return this;
     }
 
-    public NetworkWatcherImpl(NetworkWatcherInner innerObject, NetworkManager serviceManager) {
+    NetworkWatcherImpl(NetworkWatcherInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

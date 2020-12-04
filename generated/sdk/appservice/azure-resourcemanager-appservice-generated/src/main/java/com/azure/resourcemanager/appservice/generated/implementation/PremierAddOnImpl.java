@@ -117,7 +117,7 @@ public final class PremierAddOnImpl implements PremierAddOn, PremierAddOn.Defini
         return this;
     }
 
-    public PremierAddOnImpl(String name, WebSiteManager serviceManager) {
+    PremierAddOnImpl(String name, WebSiteManager serviceManager) {
         this.innerObject = new PremierAddOnInner();
         this.serviceManager = serviceManager;
         this.premierAddOnName = name;
@@ -149,7 +149,7 @@ public final class PremierAddOnImpl implements PremierAddOn, PremierAddOn.Defini
         return this;
     }
 
-    public PremierAddOnImpl(PremierAddOnInner innerObject, WebSiteManager serviceManager) {
+    PremierAddOnImpl(PremierAddOnInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -15,7 +15,7 @@ public final class CsmCopySlotEntityImpl implements CsmCopySlotEntity {
 
     private final WebSiteManager serviceManager;
 
-    public CsmCopySlotEntityImpl(CsmCopySlotEntityInner innerObject, WebSiteManager serviceManager) {
+    CsmCopySlotEntityImpl(CsmCopySlotEntityInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

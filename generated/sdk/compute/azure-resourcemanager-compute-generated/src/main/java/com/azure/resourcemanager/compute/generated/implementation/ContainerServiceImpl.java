@@ -136,7 +136,7 @@ public final class ContainerServiceImpl
         return this;
     }
 
-    public ContainerServiceImpl(String name, ComputeManager serviceManager) {
+    ContainerServiceImpl(String name, ComputeManager serviceManager) {
         this.innerObject = new ContainerServiceInner();
         this.serviceManager = serviceManager;
         this.containerServiceName = name;
@@ -164,7 +164,7 @@ public final class ContainerServiceImpl
         return this;
     }
 
-    public ContainerServiceImpl(ContainerServiceInner innerObject, ComputeManager serviceManager) {
+    ContainerServiceImpl(ContainerServiceInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

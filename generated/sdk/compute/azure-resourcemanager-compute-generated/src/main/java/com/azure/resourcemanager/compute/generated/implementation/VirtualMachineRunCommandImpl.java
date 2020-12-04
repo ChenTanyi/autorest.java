@@ -150,7 +150,7 @@ public final class VirtualMachineRunCommandImpl
         return this;
     }
 
-    public VirtualMachineRunCommandImpl(String name, ComputeManager serviceManager) {
+    VirtualMachineRunCommandImpl(String name, ComputeManager serviceManager) {
         this.innerObject = new VirtualMachineRunCommandInner();
         this.serviceManager = serviceManager;
         this.runCommandName = name;
@@ -179,7 +179,7 @@ public final class VirtualMachineRunCommandImpl
         return this;
     }
 
-    public VirtualMachineRunCommandImpl(VirtualMachineRunCommandInner innerObject, ComputeManager serviceManager) {
+    VirtualMachineRunCommandImpl(VirtualMachineRunCommandInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -13,7 +13,7 @@ public final class UpdateDomainImpl implements UpdateDomain {
 
     private final ComputeManager serviceManager;
 
-    public UpdateDomainImpl(UpdateDomainInner innerObject, ComputeManager serviceManager) {
+    UpdateDomainImpl(UpdateDomainInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

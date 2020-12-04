@@ -16,7 +16,7 @@ public final class JobResponseImpl implements JobResponse {
 
     private final IotHubManager serviceManager;
 
-    public JobResponseImpl(JobResponseInner innerObject, IotHubManager serviceManager) {
+    JobResponseImpl(JobResponseInner innerObject, IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

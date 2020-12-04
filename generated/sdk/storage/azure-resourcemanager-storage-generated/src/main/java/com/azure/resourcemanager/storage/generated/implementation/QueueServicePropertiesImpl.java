@@ -69,7 +69,7 @@ public final class QueueServicePropertiesImpl
         return this;
     }
 
-    public QueueServicePropertiesImpl(String name, StorageManager serviceManager) {
+    QueueServicePropertiesImpl(String name, StorageManager serviceManager) {
         this.innerObject = new QueueServicePropertiesInner();
         this.serviceManager = serviceManager;
         this.accountName = name;
@@ -99,7 +99,7 @@ public final class QueueServicePropertiesImpl
         return this;
     }
 
-    public QueueServicePropertiesImpl(QueueServicePropertiesInner innerObject, StorageManager serviceManager) {
+    QueueServicePropertiesImpl(QueueServicePropertiesInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

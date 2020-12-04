@@ -16,7 +16,7 @@ public final class PerformanceTierPropertiesImpl implements PerformanceTierPrope
 
     private final PostgreSqlManager serviceManager;
 
-    public PerformanceTierPropertiesImpl(PerformanceTierPropertiesInner innerObject, PostgreSqlManager serviceManager) {
+    PerformanceTierPropertiesImpl(PerformanceTierPropertiesInner innerObject, PostgreSqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

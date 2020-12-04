@@ -108,7 +108,7 @@ public final class DiskAccessImpl implements DiskAccess, DiskAccess.Definition, 
         return this;
     }
 
-    public DiskAccessImpl(String name, ComputeManager serviceManager) {
+    DiskAccessImpl(String name, ComputeManager serviceManager) {
         this.innerObject = new DiskAccessInner();
         this.serviceManager = serviceManager;
         this.diskAccessName = name;
@@ -137,7 +137,7 @@ public final class DiskAccessImpl implements DiskAccess, DiskAccess.Definition, 
         return this;
     }
 
-    public DiskAccessImpl(DiskAccessInner innerObject, ComputeManager serviceManager) {
+    DiskAccessImpl(DiskAccessInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

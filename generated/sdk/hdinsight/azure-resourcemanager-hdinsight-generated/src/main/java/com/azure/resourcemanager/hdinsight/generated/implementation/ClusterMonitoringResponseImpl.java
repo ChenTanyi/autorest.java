@@ -13,7 +13,7 @@ public final class ClusterMonitoringResponseImpl implements ClusterMonitoringRes
 
     private final HDInsightManager serviceManager;
 
-    public ClusterMonitoringResponseImpl(ClusterMonitoringResponseInner innerObject, HDInsightManager serviceManager) {
+    ClusterMonitoringResponseImpl(ClusterMonitoringResponseInner innerObject, HDInsightManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

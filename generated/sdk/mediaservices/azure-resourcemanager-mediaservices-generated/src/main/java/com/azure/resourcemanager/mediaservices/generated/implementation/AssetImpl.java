@@ -101,7 +101,7 @@ public final class AssetImpl implements Asset, Asset.Definition, Asset.Update {
         return this;
     }
 
-    public AssetImpl(String name, MediaservicesManager serviceManager) {
+    AssetImpl(String name, MediaservicesManager serviceManager) {
         this.innerObject = new AssetInner();
         this.serviceManager = serviceManager;
         this.assetName = name;
@@ -131,7 +131,7 @@ public final class AssetImpl implements Asset, Asset.Definition, Asset.Update {
         return this;
     }
 
-    public AssetImpl(AssetInner innerObject, MediaservicesManager serviceManager) {
+    AssetImpl(AssetInner innerObject, MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

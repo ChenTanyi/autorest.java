@@ -123,7 +123,7 @@ public final class ExpressRouteGatewayImpl
         return this;
     }
 
-    public ExpressRouteGatewayImpl(String name, NetworkManager serviceManager) {
+    ExpressRouteGatewayImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new ExpressRouteGatewayInner();
         this.serviceManager = serviceManager;
         this.expressRouteGatewayName = name;
@@ -151,7 +151,7 @@ public final class ExpressRouteGatewayImpl
         return this;
     }
 
-    public ExpressRouteGatewayImpl(ExpressRouteGatewayInner innerObject, NetworkManager serviceManager) {
+    ExpressRouteGatewayImpl(ExpressRouteGatewayInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

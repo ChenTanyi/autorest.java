@@ -146,7 +146,7 @@ public final class VirtualNetworkTapImpl
         return this;
     }
 
-    public VirtualNetworkTapImpl(String name, NetworkManager serviceManager) {
+    VirtualNetworkTapImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new VirtualNetworkTapInner();
         this.serviceManager = serviceManager;
         this.tapName = name;
@@ -177,7 +177,7 @@ public final class VirtualNetworkTapImpl
         return this;
     }
 
-    public VirtualNetworkTapImpl(VirtualNetworkTapInner innerObject, NetworkManager serviceManager) {
+    VirtualNetworkTapImpl(VirtualNetworkTapInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

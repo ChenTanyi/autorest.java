@@ -16,8 +16,7 @@ public final class KeyVaultReferenceCollectionImpl implements KeyVaultReferenceC
 
     private final WebSiteManager serviceManager;
 
-    public KeyVaultReferenceCollectionImpl(
-        KeyVaultReferenceCollectionInner innerObject, WebSiteManager serviceManager) {
+    KeyVaultReferenceCollectionImpl(KeyVaultReferenceCollectionInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

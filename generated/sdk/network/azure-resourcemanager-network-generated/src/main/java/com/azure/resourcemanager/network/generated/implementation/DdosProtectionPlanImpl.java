@@ -113,7 +113,7 @@ public final class DdosProtectionPlanImpl
         return this;
     }
 
-    public DdosProtectionPlanImpl(String name, NetworkManager serviceManager) {
+    DdosProtectionPlanImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new DdosProtectionPlanInner();
         this.serviceManager = serviceManager;
         this.ddosProtectionPlanName = name;
@@ -144,7 +144,7 @@ public final class DdosProtectionPlanImpl
         return this;
     }
 
-    public DdosProtectionPlanImpl(DdosProtectionPlanInner innerObject, NetworkManager serviceManager) {
+    DdosProtectionPlanImpl(DdosProtectionPlanInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

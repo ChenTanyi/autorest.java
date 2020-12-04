@@ -14,7 +14,7 @@ public final class GroupIdInformationImpl implements GroupIdInformation {
 
     private final IotHubManager serviceManager;
 
-    public GroupIdInformationImpl(GroupIdInformationInner innerObject, IotHubManager serviceManager) {
+    GroupIdInformationImpl(GroupIdInformationInner innerObject, IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

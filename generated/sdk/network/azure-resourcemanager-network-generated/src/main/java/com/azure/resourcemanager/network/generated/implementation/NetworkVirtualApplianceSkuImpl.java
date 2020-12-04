@@ -17,7 +17,7 @@ public final class NetworkVirtualApplianceSkuImpl implements NetworkVirtualAppli
 
     private final NetworkManager serviceManager;
 
-    public NetworkVirtualApplianceSkuImpl(NetworkVirtualApplianceSkuInner innerObject, NetworkManager serviceManager) {
+    NetworkVirtualApplianceSkuImpl(NetworkVirtualApplianceSkuInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

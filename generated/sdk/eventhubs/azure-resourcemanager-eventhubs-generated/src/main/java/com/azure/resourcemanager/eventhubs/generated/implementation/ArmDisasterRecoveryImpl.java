@@ -89,7 +89,7 @@ public final class ArmDisasterRecoveryImpl
         return this;
     }
 
-    public ArmDisasterRecoveryImpl(String name, EventHubsManager serviceManager) {
+    ArmDisasterRecoveryImpl(String name, EventHubsManager serviceManager) {
         this.innerObject = new ArmDisasterRecoveryInner();
         this.serviceManager = serviceManager;
         this.alias = name;
@@ -119,7 +119,7 @@ public final class ArmDisasterRecoveryImpl
         return this;
     }
 
-    public ArmDisasterRecoveryImpl(ArmDisasterRecoveryInner innerObject, EventHubsManager serviceManager) {
+    ArmDisasterRecoveryImpl(ArmDisasterRecoveryInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

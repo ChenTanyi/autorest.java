@@ -16,7 +16,7 @@ public final class RoleInstancePropertiesImpl implements RoleInstanceProperties 
 
     private final ComputeManager serviceManager;
 
-    public RoleInstancePropertiesImpl(RoleInstancePropertiesInner innerObject, ComputeManager serviceManager) {
+    RoleInstancePropertiesImpl(RoleInstancePropertiesInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

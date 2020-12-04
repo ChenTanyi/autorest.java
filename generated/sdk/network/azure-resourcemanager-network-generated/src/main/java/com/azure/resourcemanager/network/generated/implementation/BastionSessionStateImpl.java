@@ -13,7 +13,7 @@ public final class BastionSessionStateImpl implements BastionSessionState {
 
     private final NetworkManager serviceManager;
 
-    public BastionSessionStateImpl(BastionSessionStateInner innerObject, NetworkManager serviceManager) {
+    BastionSessionStateImpl(BastionSessionStateInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

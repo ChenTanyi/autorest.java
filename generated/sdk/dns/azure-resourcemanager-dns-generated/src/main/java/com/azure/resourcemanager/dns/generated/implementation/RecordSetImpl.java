@@ -27,7 +27,7 @@ public final class RecordSetImpl implements RecordSet {
 
     private final DnsManager serviceManager;
 
-    public RecordSetImpl(RecordSetInner innerObject, DnsManager serviceManager) {
+    RecordSetImpl(RecordSetInner innerObject, DnsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

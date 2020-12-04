@@ -17,7 +17,7 @@ public final class SiteAuthSettingsImpl implements SiteAuthSettings {
 
     private final WebSiteManager serviceManager;
 
-    public SiteAuthSettingsImpl(SiteAuthSettingsInner innerObject, WebSiteManager serviceManager) {
+    SiteAuthSettingsImpl(SiteAuthSettingsInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

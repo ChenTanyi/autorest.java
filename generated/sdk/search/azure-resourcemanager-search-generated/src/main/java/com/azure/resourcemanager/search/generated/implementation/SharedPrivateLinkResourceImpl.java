@@ -87,7 +87,7 @@ public final class SharedPrivateLinkResourceImpl
         return this;
     }
 
-    public SharedPrivateLinkResourceImpl(String name, SearchManager serviceManager) {
+    SharedPrivateLinkResourceImpl(String name, SearchManager serviceManager) {
         this.innerObject = new SharedPrivateLinkResourceInner();
         this.serviceManager = serviceManager;
         this.sharedPrivateLinkResourceName = name;
@@ -129,7 +129,7 @@ public final class SharedPrivateLinkResourceImpl
         return this;
     }
 
-    public SharedPrivateLinkResourceImpl(SharedPrivateLinkResourceInner innerObject, SearchManager serviceManager) {
+    SharedPrivateLinkResourceImpl(SharedPrivateLinkResourceInner innerObject, SearchManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

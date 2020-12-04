@@ -69,7 +69,7 @@ public final class TableServicePropertiesImpl
         return this;
     }
 
-    public TableServicePropertiesImpl(String name, StorageManager serviceManager) {
+    TableServicePropertiesImpl(String name, StorageManager serviceManager) {
         this.innerObject = new TableServicePropertiesInner();
         this.serviceManager = serviceManager;
         this.accountName = name;
@@ -99,7 +99,7 @@ public final class TableServicePropertiesImpl
         return this;
     }
 
-    public TableServicePropertiesImpl(TableServicePropertiesInner innerObject, StorageManager serviceManager) {
+    TableServicePropertiesImpl(TableServicePropertiesInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

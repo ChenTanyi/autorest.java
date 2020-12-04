@@ -122,7 +122,7 @@ public final class ExperimentImpl implements Experiment, Experiment.Definition, 
         return this;
     }
 
-    public ExperimentImpl(String name, FrontDoorManager serviceManager) {
+    ExperimentImpl(String name, FrontDoorManager serviceManager) {
         this.innerObject = new ExperimentInner();
         this.serviceManager = serviceManager;
         this.experimentName = name;
@@ -151,7 +151,7 @@ public final class ExperimentImpl implements Experiment, Experiment.Definition, 
         return this;
     }
 
-    public ExperimentImpl(ExperimentInner innerObject, FrontDoorManager serviceManager) {
+    ExperimentImpl(ExperimentInner innerObject, FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

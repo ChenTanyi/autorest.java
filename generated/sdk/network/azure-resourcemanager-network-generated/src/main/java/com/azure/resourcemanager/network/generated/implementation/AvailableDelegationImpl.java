@@ -15,7 +15,7 @@ public final class AvailableDelegationImpl implements AvailableDelegation {
 
     private final NetworkManager serviceManager;
 
-    public AvailableDelegationImpl(AvailableDelegationInner innerObject, NetworkManager serviceManager) {
+    AvailableDelegationImpl(AvailableDelegationInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -16,7 +16,7 @@ public final class EHNamespaceIdListResultImpl implements EHNamespaceIdListResul
 
     private final EventHubsManager serviceManager;
 
-    public EHNamespaceIdListResultImpl(EHNamespaceIdListResultInner innerObject, EventHubsManager serviceManager) {
+    EHNamespaceIdListResultImpl(EHNamespaceIdListResultInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

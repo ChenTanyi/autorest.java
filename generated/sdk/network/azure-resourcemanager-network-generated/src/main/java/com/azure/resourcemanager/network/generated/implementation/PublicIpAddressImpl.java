@@ -175,7 +175,7 @@ public final class PublicIpAddressImpl implements PublicIpAddress, PublicIpAddre
         return this;
     }
 
-    public PublicIpAddressImpl(String name, NetworkManager serviceManager) {
+    PublicIpAddressImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new PublicIpAddressInner();
         this.serviceManager = serviceManager;
         this.publicIpAddressName = name;
@@ -206,7 +206,7 @@ public final class PublicIpAddressImpl implements PublicIpAddress, PublicIpAddre
         return this;
     }
 
-    public PublicIpAddressImpl(PublicIpAddressInner innerObject, NetworkManager serviceManager) {
+    PublicIpAddressImpl(PublicIpAddressInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

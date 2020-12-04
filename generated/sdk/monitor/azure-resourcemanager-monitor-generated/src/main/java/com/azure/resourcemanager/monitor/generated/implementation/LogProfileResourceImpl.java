@@ -116,7 +116,7 @@ public final class LogProfileResourceImpl
         return this;
     }
 
-    public LogProfileResourceImpl(String name, MonitorManager serviceManager) {
+    LogProfileResourceImpl(String name, MonitorManager serviceManager) {
         this.innerObject = new LogProfileResourceInner();
         this.serviceManager = serviceManager;
         this.logProfileName = name;
@@ -147,7 +147,7 @@ public final class LogProfileResourceImpl
         return this;
     }
 
-    public LogProfileResourceImpl(LogProfileResourceInner innerObject, MonitorManager serviceManager) {
+    LogProfileResourceImpl(LogProfileResourceInner innerObject, MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.logProfileName = Utils.getValueFromIdByName(innerObject.id(), "logprofiles");

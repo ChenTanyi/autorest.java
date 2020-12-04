@@ -21,7 +21,7 @@ public final class MetricDefinitionImpl implements MetricDefinition {
 
     private final MonitorManager serviceManager;
 
-    public MetricDefinitionImpl(MetricDefinitionInner innerObject, MonitorManager serviceManager) {
+    MetricDefinitionImpl(MetricDefinitionInner innerObject, MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

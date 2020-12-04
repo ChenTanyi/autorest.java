@@ -108,42 +108,6 @@ public interface RoleAssignments {
     Response<RoleAssignment> deleteWithResponse(String scope, String roleAssignmentName, Context context);
 
     /**
-     * Creates a role assignment.
-     *
-     * @param scope The scope of the role assignment to create. The scope can be any REST resource instance. For
-     *     example, use '/subscriptions/{subscription-id}/' for a subscription,
-     *     '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and
-     *     '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}'
-     *     for a resource.
-     * @param roleAssignmentName The name of the role assignment to create. It can be any valid GUID.
-     * @param parameters Parameters for the role assignment.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role Assignments.
-     */
-    RoleAssignment create(String scope, String roleAssignmentName, RoleAssignmentCreateParameters parameters);
-
-    /**
-     * Creates a role assignment.
-     *
-     * @param scope The scope of the role assignment to create. The scope can be any REST resource instance. For
-     *     example, use '/subscriptions/{subscription-id}/' for a subscription,
-     *     '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and
-     *     '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}'
-     *     for a resource.
-     * @param roleAssignmentName The name of the role assignment to create. It can be any valid GUID.
-     * @param parameters Parameters for the role assignment.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role Assignments.
-     */
-    Response<RoleAssignment> createWithResponse(
-        String scope, String roleAssignmentName, RoleAssignmentCreateParameters parameters, Context context);
-
-    /**
      * Get the specified role assignment.
      *
      * @param scope The scope of the role assignment.
@@ -288,4 +252,12 @@ public interface RoleAssignments {
      * @return role assignments for a scope.
      */
     PagedIterable<RoleAssignment> listForScope(String scope, String filter, Context context);
+
+    /**
+     * Begins definition for a new RoleAssignment resource.
+     *
+     * @param name resource name.
+     * @return the first stage of the new RoleAssignment definition.
+     */
+    RoleAssignment.DefinitionStages.Blank define(String name);
 }

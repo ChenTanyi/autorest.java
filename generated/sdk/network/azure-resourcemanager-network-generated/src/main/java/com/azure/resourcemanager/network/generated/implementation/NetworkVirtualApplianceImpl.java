@@ -172,7 +172,7 @@ public final class NetworkVirtualApplianceImpl
         return this;
     }
 
-    public NetworkVirtualApplianceImpl(String name, NetworkManager serviceManager) {
+    NetworkVirtualApplianceImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new NetworkVirtualApplianceInner();
         this.serviceManager = serviceManager;
         this.networkVirtualApplianceName = name;
@@ -203,7 +203,7 @@ public final class NetworkVirtualApplianceImpl
         return this;
     }
 
-    public NetworkVirtualApplianceImpl(NetworkVirtualApplianceInner innerObject, NetworkManager serviceManager) {
+    NetworkVirtualApplianceImpl(NetworkVirtualApplianceInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

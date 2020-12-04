@@ -16,7 +16,7 @@ public final class PrivateLinkResourcesListResultImpl implements PrivateLinkReso
 
     private final EventHubsManager serviceManager;
 
-    public PrivateLinkResourcesListResultImpl(
+    PrivateLinkResourcesListResultImpl(
         PrivateLinkResourcesListResultInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

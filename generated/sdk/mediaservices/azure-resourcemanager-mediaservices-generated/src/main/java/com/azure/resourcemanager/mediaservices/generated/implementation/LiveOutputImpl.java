@@ -18,7 +18,7 @@ public final class LiveOutputImpl implements LiveOutput, LiveOutput.Definition {
 
     private final MediaservicesManager serviceManager;
 
-    public LiveOutputImpl(LiveOutputInner innerObject, MediaservicesManager serviceManager) {
+    LiveOutputImpl(LiveOutputInner innerObject, MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -116,7 +116,7 @@ public final class LiveOutputImpl implements LiveOutput, LiveOutput.Definition {
         return this;
     }
 
-    public LiveOutputImpl(String name, MediaservicesManager serviceManager) {
+    LiveOutputImpl(String name, MediaservicesManager serviceManager) {
         this.innerObject = new LiveOutputInner();
         this.serviceManager = serviceManager;
         this.liveOutputName = name;

@@ -17,7 +17,7 @@ public final class ApplicationStackResourceImpl implements ApplicationStackResou
 
     private final WebSiteManager serviceManager;
 
-    public ApplicationStackResourceImpl(ApplicationStackResourceInner innerObject, WebSiteManager serviceManager) {
+    ApplicationStackResourceImpl(ApplicationStackResourceInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

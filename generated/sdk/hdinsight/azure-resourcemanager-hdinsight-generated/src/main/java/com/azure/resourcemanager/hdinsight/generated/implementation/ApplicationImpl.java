@@ -17,7 +17,7 @@ public final class ApplicationImpl implements Application, Application.Definitio
 
     private final HDInsightManager serviceManager;
 
-    public ApplicationImpl(ApplicationInner innerObject, HDInsightManager serviceManager) {
+    ApplicationImpl(ApplicationInner innerObject, HDInsightManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -89,7 +89,7 @@ public final class ApplicationImpl implements Application, Application.Definitio
         return this;
     }
 
-    public ApplicationImpl(String name, HDInsightManager serviceManager) {
+    ApplicationImpl(String name, HDInsightManager serviceManager) {
         this.innerObject = new ApplicationInner();
         this.serviceManager = serviceManager;
         this.applicationName = name;

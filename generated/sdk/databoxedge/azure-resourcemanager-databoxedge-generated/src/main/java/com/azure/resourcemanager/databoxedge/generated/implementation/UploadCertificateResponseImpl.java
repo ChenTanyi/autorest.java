@@ -14,8 +14,7 @@ public final class UploadCertificateResponseImpl implements UploadCertificateRes
 
     private final DataBoxEdgeManager serviceManager;
 
-    public UploadCertificateResponseImpl(
-        UploadCertificateResponseInner innerObject, DataBoxEdgeManager serviceManager) {
+    UploadCertificateResponseImpl(UploadCertificateResponseInner innerObject, DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

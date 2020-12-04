@@ -102,7 +102,7 @@ public final class WorkerPoolResourceImpl
         return this;
     }
 
-    public WorkerPoolResourceImpl(String name, WebSiteManager serviceManager) {
+    WorkerPoolResourceImpl(String name, WebSiteManager serviceManager) {
         this.innerObject = new WorkerPoolResourceInner();
         this.serviceManager = serviceManager;
         this.workerPoolName = name;
@@ -132,7 +132,7 @@ public final class WorkerPoolResourceImpl
         return this;
     }
 
-    public WorkerPoolResourceImpl(WorkerPoolResourceInner innerObject, WebSiteManager serviceManager) {
+    WorkerPoolResourceImpl(WorkerPoolResourceInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

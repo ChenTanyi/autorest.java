@@ -18,7 +18,7 @@ public final class VirtualNetworkPeeringImpl implements VirtualNetworkPeering {
 
     private final NetworkManager serviceManager;
 
-    public VirtualNetworkPeeringImpl(VirtualNetworkPeeringInner innerObject, NetworkManager serviceManager) {
+    VirtualNetworkPeeringImpl(VirtualNetworkPeeringInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

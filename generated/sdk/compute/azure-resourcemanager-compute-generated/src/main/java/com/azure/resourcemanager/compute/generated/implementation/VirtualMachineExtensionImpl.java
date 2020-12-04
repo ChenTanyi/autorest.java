@@ -133,7 +133,7 @@ public final class VirtualMachineExtensionImpl
         return this;
     }
 
-    public VirtualMachineExtensionImpl(String name, ComputeManager serviceManager) {
+    VirtualMachineExtensionImpl(String name, ComputeManager serviceManager) {
         this.innerObject = new VirtualMachineExtensionInner();
         this.serviceManager = serviceManager;
         this.vmExtensionName = name;
@@ -162,7 +162,7 @@ public final class VirtualMachineExtensionImpl
         return this;
     }
 
-    public VirtualMachineExtensionImpl(VirtualMachineExtensionInner innerObject, ComputeManager serviceManager) {
+    VirtualMachineExtensionImpl(VirtualMachineExtensionInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

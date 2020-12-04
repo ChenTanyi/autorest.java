@@ -17,7 +17,7 @@ public final class LoadBalancingRuleImpl implements LoadBalancingRule {
 
     private final NetworkManager serviceManager;
 
-    public LoadBalancingRuleImpl(LoadBalancingRuleInner innerObject, NetworkManager serviceManager) {
+    LoadBalancingRuleImpl(LoadBalancingRuleInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

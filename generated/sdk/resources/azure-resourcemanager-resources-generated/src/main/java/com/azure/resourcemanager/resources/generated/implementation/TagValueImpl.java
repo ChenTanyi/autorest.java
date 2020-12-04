@@ -14,7 +14,7 @@ public final class TagValueImpl implements TagValue {
 
     private final ResourceManager serviceManager;
 
-    public TagValueImpl(TagValueInner innerObject, ResourceManager serviceManager) {
+    TagValueImpl(TagValueInner innerObject, ResourceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

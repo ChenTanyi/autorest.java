@@ -17,7 +17,7 @@ public final class SiteExtensionInfoImpl implements SiteExtensionInfo {
 
     private final WebSiteManager serviceManager;
 
-    public SiteExtensionInfoImpl(SiteExtensionInfoInner innerObject, WebSiteManager serviceManager) {
+    SiteExtensionInfoImpl(SiteExtensionInfoInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

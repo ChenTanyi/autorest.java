@@ -15,7 +15,7 @@ public final class VirtualMachineScaleSetSkuImpl implements VirtualMachineScaleS
 
     private final ComputeManager serviceManager;
 
-    public VirtualMachineScaleSetSkuImpl(VirtualMachineScaleSetSkuInner innerObject, ComputeManager serviceManager) {
+    VirtualMachineScaleSetSkuImpl(VirtualMachineScaleSetSkuInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

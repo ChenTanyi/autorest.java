@@ -15,7 +15,7 @@ public final class MSDeployStatusImpl implements MSDeployStatus {
 
     private final WebSiteManager serviceManager;
 
-    public MSDeployStatusImpl(MSDeployStatusInner innerObject, WebSiteManager serviceManager) {
+    MSDeployStatusImpl(MSDeployStatusInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

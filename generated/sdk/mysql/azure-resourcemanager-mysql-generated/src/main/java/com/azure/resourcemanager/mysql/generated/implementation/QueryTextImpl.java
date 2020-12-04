@@ -13,7 +13,7 @@ public final class QueryTextImpl implements QueryText {
 
     private final MySqlManager serviceManager;
 
-    public QueryTextImpl(QueryTextInner innerObject, MySqlManager serviceManager) {
+    QueryTextImpl(QueryTextInner innerObject, MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

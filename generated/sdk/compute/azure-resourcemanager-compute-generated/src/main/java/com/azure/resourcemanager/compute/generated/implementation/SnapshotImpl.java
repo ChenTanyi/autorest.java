@@ -161,7 +161,7 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
         return this;
     }
 
-    public SnapshotImpl(String name, ComputeManager serviceManager) {
+    SnapshotImpl(String name, ComputeManager serviceManager) {
         this.innerObject = new SnapshotInner();
         this.serviceManager = serviceManager;
         this.snapshotName = name;
@@ -190,7 +190,7 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
         return this;
     }
 
-    public SnapshotImpl(SnapshotInner innerObject, ComputeManager serviceManager) {
+    SnapshotImpl(SnapshotInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

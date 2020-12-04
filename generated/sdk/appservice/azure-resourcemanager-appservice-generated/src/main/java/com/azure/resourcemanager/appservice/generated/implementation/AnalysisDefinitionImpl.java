@@ -13,7 +13,7 @@ public final class AnalysisDefinitionImpl implements AnalysisDefinition {
 
     private final WebSiteManager serviceManager;
 
-    public AnalysisDefinitionImpl(AnalysisDefinitionInner innerObject, WebSiteManager serviceManager) {
+    AnalysisDefinitionImpl(AnalysisDefinitionInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

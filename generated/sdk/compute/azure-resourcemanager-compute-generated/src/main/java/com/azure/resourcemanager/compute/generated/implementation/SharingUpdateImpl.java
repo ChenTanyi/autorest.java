@@ -17,7 +17,7 @@ public final class SharingUpdateImpl implements SharingUpdate {
 
     private final ComputeManager serviceManager;
 
-    public SharingUpdateImpl(SharingUpdateInner innerObject, ComputeManager serviceManager) {
+    SharingUpdateImpl(SharingUpdateInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

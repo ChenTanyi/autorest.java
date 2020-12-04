@@ -16,7 +16,7 @@ public final class AddressResponseImpl implements AddressResponse {
 
     private final WebSiteManager serviceManager;
 
-    public AddressResponseImpl(AddressResponseInner innerObject, WebSiteManager serviceManager) {
+    AddressResponseImpl(AddressResponseInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

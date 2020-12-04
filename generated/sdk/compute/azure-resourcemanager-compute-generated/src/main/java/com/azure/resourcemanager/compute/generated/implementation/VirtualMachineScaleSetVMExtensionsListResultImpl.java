@@ -19,7 +19,7 @@ public final class VirtualMachineScaleSetVMExtensionsListResultImpl
 
     private final ComputeManager serviceManager;
 
-    public VirtualMachineScaleSetVMExtensionsListResultImpl(
+    VirtualMachineScaleSetVMExtensionsListResultImpl(
         VirtualMachineScaleSetVMExtensionsListResultInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

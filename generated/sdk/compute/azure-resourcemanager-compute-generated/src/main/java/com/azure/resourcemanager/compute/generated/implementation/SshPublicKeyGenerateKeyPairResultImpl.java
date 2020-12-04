@@ -13,7 +13,7 @@ public final class SshPublicKeyGenerateKeyPairResultImpl implements SshPublicKey
 
     private final ComputeManager serviceManager;
 
-    public SshPublicKeyGenerateKeyPairResultImpl(
+    SshPublicKeyGenerateKeyPairResultImpl(
         SshPublicKeyGenerateKeyPairResultInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

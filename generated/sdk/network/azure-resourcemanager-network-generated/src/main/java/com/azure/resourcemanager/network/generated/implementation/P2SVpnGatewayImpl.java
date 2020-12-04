@@ -139,7 +139,7 @@ public final class P2SVpnGatewayImpl implements P2SVpnGateway, P2SVpnGateway.Def
         return this;
     }
 
-    public P2SVpnGatewayImpl(String name, NetworkManager serviceManager) {
+    P2SVpnGatewayImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new P2SVpnGatewayInner();
         this.serviceManager = serviceManager;
         this.gatewayName = name;
@@ -168,7 +168,7 @@ public final class P2SVpnGatewayImpl implements P2SVpnGateway, P2SVpnGateway.Def
         return this;
     }
 
-    public P2SVpnGatewayImpl(P2SVpnGatewayInner innerObject, NetworkManager serviceManager) {
+    P2SVpnGatewayImpl(P2SVpnGatewayInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

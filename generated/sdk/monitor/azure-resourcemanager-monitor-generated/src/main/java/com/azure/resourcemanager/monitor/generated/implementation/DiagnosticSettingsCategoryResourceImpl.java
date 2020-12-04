@@ -14,7 +14,7 @@ public final class DiagnosticSettingsCategoryResourceImpl implements DiagnosticS
 
     private final MonitorManager serviceManager;
 
-    public DiagnosticSettingsCategoryResourceImpl(
+    DiagnosticSettingsCategoryResourceImpl(
         DiagnosticSettingsCategoryResourceInner innerObject, MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

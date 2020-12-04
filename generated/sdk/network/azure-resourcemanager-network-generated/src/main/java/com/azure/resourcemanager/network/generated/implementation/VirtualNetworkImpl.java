@@ -174,7 +174,7 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
         return this;
     }
 
-    public VirtualNetworkImpl(String name, NetworkManager serviceManager) {
+    VirtualNetworkImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new VirtualNetworkInner();
         this.serviceManager = serviceManager;
         this.virtualNetworkName = name;
@@ -205,7 +205,7 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
         return this;
     }
 
-    public VirtualNetworkImpl(VirtualNetworkInner innerObject, NetworkManager serviceManager) {
+    VirtualNetworkImpl(VirtualNetworkInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

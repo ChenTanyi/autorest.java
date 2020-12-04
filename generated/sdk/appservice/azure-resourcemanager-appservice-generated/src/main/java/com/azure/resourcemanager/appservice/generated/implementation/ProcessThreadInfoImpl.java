@@ -14,7 +14,7 @@ public final class ProcessThreadInfoImpl implements ProcessThreadInfo {
 
     private final WebSiteManager serviceManager;
 
-    public ProcessThreadInfoImpl(ProcessThreadInfoInner innerObject, WebSiteManager serviceManager) {
+    ProcessThreadInfoImpl(ProcessThreadInfoInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

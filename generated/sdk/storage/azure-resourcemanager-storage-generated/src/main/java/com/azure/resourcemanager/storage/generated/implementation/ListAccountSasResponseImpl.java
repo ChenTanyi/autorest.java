@@ -13,7 +13,7 @@ public final class ListAccountSasResponseImpl implements ListAccountSasResponse 
 
     private final StorageManager serviceManager;
 
-    public ListAccountSasResponseImpl(ListAccountSasResponseInner innerObject, StorageManager serviceManager) {
+    ListAccountSasResponseImpl(ListAccountSasResponseInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

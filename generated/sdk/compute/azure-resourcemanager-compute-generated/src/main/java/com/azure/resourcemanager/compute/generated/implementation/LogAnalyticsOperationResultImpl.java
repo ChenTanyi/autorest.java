@@ -14,8 +14,7 @@ public final class LogAnalyticsOperationResultImpl implements LogAnalyticsOperat
 
     private final ComputeManager serviceManager;
 
-    public LogAnalyticsOperationResultImpl(
-        LogAnalyticsOperationResultInner innerObject, ComputeManager serviceManager) {
+    LogAnalyticsOperationResultImpl(LogAnalyticsOperationResultInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

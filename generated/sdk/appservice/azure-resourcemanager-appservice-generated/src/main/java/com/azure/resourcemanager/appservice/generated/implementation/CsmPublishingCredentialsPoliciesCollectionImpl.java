@@ -16,7 +16,7 @@ public final class CsmPublishingCredentialsPoliciesCollectionImpl
 
     private final WebSiteManager serviceManager;
 
-    public CsmPublishingCredentialsPoliciesCollectionImpl(
+    CsmPublishingCredentialsPoliciesCollectionImpl(
         CsmPublishingCredentialsPoliciesCollectionInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

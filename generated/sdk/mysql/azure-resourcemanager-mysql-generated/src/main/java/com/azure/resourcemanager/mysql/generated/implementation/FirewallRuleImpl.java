@@ -72,7 +72,7 @@ public final class FirewallRuleImpl implements FirewallRule, FirewallRule.Defini
         return this;
     }
 
-    public FirewallRuleImpl(String name, MySqlManager serviceManager) {
+    FirewallRuleImpl(String name, MySqlManager serviceManager) {
         this.innerObject = new FirewallRuleInner();
         this.serviceManager = serviceManager;
         this.firewallRuleName = name;
@@ -100,7 +100,7 @@ public final class FirewallRuleImpl implements FirewallRule, FirewallRule.Defini
         return this;
     }
 
-    public FirewallRuleImpl(FirewallRuleInner innerObject, MySqlManager serviceManager) {
+    FirewallRuleImpl(FirewallRuleInner innerObject, MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -13,7 +13,7 @@ public final class ConnectionResetSharedKeyImpl implements ConnectionResetShared
 
     private final NetworkManager serviceManager;
 
-    public ConnectionResetSharedKeyImpl(ConnectionResetSharedKeyInner innerObject, NetworkManager serviceManager) {
+    ConnectionResetSharedKeyImpl(ConnectionResetSharedKeyInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

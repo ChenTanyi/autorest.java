@@ -108,7 +108,7 @@ public final class ServerSecurityAlertPolicyImpl
         return this;
     }
 
-    public ServerSecurityAlertPolicyImpl(SecurityAlertPolicyName name, MySqlManager serviceManager) {
+    ServerSecurityAlertPolicyImpl(SecurityAlertPolicyName name, MySqlManager serviceManager) {
         this.innerObject = new ServerSecurityAlertPolicyInner();
         this.serviceManager = serviceManager;
         this.securityAlertPolicyName = name;
@@ -137,7 +137,7 @@ public final class ServerSecurityAlertPolicyImpl
         return this;
     }
 
-    public ServerSecurityAlertPolicyImpl(ServerSecurityAlertPolicyInner innerObject, MySqlManager serviceManager) {
+    ServerSecurityAlertPolicyImpl(ServerSecurityAlertPolicyInner innerObject, MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

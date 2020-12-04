@@ -88,7 +88,7 @@ public final class VnetRouteImpl implements VnetRoute, VnetRoute.Definition, Vne
         return this;
     }
 
-    public VnetRouteImpl(String name, WebSiteManager serviceManager) {
+    VnetRouteImpl(String name, WebSiteManager serviceManager) {
         this.innerObject = new VnetRouteInner();
         this.serviceManager = serviceManager;
         this.routeName = name;
@@ -119,7 +119,7 @@ public final class VnetRouteImpl implements VnetRoute, VnetRoute.Definition, Vne
         return this;
     }
 
-    public VnetRouteImpl(VnetRouteInner innerObject, WebSiteManager serviceManager) {
+    VnetRouteImpl(VnetRouteInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

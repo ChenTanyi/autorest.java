@@ -18,7 +18,7 @@ public final class RouteFilterRuleImpl implements RouteFilterRule {
 
     private final NetworkManager serviceManager;
 
-    public RouteFilterRuleImpl(RouteFilterRuleInner innerObject, NetworkManager serviceManager) {
+    RouteFilterRuleImpl(RouteFilterRuleInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

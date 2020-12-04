@@ -13,7 +13,7 @@ public final class P2SVpnConnectionHealthImpl implements P2SVpnConnectionHealth 
 
     private final NetworkManager serviceManager;
 
-    public P2SVpnConnectionHealthImpl(P2SVpnConnectionHealthInner innerObject, NetworkManager serviceManager) {
+    P2SVpnConnectionHealthImpl(P2SVpnConnectionHealthInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

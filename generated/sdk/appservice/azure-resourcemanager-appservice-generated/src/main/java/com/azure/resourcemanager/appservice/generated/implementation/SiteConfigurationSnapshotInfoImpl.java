@@ -14,8 +14,7 @@ public final class SiteConfigurationSnapshotInfoImpl implements SiteConfiguratio
 
     private final WebSiteManager serviceManager;
 
-    public SiteConfigurationSnapshotInfoImpl(
-        SiteConfigurationSnapshotInfoInner innerObject, WebSiteManager serviceManager) {
+    SiteConfigurationSnapshotInfoImpl(SiteConfigurationSnapshotInfoInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

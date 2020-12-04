@@ -14,7 +14,7 @@ public final class CheckNameAvailabilityOutputImpl implements CheckNameAvailabil
 
     private final SearchManager serviceManager;
 
-    public CheckNameAvailabilityOutputImpl(CheckNameAvailabilityOutputInner innerObject, SearchManager serviceManager) {
+    CheckNameAvailabilityOutputImpl(CheckNameAvailabilityOutputInner innerObject, SearchManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

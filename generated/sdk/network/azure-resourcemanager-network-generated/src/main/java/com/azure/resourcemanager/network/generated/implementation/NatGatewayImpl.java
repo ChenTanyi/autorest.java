@@ -148,7 +148,7 @@ public final class NatGatewayImpl implements NatGateway, NatGateway.Definition, 
         return this;
     }
 
-    public NatGatewayImpl(String name, NetworkManager serviceManager) {
+    NatGatewayImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new NatGatewayInner();
         this.serviceManager = serviceManager;
         this.natGatewayName = name;
@@ -179,7 +179,7 @@ public final class NatGatewayImpl implements NatGateway, NatGateway.Definition, 
         return this;
     }
 
-    public NatGatewayImpl(NatGatewayInner innerObject, NetworkManager serviceManager) {
+    NatGatewayImpl(NatGatewayInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

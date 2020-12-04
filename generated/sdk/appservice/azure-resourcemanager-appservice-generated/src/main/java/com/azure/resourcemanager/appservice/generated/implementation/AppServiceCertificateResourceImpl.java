@@ -113,7 +113,7 @@ public final class AppServiceCertificateResourceImpl
         return this;
     }
 
-    public AppServiceCertificateResourceImpl(String name, WebSiteManager serviceManager) {
+    AppServiceCertificateResourceImpl(String name, WebSiteManager serviceManager) {
         this.innerObject = new AppServiceCertificateResourceInner();
         this.serviceManager = serviceManager;
         this.name = name;
@@ -146,8 +146,7 @@ public final class AppServiceCertificateResourceImpl
         return this;
     }
 
-    public AppServiceCertificateResourceImpl(
-        AppServiceCertificateResourceInner innerObject, WebSiteManager serviceManager) {
+    AppServiceCertificateResourceImpl(AppServiceCertificateResourceInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

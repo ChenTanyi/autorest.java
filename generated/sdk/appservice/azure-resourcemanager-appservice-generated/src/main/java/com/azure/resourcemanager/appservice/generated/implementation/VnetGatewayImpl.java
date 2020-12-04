@@ -87,7 +87,7 @@ public final class VnetGatewayImpl implements VnetGateway, VnetGateway.Definitio
         return this;
     }
 
-    public VnetGatewayImpl(String name, WebSiteManager serviceManager) {
+    VnetGatewayImpl(String name, WebSiteManager serviceManager) {
         this.innerObject = new VnetGatewayInner();
         this.serviceManager = serviceManager;
         this.gatewayName = name;
@@ -119,7 +119,7 @@ public final class VnetGatewayImpl implements VnetGateway, VnetGateway.Definitio
         return this;
     }
 
-    public VnetGatewayImpl(VnetGatewayInner innerObject, WebSiteManager serviceManager) {
+    VnetGatewayImpl(VnetGatewayInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

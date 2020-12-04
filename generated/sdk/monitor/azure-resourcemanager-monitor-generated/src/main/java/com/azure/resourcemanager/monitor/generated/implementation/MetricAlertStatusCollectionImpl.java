@@ -16,8 +16,7 @@ public final class MetricAlertStatusCollectionImpl implements MetricAlertStatusC
 
     private final MonitorManager serviceManager;
 
-    public MetricAlertStatusCollectionImpl(
-        MetricAlertStatusCollectionInner innerObject, MonitorManager serviceManager) {
+    MetricAlertStatusCollectionImpl(MetricAlertStatusCollectionInner innerObject, MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

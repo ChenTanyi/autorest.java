@@ -15,7 +15,7 @@ public final class StaticSiteBuildArmResourceImpl implements StaticSiteBuildArmR
 
     private final WebSiteManager serviceManager;
 
-    public StaticSiteBuildArmResourceImpl(StaticSiteBuildArmResourceInner innerObject, WebSiteManager serviceManager) {
+    StaticSiteBuildArmResourceImpl(StaticSiteBuildArmResourceInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

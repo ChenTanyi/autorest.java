@@ -119,7 +119,7 @@ public final class GalleryApplicationImpl
         return this;
     }
 
-    public GalleryApplicationImpl(String name, ComputeManager serviceManager) {
+    GalleryApplicationImpl(String name, ComputeManager serviceManager) {
         this.innerObject = new GalleryApplicationInner();
         this.serviceManager = serviceManager;
         this.galleryApplicationName = name;
@@ -148,7 +148,7 @@ public final class GalleryApplicationImpl
         return this;
     }
 
-    public GalleryApplicationImpl(GalleryApplicationInner innerObject, ComputeManager serviceManager) {
+    GalleryApplicationImpl(GalleryApplicationInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

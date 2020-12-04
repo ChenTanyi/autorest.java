@@ -18,7 +18,7 @@ public final class ExpressRouteCrossConnectionPeeringImpl implements ExpressRout
 
     private final NetworkManager serviceManager;
 
-    public ExpressRouteCrossConnectionPeeringImpl(
+    ExpressRouteCrossConnectionPeeringImpl(
         ExpressRouteCrossConnectionPeeringInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

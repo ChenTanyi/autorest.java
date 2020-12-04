@@ -14,7 +14,7 @@ public final class BastionActiveSessionImpl implements BastionActiveSession {
 
     private final NetworkManager serviceManager;
 
-    public BastionActiveSessionImpl(BastionActiveSessionInner innerObject, NetworkManager serviceManager) {
+    BastionActiveSessionImpl(BastionActiveSessionInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -17,7 +17,7 @@ public final class CalculateBaselineResponseImpl implements CalculateBaselineRes
 
     private final MonitorManager serviceManager;
 
-    public CalculateBaselineResponseImpl(CalculateBaselineResponseInner innerObject, MonitorManager serviceManager) {
+    CalculateBaselineResponseImpl(CalculateBaselineResponseInner innerObject, MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

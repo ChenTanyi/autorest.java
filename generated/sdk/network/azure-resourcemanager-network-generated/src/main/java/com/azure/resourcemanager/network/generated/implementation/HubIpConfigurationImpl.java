@@ -105,7 +105,7 @@ public final class HubIpConfigurationImpl
         return this;
     }
 
-    public HubIpConfigurationImpl(String name, NetworkManager serviceManager) {
+    HubIpConfigurationImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new HubIpConfigurationInner();
         this.serviceManager = serviceManager;
         this.ipConfigName = name;
@@ -133,7 +133,7 @@ public final class HubIpConfigurationImpl
         return this;
     }
 
-    public HubIpConfigurationImpl(HubIpConfigurationInner innerObject, NetworkManager serviceManager) {
+    HubIpConfigurationImpl(HubIpConfigurationInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

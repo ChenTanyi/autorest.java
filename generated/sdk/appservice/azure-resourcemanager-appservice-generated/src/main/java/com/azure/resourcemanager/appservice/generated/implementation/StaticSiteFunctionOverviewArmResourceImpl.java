@@ -14,7 +14,7 @@ public final class StaticSiteFunctionOverviewArmResourceImpl implements StaticSi
 
     private final WebSiteManager serviceManager;
 
-    public StaticSiteFunctionOverviewArmResourceImpl(
+    StaticSiteFunctionOverviewArmResourceImpl(
         StaticSiteFunctionOverviewArmResourceInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

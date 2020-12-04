@@ -13,7 +13,7 @@ public final class NetworkTraceImpl implements NetworkTrace {
 
     private final WebSiteManager serviceManager;
 
-    public NetworkTraceImpl(NetworkTraceInner innerObject, WebSiteManager serviceManager) {
+    NetworkTraceImpl(NetworkTraceInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

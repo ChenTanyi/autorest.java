@@ -18,7 +18,7 @@ public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
 
     private final IotHubManager serviceManager;
 
-    public PrivateLinkResourcesImpl(PrivateLinkResourcesInner innerObject, IotHubManager serviceManager) {
+    PrivateLinkResourcesImpl(PrivateLinkResourcesInner innerObject, IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

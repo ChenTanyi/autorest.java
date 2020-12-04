@@ -17,7 +17,7 @@ public final class BackupRequestImpl implements BackupRequest {
 
     private final WebSiteManager serviceManager;
 
-    public BackupRequestImpl(BackupRequestInner innerObject, WebSiteManager serviceManager) {
+    BackupRequestImpl(BackupRequestInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

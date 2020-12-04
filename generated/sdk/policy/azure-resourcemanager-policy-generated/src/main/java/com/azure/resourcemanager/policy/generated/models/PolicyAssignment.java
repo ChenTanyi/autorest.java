@@ -4,6 +4,8 @@
 
 package com.azure.resourcemanager.policy.generated.models;
 
+import com.azure.core.management.Region;
+import com.azure.core.util.Context;
 import com.azure.resourcemanager.policy.generated.fluent.models.PolicyAssignmentInner;
 import java.util.List;
 import java.util.Map;
@@ -112,9 +114,216 @@ public interface PolicyAssignment {
     EnforcementMode enforcementMode();
 
     /**
+     * Gets the region of the resource.
+     *
+     * @return the region of the resource.
+     */
+    Region region();
+
+    /**
+     * Gets the name of the resource region.
+     *
+     * @return the name of the resource region.
+     */
+    String regionName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.policy.generated.fluent.models.PolicyAssignmentInner object.
      *
      * @return the inner object.
      */
     PolicyAssignmentInner innerModel();
+
+    /** The entirety of the PolicyAssignment definition. */
+    interface Definition extends DefinitionStages.Blank, DefinitionStages.WithScopeStage, DefinitionStages.WithCreate {
+    }
+    /** The PolicyAssignment definition stages. */
+    interface DefinitionStages {
+        /** The first stage of the PolicyAssignment definition. */
+        interface Blank extends WithScopeStage {
+        }
+        /** The stage of the PolicyAssignment definition allowing to specify parent resource. */
+        interface WithScopeStage {
+            /**
+             * Specifies scope.
+             *
+             * @param scope The scope of the policy assignment. Valid scopes are: management group (format:
+             *     '/providers/Microsoft.Management/managementGroups/{managementGroup}'), subscription (format:
+             *     '/subscriptions/{subscriptionId}'), resource group (format:
+             *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}', or resource (format:
+             *     '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/[{parentResourcePath}/]{resourceType}/{resourceName}'.
+             * @return the next definition stage.
+             */
+            WithCreate withExistingScope(String scope);
+        }
+        /**
+         * The stage of the PolicyAssignment definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
+         */
+        interface WithCreate
+            extends DefinitionStages.WithLocation,
+                DefinitionStages.WithSku,
+                DefinitionStages.WithIdentity,
+                DefinitionStages.WithDisplayName,
+                DefinitionStages.WithPolicyDefinitionId,
+                DefinitionStages.WithScope,
+                DefinitionStages.WithNotScopes,
+                DefinitionStages.WithParameters,
+                DefinitionStages.WithDescription,
+                DefinitionStages.WithMetadata,
+                DefinitionStages.WithEnforcementMode {
+            /**
+             * Executes the create request.
+             *
+             * @return the created resource.
+             */
+            PolicyAssignment create();
+
+            /**
+             * Executes the create request.
+             *
+             * @param context The context to associate with this operation.
+             * @return the created resource.
+             */
+            PolicyAssignment create(Context context);
+        }
+        /** The stage of the PolicyAssignment definition allowing to specify location. */
+        interface WithLocation {
+            /**
+             * Specifies the region for the resource.
+             *
+             * @param location The location of the policy assignment. Only required when utilizing managed identity.
+             * @return the next definition stage.
+             */
+            WithCreate withRegion(Region location);
+
+            /**
+             * Specifies the region for the resource.
+             *
+             * @param location The location of the policy assignment. Only required when utilizing managed identity.
+             * @return the next definition stage.
+             */
+            WithCreate withRegion(String location);
+        }
+        /** The stage of the PolicyAssignment definition allowing to specify sku. */
+        interface WithSku {
+            /**
+             * Specifies the sku property: The policy sku. This property is optional, obsolete, and will be ignored..
+             *
+             * @param sku The policy sku. This property is optional, obsolete, and will be ignored.
+             * @return the next definition stage.
+             */
+            WithCreate withSku(PolicySku sku);
+        }
+        /** The stage of the PolicyAssignment definition allowing to specify identity. */
+        interface WithIdentity {
+            /**
+             * Specifies the identity property: The managed identity associated with the policy assignment..
+             *
+             * @param identity The managed identity associated with the policy assignment.
+             * @return the next definition stage.
+             */
+            WithCreate withIdentity(Identity identity);
+        }
+        /** The stage of the PolicyAssignment definition allowing to specify displayName. */
+        interface WithDisplayName {
+            /**
+             * Specifies the displayName property: The display name of the policy assignment..
+             *
+             * @param displayName The display name of the policy assignment.
+             * @return the next definition stage.
+             */
+            WithCreate withDisplayName(String displayName);
+        }
+        /** The stage of the PolicyAssignment definition allowing to specify policyDefinitionId. */
+        interface WithPolicyDefinitionId {
+            /**
+             * Specifies the policyDefinitionId property: The ID of the policy definition or policy set definition being
+             * assigned..
+             *
+             * @param policyDefinitionId The ID of the policy definition or policy set definition being assigned.
+             * @return the next definition stage.
+             */
+            WithCreate withPolicyDefinitionId(String policyDefinitionId);
+        }
+        /** The stage of the PolicyAssignment definition allowing to specify scope. */
+        interface WithScope {
+            /**
+             * Specifies the scope property: The scope for the policy assignment..
+             *
+             * @param scope The scope for the policy assignment.
+             * @return the next definition stage.
+             */
+            WithCreate withScope(String scope);
+        }
+        /** The stage of the PolicyAssignment definition allowing to specify notScopes. */
+        interface WithNotScopes {
+            /**
+             * Specifies the notScopes property: The policy's excluded scopes..
+             *
+             * @param notScopes The policy's excluded scopes.
+             * @return the next definition stage.
+             */
+            WithCreate withNotScopes(List<String> notScopes);
+        }
+        /** The stage of the PolicyAssignment definition allowing to specify parameters. */
+        interface WithParameters {
+            /**
+             * Specifies the parameters property: The parameter values for the assigned policy rule. The keys are the
+             * parameter names..
+             *
+             * @param parameters The parameter values for the assigned policy rule. The keys are the parameter names.
+             * @return the next definition stage.
+             */
+            WithCreate withParameters(Map<String, ParameterValuesValue> parameters);
+        }
+        /** The stage of the PolicyAssignment definition allowing to specify description. */
+        interface WithDescription {
+            /**
+             * Specifies the description property: This message will be part of response in case of policy violation..
+             *
+             * @param description This message will be part of response in case of policy violation.
+             * @return the next definition stage.
+             */
+            WithCreate withDescription(String description);
+        }
+        /** The stage of the PolicyAssignment definition allowing to specify metadata. */
+        interface WithMetadata {
+            /**
+             * Specifies the metadata property: The policy assignment metadata. Metadata is an open ended object and is
+             * typically a collection of key value pairs..
+             *
+             * @param metadata The policy assignment metadata. Metadata is an open ended object and is typically a
+             *     collection of key value pairs.
+             * @return the next definition stage.
+             */
+            WithCreate withMetadata(Object metadata);
+        }
+        /** The stage of the PolicyAssignment definition allowing to specify enforcementMode. */
+        interface WithEnforcementMode {
+            /**
+             * Specifies the enforcementMode property: The policy assignment enforcement mode. Possible values are
+             * Default and DoNotEnforce..
+             *
+             * @param enforcementMode The policy assignment enforcement mode. Possible values are Default and
+             *     DoNotEnforce.
+             * @return the next definition stage.
+             */
+            WithCreate withEnforcementMode(EnforcementMode enforcementMode);
+        }
+    }
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @return the refreshed resource.
+     */
+    PolicyAssignment refresh();
+
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @param context The context to associate with this operation.
+     * @return the refreshed resource.
+     */
+    PolicyAssignment refresh(Context context);
 }

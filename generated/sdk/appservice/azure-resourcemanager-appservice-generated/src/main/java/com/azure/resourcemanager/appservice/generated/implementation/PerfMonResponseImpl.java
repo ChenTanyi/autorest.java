@@ -14,7 +14,7 @@ public final class PerfMonResponseImpl implements PerfMonResponse {
 
     private final WebSiteManager serviceManager;
 
-    public PerfMonResponseImpl(PerfMonResponseInner innerObject, WebSiteManager serviceManager) {
+    PerfMonResponseImpl(PerfMonResponseInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

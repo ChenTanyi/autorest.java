@@ -14,7 +14,7 @@ public final class OperationImpl implements Operation {
 
     private final ManagementLockManager serviceManager;
 
-    public OperationImpl(OperationInner innerObject, ManagementLockManager serviceManager) {
+    OperationImpl(OperationInner innerObject, ManagementLockManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

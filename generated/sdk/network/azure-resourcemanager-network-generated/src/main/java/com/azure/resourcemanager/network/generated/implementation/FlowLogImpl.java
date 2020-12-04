@@ -131,7 +131,7 @@ public final class FlowLogImpl implements FlowLog, FlowLog.Definition, FlowLog.U
         return this;
     }
 
-    public FlowLogImpl(String name, NetworkManager serviceManager) {
+    FlowLogImpl(String name, NetworkManager serviceManager) {
         this.innerObject = new FlowLogInner();
         this.serviceManager = serviceManager;
         this.flowLogName = name;
@@ -163,7 +163,7 @@ public final class FlowLogImpl implements FlowLog, FlowLog.Definition, FlowLog.U
         return this;
     }
 
-    public FlowLogImpl(FlowLogInner innerObject, NetworkManager serviceManager) {
+    FlowLogImpl(FlowLogInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

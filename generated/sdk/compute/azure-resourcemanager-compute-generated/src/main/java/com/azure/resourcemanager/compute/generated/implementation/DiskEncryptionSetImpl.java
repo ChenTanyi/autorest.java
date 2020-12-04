@@ -118,7 +118,7 @@ public final class DiskEncryptionSetImpl
         return this;
     }
 
-    public DiskEncryptionSetImpl(String name, ComputeManager serviceManager) {
+    DiskEncryptionSetImpl(String name, ComputeManager serviceManager) {
         this.innerObject = new DiskEncryptionSetInner();
         this.serviceManager = serviceManager;
         this.diskEncryptionSetName = name;
@@ -147,7 +147,7 @@ public final class DiskEncryptionSetImpl
         return this;
     }
 
-    public DiskEncryptionSetImpl(DiskEncryptionSetInner innerObject, ComputeManager serviceManager) {
+    DiskEncryptionSetImpl(DiskEncryptionSetInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

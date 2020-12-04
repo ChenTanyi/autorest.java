@@ -19,7 +19,7 @@ public final class StreamingPolicyImpl implements StreamingPolicy, StreamingPoli
 
     private final MediaservicesManager serviceManager;
 
-    public StreamingPolicyImpl(StreamingPolicyInner innerObject, MediaservicesManager serviceManager) {
+    StreamingPolicyImpl(StreamingPolicyInner innerObject, MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -101,7 +101,7 @@ public final class StreamingPolicyImpl implements StreamingPolicy, StreamingPoli
         return this;
     }
 
-    public StreamingPolicyImpl(String name, MediaservicesManager serviceManager) {
+    StreamingPolicyImpl(String name, MediaservicesManager serviceManager) {
         this.innerObject = new StreamingPolicyInner();
         this.serviceManager = serviceManager;
         this.streamingPolicyName = name;

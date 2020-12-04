@@ -23,7 +23,7 @@ public final class FrontendIpConfigurationImpl implements FrontendIpConfiguratio
 
     private final NetworkManager serviceManager;
 
-    public FrontendIpConfigurationImpl(FrontendIpConfigurationInner innerObject, NetworkManager serviceManager) {
+    FrontendIpConfigurationImpl(FrontendIpConfigurationInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

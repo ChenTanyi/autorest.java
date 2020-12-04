@@ -14,7 +14,7 @@ public final class VerificationIpFlowResultImpl implements VerificationIpFlowRes
 
     private final NetworkManager serviceManager;
 
-    public VerificationIpFlowResultImpl(VerificationIpFlowResultInner innerObject, NetworkManager serviceManager) {
+    VerificationIpFlowResultImpl(VerificationIpFlowResultInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

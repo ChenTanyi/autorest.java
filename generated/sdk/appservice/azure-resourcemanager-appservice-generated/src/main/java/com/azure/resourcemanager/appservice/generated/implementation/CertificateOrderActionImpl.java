@@ -15,7 +15,7 @@ public final class CertificateOrderActionImpl implements CertificateOrderAction 
 
     private final WebSiteManager serviceManager;
 
-    public CertificateOrderActionImpl(CertificateOrderActionInner innerObject, WebSiteManager serviceManager) {
+    CertificateOrderActionImpl(CertificateOrderActionInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

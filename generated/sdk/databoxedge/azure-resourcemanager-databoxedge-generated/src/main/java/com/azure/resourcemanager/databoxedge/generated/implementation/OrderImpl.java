@@ -19,7 +19,7 @@ public final class OrderImpl implements Order {
 
     private final DataBoxEdgeManager serviceManager;
 
-    public OrderImpl(OrderInner innerObject, DataBoxEdgeManager serviceManager) {
+    OrderImpl(OrderInner innerObject, DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

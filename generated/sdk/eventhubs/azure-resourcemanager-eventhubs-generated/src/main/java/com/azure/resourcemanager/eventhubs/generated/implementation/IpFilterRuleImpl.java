@@ -81,7 +81,7 @@ public final class IpFilterRuleImpl implements IpFilterRule, IpFilterRule.Defini
         return this;
     }
 
-    public IpFilterRuleImpl(String name, EventHubsManager serviceManager) {
+    IpFilterRuleImpl(String name, EventHubsManager serviceManager) {
         this.innerObject = new IpFilterRuleInner();
         this.serviceManager = serviceManager;
         this.ipFilterRuleName = name;
@@ -113,7 +113,7 @@ public final class IpFilterRuleImpl implements IpFilterRule, IpFilterRule.Defini
         return this;
     }
 
-    public IpFilterRuleImpl(IpFilterRuleInner innerObject, EventHubsManager serviceManager) {
+    IpFilterRuleImpl(IpFilterRuleInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

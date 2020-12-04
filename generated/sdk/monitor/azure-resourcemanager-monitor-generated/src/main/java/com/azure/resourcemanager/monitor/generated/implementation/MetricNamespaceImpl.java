@@ -14,7 +14,7 @@ public final class MetricNamespaceImpl implements MetricNamespace {
 
     private final MonitorManager serviceManager;
 
-    public MetricNamespaceImpl(MetricNamespaceInner innerObject, MonitorManager serviceManager) {
+    MetricNamespaceImpl(MetricNamespaceInner innerObject, MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

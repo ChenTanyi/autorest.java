@@ -14,7 +14,7 @@ public final class IncidentImpl implements Incident {
 
     private final MonitorManager serviceManager;
 
-    public IncidentImpl(IncidentInner innerObject, MonitorManager serviceManager) {
+    IncidentImpl(IncidentInner innerObject, MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

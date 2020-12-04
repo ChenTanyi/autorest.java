@@ -14,7 +14,7 @@ public final class PrivateEndpointConnectionImpl implements PrivateEndpointConne
 
     private final IotHubManager serviceManager;
 
-    public PrivateEndpointConnectionImpl(PrivateEndpointConnectionInner innerObject, IotHubManager serviceManager) {
+    PrivateEndpointConnectionImpl(PrivateEndpointConnectionInner innerObject, IotHubManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

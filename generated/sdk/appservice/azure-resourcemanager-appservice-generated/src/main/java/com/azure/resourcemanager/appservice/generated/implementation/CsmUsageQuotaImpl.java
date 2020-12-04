@@ -15,7 +15,7 @@ public final class CsmUsageQuotaImpl implements CsmUsageQuota {
 
     private final WebSiteManager serviceManager;
 
-    public CsmUsageQuotaImpl(CsmUsageQuotaInner innerObject, WebSiteManager serviceManager) {
+    CsmUsageQuotaImpl(CsmUsageQuotaInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

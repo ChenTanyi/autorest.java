@@ -18,7 +18,7 @@ public final class RoleInstanceImpl implements RoleInstance {
 
     private final ComputeManager serviceManager;
 
-    public RoleInstanceImpl(RoleInstanceInner innerObject, ComputeManager serviceManager) {
+    RoleInstanceImpl(RoleInstanceInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

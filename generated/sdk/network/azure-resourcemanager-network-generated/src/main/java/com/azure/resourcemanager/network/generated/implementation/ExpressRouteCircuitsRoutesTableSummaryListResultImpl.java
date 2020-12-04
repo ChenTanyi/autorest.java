@@ -17,7 +17,7 @@ public final class ExpressRouteCircuitsRoutesTableSummaryListResultImpl
 
     private final NetworkManager serviceManager;
 
-    public ExpressRouteCircuitsRoutesTableSummaryListResultImpl(
+    ExpressRouteCircuitsRoutesTableSummaryListResultImpl(
         ExpressRouteCircuitsRoutesTableSummaryListResultInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;

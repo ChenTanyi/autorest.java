@@ -86,7 +86,7 @@ public final class ManagementLockObjectImpl
         return this;
     }
 
-    public ManagementLockObjectImpl(String name, ManagementLockManager serviceManager) {
+    ManagementLockObjectImpl(String name, ManagementLockManager serviceManager) {
         this.innerObject = new ManagementLockObjectInner();
         this.serviceManager = serviceManager;
         this.lockName = name;
@@ -117,7 +117,7 @@ public final class ManagementLockObjectImpl
         return this;
     }
 
-    public ManagementLockObjectImpl(ManagementLockObjectInner innerObject, ManagementLockManager serviceManager) {
+    ManagementLockObjectImpl(ManagementLockObjectInner innerObject, ManagementLockManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

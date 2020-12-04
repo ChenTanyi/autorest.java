@@ -17,7 +17,7 @@ public final class ResourceMetricDefinitionImpl implements ResourceMetricDefinit
 
     private final WebSiteManager serviceManager;
 
-    public ResourceMetricDefinitionImpl(ResourceMetricDefinitionInner innerObject, WebSiteManager serviceManager) {
+    ResourceMetricDefinitionImpl(ResourceMetricDefinitionInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

@@ -13,7 +13,7 @@ public final class AvailableServiceAliasImpl implements AvailableServiceAlias {
 
     private final NetworkManager serviceManager;
 
-    public AvailableServiceAliasImpl(AvailableServiceAliasInner innerObject, NetworkManager serviceManager) {
+    AvailableServiceAliasImpl(AvailableServiceAliasInner innerObject, NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

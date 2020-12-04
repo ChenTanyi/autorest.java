@@ -17,7 +17,7 @@ public final class WebSiteInstanceStatusImpl implements WebSiteInstanceStatus {
 
     private final WebSiteManager serviceManager;
 
-    public WebSiteInstanceStatusImpl(WebSiteInstanceStatusInner innerObject, WebSiteManager serviceManager) {
+    WebSiteInstanceStatusImpl(WebSiteInstanceStatusInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

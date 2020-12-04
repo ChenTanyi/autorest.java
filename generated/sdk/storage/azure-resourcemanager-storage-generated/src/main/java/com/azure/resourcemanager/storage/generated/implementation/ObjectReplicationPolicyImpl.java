@@ -98,7 +98,7 @@ public final class ObjectReplicationPolicyImpl
         return this;
     }
 
-    public ObjectReplicationPolicyImpl(String name, StorageManager serviceManager) {
+    ObjectReplicationPolicyImpl(String name, StorageManager serviceManager) {
         this.innerObject = new ObjectReplicationPolicyInner();
         this.serviceManager = serviceManager;
         this.objectReplicationPolicyId = name;
@@ -130,7 +130,7 @@ public final class ObjectReplicationPolicyImpl
         return this;
     }
 
-    public ObjectReplicationPolicyImpl(ObjectReplicationPolicyInner innerObject, StorageManager serviceManager) {
+    ObjectReplicationPolicyImpl(ObjectReplicationPolicyInner innerObject, StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -97,7 +97,7 @@ public final class VaultImpl implements Vault, Vault.Definition, Vault.Update {
         return this;
     }
 
-    public VaultImpl(String name, KeyVaultManager serviceManager) {
+    VaultImpl(String name, KeyVaultManager serviceManager) {
         this.innerObject = new VaultInner();
         this.serviceManager = serviceManager;
         this.vaultName = name;
@@ -129,7 +129,7 @@ public final class VaultImpl implements Vault, Vault.Definition, Vault.Update {
         return this;
     }
 
-    public VaultImpl(VaultInner innerObject, KeyVaultManager serviceManager) {
+    VaultImpl(VaultInner innerObject, KeyVaultManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

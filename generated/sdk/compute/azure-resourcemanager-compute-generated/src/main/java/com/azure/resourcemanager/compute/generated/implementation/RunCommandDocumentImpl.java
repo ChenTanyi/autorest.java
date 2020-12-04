@@ -17,7 +17,7 @@ public final class RunCommandDocumentImpl implements RunCommandDocument {
 
     private final ComputeManager serviceManager;
 
-    public RunCommandDocumentImpl(RunCommandDocumentInner innerObject, ComputeManager serviceManager) {
+    RunCommandDocumentImpl(RunCommandDocumentInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }

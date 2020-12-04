@@ -88,7 +88,7 @@ public final class ConfigurationImpl implements Configuration, Configuration.Def
         return this;
     }
 
-    public ConfigurationImpl(String name, MySqlManager serviceManager) {
+    ConfigurationImpl(String name, MySqlManager serviceManager) {
         this.innerObject = new ConfigurationInner();
         this.serviceManager = serviceManager;
         this.configurationName = name;
@@ -116,7 +116,7 @@ public final class ConfigurationImpl implements Configuration, Configuration.Def
         return this;
     }
 
-    public ConfigurationImpl(ConfigurationInner innerObject, MySqlManager serviceManager) {
+    ConfigurationImpl(ConfigurationInner innerObject, MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

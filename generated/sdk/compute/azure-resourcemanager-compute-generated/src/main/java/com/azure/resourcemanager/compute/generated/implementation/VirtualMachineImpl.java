@@ -224,7 +224,7 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         return this;
     }
 
-    public VirtualMachineImpl(String name, ComputeManager serviceManager) {
+    VirtualMachineImpl(String name, ComputeManager serviceManager) {
         this.innerObject = new VirtualMachineInner();
         this.serviceManager = serviceManager;
         this.vmName = name;
@@ -253,7 +253,7 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         return this;
     }
 
-    public VirtualMachineImpl(VirtualMachineInner innerObject, ComputeManager serviceManager) {
+    VirtualMachineImpl(VirtualMachineInner innerObject, ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

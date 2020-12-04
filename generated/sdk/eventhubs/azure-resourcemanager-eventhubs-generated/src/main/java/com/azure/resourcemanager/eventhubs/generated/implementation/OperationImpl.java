@@ -14,7 +14,7 @@ public final class OperationImpl implements Operation {
 
     private final EventHubsManager serviceManager;
 
-    public OperationImpl(OperationInner innerObject, EventHubsManager serviceManager) {
+    OperationImpl(OperationInner innerObject, EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
