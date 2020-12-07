@@ -39,6 +39,13 @@ public interface RecommendationRule {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the recommendationName property: Unique name of the rule.
      *
      * @return the recommendationName value.

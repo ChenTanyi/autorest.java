@@ -7,6 +7,7 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteFunctionOverviewArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteFunctionOverviewArmResource;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.TriggerTypes;
 
 public final class StaticSiteFunctionOverviewArmResourceImpl implements StaticSiteFunctionOverviewArmResource {
@@ -34,6 +35,10 @@ public final class StaticSiteFunctionOverviewArmResourceImpl implements StaticSi
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String functionName() {

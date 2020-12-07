@@ -11,6 +11,7 @@ import com.azure.resourcemanager.appservice.generated.models.ArmIdWrapper;
 import com.azure.resourcemanager.appservice.generated.models.PrivateEndpointConnectionResource;
 import com.azure.resourcemanager.appservice.generated.models.PrivateLinkConnectionApprovalRequestResource;
 import com.azure.resourcemanager.appservice.generated.models.PrivateLinkConnectionState;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class PrivateEndpointConnectionResourceImpl
     implements PrivateEndpointConnectionResource,
@@ -34,6 +35,10 @@ public final class PrivateEndpointConnectionResourceImpl
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String provisioningState() {

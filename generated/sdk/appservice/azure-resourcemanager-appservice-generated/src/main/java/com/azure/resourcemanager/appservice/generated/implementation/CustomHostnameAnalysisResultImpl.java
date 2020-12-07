@@ -9,6 +9,7 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.CustomHostna
 import com.azure.resourcemanager.appservice.generated.models.CustomHostnameAnalysisResult;
 import com.azure.resourcemanager.appservice.generated.models.DnsVerificationTestResult;
 import com.azure.resourcemanager.appservice.generated.models.ErrorEntity;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.util.Collections;
 import java.util.List;
 
@@ -36,6 +37,10 @@ public final class CustomHostnameAnalysisResultImpl implements CustomHostnameAna
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public Boolean isHostnameAlreadyVerified() {

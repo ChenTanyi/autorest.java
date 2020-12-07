@@ -37,6 +37,13 @@ public interface SiteSourceControl {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the repoUrl property: Repository or source control URL.
      *
      * @return the repoUrl value.
@@ -58,6 +65,13 @@ public interface SiteSourceControl {
      * @return the isManualIntegration value.
      */
     Boolean isManualIntegration();
+
+    /**
+     * Gets the isGitHubAction property: &lt;code&gt;true&lt;/code&gt; if this is deployed via GitHub action.
+     *
+     * @return the isGitHubAction value.
+     */
+    Boolean isGitHubAction();
 
     /**
      * Gets the deploymentRollbackEnabled property: &lt;code&gt;true&lt;/code&gt; to enable deployment rollback;

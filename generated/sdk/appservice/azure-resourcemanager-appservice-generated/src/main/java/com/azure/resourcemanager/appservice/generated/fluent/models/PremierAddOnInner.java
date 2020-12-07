@@ -8,6 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.management.Resource;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
@@ -53,6 +54,12 @@ public class PremierAddOnInner extends Resource {
      */
     @JsonProperty(value = "kind")
     private String kind;
+
+    /*
+     * The system metadata relating to this resource.
+     */
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
 
     /**
      * Get the sku property: Premier add on SKU.
@@ -174,6 +181,15 @@ public class PremierAddOnInner extends Resource {
         return this;
     }
 
+    /**
+     * Get the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
+    }
+
     /** {@inheritDoc} */
     @Override
     public PremierAddOnInner withLocation(String location) {
@@ -194,5 +210,8 @@ public class PremierAddOnInner extends Resource {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+        if (systemData() != null) {
+            systemData().validate();
+        }
     }
 }

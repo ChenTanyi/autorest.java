@@ -71,7 +71,7 @@ public class AppServiceEnvironmentPatchResource extends ProxyOnlyResource {
      * the App Service Environment.
      */
     @JsonProperty(value = "properties.internalLoadBalancingMode")
-    private InternalLoadBalancingMode internalLoadBalancingMode;
+    private LoadBalancingMode internalLoadBalancingMode;
 
     /*
      * Front-end VM size, e.g. "Medium", "Large".
@@ -412,7 +412,7 @@ public class AppServiceEnvironmentPatchResource extends ProxyOnlyResource {
      *
      * @return the internalLoadBalancingMode value.
      */
-    public InternalLoadBalancingMode internalLoadBalancingMode() {
+    public LoadBalancingMode internalLoadBalancingMode() {
         return this.internalLoadBalancingMode;
     }
 
@@ -424,7 +424,7 @@ public class AppServiceEnvironmentPatchResource extends ProxyOnlyResource {
      * @return the AppServiceEnvironmentPatchResource object itself.
      */
     public AppServiceEnvironmentPatchResource withInternalLoadBalancingMode(
-        InternalLoadBalancingMode internalLoadBalancingMode) {
+        LoadBalancingMode internalLoadBalancingMode) {
         this.internalLoadBalancingMode = internalLoadBalancingMode;
         return this;
     }

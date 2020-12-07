@@ -15,13 +15,48 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteCu
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteFunctionOverviewArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserInvitationResponseResourceInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSitesWorkflowPreviewInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StringDictionaryInner;
 import com.azure.resourcemanager.appservice.generated.models.StaticSitePatchResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteResetPropertiesArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserInvitationRequestResource;
+import com.azure.resourcemanager.appservice.generated.models.StaticSitesWorkflowPreviewRequest;
 
 /** An instance of this class provides access to all the operations defined in StaticSitesClient. */
 public interface StaticSitesClient {
+    /**
+     * Description for Generates a preview workflow file for the static site.
+     *
+     * @param location Location where you plan to create the static site.
+     * @param staticSitesWorkflowPreviewRequest A JSON representation of the StaticSitesWorkflowPreviewRequest
+     *     properties. See example.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return preview for the Static Site Workflow to be generated.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    StaticSitesWorkflowPreviewInner previewWorkflow(
+        String location, StaticSitesWorkflowPreviewRequest staticSitesWorkflowPreviewRequest);
+
+    /**
+     * Description for Generates a preview workflow file for the static site.
+     *
+     * @param location Location where you plan to create the static site.
+     * @param staticSitesWorkflowPreviewRequest A JSON representation of the StaticSitesWorkflowPreviewRequest
+     *     properties. See example.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return preview for the Static Site Workflow to be generated.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    Response<StaticSitesWorkflowPreviewInner> previewWorkflowWithResponse(
+        String location, StaticSitesWorkflowPreviewRequest staticSitesWorkflowPreviewRequest, Context context);
+
     /**
      * Description for Get all Static Sites for a subscription.
      *

@@ -38,6 +38,12 @@ public class SiteSourceControlInner extends ProxyOnlyResource {
     private Boolean isManualIntegration;
 
     /*
+     * <code>true</code> if this is deployed via GitHub action.
+     */
+    @JsonProperty(value = "properties.isGitHubAction")
+    private Boolean isGitHubAction;
+
+    /*
      * <code>true</code> to enable deployment rollback; otherwise,
      * <code>false</code>.
      */
@@ -112,6 +118,26 @@ public class SiteSourceControlInner extends ProxyOnlyResource {
      */
     public SiteSourceControlInner withIsManualIntegration(Boolean isManualIntegration) {
         this.isManualIntegration = isManualIntegration;
+        return this;
+    }
+
+    /**
+     * Get the isGitHubAction property: &lt;code&gt;true&lt;/code&gt; if this is deployed via GitHub action.
+     *
+     * @return the isGitHubAction value.
+     */
+    public Boolean isGitHubAction() {
+        return this.isGitHubAction;
+    }
+
+    /**
+     * Set the isGitHubAction property: &lt;code&gt;true&lt;/code&gt; if this is deployed via GitHub action.
+     *
+     * @param isGitHubAction the isGitHubAction value to set.
+     * @return the SiteSourceControlInner object itself.
+     */
+    public SiteSourceControlInner withIsGitHubAction(Boolean isGitHubAction) {
+        this.isGitHubAction = isGitHubAction;
         return this;
     }
 

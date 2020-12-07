@@ -8,6 +8,7 @@ import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.MSDeployLogInner;
 import com.azure.resourcemanager.appservice.generated.models.MSDeployLog;
 import com.azure.resourcemanager.appservice.generated.models.MSDeployLogEntry;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.util.Collections;
 import java.util.List;
 
@@ -35,6 +36,10 @@ public final class MSDeployLogImpl implements MSDeployLog {
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public List<MSDeployLogEntry> entries() {

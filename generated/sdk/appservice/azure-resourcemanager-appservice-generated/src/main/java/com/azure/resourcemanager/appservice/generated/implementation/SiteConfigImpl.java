@@ -101,14 +101,6 @@ public final class SiteConfigImpl implements SiteConfig {
         return this.innerModel().httpLoggingEnabled();
     }
 
-    public Boolean acrUseManagedIdentityCreds() {
-        return this.innerModel().acrUseManagedIdentityCreds();
-    }
-
-    public String acrUserManagedIdentityId() {
-        return this.innerModel().acrUserManagedIdentityId();
-    }
-
     public Integer logsDirectorySizeLimit() {
         return this.innerModel().logsDirectorySizeLimit();
     }
@@ -229,6 +221,14 @@ public final class SiteConfigImpl implements SiteConfig {
         return this.innerModel().vnetName();
     }
 
+    public Boolean vnetRouteAllEnabled() {
+        return this.innerModel().vnetRouteAllEnabled();
+    }
+
+    public Integer vnetPrivatePortsCount() {
+        return this.innerModel().vnetPrivatePortsCount();
+    }
+
     public CorsSettings cors() {
         return this.innerModel().cors();
     }
@@ -294,6 +294,10 @@ public final class SiteConfigImpl implements SiteConfig {
 
     public SupportedTlsVersions minTlsVersion() {
         return this.innerModel().minTlsVersion();
+    }
+
+    public SupportedTlsVersions scmMinTlsVersion() {
+        return this.innerModel().scmMinTlsVersion();
     }
 
     public FtpsState ftpsState() {

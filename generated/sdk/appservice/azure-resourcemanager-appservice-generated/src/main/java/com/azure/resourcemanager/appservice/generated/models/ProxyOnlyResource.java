@@ -21,6 +21,12 @@ public class ProxyOnlyResource extends ProxyResource {
     @JsonProperty(value = "kind")
     private String kind;
 
+    /*
+     * The system metadata relating to this resource.
+     */
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
+
     /**
      * Get the kind property: Kind of resource.
      *
@@ -42,10 +48,22 @@ public class ProxyOnlyResource extends ProxyResource {
     }
 
     /**
+     * Get the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+        if (systemData() != null) {
+            systemData().validate();
+        }
     }
 }

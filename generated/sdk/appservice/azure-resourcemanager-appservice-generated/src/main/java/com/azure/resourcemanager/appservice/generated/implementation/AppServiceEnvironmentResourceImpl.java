@@ -12,11 +12,12 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.StampCapacit
 import com.azure.resourcemanager.appservice.generated.models.AppServiceEnvironmentPatchResource;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceEnvironmentResource;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentStatus;
-import com.azure.resourcemanager.appservice.generated.models.InternalLoadBalancingMode;
+import com.azure.resourcemanager.appservice.generated.models.LoadBalancingMode;
 import com.azure.resourcemanager.appservice.generated.models.NameValuePair;
 import com.azure.resourcemanager.appservice.generated.models.NetworkAccessControlEntry;
 import com.azure.resourcemanager.appservice.generated.models.ProvisioningState;
 import com.azure.resourcemanager.appservice.generated.models.StampCapacity;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.VirtualIpMapping;
 import com.azure.resourcemanager.appservice.generated.models.VirtualNetworkProfile;
 import com.azure.resourcemanager.appservice.generated.models.WorkerPool;
@@ -90,7 +91,7 @@ public final class AppServiceEnvironmentResourceImpl
         return this.innerModel().virtualNetwork();
     }
 
-    public InternalLoadBalancingMode internalLoadBalancingMode() {
+    public LoadBalancingMode internalLoadBalancingMode() {
         return this.innerModel().internalLoadBalancingMode();
     }
 
@@ -251,6 +252,10 @@ public final class AppServiceEnvironmentResourceImpl
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public Region region() {
@@ -427,7 +432,7 @@ public final class AppServiceEnvironmentResourceImpl
     }
 
     public AppServiceEnvironmentResourceImpl withInternalLoadBalancingMode(
-        InternalLoadBalancingMode internalLoadBalancingMode) {
+        LoadBalancingMode internalLoadBalancingMode) {
         if (isInCreateMode()) {
             this.innerModel().withInternalLoadBalancingMode(internalLoadBalancingMode);
             return this;

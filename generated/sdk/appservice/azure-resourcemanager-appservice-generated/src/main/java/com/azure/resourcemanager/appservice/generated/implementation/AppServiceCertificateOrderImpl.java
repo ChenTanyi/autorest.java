@@ -16,6 +16,7 @@ import com.azure.resourcemanager.appservice.generated.models.CertificateDetails;
 import com.azure.resourcemanager.appservice.generated.models.CertificateOrderStatus;
 import com.azure.resourcemanager.appservice.generated.models.CertificateProductType;
 import com.azure.resourcemanager.appservice.generated.models.ProvisioningState;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -142,6 +143,10 @@ public final class AppServiceCertificateOrderImpl
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public Region region() {

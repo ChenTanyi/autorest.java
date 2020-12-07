@@ -12,6 +12,7 @@ import com.azure.resourcemanager.appservice.generated.models.SkuDescription;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteBuildProperties;
 import com.azure.resourcemanager.appservice.generated.models.StaticSitePatchResource;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -82,6 +83,10 @@ public final class StaticSiteArmResourceImpl
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public Region region() {

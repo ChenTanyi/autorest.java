@@ -7,6 +7,7 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteSourceControlInner;
 import com.azure.resourcemanager.appservice.generated.models.SiteSourceControl;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class SiteSourceControlImpl implements SiteSourceControl {
     private SiteSourceControlInner innerObject;
@@ -34,6 +35,10 @@ public final class SiteSourceControlImpl implements SiteSourceControl {
         return this.innerModel().kind();
     }
 
+    public SystemData systemData() {
+        return this.innerModel().systemData();
+    }
+
     public String repoUrl() {
         return this.innerModel().repoUrl();
     }
@@ -44,6 +49,10 @@ public final class SiteSourceControlImpl implements SiteSourceControl {
 
     public Boolean isManualIntegration() {
         return this.innerModel().isManualIntegration();
+    }
+
+    public Boolean isGitHubAction() {
+        return this.innerModel().isGitHubAction();
     }
 
     public Boolean deploymentRollbackEnabled() {

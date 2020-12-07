@@ -37,6 +37,13 @@ public interface DetectorDefinition {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the displayName property: Display name of the detector.
      *
      * @return the displayName value.

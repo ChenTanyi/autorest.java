@@ -12,6 +12,7 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.VnetInfoInne
 import com.azure.resourcemanager.appservice.generated.models.HybridConnection;
 import com.azure.resourcemanager.appservice.generated.models.NetworkFeatures;
 import com.azure.resourcemanager.appservice.generated.models.RelayServiceConnectionEntity;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.VnetInfo;
 import java.util.Collections;
 import java.util.List;
@@ -41,6 +42,10 @@ public final class NetworkFeaturesImpl implements NetworkFeatures {
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String virtualNetworkName() {

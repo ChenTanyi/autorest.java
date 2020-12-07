@@ -38,6 +38,13 @@ public interface DetectorResponse {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the metadata property: metadata for the detector.
      *
      * @return the metadata value.

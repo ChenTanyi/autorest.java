@@ -7,6 +7,7 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AddressResponseInner;
 import com.azure.resourcemanager.appservice.generated.models.AddressResponse;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.VirtualIpMapping;
 import java.util.Collections;
 import java.util.List;
@@ -35,6 +36,10 @@ public final class AddressResponseImpl implements AddressResponse {
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String serviceIpAddress() {

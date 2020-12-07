@@ -11,6 +11,7 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.ProcessThrea
 import com.azure.resourcemanager.appservice.generated.models.ProcessInfo;
 import com.azure.resourcemanager.appservice.generated.models.ProcessModuleInfo;
 import com.azure.resourcemanager.appservice.generated.models.ProcessThreadInfo;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -41,6 +42,10 @@ public final class ProcessInfoImpl implements ProcessInfo {
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public Integer identifier() {

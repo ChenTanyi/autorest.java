@@ -6,21 +6,21 @@ package com.azure.resourcemanager.appservice.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.appservice.generated.fluent.models.SiteInstanceInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.WebSiteInstanceStatusInner;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** Collection of app instances. */
 @Fluent
-public final class WebAppInstanceCollection {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(WebAppInstanceCollection.class);
+public final class WebAppInstanceStatusCollection {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(WebAppInstanceStatusCollection.class);
 
     /*
      * Collection of resources.
      */
     @JsonProperty(value = "value", required = true)
-    private List<SiteInstanceInner> value;
+    private List<WebSiteInstanceStatusInner> value;
 
     /*
      * Link to next page of resources.
@@ -33,7 +33,7 @@ public final class WebAppInstanceCollection {
      *
      * @return the value value.
      */
-    public List<SiteInstanceInner> value() {
+    public List<WebSiteInstanceStatusInner> value() {
         return this.value;
     }
 
@@ -41,9 +41,9 @@ public final class WebAppInstanceCollection {
      * Set the value property: Collection of resources.
      *
      * @param value the value value to set.
-     * @return the WebAppInstanceCollection object itself.
+     * @return the WebAppInstanceStatusCollection object itself.
      */
-    public WebAppInstanceCollection withValue(List<SiteInstanceInner> value) {
+    public WebAppInstanceStatusCollection withValue(List<WebSiteInstanceStatusInner> value) {
         this.value = value;
         return this;
     }
@@ -66,7 +66,8 @@ public final class WebAppInstanceCollection {
         if (value() == null) {
             throw logger
                 .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property value in model WebAppInstanceCollection"));
+                    new IllegalArgumentException(
+                        "Missing required property value in model WebAppInstanceStatusCollection"));
         } else {
             value().forEach(e -> e.validate());
         }

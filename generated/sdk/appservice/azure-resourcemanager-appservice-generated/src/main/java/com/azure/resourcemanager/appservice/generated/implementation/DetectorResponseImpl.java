@@ -9,6 +9,7 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.DetectorResp
 import com.azure.resourcemanager.appservice.generated.models.DetectorInfo;
 import com.azure.resourcemanager.appservice.generated.models.DetectorResponse;
 import com.azure.resourcemanager.appservice.generated.models.DiagnosticData;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.util.Collections;
 import java.util.List;
 
@@ -36,6 +37,10 @@ public final class DetectorResponseImpl implements DetectorResponse {
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public DetectorInfo metadata() {

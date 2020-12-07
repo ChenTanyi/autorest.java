@@ -54,8 +54,6 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.HostnameBind
 import com.azure.resourcemanager.appservice.generated.fluent.models.HybridConnectionInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.IdentifierInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.KeyInfoInner;
-import com.azure.resourcemanager.appservice.generated.fluent.models.KeyVaultReferenceCollectionInner;
-import com.azure.resourcemanager.appservice.generated.fluent.models.KeyVaultReferenceResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.MSDeployLogInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.MSDeployStatusInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.MigrateMySqlStatusInner;
@@ -75,12 +73,12 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.PushSettings
 import com.azure.resourcemanager.appservice.generated.fluent.models.RelayServiceConnectionEntityInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RestoreRequestInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteAuthSettingsInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.SiteAuthSettingsV2Inner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteCloneabilityInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigurationSnapshotInfoInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteExtensionInfoInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteInner;
-import com.azure.resourcemanager.appservice.generated.fluent.models.SiteInstanceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteLogsConfigInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SitePatchResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SitePhpErrorLogFlagInner;
@@ -128,7 +126,7 @@ import com.azure.resourcemanager.appservice.generated.models.StorageMigrationOpt
 import com.azure.resourcemanager.appservice.generated.models.TriggeredJobHistoryCollection;
 import com.azure.resourcemanager.appservice.generated.models.TriggeredWebJobCollection;
 import com.azure.resourcemanager.appservice.generated.models.WebAppCollection;
-import com.azure.resourcemanager.appservice.generated.models.WebAppInstanceCollection;
+import com.azure.resourcemanager.appservice.generated.models.WebAppInstanceStatusCollection;
 import com.azure.resourcemanager.appservice.generated.models.WebJobCollection;
 import com.fasterxml.jackson.databind.util.ByteBufferBackedInputStream;
 import java.io.InputStream;
@@ -537,6 +535,37 @@ public final class WebAppsClientImpl implements WebAppsClient {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}"
+                + "/config/authsettingsV2")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<SiteAuthSettingsV2Inner>> updateAuthSettingsV2(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @BodyParam("application/json") SiteAuthSettingsV2Inner siteAuthSettingsV2,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}"
+                + "/config/authsettingsV2/list")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<SiteAuthSettingsV2Inner>> getAuthSettingsV2(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Put(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}"
                 + "/config/azurestorageaccounts")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
@@ -606,37 +635,6 @@ public final class WebAppsClientImpl implements WebAppsClient {
             @HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
             @PathParam("name") String name,
-            @PathParam("subscriptionId") String subscriptionId,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
-
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}"
-                + "/config/configreferences/appsettings")
-        @ExpectedResponses({200})
-        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
-        Mono<Response<KeyVaultReferenceCollectionInner>> getAppSettingsKeyVaultReferences(
-            @HostParam("$host") String endpoint,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("name") String name,
-            @PathParam("subscriptionId") String subscriptionId,
-            @QueryParam("api-version") String apiVersion,
-            @HeaderParam("Accept") String accept,
-            Context context);
-
-        @Headers({"Content-Type: application/json"})
-        @Get(
-            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}"
-                + "/config/configreferences/appsettings/{appSettingKey}")
-        @ExpectedResponses({200})
-        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
-        Mono<Response<KeyVaultReferenceResourceInner>> getAppSettingKeyVaultReference(
-            @HostParam("$host") String endpoint,
-            @PathParam("resourceGroupName") String resourceGroupName,
-            @PathParam("name") String name,
-            @PathParam("appSettingKey") String appSettingKey,
             @PathParam("subscriptionId") String subscriptionId,
             @QueryParam("api-version") String apiVersion,
             @HeaderParam("Accept") String accept,
@@ -1700,7 +1698,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
                 + "/instances")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
-        Mono<Response<WebAppInstanceCollection>> listInstanceIdentifiers(
+        Mono<Response<WebAppInstanceStatusCollection>> listInstanceIdentifiers(
             @HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
             @PathParam("name") String name,
@@ -2993,6 +2991,39 @@ public final class WebAppsClientImpl implements WebAppsClient {
         @Headers({"Content-Type: application/json"})
         @Put(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}"
+                + "/slots/{slot}/config/authsettingsV2")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<SiteAuthSettingsV2Inner>> updateAuthSettingsV2Slot(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("slot") String slot,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @BodyParam("application/json") SiteAuthSettingsV2Inner siteAuthSettingsV2,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}"
+                + "/slots/{slot}/config/authsettingsV2/list")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<SiteAuthSettingsV2Inner>> getAuthSettingsV2Slot(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("slot") String slot,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Put(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}"
                 + "/slots/{slot}/config/azurestorageaccounts")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
@@ -4163,7 +4194,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
                 + "/slots/{slot}/instances")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
-        Mono<Response<WebAppInstanceCollection>> listInstanceIdentifiersSlot(
+        Mono<Response<WebAppInstanceStatusCollection>> listInstanceIdentifiersSlot(
             @HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
             @PathParam("name") String name,
@@ -6365,7 +6396,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
         @Get("{nextLink}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
-        Mono<Response<WebAppInstanceCollection>> listInstanceIdentifiersNext(
+        Mono<Response<WebAppInstanceStatusCollection>> listInstanceIdentifiersNext(
             @PathParam(value = "nextLink", encoded = true) String nextLink,
             @HostParam("$host") String endpoint,
             @HeaderParam("Accept") String accept,
@@ -6565,7 +6596,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
         @Get("{nextLink}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
-        Mono<Response<WebAppInstanceCollection>> listInstanceIdentifiersSlotNext(
+        Mono<Response<WebAppInstanceStatusCollection>> listInstanceIdentifiersSlotNext(
             @PathParam(value = "nextLink", encoded = true) String nextLink,
             @HostParam("$host") String endpoint,
             @HeaderParam("Accept") String accept,
@@ -11019,6 +11050,325 @@ public final class WebAppsClientImpl implements WebAppsClient {
     }
 
     /**
+     * Description for Updates site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of web app.
+     * @param siteAuthSettingsV2 Auth settings associated with web app.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<SiteAuthSettingsV2Inner>> updateAuthSettingsV2WithResponseAsync(
+        String resourceGroupName, String name, SiteAuthSettingsV2Inner siteAuthSettingsV2) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (siteAuthSettingsV2 == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter siteAuthSettingsV2 is required and cannot be null."));
+        } else {
+            siteAuthSettingsV2.validate();
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .updateAuthSettingsV2(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            siteAuthSettingsV2,
+                            accept,
+                            context))
+            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+    }
+
+    /**
+     * Description for Updates site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of web app.
+     * @param siteAuthSettingsV2 Auth settings associated with web app.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<SiteAuthSettingsV2Inner>> updateAuthSettingsV2WithResponseAsync(
+        String resourceGroupName, String name, SiteAuthSettingsV2Inner siteAuthSettingsV2, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (siteAuthSettingsV2 == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter siteAuthSettingsV2 is required and cannot be null."));
+        } else {
+            siteAuthSettingsV2.validate();
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .updateAuthSettingsV2(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                siteAuthSettingsV2,
+                accept,
+                context);
+    }
+
+    /**
+     * Description for Updates site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of web app.
+     * @param siteAuthSettingsV2 Auth settings associated with web app.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<SiteAuthSettingsV2Inner> updateAuthSettingsV2Async(
+        String resourceGroupName, String name, SiteAuthSettingsV2Inner siteAuthSettingsV2) {
+        return updateAuthSettingsV2WithResponseAsync(resourceGroupName, name, siteAuthSettingsV2)
+            .flatMap(
+                (Response<SiteAuthSettingsV2Inner> res) -> {
+                    if (res.getValue() != null) {
+                        return Mono.just(res.getValue());
+                    } else {
+                        return Mono.empty();
+                    }
+                });
+    }
+
+    /**
+     * Description for Updates site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of web app.
+     * @param siteAuthSettingsV2 Auth settings associated with web app.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public SiteAuthSettingsV2Inner updateAuthSettingsV2(
+        String resourceGroupName, String name, SiteAuthSettingsV2Inner siteAuthSettingsV2) {
+        return updateAuthSettingsV2Async(resourceGroupName, name, siteAuthSettingsV2).block();
+    }
+
+    /**
+     * Description for Updates site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of web app.
+     * @param siteAuthSettingsV2 Auth settings associated with web app.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<SiteAuthSettingsV2Inner> updateAuthSettingsV2WithResponse(
+        String resourceGroupName, String name, SiteAuthSettingsV2Inner siteAuthSettingsV2, Context context) {
+        return updateAuthSettingsV2WithResponseAsync(resourceGroupName, name, siteAuthSettingsV2, context).block();
+    }
+
+    /**
+     * Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<SiteAuthSettingsV2Inner>> getAuthSettingsV2WithResponseAsync(
+        String resourceGroupName, String name) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .getAuthSettingsV2(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
+            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+    }
+
+    /**
+     * Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<SiteAuthSettingsV2Inner>> getAuthSettingsV2WithResponseAsync(
+        String resourceGroupName, String name, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getAuthSettingsV2(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                accept,
+                context);
+    }
+
+    /**
+     * Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<SiteAuthSettingsV2Inner> getAuthSettingsV2Async(String resourceGroupName, String name) {
+        return getAuthSettingsV2WithResponseAsync(resourceGroupName, name)
+            .flatMap(
+                (Response<SiteAuthSettingsV2Inner> res) -> {
+                    if (res.getValue() != null) {
+                        return Mono.just(res.getValue());
+                    } else {
+                        return Mono.empty();
+                    }
+                });
+    }
+
+    /**
+     * Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public SiteAuthSettingsV2Inner getAuthSettingsV2(String resourceGroupName, String name) {
+        return getAuthSettingsV2Async(resourceGroupName, name).block();
+    }
+
+    /**
+     * Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<SiteAuthSettingsV2Inner> getAuthSettingsV2WithResponse(
+        String resourceGroupName, String name, Context context) {
+        return getAuthSettingsV2WithResponseAsync(resourceGroupName, name, context).block();
+    }
+
+    /**
      * Description for Updates the Azure storage account configurations of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -11800,320 +12150,6 @@ public final class WebAppsClientImpl implements WebAppsClient {
     public Response<BackupRequestInner> getBackupConfigurationWithResponse(
         String resourceGroupName, String name, Context context) {
         return getBackupConfigurationWithResponseAsync(resourceGroupName, name, context).block();
-    }
-
-    /**
-     * Description for Gets the config reference app settings and status of an app.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the app.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return web app key vault reference and status ARM resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<KeyVaultReferenceCollectionInner>> getAppSettingsKeyVaultReferencesWithResponseAsync(
-        String resourceGroupName, String name) {
-        if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
-        }
-        if (resourceGroupName == null) {
-            return Mono
-                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
-        }
-        if (name == null) {
-            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
-        }
-        if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
-        }
-        final String accept = "application/json";
-        return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .getAppSettingsKeyVaultReferences(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            name,
-                            this.client.getSubscriptionId(),
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
-    }
-
-    /**
-     * Description for Gets the config reference app settings and status of an app.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the app.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return web app key vault reference and status ARM resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<KeyVaultReferenceCollectionInner>> getAppSettingsKeyVaultReferencesWithResponseAsync(
-        String resourceGroupName, String name, Context context) {
-        if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
-        }
-        if (resourceGroupName == null) {
-            return Mono
-                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
-        }
-        if (name == null) {
-            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
-        }
-        if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
-        }
-        final String accept = "application/json";
-        context = this.client.mergeContext(context);
-        return service
-            .getAppSettingsKeyVaultReferences(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                name,
-                this.client.getSubscriptionId(),
-                this.client.getApiVersion(),
-                accept,
-                context);
-    }
-
-    /**
-     * Description for Gets the config reference app settings and status of an app.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the app.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return web app key vault reference and status ARM resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<KeyVaultReferenceCollectionInner> getAppSettingsKeyVaultReferencesAsync(
-        String resourceGroupName, String name) {
-        return getAppSettingsKeyVaultReferencesWithResponseAsync(resourceGroupName, name)
-            .flatMap(
-                (Response<KeyVaultReferenceCollectionInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
-    }
-
-    /**
-     * Description for Gets the config reference app settings and status of an app.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the app.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return web app key vault reference and status ARM resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public KeyVaultReferenceCollectionInner getAppSettingsKeyVaultReferences(String resourceGroupName, String name) {
-        return getAppSettingsKeyVaultReferencesAsync(resourceGroupName, name).block();
-    }
-
-    /**
-     * Description for Gets the config reference app settings and status of an app.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the app.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return web app key vault reference and status ARM resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<KeyVaultReferenceCollectionInner> getAppSettingsKeyVaultReferencesWithResponse(
-        String resourceGroupName, String name, Context context) {
-        return getAppSettingsKeyVaultReferencesWithResponseAsync(resourceGroupName, name, context).block();
-    }
-
-    /**
-     * Description for Gets the config reference and status of an app.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the app.
-     * @param appSettingKey App Setting key name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return web app key vault reference and status ARM resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<KeyVaultReferenceResourceInner>> getAppSettingKeyVaultReferenceWithResponseAsync(
-        String resourceGroupName, String name, String appSettingKey) {
-        if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
-        }
-        if (resourceGroupName == null) {
-            return Mono
-                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
-        }
-        if (name == null) {
-            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
-        }
-        if (appSettingKey == null) {
-            return Mono.error(new IllegalArgumentException("Parameter appSettingKey is required and cannot be null."));
-        }
-        if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
-        }
-        final String accept = "application/json";
-        return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .getAppSettingKeyVaultReference(
-                            this.client.getEndpoint(),
-                            resourceGroupName,
-                            name,
-                            appSettingKey,
-                            this.client.getSubscriptionId(),
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
-    }
-
-    /**
-     * Description for Gets the config reference and status of an app.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the app.
-     * @param appSettingKey App Setting key name.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return web app key vault reference and status ARM resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<KeyVaultReferenceResourceInner>> getAppSettingKeyVaultReferenceWithResponseAsync(
-        String resourceGroupName, String name, String appSettingKey, Context context) {
-        if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
-        }
-        if (resourceGroupName == null) {
-            return Mono
-                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
-        }
-        if (name == null) {
-            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
-        }
-        if (appSettingKey == null) {
-            return Mono.error(new IllegalArgumentException("Parameter appSettingKey is required and cannot be null."));
-        }
-        if (this.client.getSubscriptionId() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
-        }
-        final String accept = "application/json";
-        context = this.client.mergeContext(context);
-        return service
-            .getAppSettingKeyVaultReference(
-                this.client.getEndpoint(),
-                resourceGroupName,
-                name,
-                appSettingKey,
-                this.client.getSubscriptionId(),
-                this.client.getApiVersion(),
-                accept,
-                context);
-    }
-
-    /**
-     * Description for Gets the config reference and status of an app.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the app.
-     * @param appSettingKey App Setting key name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return web app key vault reference and status ARM resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<KeyVaultReferenceResourceInner> getAppSettingKeyVaultReferenceAsync(
-        String resourceGroupName, String name, String appSettingKey) {
-        return getAppSettingKeyVaultReferenceWithResponseAsync(resourceGroupName, name, appSettingKey)
-            .flatMap(
-                (Response<KeyVaultReferenceResourceInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
-    }
-
-    /**
-     * Description for Gets the config reference and status of an app.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the app.
-     * @param appSettingKey App Setting key name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return web app key vault reference and status ARM resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public KeyVaultReferenceResourceInner getAppSettingKeyVaultReference(
-        String resourceGroupName, String name, String appSettingKey) {
-        return getAppSettingKeyVaultReferenceAsync(resourceGroupName, name, appSettingKey).block();
-    }
-
-    /**
-     * Description for Gets the config reference and status of an app.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the app.
-     * @param appSettingKey App Setting key name.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return web app key vault reference and status ARM resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<KeyVaultReferenceResourceInner> getAppSettingKeyVaultReferenceWithResponse(
-        String resourceGroupName, String name, String appSettingKey, Context context) {
-        return getAppSettingKeyVaultReferenceWithResponseAsync(resourceGroupName, name, appSettingKey, context).block();
     }
 
     /**
@@ -23513,7 +23549,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @return collection of app instances.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<SiteInstanceInner>> listInstanceIdentifiersSinglePageAsync(
+    private Mono<PagedResponse<WebSiteInstanceStatusInner>> listInstanceIdentifiersSinglePageAsync(
         String resourceGroupName, String name) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -23547,7 +23583,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
                             this.client.getApiVersion(),
                             accept,
                             context))
-            .<PagedResponse<SiteInstanceInner>>map(
+            .<PagedResponse<WebSiteInstanceStatusInner>>map(
                 res ->
                     new PagedResponseBase<>(
                         res.getRequest(),
@@ -23571,7 +23607,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @return collection of app instances.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<SiteInstanceInner>> listInstanceIdentifiersSinglePageAsync(
+    private Mono<PagedResponse<WebSiteInstanceStatusInner>> listInstanceIdentifiersSinglePageAsync(
         String resourceGroupName, String name, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -23625,7 +23661,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @return collection of app instances.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<SiteInstanceInner> listInstanceIdentifiersAsync(String resourceGroupName, String name) {
+    private PagedFlux<WebSiteInstanceStatusInner> listInstanceIdentifiersAsync(String resourceGroupName, String name) {
         return new PagedFlux<>(
             () -> listInstanceIdentifiersSinglePageAsync(resourceGroupName, name),
             nextLink -> listInstanceIdentifiersNextSinglePageAsync(nextLink));
@@ -23643,7 +23679,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @return collection of app instances.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<SiteInstanceInner> listInstanceIdentifiersAsync(
+    private PagedFlux<WebSiteInstanceStatusInner> listInstanceIdentifiersAsync(
         String resourceGroupName, String name, Context context) {
         return new PagedFlux<>(
             () -> listInstanceIdentifiersSinglePageAsync(resourceGroupName, name, context),
@@ -23661,7 +23697,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @return collection of app instances.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<SiteInstanceInner> listInstanceIdentifiers(String resourceGroupName, String name) {
+    public PagedIterable<WebSiteInstanceStatusInner> listInstanceIdentifiers(String resourceGroupName, String name) {
         return new PagedIterable<>(listInstanceIdentifiersAsync(resourceGroupName, name));
     }
 
@@ -23677,7 +23713,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @return collection of app instances.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<SiteInstanceInner> listInstanceIdentifiers(
+    public PagedIterable<WebSiteInstanceStatusInner> listInstanceIdentifiers(
         String resourceGroupName, String name, Context context) {
         return new PagedIterable<>(listInstanceIdentifiersAsync(resourceGroupName, name, context));
     }
@@ -38808,6 +38844,366 @@ public final class WebAppsClientImpl implements WebAppsClient {
     }
 
     /**
+     * Description for Updates site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of web app.
+     * @param slot Name of web app slot. If not specified then will default to production slot.
+     * @param siteAuthSettingsV2 Auth settings associated with web app.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<SiteAuthSettingsV2Inner>> updateAuthSettingsV2SlotWithResponseAsync(
+        String resourceGroupName, String name, String slot, SiteAuthSettingsV2Inner siteAuthSettingsV2) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (slot == null) {
+            return Mono.error(new IllegalArgumentException("Parameter slot is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (siteAuthSettingsV2 == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter siteAuthSettingsV2 is required and cannot be null."));
+        } else {
+            siteAuthSettingsV2.validate();
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .updateAuthSettingsV2Slot(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            slot,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            siteAuthSettingsV2,
+                            accept,
+                            context))
+            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+    }
+
+    /**
+     * Description for Updates site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of web app.
+     * @param slot Name of web app slot. If not specified then will default to production slot.
+     * @param siteAuthSettingsV2 Auth settings associated with web app.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<SiteAuthSettingsV2Inner>> updateAuthSettingsV2SlotWithResponseAsync(
+        String resourceGroupName,
+        String name,
+        String slot,
+        SiteAuthSettingsV2Inner siteAuthSettingsV2,
+        Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (slot == null) {
+            return Mono.error(new IllegalArgumentException("Parameter slot is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (siteAuthSettingsV2 == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter siteAuthSettingsV2 is required and cannot be null."));
+        } else {
+            siteAuthSettingsV2.validate();
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .updateAuthSettingsV2Slot(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                slot,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                siteAuthSettingsV2,
+                accept,
+                context);
+    }
+
+    /**
+     * Description for Updates site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of web app.
+     * @param slot Name of web app slot. If not specified then will default to production slot.
+     * @param siteAuthSettingsV2 Auth settings associated with web app.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<SiteAuthSettingsV2Inner> updateAuthSettingsV2SlotAsync(
+        String resourceGroupName, String name, String slot, SiteAuthSettingsV2Inner siteAuthSettingsV2) {
+        return updateAuthSettingsV2SlotWithResponseAsync(resourceGroupName, name, slot, siteAuthSettingsV2)
+            .flatMap(
+                (Response<SiteAuthSettingsV2Inner> res) -> {
+                    if (res.getValue() != null) {
+                        return Mono.just(res.getValue());
+                    } else {
+                        return Mono.empty();
+                    }
+                });
+    }
+
+    /**
+     * Description for Updates site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of web app.
+     * @param slot Name of web app slot. If not specified then will default to production slot.
+     * @param siteAuthSettingsV2 Auth settings associated with web app.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public SiteAuthSettingsV2Inner updateAuthSettingsV2Slot(
+        String resourceGroupName, String name, String slot, SiteAuthSettingsV2Inner siteAuthSettingsV2) {
+        return updateAuthSettingsV2SlotAsync(resourceGroupName, name, slot, siteAuthSettingsV2).block();
+    }
+
+    /**
+     * Description for Updates site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of web app.
+     * @param slot Name of web app slot. If not specified then will default to production slot.
+     * @param siteAuthSettingsV2 Auth settings associated with web app.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<SiteAuthSettingsV2Inner> updateAuthSettingsV2SlotWithResponse(
+        String resourceGroupName,
+        String name,
+        String slot,
+        SiteAuthSettingsV2Inner siteAuthSettingsV2,
+        Context context) {
+        return updateAuthSettingsV2SlotWithResponseAsync(resourceGroupName, name, slot, siteAuthSettingsV2, context)
+            .block();
+    }
+
+    /**
+     * Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param slot Name of the deployment slot. If a slot is not specified, the API will get the settings for the
+     *     production slot.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<SiteAuthSettingsV2Inner>> getAuthSettingsV2SlotWithResponseAsync(
+        String resourceGroupName, String name, String slot) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (slot == null) {
+            return Mono.error(new IllegalArgumentException("Parameter slot is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .getAuthSettingsV2Slot(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            slot,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
+            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+    }
+
+    /**
+     * Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param slot Name of the deployment slot. If a slot is not specified, the API will get the settings for the
+     *     production slot.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<SiteAuthSettingsV2Inner>> getAuthSettingsV2SlotWithResponseAsync(
+        String resourceGroupName, String name, String slot, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (slot == null) {
+            return Mono.error(new IllegalArgumentException("Parameter slot is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getAuthSettingsV2Slot(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                slot,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                accept,
+                context);
+    }
+
+    /**
+     * Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param slot Name of the deployment slot. If a slot is not specified, the API will get the settings for the
+     *     production slot.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<SiteAuthSettingsV2Inner> getAuthSettingsV2SlotAsync(
+        String resourceGroupName, String name, String slot) {
+        return getAuthSettingsV2SlotWithResponseAsync(resourceGroupName, name, slot)
+            .flatMap(
+                (Response<SiteAuthSettingsV2Inner> res) -> {
+                    if (res.getValue() != null) {
+                        return Mono.just(res.getValue());
+                    } else {
+                        return Mono.empty();
+                    }
+                });
+    }
+
+    /**
+     * Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param slot Name of the deployment slot. If a slot is not specified, the API will get the settings for the
+     *     production slot.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public SiteAuthSettingsV2Inner getAuthSettingsV2Slot(String resourceGroupName, String name, String slot) {
+        return getAuthSettingsV2SlotAsync(resourceGroupName, name, slot).block();
+    }
+
+    /**
+     * Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param slot Name of the deployment slot. If a slot is not specified, the API will get the settings for the
+     *     production slot.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<SiteAuthSettingsV2Inner> getAuthSettingsV2SlotWithResponse(
+        String resourceGroupName, String name, String slot, Context context) {
+        return getAuthSettingsV2SlotWithResponseAsync(resourceGroupName, name, slot, context).block();
+    }
+
+    /**
      * Description for Updates the Azure storage account configurations of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -52014,7 +52410,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @return collection of app instances.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<SiteInstanceInner>> listInstanceIdentifiersSlotSinglePageAsync(
+    private Mono<PagedResponse<WebSiteInstanceStatusInner>> listInstanceIdentifiersSlotSinglePageAsync(
         String resourceGroupName, String name, String slot) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -52052,7 +52448,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
                             this.client.getApiVersion(),
                             accept,
                             context))
-            .<PagedResponse<SiteInstanceInner>>map(
+            .<PagedResponse<WebSiteInstanceStatusInner>>map(
                 res ->
                     new PagedResponseBase<>(
                         res.getRequest(),
@@ -52077,7 +52473,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @return collection of app instances.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<SiteInstanceInner>> listInstanceIdentifiersSlotSinglePageAsync(
+    private Mono<PagedResponse<WebSiteInstanceStatusInner>> listInstanceIdentifiersSlotSinglePageAsync(
         String resourceGroupName, String name, String slot, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -52136,7 +52532,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @return collection of app instances.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<SiteInstanceInner> listInstanceIdentifiersSlotAsync(
+    private PagedFlux<WebSiteInstanceStatusInner> listInstanceIdentifiersSlotAsync(
         String resourceGroupName, String name, String slot) {
         return new PagedFlux<>(
             () -> listInstanceIdentifiersSlotSinglePageAsync(resourceGroupName, name, slot),
@@ -52156,7 +52552,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @return collection of app instances.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<SiteInstanceInner> listInstanceIdentifiersSlotAsync(
+    private PagedFlux<WebSiteInstanceStatusInner> listInstanceIdentifiersSlotAsync(
         String resourceGroupName, String name, String slot, Context context) {
         return new PagedFlux<>(
             () -> listInstanceIdentifiersSlotSinglePageAsync(resourceGroupName, name, slot, context),
@@ -52175,7 +52571,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @return collection of app instances.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<SiteInstanceInner> listInstanceIdentifiersSlot(
+    public PagedIterable<WebSiteInstanceStatusInner> listInstanceIdentifiersSlot(
         String resourceGroupName, String name, String slot) {
         return new PagedIterable<>(listInstanceIdentifiersSlotAsync(resourceGroupName, name, slot));
     }
@@ -52193,7 +52589,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @return collection of app instances.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<SiteInstanceInner> listInstanceIdentifiersSlot(
+    public PagedIterable<WebSiteInstanceStatusInner> listInstanceIdentifiersSlot(
         String resourceGroupName, String name, String slot, Context context) {
         return new PagedIterable<>(listInstanceIdentifiersSlotAsync(resourceGroupName, name, slot, context));
     }
@@ -77909,7 +78305,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @return collection of app instances.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<SiteInstanceInner>> listInstanceIdentifiersNextSinglePageAsync(String nextLink) {
+    private Mono<PagedResponse<WebSiteInstanceStatusInner>> listInstanceIdentifiersNextSinglePageAsync(
+        String nextLink) {
         if (nextLink == null) {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
@@ -77923,7 +78320,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
         return FluxUtil
             .withContext(
                 context -> service.listInstanceIdentifiersNext(nextLink, this.client.getEndpoint(), accept, context))
-            .<PagedResponse<SiteInstanceInner>>map(
+            .<PagedResponse<WebSiteInstanceStatusInner>>map(
                 res ->
                     new PagedResponseBase<>(
                         res.getRequest(),
@@ -77946,7 +78343,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @return collection of app instances.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<SiteInstanceInner>> listInstanceIdentifiersNextSinglePageAsync(
+    private Mono<PagedResponse<WebSiteInstanceStatusInner>> listInstanceIdentifiersNextSinglePageAsync(
         String nextLink, Context context) {
         if (nextLink == null) {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
@@ -79366,7 +79763,8 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @return collection of app instances.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<SiteInstanceInner>> listInstanceIdentifiersSlotNextSinglePageAsync(String nextLink) {
+    private Mono<PagedResponse<WebSiteInstanceStatusInner>> listInstanceIdentifiersSlotNextSinglePageAsync(
+        String nextLink) {
         if (nextLink == null) {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
         }
@@ -79381,7 +79779,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
             .withContext(
                 context ->
                     service.listInstanceIdentifiersSlotNext(nextLink, this.client.getEndpoint(), accept, context))
-            .<PagedResponse<SiteInstanceInner>>map(
+            .<PagedResponse<WebSiteInstanceStatusInner>>map(
                 res ->
                     new PagedResponseBase<>(
                         res.getRequest(),
@@ -79404,7 +79802,7 @@ public final class WebAppsClientImpl implements WebAppsClient {
      * @return collection of app instances.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<SiteInstanceInner>> listInstanceIdentifiersSlotNextSinglePageAsync(
+    private Mono<PagedResponse<WebSiteInstanceStatusInner>> listInstanceIdentifiersSlotNextSinglePageAsync(
         String nextLink, Context context) {
         if (nextLink == null) {
             return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));

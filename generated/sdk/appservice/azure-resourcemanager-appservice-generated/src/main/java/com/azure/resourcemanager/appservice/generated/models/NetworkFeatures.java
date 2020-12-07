@@ -38,6 +38,13 @@ public interface NetworkFeatures {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the virtualNetworkName property: The Virtual Network name.
      *
      * @return the virtualNetworkName value.

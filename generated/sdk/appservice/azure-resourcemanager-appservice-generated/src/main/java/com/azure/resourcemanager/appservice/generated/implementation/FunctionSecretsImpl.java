@@ -18,22 +18,6 @@ public final class FunctionSecretsImpl implements FunctionSecrets {
         this.serviceManager = serviceManager;
     }
 
-    public String id() {
-        return this.innerModel().id();
-    }
-
-    public String name() {
-        return this.innerModel().name();
-    }
-
-    public String type() {
-        return this.innerModel().type();
-    }
-
-    public String kind() {
-        return this.innerModel().kind();
-    }
-
     public String key() {
         return this.innerModel().key();
     }

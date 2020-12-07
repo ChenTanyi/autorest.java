@@ -14,6 +14,7 @@ import com.azure.resourcemanager.appservice.generated.models.CertificateDetails;
 import com.azure.resourcemanager.appservice.generated.models.CertificateOrderStatus;
 import com.azure.resourcemanager.appservice.generated.models.CertificateProductType;
 import com.azure.resourcemanager.appservice.generated.models.ProvisioningState;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
@@ -151,6 +152,12 @@ public class AppServiceCertificateOrderInner extends Resource {
      */
     @JsonProperty(value = "kind")
     private String kind;
+
+    /*
+     * The system metadata relating to this resource.
+     */
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
 
     /**
      * Get the certificates property: State of the Key Vault secret.
@@ -425,6 +432,15 @@ public class AppServiceCertificateOrderInner extends Resource {
         return this;
     }
 
+    /**
+     * Get the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
+    }
+
     /** {@inheritDoc} */
     @Override
     public AppServiceCertificateOrderInner withLocation(String location) {
@@ -463,6 +479,9 @@ public class AppServiceCertificateOrderInner extends Resource {
         }
         if (root() != null) {
             root().validate();
+        }
+        if (systemData() != null) {
+            systemData().validate();
         }
     }
 }

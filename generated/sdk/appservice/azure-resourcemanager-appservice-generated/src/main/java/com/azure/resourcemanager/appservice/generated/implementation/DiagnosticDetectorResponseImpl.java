@@ -13,6 +13,7 @@ import com.azure.resourcemanager.appservice.generated.models.DiagnosticDetectorR
 import com.azure.resourcemanager.appservice.generated.models.DiagnosticMetricSet;
 import com.azure.resourcemanager.appservice.generated.models.NameValuePair;
 import com.azure.resourcemanager.appservice.generated.models.ResponseMetadata;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -41,6 +42,10 @@ public final class DiagnosticDetectorResponseImpl implements DiagnosticDetectorR
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public OffsetDateTime startTime() {

@@ -37,6 +37,13 @@ public interface GeoRegion {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the description property: Region description.
      *
      * @return the description value.

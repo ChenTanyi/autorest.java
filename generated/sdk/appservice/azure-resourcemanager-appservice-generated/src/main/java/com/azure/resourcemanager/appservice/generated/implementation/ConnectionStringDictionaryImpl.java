@@ -8,6 +8,7 @@ import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ConnectionStringDictionaryInner;
 import com.azure.resourcemanager.appservice.generated.models.ConnStringValueTypePair;
 import com.azure.resourcemanager.appservice.generated.models.ConnectionStringDictionary;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.util.Collections;
 import java.util.Map;
 
@@ -35,6 +36,10 @@ public final class ConnectionStringDictionaryImpl implements ConnectionStringDic
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public Map<String, ConnStringValueTypePair> properties() {

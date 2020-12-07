@@ -10,6 +10,7 @@ import com.azure.resourcemanager.appservice.generated.models.Channels;
 import com.azure.resourcemanager.appservice.generated.models.NotificationLevel;
 import com.azure.resourcemanager.appservice.generated.models.Recommendation;
 import com.azure.resourcemanager.appservice.generated.models.ResourceScopeType;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -39,6 +40,10 @@ public final class RecommendationImpl implements Recommendation {
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public OffsetDateTime creationTime() {

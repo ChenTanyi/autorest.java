@@ -14,6 +14,32 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.UserInner;
 /** Resource collection API of ResourceProviders. */
 public interface ResourceProviders {
     /**
+     * Description for Exchange code for GitHub access token for AppService CLI.
+     *
+     * @param request Appservice Github token request content.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return github access token for Appservice CLI github integration.
+     */
+    AppserviceGithubToken generateGithubAccessTokenForAppserviceCliAsync(AppserviceGithubTokenRequest request);
+
+    /**
+     * Description for Exchange code for GitHub access token for AppService CLI.
+     *
+     * @param request Appservice Github token request content.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return github access token for Appservice CLI github integration.
+     */
+    Response<AppserviceGithubToken> generateGithubAccessTokenForAppserviceCliAsyncWithResponse(
+        AppserviceGithubTokenRequest request, Context context);
+
+    /**
      * Description for Gets publishing user.
      *
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the

@@ -38,6 +38,13 @@ public interface TriggeredJobHistory {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the runs property: List of triggered web job runs.
      *
      * @return the runs value.

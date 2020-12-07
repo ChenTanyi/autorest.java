@@ -7,6 +7,7 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SnapshotInner;
 import com.azure.resourcemanager.appservice.generated.models.Snapshot;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class SnapshotImpl implements Snapshot {
     private SnapshotInner innerObject;
@@ -32,6 +33,10 @@ public final class SnapshotImpl implements Snapshot {
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String time() {

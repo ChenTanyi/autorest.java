@@ -38,6 +38,13 @@ public interface PrivateEndpointConnectionResource {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the provisioningState property: The provisioningState property.
      *
      * @return the provisioningState value.

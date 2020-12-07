@@ -38,6 +38,13 @@ public interface SiteAuthSettings {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the enabled property: &lt;code&gt;true&lt;/code&gt; if the Authentication / Authorization feature is enabled
      * for the current app; otherwise, &lt;code&gt;false&lt;/code&gt;.
      *
@@ -119,6 +126,14 @@ public interface SiteAuthSettings {
     String clientSecret();
 
     /**
+     * Gets the clientSecretSettingName property: The app setting name that contains the client secret of the relying
+     * party application.
+     *
+     * @return the clientSecretSettingName value.
+     */
+    String clientSecretSettingName();
+
+    /**
      * Gets the clientSecretCertificateThumbprint property: An alternative to the client secret, that is the thumbprint
      * of a certificate used for signing purposes. This property acts as a replacement for the Client Secret. It is also
      * optional.
@@ -163,6 +178,13 @@ public interface SiteAuthSettings {
     List<String> additionalLoginParams();
 
     /**
+     * Gets the aadClaimsAuthorization property: Gets a JSON string containing the Azure AD Acl settings.
+     *
+     * @return the aadClaimsAuthorization value.
+     */
+    String aadClaimsAuthorization();
+
+    /**
      * Gets the googleClientId property: The OpenID Connect Client ID for the Google web application. This setting is
      * required for enabling Google Sign-In. Google Sign-In documentation:
      * https://developers.google.com/identity/sign-in/web/.
@@ -179,6 +201,14 @@ public interface SiteAuthSettings {
      * @return the googleClientSecret value.
      */
     String googleClientSecret();
+
+    /**
+     * Gets the googleClientSecretSettingName property: The app setting name that contains the client secret associated
+     * with the Google web application.
+     *
+     * @return the googleClientSecretSettingName value.
+     */
+    String googleClientSecretSettingName();
 
     /**
      * Gets the googleOAuthScopes property: The OAuth 2.0 scopes that will be requested as part of Google Sign-In
@@ -207,6 +237,14 @@ public interface SiteAuthSettings {
     String facebookAppSecret();
 
     /**
+     * Gets the facebookAppSecretSettingName property: The app setting name that contains the app secret used for
+     * Facebook Login.
+     *
+     * @return the facebookAppSecretSettingName value.
+     */
+    String facebookAppSecretSettingName();
+
+    /**
      * Gets the facebookOAuthScopes property: The OAuth 2.0 scopes that will be requested as part of Facebook Login
      * authentication. This setting is optional. Facebook Login documentation:
      * https://developers.facebook.com/docs/facebook-login.
@@ -214,6 +252,38 @@ public interface SiteAuthSettings {
      * @return the facebookOAuthScopes value.
      */
     List<String> facebookOAuthScopes();
+
+    /**
+     * Gets the gitHubClientId property: The Client Id of the GitHub app used for login. This setting is required for
+     * enabling Github login.
+     *
+     * @return the gitHubClientId value.
+     */
+    String gitHubClientId();
+
+    /**
+     * Gets the gitHubClientSecret property: The Client Secret of the GitHub app used for Github Login. This setting is
+     * required for enabling Github login.
+     *
+     * @return the gitHubClientSecret value.
+     */
+    String gitHubClientSecret();
+
+    /**
+     * Gets the gitHubClientSecretSettingName property: The app setting name that contains the client secret of the
+     * Github app used for GitHub Login.
+     *
+     * @return the gitHubClientSecretSettingName value.
+     */
+    String gitHubClientSecretSettingName();
+
+    /**
+     * Gets the gitHubOAuthScopes property: The OAuth 2.0 scopes that will be requested as part of GitHub Login
+     * authentication. This setting is optional.
+     *
+     * @return the gitHubOAuthScopes value.
+     */
+    List<String> gitHubOAuthScopes();
 
     /**
      * Gets the twitterConsumerKey property: The OAuth 1.0a consumer key of the Twitter application used for sign-in.
@@ -234,6 +304,14 @@ public interface SiteAuthSettings {
     String twitterConsumerSecret();
 
     /**
+     * Gets the twitterConsumerSecretSettingName property: The app setting name that contains the OAuth 1.0a consumer
+     * secret of the Twitter application used for sign-in.
+     *
+     * @return the twitterConsumerSecretSettingName value.
+     */
+    String twitterConsumerSecretSettingName();
+
+    /**
      * Gets the microsoftAccountClientId property: The OAuth 2.0 client ID that was created for the app used for
      * authentication. This setting is required for enabling Microsoft Account authentication. Microsoft Account OAuth
      * documentation: https://dev.onedrive.com/auth/msa_oauth.htm.
@@ -252,6 +330,14 @@ public interface SiteAuthSettings {
     String microsoftAccountClientSecret();
 
     /**
+     * Gets the microsoftAccountClientSecretSettingName property: The app setting name containing the OAuth 2.0 client
+     * secret that was created for the app used for authentication.
+     *
+     * @return the microsoftAccountClientSecretSettingName value.
+     */
+    String microsoftAccountClientSecretSettingName();
+
+    /**
      * Gets the microsoftAccountOAuthScopes property: The OAuth 2.0 scopes that will be requested as part of Microsoft
      * Account authentication. This setting is optional. If not specified, "wl.basic" is used as the default scope.
      * Microsoft Account Scopes and permissions documentation: https://msdn.microsoft.com/en-us/library/dn631845.aspx.
@@ -259,6 +345,22 @@ public interface SiteAuthSettings {
      * @return the microsoftAccountOAuthScopes value.
      */
     List<String> microsoftAccountOAuthScopes();
+
+    /**
+     * Gets the isAuthFromFile property: "true" if the auth config settings should be read from a file, "false"
+     * otherwise.
+     *
+     * @return the isAuthFromFile value.
+     */
+    String isAuthFromFile();
+
+    /**
+     * Gets the authFilePath property: The path of the config file containing auth settings. If the path is relative,
+     * base will the site's root directory.
+     *
+     * @return the authFilePath value.
+     */
+    String authFilePath();
 
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.SiteAuthSettingsInner object.

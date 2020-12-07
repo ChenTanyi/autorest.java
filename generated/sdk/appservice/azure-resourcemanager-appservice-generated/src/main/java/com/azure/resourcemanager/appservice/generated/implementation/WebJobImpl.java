@@ -6,6 +6,7 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.WebJobInner;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.WebJob;
 import com.azure.resourcemanager.appservice.generated.models.WebJobType;
 import java.util.Collections;
@@ -35,6 +36,10 @@ public final class WebJobImpl implements WebJob {
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String runCommand() {

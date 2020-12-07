@@ -8,6 +8,7 @@ import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteBuildArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.BuildStatus;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteBuildArmResource;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.time.OffsetDateTime;
 
 public final class StaticSiteBuildArmResourceImpl implements StaticSiteBuildArmResource {
@@ -34,6 +35,10 @@ public final class StaticSiteBuildArmResourceImpl implements StaticSiteBuildArmR
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String buildId() {

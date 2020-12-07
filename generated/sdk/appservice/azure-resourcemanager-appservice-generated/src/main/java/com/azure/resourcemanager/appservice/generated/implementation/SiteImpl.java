@@ -10,6 +10,7 @@ import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SitePatchResourceInner;
+import com.azure.resourcemanager.appservice.generated.models.ClientCertMode;
 import com.azure.resourcemanager.appservice.generated.models.CloningInfo;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentProfile;
 import com.azure.resourcemanager.appservice.generated.models.HostnameSslState;
@@ -19,6 +20,7 @@ import com.azure.resourcemanager.appservice.generated.models.Site;
 import com.azure.resourcemanager.appservice.generated.models.SiteAvailabilityState;
 import com.azure.resourcemanager.appservice.generated.models.SiteConfig;
 import com.azure.resourcemanager.appservice.generated.models.SlotSwapStatus;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.UsageState;
 import java.time.OffsetDateTime;
 import java.util.Collections;
@@ -165,12 +167,20 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         return this.innerModel().clientCertEnabled();
     }
 
+    public ClientCertMode clientCertMode() {
+        return this.innerModel().clientCertMode();
+    }
+
     public String clientCertExclusionPaths() {
         return this.innerModel().clientCertExclusionPaths();
     }
 
     public Boolean hostNamesDisabled() {
         return this.innerModel().hostNamesDisabled();
+    }
+
+    public String customDomainVerificationId() {
+        return this.innerModel().customDomainVerificationId();
     }
 
     public String outboundIpAddresses() {
@@ -231,6 +241,10 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public Region region() {
@@ -451,6 +465,16 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         }
     }
 
+    public SiteImpl withClientCertMode(ClientCertMode clientCertMode) {
+        if (isInCreateMode()) {
+            this.innerModel().withClientCertMode(clientCertMode);
+            return this;
+        } else {
+            this.updateSiteEnvelope.withClientCertMode(clientCertMode);
+            return this;
+        }
+    }
+
     public SiteImpl withClientCertExclusionPaths(String clientCertExclusionPaths) {
         if (isInCreateMode()) {
             this.innerModel().withClientCertExclusionPaths(clientCertExclusionPaths);
@@ -467,6 +491,16 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
             return this;
         } else {
             this.updateSiteEnvelope.withHostNamesDisabled(hostNamesDisabled);
+            return this;
+        }
+    }
+
+    public SiteImpl withCustomDomainVerificationId(String customDomainVerificationId) {
+        if (isInCreateMode()) {
+            this.innerModel().withCustomDomainVerificationId(customDomainVerificationId);
+            return this;
+        } else {
+            this.updateSiteEnvelope.withCustomDomainVerificationId(customDomainVerificationId);
             return this;
         }
     }

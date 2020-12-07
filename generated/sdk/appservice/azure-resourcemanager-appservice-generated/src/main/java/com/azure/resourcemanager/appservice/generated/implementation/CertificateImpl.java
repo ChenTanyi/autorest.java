@@ -12,6 +12,7 @@ import com.azure.resourcemanager.appservice.generated.models.Certificate;
 import com.azure.resourcemanager.appservice.generated.models.CertificatePatchResource;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentProfile;
 import com.azure.resourcemanager.appservice.generated.models.KeyVaultSecretStatus;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -134,6 +135,10 @@ public final class CertificateImpl implements Certificate, Certificate.Definitio
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public Region region() {

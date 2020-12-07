@@ -9,6 +9,7 @@ import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.PublicCertificateInner;
 import com.azure.resourcemanager.appservice.generated.models.PublicCertificate;
 import com.azure.resourcemanager.appservice.generated.models.PublicCertificateLocation;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class PublicCertificateImpl
     implements PublicCertificate, PublicCertificate.Definition, PublicCertificate.Update {
@@ -30,6 +31,10 @@ public final class PublicCertificateImpl
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public byte[] blob() {

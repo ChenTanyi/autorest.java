@@ -8,6 +8,7 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DeploymentInner;
 import com.azure.resourcemanager.appservice.generated.models.Deployment;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.time.OffsetDateTime;
 
 public final class DeploymentImpl implements Deployment, Deployment.Definition {
@@ -34,6 +35,10 @@ public final class DeploymentImpl implements Deployment, Deployment.Definition {
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public Integer status() {

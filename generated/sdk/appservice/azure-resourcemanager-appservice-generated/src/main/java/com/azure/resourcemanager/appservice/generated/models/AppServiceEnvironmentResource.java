@@ -109,7 +109,7 @@ public interface AppServiceEnvironmentResource {
      *
      * @return the internalLoadBalancingMode value.
      */
-    InternalLoadBalancingMode internalLoadBalancingMode();
+    LoadBalancingMode internalLoadBalancingMode();
 
     /**
      * Gets the multiSize property: Front-end VM size, e.g. "Medium", "Large".
@@ -341,6 +341,13 @@ public interface AppServiceEnvironmentResource {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -527,7 +534,7 @@ public interface AppServiceEnvironmentResource {
              *     the App Service Environment.
              * @return the next definition stage.
              */
-            WithCreate withInternalLoadBalancingMode(InternalLoadBalancingMode internalLoadBalancingMode);
+            WithCreate withInternalLoadBalancingMode(LoadBalancingMode internalLoadBalancingMode);
         }
         /** The stage of the AppServiceEnvironmentResource definition allowing to specify multiSize. */
         interface WithMultiSize {
@@ -826,7 +833,7 @@ public interface AppServiceEnvironmentResource {
              *     the App Service Environment.
              * @return the next definition stage.
              */
-            Update withInternalLoadBalancingMode(InternalLoadBalancingMode internalLoadBalancingMode);
+            Update withInternalLoadBalancingMode(LoadBalancingMode internalLoadBalancingMode);
         }
         /** The stage of the AppServiceEnvironmentResource update allowing to specify multiSize. */
         interface WithMultiSize {

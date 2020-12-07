@@ -8,6 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.management.Resource;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.resourcemanager.appservice.generated.models.ClientCertMode;
 import com.azure.resourcemanager.appservice.generated.models.CloningInfo;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentProfile;
 import com.azure.resourcemanager.appservice.generated.models.HostnameSslState;
@@ -15,6 +16,7 @@ import com.azure.resourcemanager.appservice.generated.models.ManagedServiceIdent
 import com.azure.resourcemanager.appservice.generated.models.RedundancyMode;
 import com.azure.resourcemanager.appservice.generated.models.SiteAvailabilityState;
 import com.azure.resourcemanager.appservice.generated.models.SlotSwapStatus;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.UsageState;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -168,6 +170,17 @@ public class SiteInner extends Resource {
     private Boolean clientCertEnabled;
 
     /*
+     * This composes with ClientCertEnabled setting.
+     * - ClientCertEnabled: false means ClientCert is ignored.
+     * - ClientCertEnabled: true and ClientCertMode: Required means ClientCert
+     * is required.
+     * - ClientCertEnabled: true and ClientCertMode: Optional means ClientCert
+     * is optional or accepted.
+     */
+    @JsonProperty(value = "properties.clientCertMode")
+    private ClientCertMode clientCertMode;
+
+    /*
      * client certificate authentication comma-separated exclusion paths
      */
     @JsonProperty(value = "properties.clientCertExclusionPaths")
@@ -181,6 +194,13 @@ public class SiteInner extends Resource {
      */
     @JsonProperty(value = "properties.hostNamesDisabled")
     private Boolean hostNamesDisabled;
+
+    /*
+     * Unique identifier that verifies the custom domains assigned to the app.
+     * Customer will add this id to a txt record for verification.
+     */
+    @JsonProperty(value = "properties.customDomainVerificationId")
+    private String customDomainVerificationId;
 
     /*
      * List of IP addresses that the app uses for outbound connections (e.g.
@@ -280,6 +300,12 @@ public class SiteInner extends Resource {
      */
     @JsonProperty(value = "kind")
     private String kind;
+
+    /*
+     * The system metadata relating to this resource.
+     */
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
 
     /**
      * Get the identity property: Managed service identity.
@@ -620,6 +646,30 @@ public class SiteInner extends Resource {
     }
 
     /**
+     * Get the clientCertMode property: This composes with ClientCertEnabled setting. - ClientCertEnabled: false means
+     * ClientCert is ignored. - ClientCertEnabled: true and ClientCertMode: Required means ClientCert is required. -
+     * ClientCertEnabled: true and ClientCertMode: Optional means ClientCert is optional or accepted.
+     *
+     * @return the clientCertMode value.
+     */
+    public ClientCertMode clientCertMode() {
+        return this.clientCertMode;
+    }
+
+    /**
+     * Set the clientCertMode property: This composes with ClientCertEnabled setting. - ClientCertEnabled: false means
+     * ClientCert is ignored. - ClientCertEnabled: true and ClientCertMode: Required means ClientCert is required. -
+     * ClientCertEnabled: true and ClientCertMode: Optional means ClientCert is optional or accepted.
+     *
+     * @param clientCertMode the clientCertMode value to set.
+     * @return the SiteInner object itself.
+     */
+    public SiteInner withClientCertMode(ClientCertMode clientCertMode) {
+        this.clientCertMode = clientCertMode;
+        return this;
+    }
+
+    /**
      * Get the clientCertExclusionPaths property: client certificate authentication comma-separated exclusion paths.
      *
      * @return the clientCertExclusionPaths value.
@@ -660,6 +710,28 @@ public class SiteInner extends Resource {
      */
     public SiteInner withHostNamesDisabled(Boolean hostNamesDisabled) {
         this.hostNamesDisabled = hostNamesDisabled;
+        return this;
+    }
+
+    /**
+     * Get the customDomainVerificationId property: Unique identifier that verifies the custom domains assigned to the
+     * app. Customer will add this id to a txt record for verification.
+     *
+     * @return the customDomainVerificationId value.
+     */
+    public String customDomainVerificationId() {
+        return this.customDomainVerificationId;
+    }
+
+    /**
+     * Set the customDomainVerificationId property: Unique identifier that verifies the custom domains assigned to the
+     * app. Customer will add this id to a txt record for verification.
+     *
+     * @param customDomainVerificationId the customDomainVerificationId value to set.
+     * @return the SiteInner object itself.
+     */
+    public SiteInner withCustomDomainVerificationId(String customDomainVerificationId) {
+        this.customDomainVerificationId = customDomainVerificationId;
         return this;
     }
 
@@ -869,6 +941,15 @@ public class SiteInner extends Resource {
         return this;
     }
 
+    /**
+     * Get the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
+    }
+
     /** {@inheritDoc} */
     @Override
     public SiteInner withLocation(String location) {
@@ -906,6 +987,9 @@ public class SiteInner extends Resource {
         }
         if (slotSwapStatus() != null) {
             slotSwapStatus().validate();
+        }
+        if (systemData() != null) {
+            systemData().validate();
         }
     }
 }

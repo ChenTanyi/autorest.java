@@ -38,6 +38,13 @@ public interface SlotConfigNamesResource {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the connectionStringNames property: List of connection string names.
      *
      * @return the connectionStringNames value.

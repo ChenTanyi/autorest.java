@@ -12,6 +12,7 @@ import com.azure.resourcemanager.appservice.generated.models.CustomHostnameDnsRe
 import com.azure.resourcemanager.appservice.generated.models.HostnameBinding;
 import com.azure.resourcemanager.appservice.generated.models.HostnameType;
 import com.azure.resourcemanager.appservice.generated.models.SslState;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class HostnameBindingImpl implements HostnameBinding, HostnameBinding.Definition, HostnameBinding.Update {
     private HostnameBindingInner innerObject;
@@ -32,6 +33,10 @@ public final class HostnameBindingImpl implements HostnameBinding, HostnameBindi
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String siteName() {

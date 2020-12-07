@@ -7,6 +7,7 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.GeoRegionInner;
 import com.azure.resourcemanager.appservice.generated.models.GeoRegion;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class GeoRegionImpl implements GeoRegion {
     private GeoRegionInner innerObject;
@@ -32,6 +33,10 @@ public final class GeoRegionImpl implements GeoRegion {
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String description() {

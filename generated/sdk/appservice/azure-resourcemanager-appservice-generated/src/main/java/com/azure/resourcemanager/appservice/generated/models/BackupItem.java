@@ -39,6 +39,13 @@ public interface BackupItem {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the backupId property: Id of the backup.
      *
      * @return the backupId value.

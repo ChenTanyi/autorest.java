@@ -38,6 +38,13 @@ public interface AddressResponse {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the serviceIpAddress property: Main public virtual IP.
      *
      * @return the serviceIpAddress value.

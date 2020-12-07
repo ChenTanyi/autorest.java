@@ -38,6 +38,13 @@ public interface PublicCertificate {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the blob property: Public Certificate byte array.
      *
      * @return the blob value.

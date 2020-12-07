@@ -37,6 +37,13 @@ public interface ProcessModuleInfo {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the baseAddress property: Base address. Used as module identifier in ARM resource URI.
      *
      * @return the baseAddress value.

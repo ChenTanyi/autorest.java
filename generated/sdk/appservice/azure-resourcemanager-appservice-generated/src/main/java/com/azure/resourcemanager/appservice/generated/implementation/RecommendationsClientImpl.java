@@ -1014,7 +1014,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for an app.
+     * Description for Get all recommendations for a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the app.
@@ -1079,7 +1079,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for an app.
+     * Description for Get all recommendations for a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the app.
@@ -1142,7 +1142,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for an app.
+     * Description for Get all recommendations for a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the app.
@@ -1166,7 +1166,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for an app.
+     * Description for Get all recommendations for a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the app.
@@ -1188,7 +1188,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for an app.
+     * Description for Get all recommendations for a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the app.
@@ -1213,7 +1213,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for an app.
+     * Description for Get all recommendations for a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the app.
@@ -1233,7 +1233,7 @@ public final class RecommendationsClientImpl implements RecommendationsClient {
     }
 
     /**
-     * Description for Get all recommendations for an app.
+     * Description for Get all recommendations for a hosting environment.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param hostingEnvironmentName Name of the app.

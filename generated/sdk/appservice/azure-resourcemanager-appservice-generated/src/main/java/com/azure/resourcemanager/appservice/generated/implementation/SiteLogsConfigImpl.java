@@ -10,6 +10,7 @@ import com.azure.resourcemanager.appservice.generated.models.ApplicationLogsConf
 import com.azure.resourcemanager.appservice.generated.models.EnabledConfig;
 import com.azure.resourcemanager.appservice.generated.models.HttpLogsConfig;
 import com.azure.resourcemanager.appservice.generated.models.SiteLogsConfig;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class SiteLogsConfigImpl implements SiteLogsConfig {
     private SiteLogsConfigInner innerObject;
@@ -35,6 +36,10 @@ public final class SiteLogsConfigImpl implements SiteLogsConfig {
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public ApplicationLogsConfig applicationLogs() {

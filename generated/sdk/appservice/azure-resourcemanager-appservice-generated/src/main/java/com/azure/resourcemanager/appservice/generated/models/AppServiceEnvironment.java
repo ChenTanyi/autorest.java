@@ -69,7 +69,7 @@ public final class AppServiceEnvironment {
      * the App Service Environment.
      */
     @JsonProperty(value = "internalLoadBalancingMode")
-    private InternalLoadBalancingMode internalLoadBalancingMode;
+    private LoadBalancingMode internalLoadBalancingMode;
 
     /*
      * Front-end VM size, e.g. "Medium", "Large".
@@ -410,7 +410,7 @@ public final class AppServiceEnvironment {
      *
      * @return the internalLoadBalancingMode value.
      */
-    public InternalLoadBalancingMode internalLoadBalancingMode() {
+    public LoadBalancingMode internalLoadBalancingMode() {
         return this.internalLoadBalancingMode;
     }
 
@@ -421,7 +421,7 @@ public final class AppServiceEnvironment {
      * @param internalLoadBalancingMode the internalLoadBalancingMode value to set.
      * @return the AppServiceEnvironment object itself.
      */
-    public AppServiceEnvironment withInternalLoadBalancingMode(InternalLoadBalancingMode internalLoadBalancingMode) {
+    public AppServiceEnvironment withInternalLoadBalancingMode(LoadBalancingMode internalLoadBalancingMode) {
         this.internalLoadBalancingMode = internalLoadBalancingMode;
         return this;
     }

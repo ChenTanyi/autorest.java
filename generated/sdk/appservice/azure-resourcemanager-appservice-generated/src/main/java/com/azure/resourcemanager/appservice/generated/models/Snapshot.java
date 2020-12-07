@@ -37,6 +37,13 @@ public interface Snapshot {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the time property: The time the snapshot was taken.
      *
      * @return the time value.

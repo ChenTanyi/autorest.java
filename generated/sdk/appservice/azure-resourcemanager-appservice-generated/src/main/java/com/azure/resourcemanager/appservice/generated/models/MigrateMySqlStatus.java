@@ -37,6 +37,13 @@ public interface MigrateMySqlStatus {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the migrationOperationStatus property: Status of the migration task.
      *
      * @return the migrationOperationStatus value.

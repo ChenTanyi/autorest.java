@@ -37,6 +37,13 @@ public interface User {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the publishingUsername property: Username used for publishing.
      *
      * @return the publishingUsername value.

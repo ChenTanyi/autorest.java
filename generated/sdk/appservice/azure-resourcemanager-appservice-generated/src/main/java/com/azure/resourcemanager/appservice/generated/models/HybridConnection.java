@@ -38,6 +38,13 @@ public interface HybridConnection {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the serviceBusNamespace property: The name of the Service Bus namespace.
      *
      * @return the serviceBusNamespace value.

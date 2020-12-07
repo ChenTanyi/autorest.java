@@ -7,6 +7,7 @@ package com.azure.resourcemanager.appservice.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.resourcemanager.appservice.generated.models.ClientCertMode;
 import com.azure.resourcemanager.appservice.generated.models.CloningInfo;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentProfile;
 import com.azure.resourcemanager.appservice.generated.models.HostnameSslState;
@@ -167,6 +168,17 @@ public class SitePatchResourceInner extends ProxyOnlyResource {
     private Boolean clientCertEnabled;
 
     /*
+     * This composes with ClientCertEnabled setting.
+     * - ClientCertEnabled: false means ClientCert is ignored.
+     * - ClientCertEnabled: true and ClientCertMode: Required means ClientCert
+     * is required.
+     * - ClientCertEnabled: true and ClientCertMode: Optional means ClientCert
+     * is optional or accepted.
+     */
+    @JsonProperty(value = "properties.clientCertMode")
+    private ClientCertMode clientCertMode;
+
+    /*
      * client certificate authentication comma-separated exclusion paths
      */
     @JsonProperty(value = "properties.clientCertExclusionPaths")
@@ -180,6 +192,13 @@ public class SitePatchResourceInner extends ProxyOnlyResource {
      */
     @JsonProperty(value = "properties.hostNamesDisabled")
     private Boolean hostNamesDisabled;
+
+    /*
+     * Unique identifier that verifies the custom domains assigned to the app.
+     * Customer will add this id to a txt record for verification.
+     */
+    @JsonProperty(value = "properties.customDomainVerificationId")
+    private String customDomainVerificationId;
 
     /*
      * List of IP addresses that the app uses for outbound connections (e.g.
@@ -613,6 +632,30 @@ public class SitePatchResourceInner extends ProxyOnlyResource {
     }
 
     /**
+     * Get the clientCertMode property: This composes with ClientCertEnabled setting. - ClientCertEnabled: false means
+     * ClientCert is ignored. - ClientCertEnabled: true and ClientCertMode: Required means ClientCert is required. -
+     * ClientCertEnabled: true and ClientCertMode: Optional means ClientCert is optional or accepted.
+     *
+     * @return the clientCertMode value.
+     */
+    public ClientCertMode clientCertMode() {
+        return this.clientCertMode;
+    }
+
+    /**
+     * Set the clientCertMode property: This composes with ClientCertEnabled setting. - ClientCertEnabled: false means
+     * ClientCert is ignored. - ClientCertEnabled: true and ClientCertMode: Required means ClientCert is required. -
+     * ClientCertEnabled: true and ClientCertMode: Optional means ClientCert is optional or accepted.
+     *
+     * @param clientCertMode the clientCertMode value to set.
+     * @return the SitePatchResourceInner object itself.
+     */
+    public SitePatchResourceInner withClientCertMode(ClientCertMode clientCertMode) {
+        this.clientCertMode = clientCertMode;
+        return this;
+    }
+
+    /**
      * Get the clientCertExclusionPaths property: client certificate authentication comma-separated exclusion paths.
      *
      * @return the clientCertExclusionPaths value.
@@ -653,6 +696,28 @@ public class SitePatchResourceInner extends ProxyOnlyResource {
      */
     public SitePatchResourceInner withHostNamesDisabled(Boolean hostNamesDisabled) {
         this.hostNamesDisabled = hostNamesDisabled;
+        return this;
+    }
+
+    /**
+     * Get the customDomainVerificationId property: Unique identifier that verifies the custom domains assigned to the
+     * app. Customer will add this id to a txt record for verification.
+     *
+     * @return the customDomainVerificationId value.
+     */
+    public String customDomainVerificationId() {
+        return this.customDomainVerificationId;
+    }
+
+    /**
+     * Set the customDomainVerificationId property: Unique identifier that verifies the custom domains assigned to the
+     * app. Customer will add this id to a txt record for verification.
+     *
+     * @param customDomainVerificationId the customDomainVerificationId value to set.
+     * @return the SitePatchResourceInner object itself.
+     */
+    public SitePatchResourceInner withCustomDomainVerificationId(String customDomainVerificationId) {
+        this.customDomainVerificationId = customDomainVerificationId;
         return this;
     }
 

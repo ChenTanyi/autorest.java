@@ -37,6 +37,13 @@ public interface SwiftVirtualNetwork {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the subnetResourceId property: The Virtual Network subnet's resource ID. This is the subnet that this Web
      * App will join. This subnet must have a delegation to Microsoft.Web/serverFarms defined first.
      *

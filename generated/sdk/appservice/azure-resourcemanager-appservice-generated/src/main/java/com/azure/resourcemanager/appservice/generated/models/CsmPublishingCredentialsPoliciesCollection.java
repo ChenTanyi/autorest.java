@@ -37,6 +37,13 @@ public interface CsmPublishingCredentialsPoliciesCollection {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the ftp property: Whether FTP is allowed.
      *
      * @return the ftp value.

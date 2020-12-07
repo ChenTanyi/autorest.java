@@ -38,6 +38,13 @@ public interface MSDeployStatus {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the deployer property: Username of deployer.
      *
      * @return the deployer value.

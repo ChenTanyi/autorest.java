@@ -6,6 +6,7 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.UserInner;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.User;
 
 public final class UserImpl implements User {
@@ -32,6 +33,10 @@ public final class UserImpl implements User {
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String publishingUsername() {

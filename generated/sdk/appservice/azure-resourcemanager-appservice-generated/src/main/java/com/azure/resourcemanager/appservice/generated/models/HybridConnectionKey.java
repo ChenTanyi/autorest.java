@@ -37,6 +37,13 @@ public interface HybridConnectionKey {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the sendKeyName property: The name of the send key.
      *
      * @return the sendKeyName value.

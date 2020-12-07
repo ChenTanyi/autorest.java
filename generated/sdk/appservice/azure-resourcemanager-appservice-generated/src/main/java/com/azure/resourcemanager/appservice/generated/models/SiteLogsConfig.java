@@ -37,6 +37,13 @@ public interface SiteLogsConfig {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the applicationLogs property: Application logs configuration.
      *
      * @return the applicationLogs value.

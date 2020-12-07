@@ -9,6 +9,7 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.BackupItemIn
 import com.azure.resourcemanager.appservice.generated.models.BackupItem;
 import com.azure.resourcemanager.appservice.generated.models.BackupItemStatus;
 import com.azure.resourcemanager.appservice.generated.models.DatabaseBackupSetting;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -37,6 +38,10 @@ public final class BackupItemImpl implements BackupItem {
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public Integer backupId() {

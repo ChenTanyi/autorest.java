@@ -9,6 +9,7 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.BackupReques
 import com.azure.resourcemanager.appservice.generated.models.BackupRequest;
 import com.azure.resourcemanager.appservice.generated.models.BackupSchedule;
 import com.azure.resourcemanager.appservice.generated.models.DatabaseBackupSetting;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.util.Collections;
 import java.util.List;
 
@@ -36,6 +37,10 @@ public final class BackupRequestImpl implements BackupRequest {
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String backupName() {

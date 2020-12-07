@@ -124,18 +124,6 @@ public class SiteConfigResourceInner extends ProxyOnlyResource {
     private Boolean httpLoggingEnabled;
 
     /*
-     * Flag to use Managed Identity Creds for ACR pull
-     */
-    @JsonProperty(value = "properties.acrUseManagedIdentityCreds")
-    private Boolean acrUseManagedIdentityCreds;
-
-    /*
-     * If using user managed identity, the user managed identity ClientId
-     */
-    @JsonProperty(value = "properties.acrUserManagedIdentityID")
-    private String acrUserManagedIdentityId;
-
-    /*
      * HTTP logs directory size limit.
      */
     @JsonProperty(value = "properties.logsDirectorySizeLimit")
@@ -291,6 +279,20 @@ public class SiteConfigResourceInner extends ProxyOnlyResource {
     private String vnetName;
 
     /*
+     * Virtual Network Route All enabled. This causes all outbound traffic to
+     * have Virtual Network Security Groups and User Defined Routes applied.
+     */
+    @JsonProperty(value = "properties.vnetRouteAllEnabled")
+    private Boolean vnetRouteAllEnabled;
+
+    /*
+     * The number of private ports assigned to this app. These will be assigned
+     * dynamically on runtime.
+     */
+    @JsonProperty(value = "properties.vnetPrivatePortsCount")
+    private Integer vnetPrivatePortsCount;
+
+    /*
      * Cross-Origin Resource Sharing (CORS) settings.
      */
     @JsonProperty(value = "properties.cors")
@@ -369,6 +371,13 @@ public class SiteConfigResourceInner extends ProxyOnlyResource {
      */
     @JsonProperty(value = "properties.minTlsVersion")
     private SupportedTlsVersions minTlsVersion;
+
+    /*
+     * ScmMinTlsVersion: configures the minimum version of TLS required for SSL
+     * requests for SCM site
+     */
+    @JsonProperty(value = "properties.scmMinTlsVersion")
+    private SupportedTlsVersions scmMinTlsVersion;
 
     /*
      * State of FTP / FTPS service
@@ -672,46 +681,6 @@ public class SiteConfigResourceInner extends ProxyOnlyResource {
      */
     public SiteConfigResourceInner withHttpLoggingEnabled(Boolean httpLoggingEnabled) {
         this.httpLoggingEnabled = httpLoggingEnabled;
-        return this;
-    }
-
-    /**
-     * Get the acrUseManagedIdentityCreds property: Flag to use Managed Identity Creds for ACR pull.
-     *
-     * @return the acrUseManagedIdentityCreds value.
-     */
-    public Boolean acrUseManagedIdentityCreds() {
-        return this.acrUseManagedIdentityCreds;
-    }
-
-    /**
-     * Set the acrUseManagedIdentityCreds property: Flag to use Managed Identity Creds for ACR pull.
-     *
-     * @param acrUseManagedIdentityCreds the acrUseManagedIdentityCreds value to set.
-     * @return the SiteConfigResourceInner object itself.
-     */
-    public SiteConfigResourceInner withAcrUseManagedIdentityCreds(Boolean acrUseManagedIdentityCreds) {
-        this.acrUseManagedIdentityCreds = acrUseManagedIdentityCreds;
-        return this;
-    }
-
-    /**
-     * Get the acrUserManagedIdentityId property: If using user managed identity, the user managed identity ClientId.
-     *
-     * @return the acrUserManagedIdentityId value.
-     */
-    public String acrUserManagedIdentityId() {
-        return this.acrUserManagedIdentityId;
-    }
-
-    /**
-     * Set the acrUserManagedIdentityId property: If using user managed identity, the user managed identity ClientId.
-     *
-     * @param acrUserManagedIdentityId the acrUserManagedIdentityId value to set.
-     * @return the SiteConfigResourceInner object itself.
-     */
-    public SiteConfigResourceInner withAcrUserManagedIdentityId(String acrUserManagedIdentityId) {
-        this.acrUserManagedIdentityId = acrUserManagedIdentityId;
         return this;
     }
 
@@ -1215,6 +1184,50 @@ public class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
+     * Get the vnetRouteAllEnabled property: Virtual Network Route All enabled. This causes all outbound traffic to have
+     * Virtual Network Security Groups and User Defined Routes applied.
+     *
+     * @return the vnetRouteAllEnabled value.
+     */
+    public Boolean vnetRouteAllEnabled() {
+        return this.vnetRouteAllEnabled;
+    }
+
+    /**
+     * Set the vnetRouteAllEnabled property: Virtual Network Route All enabled. This causes all outbound traffic to have
+     * Virtual Network Security Groups and User Defined Routes applied.
+     *
+     * @param vnetRouteAllEnabled the vnetRouteAllEnabled value to set.
+     * @return the SiteConfigResourceInner object itself.
+     */
+    public SiteConfigResourceInner withVnetRouteAllEnabled(Boolean vnetRouteAllEnabled) {
+        this.vnetRouteAllEnabled = vnetRouteAllEnabled;
+        return this;
+    }
+
+    /**
+     * Get the vnetPrivatePortsCount property: The number of private ports assigned to this app. These will be assigned
+     * dynamically on runtime.
+     *
+     * @return the vnetPrivatePortsCount value.
+     */
+    public Integer vnetPrivatePortsCount() {
+        return this.vnetPrivatePortsCount;
+    }
+
+    /**
+     * Set the vnetPrivatePortsCount property: The number of private ports assigned to this app. These will be assigned
+     * dynamically on runtime.
+     *
+     * @param vnetPrivatePortsCount the vnetPrivatePortsCount value to set.
+     * @return the SiteConfigResourceInner object itself.
+     */
+    public SiteConfigResourceInner withVnetPrivatePortsCount(Integer vnetPrivatePortsCount) {
+        this.vnetPrivatePortsCount = vnetPrivatePortsCount;
+        return this;
+    }
+
+    /**
      * Get the cors property: Cross-Origin Resource Sharing (CORS) settings.
      *
      * @return the cors value.
@@ -1474,6 +1487,28 @@ public class SiteConfigResourceInner extends ProxyOnlyResource {
      */
     public SiteConfigResourceInner withMinTlsVersion(SupportedTlsVersions minTlsVersion) {
         this.minTlsVersion = minTlsVersion;
+        return this;
+    }
+
+    /**
+     * Get the scmMinTlsVersion property: ScmMinTlsVersion: configures the minimum version of TLS required for SSL
+     * requests for SCM site.
+     *
+     * @return the scmMinTlsVersion value.
+     */
+    public SupportedTlsVersions scmMinTlsVersion() {
+        return this.scmMinTlsVersion;
+    }
+
+    /**
+     * Set the scmMinTlsVersion property: ScmMinTlsVersion: configures the minimum version of TLS required for SSL
+     * requests for SCM site.
+     *
+     * @param scmMinTlsVersion the scmMinTlsVersion value to set.
+     * @return the SiteConfigResourceInner object itself.
+     */
+    public SiteConfigResourceInner withScmMinTlsVersion(SupportedTlsVersions scmMinTlsVersion) {
+        this.scmMinTlsVersion = scmMinTlsVersion;
         return this;
     }
 

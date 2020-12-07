@@ -14,6 +14,7 @@ import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentP
 import com.azure.resourcemanager.appservice.generated.models.ProvisioningState;
 import com.azure.resourcemanager.appservice.generated.models.SkuDescription;
 import com.azure.resourcemanager.appservice.generated.models.StatusOptions;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.Map;
@@ -130,6 +131,10 @@ public final class AppServicePlanImpl implements AppServicePlan, AppServicePlan.
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public Region region() {

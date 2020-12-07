@@ -112,20 +112,6 @@ public interface SiteConfig {
     Boolean httpLoggingEnabled();
 
     /**
-     * Gets the acrUseManagedIdentityCreds property: Flag to use Managed Identity Creds for ACR pull.
-     *
-     * @return the acrUseManagedIdentityCreds value.
-     */
-    Boolean acrUseManagedIdentityCreds();
-
-    /**
-     * Gets the acrUserManagedIdentityId property: If using user managed identity, the user managed identity ClientId.
-     *
-     * @return the acrUserManagedIdentityId value.
-     */
-    String acrUserManagedIdentityId();
-
-    /**
      * Gets the logsDirectorySizeLimit property: HTTP logs directory size limit.
      *
      * @return the logsDirectorySizeLimit value.
@@ -306,6 +292,22 @@ public interface SiteConfig {
     String vnetName();
 
     /**
+     * Gets the vnetRouteAllEnabled property: Virtual Network Route All enabled. This causes all outbound traffic to
+     * have Virtual Network Security Groups and User Defined Routes applied.
+     *
+     * @return the vnetRouteAllEnabled value.
+     */
+    Boolean vnetRouteAllEnabled();
+
+    /**
+     * Gets the vnetPrivatePortsCount property: The number of private ports assigned to this app. These will be assigned
+     * dynamically on runtime.
+     *
+     * @return the vnetPrivatePortsCount value.
+     */
+    Integer vnetPrivatePortsCount();
+
+    /**
      * Gets the cors property: Cross-Origin Resource Sharing (CORS) settings.
      *
      * @return the cors value.
@@ -396,6 +398,14 @@ public interface SiteConfig {
      * @return the minTlsVersion value.
      */
     SupportedTlsVersions minTlsVersion();
+
+    /**
+     * Gets the scmMinTlsVersion property: ScmMinTlsVersion: configures the minimum version of TLS required for SSL
+     * requests for SCM site.
+     *
+     * @return the scmMinTlsVersion value.
+     */
+    SupportedTlsVersions scmMinTlsVersion();
 
     /**
      * Gets the ftpsState property: State of FTP / FTPS service.

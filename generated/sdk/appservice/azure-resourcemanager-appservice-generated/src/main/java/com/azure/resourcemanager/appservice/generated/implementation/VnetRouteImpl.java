@@ -8,6 +8,7 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetRouteInner;
 import com.azure.resourcemanager.appservice.generated.models.RouteType;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.VnetRoute;
 
 public final class VnetRouteImpl implements VnetRoute, VnetRoute.Definition, VnetRoute.Update {
@@ -29,6 +30,10 @@ public final class VnetRouteImpl implements VnetRoute, VnetRoute.Definition, Vne
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String startAddress() {

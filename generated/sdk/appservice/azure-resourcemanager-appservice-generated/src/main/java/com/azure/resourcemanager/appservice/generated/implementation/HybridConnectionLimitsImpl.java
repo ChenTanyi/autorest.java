@@ -7,6 +7,7 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.HybridConnectionLimitsInner;
 import com.azure.resourcemanager.appservice.generated.models.HybridConnectionLimits;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class HybridConnectionLimitsImpl implements HybridConnectionLimits {
     private HybridConnectionLimitsInner innerObject;
@@ -32,6 +33,10 @@ public final class HybridConnectionLimitsImpl implements HybridConnectionLimits 
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public Integer current() {

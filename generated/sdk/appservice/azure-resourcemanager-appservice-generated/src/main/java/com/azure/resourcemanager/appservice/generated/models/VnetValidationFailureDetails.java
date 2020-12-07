@@ -38,6 +38,13 @@ public interface VnetValidationFailureDetails {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the failed property: A flag describing whether or not validation failed.
      *
      * @return the failed value.

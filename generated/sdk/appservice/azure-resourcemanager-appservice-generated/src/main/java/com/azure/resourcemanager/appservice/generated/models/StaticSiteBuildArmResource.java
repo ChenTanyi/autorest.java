@@ -38,6 +38,13 @@ public interface StaticSiteBuildArmResource {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the buildId property: An identifier for the static site build.
      *
      * @return the buildId value.

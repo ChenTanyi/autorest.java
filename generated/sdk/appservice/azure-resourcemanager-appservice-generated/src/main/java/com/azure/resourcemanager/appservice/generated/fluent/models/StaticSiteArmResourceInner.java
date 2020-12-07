@@ -10,6 +10,7 @@ import com.azure.core.management.Resource;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.SkuDescription;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteBuildProperties;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -69,6 +70,12 @@ public class StaticSiteArmResourceInner extends Resource {
      */
     @JsonProperty(value = "kind")
     private String kind;
+
+    /*
+     * The system metadata relating to this resource.
+     */
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
 
     /**
      * Get the sku property: Description of a SKU for a scalable resource.
@@ -210,6 +217,15 @@ public class StaticSiteArmResourceInner extends Resource {
         return this;
     }
 
+    /**
+     * Get the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
+    }
+
     /** {@inheritDoc} */
     @Override
     public StaticSiteArmResourceInner withLocation(String location) {
@@ -235,6 +251,9 @@ public class StaticSiteArmResourceInner extends Resource {
         }
         if (buildProperties() != null) {
             buildProperties().validate();
+        }
+        if (systemData() != null) {
+            systemData().validate();
         }
     }
 }

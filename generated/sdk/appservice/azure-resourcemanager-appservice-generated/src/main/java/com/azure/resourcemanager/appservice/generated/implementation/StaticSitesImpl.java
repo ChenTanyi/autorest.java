@@ -17,6 +17,7 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteCu
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteFunctionOverviewArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserInvitationResponseResourceInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSitesWorkflowPreviewInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StringDictionaryInner;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteBuildArmResource;
@@ -27,6 +28,8 @@ import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserArmRe
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserInvitationRequestResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserInvitationResponseResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSites;
+import com.azure.resourcemanager.appservice.generated.models.StaticSitesWorkflowPreview;
+import com.azure.resourcemanager.appservice.generated.models.StaticSitesWorkflowPreviewRequest;
 import com.azure.resourcemanager.appservice.generated.models.StringDictionary;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -40,6 +43,32 @@ public final class StaticSitesImpl implements StaticSites {
     public StaticSitesImpl(StaticSitesClient innerClient, WebSiteManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
+    }
+
+    public StaticSitesWorkflowPreview previewWorkflow(
+        String location, StaticSitesWorkflowPreviewRequest staticSitesWorkflowPreviewRequest) {
+        StaticSitesWorkflowPreviewInner inner =
+            this.serviceClient().previewWorkflow(location, staticSitesWorkflowPreviewRequest);
+        if (inner != null) {
+            return new StaticSitesWorkflowPreviewImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<StaticSitesWorkflowPreview> previewWorkflowWithResponse(
+        String location, StaticSitesWorkflowPreviewRequest staticSitesWorkflowPreviewRequest, Context context) {
+        Response<StaticSitesWorkflowPreviewInner> inner =
+            this.serviceClient().previewWorkflowWithResponse(location, staticSitesWorkflowPreviewRequest, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new StaticSitesWorkflowPreviewImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
     }
 
     public PagedIterable<StaticSiteArmResource> list() {

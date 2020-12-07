@@ -15,6 +15,7 @@ import com.azure.resourcemanager.appservice.generated.models.DomainPurchaseConse
 import com.azure.resourcemanager.appservice.generated.models.DomainStatus;
 import com.azure.resourcemanager.appservice.generated.models.Hostname;
 import com.azure.resourcemanager.appservice.generated.models.ProvisioningState;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
@@ -157,6 +158,12 @@ public class DomainInner extends Resource {
      */
     @JsonProperty(value = "kind")
     private String kind;
+
+    /*
+     * The system metadata relating to this resource.
+     */
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
 
     /**
      * Get the contactAdmin property: Administrative contact.
@@ -485,6 +492,15 @@ public class DomainInner extends Resource {
         return this;
     }
 
+    /**
+     * Get the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
+    }
+
     /** {@inheritDoc} */
     @Override
     public DomainInner withLocation(String location) {
@@ -522,6 +538,9 @@ public class DomainInner extends Resource {
         }
         if (consent() != null) {
             consent().validate();
+        }
+        if (systemData() != null) {
+            systemData().validate();
         }
     }
 }

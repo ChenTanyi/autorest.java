@@ -8,6 +8,7 @@ import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.WebSiteInstanceStatusInner;
 import com.azure.resourcemanager.appservice.generated.models.ContainerInfo;
 import com.azure.resourcemanager.appservice.generated.models.SiteRuntimeState;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.WebSiteInstanceStatus;
 import java.util.Collections;
 import java.util.Map;
@@ -38,6 +39,10 @@ public final class WebSiteInstanceStatusImpl implements WebSiteInstanceStatus {
         return this.innerModel().kind();
     }
 
+    public SystemData systemData() {
+        return this.innerModel().systemData();
+    }
+
     public SiteRuntimeState state() {
         return this.innerModel().state();
     }
@@ -52,6 +57,10 @@ public final class WebSiteInstanceStatusImpl implements WebSiteInstanceStatus {
 
     public String consoleUrl() {
         return this.innerModel().consoleUrl();
+    }
+
+    public String healthCheckUrl() {
+        return this.innerModel().healthCheckUrl();
     }
 
     public Map<String, ContainerInfo> containers() {

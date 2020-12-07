@@ -38,6 +38,13 @@ public interface DomainOwnershipIdentifier {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the ownershipId property: Ownership Id.
      *
      * @return the ownershipId value.

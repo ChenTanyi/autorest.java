@@ -7,6 +7,7 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SlotConfigNamesResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.SlotConfigNamesResource;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.util.Collections;
 import java.util.List;
 
@@ -34,6 +35,10 @@ public final class SlotConfigNamesResourceImpl implements SlotConfigNamesResourc
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public List<String> connectionStringNames() {

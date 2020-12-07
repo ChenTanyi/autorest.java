@@ -37,6 +37,13 @@ public interface StorageMigrationResponse {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the operationId property: When server starts the migration process, it will return an operation ID
      * identifying that particular migration operation.
      *

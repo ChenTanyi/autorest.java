@@ -38,6 +38,13 @@ public interface Identifier {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the value property: String representation of the identity.
      *
      * @return the value value.

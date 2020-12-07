@@ -38,6 +38,13 @@ public interface SourceControl {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the token property: OAuth access token.
      *
      * @return the token value.

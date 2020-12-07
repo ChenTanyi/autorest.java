@@ -5,15 +5,16 @@
 package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
-import com.azure.resourcemanager.appservice.generated.fluent.models.SiteInstanceInner;
-import com.azure.resourcemanager.appservice.generated.models.SiteInstance;
+import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSitesWorkflowPreviewInner;
+import com.azure.resourcemanager.appservice.generated.models.StaticSitesWorkflowPreview;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
-public final class SiteInstanceImpl implements SiteInstance {
-    private SiteInstanceInner innerObject;
+public final class StaticSitesWorkflowPreviewImpl implements StaticSitesWorkflowPreview {
+    private StaticSitesWorkflowPreviewInner innerObject;
 
     private final WebSiteManager serviceManager;
 
-    SiteInstanceImpl(SiteInstanceInner innerObject, WebSiteManager serviceManager) {
+    StaticSitesWorkflowPreviewImpl(StaticSitesWorkflowPreviewInner innerObject, WebSiteManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,11 +35,19 @@ public final class SiteInstanceImpl implements SiteInstance {
         return this.innerModel().kind();
     }
 
-    public String siteInstanceName() {
-        return this.innerModel().siteInstanceName();
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
-    public SiteInstanceInner innerModel() {
+    public String path() {
+        return this.innerModel().path();
+    }
+
+    public String contents() {
+        return this.innerModel().contents();
+    }
+
+    public StaticSitesWorkflowPreviewInner innerModel() {
         return this.innerObject;
     }
 

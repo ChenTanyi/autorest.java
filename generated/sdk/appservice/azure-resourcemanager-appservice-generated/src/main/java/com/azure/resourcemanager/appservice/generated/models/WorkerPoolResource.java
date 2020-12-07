@@ -39,6 +39,13 @@ public interface WorkerPoolResource {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the sku property: Description of a SKU for a scalable resource.
      *
      * @return the sku value.

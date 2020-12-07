@@ -30,8 +30,6 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.HostnameBind
 import com.azure.resourcemanager.appservice.generated.fluent.models.HybridConnectionInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.IdentifierInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.KeyInfoInner;
-import com.azure.resourcemanager.appservice.generated.fluent.models.KeyVaultReferenceCollectionInner;
-import com.azure.resourcemanager.appservice.generated.fluent.models.KeyVaultReferenceResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.MSDeployLogInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.MSDeployStatusInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.MigrateMySqlStatusInner;
@@ -51,12 +49,12 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.PushSettings
 import com.azure.resourcemanager.appservice.generated.fluent.models.RelayServiceConnectionEntityInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RestoreRequestInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteAuthSettingsInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.SiteAuthSettingsV2Inner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteCloneabilityInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigurationSnapshotInfoInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteExtensionInfoInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteInner;
-import com.azure.resourcemanager.appservice.generated.fluent.models.SiteInstanceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteLogsConfigInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SitePatchResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SitePhpErrorLogFlagInner;
@@ -94,8 +92,6 @@ import com.azure.resourcemanager.appservice.generated.models.HostnameBinding;
 import com.azure.resourcemanager.appservice.generated.models.HybridConnection;
 import com.azure.resourcemanager.appservice.generated.models.Identifier;
 import com.azure.resourcemanager.appservice.generated.models.KeyInfo;
-import com.azure.resourcemanager.appservice.generated.models.KeyVaultReferenceCollection;
-import com.azure.resourcemanager.appservice.generated.models.KeyVaultReferenceResource;
 import com.azure.resourcemanager.appservice.generated.models.MSDeploy;
 import com.azure.resourcemanager.appservice.generated.models.MSDeployLog;
 import com.azure.resourcemanager.appservice.generated.models.MSDeployStatus;
@@ -119,11 +115,11 @@ import com.azure.resourcemanager.appservice.generated.models.RelayServiceConnect
 import com.azure.resourcemanager.appservice.generated.models.RestoreRequest;
 import com.azure.resourcemanager.appservice.generated.models.Site;
 import com.azure.resourcemanager.appservice.generated.models.SiteAuthSettings;
+import com.azure.resourcemanager.appservice.generated.models.SiteAuthSettingsV2;
 import com.azure.resourcemanager.appservice.generated.models.SiteCloneability;
 import com.azure.resourcemanager.appservice.generated.models.SiteConfigResource;
 import com.azure.resourcemanager.appservice.generated.models.SiteConfigurationSnapshotInfo;
 import com.azure.resourcemanager.appservice.generated.models.SiteExtensionInfo;
-import com.azure.resourcemanager.appservice.generated.models.SiteInstance;
 import com.azure.resourcemanager.appservice.generated.models.SiteLogsConfig;
 import com.azure.resourcemanager.appservice.generated.models.SitePhpErrorLogFlag;
 import com.azure.resourcemanager.appservice.generated.models.SiteSourceControl;
@@ -607,6 +603,56 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public SiteAuthSettingsV2 updateAuthSettingsV2(
+        String resourceGroupName, String name, SiteAuthSettingsV2Inner siteAuthSettingsV2) {
+        SiteAuthSettingsV2Inner inner =
+            this.serviceClient().updateAuthSettingsV2(resourceGroupName, name, siteAuthSettingsV2);
+        if (inner != null) {
+            return new SiteAuthSettingsV2Impl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<SiteAuthSettingsV2> updateAuthSettingsV2WithResponse(
+        String resourceGroupName, String name, SiteAuthSettingsV2Inner siteAuthSettingsV2, Context context) {
+        Response<SiteAuthSettingsV2Inner> inner =
+            this.serviceClient().updateAuthSettingsV2WithResponse(resourceGroupName, name, siteAuthSettingsV2, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new SiteAuthSettingsV2Impl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public SiteAuthSettingsV2 getAuthSettingsV2(String resourceGroupName, String name) {
+        SiteAuthSettingsV2Inner inner = this.serviceClient().getAuthSettingsV2(resourceGroupName, name);
+        if (inner != null) {
+            return new SiteAuthSettingsV2Impl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<SiteAuthSettingsV2> getAuthSettingsV2WithResponse(
+        String resourceGroupName, String name, Context context) {
+        Response<SiteAuthSettingsV2Inner> inner =
+            this.serviceClient().getAuthSettingsV2WithResponse(resourceGroupName, name, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new SiteAuthSettingsV2Impl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
     public AzureStoragePropertyDictionaryResource updateAzureStorageAccounts(
         String resourceGroupName, String name, AzureStoragePropertyDictionaryResourceInner azureStorageAccounts) {
         AzureStoragePropertyDictionaryResourceInner inner =
@@ -715,59 +761,6 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new BackupRequestImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
-    }
-
-    public KeyVaultReferenceCollection getAppSettingsKeyVaultReferences(String resourceGroupName, String name) {
-        KeyVaultReferenceCollectionInner inner =
-            this.serviceClient().getAppSettingsKeyVaultReferences(resourceGroupName, name);
-        if (inner != null) {
-            return new KeyVaultReferenceCollectionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<KeyVaultReferenceCollection> getAppSettingsKeyVaultReferencesWithResponse(
-        String resourceGroupName, String name, Context context) {
-        Response<KeyVaultReferenceCollectionInner> inner =
-            this.serviceClient().getAppSettingsKeyVaultReferencesWithResponse(resourceGroupName, name, context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new KeyVaultReferenceCollectionImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
-    }
-
-    public KeyVaultReferenceResource getAppSettingKeyVaultReference(
-        String resourceGroupName, String name, String appSettingKey) {
-        KeyVaultReferenceResourceInner inner =
-            this.serviceClient().getAppSettingKeyVaultReference(resourceGroupName, name, appSettingKey);
-        if (inner != null) {
-            return new KeyVaultReferenceResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<KeyVaultReferenceResource> getAppSettingKeyVaultReferenceWithResponse(
-        String resourceGroupName, String name, String appSettingKey, Context context) {
-        Response<KeyVaultReferenceResourceInner> inner =
-            this
-                .serviceClient()
-                .getAppSettingKeyVaultReferenceWithResponse(resourceGroupName, name, appSettingKey, context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new KeyVaultReferenceResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
@@ -1843,15 +1836,17 @@ public final class WebAppsImpl implements WebApps {
             .deleteRelayServiceConnectionWithResponse(resourceGroupName, name, entityName, context);
     }
 
-    public PagedIterable<SiteInstance> listInstanceIdentifiers(String resourceGroupName, String name) {
-        PagedIterable<SiteInstanceInner> inner = this.serviceClient().listInstanceIdentifiers(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new SiteInstanceImpl(inner1, this.manager()));
+    public PagedIterable<WebSiteInstanceStatus> listInstanceIdentifiers(String resourceGroupName, String name) {
+        PagedIterable<WebSiteInstanceStatusInner> inner =
+            this.serviceClient().listInstanceIdentifiers(resourceGroupName, name);
+        return inner.mapPage(inner1 -> new WebSiteInstanceStatusImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<SiteInstance> listInstanceIdentifiers(String resourceGroupName, String name, Context context) {
-        PagedIterable<SiteInstanceInner> inner =
+    public PagedIterable<WebSiteInstanceStatus> listInstanceIdentifiers(
+        String resourceGroupName, String name, Context context) {
+        PagedIterable<WebSiteInstanceStatusInner> inner =
             this.serviceClient().listInstanceIdentifiers(resourceGroupName, name, context);
-        return inner.mapPage(inner1 -> new SiteInstanceImpl(inner1, this.manager()));
+        return inner.mapPage(inner1 -> new WebSiteInstanceStatusImpl(inner1, this.manager()));
     }
 
     public WebSiteInstanceStatus getInstanceInfo(String resourceGroupName, String name, String instanceId) {
@@ -3254,6 +3249,62 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new SiteAuthSettingsImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public SiteAuthSettingsV2 updateAuthSettingsV2Slot(
+        String resourceGroupName, String name, String slot, SiteAuthSettingsV2Inner siteAuthSettingsV2) {
+        SiteAuthSettingsV2Inner inner =
+            this.serviceClient().updateAuthSettingsV2Slot(resourceGroupName, name, slot, siteAuthSettingsV2);
+        if (inner != null) {
+            return new SiteAuthSettingsV2Impl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<SiteAuthSettingsV2> updateAuthSettingsV2SlotWithResponse(
+        String resourceGroupName,
+        String name,
+        String slot,
+        SiteAuthSettingsV2Inner siteAuthSettingsV2,
+        Context context) {
+        Response<SiteAuthSettingsV2Inner> inner =
+            this
+                .serviceClient()
+                .updateAuthSettingsV2SlotWithResponse(resourceGroupName, name, slot, siteAuthSettingsV2, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new SiteAuthSettingsV2Impl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public SiteAuthSettingsV2 getAuthSettingsV2Slot(String resourceGroupName, String name, String slot) {
+        SiteAuthSettingsV2Inner inner = this.serviceClient().getAuthSettingsV2Slot(resourceGroupName, name, slot);
+        if (inner != null) {
+            return new SiteAuthSettingsV2Impl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<SiteAuthSettingsV2> getAuthSettingsV2SlotWithResponse(
+        String resourceGroupName, String name, String slot, Context context) {
+        Response<SiteAuthSettingsV2Inner> inner =
+            this.serviceClient().getAuthSettingsV2SlotWithResponse(resourceGroupName, name, slot, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new SiteAuthSettingsV2Impl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
@@ -4843,17 +4894,18 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public PagedIterable<SiteInstance> listInstanceIdentifiersSlot(String resourceGroupName, String name, String slot) {
-        PagedIterable<SiteInstanceInner> inner =
+    public PagedIterable<WebSiteInstanceStatus> listInstanceIdentifiersSlot(
+        String resourceGroupName, String name, String slot) {
+        PagedIterable<WebSiteInstanceStatusInner> inner =
             this.serviceClient().listInstanceIdentifiersSlot(resourceGroupName, name, slot);
-        return inner.mapPage(inner1 -> new SiteInstanceImpl(inner1, this.manager()));
+        return inner.mapPage(inner1 -> new WebSiteInstanceStatusImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<SiteInstance> listInstanceIdentifiersSlot(
+    public PagedIterable<WebSiteInstanceStatus> listInstanceIdentifiersSlot(
         String resourceGroupName, String name, String slot, Context context) {
-        PagedIterable<SiteInstanceInner> inner =
+        PagedIterable<WebSiteInstanceStatusInner> inner =
             this.serviceClient().listInstanceIdentifiersSlot(resourceGroupName, name, slot, context);
-        return inner.mapPage(inner1 -> new SiteInstanceImpl(inner1, this.manager()));
+        return inner.mapPage(inner1 -> new WebSiteInstanceStatusImpl(inner1, this.manager()));
     }
 
     public WebSiteInstanceStatus getInstanceInfoSlot(

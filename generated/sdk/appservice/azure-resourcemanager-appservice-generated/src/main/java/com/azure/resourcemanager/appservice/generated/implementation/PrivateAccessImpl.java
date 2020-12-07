@@ -8,6 +8,7 @@ import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.PrivateAccessInner;
 import com.azure.resourcemanager.appservice.generated.models.PrivateAccess;
 import com.azure.resourcemanager.appservice.generated.models.PrivateAccessVirtualNetwork;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.util.Collections;
 import java.util.List;
 
@@ -35,6 +36,10 @@ public final class PrivateAccessImpl implements PrivateAccess {
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public Boolean enabled() {

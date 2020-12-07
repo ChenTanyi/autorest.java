@@ -38,6 +38,13 @@ public interface TriggeredWebJob {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the latestRun property: Latest job run information.
      *
      * @return the latestRun value.

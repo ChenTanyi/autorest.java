@@ -8,6 +8,7 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetInfoInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetRouteInner;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.VnetInfo;
 import com.azure.resourcemanager.appservice.generated.models.VnetRoute;
 import java.util.Collections;
@@ -33,6 +34,10 @@ public final class VnetInfoImpl implements VnetInfo, VnetInfo.Definition, VnetIn
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String vnetResourceId() {

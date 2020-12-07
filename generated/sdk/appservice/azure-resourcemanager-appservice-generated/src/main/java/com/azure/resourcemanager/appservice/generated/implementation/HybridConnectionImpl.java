@@ -8,6 +8,7 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.HybridConnectionInner;
 import com.azure.resourcemanager.appservice.generated.models.HybridConnection;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class HybridConnectionImpl
     implements HybridConnection, HybridConnection.Definition, HybridConnection.Update {
@@ -29,6 +30,10 @@ public final class HybridConnectionImpl
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String serviceBusNamespace() {

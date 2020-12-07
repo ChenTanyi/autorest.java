@@ -8,6 +8,7 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.FunctionEnvelopeInner;
 import com.azure.resourcemanager.appservice.generated.models.FunctionEnvelope;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.util.Collections;
 import java.util.Map;
 
@@ -35,6 +36,10 @@ public final class FunctionEnvelopeImpl implements FunctionEnvelope, FunctionEnv
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String functionAppId() {

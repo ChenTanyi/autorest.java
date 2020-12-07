@@ -39,6 +39,13 @@ public interface FunctionEnvelope {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the functionAppId property: Function App ID.
      *
      * @return the functionAppId value.

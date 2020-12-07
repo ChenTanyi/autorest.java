@@ -7,28 +7,31 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for ConfigReferenceSource. */
-public enum ConfigReferenceSource {
-    /** Enum value KeyVault. */
-    KEY_VAULT("KeyVault");
+/** Defines values for ClientCertMode. */
+public enum ClientCertMode {
+    /** Enum value Required. */
+    REQUIRED("Required"),
 
-    /** The actual serialized value for a ConfigReferenceSource instance. */
+    /** Enum value Optional. */
+    OPTIONAL("Optional");
+
+    /** The actual serialized value for a ClientCertMode instance. */
     private final String value;
 
-    ConfigReferenceSource(String value) {
+    ClientCertMode(String value) {
         this.value = value;
     }
 
     /**
-     * Parses a serialized value to a ConfigReferenceSource instance.
+     * Parses a serialized value to a ClientCertMode instance.
      *
      * @param value the serialized value to parse.
-     * @return the parsed ConfigReferenceSource object, or null if unable to parse.
+     * @return the parsed ClientCertMode object, or null if unable to parse.
      */
     @JsonCreator
-    public static ConfigReferenceSource fromString(String value) {
-        ConfigReferenceSource[] items = ConfigReferenceSource.values();
-        for (ConfigReferenceSource item : items) {
+    public static ClientCertMode fromString(String value) {
+        ClientCertMode[] items = ClientCertMode.values();
+        for (ClientCertMode item : items) {
             if (item.toString().equalsIgnoreCase(value)) {
                 return item;
             }

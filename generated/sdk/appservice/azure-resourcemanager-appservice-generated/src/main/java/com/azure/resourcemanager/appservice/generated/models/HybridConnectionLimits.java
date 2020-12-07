@@ -37,6 +37,13 @@ public interface HybridConnectionLimits {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the current property: The current number of Hybrid Connections.
      *
      * @return the current value.

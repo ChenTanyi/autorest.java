@@ -38,6 +38,13 @@ public interface VnetRoute {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the startAddress property: The starting address for this route. This may also include a CIDR notation, in
      * which case the end address must not be specified.
      *

@@ -12,6 +12,7 @@ import com.azure.resourcemanager.appservice.generated.models.AbnormalTimePeriod;
 import com.azure.resourcemanager.appservice.generated.models.AnalysisData;
 import com.azure.resourcemanager.appservice.generated.models.DetectorDefinition;
 import com.azure.resourcemanager.appservice.generated.models.DiagnosticAnalysis;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -41,6 +42,10 @@ public final class DiagnosticAnalysisImpl implements DiagnosticAnalysis {
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public OffsetDateTime startTime() {

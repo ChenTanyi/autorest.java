@@ -9,6 +9,7 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.CsmPublishin
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmPublishingCredentialsPoliciesEntityInner;
 import com.azure.resourcemanager.appservice.generated.models.CsmPublishingCredentialsPoliciesCollection;
 import com.azure.resourcemanager.appservice.generated.models.CsmPublishingCredentialsPoliciesEntity;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class CsmPublishingCredentialsPoliciesCollectionImpl
     implements CsmPublishingCredentialsPoliciesCollection {
@@ -36,6 +37,10 @@ public final class CsmPublishingCredentialsPoliciesCollectionImpl
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public CsmPublishingCredentialsPoliciesEntity ftp() {

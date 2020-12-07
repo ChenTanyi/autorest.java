@@ -7,6 +7,7 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserArmResource;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class StaticSiteUserArmResourceImpl implements StaticSiteUserArmResource {
     private StaticSiteUserArmResourceInner innerObject;
@@ -32,6 +33,10 @@ public final class StaticSiteUserArmResourceImpl implements StaticSiteUserArmRes
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String provider() {

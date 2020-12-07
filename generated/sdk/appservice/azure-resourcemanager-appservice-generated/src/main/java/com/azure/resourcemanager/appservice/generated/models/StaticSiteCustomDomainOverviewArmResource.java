@@ -38,6 +38,13 @@ public interface StaticSiteCustomDomainOverviewArmResource {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the domainName property: The domain name for the static site custom domain.
      *
      * @return the domainName value.

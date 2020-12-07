@@ -207,6 +207,15 @@ public interface Site {
     Boolean clientCertEnabled();
 
     /**
+     * Gets the clientCertMode property: This composes with ClientCertEnabled setting. - ClientCertEnabled: false means
+     * ClientCert is ignored. - ClientCertEnabled: true and ClientCertMode: Required means ClientCert is required. -
+     * ClientCertEnabled: true and ClientCertMode: Optional means ClientCert is optional or accepted.
+     *
+     * @return the clientCertMode value.
+     */
+    ClientCertMode clientCertMode();
+
+    /**
      * Gets the clientCertExclusionPaths property: client certificate authentication comma-separated exclusion paths.
      *
      * @return the clientCertExclusionPaths value.
@@ -221,6 +230,14 @@ public interface Site {
      * @return the hostNamesDisabled value.
      */
     Boolean hostNamesDisabled();
+
+    /**
+     * Gets the customDomainVerificationId property: Unique identifier that verifies the custom domains assigned to the
+     * app. Customer will add this id to a txt record for verification.
+     *
+     * @return the customDomainVerificationId value.
+     */
+    String customDomainVerificationId();
 
     /**
      * Gets the outboundIpAddresses property: List of IP addresses that the app uses for outbound connections (e.g.
@@ -333,6 +350,13 @@ public interface Site {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -411,8 +435,10 @@ public interface Site {
                 DefinitionStages.WithHostingEnvironmentProfile,
                 DefinitionStages.WithClientAffinityEnabled,
                 DefinitionStages.WithClientCertEnabled,
+                DefinitionStages.WithClientCertMode,
                 DefinitionStages.WithClientCertExclusionPaths,
                 DefinitionStages.WithHostNamesDisabled,
+                DefinitionStages.WithCustomDomainVerificationId,
                 DefinitionStages.WithContainerSize,
                 DefinitionStages.WithDailyMemoryTimeQuota,
                 DefinitionStages.WithCloningInfo,
@@ -583,6 +609,22 @@ public interface Site {
              */
             WithCreate withClientCertEnabled(Boolean clientCertEnabled);
         }
+        /** The stage of the Site definition allowing to specify clientCertMode. */
+        interface WithClientCertMode {
+            /**
+             * Specifies the clientCertMode property: This composes with ClientCertEnabled setting. - ClientCertEnabled:
+             * false means ClientCert is ignored. - ClientCertEnabled: true and ClientCertMode: Required means
+             * ClientCert is required. - ClientCertEnabled: true and ClientCertMode: Optional means ClientCert is
+             * optional or accepted..
+             *
+             * @param clientCertMode This composes with ClientCertEnabled setting. - ClientCertEnabled: false means
+             *     ClientCert is ignored. - ClientCertEnabled: true and ClientCertMode: Required means ClientCert is
+             *     required. - ClientCertEnabled: true and ClientCertMode: Optional means ClientCert is optional or
+             *     accepted.
+             * @return the next definition stage.
+             */
+            WithCreate withClientCertMode(ClientCertMode clientCertMode);
+        }
         /** The stage of the Site definition allowing to specify clientCertExclusionPaths. */
         interface WithClientCertExclusionPaths {
             /**
@@ -607,6 +649,18 @@ public interface Site {
              * @return the next definition stage.
              */
             WithCreate withHostNamesDisabled(Boolean hostNamesDisabled);
+        }
+        /** The stage of the Site definition allowing to specify customDomainVerificationId. */
+        interface WithCustomDomainVerificationId {
+            /**
+             * Specifies the customDomainVerificationId property: Unique identifier that verifies the custom domains
+             * assigned to the app. Customer will add this id to a txt record for verification..
+             *
+             * @param customDomainVerificationId Unique identifier that verifies the custom domains assigned to the app.
+             *     Customer will add this id to a txt record for verification.
+             * @return the next definition stage.
+             */
+            WithCreate withCustomDomainVerificationId(String customDomainVerificationId);
         }
         /** The stage of the Site definition allowing to specify containerSize. */
         interface WithContainerSize {
@@ -691,8 +745,10 @@ public interface Site {
             UpdateStages.WithScmSiteAlsoStopped,
             UpdateStages.WithClientAffinityEnabled,
             UpdateStages.WithClientCertEnabled,
+            UpdateStages.WithClientCertMode,
             UpdateStages.WithClientCertExclusionPaths,
             UpdateStages.WithHostNamesDisabled,
+            UpdateStages.WithCustomDomainVerificationId,
             UpdateStages.WithContainerSize,
             UpdateStages.WithDailyMemoryTimeQuota,
             UpdateStages.WithHttpsOnly,
@@ -822,6 +878,22 @@ public interface Site {
              */
             Update withClientCertEnabled(Boolean clientCertEnabled);
         }
+        /** The stage of the Site update allowing to specify clientCertMode. */
+        interface WithClientCertMode {
+            /**
+             * Specifies the clientCertMode property: This composes with ClientCertEnabled setting. - ClientCertEnabled:
+             * false means ClientCert is ignored. - ClientCertEnabled: true and ClientCertMode: Required means
+             * ClientCert is required. - ClientCertEnabled: true and ClientCertMode: Optional means ClientCert is
+             * optional or accepted..
+             *
+             * @param clientCertMode This composes with ClientCertEnabled setting. - ClientCertEnabled: false means
+             *     ClientCert is ignored. - ClientCertEnabled: true and ClientCertMode: Required means ClientCert is
+             *     required. - ClientCertEnabled: true and ClientCertMode: Optional means ClientCert is optional or
+             *     accepted.
+             * @return the next definition stage.
+             */
+            Update withClientCertMode(ClientCertMode clientCertMode);
+        }
         /** The stage of the Site update allowing to specify clientCertExclusionPaths. */
         interface WithClientCertExclusionPaths {
             /**
@@ -846,6 +918,18 @@ public interface Site {
              * @return the next definition stage.
              */
             Update withHostNamesDisabled(Boolean hostNamesDisabled);
+        }
+        /** The stage of the Site update allowing to specify customDomainVerificationId. */
+        interface WithCustomDomainVerificationId {
+            /**
+             * Specifies the customDomainVerificationId property: Unique identifier that verifies the custom domains
+             * assigned to the app. Customer will add this id to a txt record for verification..
+             *
+             * @param customDomainVerificationId Unique identifier that verifies the custom domains assigned to the app.
+             *     Customer will add this id to a txt record for verification.
+             * @return the next definition stage.
+             */
+            Update withCustomDomainVerificationId(String customDomainVerificationId);
         }
         /** The stage of the Site update allowing to specify containerSize. */
         interface WithContainerSize {

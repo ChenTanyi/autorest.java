@@ -8,6 +8,7 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.IdentifierInner;
 import com.azure.resourcemanager.appservice.generated.models.Identifier;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class IdentifierImpl implements Identifier, Identifier.Definition, Identifier.Update {
     private IdentifierInner innerObject;
@@ -28,6 +29,10 @@ public final class IdentifierImpl implements Identifier, Identifier.Definition, 
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String value() {

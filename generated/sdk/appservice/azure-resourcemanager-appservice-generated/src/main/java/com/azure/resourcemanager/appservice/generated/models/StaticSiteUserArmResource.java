@@ -37,6 +37,13 @@ public interface StaticSiteUserArmResource {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the provider property: The identity provider for the static site user.
      *
      * @return the provider value.

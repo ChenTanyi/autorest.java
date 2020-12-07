@@ -7,6 +7,7 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SitePatchResourceInner;
+import com.azure.resourcemanager.appservice.generated.models.ClientCertMode;
 import com.azure.resourcemanager.appservice.generated.models.CloningInfo;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentProfile;
 import com.azure.resourcemanager.appservice.generated.models.HostnameSslState;
@@ -16,6 +17,7 @@ import com.azure.resourcemanager.appservice.generated.models.SiteAvailabilitySta
 import com.azure.resourcemanager.appservice.generated.models.SiteConfig;
 import com.azure.resourcemanager.appservice.generated.models.SitePatchResource;
 import com.azure.resourcemanager.appservice.generated.models.SlotSwapStatus;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.UsageState;
 import java.time.OffsetDateTime;
 import java.util.Collections;
@@ -46,6 +48,10 @@ public final class SitePatchResourceImpl implements SitePatchResource {
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public ManagedServiceIdentity identity() {
@@ -157,12 +163,20 @@ public final class SitePatchResourceImpl implements SitePatchResource {
         return this.innerModel().clientCertEnabled();
     }
 
+    public ClientCertMode clientCertMode() {
+        return this.innerModel().clientCertMode();
+    }
+
     public String clientCertExclusionPaths() {
         return this.innerModel().clientCertExclusionPaths();
     }
 
     public Boolean hostNamesDisabled() {
         return this.innerModel().hostNamesDisabled();
+    }
+
+    public String customDomainVerificationId() {
+        return this.innerModel().customDomainVerificationId();
     }
 
     public String outboundIpAddresses() {

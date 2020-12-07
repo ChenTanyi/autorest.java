@@ -7,6 +7,7 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmPublishingCredentialsPoliciesEntityInner;
 import com.azure.resourcemanager.appservice.generated.models.CsmPublishingCredentialsPoliciesEntity;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class CsmPublishingCredentialsPoliciesEntityImpl implements CsmPublishingCredentialsPoliciesEntity {
     private CsmPublishingCredentialsPoliciesEntityInner innerObject;
@@ -33,6 +34,10 @@ public final class CsmPublishingCredentialsPoliciesEntityImpl implements CsmPubl
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public Boolean allow() {

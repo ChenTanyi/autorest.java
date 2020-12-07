@@ -38,6 +38,13 @@ public interface WebSiteInstanceStatus {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the state property: The state property.
      *
      * @return the state value.
@@ -59,11 +66,18 @@ public interface WebSiteInstanceStatus {
     String detectorUrl();
 
     /**
-     * Gets the consoleUrl property: Link to the Diagnose and Solve Portal.
+     * Gets the consoleUrl property: Link to the console to web app instance.
      *
      * @return the consoleUrl value.
      */
     String consoleUrl();
+
+    /**
+     * Gets the healthCheckUrl property: Link to the console to web app instance.
+     *
+     * @return the healthCheckUrl value.
+     */
+    String healthCheckUrl();
 
     /**
      * Gets the containers property: Dictionary of &lt;ContainerInfo&gt;.

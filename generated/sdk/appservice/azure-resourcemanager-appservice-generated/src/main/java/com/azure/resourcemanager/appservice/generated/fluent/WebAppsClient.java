@@ -30,8 +30,6 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.HostnameBind
 import com.azure.resourcemanager.appservice.generated.fluent.models.HybridConnectionInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.IdentifierInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.KeyInfoInner;
-import com.azure.resourcemanager.appservice.generated.fluent.models.KeyVaultReferenceCollectionInner;
-import com.azure.resourcemanager.appservice.generated.fluent.models.KeyVaultReferenceResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.MSDeployLogInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.MSDeployStatusInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.MigrateMySqlStatusInner;
@@ -51,12 +49,12 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.PushSettings
 import com.azure.resourcemanager.appservice.generated.fluent.models.RelayServiceConnectionEntityInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RestoreRequestInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteAuthSettingsInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.SiteAuthSettingsV2Inner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteCloneabilityInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigurationSnapshotInfoInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteExtensionInfoInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteInner;
-import com.azure.resourcemanager.appservice.generated.fluent.models.SiteInstanceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteLogsConfigInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SitePatchResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SitePhpErrorLogFlagInner;
@@ -916,6 +914,69 @@ public interface WebAppsClient {
     Response<SiteAuthSettingsInner> getAuthSettingsWithResponse(String resourceGroupName, String name, Context context);
 
     /**
+     * Description for Updates site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of web app.
+     * @param siteAuthSettingsV2 Auth settings associated with web app.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    SiteAuthSettingsV2Inner updateAuthSettingsV2(
+        String resourceGroupName, String name, SiteAuthSettingsV2Inner siteAuthSettingsV2);
+
+    /**
+     * Description for Updates site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of web app.
+     * @param siteAuthSettingsV2 Auth settings associated with web app.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    Response<SiteAuthSettingsV2Inner> updateAuthSettingsV2WithResponse(
+        String resourceGroupName, String name, SiteAuthSettingsV2Inner siteAuthSettingsV2, Context context);
+
+    /**
+     * Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    SiteAuthSettingsV2Inner getAuthSettingsV2(String resourceGroupName, String name);
+
+    /**
+     * Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    Response<SiteAuthSettingsV2Inner> getAuthSettingsV2WithResponse(
+        String resourceGroupName, String name, Context context);
+
+    /**
      * Description for Updates the Azure storage account configurations of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -1070,69 +1131,6 @@ public interface WebAppsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<BackupRequestInner> getBackupConfigurationWithResponse(
         String resourceGroupName, String name, Context context);
-
-    /**
-     * Description for Gets the config reference app settings and status of an app.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the app.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return web app key vault reference and status ARM resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    KeyVaultReferenceCollectionInner getAppSettingsKeyVaultReferences(String resourceGroupName, String name);
-
-    /**
-     * Description for Gets the config reference app settings and status of an app.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the app.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return web app key vault reference and status ARM resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<KeyVaultReferenceCollectionInner> getAppSettingsKeyVaultReferencesWithResponse(
-        String resourceGroupName, String name, Context context);
-
-    /**
-     * Description for Gets the config reference and status of an app.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the app.
-     * @param appSettingKey App Setting key name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return web app key vault reference and status ARM resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    KeyVaultReferenceResourceInner getAppSettingKeyVaultReference(
-        String resourceGroupName, String name, String appSettingKey);
-
-    /**
-     * Description for Gets the config reference and status of an app.
-     *
-     * @param resourceGroupName Name of the resource group to which the resource belongs.
-     * @param name Name of the app.
-     * @param appSettingKey App Setting key name.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return web app key vault reference and status ARM resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<KeyVaultReferenceResourceInner> getAppSettingKeyVaultReferenceWithResponse(
-        String resourceGroupName, String name, String appSettingKey, Context context);
 
     /**
      * Description for Replaces the connection strings of an app.
@@ -3394,7 +3392,7 @@ public interface WebAppsClient {
      * @return collection of app instances.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<SiteInstanceInner> listInstanceIdentifiers(String resourceGroupName, String name);
+    PagedIterable<WebSiteInstanceStatusInner> listInstanceIdentifiers(String resourceGroupName, String name);
 
     /**
      * Description for Gets all scale-out instances of an app.
@@ -3409,7 +3407,8 @@ public interface WebAppsClient {
      * @return collection of app instances.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<SiteInstanceInner> listInstanceIdentifiers(String resourceGroupName, String name, Context context);
+    PagedIterable<WebSiteInstanceStatusInner> listInstanceIdentifiers(
+        String resourceGroupName, String name, Context context);
 
     /**
      * Description for Gets all scale-out instances of an app.
@@ -6484,6 +6483,79 @@ public interface WebAppsClient {
         String resourceGroupName, String name, String slot, Context context);
 
     /**
+     * Description for Updates site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of web app.
+     * @param slot Name of web app slot. If not specified then will default to production slot.
+     * @param siteAuthSettingsV2 Auth settings associated with web app.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    SiteAuthSettingsV2Inner updateAuthSettingsV2Slot(
+        String resourceGroupName, String name, String slot, SiteAuthSettingsV2Inner siteAuthSettingsV2);
+
+    /**
+     * Description for Updates site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of web app.
+     * @param slot Name of web app slot. If not specified then will default to production slot.
+     * @param siteAuthSettingsV2 Auth settings associated with web app.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    Response<SiteAuthSettingsV2Inner> updateAuthSettingsV2SlotWithResponse(
+        String resourceGroupName,
+        String name,
+        String slot,
+        SiteAuthSettingsV2Inner siteAuthSettingsV2,
+        Context context);
+
+    /**
+     * Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param slot Name of the deployment slot. If a slot is not specified, the API will get the settings for the
+     *     production slot.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    SiteAuthSettingsV2Inner getAuthSettingsV2Slot(String resourceGroupName, String name, String slot);
+
+    /**
+     * Description for Gets site's Authentication / Authorization settings for apps via the V2 format.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param slot Name of the deployment slot. If a slot is not specified, the API will get the settings for the
+     *     production slot.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    Response<SiteAuthSettingsV2Inner> getAuthSettingsV2SlotWithResponse(
+        String resourceGroupName, String name, String slot, Context context);
+
+    /**
      * Description for Updates the Azure storage account configurations of an app.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -9150,7 +9222,8 @@ public interface WebAppsClient {
      * @return collection of app instances.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<SiteInstanceInner> listInstanceIdentifiersSlot(String resourceGroupName, String name, String slot);
+    PagedIterable<WebSiteInstanceStatusInner> listInstanceIdentifiersSlot(
+        String resourceGroupName, String name, String slot);
 
     /**
      * Description for Gets all scale-out instances of an app.
@@ -9166,7 +9239,7 @@ public interface WebAppsClient {
      * @return collection of app instances.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<SiteInstanceInner> listInstanceIdentifiersSlot(
+    PagedIterable<WebSiteInstanceStatusInner> listInstanceIdentifiersSlot(
         String resourceGroupName, String name, String slot, Context context);
 
     /**

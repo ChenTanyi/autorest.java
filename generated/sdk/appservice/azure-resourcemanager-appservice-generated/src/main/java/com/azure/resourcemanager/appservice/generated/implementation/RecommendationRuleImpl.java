@@ -9,6 +9,7 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.Recommendati
 import com.azure.resourcemanager.appservice.generated.models.Channels;
 import com.azure.resourcemanager.appservice.generated.models.NotificationLevel;
 import com.azure.resourcemanager.appservice.generated.models.RecommendationRule;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
@@ -37,6 +38,10 @@ public final class RecommendationRuleImpl implements RecommendationRule {
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String recommendationName() {

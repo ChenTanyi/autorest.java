@@ -10,6 +10,7 @@ import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.PremierAddOnInner;
 import com.azure.resourcemanager.appservice.generated.models.PremierAddOn;
 import com.azure.resourcemanager.appservice.generated.models.PremierAddOnPatchResource;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.util.Collections;
 import java.util.Map;
 
@@ -65,6 +66,10 @@ public final class PremierAddOnImpl implements PremierAddOn, PremierAddOn.Defini
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public Region region() {

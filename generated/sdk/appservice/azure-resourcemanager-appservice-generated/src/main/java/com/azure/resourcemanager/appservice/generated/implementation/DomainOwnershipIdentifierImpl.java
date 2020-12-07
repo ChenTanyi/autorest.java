@@ -8,6 +8,7 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DomainOwnershipIdentifierInner;
 import com.azure.resourcemanager.appservice.generated.models.DomainOwnershipIdentifier;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class DomainOwnershipIdentifierImpl
     implements DomainOwnershipIdentifier, DomainOwnershipIdentifier.Definition, DomainOwnershipIdentifier.Update {
@@ -29,6 +30,10 @@ public final class DomainOwnershipIdentifierImpl
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String ownershipId() {

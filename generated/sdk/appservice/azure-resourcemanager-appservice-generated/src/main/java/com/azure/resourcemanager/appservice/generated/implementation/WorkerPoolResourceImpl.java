@@ -9,6 +9,7 @@ import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.WorkerPoolResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.ComputeModeOptions;
 import com.azure.resourcemanager.appservice.generated.models.SkuDescription;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.WorkerPoolResource;
 import java.util.Collections;
 import java.util.List;
@@ -33,6 +34,10 @@ public final class WorkerPoolResourceImpl
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public SkuDescription sku() {

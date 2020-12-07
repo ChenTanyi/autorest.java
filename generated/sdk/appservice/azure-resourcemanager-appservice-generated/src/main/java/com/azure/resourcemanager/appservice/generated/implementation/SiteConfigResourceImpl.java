@@ -25,6 +25,7 @@ import com.azure.resourcemanager.appservice.generated.models.SiteLimits;
 import com.azure.resourcemanager.appservice.generated.models.SiteLoadBalancing;
 import com.azure.resourcemanager.appservice.generated.models.SiteMachineKey;
 import com.azure.resourcemanager.appservice.generated.models.SupportedTlsVersions;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.VirtualApplication;
 import java.time.OffsetDateTime;
 import java.util.Collections;
@@ -54,6 +55,10 @@ public final class SiteConfigResourceImpl implements SiteConfigResource {
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public Integer numberOfWorkers() {
@@ -115,14 +120,6 @@ public final class SiteConfigResourceImpl implements SiteConfigResource {
 
     public Boolean httpLoggingEnabled() {
         return this.innerModel().httpLoggingEnabled();
-    }
-
-    public Boolean acrUseManagedIdentityCreds() {
-        return this.innerModel().acrUseManagedIdentityCreds();
-    }
-
-    public String acrUserManagedIdentityId() {
-        return this.innerModel().acrUserManagedIdentityId();
     }
 
     public Integer logsDirectorySizeLimit() {
@@ -245,6 +242,14 @@ public final class SiteConfigResourceImpl implements SiteConfigResource {
         return this.innerModel().vnetName();
     }
 
+    public Boolean vnetRouteAllEnabled() {
+        return this.innerModel().vnetRouteAllEnabled();
+    }
+
+    public Integer vnetPrivatePortsCount() {
+        return this.innerModel().vnetPrivatePortsCount();
+    }
+
     public CorsSettings cors() {
         return this.innerModel().cors();
     }
@@ -310,6 +315,10 @@ public final class SiteConfigResourceImpl implements SiteConfigResource {
 
     public SupportedTlsVersions minTlsVersion() {
         return this.innerModel().minTlsVersion();
+    }
+
+    public SupportedTlsVersions scmMinTlsVersion() {
+        return this.innerModel().scmMinTlsVersion();
     }
 
     public FtpsState ftpsState() {

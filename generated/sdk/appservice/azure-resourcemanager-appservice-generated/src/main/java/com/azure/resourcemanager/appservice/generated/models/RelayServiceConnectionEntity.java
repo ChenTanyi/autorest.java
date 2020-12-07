@@ -38,6 +38,13 @@ public interface RelayServiceConnectionEntity {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the entityName property: The entityName property.
      *
      * @return the entityName value.

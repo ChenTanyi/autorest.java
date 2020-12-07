@@ -11,6 +11,7 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceCe
 import com.azure.resourcemanager.appservice.generated.models.AppServiceCertificatePatchResource;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceCertificateResource;
 import com.azure.resourcemanager.appservice.generated.models.KeyVaultSecretStatus;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.util.Collections;
 import java.util.Map;
 
@@ -61,6 +62,10 @@ public final class AppServiceCertificateResourceImpl
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public Region region() {

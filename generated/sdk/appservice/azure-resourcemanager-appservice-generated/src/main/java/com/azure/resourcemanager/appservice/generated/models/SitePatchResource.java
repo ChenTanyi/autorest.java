@@ -40,6 +40,13 @@ public interface SitePatchResource {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the identity property: Managed service identity.
      *
      * @return the identity value.
@@ -196,6 +203,15 @@ public interface SitePatchResource {
     Boolean clientCertEnabled();
 
     /**
+     * Gets the clientCertMode property: This composes with ClientCertEnabled setting. - ClientCertEnabled: false means
+     * ClientCert is ignored. - ClientCertEnabled: true and ClientCertMode: Required means ClientCert is required. -
+     * ClientCertEnabled: true and ClientCertMode: Optional means ClientCert is optional or accepted.
+     *
+     * @return the clientCertMode value.
+     */
+    ClientCertMode clientCertMode();
+
+    /**
      * Gets the clientCertExclusionPaths property: client certificate authentication comma-separated exclusion paths.
      *
      * @return the clientCertExclusionPaths value.
@@ -210,6 +226,14 @@ public interface SitePatchResource {
      * @return the hostNamesDisabled value.
      */
     Boolean hostNamesDisabled();
+
+    /**
+     * Gets the customDomainVerificationId property: Unique identifier that verifies the custom domains assigned to the
+     * app. Customer will add this id to a txt record for verification.
+     *
+     * @return the customDomainVerificationId value.
+     */
+    String customDomainVerificationId();
 
     /**
      * Gets the outboundIpAddresses property: List of IP addresses that the app uses for outbound connections (e.g.

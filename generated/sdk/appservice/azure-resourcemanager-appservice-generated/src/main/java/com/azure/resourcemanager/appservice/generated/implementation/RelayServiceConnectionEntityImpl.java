@@ -8,6 +8,7 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RelayServiceConnectionEntityInner;
 import com.azure.resourcemanager.appservice.generated.models.RelayServiceConnectionEntity;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class RelayServiceConnectionEntityImpl
     implements RelayServiceConnectionEntity,
@@ -31,6 +32,10 @@ public final class RelayServiceConnectionEntityImpl
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String entityName() {

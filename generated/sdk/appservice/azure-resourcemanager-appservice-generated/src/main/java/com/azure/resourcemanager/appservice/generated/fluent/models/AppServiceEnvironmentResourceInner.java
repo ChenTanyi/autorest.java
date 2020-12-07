@@ -9,10 +9,11 @@ import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.management.Resource;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentStatus;
-import com.azure.resourcemanager.appservice.generated.models.InternalLoadBalancingMode;
+import com.azure.resourcemanager.appservice.generated.models.LoadBalancingMode;
 import com.azure.resourcemanager.appservice.generated.models.NameValuePair;
 import com.azure.resourcemanager.appservice.generated.models.NetworkAccessControlEntry;
 import com.azure.resourcemanager.appservice.generated.models.ProvisioningState;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.VirtualIpMapping;
 import com.azure.resourcemanager.appservice.generated.models.VirtualNetworkProfile;
 import com.azure.resourcemanager.appservice.generated.models.WorkerPool;
@@ -80,7 +81,7 @@ public class AppServiceEnvironmentResourceInner extends Resource {
      * the App Service Environment.
      */
     @JsonProperty(value = "properties.internalLoadBalancingMode")
-    private InternalLoadBalancingMode internalLoadBalancingMode;
+    private LoadBalancingMode internalLoadBalancingMode;
 
     /*
      * Front-end VM size, e.g. "Medium", "Large".
@@ -283,6 +284,12 @@ public class AppServiceEnvironmentResourceInner extends Resource {
     @JsonProperty(value = "kind")
     private String kind;
 
+    /*
+     * The system metadata relating to this resource.
+     */
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
+
     /**
      * Get the namePropertiesName property: Name of the App Service Environment.
      *
@@ -427,7 +434,7 @@ public class AppServiceEnvironmentResourceInner extends Resource {
      *
      * @return the internalLoadBalancingMode value.
      */
-    public InternalLoadBalancingMode internalLoadBalancingMode() {
+    public LoadBalancingMode internalLoadBalancingMode() {
         return this.internalLoadBalancingMode;
     }
 
@@ -439,7 +446,7 @@ public class AppServiceEnvironmentResourceInner extends Resource {
      * @return the AppServiceEnvironmentResourceInner object itself.
      */
     public AppServiceEnvironmentResourceInner withInternalLoadBalancingMode(
-        InternalLoadBalancingMode internalLoadBalancingMode) {
+        LoadBalancingMode internalLoadBalancingMode) {
         this.internalLoadBalancingMode = internalLoadBalancingMode;
         return this;
     }
@@ -919,6 +926,15 @@ public class AppServiceEnvironmentResourceInner extends Resource {
         return this;
     }
 
+    /**
+     * Get the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
+    }
+
     /** {@inheritDoc} */
     @Override
     public AppServiceEnvironmentResourceInner withLocation(String location) {
@@ -956,6 +972,9 @@ public class AppServiceEnvironmentResourceInner extends Resource {
         }
         if (clusterSettings() != null) {
             clusterSettings().forEach(e -> e.validate());
+        }
+        if (systemData() != null) {
+            systemData().validate();
         }
     }
 }

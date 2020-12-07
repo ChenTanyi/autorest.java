@@ -7,28 +7,28 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for ConfigReferenceLocation. */
-public enum ConfigReferenceLocation {
-    /** Enum value ApplicationSetting. */
-    APPLICATION_SETTING("ApplicationSetting");
+/** Defines values for ClientCredentialMethod. */
+public enum ClientCredentialMethod {
+    /** Enum value ClientSecretPost. */
+    CLIENT_SECRET_POST("ClientSecretPost");
 
-    /** The actual serialized value for a ConfigReferenceLocation instance. */
+    /** The actual serialized value for a ClientCredentialMethod instance. */
     private final String value;
 
-    ConfigReferenceLocation(String value) {
+    ClientCredentialMethod(String value) {
         this.value = value;
     }
 
     /**
-     * Parses a serialized value to a ConfigReferenceLocation instance.
+     * Parses a serialized value to a ClientCredentialMethod instance.
      *
      * @param value the serialized value to parse.
-     * @return the parsed ConfigReferenceLocation object, or null if unable to parse.
+     * @return the parsed ClientCredentialMethod object, or null if unable to parse.
      */
     @JsonCreator
-    public static ConfigReferenceLocation fromString(String value) {
-        ConfigReferenceLocation[] items = ConfigReferenceLocation.values();
-        for (ConfigReferenceLocation item : items) {
+    public static ClientCredentialMethod fromString(String value) {
+        ClientCredentialMethod[] items = ClientCredentialMethod.values();
+        for (ClientCredentialMethod item : items) {
             if (item.toString().equalsIgnoreCase(value)) {
                 return item;
             }

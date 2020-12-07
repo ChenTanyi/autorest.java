@@ -8,6 +8,7 @@ import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.MigrateMySqlStatusInner;
 import com.azure.resourcemanager.appservice.generated.models.MigrateMySqlStatus;
 import com.azure.resourcemanager.appservice.generated.models.OperationStatus;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class MigrateMySqlStatusImpl implements MigrateMySqlStatus {
     private MigrateMySqlStatusInner innerObject;
@@ -33,6 +34,10 @@ public final class MigrateMySqlStatusImpl implements MigrateMySqlStatus {
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public OperationStatus migrationOperationStatus() {

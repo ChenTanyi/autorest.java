@@ -38,6 +38,13 @@ public interface StaticSiteUserInvitationResponseResource {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the expiresOn property: The expiration time of the invitation.
      *
      * @return the expiresOn value.

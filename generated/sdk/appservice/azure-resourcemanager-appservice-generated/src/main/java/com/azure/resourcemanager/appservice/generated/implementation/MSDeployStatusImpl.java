@@ -8,6 +8,7 @@ import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.MSDeployStatusInner;
 import com.azure.resourcemanager.appservice.generated.models.MSDeployProvisioningState;
 import com.azure.resourcemanager.appservice.generated.models.MSDeployStatus;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.time.OffsetDateTime;
 
 public final class MSDeployStatusImpl implements MSDeployStatus {
@@ -34,6 +35,10 @@ public final class MSDeployStatusImpl implements MSDeployStatus {
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String deployer() {

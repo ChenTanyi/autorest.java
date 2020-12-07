@@ -7,6 +7,7 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ResourceHealthMetadataInner;
 import com.azure.resourcemanager.appservice.generated.models.ResourceHealthMetadata;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class ResourceHealthMetadataImpl implements ResourceHealthMetadata {
     private ResourceHealthMetadataInner innerObject;
@@ -32,6 +33,10 @@ public final class ResourceHealthMetadataImpl implements ResourceHealthMetadata 
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String category() {

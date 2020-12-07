@@ -38,6 +38,13 @@ public interface Usage {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the displayName property: Friendly name shown in the UI.
      *
      * @return the displayName value.

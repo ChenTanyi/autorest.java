@@ -37,6 +37,13 @@ public interface BillingMeter {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the meterId property: Meter GUID onboarded in Commerce.
      *
      * @return the meterId value.

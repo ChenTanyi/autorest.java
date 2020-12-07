@@ -38,6 +38,13 @@ public interface MSDeployLog {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the entries property: List of log entry messages.
      *
      * @return the entries value.

@@ -11,6 +11,7 @@ import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentProfile;
 import com.azure.resourcemanager.appservice.generated.models.KeyVaultSecretStatus;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
@@ -151,6 +152,12 @@ public class CertificateInner extends Resource {
      */
     @JsonProperty(value = "kind")
     private String kind;
+
+    /*
+     * The system metadata relating to this resource.
+     */
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
 
     /**
      * Get the friendlyName property: Friendly name of the certificate.
@@ -434,6 +441,15 @@ public class CertificateInner extends Resource {
         return this;
     }
 
+    /**
+     * Get the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
+    }
+
     /** {@inheritDoc} */
     @Override
     public CertificateInner withLocation(String location) {
@@ -456,6 +472,9 @@ public class CertificateInner extends Resource {
     public void validate() {
         if (hostingEnvironmentProfile() != null) {
             hostingEnvironmentProfile().validate();
+        }
+        if (systemData() != null) {
+            systemData().validate();
         }
     }
 }

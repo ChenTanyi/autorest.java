@@ -29,6 +29,7 @@ import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.fluent.ResourceProvidersClient;
+import com.azure.resourcemanager.appservice.generated.fluent.models.AppserviceGithubTokenInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.BillingMeterInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DeploymentLocationsInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.GeoRegionInner;
@@ -41,6 +42,7 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.SourceContro
 import com.azure.resourcemanager.appservice.generated.fluent.models.UserInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ValidateResponseInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetValidationFailureDetailsInner;
+import com.azure.resourcemanager.appservice.generated.models.AppserviceGithubTokenRequest;
 import com.azure.resourcemanager.appservice.generated.models.BillingMeterCollection;
 import com.azure.resourcemanager.appservice.generated.models.CsmMoveResourceEnvelope;
 import com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException;
@@ -82,6 +84,17 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
     private interface ResourceProvidersService {
+        @Headers({"Content-Type: application/json"})
+        @Post("/providers/Microsoft.Web/generateGithubAccessTokenForAppserviceCLI")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<AppserviceGithubTokenInner>> generateGithubAccessTokenForAppserviceCliAsync(
+            @HostParam("$host") String endpoint,
+            @QueryParam("api-version") String apiVersion,
+            @BodyParam("application/json") AppserviceGithubTokenRequest request,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
         @Headers({"Content-Type: application/json"})
         @Get("/providers/Microsoft.Web/publishingUsers/web")
         @ExpectedResponses({200})
@@ -321,6 +334,124 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
             @HostParam("$host") String endpoint,
             @HeaderParam("Accept") String accept,
             Context context);
+    }
+
+    /**
+     * Description for Exchange code for GitHub access token for AppService CLI.
+     *
+     * @param request Appservice Github token request content.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return github access token for Appservice CLI github integration.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<AppserviceGithubTokenInner>> generateGithubAccessTokenForAppserviceCliAsyncWithResponseAsync(
+        AppserviceGithubTokenRequest request) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (request == null) {
+            return Mono.error(new IllegalArgumentException("Parameter request is required and cannot be null."));
+        } else {
+            request.validate();
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .generateGithubAccessTokenForAppserviceCliAsync(
+                            this.client.getEndpoint(), this.client.getApiVersion(), request, accept, context))
+            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+    }
+
+    /**
+     * Description for Exchange code for GitHub access token for AppService CLI.
+     *
+     * @param request Appservice Github token request content.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return github access token for Appservice CLI github integration.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<AppserviceGithubTokenInner>> generateGithubAccessTokenForAppserviceCliAsyncWithResponseAsync(
+        AppserviceGithubTokenRequest request, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (request == null) {
+            return Mono.error(new IllegalArgumentException("Parameter request is required and cannot be null."));
+        } else {
+            request.validate();
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .generateGithubAccessTokenForAppserviceCliAsync(
+                this.client.getEndpoint(), this.client.getApiVersion(), request, accept, context);
+    }
+
+    /**
+     * Description for Exchange code for GitHub access token for AppService CLI.
+     *
+     * @param request Appservice Github token request content.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return github access token for Appservice CLI github integration.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<AppserviceGithubTokenInner> generateGithubAccessTokenForAppserviceCliAsyncAsync(
+        AppserviceGithubTokenRequest request) {
+        return generateGithubAccessTokenForAppserviceCliAsyncWithResponseAsync(request)
+            .flatMap(
+                (Response<AppserviceGithubTokenInner> res) -> {
+                    if (res.getValue() != null) {
+                        return Mono.just(res.getValue());
+                    } else {
+                        return Mono.empty();
+                    }
+                });
+    }
+
+    /**
+     * Description for Exchange code for GitHub access token for AppService CLI.
+     *
+     * @param request Appservice Github token request content.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return github access token for Appservice CLI github integration.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public AppserviceGithubTokenInner generateGithubAccessTokenForAppserviceCliAsync(
+        AppserviceGithubTokenRequest request) {
+        return generateGithubAccessTokenForAppserviceCliAsyncAsync(request).block();
+    }
+
+    /**
+     * Description for Exchange code for GitHub access token for AppService CLI.
+     *
+     * @param request Appservice Github token request content.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return github access token for Appservice CLI github integration.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<AppserviceGithubTokenInner> generateGithubAccessTokenForAppserviceCliAsyncWithResponse(
+        AppserviceGithubTokenRequest request, Context context) {
+        return generateGithubAccessTokenForAppserviceCliAsyncWithResponseAsync(request, context).block();
     }
 
     /**

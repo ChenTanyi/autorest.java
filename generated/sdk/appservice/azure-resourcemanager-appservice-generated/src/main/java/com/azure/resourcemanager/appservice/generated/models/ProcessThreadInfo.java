@@ -38,6 +38,13 @@ public interface ProcessThreadInfo {
     String kind();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the identifier property: Site extension ID.
      *
      * @return the identifier value.

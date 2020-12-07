@@ -8,6 +8,7 @@ import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteAuthSettingsInner;
 import com.azure.resourcemanager.appservice.generated.models.BuiltInAuthenticationProvider;
 import com.azure.resourcemanager.appservice.generated.models.SiteAuthSettings;
+import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.UnauthenticatedClientAction;
 import java.util.Collections;
 import java.util.List;
@@ -36,6 +37,10 @@ public final class SiteAuthSettingsImpl implements SiteAuthSettings {
 
     public String kind() {
         return this.innerModel().kind();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public Boolean enabled() {
@@ -79,6 +84,10 @@ public final class SiteAuthSettingsImpl implements SiteAuthSettings {
         return this.innerModel().clientSecret();
     }
 
+    public String clientSecretSettingName() {
+        return this.innerModel().clientSecretSettingName();
+    }
+
     public String clientSecretCertificateThumbprint() {
         return this.innerModel().clientSecretCertificateThumbprint();
     }
@@ -109,12 +118,20 @@ public final class SiteAuthSettingsImpl implements SiteAuthSettings {
         }
     }
 
+    public String aadClaimsAuthorization() {
+        return this.innerModel().aadClaimsAuthorization();
+    }
+
     public String googleClientId() {
         return this.innerModel().googleClientId();
     }
 
     public String googleClientSecret() {
         return this.innerModel().googleClientSecret();
+    }
+
+    public String googleClientSecretSettingName() {
+        return this.innerModel().googleClientSecretSettingName();
     }
 
     public List<String> googleOAuthScopes() {
@@ -134,8 +151,33 @@ public final class SiteAuthSettingsImpl implements SiteAuthSettings {
         return this.innerModel().facebookAppSecret();
     }
 
+    public String facebookAppSecretSettingName() {
+        return this.innerModel().facebookAppSecretSettingName();
+    }
+
     public List<String> facebookOAuthScopes() {
         List<String> inner = this.innerModel().facebookOAuthScopes();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public String gitHubClientId() {
+        return this.innerModel().gitHubClientId();
+    }
+
+    public String gitHubClientSecret() {
+        return this.innerModel().gitHubClientSecret();
+    }
+
+    public String gitHubClientSecretSettingName() {
+        return this.innerModel().gitHubClientSecretSettingName();
+    }
+
+    public List<String> gitHubOAuthScopes() {
+        List<String> inner = this.innerModel().gitHubOAuthScopes();
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
@@ -151,12 +193,20 @@ public final class SiteAuthSettingsImpl implements SiteAuthSettings {
         return this.innerModel().twitterConsumerSecret();
     }
 
+    public String twitterConsumerSecretSettingName() {
+        return this.innerModel().twitterConsumerSecretSettingName();
+    }
+
     public String microsoftAccountClientId() {
         return this.innerModel().microsoftAccountClientId();
     }
 
     public String microsoftAccountClientSecret() {
         return this.innerModel().microsoftAccountClientSecret();
+    }
+
+    public String microsoftAccountClientSecretSettingName() {
+        return this.innerModel().microsoftAccountClientSecretSettingName();
     }
 
     public List<String> microsoftAccountOAuthScopes() {
@@ -166,6 +216,14 @@ public final class SiteAuthSettingsImpl implements SiteAuthSettings {
         } else {
             return Collections.emptyList();
         }
+    }
+
+    public String isAuthFromFile() {
+        return this.innerModel().isAuthFromFile();
+    }
+
+    public String authFilePath() {
+        return this.innerModel().authFilePath();
     }
 
     public SiteAuthSettingsInner innerModel() {
