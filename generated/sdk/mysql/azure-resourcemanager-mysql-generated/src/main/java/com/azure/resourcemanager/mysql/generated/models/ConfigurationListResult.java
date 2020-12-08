@@ -4,52 +4,22 @@
 
 package com.azure.resourcemanager.mysql.generated.models;
 
-import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.mysql.generated.fluent.models.ConfigurationInner;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.resourcemanager.mysql.generated.fluent.models.ConfigurationListResultInner;
 import java.util.List;
 
-/** A list of server configurations. */
-@Fluent
-public final class ConfigurationListResult {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(ConfigurationListResult.class);
-
-    /*
-     * The list of server configurations.
-     */
-    @JsonProperty(value = "value")
-    private List<ConfigurationInner> value;
-
+/** An immutable client-side representation of ConfigurationListResult. */
+public interface ConfigurationListResult {
     /**
-     * Get the value property: The list of server configurations.
+     * Gets the value property: The list of server configurations.
      *
      * @return the value value.
      */
-    public List<ConfigurationInner> value() {
-        return this.value;
-    }
+    List<Configuration> value();
 
     /**
-     * Set the value property: The list of server configurations.
+     * Gets the inner com.azure.resourcemanager.mysql.generated.fluent.models.ConfigurationListResultInner object.
      *
-     * @param value the value value to set.
-     * @return the ConfigurationListResult object itself.
+     * @return the inner object.
      */
-    public ConfigurationListResult withValue(List<ConfigurationInner> value) {
-        this.value = value;
-        return this;
-    }
-
-    /**
-     * Validates the instance.
-     *
-     * @throws IllegalArgumentException thrown if the instance is not valid.
-     */
-    public void validate() {
-        if (value() != null) {
-            value().forEach(e -> e.validate());
-        }
-    }
+    ConfigurationListResultInner innerModel();
 }

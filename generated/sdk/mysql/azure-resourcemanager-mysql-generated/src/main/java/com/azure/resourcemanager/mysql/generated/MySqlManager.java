@@ -36,10 +36,13 @@ import com.azure.resourcemanager.mysql.generated.implementation.PrivateEndpointC
 import com.azure.resourcemanager.mysql.generated.implementation.PrivateLinkResourcesImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.QueryTextsImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.RecommendedActionsImpl;
+import com.azure.resourcemanager.mysql.generated.implementation.RecoverableServersImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.ReplicasImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.ResourceProvidersImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.ServerAdministratorsImpl;
+import com.azure.resourcemanager.mysql.generated.implementation.ServerBasedPerformanceTiersImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.ServerKeysImpl;
+import com.azure.resourcemanager.mysql.generated.implementation.ServerParametersImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.ServerSecurityAlertPoliciesImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.ServersImpl;
 import com.azure.resourcemanager.mysql.generated.implementation.TopQueryStatisticsImpl;
@@ -59,10 +62,13 @@ import com.azure.resourcemanager.mysql.generated.models.PrivateEndpointConnectio
 import com.azure.resourcemanager.mysql.generated.models.PrivateLinkResources;
 import com.azure.resourcemanager.mysql.generated.models.QueryTexts;
 import com.azure.resourcemanager.mysql.generated.models.RecommendedActions;
+import com.azure.resourcemanager.mysql.generated.models.RecoverableServers;
 import com.azure.resourcemanager.mysql.generated.models.Replicas;
 import com.azure.resourcemanager.mysql.generated.models.ResourceProviders;
 import com.azure.resourcemanager.mysql.generated.models.ServerAdministrators;
+import com.azure.resourcemanager.mysql.generated.models.ServerBasedPerformanceTiers;
 import com.azure.resourcemanager.mysql.generated.models.ServerKeys;
+import com.azure.resourcemanager.mysql.generated.models.ServerParameters;
 import com.azure.resourcemanager.mysql.generated.models.ServerSecurityAlertPolicies;
 import com.azure.resourcemanager.mysql.generated.models.Servers;
 import com.azure.resourcemanager.mysql.generated.models.TopQueryStatistics;
@@ -92,9 +98,15 @@ public final class MySqlManager {
 
     private Configurations configurations;
 
+    private ServerParameters serverParameters;
+
     private LogFiles logFiles;
 
     private ServerAdministrators serverAdministrators;
+
+    private RecoverableServers recoverableServers;
+
+    private ServerBasedPerformanceTiers serverBasedPerformanceTiers;
 
     private LocationBasedPerformanceTiers locationBasedPerformanceTiers;
 
@@ -322,6 +334,14 @@ public final class MySqlManager {
         return configurations;
     }
 
+    /** @return Resource collection API of ServerParameters. */
+    public ServerParameters serverParameters() {
+        if (this.serverParameters == null) {
+            this.serverParameters = new ServerParametersImpl(clientObject.getServerParameters(), this);
+        }
+        return serverParameters;
+    }
+
     /** @return Resource collection API of LogFiles. */
     public LogFiles logFiles() {
         if (this.logFiles == null) {
@@ -336,6 +356,23 @@ public final class MySqlManager {
             this.serverAdministrators = new ServerAdministratorsImpl(clientObject.getServerAdministrators(), this);
         }
         return serverAdministrators;
+    }
+
+    /** @return Resource collection API of RecoverableServers. */
+    public RecoverableServers recoverableServers() {
+        if (this.recoverableServers == null) {
+            this.recoverableServers = new RecoverableServersImpl(clientObject.getRecoverableServers(), this);
+        }
+        return recoverableServers;
+    }
+
+    /** @return Resource collection API of ServerBasedPerformanceTiers. */
+    public ServerBasedPerformanceTiers serverBasedPerformanceTiers() {
+        if (this.serverBasedPerformanceTiers == null) {
+            this.serverBasedPerformanceTiers =
+                new ServerBasedPerformanceTiersImpl(clientObject.getServerBasedPerformanceTiers(), this);
+        }
+        return serverBasedPerformanceTiers;
     }
 
     /** @return Resource collection API of LocationBasedPerformanceTiers. */

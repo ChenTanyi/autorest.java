@@ -36,10 +36,13 @@ import com.azure.resourcemanager.mysql.generated.fluent.PrivateEndpointConnectio
 import com.azure.resourcemanager.mysql.generated.fluent.PrivateLinkResourcesClient;
 import com.azure.resourcemanager.mysql.generated.fluent.QueryTextsClient;
 import com.azure.resourcemanager.mysql.generated.fluent.RecommendedActionsClient;
+import com.azure.resourcemanager.mysql.generated.fluent.RecoverableServersClient;
 import com.azure.resourcemanager.mysql.generated.fluent.ReplicasClient;
 import com.azure.resourcemanager.mysql.generated.fluent.ResourceProvidersClient;
 import com.azure.resourcemanager.mysql.generated.fluent.ServerAdministratorsClient;
+import com.azure.resourcemanager.mysql.generated.fluent.ServerBasedPerformanceTiersClient;
 import com.azure.resourcemanager.mysql.generated.fluent.ServerKeysClient;
+import com.azure.resourcemanager.mysql.generated.fluent.ServerParametersClient;
 import com.azure.resourcemanager.mysql.generated.fluent.ServerSecurityAlertPoliciesClient;
 import com.azure.resourcemanager.mysql.generated.fluent.ServersClient;
 import com.azure.resourcemanager.mysql.generated.fluent.TopQueryStatisticsClient;
@@ -192,6 +195,18 @@ public final class MySqlManagementClientImpl implements MySqlManagementClient {
         return this.configurations;
     }
 
+    /** The ServerParametersClient object to access its operations. */
+    private final ServerParametersClient serverParameters;
+
+    /**
+     * Gets the ServerParametersClient object to access its operations.
+     *
+     * @return the ServerParametersClient object.
+     */
+    public ServerParametersClient getServerParameters() {
+        return this.serverParameters;
+    }
+
     /** The LogFilesClient object to access its operations. */
     private final LogFilesClient logFiles;
 
@@ -214,6 +229,30 @@ public final class MySqlManagementClientImpl implements MySqlManagementClient {
      */
     public ServerAdministratorsClient getServerAdministrators() {
         return this.serverAdministrators;
+    }
+
+    /** The RecoverableServersClient object to access its operations. */
+    private final RecoverableServersClient recoverableServers;
+
+    /**
+     * Gets the RecoverableServersClient object to access its operations.
+     *
+     * @return the RecoverableServersClient object.
+     */
+    public RecoverableServersClient getRecoverableServers() {
+        return this.recoverableServers;
+    }
+
+    /** The ServerBasedPerformanceTiersClient object to access its operations. */
+    private final ServerBasedPerformanceTiersClient serverBasedPerformanceTiers;
+
+    /**
+     * Gets the ServerBasedPerformanceTiersClient object to access its operations.
+     *
+     * @return the ServerBasedPerformanceTiersClient object.
+     */
+    public ServerBasedPerformanceTiersClient getServerBasedPerformanceTiers() {
+        return this.serverBasedPerformanceTiers;
     }
 
     /** The LocationBasedPerformanceTiersClient object to access its operations. */
@@ -426,8 +465,11 @@ public final class MySqlManagementClientImpl implements MySqlManagementClient {
         this.virtualNetworkRules = new VirtualNetworkRulesClientImpl(this);
         this.databases = new DatabasesClientImpl(this);
         this.configurations = new ConfigurationsClientImpl(this);
+        this.serverParameters = new ServerParametersClientImpl(this);
         this.logFiles = new LogFilesClientImpl(this);
         this.serverAdministrators = new ServerAdministratorsClientImpl(this);
+        this.recoverableServers = new RecoverableServersClientImpl(this);
+        this.serverBasedPerformanceTiers = new ServerBasedPerformanceTiersClientImpl(this);
         this.locationBasedPerformanceTiers = new LocationBasedPerformanceTiersClientImpl(this);
         this.checkNameAvailabilities = new CheckNameAvailabilitiesClientImpl(this);
         this.operations = new OperationsClientImpl(this);

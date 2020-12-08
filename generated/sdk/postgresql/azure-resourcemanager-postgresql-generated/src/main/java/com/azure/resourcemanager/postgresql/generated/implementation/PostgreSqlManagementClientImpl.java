@@ -31,9 +31,12 @@ import com.azure.resourcemanager.postgresql.generated.fluent.OperationsClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.PostgreSqlManagementClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.PrivateEndpointConnectionsClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.PrivateLinkResourcesClient;
+import com.azure.resourcemanager.postgresql.generated.fluent.RecoverableServersClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.ReplicasClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.ServerAdministratorsClient;
+import com.azure.resourcemanager.postgresql.generated.fluent.ServerBasedPerformanceTiersClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.ServerKeysClient;
+import com.azure.resourcemanager.postgresql.generated.fluent.ServerParametersClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.ServerSecurityAlertPoliciesClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.ServersClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.VirtualNetworkRulesClient;
@@ -184,6 +187,18 @@ public final class PostgreSqlManagementClientImpl implements PostgreSqlManagemen
         return this.configurations;
     }
 
+    /** The ServerParametersClient object to access its operations. */
+    private final ServerParametersClient serverParameters;
+
+    /**
+     * Gets the ServerParametersClient object to access its operations.
+     *
+     * @return the ServerParametersClient object.
+     */
+    public ServerParametersClient getServerParameters() {
+        return this.serverParameters;
+    }
+
     /** The LogFilesClient object to access its operations. */
     private final LogFilesClient logFiles;
 
@@ -206,6 +221,30 @@ public final class PostgreSqlManagementClientImpl implements PostgreSqlManagemen
      */
     public ServerAdministratorsClient getServerAdministrators() {
         return this.serverAdministrators;
+    }
+
+    /** The RecoverableServersClient object to access its operations. */
+    private final RecoverableServersClient recoverableServers;
+
+    /**
+     * Gets the RecoverableServersClient object to access its operations.
+     *
+     * @return the RecoverableServersClient object.
+     */
+    public RecoverableServersClient getRecoverableServers() {
+        return this.recoverableServers;
+    }
+
+    /** The ServerBasedPerformanceTiersClient object to access its operations. */
+    private final ServerBasedPerformanceTiersClient serverBasedPerformanceTiers;
+
+    /**
+     * Gets the ServerBasedPerformanceTiersClient object to access its operations.
+     *
+     * @return the ServerBasedPerformanceTiersClient object.
+     */
+    public ServerBasedPerformanceTiersClient getServerBasedPerformanceTiers() {
+        return this.serverBasedPerformanceTiers;
     }
 
     /** The LocationBasedPerformanceTiersClient object to access its operations. */
@@ -320,8 +359,11 @@ public final class PostgreSqlManagementClientImpl implements PostgreSqlManagemen
         this.virtualNetworkRules = new VirtualNetworkRulesClientImpl(this);
         this.databases = new DatabasesClientImpl(this);
         this.configurations = new ConfigurationsClientImpl(this);
+        this.serverParameters = new ServerParametersClientImpl(this);
         this.logFiles = new LogFilesClientImpl(this);
         this.serverAdministrators = new ServerAdministratorsClientImpl(this);
+        this.recoverableServers = new RecoverableServersClientImpl(this);
+        this.serverBasedPerformanceTiers = new ServerBasedPerformanceTiersClientImpl(this);
         this.locationBasedPerformanceTiers = new LocationBasedPerformanceTiersClientImpl(this);
         this.checkNameAvailabilities = new CheckNameAvailabilitiesClientImpl(this);
         this.operations = new OperationsClientImpl(this);

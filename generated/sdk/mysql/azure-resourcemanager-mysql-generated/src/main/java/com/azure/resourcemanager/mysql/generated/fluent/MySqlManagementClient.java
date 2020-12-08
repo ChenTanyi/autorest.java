@@ -80,6 +80,13 @@ public interface MySqlManagementClient {
     ConfigurationsClient getConfigurations();
 
     /**
+     * Gets the ServerParametersClient object to access its operations.
+     *
+     * @return the ServerParametersClient object.
+     */
+    ServerParametersClient getServerParameters();
+
+    /**
      * Gets the LogFilesClient object to access its operations.
      *
      * @return the LogFilesClient object.
@@ -92,6 +99,20 @@ public interface MySqlManagementClient {
      * @return the ServerAdministratorsClient object.
      */
     ServerAdministratorsClient getServerAdministrators();
+
+    /**
+     * Gets the RecoverableServersClient object to access its operations.
+     *
+     * @return the RecoverableServersClient object.
+     */
+    RecoverableServersClient getRecoverableServers();
+
+    /**
+     * Gets the ServerBasedPerformanceTiersClient object to access its operations.
+     *
+     * @return the ServerBasedPerformanceTiersClient object.
+     */
+    ServerBasedPerformanceTiersClient getServerBasedPerformanceTiers();
 
     /**
      * Gets the LocationBasedPerformanceTiersClient object to access its operations.

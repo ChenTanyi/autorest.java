@@ -31,9 +31,12 @@ import com.azure.resourcemanager.postgresql.generated.implementation.OperationsI
 import com.azure.resourcemanager.postgresql.generated.implementation.PostgreSqlManagementClientBuilder;
 import com.azure.resourcemanager.postgresql.generated.implementation.PrivateEndpointConnectionsImpl;
 import com.azure.resourcemanager.postgresql.generated.implementation.PrivateLinkResourcesImpl;
+import com.azure.resourcemanager.postgresql.generated.implementation.RecoverableServersImpl;
 import com.azure.resourcemanager.postgresql.generated.implementation.ReplicasImpl;
 import com.azure.resourcemanager.postgresql.generated.implementation.ServerAdministratorsImpl;
+import com.azure.resourcemanager.postgresql.generated.implementation.ServerBasedPerformanceTiersImpl;
 import com.azure.resourcemanager.postgresql.generated.implementation.ServerKeysImpl;
+import com.azure.resourcemanager.postgresql.generated.implementation.ServerParametersImpl;
 import com.azure.resourcemanager.postgresql.generated.implementation.ServerSecurityAlertPoliciesImpl;
 import com.azure.resourcemanager.postgresql.generated.implementation.ServersImpl;
 import com.azure.resourcemanager.postgresql.generated.implementation.VirtualNetworkRulesImpl;
@@ -46,9 +49,12 @@ import com.azure.resourcemanager.postgresql.generated.models.LogFiles;
 import com.azure.resourcemanager.postgresql.generated.models.Operations;
 import com.azure.resourcemanager.postgresql.generated.models.PrivateEndpointConnections;
 import com.azure.resourcemanager.postgresql.generated.models.PrivateLinkResources;
+import com.azure.resourcemanager.postgresql.generated.models.RecoverableServers;
 import com.azure.resourcemanager.postgresql.generated.models.Replicas;
 import com.azure.resourcemanager.postgresql.generated.models.ServerAdministrators;
+import com.azure.resourcemanager.postgresql.generated.models.ServerBasedPerformanceTiers;
 import com.azure.resourcemanager.postgresql.generated.models.ServerKeys;
+import com.azure.resourcemanager.postgresql.generated.models.ServerParameters;
 import com.azure.resourcemanager.postgresql.generated.models.ServerSecurityAlertPolicies;
 import com.azure.resourcemanager.postgresql.generated.models.Servers;
 import com.azure.resourcemanager.postgresql.generated.models.VirtualNetworkRules;
@@ -76,9 +82,15 @@ public final class PostgreSqlManager {
 
     private Configurations configurations;
 
+    private ServerParameters serverParameters;
+
     private LogFiles logFiles;
 
     private ServerAdministrators serverAdministrators;
+
+    private RecoverableServers recoverableServers;
+
+    private ServerBasedPerformanceTiers serverBasedPerformanceTiers;
 
     private LocationBasedPerformanceTiers locationBasedPerformanceTiers;
 
@@ -290,6 +302,14 @@ public final class PostgreSqlManager {
         return configurations;
     }
 
+    /** @return Resource collection API of ServerParameters. */
+    public ServerParameters serverParameters() {
+        if (this.serverParameters == null) {
+            this.serverParameters = new ServerParametersImpl(clientObject.getServerParameters(), this);
+        }
+        return serverParameters;
+    }
+
     /** @return Resource collection API of LogFiles. */
     public LogFiles logFiles() {
         if (this.logFiles == null) {
@@ -304,6 +324,23 @@ public final class PostgreSqlManager {
             this.serverAdministrators = new ServerAdministratorsImpl(clientObject.getServerAdministrators(), this);
         }
         return serverAdministrators;
+    }
+
+    /** @return Resource collection API of RecoverableServers. */
+    public RecoverableServers recoverableServers() {
+        if (this.recoverableServers == null) {
+            this.recoverableServers = new RecoverableServersImpl(clientObject.getRecoverableServers(), this);
+        }
+        return recoverableServers;
+    }
+
+    /** @return Resource collection API of ServerBasedPerformanceTiers. */
+    public ServerBasedPerformanceTiers serverBasedPerformanceTiers() {
+        if (this.serverBasedPerformanceTiers == null) {
+            this.serverBasedPerformanceTiers =
+                new ServerBasedPerformanceTiersImpl(clientObject.getServerBasedPerformanceTiers(), this);
+        }
+        return serverBasedPerformanceTiers;
     }
 
     /** @return Resource collection API of LocationBasedPerformanceTiers. */

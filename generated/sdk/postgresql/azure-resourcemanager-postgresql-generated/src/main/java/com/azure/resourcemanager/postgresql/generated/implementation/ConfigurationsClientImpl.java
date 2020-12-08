@@ -33,7 +33,7 @@ import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.postgresql.generated.fluent.ConfigurationsClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.ConfigurationInner;
-import com.azure.resourcemanager.postgresql.generated.models.ConfigurationListResult;
+import com.azure.resourcemanager.postgresql.generated.fluent.models.ConfigurationListResultInner;
 import java.nio.ByteBuffer;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -105,7 +105,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
                 + "/servers/{serverName}/configurations")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<ConfigurationListResult>> listByServer(
+        Mono<Response<ConfigurationListResultInner>> listByServer(
             @HostParam("$host") String endpoint,
             @QueryParam("api-version") String apiVersion,
             @PathParam("subscriptionId") String subscriptionId,

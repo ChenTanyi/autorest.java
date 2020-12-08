@@ -17,6 +17,48 @@ public interface PerformanceTierProperties {
     String id();
 
     /**
+     * Gets the maxBackupRetentionDays property: Maximum Backup retention in days for the performance tier edition.
+     *
+     * @return the maxBackupRetentionDays value.
+     */
+    Integer maxBackupRetentionDays();
+
+    /**
+     * Gets the minBackupRetentionDays property: Minimum Backup retention in days for the performance tier edition.
+     *
+     * @return the minBackupRetentionDays value.
+     */
+    Integer minBackupRetentionDays();
+
+    /**
+     * Gets the maxStorageMB property: Max storage allowed for a server.
+     *
+     * @return the maxStorageMB value.
+     */
+    Integer maxStorageMB();
+
+    /**
+     * Gets the minLargeStorageMB property: Max storage allowed for a server.
+     *
+     * @return the minLargeStorageMB value.
+     */
+    Integer minLargeStorageMB();
+
+    /**
+     * Gets the maxLargeStorageMB property: Max storage allowed for a server.
+     *
+     * @return the maxLargeStorageMB value.
+     */
+    Integer maxLargeStorageMB();
+
+    /**
+     * Gets the minStorageMB property: Max storage allowed for a server.
+     *
+     * @return the minStorageMB value.
+     */
+    Integer minStorageMB();
+
+    /**
      * Gets the serviceLevelObjectives property: Service level objectives associated with the performance tier.
      *
      * @return the serviceLevelObjectives value.

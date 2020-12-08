@@ -25,6 +25,30 @@ public final class PerformanceTierPropertiesImpl implements PerformanceTierPrope
         return this.innerModel().id();
     }
 
+    public Integer maxBackupRetentionDays() {
+        return this.innerModel().maxBackupRetentionDays();
+    }
+
+    public Integer minBackupRetentionDays() {
+        return this.innerModel().minBackupRetentionDays();
+    }
+
+    public Integer maxStorageMB() {
+        return this.innerModel().maxStorageMB();
+    }
+
+    public Integer minLargeStorageMB() {
+        return this.innerModel().minLargeStorageMB();
+    }
+
+    public Integer maxLargeStorageMB() {
+        return this.innerModel().maxLargeStorageMB();
+    }
+
+    public Integer minStorageMB() {
+        return this.innerModel().minStorageMB();
+    }
+
     public List<PerformanceTierServiceLevelObjectives> serviceLevelObjectives() {
         List<PerformanceTierServiceLevelObjectives> inner = this.innerModel().serviceLevelObjectives();
         if (inner != null) {
