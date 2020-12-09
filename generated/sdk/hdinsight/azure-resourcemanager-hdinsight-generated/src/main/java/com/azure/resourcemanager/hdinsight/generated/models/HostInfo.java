@@ -16,6 +16,20 @@ public interface HostInfo {
     String name();
 
     /**
+     * Gets the fqdn property: The Fully Qualified Domain Name of host.
+     *
+     * @return the fqdn value.
+     */
+    String fqdn();
+
+    /**
+     * Gets the effectiveDiskEncryptionKeyUrl property: The effective disk encryption key URL used by the host.
+     *
+     * @return the effectiveDiskEncryptionKeyUrl value.
+     */
+    String effectiveDiskEncryptionKeyUrl();
+
+    /**
      * Gets the inner com.azure.resourcemanager.hdinsight.generated.fluent.models.HostInfoInner object.
      *
      * @return the inner object.

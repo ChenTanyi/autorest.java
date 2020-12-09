@@ -107,7 +107,6 @@ public final class RegionsClientImpl implements RegionsClient {
         if (sku == null) {
             return Mono.error(new IllegalArgumentException("Parameter sku is required and cannot be null."));
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -115,7 +114,7 @@ public final class RegionsClientImpl implements RegionsClient {
                     service
                         .listBySku(
                             this.client.getEndpoint(),
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             sku,
                             accept,
@@ -159,11 +158,16 @@ public final class RegionsClientImpl implements RegionsClient {
         if (sku == null) {
             return Mono.error(new IllegalArgumentException("Parameter sku is required and cannot be null."));
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .listBySku(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), sku, accept, context)
+            .listBySku(
+                this.client.getEndpoint(),
+                this.client.getApiVersion(),
+                this.client.getSubscriptionId(),
+                sku,
+                accept,
+                context)
             .map(
                 res ->
                     new PagedResponseBase<>(

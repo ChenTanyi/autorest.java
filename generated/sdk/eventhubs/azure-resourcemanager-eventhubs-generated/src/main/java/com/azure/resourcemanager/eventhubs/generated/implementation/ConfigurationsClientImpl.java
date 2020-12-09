@@ -127,7 +127,6 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -138,7 +137,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             clusterName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             parameters,
                             accept,
                             context))
@@ -188,7 +187,6 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -197,7 +195,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 clusterName,
-                apiVersion,
+                this.client.getApiVersion(),
                 parameters,
                 accept,
                 context);
@@ -303,7 +301,6 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
         if (clusterName == null) {
             return Mono.error(new IllegalArgumentException("Parameter clusterName is required and cannot be null."));
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -314,7 +311,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             clusterName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
@@ -355,7 +352,6 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
         if (clusterName == null) {
             return Mono.error(new IllegalArgumentException("Parameter clusterName is required and cannot be null."));
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -364,7 +360,7 @@ public final class ConfigurationsClientImpl implements ConfigurationsClient {
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 clusterName,
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context);
     }

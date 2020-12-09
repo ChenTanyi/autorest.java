@@ -22,6 +22,14 @@ public final class HostInfoImpl implements HostInfo {
         return this.innerModel().name();
     }
 
+    public String fqdn() {
+        return this.innerModel().fqdn();
+    }
+
+    public String effectiveDiskEncryptionKeyUrl() {
+        return this.innerModel().effectiveDiskEncryptionKeyUrl();
+    }
+
     public HostInfoInner innerModel() {
         return this.innerObject;
     }

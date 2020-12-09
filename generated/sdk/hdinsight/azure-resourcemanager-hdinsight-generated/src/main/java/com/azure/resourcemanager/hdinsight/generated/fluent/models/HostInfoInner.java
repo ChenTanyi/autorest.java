@@ -20,6 +20,18 @@ public final class HostInfoInner {
     @JsonProperty(value = "name")
     private String name;
 
+    /*
+     * The Fully Qualified Domain Name of host
+     */
+    @JsonProperty(value = "fqdn")
+    private String fqdn;
+
+    /*
+     * The effective disk encryption key URL used by the host
+     */
+    @JsonProperty(value = "effectiveDiskEncryptionKeyUrl")
+    private String effectiveDiskEncryptionKeyUrl;
+
     /**
      * Get the name property: The host name.
      *
@@ -37,6 +49,46 @@ public final class HostInfoInner {
      */
     public HostInfoInner withName(String name) {
         this.name = name;
+        return this;
+    }
+
+    /**
+     * Get the fqdn property: The Fully Qualified Domain Name of host.
+     *
+     * @return the fqdn value.
+     */
+    public String fqdn() {
+        return this.fqdn;
+    }
+
+    /**
+     * Set the fqdn property: The Fully Qualified Domain Name of host.
+     *
+     * @param fqdn the fqdn value to set.
+     * @return the HostInfoInner object itself.
+     */
+    public HostInfoInner withFqdn(String fqdn) {
+        this.fqdn = fqdn;
+        return this;
+    }
+
+    /**
+     * Get the effectiveDiskEncryptionKeyUrl property: The effective disk encryption key URL used by the host.
+     *
+     * @return the effectiveDiskEncryptionKeyUrl value.
+     */
+    public String effectiveDiskEncryptionKeyUrl() {
+        return this.effectiveDiskEncryptionKeyUrl;
+    }
+
+    /**
+     * Set the effectiveDiskEncryptionKeyUrl property: The effective disk encryption key URL used by the host.
+     *
+     * @param effectiveDiskEncryptionKeyUrl the effectiveDiskEncryptionKeyUrl value to set.
+     * @return the HostInfoInner object itself.
+     */
+    public HostInfoInner withEffectiveDiskEncryptionKeyUrl(String effectiveDiskEncryptionKeyUrl) {
+        this.effectiveDiskEncryptionKeyUrl = effectiveDiskEncryptionKeyUrl;
         return this;
     }
 

@@ -518,7 +518,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -528,7 +527,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                             this.client.getEndpoint(),
                             resourceGroupName,
                             namespaceName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -577,7 +576,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -585,7 +583,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                 this.client.getEndpoint(),
                 resourceGroupName,
                 namespaceName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context)
@@ -711,7 +709,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -722,7 +719,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                             resourceGroupName,
                             namespaceName,
                             ipFilterRuleName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -778,7 +775,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -787,7 +783,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                 resourceGroupName,
                 namespaceName,
                 ipFilterRuleName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -901,7 +897,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -912,7 +907,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                             resourceGroupName,
                             namespaceName,
                             ipFilterRuleName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -957,7 +952,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -966,7 +960,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                 resourceGroupName,
                 namespaceName,
                 ipFilterRuleName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -1060,7 +1054,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1071,7 +1064,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                             resourceGroupName,
                             namespaceName,
                             ipFilterRuleName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -1116,7 +1109,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1125,7 +1117,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                 resourceGroupName,
                 namespaceName,
                 ipFilterRuleName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -1211,13 +1203,17 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
-                        .list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context))
+                        .list(
+                            this.client.getEndpoint(),
+                            this.client.getApiVersion(),
+                            this.client.getSubscriptionId(),
+                            accept,
+                            context))
             .<PagedResponse<EHNamespaceInner>>map(
                 res ->
                     new PagedResponseBase<>(
@@ -1253,11 +1249,15 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context)
+            .list(
+                this.client.getEndpoint(),
+                this.client.getApiVersion(),
+                this.client.getSubscriptionId(),
+                accept,
+                context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -1349,7 +1349,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1358,7 +1357,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                         .listByResourceGroup(
                             this.client.getEndpoint(),
                             resourceGroupName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -1403,14 +1402,13 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .listByResourceGroup(
                 this.client.getEndpoint(),
                 resourceGroupName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context)
@@ -1526,7 +1524,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1536,7 +1533,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                             this.client.getEndpoint(),
                             resourceGroupName,
                             namespaceName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -1584,7 +1581,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1592,7 +1588,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                 this.client.getEndpoint(),
                 resourceGroupName,
                 namespaceName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -1793,7 +1789,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1803,7 +1798,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                             this.client.getEndpoint(),
                             resourceGroupName,
                             namespaceName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -1843,7 +1838,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1851,7 +1845,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                 this.client.getEndpoint(),
                 resourceGroupName,
                 namespaceName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -2022,7 +2016,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2032,7 +2025,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                             this.client.getEndpoint(),
                             resourceGroupName,
                             namespaceName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -2072,7 +2065,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2080,7 +2072,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                 this.client.getEndpoint(),
                 resourceGroupName,
                 namespaceName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -2180,7 +2172,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2190,7 +2181,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                             this.client.getEndpoint(),
                             resourceGroupName,
                             namespaceName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -2238,7 +2229,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2246,7 +2236,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                 this.client.getEndpoint(),
                 resourceGroupName,
                 namespaceName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -2347,7 +2337,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2357,7 +2346,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                             this.client.getEndpoint(),
                             resourceGroupName,
                             namespaceName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -2406,7 +2395,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2414,7 +2402,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                 this.client.getEndpoint(),
                 resourceGroupName,
                 namespaceName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context)
@@ -2546,7 +2534,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2557,7 +2544,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                             resourceGroupName,
                             namespaceName,
                             virtualNetworkRuleName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -2614,7 +2601,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2623,7 +2609,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                 resourceGroupName,
                 namespaceName,
                 virtualNetworkRuleName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -2746,7 +2732,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2757,7 +2742,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                             resourceGroupName,
                             namespaceName,
                             virtualNetworkRuleName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -2803,7 +2788,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2812,7 +2796,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                 resourceGroupName,
                 namespaceName,
                 virtualNetworkRuleName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -2910,7 +2894,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2921,7 +2904,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                             resourceGroupName,
                             namespaceName,
                             virtualNetworkRuleName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -2967,7 +2950,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2976,7 +2958,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                 resourceGroupName,
                 namespaceName,
                 virtualNetworkRuleName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -3081,7 +3063,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3091,7 +3072,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                             this.client.getEndpoint(),
                             resourceGroupName,
                             namespaceName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -3138,7 +3119,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -3146,7 +3126,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                 this.client.getEndpoint(),
                 resourceGroupName,
                 namespaceName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -3246,7 +3226,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3256,7 +3235,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                             this.client.getEndpoint(),
                             resourceGroupName,
                             namespaceName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -3296,7 +3275,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2018-01-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -3304,7 +3282,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                 this.client.getEndpoint(),
                 resourceGroupName,
                 namespaceName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -3397,7 +3375,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3407,7 +3384,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                             this.client.getEndpoint(),
                             resourceGroupName,
                             namespaceName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -3456,7 +3433,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -3464,7 +3440,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                 this.client.getEndpoint(),
                 resourceGroupName,
                 namespaceName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context)
@@ -3595,7 +3571,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3606,7 +3581,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                             resourceGroupName,
                             namespaceName,
                             authorizationRuleName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -3662,7 +3637,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -3671,7 +3645,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                 resourceGroupName,
                 namespaceName,
                 authorizationRuleName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -3792,7 +3766,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3803,7 +3776,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                             resourceGroupName,
                             namespaceName,
                             authorizationRuleName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -3848,7 +3821,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -3857,7 +3829,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                 resourceGroupName,
                 namespaceName,
                 authorizationRuleName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -3953,7 +3925,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -3964,7 +3935,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                             resourceGroupName,
                             namespaceName,
                             authorizationRuleName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -4009,7 +3980,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -4018,7 +3988,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                 resourceGroupName,
                 namespaceName,
                 authorizationRuleName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -4122,7 +4092,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -4133,7 +4102,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                             resourceGroupName,
                             namespaceName,
                             authorizationRuleName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -4178,7 +4147,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -4187,7 +4155,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                 resourceGroupName,
                 namespaceName,
                 authorizationRuleName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -4298,7 +4266,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -4309,7 +4276,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                             resourceGroupName,
                             namespaceName,
                             authorizationRuleName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -4365,7 +4332,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -4374,7 +4340,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                 resourceGroupName,
                 namespaceName,
                 authorizationRuleName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -4485,7 +4451,6 @@ public final class NamespacesClientImpl implements NamespacesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -4493,7 +4458,7 @@ public final class NamespacesClientImpl implements NamespacesClient {
                     service
                         .checkNameAvailability(
                             this.client.getEndpoint(),
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -4531,12 +4496,16 @@ public final class NamespacesClientImpl implements NamespacesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .checkNameAvailability(
-                this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), parameters, accept, context);
+                this.client.getEndpoint(),
+                this.client.getApiVersion(),
+                this.client.getSubscriptionId(),
+                parameters,
+                accept,
+                context);
     }
 
     /**

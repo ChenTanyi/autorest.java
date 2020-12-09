@@ -75,6 +75,18 @@ public final class EventHubManagementClientImpl implements EventHubManagementCli
         return this.endpoint;
     }
 
+    /** Api Version. */
+    private final String apiVersion;
+
+    /**
+     * Gets Api Version.
+     *
+     * @return the apiVersion value.
+     */
+    public String getApiVersion() {
+        return this.apiVersion;
+    }
+
     /** The HTTP pipeline to send requests through. */
     private final HttpPipeline httpPipeline;
 
@@ -254,6 +266,7 @@ public final class EventHubManagementClientImpl implements EventHubManagementCli
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
+        this.apiVersion = "2018-01-01-preview";
         this.clusters = new ClustersClientImpl(this);
         this.namespaces = new NamespacesClientImpl(this);
         this.privateEndpointConnections = new PrivateEndpointConnectionsClientImpl(this);

@@ -293,7 +293,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -304,7 +303,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
                             resourceGroupName,
                             namespaceName,
                             eventHubName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -357,7 +356,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -366,7 +364,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
                 resourceGroupName,
                 namespaceName,
                 eventHubName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context)
@@ -508,7 +506,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -520,7 +517,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
                             namespaceName,
                             eventHubName,
                             authorizationRuleName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -582,7 +579,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -592,7 +588,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
                 namespaceName,
                 eventHubName,
                 authorizationRuleName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -727,7 +723,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -739,7 +734,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
                             namespaceName,
                             eventHubName,
                             authorizationRuleName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -792,7 +787,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -802,7 +796,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
                 namespaceName,
                 eventHubName,
                 authorizationRuleName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -919,7 +913,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -931,7 +924,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
                             namespaceName,
                             eventHubName,
                             authorizationRuleName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -984,7 +977,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -994,7 +986,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
                 namespaceName,
                 eventHubName,
                 authorizationRuleName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -1103,7 +1095,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1115,7 +1106,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
                             namespaceName,
                             eventHubName,
                             authorizationRuleName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -1168,7 +1159,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1178,7 +1168,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
                 namespaceName,
                 eventHubName,
                 authorizationRuleName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -1303,7 +1293,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1315,7 +1304,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
                             namespaceName,
                             eventHubName,
                             authorizationRuleName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -1376,7 +1365,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1386,7 +1374,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
                 namespaceName,
                 eventHubName,
                 authorizationRuleName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -1512,7 +1500,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1522,7 +1509,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
                             this.client.getEndpoint(),
                             resourceGroupName,
                             namespaceName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             skip,
                             top,
@@ -1577,7 +1564,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1585,7 +1571,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
                 this.client.getEndpoint(),
                 resourceGroupName,
                 namespaceName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 skip,
                 top,
@@ -1746,7 +1732,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1757,7 +1742,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
                             resourceGroupName,
                             namespaceName,
                             eventHubName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -1812,7 +1797,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1821,7 +1805,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
                 resourceGroupName,
                 namespaceName,
                 eventHubName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -1932,7 +1916,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1943,7 +1926,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
                             resourceGroupName,
                             namespaceName,
                             eventHubName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -1987,7 +1970,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1996,7 +1978,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
                 resourceGroupName,
                 namespaceName,
                 eventHubName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -2088,7 +2070,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -2099,7 +2080,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
                             resourceGroupName,
                             namespaceName,
                             eventHubName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -2143,7 +2124,6 @@ public final class EventHubsClientImpl implements EventHubsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2017-04-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -2152,7 +2132,7 @@ public final class EventHubsClientImpl implements EventHubsClient {
                 resourceGroupName,
                 namespaceName,
                 eventHubName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
