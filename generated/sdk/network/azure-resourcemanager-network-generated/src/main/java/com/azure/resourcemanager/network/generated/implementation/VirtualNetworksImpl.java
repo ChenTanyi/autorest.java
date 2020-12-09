@@ -32,7 +32,7 @@ public final class VirtualNetworksImpl implements VirtualNetworks {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String virtualNetworkName) {
+    public void deleteByResourceGroup(String resourceGroupName, String virtualNetworkName) {
         this.serviceClient().delete(resourceGroupName, virtualNetworkName);
     }
 

@@ -50,7 +50,7 @@ public interface IpGroups {
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void delete(String resourceGroupName, String ipGroupsName);
+    void deleteByResourceGroup(String resourceGroupName, String ipGroupsName);
 
     /**
      * Deletes the specified ipGroups.

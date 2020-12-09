@@ -28,7 +28,7 @@ public final class RouteFiltersImpl implements RouteFilters {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String routeFilterName) {
+    public void deleteByResourceGroup(String resourceGroupName, String routeFilterName) {
         this.serviceClient().delete(resourceGroupName, routeFilterName);
     }
 

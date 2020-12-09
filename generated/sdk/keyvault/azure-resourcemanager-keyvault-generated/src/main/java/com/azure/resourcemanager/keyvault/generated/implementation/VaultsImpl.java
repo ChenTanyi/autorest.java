@@ -37,7 +37,7 @@ public final class VaultsImpl implements Vaults {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String vaultName) {
+    public void deleteByResourceGroup(String resourceGroupName, String vaultName) {
         this.serviceClient().delete(resourceGroupName, vaultName);
     }
 

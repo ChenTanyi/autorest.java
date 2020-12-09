@@ -28,7 +28,7 @@ public final class NatGatewaysImpl implements NatGateways {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String natGatewayName) {
+    public void deleteByResourceGroup(String resourceGroupName, String natGatewayName) {
         this.serviceClient().delete(resourceGroupName, natGatewayName);
     }
 

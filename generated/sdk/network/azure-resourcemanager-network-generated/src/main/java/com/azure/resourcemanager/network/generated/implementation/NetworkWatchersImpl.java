@@ -83,7 +83,7 @@ public final class NetworkWatchersImpl implements NetworkWatchers {
         }
     }
 
-    public void delete(String resourceGroupName, String networkWatcherName) {
+    public void deleteByResourceGroup(String resourceGroupName, String networkWatcherName) {
         this.serviceClient().delete(resourceGroupName, networkWatcherName);
     }
 

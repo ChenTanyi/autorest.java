@@ -75,7 +75,7 @@ public final class FrontDoorsImpl implements FrontDoors {
         }
     }
 
-    public void delete(String resourceGroupName, String frontDoorName) {
+    public void deleteByResourceGroup(String resourceGroupName, String frontDoorName) {
         this.serviceClient().delete(resourceGroupName, frontDoorName);
     }
 

@@ -28,7 +28,7 @@ public final class CustomIpPrefixesImpl implements CustomIpPrefixes {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String customIpPrefixName) {
+    public void deleteByResourceGroup(String resourceGroupName, String customIpPrefixName) {
         this.serviceClient().delete(resourceGroupName, customIpPrefixName);
     }
 

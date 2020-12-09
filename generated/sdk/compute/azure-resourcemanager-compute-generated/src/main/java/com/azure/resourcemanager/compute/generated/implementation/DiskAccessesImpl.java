@@ -54,7 +54,7 @@ public final class DiskAccessesImpl implements DiskAccesses {
         }
     }
 
-    public void delete(String resourceGroupName, String diskAccessName) {
+    public void deleteByResourceGroup(String resourceGroupName, String diskAccessName) {
         this.serviceClient().delete(resourceGroupName, diskAccessName);
     }
 

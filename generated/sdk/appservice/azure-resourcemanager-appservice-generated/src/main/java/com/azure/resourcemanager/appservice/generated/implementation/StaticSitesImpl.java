@@ -116,12 +116,12 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public void deleteStaticSite(String resourceGroupName, String name) {
-        this.serviceClient().deleteStaticSite(resourceGroupName, name);
+    public void deleteByResourceGroup(String resourceGroupName, String name) {
+        this.serviceClient().delete(resourceGroupName, name);
     }
 
-    public Response<Void> deleteStaticSiteWithResponse(String resourceGroupName, String name, Context context) {
-        return this.serviceClient().deleteStaticSiteWithResponse(resourceGroupName, name, context);
+    public Response<Void> deleteWithResponse(String resourceGroupName, String name, Context context) {
+        return this.serviceClient().deleteWithResponse(resourceGroupName, name, context);
     }
 
     public PagedIterable<StaticSiteUserArmResource> listStaticSiteUsers(
@@ -558,7 +558,7 @@ public final class StaticSitesImpl implements StaticSites {
         return this.getByResourceGroupWithResponse(resourceGroupName, name, context);
     }
 
-    public void deleteStaticSiteById(String id) {
+    public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw logger
@@ -574,10 +574,10 @@ public final class StaticSitesImpl implements StaticSites {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
-        this.deleteStaticSiteWithResponse(resourceGroupName, name, Context.NONE).getValue();
+        this.deleteWithResponse(resourceGroupName, name, Context.NONE).getValue();
     }
 
-    public Response<Void> deleteStaticSiteByIdWithResponse(String id, Context context) {
+    public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw logger
@@ -593,7 +593,7 @@ public final class StaticSitesImpl implements StaticSites {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
-        return this.deleteStaticSiteWithResponse(resourceGroupName, name, context);
+        return this.deleteWithResponse(resourceGroupName, name, context);
     }
 
     private StaticSitesClient serviceClient() {

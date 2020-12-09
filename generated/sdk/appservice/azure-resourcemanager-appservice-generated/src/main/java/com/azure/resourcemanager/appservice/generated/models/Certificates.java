@@ -94,7 +94,7 @@ public interface Certificates {
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void delete(String resourceGroupName, String name);
+    void deleteByResourceGroup(String resourceGroupName, String name);
 
     /**
      * Description for Delete a certificate.

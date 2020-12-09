@@ -182,7 +182,7 @@ public interface StaticSitesClient {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void deleteStaticSite(String resourceGroupName, String name);
+    void delete(String resourceGroupName, String name);
 
     /**
      * Description for Deletes a static site.
@@ -197,7 +197,7 @@ public interface StaticSitesClient {
      * @return the response.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<Void> deleteStaticSiteWithResponse(String resourceGroupName, String name, Context context);
+    Response<Void> deleteWithResponse(String resourceGroupName, String name, Context context);
 
     /**
      * Description for Creates a new static site in an existing resource group, or updates an existing static site.

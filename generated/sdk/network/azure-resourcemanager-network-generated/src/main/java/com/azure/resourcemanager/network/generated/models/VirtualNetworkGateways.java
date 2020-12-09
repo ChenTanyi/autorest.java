@@ -46,7 +46,7 @@ public interface VirtualNetworkGateways {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void delete(String resourceGroupName, String virtualNetworkGatewayName);
+    void deleteByResourceGroup(String resourceGroupName, String virtualNetworkGatewayName);
 
     /**
      * Deletes the specified virtual network gateway.

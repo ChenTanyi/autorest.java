@@ -27,7 +27,7 @@ public interface PolicyAssignments {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the policy assignment.
      */
-    PolicyAssignment delete(String scope, String policyAssignmentName);
+    PolicyAssignment deleteByResourceGroup(String scope, String policyAssignmentName);
 
     /**
      * This operation deletes a policy assignment, given its name and the scope it was created in. The scope of a policy

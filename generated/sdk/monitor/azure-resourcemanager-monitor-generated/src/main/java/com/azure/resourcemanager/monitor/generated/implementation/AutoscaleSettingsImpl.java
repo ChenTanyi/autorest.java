@@ -40,7 +40,7 @@ public final class AutoscaleSettingsImpl implements AutoscaleSettings {
         return inner.mapPage(inner1 -> new AutoscaleSettingResourceImpl(inner1, this.manager()));
     }
 
-    public void delete(String resourceGroupName, String autoscaleSettingName) {
+    public void deleteByResourceGroup(String resourceGroupName, String autoscaleSettingName) {
         this.serviceClient().delete(resourceGroupName, autoscaleSettingName);
     }
 

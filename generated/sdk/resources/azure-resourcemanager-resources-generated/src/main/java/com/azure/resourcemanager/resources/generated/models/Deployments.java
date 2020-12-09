@@ -957,7 +957,7 @@ public interface Deployments {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void delete(String resourceGroupName, String deploymentName);
+    void deleteByResourceGroup(String resourceGroupName, String deploymentName);
 
     /**
      * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the

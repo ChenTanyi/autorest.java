@@ -28,7 +28,7 @@ public final class BastionHostsImpl implements BastionHosts {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String bastionHostname) {
+    public void deleteByResourceGroup(String resourceGroupName, String bastionHostname) {
         this.serviceClient().delete(resourceGroupName, bastionHostname);
     }
 

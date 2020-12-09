@@ -53,7 +53,7 @@ public final class DiskEncryptionSetsImpl implements DiskEncryptionSets {
         }
     }
 
-    public void delete(String resourceGroupName, String diskEncryptionSetName) {
+    public void deleteByResourceGroup(String resourceGroupName, String diskEncryptionSetName) {
         this.serviceClient().delete(resourceGroupName, diskEncryptionSetName);
     }
 

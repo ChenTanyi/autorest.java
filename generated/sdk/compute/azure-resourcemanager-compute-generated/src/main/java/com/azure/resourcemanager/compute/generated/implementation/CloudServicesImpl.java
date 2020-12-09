@@ -31,7 +31,7 @@ public final class CloudServicesImpl implements CloudServices {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String cloudServiceName) {
+    public void deleteByResourceGroup(String resourceGroupName, String cloudServiceName) {
         this.serviceClient().delete(resourceGroupName, cloudServiceName);
     }
 

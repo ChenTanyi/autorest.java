@@ -21,7 +21,7 @@ public interface ManagementLocks {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void deleteAtResourceGroupLevel(String resourceGroupName, String lockName);
+    void deleteByResourceGroup(String resourceGroupName, String lockName);
 
     /**
      * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
@@ -35,7 +35,7 @@ public interface ManagementLocks {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
-    Response<Void> deleteAtResourceGroupLevelWithResponse(String resourceGroupName, String lockName, Context context);
+    Response<Void> deleteWithResponse(String resourceGroupName, String lockName, Context context);
 
     /**
      * Gets a management lock at the resource group level.
@@ -531,7 +531,7 @@ public interface ManagementLocks {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void deleteAtResourceGroupLevelById(String id);
+    void deleteById(String id);
 
     /**
      * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
@@ -544,7 +544,7 @@ public interface ManagementLocks {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
-    Response<Void> deleteAtResourceGroupLevelByIdWithResponse(String id, Context context);
+    Response<Void> deleteByIdWithResponse(String id, Context context);
 
     /**
      * Begins definition for a new ManagementLockObject resource.

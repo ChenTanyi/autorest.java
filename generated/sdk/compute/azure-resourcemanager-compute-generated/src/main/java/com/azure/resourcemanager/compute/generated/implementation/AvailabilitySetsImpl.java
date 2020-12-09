@@ -30,7 +30,7 @@ public final class AvailabilitySetsImpl implements AvailabilitySets {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String availabilitySetName) {
+    public void deleteByResourceGroup(String resourceGroupName, String availabilitySetName) {
         this.serviceClient().delete(resourceGroupName, availabilitySetName);
     }
 

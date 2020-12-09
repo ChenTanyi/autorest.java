@@ -598,7 +598,7 @@ public final class DeploymentsImpl implements Deployments {
         return inner.mapPage(inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
     }
 
-    public void delete(String resourceGroupName, String deploymentName) {
+    public void deleteByResourceGroup(String resourceGroupName, String deploymentName) {
         this.serviceClient().delete(resourceGroupName, deploymentName);
     }
 

@@ -36,7 +36,7 @@ public final class ClustersImpl implements Clusters {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String clusterName) {
+    public void deleteByResourceGroup(String resourceGroupName, String clusterName) {
         this.serviceClient().delete(resourceGroupName, clusterName);
     }
 

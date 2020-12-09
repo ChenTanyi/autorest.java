@@ -84,7 +84,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
                 + "/{lockName}")
         @ExpectedResponses({200, 204})
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Void>> deleteAtResourceGroupLevel(
+        Mono<Response<Void>> delete(
             @HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
             @PathParam("lockName") String lockName,
@@ -534,8 +534,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @return the completion.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Void>> deleteAtResourceGroupLevelWithResponseAsync(
-        String resourceGroupName, String lockName) {
+    private Mono<Response<Void>> deleteWithResponseAsync(String resourceGroupName, String lockName) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -559,7 +558,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
             .withContext(
                 context ->
                     service
-                        .deleteAtResourceGroupLevel(
+                        .delete(
                             this.client.getEndpoint(),
                             resourceGroupName,
                             lockName,
@@ -582,8 +581,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @return the completion.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Void>> deleteAtResourceGroupLevelWithResponseAsync(
-        String resourceGroupName, String lockName, Context context) {
+    private Mono<Response<Void>> deleteWithResponseAsync(String resourceGroupName, String lockName, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -605,7 +603,7 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
         }
         context = this.client.mergeContext(context);
         return service
-            .deleteAtResourceGroupLevel(
+            .delete(
                 this.client.getEndpoint(),
                 resourceGroupName,
                 lockName,
@@ -626,9 +624,8 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @return the completion.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Void> deleteAtResourceGroupLevelAsync(String resourceGroupName, String lockName) {
-        return deleteAtResourceGroupLevelWithResponseAsync(resourceGroupName, lockName)
-            .flatMap((Response<Void> res) -> Mono.empty());
+    private Mono<Void> deleteAsync(String resourceGroupName, String lockName) {
+        return deleteWithResponseAsync(resourceGroupName, lockName).flatMap((Response<Void> res) -> Mono.empty());
     }
 
     /**
@@ -642,8 +639,8 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void deleteAtResourceGroupLevel(String resourceGroupName, String lockName) {
-        deleteAtResourceGroupLevelAsync(resourceGroupName, lockName).block();
+    public void delete(String resourceGroupName, String lockName) {
+        deleteAsync(resourceGroupName, lockName).block();
     }
 
     /**
@@ -659,9 +656,8 @@ public final class ManagementLocksClientImpl implements ManagementLocksClient {
      * @return the response.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteAtResourceGroupLevelWithResponse(
-        String resourceGroupName, String lockName, Context context) {
-        return deleteAtResourceGroupLevelWithResponseAsync(resourceGroupName, lockName, context).block();
+    public Response<Void> deleteWithResponse(String resourceGroupName, String lockName, Context context) {
+        return deleteWithResponseAsync(resourceGroupName, lockName, context).block();
     }
 
     /**

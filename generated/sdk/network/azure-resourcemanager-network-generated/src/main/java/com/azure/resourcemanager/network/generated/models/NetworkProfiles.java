@@ -19,7 +19,7 @@ public interface NetworkProfiles {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void delete(String resourceGroupName, String networkProfileName);
+    void deleteByResourceGroup(String resourceGroupName, String networkProfileName);
 
     /**
      * Deletes the specified network profile.

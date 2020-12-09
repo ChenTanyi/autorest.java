@@ -141,9 +141,9 @@ public final class DevicesClientImpl implements DevicesClient {
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<Flux<ByteBuffer>>> delete(
             @HostParam("$host") String endpoint,
-            @PathParam("deviceName") String deviceName,
-            @PathParam("subscriptionId") String subscriptionId,
             @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("subscriptionId") String subscriptionId,
+            @PathParam("deviceName") String deviceName,
             @QueryParam("api-version") String apiVersion,
             @HeaderParam("Accept") String accept,
             Context context);
@@ -1099,23 +1099,24 @@ public final class DevicesClientImpl implements DevicesClient {
     /**
      * Deletes the Data Box Edge/Data Box Gateway device.
      *
-     * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
+     * @param deviceName The device name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the completion.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(String deviceName, String resourceGroupName) {
+    private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(String resourceGroupName, String deviceName) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
                     new IllegalArgumentException(
                         "Parameter this.client.getEndpoint() is required and cannot be null."));
         }
-        if (deviceName == null) {
-            return Mono.error(new IllegalArgumentException("Parameter deviceName is required and cannot be null."));
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
             return Mono
@@ -1123,9 +1124,8 @@ public final class DevicesClientImpl implements DevicesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        if (resourceGroupName == null) {
-            return Mono
-                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        if (deviceName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter deviceName is required and cannot be null."));
         }
         final String accept = "application/json";
         return FluxUtil
@@ -1134,9 +1134,9 @@ public final class DevicesClientImpl implements DevicesClient {
                     service
                         .delete(
                             this.client.getEndpoint(),
-                            deviceName,
-                            this.client.getSubscriptionId(),
                             resourceGroupName,
+                            this.client.getSubscriptionId(),
+                            deviceName,
                             this.client.getApiVersion(),
                             accept,
                             context))
@@ -1146,8 +1146,8 @@ public final class DevicesClientImpl implements DevicesClient {
     /**
      * Deletes the Data Box Edge/Data Box Gateway device.
      *
-     * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
+     * @param deviceName The device name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1156,15 +1156,16 @@ public final class DevicesClientImpl implements DevicesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(
-        String deviceName, String resourceGroupName, Context context) {
+        String resourceGroupName, String deviceName, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
                     new IllegalArgumentException(
                         "Parameter this.client.getEndpoint() is required and cannot be null."));
         }
-        if (deviceName == null) {
-            return Mono.error(new IllegalArgumentException("Parameter deviceName is required and cannot be null."));
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
         if (this.client.getSubscriptionId() == null) {
             return Mono
@@ -1172,18 +1173,17 @@ public final class DevicesClientImpl implements DevicesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        if (resourceGroupName == null) {
-            return Mono
-                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        if (deviceName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter deviceName is required and cannot be null."));
         }
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .delete(
                 this.client.getEndpoint(),
-                deviceName,
-                this.client.getSubscriptionId(),
                 resourceGroupName,
+                this.client.getSubscriptionId(),
+                deviceName,
                 this.client.getApiVersion(),
                 accept,
                 context);
@@ -1192,16 +1192,16 @@ public final class DevicesClientImpl implements DevicesClient {
     /**
      * Deletes the Data Box Edge/Data Box Gateway device.
      *
-     * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
+     * @param deviceName The device name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the completion.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String deviceName, String resourceGroupName) {
-        Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(deviceName, resourceGroupName);
+    private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(String resourceGroupName, String deviceName) {
+        Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, deviceName);
         return this
             .client
             .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, Context.NONE);
@@ -1210,8 +1210,8 @@ public final class DevicesClientImpl implements DevicesClient {
     /**
      * Deletes the Data Box Edge/Data Box Gateway device.
      *
-     * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
+     * @param deviceName The device name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1220,9 +1220,9 @@ public final class DevicesClientImpl implements DevicesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private PollerFlux<PollResult<Void>, Void> beginDeleteAsync(
-        String deviceName, String resourceGroupName, Context context) {
+        String resourceGroupName, String deviceName, Context context) {
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(deviceName, resourceGroupName, context);
+        Mono<Response<Flux<ByteBuffer>>> mono = deleteWithResponseAsync(resourceGroupName, deviceName, context);
         return this
             .client
             .<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class, context);
@@ -1231,23 +1231,23 @@ public final class DevicesClientImpl implements DevicesClient {
     /**
      * Deletes the Data Box Edge/Data Box Gateway device.
      *
-     * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
+     * @param deviceName The device name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the completion.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public SyncPoller<PollResult<Void>, Void> beginDelete(String deviceName, String resourceGroupName) {
-        return beginDeleteAsync(deviceName, resourceGroupName).getSyncPoller();
+    public SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String deviceName) {
+        return beginDeleteAsync(resourceGroupName, deviceName).getSyncPoller();
     }
 
     /**
      * Deletes the Data Box Edge/Data Box Gateway device.
      *
-     * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
+     * @param deviceName The device name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1256,30 +1256,30 @@ public final class DevicesClientImpl implements DevicesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public SyncPoller<PollResult<Void>, Void> beginDelete(
-        String deviceName, String resourceGroupName, Context context) {
-        return beginDeleteAsync(deviceName, resourceGroupName, context).getSyncPoller();
+        String resourceGroupName, String deviceName, Context context) {
+        return beginDeleteAsync(resourceGroupName, deviceName, context).getSyncPoller();
     }
 
     /**
      * Deletes the Data Box Edge/Data Box Gateway device.
      *
-     * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
+     * @param deviceName The device name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the completion.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Void> deleteAsync(String deviceName, String resourceGroupName) {
-        return beginDeleteAsync(deviceName, resourceGroupName).last().flatMap(this.client::getLroFinalResultOrError);
+    private Mono<Void> deleteAsync(String resourceGroupName, String deviceName) {
+        return beginDeleteAsync(resourceGroupName, deviceName).last().flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
      * Deletes the Data Box Edge/Data Box Gateway device.
      *
-     * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
+     * @param deviceName The device name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1287,8 +1287,8 @@ public final class DevicesClientImpl implements DevicesClient {
      * @return the completion.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Void> deleteAsync(String deviceName, String resourceGroupName, Context context) {
-        return beginDeleteAsync(deviceName, resourceGroupName, context)
+    private Mono<Void> deleteAsync(String resourceGroupName, String deviceName, Context context) {
+        return beginDeleteAsync(resourceGroupName, deviceName, context)
             .last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
@@ -1296,30 +1296,30 @@ public final class DevicesClientImpl implements DevicesClient {
     /**
      * Deletes the Data Box Edge/Data Box Gateway device.
      *
-     * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
+     * @param deviceName The device name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String deviceName, String resourceGroupName) {
-        deleteAsync(deviceName, resourceGroupName).block();
+    public void delete(String resourceGroupName, String deviceName) {
+        deleteAsync(resourceGroupName, deviceName).block();
     }
 
     /**
      * Deletes the Data Box Edge/Data Box Gateway device.
      *
-     * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
+     * @param deviceName The device name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void delete(String deviceName, String resourceGroupName, Context context) {
-        deleteAsync(deviceName, resourceGroupName, context).block();
+    public void delete(String resourceGroupName, String deviceName, Context context) {
+        deleteAsync(resourceGroupName, deviceName, context).block();
     }
 
     /**

@@ -55,7 +55,7 @@ public final class SnapshotsImpl implements Snapshots {
         }
     }
 
-    public void delete(String resourceGroupName, String snapshotName) {
+    public void deleteByResourceGroup(String resourceGroupName, String snapshotName) {
         this.serviceClient().delete(resourceGroupName, snapshotName);
     }
 

@@ -123,7 +123,7 @@ public interface AppServiceCertificateOrders {
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void delete(String resourceGroupName, String certificateOrderName);
+    void deleteByResourceGroup(String resourceGroupName, String certificateOrderName);
 
     /**
      * Description for Delete an existing certificate order.

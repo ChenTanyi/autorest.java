@@ -28,13 +28,12 @@ public final class ManagementLocksImpl implements ManagementLocks {
         this.serviceManager = serviceManager;
     }
 
-    public void deleteAtResourceGroupLevel(String resourceGroupName, String lockName) {
-        this.serviceClient().deleteAtResourceGroupLevel(resourceGroupName, lockName);
+    public void deleteByResourceGroup(String resourceGroupName, String lockName) {
+        this.serviceClient().delete(resourceGroupName, lockName);
     }
 
-    public Response<Void> deleteAtResourceGroupLevelWithResponse(
-        String resourceGroupName, String lockName, Context context) {
-        return this.serviceClient().deleteAtResourceGroupLevelWithResponse(resourceGroupName, lockName, context);
+    public Response<Void> deleteWithResponse(String resourceGroupName, String lockName, Context context) {
+        return this.serviceClient().deleteWithResponse(resourceGroupName, lockName, context);
     }
 
     public ManagementLockObject getByResourceGroup(String resourceGroupName, String lockName) {
@@ -424,7 +423,7 @@ public final class ManagementLocksImpl implements ManagementLocks {
         return this.getByResourceGroupWithResponse(resourceGroupName, lockName, context);
     }
 
-    public void deleteAtResourceGroupLevelById(String id) {
+    public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw logger
@@ -440,10 +439,10 @@ public final class ManagementLocksImpl implements ManagementLocks {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'locks'.", id)));
         }
-        this.deleteAtResourceGroupLevelWithResponse(resourceGroupName, lockName, Context.NONE).getValue();
+        this.deleteWithResponse(resourceGroupName, lockName, Context.NONE).getValue();
     }
 
-    public Response<Void> deleteAtResourceGroupLevelByIdWithResponse(String id, Context context) {
+    public Response<Void> deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw logger
@@ -459,7 +458,7 @@ public final class ManagementLocksImpl implements ManagementLocks {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'locks'.", id)));
         }
-        return this.deleteAtResourceGroupLevelWithResponse(resourceGroupName, lockName, context);
+        return this.deleteWithResponse(resourceGroupName, lockName, context);
     }
 
     private ManagementLocksClient serviceClient() {

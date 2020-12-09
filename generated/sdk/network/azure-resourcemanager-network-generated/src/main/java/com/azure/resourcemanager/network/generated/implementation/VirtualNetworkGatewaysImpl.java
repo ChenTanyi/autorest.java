@@ -68,7 +68,7 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
         }
     }
 
-    public void delete(String resourceGroupName, String virtualNetworkGatewayName) {
+    public void deleteByResourceGroup(String resourceGroupName, String virtualNetworkGatewayName) {
         this.serviceClient().delete(resourceGroupName, virtualNetworkGatewayName);
     }
 

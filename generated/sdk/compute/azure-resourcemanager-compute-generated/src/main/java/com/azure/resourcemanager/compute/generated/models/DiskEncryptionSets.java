@@ -54,7 +54,7 @@ public interface DiskEncryptionSets {
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void delete(String resourceGroupName, String diskEncryptionSetName);
+    void deleteByResourceGroup(String resourceGroupName, String diskEncryptionSetName);
 
     /**
      * Deletes a disk encryption set.

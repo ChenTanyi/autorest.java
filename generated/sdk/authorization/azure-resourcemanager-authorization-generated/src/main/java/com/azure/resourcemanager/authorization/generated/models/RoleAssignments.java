@@ -92,7 +92,7 @@ public interface RoleAssignments {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return role Assignments.
      */
-    RoleAssignment delete(String scope, String roleAssignmentName);
+    RoleAssignment deleteByResourceGroup(String scope, String roleAssignmentName);
 
     /**
      * Deletes a role assignment.

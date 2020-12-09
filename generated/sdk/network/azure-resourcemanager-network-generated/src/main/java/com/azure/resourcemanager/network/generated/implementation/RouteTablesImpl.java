@@ -28,7 +28,7 @@ public final class RouteTablesImpl implements RouteTables {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String routeTableName) {
+    public void deleteByResourceGroup(String resourceGroupName, String routeTableName) {
         this.serviceClient().delete(resourceGroupName, routeTableName);
     }
 

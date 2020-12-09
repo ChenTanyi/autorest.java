@@ -76,7 +76,7 @@ public final class RoleAssignmentsImpl implements RoleAssignments {
         return inner.mapPage(inner1 -> new RoleAssignmentImpl(inner1, this.manager()));
     }
 
-    public RoleAssignment delete(String scope, String roleAssignmentName) {
+    public RoleAssignment deleteByResourceGroup(String scope, String roleAssignmentName) {
         RoleAssignmentInner inner = this.serviceClient().delete(scope, roleAssignmentName);
         if (inner != null) {
             return new RoleAssignmentImpl(inner, this.manager());

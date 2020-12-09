@@ -20,7 +20,7 @@ public interface VirtualRouters {
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void delete(String resourceGroupName, String virtualRouterName);
+    void deleteByResourceGroup(String resourceGroupName, String virtualRouterName);
 
     /**
      * Deletes the specified Virtual Router.

@@ -28,7 +28,7 @@ public final class NetworkSecurityGroupsImpl implements NetworkSecurityGroups {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String networkSecurityGroupName) {
+    public void deleteByResourceGroup(String resourceGroupName, String networkSecurityGroupName) {
         this.serviceClient().delete(resourceGroupName, networkSecurityGroupName);
     }
 

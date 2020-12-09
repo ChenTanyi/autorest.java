@@ -93,7 +93,7 @@ public final class AppServicePlansImpl implements AppServicePlans {
         }
     }
 
-    public void delete(String resourceGroupName, String name) {
+    public void deleteByResourceGroup(String resourceGroupName, String name) {
         this.serviceClient().delete(resourceGroupName, name);
     }
 

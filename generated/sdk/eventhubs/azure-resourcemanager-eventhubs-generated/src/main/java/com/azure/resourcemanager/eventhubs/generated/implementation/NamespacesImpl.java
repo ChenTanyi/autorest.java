@@ -113,7 +113,7 @@ public final class NamespacesImpl implements Namespaces {
         return inner.mapPage(inner1 -> new EHNamespaceImpl(inner1, this.manager()));
     }
 
-    public void delete(String resourceGroupName, String namespaceName) {
+    public void deleteByResourceGroup(String resourceGroupName, String namespaceName) {
         this.serviceClient().delete(resourceGroupName, namespaceName);
     }
 

@@ -84,12 +84,12 @@ public final class DevicesImpl implements Devices {
         }
     }
 
-    public void delete(String deviceName, String resourceGroupName) {
-        this.serviceClient().delete(deviceName, resourceGroupName);
+    public void deleteByResourceGroup(String resourceGroupName, String deviceName) {
+        this.serviceClient().delete(resourceGroupName, deviceName);
     }
 
-    public void delete(String deviceName, String resourceGroupName, Context context) {
-        this.serviceClient().delete(deviceName, resourceGroupName, context);
+    public void delete(String resourceGroupName, String deviceName, Context context) {
+        this.serviceClient().delete(resourceGroupName, deviceName, context);
     }
 
     public void downloadUpdates(String deviceName, String resourceGroupName) {
@@ -268,6 +268,14 @@ public final class DevicesImpl implements Devices {
     }
 
     public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
         if (deviceName == null) {
             throw logger
@@ -277,18 +285,18 @@ public final class DevicesImpl implements Devices {
                             .format(
                                 "The resource ID '%s' is not valid. Missing path segment 'dataBoxEdgeDevices'.", id)));
         }
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
-        if (resourceGroupName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
-        }
-        this.delete(deviceName, resourceGroupName, Context.NONE);
+        this.delete(resourceGroupName, deviceName, Context.NONE);
     }
 
     public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
         String deviceName = Utils.getValueFromIdByName(id, "dataBoxEdgeDevices");
         if (deviceName == null) {
             throw logger
@@ -298,15 +306,7 @@ public final class DevicesImpl implements Devices {
                             .format(
                                 "The resource ID '%s' is not valid. Missing path segment 'dataBoxEdgeDevices'.", id)));
         }
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
-        if (resourceGroupName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
-        }
-        this.delete(deviceName, resourceGroupName, context);
+        this.delete(resourceGroupName, deviceName, context);
     }
 
     private DevicesClient serviceClient() {

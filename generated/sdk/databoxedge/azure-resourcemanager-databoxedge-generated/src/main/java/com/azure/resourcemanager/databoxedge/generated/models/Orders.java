@@ -97,7 +97,7 @@ public interface Orders {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void delete(String deviceName, String resourceGroupName);
+    void deleteByResourceGroup(String deviceName, String resourceGroupName);
 
     /**
      * Deletes the order related to the device.

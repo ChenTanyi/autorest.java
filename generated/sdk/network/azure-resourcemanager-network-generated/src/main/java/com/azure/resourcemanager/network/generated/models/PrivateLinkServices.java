@@ -21,7 +21,7 @@ public interface PrivateLinkServices {
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void delete(String resourceGroupName, String serviceName);
+    void deleteByResourceGroup(String resourceGroupName, String serviceName);
 
     /**
      * Deletes the specified private link service.

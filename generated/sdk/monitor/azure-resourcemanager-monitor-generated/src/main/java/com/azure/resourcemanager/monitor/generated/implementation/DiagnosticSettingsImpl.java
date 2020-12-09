@@ -52,7 +52,7 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
         }
     }
 
-    public void delete(String resourceUri, String name) {
+    public void deleteByResourceGroup(String resourceUri, String name) {
         this.serviceClient().delete(resourceUri, name);
     }
 

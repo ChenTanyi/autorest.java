@@ -72,7 +72,7 @@ public final class CertificatesImpl implements Certificates {
         }
     }
 
-    public void delete(String resourceGroupName, String name) {
+    public void deleteByResourceGroup(String resourceGroupName, String name) {
         this.serviceClient().delete(resourceGroupName, name);
     }
 

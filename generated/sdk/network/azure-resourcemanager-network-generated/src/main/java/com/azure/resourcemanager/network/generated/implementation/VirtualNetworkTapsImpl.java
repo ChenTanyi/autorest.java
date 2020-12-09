@@ -28,7 +28,7 @@ public final class VirtualNetworkTapsImpl implements VirtualNetworkTaps {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String tapName) {
+    public void deleteByResourceGroup(String resourceGroupName, String tapName) {
         this.serviceClient().delete(resourceGroupName, tapName);
     }
 

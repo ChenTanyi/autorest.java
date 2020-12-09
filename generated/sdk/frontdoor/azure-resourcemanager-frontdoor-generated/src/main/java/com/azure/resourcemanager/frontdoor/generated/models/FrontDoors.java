@@ -87,7 +87,7 @@ public interface FrontDoors {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void delete(String resourceGroupName, String frontDoorName);
+    void deleteByResourceGroup(String resourceGroupName, String frontDoorName);
 
     /**
      * Deletes an existing Front Door with the specified parameters.

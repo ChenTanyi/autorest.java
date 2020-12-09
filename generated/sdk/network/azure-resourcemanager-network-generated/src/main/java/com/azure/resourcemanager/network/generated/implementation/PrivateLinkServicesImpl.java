@@ -35,7 +35,7 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String serviceName) {
+    public void deleteByResourceGroup(String resourceGroupName, String serviceName) {
         this.serviceClient().delete(resourceGroupName, serviceName);
     }
 

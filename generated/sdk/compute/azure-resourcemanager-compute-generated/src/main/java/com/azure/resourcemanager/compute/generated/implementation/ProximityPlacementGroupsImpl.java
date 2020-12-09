@@ -28,7 +28,7 @@ public final class ProximityPlacementGroupsImpl implements ProximityPlacementGro
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String proximityPlacementGroupName) {
+    public void deleteByResourceGroup(String resourceGroupName, String proximityPlacementGroupName) {
         this.serviceClient().delete(resourceGroupName, proximityPlacementGroupName);
     }
 

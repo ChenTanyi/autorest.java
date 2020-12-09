@@ -52,7 +52,7 @@ public final class IpGroupsImpl implements IpGroups {
         }
     }
 
-    public void delete(String resourceGroupName, String ipGroupsName) {
+    public void deleteByResourceGroup(String resourceGroupName, String ipGroupsName) {
         this.serviceClient().delete(resourceGroupName, ipGroupsName);
     }
 

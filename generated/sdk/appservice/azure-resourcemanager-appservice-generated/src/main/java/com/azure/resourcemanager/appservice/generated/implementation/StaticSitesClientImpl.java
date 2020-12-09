@@ -154,7 +154,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
                 + "/{name}")
         @ExpectedResponses({200, 202})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
-        Mono<Response<Void>> deleteStaticSite(
+        Mono<Response<Void>> delete(
             @HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
             @PathParam("name") String name,
@@ -1367,7 +1367,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @return the completion.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Void>> deleteStaticSiteWithResponseAsync(String resourceGroupName, String name) {
+    private Mono<Response<Void>> deleteWithResponseAsync(String resourceGroupName, String name) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -1392,7 +1392,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
             .withContext(
                 context ->
                     service
-                        .deleteStaticSite(
+                        .delete(
                             this.client.getEndpoint(),
                             resourceGroupName,
                             name,
@@ -1415,8 +1415,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @return the completion.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Void>> deleteStaticSiteWithResponseAsync(
-        String resourceGroupName, String name, Context context) {
+    private Mono<Response<Void>> deleteWithResponseAsync(String resourceGroupName, String name, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -1439,7 +1438,7 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .deleteStaticSite(
+            .delete(
                 this.client.getEndpoint(),
                 resourceGroupName,
                 name,
@@ -1460,8 +1459,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @return the completion.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Void> deleteStaticSiteAsync(String resourceGroupName, String name) {
-        return deleteStaticSiteWithResponseAsync(resourceGroupName, name).flatMap((Response<Void> res) -> Mono.empty());
+    private Mono<Void> deleteAsync(String resourceGroupName, String name) {
+        return deleteWithResponseAsync(resourceGroupName, name).flatMap((Response<Void> res) -> Mono.empty());
     }
 
     /**
@@ -1474,8 +1473,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public void deleteStaticSite(String resourceGroupName, String name) {
-        deleteStaticSiteAsync(resourceGroupName, name).block();
+    public void delete(String resourceGroupName, String name) {
+        deleteAsync(resourceGroupName, name).block();
     }
 
     /**
@@ -1490,8 +1489,8 @@ public final class StaticSitesClientImpl implements StaticSitesClient {
      * @return the response.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<Void> deleteStaticSiteWithResponse(String resourceGroupName, String name, Context context) {
-        return deleteStaticSiteWithResponseAsync(resourceGroupName, name, context).block();
+    public Response<Void> deleteWithResponse(String resourceGroupName, String name, Context context) {
+        return deleteWithResponseAsync(resourceGroupName, name, context).block();
     }
 
     /**

@@ -28,7 +28,7 @@ public final class NetworkVirtualAppliancesImpl implements NetworkVirtualApplian
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String networkVirtualApplianceName) {
+    public void deleteByResourceGroup(String resourceGroupName, String networkVirtualApplianceName) {
         this.serviceClient().delete(resourceGroupName, networkVirtualApplianceName);
     }
 

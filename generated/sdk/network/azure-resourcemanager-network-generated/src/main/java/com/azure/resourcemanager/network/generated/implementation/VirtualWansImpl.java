@@ -52,7 +52,7 @@ public final class VirtualWansImpl implements VirtualWans {
         }
     }
 
-    public void delete(String resourceGroupName, String virtualWanName) {
+    public void deleteByResourceGroup(String resourceGroupName, String virtualWanName) {
         this.serviceClient().delete(resourceGroupName, virtualWanName);
     }
 

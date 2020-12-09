@@ -79,7 +79,7 @@ public final class OrdersImpl implements Orders {
         }
     }
 
-    public void delete(String deviceName, String resourceGroupName) {
+    public void deleteByResourceGroup(String deviceName, String resourceGroupName) {
         this.serviceClient().delete(deviceName, resourceGroupName);
     }
 

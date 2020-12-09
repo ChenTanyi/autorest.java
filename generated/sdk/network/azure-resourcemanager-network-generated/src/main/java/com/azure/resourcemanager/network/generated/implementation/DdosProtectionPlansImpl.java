@@ -28,7 +28,7 @@ public final class DdosProtectionPlansImpl implements DdosProtectionPlans {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String ddosProtectionPlanName) {
+    public void deleteByResourceGroup(String resourceGroupName, String ddosProtectionPlanName) {
         this.serviceClient().delete(resourceGroupName, ddosProtectionPlanName);
     }
 

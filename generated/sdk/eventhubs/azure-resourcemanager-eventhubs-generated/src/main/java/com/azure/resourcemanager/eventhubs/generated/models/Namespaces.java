@@ -143,7 +143,7 @@ public interface Namespaces {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void delete(String resourceGroupName, String namespaceName);
+    void deleteByResourceGroup(String resourceGroupName, String namespaceName);
 
     /**
      * Deletes an existing namespace. This operation also removes all associated resources under the namespace.

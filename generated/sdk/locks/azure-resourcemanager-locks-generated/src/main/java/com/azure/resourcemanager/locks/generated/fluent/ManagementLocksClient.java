@@ -61,7 +61,7 @@ public interface ManagementLocksClient {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    void deleteAtResourceGroupLevel(String resourceGroupName, String lockName);
+    void delete(String resourceGroupName, String lockName);
 
     /**
      * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
@@ -76,7 +76,7 @@ public interface ManagementLocksClient {
      * @return the response.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<Void> deleteAtResourceGroupLevelWithResponse(String resourceGroupName, String lockName, Context context);
+    Response<Void> deleteWithResponse(String resourceGroupName, String lockName, Context context);
 
     /**
      * Gets a management lock at the resource group level.

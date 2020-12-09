@@ -20,7 +20,7 @@ public interface PrivateEndpoints {
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void delete(String resourceGroupName, String privateEndpointName);
+    void deleteByResourceGroup(String resourceGroupName, String privateEndpointName);
 
     /**
      * Deletes the specified private endpoint.

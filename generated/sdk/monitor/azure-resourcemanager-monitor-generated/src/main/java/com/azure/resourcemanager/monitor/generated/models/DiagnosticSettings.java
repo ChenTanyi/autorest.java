@@ -43,7 +43,7 @@ public interface DiagnosticSettings {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void delete(String resourceUri, String name);
+    void deleteByResourceGroup(String resourceUri, String name);
 
     /**
      * Deletes existing diagnostic settings for the specified resource.

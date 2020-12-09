@@ -28,7 +28,7 @@ public final class ApplicationSecurityGroupsImpl implements ApplicationSecurityG
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String applicationSecurityGroupName) {
+    public void deleteByResourceGroup(String resourceGroupName, String applicationSecurityGroupName) {
         this.serviceClient().delete(resourceGroupName, applicationSecurityGroupName);
     }
 

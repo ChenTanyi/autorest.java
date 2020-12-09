@@ -54,7 +54,7 @@ public final class DisksImpl implements Disks {
         }
     }
 
-    public void delete(String resourceGroupName, String diskName) {
+    public void deleteByResourceGroup(String resourceGroupName, String diskName) {
         this.serviceClient().delete(resourceGroupName, diskName);
     }
 

@@ -53,7 +53,7 @@ public final class VirtualHubsImpl implements VirtualHubs {
         }
     }
 
-    public void delete(String resourceGroupName, String virtualHubName) {
+    public void deleteByResourceGroup(String resourceGroupName, String virtualHubName) {
         this.serviceClient().delete(resourceGroupName, virtualHubName);
     }
 

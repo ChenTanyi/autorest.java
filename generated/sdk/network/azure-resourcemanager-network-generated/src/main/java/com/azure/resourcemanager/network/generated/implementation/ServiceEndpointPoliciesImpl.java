@@ -28,7 +28,7 @@ public final class ServiceEndpointPoliciesImpl implements ServiceEndpointPolicie
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String serviceEndpointPolicyName) {
+    public void deleteByResourceGroup(String resourceGroupName, String serviceEndpointPolicyName) {
         this.serviceClient().delete(resourceGroupName, serviceEndpointPolicyName);
     }
 

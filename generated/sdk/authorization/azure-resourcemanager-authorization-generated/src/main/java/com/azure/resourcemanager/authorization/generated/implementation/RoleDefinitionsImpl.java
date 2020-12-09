@@ -28,7 +28,7 @@ public final class RoleDefinitionsImpl implements RoleDefinitions {
         this.serviceManager = serviceManager;
     }
 
-    public RoleDefinition delete(String scope, String roleDefinitionId) {
+    public RoleDefinition deleteByResourceGroup(String scope, String roleDefinitionId) {
         RoleDefinitionInner inner = this.serviceClient().delete(scope, roleDefinitionId);
         if (inner != null) {
             return new RoleDefinitionImpl(inner, this.manager());

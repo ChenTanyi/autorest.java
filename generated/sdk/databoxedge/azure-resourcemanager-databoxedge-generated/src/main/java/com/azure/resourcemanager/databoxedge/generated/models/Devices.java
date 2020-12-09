@@ -86,25 +86,25 @@ public interface Devices {
     /**
      * Deletes the Data Box Edge/Data Box Gateway device.
      *
-     * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
+     * @param deviceName The device name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void delete(String deviceName, String resourceGroupName);
+    void deleteByResourceGroup(String resourceGroupName, String deviceName);
 
     /**
      * Deletes the Data Box Edge/Data Box Gateway device.
      *
-     * @param deviceName The device name.
      * @param resourceGroupName The resource group name.
+     * @param deviceName The device name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void delete(String deviceName, String resourceGroupName, Context context);
+    void delete(String resourceGroupName, String deviceName, Context context);
 
     /**
      * Downloads the updates on a Data Box Edge/Data Box Gateway device.

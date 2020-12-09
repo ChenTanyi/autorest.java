@@ -52,7 +52,7 @@ public final class VpnSitesImpl implements VpnSites {
         }
     }
 
-    public void delete(String resourceGroupName, String vpnSiteName) {
+    public void deleteByResourceGroup(String resourceGroupName, String vpnSiteName) {
         this.serviceClient().delete(resourceGroupName, vpnSiteName);
     }
 

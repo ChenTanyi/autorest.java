@@ -76,7 +76,7 @@ public final class WebApplicationFirewallPoliciesImpl implements WebApplicationF
         }
     }
 
-    public void delete(String resourceGroupName, String policyName) {
+    public void deleteByResourceGroup(String resourceGroupName, String policyName) {
         this.serviceClient().delete(resourceGroupName, policyName);
     }
 

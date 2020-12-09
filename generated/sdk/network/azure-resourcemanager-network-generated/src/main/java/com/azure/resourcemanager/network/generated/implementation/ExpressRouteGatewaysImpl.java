@@ -100,7 +100,7 @@ public final class ExpressRouteGatewaysImpl implements ExpressRouteGateways {
         }
     }
 
-    public void delete(String resourceGroupName, String expressRouteGatewayName) {
+    public void deleteByResourceGroup(String resourceGroupName, String expressRouteGatewayName) {
         this.serviceClient().delete(resourceGroupName, expressRouteGatewayName);
     }
 

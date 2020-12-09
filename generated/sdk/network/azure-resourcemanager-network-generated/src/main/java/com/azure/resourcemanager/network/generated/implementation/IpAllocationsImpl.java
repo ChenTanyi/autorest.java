@@ -28,7 +28,7 @@ public final class IpAllocationsImpl implements IpAllocations {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String ipAllocationName) {
+    public void deleteByResourceGroup(String resourceGroupName, String ipAllocationName) {
         this.serviceClient().delete(resourceGroupName, ipAllocationName);
     }
 

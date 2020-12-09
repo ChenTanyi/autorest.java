@@ -100,7 +100,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         }
     }
 
-    public void delete(String resourceGroupName, String certificateOrderName) {
+    public void deleteByResourceGroup(String resourceGroupName, String certificateOrderName) {
         this.serviceClient().delete(resourceGroupName, certificateOrderName);
     }
 

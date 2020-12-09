@@ -70,7 +70,7 @@ public final class StorageAccountsImpl implements StorageAccounts {
         }
     }
 
-    public void delete(String resourceGroupName, String accountName) {
+    public void deleteByResourceGroup(String resourceGroupName, String accountName) {
         this.serviceClient().delete(resourceGroupName, accountName);
     }
 

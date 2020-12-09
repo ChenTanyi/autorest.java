@@ -28,7 +28,7 @@ public final class AlertRulesImpl implements AlertRules {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String ruleName) {
+    public void deleteByResourceGroup(String resourceGroupName, String ruleName) {
         this.serviceClient().delete(resourceGroupName, ruleName);
     }
 

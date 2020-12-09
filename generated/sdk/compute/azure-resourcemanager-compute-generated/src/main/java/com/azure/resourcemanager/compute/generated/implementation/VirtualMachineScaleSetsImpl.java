@@ -41,7 +41,7 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String vmScaleSetName) {
+    public void deleteByResourceGroup(String resourceGroupName, String vmScaleSetName) {
         this.serviceClient().delete(resourceGroupName, vmScaleSetName);
     }
 

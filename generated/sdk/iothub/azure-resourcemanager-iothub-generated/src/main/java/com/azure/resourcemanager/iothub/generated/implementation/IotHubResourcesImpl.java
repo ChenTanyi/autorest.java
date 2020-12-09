@@ -77,7 +77,7 @@ public final class IotHubResourcesImpl implements IotHubResources {
         }
     }
 
-    public IotHubDescription delete(String resourceGroupName, String resourceName) {
+    public IotHubDescription deleteByResourceGroup(String resourceGroupName, String resourceName) {
         IotHubDescriptionInner inner = this.serviceClient().delete(resourceGroupName, resourceName);
         if (inner != null) {
             return new IotHubDescriptionImpl(inner, this.manager());

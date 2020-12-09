@@ -29,7 +29,7 @@ public final class DedicatedHostGroupsImpl implements DedicatedHostGroups {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String hostGroupName) {
+    public void deleteByResourceGroup(String resourceGroupName, String hostGroupName) {
         this.serviceClient().delete(resourceGroupName, hostGroupName);
     }
 

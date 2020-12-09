@@ -36,7 +36,7 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String circuitName) {
+    public void deleteByResourceGroup(String resourceGroupName, String circuitName) {
         this.serviceClient().delete(resourceGroupName, circuitName);
     }
 

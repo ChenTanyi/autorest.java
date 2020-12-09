@@ -28,7 +28,7 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String privateEndpointName) {
+    public void deleteByResourceGroup(String resourceGroupName, String privateEndpointName) {
         this.serviceClient().delete(resourceGroupName, privateEndpointName);
     }
 

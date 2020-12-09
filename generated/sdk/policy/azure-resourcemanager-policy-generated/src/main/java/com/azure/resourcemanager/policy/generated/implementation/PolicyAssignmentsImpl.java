@@ -28,7 +28,7 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
         this.serviceManager = serviceManager;
     }
 
-    public PolicyAssignment delete(String scope, String policyAssignmentName) {
+    public PolicyAssignment deleteByResourceGroup(String scope, String policyAssignmentName) {
         PolicyAssignmentInner inner = this.serviceClient().delete(scope, policyAssignmentName);
         if (inner != null) {
             return new PolicyAssignmentImpl(inner, this.manager());

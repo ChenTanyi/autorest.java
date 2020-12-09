@@ -27,7 +27,7 @@ public final class DdosCustomPoliciesImpl implements DdosCustomPolicies {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String ddosCustomPolicyName) {
+    public void deleteByResourceGroup(String resourceGroupName, String ddosCustomPolicyName) {
         this.serviceClient().delete(resourceGroupName, ddosCustomPolicyName);
     }
 

@@ -41,7 +41,7 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String applicationGatewayName) {
+    public void deleteByResourceGroup(String resourceGroupName, String applicationGatewayName) {
         this.serviceClient().delete(resourceGroupName, applicationGatewayName);
     }
 

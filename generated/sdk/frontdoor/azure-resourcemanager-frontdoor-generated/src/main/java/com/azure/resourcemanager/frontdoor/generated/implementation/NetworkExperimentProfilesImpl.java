@@ -72,7 +72,7 @@ public final class NetworkExperimentProfilesImpl implements NetworkExperimentPro
         }
     }
 
-    public void delete(String resourceGroupName, String profileName) {
+    public void deleteByResourceGroup(String resourceGroupName, String profileName) {
         this.serviceClient().delete(resourceGroupName, profileName);
     }
 

@@ -62,7 +62,7 @@ public final class ContainerServicesImpl implements ContainerServices {
         }
     }
 
-    public void delete(String resourceGroupName, String containerServiceName) {
+    public void deleteByResourceGroup(String resourceGroupName, String containerServiceName) {
         this.serviceClient().delete(resourceGroupName, containerServiceName);
     }
 

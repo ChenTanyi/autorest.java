@@ -128,7 +128,7 @@ public interface StaticSites {
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void deleteStaticSite(String resourceGroupName, String name);
+    void deleteByResourceGroup(String resourceGroupName, String name);
 
     /**
      * Description for Deletes a static site.
@@ -142,7 +142,7 @@ public interface StaticSites {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
-    Response<Void> deleteStaticSiteWithResponse(String resourceGroupName, String name, Context context);
+    Response<Void> deleteWithResponse(String resourceGroupName, String name, Context context);
 
     /**
      * Description for Gets the list of users of a static site.
@@ -793,7 +793,7 @@ public interface StaticSites {
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void deleteStaticSiteById(String id);
+    void deleteById(String id);
 
     /**
      * Description for Deletes a static site.
@@ -806,7 +806,7 @@ public interface StaticSites {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
-    Response<Void> deleteStaticSiteByIdWithResponse(String id, Context context);
+    Response<Void> deleteByIdWithResponse(String id, Context context);
 
     /**
      * Begins definition for a new StaticSiteArmResource resource.

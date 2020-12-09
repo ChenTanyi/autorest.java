@@ -28,7 +28,7 @@ public final class VirtualRoutersImpl implements VirtualRouters {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String virtualRouterName) {
+    public void deleteByResourceGroup(String resourceGroupName, String virtualRouterName) {
         this.serviceClient().delete(resourceGroupName, virtualRouterName);
     }
 

@@ -28,7 +28,7 @@ public final class ImagesImpl implements Images {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String imageName) {
+    public void deleteByResourceGroup(String resourceGroupName, String imageName) {
         this.serviceClient().delete(resourceGroupName, imageName);
     }
 

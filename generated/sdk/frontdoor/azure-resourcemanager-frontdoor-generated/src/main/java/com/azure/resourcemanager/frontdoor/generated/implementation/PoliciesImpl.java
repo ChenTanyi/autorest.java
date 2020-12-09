@@ -65,7 +65,7 @@ public final class PoliciesImpl implements Policies {
         }
     }
 
-    public void delete(String resourceGroupName, String policyName) {
+    public void deleteByResourceGroup(String resourceGroupName, String policyName) {
         this.serviceClient().delete(resourceGroupName, policyName);
     }
 

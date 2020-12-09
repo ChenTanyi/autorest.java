@@ -28,7 +28,7 @@ public final class PublicIpPrefixesImpl implements PublicIpPrefixes {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String publicIpPrefixName) {
+    public void deleteByResourceGroup(String resourceGroupName, String publicIpPrefixName) {
         this.serviceClient().delete(resourceGroupName, publicIpPrefixName);
     }
 

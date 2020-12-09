@@ -53,7 +53,7 @@ public final class VpnServerConfigurationsImpl implements VpnServerConfiguration
         }
     }
 
-    public void delete(String resourceGroupName, String vpnServerConfigurationName) {
+    public void deleteByResourceGroup(String resourceGroupName, String vpnServerConfigurationName) {
         this.serviceClient().delete(resourceGroupName, vpnServerConfigurationName);
     }
 

@@ -20,7 +20,7 @@ public interface RoleDefinitions {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return role definition.
      */
-    RoleDefinition delete(String scope, String roleDefinitionId);
+    RoleDefinition deleteByResourceGroup(String scope, String roleDefinitionId);
 
     /**
      * Deletes a role definition.

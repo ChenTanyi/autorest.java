@@ -66,7 +66,7 @@ public final class MediaservicesImpl implements Mediaservices {
         }
     }
 
-    public void delete(String resourceGroupName, String accountName) {
+    public void deleteByResourceGroup(String resourceGroupName, String accountName) {
         this.serviceClient().delete(resourceGroupName, accountName);
     }
 

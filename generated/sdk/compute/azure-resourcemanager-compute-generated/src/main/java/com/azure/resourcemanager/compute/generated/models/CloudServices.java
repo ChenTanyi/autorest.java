@@ -20,7 +20,7 @@ public interface CloudServices {
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void delete(String resourceGroupName, String cloudServiceName);
+    void deleteByResourceGroup(String resourceGroupName, String cloudServiceName);
 
     /**
      * Deletes a cloud service.

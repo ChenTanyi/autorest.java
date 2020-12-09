@@ -28,7 +28,7 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String publicIpAddressName) {
+    public void deleteByResourceGroup(String resourceGroupName, String publicIpAddressName) {
         this.serviceClient().delete(resourceGroupName, publicIpAddressName);
     }
 

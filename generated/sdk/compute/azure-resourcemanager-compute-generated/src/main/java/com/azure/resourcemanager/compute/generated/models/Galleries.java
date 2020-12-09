@@ -49,7 +49,7 @@ public interface Galleries {
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void delete(String resourceGroupName, String galleryName);
+    void deleteByResourceGroup(String resourceGroupName, String galleryName);
 
     /**
      * Delete a Shared Image Gallery.

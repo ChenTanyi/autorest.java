@@ -34,7 +34,7 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String networkInterfaceName) {
+    public void deleteByResourceGroup(String resourceGroupName, String networkInterfaceName) {
         this.serviceClient().delete(resourceGroupName, networkInterfaceName);
     }
 

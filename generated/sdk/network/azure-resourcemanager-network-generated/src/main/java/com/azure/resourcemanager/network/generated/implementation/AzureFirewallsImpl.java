@@ -28,7 +28,7 @@ public final class AzureFirewallsImpl implements AzureFirewalls {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String azureFirewallName) {
+    public void deleteByResourceGroup(String resourceGroupName, String azureFirewallName) {
         this.serviceClient().delete(resourceGroupName, azureFirewallName);
     }
 

@@ -28,7 +28,7 @@ public final class FirewallPoliciesImpl implements FirewallPolicies {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String firewallPolicyName) {
+    public void deleteByResourceGroup(String resourceGroupName, String firewallPolicyName) {
         this.serviceClient().delete(resourceGroupName, firewallPolicyName);
     }
 

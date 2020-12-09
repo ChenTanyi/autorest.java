@@ -54,7 +54,7 @@ public final class VpnGatewaysImpl implements VpnGateways {
         }
     }
 
-    public void delete(String resourceGroupName, String gatewayName) {
+    public void deleteByResourceGroup(String resourceGroupName, String gatewayName) {
         this.serviceClient().delete(resourceGroupName, gatewayName);
     }
 

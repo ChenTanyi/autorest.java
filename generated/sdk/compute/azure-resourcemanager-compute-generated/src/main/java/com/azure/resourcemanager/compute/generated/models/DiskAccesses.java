@@ -54,7 +54,7 @@ public interface DiskAccesses {
      *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void delete(String resourceGroupName, String diskAccessName);
+    void deleteByResourceGroup(String resourceGroupName, String diskAccessName);
 
     /**
      * Deletes a disk access resource.

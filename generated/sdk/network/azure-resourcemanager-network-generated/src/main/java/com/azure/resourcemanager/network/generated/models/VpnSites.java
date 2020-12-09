@@ -44,7 +44,7 @@ public interface VpnSites {
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void delete(String resourceGroupName, String vpnSiteName);
+    void deleteByResourceGroup(String resourceGroupName, String vpnSiteName);
 
     /**
      * Deletes a VpnSite.

@@ -51,7 +51,7 @@ public final class SshPublicKeysImpl implements SshPublicKeys {
         return inner.mapPage(inner1 -> new SshPublicKeyResourceImpl(inner1, this.manager()));
     }
 
-    public void delete(String resourceGroupName, String sshPublicKeyName) {
+    public void deleteByResourceGroup(String resourceGroupName, String sshPublicKeyName) {
         this.serviceClient().delete(resourceGroupName, sshPublicKeyName);
     }
 

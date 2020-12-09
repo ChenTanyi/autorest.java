@@ -53,7 +53,7 @@ public final class LocalNetworkGatewaysImpl implements LocalNetworkGateways {
         }
     }
 
-    public void delete(String resourceGroupName, String localNetworkGatewayName) {
+    public void deleteByResourceGroup(String resourceGroupName, String localNetworkGatewayName) {
         this.serviceClient().delete(resourceGroupName, localNetworkGatewayName);
     }
 

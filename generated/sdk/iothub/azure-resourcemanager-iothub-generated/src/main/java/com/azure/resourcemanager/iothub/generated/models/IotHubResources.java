@@ -49,7 +49,7 @@ public interface IotHubResources {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the description of the IoT hub.
      */
-    IotHubDescription delete(String resourceGroupName, String resourceName);
+    IotHubDescription deleteByResourceGroup(String resourceGroupName, String resourceName);
 
     /**
      * Delete an IoT hub.

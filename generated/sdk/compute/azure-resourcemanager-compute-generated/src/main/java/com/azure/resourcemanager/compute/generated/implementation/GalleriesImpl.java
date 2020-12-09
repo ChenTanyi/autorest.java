@@ -53,7 +53,7 @@ public final class GalleriesImpl implements Galleries {
         }
     }
 
-    public void delete(String resourceGroupName, String galleryName) {
+    public void deleteByResourceGroup(String resourceGroupName, String galleryName) {
         this.serviceClient().delete(resourceGroupName, galleryName);
     }
 

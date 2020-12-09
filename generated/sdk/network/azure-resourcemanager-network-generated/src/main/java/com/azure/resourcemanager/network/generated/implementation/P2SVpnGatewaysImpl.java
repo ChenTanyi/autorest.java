@@ -59,7 +59,7 @@ public final class P2SVpnGatewaysImpl implements P2SVpnGateways {
         }
     }
 
-    public void delete(String resourceGroupName, String gatewayName) {
+    public void deleteByResourceGroup(String resourceGroupName, String gatewayName) {
         this.serviceClient().delete(resourceGroupName, gatewayName);
     }
 

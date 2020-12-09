@@ -53,7 +53,7 @@ public final class ActivityLogAlertsImpl implements ActivityLogAlerts {
         }
     }
 
-    public void delete(String resourceGroupName, String activityLogAlertName) {
+    public void deleteByResourceGroup(String resourceGroupName, String activityLogAlertName) {
         this.serviceClient().delete(resourceGroupName, activityLogAlertName);
     }
 

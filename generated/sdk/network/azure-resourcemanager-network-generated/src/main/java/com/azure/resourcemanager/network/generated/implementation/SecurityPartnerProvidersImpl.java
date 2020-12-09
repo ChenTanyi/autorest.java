@@ -28,7 +28,7 @@ public final class SecurityPartnerProvidersImpl implements SecurityPartnerProvid
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String securityPartnerProviderName) {
+    public void deleteByResourceGroup(String resourceGroupName, String securityPartnerProviderName) {
         this.serviceClient().delete(resourceGroupName, securityPartnerProviderName);
     }
 

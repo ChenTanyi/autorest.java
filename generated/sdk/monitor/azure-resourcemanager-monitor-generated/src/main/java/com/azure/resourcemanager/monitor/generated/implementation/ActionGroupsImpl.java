@@ -53,7 +53,7 @@ public final class ActionGroupsImpl implements ActionGroups {
         }
     }
 
-    public void delete(String resourceGroupName, String actionGroupName) {
+    public void deleteByResourceGroup(String resourceGroupName, String actionGroupName) {
         this.serviceClient().delete(resourceGroupName, actionGroupName);
     }
 

@@ -29,7 +29,7 @@ public final class ServersImpl implements Servers {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String serverName) {
+    public void deleteByResourceGroup(String resourceGroupName, String serverName) {
         this.serviceClient().delete(resourceGroupName, serverName);
     }
 

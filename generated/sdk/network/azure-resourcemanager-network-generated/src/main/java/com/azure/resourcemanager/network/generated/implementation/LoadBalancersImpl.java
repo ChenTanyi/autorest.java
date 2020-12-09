@@ -28,7 +28,7 @@ public final class LoadBalancersImpl implements LoadBalancers {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String loadBalancerName) {
+    public void deleteByResourceGroup(String resourceGroupName, String loadBalancerName) {
         this.serviceClient().delete(resourceGroupName, loadBalancerName);
     }
 

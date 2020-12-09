@@ -31,7 +31,7 @@ public final class ExpressRoutePortsImpl implements ExpressRoutePorts {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String expressRoutePortName) {
+    public void deleteByResourceGroup(String resourceGroupName, String expressRoutePortName) {
         this.serviceClient().delete(resourceGroupName, expressRoutePortName);
     }
 

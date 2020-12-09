@@ -28,7 +28,7 @@ public final class DscpConfigurationsImpl implements DscpConfigurations {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String dscpConfigurationName) {
+    public void deleteByResourceGroup(String resourceGroupName, String dscpConfigurationName) {
         this.serviceClient().delete(resourceGroupName, dscpConfigurationName);
     }
 

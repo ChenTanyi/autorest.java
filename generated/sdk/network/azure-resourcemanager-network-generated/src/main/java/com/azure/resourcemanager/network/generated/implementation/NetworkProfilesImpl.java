@@ -28,7 +28,7 @@ public final class NetworkProfilesImpl implements NetworkProfiles {
         this.serviceManager = serviceManager;
     }
 
-    public void delete(String resourceGroupName, String networkProfileName) {
+    public void deleteByResourceGroup(String resourceGroupName, String networkProfileName) {
         this.serviceClient().delete(resourceGroupName, networkProfileName);
     }
 
