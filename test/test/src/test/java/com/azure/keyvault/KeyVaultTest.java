@@ -41,7 +41,7 @@ public class KeyVaultTest extends Base {
 
         Assertions.assertEquals("value1", vault.tags().get("tag1"));
 
-        keyVaultManager.vaults().delete(rgName, vaultName);
+        keyVaultManager.vaults().deleteByResourceGroup(rgName, vaultName);
         Assertions.assertThrows(ManagementException.class, () -> keyVaultManager.vaults().getByResourceGroup(rgName, vaultName));
     }
 }

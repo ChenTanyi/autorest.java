@@ -68,7 +68,7 @@ public class IotHubTests extends Base {
         Assertions.assertEquals("value1", updatedIotHubDescription.tags().get("key1"));
 
         // delete iothub resource
-        iotHubManager.iotHubResources().delete(rgName, iotHubName);
+        iotHubManager.iotHubResources().deleteByResourceGroup(rgName, iotHubName);
 
         // validate delete
         try {

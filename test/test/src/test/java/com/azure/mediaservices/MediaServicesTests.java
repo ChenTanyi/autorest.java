@@ -86,7 +86,7 @@ public class MediaServicesTests extends Base {
         Assertions.assertEquals("value1", updatedMediaService.tags().get("key1"));
 
         // delete media service
-        mediaservicesManager.mediaservices().delete(rgName, accountName);
+        mediaservicesManager.mediaservices().deleteByResourceGroup(rgName, accountName);
 
         // validate delete
         try {

@@ -62,7 +62,7 @@ public class DataBoxEdgeTests extends Base {
         Assertions.assertEquals("value1", updatedDevice.tags().get("key1"));
 
         // delete device
-        dataBoxEdgeManager.devices().delete(deviceName, rgName);
+        dataBoxEdgeManager.devices().deleteByResourceGroup(deviceName, rgName);
 
         // validate delete
         try {

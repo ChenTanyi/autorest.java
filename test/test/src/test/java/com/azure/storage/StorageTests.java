@@ -81,7 +81,7 @@ public class StorageTests extends Base {
                 .apply(new Context("key", "value"));
         Assertions.assertEquals(PublicAccess.NONE, blobContainer2.publicAccess());
 
-        storageManager.storageAccounts().delete(rgName, saName);
+        storageManager.storageAccounts().deleteByResourceGroup(rgName, saName);
         Assertions.assertThrows(ManagementException.class, () -> storageManager.storageAccounts().getByResourceGroup(rgName, saName));
     }
 }

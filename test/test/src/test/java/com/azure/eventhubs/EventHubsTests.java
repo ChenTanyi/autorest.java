@@ -82,7 +82,7 @@ public class EventHubsTests extends Base {
         Assertions.assertEquals("value1", updatedNamespace.tags().get("key1"));
 
         // delete namespace
-        eventHubsManager.namespaces().delete(rgName, nameSpaceName);
+        eventHubsManager.namespaces().deleteByResourceGroup(rgName, nameSpaceName);
 
         // validate if delete success
         try {

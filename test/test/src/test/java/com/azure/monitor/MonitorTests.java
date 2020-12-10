@@ -54,7 +54,7 @@ public class MonitorTests extends Base {
                 .apply();
         Assertions.assertEquals(1, actionGroup.tags().size());
 
-        monitorManager.actionGroups().delete(rgName, agName);
+        monitorManager.actionGroups().deleteByResourceGroup(rgName, agName);
         Assertions.assertThrows(ManagementException.class, () -> monitorManager.actionGroups().getByResourceGroup(rgName, agName));
     }
 

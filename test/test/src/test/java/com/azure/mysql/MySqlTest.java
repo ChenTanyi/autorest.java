@@ -49,7 +49,7 @@ public class MySqlTest extends Base {
         Assertions.assertNotNull(database.id());
         Assertions.assertNotNull(mySqlManager.databases().get(rgName, serverName, dbName));
 
-        mySqlManager.servers().delete(rgName, serverName);
+        mySqlManager.servers().deleteByResourceGroup(rgName, serverName);
         Assertions.assertThrows(ManagementException.class, () -> mySqlManager.servers().getByResourceGroup(rgName, serverName));
         Assertions.assertThrows(ManagementException.class, () -> mySqlManager.databases().get(rgName, serverName, dbName));
     }

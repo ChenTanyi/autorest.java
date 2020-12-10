@@ -57,7 +57,7 @@ public class AppServiceTests extends Base {
         Assertions.assertNotNull(appserviceManager.webApps().getByResourceGroup(rgName, webappName));
 
         appserviceManager.webApps().delete(rgName, webappName);
-        appserviceManager.appServicePlans().delete(rgName, servicePlanName);
+        appserviceManager.appServicePlans().deleteByResourceGroup(rgName, servicePlanName);
         Assertions.assertThrows(ManagementException.class, () -> appserviceManager.webApps().getByResourceGroup(rgName, servicePlanName));
     }
 }

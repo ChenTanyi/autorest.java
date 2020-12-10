@@ -28,7 +28,7 @@ public class LocksTest extends Base {
 
         Assertions.assertThrows(ManagementException.class, () -> resourceManager.resourceGroups().delete(rgName));
 
-        locksManager.managementLocks().deleteAtResourceGroupLevel(rgName, lockName);
+        locksManager.managementLocks().deleteByResourceGroup(rgName, lockName);
         Assertions.assertThrows(ManagementException.class, () -> locksManager.managementLocks().getByResourceGroup(rgName, lockName));
 
         resourceManager.resourceGroups().delete(rgName);

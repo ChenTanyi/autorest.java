@@ -138,7 +138,7 @@ public class HDInsightTests extends Base {
         Assertions.assertEquals("value1", updatedCluster.tags().get("key1"));
 
         // delete cluster
-        hdInsightManager.clusters().delete(rgName, clusterName);
+        hdInsightManager.clusters().deleteByResourceGroup(rgName, clusterName);
 
         // validate delete
         try {

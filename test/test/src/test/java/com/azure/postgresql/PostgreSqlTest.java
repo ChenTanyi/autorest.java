@@ -49,7 +49,7 @@ public class PostgreSqlTest extends Base {
         Assertions.assertNotNull(database.id());
         Assertions.assertNotNull(postgreSqlManager.databases().get(rgName, serverName, dbName));
 
-        postgreSqlManager.servers().delete(rgName, serverName);
+        postgreSqlManager.servers().deleteByResourceGroup(rgName, serverName);
         Assertions.assertThrows(ManagementException.class, () -> postgreSqlManager.servers().getByResourceGroup(rgName, serverName));
         Assertions.assertThrows(ManagementException.class, () -> postgreSqlManager.databases().get(rgName, serverName, dbName));
     }

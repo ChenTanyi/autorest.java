@@ -59,7 +59,7 @@ public class NetworkTests extends Base {
         Assertions.assertEquals("value1", updatedNsg.tags().get("key1"));
 
         // delete nsg
-        networkManager.networkSecurityGroups().delete(rgName, nsgName);
+        networkManager.networkSecurityGroups().deleteByResourceGroup(rgName, nsgName);
 
         // validate delete
         try {
