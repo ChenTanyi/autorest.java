@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.mysql.generated.implementation;
 
 import com.azure.core.annotation.ExpectedResponses;
+import com.azure.core.annotation.HeaderParam;
 import com.azure.core.annotation.Headers;
 import com.azure.core.annotation.Host;
 import com.azure.core.annotation.HostParam;
@@ -25,6 +26,7 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.mysql.generated.fluent.ResourceProvidersClient;
+import com.azure.resourcemanager.mysql.generated.fluent.models.QueryPerformanceInsightResetDataResultInner;
 import java.nio.ByteBuffer;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -57,6 +59,21 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
     private interface ResourceProvidersService {
+        @Headers({"Content-Type: application/json"})
+        @Post(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers"
+                + "/{serverName}/resetQueryPerformanceInsightData")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<QueryPerformanceInsightResetDataResultInner>> resetQueryPerformanceInsightData(
+            @HostParam("$host") String endpoint,
+            @QueryParam("api-version") String apiVersion,
+            @PathParam("subscriptionId") String subscriptionId,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("serverName") String serverName,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
         @Headers({"Accept: application/json;q=0.9", "Content-Type: application/json"})
         @Post(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/servers"
@@ -72,6 +89,160 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
             @PathParam("advisorName") String advisorName,
             @QueryParam("databaseName") String databaseName,
             Context context);
+    }
+
+    /**
+     * Reset data for Query Performance Insight.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return result of Query Performance Insight data reset.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<QueryPerformanceInsightResetDataResultInner>>
+        resetQueryPerformanceInsightDataWithResponseAsync(String resourceGroupName, String serverName) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (serverName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
+        }
+        final String apiVersion = "2018-06-01";
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .resetQueryPerformanceInsightData(
+                            this.client.getEndpoint(),
+                            apiVersion,
+                            this.client.getSubscriptionId(),
+                            resourceGroupName,
+                            serverName,
+                            accept,
+                            context))
+            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+    }
+
+    /**
+     * Reset data for Query Performance Insight.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return result of Query Performance Insight data reset.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<QueryPerformanceInsightResetDataResultInner>>
+        resetQueryPerformanceInsightDataWithResponseAsync(
+            String resourceGroupName, String serverName, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (serverName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
+        }
+        final String apiVersion = "2018-06-01";
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .resetQueryPerformanceInsightData(
+                this.client.getEndpoint(),
+                apiVersion,
+                this.client.getSubscriptionId(),
+                resourceGroupName,
+                serverName,
+                accept,
+                context);
+    }
+
+    /**
+     * Reset data for Query Performance Insight.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return result of Query Performance Insight data reset.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<QueryPerformanceInsightResetDataResultInner> resetQueryPerformanceInsightDataAsync(
+        String resourceGroupName, String serverName) {
+        return resetQueryPerformanceInsightDataWithResponseAsync(resourceGroupName, serverName)
+            .flatMap(
+                (Response<QueryPerformanceInsightResetDataResultInner> res) -> {
+                    if (res.getValue() != null) {
+                        return Mono.just(res.getValue());
+                    } else {
+                        return Mono.empty();
+                    }
+                });
+    }
+
+    /**
+     * Reset data for Query Performance Insight.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return result of Query Performance Insight data reset.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public QueryPerformanceInsightResetDataResultInner resetQueryPerformanceInsightData(
+        String resourceGroupName, String serverName) {
+        return resetQueryPerformanceInsightDataAsync(resourceGroupName, serverName).block();
+    }
+
+    /**
+     * Reset data for Query Performance Insight.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return result of Query Performance Insight data reset.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<QueryPerformanceInsightResetDataResultInner> resetQueryPerformanceInsightDataWithResponse(
+        String resourceGroupName, String serverName, Context context) {
+        return resetQueryPerformanceInsightDataWithResponseAsync(resourceGroupName, serverName, context).block();
     }
 
     /**

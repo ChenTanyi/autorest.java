@@ -6,12 +6,43 @@ package com.azure.resourcemanager.mysql.generated.fluent;
 
 import com.azure.core.annotation.ReturnType;
 import com.azure.core.annotation.ServiceMethod;
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.polling.PollResult;
 import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
+import com.azure.resourcemanager.mysql.generated.fluent.models.QueryPerformanceInsightResetDataResultInner;
 
 /** An instance of this class provides access to all the operations defined in ResourceProvidersClient. */
 public interface ResourceProvidersClient {
+    /**
+     * Reset data for Query Performance Insight.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return result of Query Performance Insight data reset.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    QueryPerformanceInsightResetDataResultInner resetQueryPerformanceInsightData(
+        String resourceGroupName, String serverName);
+
+    /**
+     * Reset data for Query Performance Insight.
+     *
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param serverName The name of the server.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return result of Query Performance Insight data reset.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    Response<QueryPerformanceInsightResetDataResultInner> resetQueryPerformanceInsightDataWithResponse(
+        String resourceGroupName, String serverName, Context context);
+
     /**
      * Create recommendation action session for the advisor.
      *

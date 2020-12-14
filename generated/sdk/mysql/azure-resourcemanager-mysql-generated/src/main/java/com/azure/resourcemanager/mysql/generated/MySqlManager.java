@@ -122,9 +122,9 @@ public final class MySqlManager {
 
     private WaitStatistics waitStatistics;
 
-    private Advisors advisors;
-
     private ResourceProviders resourceProviders;
+
+    private Advisors advisors;
 
     private RecommendedActions recommendedActions;
 
@@ -434,20 +434,20 @@ public final class MySqlManager {
         return waitStatistics;
     }
 
-    /** @return Resource collection API of Advisors. */
-    public Advisors advisors() {
-        if (this.advisors == null) {
-            this.advisors = new AdvisorsImpl(clientObject.getAdvisors(), this);
-        }
-        return advisors;
-    }
-
     /** @return Resource collection API of ResourceProviders. */
     public ResourceProviders resourceProviders() {
         if (this.resourceProviders == null) {
             this.resourceProviders = new ResourceProvidersImpl(clientObject.getResourceProviders(), this);
         }
         return resourceProviders;
+    }
+
+    /** @return Resource collection API of Advisors. */
+    public Advisors advisors() {
+        if (this.advisors == null) {
+            this.advisors = new AdvisorsImpl(clientObject.getAdvisors(), this);
+        }
+        return advisors;
     }
 
     /** @return Resource collection API of RecommendedActions. */

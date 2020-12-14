@@ -4,10 +4,14 @@
 
 package com.azure.resourcemanager.mysql.generated.implementation;
 
+import com.azure.core.http.rest.Response;
+import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.ResourceProvidersClient;
+import com.azure.resourcemanager.mysql.generated.fluent.models.QueryPerformanceInsightResetDataResultInner;
+import com.azure.resourcemanager.mysql.generated.models.QueryPerformanceInsightResetDataResult;
 import com.azure.resourcemanager.mysql.generated.models.ResourceProviders;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -21,6 +25,32 @@ public final class ResourceProvidersImpl implements ResourceProviders {
     public ResourceProvidersImpl(ResourceProvidersClient innerClient, MySqlManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
+    }
+
+    public QueryPerformanceInsightResetDataResult resetQueryPerformanceInsightData(
+        String resourceGroupName, String serverName) {
+        QueryPerformanceInsightResetDataResultInner inner =
+            this.serviceClient().resetQueryPerformanceInsightData(resourceGroupName, serverName);
+        if (inner != null) {
+            return new QueryPerformanceInsightResetDataResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<QueryPerformanceInsightResetDataResult> resetQueryPerformanceInsightDataWithResponse(
+        String resourceGroupName, String serverName, Context context) {
+        Response<QueryPerformanceInsightResetDataResultInner> inner =
+            this.serviceClient().resetQueryPerformanceInsightDataWithResponse(resourceGroupName, serverName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new QueryPerformanceInsightResetDataResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
     }
 
     public void createRecommendedActionSession(

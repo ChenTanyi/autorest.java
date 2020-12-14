@@ -339,18 +339,6 @@ public final class MySqlManagementClientImpl implements MySqlManagementClient {
         return this.waitStatistics;
     }
 
-    /** The AdvisorsClient object to access its operations. */
-    private final AdvisorsClient advisors;
-
-    /**
-     * Gets the AdvisorsClient object to access its operations.
-     *
-     * @return the AdvisorsClient object.
-     */
-    public AdvisorsClient getAdvisors() {
-        return this.advisors;
-    }
-
     /** The ResourceProvidersClient object to access its operations. */
     private final ResourceProvidersClient resourceProviders;
 
@@ -361,6 +349,18 @@ public final class MySqlManagementClientImpl implements MySqlManagementClient {
      */
     public ResourceProvidersClient getResourceProviders() {
         return this.resourceProviders;
+    }
+
+    /** The AdvisorsClient object to access its operations. */
+    private final AdvisorsClient advisors;
+
+    /**
+     * Gets the AdvisorsClient object to access its operations.
+     *
+     * @return the AdvisorsClient object.
+     */
+    public AdvisorsClient getAdvisors() {
+        return this.advisors;
     }
 
     /** The RecommendedActionsClient object to access its operations. */
@@ -477,8 +477,8 @@ public final class MySqlManagementClientImpl implements MySqlManagementClient {
         this.queryTexts = new QueryTextsClientImpl(this);
         this.topQueryStatistics = new TopQueryStatisticsClientImpl(this);
         this.waitStatistics = new WaitStatisticsClientImpl(this);
-        this.advisors = new AdvisorsClientImpl(this);
         this.resourceProviders = new ResourceProvidersClientImpl(this);
+        this.advisors = new AdvisorsClientImpl(this);
         this.recommendedActions = new RecommendedActionsClientImpl(this);
         this.locationBasedRecommendedActionSessionsOperationStatus =
             new LocationBasedRecommendedActionSessionsOperationStatusClientImpl(this);

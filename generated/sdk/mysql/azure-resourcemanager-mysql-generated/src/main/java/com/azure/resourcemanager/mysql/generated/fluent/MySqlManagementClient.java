@@ -164,18 +164,18 @@ public interface MySqlManagementClient {
     WaitStatisticsClient getWaitStatistics();
 
     /**
-     * Gets the AdvisorsClient object to access its operations.
-     *
-     * @return the AdvisorsClient object.
-     */
-    AdvisorsClient getAdvisors();
-
-    /**
      * Gets the ResourceProvidersClient object to access its operations.
      *
      * @return the ResourceProvidersClient object.
      */
     ResourceProvidersClient getResourceProviders();
+
+    /**
+     * Gets the AdvisorsClient object to access its operations.
+     *
+     * @return the AdvisorsClient object.
+     */
+    AdvisorsClient getAdvisors();
 
     /**
      * Gets the RecommendedActionsClient object to access its operations.
