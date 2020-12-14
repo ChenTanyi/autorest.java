@@ -86,6 +86,12 @@ public final class ClusterCreateProperties {
     @JsonProperty(value = "networkProperties")
     private NetworkProperties networkProperties;
 
+    /*
+     * The compute isolation properties.
+     */
+    @JsonProperty(value = "computeIsolationProperties")
+    private ComputeIsolationProperties computeIsolationProperties;
+
     /**
      * Get the clusterVersion property: The version of the cluster.
      *
@@ -328,6 +334,27 @@ public final class ClusterCreateProperties {
     }
 
     /**
+     * Get the computeIsolationProperties property: The compute isolation properties.
+     *
+     * @return the computeIsolationProperties value.
+     */
+    public ComputeIsolationProperties computeIsolationProperties() {
+        return this.computeIsolationProperties;
+    }
+
+    /**
+     * Set the computeIsolationProperties property: The compute isolation properties.
+     *
+     * @param computeIsolationProperties the computeIsolationProperties value to set.
+     * @return the ClusterCreateProperties object itself.
+     */
+    public ClusterCreateProperties withComputeIsolationProperties(
+        ComputeIsolationProperties computeIsolationProperties) {
+        this.computeIsolationProperties = computeIsolationProperties;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -356,6 +383,9 @@ public final class ClusterCreateProperties {
         }
         if (networkProperties() != null) {
             networkProperties().validate();
+        }
+        if (computeIsolationProperties() != null) {
+            computeIsolationProperties().validate();
         }
     }
 }

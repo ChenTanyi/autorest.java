@@ -8,10 +8,13 @@
         <module>test</module>
         <module>../generated/sdk/appservice/azure-resourcemanager-appservice-generated</module>
         <module>../generated/sdk/authorization/azure-resourcemanager-authorization-generated</module>
+        <module>../generated/sdk/azurekusto/azure-resourcemanager-azurekusto-generated</module>
         <module>../generated/sdk/commerce/azure-resourcemanager-commerce-generated</module>
         <module>../generated/sdk/compute/azure-resourcemanager-compute-generated</module>
+        <module>../generated/sdk/costmanagement/azure-resourcemanager-costmanagement-generated</module>
         <module>../generated/sdk/databoxedge/azure-resourcemanager-databoxedge-generated</module>
         <module>../generated/sdk/dns/azure-resourcemanager-dns-generated</module>
+        <module>../generated/sdk/eventgrid/azure-resourcemanager-eventgrid-generated</module>
         <module>../generated/sdk/eventhubs/azure-resourcemanager-eventhubs-generated</module>
         <module>../generated/sdk/frontdoor/azure-resourcemanager-frontdoor-generated</module>
         <module>../generated/sdk/hdinsight/azure-resourcemanager-hdinsight-generated</module>
@@ -22,11 +25,15 @@
         <module>../generated/sdk/monitor/azure-resourcemanager-monitor-generated</module>
         <module>../generated/sdk/mysql/azure-resourcemanager-mysql-generated</module>
         <module>../generated/sdk/network/azure-resourcemanager-network-generated</module>
+        <module>../generated/sdk/operationalinsights/azure-resourcemanager-operationalinsights-generated</module>
         <module>../generated/sdk/policy/azure-resourcemanager-policy-generated</module>
         <module>../generated/sdk/postgresql/azure-resourcemanager-postgresql-generated</module>
+        <module>../generated/sdk/recoveryservices/azure-resourcemanager-recoveryservices-generated</module>
+        <module>../generated/sdk/relay/azure-resourcemanager-relay-generated</module>
         <module>../generated/sdk/resourcegraph/azure-resourcemanager-resourcegraph-generated</module>
         <module>../generated/sdk/resources/azure-resourcemanager-resources-generated</module>
         <module>../generated/sdk/search/azure-resourcemanager-search-generated</module>
+        <module>../generated/sdk/sqlvirtualmachine/azure-resourcemanager-sqlvirtualmachine-generated</module>
         <module>../generated/sdk/storage/azure-resourcemanager-storage-generated</module>
     </modules>
 </project>
