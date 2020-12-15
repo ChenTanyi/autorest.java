@@ -44,8 +44,9 @@ public final class QueueServicePropertiesImpl
 
     private String accountName;
 
-    public QueueServicePropertiesImpl withExistingResourceGroup(String resourceGroupName) {
+    public QueueServicePropertiesImpl withExistingStorageAccount(String resourceGroupName, String accountName) {
         this.resourceGroupName = resourceGroupName;
+        this.accountName = accountName;
         return this;
     }
 
@@ -69,10 +70,9 @@ public final class QueueServicePropertiesImpl
         return this;
     }
 
-    QueueServicePropertiesImpl(String name, StorageManager serviceManager) {
+    QueueServicePropertiesImpl(StorageManager serviceManager) {
         this.innerObject = new QueueServicePropertiesInner();
         this.serviceManager = serviceManager;
-        this.accountName = name;
     }
 
     public QueueServicePropertiesImpl update() {

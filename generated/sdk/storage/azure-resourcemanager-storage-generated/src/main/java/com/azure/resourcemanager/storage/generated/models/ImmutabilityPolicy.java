@@ -82,15 +82,18 @@ public interface ImmutabilityPolicy {
         /** The stage of the ImmutabilityPolicy definition allowing to specify parent resource. */
         interface WithParentResource {
             /**
-             * Specifies resourceGroupName, accountName.
+             * Specifies resourceGroupName, accountName, containerName.
              *
              * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
              *     insensitive.
              * @param accountName The name of the storage account within the specified resource group. Storage account
              *     names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+             * @param containerName The name of the blob container within the specified storage account. Blob container
+             *     names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-)
+             *     only. Every dash (-) character must be immediately preceded and followed by a letter or number.
              * @return the next definition stage.
              */
-            WithCreate withExistingStorageAccount(String resourceGroupName, String accountName);
+            WithCreate withExistingContainer(String resourceGroupName, String accountName, String containerName);
         }
         /**
          * The stage of the ImmutabilityPolicy definition which contains all the minimum required properties for the

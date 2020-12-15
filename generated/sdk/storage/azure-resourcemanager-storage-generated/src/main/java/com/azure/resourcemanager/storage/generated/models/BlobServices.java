@@ -103,8 +103,7 @@ public interface BlobServices {
     /**
      * Begins definition for a new BlobServiceProperties resource.
      *
-     * @param name resource name.
      * @return the first stage of the new BlobServiceProperties definition.
      */
-    BlobServiceProperties.DefinitionStages.Blank define(String name);
+    BlobServiceProperties.DefinitionStages.Blank define();
 }

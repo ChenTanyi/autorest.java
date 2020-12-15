@@ -98,8 +98,7 @@ public interface FileServices {
     /**
      * Begins definition for a new FileServiceProperties resource.
      *
-     * @param name resource name.
      * @return the first stage of the new FileServiceProperties definition.
      */
-    FileServiceProperties.DefinitionStages.Blank define(String name);
+    FileServiceProperties.DefinitionStages.Blank define();
 }

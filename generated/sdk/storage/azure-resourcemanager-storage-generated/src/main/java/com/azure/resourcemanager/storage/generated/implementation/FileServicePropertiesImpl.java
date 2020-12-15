@@ -54,8 +54,9 @@ public final class FileServicePropertiesImpl
 
     private String accountName;
 
-    public FileServicePropertiesImpl withExistingResourceGroup(String resourceGroupName) {
+    public FileServicePropertiesImpl withExistingStorageAccount(String resourceGroupName, String accountName) {
         this.resourceGroupName = resourceGroupName;
+        this.accountName = accountName;
         return this;
     }
 
@@ -79,10 +80,9 @@ public final class FileServicePropertiesImpl
         return this;
     }
 
-    FileServicePropertiesImpl(String name, StorageManager serviceManager) {
+    FileServicePropertiesImpl(StorageManager serviceManager) {
         this.innerObject = new FileServicePropertiesInner();
         this.serviceManager = serviceManager;
-        this.accountName = name;
     }
 
     public FileServicePropertiesImpl update() {

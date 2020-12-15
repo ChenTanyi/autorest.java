@@ -124,7 +124,7 @@ public final class QueueServicesImpl implements QueueServices {
         return this.serviceManager;
     }
 
-    public QueueServicePropertiesImpl define(String name) {
-        return new QueueServicePropertiesImpl(name, this.manager());
+    public QueueServicePropertiesImpl define() {
+        return new QueueServicePropertiesImpl(this.manager());
     }
 }

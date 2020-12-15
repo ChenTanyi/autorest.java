@@ -529,7 +529,7 @@ public final class BlobContainersImpl implements BlobContainers {
         return new BlobContainerImpl(name, this.manager());
     }
 
-    public ImmutabilityPolicyImpl defineImmutabilityPolicy(String name) {
-        return new ImmutabilityPolicyImpl(name, this.manager());
+    public ImmutabilityPolicyImpl defineImmutabilityPolicy() {
+        return new ImmutabilityPolicyImpl(this.manager());
     }
 }

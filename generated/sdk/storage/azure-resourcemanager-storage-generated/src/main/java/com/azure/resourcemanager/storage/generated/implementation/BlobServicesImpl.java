@@ -111,7 +111,7 @@ public final class BlobServicesImpl implements BlobServices {
         return this.serviceManager;
     }
 
-    public BlobServicePropertiesImpl define(String name) {
-        return new BlobServicePropertiesImpl(name, this.manager());
+    public BlobServicePropertiesImpl define() {
+        return new BlobServicePropertiesImpl(this.manager());
     }
 }

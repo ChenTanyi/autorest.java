@@ -80,8 +80,9 @@ public final class BlobServicePropertiesImpl
 
     private String accountName;
 
-    public BlobServicePropertiesImpl withExistingResourceGroup(String resourceGroupName) {
+    public BlobServicePropertiesImpl withExistingStorageAccount(String resourceGroupName, String accountName) {
         this.resourceGroupName = resourceGroupName;
+        this.accountName = accountName;
         return this;
     }
 
@@ -105,10 +106,9 @@ public final class BlobServicePropertiesImpl
         return this;
     }
 
-    BlobServicePropertiesImpl(String name, StorageManager serviceManager) {
+    BlobServicePropertiesImpl(StorageManager serviceManager) {
         this.innerObject = new BlobServicePropertiesInner();
         this.serviceManager = serviceManager;
-        this.accountName = name;
     }
 
     public BlobServicePropertiesImpl update() {

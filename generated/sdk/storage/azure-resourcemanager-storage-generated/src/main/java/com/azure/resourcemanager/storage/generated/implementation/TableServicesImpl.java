@@ -124,7 +124,7 @@ public final class TableServicesImpl implements TableServices {
         return this.serviceManager;
     }
 
-    public TableServicePropertiesImpl define(String name) {
-        return new TableServicePropertiesImpl(name, this.manager());
+    public TableServicePropertiesImpl define() {
+        return new TableServicePropertiesImpl(this.manager());
     }
 }

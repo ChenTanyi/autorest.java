@@ -124,7 +124,7 @@ public final class FileServicesImpl implements FileServices {
         return this.serviceManager;
     }
 
-    public FileServicePropertiesImpl define(String name) {
-        return new FileServicePropertiesImpl(name, this.manager());
+    public FileServicePropertiesImpl define() {
+        return new FileServicePropertiesImpl(this.manager());
     }
 }

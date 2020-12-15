@@ -102,8 +102,7 @@ public interface QueueServices {
     /**
      * Begins definition for a new QueueServiceProperties resource.
      *
-     * @param name resource name.
      * @return the first stage of the new QueueServiceProperties definition.
      */
-    QueueServiceProperties.DefinitionStages.Blank define(String name);
+    QueueServiceProperties.DefinitionStages.Blank define();
 }

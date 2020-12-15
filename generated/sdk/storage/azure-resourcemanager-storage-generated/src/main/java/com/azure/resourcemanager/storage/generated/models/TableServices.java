@@ -102,8 +102,7 @@ public interface TableServices {
     /**
      * Begins definition for a new TableServiceProperties resource.
      *
-     * @param name resource name.
      * @return the first stage of the new TableServiceProperties definition.
      */
-    TableServiceProperties.DefinitionStages.Blank define(String name);
+    TableServiceProperties.DefinitionStages.Blank define();
 }

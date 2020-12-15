@@ -62,9 +62,11 @@ public final class ImmutabilityPolicyImpl
 
     private String updateIfMatch;
 
-    public ImmutabilityPolicyImpl withExistingStorageAccount(String resourceGroupName, String accountName) {
+    public ImmutabilityPolicyImpl withExistingContainer(
+        String resourceGroupName, String accountName, String containerName) {
         this.resourceGroupName = resourceGroupName;
         this.accountName = accountName;
+        this.containerName = containerName;
         return this;
     }
 
@@ -90,10 +92,9 @@ public final class ImmutabilityPolicyImpl
         return this;
     }
 
-    ImmutabilityPolicyImpl(String name, StorageManager serviceManager) {
+    ImmutabilityPolicyImpl(StorageManager serviceManager) {
         this.innerObject = new ImmutabilityPolicyInner();
         this.serviceManager = serviceManager;
-        this.containerName = name;
         this.createIfMatch = null;
     }
 

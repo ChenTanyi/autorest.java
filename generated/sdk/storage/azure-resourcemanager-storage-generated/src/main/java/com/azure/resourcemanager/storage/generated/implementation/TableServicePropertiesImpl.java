@@ -44,8 +44,9 @@ public final class TableServicePropertiesImpl
 
     private String accountName;
 
-    public TableServicePropertiesImpl withExistingResourceGroup(String resourceGroupName) {
+    public TableServicePropertiesImpl withExistingStorageAccount(String resourceGroupName, String accountName) {
         this.resourceGroupName = resourceGroupName;
+        this.accountName = accountName;
         return this;
     }
 
@@ -69,10 +70,9 @@ public final class TableServicePropertiesImpl
         return this;
     }
 
-    TableServicePropertiesImpl(String name, StorageManager serviceManager) {
+    TableServicePropertiesImpl(StorageManager serviceManager) {
         this.innerObject = new TableServicePropertiesInner();
         this.serviceManager = serviceManager;
-        this.accountName = name;
     }
 
     public TableServicePropertiesImpl update() {
