@@ -83,7 +83,7 @@
     },
     "policy": {
         "source": "specification/resources/resource-manager/readme.md",
-        "tag": "package-policy-2019-09",
+        "tag": "package-policy-2020-09",
         "namespace": "com.azure.resourcemanager.policy.generated",
         "output": "sdk/policy/azure-resourcemanager-policy-generated"
     },
