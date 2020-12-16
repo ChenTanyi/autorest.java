@@ -21,10 +21,12 @@ import com.azure.core.management.profile.AzureProfile;
 import com.azure.core.util.Configuration;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.policy.generated.fluent.PolicyClient;
+import com.azure.resourcemanager.policy.generated.implementation.DataPolicyManifestsImpl;
 import com.azure.resourcemanager.policy.generated.implementation.PolicyAssignmentsImpl;
 import com.azure.resourcemanager.policy.generated.implementation.PolicyClientBuilder;
 import com.azure.resourcemanager.policy.generated.implementation.PolicyDefinitionsImpl;
 import com.azure.resourcemanager.policy.generated.implementation.PolicySetDefinitionsImpl;
+import com.azure.resourcemanager.policy.generated.models.DataPolicyManifests;
 import com.azure.resourcemanager.policy.generated.models.PolicyAssignments;
 import com.azure.resourcemanager.policy.generated.models.PolicyDefinitions;
 import com.azure.resourcemanager.policy.generated.models.PolicySetDefinitions;
@@ -39,6 +41,8 @@ import java.util.Objects;
  * assign them at a scope.
  */
 public final class PolicyManager {
+    private DataPolicyManifests dataPolicyManifests;
+
     private PolicyAssignments policyAssignments;
 
     private PolicyDefinitions policyDefinitions;
@@ -191,6 +195,14 @@ public final class PolicyManager {
                     .build();
             return new PolicyManager(httpPipeline, profile, defaultPollInterval);
         }
+    }
+
+    /** @return Resource collection API of DataPolicyManifests. */
+    public DataPolicyManifests dataPolicyManifests() {
+        if (this.dataPolicyManifests == null) {
+            this.dataPolicyManifests = new DataPolicyManifestsImpl(clientObject.getDataPolicyManifests(), this);
+        }
+        return dataPolicyManifests;
     }
 
     /** @return Resource collection API of PolicyAssignments. */

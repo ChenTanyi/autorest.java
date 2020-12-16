@@ -87,8 +87,8 @@ public final class PolicySetDefinitionsImpl implements PolicySetDefinitions {
         return inner.mapPage(inner1 -> new PolicySetDefinitionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<PolicySetDefinition> list(Context context) {
-        PagedIterable<PolicySetDefinitionInner> inner = this.serviceClient().list(context);
+    public PagedIterable<PolicySetDefinition> list(String filter, Integer top, Context context) {
+        PagedIterable<PolicySetDefinitionInner> inner = this.serviceClient().list(filter, top, context);
         return inner.mapPage(inner1 -> new PolicySetDefinitionImpl(inner1, this.manager()));
     }
 
@@ -97,8 +97,8 @@ public final class PolicySetDefinitionsImpl implements PolicySetDefinitions {
         return inner.mapPage(inner1 -> new PolicySetDefinitionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<PolicySetDefinition> listBuiltIn(Context context) {
-        PagedIterable<PolicySetDefinitionInner> inner = this.serviceClient().listBuiltIn(context);
+    public PagedIterable<PolicySetDefinition> listBuiltIn(String filter, Integer top, Context context) {
+        PagedIterable<PolicySetDefinitionInner> inner = this.serviceClient().listBuiltIn(filter, top, context);
         return inner.mapPage(inner1 -> new PolicySetDefinitionImpl(inner1, this.manager()));
     }
 
@@ -177,9 +177,10 @@ public final class PolicySetDefinitionsImpl implements PolicySetDefinitions {
         return inner.mapPage(inner1 -> new PolicySetDefinitionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<PolicySetDefinition> listByManagementGroup(String managementGroupId, Context context) {
+    public PagedIterable<PolicySetDefinition> listByManagementGroup(
+        String managementGroupId, String filter, Integer top, Context context) {
         PagedIterable<PolicySetDefinitionInner> inner =
-            this.serviceClient().listByManagementGroup(managementGroupId, context);
+            this.serviceClient().listByManagementGroup(managementGroupId, filter, top, context);
         return inner.mapPage(inner1 -> new PolicySetDefinitionImpl(inner1, this.manager()));
     }
 

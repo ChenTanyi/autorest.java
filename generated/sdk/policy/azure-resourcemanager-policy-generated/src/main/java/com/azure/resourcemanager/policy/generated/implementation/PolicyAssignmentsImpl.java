@@ -80,9 +80,9 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
     }
 
     public PagedIterable<PolicyAssignment> listByResourceGroup(
-        String resourceGroupName, String filter, Context context) {
+        String resourceGroupName, String filter, Integer top, Context context) {
         PagedIterable<PolicyAssignmentInner> inner =
-            this.serviceClient().listByResourceGroup(resourceGroupName, filter, context);
+            this.serviceClient().listByResourceGroup(resourceGroupName, filter, top, context);
         return inner.mapPage(inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
@@ -107,6 +107,7 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
         String resourceType,
         String resourceName,
         String filter,
+        Integer top,
         Context context) {
         PagedIterable<PolicyAssignmentInner> inner =
             this
@@ -118,20 +119,20 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
                     resourceType,
                     resourceName,
                     filter,
+                    top,
                     context);
         return inner.mapPage(inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<PolicyAssignment> listForManagementGroup(String managementGroupId, String filter) {
-        PagedIterable<PolicyAssignmentInner> inner =
-            this.serviceClient().listForManagementGroup(managementGroupId, filter);
+    public PagedIterable<PolicyAssignment> listForManagementGroup(String managementGroupId) {
+        PagedIterable<PolicyAssignmentInner> inner = this.serviceClient().listForManagementGroup(managementGroupId);
         return inner.mapPage(inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyAssignment> listForManagementGroup(
-        String managementGroupId, String filter, Context context) {
+        String managementGroupId, String filter, Integer top, Context context) {
         PagedIterable<PolicyAssignmentInner> inner =
-            this.serviceClient().listForManagementGroup(managementGroupId, filter, context);
+            this.serviceClient().listForManagementGroup(managementGroupId, filter, top, context);
         return inner.mapPage(inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
@@ -140,8 +141,8 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
         return inner.mapPage(inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<PolicyAssignment> list(String filter, Context context) {
-        PagedIterable<PolicyAssignmentInner> inner = this.serviceClient().list(filter, context);
+    public PagedIterable<PolicyAssignment> list(String filter, Integer top, Context context) {
+        PagedIterable<PolicyAssignmentInner> inner = this.serviceClient().list(filter, top, context);
         return inner.mapPage(inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 

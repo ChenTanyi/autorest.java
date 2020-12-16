@@ -125,6 +125,8 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
             @HostParam("$host") String endpoint,
             @QueryParam("api-version") String apiVersion,
             @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam(value = "$filter", encoded = true) String filter,
+            @QueryParam("$top") Integer top,
             @HeaderParam("Accept") String accept,
             Context context);
 
@@ -135,12 +137,14 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
         Mono<Response<PolicySetDefinitionListResult>> listBuiltIn(
             @HostParam("$host") String endpoint,
             @QueryParam("api-version") String apiVersion,
+            @QueryParam(value = "$filter", encoded = true) String filter,
+            @QueryParam("$top") Integer top,
             @HeaderParam("Accept") String accept,
             Context context);
 
         @Headers({"Content-Type: application/json"})
         @Put(
-            "/providers/Microsoft.Management/managementgroups/{managementGroupId}/providers/Microsoft.Authorization"
+            "/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Authorization"
                 + "/policySetDefinitions/{policySetDefinitionName}")
         @ExpectedResponses({200, 201})
         @UnexpectedResponseExceptionType(ManagementException.class)
@@ -155,7 +159,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
 
         @Headers({"Content-Type: application/json"})
         @Delete(
-            "/providers/Microsoft.Management/managementgroups/{managementGroupId}/providers/Microsoft.Authorization"
+            "/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Authorization"
                 + "/policySetDefinitions/{policySetDefinitionName}")
         @ExpectedResponses({200, 204})
         @UnexpectedResponseExceptionType(ManagementException.class)
@@ -169,7 +173,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/providers/Microsoft.Management/managementgroups/{managementGroupId}/providers/Microsoft.Authorization"
+            "/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Authorization"
                 + "/policySetDefinitions/{policySetDefinitionName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
@@ -183,7 +187,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/providers/Microsoft.Management/managementgroups/{managementGroupId}/providers/Microsoft.Authorization"
+            "/providers/Microsoft.Management/managementGroups/{managementGroupId}/providers/Microsoft.Authorization"
                 + "/policySetDefinitions")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
@@ -191,6 +195,8 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
             @HostParam("$host") String endpoint,
             @QueryParam("api-version") String apiVersion,
             @PathParam("managementGroupId") String managementGroupId,
+            @QueryParam(value = "$filter", encoded = true) String filter,
+            @QueryParam("$top") Integer top,
             @HeaderParam("Accept") String accept,
             Context context);
 
@@ -763,14 +769,31 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
     }
 
     /**
-     * This operation retrieves a list of all the policy set definitions in the given subscription.
+     * This operation retrieves a list of all the policy set definitions in a given subscription that match the optional
+     * given $filter. Valid values for $filter are: 'atExactScope()', 'policyType -eq {value}' or 'category eq
+     * '{value}''. If $filter is not provided, the unfiltered list includes all policy set definitions associated with
+     * the subscription, including those that apply directly or from management groups that contain the given
+     * subscription. If $filter=atExactScope() is provided, the returned list only includes all policy set definitions
+     * that at the given subscription. If $filter='policyType -eq {value}' is provided, the returned list only includes
+     * all policy set definitions whose type match the {value}. Possible policyType values are NotSpecified, BuiltIn and
+     * Custom. If $filter='category -eq {value}' is provided, the returned list only includes all policy set definitions
+     * whose category match the {value}.
      *
+     * @param filter The filter to apply on the operation. Valid values for $filter are: 'atExactScope()', 'policyType
+     *     -eq {value}' or 'category eq '{value}''. If $filter is not provided, no filtering is performed. If
+     *     $filter=atExactScope() is provided, the returned list only includes all policy set definitions that at the
+     *     given scope. If $filter='policyType -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose type match the {value}. Possible policyType values are NotSpecified, BuiltIn, Custom, and
+     *     Static. If $filter='category -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose category match the {value}.
+     * @param top Maximum number of records to return. When the $top filter is not provided, it will return 500 records.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of policy set definitions.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<PolicySetDefinitionInner>> listSinglePageAsync() {
+    private Mono<PagedResponse<PolicySetDefinitionInner>> listSinglePageAsync(String filter, Integer top) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -792,6 +815,8 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
                             this.client.getEndpoint(),
                             this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
+                            filter,
+                            top,
                             accept,
                             context))
             .<PagedResponse<PolicySetDefinitionInner>>map(
@@ -807,8 +832,24 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
     }
 
     /**
-     * This operation retrieves a list of all the policy set definitions in the given subscription.
+     * This operation retrieves a list of all the policy set definitions in a given subscription that match the optional
+     * given $filter. Valid values for $filter are: 'atExactScope()', 'policyType -eq {value}' or 'category eq
+     * '{value}''. If $filter is not provided, the unfiltered list includes all policy set definitions associated with
+     * the subscription, including those that apply directly or from management groups that contain the given
+     * subscription. If $filter=atExactScope() is provided, the returned list only includes all policy set definitions
+     * that at the given subscription. If $filter='policyType -eq {value}' is provided, the returned list only includes
+     * all policy set definitions whose type match the {value}. Possible policyType values are NotSpecified, BuiltIn and
+     * Custom. If $filter='category -eq {value}' is provided, the returned list only includes all policy set definitions
+     * whose category match the {value}.
      *
+     * @param filter The filter to apply on the operation. Valid values for $filter are: 'atExactScope()', 'policyType
+     *     -eq {value}' or 'category eq '{value}''. If $filter is not provided, no filtering is performed. If
+     *     $filter=atExactScope() is provided, the returned list only includes all policy set definitions that at the
+     *     given scope. If $filter='policyType -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose type match the {value}. Possible policyType values are NotSpecified, BuiltIn, Custom, and
+     *     Static. If $filter='category -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose category match the {value}.
+     * @param top Maximum number of records to return. When the $top filter is not provided, it will return 500 records.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -816,7 +857,8 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      * @return list of policy set definitions.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<PolicySetDefinitionInner>> listSinglePageAsync(Context context) {
+    private Mono<PagedResponse<PolicySetDefinitionInner>> listSinglePageAsync(
+        String filter, Integer top, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -836,6 +878,8 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
                 this.client.getEndpoint(),
                 this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
+                filter,
+                top,
                 accept,
                 context)
             .map(
@@ -850,7 +894,44 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
     }
 
     /**
-     * This operation retrieves a list of all the policy set definitions in the given subscription.
+     * This operation retrieves a list of all the policy set definitions in a given subscription that match the optional
+     * given $filter. Valid values for $filter are: 'atExactScope()', 'policyType -eq {value}' or 'category eq
+     * '{value}''. If $filter is not provided, the unfiltered list includes all policy set definitions associated with
+     * the subscription, including those that apply directly or from management groups that contain the given
+     * subscription. If $filter=atExactScope() is provided, the returned list only includes all policy set definitions
+     * that at the given subscription. If $filter='policyType -eq {value}' is provided, the returned list only includes
+     * all policy set definitions whose type match the {value}. Possible policyType values are NotSpecified, BuiltIn and
+     * Custom. If $filter='category -eq {value}' is provided, the returned list only includes all policy set definitions
+     * whose category match the {value}.
+     *
+     * @param filter The filter to apply on the operation. Valid values for $filter are: 'atExactScope()', 'policyType
+     *     -eq {value}' or 'category eq '{value}''. If $filter is not provided, no filtering is performed. If
+     *     $filter=atExactScope() is provided, the returned list only includes all policy set definitions that at the
+     *     given scope. If $filter='policyType -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose type match the {value}. Possible policyType values are NotSpecified, BuiltIn, Custom, and
+     *     Static. If $filter='category -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose category match the {value}.
+     * @param top Maximum number of records to return. When the $top filter is not provided, it will return 500 records.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of policy set definitions.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<PolicySetDefinitionInner> listAsync(String filter, Integer top) {
+        return new PagedFlux<>(() -> listSinglePageAsync(filter, top), nextLink -> listNextSinglePageAsync(nextLink));
+    }
+
+    /**
+     * This operation retrieves a list of all the policy set definitions in a given subscription that match the optional
+     * given $filter. Valid values for $filter are: 'atExactScope()', 'policyType -eq {value}' or 'category eq
+     * '{value}''. If $filter is not provided, the unfiltered list includes all policy set definitions associated with
+     * the subscription, including those that apply directly or from management groups that contain the given
+     * subscription. If $filter=atExactScope() is provided, the returned list only includes all policy set definitions
+     * that at the given subscription. If $filter='policyType -eq {value}' is provided, the returned list only includes
+     * all policy set definitions whose type match the {value}. Possible policyType values are NotSpecified, BuiltIn and
+     * Custom. If $filter='category -eq {value}' is provided, the returned list only includes all policy set definitions
+     * whose category match the {value}.
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -858,12 +939,30 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PolicySetDefinitionInner> listAsync() {
-        return new PagedFlux<>(() -> listSinglePageAsync(), nextLink -> listNextSinglePageAsync(nextLink));
+        final String filter = null;
+        final Integer top = null;
+        return new PagedFlux<>(() -> listSinglePageAsync(filter, top), nextLink -> listNextSinglePageAsync(nextLink));
     }
 
     /**
-     * This operation retrieves a list of all the policy set definitions in the given subscription.
+     * This operation retrieves a list of all the policy set definitions in a given subscription that match the optional
+     * given $filter. Valid values for $filter are: 'atExactScope()', 'policyType -eq {value}' or 'category eq
+     * '{value}''. If $filter is not provided, the unfiltered list includes all policy set definitions associated with
+     * the subscription, including those that apply directly or from management groups that contain the given
+     * subscription. If $filter=atExactScope() is provided, the returned list only includes all policy set definitions
+     * that at the given subscription. If $filter='policyType -eq {value}' is provided, the returned list only includes
+     * all policy set definitions whose type match the {value}. Possible policyType values are NotSpecified, BuiltIn and
+     * Custom. If $filter='category -eq {value}' is provided, the returned list only includes all policy set definitions
+     * whose category match the {value}.
      *
+     * @param filter The filter to apply on the operation. Valid values for $filter are: 'atExactScope()', 'policyType
+     *     -eq {value}' or 'category eq '{value}''. If $filter is not provided, no filtering is performed. If
+     *     $filter=atExactScope() is provided, the returned list only includes all policy set definitions that at the
+     *     given scope. If $filter='policyType -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose type match the {value}. Possible policyType values are NotSpecified, BuiltIn, Custom, and
+     *     Static. If $filter='category -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose category match the {value}.
+     * @param top Maximum number of records to return. When the $top filter is not provided, it will return 500 records.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -871,13 +970,21 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      * @return list of policy set definitions.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<PolicySetDefinitionInner> listAsync(Context context) {
+    private PagedFlux<PolicySetDefinitionInner> listAsync(String filter, Integer top, Context context) {
         return new PagedFlux<>(
-            () -> listSinglePageAsync(context), nextLink -> listNextSinglePageAsync(nextLink, context));
+            () -> listSinglePageAsync(filter, top, context), nextLink -> listNextSinglePageAsync(nextLink, context));
     }
 
     /**
-     * This operation retrieves a list of all the policy set definitions in the given subscription.
+     * This operation retrieves a list of all the policy set definitions in a given subscription that match the optional
+     * given $filter. Valid values for $filter are: 'atExactScope()', 'policyType -eq {value}' or 'category eq
+     * '{value}''. If $filter is not provided, the unfiltered list includes all policy set definitions associated with
+     * the subscription, including those that apply directly or from management groups that contain the given
+     * subscription. If $filter=atExactScope() is provided, the returned list only includes all policy set definitions
+     * that at the given subscription. If $filter='policyType -eq {value}' is provided, the returned list only includes
+     * all policy set definitions whose type match the {value}. Possible policyType values are NotSpecified, BuiltIn and
+     * Custom. If $filter='category -eq {value}' is provided, the returned list only includes all policy set definitions
+     * whose category match the {value}.
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -885,12 +992,30 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PolicySetDefinitionInner> list() {
-        return new PagedIterable<>(listAsync());
+        final String filter = null;
+        final Integer top = null;
+        return new PagedIterable<>(listAsync(filter, top));
     }
 
     /**
-     * This operation retrieves a list of all the policy set definitions in the given subscription.
+     * This operation retrieves a list of all the policy set definitions in a given subscription that match the optional
+     * given $filter. Valid values for $filter are: 'atExactScope()', 'policyType -eq {value}' or 'category eq
+     * '{value}''. If $filter is not provided, the unfiltered list includes all policy set definitions associated with
+     * the subscription, including those that apply directly or from management groups that contain the given
+     * subscription. If $filter=atExactScope() is provided, the returned list only includes all policy set definitions
+     * that at the given subscription. If $filter='policyType -eq {value}' is provided, the returned list only includes
+     * all policy set definitions whose type match the {value}. Possible policyType values are NotSpecified, BuiltIn and
+     * Custom. If $filter='category -eq {value}' is provided, the returned list only includes all policy set definitions
+     * whose category match the {value}.
      *
+     * @param filter The filter to apply on the operation. Valid values for $filter are: 'atExactScope()', 'policyType
+     *     -eq {value}' or 'category eq '{value}''. If $filter is not provided, no filtering is performed. If
+     *     $filter=atExactScope() is provided, the returned list only includes all policy set definitions that at the
+     *     given scope. If $filter='policyType -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose type match the {value}. Possible policyType values are NotSpecified, BuiltIn, Custom, and
+     *     Static. If $filter='category -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose category match the {value}.
+     * @param top Maximum number of records to return. When the $top filter is not provided, it will return 500 records.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -898,19 +1023,30 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      * @return list of policy set definitions.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<PolicySetDefinitionInner> list(Context context) {
-        return new PagedIterable<>(listAsync(context));
+    public PagedIterable<PolicySetDefinitionInner> list(String filter, Integer top, Context context) {
+        return new PagedIterable<>(listAsync(filter, top, context));
     }
 
     /**
-     * This operation retrieves a list of all the built-in policy set definitions.
+     * This operation retrieves a list of all the built-in policy set definitions that match the optional given $filter.
+     * If $filter='category -eq {value}' is provided, the returned list only includes all built-in policy set
+     * definitions whose category match the {value}.
      *
+     * @param filter The filter to apply on the operation. Valid values for $filter are: 'atExactScope()', 'policyType
+     *     -eq {value}' or 'category eq '{value}''. If $filter is not provided, no filtering is performed. If
+     *     $filter=atExactScope() is provided, the returned list only includes all policy set definitions that at the
+     *     given scope. If $filter='policyType -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose type match the {value}. Possible policyType values are NotSpecified, BuiltIn, Custom, and
+     *     Static. If $filter='category -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose category match the {value}.
+     * @param top Maximum number of records to return. When the $top filter is not provided, it will return 500 records.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return list of policy set definitions.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<PolicySetDefinitionInner>> listBuiltInSinglePageAsync() {
+    private Mono<PagedResponse<PolicySetDefinitionInner>> listBuiltInSinglePageAsync(String filter, Integer top) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -920,7 +1056,10 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
         final String accept = "application/json";
         return FluxUtil
             .withContext(
-                context -> service.listBuiltIn(this.client.getEndpoint(), this.client.getApiVersion(), accept, context))
+                context ->
+                    service
+                        .listBuiltIn(
+                            this.client.getEndpoint(), this.client.getApiVersion(), filter, top, accept, context))
             .<PagedResponse<PolicySetDefinitionInner>>map(
                 res ->
                     new PagedResponseBase<>(
@@ -934,8 +1073,18 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
     }
 
     /**
-     * This operation retrieves a list of all the built-in policy set definitions.
+     * This operation retrieves a list of all the built-in policy set definitions that match the optional given $filter.
+     * If $filter='category -eq {value}' is provided, the returned list only includes all built-in policy set
+     * definitions whose category match the {value}.
      *
+     * @param filter The filter to apply on the operation. Valid values for $filter are: 'atExactScope()', 'policyType
+     *     -eq {value}' or 'category eq '{value}''. If $filter is not provided, no filtering is performed. If
+     *     $filter=atExactScope() is provided, the returned list only includes all policy set definitions that at the
+     *     given scope. If $filter='policyType -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose type match the {value}. Possible policyType values are NotSpecified, BuiltIn, Custom, and
+     *     Static. If $filter='category -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose category match the {value}.
+     * @param top Maximum number of records to return. When the $top filter is not provided, it will return 500 records.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -943,7 +1092,8 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      * @return list of policy set definitions.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<PolicySetDefinitionInner>> listBuiltInSinglePageAsync(Context context) {
+    private Mono<PagedResponse<PolicySetDefinitionInner>> listBuiltInSinglePageAsync(
+        String filter, Integer top, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -953,7 +1103,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .listBuiltIn(this.client.getEndpoint(), this.client.getApiVersion(), accept, context)
+            .listBuiltIn(this.client.getEndpoint(), this.client.getApiVersion(), filter, top, accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -966,7 +1116,33 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
     }
 
     /**
-     * This operation retrieves a list of all the built-in policy set definitions.
+     * This operation retrieves a list of all the built-in policy set definitions that match the optional given $filter.
+     * If $filter='category -eq {value}' is provided, the returned list only includes all built-in policy set
+     * definitions whose category match the {value}.
+     *
+     * @param filter The filter to apply on the operation. Valid values for $filter are: 'atExactScope()', 'policyType
+     *     -eq {value}' or 'category eq '{value}''. If $filter is not provided, no filtering is performed. If
+     *     $filter=atExactScope() is provided, the returned list only includes all policy set definitions that at the
+     *     given scope. If $filter='policyType -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose type match the {value}. Possible policyType values are NotSpecified, BuiltIn, Custom, and
+     *     Static. If $filter='category -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose category match the {value}.
+     * @param top Maximum number of records to return. When the $top filter is not provided, it will return 500 records.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of policy set definitions.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<PolicySetDefinitionInner> listBuiltInAsync(String filter, Integer top) {
+        return new PagedFlux<>(
+            () -> listBuiltInSinglePageAsync(filter, top), nextLink -> listBuiltInNextSinglePageAsync(nextLink));
+    }
+
+    /**
+     * This operation retrieves a list of all the built-in policy set definitions that match the optional given $filter.
+     * If $filter='category -eq {value}' is provided, the returned list only includes all built-in policy set
+     * definitions whose category match the {value}.
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -974,13 +1150,25 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PolicySetDefinitionInner> listBuiltInAsync() {
+        final String filter = null;
+        final Integer top = null;
         return new PagedFlux<>(
-            () -> listBuiltInSinglePageAsync(), nextLink -> listBuiltInNextSinglePageAsync(nextLink));
+            () -> listBuiltInSinglePageAsync(filter, top), nextLink -> listBuiltInNextSinglePageAsync(nextLink));
     }
 
     /**
-     * This operation retrieves a list of all the built-in policy set definitions.
+     * This operation retrieves a list of all the built-in policy set definitions that match the optional given $filter.
+     * If $filter='category -eq {value}' is provided, the returned list only includes all built-in policy set
+     * definitions whose category match the {value}.
      *
+     * @param filter The filter to apply on the operation. Valid values for $filter are: 'atExactScope()', 'policyType
+     *     -eq {value}' or 'category eq '{value}''. If $filter is not provided, no filtering is performed. If
+     *     $filter=atExactScope() is provided, the returned list only includes all policy set definitions that at the
+     *     given scope. If $filter='policyType -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose type match the {value}. Possible policyType values are NotSpecified, BuiltIn, Custom, and
+     *     Static. If $filter='category -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose category match the {value}.
+     * @param top Maximum number of records to return. When the $top filter is not provided, it will return 500 records.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -988,13 +1176,16 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      * @return list of policy set definitions.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<PolicySetDefinitionInner> listBuiltInAsync(Context context) {
+    private PagedFlux<PolicySetDefinitionInner> listBuiltInAsync(String filter, Integer top, Context context) {
         return new PagedFlux<>(
-            () -> listBuiltInSinglePageAsync(context), nextLink -> listBuiltInNextSinglePageAsync(nextLink, context));
+            () -> listBuiltInSinglePageAsync(filter, top, context),
+            nextLink -> listBuiltInNextSinglePageAsync(nextLink, context));
     }
 
     /**
-     * This operation retrieves a list of all the built-in policy set definitions.
+     * This operation retrieves a list of all the built-in policy set definitions that match the optional given $filter.
+     * If $filter='category -eq {value}' is provided, the returned list only includes all built-in policy set
+     * definitions whose category match the {value}.
      *
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1002,12 +1193,24 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PolicySetDefinitionInner> listBuiltIn() {
-        return new PagedIterable<>(listBuiltInAsync());
+        final String filter = null;
+        final Integer top = null;
+        return new PagedIterable<>(listBuiltInAsync(filter, top));
     }
 
     /**
-     * This operation retrieves a list of all the built-in policy set definitions.
+     * This operation retrieves a list of all the built-in policy set definitions that match the optional given $filter.
+     * If $filter='category -eq {value}' is provided, the returned list only includes all built-in policy set
+     * definitions whose category match the {value}.
      *
+     * @param filter The filter to apply on the operation. Valid values for $filter are: 'atExactScope()', 'policyType
+     *     -eq {value}' or 'category eq '{value}''. If $filter is not provided, no filtering is performed. If
+     *     $filter=atExactScope() is provided, the returned list only includes all policy set definitions that at the
+     *     given scope. If $filter='policyType -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose type match the {value}. Possible policyType values are NotSpecified, BuiltIn, Custom, and
+     *     Static. If $filter='category -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose category match the {value}.
+     * @param top Maximum number of records to return. When the $top filter is not provided, it will return 500 records.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1015,8 +1218,8 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      * @return list of policy set definitions.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<PolicySetDefinitionInner> listBuiltIn(Context context) {
-        return new PagedIterable<>(listBuiltInAsync(context));
+    public PagedIterable<PolicySetDefinitionInner> listBuiltIn(String filter, Integer top, Context context) {
+        return new PagedIterable<>(listBuiltInAsync(filter, top, context));
     }
 
     /**
@@ -1457,9 +1660,25 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
     }
 
     /**
-     * This operation retrieves a list of all the a policy set definition in the given management group.
+     * This operation retrieves a list of all the policy set definitions in a given management group that match the
+     * optional given $filter. Valid values for $filter are: 'atExactScope()', 'policyType -eq {value}' or 'category eq
+     * '{value}''. If $filter is not provided, the unfiltered list includes all policy set definitions associated with
+     * the management group, including those that apply directly or from management groups that contain the given
+     * management group. If $filter=atExactScope() is provided, the returned list only includes all policy set
+     * definitions that at the given management group. If $filter='policyType -eq {value}' is provided, the returned
+     * list only includes all policy set definitions whose type match the {value}. Possible policyType values are
+     * NotSpecified, BuiltIn and Custom. If $filter='category -eq {value}' is provided, the returned list only includes
+     * all policy set definitions whose category match the {value}.
      *
      * @param managementGroupId The ID of the management group.
+     * @param filter The filter to apply on the operation. Valid values for $filter are: 'atExactScope()', 'policyType
+     *     -eq {value}' or 'category eq '{value}''. If $filter is not provided, no filtering is performed. If
+     *     $filter=atExactScope() is provided, the returned list only includes all policy set definitions that at the
+     *     given scope. If $filter='policyType -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose type match the {value}. Possible policyType values are NotSpecified, BuiltIn, Custom, and
+     *     Static. If $filter='category -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose category match the {value}.
+     * @param top Maximum number of records to return. When the $top filter is not provided, it will return 500 records.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1467,7 +1686,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PolicySetDefinitionInner>> listByManagementGroupSinglePageAsync(
-        String managementGroupId) {
+        String managementGroupId, String filter, Integer top) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -1484,7 +1703,13 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
                 context ->
                     service
                         .listByManagementGroup(
-                            this.client.getEndpoint(), this.client.getApiVersion(), managementGroupId, accept, context))
+                            this.client.getEndpoint(),
+                            this.client.getApiVersion(),
+                            managementGroupId,
+                            filter,
+                            top,
+                            accept,
+                            context))
             .<PagedResponse<PolicySetDefinitionInner>>map(
                 res ->
                     new PagedResponseBase<>(
@@ -1498,9 +1723,25 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
     }
 
     /**
-     * This operation retrieves a list of all the a policy set definition in the given management group.
+     * This operation retrieves a list of all the policy set definitions in a given management group that match the
+     * optional given $filter. Valid values for $filter are: 'atExactScope()', 'policyType -eq {value}' or 'category eq
+     * '{value}''. If $filter is not provided, the unfiltered list includes all policy set definitions associated with
+     * the management group, including those that apply directly or from management groups that contain the given
+     * management group. If $filter=atExactScope() is provided, the returned list only includes all policy set
+     * definitions that at the given management group. If $filter='policyType -eq {value}' is provided, the returned
+     * list only includes all policy set definitions whose type match the {value}. Possible policyType values are
+     * NotSpecified, BuiltIn and Custom. If $filter='category -eq {value}' is provided, the returned list only includes
+     * all policy set definitions whose category match the {value}.
      *
      * @param managementGroupId The ID of the management group.
+     * @param filter The filter to apply on the operation. Valid values for $filter are: 'atExactScope()', 'policyType
+     *     -eq {value}' or 'category eq '{value}''. If $filter is not provided, no filtering is performed. If
+     *     $filter=atExactScope() is provided, the returned list only includes all policy set definitions that at the
+     *     given scope. If $filter='policyType -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose type match the {value}. Possible policyType values are NotSpecified, BuiltIn, Custom, and
+     *     Static. If $filter='category -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose category match the {value}.
+     * @param top Maximum number of records to return. When the $top filter is not provided, it will return 500 records.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1509,7 +1750,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PolicySetDefinitionInner>> listByManagementGroupSinglePageAsync(
-        String managementGroupId, Context context) {
+        String managementGroupId, String filter, Integer top, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -1524,7 +1765,7 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
         context = this.client.mergeContext(context);
         return service
             .listByManagementGroup(
-                this.client.getEndpoint(), this.client.getApiVersion(), managementGroupId, accept, context)
+                this.client.getEndpoint(), this.client.getApiVersion(), managementGroupId, filter, top, accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -1537,7 +1778,48 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
     }
 
     /**
-     * This operation retrieves a list of all the a policy set definition in the given management group.
+     * This operation retrieves a list of all the policy set definitions in a given management group that match the
+     * optional given $filter. Valid values for $filter are: 'atExactScope()', 'policyType -eq {value}' or 'category eq
+     * '{value}''. If $filter is not provided, the unfiltered list includes all policy set definitions associated with
+     * the management group, including those that apply directly or from management groups that contain the given
+     * management group. If $filter=atExactScope() is provided, the returned list only includes all policy set
+     * definitions that at the given management group. If $filter='policyType -eq {value}' is provided, the returned
+     * list only includes all policy set definitions whose type match the {value}. Possible policyType values are
+     * NotSpecified, BuiltIn and Custom. If $filter='category -eq {value}' is provided, the returned list only includes
+     * all policy set definitions whose category match the {value}.
+     *
+     * @param managementGroupId The ID of the management group.
+     * @param filter The filter to apply on the operation. Valid values for $filter are: 'atExactScope()', 'policyType
+     *     -eq {value}' or 'category eq '{value}''. If $filter is not provided, no filtering is performed. If
+     *     $filter=atExactScope() is provided, the returned list only includes all policy set definitions that at the
+     *     given scope. If $filter='policyType -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose type match the {value}. Possible policyType values are NotSpecified, BuiltIn, Custom, and
+     *     Static. If $filter='category -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose category match the {value}.
+     * @param top Maximum number of records to return. When the $top filter is not provided, it will return 500 records.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of policy set definitions.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<PolicySetDefinitionInner> listByManagementGroupAsync(
+        String managementGroupId, String filter, Integer top) {
+        return new PagedFlux<>(
+            () -> listByManagementGroupSinglePageAsync(managementGroupId, filter, top),
+            nextLink -> listByManagementGroupNextSinglePageAsync(nextLink));
+    }
+
+    /**
+     * This operation retrieves a list of all the policy set definitions in a given management group that match the
+     * optional given $filter. Valid values for $filter are: 'atExactScope()', 'policyType -eq {value}' or 'category eq
+     * '{value}''. If $filter is not provided, the unfiltered list includes all policy set definitions associated with
+     * the management group, including those that apply directly or from management groups that contain the given
+     * management group. If $filter=atExactScope() is provided, the returned list only includes all policy set
+     * definitions that at the given management group. If $filter='policyType -eq {value}' is provided, the returned
+     * list only includes all policy set definitions whose type match the {value}. Possible policyType values are
+     * NotSpecified, BuiltIn and Custom. If $filter='category -eq {value}' is provided, the returned list only includes
+     * all policy set definitions whose category match the {value}.
      *
      * @param managementGroupId The ID of the management group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1547,15 +1829,33 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<PolicySetDefinitionInner> listByManagementGroupAsync(String managementGroupId) {
+        final String filter = null;
+        final Integer top = null;
         return new PagedFlux<>(
-            () -> listByManagementGroupSinglePageAsync(managementGroupId),
+            () -> listByManagementGroupSinglePageAsync(managementGroupId, filter, top),
             nextLink -> listByManagementGroupNextSinglePageAsync(nextLink));
     }
 
     /**
-     * This operation retrieves a list of all the a policy set definition in the given management group.
+     * This operation retrieves a list of all the policy set definitions in a given management group that match the
+     * optional given $filter. Valid values for $filter are: 'atExactScope()', 'policyType -eq {value}' or 'category eq
+     * '{value}''. If $filter is not provided, the unfiltered list includes all policy set definitions associated with
+     * the management group, including those that apply directly or from management groups that contain the given
+     * management group. If $filter=atExactScope() is provided, the returned list only includes all policy set
+     * definitions that at the given management group. If $filter='policyType -eq {value}' is provided, the returned
+     * list only includes all policy set definitions whose type match the {value}. Possible policyType values are
+     * NotSpecified, BuiltIn and Custom. If $filter='category -eq {value}' is provided, the returned list only includes
+     * all policy set definitions whose category match the {value}.
      *
      * @param managementGroupId The ID of the management group.
+     * @param filter The filter to apply on the operation. Valid values for $filter are: 'atExactScope()', 'policyType
+     *     -eq {value}' or 'category eq '{value}''. If $filter is not provided, no filtering is performed. If
+     *     $filter=atExactScope() is provided, the returned list only includes all policy set definitions that at the
+     *     given scope. If $filter='policyType -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose type match the {value}. Possible policyType values are NotSpecified, BuiltIn, Custom, and
+     *     Static. If $filter='category -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose category match the {value}.
+     * @param top Maximum number of records to return. When the $top filter is not provided, it will return 500 records.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1563,14 +1863,23 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      * @return list of policy set definitions.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<PolicySetDefinitionInner> listByManagementGroupAsync(String managementGroupId, Context context) {
+    private PagedFlux<PolicySetDefinitionInner> listByManagementGroupAsync(
+        String managementGroupId, String filter, Integer top, Context context) {
         return new PagedFlux<>(
-            () -> listByManagementGroupSinglePageAsync(managementGroupId, context),
+            () -> listByManagementGroupSinglePageAsync(managementGroupId, filter, top, context),
             nextLink -> listByManagementGroupNextSinglePageAsync(nextLink, context));
     }
 
     /**
-     * This operation retrieves a list of all the a policy set definition in the given management group.
+     * This operation retrieves a list of all the policy set definitions in a given management group that match the
+     * optional given $filter. Valid values for $filter are: 'atExactScope()', 'policyType -eq {value}' or 'category eq
+     * '{value}''. If $filter is not provided, the unfiltered list includes all policy set definitions associated with
+     * the management group, including those that apply directly or from management groups that contain the given
+     * management group. If $filter=atExactScope() is provided, the returned list only includes all policy set
+     * definitions that at the given management group. If $filter='policyType -eq {value}' is provided, the returned
+     * list only includes all policy set definitions whose type match the {value}. Possible policyType values are
+     * NotSpecified, BuiltIn and Custom. If $filter='category -eq {value}' is provided, the returned list only includes
+     * all policy set definitions whose category match the {value}.
      *
      * @param managementGroupId The ID of the management group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1580,13 +1889,31 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<PolicySetDefinitionInner> listByManagementGroup(String managementGroupId) {
-        return new PagedIterable<>(listByManagementGroupAsync(managementGroupId));
+        final String filter = null;
+        final Integer top = null;
+        return new PagedIterable<>(listByManagementGroupAsync(managementGroupId, filter, top));
     }
 
     /**
-     * This operation retrieves a list of all the a policy set definition in the given management group.
+     * This operation retrieves a list of all the policy set definitions in a given management group that match the
+     * optional given $filter. Valid values for $filter are: 'atExactScope()', 'policyType -eq {value}' or 'category eq
+     * '{value}''. If $filter is not provided, the unfiltered list includes all policy set definitions associated with
+     * the management group, including those that apply directly or from management groups that contain the given
+     * management group. If $filter=atExactScope() is provided, the returned list only includes all policy set
+     * definitions that at the given management group. If $filter='policyType -eq {value}' is provided, the returned
+     * list only includes all policy set definitions whose type match the {value}. Possible policyType values are
+     * NotSpecified, BuiltIn and Custom. If $filter='category -eq {value}' is provided, the returned list only includes
+     * all policy set definitions whose category match the {value}.
      *
      * @param managementGroupId The ID of the management group.
+     * @param filter The filter to apply on the operation. Valid values for $filter are: 'atExactScope()', 'policyType
+     *     -eq {value}' or 'category eq '{value}''. If $filter is not provided, no filtering is performed. If
+     *     $filter=atExactScope() is provided, the returned list only includes all policy set definitions that at the
+     *     given scope. If $filter='policyType -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose type match the {value}. Possible policyType values are NotSpecified, BuiltIn, Custom, and
+     *     Static. If $filter='category -eq {value}' is provided, the returned list only includes all policy set
+     *     definitions whose category match the {value}.
+     * @param top Maximum number of records to return. When the $top filter is not provided, it will return 500 records.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1594,8 +1921,9 @@ public final class PolicySetDefinitionsClientImpl implements PolicySetDefinition
      * @return list of policy set definitions.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<PolicySetDefinitionInner> listByManagementGroup(String managementGroupId, Context context) {
-        return new PagedIterable<>(listByManagementGroupAsync(managementGroupId, context));
+    public PagedIterable<PolicySetDefinitionInner> listByManagementGroup(
+        String managementGroupId, String filter, Integer top, Context context) {
+        return new PagedIterable<>(listByManagementGroupAsync(managementGroupId, filter, top, context));
     }
 
     /**

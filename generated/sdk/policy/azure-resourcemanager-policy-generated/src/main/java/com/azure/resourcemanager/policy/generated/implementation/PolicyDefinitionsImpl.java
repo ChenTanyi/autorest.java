@@ -151,8 +151,8 @@ public final class PolicyDefinitionsImpl implements PolicyDefinitions {
         return inner.mapPage(inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<PolicyDefinition> list(Context context) {
-        PagedIterable<PolicyDefinitionInner> inner = this.serviceClient().list(context);
+    public PagedIterable<PolicyDefinition> list(String filter, Integer top, Context context) {
+        PagedIterable<PolicyDefinitionInner> inner = this.serviceClient().list(filter, top, context);
         return inner.mapPage(inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
     }
 
@@ -161,8 +161,8 @@ public final class PolicyDefinitionsImpl implements PolicyDefinitions {
         return inner.mapPage(inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<PolicyDefinition> listBuiltIn(Context context) {
-        PagedIterable<PolicyDefinitionInner> inner = this.serviceClient().listBuiltIn(context);
+    public PagedIterable<PolicyDefinition> listBuiltIn(String filter, Integer top, Context context) {
+        PagedIterable<PolicyDefinitionInner> inner = this.serviceClient().listBuiltIn(filter, top, context);
         return inner.mapPage(inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
     }
 
@@ -171,9 +171,10 @@ public final class PolicyDefinitionsImpl implements PolicyDefinitions {
         return inner.mapPage(inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<PolicyDefinition> listByManagementGroup(String managementGroupId, Context context) {
+    public PagedIterable<PolicyDefinition> listByManagementGroup(
+        String managementGroupId, String filter, Integer top, Context context) {
         PagedIterable<PolicyDefinitionInner> inner =
-            this.serviceClient().listByManagementGroup(managementGroupId, context);
+            this.serviceClient().listByManagementGroup(managementGroupId, filter, top, context);
         return inner.mapPage(inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
     }
 

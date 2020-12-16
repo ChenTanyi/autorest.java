@@ -45,6 +45,13 @@ public interface PolicyClient {
     Duration getDefaultPollInterval();
 
     /**
+     * Gets the DataPolicyManifestsClient object to access its operations.
+     *
+     * @return the DataPolicyManifestsClient object.
+     */
+    DataPolicyManifestsClient getDataPolicyManifests();
+
+    /**
      * Gets the PolicyAssignmentsClient object to access its operations.
      *
      * @return the PolicyAssignmentsClient object.

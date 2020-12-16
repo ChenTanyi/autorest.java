@@ -20,8 +20,8 @@ public final class ClusterConfigurationsImpl implements ClusterConfigurations {
         this.serviceManager = serviceManager;
     }
 
-    public Map<String, Object> configurations() {
-        Map<String, Object> inner = this.innerModel().configurations();
+    public Map<String, Map<String, String>> configurations() {
+        Map<String, Map<String, String>> inner = this.innerModel().configurations();
         if (inner != null) {
             return Collections.unmodifiableMap(inner);
         } else {

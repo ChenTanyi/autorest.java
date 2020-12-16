@@ -15,7 +15,7 @@ public interface ClusterConfigurations {
      *
      * @return the configurations value.
      */
-    Map<String, Object> configurations();
+    Map<String, Map<String, String>> configurations();
 
     /**
      * Gets the inner com.azure.resourcemanager.hdinsight.generated.fluent.models.ClusterConfigurationsInner object.

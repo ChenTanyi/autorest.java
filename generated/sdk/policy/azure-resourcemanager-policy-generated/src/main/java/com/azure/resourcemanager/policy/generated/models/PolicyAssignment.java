@@ -34,13 +34,6 @@ public interface PolicyAssignment {
     String type();
 
     /**
-     * Gets the sku property: The policy sku. This property is optional, obsolete, and will be ignored.
-     *
-     * @return the sku value.
-     */
-    PolicySku sku();
-
-    /**
      * Gets the location property: The location of the policy assignment. Only required when utilizing managed identity.
      *
      * @return the location value.
@@ -114,6 +107,14 @@ public interface PolicyAssignment {
     EnforcementMode enforcementMode();
 
     /**
+     * Gets the nonComplianceMessages property: The messages that describe why a resource is non-compliant with the
+     * policy.
+     *
+     * @return the nonComplianceMessages value.
+     */
+    List<NonComplianceMessage> nonComplianceMessages();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -135,15 +136,15 @@ public interface PolicyAssignment {
     PolicyAssignmentInner innerModel();
 
     /** The entirety of the PolicyAssignment definition. */
-    interface Definition extends DefinitionStages.Blank, DefinitionStages.WithScopeStage, DefinitionStages.WithCreate {
+    interface Definition extends DefinitionStages.Blank, DefinitionStages.WithScope, DefinitionStages.WithCreate {
     }
     /** The PolicyAssignment definition stages. */
     interface DefinitionStages {
         /** The first stage of the PolicyAssignment definition. */
-        interface Blank extends WithScopeStage {
+        interface Blank extends WithScope {
         }
         /** The stage of the PolicyAssignment definition allowing to specify parent resource. */
-        interface WithScopeStage {
+        interface WithScope {
             /**
              * Specifies scope.
              *
@@ -162,16 +163,15 @@ public interface PolicyAssignment {
          */
         interface WithCreate
             extends DefinitionStages.WithLocation,
-                DefinitionStages.WithSku,
                 DefinitionStages.WithIdentity,
                 DefinitionStages.WithDisplayName,
                 DefinitionStages.WithPolicyDefinitionId,
-                DefinitionStages.WithScope,
                 DefinitionStages.WithNotScopes,
                 DefinitionStages.WithParameters,
                 DefinitionStages.WithDescription,
                 DefinitionStages.WithMetadata,
-                DefinitionStages.WithEnforcementMode {
+                DefinitionStages.WithEnforcementMode,
+                DefinitionStages.WithNonComplianceMessages {
             /**
              * Executes the create request.
              *
@@ -205,16 +205,6 @@ public interface PolicyAssignment {
              */
             WithCreate withRegion(String location);
         }
-        /** The stage of the PolicyAssignment definition allowing to specify sku. */
-        interface WithSku {
-            /**
-             * Specifies the sku property: The policy sku. This property is optional, obsolete, and will be ignored..
-             *
-             * @param sku The policy sku. This property is optional, obsolete, and will be ignored.
-             * @return the next definition stage.
-             */
-            WithCreate withSku(PolicySku sku);
-        }
         /** The stage of the PolicyAssignment definition allowing to specify identity. */
         interface WithIdentity {
             /**
@@ -245,16 +235,6 @@ public interface PolicyAssignment {
              * @return the next definition stage.
              */
             WithCreate withPolicyDefinitionId(String policyDefinitionId);
-        }
-        /** The stage of the PolicyAssignment definition allowing to specify scope. */
-        interface WithScope {
-            /**
-             * Specifies the scope property: The scope for the policy assignment..
-             *
-             * @param scope The scope for the policy assignment.
-             * @return the next definition stage.
-             */
-            WithCreate withScope(String scope);
         }
         /** The stage of the PolicyAssignment definition allowing to specify notScopes. */
         interface WithNotScopes {
@@ -310,6 +290,17 @@ public interface PolicyAssignment {
              * @return the next definition stage.
              */
             WithCreate withEnforcementMode(EnforcementMode enforcementMode);
+        }
+        /** The stage of the PolicyAssignment definition allowing to specify nonComplianceMessages. */
+        interface WithNonComplianceMessages {
+            /**
+             * Specifies the nonComplianceMessages property: The messages that describe why a resource is non-compliant
+             * with the policy..
+             *
+             * @param nonComplianceMessages The messages that describe why a resource is non-compliant with the policy.
+             * @return the next definition stage.
+             */
+            WithCreate withNonComplianceMessages(List<NonComplianceMessage> nonComplianceMessages);
         }
     }
     /**

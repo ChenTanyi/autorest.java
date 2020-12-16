@@ -20,7 +20,7 @@ public final class ClusterConfigurationsInner {
      * specified cluster.
      */
     @JsonProperty(value = "configurations")
-    private Map<String, Object> configurations;
+    private Map<String, Map<String, String>> configurations;
 
     /**
      * Get the configurations property: The configuration object for the specified configuration for the specified
@@ -28,7 +28,7 @@ public final class ClusterConfigurationsInner {
      *
      * @return the configurations value.
      */
-    public Map<String, Object> configurations() {
+    public Map<String, Map<String, String>> configurations() {
         return this.configurations;
     }
 
@@ -39,7 +39,7 @@ public final class ClusterConfigurationsInner {
      * @param configurations the configurations value to set.
      * @return the ClusterConfigurationsInner object itself.
      */
-    public ClusterConfigurationsInner withConfigurations(Map<String, Object> configurations) {
+    public ClusterConfigurationsInner withConfigurations(Map<String, Map<String, String>> configurations) {
         this.configurations = configurations;
         return this;
     }

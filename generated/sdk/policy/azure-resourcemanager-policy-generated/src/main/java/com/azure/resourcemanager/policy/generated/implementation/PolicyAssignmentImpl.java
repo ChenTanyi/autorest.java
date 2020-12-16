@@ -10,9 +10,9 @@ import com.azure.resourcemanager.policy.generated.PolicyManager;
 import com.azure.resourcemanager.policy.generated.fluent.models.PolicyAssignmentInner;
 import com.azure.resourcemanager.policy.generated.models.EnforcementMode;
 import com.azure.resourcemanager.policy.generated.models.Identity;
+import com.azure.resourcemanager.policy.generated.models.NonComplianceMessage;
 import com.azure.resourcemanager.policy.generated.models.ParameterValuesValue;
 import com.azure.resourcemanager.policy.generated.models.PolicyAssignment;
-import com.azure.resourcemanager.policy.generated.models.PolicySku;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -37,10 +37,6 @@ public final class PolicyAssignmentImpl implements PolicyAssignment, PolicyAssig
 
     public String type() {
         return this.innerModel().type();
-    }
-
-    public PolicySku sku() {
-        return this.innerModel().sku();
     }
 
     public String location() {
@@ -91,6 +87,15 @@ public final class PolicyAssignmentImpl implements PolicyAssignment, PolicyAssig
 
     public EnforcementMode enforcementMode() {
         return this.innerModel().enforcementMode();
+    }
+
+    public List<NonComplianceMessage> nonComplianceMessages() {
+        List<NonComplianceMessage> inner = this.innerModel().nonComplianceMessages();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     public Region region() {
@@ -174,11 +179,6 @@ public final class PolicyAssignmentImpl implements PolicyAssignment, PolicyAssig
         return this;
     }
 
-    public PolicyAssignmentImpl withSku(PolicySku sku) {
-        this.innerModel().withSku(sku);
-        return this;
-    }
-
     public PolicyAssignmentImpl withIdentity(Identity identity) {
         this.innerModel().withIdentity(identity);
         return this;
@@ -191,11 +191,6 @@ public final class PolicyAssignmentImpl implements PolicyAssignment, PolicyAssig
 
     public PolicyAssignmentImpl withPolicyDefinitionId(String policyDefinitionId) {
         this.innerModel().withPolicyDefinitionId(policyDefinitionId);
-        return this;
-    }
-
-    public PolicyAssignmentImpl withScope(String scope) {
-        this.innerModel().withScope(scope);
         return this;
     }
 
@@ -221,6 +216,11 @@ public final class PolicyAssignmentImpl implements PolicyAssignment, PolicyAssig
 
     public PolicyAssignmentImpl withEnforcementMode(EnforcementMode enforcementMode) {
         this.innerModel().withEnforcementMode(enforcementMode);
+        return this;
+    }
+
+    public PolicyAssignmentImpl withNonComplianceMessages(List<NonComplianceMessage> nonComplianceMessages) {
+        this.innerModel().withNonComplianceMessages(nonComplianceMessages);
         return this;
     }
 }

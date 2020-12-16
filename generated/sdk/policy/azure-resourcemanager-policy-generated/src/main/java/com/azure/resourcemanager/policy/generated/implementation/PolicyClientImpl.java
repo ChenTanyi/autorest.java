@@ -21,6 +21,7 @@ import com.azure.core.util.polling.LongRunningOperationStatus;
 import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.serializer.SerializerAdapter;
 import com.azure.core.util.serializer.SerializerEncoding;
+import com.azure.resourcemanager.policy.generated.fluent.DataPolicyManifestsClient;
 import com.azure.resourcemanager.policy.generated.fluent.PolicyAssignmentsClient;
 import com.azure.resourcemanager.policy.generated.fluent.PolicyClient;
 import com.azure.resourcemanager.policy.generated.fluent.PolicyDefinitionsClient;
@@ -112,6 +113,18 @@ public final class PolicyClientImpl implements PolicyClient {
         return this.defaultPollInterval;
     }
 
+    /** The DataPolicyManifestsClient object to access its operations. */
+    private final DataPolicyManifestsClient dataPolicyManifests;
+
+    /**
+     * Gets the DataPolicyManifestsClient object to access its operations.
+     *
+     * @return the DataPolicyManifestsClient object.
+     */
+    public DataPolicyManifestsClient getDataPolicyManifests() {
+        return this.dataPolicyManifests;
+    }
+
     /** The PolicyAssignmentsClient object to access its operations. */
     private final PolicyAssignmentsClient policyAssignments;
 
@@ -170,7 +183,8 @@ public final class PolicyClientImpl implements PolicyClient {
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
-        this.apiVersion = "2019-09-01";
+        this.apiVersion = "2020-09-01";
+        this.dataPolicyManifests = new DataPolicyManifestsClientImpl(this);
         this.policyAssignments = new PolicyAssignmentsClientImpl(this);
         this.policyDefinitions = new PolicyDefinitionsClientImpl(this);
         this.policySetDefinitions = new PolicySetDefinitionsClientImpl(this);
