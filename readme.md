@@ -90,9 +90,6 @@ Following settings only works when `fluent` option is specified.
 `fluent` option will change the default value for some vanilla options.
 For example, `generate-client-interfaces`, `context-client-method-parameter`, `required-parameter-client-methods`, `model-override-setter-from-superclass` option is by default `true`.
 
-For `fluent=LITE`, please set the overriding option `--pipeline.modelerfour.flatten-payloads=false`.
-This will disable the payload flattening on client method parameters, which provides better backward-compatibility for generated code.
-
 The code formatter would require Java 11+ runtime.
 
 # Customizations
@@ -101,8 +98,8 @@ To set up customizations, create a Maven project with dependency:
 
 ```xml
 <dependency>
-  <groupId>com.azure</groupId>
-  <artifactId>autorest-java-customizations</artifactId>
+  <groupId>com.azure.tools</groupId>
+  <artifactId>azure-autorest-customizations</artifactId>
   <version>1.0.0-beta.1</version>
 </dependency>
 ```
