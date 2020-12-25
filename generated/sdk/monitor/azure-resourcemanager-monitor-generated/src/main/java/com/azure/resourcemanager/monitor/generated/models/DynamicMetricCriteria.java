@@ -12,7 +12,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.OffsetDateTime;
 import java.util.List;
-import java.util.Map;
 
 /** Criterion for dynamic threshold. */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "criterionType")
@@ -173,13 +172,6 @@ public final class DynamicMetricCriteria extends MultiMetricCriteria {
     @Override
     public DynamicMetricCriteria withSkipMetricValidation(Boolean skipMetricValidation) {
         super.withSkipMetricValidation(skipMetricValidation);
-        return this;
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public DynamicMetricCriteria withAdditionalProperties(Map<String, Object> additionalProperties) {
-        super.withAdditionalProperties(additionalProperties);
         return this;
     }
 

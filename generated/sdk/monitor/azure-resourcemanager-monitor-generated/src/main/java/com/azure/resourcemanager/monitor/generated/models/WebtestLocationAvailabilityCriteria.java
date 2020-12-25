@@ -11,7 +11,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import java.util.Map;
 
 /** Specifies the metric alert rule criteria for a web test resource. */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "odata\\.type")
@@ -96,13 +95,6 @@ public class WebtestLocationAvailabilityCriteria extends MetricAlertCriteria {
      */
     public WebtestLocationAvailabilityCriteria withFailedLocationCount(float failedLocationCount) {
         this.failedLocationCount = failedLocationCount;
-        return this;
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public WebtestLocationAvailabilityCriteria withAdditionalProperties(Map<String, Object> additionalProperties) {
-        super.withAdditionalProperties(additionalProperties);
         return this;
     }
 

@@ -11,7 +11,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
-import java.util.Map;
 
 /** Criterion to filter metrics. */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "criterionType")
@@ -111,13 +110,6 @@ public final class MetricCriteria extends MultiMetricCriteria {
     @Override
     public MetricCriteria withSkipMetricValidation(Boolean skipMetricValidation) {
         super.withSkipMetricValidation(skipMetricValidation);
-        return this;
-    }
-
-    /** {@inheritDoc} */
-    @Override
-    public MetricCriteria withAdditionalProperties(Map<String, Object> additionalProperties) {
-        super.withAdditionalProperties(additionalProperties);
         return this;
     }
 
