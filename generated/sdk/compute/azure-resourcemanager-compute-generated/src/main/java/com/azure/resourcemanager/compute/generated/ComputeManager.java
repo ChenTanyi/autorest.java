@@ -38,15 +38,11 @@ import com.azure.resourcemanager.compute.generated.implementation.GalleryApplica
 import com.azure.resourcemanager.compute.generated.implementation.GalleryApplicationsImpl;
 import com.azure.resourcemanager.compute.generated.implementation.GalleryImageVersionsImpl;
 import com.azure.resourcemanager.compute.generated.implementation.GalleryImagesImpl;
-import com.azure.resourcemanager.compute.generated.implementation.GallerySharingProfilesImpl;
 import com.azure.resourcemanager.compute.generated.implementation.ImagesImpl;
 import com.azure.resourcemanager.compute.generated.implementation.LogAnalyticsImpl;
 import com.azure.resourcemanager.compute.generated.implementation.OperationsImpl;
 import com.azure.resourcemanager.compute.generated.implementation.ProximityPlacementGroupsImpl;
 import com.azure.resourcemanager.compute.generated.implementation.ResourceSkusImpl;
-import com.azure.resourcemanager.compute.generated.implementation.SharedGalleriesImpl;
-import com.azure.resourcemanager.compute.generated.implementation.SharedGalleryImageVersionsImpl;
-import com.azure.resourcemanager.compute.generated.implementation.SharedGalleryImagesImpl;
 import com.azure.resourcemanager.compute.generated.implementation.SnapshotsImpl;
 import com.azure.resourcemanager.compute.generated.implementation.SshPublicKeysImpl;
 import com.azure.resourcemanager.compute.generated.implementation.UsagesImpl;
@@ -78,15 +74,11 @@ import com.azure.resourcemanager.compute.generated.models.GalleryApplicationVers
 import com.azure.resourcemanager.compute.generated.models.GalleryApplications;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersions;
 import com.azure.resourcemanager.compute.generated.models.GalleryImages;
-import com.azure.resourcemanager.compute.generated.models.GallerySharingProfiles;
 import com.azure.resourcemanager.compute.generated.models.Images;
 import com.azure.resourcemanager.compute.generated.models.LogAnalytics;
 import com.azure.resourcemanager.compute.generated.models.Operations;
 import com.azure.resourcemanager.compute.generated.models.ProximityPlacementGroups;
 import com.azure.resourcemanager.compute.generated.models.ResourceSkus;
-import com.azure.resourcemanager.compute.generated.models.SharedGalleries;
-import com.azure.resourcemanager.compute.generated.models.SharedGalleryImageVersions;
-import com.azure.resourcemanager.compute.generated.models.SharedGalleryImages;
 import com.azure.resourcemanager.compute.generated.models.Snapshots;
 import com.azure.resourcemanager.compute.generated.models.SshPublicKeys;
 import com.azure.resourcemanager.compute.generated.models.Usages;
@@ -171,14 +163,6 @@ public final class ComputeManager {
     private GalleryApplications galleryApplications;
 
     private GalleryApplicationVersions galleryApplicationVersions;
-
-    private GallerySharingProfiles gallerySharingProfiles;
-
-    private SharedGalleries sharedGalleries;
-
-    private SharedGalleryImages sharedGalleryImages;
-
-    private SharedGalleryImageVersions sharedGalleryImageVersions;
 
     private ContainerServices containerServices;
 
@@ -597,40 +581,6 @@ public final class ComputeManager {
                 new GalleryApplicationVersionsImpl(clientObject.getGalleryApplicationVersions(), this);
         }
         return galleryApplicationVersions;
-    }
-
-    /** @return Resource collection API of GallerySharingProfiles. */
-    public GallerySharingProfiles gallerySharingProfiles() {
-        if (this.gallerySharingProfiles == null) {
-            this.gallerySharingProfiles =
-                new GallerySharingProfilesImpl(clientObject.getGallerySharingProfiles(), this);
-        }
-        return gallerySharingProfiles;
-    }
-
-    /** @return Resource collection API of SharedGalleries. */
-    public SharedGalleries sharedGalleries() {
-        if (this.sharedGalleries == null) {
-            this.sharedGalleries = new SharedGalleriesImpl(clientObject.getSharedGalleries(), this);
-        }
-        return sharedGalleries;
-    }
-
-    /** @return Resource collection API of SharedGalleryImages. */
-    public SharedGalleryImages sharedGalleryImages() {
-        if (this.sharedGalleryImages == null) {
-            this.sharedGalleryImages = new SharedGalleryImagesImpl(clientObject.getSharedGalleryImages(), this);
-        }
-        return sharedGalleryImages;
-    }
-
-    /** @return Resource collection API of SharedGalleryImageVersions. */
-    public SharedGalleryImageVersions sharedGalleryImageVersions() {
-        if (this.sharedGalleryImageVersions == null) {
-            this.sharedGalleryImageVersions =
-                new SharedGalleryImageVersionsImpl(clientObject.getSharedGalleryImageVersions(), this);
-        }
-        return sharedGalleryImageVersions;
     }
 
     /** @return Resource collection API of ContainerServices. */
