@@ -13,6 +13,7 @@ import com.azure.resourcemanager.network.generated.models.ExpressRouteConnection
 import com.azure.resourcemanager.network.generated.models.ExpressRouteGateway;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteGatewayPropertiesAutoScaleConfiguration;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
+import com.azure.resourcemanager.network.generated.models.TagsObject;
 import com.azure.resourcemanager.network.generated.models.VirtualHubId;
 import java.util.Collections;
 import java.util.List;
@@ -100,6 +101,8 @@ public final class ExpressRouteGatewayImpl
 
     private String expressRouteGatewayName;
 
+    private TagsObject updateExpressRouteGatewayParameters;
+
     public ExpressRouteGatewayImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
         return this;
@@ -130,6 +133,7 @@ public final class ExpressRouteGatewayImpl
     }
 
     public ExpressRouteGatewayImpl update() {
+        this.updateExpressRouteGatewayParameters = new TagsObject();
         return this;
     }
 
@@ -138,7 +142,8 @@ public final class ExpressRouteGatewayImpl
             serviceManager
                 .serviceClient()
                 .getExpressRouteGateways()
-                .createOrUpdate(resourceGroupName, expressRouteGatewayName, this.innerModel(), Context.NONE);
+                .updateTags(
+                    resourceGroupName, expressRouteGatewayName, updateExpressRouteGatewayParameters, Context.NONE);
         return this;
     }
 
@@ -147,7 +152,7 @@ public final class ExpressRouteGatewayImpl
             serviceManager
                 .serviceClient()
                 .getExpressRouteGateways()
-                .createOrUpdate(resourceGroupName, expressRouteGatewayName, this.innerModel(), context);
+                .updateTags(resourceGroupName, expressRouteGatewayName, updateExpressRouteGatewayParameters, context);
         return this;
     }
 
@@ -189,8 +194,13 @@ public final class ExpressRouteGatewayImpl
     }
 
     public ExpressRouteGatewayImpl withTags(Map<String, String> tags) {
-        this.innerModel().withTags(tags);
-        return this;
+        if (isInCreateMode()) {
+            this.innerModel().withTags(tags);
+            return this;
+        } else {
+            this.updateExpressRouteGatewayParameters.withTags(tags);
+            return this;
+        }
     }
 
     public ExpressRouteGatewayImpl withAutoScaleConfiguration(
@@ -202,5 +212,9 @@ public final class ExpressRouteGatewayImpl
     public ExpressRouteGatewayImpl withVirtualHub(VirtualHubId virtualHub) {
         this.innerModel().withVirtualHub(virtualHub);
         return this;
+    }
+
+    private boolean isInCreateMode() {
+        return this.innerModel().id() == null;
     }
 }

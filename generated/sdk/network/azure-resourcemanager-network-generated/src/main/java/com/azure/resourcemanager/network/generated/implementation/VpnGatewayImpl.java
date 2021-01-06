@@ -10,12 +10,14 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnConnectionInner;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnGatewayInner;
+import com.azure.resourcemanager.network.generated.fluent.models.VpnGatewayNatRuleInner;
 import com.azure.resourcemanager.network.generated.models.BgpSettings;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 import com.azure.resourcemanager.network.generated.models.VpnConnection;
 import com.azure.resourcemanager.network.generated.models.VpnGateway;
 import com.azure.resourcemanager.network.generated.models.VpnGatewayIpConfiguration;
+import com.azure.resourcemanager.network.generated.models.VpnGatewayNatRule;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -92,6 +94,20 @@ public final class VpnGatewayImpl implements VpnGateway, VpnGateway.Definition, 
 
     public Boolean isRoutingPreferenceInternet() {
         return this.innerModel().isRoutingPreferenceInternet();
+    }
+
+    public List<VpnGatewayNatRule> natRules() {
+        List<VpnGatewayNatRuleInner> inner = this.innerModel().natRules();
+        if (inner != null) {
+            return Collections
+                .unmodifiableList(
+                    inner
+                        .stream()
+                        .map(inner1 -> new VpnGatewayNatRuleImpl(inner1, this.manager()))
+                        .collect(Collectors.toList()));
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     public String id() {
@@ -241,6 +257,11 @@ public final class VpnGatewayImpl implements VpnGateway, VpnGateway.Definition, 
 
     public VpnGatewayImpl withIsRoutingPreferenceInternet(Boolean isRoutingPreferenceInternet) {
         this.innerModel().withIsRoutingPreferenceInternet(isRoutingPreferenceInternet);
+        return this;
+    }
+
+    public VpnGatewayImpl withNatRules(List<VpnGatewayNatRuleInner> natRules) {
+        this.innerModel().withNatRules(natRules);
         return this;
     }
 

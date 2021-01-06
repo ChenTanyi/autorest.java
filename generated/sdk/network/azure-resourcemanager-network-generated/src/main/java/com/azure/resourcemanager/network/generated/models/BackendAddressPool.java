@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
+import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.BackendAddressPoolInner;
@@ -39,6 +40,13 @@ public interface BackendAddressPool {
      * @return the type value.
      */
     String type();
+
+    /**
+     * Gets the location property: The location of the backend address pool.
+     *
+     * @return the location value.
+     */
+    String location();
 
     /**
      * Gets the loadBalancerBackendAddresses property: An array of backend addresses.
@@ -84,6 +92,20 @@ public interface BackendAddressPool {
     ProvisioningState provisioningState();
 
     /**
+     * Gets the region of the resource.
+     *
+     * @return the region of the resource.
+     */
+    Region region();
+
+    /**
+     * Gets the name of the resource region.
+     *
+     * @return the name of the resource region.
+     */
+    String regionName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.BackendAddressPoolInner object.
      *
      * @return the inner object.
@@ -114,7 +136,10 @@ public interface BackendAddressPool {
          * The stage of the BackendAddressPool definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate extends DefinitionStages.WithName, DefinitionStages.WithLoadBalancerBackendAddresses {
+        interface WithCreate
+            extends DefinitionStages.WithLocation,
+                DefinitionStages.WithName,
+                DefinitionStages.WithLoadBalancerBackendAddresses {
             /**
              * Executes the create request.
              *
@@ -129,6 +154,24 @@ public interface BackendAddressPool {
              * @return the created resource.
              */
             BackendAddressPool create(Context context);
+        }
+        /** The stage of the BackendAddressPool definition allowing to specify location. */
+        interface WithLocation {
+            /**
+             * Specifies the region for the resource.
+             *
+             * @param location The location of the backend address pool.
+             * @return the next definition stage.
+             */
+            WithCreate withRegion(Region location);
+
+            /**
+             * Specifies the region for the resource.
+             *
+             * @param location The location of the backend address pool.
+             * @return the next definition stage.
+             */
+            WithCreate withRegion(String location);
         }
         /** The stage of the BackendAddressPool definition allowing to specify name. */
         interface WithName {

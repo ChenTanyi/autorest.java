@@ -60,32 +60,6 @@ public final class RoutesImpl implements Routes {
         }
     }
 
-    public Route createOrUpdate(
-        String resourceGroupName, String routeTableName, String routeName, RouteInner routeParameters) {
-        RouteInner inner =
-            this.serviceClient().createOrUpdate(resourceGroupName, routeTableName, routeName, routeParameters);
-        if (inner != null) {
-            return new RouteImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Route createOrUpdate(
-        String resourceGroupName,
-        String routeTableName,
-        String routeName,
-        RouteInner routeParameters,
-        Context context) {
-        RouteInner inner =
-            this.serviceClient().createOrUpdate(resourceGroupName, routeTableName, routeName, routeParameters, context);
-        if (inner != null) {
-            return new RouteImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public PagedIterable<Route> list(String resourceGroupName, String routeTableName) {
         PagedIterable<RouteInner> inner = this.serviceClient().list(resourceGroupName, routeTableName);
         return inner.mapPage(inner1 -> new RouteImpl(inner1, this.manager()));
@@ -96,11 +70,119 @@ public final class RoutesImpl implements Routes {
         return inner.mapPage(inner1 -> new RouteImpl(inner1, this.manager()));
     }
 
+    public Route getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String routeTableName = Utils.getValueFromIdByName(id, "routeTables");
+        if (routeTableName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'routeTables'.", id)));
+        }
+        String routeName = Utils.getValueFromIdByName(id, "routes");
+        if (routeName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'routes'.", id)));
+        }
+        return this.getWithResponse(resourceGroupName, routeTableName, routeName, Context.NONE).getValue();
+    }
+
+    public Response<Route> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String routeTableName = Utils.getValueFromIdByName(id, "routeTables");
+        if (routeTableName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'routeTables'.", id)));
+        }
+        String routeName = Utils.getValueFromIdByName(id, "routes");
+        if (routeName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'routes'.", id)));
+        }
+        return this.getWithResponse(resourceGroupName, routeTableName, routeName, context);
+    }
+
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String routeTableName = Utils.getValueFromIdByName(id, "routeTables");
+        if (routeTableName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'routeTables'.", id)));
+        }
+        String routeName = Utils.getValueFromIdByName(id, "routes");
+        if (routeName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'routes'.", id)));
+        }
+        this.delete(resourceGroupName, routeTableName, routeName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String routeTableName = Utils.getValueFromIdByName(id, "routeTables");
+        if (routeTableName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'routeTables'.", id)));
+        }
+        String routeName = Utils.getValueFromIdByName(id, "routes");
+        if (routeName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'routes'.", id)));
+        }
+        this.delete(resourceGroupName, routeTableName, routeName, context);
+    }
+
     private RoutesClient serviceClient() {
         return this.innerClient;
     }
 
     private NetworkManager manager() {
         return this.serviceManager;
+    }
+
+    public RouteImpl define(String name) {
+        return new RouteImpl(name, this.manager());
     }
 }

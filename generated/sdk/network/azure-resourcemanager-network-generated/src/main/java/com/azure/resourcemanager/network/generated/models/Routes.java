@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.fluent.models.RouteInner;
 
 /** Resource collection API of Routes. */
 public interface Routes {
@@ -64,36 +63,6 @@ public interface Routes {
     Response<Route> getWithResponse(String resourceGroupName, String routeTableName, String routeName, Context context);
 
     /**
-     * Creates or updates a route in the specified route table.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param routeTableName The name of the route table.
-     * @param routeName The name of the route.
-     * @param routeParameters Parameters supplied to the create or update route operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return route resource.
-     */
-    Route createOrUpdate(String resourceGroupName, String routeTableName, String routeName, RouteInner routeParameters);
-
-    /**
-     * Creates or updates a route in the specified route table.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param routeTableName The name of the route table.
-     * @param routeName The name of the route.
-     * @param routeParameters Parameters supplied to the create or update route operation.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return route resource.
-     */
-    Route createOrUpdate(
-        String resourceGroupName, String routeTableName, String routeName, RouteInner routeParameters, Context context);
-
-    /**
      * Gets all routes in a route table.
      *
      * @param resourceGroupName The name of the resource group.
@@ -117,4 +86,56 @@ public interface Routes {
      * @return all routes in a route table.
      */
     PagedIterable<Route> list(String resourceGroupName, String routeTableName, Context context);
+
+    /**
+     * Gets the specified route from a route table.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified route from a route table.
+     */
+    Route getById(String id);
+
+    /**
+     * Gets the specified route from a route table.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified route from a route table.
+     */
+    Response<Route> getByIdWithResponse(String id, Context context);
+
+    /**
+     * Deletes the specified route from a route table.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteById(String id);
+
+    /**
+     * Deletes the specified route from a route table.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteByIdWithResponse(String id, Context context);
+
+    /**
+     * Begins definition for a new Route resource.
+     *
+     * @param name resource name.
+     * @return the first stage of the new Route definition.
+     */
+    Route.DefinitionStages.Blank define(String name);
 }

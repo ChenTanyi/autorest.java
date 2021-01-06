@@ -42,6 +42,13 @@ public interface CustomIpPrefix {
     Map<String, String> tags();
 
     /**
+     * Gets the extendedLocation property: The extended location of the custom IP prefix.
+     *
+     * @return the extendedLocation value.
+     */
+    ExtendedLocation extendedLocation();
+
+    /**
      * Gets the etag property: A unique read-only string that changes whenever the resource is updated.
      *
      * @return the etag value.
@@ -166,6 +173,7 @@ public interface CustomIpPrefix {
          */
         interface WithCreate
             extends DefinitionStages.WithTags,
+                DefinitionStages.WithExtendedLocation,
                 DefinitionStages.WithZones,
                 DefinitionStages.WithCidr,
                 DefinitionStages.WithCommissionedState {
@@ -193,6 +201,16 @@ public interface CustomIpPrefix {
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
+        }
+        /** The stage of the CustomIpPrefix definition allowing to specify extendedLocation. */
+        interface WithExtendedLocation {
+            /**
+             * Specifies the extendedLocation property: The extended location of the custom IP prefix..
+             *
+             * @param extendedLocation The extended location of the custom IP prefix.
+             * @return the next definition stage.
+             */
+            WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
         /** The stage of the CustomIpPrefix definition allowing to specify zones. */
         interface WithZones {

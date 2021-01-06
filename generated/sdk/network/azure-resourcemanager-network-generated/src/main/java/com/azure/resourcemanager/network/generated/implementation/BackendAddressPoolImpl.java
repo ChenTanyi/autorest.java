@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
+import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.NetworkManager;
@@ -37,6 +38,10 @@ public final class BackendAddressPoolImpl
 
     public String type() {
         return this.innerModel().type();
+    }
+
+    public String location() {
+        return this.innerModel().location();
     }
 
     public List<LoadBalancerBackendAddress> loadBalancerBackendAddresses() {
@@ -86,6 +91,14 @@ public final class BackendAddressPoolImpl
 
     public ProvisioningState provisioningState() {
         return this.innerModel().provisioningState();
+    }
+
+    public Region region() {
+        return Region.fromName(this.regionName());
+    }
+
+    public String regionName() {
+        return this.location();
     }
 
     public BackendAddressPoolInner innerModel() {
@@ -183,6 +196,16 @@ public final class BackendAddressPoolImpl
                 .getLoadBalancerBackendAddressPools()
                 .getWithResponse(resourceGroupName, loadBalancerName, backendAddressPoolName, context)
                 .getValue();
+        return this;
+    }
+
+    public BackendAddressPoolImpl withRegion(Region location) {
+        this.innerModel().withLocation(location.toString());
+        return this;
+    }
+
+    public BackendAddressPoolImpl withRegion(String location) {
+        this.innerModel().withLocation(location);
         return this;
     }
 

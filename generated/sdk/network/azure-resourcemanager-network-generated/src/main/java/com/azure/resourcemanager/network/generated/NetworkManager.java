@@ -70,6 +70,7 @@ import com.azure.resourcemanager.network.generated.implementation.LoadBalancerPr
 import com.azure.resourcemanager.network.generated.implementation.LoadBalancersImpl;
 import com.azure.resourcemanager.network.generated.implementation.LocalNetworkGatewaysImpl;
 import com.azure.resourcemanager.network.generated.implementation.NatGatewaysImpl;
+import com.azure.resourcemanager.network.generated.implementation.NatRulesImpl;
 import com.azure.resourcemanager.network.generated.implementation.NetworkInterfaceIpConfigurationsImpl;
 import com.azure.resourcemanager.network.generated.implementation.NetworkInterfaceLoadBalancersImpl;
 import com.azure.resourcemanager.network.generated.implementation.NetworkInterfaceTapConfigurationsImpl;
@@ -176,6 +177,7 @@ import com.azure.resourcemanager.network.generated.models.LoadBalancerProbes;
 import com.azure.resourcemanager.network.generated.models.LoadBalancers;
 import com.azure.resourcemanager.network.generated.models.LocalNetworkGateways;
 import com.azure.resourcemanager.network.generated.models.NatGateways;
+import com.azure.resourcemanager.network.generated.models.NatRules;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceIpConfigurations;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceLoadBalancers;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceTapConfigurations;
@@ -431,6 +433,8 @@ public final class NetworkManager {
     private VpnSiteLinkConnections vpnSiteLinkConnections;
 
     private VpnLinkConnections vpnLinkConnections;
+
+    private NatRules natRules;
 
     private P2SVpnGateways p2SVpnGateways;
 
@@ -1406,6 +1410,14 @@ public final class NetworkManager {
             this.vpnLinkConnections = new VpnLinkConnectionsImpl(clientObject.getVpnLinkConnections(), this);
         }
         return vpnLinkConnections;
+    }
+
+    /** @return Resource collection API of NatRules. */
+    public NatRules natRules() {
+        if (this.natRules == null) {
+            this.natRules = new NatRulesImpl(clientObject.getNatRules(), this);
+        }
+        return natRules;
     }
 
     /** @return Resource collection API of P2SVpnGateways. */

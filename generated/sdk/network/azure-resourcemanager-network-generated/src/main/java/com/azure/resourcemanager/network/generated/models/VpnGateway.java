@@ -9,6 +9,7 @@ import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnConnectionInner;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnGatewayInner;
+import com.azure.resourcemanager.network.generated.fluent.models.VpnGatewayNatRuleInner;
 import java.util.List;
 import java.util.Map;
 
@@ -100,6 +101,13 @@ public interface VpnGateway {
     Boolean isRoutingPreferenceInternet();
 
     /**
+     * Gets the natRules property: List of all the nat Rules associated with the gateway.
+     *
+     * @return the natRules value.
+     */
+    List<VpnGatewayNatRule> natRules();
+
+    /**
      * Gets the id property: Resource ID.
      *
      * @return the id value.
@@ -177,7 +185,8 @@ public interface VpnGateway {
                 DefinitionStages.WithConnections,
                 DefinitionStages.WithBgpSettings,
                 DefinitionStages.WithVpnGatewayScaleUnit,
-                DefinitionStages.WithIsRoutingPreferenceInternet {
+                DefinitionStages.WithIsRoutingPreferenceInternet,
+                DefinitionStages.WithNatRules {
             /**
              * Executes the create request.
              *
@@ -254,6 +263,16 @@ public interface VpnGateway {
              * @return the next definition stage.
              */
             WithCreate withIsRoutingPreferenceInternet(Boolean isRoutingPreferenceInternet);
+        }
+        /** The stage of the VpnGateway definition allowing to specify natRules. */
+        interface WithNatRules {
+            /**
+             * Specifies the natRules property: List of all the nat Rules associated with the gateway..
+             *
+             * @param natRules List of all the nat Rules associated with the gateway.
+             * @return the next definition stage.
+             */
+            WithCreate withNatRules(List<VpnGatewayNatRuleInner> natRules);
         }
     }
     /**

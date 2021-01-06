@@ -11,6 +11,7 @@ import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfac
 import com.azure.resourcemanager.network.generated.fluent.models.PrivateEndpointInner;
 import com.azure.resourcemanager.network.generated.fluent.models.SubnetInner;
 import com.azure.resourcemanager.network.generated.models.CustomDnsConfigPropertiesFormat;
+import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.NetworkInterface;
 import com.azure.resourcemanager.network.generated.models.PrivateEndpoint;
 import com.azure.resourcemanager.network.generated.models.PrivateLinkServiceConnection;
@@ -45,6 +46,10 @@ public final class PrivateEndpointImpl implements PrivateEndpoint, PrivateEndpoi
         } else {
             return Collections.emptyMap();
         }
+    }
+
+    public ExtendedLocation extendedLocation() {
+        return this.innerModel().extendedLocation();
     }
 
     public String etag() {
@@ -221,6 +226,11 @@ public final class PrivateEndpointImpl implements PrivateEndpoint, PrivateEndpoi
 
     public PrivateEndpointImpl withTags(Map<String, String> tags) {
         this.innerModel().withTags(tags);
+        return this;
+    }
+
+    public PrivateEndpointImpl withExtendedLocation(ExtendedLocation extendedLocation) {
+        this.innerModel().withExtendedLocation(extendedLocation);
         return this;
     }
 

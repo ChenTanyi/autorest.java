@@ -711,6 +711,13 @@ public interface NetworkManagementClient {
     VpnLinkConnectionsClient getVpnLinkConnections();
 
     /**
+     * Gets the NatRulesClient object to access its operations.
+     *
+     * @return the NatRulesClient object.
+     */
+    NatRulesClient getNatRules();
+
+    /**
      * Gets the P2SVpnGatewaysClient object to access its operations.
      *
      * @return the P2SVpnGatewaysClient object.

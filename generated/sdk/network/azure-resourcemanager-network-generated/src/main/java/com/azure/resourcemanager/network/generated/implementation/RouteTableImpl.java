@@ -80,6 +80,10 @@ public final class RouteTableImpl implements RouteTable, RouteTable.Definition, 
         return this.innerModel().provisioningState();
     }
 
+    public String resourceGuid() {
+        return this.innerModel().resourceGuid();
+    }
+
     public String id() {
         return this.innerModel().id();
     }

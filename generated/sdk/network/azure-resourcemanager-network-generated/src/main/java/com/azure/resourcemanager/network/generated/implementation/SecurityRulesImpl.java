@@ -64,40 +64,6 @@ public final class SecurityRulesImpl implements SecurityRules {
         }
     }
 
-    public SecurityRule createOrUpdate(
-        String resourceGroupName,
-        String networkSecurityGroupName,
-        String securityRuleName,
-        SecurityRuleInner securityRuleParameters) {
-        SecurityRuleInner inner =
-            this
-                .serviceClient()
-                .createOrUpdate(resourceGroupName, networkSecurityGroupName, securityRuleName, securityRuleParameters);
-        if (inner != null) {
-            return new SecurityRuleImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public SecurityRule createOrUpdate(
-        String resourceGroupName,
-        String networkSecurityGroupName,
-        String securityRuleName,
-        SecurityRuleInner securityRuleParameters,
-        Context context) {
-        SecurityRuleInner inner =
-            this
-                .serviceClient()
-                .createOrUpdate(
-                    resourceGroupName, networkSecurityGroupName, securityRuleName, securityRuleParameters, context);
-        if (inner != null) {
-            return new SecurityRuleImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public PagedIterable<SecurityRule> list(String resourceGroupName, String networkSecurityGroupName) {
         PagedIterable<SecurityRuleInner> inner = this.serviceClient().list(resourceGroupName, networkSecurityGroupName);
         return inner.mapPage(inner1 -> new SecurityRuleImpl(inner1, this.manager()));
@@ -110,11 +76,133 @@ public final class SecurityRulesImpl implements SecurityRules {
         return inner.mapPage(inner1 -> new SecurityRuleImpl(inner1, this.manager()));
     }
 
+    public SecurityRule getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String networkSecurityGroupName = Utils.getValueFromIdByName(id, "networkSecurityGroups");
+        if (networkSecurityGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'networkSecurityGroups'.",
+                                id)));
+        }
+        String securityRuleName = Utils.getValueFromIdByName(id, "securityRules");
+        if (securityRuleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'securityRules'.", id)));
+        }
+        return this
+            .getWithResponse(resourceGroupName, networkSecurityGroupName, securityRuleName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<SecurityRule> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String networkSecurityGroupName = Utils.getValueFromIdByName(id, "networkSecurityGroups");
+        if (networkSecurityGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'networkSecurityGroups'.",
+                                id)));
+        }
+        String securityRuleName = Utils.getValueFromIdByName(id, "securityRules");
+        if (securityRuleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'securityRules'.", id)));
+        }
+        return this.getWithResponse(resourceGroupName, networkSecurityGroupName, securityRuleName, context);
+    }
+
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String networkSecurityGroupName = Utils.getValueFromIdByName(id, "networkSecurityGroups");
+        if (networkSecurityGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'networkSecurityGroups'.",
+                                id)));
+        }
+        String securityRuleName = Utils.getValueFromIdByName(id, "securityRules");
+        if (securityRuleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'securityRules'.", id)));
+        }
+        this.delete(resourceGroupName, networkSecurityGroupName, securityRuleName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String networkSecurityGroupName = Utils.getValueFromIdByName(id, "networkSecurityGroups");
+        if (networkSecurityGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'networkSecurityGroups'.",
+                                id)));
+        }
+        String securityRuleName = Utils.getValueFromIdByName(id, "securityRules");
+        if (securityRuleName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'securityRules'.", id)));
+        }
+        this.delete(resourceGroupName, networkSecurityGroupName, securityRuleName, context);
+    }
+
     private SecurityRulesClient serviceClient() {
         return this.innerClient;
     }
 
     private NetworkManager manager() {
         return this.serviceManager;
+    }
+
+    public SecurityRuleImpl define(String name) {
+        return new SecurityRuleImpl(name, this.manager());
     }
 }

@@ -78,6 +78,13 @@ public interface RouteTable {
     ProvisioningState provisioningState();
 
     /**
+     * Gets the resourceGuid property: The resource GUID property of the route table.
+     *
+     * @return the resourceGuid value.
+     */
+    String resourceGuid();
+
+    /**
      * Gets the id property: Resource ID.
      *
      * @return the id value.

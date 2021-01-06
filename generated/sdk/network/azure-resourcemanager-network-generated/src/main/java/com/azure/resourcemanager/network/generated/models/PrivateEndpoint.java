@@ -42,6 +42,13 @@ public interface PrivateEndpoint {
     Map<String, String> tags();
 
     /**
+     * Gets the extendedLocation property: The extended location of the load balancer.
+     *
+     * @return the extendedLocation value.
+     */
+    ExtendedLocation extendedLocation();
+
+    /**
      * Gets the etag property: A unique read-only string that changes whenever the resource is updated.
      *
      * @return the etag value.
@@ -167,6 +174,7 @@ public interface PrivateEndpoint {
          */
         interface WithCreate
             extends DefinitionStages.WithTags,
+                DefinitionStages.WithExtendedLocation,
                 DefinitionStages.WithSubnet,
                 DefinitionStages.WithPrivateLinkServiceConnections,
                 DefinitionStages.WithManualPrivateLinkServiceConnections,
@@ -195,6 +203,16 @@ public interface PrivateEndpoint {
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
+        }
+        /** The stage of the PrivateEndpoint definition allowing to specify extendedLocation. */
+        interface WithExtendedLocation {
+            /**
+             * Specifies the extendedLocation property: The extended location of the load balancer..
+             *
+             * @param extendedLocation The extended location of the load balancer.
+             * @return the next definition stage.
+             */
+            WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
         /** The stage of the PrivateEndpoint definition allowing to specify subnet. */
         interface WithSubnet {
@@ -255,6 +273,7 @@ public interface PrivateEndpoint {
     /** The template for PrivateEndpoint update. */
     interface Update
         extends UpdateStages.WithTags,
+            UpdateStages.WithExtendedLocation,
             UpdateStages.WithSubnet,
             UpdateStages.WithPrivateLinkServiceConnections,
             UpdateStages.WithManualPrivateLinkServiceConnections,
@@ -285,6 +304,16 @@ public interface PrivateEndpoint {
              * @return the next definition stage.
              */
             Update withTags(Map<String, String> tags);
+        }
+        /** The stage of the PrivateEndpoint update allowing to specify extendedLocation. */
+        interface WithExtendedLocation {
+            /**
+             * Specifies the extendedLocation property: The extended location of the load balancer..
+             *
+             * @param extendedLocation The extended location of the load balancer.
+             * @return the next definition stage.
+             */
+            Update withExtendedLocation(ExtendedLocation extendedLocation);
         }
         /** The stage of the PrivateEndpoint update allowing to specify subnet. */
         interface WithSubnet {

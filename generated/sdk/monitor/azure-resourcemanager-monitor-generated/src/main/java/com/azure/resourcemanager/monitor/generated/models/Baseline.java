@@ -8,6 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.time.OffsetDateTime;
 import java.util.List;
 
 /** The baseline values for a single sensitivity value. */
@@ -32,6 +33,12 @@ public final class Baseline {
      */
     @JsonProperty(value = "highThresholds", required = true)
     private List<Double> highThresholds;
+
+    /*
+     * the array of timestamps of the baselines.
+     */
+    @JsonProperty(value = "timestamps")
+    private List<OffsetDateTime> timestamps;
 
     /**
      * Get the sensitivity property: the sensitivity of the baseline.
@@ -90,6 +97,26 @@ public final class Baseline {
      */
     public Baseline withHighThresholds(List<Double> highThresholds) {
         this.highThresholds = highThresholds;
+        return this;
+    }
+
+    /**
+     * Get the timestamps property: the array of timestamps of the baselines.
+     *
+     * @return the timestamps value.
+     */
+    public List<OffsetDateTime> timestamps() {
+        return this.timestamps;
+    }
+
+    /**
+     * Set the timestamps property: the array of timestamps of the baselines.
+     *
+     * @param timestamps the timestamps value to set.
+     * @return the Baseline object itself.
+     */
+    public Baseline withTimestamps(List<OffsetDateTime> timestamps) {
+        this.timestamps = timestamps;
         return this;
     }
 

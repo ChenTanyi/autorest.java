@@ -209,6 +209,14 @@ public final class VirtualNetworkGatewayConnectionsImpl implements VirtualNetwor
             .stopPacketCapture(resourceGroupName, virtualNetworkGatewayConnectionName, parameters, context);
     }
 
+    public String getIkeSas(String resourceGroupName, String virtualNetworkGatewayConnectionName) {
+        return this.serviceClient().getIkeSas(resourceGroupName, virtualNetworkGatewayConnectionName);
+    }
+
+    public String getIkeSas(String resourceGroupName, String virtualNetworkGatewayConnectionName, Context context) {
+        return this.serviceClient().getIkeSas(resourceGroupName, virtualNetworkGatewayConnectionName, context);
+    }
+
     public VirtualNetworkGatewayConnection getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {

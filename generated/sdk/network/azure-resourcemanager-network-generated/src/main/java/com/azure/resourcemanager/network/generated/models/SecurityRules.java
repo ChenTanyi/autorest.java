@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.fluent.models.SecurityRuleInner;
 
 /** Resource collection API of SecurityRules. */
 public interface SecurityRules {
@@ -65,44 +64,6 @@ public interface SecurityRules {
         String resourceGroupName, String networkSecurityGroupName, String securityRuleName, Context context);
 
     /**
-     * Creates or updates a security rule in the specified network security group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkSecurityGroupName The name of the network security group.
-     * @param securityRuleName The name of the security rule.
-     * @param securityRuleParameters Parameters supplied to the create or update network security rule operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return network security rule.
-     */
-    SecurityRule createOrUpdate(
-        String resourceGroupName,
-        String networkSecurityGroupName,
-        String securityRuleName,
-        SecurityRuleInner securityRuleParameters);
-
-    /**
-     * Creates or updates a security rule in the specified network security group.
-     *
-     * @param resourceGroupName The name of the resource group.
-     * @param networkSecurityGroupName The name of the network security group.
-     * @param securityRuleName The name of the security rule.
-     * @param securityRuleParameters Parameters supplied to the create or update network security rule operation.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return network security rule.
-     */
-    SecurityRule createOrUpdate(
-        String resourceGroupName,
-        String networkSecurityGroupName,
-        String securityRuleName,
-        SecurityRuleInner securityRuleParameters,
-        Context context);
-
-    /**
      * Gets all security rules in a network security group.
      *
      * @param resourceGroupName The name of the resource group.
@@ -126,4 +87,56 @@ public interface SecurityRules {
      * @return all security rules in a network security group.
      */
     PagedIterable<SecurityRule> list(String resourceGroupName, String networkSecurityGroupName, Context context);
+
+    /**
+     * Get the specified network security rule.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified network security rule.
+     */
+    SecurityRule getById(String id);
+
+    /**
+     * Get the specified network security rule.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the specified network security rule.
+     */
+    Response<SecurityRule> getByIdWithResponse(String id, Context context);
+
+    /**
+     * Deletes the specified network security rule.
+     *
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteById(String id);
+
+    /**
+     * Deletes the specified network security rule.
+     *
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteByIdWithResponse(String id, Context context);
+
+    /**
+     * Begins definition for a new SecurityRule resource.
+     *
+     * @param name resource name.
+     * @return the first stage of the new SecurityRule definition.
+     */
+    SecurityRule.DefinitionStages.Blank define(String name);
 }

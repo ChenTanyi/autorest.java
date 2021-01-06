@@ -11,6 +11,7 @@ import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.CustomIpPrefixInner;
 import com.azure.resourcemanager.network.generated.models.CommissionedState;
 import com.azure.resourcemanager.network.generated.models.CustomIpPrefix;
+import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 import java.util.Collections;
@@ -41,6 +42,10 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
         } else {
             return Collections.emptyMap();
         }
+    }
+
+    public ExtendedLocation extendedLocation() {
+        return this.innerModel().extendedLocation();
     }
 
     public String etag() {
@@ -208,6 +213,11 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
             this.updateParameters.withTags(tags);
             return this;
         }
+    }
+
+    public CustomIpPrefixImpl withExtendedLocation(ExtendedLocation extendedLocation) {
+        this.innerModel().withExtendedLocation(extendedLocation);
+        return this;
     }
 
     public CustomIpPrefixImpl withZones(List<String> zones) {

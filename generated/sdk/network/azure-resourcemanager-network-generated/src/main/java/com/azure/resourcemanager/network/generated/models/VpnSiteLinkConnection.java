@@ -54,6 +54,13 @@ public interface VpnSiteLinkConnection {
     Integer routingWeight();
 
     /**
+     * Gets the vpnLinkConnectionMode property: Vpn link connection mode.
+     *
+     * @return the vpnLinkConnectionMode value.
+     */
+    VpnLinkConnectionMode vpnLinkConnectionMode();
+
+    /**
      * Gets the connectionStatus property: The connection status.
      *
      * @return the connectionStatus value.
@@ -136,6 +143,20 @@ public interface VpnSiteLinkConnection {
      * @return the provisioningState value.
      */
     ProvisioningState provisioningState();
+
+    /**
+     * Gets the ingressNatRules property: List of ingress NatRules.
+     *
+     * @return the ingressNatRules value.
+     */
+    List<SubResource> ingressNatRules();
+
+    /**
+     * Gets the egressNatRules property: List of egress NatRules.
+     *
+     * @return the egressNatRules value.
+     */
+    List<SubResource> egressNatRules();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.VpnSiteLinkConnectionInner object.

@@ -61,7 +61,7 @@ public final class MetricBaselinesClientImpl implements MetricBaselinesClient {
     @ServiceInterface(name = "MonitorClientMetricB")
     private interface MetricBaselinesService {
         @Headers({"Content-Type: application/json"})
-        @Get("/{resourceUri}/providers/microsoft.insights/baseline/{metricName}")
+        @Get("/{resourceUri}/providers/Microsoft.Insights/baseline/{metricName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<BaselineResponseInner>> get(

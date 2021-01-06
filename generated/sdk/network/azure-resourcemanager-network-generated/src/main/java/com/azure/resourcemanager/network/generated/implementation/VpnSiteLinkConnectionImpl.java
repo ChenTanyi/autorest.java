@@ -11,6 +11,7 @@ import com.azure.resourcemanager.network.generated.models.IpsecPolicy;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnectionProtocol;
 import com.azure.resourcemanager.network.generated.models.VpnConnectionStatus;
+import com.azure.resourcemanager.network.generated.models.VpnLinkConnectionMode;
 import com.azure.resourcemanager.network.generated.models.VpnSiteLinkConnection;
 import java.util.Collections;
 import java.util.List;
@@ -47,6 +48,10 @@ public final class VpnSiteLinkConnectionImpl implements VpnSiteLinkConnection {
 
     public Integer routingWeight() {
         return this.innerModel().routingWeight();
+    }
+
+    public VpnLinkConnectionMode vpnLinkConnectionMode() {
+        return this.innerModel().vpnLinkConnectionMode();
     }
 
     public VpnConnectionStatus connectionStatus() {
@@ -100,6 +105,24 @@ public final class VpnSiteLinkConnectionImpl implements VpnSiteLinkConnection {
 
     public ProvisioningState provisioningState() {
         return this.innerModel().provisioningState();
+    }
+
+    public List<SubResource> ingressNatRules() {
+        List<SubResource> inner = this.innerModel().ingressNatRules();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public List<SubResource> egressNatRules() {
+        List<SubResource> inner = this.innerModel().egressNatRules();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     public VpnSiteLinkConnectionInner innerModel() {

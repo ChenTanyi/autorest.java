@@ -207,8 +207,7 @@ public interface ExpressRouteGateway {
     ExpressRouteGateway.Update update();
 
     /** The template for ExpressRouteGateway update. */
-    interface Update
-        extends UpdateStages.WithTags, UpdateStages.WithAutoScaleConfiguration, UpdateStages.WithVirtualHub {
+    interface Update extends UpdateStages.WithTags {
         /**
          * Executes the update request.
          *
@@ -235,28 +234,6 @@ public interface ExpressRouteGateway {
              * @return the next definition stage.
              */
             Update withTags(Map<String, String> tags);
-        }
-        /** The stage of the ExpressRouteGateway update allowing to specify autoScaleConfiguration. */
-        interface WithAutoScaleConfiguration {
-            /**
-             * Specifies the autoScaleConfiguration property: Configuration for auto scaling..
-             *
-             * @param autoScaleConfiguration Configuration for auto scaling.
-             * @return the next definition stage.
-             */
-            Update withAutoScaleConfiguration(
-                ExpressRouteGatewayPropertiesAutoScaleConfiguration autoScaleConfiguration);
-        }
-        /** The stage of the ExpressRouteGateway update allowing to specify virtualHub. */
-        interface WithVirtualHub {
-            /**
-             * Specifies the virtualHub property: The Virtual Hub where the ExpressRoute gateway is or will be
-             * deployed..
-             *
-             * @param virtualHub The Virtual Hub where the ExpressRoute gateway is or will be deployed.
-             * @return the next definition stage.
-             */
-            Update withVirtualHub(VirtualHubId virtualHub);
         }
     }
     /**

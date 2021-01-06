@@ -43,6 +43,13 @@ public interface PrivateLinkService {
     Map<String, String> tags();
 
     /**
+     * Gets the extendedLocation property: The extended location of the load balancer.
+     *
+     * @return the extendedLocation value.
+     */
+    ExtendedLocation extendedLocation();
+
+    /**
      * Gets the etag property: A unique read-only string that changes whenever the resource is updated.
      *
      * @return the etag value.
@@ -195,6 +202,7 @@ public interface PrivateLinkService {
          */
         interface WithCreate
             extends DefinitionStages.WithTags,
+                DefinitionStages.WithExtendedLocation,
                 DefinitionStages.WithLoadBalancerFrontendIpConfigurations,
                 DefinitionStages.WithIpConfigurations,
                 DefinitionStages.WithVisibility,
@@ -225,6 +233,16 @@ public interface PrivateLinkService {
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
+        }
+        /** The stage of the PrivateLinkService definition allowing to specify extendedLocation. */
+        interface WithExtendedLocation {
+            /**
+             * Specifies the extendedLocation property: The extended location of the load balancer..
+             *
+             * @param extendedLocation The extended location of the load balancer.
+             * @return the next definition stage.
+             */
+            WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
         /** The stage of the PrivateLinkService definition allowing to specify loadBalancerFrontendIpConfigurations. */
         interface WithLoadBalancerFrontendIpConfigurations {
@@ -301,6 +319,7 @@ public interface PrivateLinkService {
     /** The template for PrivateLinkService update. */
     interface Update
         extends UpdateStages.WithTags,
+            UpdateStages.WithExtendedLocation,
             UpdateStages.WithLoadBalancerFrontendIpConfigurations,
             UpdateStages.WithIpConfigurations,
             UpdateStages.WithVisibility,
@@ -333,6 +352,16 @@ public interface PrivateLinkService {
              * @return the next definition stage.
              */
             Update withTags(Map<String, String> tags);
+        }
+        /** The stage of the PrivateLinkService update allowing to specify extendedLocation. */
+        interface WithExtendedLocation {
+            /**
+             * Specifies the extendedLocation property: The extended location of the load balancer..
+             *
+             * @param extendedLocation The extended location of the load balancer.
+             * @return the next definition stage.
+             */
+            Update withExtendedLocation(ExtendedLocation extendedLocation);
         }
         /** The stage of the PrivateLinkService update allowing to specify loadBalancerFrontendIpConfigurations. */
         interface WithLoadBalancerFrontendIpConfigurations {

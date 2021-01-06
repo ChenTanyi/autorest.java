@@ -70,6 +70,7 @@ import com.azure.resourcemanager.network.generated.fluent.LoadBalancerProbesClie
 import com.azure.resourcemanager.network.generated.fluent.LoadBalancersClient;
 import com.azure.resourcemanager.network.generated.fluent.LocalNetworkGatewaysClient;
 import com.azure.resourcemanager.network.generated.fluent.NatGatewaysClient;
+import com.azure.resourcemanager.network.generated.fluent.NatRulesClient;
 import com.azure.resourcemanager.network.generated.fluent.NetworkInterfaceIpConfigurationsClient;
 import com.azure.resourcemanager.network.generated.fluent.NetworkInterfaceLoadBalancersClient;
 import com.azure.resourcemanager.network.generated.fluent.NetworkInterfaceTapConfigurationsClient;
@@ -1358,6 +1359,18 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         return this.vpnLinkConnections;
     }
 
+    /** The NatRulesClient object to access its operations. */
+    private final NatRulesClient natRules;
+
+    /**
+     * Gets the NatRulesClient object to access its operations.
+     *
+     * @return the NatRulesClient object.
+     */
+    public NatRulesClient getNatRules() {
+        return this.natRules;
+    }
+
     /** The P2SVpnGatewaysClient object to access its operations. */
     private final P2SVpnGatewaysClient p2SVpnGateways;
 
@@ -1588,6 +1601,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         this.vpnConnections = new VpnConnectionsClientImpl(this);
         this.vpnSiteLinkConnections = new VpnSiteLinkConnectionsClientImpl(this);
         this.vpnLinkConnections = new VpnLinkConnectionsClientImpl(this);
+        this.natRules = new NatRulesClientImpl(this);
         this.p2SVpnGateways = new P2SVpnGatewaysClientImpl(this);
         this.vpnServerConfigurationsAssociatedWithVirtualWans =
             new VpnServerConfigurationsAssociatedWithVirtualWansClientImpl(this);
