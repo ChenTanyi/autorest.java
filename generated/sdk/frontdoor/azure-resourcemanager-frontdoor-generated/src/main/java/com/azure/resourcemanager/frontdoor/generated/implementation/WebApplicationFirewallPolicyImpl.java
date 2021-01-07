@@ -14,6 +14,7 @@ import com.azure.resourcemanager.frontdoor.generated.models.ManagedRuleSetList;
 import com.azure.resourcemanager.frontdoor.generated.models.PolicyResourceState;
 import com.azure.resourcemanager.frontdoor.generated.models.PolicySettings;
 import com.azure.resourcemanager.frontdoor.generated.models.RoutingRuleLink;
+import com.azure.resourcemanager.frontdoor.generated.models.Sku;
 import com.azure.resourcemanager.frontdoor.generated.models.WebApplicationFirewallPolicy;
 import java.util.Collections;
 import java.util.List;
@@ -54,6 +55,10 @@ public final class WebApplicationFirewallPolicyImpl
 
     public String etag() {
         return this.innerModel().etag();
+    }
+
+    public Sku sku() {
+        return this.innerModel().sku();
     }
 
     public PolicySettings policySettings() {
@@ -209,6 +214,11 @@ public final class WebApplicationFirewallPolicyImpl
 
     public WebApplicationFirewallPolicyImpl withEtag(String etag) {
         this.innerModel().withEtag(etag);
+        return this;
+    }
+
+    public WebApplicationFirewallPolicyImpl withSku(Sku sku) {
+        this.innerModel().withSku(sku);
         return this;
     }
 

@@ -48,6 +48,12 @@ public final class PolicySettings {
     @JsonProperty(value = "customBlockResponseBody")
     private String customBlockResponseBody;
 
+    /*
+     * Describes if policy managed rules will inspect the request body content.
+     */
+    @JsonProperty(value = "requestBodyCheck")
+    private PolicyRequestBodyCheck requestBodyCheck;
+
     /**
      * Get the enabledState property: Describes if the policy is in enabled or disabled state. Defaults to Enabled if
      * not specified.
@@ -151,6 +157,26 @@ public final class PolicySettings {
      */
     public PolicySettings withCustomBlockResponseBody(String customBlockResponseBody) {
         this.customBlockResponseBody = customBlockResponseBody;
+        return this;
+    }
+
+    /**
+     * Get the requestBodyCheck property: Describes if policy managed rules will inspect the request body content.
+     *
+     * @return the requestBodyCheck value.
+     */
+    public PolicyRequestBodyCheck requestBodyCheck() {
+        return this.requestBodyCheck;
+    }
+
+    /**
+     * Set the requestBodyCheck property: Describes if policy managed rules will inspect the request body content.
+     *
+     * @param requestBodyCheck the requestBodyCheck value to set.
+     * @return the PolicySettings object itself.
+     */
+    public PolicySettings withRequestBodyCheck(PolicyRequestBodyCheck requestBodyCheck) {
+        this.requestBodyCheck = requestBodyCheck;
         return this;
     }
 

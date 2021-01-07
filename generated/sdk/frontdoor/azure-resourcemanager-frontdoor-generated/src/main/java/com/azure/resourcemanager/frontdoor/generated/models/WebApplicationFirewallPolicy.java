@@ -55,6 +55,14 @@ public interface WebApplicationFirewallPolicy {
     String etag();
 
     /**
+     * Gets the sku property: The pricing tier of web application firewall policy. Defaults to Classic_AzureFrontDoor if
+     * not specified.
+     *
+     * @return the sku value.
+     */
+    Sku sku();
+
+    /**
      * Gets the policySettings property: Describes settings for the policy.
      *
      * @return the policySettings value.
@@ -173,6 +181,7 @@ public interface WebApplicationFirewallPolicy {
         interface WithCreate
             extends DefinitionStages.WithTags,
                 DefinitionStages.WithEtag,
+                DefinitionStages.WithSku,
                 DefinitionStages.WithPolicySettings,
                 DefinitionStages.WithCustomRules,
                 DefinitionStages.WithManagedRules {
@@ -211,6 +220,18 @@ public interface WebApplicationFirewallPolicy {
              * @return the next definition stage.
              */
             WithCreate withEtag(String etag);
+        }
+        /** The stage of the WebApplicationFirewallPolicy definition allowing to specify sku. */
+        interface WithSku {
+            /**
+             * Specifies the sku property: The pricing tier of web application firewall policy. Defaults to
+             * Classic_AzureFrontDoor if not specified..
+             *
+             * @param sku The pricing tier of web application firewall policy. Defaults to Classic_AzureFrontDoor if not
+             *     specified.
+             * @return the next definition stage.
+             */
+            WithCreate withSku(Sku sku);
         }
         /** The stage of the WebApplicationFirewallPolicy definition allowing to specify policySettings. */
         interface WithPolicySettings {
@@ -254,6 +275,7 @@ public interface WebApplicationFirewallPolicy {
     interface Update
         extends UpdateStages.WithTags,
             UpdateStages.WithEtag,
+            UpdateStages.WithSku,
             UpdateStages.WithPolicySettings,
             UpdateStages.WithCustomRules,
             UpdateStages.WithManagedRules {
@@ -294,6 +316,18 @@ public interface WebApplicationFirewallPolicy {
              * @return the next definition stage.
              */
             Update withEtag(String etag);
+        }
+        /** The stage of the WebApplicationFirewallPolicy update allowing to specify sku. */
+        interface WithSku {
+            /**
+             * Specifies the sku property: The pricing tier of web application firewall policy. Defaults to
+             * Classic_AzureFrontDoor if not specified..
+             *
+             * @param sku The pricing tier of web application firewall policy. Defaults to Classic_AzureFrontDoor if not
+             *     specified.
+             * @return the next definition stage.
+             */
+            Update withSku(Sku sku);
         }
         /** The stage of the WebApplicationFirewallPolicy update allowing to specify policySettings. */
         interface WithPolicySettings {

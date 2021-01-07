@@ -28,6 +28,13 @@ public final class ManagedRuleSet {
     private String ruleSetVersion;
 
     /*
+     * Defines the action to take when a managed rule set score threshold is
+     * met.
+     */
+    @JsonProperty(value = "ruleSetAction")
+    private ManagedRuleSetActionType ruleSetAction;
+
+    /*
      * Describes the exclusions that are applied to all rules in the set.
      */
     @JsonProperty(value = "exclusions")
@@ -76,6 +83,26 @@ public final class ManagedRuleSet {
      */
     public ManagedRuleSet withRuleSetVersion(String ruleSetVersion) {
         this.ruleSetVersion = ruleSetVersion;
+        return this;
+    }
+
+    /**
+     * Get the ruleSetAction property: Defines the action to take when a managed rule set score threshold is met.
+     *
+     * @return the ruleSetAction value.
+     */
+    public ManagedRuleSetActionType ruleSetAction() {
+        return this.ruleSetAction;
+    }
+
+    /**
+     * Set the ruleSetAction property: Defines the action to take when a managed rule set score threshold is met.
+     *
+     * @param ruleSetAction the ruleSetAction value to set.
+     * @return the ManagedRuleSet object itself.
+     */
+    public ManagedRuleSet withRuleSetAction(ManagedRuleSetActionType ruleSetAction) {
+        this.ruleSetAction = ruleSetAction;
         return this;
     }
 

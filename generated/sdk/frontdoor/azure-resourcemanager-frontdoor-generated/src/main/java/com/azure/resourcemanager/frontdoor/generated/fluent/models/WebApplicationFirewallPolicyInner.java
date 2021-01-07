@@ -14,6 +14,7 @@ import com.azure.resourcemanager.frontdoor.generated.models.ManagedRuleSetList;
 import com.azure.resourcemanager.frontdoor.generated.models.PolicyResourceState;
 import com.azure.resourcemanager.frontdoor.generated.models.PolicySettings;
 import com.azure.resourcemanager.frontdoor.generated.models.RoutingRuleLink;
+import com.azure.resourcemanager.frontdoor.generated.models.Sku;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -31,6 +32,13 @@ public class WebApplicationFirewallPolicyInner extends Resource {
      */
     @JsonProperty(value = "etag")
     private String etag;
+
+    /*
+     * The pricing tier of web application firewall policy. Defaults to
+     * Classic_AzureFrontDoor if not specified.
+     */
+    @JsonProperty(value = "sku")
+    private Sku sku;
 
     /*
      * Describes settings for the policy.
@@ -93,6 +101,28 @@ public class WebApplicationFirewallPolicyInner extends Resource {
      */
     public WebApplicationFirewallPolicyInner withEtag(String etag) {
         this.etag = etag;
+        return this;
+    }
+
+    /**
+     * Get the sku property: The pricing tier of web application firewall policy. Defaults to Classic_AzureFrontDoor if
+     * not specified.
+     *
+     * @return the sku value.
+     */
+    public Sku sku() {
+        return this.sku;
+    }
+
+    /**
+     * Set the sku property: The pricing tier of web application firewall policy. Defaults to Classic_AzureFrontDoor if
+     * not specified.
+     *
+     * @param sku the sku value to set.
+     * @return the WebApplicationFirewallPolicyInner object itself.
+     */
+    public WebApplicationFirewallPolicyInner withSku(Sku sku) {
+        this.sku = sku;
         return this;
     }
 
@@ -213,6 +243,9 @@ public class WebApplicationFirewallPolicyInner extends Resource {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+        if (sku() != null) {
+            sku().validate();
+        }
         if (policySettings() != null) {
             policySettings().validate();
         }
