@@ -10,7 +10,7 @@ import java.time.Duration;
 /** The interface for MonitorClient class. */
 public interface MonitorClient {
     /**
-     * Gets The Azure subscription Id.
+     * Gets The ID of the target subscription.
      *
      * @return the subscriptionId value.
      */

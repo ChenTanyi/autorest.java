@@ -58,11 +58,11 @@ import reactor.core.publisher.Mono;
 public final class MonitorClientImpl implements MonitorClient {
     private final ClientLogger logger = new ClientLogger(MonitorClientImpl.class);
 
-    /** The Azure subscription Id. */
+    /** The ID of the target subscription. */
     private final String subscriptionId;
 
     /**
-     * Gets The Azure subscription Id.
+     * Gets The ID of the target subscription.
      *
      * @return the subscriptionId value.
      */
@@ -377,7 +377,7 @@ public final class MonitorClientImpl implements MonitorClient {
      * @param serializerAdapter The serializer to serialize an object into a string.
      * @param defaultPollInterval The default poll interval for long-running operation.
      * @param environment The Azure environment.
-     * @param subscriptionId The Azure subscription Id.
+     * @param subscriptionId The ID of the target subscription.
      * @param endpoint server parameter.
      */
     MonitorClientImpl(
