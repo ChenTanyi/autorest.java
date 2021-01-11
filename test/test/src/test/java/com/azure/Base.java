@@ -53,7 +53,7 @@ public class Base extends TestBase {
     protected void afterTest() {
         super.afterTest();
         try {
-            resourceManager.serviceClient().getResourceGroups().beginDelete(rgName);
+            resourceManager.serviceClient().getResourceGroups().beginDelete(rgName, null);
         } catch (Exception e) {
         }
     }
