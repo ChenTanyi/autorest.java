@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.costmanagement.generated.implementation;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.costmanagement.generated.CostManagementManager;
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.ExportExecutionListResultInner;
@@ -166,6 +167,14 @@ public final class ExportImpl implements Export, Export.Definition, Export.Updat
                 .getWithResponse(scope, exportName, localExpand, context)
                 .getValue();
         return this;
+    }
+
+    public void execute() {
+        serviceManager.exports().execute(scope, exportName);
+    }
+
+    public Response<Void> executeWithResponse(Context context) {
+        return serviceManager.exports().executeWithResponse(scope, exportName, context);
     }
 
     public ExportImpl withFormat(FormatType format) {

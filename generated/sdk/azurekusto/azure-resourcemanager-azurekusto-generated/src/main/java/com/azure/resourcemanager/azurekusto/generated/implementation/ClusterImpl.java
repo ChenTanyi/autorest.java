@@ -4,16 +4,21 @@
 
 package com.azure.resourcemanager.azurekusto.generated.implementation;
 
+import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.azurekusto.generated.KustoManager;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.ClusterInner;
+import com.azure.resourcemanager.azurekusto.generated.fluent.models.FollowerDatabaseDefinitionInner;
 import com.azure.resourcemanager.azurekusto.generated.models.AzureSku;
 import com.azure.resourcemanager.azurekusto.generated.models.Cluster;
 import com.azure.resourcemanager.azurekusto.generated.models.ClusterUpdate;
+import com.azure.resourcemanager.azurekusto.generated.models.DiagnoseVirtualNetworkResult;
 import com.azure.resourcemanager.azurekusto.generated.models.EngineType;
+import com.azure.resourcemanager.azurekusto.generated.models.FollowerDatabaseDefinition;
 import com.azure.resourcemanager.azurekusto.generated.models.Identity;
 import com.azure.resourcemanager.azurekusto.generated.models.KeyVaultProperties;
+import com.azure.resourcemanager.azurekusto.generated.models.LanguageExtension;
 import com.azure.resourcemanager.azurekusto.generated.models.LanguageExtensionsList;
 import com.azure.resourcemanager.azurekusto.generated.models.OptimizedAutoscale;
 import com.azure.resourcemanager.azurekusto.generated.models.ProvisioningState;
@@ -235,6 +240,76 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
                 .getByResourceGroupWithResponse(resourceGroupName, clusterName, context)
                 .getValue();
         return this;
+    }
+
+    public void stop() {
+        serviceManager.clusters().stop(resourceGroupName, clusterName);
+    }
+
+    public void stop(Context context) {
+        serviceManager.clusters().stop(resourceGroupName, clusterName, context);
+    }
+
+    public void start() {
+        serviceManager.clusters().start(resourceGroupName, clusterName);
+    }
+
+    public void start(Context context) {
+        serviceManager.clusters().start(resourceGroupName, clusterName, context);
+    }
+
+    public PagedIterable<FollowerDatabaseDefinition> listFollowerDatabases() {
+        return serviceManager.clusters().listFollowerDatabases(resourceGroupName, clusterName);
+    }
+
+    public PagedIterable<FollowerDatabaseDefinition> listFollowerDatabases(Context context) {
+        return serviceManager.clusters().listFollowerDatabases(resourceGroupName, clusterName, context);
+    }
+
+    public void detachFollowerDatabases(FollowerDatabaseDefinitionInner followerDatabaseToRemove) {
+        serviceManager.clusters().detachFollowerDatabases(resourceGroupName, clusterName, followerDatabaseToRemove);
+    }
+
+    public void detachFollowerDatabases(FollowerDatabaseDefinitionInner followerDatabaseToRemove, Context context) {
+        serviceManager
+            .clusters()
+            .detachFollowerDatabases(resourceGroupName, clusterName, followerDatabaseToRemove, context);
+    }
+
+    public DiagnoseVirtualNetworkResult diagnoseVirtualNetwork() {
+        return serviceManager.clusters().diagnoseVirtualNetwork(resourceGroupName, clusterName);
+    }
+
+    public DiagnoseVirtualNetworkResult diagnoseVirtualNetwork(Context context) {
+        return serviceManager.clusters().diagnoseVirtualNetwork(resourceGroupName, clusterName, context);
+    }
+
+    public PagedIterable<LanguageExtension> listLanguageExtensions() {
+        return serviceManager.clusters().listLanguageExtensions(resourceGroupName, clusterName);
+    }
+
+    public PagedIterable<LanguageExtension> listLanguageExtensions(Context context) {
+        return serviceManager.clusters().listLanguageExtensions(resourceGroupName, clusterName, context);
+    }
+
+    public void addLanguageExtensions(LanguageExtensionsList languageExtensionsToAdd) {
+        serviceManager.clusters().addLanguageExtensions(resourceGroupName, clusterName, languageExtensionsToAdd);
+    }
+
+    public void addLanguageExtensions(LanguageExtensionsList languageExtensionsToAdd, Context context) {
+        serviceManager
+            .clusters()
+            .addLanguageExtensions(resourceGroupName, clusterName, languageExtensionsToAdd, context);
+    }
+
+    public void removeLanguageExtensions(LanguageExtensionsList languageExtensionsToRemove) {
+        serviceManager.clusters().removeLanguageExtensions(resourceGroupName, clusterName, languageExtensionsToRemove);
+    }
+
+    public void removeLanguageExtensions(LanguageExtensionsList languageExtensionsToRemove, Context context) {
+        serviceManager
+            .clusters()
+            .removeLanguageExtensions(resourceGroupName, clusterName, languageExtensionsToRemove, context);
     }
 
     public ClusterImpl withRegion(Region location) {

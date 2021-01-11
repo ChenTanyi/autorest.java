@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.storage.generated.implementation;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.storage.generated.StorageManager;
@@ -11,8 +12,10 @@ import com.azure.resourcemanager.storage.generated.fluent.models.BlobRestoreStat
 import com.azure.resourcemanager.storage.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountInner;
 import com.azure.resourcemanager.storage.generated.models.AccessTier;
+import com.azure.resourcemanager.storage.generated.models.AccountSasParameters;
 import com.azure.resourcemanager.storage.generated.models.AccountStatus;
 import com.azure.resourcemanager.storage.generated.models.AzureFilesIdentityBasedAuthentication;
+import com.azure.resourcemanager.storage.generated.models.BlobRestoreParameters;
 import com.azure.resourcemanager.storage.generated.models.BlobRestoreStatus;
 import com.azure.resourcemanager.storage.generated.models.CustomDomain;
 import com.azure.resourcemanager.storage.generated.models.Encryption;
@@ -21,15 +24,21 @@ import com.azure.resourcemanager.storage.generated.models.GeoReplicationStats;
 import com.azure.resourcemanager.storage.generated.models.Identity;
 import com.azure.resourcemanager.storage.generated.models.Kind;
 import com.azure.resourcemanager.storage.generated.models.LargeFileSharesState;
+import com.azure.resourcemanager.storage.generated.models.ListAccountSasResponse;
+import com.azure.resourcemanager.storage.generated.models.ListKeyExpand;
+import com.azure.resourcemanager.storage.generated.models.ListServiceSasResponse;
 import com.azure.resourcemanager.storage.generated.models.MinimumTlsVersion;
 import com.azure.resourcemanager.storage.generated.models.NetworkRuleSet;
 import com.azure.resourcemanager.storage.generated.models.PrivateEndpointConnection;
 import com.azure.resourcemanager.storage.generated.models.ProvisioningState;
 import com.azure.resourcemanager.storage.generated.models.RoutingPreference;
+import com.azure.resourcemanager.storage.generated.models.ServiceSasParameters;
 import com.azure.resourcemanager.storage.generated.models.Sku;
 import com.azure.resourcemanager.storage.generated.models.StorageAccount;
 import com.azure.resourcemanager.storage.generated.models.StorageAccountCreateParameters;
 import com.azure.resourcemanager.storage.generated.models.StorageAccountExpand;
+import com.azure.resourcemanager.storage.generated.models.StorageAccountListKeysResult;
+import com.azure.resourcemanager.storage.generated.models.StorageAccountRegenerateKeyParameters;
 import com.azure.resourcemanager.storage.generated.models.StorageAccountUpdateParameters;
 import java.time.OffsetDateTime;
 import java.util.Collections;
@@ -296,6 +305,73 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
                 .getByResourceGroupWithResponse(resourceGroupName, accountName, localExpand, context)
                 .getValue();
         return this;
+    }
+
+    public StorageAccountListKeysResult listKeys() {
+        return serviceManager.storageAccounts().listKeys(resourceGroupName, accountName);
+    }
+
+    public Response<StorageAccountListKeysResult> listKeysWithResponse(ListKeyExpand expand, Context context) {
+        return serviceManager.storageAccounts().listKeysWithResponse(resourceGroupName, accountName, expand, context);
+    }
+
+    public StorageAccountListKeysResult regenerateKey(StorageAccountRegenerateKeyParameters regenerateKey) {
+        return serviceManager.storageAccounts().regenerateKey(resourceGroupName, accountName, regenerateKey);
+    }
+
+    public Response<StorageAccountListKeysResult> regenerateKeyWithResponse(
+        StorageAccountRegenerateKeyParameters regenerateKey, Context context) {
+        return serviceManager
+            .storageAccounts()
+            .regenerateKeyWithResponse(resourceGroupName, accountName, regenerateKey, context);
+    }
+
+    public ListAccountSasResponse listAccountSas(AccountSasParameters parameters) {
+        return serviceManager.storageAccounts().listAccountSas(resourceGroupName, accountName, parameters);
+    }
+
+    public Response<ListAccountSasResponse> listAccountSasWithResponse(
+        AccountSasParameters parameters, Context context) {
+        return serviceManager
+            .storageAccounts()
+            .listAccountSasWithResponse(resourceGroupName, accountName, parameters, context);
+    }
+
+    public ListServiceSasResponse listServiceSas(ServiceSasParameters parameters) {
+        return serviceManager.storageAccounts().listServiceSas(resourceGroupName, accountName, parameters);
+    }
+
+    public Response<ListServiceSasResponse> listServiceSasWithResponse(
+        ServiceSasParameters parameters, Context context) {
+        return serviceManager
+            .storageAccounts()
+            .listServiceSasWithResponse(resourceGroupName, accountName, parameters, context);
+    }
+
+    public void failover() {
+        serviceManager.storageAccounts().failover(resourceGroupName, accountName);
+    }
+
+    public void failover(Context context) {
+        serviceManager.storageAccounts().failover(resourceGroupName, accountName, context);
+    }
+
+    public BlobRestoreStatus restoreBlobRanges(BlobRestoreParameters parameters) {
+        return serviceManager.storageAccounts().restoreBlobRanges(resourceGroupName, accountName, parameters);
+    }
+
+    public BlobRestoreStatus restoreBlobRanges(BlobRestoreParameters parameters, Context context) {
+        return serviceManager.storageAccounts().restoreBlobRanges(resourceGroupName, accountName, parameters, context);
+    }
+
+    public void revokeUserDelegationKeys() {
+        serviceManager.storageAccounts().revokeUserDelegationKeys(resourceGroupName, accountName);
+    }
+
+    public Response<Void> revokeUserDelegationKeysWithResponse(Context context) {
+        return serviceManager
+            .storageAccounts()
+            .revokeUserDelegationKeysWithResponse(resourceGroupName, accountName, context);
     }
 
     public StorageAccountImpl withRegion(Region location) {

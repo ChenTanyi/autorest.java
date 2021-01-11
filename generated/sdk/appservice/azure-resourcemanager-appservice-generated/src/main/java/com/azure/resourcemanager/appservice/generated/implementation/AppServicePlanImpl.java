@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
@@ -238,6 +239,16 @@ public final class AppServicePlanImpl implements AppServicePlan, AppServicePlan.
                 .getByResourceGroupWithResponse(resourceGroupName, name, context)
                 .getValue();
         return this;
+    }
+
+    public void restartWebApps() {
+        serviceManager.appServicePlans().restartWebApps(resourceGroupName, name);
+    }
+
+    public Response<Void> restartWebAppsWithResponse(Boolean softRestart, Context context) {
+        return serviceManager
+            .appServicePlans()
+            .restartWebAppsWithResponse(resourceGroupName, name, softRestart, context);
     }
 
     public AppServicePlanImpl withRegion(Region location) {

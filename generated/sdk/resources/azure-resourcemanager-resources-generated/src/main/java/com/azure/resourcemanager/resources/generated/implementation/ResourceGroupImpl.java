@@ -8,7 +8,9 @@ import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.resources.generated.ResourceManager;
 import com.azure.resourcemanager.resources.generated.fluent.models.ResourceGroupInner;
+import com.azure.resourcemanager.resources.generated.models.ExportTemplateRequest;
 import com.azure.resourcemanager.resources.generated.models.ResourceGroup;
+import com.azure.resourcemanager.resources.generated.models.ResourceGroupExportResult;
 import com.azure.resourcemanager.resources.generated.models.ResourceGroupPatchable;
 import com.azure.resourcemanager.resources.generated.models.ResourceGroupProperties;
 import java.util.Collections;
@@ -143,6 +145,14 @@ public final class ResourceGroupImpl implements ResourceGroup, ResourceGroup.Def
         this.innerObject =
             serviceManager.serviceClient().getResourceGroups().getWithResponse(resourceGroupName, context).getValue();
         return this;
+    }
+
+    public ResourceGroupExportResult exportTemplate(ExportTemplateRequest parameters) {
+        return serviceManager.resourceGroups().exportTemplate(resourceGroupName, parameters);
+    }
+
+    public ResourceGroupExportResult exportTemplate(ExportTemplateRequest parameters, Context context) {
+        return serviceManager.resourceGroups().exportTemplate(resourceGroupName, parameters, context);
     }
 
     public ResourceGroupImpl withRegion(Region location) {

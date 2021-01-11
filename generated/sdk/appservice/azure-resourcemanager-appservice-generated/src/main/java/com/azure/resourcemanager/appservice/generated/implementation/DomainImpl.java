@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
@@ -257,6 +258,14 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
                 .getByResourceGroupWithResponse(resourceGroupName, domainName, context)
                 .getValue();
         return this;
+    }
+
+    public void renew() {
+        serviceManager.domains().renew(resourceGroupName, domainName);
+    }
+
+    public Response<Void> renewWithResponse(Context context) {
+        return serviceManager.domains().renewWithResponse(resourceGroupName, domainName, context);
     }
 
     public DomainImpl withRegion(Region location) {

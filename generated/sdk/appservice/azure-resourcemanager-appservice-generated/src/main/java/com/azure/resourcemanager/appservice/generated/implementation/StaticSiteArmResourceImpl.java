@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
@@ -12,6 +13,10 @@ import com.azure.resourcemanager.appservice.generated.models.SkuDescription;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteBuildProperties;
 import com.azure.resourcemanager.appservice.generated.models.StaticSitePatchResource;
+import com.azure.resourcemanager.appservice.generated.models.StaticSiteResetPropertiesArmResource;
+import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserInvitationRequestResource;
+import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserInvitationResponseResource;
+import com.azure.resourcemanager.appservice.generated.models.StringDictionary;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.util.Collections;
 import java.util.List;
@@ -192,6 +197,58 @@ public final class StaticSiteArmResourceImpl
                 .getByResourceGroupWithResponse(resourceGroupName, name, context)
                 .getValue();
         return this;
+    }
+
+    public StaticSiteUserInvitationResponseResource createUserRolesInvitationLink(
+        StaticSiteUserInvitationRequestResource staticSiteUserRolesInvitationEnvelope) {
+        return serviceManager
+            .staticSites()
+            .createUserRolesInvitationLink(resourceGroupName, name, staticSiteUserRolesInvitationEnvelope);
+    }
+
+    public Response<StaticSiteUserInvitationResponseResource> createUserRolesInvitationLinkWithResponse(
+        StaticSiteUserInvitationRequestResource staticSiteUserRolesInvitationEnvelope, Context context) {
+        return serviceManager
+            .staticSites()
+            .createUserRolesInvitationLinkWithResponse(
+                resourceGroupName, name, staticSiteUserRolesInvitationEnvelope, context);
+    }
+
+    public void detachStaticSite() {
+        serviceManager.staticSites().detachStaticSite(resourceGroupName, name);
+    }
+
+    public Response<Void> detachStaticSiteWithResponse(Context context) {
+        return serviceManager.staticSites().detachStaticSiteWithResponse(resourceGroupName, name, context);
+    }
+
+    public StringDictionary listStaticSiteFunctionAppSettings() {
+        return serviceManager.staticSites().listStaticSiteFunctionAppSettings(resourceGroupName, name);
+    }
+
+    public Response<StringDictionary> listStaticSiteFunctionAppSettingsWithResponse(Context context) {
+        return serviceManager
+            .staticSites()
+            .listStaticSiteFunctionAppSettingsWithResponse(resourceGroupName, name, context);
+    }
+
+    public StringDictionary listStaticSiteSecrets() {
+        return serviceManager.staticSites().listStaticSiteSecrets(resourceGroupName, name);
+    }
+
+    public Response<StringDictionary> listStaticSiteSecretsWithResponse(Context context) {
+        return serviceManager.staticSites().listStaticSiteSecretsWithResponse(resourceGroupName, name, context);
+    }
+
+    public void resetStaticSiteApiKey(StaticSiteResetPropertiesArmResource resetPropertiesEnvelope) {
+        serviceManager.staticSites().resetStaticSiteApiKey(resourceGroupName, name, resetPropertiesEnvelope);
+    }
+
+    public Response<Void> resetStaticSiteApiKeyWithResponse(
+        StaticSiteResetPropertiesArmResource resetPropertiesEnvelope, Context context) {
+        return serviceManager
+            .staticSites()
+            .resetStaticSiteApiKeyWithResponse(resourceGroupName, name, resetPropertiesEnvelope, context);
     }
 
     public StaticSiteArmResourceImpl withRegion(Region location) {

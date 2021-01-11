@@ -4,10 +4,12 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceCertificateOrderInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.NameIdentifierInner;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceCertificate;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceCertificateOrder;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceCertificateOrderPatchResource;
@@ -16,6 +18,10 @@ import com.azure.resourcemanager.appservice.generated.models.CertificateDetails;
 import com.azure.resourcemanager.appservice.generated.models.CertificateOrderStatus;
 import com.azure.resourcemanager.appservice.generated.models.CertificateProductType;
 import com.azure.resourcemanager.appservice.generated.models.ProvisioningState;
+import com.azure.resourcemanager.appservice.generated.models.ReissueCertificateOrderRequest;
+import com.azure.resourcemanager.appservice.generated.models.RenewCertificateOrderRequest;
+import com.azure.resourcemanager.appservice.generated.models.SiteSeal;
+import com.azure.resourcemanager.appservice.generated.models.SiteSealRequest;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.time.OffsetDateTime;
 import java.util.Collections;
@@ -252,6 +258,76 @@ public final class AppServiceCertificateOrderImpl
                 .getByResourceGroupWithResponse(resourceGroupName, certificateOrderName, context)
                 .getValue();
         return this;
+    }
+
+    public void reissue(ReissueCertificateOrderRequest reissueCertificateOrderRequest) {
+        serviceManager
+            .appServiceCertificateOrders()
+            .reissue(resourceGroupName, certificateOrderName, reissueCertificateOrderRequest);
+    }
+
+    public Response<Void> reissueWithResponse(
+        ReissueCertificateOrderRequest reissueCertificateOrderRequest, Context context) {
+        return serviceManager
+            .appServiceCertificateOrders()
+            .reissueWithResponse(resourceGroupName, certificateOrderName, reissueCertificateOrderRequest, context);
+    }
+
+    public void renew(RenewCertificateOrderRequest renewCertificateOrderRequest) {
+        serviceManager
+            .appServiceCertificateOrders()
+            .renew(resourceGroupName, certificateOrderName, renewCertificateOrderRequest);
+    }
+
+    public Response<Void> renewWithResponse(
+        RenewCertificateOrderRequest renewCertificateOrderRequest, Context context) {
+        return serviceManager
+            .appServiceCertificateOrders()
+            .renewWithResponse(resourceGroupName, certificateOrderName, renewCertificateOrderRequest, context);
+    }
+
+    public void resendEmail() {
+        serviceManager.appServiceCertificateOrders().resendEmail(resourceGroupName, certificateOrderName);
+    }
+
+    public Response<Void> resendEmailWithResponse(Context context) {
+        return serviceManager
+            .appServiceCertificateOrders()
+            .resendEmailWithResponse(resourceGroupName, certificateOrderName, context);
+    }
+
+    public void resendRequestEmails(NameIdentifierInner nameIdentifier) {
+        serviceManager
+            .appServiceCertificateOrders()
+            .resendRequestEmails(resourceGroupName, certificateOrderName, nameIdentifier);
+    }
+
+    public Response<Void> resendRequestEmailsWithResponse(NameIdentifierInner nameIdentifier, Context context) {
+        return serviceManager
+            .appServiceCertificateOrders()
+            .resendRequestEmailsWithResponse(resourceGroupName, certificateOrderName, nameIdentifier, context);
+    }
+
+    public SiteSeal retrieveSiteSeal(SiteSealRequest siteSealRequest) {
+        return serviceManager
+            .appServiceCertificateOrders()
+            .retrieveSiteSeal(resourceGroupName, certificateOrderName, siteSealRequest);
+    }
+
+    public Response<SiteSeal> retrieveSiteSealWithResponse(SiteSealRequest siteSealRequest, Context context) {
+        return serviceManager
+            .appServiceCertificateOrders()
+            .retrieveSiteSealWithResponse(resourceGroupName, certificateOrderName, siteSealRequest, context);
+    }
+
+    public void verifyDomainOwnership() {
+        serviceManager.appServiceCertificateOrders().verifyDomainOwnership(resourceGroupName, certificateOrderName);
+    }
+
+    public Response<Void> verifyDomainOwnershipWithResponse(Context context) {
+        return serviceManager
+            .appServiceCertificateOrders()
+            .verifyDomainOwnershipWithResponse(resourceGroupName, certificateOrderName, context);
     }
 
     public AppServiceCertificateOrderImpl withRegion(Region location) {

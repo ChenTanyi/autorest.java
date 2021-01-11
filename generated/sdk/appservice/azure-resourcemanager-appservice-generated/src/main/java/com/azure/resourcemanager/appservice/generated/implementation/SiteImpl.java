@@ -4,24 +4,42 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.http.rest.PagedIterable;
+import com.azure.core.http.rest.Response;
+import com.azure.core.http.rest.StreamResponse;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.fluent.models.BackupRequestInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.CsmCopySlotEntityInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.RestoreRequestInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SitePatchResourceInner;
+import com.azure.resourcemanager.appservice.generated.models.BackupItem;
 import com.azure.resourcemanager.appservice.generated.models.ClientCertMode;
 import com.azure.resourcemanager.appservice.generated.models.CloningInfo;
+import com.azure.resourcemanager.appservice.generated.models.CsmPublishingProfileOptions;
+import com.azure.resourcemanager.appservice.generated.models.CsmSlotEntity;
+import com.azure.resourcemanager.appservice.generated.models.DeletedAppRestoreRequest;
+import com.azure.resourcemanager.appservice.generated.models.FunctionSecrets;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentProfile;
 import com.azure.resourcemanager.appservice.generated.models.HostnameSslState;
 import com.azure.resourcemanager.appservice.generated.models.ManagedServiceIdentity;
+import com.azure.resourcemanager.appservice.generated.models.MigrateMySqlRequest;
+import com.azure.resourcemanager.appservice.generated.models.Operation;
 import com.azure.resourcemanager.appservice.generated.models.RedundancyMode;
+import com.azure.resourcemanager.appservice.generated.models.RestoreRequest;
 import com.azure.resourcemanager.appservice.generated.models.Site;
 import com.azure.resourcemanager.appservice.generated.models.SiteAvailabilityState;
+import com.azure.resourcemanager.appservice.generated.models.SiteCloneability;
 import com.azure.resourcemanager.appservice.generated.models.SiteConfig;
+import com.azure.resourcemanager.appservice.generated.models.SlotDifference;
 import com.azure.resourcemanager.appservice.generated.models.SlotSwapStatus;
+import com.azure.resourcemanager.appservice.generated.models.SnapshotRestoreRequest;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.UsageState;
+import java.io.InputStream;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -348,6 +366,217 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
                 .getByResourceGroupWithResponse(resourceGroupName, name, context)
                 .getValue();
         return this;
+    }
+
+    public void applySlotConfigToProduction(CsmSlotEntity slotSwapEntity) {
+        serviceManager.webApps().applySlotConfigToProduction(resourceGroupName, name, slotSwapEntity);
+    }
+
+    public Response<Void> applySlotConfigToProductionWithResponse(CsmSlotEntity slotSwapEntity, Context context) {
+        return serviceManager
+            .webApps()
+            .applySlotConfigToProductionWithResponse(resourceGroupName, name, slotSwapEntity, context);
+    }
+
+    public BackupItem backup(BackupRequestInner request) {
+        return serviceManager.webApps().backup(resourceGroupName, name, request);
+    }
+
+    public Response<BackupItem> backupWithResponse(BackupRequestInner request, Context context) {
+        return serviceManager.webApps().backupWithResponse(resourceGroupName, name, request, context);
+    }
+
+    public InputStream getWebSiteContainerLogs() {
+        return serviceManager.webApps().getWebSiteContainerLogs(resourceGroupName, name);
+    }
+
+    public StreamResponse getWebSiteContainerLogsWithResponse(Context context) {
+        return serviceManager.webApps().getWebSiteContainerLogsWithResponse(resourceGroupName, name, context);
+    }
+
+    public RestoreRequest discoverBackup(RestoreRequestInner request) {
+        return serviceManager.webApps().discoverBackup(resourceGroupName, name, request);
+    }
+
+    public Response<RestoreRequest> discoverBackupWithResponse(RestoreRequestInner request, Context context) {
+        return serviceManager.webApps().discoverBackupWithResponse(resourceGroupName, name, request, context);
+    }
+
+    public SiteCloneability isCloneable() {
+        return serviceManager.webApps().isCloneable(resourceGroupName, name);
+    }
+
+    public Response<SiteCloneability> isCloneableWithResponse(Context context) {
+        return serviceManager.webApps().isCloneableWithResponse(resourceGroupName, name, context);
+    }
+
+    public PagedIterable<BackupItem> listSiteBackups() {
+        return serviceManager.webApps().listSiteBackups(resourceGroupName, name);
+    }
+
+    public PagedIterable<BackupItem> listSiteBackups(Context context) {
+        return serviceManager.webApps().listSiteBackups(resourceGroupName, name, context);
+    }
+
+    public FunctionSecrets listSyncFunctionTriggers() {
+        return serviceManager.webApps().listSyncFunctionTriggers(resourceGroupName, name);
+    }
+
+    public Response<FunctionSecrets> listSyncFunctionTriggersWithResponse(Context context) {
+        return serviceManager.webApps().listSyncFunctionTriggersWithResponse(resourceGroupName, name, context);
+    }
+
+    public Operation migrateMySql(MigrateMySqlRequest migrationRequestEnvelope) {
+        return serviceManager.webApps().migrateMySql(resourceGroupName, name, migrationRequestEnvelope);
+    }
+
+    public Operation migrateMySql(MigrateMySqlRequest migrationRequestEnvelope, Context context) {
+        return serviceManager.webApps().migrateMySql(resourceGroupName, name, migrationRequestEnvelope, context);
+    }
+
+    public void generateNewSitePublishingPassword() {
+        serviceManager.webApps().generateNewSitePublishingPassword(resourceGroupName, name);
+    }
+
+    public Response<Void> generateNewSitePublishingPasswordWithResponse(Context context) {
+        return serviceManager.webApps().generateNewSitePublishingPasswordWithResponse(resourceGroupName, name, context);
+    }
+
+    public InputStream listPublishingProfileXmlWithSecrets(CsmPublishingProfileOptions publishingProfileOptions) {
+        return serviceManager
+            .webApps()
+            .listPublishingProfileXmlWithSecrets(resourceGroupName, name, publishingProfileOptions);
+    }
+
+    public StreamResponse listPublishingProfileXmlWithSecretsWithResponse(
+        CsmPublishingProfileOptions publishingProfileOptions, Context context) {
+        return serviceManager
+            .webApps()
+            .listPublishingProfileXmlWithSecretsWithResponse(
+                resourceGroupName, name, publishingProfileOptions, context);
+    }
+
+    public void resetProductionSlotConfig() {
+        serviceManager.webApps().resetProductionSlotConfig(resourceGroupName, name);
+    }
+
+    public Response<Void> resetProductionSlotConfigWithResponse(Context context) {
+        return serviceManager.webApps().resetProductionSlotConfigWithResponse(resourceGroupName, name, context);
+    }
+
+    public void restart() {
+        serviceManager.webApps().restart(resourceGroupName, name);
+    }
+
+    public Response<Void> restartWithResponse(Boolean softRestart, Boolean synchronous, Context context) {
+        return serviceManager.webApps().restartWithResponse(resourceGroupName, name, softRestart, synchronous, context);
+    }
+
+    public void restoreFromBackupBlob(RestoreRequestInner request) {
+        serviceManager.webApps().restoreFromBackupBlob(resourceGroupName, name, request);
+    }
+
+    public void restoreFromBackupBlob(RestoreRequestInner request, Context context) {
+        serviceManager.webApps().restoreFromBackupBlob(resourceGroupName, name, request, context);
+    }
+
+    public void restoreFromDeletedApp(DeletedAppRestoreRequest restoreRequest) {
+        serviceManager.webApps().restoreFromDeletedApp(resourceGroupName, name, restoreRequest);
+    }
+
+    public void restoreFromDeletedApp(DeletedAppRestoreRequest restoreRequest, Context context) {
+        serviceManager.webApps().restoreFromDeletedApp(resourceGroupName, name, restoreRequest, context);
+    }
+
+    public void restoreSnapshot(SnapshotRestoreRequest restoreRequest) {
+        serviceManager.webApps().restoreSnapshot(resourceGroupName, name, restoreRequest);
+    }
+
+    public void restoreSnapshot(SnapshotRestoreRequest restoreRequest, Context context) {
+        serviceManager.webApps().restoreSnapshot(resourceGroupName, name, restoreRequest, context);
+    }
+
+    public void copyProductionSlot(CsmCopySlotEntityInner copySlotEntity) {
+        serviceManager.webApps().copyProductionSlot(resourceGroupName, name, copySlotEntity);
+    }
+
+    public void copyProductionSlot(CsmCopySlotEntityInner copySlotEntity, Context context) {
+        serviceManager.webApps().copyProductionSlot(resourceGroupName, name, copySlotEntity, context);
+    }
+
+    public PagedIterable<SlotDifference> listSlotDifferencesFromProduction(CsmSlotEntity slotSwapEntity) {
+        return serviceManager.webApps().listSlotDifferencesFromProduction(resourceGroupName, name, slotSwapEntity);
+    }
+
+    public PagedIterable<SlotDifference> listSlotDifferencesFromProduction(
+        CsmSlotEntity slotSwapEntity, Context context) {
+        return serviceManager
+            .webApps()
+            .listSlotDifferencesFromProduction(resourceGroupName, name, slotSwapEntity, context);
+    }
+
+    public void swapSlotWithProduction(CsmSlotEntity slotSwapEntity) {
+        serviceManager.webApps().swapSlotWithProduction(resourceGroupName, name, slotSwapEntity);
+    }
+
+    public void swapSlotWithProduction(CsmSlotEntity slotSwapEntity, Context context) {
+        serviceManager.webApps().swapSlotWithProduction(resourceGroupName, name, slotSwapEntity, context);
+    }
+
+    public void start() {
+        serviceManager.webApps().start(resourceGroupName, name);
+    }
+
+    public Response<Void> startWithResponse(Context context) {
+        return serviceManager.webApps().startWithResponse(resourceGroupName, name, context);
+    }
+
+    public Object startNetworkTrace(Integer durationInSeconds, Integer maxFrameLength, String sasUrl) {
+        return serviceManager
+            .webApps()
+            .startNetworkTrace(resourceGroupName, name, durationInSeconds, maxFrameLength, sasUrl);
+    }
+
+    public Object startNetworkTrace() {
+        return serviceManager.webApps().startNetworkTrace(resourceGroupName, name);
+    }
+
+    public Object startNetworkTrace(Integer durationInSeconds, Integer maxFrameLength, String sasUrl, Context context) {
+        return serviceManager
+            .webApps()
+            .startNetworkTrace(resourceGroupName, name, durationInSeconds, maxFrameLength, sasUrl, context);
+    }
+
+    public void stop() {
+        serviceManager.webApps().stop(resourceGroupName, name);
+    }
+
+    public Response<Void> stopWithResponse(Context context) {
+        return serviceManager.webApps().stopWithResponse(resourceGroupName, name, context);
+    }
+
+    public void stopNetworkTrace() {
+        serviceManager.webApps().stopNetworkTrace(resourceGroupName, name);
+    }
+
+    public Response<Void> stopNetworkTraceWithResponse(Context context) {
+        return serviceManager.webApps().stopNetworkTraceWithResponse(resourceGroupName, name, context);
+    }
+
+    public void syncRepository() {
+        serviceManager.webApps().syncRepository(resourceGroupName, name);
+    }
+
+    public Response<Void> syncRepositoryWithResponse(Context context) {
+        return serviceManager.webApps().syncRepositoryWithResponse(resourceGroupName, name, context);
+    }
+
+    public void syncFunctionTriggers() {
+        serviceManager.webApps().syncFunctionTriggers(resourceGroupName, name);
+    }
+
+    public Response<Void> syncFunctionTriggersWithResponse(Context context) {
+        return serviceManager.webApps().syncFunctionTriggersWithResponse(resourceGroupName, name, context);
     }
 
     public SiteImpl withRegion(Region location) {

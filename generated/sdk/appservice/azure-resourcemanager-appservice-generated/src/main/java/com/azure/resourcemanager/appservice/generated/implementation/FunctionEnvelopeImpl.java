@@ -4,10 +4,13 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.FunctionEnvelopeInner;
 import com.azure.resourcemanager.appservice.generated.models.FunctionEnvelope;
+import com.azure.resourcemanager.appservice.generated.models.FunctionSecrets;
+import com.azure.resourcemanager.appservice.generated.models.StringDictionary;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.util.Collections;
 import java.util.Map;
@@ -161,6 +164,22 @@ public final class FunctionEnvelopeImpl implements FunctionEnvelope, FunctionEnv
                 .getFunctionWithResponse(resourceGroupName, name, functionName, context)
                 .getValue();
         return this;
+    }
+
+    public StringDictionary listFunctionKeys() {
+        return serviceManager.webApps().listFunctionKeys(resourceGroupName, name, functionName);
+    }
+
+    public Response<StringDictionary> listFunctionKeysWithResponse(Context context) {
+        return serviceManager.webApps().listFunctionKeysWithResponse(resourceGroupName, name, functionName, context);
+    }
+
+    public FunctionSecrets listFunctionSecrets() {
+        return serviceManager.webApps().listFunctionSecrets(resourceGroupName, name, functionName);
+    }
+
+    public Response<FunctionSecrets> listFunctionSecretsWithResponse(Context context) {
+        return serviceManager.webApps().listFunctionSecretsWithResponse(resourceGroupName, name, functionName, context);
     }
 
     public FunctionEnvelopeImpl withKind(String kind) {

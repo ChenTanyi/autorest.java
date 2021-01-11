@@ -4,9 +4,11 @@
 
 package com.azure.resourcemanager.storage.generated.implementation;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.FileShareInner;
+import com.azure.resourcemanager.storage.generated.models.DeletedShare;
 import com.azure.resourcemanager.storage.generated.models.EnabledProtocols;
 import com.azure.resourcemanager.storage.generated.models.FileShare;
 import com.azure.resourcemanager.storage.generated.models.GetShareExpand;
@@ -192,6 +194,16 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
                 .getWithResponse(resourceGroupName, accountName, shareName, localExpand, context)
                 .getValue();
         return this;
+    }
+
+    public void restore(DeletedShare deletedShare) {
+        serviceManager.fileShares().restore(resourceGroupName, accountName, shareName, deletedShare);
+    }
+
+    public Response<Void> restoreWithResponse(DeletedShare deletedShare, Context context) {
+        return serviceManager
+            .fileShares()
+            .restoreWithResponse(resourceGroupName, accountName, shareName, deletedShare, context);
     }
 
     public FileShareImpl withMetadata(Map<String, String> metadata) {

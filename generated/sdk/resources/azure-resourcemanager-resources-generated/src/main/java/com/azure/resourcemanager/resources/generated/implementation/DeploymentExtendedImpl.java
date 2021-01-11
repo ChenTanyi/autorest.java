@@ -4,14 +4,19 @@
 
 package com.azure.resourcemanager.resources.generated.implementation;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.resources.generated.ResourceManager;
 import com.azure.resourcemanager.resources.generated.fluent.models.DeploymentExtendedInner;
 import com.azure.resourcemanager.resources.generated.models.Deployment;
+import com.azure.resourcemanager.resources.generated.models.DeploymentExportResult;
 import com.azure.resourcemanager.resources.generated.models.DeploymentExtended;
 import com.azure.resourcemanager.resources.generated.models.DeploymentProperties;
 import com.azure.resourcemanager.resources.generated.models.DeploymentPropertiesExtended;
+import com.azure.resourcemanager.resources.generated.models.DeploymentValidateResult;
+import com.azure.resourcemanager.resources.generated.models.DeploymentWhatIf;
+import com.azure.resourcemanager.resources.generated.models.WhatIfOperationResult;
 import java.util.Collections;
 import java.util.Map;
 
@@ -152,6 +157,38 @@ public final class DeploymentExtendedImpl
                 .getByResourceGroupWithResponse(resourceGroupName, deploymentName, context)
                 .getValue();
         return this;
+    }
+
+    public void cancel() {
+        serviceManager.deployments().cancel(resourceGroupName, deploymentName);
+    }
+
+    public Response<Void> cancelWithResponse(Context context) {
+        return serviceManager.deployments().cancelWithResponse(resourceGroupName, deploymentName, context);
+    }
+
+    public DeploymentValidateResult validate(Deployment parameters) {
+        return serviceManager.deployments().validate(resourceGroupName, deploymentName, parameters);
+    }
+
+    public DeploymentValidateResult validate(Deployment parameters, Context context) {
+        return serviceManager.deployments().validate(resourceGroupName, deploymentName, parameters, context);
+    }
+
+    public WhatIfOperationResult whatIf(DeploymentWhatIf parameters) {
+        return serviceManager.deployments().whatIf(resourceGroupName, deploymentName, parameters);
+    }
+
+    public WhatIfOperationResult whatIf(DeploymentWhatIf parameters, Context context) {
+        return serviceManager.deployments().whatIf(resourceGroupName, deploymentName, parameters, context);
+    }
+
+    public DeploymentExportResult exportTemplate() {
+        return serviceManager.deployments().exportTemplate(resourceGroupName, deploymentName);
+    }
+
+    public Response<DeploymentExportResult> exportTemplateWithResponse(Context context) {
+        return serviceManager.deployments().exportTemplateWithResponse(resourceGroupName, deploymentName, context);
     }
 
     public DeploymentExtendedImpl withProperties(DeploymentProperties properties) {

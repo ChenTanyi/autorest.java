@@ -4,14 +4,19 @@
 
 package com.azure.resourcemanager.storage.generated.implementation;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.BlobContainerInner;
+import com.azure.resourcemanager.storage.generated.fluent.models.LegalHoldInner;
 import com.azure.resourcemanager.storage.generated.models.BlobContainer;
 import com.azure.resourcemanager.storage.generated.models.ImmutabilityPolicyProperties;
+import com.azure.resourcemanager.storage.generated.models.LeaseContainerRequest;
+import com.azure.resourcemanager.storage.generated.models.LeaseContainerResponse;
 import com.azure.resourcemanager.storage.generated.models.LeaseDuration;
 import com.azure.resourcemanager.storage.generated.models.LeaseState;
 import com.azure.resourcemanager.storage.generated.models.LeaseStatus;
+import com.azure.resourcemanager.storage.generated.models.LegalHold;
 import com.azure.resourcemanager.storage.generated.models.LegalHoldProperties;
 import com.azure.resourcemanager.storage.generated.models.PublicAccess;
 import java.time.OffsetDateTime;
@@ -204,6 +209,36 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
                 .getWithResponse(resourceGroupName, accountName, containerName, context)
                 .getValue();
         return this;
+    }
+
+    public LegalHold setLegalHold(LegalHoldInner legalHold) {
+        return serviceManager.blobContainers().setLegalHold(resourceGroupName, accountName, containerName, legalHold);
+    }
+
+    public Response<LegalHold> setLegalHoldWithResponse(LegalHoldInner legalHold, Context context) {
+        return serviceManager
+            .blobContainers()
+            .setLegalHoldWithResponse(resourceGroupName, accountName, containerName, legalHold, context);
+    }
+
+    public LegalHold clearLegalHold(LegalHoldInner legalHold) {
+        return serviceManager.blobContainers().clearLegalHold(resourceGroupName, accountName, containerName, legalHold);
+    }
+
+    public Response<LegalHold> clearLegalHoldWithResponse(LegalHoldInner legalHold, Context context) {
+        return serviceManager
+            .blobContainers()
+            .clearLegalHoldWithResponse(resourceGroupName, accountName, containerName, legalHold, context);
+    }
+
+    public LeaseContainerResponse lease() {
+        return serviceManager.blobContainers().lease(resourceGroupName, accountName, containerName);
+    }
+
+    public Response<LeaseContainerResponse> leaseWithResponse(LeaseContainerRequest parameters, Context context) {
+        return serviceManager
+            .blobContainers()
+            .leaseWithResponse(resourceGroupName, accountName, containerName, parameters, context);
     }
 
     public BlobContainerImpl withDefaultEncryptionScope(String defaultEncryptionScope) {

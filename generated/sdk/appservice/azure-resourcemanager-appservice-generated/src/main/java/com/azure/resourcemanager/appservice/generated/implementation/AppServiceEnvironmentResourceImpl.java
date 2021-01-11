@@ -4,6 +4,8 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.http.rest.PagedIterable;
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.WebSiteManager;
@@ -16,6 +18,7 @@ import com.azure.resourcemanager.appservice.generated.models.LoadBalancingMode;
 import com.azure.resourcemanager.appservice.generated.models.NameValuePair;
 import com.azure.resourcemanager.appservice.generated.models.NetworkAccessControlEntry;
 import com.azure.resourcemanager.appservice.generated.models.ProvisioningState;
+import com.azure.resourcemanager.appservice.generated.models.Site;
 import com.azure.resourcemanager.appservice.generated.models.StampCapacity;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.VirtualIpMapping;
@@ -359,6 +362,38 @@ public final class AppServiceEnvironmentResourceImpl
                 .getByResourceGroupWithResponse(resourceGroupName, name, context)
                 .getValue();
         return this;
+    }
+
+    public PagedIterable<Site> changeVnet(VirtualNetworkProfile vnetInfo) {
+        return serviceManager.appServiceEnvironments().changeVnet(resourceGroupName, name, vnetInfo);
+    }
+
+    public PagedIterable<Site> changeVnet(VirtualNetworkProfile vnetInfo, Context context) {
+        return serviceManager.appServiceEnvironments().changeVnet(resourceGroupName, name, vnetInfo, context);
+    }
+
+    public void reboot() {
+        serviceManager.appServiceEnvironments().reboot(resourceGroupName, name);
+    }
+
+    public Response<Void> rebootWithResponse(Context context) {
+        return serviceManager.appServiceEnvironments().rebootWithResponse(resourceGroupName, name, context);
+    }
+
+    public PagedIterable<Site> resume() {
+        return serviceManager.appServiceEnvironments().resume(resourceGroupName, name);
+    }
+
+    public PagedIterable<Site> resume(Context context) {
+        return serviceManager.appServiceEnvironments().resume(resourceGroupName, name, context);
+    }
+
+    public PagedIterable<Site> suspend() {
+        return serviceManager.appServiceEnvironments().suspend(resourceGroupName, name);
+    }
+
+    public PagedIterable<Site> suspend(Context context) {
+        return serviceManager.appServiceEnvironments().suspend(resourceGroupName, name, context);
     }
 
     public AppServiceEnvironmentResourceImpl withRegion(Region location) {

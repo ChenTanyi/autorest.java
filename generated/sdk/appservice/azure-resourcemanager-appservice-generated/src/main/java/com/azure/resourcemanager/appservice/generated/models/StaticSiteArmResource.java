@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteArmResourceInner;
@@ -370,4 +371,121 @@ public interface StaticSiteArmResource {
      * @return the refreshed resource.
      */
     StaticSiteArmResource refresh(Context context);
+
+    /**
+     * Description for Creates an invitation link for a user with the role.
+     *
+     * @param staticSiteUserRolesInvitationEnvelope Static sites user roles invitation resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static sites user roles invitation link resource.
+     */
+    StaticSiteUserInvitationResponseResource createUserRolesInvitationLink(
+        StaticSiteUserInvitationRequestResource staticSiteUserRolesInvitationEnvelope);
+
+    /**
+     * Description for Creates an invitation link for a user with the role.
+     *
+     * @param staticSiteUserRolesInvitationEnvelope Static sites user roles invitation resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return static sites user roles invitation link resource.
+     */
+    Response<StaticSiteUserInvitationResponseResource> createUserRolesInvitationLinkWithResponse(
+        StaticSiteUserInvitationRequestResource staticSiteUserRolesInvitationEnvelope, Context context);
+
+    /**
+     * Description for Detaches a static site.
+     *
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void detachStaticSite();
+
+    /**
+     * Description for Detaches a static site.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    Response<Void> detachStaticSiteWithResponse(Context context);
+
+    /**
+     * Description for Gets the application settings of a static site.
+     *
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return string dictionary resource.
+     */
+    StringDictionary listStaticSiteFunctionAppSettings();
+
+    /**
+     * Description for Gets the application settings of a static site.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return string dictionary resource.
+     */
+    Response<StringDictionary> listStaticSiteFunctionAppSettingsWithResponse(Context context);
+
+    /**
+     * Description for Lists the secrets for an existing static site.
+     *
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return string dictionary resource.
+     */
+    StringDictionary listStaticSiteSecrets();
+
+    /**
+     * Description for Lists the secrets for an existing static site.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return string dictionary resource.
+     */
+    Response<StringDictionary> listStaticSiteSecretsWithResponse(Context context);
+
+    /**
+     * Description for Resets the api key for an existing static site.
+     *
+     * @param resetPropertiesEnvelope Static Site Reset Properties ARM resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void resetStaticSiteApiKey(StaticSiteResetPropertiesArmResource resetPropertiesEnvelope);
+
+    /**
+     * Description for Resets the api key for an existing static site.
+     *
+     * @param resetPropertiesEnvelope Static Site Reset Properties ARM resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    Response<Void> resetStaticSiteApiKeyWithResponse(
+        StaticSiteResetPropertiesArmResource resetPropertiesEnvelope, Context context);
 }

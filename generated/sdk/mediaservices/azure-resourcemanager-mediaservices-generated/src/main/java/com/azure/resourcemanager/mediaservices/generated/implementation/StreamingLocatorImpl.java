@@ -4,9 +4,12 @@
 
 package com.azure.resourcemanager.mediaservices.generated.implementation;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.mediaservices.generated.MediaservicesManager;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.StreamingLocatorInner;
+import com.azure.resourcemanager.mediaservices.generated.models.ListContentKeysResponse;
+import com.azure.resourcemanager.mediaservices.generated.models.ListPathsResponse;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingLocator;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingLocatorContentKey;
 import java.time.OffsetDateTime;
@@ -151,6 +154,26 @@ public final class StreamingLocatorImpl implements StreamingLocator, StreamingLo
                 .getWithResponse(resourceGroupName, accountName, streamingLocatorName, context)
                 .getValue();
         return this;
+    }
+
+    public ListContentKeysResponse listContentKeys() {
+        return serviceManager.streamingLocators().listContentKeys(resourceGroupName, accountName, streamingLocatorName);
+    }
+
+    public Response<ListContentKeysResponse> listContentKeysWithResponse(Context context) {
+        return serviceManager
+            .streamingLocators()
+            .listContentKeysWithResponse(resourceGroupName, accountName, streamingLocatorName, context);
+    }
+
+    public ListPathsResponse listPaths() {
+        return serviceManager.streamingLocators().listPaths(resourceGroupName, accountName, streamingLocatorName);
+    }
+
+    public Response<ListPathsResponse> listPathsWithResponse(Context context) {
+        return serviceManager
+            .streamingLocators()
+            .listPathsWithResponse(resourceGroupName, accountName, streamingLocatorName, context);
     }
 
     public StreamingLocatorImpl withAssetName(String assetName) {

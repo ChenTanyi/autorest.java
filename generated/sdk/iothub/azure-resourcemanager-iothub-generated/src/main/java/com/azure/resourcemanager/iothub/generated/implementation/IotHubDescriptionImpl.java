@@ -4,13 +4,19 @@
 
 package com.azure.resourcemanager.iothub.generated.implementation;
 
+import com.azure.core.http.rest.PagedIterable;
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.iothub.generated.IotHubManager;
 import com.azure.resourcemanager.iothub.generated.fluent.models.IotHubDescriptionInner;
+import com.azure.resourcemanager.iothub.generated.models.ExportDevicesRequest;
+import com.azure.resourcemanager.iothub.generated.models.ImportDevicesRequest;
 import com.azure.resourcemanager.iothub.generated.models.IotHubDescription;
 import com.azure.resourcemanager.iothub.generated.models.IotHubProperties;
 import com.azure.resourcemanager.iothub.generated.models.IotHubSkuInfo;
+import com.azure.resourcemanager.iothub.generated.models.JobResponse;
+import com.azure.resourcemanager.iothub.generated.models.SharedAccessSignatureAuthorizationRule;
 import com.azure.resourcemanager.iothub.generated.models.TagsResource;
 import java.util.Collections;
 import java.util.Map;
@@ -160,6 +166,36 @@ public final class IotHubDescriptionImpl
                 .getByResourceGroupWithResponse(resourceGroupName, resourceName, context)
                 .getValue();
         return this;
+    }
+
+    public PagedIterable<SharedAccessSignatureAuthorizationRule> listKeys() {
+        return serviceManager.iotHubResources().listKeys(resourceGroupName, resourceName);
+    }
+
+    public PagedIterable<SharedAccessSignatureAuthorizationRule> listKeys(Context context) {
+        return serviceManager.iotHubResources().listKeys(resourceGroupName, resourceName, context);
+    }
+
+    public JobResponse exportDevices(ExportDevicesRequest exportDevicesParameters) {
+        return serviceManager.iotHubResources().exportDevices(resourceGroupName, resourceName, exportDevicesParameters);
+    }
+
+    public Response<JobResponse> exportDevicesWithResponse(
+        ExportDevicesRequest exportDevicesParameters, Context context) {
+        return serviceManager
+            .iotHubResources()
+            .exportDevicesWithResponse(resourceGroupName, resourceName, exportDevicesParameters, context);
+    }
+
+    public JobResponse importDevices(ImportDevicesRequest importDevicesParameters) {
+        return serviceManager.iotHubResources().importDevices(resourceGroupName, resourceName, importDevicesParameters);
+    }
+
+    public Response<JobResponse> importDevicesWithResponse(
+        ImportDevicesRequest importDevicesParameters, Context context) {
+        return serviceManager
+            .iotHubResources()
+            .importDevicesWithResponse(resourceGroupName, resourceName, importDevicesParameters, context);
     }
 
     public IotHubDescriptionImpl withRegion(Region location) {

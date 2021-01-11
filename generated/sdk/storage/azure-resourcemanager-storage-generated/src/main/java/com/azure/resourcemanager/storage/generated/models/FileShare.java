@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.storage.generated.models;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.storage.generated.fluent.models.FileShareInner;
 import java.time.OffsetDateTime;
@@ -347,4 +348,26 @@ public interface FileShare {
      * @return the refreshed resource.
      */
     FileShare refresh(Context context);
+
+    /**
+     * Restore a file share within a valid retention days if share soft delete is enabled.
+     *
+     * @param deletedShare The deleted share to be restored.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void restore(DeletedShare deletedShare);
+
+    /**
+     * Restore a file share within a valid retention days if share soft delete is enabled.
+     *
+     * @param deletedShare The deleted share to be restored.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    Response<Void> restoreWithResponse(DeletedShare deletedShare, Context context);
 }

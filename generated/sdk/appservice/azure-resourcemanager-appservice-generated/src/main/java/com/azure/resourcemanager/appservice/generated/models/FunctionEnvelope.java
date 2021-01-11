@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.FunctionEnvelopeInner;
 import java.util.Map;
@@ -352,4 +353,48 @@ public interface FunctionEnvelope {
      * @return the refreshed resource.
      */
     FunctionEnvelope refresh(Context context);
+
+    /**
+     * Description for Get function keys for a function in a web site, or a deployment slot.
+     *
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return string dictionary resource.
+     */
+    StringDictionary listFunctionKeys();
+
+    /**
+     * Description for Get function keys for a function in a web site, or a deployment slot.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return string dictionary resource.
+     */
+    Response<StringDictionary> listFunctionKeysWithResponse(Context context);
+
+    /**
+     * Description for Get function secrets for a function in a web site, or a deployment slot.
+     *
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return function secrets.
+     */
+    FunctionSecrets listFunctionSecrets();
+
+    /**
+     * Description for Get function secrets for a function in a web site, or a deployment slot.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return function secrets.
+     */
+    Response<FunctionSecrets> listFunctionSecretsWithResponse(Context context);
 }

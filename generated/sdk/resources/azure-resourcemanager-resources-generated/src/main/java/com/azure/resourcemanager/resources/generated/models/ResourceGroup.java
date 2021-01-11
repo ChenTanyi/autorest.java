@@ -241,4 +241,27 @@ public interface ResourceGroup {
      * @return the refreshed resource.
      */
     ResourceGroup refresh(Context context);
+
+    /**
+     * Captures the specified resource group as a template.
+     *
+     * @param parameters Parameters for exporting the template.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return resource group export result.
+     */
+    ResourceGroupExportResult exportTemplate(ExportTemplateRequest parameters);
+
+    /**
+     * Captures the specified resource group as a template.
+     *
+     * @param parameters Parameters for exporting the template.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return resource group export result.
+     */
+    ResourceGroupExportResult exportTemplate(ExportTemplateRequest parameters, Context context);
 }

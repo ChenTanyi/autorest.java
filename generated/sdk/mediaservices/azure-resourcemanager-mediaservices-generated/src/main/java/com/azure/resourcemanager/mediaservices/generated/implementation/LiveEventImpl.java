@@ -10,6 +10,7 @@ import com.azure.resourcemanager.mediaservices.generated.MediaservicesManager;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.LiveEventInner;
 import com.azure.resourcemanager.mediaservices.generated.models.CrossSiteAccessPolicies;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEvent;
+import com.azure.resourcemanager.mediaservices.generated.models.LiveEventActionInput;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEventEncoding;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEventInput;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEventPreview;
@@ -217,6 +218,38 @@ public final class LiveEventImpl implements LiveEvent, LiveEvent.Definition, Liv
                 .getWithResponse(resourceGroupName, accountName, liveEventName, context)
                 .getValue();
         return this;
+    }
+
+    public void allocate() {
+        serviceManager.liveEvents().allocate(resourceGroupName, accountName, liveEventName);
+    }
+
+    public void allocate(Context context) {
+        serviceManager.liveEvents().allocate(resourceGroupName, accountName, liveEventName, context);
+    }
+
+    public void start() {
+        serviceManager.liveEvents().start(resourceGroupName, accountName, liveEventName);
+    }
+
+    public void start(Context context) {
+        serviceManager.liveEvents().start(resourceGroupName, accountName, liveEventName, context);
+    }
+
+    public void stop(LiveEventActionInput parameters) {
+        serviceManager.liveEvents().stop(resourceGroupName, accountName, liveEventName, parameters);
+    }
+
+    public void stop(LiveEventActionInput parameters, Context context) {
+        serviceManager.liveEvents().stop(resourceGroupName, accountName, liveEventName, parameters, context);
+    }
+
+    public void reset() {
+        serviceManager.liveEvents().reset(resourceGroupName, accountName, liveEventName);
+    }
+
+    public void reset(Context context) {
+        serviceManager.liveEvents().reset(resourceGroupName, accountName, liveEventName, context);
     }
 
     public LiveEventImpl withRegion(Region location) {

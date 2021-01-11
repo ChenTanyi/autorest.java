@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ArmDisasterRecoveryInner;
@@ -145,6 +146,26 @@ public final class ArmDisasterRecoveryImpl
                 .getWithResponse(resourceGroupName, namespaceName, alias, context)
                 .getValue();
         return this;
+    }
+
+    public void breakPairing() {
+        serviceManager.disasterRecoveryConfigs().breakPairing(resourceGroupName, namespaceName, alias);
+    }
+
+    public Response<Void> breakPairingWithResponse(Context context) {
+        return serviceManager
+            .disasterRecoveryConfigs()
+            .breakPairingWithResponse(resourceGroupName, namespaceName, alias, context);
+    }
+
+    public void failOver() {
+        serviceManager.disasterRecoveryConfigs().failOver(resourceGroupName, namespaceName, alias);
+    }
+
+    public Response<Void> failOverWithResponse(Context context) {
+        return serviceManager
+            .disasterRecoveryConfigs()
+            .failOverWithResponse(resourceGroupName, namespaceName, alias, context);
     }
 
     public ArmDisasterRecoveryImpl withPartnerNamespace(String partnerNamespace) {

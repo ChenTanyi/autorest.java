@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.storage.generated.models;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountInner;
@@ -760,4 +761,159 @@ public interface StorageAccount {
      * @return the refreshed resource.
      */
     StorageAccount refresh(Context context);
+
+    /**
+     * Lists the access keys or Kerberos keys (if active directory enabled) for the specified storage account.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response from the ListKeys operation.
+     */
+    StorageAccountListKeysResult listKeys();
+
+    /**
+     * Lists the access keys or Kerberos keys (if active directory enabled) for the specified storage account.
+     *
+     * @param expand Specifies type of the key to be listed. Possible value is kerb.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response from the ListKeys operation.
+     */
+    Response<StorageAccountListKeysResult> listKeysWithResponse(ListKeyExpand expand, Context context);
+
+    /**
+     * Regenerates one of the access keys or Kerberos keys for the specified storage account.
+     *
+     * @param regenerateKey Specifies name of the key which should be regenerated -- key1, key2, kerb1, kerb2.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response from the ListKeys operation.
+     */
+    StorageAccountListKeysResult regenerateKey(StorageAccountRegenerateKeyParameters regenerateKey);
+
+    /**
+     * Regenerates one of the access keys or Kerberos keys for the specified storage account.
+     *
+     * @param regenerateKey Specifies name of the key which should be regenerated -- key1, key2, kerb1, kerb2.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response from the ListKeys operation.
+     */
+    Response<StorageAccountListKeysResult> regenerateKeyWithResponse(
+        StorageAccountRegenerateKeyParameters regenerateKey, Context context);
+
+    /**
+     * List SAS credentials of a storage account.
+     *
+     * @param parameters The parameters to provide to list SAS credentials for the storage account.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the List SAS credentials operation response.
+     */
+    ListAccountSasResponse listAccountSas(AccountSasParameters parameters);
+
+    /**
+     * List SAS credentials of a storage account.
+     *
+     * @param parameters The parameters to provide to list SAS credentials for the storage account.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the List SAS credentials operation response.
+     */
+    Response<ListAccountSasResponse> listAccountSasWithResponse(AccountSasParameters parameters, Context context);
+
+    /**
+     * List service SAS credentials of a specific resource.
+     *
+     * @param parameters The parameters to provide to list service SAS credentials.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the List service SAS credentials operation response.
+     */
+    ListServiceSasResponse listServiceSas(ServiceSasParameters parameters);
+
+    /**
+     * List service SAS credentials of a specific resource.
+     *
+     * @param parameters The parameters to provide to list service SAS credentials.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the List service SAS credentials operation response.
+     */
+    Response<ListServiceSasResponse> listServiceSasWithResponse(ServiceSasParameters parameters, Context context);
+
+    /**
+     * Failover request can be triggered for a storage account in case of availability issues. The failover occurs from
+     * the storage account's primary cluster to secondary cluster for RA-GRS accounts. The secondary cluster will become
+     * primary after failover.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void failover();
+
+    /**
+     * Failover request can be triggered for a storage account in case of availability issues. The failover occurs from
+     * the storage account's primary cluster to secondary cluster for RA-GRS accounts. The secondary cluster will become
+     * primary after failover.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void failover(Context context);
+
+    /**
+     * Restore blobs in the specified blob ranges.
+     *
+     * @param parameters The parameters to provide for restore blob ranges.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return blob restore status.
+     */
+    BlobRestoreStatus restoreBlobRanges(BlobRestoreParameters parameters);
+
+    /**
+     * Restore blobs in the specified blob ranges.
+     *
+     * @param parameters The parameters to provide for restore blob ranges.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return blob restore status.
+     */
+    BlobRestoreStatus restoreBlobRanges(BlobRestoreParameters parameters, Context context);
+
+    /**
+     * Revoke user delegation keys.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void revokeUserDelegationKeys();
+
+    /**
+     * Revoke user delegation keys.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    Response<Void> revokeUserDelegationKeysWithResponse(Context context);
 }

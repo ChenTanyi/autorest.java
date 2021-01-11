@@ -4,16 +4,20 @@
 
 package com.azure.resourcemanager.databoxedge.generated.implementation;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.DataBoxEdgeDeviceInner;
 import com.azure.resourcemanager.databoxedge.generated.models.DataBoxEdgeDevice;
+import com.azure.resourcemanager.databoxedge.generated.models.DataBoxEdgeDeviceExtendedInfo;
 import com.azure.resourcemanager.databoxedge.generated.models.DataBoxEdgeDevicePatch;
 import com.azure.resourcemanager.databoxedge.generated.models.DataBoxEdgeDeviceStatus;
 import com.azure.resourcemanager.databoxedge.generated.models.DeviceType;
 import com.azure.resourcemanager.databoxedge.generated.models.RoleTypes;
 import com.azure.resourcemanager.databoxedge.generated.models.Sku;
+import com.azure.resourcemanager.databoxedge.generated.models.UploadCertificateRequest;
+import com.azure.resourcemanager.databoxedge.generated.models.UploadCertificateResponse;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -219,6 +223,49 @@ public final class DataBoxEdgeDeviceImpl
                 .getByResourceGroupWithResponse(resourceGroupName, deviceName, context)
                 .getValue();
         return this;
+    }
+
+    public void downloadUpdates() {
+        serviceManager.devices().downloadUpdates(deviceName, resourceGroupName);
+    }
+
+    public void downloadUpdates(Context context) {
+        serviceManager.devices().downloadUpdates(deviceName, resourceGroupName, context);
+    }
+
+    public DataBoxEdgeDeviceExtendedInfo getExtendedInformation() {
+        return serviceManager.devices().getExtendedInformation(deviceName, resourceGroupName);
+    }
+
+    public Response<DataBoxEdgeDeviceExtendedInfo> getExtendedInformationWithResponse(Context context) {
+        return serviceManager.devices().getExtendedInformationWithResponse(deviceName, resourceGroupName, context);
+    }
+
+    public void installUpdates() {
+        serviceManager.devices().installUpdates(deviceName, resourceGroupName);
+    }
+
+    public void installUpdates(Context context) {
+        serviceManager.devices().installUpdates(deviceName, resourceGroupName, context);
+    }
+
+    public void scanForUpdates() {
+        serviceManager.devices().scanForUpdates(deviceName, resourceGroupName);
+    }
+
+    public void scanForUpdates(Context context) {
+        serviceManager.devices().scanForUpdates(deviceName, resourceGroupName, context);
+    }
+
+    public UploadCertificateResponse uploadCertificate(UploadCertificateRequest parameters) {
+        return serviceManager.devices().uploadCertificate(deviceName, resourceGroupName, parameters);
+    }
+
+    public Response<UploadCertificateResponse> uploadCertificateWithResponse(
+        UploadCertificateRequest parameters, Context context) {
+        return serviceManager
+            .devices()
+            .uploadCertificateWithResponse(deviceName, resourceGroupName, parameters, context);
     }
 
     public DataBoxEdgeDeviceImpl withRegion(Region location) {

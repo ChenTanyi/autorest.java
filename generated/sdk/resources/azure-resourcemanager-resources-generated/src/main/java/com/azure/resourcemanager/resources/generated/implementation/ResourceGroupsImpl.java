@@ -39,12 +39,16 @@ public final class ResourceGroupsImpl implements ResourceGroups {
         return this.serviceClient().checkExistenceWithResponse(resourceGroupName, context);
     }
 
+    public void deleteByResourceGroup(String resourceGroupName, String forceDeletionResourceTypes) {
+        this.serviceClient().delete(resourceGroupName, forceDeletionResourceTypes);
+    }
+
     public void delete(String resourceGroupName) {
         this.serviceClient().delete(resourceGroupName);
     }
 
-    public void delete(String resourceGroupName, Context context) {
-        this.serviceClient().delete(resourceGroupName, context);
+    public void delete(String resourceGroupName, String forceDeletionResourceTypes, Context context) {
+        this.serviceClient().delete(resourceGroupName, forceDeletionResourceTypes, context);
     }
 
     public ResourceGroup get(String resourceGroupName) {
@@ -132,10 +136,11 @@ public final class ResourceGroupsImpl implements ResourceGroups {
                         String
                             .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
-        this.delete(resourceGroupName, Context.NONE);
+        String localForceDeletionResourceTypes = null;
+        this.delete(resourceGroupName, localForceDeletionResourceTypes, Context.NONE);
     }
 
-    public void deleteByIdWithResponse(String id, Context context) {
+    public void deleteByIdWithResponse(String id, String forceDeletionResourceTypes, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
             throw logger
@@ -144,7 +149,7 @@ public final class ResourceGroupsImpl implements ResourceGroups {
                         String
                             .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
-        this.delete(resourceGroupName, context);
+        this.delete(resourceGroupName, forceDeletionResourceTypes, context);
     }
 
     private ResourceGroupsClient serviceClient() {
