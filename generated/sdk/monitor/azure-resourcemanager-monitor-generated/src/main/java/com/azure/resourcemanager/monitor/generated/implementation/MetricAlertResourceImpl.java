@@ -222,16 +222,6 @@ public final class MetricAlertResourceImpl
         return this;
     }
 
-    public MetricAlertResourceImpl withDescription(String description) {
-        if (isInCreateMode()) {
-            this.innerModel().withDescription(description);
-            return this;
-        } else {
-            this.updateParameters.withDescription(description);
-            return this;
-        }
-    }
-
     public MetricAlertResourceImpl withSeverity(int severity) {
         this.innerModel().withSeverity(severity);
         return this;
@@ -278,6 +268,16 @@ public final class MetricAlertResourceImpl
             return this;
         } else {
             this.updateParameters.withTags(tags);
+            return this;
+        }
+    }
+
+    public MetricAlertResourceImpl withDescription(String description) {
+        if (isInCreateMode()) {
+            this.innerModel().withDescription(description);
+            return this;
+        } else {
+            this.updateParameters.withDescription(description);
             return this;
         }
     }

@@ -136,7 +136,7 @@ public final class MetricAlertsClientImpl implements MetricAlertsClient {
             @HeaderParam("Accept") String accept,
             Context context);
 
-        @Headers({"Accept: application/json;q=0.9", "Content-Type: application/json"})
+        @Headers({"Content-Type: application/json"})
         @Delete(
             "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights"
                 + "/metricAlerts/{ruleName}")
@@ -148,6 +148,7 @@ public final class MetricAlertsClientImpl implements MetricAlertsClient {
             @PathParam("resourceGroupName") String resourceGroupName,
             @PathParam("ruleName") String ruleName,
             @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
             Context context);
     }
 
@@ -946,6 +947,7 @@ public final class MetricAlertsClientImpl implements MetricAlertsClient {
             return Mono.error(new IllegalArgumentException("Parameter ruleName is required and cannot be null."));
         }
         final String apiVersion = "2018-03-01";
+        final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
@@ -956,6 +958,7 @@ public final class MetricAlertsClientImpl implements MetricAlertsClient {
                             resourceGroupName,
                             ruleName,
                             apiVersion,
+                            accept,
                             context))
             .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
     }
@@ -993,6 +996,7 @@ public final class MetricAlertsClientImpl implements MetricAlertsClient {
             return Mono.error(new IllegalArgumentException("Parameter ruleName is required and cannot be null."));
         }
         final String apiVersion = "2018-03-01";
+        final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .delete(
@@ -1001,6 +1005,7 @@ public final class MetricAlertsClientImpl implements MetricAlertsClient {
                 resourceGroupName,
                 ruleName,
                 apiVersion,
+                accept,
                 context);
     }
 

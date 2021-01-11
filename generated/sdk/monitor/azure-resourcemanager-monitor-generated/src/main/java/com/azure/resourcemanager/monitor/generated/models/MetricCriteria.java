@@ -94,7 +94,7 @@ public final class MetricCriteria extends MultiMetricCriteria {
 
     /** {@inheritDoc} */
     @Override
-    public MetricCriteria withTimeAggregation(AggregationType timeAggregation) {
+    public MetricCriteria withTimeAggregation(AggregationTypeEnum timeAggregation) {
         super.withTimeAggregation(timeAggregation);
         return this;
     }

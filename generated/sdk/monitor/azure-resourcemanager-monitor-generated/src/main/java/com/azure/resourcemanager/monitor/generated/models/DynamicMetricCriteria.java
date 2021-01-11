@@ -156,7 +156,7 @@ public final class DynamicMetricCriteria extends MultiMetricCriteria {
 
     /** {@inheritDoc} */
     @Override
-    public DynamicMetricCriteria withTimeAggregation(AggregationType timeAggregation) {
+    public DynamicMetricCriteria withTimeAggregation(AggregationTypeEnum timeAggregation) {
         super.withTimeAggregation(timeAggregation);
         return this;
     }

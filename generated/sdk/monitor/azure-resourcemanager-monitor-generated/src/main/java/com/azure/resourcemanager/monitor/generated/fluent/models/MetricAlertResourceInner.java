@@ -27,7 +27,7 @@ public class MetricAlertResourceInner extends Resource {
      * the description of the metric alert that will be included in the alert
      * email.
      */
-    @JsonProperty(value = "properties.description", required = true)
+    @JsonProperty(value = "properties.description")
     private String description;
 
     /*
@@ -363,12 +363,6 @@ public class MetricAlertResourceInner extends Resource {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
-        if (description() == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property description in model MetricAlertResourceInner"));
-        }
         if (evaluationFrequency() == null) {
             throw logger
                 .logExceptionAsError(

@@ -165,7 +165,6 @@ public interface MetricAlertResource {
         extends DefinitionStages.Blank,
             DefinitionStages.WithLocation,
             DefinitionStages.WithResourceGroup,
-            DefinitionStages.WithDescription,
             DefinitionStages.WithSeverity,
             DefinitionStages.WithEnabled,
             DefinitionStages.WithEvaluationFrequency,
@@ -204,18 +203,7 @@ public interface MetricAlertResource {
              * @param resourceGroupName The name of the resource group.
              * @return the next definition stage.
              */
-            WithDescription withExistingResourceGroup(String resourceGroupName);
-        }
-        /** The stage of the MetricAlertResource definition allowing to specify description. */
-        interface WithDescription {
-            /**
-             * Specifies the description property: the description of the metric alert that will be included in the
-             * alert email..
-             *
-             * @param description the description of the metric alert that will be included in the alert email.
-             * @return the next definition stage.
-             */
-            WithSeverity withDescription(String description);
+            WithSeverity withExistingResourceGroup(String resourceGroupName);
         }
         /** The stage of the MetricAlertResource definition allowing to specify severity. */
         interface WithSeverity {
@@ -277,6 +265,7 @@ public interface MetricAlertResource {
          */
         interface WithCreate
             extends DefinitionStages.WithTags,
+                DefinitionStages.WithDescription,
                 DefinitionStages.WithScopes,
                 DefinitionStages.WithTargetResourceType,
                 DefinitionStages.WithTargetResourceRegion,
@@ -306,6 +295,17 @@ public interface MetricAlertResource {
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
+        }
+        /** The stage of the MetricAlertResource definition allowing to specify description. */
+        interface WithDescription {
+            /**
+             * Specifies the description property: the description of the metric alert that will be included in the
+             * alert email..
+             *
+             * @param description the description of the metric alert that will be included in the alert email.
+             * @return the next definition stage.
+             */
+            WithCreate withDescription(String description);
         }
         /** The stage of the MetricAlertResource definition allowing to specify scopes. */
         interface WithScopes {
