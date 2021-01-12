@@ -33,7 +33,6 @@ public class SearchTests extends Base {
                 .withSku(new Sku().withName(SkuName.FREE))
                 .create();
 
-        searchService.refresh();
         Assertions.assertEquals(SkuName.FREE, searchService.sku().name());
 
         Assertions.assertEquals(HostingMode.DEFAULT, searchService.hostingMode());
