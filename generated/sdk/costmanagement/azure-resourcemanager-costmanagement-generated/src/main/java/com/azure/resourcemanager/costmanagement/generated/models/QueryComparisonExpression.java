@@ -25,7 +25,7 @@ public final class QueryComparisonExpression {
      * The operator to use for comparison.
      */
     @JsonProperty(value = "operator", required = true)
-    private OperatorType operator;
+    private QueryOperatorType operator;
 
     /*
      * Array of values to use for comparison
@@ -58,7 +58,7 @@ public final class QueryComparisonExpression {
      *
      * @return the operator value.
      */
-    public OperatorType operator() {
+    public QueryOperatorType operator() {
         return this.operator;
     }
 
@@ -68,7 +68,7 @@ public final class QueryComparisonExpression {
      * @param operator the operator value to set.
      * @return the QueryComparisonExpression object itself.
      */
-    public QueryComparisonExpression withOperator(OperatorType operator) {
+    public QueryComparisonExpression withOperator(QueryOperatorType operator) {
         this.operator = operator;
         return this;
     }

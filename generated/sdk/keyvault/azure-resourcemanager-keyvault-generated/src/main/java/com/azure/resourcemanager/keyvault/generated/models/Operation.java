@@ -30,6 +30,13 @@ public interface Operation {
     String origin();
 
     /**
+     * Gets the isDataAction property: Property to specify whether the action is a data action.
+     *
+     * @return the isDataAction value.
+     */
+    Boolean isDataAction();
+
+    /**
      * Gets the serviceSpecification property: One property of operation, include metric specifications.
      *
      * @return the serviceSpecification value.

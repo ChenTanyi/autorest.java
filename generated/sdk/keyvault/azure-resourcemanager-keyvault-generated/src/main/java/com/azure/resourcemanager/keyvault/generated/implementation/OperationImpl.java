@@ -32,6 +32,10 @@ public final class OperationImpl implements Operation {
         return this.innerModel().origin();
     }
 
+    public Boolean isDataAction() {
+        return this.innerModel().isDataAction();
+    }
+
     public ServiceSpecification serviceSpecification() {
         return this.innerModel().serviceSpecification();
     }

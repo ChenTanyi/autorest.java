@@ -46,6 +46,10 @@ public final class PrivateEndpointConnectionImpl
         }
     }
 
+    public String etag() {
+        return this.innerModel().etag();
+    }
+
     public PrivateEndpoint privateEndpoint() {
         return this.innerModel().privateEndpoint();
     }
@@ -180,6 +184,11 @@ public final class PrivateEndpointConnectionImpl
 
     public PrivateEndpointConnectionImpl withTags(Map<String, String> tags) {
         this.innerModel().withTags(tags);
+        return this;
+    }
+
+    public PrivateEndpointConnectionImpl withEtag(String etag) {
+        this.innerModel().withEtag(etag);
         return this;
     }
 

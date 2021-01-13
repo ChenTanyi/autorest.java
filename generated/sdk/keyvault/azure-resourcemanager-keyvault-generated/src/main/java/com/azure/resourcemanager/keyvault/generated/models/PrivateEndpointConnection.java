@@ -47,6 +47,13 @@ public interface PrivateEndpointConnection {
     Map<String, String> tags();
 
     /**
+     * Gets the etag property: Modified whenever there is a change in the state of private endpoint connection.
+     *
+     * @return the etag value.
+     */
+    String etag();
+
+    /**
      * Gets the privateEndpoint property: Properties of the private endpoint object.
      *
      * @return the privateEndpoint value.
@@ -135,6 +142,7 @@ public interface PrivateEndpointConnection {
          */
         interface WithCreate
             extends DefinitionStages.WithTags,
+                DefinitionStages.WithEtag,
                 DefinitionStages.WithPrivateEndpoint,
                 DefinitionStages.WithPrivateLinkServiceConnectionState {
             /**
@@ -161,6 +169,17 @@ public interface PrivateEndpointConnection {
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
+        }
+        /** The stage of the PrivateEndpointConnection definition allowing to specify etag. */
+        interface WithEtag {
+            /**
+             * Specifies the etag property: Modified whenever there is a change in the state of private endpoint
+             * connection..
+             *
+             * @param etag Modified whenever there is a change in the state of private endpoint connection.
+             * @return the next definition stage.
+             */
+            WithCreate withEtag(String etag);
         }
         /** The stage of the PrivateEndpointConnection definition allowing to specify privateEndpoint. */
         interface WithPrivateEndpoint {
@@ -196,6 +215,7 @@ public interface PrivateEndpointConnection {
     /** The template for PrivateEndpointConnection update. */
     interface Update
         extends UpdateStages.WithTags,
+            UpdateStages.WithEtag,
             UpdateStages.WithPrivateEndpoint,
             UpdateStages.WithPrivateLinkServiceConnectionState {
         /**
@@ -224,6 +244,17 @@ public interface PrivateEndpointConnection {
              * @return the next definition stage.
              */
             Update withTags(Map<String, String> tags);
+        }
+        /** The stage of the PrivateEndpointConnection update allowing to specify etag. */
+        interface WithEtag {
+            /**
+             * Specifies the etag property: Modified whenever there is a change in the state of private endpoint
+             * connection..
+             *
+             * @param etag Modified whenever there is a change in the state of private endpoint connection.
+             * @return the next definition stage.
+             */
+            Update withEtag(String etag);
         }
         /** The stage of the PrivateEndpointConnection update allowing to specify privateEndpoint. */
         interface WithPrivateEndpoint {

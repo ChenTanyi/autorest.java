@@ -120,6 +120,12 @@ public final class VaultProperties {
     private NetworkRuleSet networkAcls;
 
     /*
+     * Provisioning state of the vault.
+     */
+    @JsonProperty(value = "provisioningState")
+    private VaultProvisioningState provisioningState;
+
+    /*
      * List of private endpoint connections associated with the key vault.
      */
     @JsonProperty(value = "privateEndpointConnections", access = JsonProperty.Access.WRITE_ONLY)
@@ -418,6 +424,26 @@ public final class VaultProperties {
      */
     public VaultProperties withNetworkAcls(NetworkRuleSet networkAcls) {
         this.networkAcls = networkAcls;
+        return this;
+    }
+
+    /**
+     * Get the provisioningState property: Provisioning state of the vault.
+     *
+     * @return the provisioningState value.
+     */
+    public VaultProvisioningState provisioningState() {
+        return this.provisioningState;
+    }
+
+    /**
+     * Set the provisioningState property: Provisioning state of the vault.
+     *
+     * @param provisioningState the provisioningState value to set.
+     * @return the VaultProperties object itself.
+     */
+    public VaultProperties withProvisioningState(VaultProvisioningState provisioningState) {
+        this.provisioningState = provisioningState;
         return this;
     }
 
