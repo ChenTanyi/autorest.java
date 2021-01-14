@@ -32,17 +32,22 @@ import com.azure.resourcemanager.compute.generated.fluent.DedicatedHostGroupsCli
 import com.azure.resourcemanager.compute.generated.fluent.DedicatedHostsClient;
 import com.azure.resourcemanager.compute.generated.fluent.DiskAccessesClient;
 import com.azure.resourcemanager.compute.generated.fluent.DiskEncryptionSetsClient;
+import com.azure.resourcemanager.compute.generated.fluent.DiskRestorePointsClient;
 import com.azure.resourcemanager.compute.generated.fluent.DisksClient;
 import com.azure.resourcemanager.compute.generated.fluent.GalleriesClient;
 import com.azure.resourcemanager.compute.generated.fluent.GalleryApplicationVersionsClient;
 import com.azure.resourcemanager.compute.generated.fluent.GalleryApplicationsClient;
 import com.azure.resourcemanager.compute.generated.fluent.GalleryImageVersionsClient;
 import com.azure.resourcemanager.compute.generated.fluent.GalleryImagesClient;
+import com.azure.resourcemanager.compute.generated.fluent.GallerySharingProfilesClient;
 import com.azure.resourcemanager.compute.generated.fluent.ImagesClient;
 import com.azure.resourcemanager.compute.generated.fluent.LogAnalyticsClient;
 import com.azure.resourcemanager.compute.generated.fluent.OperationsClient;
 import com.azure.resourcemanager.compute.generated.fluent.ProximityPlacementGroupsClient;
 import com.azure.resourcemanager.compute.generated.fluent.ResourceSkusClient;
+import com.azure.resourcemanager.compute.generated.fluent.SharedGalleriesClient;
+import com.azure.resourcemanager.compute.generated.fluent.SharedGalleryImageVersionsClient;
+import com.azure.resourcemanager.compute.generated.fluent.SharedGalleryImagesClient;
 import com.azure.resourcemanager.compute.generated.fluent.SnapshotsClient;
 import com.azure.resourcemanager.compute.generated.fluent.SshPublicKeysClient;
 import com.azure.resourcemanager.compute.generated.fluent.UsagesClient;
@@ -449,6 +454,18 @@ public final class ComputeManagementClientImpl implements ComputeManagementClien
         return this.diskAccesses;
     }
 
+    /** The DiskRestorePointsClient object to access its operations. */
+    private final DiskRestorePointsClient diskRestorePoints;
+
+    /**
+     * Gets the DiskRestorePointsClient object to access its operations.
+     *
+     * @return the DiskRestorePointsClient object.
+     */
+    public DiskRestorePointsClient getDiskRestorePoints() {
+        return this.diskRestorePoints;
+    }
+
     /** The GalleriesClient object to access its operations. */
     private final GalleriesClient galleries;
 
@@ -507,6 +524,54 @@ public final class ComputeManagementClientImpl implements ComputeManagementClien
      */
     public GalleryApplicationVersionsClient getGalleryApplicationVersions() {
         return this.galleryApplicationVersions;
+    }
+
+    /** The GallerySharingProfilesClient object to access its operations. */
+    private final GallerySharingProfilesClient gallerySharingProfiles;
+
+    /**
+     * Gets the GallerySharingProfilesClient object to access its operations.
+     *
+     * @return the GallerySharingProfilesClient object.
+     */
+    public GallerySharingProfilesClient getGallerySharingProfiles() {
+        return this.gallerySharingProfiles;
+    }
+
+    /** The SharedGalleriesClient object to access its operations. */
+    private final SharedGalleriesClient sharedGalleries;
+
+    /**
+     * Gets the SharedGalleriesClient object to access its operations.
+     *
+     * @return the SharedGalleriesClient object.
+     */
+    public SharedGalleriesClient getSharedGalleries() {
+        return this.sharedGalleries;
+    }
+
+    /** The SharedGalleryImagesClient object to access its operations. */
+    private final SharedGalleryImagesClient sharedGalleryImages;
+
+    /**
+     * Gets the SharedGalleryImagesClient object to access its operations.
+     *
+     * @return the SharedGalleryImagesClient object.
+     */
+    public SharedGalleryImagesClient getSharedGalleryImages() {
+        return this.sharedGalleryImages;
+    }
+
+    /** The SharedGalleryImageVersionsClient object to access its operations. */
+    private final SharedGalleryImageVersionsClient sharedGalleryImageVersions;
+
+    /**
+     * Gets the SharedGalleryImageVersionsClient object to access its operations.
+     *
+     * @return the SharedGalleryImageVersionsClient object.
+     */
+    public SharedGalleryImageVersionsClient getSharedGalleryImageVersions() {
+        return this.sharedGalleryImageVersions;
     }
 
     /** The ContainerServicesClient object to access its operations. */
@@ -618,11 +683,16 @@ public final class ComputeManagementClientImpl implements ComputeManagementClien
         this.snapshots = new SnapshotsClientImpl(this);
         this.diskEncryptionSets = new DiskEncryptionSetsClientImpl(this);
         this.diskAccesses = new DiskAccessesClientImpl(this);
+        this.diskRestorePoints = new DiskRestorePointsClientImpl(this);
         this.galleries = new GalleriesClientImpl(this);
         this.galleryImages = new GalleryImagesClientImpl(this);
         this.galleryImageVersions = new GalleryImageVersionsClientImpl(this);
         this.galleryApplications = new GalleryApplicationsClientImpl(this);
         this.galleryApplicationVersions = new GalleryApplicationVersionsClientImpl(this);
+        this.gallerySharingProfiles = new GallerySharingProfilesClientImpl(this);
+        this.sharedGalleries = new SharedGalleriesClientImpl(this);
+        this.sharedGalleryImages = new SharedGalleryImagesClientImpl(this);
+        this.sharedGalleryImageVersions = new SharedGalleryImageVersionsClientImpl(this);
         this.containerServices = new ContainerServicesClientImpl(this);
         this.cloudServiceRoleInstances = new CloudServiceRoleInstancesClientImpl(this);
         this.cloudServiceRoles = new CloudServiceRolesClientImpl(this);

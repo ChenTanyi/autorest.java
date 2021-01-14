@@ -67,7 +67,7 @@ public interface DiskEncryptionSet {
      *
      * @return the activeKey value.
      */
-    KeyVaultAndKeyReference activeKey();
+    KeyForDiskEncryptionSet activeKey();
 
     /**
      * Gets the previousKeys property: A readonly collection of key vault keys previously used by this disk encryption
@@ -75,7 +75,7 @@ public interface DiskEncryptionSet {
      *
      * @return the previousKeys value.
      */
-    List<KeyVaultAndKeyReference> previousKeys();
+    List<KeyForDiskEncryptionSet> previousKeys();
 
     /**
      * Gets the provisioningState property: The disk encryption set provisioning state.
@@ -209,7 +209,7 @@ public interface DiskEncryptionSet {
              * @param activeKey The key vault key which is currently used by this disk encryption set.
              * @return the next definition stage.
              */
-            WithCreate withActiveKey(KeyVaultAndKeyReference activeKey);
+            WithCreate withActiveKey(KeyForDiskEncryptionSet activeKey);
         }
     }
     /**
@@ -261,14 +261,13 @@ public interface DiskEncryptionSet {
         /** The stage of the DiskEncryptionSet update allowing to specify activeKey. */
         interface WithActiveKey {
             /**
-             * Specifies the activeKey property: Key Vault Key Url and vault id of KeK, KeK is optional and when
-             * provided is used to unwrap the encryptionKey.
+             * Specifies the activeKey property: Key Vault Key Url to be used for server side encryption of Managed
+             * Disks and Snapshots.
              *
-             * @param activeKey Key Vault Key Url and vault id of KeK, KeK is optional and when provided is used to
-             *     unwrap the encryptionKey.
+             * @param activeKey Key Vault Key Url to be used for server side encryption of Managed Disks and Snapshots.
              * @return the next definition stage.
              */
-            Update withActiveKey(KeyVaultAndKeyReference activeKey);
+            Update withActiveKey(KeyForDiskEncryptionSet activeKey);
         }
     }
     /**

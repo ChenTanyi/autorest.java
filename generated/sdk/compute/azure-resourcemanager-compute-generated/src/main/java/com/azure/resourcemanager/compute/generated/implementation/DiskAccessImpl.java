@@ -8,6 +8,7 @@ import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.DiskAccessInner;
+import com.azure.resourcemanager.compute.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.compute.generated.models.DiskAccess;
 import com.azure.resourcemanager.compute.generated.models.DiskAccessUpdate;
 import com.azure.resourcemanager.compute.generated.models.PrivateEndpointConnection;
@@ -15,6 +16,7 @@ import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public final class DiskAccessImpl implements DiskAccess, DiskAccess.Definition, DiskAccess.Update {
     private DiskAccessInner innerObject;
@@ -47,9 +49,14 @@ public final class DiskAccessImpl implements DiskAccess, DiskAccess.Definition, 
     }
 
     public List<PrivateEndpointConnection> privateEndpointConnections() {
-        List<PrivateEndpointConnection> inner = this.innerModel().privateEndpointConnections();
+        List<PrivateEndpointConnectionInner> inner = this.innerModel().privateEndpointConnections();
         if (inner != null) {
-            return Collections.unmodifiableList(inner);
+            return Collections
+                .unmodifiableList(
+                    inner
+                        .stream()
+                        .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()))
+                        .collect(Collectors.toList()));
         } else {
             return Collections.emptyList();
         }

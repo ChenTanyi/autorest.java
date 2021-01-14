@@ -47,7 +47,7 @@ public interface GalleryApplicationVersion {
     Map<String, String> tags();
 
     /**
-     * Gets the publishingProfile property: The publishing profile of a gallery Image Version.
+     * Gets the publishingProfile property: The publishing profile of a gallery image version.
      *
      * @return the publishingProfile value.
      */
@@ -61,7 +61,7 @@ public interface GalleryApplicationVersion {
     GalleryApplicationVersionPropertiesProvisioningState provisioningState();
 
     /**
-     * Gets the replicationStatus property: This is the replication status of the gallery Image Version.
+     * Gets the replicationStatus property: This is the replication status of the gallery image version.
      *
      * @return the replicationStatus value.
      */
@@ -166,9 +166,9 @@ public interface GalleryApplicationVersion {
         /** The stage of the GalleryApplicationVersion definition allowing to specify publishingProfile. */
         interface WithPublishingProfile {
             /**
-             * Specifies the publishingProfile property: The publishing profile of a gallery Image Version..
+             * Specifies the publishingProfile property: The publishing profile of a gallery image version..
              *
-             * @param publishingProfile The publishing profile of a gallery Image Version.
+             * @param publishingProfile The publishing profile of a gallery image version.
              * @return the next definition stage.
              */
             WithCreate withPublishingProfile(GalleryApplicationVersionPublishingProfile publishingProfile);
@@ -213,9 +213,9 @@ public interface GalleryApplicationVersion {
         /** The stage of the GalleryApplicationVersion update allowing to specify publishingProfile. */
         interface WithPublishingProfile {
             /**
-             * Specifies the publishingProfile property: The publishing profile of a gallery Image Version..
+             * Specifies the publishingProfile property: The publishing profile of a gallery image version..
              *
-             * @param publishingProfile The publishing profile of a gallery Image Version.
+             * @param publishingProfile The publishing profile of a gallery image version.
              * @return the next definition stage.
              */
             Update withPublishingProfile(GalleryApplicationVersionPublishingProfile publishingProfile);

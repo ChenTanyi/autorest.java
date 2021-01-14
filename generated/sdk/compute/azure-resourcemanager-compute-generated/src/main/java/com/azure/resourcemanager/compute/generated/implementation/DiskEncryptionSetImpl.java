@@ -12,7 +12,7 @@ import com.azure.resourcemanager.compute.generated.models.DiskEncryptionSet;
 import com.azure.resourcemanager.compute.generated.models.DiskEncryptionSetType;
 import com.azure.resourcemanager.compute.generated.models.DiskEncryptionSetUpdate;
 import com.azure.resourcemanager.compute.generated.models.EncryptionSetIdentity;
-import com.azure.resourcemanager.compute.generated.models.KeyVaultAndKeyReference;
+import com.azure.resourcemanager.compute.generated.models.KeyForDiskEncryptionSet;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -56,12 +56,12 @@ public final class DiskEncryptionSetImpl
         return this.innerModel().encryptionType();
     }
 
-    public KeyVaultAndKeyReference activeKey() {
+    public KeyForDiskEncryptionSet activeKey() {
         return this.innerModel().activeKey();
     }
 
-    public List<KeyVaultAndKeyReference> previousKeys() {
-        List<KeyVaultAndKeyReference> inner = this.innerModel().previousKeys();
+    public List<KeyForDiskEncryptionSet> previousKeys() {
+        List<KeyForDiskEncryptionSet> inner = this.innerModel().previousKeys();
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {
@@ -209,7 +209,7 @@ public final class DiskEncryptionSetImpl
         }
     }
 
-    public DiskEncryptionSetImpl withActiveKey(KeyVaultAndKeyReference activeKey) {
+    public DiskEncryptionSetImpl withActiveKey(KeyForDiskEncryptionSet activeKey) {
         if (isInCreateMode()) {
             this.innerModel().withActiveKey(activeKey);
             return this;

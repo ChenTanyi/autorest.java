@@ -8,6 +8,7 @@ import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.GalleryImageInner;
 import java.time.OffsetDateTime;
+import java.util.List;
 import java.util.Map;
 
 /** An immutable client-side representation of GalleryImage. */
@@ -48,7 +49,7 @@ public interface GalleryImage {
     Map<String, String> tags();
 
     /**
-     * Gets the description property: The description of this gallery Image Definition resource. This property is
+     * Gets the description property: The description of this gallery image definition resource. This property is
      * updatable.
      *
      * @return the description value.
@@ -56,7 +57,7 @@ public interface GalleryImage {
     String description();
 
     /**
-     * Gets the eula property: The Eula agreement for the gallery Image Definition.
+     * Gets the eula property: The Eula agreement for the gallery image definition.
      *
      * @return the eula value.
      */
@@ -102,7 +103,14 @@ public interface GalleryImage {
     HyperVGeneration hyperVGeneration();
 
     /**
-     * Gets the endOfLifeDate property: The end of life date of the gallery Image Definition. This property can be used
+     * Gets the features property: A list of gallery image features.
+     *
+     * @return the features value.
+     */
+    List<GalleryImageFeature> features();
+
+    /**
+     * Gets the endOfLifeDate property: The end of life date of the gallery image definition. This property can be used
      * for decommissioning purposes. This property is updatable.
      *
      * @return the endOfLifeDate value.
@@ -110,7 +118,7 @@ public interface GalleryImage {
     OffsetDateTime endOfLifeDate();
 
     /**
-     * Gets the identifier property: This is the gallery Image Definition identifier.
+     * Gets the identifier property: This is the gallery image definition identifier.
      *
      * @return the identifier value.
      */
@@ -132,7 +140,7 @@ public interface GalleryImage {
     Disallowed disallowed();
 
     /**
-     * Gets the purchasePlan property: Describes the gallery Image Definition purchase plan. This is used by marketplace
+     * Gets the purchasePlan property: Describes the gallery image definition purchase plan. This is used by marketplace
      * images.
      *
      * @return the purchasePlan value.
@@ -221,6 +229,7 @@ public interface GalleryImage {
                 DefinitionStages.WithOsType,
                 DefinitionStages.WithOsState,
                 DefinitionStages.WithHyperVGeneration,
+                DefinitionStages.WithFeatures,
                 DefinitionStages.WithEndOfLifeDate,
                 DefinitionStages.WithIdentifier,
                 DefinitionStages.WithRecommended,
@@ -254,10 +263,10 @@ public interface GalleryImage {
         /** The stage of the GalleryImage definition allowing to specify description. */
         interface WithDescription {
             /**
-             * Specifies the description property: The description of this gallery Image Definition resource. This
+             * Specifies the description property: The description of this gallery image definition resource. This
              * property is updatable..
              *
-             * @param description The description of this gallery Image Definition resource. This property is updatable.
+             * @param description The description of this gallery image definition resource. This property is updatable.
              * @return the next definition stage.
              */
             WithCreate withDescription(String description);
@@ -265,9 +274,9 @@ public interface GalleryImage {
         /** The stage of the GalleryImage definition allowing to specify eula. */
         interface WithEula {
             /**
-             * Specifies the eula property: The Eula agreement for the gallery Image Definition..
+             * Specifies the eula property: The Eula agreement for the gallery image definition..
              *
-             * @param eula The Eula agreement for the gallery Image Definition.
+             * @param eula The Eula agreement for the gallery image definition.
              * @return the next definition stage.
              */
             WithCreate withEula(String eula);
@@ -329,13 +338,23 @@ public interface GalleryImage {
              */
             WithCreate withHyperVGeneration(HyperVGeneration hyperVGeneration);
         }
+        /** The stage of the GalleryImage definition allowing to specify features. */
+        interface WithFeatures {
+            /**
+             * Specifies the features property: A list of gallery image features..
+             *
+             * @param features A list of gallery image features.
+             * @return the next definition stage.
+             */
+            WithCreate withFeatures(List<GalleryImageFeature> features);
+        }
         /** The stage of the GalleryImage definition allowing to specify endOfLifeDate. */
         interface WithEndOfLifeDate {
             /**
-             * Specifies the endOfLifeDate property: The end of life date of the gallery Image Definition. This property
+             * Specifies the endOfLifeDate property: The end of life date of the gallery image definition. This property
              * can be used for decommissioning purposes. This property is updatable..
              *
-             * @param endOfLifeDate The end of life date of the gallery Image Definition. This property can be used for
+             * @param endOfLifeDate The end of life date of the gallery image definition. This property can be used for
              *     decommissioning purposes. This property is updatable.
              * @return the next definition stage.
              */
@@ -344,9 +363,9 @@ public interface GalleryImage {
         /** The stage of the GalleryImage definition allowing to specify identifier. */
         interface WithIdentifier {
             /**
-             * Specifies the identifier property: This is the gallery Image Definition identifier..
+             * Specifies the identifier property: This is the gallery image definition identifier..
              *
-             * @param identifier This is the gallery Image Definition identifier.
+             * @param identifier This is the gallery image definition identifier.
              * @return the next definition stage.
              */
             WithCreate withIdentifier(GalleryImageIdentifier identifier);
@@ -376,10 +395,10 @@ public interface GalleryImage {
         /** The stage of the GalleryImage definition allowing to specify purchasePlan. */
         interface WithPurchasePlan {
             /**
-             * Specifies the purchasePlan property: Describes the gallery Image Definition purchase plan. This is used
+             * Specifies the purchasePlan property: Describes the gallery image definition purchase plan. This is used
              * by marketplace images..
              *
-             * @param purchasePlan Describes the gallery Image Definition purchase plan. This is used by marketplace
+             * @param purchasePlan Describes the gallery image definition purchase plan. This is used by marketplace
              *     images.
              * @return the next definition stage.
              */
@@ -403,6 +422,7 @@ public interface GalleryImage {
             UpdateStages.WithOsType,
             UpdateStages.WithOsState,
             UpdateStages.WithHyperVGeneration,
+            UpdateStages.WithFeatures,
             UpdateStages.WithEndOfLifeDate,
             UpdateStages.WithIdentifier,
             UpdateStages.WithRecommended,
@@ -438,10 +458,10 @@ public interface GalleryImage {
         /** The stage of the GalleryImage update allowing to specify description. */
         interface WithDescription {
             /**
-             * Specifies the description property: The description of this gallery Image Definition resource. This
+             * Specifies the description property: The description of this gallery image definition resource. This
              * property is updatable..
              *
-             * @param description The description of this gallery Image Definition resource. This property is updatable.
+             * @param description The description of this gallery image definition resource. This property is updatable.
              * @return the next definition stage.
              */
             Update withDescription(String description);
@@ -449,9 +469,9 @@ public interface GalleryImage {
         /** The stage of the GalleryImage update allowing to specify eula. */
         interface WithEula {
             /**
-             * Specifies the eula property: The Eula agreement for the gallery Image Definition..
+             * Specifies the eula property: The Eula agreement for the gallery image definition..
              *
-             * @param eula The Eula agreement for the gallery Image Definition.
+             * @param eula The Eula agreement for the gallery image definition.
              * @return the next definition stage.
              */
             Update withEula(String eula);
@@ -513,13 +533,23 @@ public interface GalleryImage {
              */
             Update withHyperVGeneration(HyperVGeneration hyperVGeneration);
         }
+        /** The stage of the GalleryImage update allowing to specify features. */
+        interface WithFeatures {
+            /**
+             * Specifies the features property: A list of gallery image features..
+             *
+             * @param features A list of gallery image features.
+             * @return the next definition stage.
+             */
+            Update withFeatures(List<GalleryImageFeature> features);
+        }
         /** The stage of the GalleryImage update allowing to specify endOfLifeDate. */
         interface WithEndOfLifeDate {
             /**
-             * Specifies the endOfLifeDate property: The end of life date of the gallery Image Definition. This property
+             * Specifies the endOfLifeDate property: The end of life date of the gallery image definition. This property
              * can be used for decommissioning purposes. This property is updatable..
              *
-             * @param endOfLifeDate The end of life date of the gallery Image Definition. This property can be used for
+             * @param endOfLifeDate The end of life date of the gallery image definition. This property can be used for
              *     decommissioning purposes. This property is updatable.
              * @return the next definition stage.
              */
@@ -528,9 +558,9 @@ public interface GalleryImage {
         /** The stage of the GalleryImage update allowing to specify identifier. */
         interface WithIdentifier {
             /**
-             * Specifies the identifier property: This is the gallery Image Definition identifier..
+             * Specifies the identifier property: This is the gallery image definition identifier..
              *
-             * @param identifier This is the gallery Image Definition identifier.
+             * @param identifier This is the gallery image definition identifier.
              * @return the next definition stage.
              */
             Update withIdentifier(GalleryImageIdentifier identifier);
@@ -560,10 +590,10 @@ public interface GalleryImage {
         /** The stage of the GalleryImage update allowing to specify purchasePlan. */
         interface WithPurchasePlan {
             /**
-             * Specifies the purchasePlan property: Describes the gallery Image Definition purchase plan. This is used
+             * Specifies the purchasePlan property: Describes the gallery image definition purchase plan. This is used
              * by marketplace images..
              *
-             * @param purchasePlan Describes the gallery Image Definition purchase plan. This is used by marketplace
+             * @param purchasePlan Describes the gallery image definition purchase plan. This is used by marketplace
              *     images.
              * @return the next definition stage.
              */

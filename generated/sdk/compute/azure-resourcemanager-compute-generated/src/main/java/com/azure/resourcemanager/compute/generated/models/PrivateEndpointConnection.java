@@ -4,145 +4,57 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
-import com.azure.core.annotation.Fluent;
-import com.azure.core.annotation.JsonFlatten;
-import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.resourcemanager.compute.generated.fluent.models.PrivateEndpointConnectionInner;
 
-/** The Private Endpoint Connection resource. */
-@JsonFlatten
-@Fluent
-public class PrivateEndpointConnection {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(PrivateEndpointConnection.class);
-
-    /*
-     * private endpoint connection Id
-     */
-    @JsonProperty(value = "id", access = JsonProperty.Access.WRITE_ONLY)
-    private String id;
-
-    /*
-     * private endpoint connection name
-     */
-    @JsonProperty(value = "name", access = JsonProperty.Access.WRITE_ONLY)
-    private String name;
-
-    /*
-     * private endpoint connection type
-     */
-    @JsonProperty(value = "type", access = JsonProperty.Access.WRITE_ONLY)
-    private String type;
-
-    /*
-     * The resource of private end point.
-     */
-    @JsonProperty(value = "properties.privateEndpoint")
-    private PrivateEndpoint privateEndpoint;
-
-    /*
-     * A collection of information about the state of the connection between
-     * DiskAccess and Virtual Network.
-     */
-    @JsonProperty(value = "properties.privateLinkServiceConnectionState")
-    private PrivateLinkServiceConnectionState privateLinkServiceConnectionState;
-
-    /*
-     * The provisioning state of the private endpoint connection resource.
-     */
-    @JsonProperty(value = "properties.provisioningState", access = JsonProperty.Access.WRITE_ONLY)
-    private PrivateEndpointConnectionProvisioningState provisioningState;
-
+/** An immutable client-side representation of PrivateEndpointConnection. */
+public interface PrivateEndpointConnection {
     /**
-     * Get the id property: private endpoint connection Id.
+     * Gets the id property: Resource Id.
      *
      * @return the id value.
      */
-    public String id() {
-        return this.id;
-    }
+    String id();
 
     /**
-     * Get the name property: private endpoint connection name.
+     * Gets the name property: Resource name.
      *
      * @return the name value.
      */
-    public String name() {
-        return this.name;
-    }
+    String name();
 
     /**
-     * Get the type property: private endpoint connection type.
+     * Gets the type property: Resource type.
      *
      * @return the type value.
      */
-    public String type() {
-        return this.type;
-    }
+    String type();
 
     /**
-     * Get the privateEndpoint property: The resource of private end point.
+     * Gets the privateEndpoint property: The resource of private end point.
      *
      * @return the privateEndpoint value.
      */
-    public PrivateEndpoint privateEndpoint() {
-        return this.privateEndpoint;
-    }
+    PrivateEndpoint privateEndpoint();
 
     /**
-     * Set the privateEndpoint property: The resource of private end point.
-     *
-     * @param privateEndpoint the privateEndpoint value to set.
-     * @return the PrivateEndpointConnection object itself.
-     */
-    public PrivateEndpointConnection withPrivateEndpoint(PrivateEndpoint privateEndpoint) {
-        this.privateEndpoint = privateEndpoint;
-        return this;
-    }
-
-    /**
-     * Get the privateLinkServiceConnectionState property: A collection of information about the state of the connection
-     * between DiskAccess and Virtual Network.
+     * Gets the privateLinkServiceConnectionState property: A collection of information about the state of the
+     * connection between DiskAccess and Virtual Network.
      *
      * @return the privateLinkServiceConnectionState value.
      */
-    public PrivateLinkServiceConnectionState privateLinkServiceConnectionState() {
-        return this.privateLinkServiceConnectionState;
-    }
+    PrivateLinkServiceConnectionState privateLinkServiceConnectionState();
 
     /**
-     * Set the privateLinkServiceConnectionState property: A collection of information about the state of the connection
-     * between DiskAccess and Virtual Network.
-     *
-     * @param privateLinkServiceConnectionState the privateLinkServiceConnectionState value to set.
-     * @return the PrivateEndpointConnection object itself.
-     */
-    public PrivateEndpointConnection withPrivateLinkServiceConnectionState(
-        PrivateLinkServiceConnectionState privateLinkServiceConnectionState) {
-        this.privateLinkServiceConnectionState = privateLinkServiceConnectionState;
-        return this;
-    }
-
-    /**
-     * Get the provisioningState property: The provisioning state of the private endpoint connection resource.
+     * Gets the provisioningState property: The provisioning state of the private endpoint connection resource.
      *
      * @return the provisioningState value.
      */
-    public PrivateEndpointConnectionProvisioningState provisioningState() {
-        return this.provisioningState;
-    }
+    PrivateEndpointConnectionProvisioningState provisioningState();
 
     /**
-     * Validates the instance.
+     * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.PrivateEndpointConnectionInner object.
      *
-     * @throws IllegalArgumentException thrown if the instance is not valid.
+     * @return the inner object.
      */
-    public void validate() {
-        if (privateEndpoint() != null) {
-            privateEndpoint().validate();
-        }
-        if (privateLinkServiceConnectionState() != null) {
-            privateLinkServiceConnectionState().validate();
-        }
-    }
+    PrivateEndpointConnectionInner innerModel();
 }

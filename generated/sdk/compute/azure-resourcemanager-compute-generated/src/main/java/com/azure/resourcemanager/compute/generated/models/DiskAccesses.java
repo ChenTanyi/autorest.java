@@ -7,6 +7,7 @@ package com.azure.resourcemanager.compute.generated.models;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
+import com.azure.resourcemanager.compute.generated.fluent.models.PrivateEndpointConnectionInner;
 
 /** Resource collection API of DiskAccesses. */
 public interface DiskAccesses {
@@ -146,6 +147,155 @@ public interface DiskAccesses {
      * @return the private link resources possible under disk access resource.
      */
     Response<PrivateLinkResourceListResult> getPrivateLinkResourcesWithResponse(
+        String resourceGroupName, String diskAccessName, Context context);
+
+    /**
+     * Approve or reject a private endpoint connection under disk access resource, this can't be used to create a new
+     * private endpoint connection.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
+     *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The maximum
+     *     name length is 80 characters.
+     * @param privateEndpointConnectionName The name of the private endpoint connection.
+     * @param privateEndpointConnection private endpoint connection object supplied in the body of the Put private
+     *     endpoint connection operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the Private Endpoint Connection resource.
+     */
+    PrivateEndpointConnection updateAPrivateEndpointConnection(
+        String resourceGroupName,
+        String diskAccessName,
+        String privateEndpointConnectionName,
+        PrivateEndpointConnectionInner privateEndpointConnection);
+
+    /**
+     * Approve or reject a private endpoint connection under disk access resource, this can't be used to create a new
+     * private endpoint connection.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
+     *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The maximum
+     *     name length is 80 characters.
+     * @param privateEndpointConnectionName The name of the private endpoint connection.
+     * @param privateEndpointConnection private endpoint connection object supplied in the body of the Put private
+     *     endpoint connection operation.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the Private Endpoint Connection resource.
+     */
+    PrivateEndpointConnection updateAPrivateEndpointConnection(
+        String resourceGroupName,
+        String diskAccessName,
+        String privateEndpointConnectionName,
+        PrivateEndpointConnectionInner privateEndpointConnection,
+        Context context);
+
+    /**
+     * Gets information about a private endpoint connection under a disk access resource.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
+     *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The maximum
+     *     name length is 80 characters.
+     * @param privateEndpointConnectionName The name of the private endpoint connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about a private endpoint connection under a disk access resource.
+     */
+    PrivateEndpointConnection getAPrivateEndpointConnection(
+        String resourceGroupName, String diskAccessName, String privateEndpointConnectionName);
+
+    /**
+     * Gets information about a private endpoint connection under a disk access resource.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
+     *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The maximum
+     *     name length is 80 characters.
+     * @param privateEndpointConnectionName The name of the private endpoint connection.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return information about a private endpoint connection under a disk access resource.
+     */
+    Response<PrivateEndpointConnection> getAPrivateEndpointConnectionWithResponse(
+        String resourceGroupName, String diskAccessName, String privateEndpointConnectionName, Context context);
+
+    /**
+     * Deletes a private endpoint connection under a disk access resource.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
+     *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The maximum
+     *     name length is 80 characters.
+     * @param privateEndpointConnectionName The name of the private endpoint connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteAPrivateEndpointConnection(
+        String resourceGroupName, String diskAccessName, String privateEndpointConnectionName);
+
+    /**
+     * Deletes a private endpoint connection under a disk access resource.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
+     *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The maximum
+     *     name length is 80 characters.
+     * @param privateEndpointConnectionName The name of the private endpoint connection.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteAPrivateEndpointConnection(
+        String resourceGroupName, String diskAccessName, String privateEndpointConnectionName, Context context);
+
+    /**
+     * List information about private endpoint connections under a disk access resource.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
+     *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The maximum
+     *     name length is 80 characters.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a list of private link resources.
+     */
+    PagedIterable<PrivateEndpointConnection> listPrivateEndpointConnections(
+        String resourceGroupName, String diskAccessName);
+
+    /**
+     * List information about private endpoint connections under a disk access resource.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param diskAccessName The name of the disk access resource that is being created. The name can't be changed after
+     *     the disk encryption set is created. Supported characters for the name are a-z, A-Z, 0-9 and _. The maximum
+     *     name length is 80 characters.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a list of private link resources.
+     */
+    PagedIterable<PrivateEndpointConnection> listPrivateEndpointConnections(
         String resourceGroupName, String diskAccessName, Context context);
 
     /**

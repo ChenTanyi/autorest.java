@@ -14,6 +14,7 @@ import com.azure.resourcemanager.compute.generated.fluent.GalleriesClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.GalleryInner;
 import com.azure.resourcemanager.compute.generated.models.Galleries;
 import com.azure.resourcemanager.compute.generated.models.Gallery;
+import com.azure.resourcemanager.compute.generated.models.SelectPermissions;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class GalleriesImpl implements Galleries {
@@ -38,9 +39,9 @@ public final class GalleriesImpl implements Galleries {
     }
 
     public Response<Gallery> getByResourceGroupWithResponse(
-        String resourceGroupName, String galleryName, Context context) {
+        String resourceGroupName, String galleryName, SelectPermissions select, Context context) {
         Response<GalleryInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, galleryName, context);
+            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, galleryName, select, context);
         if (inner != null) {
             return new SimpleResponse<>(
                 inner.getRequest(),
@@ -96,10 +97,13 @@ public final class GalleriesImpl implements Galleries {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'galleries'.", id)));
         }
-        return this.getByResourceGroupWithResponse(resourceGroupName, galleryName, Context.NONE).getValue();
+        SelectPermissions localSelect = null;
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, galleryName, localSelect, Context.NONE)
+            .getValue();
     }
 
-    public Response<Gallery> getByIdWithResponse(String id, Context context) {
+    public Response<Gallery> getByIdWithResponse(String id, SelectPermissions select, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw logger
@@ -115,7 +119,7 @@ public final class GalleriesImpl implements Galleries {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'galleries'.", id)));
         }
-        return this.getByResourceGroupWithResponse(resourceGroupName, galleryName, context);
+        return this.getByResourceGroupWithResponse(resourceGroupName, galleryName, select, context);
     }
 
     public void deleteById(String id) {

@@ -12,6 +12,8 @@ import com.azure.resourcemanager.compute.generated.models.Gallery;
 import com.azure.resourcemanager.compute.generated.models.GalleryIdentifier;
 import com.azure.resourcemanager.compute.generated.models.GalleryPropertiesProvisioningState;
 import com.azure.resourcemanager.compute.generated.models.GalleryUpdate;
+import com.azure.resourcemanager.compute.generated.models.SelectPermissions;
+import com.azure.resourcemanager.compute.generated.models.SharingProfile;
 import java.util.Collections;
 import java.util.Map;
 
@@ -55,6 +57,10 @@ public final class GalleryImpl implements Gallery, Gallery.Definition, Gallery.U
 
     public GalleryPropertiesProvisioningState provisioningState() {
         return this.innerModel().provisioningState();
+    }
+
+    public SharingProfile sharingProfile() {
+        return this.innerModel().sharingProfile();
     }
 
     public Region region() {
@@ -139,21 +145,23 @@ public final class GalleryImpl implements Gallery, Gallery.Definition, Gallery.U
     }
 
     public Gallery refresh() {
+        SelectPermissions localSelect = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getGalleries()
-                .getByResourceGroupWithResponse(resourceGroupName, galleryName, Context.NONE)
+                .getByResourceGroupWithResponse(resourceGroupName, galleryName, localSelect, Context.NONE)
                 .getValue();
         return this;
     }
 
     public Gallery refresh(Context context) {
+        SelectPermissions localSelect = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getGalleries()
-                .getByResourceGroupWithResponse(resourceGroupName, galleryName, context)
+                .getByResourceGroupWithResponse(resourceGroupName, galleryName, localSelect, context)
                 .getValue();
         return this;
     }
@@ -194,6 +202,16 @@ public final class GalleryImpl implements Gallery, Gallery.Definition, Gallery.U
             return this;
         } else {
             this.updateGallery.withIdentifier(identifier);
+            return this;
+        }
+    }
+
+    public GalleryImpl withSharingProfile(SharingProfile sharingProfile) {
+        if (isInCreateMode()) {
+            this.innerModel().withSharingProfile(sharingProfile);
+            return this;
+        } else {
+            this.updateGallery.withSharingProfile(sharingProfile);
             return this;
         }
     }

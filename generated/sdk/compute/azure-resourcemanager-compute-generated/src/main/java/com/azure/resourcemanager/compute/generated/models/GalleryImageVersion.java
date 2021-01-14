@@ -68,7 +68,7 @@ public interface GalleryImageVersion {
     GalleryImageVersionStorageProfile storageProfile();
 
     /**
-     * Gets the replicationStatus property: This is the replication status of the gallery Image Version.
+     * Gets the replicationStatus property: This is the replication status of the gallery image version.
      *
      * @return the replicationStatus value.
      */
@@ -132,7 +132,7 @@ public interface GalleryImageVersion {
              *
              * @param resourceGroupName The name of the resource group.
              * @param galleryName The name of the Shared Image Gallery in which the Image Definition resides.
-             * @param galleryImageName The name of the gallery Image Definition in which the Image Version is to be
+             * @param galleryImageName The name of the gallery image definition in which the Image Version is to be
              *     created.
              * @return the next definition stage.
              */
