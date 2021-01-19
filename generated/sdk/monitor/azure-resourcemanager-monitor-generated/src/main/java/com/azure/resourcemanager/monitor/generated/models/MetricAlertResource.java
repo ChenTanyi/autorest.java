@@ -95,7 +95,7 @@ public interface MetricAlertResource {
 
     /**
      * Gets the targetResourceType property: the resource type of the target resource(s) on which the alert is
-     * created/updated. Mandatory for MultipleResourceMultipleMetricCriteria.
+     * created/updated. Mandatory if the scope contains a subscription, resource group, or more than one resource.
      *
      * @return the targetResourceType value.
      */
@@ -103,7 +103,7 @@ public interface MetricAlertResource {
 
     /**
      * Gets the targetResourceRegion property: the region of the target resource(s) on which the alert is
-     * created/updated. Mandatory for MultipleResourceMultipleMetricCriteria.
+     * created/updated. Mandatory if the scope contains a subscription, resource group, or more than one resource.
      *
      * @return the targetResourceRegion value.
      */
@@ -140,6 +140,13 @@ public interface MetricAlertResource {
     OffsetDateTime lastUpdatedTime();
 
     /**
+     * Gets the isMigrated property: the value indicating whether this alert rule is migrated.
+     *
+     * @return the isMigrated value.
+     */
+    String isMigrated();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -167,6 +174,7 @@ public interface MetricAlertResource {
             DefinitionStages.WithResourceGroup,
             DefinitionStages.WithSeverity,
             DefinitionStages.WithEnabled,
+            DefinitionStages.WithScopes,
             DefinitionStages.WithEvaluationFrequency,
             DefinitionStages.WithWindowSize,
             DefinitionStages.WithCriteria,
@@ -223,7 +231,17 @@ public interface MetricAlertResource {
              * @param enabled the flag that indicates whether the metric alert is enabled.
              * @return the next definition stage.
              */
-            WithEvaluationFrequency withEnabled(boolean enabled);
+            WithScopes withEnabled(boolean enabled);
+        }
+        /** The stage of the MetricAlertResource definition allowing to specify scopes. */
+        interface WithScopes {
+            /**
+             * Specifies the scopes property: the list of resource id's that this metric alert is scoped to..
+             *
+             * @param scopes the list of resource id's that this metric alert is scoped to.
+             * @return the next definition stage.
+             */
+            WithEvaluationFrequency withScopes(List<String> scopes);
         }
         /** The stage of the MetricAlertResource definition allowing to specify evaluationFrequency. */
         interface WithEvaluationFrequency {
@@ -266,7 +284,6 @@ public interface MetricAlertResource {
         interface WithCreate
             extends DefinitionStages.WithTags,
                 DefinitionStages.WithDescription,
-                DefinitionStages.WithScopes,
                 DefinitionStages.WithTargetResourceType,
                 DefinitionStages.WithTargetResourceRegion,
                 DefinitionStages.WithAutoMitigate,
@@ -307,24 +324,16 @@ public interface MetricAlertResource {
              */
             WithCreate withDescription(String description);
         }
-        /** The stage of the MetricAlertResource definition allowing to specify scopes. */
-        interface WithScopes {
-            /**
-             * Specifies the scopes property: the list of resource id's that this metric alert is scoped to..
-             *
-             * @param scopes the list of resource id's that this metric alert is scoped to.
-             * @return the next definition stage.
-             */
-            WithCreate withScopes(List<String> scopes);
-        }
         /** The stage of the MetricAlertResource definition allowing to specify targetResourceType. */
         interface WithTargetResourceType {
             /**
              * Specifies the targetResourceType property: the resource type of the target resource(s) on which the alert
-             * is created/updated. Mandatory for MultipleResourceMultipleMetricCriteria..
+             * is created/updated. Mandatory if the scope contains a subscription, resource group, or more than one
+             * resource..
              *
              * @param targetResourceType the resource type of the target resource(s) on which the alert is
-             *     created/updated. Mandatory for MultipleResourceMultipleMetricCriteria.
+             *     created/updated. Mandatory if the scope contains a subscription, resource group, or more than one
+             *     resource.
              * @return the next definition stage.
              */
             WithCreate withTargetResourceType(String targetResourceType);
@@ -333,10 +342,11 @@ public interface MetricAlertResource {
         interface WithTargetResourceRegion {
             /**
              * Specifies the targetResourceRegion property: the region of the target resource(s) on which the alert is
-             * created/updated. Mandatory for MultipleResourceMultipleMetricCriteria..
+             * created/updated. Mandatory if the scope contains a subscription, resource group, or more than one
+             * resource..
              *
              * @param targetResourceRegion the region of the target resource(s) on which the alert is created/updated.
-             *     Mandatory for MultipleResourceMultipleMetricCriteria.
+             *     Mandatory if the scope contains a subscription, resource group, or more than one resource.
              * @return the next definition stage.
              */
             WithCreate withTargetResourceRegion(String targetResourceRegion);

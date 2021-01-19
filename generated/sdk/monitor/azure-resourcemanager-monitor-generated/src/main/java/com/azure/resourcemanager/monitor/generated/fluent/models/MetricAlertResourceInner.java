@@ -45,7 +45,7 @@ public class MetricAlertResourceInner extends Resource {
     /*
      * the list of resource id's that this metric alert is scoped to.
      */
-    @JsonProperty(value = "properties.scopes")
+    @JsonProperty(value = "properties.scopes", required = true)
     private List<String> scopes;
 
     /*
@@ -64,14 +64,16 @@ public class MetricAlertResourceInner extends Resource {
 
     /*
      * the resource type of the target resource(s) on which the alert is
-     * created/updated. Mandatory for MultipleResourceMultipleMetricCriteria.
+     * created/updated. Mandatory if the scope contains a subscription,
+     * resource group, or more than one resource.
      */
     @JsonProperty(value = "properties.targetResourceType")
     private String targetResourceType;
 
     /*
      * the region of the target resource(s) on which the alert is
-     * created/updated. Mandatory for MultipleResourceMultipleMetricCriteria.
+     * created/updated. Mandatory if the scope contains a subscription,
+     * resource group, or more than one resource.
      */
     @JsonProperty(value = "properties.targetResourceRegion")
     private String targetResourceRegion;
@@ -101,6 +103,12 @@ public class MetricAlertResourceInner extends Resource {
      */
     @JsonProperty(value = "properties.lastUpdatedTime", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime lastUpdatedTime;
+
+    /*
+     * the value indicating whether this alert rule is migrated.
+     */
+    @JsonProperty(value = "properties.isMigrated", access = JsonProperty.Access.WRITE_ONLY)
+    private String isMigrated;
 
     /**
      * Get the description property: the description of the metric alert that will be included in the alert email.
@@ -228,7 +236,7 @@ public class MetricAlertResourceInner extends Resource {
 
     /**
      * Get the targetResourceType property: the resource type of the target resource(s) on which the alert is
-     * created/updated. Mandatory for MultipleResourceMultipleMetricCriteria.
+     * created/updated. Mandatory if the scope contains a subscription, resource group, or more than one resource.
      *
      * @return the targetResourceType value.
      */
@@ -238,7 +246,7 @@ public class MetricAlertResourceInner extends Resource {
 
     /**
      * Set the targetResourceType property: the resource type of the target resource(s) on which the alert is
-     * created/updated. Mandatory for MultipleResourceMultipleMetricCriteria.
+     * created/updated. Mandatory if the scope contains a subscription, resource group, or more than one resource.
      *
      * @param targetResourceType the targetResourceType value to set.
      * @return the MetricAlertResourceInner object itself.
@@ -250,7 +258,7 @@ public class MetricAlertResourceInner extends Resource {
 
     /**
      * Get the targetResourceRegion property: the region of the target resource(s) on which the alert is
-     * created/updated. Mandatory for MultipleResourceMultipleMetricCriteria.
+     * created/updated. Mandatory if the scope contains a subscription, resource group, or more than one resource.
      *
      * @return the targetResourceRegion value.
      */
@@ -260,7 +268,7 @@ public class MetricAlertResourceInner extends Resource {
 
     /**
      * Set the targetResourceRegion property: the region of the target resource(s) on which the alert is
-     * created/updated. Mandatory for MultipleResourceMultipleMetricCriteria.
+     * created/updated. Mandatory if the scope contains a subscription, resource group, or more than one resource.
      *
      * @param targetResourceRegion the targetResourceRegion value to set.
      * @return the MetricAlertResourceInner object itself.
@@ -343,6 +351,15 @@ public class MetricAlertResourceInner extends Resource {
         return this.lastUpdatedTime;
     }
 
+    /**
+     * Get the isMigrated property: the value indicating whether this alert rule is migrated.
+     *
+     * @return the isMigrated value.
+     */
+    public String isMigrated() {
+        return this.isMigrated;
+    }
+
     /** {@inheritDoc} */
     @Override
     public MetricAlertResourceInner withLocation(String location) {
@@ -363,6 +380,11 @@ public class MetricAlertResourceInner extends Resource {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+        if (scopes() == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException("Missing required property scopes in model MetricAlertResourceInner"));
+        }
         if (evaluationFrequency() == null) {
             throw logger
                 .logExceptionAsError(

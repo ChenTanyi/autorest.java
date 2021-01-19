@@ -107,6 +107,10 @@ public final class MetricAlertResourceImpl
         return this.innerModel().lastUpdatedTime();
     }
 
+    public String isMigrated() {
+        return this.innerModel().isMigrated();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -232,6 +236,16 @@ public final class MetricAlertResourceImpl
         return this;
     }
 
+    public MetricAlertResourceImpl withScopes(List<String> scopes) {
+        if (isInCreateMode()) {
+            this.innerModel().withScopes(scopes);
+            return this;
+        } else {
+            this.updateParameters.withScopes(scopes);
+            return this;
+        }
+    }
+
     public MetricAlertResourceImpl withEvaluationFrequency(Duration evaluationFrequency) {
         if (isInCreateMode()) {
             this.innerModel().withEvaluationFrequency(evaluationFrequency);
@@ -278,16 +292,6 @@ public final class MetricAlertResourceImpl
             return this;
         } else {
             this.updateParameters.withDescription(description);
-            return this;
-        }
-    }
-
-    public MetricAlertResourceImpl withScopes(List<String> scopes) {
-        if (isInCreateMode()) {
-            this.innerModel().withScopes(scopes);
-            return this;
-        } else {
-            this.updateParameters.withScopes(scopes);
             return this;
         }
     }
