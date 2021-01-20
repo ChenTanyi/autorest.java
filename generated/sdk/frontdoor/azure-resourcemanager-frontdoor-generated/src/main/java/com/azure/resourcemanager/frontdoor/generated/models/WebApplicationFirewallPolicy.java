@@ -99,6 +99,14 @@ public interface WebApplicationFirewallPolicy {
     List<RoutingRuleLink> routingRuleLinks();
 
     /**
+     * Gets the securityPolicyLinks property: Describes Security Policy associated with this Web Application Firewall
+     * policy.
+     *
+     * @return the securityPolicyLinks value.
+     */
+    List<SecurityPolicyLink> securityPolicyLinks();
+
+    /**
      * Gets the provisioningState property: Provisioning state of the policy.
      *
      * @return the provisioningState value.

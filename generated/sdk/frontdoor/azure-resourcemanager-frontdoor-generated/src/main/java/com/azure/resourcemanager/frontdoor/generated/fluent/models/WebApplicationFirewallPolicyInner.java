@@ -14,6 +14,7 @@ import com.azure.resourcemanager.frontdoor.generated.models.ManagedRuleSetList;
 import com.azure.resourcemanager.frontdoor.generated.models.PolicyResourceState;
 import com.azure.resourcemanager.frontdoor.generated.models.PolicySettings;
 import com.azure.resourcemanager.frontdoor.generated.models.RoutingRuleLink;
+import com.azure.resourcemanager.frontdoor.generated.models.SecurityPolicyLink;
 import com.azure.resourcemanager.frontdoor.generated.models.Sku;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -71,6 +72,13 @@ public class WebApplicationFirewallPolicyInner extends Resource {
      */
     @JsonProperty(value = "properties.routingRuleLinks", access = JsonProperty.Access.WRITE_ONLY)
     private List<RoutingRuleLink> routingRuleLinks;
+
+    /*
+     * Describes Security Policy associated with this Web Application Firewall
+     * policy.
+     */
+    @JsonProperty(value = "properties.securityPolicyLinks", access = JsonProperty.Access.WRITE_ONLY)
+    private List<SecurityPolicyLink> securityPolicyLinks;
 
     /*
      * Provisioning state of the policy.
@@ -206,6 +214,16 @@ public class WebApplicationFirewallPolicyInner extends Resource {
     }
 
     /**
+     * Get the securityPolicyLinks property: Describes Security Policy associated with this Web Application Firewall
+     * policy.
+     *
+     * @return the securityPolicyLinks value.
+     */
+    public List<SecurityPolicyLink> securityPolicyLinks() {
+        return this.securityPolicyLinks;
+    }
+
+    /**
      * Get the provisioningState property: Provisioning state of the policy.
      *
      * @return the provisioningState value.
@@ -260,6 +278,9 @@ public class WebApplicationFirewallPolicyInner extends Resource {
         }
         if (routingRuleLinks() != null) {
             routingRuleLinks().forEach(e -> e.validate());
+        }
+        if (securityPolicyLinks() != null) {
+            securityPolicyLinks().forEach(e -> e.validate());
         }
     }
 }

@@ -14,6 +14,7 @@ import com.azure.resourcemanager.frontdoor.generated.models.ManagedRuleSetList;
 import com.azure.resourcemanager.frontdoor.generated.models.PolicyResourceState;
 import com.azure.resourcemanager.frontdoor.generated.models.PolicySettings;
 import com.azure.resourcemanager.frontdoor.generated.models.RoutingRuleLink;
+import com.azure.resourcemanager.frontdoor.generated.models.SecurityPolicyLink;
 import com.azure.resourcemanager.frontdoor.generated.models.Sku;
 import com.azure.resourcemanager.frontdoor.generated.models.WebApplicationFirewallPolicy;
 import java.util.Collections;
@@ -84,6 +85,15 @@ public final class WebApplicationFirewallPolicyImpl
 
     public List<RoutingRuleLink> routingRuleLinks() {
         List<RoutingRuleLink> inner = this.innerModel().routingRuleLinks();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public List<SecurityPolicyLink> securityPolicyLinks() {
+        List<SecurityPolicyLink> inner = this.innerModel().securityPolicyLinks();
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {

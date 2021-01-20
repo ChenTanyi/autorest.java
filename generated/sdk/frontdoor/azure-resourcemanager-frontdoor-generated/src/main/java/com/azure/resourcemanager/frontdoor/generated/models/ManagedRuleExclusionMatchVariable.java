@@ -23,6 +23,10 @@ public final class ManagedRuleExclusionMatchVariable extends ExpandableStringEnu
     public static final ManagedRuleExclusionMatchVariable REQUEST_BODY_POST_ARG_NAMES =
         fromString("RequestBodyPostArgNames");
 
+    /** Static value RequestBodyJsonArgNames for ManagedRuleExclusionMatchVariable. */
+    public static final ManagedRuleExclusionMatchVariable REQUEST_BODY_JSON_ARG_NAMES =
+        fromString("RequestBodyJsonArgNames");
+
     /**
      * Creates or finds a ManagedRuleExclusionMatchVariable from its string representation.
      *
