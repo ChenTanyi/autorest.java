@@ -10,7 +10,6 @@ import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.GalleryImageInner;
 import com.azure.resourcemanager.compute.generated.models.Disallowed;
 import com.azure.resourcemanager.compute.generated.models.GalleryImage;
-import com.azure.resourcemanager.compute.generated.models.GalleryImageFeature;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageIdentifier;
 import com.azure.resourcemanager.compute.generated.models.GalleryImagePropertiesProvisioningState;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageUpdate;
@@ -21,7 +20,6 @@ import com.azure.resourcemanager.compute.generated.models.OperatingSystemTypes;
 import com.azure.resourcemanager.compute.generated.models.RecommendedMachineConfiguration;
 import java.time.OffsetDateTime;
 import java.util.Collections;
-import java.util.List;
 import java.util.Map;
 
 public final class GalleryImageImpl implements GalleryImage, GalleryImage.Definition, GalleryImage.Update {
@@ -80,15 +78,6 @@ public final class GalleryImageImpl implements GalleryImage, GalleryImage.Defini
 
     public HyperVGeneration hyperVGeneration() {
         return this.innerModel().hyperVGeneration();
-    }
-
-    public List<GalleryImageFeature> features() {
-        List<GalleryImageFeature> inner = this.innerModel().features();
-        if (inner != null) {
-            return Collections.unmodifiableList(inner);
-        } else {
-            return Collections.emptyList();
-        }
     }
 
     public OffsetDateTime endOfLifeDate() {
@@ -306,16 +295,6 @@ public final class GalleryImageImpl implements GalleryImage, GalleryImage.Defini
             return this;
         } else {
             this.updateGalleryImage.withHyperVGeneration(hyperVGeneration);
-            return this;
-        }
-    }
-
-    public GalleryImageImpl withFeatures(List<GalleryImageFeature> features) {
-        if (isInCreateMode()) {
-            this.innerModel().withFeatures(features);
-            return this;
-        } else {
-            this.updateGalleryImage.withFeatures(features);
             return this;
         }
     }

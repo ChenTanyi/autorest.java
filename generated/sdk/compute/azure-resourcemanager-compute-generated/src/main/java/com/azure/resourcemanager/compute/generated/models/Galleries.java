@@ -28,7 +28,6 @@ public interface Galleries {
      *
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery.
-     * @param select The select expression to apply on the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -36,8 +35,7 @@ public interface Galleries {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the Shared Image Gallery that you want to create or update.
      */
-    Response<Gallery> getByResourceGroupWithResponse(
-        String resourceGroupName, String galleryName, SelectPermissions select, Context context);
+    Response<Gallery> getByResourceGroupWithResponse(String resourceGroupName, String galleryName, Context context);
 
     /**
      * Delete a Shared Image Gallery.
@@ -127,7 +125,6 @@ public interface Galleries {
      * Retrieves information about a Shared Image Gallery.
      *
      * @param id the resource ID.
-     * @param select The select expression to apply on the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -135,7 +132,7 @@ public interface Galleries {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the Shared Image Gallery that you want to create or update.
      */
-    Response<Gallery> getByIdWithResponse(String id, SelectPermissions select, Context context);
+    Response<Gallery> getByIdWithResponse(String id, Context context);
 
     /**
      * Delete a Shared Image Gallery.

@@ -61,7 +61,7 @@ public interface GalleryApplicationVersion {
     GalleryApplicationVersionPropertiesProvisioningState provisioningState();
 
     /**
-     * Gets the replicationStatus property: This is the replication status of the gallery image version.
+     * Gets the replicationStatus property: This is the replication status of the gallery Image Version.
      *
      * @return the replicationStatus value.
      */

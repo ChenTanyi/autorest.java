@@ -34,7 +34,7 @@ public class GalleryApplicationVersionInner extends Resource {
     private GalleryApplicationVersionPropertiesProvisioningState provisioningState;
 
     /*
-     * This is the replication status of the gallery image version.
+     * This is the replication status of the gallery Image Version.
      */
     @JsonProperty(value = "properties.replicationStatus", access = JsonProperty.Access.WRITE_ONLY)
     private ReplicationStatus replicationStatus;
@@ -70,7 +70,7 @@ public class GalleryApplicationVersionInner extends Resource {
     }
 
     /**
-     * Get the replicationStatus property: This is the replication status of the gallery image version.
+     * Get the replicationStatus property: This is the replication status of the gallery Image Version.
      *
      * @return the replicationStatus value.
      */

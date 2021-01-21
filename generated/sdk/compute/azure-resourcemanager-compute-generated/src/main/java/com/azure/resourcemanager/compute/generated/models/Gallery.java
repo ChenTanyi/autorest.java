@@ -68,13 +68,6 @@ public interface Gallery {
     GalleryPropertiesProvisioningState provisioningState();
 
     /**
-     * Gets the sharingProfile property: Profile for gallery sharing to subscription or tenant.
-     *
-     * @return the sharingProfile value.
-     */
-    SharingProfile sharingProfile();
-
-    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -140,10 +133,7 @@ public interface Gallery {
          * created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
-            extends DefinitionStages.WithTags,
-                DefinitionStages.WithDescription,
-                DefinitionStages.WithIdentifier,
-                DefinitionStages.WithSharingProfile {
+            extends DefinitionStages.WithTags, DefinitionStages.WithDescription, DefinitionStages.WithIdentifier {
             /**
              * Executes the create request.
              *
@@ -190,16 +180,6 @@ public interface Gallery {
              */
             WithCreate withIdentifier(GalleryIdentifier identifier);
         }
-        /** The stage of the Gallery definition allowing to specify sharingProfile. */
-        interface WithSharingProfile {
-            /**
-             * Specifies the sharingProfile property: Profile for gallery sharing to subscription or tenant.
-             *
-             * @param sharingProfile Profile for gallery sharing to subscription or tenant.
-             * @return the next definition stage.
-             */
-            WithCreate withSharingProfile(SharingProfile sharingProfile);
-        }
     }
     /**
      * Begins update for the Gallery resource.
@@ -209,11 +189,7 @@ public interface Gallery {
     Gallery.Update update();
 
     /** The template for Gallery update. */
-    interface Update
-        extends UpdateStages.WithTags,
-            UpdateStages.WithDescription,
-            UpdateStages.WithIdentifier,
-            UpdateStages.WithSharingProfile {
+    interface Update extends UpdateStages.WithTags, UpdateStages.WithDescription, UpdateStages.WithIdentifier {
         /**
          * Executes the update request.
          *
@@ -261,16 +237,6 @@ public interface Gallery {
              * @return the next definition stage.
              */
             Update withIdentifier(GalleryIdentifier identifier);
-        }
-        /** The stage of the Gallery update allowing to specify sharingProfile. */
-        interface WithSharingProfile {
-            /**
-             * Specifies the sharingProfile property: Profile for gallery sharing to subscription or tenant.
-             *
-             * @param sharingProfile Profile for gallery sharing to subscription or tenant.
-             * @return the next definition stage.
-             */
-            Update withSharingProfile(SharingProfile sharingProfile);
         }
     }
     /**
