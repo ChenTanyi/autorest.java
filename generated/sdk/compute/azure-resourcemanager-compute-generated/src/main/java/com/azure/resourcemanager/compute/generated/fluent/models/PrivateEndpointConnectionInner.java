@@ -6,18 +6,18 @@ package com.azure.resourcemanager.compute.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
+import com.azure.core.management.ProxyResource;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.models.PrivateEndpoint;
 import com.azure.resourcemanager.compute.generated.models.PrivateEndpointConnectionProvisioningState;
 import com.azure.resourcemanager.compute.generated.models.PrivateLinkServiceConnectionState;
-import com.azure.resourcemanager.compute.generated.models.ProxyOnlyResource;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** The Private Endpoint Connection resource. */
 @JsonFlatten
 @Fluent
-public class PrivateEndpointConnectionInner extends ProxyOnlyResource {
+public class PrivateEndpointConnectionInner extends ProxyResource {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(PrivateEndpointConnectionInner.class);
 
     /*
@@ -96,9 +96,7 @@ public class PrivateEndpointConnectionInner extends ProxyOnlyResource {
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
-    @Override
     public void validate() {
-        super.validate();
         if (privateEndpoint() != null) {
             privateEndpoint().validate();
         }

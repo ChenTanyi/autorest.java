@@ -9,21 +9,21 @@ import com.azure.resourcemanager.compute.generated.fluent.models.PrivateEndpoint
 /** An immutable client-side representation of PrivateEndpointConnection. */
 public interface PrivateEndpointConnection {
     /**
-     * Gets the id property: Resource Id.
+     * Gets the id property: Fully qualified resource Id for the resource.
      *
      * @return the id value.
      */
     String id();
 
     /**
-     * Gets the name property: Resource name.
+     * Gets the name property: The name of the resource.
      *
      * @return the name value.
      */
     String name();
 
     /**
-     * Gets the type property: Resource type.
+     * Gets the type property: The type of the resource.
      *
      * @return the type value.
      */
