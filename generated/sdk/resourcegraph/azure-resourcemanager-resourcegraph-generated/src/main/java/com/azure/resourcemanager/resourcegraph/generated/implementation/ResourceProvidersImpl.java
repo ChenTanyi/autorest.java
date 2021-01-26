@@ -20,6 +20,7 @@ import com.azure.resourcemanager.resourcegraph.generated.models.ResourceChangeDe
 import com.azure.resourcemanager.resourcegraph.generated.models.ResourceChangeList;
 import com.azure.resourcemanager.resourcegraph.generated.models.ResourceChangesRequestParameters;
 import com.azure.resourcemanager.resourcegraph.generated.models.ResourceProviders;
+import com.azure.resourcemanager.resourcegraph.generated.models.ResourcesHistoryRequest;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ResourceProvidersImpl implements ResourceProviders {
@@ -101,6 +102,14 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         } else {
             return null;
         }
+    }
+
+    public Object resourcesHistory(ResourcesHistoryRequest request) {
+        return this.serviceClient().resourcesHistory(request);
+    }
+
+    public Response<Object> resourcesHistoryWithResponse(ResourcesHistoryRequest request, Context context) {
+        return this.serviceClient().resourcesHistoryWithResponse(request, context);
     }
 
     private ResourceProvidersClient serviceClient() {

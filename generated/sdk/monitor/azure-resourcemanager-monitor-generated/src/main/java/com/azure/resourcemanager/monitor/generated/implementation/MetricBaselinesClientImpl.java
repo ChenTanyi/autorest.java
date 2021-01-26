@@ -78,7 +78,7 @@ public final class MetricBaselinesClientImpl implements MetricBaselinesClient {
             Context context);
 
         @Headers({"Content-Type: application/json"})
-        @Post("/{resourceUri}/providers/microsoft.insights/calculatebaseline")
+        @Post("/{resourceUri}/providers/Microsoft.Insights/calculatebaseline")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<CalculateBaselineResponseInner>> calculateBaseline(

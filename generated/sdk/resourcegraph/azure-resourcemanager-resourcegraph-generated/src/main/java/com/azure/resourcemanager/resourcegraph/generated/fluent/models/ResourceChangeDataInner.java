@@ -19,6 +19,12 @@ public final class ResourceChangeDataInner {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(ResourceChangeDataInner.class);
 
     /*
+     * The ID of the resource
+     */
+    @JsonProperty(value = "resourceId")
+    private String resourceId;
+
+    /*
      * The change ID. Valid and unique within the specified resource only.
      */
     @JsonProperty(value = "changeId", required = true)
@@ -48,6 +54,26 @@ public final class ResourceChangeDataInner {
      */
     @JsonProperty(value = "propertyChanges")
     private List<ResourcePropertyChange> propertyChanges;
+
+    /**
+     * Get the resourceId property: The ID of the resource.
+     *
+     * @return the resourceId value.
+     */
+    public String resourceId() {
+        return this.resourceId;
+    }
+
+    /**
+     * Set the resourceId property: The ID of the resource.
+     *
+     * @param resourceId the resourceId value to set.
+     * @return the ResourceChangeDataInner object itself.
+     */
+    public ResourceChangeDataInner withResourceId(String resourceId) {
+        this.resourceId = resourceId;
+        return this;
+    }
 
     /**
      * Get the changeId property: The change ID. Valid and unique within the specified resource only.

@@ -79,4 +79,27 @@ public interface ResourceProviders {
      */
     Response<ResourceChangeData> resourceChangeDetailsWithResponse(
         ResourceChangeDetailsRequestParameters parameters, Context context);
+
+    /**
+     * List all snapshots of a resource for a given time interval.
+     *
+     * @param request The request parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object.
+     */
+    Object resourcesHistory(ResourcesHistoryRequest request);
+
+    /**
+     * List all snapshots of a resource for a given time interval.
+     *
+     * @param request The request parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object.
+     */
+    Response<Object> resourcesHistoryWithResponse(ResourcesHistoryRequest request, Context context);
 }

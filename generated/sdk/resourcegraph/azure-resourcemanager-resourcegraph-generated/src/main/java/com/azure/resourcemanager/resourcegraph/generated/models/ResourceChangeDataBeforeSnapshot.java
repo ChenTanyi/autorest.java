@@ -16,6 +16,13 @@ public final class ResourceChangeDataBeforeSnapshot extends ResourceSnapshotData
 
     /** {@inheritDoc} */
     @Override
+    public ResourceChangeDataBeforeSnapshot withSnapshotId(String snapshotId) {
+        super.withSnapshotId(snapshotId);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
     public ResourceChangeDataBeforeSnapshot withTimestamp(OffsetDateTime timestamp) {
         super.withTimestamp(timestamp);
         return this;

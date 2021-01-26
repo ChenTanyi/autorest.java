@@ -23,6 +23,10 @@ public final class ResourceChangeDataImpl implements ResourceChangeData {
         this.serviceManager = serviceManager;
     }
 
+    public String resourceId() {
+        return this.innerModel().resourceId();
+    }
+
     public String changeId() {
         return this.innerModel().changeId();
     }

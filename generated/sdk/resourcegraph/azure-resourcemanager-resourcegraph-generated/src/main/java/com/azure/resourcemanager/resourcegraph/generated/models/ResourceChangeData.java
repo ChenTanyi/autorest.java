@@ -10,6 +10,13 @@ import java.util.List;
 /** An immutable client-side representation of ResourceChangeData. */
 public interface ResourceChangeData {
     /**
+     * Gets the resourceId property: The ID of the resource.
+     *
+     * @return the resourceId value.
+     */
+    String resourceId();
+
+    /**
      * Gets the changeId property: The change ID. Valid and unique within the specified resource only.
      *
      * @return the changeId value.

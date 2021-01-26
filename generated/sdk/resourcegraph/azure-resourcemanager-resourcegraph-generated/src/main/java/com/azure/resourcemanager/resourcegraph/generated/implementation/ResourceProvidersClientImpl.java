@@ -29,6 +29,7 @@ import com.azure.resourcemanager.resourcegraph.generated.fluent.models.ResourceC
 import com.azure.resourcemanager.resourcegraph.generated.models.QueryRequest;
 import com.azure.resourcemanager.resourcegraph.generated.models.ResourceChangeDetailsRequestParameters;
 import com.azure.resourcemanager.resourcegraph.generated.models.ResourceChangesRequestParameters;
+import com.azure.resourcemanager.resourcegraph.generated.models.ResourcesHistoryRequest;
 import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in ResourceProvidersClient. */
@@ -89,6 +90,17 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
             @HostParam("$host") String endpoint,
             @QueryParam("api-version") String apiVersion,
             @BodyParam("application/json") ResourceChangeDetailsRequestParameters parameters,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Post("/providers/Microsoft.ResourceGraph/resourcesHistory")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<Object>> resourcesHistory(
+            @HostParam("$host") String endpoint,
+            @QueryParam("api-version") String apiVersion,
+            @BodyParam("application/json") ResourcesHistoryRequest request,
             @HeaderParam("Accept") String accept,
             Context context);
     }
@@ -431,5 +443,117 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     public Response<ResourceChangeDataInner> resourceChangeDetailsWithResponse(
         ResourceChangeDetailsRequestParameters parameters, Context context) {
         return resourceChangeDetailsWithResponseAsync(parameters, context).block();
+    }
+
+    /**
+     * List all snapshots of a resource for a given time interval.
+     *
+     * @param request The request parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Object>> resourcesHistoryWithResponseAsync(ResourcesHistoryRequest request) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (request == null) {
+            return Mono.error(new IllegalArgumentException("Parameter request is required and cannot be null."));
+        } else {
+            request.validate();
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .resourcesHistory(
+                            this.client.getEndpoint(), this.client.getApiVersion(), request, accept, context))
+            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+    }
+
+    /**
+     * List all snapshots of a resource for a given time interval.
+     *
+     * @param request The request parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Object>> resourcesHistoryWithResponseAsync(ResourcesHistoryRequest request, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (request == null) {
+            return Mono.error(new IllegalArgumentException("Parameter request is required and cannot be null."));
+        } else {
+            request.validate();
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .resourcesHistory(this.client.getEndpoint(), this.client.getApiVersion(), request, accept, context);
+    }
+
+    /**
+     * List all snapshots of a resource for a given time interval.
+     *
+     * @param request The request parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Object> resourcesHistoryAsync(ResourcesHistoryRequest request) {
+        return resourcesHistoryWithResponseAsync(request)
+            .flatMap(
+                (Response<Object> res) -> {
+                    if (res.getValue() != null) {
+                        return Mono.just(res.getValue());
+                    } else {
+                        return Mono.empty();
+                    }
+                });
+    }
+
+    /**
+     * List all snapshots of a resource for a given time interval.
+     *
+     * @param request The request parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Object resourcesHistory(ResourcesHistoryRequest request) {
+        return resourcesHistoryAsync(request).block();
+    }
+
+    /**
+     * List all snapshots of a resource for a given time interval.
+     *
+     * @param request The request parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<Object> resourcesHistoryWithResponse(ResourcesHistoryRequest request, Context context) {
+        return resourcesHistoryWithResponseAsync(request, context).block();
     }
 }

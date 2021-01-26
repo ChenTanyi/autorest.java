@@ -14,6 +14,7 @@ import com.azure.resourcemanager.resourcegraph.generated.fluent.models.ResourceC
 import com.azure.resourcemanager.resourcegraph.generated.models.QueryRequest;
 import com.azure.resourcemanager.resourcegraph.generated.models.ResourceChangeDetailsRequestParameters;
 import com.azure.resourcemanager.resourcegraph.generated.models.ResourceChangesRequestParameters;
+import com.azure.resourcemanager.resourcegraph.generated.models.ResourcesHistoryRequest;
 
 /** An instance of this class provides access to all the operations defined in ResourceProvidersClient. */
 public interface ResourceProvidersClient {
@@ -93,4 +94,29 @@ public interface ResourceProvidersClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<ResourceChangeDataInner> resourceChangeDetailsWithResponse(
         ResourceChangeDetailsRequestParameters parameters, Context context);
+
+    /**
+     * List all snapshots of a resource for a given time interval.
+     *
+     * @param request The request parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    Object resourcesHistory(ResourcesHistoryRequest request);
+
+    /**
+     * List all snapshots of a resource for a given time interval.
+     *
+     * @param request The request parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    Response<Object> resourcesHistoryWithResponse(ResourcesHistoryRequest request, Context context);
 }

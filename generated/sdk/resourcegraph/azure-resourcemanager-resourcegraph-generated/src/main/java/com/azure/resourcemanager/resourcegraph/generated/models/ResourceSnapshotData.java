@@ -16,6 +16,12 @@ public class ResourceSnapshotData {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(ResourceSnapshotData.class);
 
     /*
+     * The ID of the snapshot.
+     */
+    @JsonProperty(value = "snapshotId")
+    private String snapshotId;
+
+    /*
      * The time when the snapshot was created.
      * The snapshot timestamp provides an approximation as to when a
      * modification to a resource was detected.  There can be a difference
@@ -32,6 +38,26 @@ public class ResourceSnapshotData {
      */
     @JsonProperty(value = "content")
     private Object content;
+
+    /**
+     * Get the snapshotId property: The ID of the snapshot.
+     *
+     * @return the snapshotId value.
+     */
+    public String snapshotId() {
+        return this.snapshotId;
+    }
+
+    /**
+     * Set the snapshotId property: The ID of the snapshot.
+     *
+     * @param snapshotId the snapshotId value to set.
+     * @return the ResourceSnapshotData object itself.
+     */
+    public ResourceSnapshotData withSnapshotId(String snapshotId) {
+        this.snapshotId = snapshotId;
+        return this;
+    }
 
     /**
      * Get the timestamp property: The time when the snapshot was created. The snapshot timestamp provides an
