@@ -48,11 +48,37 @@ public interface LogSearchRuleResource {
     Map<String, String> tags();
 
     /**
+     * Gets the kind property: Metadata used by portal/tooling/etc to render different UX experiences for resources of
+     * the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type. If supported, the resource provider must
+     * validate and persist this value.
+     *
+     * @return the kind value.
+     */
+    String kind();
+
+    /**
+     * Gets the etag property: The etag field is *not* required. If it is provided in the response body, it must also be
+     * provided as a header per the normal etag convention. Entity tags are used for comparing two or more entities from
+     * the same requested resource. HTTP/1.1 uses entity tags in the etag (section 14.19), If-Match (section 14.24),
+     * If-None-Match (section 14.26), and If-Range (section 14.27) header fields.
+     *
+     * @return the etag value.
+     */
+    String etag();
+
+    /**
      * Gets the description property: The description of the Log Search rule.
      *
      * @return the description value.
      */
     String description();
+
+    /**
+     * Gets the displayName property: The display name of the alert rule.
+     *
+     * @return the displayName value.
+     */
+    String displayName();
 
     /**
      * Gets the enabled property: The flag which indicates whether the Log Search rule is enabled. Value should be true
@@ -188,6 +214,7 @@ public interface LogSearchRuleResource {
         interface WithCreate
             extends DefinitionStages.WithTags,
                 DefinitionStages.WithDescription,
+                DefinitionStages.WithDisplayName,
                 DefinitionStages.WithEnabled,
                 DefinitionStages.WithSchedule {
             /**
@@ -224,6 +251,16 @@ public interface LogSearchRuleResource {
              * @return the next definition stage.
              */
             WithCreate withDescription(String description);
+        }
+        /** The stage of the LogSearchRuleResource definition allowing to specify displayName. */
+        interface WithDisplayName {
+            /**
+             * Specifies the displayName property: The display name of the alert rule.
+             *
+             * @param displayName The display name of the alert rule.
+             * @return the next definition stage.
+             */
+            WithCreate withDisplayName(String displayName);
         }
         /** The stage of the LogSearchRuleResource definition allowing to specify enabled. */
         interface WithEnabled {

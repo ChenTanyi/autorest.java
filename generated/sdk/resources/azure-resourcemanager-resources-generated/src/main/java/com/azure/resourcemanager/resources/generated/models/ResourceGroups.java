@@ -39,7 +39,8 @@ public interface ResourceGroups {
      *
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
      * @param forceDeletionResourceTypes The resource types you want to force delete. Currently, only the following is
-     *     supported: forceDeletionResourceTypes=Microsoft.Compute/virtualMachines.
+     *     supported:
+     *     forceDeletionResourceTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -63,7 +64,8 @@ public interface ResourceGroups {
      *
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
      * @param forceDeletionResourceTypes The resource types you want to force delete. Currently, only the following is
-     *     supported: forceDeletionResourceTypes=Microsoft.Compute/virtualMachines.
+     *     supported:
+     *     forceDeletionResourceTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -183,7 +185,8 @@ public interface ResourceGroups {
      *
      * @param id the resource ID.
      * @param forceDeletionResourceTypes The resource types you want to force delete. Currently, only the following is
-     *     supported: forceDeletionResourceTypes=Microsoft.Compute/virtualMachines.
+     *     supported:
+     *     forceDeletionResourceTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

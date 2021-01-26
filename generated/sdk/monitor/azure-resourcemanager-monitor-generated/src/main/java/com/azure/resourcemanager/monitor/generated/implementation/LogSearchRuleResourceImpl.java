@@ -50,8 +50,20 @@ public final class LogSearchRuleResourceImpl
         }
     }
 
+    public String kind() {
+        return this.innerModel().kind();
+    }
+
+    public String etag() {
+        return this.innerModel().etag();
+    }
+
     public String description() {
         return this.innerModel().description();
+    }
+
+    public String displayName() {
+        return this.innerModel().displayName();
     }
 
     public Enabled enabled() {
@@ -215,6 +227,11 @@ public final class LogSearchRuleResourceImpl
 
     public LogSearchRuleResourceImpl withDescription(String description) {
         this.innerModel().withDescription(description);
+        return this;
+    }
+
+    public LogSearchRuleResourceImpl withDisplayName(String displayName) {
+        this.innerModel().withDisplayName(displayName);
         return this;
     }
 
