@@ -144,7 +144,7 @@ public interface MetricAlertResource {
      *
      * @return the isMigrated value.
      */
-    String isMigrated();
+    Boolean isMigrated();
 
     /**
      * Gets the region of the resource.

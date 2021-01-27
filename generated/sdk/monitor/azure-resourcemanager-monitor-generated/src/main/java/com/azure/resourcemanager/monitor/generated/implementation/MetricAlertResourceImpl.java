@@ -107,7 +107,7 @@ public final class MetricAlertResourceImpl
         return this.innerModel().lastUpdatedTime();
     }
 
-    public String isMigrated() {
+    public Boolean isMigrated() {
         return this.innerModel().isMigrated();
     }
 

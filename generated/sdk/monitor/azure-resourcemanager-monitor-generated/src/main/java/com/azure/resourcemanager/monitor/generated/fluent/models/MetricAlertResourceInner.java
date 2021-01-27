@@ -108,7 +108,7 @@ public class MetricAlertResourceInner extends Resource {
      * the value indicating whether this alert rule is migrated.
      */
     @JsonProperty(value = "properties.isMigrated", access = JsonProperty.Access.WRITE_ONLY)
-    private String isMigrated;
+    private Boolean isMigrated;
 
     /**
      * Get the description property: the description of the metric alert that will be included in the alert email.
@@ -356,7 +356,7 @@ public class MetricAlertResourceInner extends Resource {
      *
      * @return the isMigrated value.
      */
-    public String isMigrated() {
+    public Boolean isMigrated() {
         return this.isMigrated;
     }
 
