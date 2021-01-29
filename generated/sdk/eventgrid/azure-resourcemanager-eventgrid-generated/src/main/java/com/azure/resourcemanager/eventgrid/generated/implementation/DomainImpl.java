@@ -15,11 +15,13 @@ import com.azure.resourcemanager.eventgrid.generated.models.DomainProvisioningSt
 import com.azure.resourcemanager.eventgrid.generated.models.DomainRegenerateKeyRequest;
 import com.azure.resourcemanager.eventgrid.generated.models.DomainSharedAccessKeys;
 import com.azure.resourcemanager.eventgrid.generated.models.DomainUpdateParameters;
+import com.azure.resourcemanager.eventgrid.generated.models.IdentityInfo;
 import com.azure.resourcemanager.eventgrid.generated.models.InboundIpRule;
 import com.azure.resourcemanager.eventgrid.generated.models.InputSchema;
 import com.azure.resourcemanager.eventgrid.generated.models.InputSchemaMapping;
 import com.azure.resourcemanager.eventgrid.generated.models.PrivateEndpointConnection;
 import com.azure.resourcemanager.eventgrid.generated.models.PublicNetworkAccess;
+import com.azure.resourcemanager.eventgrid.generated.models.ResourceSku;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -53,6 +55,14 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
         } else {
             return Collections.emptyMap();
         }
+    }
+
+    public ResourceSku sku() {
+        return this.innerModel().sku();
+    }
+
+    public IdentityInfo identity() {
+        return this.innerModel().identity();
     }
 
     public List<PrivateEndpointConnection> privateEndpointConnections() {
@@ -238,6 +248,26 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
             return this;
         } else {
             this.updateDomainUpdateParameters.withTags(tags);
+            return this;
+        }
+    }
+
+    public DomainImpl withSku(ResourceSku sku) {
+        if (isInCreateMode()) {
+            this.innerModel().withSku(sku);
+            return this;
+        } else {
+            this.updateDomainUpdateParameters.withSku(sku);
+            return this;
+        }
+    }
+
+    public DomainImpl withIdentity(IdentityInfo identity) {
+        if (isInCreateMode()) {
+            this.innerModel().withIdentity(identity);
+            return this;
+        } else {
+            this.updateDomainUpdateParameters.withIdentity(identity);
             return this;
         }
     }

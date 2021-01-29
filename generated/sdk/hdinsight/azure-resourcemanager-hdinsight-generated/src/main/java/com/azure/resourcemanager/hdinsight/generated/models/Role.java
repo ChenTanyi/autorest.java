@@ -34,6 +34,12 @@ public final class Role {
     private Integer targetInstanceCount;
 
     /*
+     * The name of the virtual machine group.
+     */
+    @JsonProperty(value = "VMGroupName")
+    private String vMGroupName;
+
+    /*
      * The autoscale configurations.
      */
     @JsonProperty(value = "autoscale")
@@ -132,6 +138,26 @@ public final class Role {
      */
     public Role withTargetInstanceCount(Integer targetInstanceCount) {
         this.targetInstanceCount = targetInstanceCount;
+        return this;
+    }
+
+    /**
+     * Get the vMGroupName property: The name of the virtual machine group.
+     *
+     * @return the vMGroupName value.
+     */
+    public String vMGroupName() {
+        return this.vMGroupName;
+    }
+
+    /**
+     * Set the vMGroupName property: The name of the virtual machine group.
+     *
+     * @param vMGroupName the vMGroupName value to set.
+     * @return the Role object itself.
+     */
+    public Role withVMGroupName(String vMGroupName) {
+        this.vMGroupName = vMGroupName;
         return this;
     }
 

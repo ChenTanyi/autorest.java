@@ -80,6 +80,13 @@ public interface StorageManagementClient {
     ManagementPoliciesClient getManagementPolicies();
 
     /**
+     * Gets the BlobInventoryPoliciesClient object to access its operations.
+     *
+     * @return the BlobInventoryPoliciesClient object.
+     */
+    BlobInventoryPoliciesClient getBlobInventoryPolicies();
+
+    /**
      * Gets the PrivateEndpointConnectionsClient object to access its operations.
      *
      * @return the PrivateEndpointConnectionsClient object.

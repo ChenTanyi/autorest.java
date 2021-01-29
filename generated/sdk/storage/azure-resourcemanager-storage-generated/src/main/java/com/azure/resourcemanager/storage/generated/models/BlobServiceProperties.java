@@ -98,6 +98,14 @@ public interface BlobServiceProperties {
     DeleteRetentionPolicy containerDeleteRetentionPolicy();
 
     /**
+     * Gets the lastAccessTimeTrackingPolicy property: The blob service property to configure last access time based
+     * tracking policy.
+     *
+     * @return the lastAccessTimeTrackingPolicy value.
+     */
+    LastAccessTimeTrackingPolicy lastAccessTimeTrackingPolicy();
+
+    /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.BlobServicePropertiesInner object.
      *
      * @return the inner object.
@@ -138,7 +146,8 @@ public interface BlobServiceProperties {
                 DefinitionStages.WithAutomaticSnapshotPolicyEnabled,
                 DefinitionStages.WithChangeFeed,
                 DefinitionStages.WithRestorePolicy,
-                DefinitionStages.WithContainerDeleteRetentionPolicy {
+                DefinitionStages.WithContainerDeleteRetentionPolicy,
+                DefinitionStages.WithLastAccessTimeTrackingPolicy {
             /**
              * Executes the create request.
              *
@@ -244,6 +253,18 @@ public interface BlobServiceProperties {
              */
             WithCreate withContainerDeleteRetentionPolicy(DeleteRetentionPolicy containerDeleteRetentionPolicy);
         }
+        /** The stage of the BlobServiceProperties definition allowing to specify lastAccessTimeTrackingPolicy. */
+        interface WithLastAccessTimeTrackingPolicy {
+            /**
+             * Specifies the lastAccessTimeTrackingPolicy property: The blob service property to configure last access
+             * time based tracking policy..
+             *
+             * @param lastAccessTimeTrackingPolicy The blob service property to configure last access time based
+             *     tracking policy.
+             * @return the next definition stage.
+             */
+            WithCreate withLastAccessTimeTrackingPolicy(LastAccessTimeTrackingPolicy lastAccessTimeTrackingPolicy);
+        }
     }
     /**
      * Begins update for the BlobServiceProperties resource.
@@ -261,7 +282,8 @@ public interface BlobServiceProperties {
             UpdateStages.WithAutomaticSnapshotPolicyEnabled,
             UpdateStages.WithChangeFeed,
             UpdateStages.WithRestorePolicy,
-            UpdateStages.WithContainerDeleteRetentionPolicy {
+            UpdateStages.WithContainerDeleteRetentionPolicy,
+            UpdateStages.WithLastAccessTimeTrackingPolicy {
         /**
          * Executes the update request.
          *
@@ -368,6 +390,18 @@ public interface BlobServiceProperties {
              * @return the next definition stage.
              */
             Update withContainerDeleteRetentionPolicy(DeleteRetentionPolicy containerDeleteRetentionPolicy);
+        }
+        /** The stage of the BlobServiceProperties update allowing to specify lastAccessTimeTrackingPolicy. */
+        interface WithLastAccessTimeTrackingPolicy {
+            /**
+             * Specifies the lastAccessTimeTrackingPolicy property: The blob service property to configure last access
+             * time based tracking policy..
+             *
+             * @param lastAccessTimeTrackingPolicy The blob service property to configure last access time based
+             *     tracking policy.
+             * @return the next definition stage.
+             */
+            Update withLastAccessTimeTrackingPolicy(LastAccessTimeTrackingPolicy lastAccessTimeTrackingPolicy);
         }
     }
     /**

@@ -22,6 +22,7 @@ import com.azure.core.util.Configuration;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.storage.generated.fluent.StorageManagementClient;
 import com.azure.resourcemanager.storage.generated.implementation.BlobContainersImpl;
+import com.azure.resourcemanager.storage.generated.implementation.BlobInventoryPoliciesImpl;
 import com.azure.resourcemanager.storage.generated.implementation.BlobServicesImpl;
 import com.azure.resourcemanager.storage.generated.implementation.EncryptionScopesImpl;
 import com.azure.resourcemanager.storage.generated.implementation.FileServicesImpl;
@@ -40,6 +41,7 @@ import com.azure.resourcemanager.storage.generated.implementation.TableServicesI
 import com.azure.resourcemanager.storage.generated.implementation.TablesImpl;
 import com.azure.resourcemanager.storage.generated.implementation.UsagesImpl;
 import com.azure.resourcemanager.storage.generated.models.BlobContainers;
+import com.azure.resourcemanager.storage.generated.models.BlobInventoryPolicies;
 import com.azure.resourcemanager.storage.generated.models.BlobServices;
 import com.azure.resourcemanager.storage.generated.models.EncryptionScopes;
 import com.azure.resourcemanager.storage.generated.models.FileServices;
@@ -73,6 +75,8 @@ public final class StorageManager {
     private Usages usages;
 
     private ManagementPolicies managementPolicies;
+
+    private BlobInventoryPolicies blobInventoryPolicies;
 
     private PrivateEndpointConnections privateEndpointConnections;
 
@@ -298,6 +302,14 @@ public final class StorageManager {
             this.managementPolicies = new ManagementPoliciesImpl(clientObject.getManagementPolicies(), this);
         }
         return managementPolicies;
+    }
+
+    /** @return Resource collection API of BlobInventoryPolicies. */
+    public BlobInventoryPolicies blobInventoryPolicies() {
+        if (this.blobInventoryPolicies == null) {
+            this.blobInventoryPolicies = new BlobInventoryPoliciesImpl(clientObject.getBlobInventoryPolicies(), this);
+        }
+        return blobInventoryPolicies;
     }
 
     /** @return Resource collection API of PrivateEndpointConnections. */

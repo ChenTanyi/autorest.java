@@ -199,6 +199,10 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this.innerModel().minimumTlsVersion();
     }
 
+    public Boolean allowSharedKeyAccess() {
+        return this.innerModel().allowSharedKeyAccess();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -526,6 +530,16 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
             return this;
         } else {
             this.updateParameters.withMinimumTlsVersion(minimumTlsVersion);
+            return this;
+        }
+    }
+
+    public StorageAccountImpl withAllowSharedKeyAccess(Boolean allowSharedKeyAccess) {
+        if (isInCreateMode()) {
+            this.createParameters.withAllowSharedKeyAccess(allowSharedKeyAccess);
+            return this;
+        } else {
+            this.updateParameters.withAllowSharedKeyAccess(allowSharedKeyAccess);
             return this;
         }
     }

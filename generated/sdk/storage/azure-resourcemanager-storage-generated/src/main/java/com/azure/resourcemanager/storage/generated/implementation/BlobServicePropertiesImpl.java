@@ -11,6 +11,7 @@ import com.azure.resourcemanager.storage.generated.models.BlobServiceProperties;
 import com.azure.resourcemanager.storage.generated.models.ChangeFeed;
 import com.azure.resourcemanager.storage.generated.models.CorsRules;
 import com.azure.resourcemanager.storage.generated.models.DeleteRetentionPolicy;
+import com.azure.resourcemanager.storage.generated.models.LastAccessTimeTrackingPolicy;
 import com.azure.resourcemanager.storage.generated.models.RestorePolicyProperties;
 import com.azure.resourcemanager.storage.generated.models.Sku;
 
@@ -66,6 +67,10 @@ public final class BlobServicePropertiesImpl
 
     public DeleteRetentionPolicy containerDeleteRetentionPolicy() {
         return this.innerModel().containerDeleteRetentionPolicy();
+    }
+
+    public LastAccessTimeTrackingPolicy lastAccessTimeTrackingPolicy() {
+        return this.innerModel().lastAccessTimeTrackingPolicy();
     }
 
     public BlobServicePropertiesInner innerModel() {
@@ -200,6 +205,12 @@ public final class BlobServicePropertiesImpl
     public BlobServicePropertiesImpl withContainerDeleteRetentionPolicy(
         DeleteRetentionPolicy containerDeleteRetentionPolicy) {
         this.innerModel().withContainerDeleteRetentionPolicy(containerDeleteRetentionPolicy);
+        return this;
+    }
+
+    public BlobServicePropertiesImpl withLastAccessTimeTrackingPolicy(
+        LastAccessTimeTrackingPolicy lastAccessTimeTrackingPolicy) {
+        this.innerModel().withLastAccessTimeTrackingPolicy(lastAccessTimeTrackingPolicy);
         return this;
     }
 }

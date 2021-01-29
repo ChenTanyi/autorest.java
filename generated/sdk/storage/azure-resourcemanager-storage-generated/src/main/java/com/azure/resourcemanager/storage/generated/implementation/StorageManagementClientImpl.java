@@ -22,6 +22,7 @@ import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.serializer.SerializerAdapter;
 import com.azure.core.util.serializer.SerializerEncoding;
 import com.azure.resourcemanager.storage.generated.fluent.BlobContainersClient;
+import com.azure.resourcemanager.storage.generated.fluent.BlobInventoryPoliciesClient;
 import com.azure.resourcemanager.storage.generated.fluent.BlobServicesClient;
 import com.azure.resourcemanager.storage.generated.fluent.EncryptionScopesClient;
 import com.azure.resourcemanager.storage.generated.fluent.FileServicesClient;
@@ -184,6 +185,18 @@ public final class StorageManagementClientImpl implements StorageManagementClien
      */
     public ManagementPoliciesClient getManagementPolicies() {
         return this.managementPolicies;
+    }
+
+    /** The BlobInventoryPoliciesClient object to access its operations. */
+    private final BlobInventoryPoliciesClient blobInventoryPolicies;
+
+    /**
+     * Gets the BlobInventoryPoliciesClient object to access its operations.
+     *
+     * @return the BlobInventoryPoliciesClient object.
+     */
+    public BlobInventoryPoliciesClient getBlobInventoryPolicies() {
+        return this.blobInventoryPolicies;
     }
 
     /** The PrivateEndpointConnectionsClient object to access its operations. */
@@ -358,6 +371,7 @@ public final class StorageManagementClientImpl implements StorageManagementClien
         this.storageAccounts = new StorageAccountsClientImpl(this);
         this.usages = new UsagesClientImpl(this);
         this.managementPolicies = new ManagementPoliciesClientImpl(this);
+        this.blobInventoryPolicies = new BlobInventoryPoliciesClientImpl(this);
         this.privateEndpointConnections = new PrivateEndpointConnectionsClientImpl(this);
         this.privateLinkResources = new PrivateLinkResourcesClientImpl(this);
         this.objectReplicationPoliciesOperations = new ObjectReplicationPoliciesOperationsClientImpl(this);

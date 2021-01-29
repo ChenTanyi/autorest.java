@@ -131,6 +131,16 @@ public class StorageAccountCreateParameters {
     @JsonProperty(value = "properties.minimumTlsVersion")
     private MinimumTlsVersion minimumTlsVersion;
 
+    /*
+     * Indicates whether the storage account permits requests to be authorized
+     * with the account access key via Shared Key. If false, then all requests,
+     * including shared access signatures, must be authorized with Azure Active
+     * Directory (Azure AD). The default value is null, which is equivalent to
+     * true.
+     */
+    @JsonProperty(value = "properties.allowSharedKeyAccess")
+    private Boolean allowSharedKeyAccess;
+
     /**
      * Get the sku property: Required. Gets or sets the SKU name.
      *
@@ -481,6 +491,30 @@ public class StorageAccountCreateParameters {
      */
     public StorageAccountCreateParameters withMinimumTlsVersion(MinimumTlsVersion minimumTlsVersion) {
         this.minimumTlsVersion = minimumTlsVersion;
+        return this;
+    }
+
+    /**
+     * Get the allowSharedKeyAccess property: Indicates whether the storage account permits requests to be authorized
+     * with the account access key via Shared Key. If false, then all requests, including shared access signatures, must
+     * be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to true.
+     *
+     * @return the allowSharedKeyAccess value.
+     */
+    public Boolean allowSharedKeyAccess() {
+        return this.allowSharedKeyAccess;
+    }
+
+    /**
+     * Set the allowSharedKeyAccess property: Indicates whether the storage account permits requests to be authorized
+     * with the account access key via Shared Key. If false, then all requests, including shared access signatures, must
+     * be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to true.
+     *
+     * @param allowSharedKeyAccess the allowSharedKeyAccess value to set.
+     * @return the StorageAccountCreateParameters object itself.
+     */
+    public StorageAccountCreateParameters withAllowSharedKeyAccess(Boolean allowSharedKeyAccess) {
+        this.allowSharedKeyAccess = allowSharedKeyAccess;
         return this;
     }
 

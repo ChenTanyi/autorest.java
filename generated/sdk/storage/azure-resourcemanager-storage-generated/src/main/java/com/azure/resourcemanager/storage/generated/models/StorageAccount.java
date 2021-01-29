@@ -256,6 +256,15 @@ public interface StorageAccount {
     MinimumTlsVersion minimumTlsVersion();
 
     /**
+     * Gets the allowSharedKeyAccess property: Indicates whether the storage account permits requests to be authorized
+     * with the account access key via Shared Key. If false, then all requests, including shared access signatures, must
+     * be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to true.
+     *
+     * @return the allowSharedKeyAccess value.
+     */
+    Boolean allowSharedKeyAccess();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -362,7 +371,8 @@ public interface StorageAccount {
                 DefinitionStages.WithLargeFileSharesState,
                 DefinitionStages.WithRoutingPreference,
                 DefinitionStages.WithAllowBlobPublicAccess,
-                DefinitionStages.WithMinimumTlsVersion {
+                DefinitionStages.WithMinimumTlsVersion,
+                DefinitionStages.WithAllowSharedKeyAccess {
             /**
              * Executes the create request.
              *
@@ -535,6 +545,22 @@ public interface StorageAccount {
              */
             WithCreate withMinimumTlsVersion(MinimumTlsVersion minimumTlsVersion);
         }
+        /** The stage of the StorageAccount definition allowing to specify allowSharedKeyAccess. */
+        interface WithAllowSharedKeyAccess {
+            /**
+             * Specifies the allowSharedKeyAccess property: Indicates whether the storage account permits requests to be
+             * authorized with the account access key via Shared Key. If false, then all requests, including shared
+             * access signatures, must be authorized with Azure Active Directory (Azure AD). The default value is null,
+             * which is equivalent to true..
+             *
+             * @param allowSharedKeyAccess Indicates whether the storage account permits requests to be authorized with
+             *     the account access key via Shared Key. If false, then all requests, including shared access
+             *     signatures, must be authorized with Azure Active Directory (Azure AD). The default value is null,
+             *     which is equivalent to true.
+             * @return the next definition stage.
+             */
+            WithCreate withAllowSharedKeyAccess(Boolean allowSharedKeyAccess);
+        }
     }
     /**
      * Begins update for the StorageAccount resource.
@@ -558,7 +584,8 @@ public interface StorageAccount {
             UpdateStages.WithLargeFileSharesState,
             UpdateStages.WithRoutingPreference,
             UpdateStages.WithAllowBlobPublicAccess,
-            UpdateStages.WithMinimumTlsVersion {
+            UpdateStages.WithMinimumTlsVersion,
+            UpdateStages.WithAllowSharedKeyAccess {
         /**
          * Executes the update request.
          *
@@ -745,6 +772,22 @@ public interface StorageAccount {
              * @return the next definition stage.
              */
             Update withMinimumTlsVersion(MinimumTlsVersion minimumTlsVersion);
+        }
+        /** The stage of the StorageAccount update allowing to specify allowSharedKeyAccess. */
+        interface WithAllowSharedKeyAccess {
+            /**
+             * Specifies the allowSharedKeyAccess property: Indicates whether the storage account permits requests to be
+             * authorized with the account access key via Shared Key. If false, then all requests, including shared
+             * access signatures, must be authorized with Azure Active Directory (Azure AD). The default value is null,
+             * which is equivalent to true..
+             *
+             * @param allowSharedKeyAccess Indicates whether the storage account permits requests to be authorized with
+             *     the account access key via Shared Key. If false, then all requests, including shared access
+             *     signatures, must be authorized with Azure Active Directory (Azure AD). The default value is null,
+             *     which is equivalent to true.
+             * @return the next definition stage.
+             */
+            Update withAllowSharedKeyAccess(Boolean allowSharedKeyAccess);
         }
     }
     /**

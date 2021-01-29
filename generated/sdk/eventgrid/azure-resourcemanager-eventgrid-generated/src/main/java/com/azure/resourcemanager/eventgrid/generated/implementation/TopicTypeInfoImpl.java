@@ -8,6 +8,7 @@ import com.azure.resourcemanager.eventgrid.generated.EventGridManager;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.TopicTypeInfoInner;
 import com.azure.resourcemanager.eventgrid.generated.models.ResourceRegionType;
 import com.azure.resourcemanager.eventgrid.generated.models.TopicTypeInfo;
+import com.azure.resourcemanager.eventgrid.generated.models.TopicTypePropertiesSupportedScopesForSourceItem;
 import com.azure.resourcemanager.eventgrid.generated.models.TopicTypeProvisioningState;
 import java.util.Collections;
 import java.util.List;
@@ -65,6 +66,15 @@ public final class TopicTypeInfoImpl implements TopicTypeInfo {
 
     public String sourceResourceFormat() {
         return this.innerModel().sourceResourceFormat();
+    }
+
+    public List<TopicTypePropertiesSupportedScopesForSourceItem> supportedScopesForSource() {
+        List<TopicTypePropertiesSupportedScopesForSourceItem> inner = this.innerModel().supportedScopesForSource();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     public TopicTypeInfoInner innerModel() {
