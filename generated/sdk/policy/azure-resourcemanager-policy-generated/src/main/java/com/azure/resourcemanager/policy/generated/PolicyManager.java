@@ -25,10 +25,12 @@ import com.azure.resourcemanager.policy.generated.implementation.DataPolicyManif
 import com.azure.resourcemanager.policy.generated.implementation.PolicyAssignmentsImpl;
 import com.azure.resourcemanager.policy.generated.implementation.PolicyClientBuilder;
 import com.azure.resourcemanager.policy.generated.implementation.PolicyDefinitionsImpl;
+import com.azure.resourcemanager.policy.generated.implementation.PolicyExemptionsImpl;
 import com.azure.resourcemanager.policy.generated.implementation.PolicySetDefinitionsImpl;
 import com.azure.resourcemanager.policy.generated.models.DataPolicyManifests;
 import com.azure.resourcemanager.policy.generated.models.PolicyAssignments;
 import com.azure.resourcemanager.policy.generated.models.PolicyDefinitions;
+import com.azure.resourcemanager.policy.generated.models.PolicyExemptions;
 import com.azure.resourcemanager.policy.generated.models.PolicySetDefinitions;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
@@ -48,6 +50,8 @@ public final class PolicyManager {
     private PolicyDefinitions policyDefinitions;
 
     private PolicySetDefinitions policySetDefinitions;
+
+    private PolicyExemptions policyExemptions;
 
     private final PolicyClient clientObject;
 
@@ -241,6 +245,14 @@ public final class PolicyManager {
             this.policySetDefinitions = new PolicySetDefinitionsImpl(clientObject.getPolicySetDefinitions(), this);
         }
         return policySetDefinitions;
+    }
+
+    /** @return Resource collection API of PolicyExemptions. */
+    public PolicyExemptions policyExemptions() {
+        if (this.policyExemptions == null) {
+            this.policyExemptions = new PolicyExemptionsImpl(clientObject.getPolicyExemptions(), this);
+        }
+        return policyExemptions;
     }
 
     /**

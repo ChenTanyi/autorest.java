@@ -270,18 +270,12 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter policyAssignmentName is required and cannot be null."));
         }
+        final String apiVersion = "2020-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
-                    service
-                        .delete(
-                            this.client.getEndpoint(),
-                            scope,
-                            policyAssignmentName,
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
+                    service.delete(this.client.getEndpoint(), scope, policyAssignmentName, apiVersion, accept, context))
             .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
     }
 
@@ -318,11 +312,10 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter policyAssignmentName is required and cannot be null."));
         }
+        final String apiVersion = "2020-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .delete(
-                this.client.getEndpoint(), scope, policyAssignmentName, this.client.getApiVersion(), accept, context);
+        return service.delete(this.client.getEndpoint(), scope, policyAssignmentName, apiVersion, accept, context);
     }
 
     /**
@@ -436,6 +429,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2020-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -445,7 +439,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
                             this.client.getEndpoint(),
                             scope,
                             policyAssignmentName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             parameters,
                             accept,
                             context))
@@ -491,17 +485,11 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2020-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .create(
-                this.client.getEndpoint(),
-                scope,
-                policyAssignmentName,
-                this.client.getApiVersion(),
-                parameters,
-                accept,
-                context);
+            .create(this.client.getEndpoint(), scope, policyAssignmentName, apiVersion, parameters, accept, context);
     }
 
     /**
@@ -610,18 +598,12 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter policyAssignmentName is required and cannot be null."));
         }
+        final String apiVersion = "2020-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
-                    service
-                        .get(
-                            this.client.getEndpoint(),
-                            scope,
-                            policyAssignmentName,
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
+                    service.get(this.client.getEndpoint(), scope, policyAssignmentName, apiVersion, accept, context))
             .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
     }
 
@@ -656,10 +638,10 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter policyAssignmentName is required and cannot be null."));
         }
+        final String apiVersion = "2020-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .get(this.client.getEndpoint(), scope, policyAssignmentName, this.client.getApiVersion(), accept, context);
+        return service.get(this.client.getEndpoint(), scope, policyAssignmentName, apiVersion, accept, context);
     }
 
     /**
@@ -773,6 +755,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2020-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -783,7 +766,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
                             resourceGroupName,
                             filter,
                             top,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -845,6 +828,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2020-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -853,7 +837,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
                 resourceGroupName,
                 filter,
                 top,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 accept,
                 context)
@@ -1104,6 +1088,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2020-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1118,7 +1103,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
                             resourceName,
                             filter,
                             top,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -1218,6 +1203,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2020-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1230,7 +1216,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
                 resourceName,
                 filter,
                 top,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 accept,
                 context)
@@ -1582,19 +1568,14 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter managementGroupId is required and cannot be null."));
         }
+        final String apiVersion = "2020-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
                         .listForManagementGroup(
-                            this.client.getEndpoint(),
-                            managementGroupId,
-                            filter,
-                            top,
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
+                            this.client.getEndpoint(), managementGroupId, filter, top, apiVersion, accept, context))
             .<PagedResponse<PolicyAssignmentInner>>map(
                 res ->
                     new PagedResponseBase<>(
@@ -1644,11 +1625,12 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter managementGroupId is required and cannot be null."));
         }
+        final String apiVersion = "2020-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .listForManagementGroup(
-                this.client.getEndpoint(), managementGroupId, filter, top, this.client.getApiVersion(), accept, context)
+                this.client.getEndpoint(), managementGroupId, filter, top, apiVersion, accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -1838,6 +1820,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2020-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1847,7 +1830,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
                             this.client.getEndpoint(),
                             filter,
                             top,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -1904,17 +1887,11 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2020-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(
-                this.client.getEndpoint(),
-                filter,
-                top,
-                this.client.getApiVersion(),
-                this.client.getSubscriptionId(),
-                accept,
-                context)
+            .list(this.client.getEndpoint(), filter, top, apiVersion, this.client.getSubscriptionId(), accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -2093,17 +2070,12 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter policyAssignmentId is required and cannot be null."));
         }
+        final String apiVersion = "2020-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
-                    service
-                        .deleteById(
-                            this.client.getEndpoint(),
-                            policyAssignmentId,
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
+                    service.deleteById(this.client.getEndpoint(), policyAssignmentId, apiVersion, accept, context))
             .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
     }
 
@@ -2137,10 +2109,10 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter policyAssignmentId is required and cannot be null."));
         }
+        final String apiVersion = "2020-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .deleteById(this.client.getEndpoint(), policyAssignmentId, this.client.getApiVersion(), accept, context);
+        return service.deleteById(this.client.getEndpoint(), policyAssignmentId, apiVersion, accept, context);
     }
 
     /**
@@ -2251,18 +2223,14 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2020-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
                         .createById(
-                            this.client.getEndpoint(),
-                            policyAssignmentId,
-                            this.client.getApiVersion(),
-                            parameters,
-                            accept,
-                            context))
+                            this.client.getEndpoint(), policyAssignmentId, apiVersion, parameters, accept, context))
             .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
     }
 
@@ -2303,16 +2271,11 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2020-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .createById(
-                this.client.getEndpoint(),
-                policyAssignmentId,
-                this.client.getApiVersion(),
-                parameters,
-                accept,
-                context);
+            .createById(this.client.getEndpoint(), policyAssignmentId, apiVersion, parameters, accept, context);
     }
 
     /**
@@ -2421,17 +2384,11 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter policyAssignmentId is required and cannot be null."));
         }
+        final String apiVersion = "2020-09-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
-                context ->
-                    service
-                        .getById(
-                            this.client.getEndpoint(),
-                            policyAssignmentId,
-                            this.client.getApiVersion(),
-                            accept,
-                            context))
+                context -> service.getById(this.client.getEndpoint(), policyAssignmentId, apiVersion, accept, context))
             .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
     }
 
@@ -2463,10 +2420,10 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
             return Mono
                 .error(new IllegalArgumentException("Parameter policyAssignmentId is required and cannot be null."));
         }
+        final String apiVersion = "2020-09-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .getById(this.client.getEndpoint(), policyAssignmentId, this.client.getApiVersion(), accept, context);
+        return service.getById(this.client.getEndpoint(), policyAssignmentId, apiVersion, accept, context);
     }
 
     /**

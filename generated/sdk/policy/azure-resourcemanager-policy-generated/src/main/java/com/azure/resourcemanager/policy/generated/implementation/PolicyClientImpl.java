@@ -25,6 +25,7 @@ import com.azure.resourcemanager.policy.generated.fluent.DataPolicyManifestsClie
 import com.azure.resourcemanager.policy.generated.fluent.PolicyAssignmentsClient;
 import com.azure.resourcemanager.policy.generated.fluent.PolicyClient;
 import com.azure.resourcemanager.policy.generated.fluent.PolicyDefinitionsClient;
+import com.azure.resourcemanager.policy.generated.fluent.PolicyExemptionsClient;
 import com.azure.resourcemanager.policy.generated.fluent.PolicySetDefinitionsClient;
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -63,18 +64,6 @@ public final class PolicyClientImpl implements PolicyClient {
      */
     public String getEndpoint() {
         return this.endpoint;
-    }
-
-    /** Api Version. */
-    private final String apiVersion;
-
-    /**
-     * Gets Api Version.
-     *
-     * @return the apiVersion value.
-     */
-    public String getApiVersion() {
-        return this.apiVersion;
     }
 
     /** The HTTP pipeline to send requests through. */
@@ -161,6 +150,18 @@ public final class PolicyClientImpl implements PolicyClient {
         return this.policySetDefinitions;
     }
 
+    /** The PolicyExemptionsClient object to access its operations. */
+    private final PolicyExemptionsClient policyExemptions;
+
+    /**
+     * Gets the PolicyExemptionsClient object to access its operations.
+     *
+     * @return the PolicyExemptionsClient object.
+     */
+    public PolicyExemptionsClient getPolicyExemptions() {
+        return this.policyExemptions;
+    }
+
     /**
      * Initializes an instance of PolicyClient client.
      *
@@ -183,11 +184,11 @@ public final class PolicyClientImpl implements PolicyClient {
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
-        this.apiVersion = "2020-09-01";
         this.dataPolicyManifests = new DataPolicyManifestsClientImpl(this);
         this.policyAssignments = new PolicyAssignmentsClientImpl(this);
         this.policyDefinitions = new PolicyDefinitionsClientImpl(this);
         this.policySetDefinitions = new PolicySetDefinitionsClientImpl(this);
+        this.policyExemptions = new PolicyExemptionsClientImpl(this);
     }
 
     /**
