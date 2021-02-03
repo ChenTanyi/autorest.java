@@ -58,6 +58,14 @@ public final class LogSearchRuleResourceImpl
         return this.innerModel().etag();
     }
 
+    public String createdWithApiVersion() {
+        return this.innerModel().createdWithApiVersion();
+    }
+
+    public Boolean isLegacyLogAnalyticsRule() {
+        return this.innerModel().isLegacyLogAnalyticsRule();
+    }
+
     public String description() {
         return this.innerModel().description();
     }

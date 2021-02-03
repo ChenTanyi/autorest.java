@@ -67,6 +67,20 @@ public interface LogSearchRuleResource {
     String etag();
 
     /**
+     * Gets the createdWithApiVersion property: The api-version used when creating this alert rule.
+     *
+     * @return the createdWithApiVersion value.
+     */
+    String createdWithApiVersion();
+
+    /**
+     * Gets the isLegacyLogAnalyticsRule property: True if alert rule is legacy Log Analytic rule.
+     *
+     * @return the isLegacyLogAnalyticsRule value.
+     */
+    Boolean isLegacyLogAnalyticsRule();
+
+    /**
      * Gets the description property: The description of the Log Search rule.
      *
      * @return the description value.
