@@ -119,7 +119,7 @@ public interface VirtualMachineInstanceView {
     List<InstanceViewStatus> statuses();
 
     /**
-     * Gets the patchStatus property: The status of virtual machine patch operations.
+     * Gets the patchStatus property: [Preview Feature] The status of virtual machine patch operations.
      *
      * @return the patchStatus value.
      */

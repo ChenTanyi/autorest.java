@@ -102,6 +102,10 @@ public final class VirtualMachineUpdateImpl implements VirtualMachineUpdate {
         return this.innerModel().proximityPlacementGroup();
     }
 
+    public Integer platformFaultDomain() {
+        return this.innerModel().platformFaultDomain();
+    }
+
     public VirtualMachinePriorityTypes priority() {
         return this.innerModel().priority();
     }

@@ -11,6 +11,8 @@ import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetInner;
 import com.azure.resourcemanager.compute.generated.models.AdditionalCapabilities;
 import com.azure.resourcemanager.compute.generated.models.AutomaticRepairsPolicy;
+import com.azure.resourcemanager.compute.generated.models.ExtendedLocation;
+import com.azure.resourcemanager.compute.generated.models.OrchestrationMode;
 import com.azure.resourcemanager.compute.generated.models.Plan;
 import com.azure.resourcemanager.compute.generated.models.ScaleInPolicy;
 import com.azure.resourcemanager.compute.generated.models.Sku;
@@ -76,6 +78,10 @@ public final class VirtualMachineScaleSetImpl
         }
     }
 
+    public ExtendedLocation extendedLocation() {
+        return this.innerModel().extendedLocation();
+    }
+
     public UpgradePolicy upgradePolicy() {
         return this.innerModel().upgradePolicy();
     }
@@ -130,6 +136,10 @@ public final class VirtualMachineScaleSetImpl
 
     public ScaleInPolicy scaleInPolicy() {
         return this.innerModel().scaleInPolicy();
+    }
+
+    public OrchestrationMode orchestrationMode() {
+        return this.innerModel().orchestrationMode();
     }
 
     public Region region() {
@@ -288,6 +298,11 @@ public final class VirtualMachineScaleSetImpl
         return this;
     }
 
+    public VirtualMachineScaleSetImpl withExtendedLocation(ExtendedLocation extendedLocation) {
+        this.innerModel().withExtendedLocation(extendedLocation);
+        return this;
+    }
+
     public VirtualMachineScaleSetImpl withUpgradePolicy(UpgradePolicy upgradePolicy) {
         if (isInCreateMode()) {
             this.innerModel().withUpgradePolicy(upgradePolicy);
@@ -387,6 +402,11 @@ public final class VirtualMachineScaleSetImpl
             this.updateParameters.withScaleInPolicy(scaleInPolicy);
             return this;
         }
+    }
+
+    public VirtualMachineScaleSetImpl withOrchestrationMode(OrchestrationMode orchestrationMode) {
+        this.innerModel().withOrchestrationMode(orchestrationMode);
+        return this;
     }
 
     public VirtualMachineScaleSetImpl withVirtualMachineProfile(

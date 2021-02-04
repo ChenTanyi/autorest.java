@@ -587,6 +587,40 @@ public interface VirtualMachines {
     VirtualMachineAssessPatchesResult assessPatches(String resourceGroupName, String vmName, Context context);
 
     /**
+     * Installs patches on the VM.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @param installPatchesInput Input for InstallPatches as directly received by the API.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the result summary of an installation operation.
+     */
+    VirtualMachineInstallPatchesResult installPatches(
+        String resourceGroupName, String vmName, VirtualMachineInstallPatchesParameters installPatchesInput);
+
+    /**
+     * Installs patches on the VM.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @param installPatchesInput Input for InstallPatches as directly received by the API.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the result summary of an installation operation.
+     */
+    VirtualMachineInstallPatchesResult installPatches(
+        String resourceGroupName,
+        String vmName,
+        VirtualMachineInstallPatchesParameters installPatchesInput,
+        Context context);
+
+    /**
      * Run command on the VM.
      *
      * @param resourceGroupName The name of the resource group.

@@ -41,12 +41,26 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         this.serviceManager = serviceManager;
     }
 
-    public void deleteByResourceGroup(String resourceGroupName, String vmScaleSetName) {
+    public PagedIterable<VirtualMachineScaleSet> listByLocation(String location) {
+        PagedIterable<VirtualMachineScaleSetInner> inner = this.serviceClient().listByLocation(location);
+        return inner.mapPage(inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<VirtualMachineScaleSet> listByLocation(String location, Context context) {
+        PagedIterable<VirtualMachineScaleSetInner> inner = this.serviceClient().listByLocation(location, context);
+        return inner.mapPage(inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
+    }
+
+    public void delete(String resourceGroupName, String vmScaleSetName, Boolean forceDeletion) {
+        this.serviceClient().delete(resourceGroupName, vmScaleSetName, forceDeletion);
+    }
+
+    public void delete(String resourceGroupName, String vmScaleSetName) {
         this.serviceClient().delete(resourceGroupName, vmScaleSetName);
     }
 
-    public void delete(String resourceGroupName, String vmScaleSetName, Context context) {
-        this.serviceClient().delete(resourceGroupName, vmScaleSetName, context);
+    public void delete(String resourceGroupName, String vmScaleSetName, Boolean forceDeletion, Context context) {
+        this.serviceClient().delete(resourceGroupName, vmScaleSetName, forceDeletion, context);
     }
 
     public VirtualMachineScaleSet getByResourceGroup(String resourceGroupName, String vmScaleSetName) {
@@ -91,6 +105,14 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
     }
 
     public void deleteInstances(
+        String resourceGroupName,
+        String vmScaleSetName,
+        VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs,
+        Boolean forceDeletion) {
+        this.serviceClient().deleteInstances(resourceGroupName, vmScaleSetName, vmInstanceIDs, forceDeletion);
+    }
+
+    public void deleteInstances(
         String resourceGroupName, String vmScaleSetName, VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs) {
         this.serviceClient().deleteInstances(resourceGroupName, vmScaleSetName, vmInstanceIDs);
     }
@@ -99,8 +121,9 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
         String resourceGroupName,
         String vmScaleSetName,
         VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs,
+        Boolean forceDeletion,
         Context context) {
-        this.serviceClient().deleteInstances(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
+        this.serviceClient().deleteInstances(resourceGroupName, vmScaleSetName, vmInstanceIDs, forceDeletion, context);
     }
 
     public VirtualMachineScaleSetInstanceView getInstanceView(String resourceGroupName, String vmScaleSetName) {
@@ -434,10 +457,11 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
                                 "The resource ID '%s' is not valid. Missing path segment 'virtualMachineScaleSets'.",
                                 id)));
         }
-        this.delete(resourceGroupName, vmScaleSetName, Context.NONE);
+        Boolean localForceDeletion = null;
+        this.delete(resourceGroupName, vmScaleSetName, localForceDeletion, Context.NONE);
     }
 
-    public void deleteByIdWithResponse(String id, Context context) {
+    public void deleteByIdWithResponse(String id, Boolean forceDeletion, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw logger
@@ -456,7 +480,7 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
                                 "The resource ID '%s' is not valid. Missing path segment 'virtualMachineScaleSets'.",
                                 id)));
         }
-        this.delete(resourceGroupName, vmScaleSetName, context);
+        this.delete(resourceGroupName, vmScaleSetName, forceDeletion, context);
     }
 
     private VirtualMachineScaleSetsClient serviceClient() {

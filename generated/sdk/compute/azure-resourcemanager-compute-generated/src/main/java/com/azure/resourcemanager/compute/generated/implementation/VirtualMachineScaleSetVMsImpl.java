@@ -100,12 +100,17 @@ public final class VirtualMachineScaleSetVMsImpl implements VirtualMachineScaleS
         }
     }
 
+    public void delete(String resourceGroupName, String vmScaleSetName, String instanceId, Boolean forceDeletion) {
+        this.serviceClient().delete(resourceGroupName, vmScaleSetName, instanceId, forceDeletion);
+    }
+
     public void delete(String resourceGroupName, String vmScaleSetName, String instanceId) {
         this.serviceClient().delete(resourceGroupName, vmScaleSetName, instanceId);
     }
 
-    public void delete(String resourceGroupName, String vmScaleSetName, String instanceId, Context context) {
-        this.serviceClient().delete(resourceGroupName, vmScaleSetName, instanceId, context);
+    public void delete(
+        String resourceGroupName, String vmScaleSetName, String instanceId, Boolean forceDeletion, Context context) {
+        this.serviceClient().delete(resourceGroupName, vmScaleSetName, instanceId, forceDeletion, context);
     }
 
     public VirtualMachineScaleSetVM get(String resourceGroupName, String vmScaleSetName, String instanceId) {

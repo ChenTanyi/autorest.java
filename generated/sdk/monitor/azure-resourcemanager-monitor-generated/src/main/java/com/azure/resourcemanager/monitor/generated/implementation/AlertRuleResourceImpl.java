@@ -56,12 +56,20 @@ public final class AlertRuleResourceImpl
         return this.innerModel().description();
     }
 
+    public String provisioningState() {
+        return this.innerModel().provisioningState();
+    }
+
     public boolean isEnabled() {
         return this.innerModel().isEnabled();
     }
 
     public RuleCondition condition() {
         return this.innerModel().condition();
+    }
+
+    public RuleAction action() {
+        return this.innerModel().action();
     }
 
     public List<RuleAction> actions() {
@@ -228,6 +236,26 @@ public final class AlertRuleResourceImpl
             return this;
         } else {
             this.updateAlertRulesResource.withDescription(description);
+            return this;
+        }
+    }
+
+    public AlertRuleResourceImpl withProvisioningState(String provisioningState) {
+        if (isInCreateMode()) {
+            this.innerModel().withProvisioningState(provisioningState);
+            return this;
+        } else {
+            this.updateAlertRulesResource.withProvisioningState(provisioningState);
+            return this;
+        }
+    }
+
+    public AlertRuleResourceImpl withAction(RuleAction action) {
+        if (isInCreateMode()) {
+            this.innerModel().withAction(action);
+            return this;
+        } else {
+            this.updateAlertRulesResource.withAction(action);
             return this;
         }
     }

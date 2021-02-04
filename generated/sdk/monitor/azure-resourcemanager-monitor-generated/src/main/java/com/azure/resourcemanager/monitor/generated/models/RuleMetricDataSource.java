@@ -53,6 +53,27 @@ public class RuleMetricDataSource extends RuleDataSource {
         return this;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public RuleMetricDataSource withLegacyResourceId(String legacyResourceId) {
+        super.withLegacyResourceId(legacyResourceId);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public RuleMetricDataSource withResourceLocation(String resourceLocation) {
+        super.withResourceLocation(resourceLocation);
+        return this;
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public RuleMetricDataSource withMetricNamespace(String metricNamespace) {
+        super.withMetricNamespace(metricNamespace);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

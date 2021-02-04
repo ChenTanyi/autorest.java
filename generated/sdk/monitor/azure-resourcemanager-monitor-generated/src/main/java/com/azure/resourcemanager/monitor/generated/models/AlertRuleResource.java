@@ -63,6 +63,13 @@ public interface AlertRuleResource {
     String description();
 
     /**
+     * Gets the provisioningState property: the provisioning state.
+     *
+     * @return the provisioningState value.
+     */
+    String provisioningState();
+
+    /**
      * Gets the isEnabled property: the flag that indicates whether the alert rule is enabled.
      *
      * @return the isEnabled value.
@@ -75,6 +82,14 @@ public interface AlertRuleResource {
      * @return the condition value.
      */
     RuleCondition condition();
+
+    /**
+     * Gets the action property: action that is performed when the alert rule becomes active, and when an alert
+     * condition is resolved.
+     *
+     * @return the action value.
+     */
+    RuleAction action();
 
     /**
      * Gets the actions property: the array of actions that are performed when the alert rule becomes active, and when
@@ -190,7 +205,11 @@ public interface AlertRuleResource {
          * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
-            extends DefinitionStages.WithTags, DefinitionStages.WithDescription, DefinitionStages.WithActions {
+            extends DefinitionStages.WithTags,
+                DefinitionStages.WithDescription,
+                DefinitionStages.WithProvisioningState,
+                DefinitionStages.WithAction,
+                DefinitionStages.WithActions {
             /**
              * Executes the create request.
              *
@@ -227,6 +246,28 @@ public interface AlertRuleResource {
              */
             WithCreate withDescription(String description);
         }
+        /** The stage of the AlertRuleResource definition allowing to specify provisioningState. */
+        interface WithProvisioningState {
+            /**
+             * Specifies the provisioningState property: the provisioning state..
+             *
+             * @param provisioningState the provisioning state.
+             * @return the next definition stage.
+             */
+            WithCreate withProvisioningState(String provisioningState);
+        }
+        /** The stage of the AlertRuleResource definition allowing to specify action. */
+        interface WithAction {
+            /**
+             * Specifies the action property: action that is performed when the alert rule becomes active, and when an
+             * alert condition is resolved..
+             *
+             * @param action action that is performed when the alert rule becomes active, and when an alert condition is
+             *     resolved.
+             * @return the next definition stage.
+             */
+            WithCreate withAction(RuleAction action);
+        }
         /** The stage of the AlertRuleResource definition allowing to specify actions. */
         interface WithActions {
             /**
@@ -252,8 +293,10 @@ public interface AlertRuleResource {
         extends UpdateStages.WithTags,
             UpdateStages.WithName,
             UpdateStages.WithDescription,
+            UpdateStages.WithProvisioningState,
             UpdateStages.WithIsEnabled,
             UpdateStages.WithCondition,
+            UpdateStages.WithAction,
             UpdateStages.WithActions {
         /**
          * Executes the update request.
@@ -303,6 +346,16 @@ public interface AlertRuleResource {
              */
             Update withDescription(String description);
         }
+        /** The stage of the AlertRuleResource update allowing to specify provisioningState. */
+        interface WithProvisioningState {
+            /**
+             * Specifies the provisioningState property: the provisioning state..
+             *
+             * @param provisioningState the provisioning state.
+             * @return the next definition stage.
+             */
+            Update withProvisioningState(String provisioningState);
+        }
         /** The stage of the AlertRuleResource update allowing to specify isEnabled. */
         interface WithIsEnabled {
             /**
@@ -322,6 +375,18 @@ public interface AlertRuleResource {
              * @return the next definition stage.
              */
             Update withCondition(RuleCondition condition);
+        }
+        /** The stage of the AlertRuleResource update allowing to specify action. */
+        interface WithAction {
+            /**
+             * Specifies the action property: action that is performed when the alert rule becomes active, and when an
+             * alert condition is resolved..
+             *
+             * @param action action that is performed when the alert rule becomes active, and when an alert condition is
+             *     resolved.
+             * @return the next definition stage.
+             */
+            Update withAction(RuleAction action);
         }
         /** The stage of the AlertRuleResource update allowing to specify actions. */
         interface WithActions {

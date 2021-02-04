@@ -16,6 +16,7 @@ import com.azure.resourcemanager.compute.generated.fluent.models.RunCommandResul
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineAssessPatchesResultInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineCaptureResultInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineInner;
+import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineInstallPatchesResultInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineInstanceViewInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineSizeInner;
 import com.azure.resourcemanager.compute.generated.models.InstanceViewTypes;
@@ -26,6 +27,8 @@ import com.azure.resourcemanager.compute.generated.models.VirtualMachine;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineAssessPatchesResult;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineCaptureParameters;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineCaptureResult;
+import com.azure.resourcemanager.compute.generated.models.VirtualMachineInstallPatchesParameters;
+import com.azure.resourcemanager.compute.generated.models.VirtualMachineInstallPatchesResult;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineInstanceView;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineReimageParameters;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineSize;
@@ -307,6 +310,31 @@ public final class VirtualMachinesImpl implements VirtualMachines {
             this.serviceClient().assessPatches(resourceGroupName, vmName, context);
         if (inner != null) {
             return new VirtualMachineAssessPatchesResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public VirtualMachineInstallPatchesResult installPatches(
+        String resourceGroupName, String vmName, VirtualMachineInstallPatchesParameters installPatchesInput) {
+        VirtualMachineInstallPatchesResultInner inner =
+            this.serviceClient().installPatches(resourceGroupName, vmName, installPatchesInput);
+        if (inner != null) {
+            return new VirtualMachineInstallPatchesResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public VirtualMachineInstallPatchesResult installPatches(
+        String resourceGroupName,
+        String vmName,
+        VirtualMachineInstallPatchesParameters installPatchesInput,
+        Context context) {
+        VirtualMachineInstallPatchesResultInner inner =
+            this.serviceClient().installPatches(resourceGroupName, vmName, installPatchesInput, context);
+        if (inner != null) {
+            return new VirtualMachineInstallPatchesResultImpl(inner, this.manager());
         } else {
             return null;
         }

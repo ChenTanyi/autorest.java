@@ -36,6 +36,12 @@ public class AlertRuleResourceInner extends Resource {
     private String description;
 
     /*
+     * the provisioning state.
+     */
+    @JsonProperty(value = "properties.provisioningState")
+    private String provisioningState;
+
+    /*
      * the flag that indicates whether the alert rule is enabled.
      */
     @JsonProperty(value = "properties.isEnabled", required = true)
@@ -46,6 +52,13 @@ public class AlertRuleResourceInner extends Resource {
      */
     @JsonProperty(value = "properties.condition", required = true)
     private RuleCondition condition;
+
+    /*
+     * action that is performed when the alert rule becomes active, and when an
+     * alert condition is resolved.
+     */
+    @JsonProperty(value = "properties.action")
+    private RuleAction action;
 
     /*
      * the array of actions that are performed when the alert rule becomes
@@ -101,6 +114,26 @@ public class AlertRuleResourceInner extends Resource {
     }
 
     /**
+     * Get the provisioningState property: the provisioning state.
+     *
+     * @return the provisioningState value.
+     */
+    public String provisioningState() {
+        return this.provisioningState;
+    }
+
+    /**
+     * Set the provisioningState property: the provisioning state.
+     *
+     * @param provisioningState the provisioningState value to set.
+     * @return the AlertRuleResourceInner object itself.
+     */
+    public AlertRuleResourceInner withProvisioningState(String provisioningState) {
+        this.provisioningState = provisioningState;
+        return this;
+    }
+
+    /**
      * Get the isEnabled property: the flag that indicates whether the alert rule is enabled.
      *
      * @return the isEnabled value.
@@ -137,6 +170,28 @@ public class AlertRuleResourceInner extends Resource {
      */
     public AlertRuleResourceInner withCondition(RuleCondition condition) {
         this.condition = condition;
+        return this;
+    }
+
+    /**
+     * Get the action property: action that is performed when the alert rule becomes active, and when an alert condition
+     * is resolved.
+     *
+     * @return the action value.
+     */
+    public RuleAction action() {
+        return this.action;
+    }
+
+    /**
+     * Set the action property: action that is performed when the alert rule becomes active, and when an alert condition
+     * is resolved.
+     *
+     * @param action the action value to set.
+     * @return the AlertRuleResourceInner object itself.
+     */
+    public AlertRuleResourceInner withAction(RuleAction action) {
+        this.action = action;
         return this;
     }
 
@@ -204,6 +259,9 @@ public class AlertRuleResourceInner extends Resource {
                         "Missing required property condition in model AlertRuleResourceInner"));
         } else {
             condition().validate();
+        }
+        if (action() != null) {
+            action().validate();
         }
         if (actions() != null) {
             actions().forEach(e -> e.validate());

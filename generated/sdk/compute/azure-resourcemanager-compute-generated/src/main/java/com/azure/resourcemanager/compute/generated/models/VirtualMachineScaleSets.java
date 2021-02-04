@@ -11,27 +11,65 @@ import com.azure.core.util.Context;
 /** Resource collection API of VirtualMachineScaleSets. */
 public interface VirtualMachineScaleSets {
     /**
-     * Deletes a VM scale set.
+     * Gets all the VM scale sets under the specified subscription for the specified location.
      *
-     * @param resourceGroupName The name of the resource group.
-     * @param vmScaleSetName The name of the VM scale set.
+     * @param location The location for which VM scale sets under the subscription are queried.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return all the VM scale sets under the specified subscription for the specified location.
      */
-    void deleteByResourceGroup(String resourceGroupName, String vmScaleSetName);
+    PagedIterable<VirtualMachineScaleSet> listByLocation(String location);
+
+    /**
+     * Gets all the VM scale sets under the specified subscription for the specified location.
+     *
+     * @param location The location for which VM scale sets under the subscription are queried.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return all the VM scale sets under the specified subscription for the specified location.
+     */
+    PagedIterable<VirtualMachineScaleSet> listByLocation(String location, Context context);
 
     /**
      * Deletes a VM scale set.
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
+     * @param forceDeletion Optional parameter to force delete a VM scale set. (Feature in Preview).
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void delete(String resourceGroupName, String vmScaleSetName, Boolean forceDeletion);
+
+    /**
+     * Deletes a VM scale set.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void delete(String resourceGroupName, String vmScaleSetName);
+
+    /**
+     * Deletes a VM scale set.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @param forceDeletion Optional parameter to force delete a VM scale set. (Feature in Preview).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void delete(String resourceGroupName, String vmScaleSetName, Context context);
+    void delete(String resourceGroupName, String vmScaleSetName, Boolean forceDeletion, Context context);
 
     /**
      * Display information about a virtual machine scale set.
@@ -108,6 +146,24 @@ public interface VirtualMachineScaleSets {
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
+     * @param forceDeletion Optional parameter to force delete virtual machines from the VM scale set. (Feature in
+     *     Preview).
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteInstances(
+        String resourceGroupName,
+        String vmScaleSetName,
+        VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs,
+        Boolean forceDeletion);
+
+    /**
+     * Deletes virtual machines in a VM scale set.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -121,6 +177,8 @@ public interface VirtualMachineScaleSets {
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param vmInstanceIDs A list of virtual machine instance IDs from the VM scale set.
+     * @param forceDeletion Optional parameter to force delete virtual machines from the VM scale set. (Feature in
+     *     Preview).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -130,6 +188,7 @@ public interface VirtualMachineScaleSets {
         String resourceGroupName,
         String vmScaleSetName,
         VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs,
+        Boolean forceDeletion,
         Context context);
 
     /**
@@ -731,12 +790,13 @@ public interface VirtualMachineScaleSets {
      * Deletes a VM scale set.
      *
      * @param id the resource ID.
+     * @param forceDeletion Optional parameter to force delete a VM scale set. (Feature in Preview).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void deleteByIdWithResponse(String id, Context context);
+    void deleteByIdWithResponse(String id, Boolean forceDeletion, Context context);
 
     /**
      * Begins definition for a new VirtualMachineScaleSet resource.

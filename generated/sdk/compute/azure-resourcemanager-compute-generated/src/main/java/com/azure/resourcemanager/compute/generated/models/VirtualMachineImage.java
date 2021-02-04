@@ -41,6 +41,13 @@ public interface VirtualMachineImage {
     Map<String, String> tags();
 
     /**
+     * Gets the extendedLocation property: The extended location of the Virtual Machine.
+     *
+     * @return the extendedLocation value.
+     */
+    ExtendedLocation extendedLocation();
+
+    /**
      * Gets the plan property: Used for establishing the purchase context of any 3rd Party artifact through MarketPlace.
      *
      * @return the plan value.
@@ -81,6 +88,13 @@ public interface VirtualMachineImage {
      * @return the disallowed value.
      */
     DisallowedConfiguration disallowed();
+
+    /**
+     * Gets the features property: The features property.
+     *
+     * @return the features value.
+     */
+    List<VirtualMachineImageFeature> features();
 
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineImageInner object.

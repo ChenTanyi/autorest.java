@@ -6,6 +6,7 @@ package com.azure.resourcemanager.compute.generated.implementation;
 
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineImageResourceInner;
+import com.azure.resourcemanager.compute.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineImageResource;
 import java.util.Collections;
 import java.util.Map;
@@ -39,6 +40,10 @@ public final class VirtualMachineImageResourceImpl implements VirtualMachineImag
         } else {
             return Collections.emptyMap();
         }
+    }
+
+    public ExtendedLocation extendedLocation() {
+        return this.innerModel().extendedLocation();
     }
 
     public VirtualMachineImageResourceInner innerModel() {

@@ -40,6 +40,13 @@ public interface VirtualMachineImageResource {
     Map<String, String> tags();
 
     /**
+     * Gets the extendedLocation property: The extended location of the Virtual Machine.
+     *
+     * @return the extendedLocation value.
+     */
+    ExtendedLocation extendedLocation();
+
+    /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineImageResourceInner object.
      *
      * @return the inner object.

@@ -12,7 +12,8 @@ import java.util.List;
 public interface VirtualMachineAssessPatchesResult {
     /**
      * Gets the status property: The overall success or failure status of the operation. It remains "InProgress" until
-     * the operation completes. At that point it will become "Failed", "Succeeded", or "CompletedWithWarnings.".
+     * the operation completes. At that point it will become "Unknown", "Failed", "Succeeded", or
+     * "CompletedWithWarnings.".
      *
      * @return the status value.
      */
@@ -57,11 +58,11 @@ public interface VirtualMachineAssessPatchesResult {
     OffsetDateTime startDateTime();
 
     /**
-     * Gets the patches property: The list of patches that have been detected as available for installation.
+     * Gets the availablePatches property: The list of patches that have been detected as available for installation.
      *
-     * @return the patches value.
+     * @return the availablePatches value.
      */
-    List<VirtualMachineSoftwarePatchProperties> patches();
+    List<VirtualMachineSoftwarePatchProperties> availablePatches();
 
     /**
      * Gets the error property: The errors that were encountered during execution of the operation. The details array

@@ -22,12 +22,7 @@ import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.serializer.SerializerAdapter;
 import com.azure.core.util.serializer.SerializerEncoding;
 import com.azure.resourcemanager.compute.generated.fluent.AvailabilitySetsClient;
-import com.azure.resourcemanager.compute.generated.fluent.CloudServiceRoleInstancesClient;
-import com.azure.resourcemanager.compute.generated.fluent.CloudServiceRolesClient;
-import com.azure.resourcemanager.compute.generated.fluent.CloudServicesClient;
-import com.azure.resourcemanager.compute.generated.fluent.CloudServicesUpdateDomainsClient;
 import com.azure.resourcemanager.compute.generated.fluent.ComputeManagementClient;
-import com.azure.resourcemanager.compute.generated.fluent.ContainerServicesClient;
 import com.azure.resourcemanager.compute.generated.fluent.DedicatedHostGroupsClient;
 import com.azure.resourcemanager.compute.generated.fluent.DedicatedHostsClient;
 import com.azure.resourcemanager.compute.generated.fluent.DiskAccessesClient;
@@ -50,6 +45,7 @@ import com.azure.resourcemanager.compute.generated.fluent.UsagesClient;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineExtensionImagesClient;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineExtensionsClient;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineImagesClient;
+import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineImagesEdgeZonesClient;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineRunCommandsClient;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineScaleSetExtensionsClient;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineScaleSetRollingUpgradesClient;
@@ -246,6 +242,18 @@ public final class ComputeManagementClientImpl implements ComputeManagementClien
         return this.virtualMachineImages;
     }
 
+    /** The VirtualMachineImagesEdgeZonesClient object to access its operations. */
+    private final VirtualMachineImagesEdgeZonesClient virtualMachineImagesEdgeZones;
+
+    /**
+     * Gets the VirtualMachineImagesEdgeZonesClient object to access its operations.
+     *
+     * @return the VirtualMachineImagesEdgeZonesClient object.
+     */
+    public VirtualMachineImagesEdgeZonesClient getVirtualMachineImagesEdgeZones() {
+        return this.virtualMachineImagesEdgeZones;
+    }
+
     /** The UsagesClient object to access its operations. */
     private final UsagesClient usages;
 
@@ -270,6 +278,18 @@ public final class ComputeManagementClientImpl implements ComputeManagementClien
         return this.virtualMachines;
     }
 
+    /** The VirtualMachineScaleSetsClient object to access its operations. */
+    private final VirtualMachineScaleSetsClient virtualMachineScaleSets;
+
+    /**
+     * Gets the VirtualMachineScaleSetsClient object to access its operations.
+     *
+     * @return the VirtualMachineScaleSetsClient object.
+     */
+    public VirtualMachineScaleSetsClient getVirtualMachineScaleSets() {
+        return this.virtualMachineScaleSets;
+    }
+
     /** The VirtualMachineSizesClient object to access its operations. */
     private final VirtualMachineSizesClient virtualMachineSizes;
 
@@ -292,18 +312,6 @@ public final class ComputeManagementClientImpl implements ComputeManagementClien
      */
     public ImagesClient getImages() {
         return this.images;
-    }
-
-    /** The VirtualMachineScaleSetsClient object to access its operations. */
-    private final VirtualMachineScaleSetsClient virtualMachineScaleSets;
-
-    /**
-     * Gets the VirtualMachineScaleSetsClient object to access its operations.
-     *
-     * @return the VirtualMachineScaleSetsClient object.
-     */
-    public VirtualMachineScaleSetsClient getVirtualMachineScaleSets() {
-        return this.virtualMachineScaleSets;
     }
 
     /** The VirtualMachineScaleSetExtensionsClient object to access its operations. */
@@ -522,66 +530,6 @@ public final class ComputeManagementClientImpl implements ComputeManagementClien
         return this.galleryApplicationVersions;
     }
 
-    /** The ContainerServicesClient object to access its operations. */
-    private final ContainerServicesClient containerServices;
-
-    /**
-     * Gets the ContainerServicesClient object to access its operations.
-     *
-     * @return the ContainerServicesClient object.
-     */
-    public ContainerServicesClient getContainerServices() {
-        return this.containerServices;
-    }
-
-    /** The CloudServiceRoleInstancesClient object to access its operations. */
-    private final CloudServiceRoleInstancesClient cloudServiceRoleInstances;
-
-    /**
-     * Gets the CloudServiceRoleInstancesClient object to access its operations.
-     *
-     * @return the CloudServiceRoleInstancesClient object.
-     */
-    public CloudServiceRoleInstancesClient getCloudServiceRoleInstances() {
-        return this.cloudServiceRoleInstances;
-    }
-
-    /** The CloudServiceRolesClient object to access its operations. */
-    private final CloudServiceRolesClient cloudServiceRoles;
-
-    /**
-     * Gets the CloudServiceRolesClient object to access its operations.
-     *
-     * @return the CloudServiceRolesClient object.
-     */
-    public CloudServiceRolesClient getCloudServiceRoles() {
-        return this.cloudServiceRoles;
-    }
-
-    /** The CloudServicesClient object to access its operations. */
-    private final CloudServicesClient cloudServices;
-
-    /**
-     * Gets the CloudServicesClient object to access its operations.
-     *
-     * @return the CloudServicesClient object.
-     */
-    public CloudServicesClient getCloudServices() {
-        return this.cloudServices;
-    }
-
-    /** The CloudServicesUpdateDomainsClient object to access its operations. */
-    private final CloudServicesUpdateDomainsClient cloudServicesUpdateDomains;
-
-    /**
-     * Gets the CloudServicesUpdateDomainsClient object to access its operations.
-     *
-     * @return the CloudServicesUpdateDomainsClient object.
-     */
-    public CloudServicesUpdateDomainsClient getCloudServicesUpdateDomains() {
-        return this.cloudServicesUpdateDomains;
-    }
-
     /**
      * Initializes an instance of ComputeManagementClient client.
      *
@@ -614,11 +562,12 @@ public final class ComputeManagementClientImpl implements ComputeManagementClien
         this.virtualMachineExtensionImages = new VirtualMachineExtensionImagesClientImpl(this);
         this.virtualMachineExtensions = new VirtualMachineExtensionsClientImpl(this);
         this.virtualMachineImages = new VirtualMachineImagesClientImpl(this);
+        this.virtualMachineImagesEdgeZones = new VirtualMachineImagesEdgeZonesClientImpl(this);
         this.usages = new UsagesClientImpl(this);
         this.virtualMachines = new VirtualMachinesClientImpl(this);
+        this.virtualMachineScaleSets = new VirtualMachineScaleSetsClientImpl(this);
         this.virtualMachineSizes = new VirtualMachineSizesClientImpl(this);
         this.images = new ImagesClientImpl(this);
-        this.virtualMachineScaleSets = new VirtualMachineScaleSetsClientImpl(this);
         this.virtualMachineScaleSetExtensions = new VirtualMachineScaleSetExtensionsClientImpl(this);
         this.virtualMachineScaleSetRollingUpgrades = new VirtualMachineScaleSetRollingUpgradesClientImpl(this);
         this.virtualMachineScaleSetVMExtensions = new VirtualMachineScaleSetVMExtensionsClientImpl(this);
@@ -637,11 +586,6 @@ public final class ComputeManagementClientImpl implements ComputeManagementClien
         this.galleryImageVersions = new GalleryImageVersionsClientImpl(this);
         this.galleryApplications = new GalleryApplicationsClientImpl(this);
         this.galleryApplicationVersions = new GalleryApplicationVersionsClientImpl(this);
-        this.containerServices = new ContainerServicesClientImpl(this);
-        this.cloudServiceRoleInstances = new CloudServiceRoleInstancesClientImpl(this);
-        this.cloudServiceRoles = new CloudServiceRolesClientImpl(this);
-        this.cloudServices = new CloudServicesClientImpl(this);
-        this.cloudServicesUpdateDomains = new CloudServicesUpdateDomainsClientImpl(this);
     }
 
     /**

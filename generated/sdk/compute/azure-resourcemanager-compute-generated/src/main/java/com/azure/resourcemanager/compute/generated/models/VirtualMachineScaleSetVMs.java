@@ -154,6 +154,20 @@ public interface VirtualMachineScaleSetVMs {
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
+     * @param forceDeletion Optional parameter to force delete a virtual machine from a VM scale set. (Feature in
+     *     Preview).
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void delete(String resourceGroupName, String vmScaleSetName, String instanceId, Boolean forceDeletion);
+
+    /**
+     * Deletes a virtual machine from a VM scale set.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmScaleSetName The name of the VM scale set.
+     * @param instanceId The instance ID of the virtual machine.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -166,12 +180,15 @@ public interface VirtualMachineScaleSetVMs {
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
+     * @param forceDeletion Optional parameter to force delete a virtual machine from a VM scale set. (Feature in
+     *     Preview).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
-    void delete(String resourceGroupName, String vmScaleSetName, String instanceId, Context context);
+    void delete(
+        String resourceGroupName, String vmScaleSetName, String instanceId, Boolean forceDeletion, Context context);
 
     /**
      * Gets a virtual machine from a VM scale set.

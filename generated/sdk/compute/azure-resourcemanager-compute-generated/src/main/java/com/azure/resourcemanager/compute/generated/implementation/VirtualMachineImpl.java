@@ -15,6 +15,7 @@ import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineU
 import com.azure.resourcemanager.compute.generated.models.AdditionalCapabilities;
 import com.azure.resourcemanager.compute.generated.models.BillingProfile;
 import com.azure.resourcemanager.compute.generated.models.DiagnosticsProfile;
+import com.azure.resourcemanager.compute.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.compute.generated.models.HardwareProfile;
 import com.azure.resourcemanager.compute.generated.models.InstanceViewTypes;
 import com.azure.resourcemanager.compute.generated.models.NetworkProfile;
@@ -94,6 +95,10 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         }
     }
 
+    public ExtendedLocation extendedLocation() {
+        return this.innerModel().extendedLocation();
+    }
+
     public HardwareProfile hardwareProfile() {
         return this.innerModel().hardwareProfile();
     }
@@ -132,6 +137,10 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
 
     public SubResource proximityPlacementGroup() {
         return this.innerModel().proximityPlacementGroup();
+    }
+
+    public Integer platformFaultDomain() {
+        return this.innerModel().platformFaultDomain();
     }
 
     public VirtualMachinePriorityTypes priority() {
@@ -332,6 +341,11 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         }
     }
 
+    public VirtualMachineImpl withExtendedLocation(ExtendedLocation extendedLocation) {
+        this.innerModel().withExtendedLocation(extendedLocation);
+        return this;
+    }
+
     public VirtualMachineImpl withHardwareProfile(HardwareProfile hardwareProfile) {
         if (isInCreateMode()) {
             this.innerModel().withHardwareProfile(hardwareProfile);
@@ -428,6 +442,16 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
             return this;
         } else {
             this.updateParameters.withProximityPlacementGroup(proximityPlacementGroup);
+            return this;
+        }
+    }
+
+    public VirtualMachineImpl withPlatformFaultDomain(Integer platformFaultDomain) {
+        if (isInCreateMode()) {
+            this.innerModel().withPlatformFaultDomain(platformFaultDomain);
+            return this;
+        } else {
+            this.updateParameters.withPlatformFaultDomain(platformFaultDomain);
             return this;
         }
     }

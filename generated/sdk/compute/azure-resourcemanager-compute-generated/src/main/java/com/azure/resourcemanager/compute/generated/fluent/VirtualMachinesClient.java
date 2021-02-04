@@ -16,12 +16,14 @@ import com.azure.resourcemanager.compute.generated.fluent.models.RunCommandResul
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineAssessPatchesResultInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineCaptureResultInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineInner;
+import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineInstallPatchesResultInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineInstanceViewInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineSizeInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineUpdateInner;
 import com.azure.resourcemanager.compute.generated.models.InstanceViewTypes;
 import com.azure.resourcemanager.compute.generated.models.RunCommandInput;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineCaptureParameters;
+import com.azure.resourcemanager.compute.generated.models.VirtualMachineInstallPatchesParameters;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineReimageParameters;
 
 /** An instance of this class provides access to all the operations defined in VirtualMachinesClient. */
@@ -1130,6 +1132,80 @@ public interface VirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     VirtualMachineAssessPatchesResultInner assessPatches(String resourceGroupName, String vmName, Context context);
+
+    /**
+     * Installs patches on the VM.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @param installPatchesInput Input for InstallPatches as directly received by the API.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the result summary of an installation operation.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    SyncPoller<PollResult<VirtualMachineInstallPatchesResultInner>, VirtualMachineInstallPatchesResultInner>
+        beginInstallPatches(
+            String resourceGroupName, String vmName, VirtualMachineInstallPatchesParameters installPatchesInput);
+
+    /**
+     * Installs patches on the VM.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @param installPatchesInput Input for InstallPatches as directly received by the API.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the result summary of an installation operation.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    SyncPoller<PollResult<VirtualMachineInstallPatchesResultInner>, VirtualMachineInstallPatchesResultInner>
+        beginInstallPatches(
+            String resourceGroupName,
+            String vmName,
+            VirtualMachineInstallPatchesParameters installPatchesInput,
+            Context context);
+
+    /**
+     * Installs patches on the VM.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @param installPatchesInput Input for InstallPatches as directly received by the API.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the result summary of an installation operation.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    VirtualMachineInstallPatchesResultInner installPatches(
+        String resourceGroupName, String vmName, VirtualMachineInstallPatchesParameters installPatchesInput);
+
+    /**
+     * Installs patches on the VM.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param vmName The name of the virtual machine.
+     * @param installPatchesInput Input for InstallPatches as directly received by the API.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the result summary of an installation operation.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    VirtualMachineInstallPatchesResultInner installPatches(
+        String resourceGroupName,
+        String vmName,
+        VirtualMachineInstallPatchesParameters installPatchesInput,
+        Context context);
 
     /**
      * Run command on the VM.

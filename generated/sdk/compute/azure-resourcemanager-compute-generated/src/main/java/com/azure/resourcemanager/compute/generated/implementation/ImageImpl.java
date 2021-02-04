@@ -9,6 +9,7 @@ import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.ImageInner;
+import com.azure.resourcemanager.compute.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.compute.generated.models.HyperVGenerationTypes;
 import com.azure.resourcemanager.compute.generated.models.Image;
 import com.azure.resourcemanager.compute.generated.models.ImageStorageProfile;
@@ -44,6 +45,10 @@ public final class ImageImpl implements Image, Image.Definition, Image.Update {
         } else {
             return Collections.emptyMap();
         }
+    }
+
+    public ExtendedLocation extendedLocation() {
+        return this.innerModel().extendedLocation();
     }
 
     public SubResource sourceVirtualMachine() {
@@ -180,6 +185,11 @@ public final class ImageImpl implements Image, Image.Definition, Image.Update {
             this.updateParameters.withTags(tags);
             return this;
         }
+    }
+
+    public ImageImpl withExtendedLocation(ExtendedLocation extendedLocation) {
+        this.innerModel().withExtendedLocation(extendedLocation);
+        return this;
     }
 
     public ImageImpl withSourceVirtualMachine(SubResource sourceVirtualMachine) {

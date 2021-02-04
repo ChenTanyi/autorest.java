@@ -9,10 +9,12 @@ import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineI
 import com.azure.resourcemanager.compute.generated.models.AutomaticOSUpgradeProperties;
 import com.azure.resourcemanager.compute.generated.models.DataDiskImage;
 import com.azure.resourcemanager.compute.generated.models.DisallowedConfiguration;
+import com.azure.resourcemanager.compute.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.compute.generated.models.HyperVGenerationTypes;
 import com.azure.resourcemanager.compute.generated.models.OSDiskImage;
 import com.azure.resourcemanager.compute.generated.models.PurchasePlan;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineImage;
+import com.azure.resourcemanager.compute.generated.models.VirtualMachineImageFeature;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -48,6 +50,10 @@ public final class VirtualMachineImageImpl implements VirtualMachineImage {
         }
     }
 
+    public ExtendedLocation extendedLocation() {
+        return this.innerModel().extendedLocation();
+    }
+
     public PurchasePlan plan() {
         return this.innerModel().plan();
     }
@@ -75,6 +81,15 @@ public final class VirtualMachineImageImpl implements VirtualMachineImage {
 
     public DisallowedConfiguration disallowed() {
         return this.innerModel().disallowed();
+    }
+
+    public List<VirtualMachineImageFeature> features() {
+        List<VirtualMachineImageFeature> inner = this.innerModel().features();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     public VirtualMachineImageInner innerModel() {

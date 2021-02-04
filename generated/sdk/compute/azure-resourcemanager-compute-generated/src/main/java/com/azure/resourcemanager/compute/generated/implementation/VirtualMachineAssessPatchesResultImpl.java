@@ -49,8 +49,8 @@ public final class VirtualMachineAssessPatchesResultImpl implements VirtualMachi
         return this.innerModel().startDateTime();
     }
 
-    public List<VirtualMachineSoftwarePatchProperties> patches() {
-        List<VirtualMachineSoftwarePatchProperties> inner = this.innerModel().patches();
+    public List<VirtualMachineSoftwarePatchProperties> availablePatches() {
+        List<VirtualMachineSoftwarePatchProperties> inner = this.innerModel().availablePatches();
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {

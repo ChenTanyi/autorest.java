@@ -82,6 +82,13 @@ public interface VirtualMachineScaleSet {
     List<String> zones();
 
     /**
+     * Gets the extendedLocation property: The extended location of the Virtual Machine Scale Set.
+     *
+     * @return the extendedLocation value.
+     */
+    ExtendedLocation extendedLocation();
+
+    /**
      * Gets the upgradePolicy property: The upgrade policy.
      *
      * @return the upgradePolicy value.
@@ -190,6 +197,13 @@ public interface VirtualMachineScaleSet {
     ScaleInPolicy scaleInPolicy();
 
     /**
+     * Gets the orchestrationMode property: Specifies the orchestration mode for the virtual machine scale set.
+     *
+     * @return the orchestrationMode value.
+     */
+    OrchestrationMode orchestrationMode();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -260,6 +274,7 @@ public interface VirtualMachineScaleSet {
                 DefinitionStages.WithPlan,
                 DefinitionStages.WithIdentity,
                 DefinitionStages.WithZones,
+                DefinitionStages.WithExtendedLocation,
                 DefinitionStages.WithUpgradePolicy,
                 DefinitionStages.WithAutomaticRepairsPolicy,
                 DefinitionStages.WithVirtualMachineProfile,
@@ -271,7 +286,8 @@ public interface VirtualMachineScaleSet {
                 DefinitionStages.WithProximityPlacementGroup,
                 DefinitionStages.WithHostGroup,
                 DefinitionStages.WithAdditionalCapabilities,
-                DefinitionStages.WithScaleInPolicy {
+                DefinitionStages.WithScaleInPolicy,
+                DefinitionStages.WithOrchestrationMode {
             /**
              * Executes the create request.
              *
@@ -346,6 +362,16 @@ public interface VirtualMachineScaleSet {
              * @return the next definition stage.
              */
             WithCreate withZones(List<String> zones);
+        }
+        /** The stage of the VirtualMachineScaleSet definition allowing to specify extendedLocation. */
+        interface WithExtendedLocation {
+            /**
+             * Specifies the extendedLocation property: The extended location of the Virtual Machine Scale Set..
+             *
+             * @param extendedLocation The extended location of the Virtual Machine Scale Set.
+             * @return the next definition stage.
+             */
+            WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
         /** The stage of the VirtualMachineScaleSet definition allowing to specify upgradePolicy. */
         interface WithUpgradePolicy {
@@ -491,6 +517,17 @@ public interface VirtualMachineScaleSet {
              * @return the next definition stage.
              */
             WithCreate withScaleInPolicy(ScaleInPolicy scaleInPolicy);
+        }
+        /** The stage of the VirtualMachineScaleSet definition allowing to specify orchestrationMode. */
+        interface WithOrchestrationMode {
+            /**
+             * Specifies the orchestrationMode property: Specifies the orchestration mode for the virtual machine scale
+             * set..
+             *
+             * @param orchestrationMode Specifies the orchestration mode for the virtual machine scale set.
+             * @return the next definition stage.
+             */
+            WithCreate withOrchestrationMode(OrchestrationMode orchestrationMode);
         }
     }
     /**
