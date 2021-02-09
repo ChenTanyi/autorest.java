@@ -122,14 +122,14 @@ public final class ServiceEndpointPolicyDefinitionsImpl implements ServiceEndpoi
         String resourceGroupName, String serviceEndpointPolicyName) {
         PagedIterable<ServiceEndpointPolicyDefinitionInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, serviceEndpointPolicyName);
-        return inner.mapPage(inner1 -> new ServiceEndpointPolicyDefinitionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ServiceEndpointPolicyDefinitionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ServiceEndpointPolicyDefinition> listByResourceGroup(
         String resourceGroupName, String serviceEndpointPolicyName, Context context) {
         PagedIterable<ServiceEndpointPolicyDefinitionInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, serviceEndpointPolicyName, context);
-        return inner.mapPage(inner1 -> new ServiceEndpointPolicyDefinitionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ServiceEndpointPolicyDefinitionImpl(inner1, this.manager()));
     }
 
     private ServiceEndpointPolicyDefinitionsClient serviceClient() {

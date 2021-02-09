@@ -65,24 +65,24 @@ public final class PartnerNamespacesImpl implements PartnerNamespaces {
 
     public PagedIterable<PartnerNamespace> list() {
         PagedIterable<PartnerNamespaceInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new PartnerNamespaceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PartnerNamespaceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PartnerNamespace> list(String filter, Integer top, Context context) {
         PagedIterable<PartnerNamespaceInner> inner = this.serviceClient().list(filter, top, context);
-        return inner.mapPage(inner1 -> new PartnerNamespaceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PartnerNamespaceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PartnerNamespace> listByResourceGroup(String resourceGroupName) {
         PagedIterable<PartnerNamespaceInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new PartnerNamespaceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PartnerNamespaceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PartnerNamespace> listByResourceGroup(
         String resourceGroupName, String filter, Integer top, Context context) {
         PagedIterable<PartnerNamespaceInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, filter, top, context);
-        return inner.mapPage(inner1 -> new PartnerNamespaceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PartnerNamespaceImpl(inner1, this.manager()));
     }
 
     public PartnerNamespaceSharedAccessKeys listSharedAccessKeys(

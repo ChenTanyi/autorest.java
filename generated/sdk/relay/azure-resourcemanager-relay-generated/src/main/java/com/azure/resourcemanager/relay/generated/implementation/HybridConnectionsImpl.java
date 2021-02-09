@@ -36,14 +36,14 @@ public final class HybridConnectionsImpl implements HybridConnections {
     public PagedIterable<HybridConnection> listByNamespace(String resourceGroupName, String namespaceName) {
         PagedIterable<HybridConnectionInner> inner =
             this.serviceClient().listByNamespace(resourceGroupName, namespaceName);
-        return inner.mapPage(inner1 -> new HybridConnectionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new HybridConnectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<HybridConnection> listByNamespace(
         String resourceGroupName, String namespaceName, Context context) {
         PagedIterable<HybridConnectionInner> inner =
             this.serviceClient().listByNamespace(resourceGroupName, namespaceName, context);
-        return inner.mapPage(inner1 -> new HybridConnectionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new HybridConnectionImpl(inner1, this.manager()));
     }
 
     public void delete(String resourceGroupName, String namespaceName, String hybridConnectionName) {
@@ -83,7 +83,7 @@ public final class HybridConnectionsImpl implements HybridConnections {
         String resourceGroupName, String namespaceName, String hybridConnectionName) {
         PagedIterable<AuthorizationRuleInner> inner =
             this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, hybridConnectionName);
-        return inner.mapPage(inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AuthorizationRule> listAuthorizationRules(
@@ -92,7 +92,7 @@ public final class HybridConnectionsImpl implements HybridConnections {
             this
                 .serviceClient()
                 .listAuthorizationRules(resourceGroupName, namespaceName, hybridConnectionName, context);
-        return inner.mapPage(inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
     public AuthorizationRule createOrUpdateAuthorizationRule(

@@ -62,22 +62,22 @@ public final class BastionHostsImpl implements BastionHosts {
 
     public PagedIterable<BastionHost> list() {
         PagedIterable<BastionHostInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new BastionHostImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BastionHostImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BastionHost> list(Context context) {
         PagedIterable<BastionHostInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new BastionHostImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BastionHostImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BastionHost> listByResourceGroup(String resourceGroupName) {
         PagedIterable<BastionHostInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new BastionHostImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BastionHostImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BastionHost> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<BastionHostInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new BastionHostImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BastionHostImpl(inner1, this.manager()));
     }
 
     public BastionHost getById(String id) {

@@ -127,12 +127,12 @@ public final class ResourceProvidersImpl implements ResourceProviders {
 
     public PagedIterable<SourceControl> listSourceControls() {
         PagedIterable<SourceControlInner> inner = this.serviceClient().listSourceControls();
-        return inner.mapPage(inner1 -> new SourceControlImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SourceControlImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SourceControl> listSourceControls(Context context) {
         PagedIterable<SourceControlInner> inner = this.serviceClient().listSourceControls(context);
-        return inner.mapPage(inner1 -> new SourceControlImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SourceControlImpl(inner1, this.manager()));
     }
 
     public SourceControl getSourceControl(String sourceControlType) {
@@ -184,12 +184,12 @@ public final class ResourceProvidersImpl implements ResourceProviders {
 
     public PagedIterable<BillingMeter> list() {
         PagedIterable<BillingMeterInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new BillingMeterImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BillingMeterImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BillingMeter> list(String billingLocation, String osType, Context context) {
         PagedIterable<BillingMeterInner> inner = this.serviceClient().list(billingLocation, osType, context);
-        return inner.mapPage(inner1 -> new BillingMeterImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BillingMeterImpl(inner1, this.manager()));
     }
 
     public ResourceNameAvailability checkNameAvailability(ResourceNameAvailabilityRequest request) {
@@ -241,7 +241,7 @@ public final class ResourceProvidersImpl implements ResourceProviders {
 
     public PagedIterable<GeoRegion> listGeoRegions() {
         PagedIterable<GeoRegionInner> inner = this.serviceClient().listGeoRegions();
-        return inner.mapPage(inner1 -> new GeoRegionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new GeoRegionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<GeoRegion> listGeoRegions(
@@ -254,30 +254,30 @@ public final class ResourceProvidersImpl implements ResourceProviders {
             this
                 .serviceClient()
                 .listGeoRegions(sku, linuxWorkersEnabled, xenonWorkersEnabled, linuxDynamicWorkersEnabled, context);
-        return inner.mapPage(inner1 -> new GeoRegionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new GeoRegionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Identifier> listSiteIdentifiersAssignedToHostname(NameIdentifierInner nameIdentifier) {
         PagedIterable<IdentifierInner> inner =
             this.serviceClient().listSiteIdentifiersAssignedToHostname(nameIdentifier);
-        return inner.mapPage(inner1 -> new IdentifierImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new IdentifierImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Identifier> listSiteIdentifiersAssignedToHostname(
         NameIdentifierInner nameIdentifier, Context context) {
         PagedIterable<IdentifierInner> inner =
             this.serviceClient().listSiteIdentifiersAssignedToHostname(nameIdentifier, context);
-        return inner.mapPage(inner1 -> new IdentifierImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new IdentifierImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PremierAddOnOffer> listPremierAddOnOffers() {
         PagedIterable<PremierAddOnOfferInner> inner = this.serviceClient().listPremierAddOnOffers();
-        return inner.mapPage(inner1 -> new PremierAddOnOfferImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PremierAddOnOfferImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PremierAddOnOffer> listPremierAddOnOffers(Context context) {
         PagedIterable<PremierAddOnOfferInner> inner = this.serviceClient().listPremierAddOnOffers(context);
-        return inner.mapPage(inner1 -> new PremierAddOnOfferImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PremierAddOnOfferImpl(inner1, this.manager()));
     }
 
     public SkuInfos listSkus() {

@@ -101,14 +101,14 @@ public final class PrivateDnsZoneGroupsImpl implements PrivateDnsZoneGroups {
     public PagedIterable<PrivateDnsZoneGroup> list(String privateEndpointName, String resourceGroupName) {
         PagedIterable<PrivateDnsZoneGroupInner> inner =
             this.serviceClient().list(privateEndpointName, resourceGroupName);
-        return inner.mapPage(inner1 -> new PrivateDnsZoneGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PrivateDnsZoneGroupImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PrivateDnsZoneGroup> list(
         String privateEndpointName, String resourceGroupName, Context context) {
         PagedIterable<PrivateDnsZoneGroupInner> inner =
             this.serviceClient().list(privateEndpointName, resourceGroupName, context);
-        return inner.mapPage(inner1 -> new PrivateDnsZoneGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PrivateDnsZoneGroupImpl(inner1, this.manager()));
     }
 
     private PrivateDnsZoneGroupsClient serviceClient() {

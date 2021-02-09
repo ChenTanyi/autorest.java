@@ -45,14 +45,14 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         String resourceGroupName, String bastionHostname, BastionShareableLinkListRequest bslRequest) {
         PagedIterable<BastionShareableLinkInner> inner =
             this.serviceClient().putBastionShareableLink(resourceGroupName, bastionHostname, bslRequest);
-        return inner.mapPage(inner1 -> new BastionShareableLinkImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BastionShareableLinkImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BastionShareableLink> putBastionShareableLink(
         String resourceGroupName, String bastionHostname, BastionShareableLinkListRequest bslRequest, Context context) {
         PagedIterable<BastionShareableLinkInner> inner =
             this.serviceClient().putBastionShareableLink(resourceGroupName, bastionHostname, bslRequest, context);
-        return inner.mapPage(inner1 -> new BastionShareableLinkImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BastionShareableLinkImpl(inner1, this.manager()));
     }
 
     public void deleteBastionShareableLink(
@@ -69,41 +69,41 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         String resourceGroupName, String bastionHostname, BastionShareableLinkListRequest bslRequest) {
         PagedIterable<BastionShareableLinkInner> inner =
             this.serviceClient().getBastionShareableLink(resourceGroupName, bastionHostname, bslRequest);
-        return inner.mapPage(inner1 -> new BastionShareableLinkImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BastionShareableLinkImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BastionShareableLink> getBastionShareableLink(
         String resourceGroupName, String bastionHostname, BastionShareableLinkListRequest bslRequest, Context context) {
         PagedIterable<BastionShareableLinkInner> inner =
             this.serviceClient().getBastionShareableLink(resourceGroupName, bastionHostname, bslRequest, context);
-        return inner.mapPage(inner1 -> new BastionShareableLinkImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BastionShareableLinkImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BastionActiveSession> getActiveSessions(String resourceGroupName, String bastionHostname) {
         PagedIterable<BastionActiveSessionInner> inner =
             this.serviceClient().getActiveSessions(resourceGroupName, bastionHostname);
-        return inner.mapPage(inner1 -> new BastionActiveSessionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BastionActiveSessionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BastionActiveSession> getActiveSessions(
         String resourceGroupName, String bastionHostname, Context context) {
         PagedIterable<BastionActiveSessionInner> inner =
             this.serviceClient().getActiveSessions(resourceGroupName, bastionHostname, context);
-        return inner.mapPage(inner1 -> new BastionActiveSessionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BastionActiveSessionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BastionSessionState> disconnectActiveSessions(
         String resourceGroupName, String bastionHostname, SessionIds sessionIds) {
         PagedIterable<BastionSessionStateInner> inner =
             this.serviceClient().disconnectActiveSessions(resourceGroupName, bastionHostname, sessionIds);
-        return inner.mapPage(inner1 -> new BastionSessionStateImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BastionSessionStateImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BastionSessionState> disconnectActiveSessions(
         String resourceGroupName, String bastionHostname, SessionIds sessionIds, Context context) {
         PagedIterable<BastionSessionStateInner> inner =
             this.serviceClient().disconnectActiveSessions(resourceGroupName, bastionHostname, sessionIds, context);
-        return inner.mapPage(inner1 -> new BastionSessionStateImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BastionSessionStateImpl(inner1, this.manager()));
     }
 
     public DnsNameAvailabilityResult checkDnsNameAvailability(String location, String domainNameLabel) {

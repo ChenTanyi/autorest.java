@@ -116,22 +116,22 @@ public final class VpnGatewaysImpl implements VpnGateways {
 
     public PagedIterable<VpnGateway> listByResourceGroup(String resourceGroupName) {
         PagedIterable<VpnGatewayInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new VpnGatewayImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VpnGatewayImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VpnGateway> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<VpnGatewayInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new VpnGatewayImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VpnGatewayImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VpnGateway> list() {
         PagedIterable<VpnGatewayInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new VpnGatewayImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VpnGatewayImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VpnGateway> list(Context context) {
         PagedIterable<VpnGatewayInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new VpnGatewayImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VpnGatewayImpl(inner1, this.manager()));
     }
 
     public VpnGateway getById(String id) {

@@ -33,12 +33,12 @@ public final class TopLevelDomainsImpl implements TopLevelDomains {
 
     public PagedIterable<TopLevelDomain> list() {
         PagedIterable<TopLevelDomainInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new TopLevelDomainImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new TopLevelDomainImpl(inner1, this.manager()));
     }
 
     public PagedIterable<TopLevelDomain> list(Context context) {
         PagedIterable<TopLevelDomainInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new TopLevelDomainImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new TopLevelDomainImpl(inner1, this.manager()));
     }
 
     public TopLevelDomain get(String name) {
@@ -65,14 +65,14 @@ public final class TopLevelDomainsImpl implements TopLevelDomains {
 
     public PagedIterable<TldLegalAgreement> listAgreements(String name, TopLevelDomainAgreementOption agreementOption) {
         PagedIterable<TldLegalAgreementInner> inner = this.serviceClient().listAgreements(name, agreementOption);
-        return inner.mapPage(inner1 -> new TldLegalAgreementImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new TldLegalAgreementImpl(inner1, this.manager()));
     }
 
     public PagedIterable<TldLegalAgreement> listAgreements(
         String name, TopLevelDomainAgreementOption agreementOption, Context context) {
         PagedIterable<TldLegalAgreementInner> inner =
             this.serviceClient().listAgreements(name, agreementOption, context);
-        return inner.mapPage(inner1 -> new TldLegalAgreementImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new TldLegalAgreementImpl(inner1, this.manager()));
     }
 
     private TopLevelDomainsClient serviceClient() {

@@ -94,24 +94,24 @@ public final class PartnerTopicsImpl implements PartnerTopics {
 
     public PagedIterable<PartnerTopic> list() {
         PagedIterable<PartnerTopicInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new PartnerTopicImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PartnerTopicImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PartnerTopic> list(String filter, Integer top, Context context) {
         PagedIterable<PartnerTopicInner> inner = this.serviceClient().list(filter, top, context);
-        return inner.mapPage(inner1 -> new PartnerTopicImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PartnerTopicImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PartnerTopic> listByResourceGroup(String resourceGroupName) {
         PagedIterable<PartnerTopicInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new PartnerTopicImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PartnerTopicImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PartnerTopic> listByResourceGroup(
         String resourceGroupName, String filter, Integer top, Context context) {
         PagedIterable<PartnerTopicInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, filter, top, context);
-        return inner.mapPage(inner1 -> new PartnerTopicImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PartnerTopicImpl(inner1, this.manager()));
     }
 
     public PartnerTopic activate(String resourceGroupName, String partnerTopicName) {

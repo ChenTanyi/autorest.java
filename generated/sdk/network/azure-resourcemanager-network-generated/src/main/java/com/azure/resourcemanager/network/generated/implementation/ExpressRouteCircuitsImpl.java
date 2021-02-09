@@ -187,23 +187,23 @@ public final class ExpressRouteCircuitsImpl implements ExpressRouteCircuits {
 
     public PagedIterable<ExpressRouteCircuit> listByResourceGroup(String resourceGroupName) {
         PagedIterable<ExpressRouteCircuitInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new ExpressRouteCircuitImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ExpressRouteCircuitImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ExpressRouteCircuit> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<ExpressRouteCircuitInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new ExpressRouteCircuitImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ExpressRouteCircuitImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ExpressRouteCircuit> list() {
         PagedIterable<ExpressRouteCircuitInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new ExpressRouteCircuitImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ExpressRouteCircuitImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ExpressRouteCircuit> list(Context context) {
         PagedIterable<ExpressRouteCircuitInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new ExpressRouteCircuitImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ExpressRouteCircuitImpl(inner1, this.manager()));
     }
 
     public ExpressRouteCircuit getById(String id) {

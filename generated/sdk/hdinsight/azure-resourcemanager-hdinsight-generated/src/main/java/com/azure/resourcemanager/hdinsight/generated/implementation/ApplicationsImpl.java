@@ -30,13 +30,13 @@ public final class ApplicationsImpl implements Applications {
 
     public PagedIterable<Application> listByCluster(String resourceGroupName, String clusterName) {
         PagedIterable<ApplicationInner> inner = this.serviceClient().listByCluster(resourceGroupName, clusterName);
-        return inner.mapPage(inner1 -> new ApplicationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ApplicationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Application> listByCluster(String resourceGroupName, String clusterName, Context context) {
         PagedIterable<ApplicationInner> inner =
             this.serviceClient().listByCluster(resourceGroupName, clusterName, context);
-        return inner.mapPage(inner1 -> new ApplicationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ApplicationImpl(inner1, this.manager()));
     }
 
     public Application get(String resourceGroupName, String clusterName, String applicationName) {

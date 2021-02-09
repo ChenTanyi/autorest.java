@@ -64,36 +64,36 @@ public final class AvailabilitySetsImpl implements AvailabilitySets {
 
     public PagedIterable<AvailabilitySet> list() {
         PagedIterable<AvailabilitySetInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new AvailabilitySetImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AvailabilitySetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AvailabilitySet> list(String expand, Context context) {
         PagedIterable<AvailabilitySetInner> inner = this.serviceClient().list(expand, context);
-        return inner.mapPage(inner1 -> new AvailabilitySetImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AvailabilitySetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AvailabilitySet> listByResourceGroup(String resourceGroupName) {
         PagedIterable<AvailabilitySetInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new AvailabilitySetImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AvailabilitySetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AvailabilitySet> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<AvailabilitySetInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new AvailabilitySetImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AvailabilitySetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachineSize> listAvailableSizes(String resourceGroupName, String availabilitySetName) {
         PagedIterable<VirtualMachineSizeInner> inner =
             this.serviceClient().listAvailableSizes(resourceGroupName, availabilitySetName);
-        return inner.mapPage(inner1 -> new VirtualMachineSizeImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualMachineSizeImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachineSize> listAvailableSizes(
         String resourceGroupName, String availabilitySetName, Context context) {
         PagedIterable<VirtualMachineSizeInner> inner =
             this.serviceClient().listAvailableSizes(resourceGroupName, availabilitySetName, context);
-        return inner.mapPage(inner1 -> new VirtualMachineSizeImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualMachineSizeImpl(inner1, this.manager()));
     }
 
     public AvailabilitySet getById(String id) {

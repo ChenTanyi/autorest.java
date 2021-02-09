@@ -142,14 +142,14 @@ public final class PrivateEndpointConnectionsImpl implements PrivateEndpointConn
     public PagedIterable<PrivateEndpointConnection> listByService(String resourceGroupName, String searchServiceName) {
         PagedIterable<PrivateEndpointConnectionInner> inner =
             this.serviceClient().listByService(resourceGroupName, searchServiceName);
-        return inner.mapPage(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PrivateEndpointConnection> listByService(
         String resourceGroupName, String searchServiceName, UUID clientRequestId, Context context) {
         PagedIterable<PrivateEndpointConnectionInner> inner =
             this.serviceClient().listByService(resourceGroupName, searchServiceName, clientRequestId, context);
-        return inner.mapPage(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()));
     }
 
     private PrivateEndpointConnectionsClient serviceClient() {

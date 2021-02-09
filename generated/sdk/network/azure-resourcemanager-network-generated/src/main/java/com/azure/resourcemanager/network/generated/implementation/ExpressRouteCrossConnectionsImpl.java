@@ -37,24 +37,24 @@ public final class ExpressRouteCrossConnectionsImpl implements ExpressRouteCross
 
     public PagedIterable<ExpressRouteCrossConnection> list() {
         PagedIterable<ExpressRouteCrossConnectionInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new ExpressRouteCrossConnectionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ExpressRouteCrossConnectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ExpressRouteCrossConnection> list(Context context) {
         PagedIterable<ExpressRouteCrossConnectionInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new ExpressRouteCrossConnectionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ExpressRouteCrossConnectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ExpressRouteCrossConnection> listByResourceGroup(String resourceGroupName) {
         PagedIterable<ExpressRouteCrossConnectionInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new ExpressRouteCrossConnectionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ExpressRouteCrossConnectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ExpressRouteCrossConnection> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<ExpressRouteCrossConnectionInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new ExpressRouteCrossConnectionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ExpressRouteCrossConnectionImpl(inner1, this.manager()));
     }
 
     public ExpressRouteCrossConnection getByResourceGroup(String resourceGroupName, String crossConnectionName) {

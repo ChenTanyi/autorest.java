@@ -66,14 +66,14 @@ public final class ExpressRouteCircuitAuthorizationsImpl implements ExpressRoute
     public PagedIterable<ExpressRouteCircuitAuthorization> list(String resourceGroupName, String circuitName) {
         PagedIterable<ExpressRouteCircuitAuthorizationInner> inner =
             this.serviceClient().list(resourceGroupName, circuitName);
-        return inner.mapPage(inner1 -> new ExpressRouteCircuitAuthorizationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ExpressRouteCircuitAuthorizationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ExpressRouteCircuitAuthorization> list(
         String resourceGroupName, String circuitName, Context context) {
         PagedIterable<ExpressRouteCircuitAuthorizationInner> inner =
             this.serviceClient().list(resourceGroupName, circuitName, context);
-        return inner.mapPage(inner1 -> new ExpressRouteCircuitAuthorizationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ExpressRouteCircuitAuthorizationImpl(inner1, this.manager()));
     }
 
     public ExpressRouteCircuitAuthorization getById(String id) {

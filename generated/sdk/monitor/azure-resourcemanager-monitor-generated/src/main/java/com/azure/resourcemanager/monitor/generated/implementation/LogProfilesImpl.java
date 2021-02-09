@@ -60,12 +60,12 @@ public final class LogProfilesImpl implements LogProfiles {
 
     public PagedIterable<LogProfileResource> list() {
         PagedIterable<LogProfileResourceInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new LogProfileResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new LogProfileResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<LogProfileResource> list(Context context) {
         PagedIterable<LogProfileResourceInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new LogProfileResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new LogProfileResourceImpl(inner1, this.manager()));
     }
 
     public LogProfileResource getById(String id) {

@@ -64,14 +64,14 @@ public final class VirtualApplianceSitesImpl implements VirtualApplianceSites {
     public PagedIterable<VirtualApplianceSite> list(String resourceGroupName, String networkVirtualApplianceName) {
         PagedIterable<VirtualApplianceSiteInner> inner =
             this.serviceClient().list(resourceGroupName, networkVirtualApplianceName);
-        return inner.mapPage(inner1 -> new VirtualApplianceSiteImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualApplianceSiteImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualApplianceSite> list(
         String resourceGroupName, String networkVirtualApplianceName, Context context) {
         PagedIterable<VirtualApplianceSiteInner> inner =
             this.serviceClient().list(resourceGroupName, networkVirtualApplianceName, context);
-        return inner.mapPage(inner1 -> new VirtualApplianceSiteImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualApplianceSiteImpl(inner1, this.manager()));
     }
 
     public VirtualApplianceSite getById(String id) {

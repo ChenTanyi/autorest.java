@@ -62,22 +62,22 @@ public final class ImagesImpl implements Images {
 
     public PagedIterable<Image> listByResourceGroup(String resourceGroupName) {
         PagedIterable<ImageInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new ImageImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ImageImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Image> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<ImageInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new ImageImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ImageImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Image> list() {
         PagedIterable<ImageInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new ImageImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ImageImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Image> list(Context context) {
         PagedIterable<ImageInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new ImageImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ImageImpl(inner1, this.manager()));
     }
 
     public Image getById(String id) {

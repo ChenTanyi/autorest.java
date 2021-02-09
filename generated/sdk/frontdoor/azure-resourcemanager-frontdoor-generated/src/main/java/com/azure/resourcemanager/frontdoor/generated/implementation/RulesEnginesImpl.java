@@ -30,13 +30,13 @@ public final class RulesEnginesImpl implements RulesEngines {
 
     public PagedIterable<RulesEngine> listByFrontDoor(String resourceGroupName, String frontDoorName) {
         PagedIterable<RulesEngineInner> inner = this.serviceClient().listByFrontDoor(resourceGroupName, frontDoorName);
-        return inner.mapPage(inner1 -> new RulesEngineImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RulesEngineImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RulesEngine> listByFrontDoor(String resourceGroupName, String frontDoorName, Context context) {
         PagedIterable<RulesEngineInner> inner =
             this.serviceClient().listByFrontDoor(resourceGroupName, frontDoorName, context);
-        return inner.mapPage(inner1 -> new RulesEngineImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RulesEngineImpl(inner1, this.manager()));
     }
 
     public RulesEngine get(String resourceGroupName, String frontDoorName, String rulesEngineName) {

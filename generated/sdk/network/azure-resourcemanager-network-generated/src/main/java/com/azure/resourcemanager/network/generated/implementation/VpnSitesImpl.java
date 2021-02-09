@@ -62,22 +62,22 @@ public final class VpnSitesImpl implements VpnSites {
 
     public PagedIterable<VpnSite> listByResourceGroup(String resourceGroupName) {
         PagedIterable<VpnSiteInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new VpnSiteImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VpnSiteImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VpnSite> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<VpnSiteInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new VpnSiteImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VpnSiteImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VpnSite> list() {
         PagedIterable<VpnSiteInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new VpnSiteImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VpnSiteImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VpnSite> list(Context context) {
         PagedIterable<VpnSiteInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new VpnSiteImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VpnSiteImpl(inner1, this.manager()));
     }
 
     public VpnSite getById(String id) {

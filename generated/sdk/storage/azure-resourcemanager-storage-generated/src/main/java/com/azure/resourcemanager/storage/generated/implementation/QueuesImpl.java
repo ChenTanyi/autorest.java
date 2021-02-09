@@ -65,14 +65,14 @@ public final class QueuesImpl implements Queues {
 
     public PagedIterable<ListQueue> list(String resourceGroupName, String accountName) {
         PagedIterable<ListQueueInner> inner = this.serviceClient().list(resourceGroupName, accountName);
-        return inner.mapPage(inner1 -> new ListQueueImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ListQueueImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ListQueue> list(
         String resourceGroupName, String accountName, String maxpagesize, String filter, Context context) {
         PagedIterable<ListQueueInner> inner =
             this.serviceClient().list(resourceGroupName, accountName, maxpagesize, filter, context);
-        return inner.mapPage(inner1 -> new ListQueueImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ListQueueImpl(inner1, this.manager()));
     }
 
     public StorageQueue getById(String id) {

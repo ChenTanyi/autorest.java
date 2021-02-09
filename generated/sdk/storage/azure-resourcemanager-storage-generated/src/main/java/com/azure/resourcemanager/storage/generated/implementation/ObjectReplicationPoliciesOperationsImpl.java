@@ -31,13 +31,13 @@ public final class ObjectReplicationPoliciesOperationsImpl implements ObjectRepl
 
     public PagedIterable<ObjectReplicationPolicy> list(String resourceGroupName, String accountName) {
         PagedIterable<ObjectReplicationPolicyInner> inner = this.serviceClient().list(resourceGroupName, accountName);
-        return inner.mapPage(inner1 -> new ObjectReplicationPolicyImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ObjectReplicationPolicyImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ObjectReplicationPolicy> list(String resourceGroupName, String accountName, Context context) {
         PagedIterable<ObjectReplicationPolicyInner> inner =
             this.serviceClient().list(resourceGroupName, accountName, context);
-        return inner.mapPage(inner1 -> new ObjectReplicationPolicyImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ObjectReplicationPolicyImpl(inner1, this.manager()));
     }
 
     public ObjectReplicationPolicy get(String resourceGroupName, String accountName, String objectReplicationPolicyId) {

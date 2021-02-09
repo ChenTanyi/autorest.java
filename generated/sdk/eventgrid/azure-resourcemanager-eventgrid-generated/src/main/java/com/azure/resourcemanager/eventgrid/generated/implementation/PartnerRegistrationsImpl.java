@@ -64,34 +64,34 @@ public final class PartnerRegistrationsImpl implements PartnerRegistrations {
 
     public PagedIterable<PartnerRegistration> listBySubscription() {
         PagedIterable<PartnerRegistrationInner> inner = this.serviceClient().listBySubscription();
-        return inner.mapPage(inner1 -> new PartnerRegistrationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PartnerRegistrationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PartnerRegistration> listBySubscription(String filter, Integer top, Context context) {
         PagedIterable<PartnerRegistrationInner> inner = this.serviceClient().listBySubscription(filter, top, context);
-        return inner.mapPage(inner1 -> new PartnerRegistrationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PartnerRegistrationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PartnerRegistration> listByResourceGroup(String resourceGroupName) {
         PagedIterable<PartnerRegistrationInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new PartnerRegistrationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PartnerRegistrationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PartnerRegistration> listByResourceGroup(
         String resourceGroupName, String filter, Integer top, Context context) {
         PagedIterable<PartnerRegistrationInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, filter, top, context);
-        return inner.mapPage(inner1 -> new PartnerRegistrationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PartnerRegistrationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PartnerRegistration> list() {
         PagedIterable<PartnerRegistrationInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new PartnerRegistrationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PartnerRegistrationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PartnerRegistration> list(Context context) {
         PagedIterable<PartnerRegistrationInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new PartnerRegistrationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PartnerRegistrationImpl(inner1, this.manager()));
     }
 
     public PartnerRegistration getById(String id) {

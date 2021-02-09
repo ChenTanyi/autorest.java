@@ -62,22 +62,22 @@ public final class FirewallPoliciesImpl implements FirewallPolicies {
 
     public PagedIterable<FirewallPolicy> listByResourceGroup(String resourceGroupName) {
         PagedIterable<FirewallPolicyInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new FirewallPolicyImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new FirewallPolicyImpl(inner1, this.manager()));
     }
 
     public PagedIterable<FirewallPolicy> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<FirewallPolicyInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new FirewallPolicyImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new FirewallPolicyImpl(inner1, this.manager()));
     }
 
     public PagedIterable<FirewallPolicy> list() {
         PagedIterable<FirewallPolicyInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new FirewallPolicyImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new FirewallPolicyImpl(inner1, this.manager()));
     }
 
     public PagedIterable<FirewallPolicy> list(Context context) {
         PagedIterable<FirewallPolicyInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new FirewallPolicyImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new FirewallPolicyImpl(inner1, this.manager()));
     }
 
     public FirewallPolicy getById(String id) {

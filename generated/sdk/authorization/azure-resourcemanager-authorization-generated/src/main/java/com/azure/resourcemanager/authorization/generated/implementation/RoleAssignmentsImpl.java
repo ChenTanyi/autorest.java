@@ -40,7 +40,7 @@ public final class RoleAssignmentsImpl implements RoleAssignments {
                 .serviceClient()
                 .listForResource(
                     resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType, resourceName);
-        return inner.mapPage(inner1 -> new RoleAssignmentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RoleAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RoleAssignment> listForResource(
@@ -62,18 +62,18 @@ public final class RoleAssignmentsImpl implements RoleAssignments {
                     resourceName,
                     filter,
                     context);
-        return inner.mapPage(inner1 -> new RoleAssignmentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RoleAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RoleAssignment> listByResourceGroup(String resourceGroupName) {
         PagedIterable<RoleAssignmentInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new RoleAssignmentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RoleAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RoleAssignment> listByResourceGroup(String resourceGroupName, String filter, Context context) {
         PagedIterable<RoleAssignmentInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, filter, context);
-        return inner.mapPage(inner1 -> new RoleAssignmentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RoleAssignmentImpl(inner1, this.manager()));
     }
 
     public RoleAssignment deleteByResourceGroup(String scope, String roleAssignmentName) {
@@ -190,22 +190,22 @@ public final class RoleAssignmentsImpl implements RoleAssignments {
 
     public PagedIterable<RoleAssignment> list() {
         PagedIterable<RoleAssignmentInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new RoleAssignmentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RoleAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RoleAssignment> list(String filter, Context context) {
         PagedIterable<RoleAssignmentInner> inner = this.serviceClient().list(filter, context);
-        return inner.mapPage(inner1 -> new RoleAssignmentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RoleAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RoleAssignment> listForScope(String scope) {
         PagedIterable<RoleAssignmentInner> inner = this.serviceClient().listForScope(scope);
-        return inner.mapPage(inner1 -> new RoleAssignmentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RoleAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RoleAssignment> listForScope(String scope, String filter, Context context) {
         PagedIterable<RoleAssignmentInner> inner = this.serviceClient().listForScope(scope, filter, context);
-        return inner.mapPage(inner1 -> new RoleAssignmentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RoleAssignmentImpl(inner1, this.manager()));
     }
 
     private RoleAssignmentsClient serviceClient() {

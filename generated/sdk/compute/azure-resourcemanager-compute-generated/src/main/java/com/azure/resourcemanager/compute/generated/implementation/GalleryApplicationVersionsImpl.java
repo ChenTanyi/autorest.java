@@ -98,7 +98,7 @@ public final class GalleryApplicationVersionsImpl implements GalleryApplicationV
         String resourceGroupName, String galleryName, String galleryApplicationName) {
         PagedIterable<GalleryApplicationVersionInner> inner =
             this.serviceClient().listByGalleryApplication(resourceGroupName, galleryName, galleryApplicationName);
-        return inner.mapPage(inner1 -> new GalleryApplicationVersionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new GalleryApplicationVersionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<GalleryApplicationVersion> listByGalleryApplication(
@@ -107,7 +107,7 @@ public final class GalleryApplicationVersionsImpl implements GalleryApplicationV
             this
                 .serviceClient()
                 .listByGalleryApplication(resourceGroupName, galleryName, galleryApplicationName, context);
-        return inner.mapPage(inner1 -> new GalleryApplicationVersionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new GalleryApplicationVersionImpl(inner1, this.manager()));
     }
 
     public GalleryApplicationVersion getById(String id) {

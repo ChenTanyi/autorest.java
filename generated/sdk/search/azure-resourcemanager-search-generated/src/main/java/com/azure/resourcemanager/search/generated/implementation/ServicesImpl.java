@@ -69,24 +69,24 @@ public final class ServicesImpl implements Services {
 
     public PagedIterable<SearchService> listByResourceGroup(String resourceGroupName) {
         PagedIterable<SearchServiceInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new SearchServiceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SearchServiceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SearchService> listByResourceGroup(
         String resourceGroupName, UUID clientRequestId, Context context) {
         PagedIterable<SearchServiceInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, clientRequestId, context);
-        return inner.mapPage(inner1 -> new SearchServiceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SearchServiceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SearchService> list() {
         PagedIterable<SearchServiceInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new SearchServiceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SearchServiceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SearchService> list(UUID clientRequestId, Context context) {
         PagedIterable<SearchServiceInner> inner = this.serviceClient().list(clientRequestId, context);
-        return inner.mapPage(inner1 -> new SearchServiceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SearchServiceImpl(inner1, this.manager()));
     }
 
     public CheckNameAvailabilityOutput checkNameAvailability(CheckNameAvailabilityInput checkNameAvailabilityInput) {

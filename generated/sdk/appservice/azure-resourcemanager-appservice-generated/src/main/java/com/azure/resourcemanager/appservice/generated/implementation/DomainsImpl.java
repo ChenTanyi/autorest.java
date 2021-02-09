@@ -63,12 +63,12 @@ public final class DomainsImpl implements Domains {
 
     public PagedIterable<Domain> list() {
         PagedIterable<DomainInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new DomainImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DomainImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Domain> list(Context context) {
         PagedIterable<DomainInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new DomainImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DomainImpl(inner1, this.manager()));
     }
 
     public DomainControlCenterSsoRequest getControlCenterSsoRequest() {
@@ -96,23 +96,23 @@ public final class DomainsImpl implements Domains {
 
     public PagedIterable<NameIdentifier> listRecommendations(DomainRecommendationSearchParameters parameters) {
         PagedIterable<NameIdentifierInner> inner = this.serviceClient().listRecommendations(parameters);
-        return inner.mapPage(inner1 -> new NameIdentifierImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NameIdentifierImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NameIdentifier> listRecommendations(
         DomainRecommendationSearchParameters parameters, Context context) {
         PagedIterable<NameIdentifierInner> inner = this.serviceClient().listRecommendations(parameters, context);
-        return inner.mapPage(inner1 -> new NameIdentifierImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NameIdentifierImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Domain> listByResourceGroup(String resourceGroupName) {
         PagedIterable<DomainInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new DomainImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DomainImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Domain> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<DomainInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new DomainImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DomainImpl(inner1, this.manager()));
     }
 
     public Domain getByResourceGroup(String resourceGroupName, String domainName) {
@@ -152,14 +152,14 @@ public final class DomainsImpl implements Domains {
         String resourceGroupName, String domainName) {
         PagedIterable<DomainOwnershipIdentifierInner> inner =
             this.serviceClient().listOwnershipIdentifiers(resourceGroupName, domainName);
-        return inner.mapPage(inner1 -> new DomainOwnershipIdentifierImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DomainOwnershipIdentifierImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DomainOwnershipIdentifier> listOwnershipIdentifiers(
         String resourceGroupName, String domainName, Context context) {
         PagedIterable<DomainOwnershipIdentifierInner> inner =
             this.serviceClient().listOwnershipIdentifiers(resourceGroupName, domainName, context);
-        return inner.mapPage(inner1 -> new DomainOwnershipIdentifierImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DomainOwnershipIdentifierImpl(inner1, this.manager()));
     }
 
     public DomainOwnershipIdentifier getOwnershipIdentifier(String resourceGroupName, String domainName, String name) {

@@ -96,14 +96,14 @@ public final class RouteFilterRulesImpl implements RouteFilterRules {
     public PagedIterable<RouteFilterRule> listByRouteFilter(String resourceGroupName, String routeFilterName) {
         PagedIterable<RouteFilterRuleInner> inner =
             this.serviceClient().listByRouteFilter(resourceGroupName, routeFilterName);
-        return inner.mapPage(inner1 -> new RouteFilterRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RouteFilterRuleImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RouteFilterRule> listByRouteFilter(
         String resourceGroupName, String routeFilterName, Context context) {
         PagedIterable<RouteFilterRuleInner> inner =
             this.serviceClient().listByRouteFilter(resourceGroupName, routeFilterName, context);
-        return inner.mapPage(inner1 -> new RouteFilterRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RouteFilterRuleImpl(inner1, this.manager()));
     }
 
     private RouteFilterRulesClient serviceClient() {

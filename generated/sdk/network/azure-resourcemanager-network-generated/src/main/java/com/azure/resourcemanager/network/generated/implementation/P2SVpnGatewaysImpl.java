@@ -69,22 +69,22 @@ public final class P2SVpnGatewaysImpl implements P2SVpnGateways {
 
     public PagedIterable<P2SVpnGateway> listByResourceGroup(String resourceGroupName) {
         PagedIterable<P2SVpnGatewayInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new P2SVpnGatewayImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new P2SVpnGatewayImpl(inner1, this.manager()));
     }
 
     public PagedIterable<P2SVpnGateway> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<P2SVpnGatewayInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new P2SVpnGatewayImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new P2SVpnGatewayImpl(inner1, this.manager()));
     }
 
     public PagedIterable<P2SVpnGateway> list() {
         PagedIterable<P2SVpnGatewayInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new P2SVpnGatewayImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new P2SVpnGatewayImpl(inner1, this.manager()));
     }
 
     public PagedIterable<P2SVpnGateway> list(Context context) {
         PagedIterable<P2SVpnGatewayInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new P2SVpnGatewayImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new P2SVpnGatewayImpl(inner1, this.manager()));
     }
 
     public P2SVpnGateway reset(String resourceGroupName, String gatewayName) {

@@ -64,23 +64,23 @@ public final class PrivateEndpointsImpl implements PrivateEndpoints {
 
     public PagedIterable<PrivateEndpoint> listByResourceGroup(String resourceGroupName) {
         PagedIterable<PrivateEndpointInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new PrivateEndpointImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PrivateEndpointImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PrivateEndpoint> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<PrivateEndpointInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new PrivateEndpointImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PrivateEndpointImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PrivateEndpoint> list() {
         PagedIterable<PrivateEndpointInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new PrivateEndpointImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PrivateEndpointImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PrivateEndpoint> list(Context context) {
         PagedIterable<PrivateEndpointInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new PrivateEndpointImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PrivateEndpointImpl(inner1, this.manager()));
     }
 
     public PrivateEndpoint getById(String id) {

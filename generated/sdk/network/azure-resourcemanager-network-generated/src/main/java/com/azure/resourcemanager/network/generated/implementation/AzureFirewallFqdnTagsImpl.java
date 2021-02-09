@@ -28,12 +28,12 @@ public final class AzureFirewallFqdnTagsImpl implements AzureFirewallFqdnTags {
 
     public PagedIterable<AzureFirewallFqdnTag> list() {
         PagedIterable<AzureFirewallFqdnTagInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new AzureFirewallFqdnTagImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AzureFirewallFqdnTagImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AzureFirewallFqdnTag> list(Context context) {
         PagedIterable<AzureFirewallFqdnTagInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new AzureFirewallFqdnTagImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AzureFirewallFqdnTagImpl(inner1, this.manager()));
     }
 
     private AzureFirewallFqdnTagsClient serviceClient() {

@@ -33,14 +33,14 @@ public final class ResourcesImpl implements Resources {
 
     public PagedIterable<GenericResourceExpanded> listByResourceGroup(String resourceGroupName) {
         PagedIterable<GenericResourceExpandedInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new GenericResourceExpandedImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new GenericResourceExpandedImpl(inner1, this.manager()));
     }
 
     public PagedIterable<GenericResourceExpanded> listByResourceGroup(
         String resourceGroupName, String filter, String expand, Integer top, Context context) {
         PagedIterable<GenericResourceExpandedInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, filter, expand, top, context);
-        return inner.mapPage(inner1 -> new GenericResourceExpandedImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new GenericResourceExpandedImpl(inner1, this.manager()));
     }
 
     public void moveResources(String sourceResourceGroupName, ResourcesMoveInfo parameters) {
@@ -61,12 +61,12 @@ public final class ResourcesImpl implements Resources {
 
     public PagedIterable<GenericResourceExpanded> list() {
         PagedIterable<GenericResourceExpandedInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new GenericResourceExpandedImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new GenericResourceExpandedImpl(inner1, this.manager()));
     }
 
     public PagedIterable<GenericResourceExpanded> list(String filter, String expand, Integer top, Context context) {
         PagedIterable<GenericResourceExpandedInner> inner = this.serviceClient().list(filter, expand, top, context);
-        return inner.mapPage(inner1 -> new GenericResourceExpandedImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new GenericResourceExpandedImpl(inner1, this.manager()));
     }
 
     public boolean checkExistence(

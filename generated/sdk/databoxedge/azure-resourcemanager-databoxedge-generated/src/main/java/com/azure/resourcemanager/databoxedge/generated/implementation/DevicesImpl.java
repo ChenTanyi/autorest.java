@@ -40,24 +40,24 @@ public final class DevicesImpl implements Devices {
 
     public PagedIterable<DataBoxEdgeDevice> list() {
         PagedIterable<DataBoxEdgeDeviceInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new DataBoxEdgeDeviceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DataBoxEdgeDeviceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DataBoxEdgeDevice> list(String expand, Context context) {
         PagedIterable<DataBoxEdgeDeviceInner> inner = this.serviceClient().list(expand, context);
-        return inner.mapPage(inner1 -> new DataBoxEdgeDeviceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DataBoxEdgeDeviceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DataBoxEdgeDevice> listByResourceGroup(String resourceGroupName) {
         PagedIterable<DataBoxEdgeDeviceInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new DataBoxEdgeDeviceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DataBoxEdgeDeviceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DataBoxEdgeDevice> listByResourceGroup(
         String resourceGroupName, String expand, Context context) {
         PagedIterable<DataBoxEdgeDeviceInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, expand, context);
-        return inner.mapPage(inner1 -> new DataBoxEdgeDeviceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DataBoxEdgeDeviceImpl(inner1, this.manager()));
     }
 
     public DataBoxEdgeDevice getByResourceGroup(String resourceGroupName, String deviceName) {

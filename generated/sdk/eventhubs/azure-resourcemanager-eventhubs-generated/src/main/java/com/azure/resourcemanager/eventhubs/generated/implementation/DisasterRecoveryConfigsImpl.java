@@ -39,14 +39,14 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
         String resourceGroupName, String namespaceName, String alias) {
         PagedIterable<AuthorizationRuleInner> inner =
             this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, alias);
-        return inner.mapPage(inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AuthorizationRule> listAuthorizationRules(
         String resourceGroupName, String namespaceName, String alias, Context context) {
         PagedIterable<AuthorizationRuleInner> inner =
             this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, alias, context);
-        return inner.mapPage(inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
     public AuthorizationRule getAuthorizationRule(
@@ -136,13 +136,13 @@ public final class DisasterRecoveryConfigsImpl implements DisasterRecoveryConfig
 
     public PagedIterable<ArmDisasterRecovery> list(String resourceGroupName, String namespaceName) {
         PagedIterable<ArmDisasterRecoveryInner> inner = this.serviceClient().list(resourceGroupName, namespaceName);
-        return inner.mapPage(inner1 -> new ArmDisasterRecoveryImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ArmDisasterRecoveryImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ArmDisasterRecovery> list(String resourceGroupName, String namespaceName, Context context) {
         PagedIterable<ArmDisasterRecoveryInner> inner =
             this.serviceClient().list(resourceGroupName, namespaceName, context);
-        return inner.mapPage(inner1 -> new ArmDisasterRecoveryImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ArmDisasterRecoveryImpl(inner1, this.manager()));
     }
 
     public void delete(String resourceGroupName, String namespaceName, String alias) {

@@ -63,13 +63,13 @@ public final class LocalNetworkGatewaysImpl implements LocalNetworkGateways {
 
     public PagedIterable<LocalNetworkGateway> listByResourceGroup(String resourceGroupName) {
         PagedIterable<LocalNetworkGatewayInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new LocalNetworkGatewayImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new LocalNetworkGatewayImpl(inner1, this.manager()));
     }
 
     public PagedIterable<LocalNetworkGateway> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<LocalNetworkGatewayInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new LocalNetworkGatewayImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new LocalNetworkGatewayImpl(inner1, this.manager()));
     }
 
     public LocalNetworkGateway getById(String id) {

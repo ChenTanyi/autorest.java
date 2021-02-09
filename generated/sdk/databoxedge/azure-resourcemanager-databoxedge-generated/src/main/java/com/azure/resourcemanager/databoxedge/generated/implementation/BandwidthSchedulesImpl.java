@@ -31,14 +31,14 @@ public final class BandwidthSchedulesImpl implements BandwidthSchedules {
     public PagedIterable<BandwidthSchedule> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName) {
         PagedIterable<BandwidthScheduleInner> inner =
             this.serviceClient().listByDataBoxEdgeDevice(deviceName, resourceGroupName);
-        return inner.mapPage(inner1 -> new BandwidthScheduleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BandwidthScheduleImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BandwidthSchedule> listByDataBoxEdgeDevice(
         String deviceName, String resourceGroupName, Context context) {
         PagedIterable<BandwidthScheduleInner> inner =
             this.serviceClient().listByDataBoxEdgeDevice(deviceName, resourceGroupName, context);
-        return inner.mapPage(inner1 -> new BandwidthScheduleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BandwidthScheduleImpl(inner1, this.manager()));
     }
 
     public BandwidthSchedule get(String deviceName, String name, String resourceGroupName) {

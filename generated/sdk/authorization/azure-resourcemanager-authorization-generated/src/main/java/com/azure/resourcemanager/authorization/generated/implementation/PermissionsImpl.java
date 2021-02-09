@@ -28,12 +28,12 @@ public final class PermissionsImpl implements Permissions {
 
     public PagedIterable<Permission> listByResourceGroup(String resourceGroupName) {
         PagedIterable<PermissionInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new PermissionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PermissionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Permission> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<PermissionInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new PermissionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PermissionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Permission> listForResource(
@@ -47,7 +47,7 @@ public final class PermissionsImpl implements Permissions {
                 .serviceClient()
                 .listForResource(
                     resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType, resourceName);
-        return inner.mapPage(inner1 -> new PermissionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PermissionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Permission> listForResource(
@@ -67,7 +67,7 @@ public final class PermissionsImpl implements Permissions {
                     resourceType,
                     resourceName,
                     context);
-        return inner.mapPage(inner1 -> new PermissionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PermissionImpl(inner1, this.manager()));
     }
 
     private PermissionsClient serviceClient() {

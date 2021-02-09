@@ -62,12 +62,12 @@ public final class FlowLogsImpl implements FlowLogs {
 
     public PagedIterable<FlowLog> list(String resourceGroupName, String networkWatcherName) {
         PagedIterable<FlowLogInner> inner = this.serviceClient().list(resourceGroupName, networkWatcherName);
-        return inner.mapPage(inner1 -> new FlowLogImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new FlowLogImpl(inner1, this.manager()));
     }
 
     public PagedIterable<FlowLog> list(String resourceGroupName, String networkWatcherName, Context context) {
         PagedIterable<FlowLogInner> inner = this.serviceClient().list(resourceGroupName, networkWatcherName, context);
-        return inner.mapPage(inner1 -> new FlowLogImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new FlowLogImpl(inner1, this.manager()));
     }
 
     public FlowLog getById(String id) {

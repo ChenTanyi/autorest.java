@@ -144,14 +144,14 @@ public final class VirtualMachineScaleSetVMRunCommandsImpl implements VirtualMac
         String resourceGroupName, String vmScaleSetName, String instanceId) {
         PagedIterable<VirtualMachineRunCommandInner> inner =
             this.serviceClient().list(resourceGroupName, vmScaleSetName, instanceId);
-        return inner.mapPage(inner1 -> new VirtualMachineRunCommandImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualMachineRunCommandImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachineRunCommand> list(
         String resourceGroupName, String vmScaleSetName, String instanceId, String expand, Context context) {
         PagedIterable<VirtualMachineRunCommandInner> inner =
             this.serviceClient().list(resourceGroupName, vmScaleSetName, instanceId, expand, context);
-        return inner.mapPage(inner1 -> new VirtualMachineRunCommandImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualMachineRunCommandImpl(inner1, this.manager()));
     }
 
     private VirtualMachineScaleSetVMRunCommandsClient serviceClient() {

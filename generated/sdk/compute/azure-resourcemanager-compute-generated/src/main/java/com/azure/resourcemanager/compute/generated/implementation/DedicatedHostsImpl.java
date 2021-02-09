@@ -64,14 +64,14 @@ public final class DedicatedHostsImpl implements DedicatedHosts {
     public PagedIterable<DedicatedHost> listByHostGroup(String resourceGroupName, String hostGroupName) {
         PagedIterable<DedicatedHostInner> inner =
             this.serviceClient().listByHostGroup(resourceGroupName, hostGroupName);
-        return inner.mapPage(inner1 -> new DedicatedHostImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DedicatedHostImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DedicatedHost> listByHostGroup(
         String resourceGroupName, String hostGroupName, Context context) {
         PagedIterable<DedicatedHostInner> inner =
             this.serviceClient().listByHostGroup(resourceGroupName, hostGroupName, context);
-        return inner.mapPage(inner1 -> new DedicatedHostImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DedicatedHostImpl(inner1, this.manager()));
     }
 
     public DedicatedHost getById(String id) {

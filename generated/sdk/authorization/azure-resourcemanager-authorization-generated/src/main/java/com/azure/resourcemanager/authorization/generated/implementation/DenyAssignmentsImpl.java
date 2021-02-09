@@ -39,7 +39,7 @@ public final class DenyAssignmentsImpl implements DenyAssignments {
                 .serviceClient()
                 .listForResource(
                     resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType, resourceName);
-        return inner.mapPage(inner1 -> new DenyAssignmentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DenyAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DenyAssignment> listForResource(
@@ -61,28 +61,28 @@ public final class DenyAssignmentsImpl implements DenyAssignments {
                     resourceName,
                     filter,
                     context);
-        return inner.mapPage(inner1 -> new DenyAssignmentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DenyAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DenyAssignment> listByResourceGroup(String resourceGroupName) {
         PagedIterable<DenyAssignmentInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new DenyAssignmentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DenyAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DenyAssignment> listByResourceGroup(String resourceGroupName, String filter, Context context) {
         PagedIterable<DenyAssignmentInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, filter, context);
-        return inner.mapPage(inner1 -> new DenyAssignmentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DenyAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DenyAssignment> list() {
         PagedIterable<DenyAssignmentInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new DenyAssignmentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DenyAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DenyAssignment> list(String filter, Context context) {
         PagedIterable<DenyAssignmentInner> inner = this.serviceClient().list(filter, context);
-        return inner.mapPage(inner1 -> new DenyAssignmentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DenyAssignmentImpl(inner1, this.manager()));
     }
 
     public DenyAssignment get(String scope, String denyAssignmentId) {
@@ -131,12 +131,12 @@ public final class DenyAssignmentsImpl implements DenyAssignments {
 
     public PagedIterable<DenyAssignment> listForScope(String scope) {
         PagedIterable<DenyAssignmentInner> inner = this.serviceClient().listForScope(scope);
-        return inner.mapPage(inner1 -> new DenyAssignmentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DenyAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DenyAssignment> listForScope(String scope, String filter, Context context) {
         PagedIterable<DenyAssignmentInner> inner = this.serviceClient().listForScope(scope, filter, context);
-        return inner.mapPage(inner1 -> new DenyAssignmentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DenyAssignmentImpl(inner1, this.manager()));
     }
 
     private DenyAssignmentsClient serviceClient() {

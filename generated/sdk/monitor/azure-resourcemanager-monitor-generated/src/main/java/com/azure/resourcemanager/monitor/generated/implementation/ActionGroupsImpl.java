@@ -63,23 +63,23 @@ public final class ActionGroupsImpl implements ActionGroups {
 
     public PagedIterable<ActionGroupResource> list() {
         PagedIterable<ActionGroupResourceInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new ActionGroupResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ActionGroupResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ActionGroupResource> list(Context context) {
         PagedIterable<ActionGroupResourceInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new ActionGroupResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ActionGroupResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ActionGroupResource> listByResourceGroup(String resourceGroupName) {
         PagedIterable<ActionGroupResourceInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new ActionGroupResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ActionGroupResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ActionGroupResource> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<ActionGroupResourceInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new ActionGroupResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ActionGroupResourceImpl(inner1, this.manager()));
     }
 
     public void enableReceiver(String resourceGroupName, String actionGroupName, EnableRequest enableRequest) {

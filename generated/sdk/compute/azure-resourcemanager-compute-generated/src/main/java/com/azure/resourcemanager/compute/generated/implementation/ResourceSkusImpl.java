@@ -28,12 +28,12 @@ public final class ResourceSkusImpl implements ResourceSkus {
 
     public PagedIterable<ResourceSku> list() {
         PagedIterable<ResourceSkuInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new ResourceSkuImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ResourceSkuImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ResourceSku> list(String filter, Context context) {
         PagedIterable<ResourceSkuInner> inner = this.serviceClient().list(filter, context);
-        return inner.mapPage(inner1 -> new ResourceSkuImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ResourceSkuImpl(inner1, this.manager()));
     }
 
     private ResourceSkusClient serviceClient() {

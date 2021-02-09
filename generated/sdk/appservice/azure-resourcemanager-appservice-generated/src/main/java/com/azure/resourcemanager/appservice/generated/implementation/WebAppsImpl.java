@@ -159,23 +159,23 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<Site> list() {
         PagedIterable<SiteInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new SiteImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Site> list(Context context) {
         PagedIterable<SiteInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new SiteImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Site> listByResourceGroup(String resourceGroupName) {
         PagedIterable<SiteInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new SiteImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Site> listByResourceGroup(String resourceGroupName, Boolean includeSlots, Context context) {
         PagedIterable<SiteInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, includeSlots, context);
-        return inner.mapPage(inner1 -> new SiteImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
     }
 
     public Site getByResourceGroup(String resourceGroupName, String name) {
@@ -273,12 +273,12 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<BackupItem> listBackups(String resourceGroupName, String name) {
         PagedIterable<BackupItemInner> inner = this.serviceClient().listBackups(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new BackupItemImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BackupItem> listBackups(String resourceGroupName, String name, Context context) {
         PagedIterable<BackupItemInner> inner = this.serviceClient().listBackups(resourceGroupName, name, context);
-        return inner.mapPage(inner1 -> new BackupItemImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
     }
 
     public BackupItem getBackupStatus(String resourceGroupName, String name, String backupId) {
@@ -493,14 +493,14 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<SiteConfigResource> listConfigurations(String resourceGroupName, String name) {
         PagedIterable<SiteConfigResourceInner> inner = this.serviceClient().listConfigurations(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new SiteConfigResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SiteConfigResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SiteConfigResource> listConfigurations(
         String resourceGroupName, String name, Context context) {
         PagedIterable<SiteConfigResourceInner> inner =
             this.serviceClient().listConfigurations(resourceGroupName, name, context);
-        return inner.mapPage(inner1 -> new SiteConfigResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SiteConfigResourceImpl(inner1, this.manager()));
     }
 
     public StringDictionary updateApplicationSettings(
@@ -1114,14 +1114,14 @@ public final class WebAppsImpl implements WebApps {
         String resourceGroupName, String name) {
         PagedIterable<SiteConfigurationSnapshotInfoInner> inner =
             this.serviceClient().listConfigurationSnapshotInfo(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new SiteConfigurationSnapshotInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SiteConfigurationSnapshotInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SiteConfigurationSnapshotInfo> listConfigurationSnapshotInfo(
         String resourceGroupName, String name, Context context) {
         PagedIterable<SiteConfigurationSnapshotInfoInner> inner =
             this.serviceClient().listConfigurationSnapshotInfo(resourceGroupName, name, context);
-        return inner.mapPage(inner1 -> new SiteConfigurationSnapshotInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SiteConfigurationSnapshotInfoImpl(inner1, this.manager()));
     }
 
     public SiteConfigResource getConfigurationSnapshot(String resourceGroupName, String name, String snapshotId) {
@@ -1179,14 +1179,14 @@ public final class WebAppsImpl implements WebApps {
     public PagedIterable<ContinuousWebJob> listContinuousWebJobs(String resourceGroupName, String name) {
         PagedIterable<ContinuousWebJobInner> inner =
             this.serviceClient().listContinuousWebJobs(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new ContinuousWebJobImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ContinuousWebJobImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ContinuousWebJob> listContinuousWebJobs(
         String resourceGroupName, String name, Context context) {
         PagedIterable<ContinuousWebJobInner> inner =
             this.serviceClient().listContinuousWebJobs(resourceGroupName, name, context);
-        return inner.mapPage(inner1 -> new ContinuousWebJobImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ContinuousWebJobImpl(inner1, this.manager()));
     }
 
     public ContinuousWebJob getContinuousWebJob(String resourceGroupName, String name, String webJobName) {
@@ -1242,12 +1242,12 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<Deployment> listDeployments(String resourceGroupName, String name) {
         PagedIterable<DeploymentInner> inner = this.serviceClient().listDeployments(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new DeploymentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DeploymentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Deployment> listDeployments(String resourceGroupName, String name, Context context) {
         PagedIterable<DeploymentInner> inner = this.serviceClient().listDeployments(resourceGroupName, name, context);
-        return inner.mapPage(inner1 -> new DeploymentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DeploymentImpl(inner1, this.manager()));
     }
 
     public Deployment getDeployment(String resourceGroupName, String name, String id) {
@@ -1334,14 +1334,14 @@ public final class WebAppsImpl implements WebApps {
     public PagedIterable<Identifier> listDomainOwnershipIdentifiers(String resourceGroupName, String name) {
         PagedIterable<IdentifierInner> inner =
             this.serviceClient().listDomainOwnershipIdentifiers(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new IdentifierImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new IdentifierImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Identifier> listDomainOwnershipIdentifiers(
         String resourceGroupName, String name, Context context) {
         PagedIterable<IdentifierInner> inner =
             this.serviceClient().listDomainOwnershipIdentifiers(resourceGroupName, name, context);
-        return inner.mapPage(inner1 -> new IdentifierImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new IdentifierImpl(inner1, this.manager()));
     }
 
     public Identifier getDomainOwnershipIdentifier(
@@ -1455,13 +1455,13 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<FunctionEnvelope> listFunctions(String resourceGroupName, String name) {
         PagedIterable<FunctionEnvelopeInner> inner = this.serviceClient().listFunctions(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new FunctionEnvelopeImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new FunctionEnvelopeImpl(inner1, this.manager()));
     }
 
     public PagedIterable<FunctionEnvelope> listFunctions(String resourceGroupName, String name, Context context) {
         PagedIterable<FunctionEnvelopeInner> inner =
             this.serviceClient().listFunctions(resourceGroupName, name, context);
-        return inner.mapPage(inner1 -> new FunctionEnvelopeImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new FunctionEnvelopeImpl(inner1, this.manager()));
     }
 
     public String getFunctionsAdminToken(String resourceGroupName, String name) {
@@ -1669,13 +1669,13 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<HostnameBinding> listHostnameBindings(String resourceGroupName, String name) {
         PagedIterable<HostnameBindingInner> inner = this.serviceClient().listHostnameBindings(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new HostnameBindingImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new HostnameBindingImpl(inner1, this.manager()));
     }
 
     public PagedIterable<HostnameBinding> listHostnameBindings(String resourceGroupName, String name, Context context) {
         PagedIterable<HostnameBindingInner> inner =
             this.serviceClient().listHostnameBindings(resourceGroupName, name, context);
-        return inner.mapPage(inner1 -> new HostnameBindingImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new HostnameBindingImpl(inner1, this.manager()));
     }
 
     public HostnameBinding getHostnameBinding(String resourceGroupName, String name, String hostname) {
@@ -1839,14 +1839,14 @@ public final class WebAppsImpl implements WebApps {
     public PagedIterable<WebSiteInstanceStatus> listInstanceIdentifiers(String resourceGroupName, String name) {
         PagedIterable<WebSiteInstanceStatusInner> inner =
             this.serviceClient().listInstanceIdentifiers(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new WebSiteInstanceStatusImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new WebSiteInstanceStatusImpl(inner1, this.manager()));
     }
 
     public PagedIterable<WebSiteInstanceStatus> listInstanceIdentifiers(
         String resourceGroupName, String name, Context context) {
         PagedIterable<WebSiteInstanceStatusInner> inner =
             this.serviceClient().listInstanceIdentifiers(resourceGroupName, name, context);
-        return inner.mapPage(inner1 -> new WebSiteInstanceStatusImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new WebSiteInstanceStatusImpl(inner1, this.manager()));
     }
 
     public WebSiteInstanceStatus getInstanceInfo(String resourceGroupName, String name, String instanceId) {
@@ -1948,14 +1948,14 @@ public final class WebAppsImpl implements WebApps {
     public PagedIterable<ProcessInfo> listInstanceProcesses(String resourceGroupName, String name, String instanceId) {
         PagedIterable<ProcessInfoInner> inner =
             this.serviceClient().listInstanceProcesses(resourceGroupName, name, instanceId);
-        return inner.mapPage(inner1 -> new ProcessInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProcessInfo> listInstanceProcesses(
         String resourceGroupName, String name, String instanceId, Context context) {
         PagedIterable<ProcessInfoInner> inner =
             this.serviceClient().listInstanceProcesses(resourceGroupName, name, instanceId, context);
-        return inner.mapPage(inner1 -> new ProcessInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
     }
 
     public ProcessInfo getInstanceProcess(String resourceGroupName, String name, String processId, String instanceId) {
@@ -2012,14 +2012,14 @@ public final class WebAppsImpl implements WebApps {
         String resourceGroupName, String name, String processId, String instanceId) {
         PagedIterable<ProcessModuleInfoInner> inner =
             this.serviceClient().listInstanceProcessModules(resourceGroupName, name, processId, instanceId);
-        return inner.mapPage(inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProcessModuleInfo> listInstanceProcessModules(
         String resourceGroupName, String name, String processId, String instanceId, Context context) {
         PagedIterable<ProcessModuleInfoInner> inner =
             this.serviceClient().listInstanceProcessModules(resourceGroupName, name, processId, instanceId, context);
-        return inner.mapPage(inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
     }
 
     public ProcessModuleInfo getInstanceProcessModule(
@@ -2060,14 +2060,14 @@ public final class WebAppsImpl implements WebApps {
         String resourceGroupName, String name, String processId, String instanceId) {
         PagedIterable<ProcessThreadInfoInner> inner =
             this.serviceClient().listInstanceProcessThreads(resourceGroupName, name, processId, instanceId);
-        return inner.mapPage(inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProcessThreadInfo> listInstanceProcessThreads(
         String resourceGroupName, String name, String processId, String instanceId, Context context) {
         PagedIterable<ProcessThreadInfoInner> inner =
             this.serviceClient().listInstanceProcessThreads(resourceGroupName, name, processId, instanceId, context);
-        return inner.mapPage(inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
     }
 
     public SiteCloneability isCloneable(String resourceGroupName, String name) {
@@ -2095,12 +2095,12 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<BackupItem> listSiteBackups(String resourceGroupName, String name) {
         PagedIterable<BackupItemInner> inner = this.serviceClient().listSiteBackups(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new BackupItemImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BackupItem> listSiteBackups(String resourceGroupName, String name, Context context) {
         PagedIterable<BackupItemInner> inner = this.serviceClient().listSiteBackups(resourceGroupName, name, context);
-        return inner.mapPage(inner1 -> new BackupItemImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
     }
 
     public FunctionSecrets listSyncFunctionTriggers(String resourceGroupName, String name) {
@@ -2459,14 +2459,14 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<PerfMonResponse> listPerfMonCounters(String resourceGroupName, String name) {
         PagedIterable<PerfMonResponseInner> inner = this.serviceClient().listPerfMonCounters(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new PerfMonResponseImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PerfMonResponseImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PerfMonResponse> listPerfMonCounters(
         String resourceGroupName, String name, String filter, Context context) {
         PagedIterable<PerfMonResponseInner> inner =
             this.serviceClient().listPerfMonCounters(resourceGroupName, name, filter, context);
-        return inner.mapPage(inner1 -> new PerfMonResponseImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PerfMonResponseImpl(inner1, this.manager()));
     }
 
     public SitePhpErrorLogFlag getSitePhpErrorLogFlag(String resourceGroupName, String name) {
@@ -2600,12 +2600,12 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<ProcessInfo> listProcesses(String resourceGroupName, String name) {
         PagedIterable<ProcessInfoInner> inner = this.serviceClient().listProcesses(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new ProcessInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProcessInfo> listProcesses(String resourceGroupName, String name, Context context) {
         PagedIterable<ProcessInfoInner> inner = this.serviceClient().listProcesses(resourceGroupName, name, context);
-        return inner.mapPage(inner1 -> new ProcessInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
     }
 
     public ProcessInfo getProcess(String resourceGroupName, String name, String processId) {
@@ -2654,14 +2654,14 @@ public final class WebAppsImpl implements WebApps {
         String resourceGroupName, String name, String processId) {
         PagedIterable<ProcessModuleInfoInner> inner =
             this.serviceClient().listProcessModules(resourceGroupName, name, processId);
-        return inner.mapPage(inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProcessModuleInfo> listProcessModules(
         String resourceGroupName, String name, String processId, Context context) {
         PagedIterable<ProcessModuleInfoInner> inner =
             this.serviceClient().listProcessModules(resourceGroupName, name, processId, context);
-        return inner.mapPage(inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
     }
 
     public ProcessModuleInfo getProcessModule(
@@ -2694,27 +2694,27 @@ public final class WebAppsImpl implements WebApps {
         String resourceGroupName, String name, String processId) {
         PagedIterable<ProcessThreadInfoInner> inner =
             this.serviceClient().listProcessThreads(resourceGroupName, name, processId);
-        return inner.mapPage(inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProcessThreadInfo> listProcessThreads(
         String resourceGroupName, String name, String processId, Context context) {
         PagedIterable<ProcessThreadInfoInner> inner =
             this.serviceClient().listProcessThreads(resourceGroupName, name, processId, context);
-        return inner.mapPage(inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicCertificate> listPublicCertificates(String resourceGroupName, String name) {
         PagedIterable<PublicCertificateInner> inner =
             this.serviceClient().listPublicCertificates(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new PublicCertificateImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PublicCertificateImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicCertificate> listPublicCertificates(
         String resourceGroupName, String name, Context context) {
         PagedIterable<PublicCertificateInner> inner =
             this.serviceClient().listPublicCertificates(resourceGroupName, name, context);
-        return inner.mapPage(inner1 -> new PublicCertificateImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PublicCertificateImpl(inner1, this.manager()));
     }
 
     public PublicCertificate getPublicCertificate(String resourceGroupName, String name, String publicCertificateName) {
@@ -2817,13 +2817,13 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<SiteExtensionInfo> listSiteExtensions(String resourceGroupName, String name) {
         PagedIterable<SiteExtensionInfoInner> inner = this.serviceClient().listSiteExtensions(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new SiteExtensionInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SiteExtensionInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SiteExtensionInfo> listSiteExtensions(String resourceGroupName, String name, Context context) {
         PagedIterable<SiteExtensionInfoInner> inner =
             this.serviceClient().listSiteExtensions(resourceGroupName, name, context);
-        return inner.mapPage(inner1 -> new SiteExtensionInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SiteExtensionInfoImpl(inner1, this.manager()));
     }
 
     public SiteExtensionInfo getSiteExtension(String resourceGroupName, String name, String siteExtensionId) {
@@ -2891,12 +2891,12 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<Site> listSlots(String resourceGroupName, String name) {
         PagedIterable<SiteInner> inner = this.serviceClient().listSlots(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new SiteImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Site> listSlots(String resourceGroupName, String name, Context context) {
         PagedIterable<SiteInner> inner = this.serviceClient().listSlots(resourceGroupName, name, context);
-        return inner.mapPage(inner1 -> new SiteImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
     }
 
     public Site getSlot(String resourceGroupName, String name, String slot) {
@@ -3045,14 +3045,14 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<BackupItem> listBackupsSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<BackupItemInner> inner = this.serviceClient().listBackupsSlot(resourceGroupName, name, slot);
-        return inner.mapPage(inner1 -> new BackupItemImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BackupItem> listBackupsSlot(
         String resourceGroupName, String name, String slot, Context context) {
         PagedIterable<BackupItemInner> inner =
             this.serviceClient().listBackupsSlot(resourceGroupName, name, slot, context);
-        return inner.mapPage(inner1 -> new BackupItemImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
     }
 
     public BackupItem getBackupStatusSlot(String resourceGroupName, String name, String backupId, String slot) {
@@ -3140,14 +3140,14 @@ public final class WebAppsImpl implements WebApps {
         String resourceGroupName, String name, String slot) {
         PagedIterable<SiteConfigResourceInner> inner =
             this.serviceClient().listConfigurationsSlot(resourceGroupName, name, slot);
-        return inner.mapPage(inner1 -> new SiteConfigResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SiteConfigResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SiteConfigResource> listConfigurationsSlot(
         String resourceGroupName, String name, String slot, Context context) {
         PagedIterable<SiteConfigResourceInner> inner =
             this.serviceClient().listConfigurationsSlot(resourceGroupName, name, slot, context);
-        return inner.mapPage(inner1 -> new SiteConfigResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SiteConfigResourceImpl(inner1, this.manager()));
     }
 
     public StringDictionary updateApplicationSettingsSlot(
@@ -3746,14 +3746,14 @@ public final class WebAppsImpl implements WebApps {
         String resourceGroupName, String name, String slot) {
         PagedIterable<SiteConfigurationSnapshotInfoInner> inner =
             this.serviceClient().listConfigurationSnapshotInfoSlot(resourceGroupName, name, slot);
-        return inner.mapPage(inner1 -> new SiteConfigurationSnapshotInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SiteConfigurationSnapshotInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SiteConfigurationSnapshotInfo> listConfigurationSnapshotInfoSlot(
         String resourceGroupName, String name, String slot, Context context) {
         PagedIterable<SiteConfigurationSnapshotInfoInner> inner =
             this.serviceClient().listConfigurationSnapshotInfoSlot(resourceGroupName, name, slot, context);
-        return inner.mapPage(inner1 -> new SiteConfigurationSnapshotInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SiteConfigurationSnapshotInfoImpl(inner1, this.manager()));
     }
 
     public SiteConfigResource getConfigurationSnapshotSlot(
@@ -3818,14 +3818,14 @@ public final class WebAppsImpl implements WebApps {
         String resourceGroupName, String name, String slot) {
         PagedIterable<ContinuousWebJobInner> inner =
             this.serviceClient().listContinuousWebJobsSlot(resourceGroupName, name, slot);
-        return inner.mapPage(inner1 -> new ContinuousWebJobImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ContinuousWebJobImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ContinuousWebJob> listContinuousWebJobsSlot(
         String resourceGroupName, String name, String slot, Context context) {
         PagedIterable<ContinuousWebJobInner> inner =
             this.serviceClient().listContinuousWebJobsSlot(resourceGroupName, name, slot, context);
-        return inner.mapPage(inner1 -> new ContinuousWebJobImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ContinuousWebJobImpl(inner1, this.manager()));
     }
 
     public ContinuousWebJob getContinuousWebJobSlot(
@@ -3891,14 +3891,14 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<Deployment> listDeploymentsSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<DeploymentInner> inner = this.serviceClient().listDeploymentsSlot(resourceGroupName, name, slot);
-        return inner.mapPage(inner1 -> new DeploymentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DeploymentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Deployment> listDeploymentsSlot(
         String resourceGroupName, String name, String slot, Context context) {
         PagedIterable<DeploymentInner> inner =
             this.serviceClient().listDeploymentsSlot(resourceGroupName, name, slot, context);
-        return inner.mapPage(inner1 -> new DeploymentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DeploymentImpl(inner1, this.manager()));
     }
 
     public Deployment getDeploymentSlot(String resourceGroupName, String name, String id, String slot) {
@@ -4015,14 +4015,14 @@ public final class WebAppsImpl implements WebApps {
         String resourceGroupName, String name, String slot) {
         PagedIterable<IdentifierInner> inner =
             this.serviceClient().listDomainOwnershipIdentifiersSlot(resourceGroupName, name, slot);
-        return inner.mapPage(inner1 -> new IdentifierImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new IdentifierImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Identifier> listDomainOwnershipIdentifiersSlot(
         String resourceGroupName, String name, String slot, Context context) {
         PagedIterable<IdentifierInner> inner =
             this.serviceClient().listDomainOwnershipIdentifiersSlot(resourceGroupName, name, slot, context);
-        return inner.mapPage(inner1 -> new IdentifierImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new IdentifierImpl(inner1, this.manager()));
     }
 
     public Identifier getDomainOwnershipIdentifierSlot(
@@ -4227,14 +4227,14 @@ public final class WebAppsImpl implements WebApps {
         String resourceGroupName, String name, String slot) {
         PagedIterable<FunctionEnvelopeInner> inner =
             this.serviceClient().listInstanceFunctionsSlot(resourceGroupName, name, slot);
-        return inner.mapPage(inner1 -> new FunctionEnvelopeImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new FunctionEnvelopeImpl(inner1, this.manager()));
     }
 
     public PagedIterable<FunctionEnvelope> listInstanceFunctionsSlot(
         String resourceGroupName, String name, String slot, Context context) {
         PagedIterable<FunctionEnvelopeInner> inner =
             this.serviceClient().listInstanceFunctionsSlot(resourceGroupName, name, slot, context);
-        return inner.mapPage(inner1 -> new FunctionEnvelopeImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new FunctionEnvelopeImpl(inner1, this.manager()));
     }
 
     public String getFunctionsAdminTokenSlot(String resourceGroupName, String name, String slot) {
@@ -4515,14 +4515,14 @@ public final class WebAppsImpl implements WebApps {
     public PagedIterable<HostnameBinding> listHostnameBindingsSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<HostnameBindingInner> inner =
             this.serviceClient().listHostnameBindingsSlot(resourceGroupName, name, slot);
-        return inner.mapPage(inner1 -> new HostnameBindingImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new HostnameBindingImpl(inner1, this.manager()));
     }
 
     public PagedIterable<HostnameBinding> listHostnameBindingsSlot(
         String resourceGroupName, String name, String slot, Context context) {
         PagedIterable<HostnameBindingInner> inner =
             this.serviceClient().listHostnameBindingsSlot(resourceGroupName, name, slot, context);
-        return inner.mapPage(inner1 -> new HostnameBindingImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new HostnameBindingImpl(inner1, this.manager()));
     }
 
     public HostnameBinding getHostnameBindingSlot(String resourceGroupName, String name, String slot, String hostname) {
@@ -4898,14 +4898,14 @@ public final class WebAppsImpl implements WebApps {
         String resourceGroupName, String name, String slot) {
         PagedIterable<WebSiteInstanceStatusInner> inner =
             this.serviceClient().listInstanceIdentifiersSlot(resourceGroupName, name, slot);
-        return inner.mapPage(inner1 -> new WebSiteInstanceStatusImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new WebSiteInstanceStatusImpl(inner1, this.manager()));
     }
 
     public PagedIterable<WebSiteInstanceStatus> listInstanceIdentifiersSlot(
         String resourceGroupName, String name, String slot, Context context) {
         PagedIterable<WebSiteInstanceStatusInner> inner =
             this.serviceClient().listInstanceIdentifiersSlot(resourceGroupName, name, slot, context);
-        return inner.mapPage(inner1 -> new WebSiteInstanceStatusImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new WebSiteInstanceStatusImpl(inner1, this.manager()));
     }
 
     public WebSiteInstanceStatus getInstanceInfoSlot(
@@ -5020,14 +5020,14 @@ public final class WebAppsImpl implements WebApps {
         String resourceGroupName, String name, String slot, String instanceId) {
         PagedIterable<ProcessInfoInner> inner =
             this.serviceClient().listInstanceProcessesSlot(resourceGroupName, name, slot, instanceId);
-        return inner.mapPage(inner1 -> new ProcessInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProcessInfo> listInstanceProcessesSlot(
         String resourceGroupName, String name, String slot, String instanceId, Context context) {
         PagedIterable<ProcessInfoInner> inner =
             this.serviceClient().listInstanceProcessesSlot(resourceGroupName, name, slot, instanceId, context);
-        return inner.mapPage(inner1 -> new ProcessInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
     }
 
     public ProcessInfo getInstanceProcessSlot(
@@ -5086,7 +5086,7 @@ public final class WebAppsImpl implements WebApps {
         String resourceGroupName, String name, String processId, String slot, String instanceId) {
         PagedIterable<ProcessModuleInfoInner> inner =
             this.serviceClient().listInstanceProcessModulesSlot(resourceGroupName, name, processId, slot, instanceId);
-        return inner.mapPage(inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProcessModuleInfo> listInstanceProcessModulesSlot(
@@ -5095,7 +5095,7 @@ public final class WebAppsImpl implements WebApps {
             this
                 .serviceClient()
                 .listInstanceProcessModulesSlot(resourceGroupName, name, processId, slot, instanceId, context);
-        return inner.mapPage(inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
     }
 
     public ProcessModuleInfo getInstanceProcessModuleSlot(
@@ -5139,7 +5139,7 @@ public final class WebAppsImpl implements WebApps {
         String resourceGroupName, String name, String processId, String slot, String instanceId) {
         PagedIterable<ProcessThreadInfoInner> inner =
             this.serviceClient().listInstanceProcessThreadsSlot(resourceGroupName, name, processId, slot, instanceId);
-        return inner.mapPage(inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProcessThreadInfo> listInstanceProcessThreadsSlot(
@@ -5148,7 +5148,7 @@ public final class WebAppsImpl implements WebApps {
             this
                 .serviceClient()
                 .listInstanceProcessThreadsSlot(resourceGroupName, name, processId, slot, instanceId, context);
-        return inner.mapPage(inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
     }
 
     public SiteCloneability isCloneableSlot(String resourceGroupName, String name, String slot) {
@@ -5177,14 +5177,14 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<BackupItem> listSiteBackupsSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<BackupItemInner> inner = this.serviceClient().listSiteBackupsSlot(resourceGroupName, name, slot);
-        return inner.mapPage(inner1 -> new BackupItemImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BackupItem> listSiteBackupsSlot(
         String resourceGroupName, String name, String slot, Context context) {
         PagedIterable<BackupItemInner> inner =
             this.serviceClient().listSiteBackupsSlot(resourceGroupName, name, slot, context);
-        return inner.mapPage(inner1 -> new BackupItemImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BackupItemImpl(inner1, this.manager()));
     }
 
     public FunctionSecrets listSyncFunctionTriggersSlot(String resourceGroupName, String name, String slot) {
@@ -5533,14 +5533,14 @@ public final class WebAppsImpl implements WebApps {
     public PagedIterable<PerfMonResponse> listPerfMonCountersSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<PerfMonResponseInner> inner =
             this.serviceClient().listPerfMonCountersSlot(resourceGroupName, name, slot);
-        return inner.mapPage(inner1 -> new PerfMonResponseImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PerfMonResponseImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PerfMonResponse> listPerfMonCountersSlot(
         String resourceGroupName, String name, String slot, String filter, Context context) {
         PagedIterable<PerfMonResponseInner> inner =
             this.serviceClient().listPerfMonCountersSlot(resourceGroupName, name, slot, filter, context);
-        return inner.mapPage(inner1 -> new PerfMonResponseImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PerfMonResponseImpl(inner1, this.manager()));
     }
 
     public SitePhpErrorLogFlag getSitePhpErrorLogFlagSlot(String resourceGroupName, String name, String slot) {
@@ -5820,14 +5820,14 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<ProcessInfo> listProcessesSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<ProcessInfoInner> inner = this.serviceClient().listProcessesSlot(resourceGroupName, name, slot);
-        return inner.mapPage(inner1 -> new ProcessInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProcessInfo> listProcessesSlot(
         String resourceGroupName, String name, String slot, Context context) {
         PagedIterable<ProcessInfoInner> inner =
             this.serviceClient().listProcessesSlot(resourceGroupName, name, slot, context);
-        return inner.mapPage(inner1 -> new ProcessInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
     }
 
     public ProcessInfo getProcessSlot(String resourceGroupName, String name, String processId, String slot) {
@@ -5876,14 +5876,14 @@ public final class WebAppsImpl implements WebApps {
         String resourceGroupName, String name, String processId, String slot) {
         PagedIterable<ProcessModuleInfoInner> inner =
             this.serviceClient().listProcessModulesSlot(resourceGroupName, name, processId, slot);
-        return inner.mapPage(inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProcessModuleInfo> listProcessModulesSlot(
         String resourceGroupName, String name, String processId, String slot, Context context) {
         PagedIterable<ProcessModuleInfoInner> inner =
             this.serviceClient().listProcessModulesSlot(resourceGroupName, name, processId, slot, context);
-        return inner.mapPage(inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProcessModuleInfoImpl(inner1, this.manager()));
     }
 
     public ProcessModuleInfo getProcessModuleSlot(
@@ -5918,28 +5918,28 @@ public final class WebAppsImpl implements WebApps {
         String resourceGroupName, String name, String processId, String slot) {
         PagedIterable<ProcessThreadInfoInner> inner =
             this.serviceClient().listProcessThreadsSlot(resourceGroupName, name, processId, slot);
-        return inner.mapPage(inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProcessThreadInfo> listProcessThreadsSlot(
         String resourceGroupName, String name, String processId, String slot, Context context) {
         PagedIterable<ProcessThreadInfoInner> inner =
             this.serviceClient().listProcessThreadsSlot(resourceGroupName, name, processId, slot, context);
-        return inner.mapPage(inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProcessThreadInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicCertificate> listPublicCertificatesSlot(
         String resourceGroupName, String name, String slot) {
         PagedIterable<PublicCertificateInner> inner =
             this.serviceClient().listPublicCertificatesSlot(resourceGroupName, name, slot);
-        return inner.mapPage(inner1 -> new PublicCertificateImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PublicCertificateImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicCertificate> listPublicCertificatesSlot(
         String resourceGroupName, String name, String slot, Context context) {
         PagedIterable<PublicCertificateInner> inner =
             this.serviceClient().listPublicCertificatesSlot(resourceGroupName, name, slot, context);
-        return inner.mapPage(inner1 -> new PublicCertificateImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PublicCertificateImpl(inner1, this.manager()));
     }
 
     public PublicCertificate getPublicCertificateSlot(
@@ -6095,14 +6095,14 @@ public final class WebAppsImpl implements WebApps {
     public PagedIterable<SiteExtensionInfo> listSiteExtensionsSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<SiteExtensionInfoInner> inner =
             this.serviceClient().listSiteExtensionsSlot(resourceGroupName, name, slot);
-        return inner.mapPage(inner1 -> new SiteExtensionInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SiteExtensionInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SiteExtensionInfo> listSiteExtensionsSlot(
         String resourceGroupName, String name, String slot, Context context) {
         PagedIterable<SiteExtensionInfoInner> inner =
             this.serviceClient().listSiteExtensionsSlot(resourceGroupName, name, slot, context);
-        return inner.mapPage(inner1 -> new SiteExtensionInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SiteExtensionInfoImpl(inner1, this.manager()));
     }
 
     public SiteExtensionInfo getSiteExtensionSlot(
@@ -6179,14 +6179,14 @@ public final class WebAppsImpl implements WebApps {
         String resourceGroupName, String name, String slot, CsmSlotEntity slotSwapEntity) {
         PagedIterable<SlotDifferenceInner> inner =
             this.serviceClient().listSlotDifferencesSlot(resourceGroupName, name, slot, slotSwapEntity);
-        return inner.mapPage(inner1 -> new SlotDifferenceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SlotDifferenceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SlotDifference> listSlotDifferencesSlot(
         String resourceGroupName, String name, String slot, CsmSlotEntity slotSwapEntity, Context context) {
         PagedIterable<SlotDifferenceInner> inner =
             this.serviceClient().listSlotDifferencesSlot(resourceGroupName, name, slot, slotSwapEntity, context);
-        return inner.mapPage(inner1 -> new SlotDifferenceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SlotDifferenceImpl(inner1, this.manager()));
     }
 
     public void swapSlot(String resourceGroupName, String name, String slot, CsmSlotEntity slotSwapEntity) {
@@ -6200,28 +6200,28 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<Snapshot> listSnapshotsSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<SnapshotInner> inner = this.serviceClient().listSnapshotsSlot(resourceGroupName, name, slot);
-        return inner.mapPage(inner1 -> new SnapshotImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Snapshot> listSnapshotsSlot(
         String resourceGroupName, String name, String slot, Context context) {
         PagedIterable<SnapshotInner> inner =
             this.serviceClient().listSnapshotsSlot(resourceGroupName, name, slot, context);
-        return inner.mapPage(inner1 -> new SnapshotImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Snapshot> listSnapshotsFromDRSecondarySlot(
         String resourceGroupName, String name, String slot) {
         PagedIterable<SnapshotInner> inner =
             this.serviceClient().listSnapshotsFromDRSecondarySlot(resourceGroupName, name, slot);
-        return inner.mapPage(inner1 -> new SnapshotImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Snapshot> listSnapshotsFromDRSecondarySlot(
         String resourceGroupName, String name, String slot, Context context) {
         PagedIterable<SnapshotInner> inner =
             this.serviceClient().listSnapshotsFromDRSecondarySlot(resourceGroupName, name, slot, context);
-        return inner.mapPage(inner1 -> new SnapshotImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
     }
 
     public SiteSourceControl getSourceControlSlot(String resourceGroupName, String name, String slot) {
@@ -6384,14 +6384,14 @@ public final class WebAppsImpl implements WebApps {
     public PagedIterable<TriggeredWebJob> listTriggeredWebJobsSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<TriggeredWebJobInner> inner =
             this.serviceClient().listTriggeredWebJobsSlot(resourceGroupName, name, slot);
-        return inner.mapPage(inner1 -> new TriggeredWebJobImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new TriggeredWebJobImpl(inner1, this.manager()));
     }
 
     public PagedIterable<TriggeredWebJob> listTriggeredWebJobsSlot(
         String resourceGroupName, String name, String slot, Context context) {
         PagedIterable<TriggeredWebJobInner> inner =
             this.serviceClient().listTriggeredWebJobsSlot(resourceGroupName, name, slot, context);
-        return inner.mapPage(inner1 -> new TriggeredWebJobImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new TriggeredWebJobImpl(inner1, this.manager()));
     }
 
     public TriggeredWebJob getTriggeredWebJobSlot(
@@ -6435,14 +6435,14 @@ public final class WebAppsImpl implements WebApps {
         String resourceGroupName, String name, String webJobName, String slot) {
         PagedIterable<TriggeredJobHistoryInner> inner =
             this.serviceClient().listTriggeredWebJobHistorySlot(resourceGroupName, name, webJobName, slot);
-        return inner.mapPage(inner1 -> new TriggeredJobHistoryImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new TriggeredJobHistoryImpl(inner1, this.manager()));
     }
 
     public PagedIterable<TriggeredJobHistory> listTriggeredWebJobHistorySlot(
         String resourceGroupName, String name, String webJobName, String slot, Context context) {
         PagedIterable<TriggeredJobHistoryInner> inner =
             this.serviceClient().listTriggeredWebJobHistorySlot(resourceGroupName, name, webJobName, slot, context);
-        return inner.mapPage(inner1 -> new TriggeredJobHistoryImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new TriggeredJobHistoryImpl(inner1, this.manager()));
     }
 
     public TriggeredJobHistory getTriggeredWebJobHistorySlot(
@@ -6486,14 +6486,14 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<CsmUsageQuota> listUsagesSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<CsmUsageQuotaInner> inner = this.serviceClient().listUsagesSlot(resourceGroupName, name, slot);
-        return inner.mapPage(inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
     }
 
     public PagedIterable<CsmUsageQuota> listUsagesSlot(
         String resourceGroupName, String name, String slot, String filter, Context context) {
         PagedIterable<CsmUsageQuotaInner> inner =
             this.serviceClient().listUsagesSlot(resourceGroupName, name, slot, filter, context);
-        return inner.mapPage(inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
     }
 
     public List<VnetInfo> listVnetConnectionsSlot(String resourceGroupName, String name, String slot) {
@@ -6595,12 +6595,12 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<WebJob> listWebJobsSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<WebJobInner> inner = this.serviceClient().listWebJobsSlot(resourceGroupName, name, slot);
-        return inner.mapPage(inner1 -> new WebJobImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new WebJobImpl(inner1, this.manager()));
     }
 
     public PagedIterable<WebJob> listWebJobsSlot(String resourceGroupName, String name, String slot, Context context) {
         PagedIterable<WebJobInner> inner = this.serviceClient().listWebJobsSlot(resourceGroupName, name, slot, context);
-        return inner.mapPage(inner1 -> new WebJobImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new WebJobImpl(inner1, this.manager()));
     }
 
     public WebJob getWebJobSlot(String resourceGroupName, String name, String webJobName, String slot) {
@@ -6631,14 +6631,14 @@ public final class WebAppsImpl implements WebApps {
         String resourceGroupName, String name, CsmSlotEntity slotSwapEntity) {
         PagedIterable<SlotDifferenceInner> inner =
             this.serviceClient().listSlotDifferencesFromProduction(resourceGroupName, name, slotSwapEntity);
-        return inner.mapPage(inner1 -> new SlotDifferenceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SlotDifferenceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SlotDifference> listSlotDifferencesFromProduction(
         String resourceGroupName, String name, CsmSlotEntity slotSwapEntity, Context context) {
         PagedIterable<SlotDifferenceInner> inner =
             this.serviceClient().listSlotDifferencesFromProduction(resourceGroupName, name, slotSwapEntity, context);
-        return inner.mapPage(inner1 -> new SlotDifferenceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SlotDifferenceImpl(inner1, this.manager()));
     }
 
     public void swapSlotWithProduction(String resourceGroupName, String name, CsmSlotEntity slotSwapEntity) {
@@ -6652,24 +6652,24 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<Snapshot> listSnapshots(String resourceGroupName, String name) {
         PagedIterable<SnapshotInner> inner = this.serviceClient().listSnapshots(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new SnapshotImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Snapshot> listSnapshots(String resourceGroupName, String name, Context context) {
         PagedIterable<SnapshotInner> inner = this.serviceClient().listSnapshots(resourceGroupName, name, context);
-        return inner.mapPage(inner1 -> new SnapshotImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Snapshot> listSnapshotsFromDRSecondary(String resourceGroupName, String name) {
         PagedIterable<SnapshotInner> inner = this.serviceClient().listSnapshotsFromDRSecondary(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new SnapshotImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Snapshot> listSnapshotsFromDRSecondary(
         String resourceGroupName, String name, Context context) {
         PagedIterable<SnapshotInner> inner =
             this.serviceClient().listSnapshotsFromDRSecondary(resourceGroupName, name, context);
-        return inner.mapPage(inner1 -> new SnapshotImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
     }
 
     public SiteSourceControl getSourceControl(String resourceGroupName, String name) {
@@ -6817,13 +6817,13 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<TriggeredWebJob> listTriggeredWebJobs(String resourceGroupName, String name) {
         PagedIterable<TriggeredWebJobInner> inner = this.serviceClient().listTriggeredWebJobs(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new TriggeredWebJobImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new TriggeredWebJobImpl(inner1, this.manager()));
     }
 
     public PagedIterable<TriggeredWebJob> listTriggeredWebJobs(String resourceGroupName, String name, Context context) {
         PagedIterable<TriggeredWebJobInner> inner =
             this.serviceClient().listTriggeredWebJobs(resourceGroupName, name, context);
-        return inner.mapPage(inner1 -> new TriggeredWebJobImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new TriggeredWebJobImpl(inner1, this.manager()));
     }
 
     public TriggeredWebJob getTriggeredWebJob(String resourceGroupName, String name, String webJobName) {
@@ -6863,14 +6863,14 @@ public final class WebAppsImpl implements WebApps {
         String resourceGroupName, String name, String webJobName) {
         PagedIterable<TriggeredJobHistoryInner> inner =
             this.serviceClient().listTriggeredWebJobHistory(resourceGroupName, name, webJobName);
-        return inner.mapPage(inner1 -> new TriggeredJobHistoryImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new TriggeredJobHistoryImpl(inner1, this.manager()));
     }
 
     public PagedIterable<TriggeredJobHistory> listTriggeredWebJobHistory(
         String resourceGroupName, String name, String webJobName, Context context) {
         PagedIterable<TriggeredJobHistoryInner> inner =
             this.serviceClient().listTriggeredWebJobHistory(resourceGroupName, name, webJobName, context);
-        return inner.mapPage(inner1 -> new TriggeredJobHistoryImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new TriggeredJobHistoryImpl(inner1, this.manager()));
     }
 
     public TriggeredJobHistory getTriggeredWebJobHistory(
@@ -6912,14 +6912,14 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<CsmUsageQuota> listUsages(String resourceGroupName, String name) {
         PagedIterable<CsmUsageQuotaInner> inner = this.serviceClient().listUsages(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
     }
 
     public PagedIterable<CsmUsageQuota> listUsages(
         String resourceGroupName, String name, String filter, Context context) {
         PagedIterable<CsmUsageQuotaInner> inner =
             this.serviceClient().listUsages(resourceGroupName, name, filter, context);
-        return inner.mapPage(inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
     }
 
     public List<VnetInfo> listVnetConnections(String resourceGroupName, String name) {
@@ -7156,12 +7156,12 @@ public final class WebAppsImpl implements WebApps {
 
     public PagedIterable<WebJob> listWebJobs(String resourceGroupName, String name) {
         PagedIterable<WebJobInner> inner = this.serviceClient().listWebJobs(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new WebJobImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new WebJobImpl(inner1, this.manager()));
     }
 
     public PagedIterable<WebJob> listWebJobs(String resourceGroupName, String name, Context context) {
         PagedIterable<WebJobInner> inner = this.serviceClient().listWebJobs(resourceGroupName, name, context);
-        return inner.mapPage(inner1 -> new WebJobImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new WebJobImpl(inner1, this.manager()));
     }
 
     public WebJob getWebJob(String resourceGroupName, String name, String webJobName) {

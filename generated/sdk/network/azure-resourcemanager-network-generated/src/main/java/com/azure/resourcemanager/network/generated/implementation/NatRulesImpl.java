@@ -63,14 +63,14 @@ public final class NatRulesImpl implements NatRules {
     public PagedIterable<VpnGatewayNatRule> listByVpnGateway(String resourceGroupName, String gatewayName) {
         PagedIterable<VpnGatewayNatRuleInner> inner =
             this.serviceClient().listByVpnGateway(resourceGroupName, gatewayName);
-        return inner.mapPage(inner1 -> new VpnGatewayNatRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VpnGatewayNatRuleImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VpnGatewayNatRule> listByVpnGateway(
         String resourceGroupName, String gatewayName, Context context) {
         PagedIterable<VpnGatewayNatRuleInner> inner =
             this.serviceClient().listByVpnGateway(resourceGroupName, gatewayName, context);
-        return inner.mapPage(inner1 -> new VpnGatewayNatRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VpnGatewayNatRuleImpl(inner1, this.manager()));
     }
 
     public VpnGatewayNatRule getById(String id) {

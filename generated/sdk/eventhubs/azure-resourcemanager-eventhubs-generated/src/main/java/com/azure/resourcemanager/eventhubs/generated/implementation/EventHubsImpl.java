@@ -37,14 +37,14 @@ public final class EventHubsImpl implements EventHubs {
         String resourceGroupName, String namespaceName, String eventHubName) {
         PagedIterable<AuthorizationRuleInner> inner =
             this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, eventHubName);
-        return inner.mapPage(inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AuthorizationRule> listAuthorizationRules(
         String resourceGroupName, String namespaceName, String eventHubName, Context context) {
         PagedIterable<AuthorizationRuleInner> inner =
             this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, eventHubName, context);
-        return inner.mapPage(inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
     public AuthorizationRule createOrUpdateAuthorizationRule(
@@ -216,14 +216,14 @@ public final class EventHubsImpl implements EventHubs {
 
     public PagedIterable<Eventhub> listByNamespace(String resourceGroupName, String namespaceName) {
         PagedIterable<EventhubInner> inner = this.serviceClient().listByNamespace(resourceGroupName, namespaceName);
-        return inner.mapPage(inner1 -> new EventhubImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new EventhubImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Eventhub> listByNamespace(
         String resourceGroupName, String namespaceName, Integer skip, Integer top, Context context) {
         PagedIterable<EventhubInner> inner =
             this.serviceClient().listByNamespace(resourceGroupName, namespaceName, skip, top, context);
-        return inner.mapPage(inner1 -> new EventhubImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new EventhubImpl(inner1, this.manager()));
     }
 
     public void delete(String resourceGroupName, String namespaceName, String eventHubName) {

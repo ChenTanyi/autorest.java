@@ -33,14 +33,14 @@ public final class ExpressRouteCrossConnectionPeeringsImpl implements ExpressRou
         String resourceGroupName, String crossConnectionName) {
         PagedIterable<ExpressRouteCrossConnectionPeeringInner> inner =
             this.serviceClient().list(resourceGroupName, crossConnectionName);
-        return inner.mapPage(inner1 -> new ExpressRouteCrossConnectionPeeringImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ExpressRouteCrossConnectionPeeringImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ExpressRouteCrossConnectionPeering> list(
         String resourceGroupName, String crossConnectionName, Context context) {
         PagedIterable<ExpressRouteCrossConnectionPeeringInner> inner =
             this.serviceClient().list(resourceGroupName, crossConnectionName, context);
-        return inner.mapPage(inner1 -> new ExpressRouteCrossConnectionPeeringImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ExpressRouteCrossConnectionPeeringImpl(inner1, this.manager()));
     }
 
     public void delete(String resourceGroupName, String crossConnectionName, String peeringName) {

@@ -55,12 +55,12 @@ public final class ProviderOperationsMetadatasImpl implements ProviderOperations
 
     public PagedIterable<ProviderOperationsMetadata> list() {
         PagedIterable<ProviderOperationsMetadataInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new ProviderOperationsMetadataImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProviderOperationsMetadataImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProviderOperationsMetadata> list(String expand, Context context) {
         PagedIterable<ProviderOperationsMetadataInner> inner = this.serviceClient().list(expand, context);
-        return inner.mapPage(inner1 -> new ProviderOperationsMetadataImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProviderOperationsMetadataImpl(inner1, this.manager()));
     }
 
     private ProviderOperationsMetadatasClient serviceClient() {

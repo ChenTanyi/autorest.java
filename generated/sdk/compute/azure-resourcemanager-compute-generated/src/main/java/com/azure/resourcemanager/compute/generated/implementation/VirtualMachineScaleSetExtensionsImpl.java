@@ -66,14 +66,14 @@ public final class VirtualMachineScaleSetExtensionsImpl implements VirtualMachin
     public PagedIterable<VirtualMachineScaleSetExtension> list(String resourceGroupName, String vmScaleSetName) {
         PagedIterable<VirtualMachineScaleSetExtensionInner> inner =
             this.serviceClient().list(resourceGroupName, vmScaleSetName);
-        return inner.mapPage(inner1 -> new VirtualMachineScaleSetExtensionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualMachineScaleSetExtensionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachineScaleSetExtension> list(
         String resourceGroupName, String vmScaleSetName, Context context) {
         PagedIterable<VirtualMachineScaleSetExtensionInner> inner =
             this.serviceClient().list(resourceGroupName, vmScaleSetName, context);
-        return inner.mapPage(inner1 -> new VirtualMachineScaleSetExtensionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualMachineScaleSetExtensionImpl(inner1, this.manager()));
     }
 
     public VirtualMachineScaleSetExtension getById(String id) {

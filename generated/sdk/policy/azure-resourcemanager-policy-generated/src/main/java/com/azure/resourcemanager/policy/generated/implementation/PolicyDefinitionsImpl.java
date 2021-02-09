@@ -148,34 +148,34 @@ public final class PolicyDefinitionsImpl implements PolicyDefinitions {
 
     public PagedIterable<PolicyDefinition> list() {
         PagedIterable<PolicyDefinitionInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyDefinition> list(String filter, Integer top, Context context) {
         PagedIterable<PolicyDefinitionInner> inner = this.serviceClient().list(filter, top, context);
-        return inner.mapPage(inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyDefinition> listBuiltIn() {
         PagedIterable<PolicyDefinitionInner> inner = this.serviceClient().listBuiltIn();
-        return inner.mapPage(inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyDefinition> listBuiltIn(String filter, Integer top, Context context) {
         PagedIterable<PolicyDefinitionInner> inner = this.serviceClient().listBuiltIn(filter, top, context);
-        return inner.mapPage(inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyDefinition> listByManagementGroup(String managementGroupId) {
         PagedIterable<PolicyDefinitionInner> inner = this.serviceClient().listByManagementGroup(managementGroupId);
-        return inner.mapPage(inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyDefinition> listByManagementGroup(
         String managementGroupId, String filter, Integer top, Context context) {
         PagedIterable<PolicyDefinitionInner> inner =
             this.serviceClient().listByManagementGroup(managementGroupId, filter, top, context);
-        return inner.mapPage(inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PolicyDefinitionImpl(inner1, this.manager()));
     }
 
     public PolicyDefinition getById(String id) {

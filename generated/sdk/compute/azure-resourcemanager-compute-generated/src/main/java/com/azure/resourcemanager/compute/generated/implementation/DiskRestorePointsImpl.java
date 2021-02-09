@@ -70,7 +70,7 @@ public final class DiskRestorePointsImpl implements DiskRestorePoints {
         String resourceGroupName, String restorePointCollectionName, String vmRestorePointName) {
         PagedIterable<DiskRestorePointInner> inner =
             this.serviceClient().listByRestorePoint(resourceGroupName, restorePointCollectionName, vmRestorePointName);
-        return inner.mapPage(inner1 -> new DiskRestorePointImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DiskRestorePointImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DiskRestorePoint> listByRestorePoint(
@@ -79,7 +79,7 @@ public final class DiskRestorePointsImpl implements DiskRestorePoints {
             this
                 .serviceClient()
                 .listByRestorePoint(resourceGroupName, restorePointCollectionName, vmRestorePointName, context);
-        return inner.mapPage(inner1 -> new DiskRestorePointImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DiskRestorePointImpl(inner1, this.manager()));
     }
 
     private DiskRestorePointsClient serviceClient() {

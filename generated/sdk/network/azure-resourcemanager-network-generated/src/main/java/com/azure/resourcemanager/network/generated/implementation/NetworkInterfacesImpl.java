@@ -70,23 +70,23 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
 
     public PagedIterable<NetworkInterface> list() {
         PagedIterable<NetworkInterfaceInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkInterface> list(Context context) {
         PagedIterable<NetworkInterfaceInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkInterface> listByResourceGroup(String resourceGroupName) {
         PagedIterable<NetworkInterfaceInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkInterface> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<NetworkInterfaceInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
     }
 
     public EffectiveRouteListResult getEffectiveRouteTable(String resourceGroupName, String networkInterfaceName) {
@@ -139,7 +139,7 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
                 .serviceClient()
                 .listVirtualMachineScaleSetVMNetworkInterfaces(
                     resourceGroupName, virtualMachineScaleSetName, virtualmachineIndex);
-        return inner.mapPage(inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkInterface> listVirtualMachineScaleSetVMNetworkInterfaces(
@@ -149,7 +149,7 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
                 .serviceClient()
                 .listVirtualMachineScaleSetVMNetworkInterfaces(
                     resourceGroupName, virtualMachineScaleSetName, virtualmachineIndex, context);
-        return inner.mapPage(inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkInterface> listVirtualMachineScaleSetNetworkInterfaces(
@@ -158,7 +158,7 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
             this
                 .serviceClient()
                 .listVirtualMachineScaleSetNetworkInterfaces(resourceGroupName, virtualMachineScaleSetName);
-        return inner.mapPage(inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkInterface> listVirtualMachineScaleSetNetworkInterfaces(
@@ -167,7 +167,7 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
             this
                 .serviceClient()
                 .listVirtualMachineScaleSetNetworkInterfaces(resourceGroupName, virtualMachineScaleSetName, context);
-        return inner.mapPage(inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
     }
 
     public NetworkInterface getVirtualMachineScaleSetNetworkInterface(
@@ -225,7 +225,7 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
                 .serviceClient()
                 .listVirtualMachineScaleSetIpConfigurations(
                     resourceGroupName, virtualMachineScaleSetName, virtualmachineIndex, networkInterfaceName);
-        return inner.mapPage(inner1 -> new NetworkInterfaceIpConfigurationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceIpConfigurationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkInterfaceIpConfiguration> listVirtualMachineScaleSetIpConfigurations(
@@ -245,7 +245,7 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
                     networkInterfaceName,
                     expand,
                     context);
-        return inner.mapPage(inner1 -> new NetworkInterfaceIpConfigurationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceIpConfigurationImpl(inner1, this.manager()));
     }
 
     public NetworkInterfaceIpConfiguration getVirtualMachineScaleSetIpConfiguration(
@@ -306,7 +306,7 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
             this
                 .serviceClient()
                 .listCloudServiceRoleInstanceNetworkInterfaces(resourceGroupName, cloudServiceName, roleInstanceName);
-        return inner.mapPage(inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkInterface> listCloudServiceRoleInstanceNetworkInterfaces(
@@ -316,21 +316,21 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
                 .serviceClient()
                 .listCloudServiceRoleInstanceNetworkInterfaces(
                     resourceGroupName, cloudServiceName, roleInstanceName, context);
-        return inner.mapPage(inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkInterface> listCloudServiceNetworkInterfaces(
         String resourceGroupName, String cloudServiceName) {
         PagedIterable<NetworkInterfaceInner> inner =
             this.serviceClient().listCloudServiceNetworkInterfaces(resourceGroupName, cloudServiceName);
-        return inner.mapPage(inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkInterface> listCloudServiceNetworkInterfaces(
         String resourceGroupName, String cloudServiceName, Context context) {
         PagedIterable<NetworkInterfaceInner> inner =
             this.serviceClient().listCloudServiceNetworkInterfaces(resourceGroupName, cloudServiceName, context);
-        return inner.mapPage(inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
     }
 
     public NetworkInterface getCloudServiceNetworkInterface(

@@ -30,22 +30,22 @@ public final class NetworkExperimentProfilesImpl implements NetworkExperimentPro
 
     public PagedIterable<Profile> list() {
         PagedIterable<ProfileInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new ProfileImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProfileImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Profile> list(Context context) {
         PagedIterable<ProfileInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new ProfileImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProfileImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Profile> listByResourceGroup(String resourceGroupName) {
         PagedIterable<ProfileInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new ProfileImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProfileImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Profile> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<ProfileInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new ProfileImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProfileImpl(inner1, this.manager()));
     }
 
     public Profile getByResourceGroup(String resourceGroupName, String profileName) {

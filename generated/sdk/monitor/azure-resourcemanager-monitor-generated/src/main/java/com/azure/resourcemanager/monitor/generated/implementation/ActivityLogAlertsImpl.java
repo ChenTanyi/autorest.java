@@ -63,24 +63,24 @@ public final class ActivityLogAlertsImpl implements ActivityLogAlerts {
 
     public PagedIterable<ActivityLogAlertResource> list() {
         PagedIterable<ActivityLogAlertResourceInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new ActivityLogAlertResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ActivityLogAlertResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ActivityLogAlertResource> list(Context context) {
         PagedIterable<ActivityLogAlertResourceInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new ActivityLogAlertResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ActivityLogAlertResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ActivityLogAlertResource> listByResourceGroup(String resourceGroupName) {
         PagedIterable<ActivityLogAlertResourceInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new ActivityLogAlertResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ActivityLogAlertResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ActivityLogAlertResource> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<ActivityLogAlertResourceInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new ActivityLogAlertResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ActivityLogAlertResourceImpl(inner1, this.manager()));
     }
 
     public ActivityLogAlertResource getById(String id) {

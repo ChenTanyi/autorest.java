@@ -62,22 +62,22 @@ public final class NatGatewaysImpl implements NatGateways {
 
     public PagedIterable<NatGateway> list() {
         PagedIterable<NatGatewayInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new NatGatewayImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NatGatewayImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NatGateway> list(Context context) {
         PagedIterable<NatGatewayInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new NatGatewayImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NatGatewayImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NatGateway> listByResourceGroup(String resourceGroupName) {
         PagedIterable<NatGatewayInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new NatGatewayImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NatGatewayImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NatGateway> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<NatGatewayInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new NatGatewayImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NatGatewayImpl(inner1, this.manager()));
     }
 
     public NatGateway getById(String id) {

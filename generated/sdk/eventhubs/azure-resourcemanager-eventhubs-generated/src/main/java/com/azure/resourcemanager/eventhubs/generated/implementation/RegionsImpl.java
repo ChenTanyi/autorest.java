@@ -28,12 +28,12 @@ public final class RegionsImpl implements Regions {
 
     public PagedIterable<MessagingRegions> listBySku(String sku) {
         PagedIterable<MessagingRegionsInner> inner = this.serviceClient().listBySku(sku);
-        return inner.mapPage(inner1 -> new MessagingRegionsImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new MessagingRegionsImpl(inner1, this.manager()));
     }
 
     public PagedIterable<MessagingRegions> listBySku(String sku, Context context) {
         PagedIterable<MessagingRegionsInner> inner = this.serviceClient().listBySku(sku, context);
-        return inner.mapPage(inner1 -> new MessagingRegionsImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new MessagingRegionsImpl(inner1, this.manager()));
     }
 
     private RegionsClient serviceClient() {

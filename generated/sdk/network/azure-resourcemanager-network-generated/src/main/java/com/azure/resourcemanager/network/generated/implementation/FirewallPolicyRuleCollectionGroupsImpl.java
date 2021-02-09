@@ -69,14 +69,14 @@ public final class FirewallPolicyRuleCollectionGroupsImpl implements FirewallPol
     public PagedIterable<FirewallPolicyRuleCollectionGroup> list(String resourceGroupName, String firewallPolicyName) {
         PagedIterable<FirewallPolicyRuleCollectionGroupInner> inner =
             this.serviceClient().list(resourceGroupName, firewallPolicyName);
-        return inner.mapPage(inner1 -> new FirewallPolicyRuleCollectionGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new FirewallPolicyRuleCollectionGroupImpl(inner1, this.manager()));
     }
 
     public PagedIterable<FirewallPolicyRuleCollectionGroup> list(
         String resourceGroupName, String firewallPolicyName, Context context) {
         PagedIterable<FirewallPolicyRuleCollectionGroupInner> inner =
             this.serviceClient().list(resourceGroupName, firewallPolicyName, context);
-        return inner.mapPage(inner1 -> new FirewallPolicyRuleCollectionGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new FirewallPolicyRuleCollectionGroupImpl(inner1, this.manager()));
     }
 
     public FirewallPolicyRuleCollectionGroup getById(String id) {

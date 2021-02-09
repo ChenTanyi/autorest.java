@@ -153,12 +153,12 @@ public final class DeploymentsImpl implements Deployments {
 
     public PagedIterable<DeploymentExtended> listAtScope(String scope) {
         PagedIterable<DeploymentExtendedInner> inner = this.serviceClient().listAtScope(scope);
-        return inner.mapPage(inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DeploymentExtended> listAtScope(String scope, String filter, Integer top, Context context) {
         PagedIterable<DeploymentExtendedInner> inner = this.serviceClient().listAtScope(scope, filter, top, context);
-        return inner.mapPage(inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
     }
 
     public void deleteAtTenantScope(String deploymentName) {
@@ -294,12 +294,12 @@ public final class DeploymentsImpl implements Deployments {
 
     public PagedIterable<DeploymentExtended> listAtTenantScope() {
         PagedIterable<DeploymentExtendedInner> inner = this.serviceClient().listAtTenantScope();
-        return inner.mapPage(inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DeploymentExtended> listAtTenantScope(String filter, Integer top, Context context) {
         PagedIterable<DeploymentExtendedInner> inner = this.serviceClient().listAtTenantScope(filter, top, context);
-        return inner.mapPage(inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
     }
 
     public void deleteAtManagementGroupScope(String groupId, String deploymentName) {
@@ -445,14 +445,14 @@ public final class DeploymentsImpl implements Deployments {
 
     public PagedIterable<DeploymentExtended> listAtManagementGroupScope(String groupId) {
         PagedIterable<DeploymentExtendedInner> inner = this.serviceClient().listAtManagementGroupScope(groupId);
-        return inner.mapPage(inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DeploymentExtended> listAtManagementGroupScope(
         String groupId, String filter, Integer top, Context context) {
         PagedIterable<DeploymentExtendedInner> inner =
             this.serviceClient().listAtManagementGroupScope(groupId, filter, top, context);
-        return inner.mapPage(inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
     }
 
     public void deleteAtSubscriptionScope(String deploymentName) {
@@ -590,12 +590,12 @@ public final class DeploymentsImpl implements Deployments {
 
     public PagedIterable<DeploymentExtended> list() {
         PagedIterable<DeploymentExtendedInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DeploymentExtended> list(String filter, Integer top, Context context) {
         PagedIterable<DeploymentExtendedInner> inner = this.serviceClient().list(filter, top, context);
-        return inner.mapPage(inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
     }
 
     public void deleteByResourceGroup(String resourceGroupName, String deploymentName) {
@@ -714,14 +714,14 @@ public final class DeploymentsImpl implements Deployments {
 
     public PagedIterable<DeploymentExtended> listByResourceGroup(String resourceGroupName) {
         PagedIterable<DeploymentExtendedInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DeploymentExtended> listByResourceGroup(
         String resourceGroupName, String filter, Integer top, Context context) {
         PagedIterable<DeploymentExtendedInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, filter, top, context);
-        return inner.mapPage(inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DeploymentExtendedImpl(inner1, this.manager()));
     }
 
     public TemplateHashResult calculateTemplateHash(Object template) {

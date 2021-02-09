@@ -62,24 +62,24 @@ public final class ScheduledQueryRulesImpl implements ScheduledQueryRules {
 
     public PagedIterable<LogSearchRuleResource> list() {
         PagedIterable<LogSearchRuleResourceInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new LogSearchRuleResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new LogSearchRuleResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<LogSearchRuleResource> list(String filter, Context context) {
         PagedIterable<LogSearchRuleResourceInner> inner = this.serviceClient().list(filter, context);
-        return inner.mapPage(inner1 -> new LogSearchRuleResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new LogSearchRuleResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<LogSearchRuleResource> listByResourceGroup(String resourceGroupName) {
         PagedIterable<LogSearchRuleResourceInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new LogSearchRuleResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new LogSearchRuleResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<LogSearchRuleResource> listByResourceGroup(
         String resourceGroupName, String filter, Context context) {
         PagedIterable<LogSearchRuleResourceInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, filter, context);
-        return inner.mapPage(inner1 -> new LogSearchRuleResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new LogSearchRuleResourceImpl(inner1, this.manager()));
     }
 
     public LogSearchRuleResource getById(String id) {

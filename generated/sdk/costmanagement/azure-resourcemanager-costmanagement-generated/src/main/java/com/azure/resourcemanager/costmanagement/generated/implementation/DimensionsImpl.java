@@ -29,20 +29,20 @@ public final class DimensionsImpl implements Dimensions {
 
     public PagedIterable<Dimension> list(String scope) {
         PagedIterable<DimensionInner> inner = this.serviceClient().list(scope);
-        return inner.mapPage(inner1 -> new DimensionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DimensionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Dimension> list(
         String scope, String filter, String expand, String skiptoken, Integer top, Context context) {
         PagedIterable<DimensionInner> inner = this.serviceClient().list(scope, filter, expand, skiptoken, top, context);
-        return inner.mapPage(inner1 -> new DimensionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DimensionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Dimension> byExternalCloudProviderType(
         ExternalCloudProviderType externalCloudProviderType, String externalCloudProviderId) {
         PagedIterable<DimensionInner> inner =
             this.serviceClient().byExternalCloudProviderType(externalCloudProviderType, externalCloudProviderId);
-        return inner.mapPage(inner1 -> new DimensionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DimensionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Dimension> byExternalCloudProviderType(
@@ -58,7 +58,7 @@ public final class DimensionsImpl implements Dimensions {
                 .serviceClient()
                 .byExternalCloudProviderType(
                     externalCloudProviderType, externalCloudProviderId, filter, expand, skiptoken, top, context);
-        return inner.mapPage(inner1 -> new DimensionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DimensionImpl(inner1, this.manager()));
     }
 
     private DimensionsClient serviceClient() {

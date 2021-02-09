@@ -30,23 +30,23 @@ public final class MetricAlertsImpl implements MetricAlerts {
 
     public PagedIterable<MetricAlertResource> list() {
         PagedIterable<MetricAlertResourceInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new MetricAlertResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new MetricAlertResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<MetricAlertResource> list(Context context) {
         PagedIterable<MetricAlertResourceInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new MetricAlertResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new MetricAlertResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<MetricAlertResource> listByResourceGroup(String resourceGroupName) {
         PagedIterable<MetricAlertResourceInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new MetricAlertResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new MetricAlertResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<MetricAlertResource> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<MetricAlertResourceInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new MetricAlertResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new MetricAlertResourceImpl(inner1, this.manager()));
     }
 
     public MetricAlertResource getByResourceGroup(String resourceGroupName, String ruleName) {

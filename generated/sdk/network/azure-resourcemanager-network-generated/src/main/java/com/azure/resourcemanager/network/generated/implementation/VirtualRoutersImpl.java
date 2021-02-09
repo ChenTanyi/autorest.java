@@ -62,22 +62,22 @@ public final class VirtualRoutersImpl implements VirtualRouters {
 
     public PagedIterable<VirtualRouter> listByResourceGroup(String resourceGroupName) {
         PagedIterable<VirtualRouterInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new VirtualRouterImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualRouterImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualRouter> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<VirtualRouterInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new VirtualRouterImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualRouterImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualRouter> list() {
         PagedIterable<VirtualRouterInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new VirtualRouterImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualRouterImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualRouter> list(Context context) {
         PagedIterable<VirtualRouterInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new VirtualRouterImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualRouterImpl(inner1, this.manager()));
     }
 
     public VirtualRouter getById(String id) {

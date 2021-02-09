@@ -40,7 +40,7 @@ public final class BlobContainersImpl implements BlobContainers {
 
     public PagedIterable<ListContainerItem> list(String resourceGroupName, String accountName) {
         PagedIterable<ListContainerItemInner> inner = this.serviceClient().list(resourceGroupName, accountName);
-        return inner.mapPage(inner1 -> new ListContainerItemImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ListContainerItemImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ListContainerItem> list(
@@ -52,7 +52,7 @@ public final class BlobContainersImpl implements BlobContainers {
         Context context) {
         PagedIterable<ListContainerItemInner> inner =
             this.serviceClient().list(resourceGroupName, accountName, maxpagesize, filter, include, context);
-        return inner.mapPage(inner1 -> new ListContainerItemImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ListContainerItemImpl(inner1, this.manager()));
     }
 
     public BlobContainer get(String resourceGroupName, String accountName, String containerName) {

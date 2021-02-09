@@ -30,7 +30,7 @@ public final class BaselinesImpl implements Baselines {
 
     public PagedIterable<SingleMetricBaseline> list(String resourceUri) {
         PagedIterable<SingleMetricBaselineInner> inner = this.serviceClient().list(resourceUri);
-        return inner.mapPage(inner1 -> new SingleMetricBaselineImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SingleMetricBaselineImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SingleMetricBaseline> list(
@@ -58,7 +58,7 @@ public final class BaselinesImpl implements Baselines {
                     filter,
                     resultType,
                     context);
-        return inner.mapPage(inner1 -> new SingleMetricBaselineImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SingleMetricBaselineImpl(inner1, this.manager()));
     }
 
     private BaselinesClient serviceClient() {

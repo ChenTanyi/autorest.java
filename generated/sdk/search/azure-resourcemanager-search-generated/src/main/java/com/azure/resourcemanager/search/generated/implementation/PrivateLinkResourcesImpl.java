@@ -30,14 +30,14 @@ public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
     public PagedIterable<PrivateLinkResource> listSupported(String resourceGroupName, String searchServiceName) {
         PagedIterable<PrivateLinkResourceInner> inner =
             this.serviceClient().listSupported(resourceGroupName, searchServiceName);
-        return inner.mapPage(inner1 -> new PrivateLinkResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PrivateLinkResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PrivateLinkResource> listSupported(
         String resourceGroupName, String searchServiceName, UUID clientRequestId, Context context) {
         PagedIterable<PrivateLinkResourceInner> inner =
             this.serviceClient().listSupported(resourceGroupName, searchServiceName, clientRequestId, context);
-        return inner.mapPage(inner1 -> new PrivateLinkResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PrivateLinkResourceImpl(inner1, this.manager()));
     }
 
     private PrivateLinkResourcesClient serviceClient() {

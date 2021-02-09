@@ -319,14 +319,14 @@ public final class ManagementLocksImpl implements ManagementLocks {
 
     public PagedIterable<ManagementLockObject> listByResourceGroup(String resourceGroupName) {
         PagedIterable<ManagementLockObjectInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ManagementLockObject> listByResourceGroup(
         String resourceGroupName, String filter, Context context) {
         PagedIterable<ManagementLockObjectInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, filter, context);
-        return inner.mapPage(inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ManagementLockObject> listAtResourceLevel(
@@ -340,7 +340,7 @@ public final class ManagementLocksImpl implements ManagementLocks {
                 .serviceClient()
                 .listAtResourceLevel(
                     resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType, resourceName);
-        return inner.mapPage(inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ManagementLockObject> listAtResourceLevel(
@@ -362,27 +362,27 @@ public final class ManagementLocksImpl implements ManagementLocks {
                     resourceName,
                     filter,
                     context);
-        return inner.mapPage(inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ManagementLockObject> list() {
         PagedIterable<ManagementLockObjectInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ManagementLockObject> list(String filter, Context context) {
         PagedIterable<ManagementLockObjectInner> inner = this.serviceClient().list(filter, context);
-        return inner.mapPage(inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ManagementLockObject> listByScope(String scope) {
         PagedIterable<ManagementLockObjectInner> inner = this.serviceClient().listByScope(scope);
-        return inner.mapPage(inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ManagementLockObject> listByScope(String scope, String filter, Context context) {
         PagedIterable<ManagementLockObjectInner> inner = this.serviceClient().listByScope(scope, filter, context);
-        return inner.mapPage(inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ManagementLockObjectImpl(inner1, this.manager()));
     }
 
     public ManagementLockObject getById(String id) {

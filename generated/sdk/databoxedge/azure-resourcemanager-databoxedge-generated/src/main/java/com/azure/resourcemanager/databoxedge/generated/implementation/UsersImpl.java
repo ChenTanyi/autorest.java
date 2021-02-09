@@ -30,14 +30,14 @@ public final class UsersImpl implements Users {
 
     public PagedIterable<User> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName) {
         PagedIterable<UserInner> inner = this.serviceClient().listByDataBoxEdgeDevice(deviceName, resourceGroupName);
-        return inner.mapPage(inner1 -> new UserImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new UserImpl(inner1, this.manager()));
     }
 
     public PagedIterable<User> listByDataBoxEdgeDevice(
         String deviceName, String resourceGroupName, String filter, Context context) {
         PagedIterable<UserInner> inner =
             this.serviceClient().listByDataBoxEdgeDevice(deviceName, resourceGroupName, filter, context);
-        return inner.mapPage(inner1 -> new UserImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new UserImpl(inner1, this.manager()));
     }
 
     public User get(String deviceName, String name, String resourceGroupName) {

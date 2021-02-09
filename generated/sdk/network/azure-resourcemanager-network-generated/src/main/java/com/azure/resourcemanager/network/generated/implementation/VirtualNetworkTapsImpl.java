@@ -62,23 +62,23 @@ public final class VirtualNetworkTapsImpl implements VirtualNetworkTaps {
 
     public PagedIterable<VirtualNetworkTap> list() {
         PagedIterable<VirtualNetworkTapInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new VirtualNetworkTapImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualNetworkTapImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualNetworkTap> list(Context context) {
         PagedIterable<VirtualNetworkTapInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new VirtualNetworkTapImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualNetworkTapImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualNetworkTap> listByResourceGroup(String resourceGroupName) {
         PagedIterable<VirtualNetworkTapInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new VirtualNetworkTapImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualNetworkTapImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualNetworkTap> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<VirtualNetworkTapInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new VirtualNetworkTapImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualNetworkTapImpl(inner1, this.manager()));
     }
 
     public VirtualNetworkTap getById(String id) {

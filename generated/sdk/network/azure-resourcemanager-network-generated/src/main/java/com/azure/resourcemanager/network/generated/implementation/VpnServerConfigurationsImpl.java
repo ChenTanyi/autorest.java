@@ -63,23 +63,23 @@ public final class VpnServerConfigurationsImpl implements VpnServerConfiguration
 
     public PagedIterable<VpnServerConfiguration> listByResourceGroup(String resourceGroupName) {
         PagedIterable<VpnServerConfigurationInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new VpnServerConfigurationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VpnServerConfigurationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VpnServerConfiguration> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<VpnServerConfigurationInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new VpnServerConfigurationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VpnServerConfigurationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VpnServerConfiguration> list() {
         PagedIterable<VpnServerConfigurationInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new VpnServerConfigurationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VpnServerConfigurationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VpnServerConfiguration> list(Context context) {
         PagedIterable<VpnServerConfigurationInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new VpnServerConfigurationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VpnServerConfigurationImpl(inner1, this.manager()));
     }
 
     public VpnServerConfiguration getById(String id) {

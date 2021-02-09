@@ -35,7 +35,7 @@ public final class FileSharesImpl implements FileShares {
 
     public PagedIterable<FileShareItem> list(String resourceGroupName, String accountName) {
         PagedIterable<FileShareItemInner> inner = this.serviceClient().list(resourceGroupName, accountName);
-        return inner.mapPage(inner1 -> new FileShareItemImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new FileShareItemImpl(inner1, this.manager()));
     }
 
     public PagedIterable<FileShareItem> list(
@@ -47,7 +47,7 @@ public final class FileSharesImpl implements FileShares {
         Context context) {
         PagedIterable<FileShareItemInner> inner =
             this.serviceClient().list(resourceGroupName, accountName, maxpagesize, filter, expand, context);
-        return inner.mapPage(inner1 -> new FileShareItemImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new FileShareItemImpl(inner1, this.manager()));
     }
 
     public FileShare get(String resourceGroupName, String accountName, String shareName) {

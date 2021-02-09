@@ -65,23 +65,23 @@ public final class NetworkVirtualAppliancesImpl implements NetworkVirtualApplian
 
     public PagedIterable<NetworkVirtualAppliance> listByResourceGroup(String resourceGroupName) {
         PagedIterable<NetworkVirtualApplianceInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new NetworkVirtualApplianceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkVirtualApplianceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkVirtualAppliance> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<NetworkVirtualApplianceInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new NetworkVirtualApplianceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkVirtualApplianceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkVirtualAppliance> list() {
         PagedIterable<NetworkVirtualApplianceInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new NetworkVirtualApplianceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkVirtualApplianceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkVirtualAppliance> list(Context context) {
         PagedIterable<NetworkVirtualApplianceInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new NetworkVirtualApplianceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkVirtualApplianceImpl(inner1, this.manager()));
     }
 
     public NetworkVirtualAppliance getById(String id) {

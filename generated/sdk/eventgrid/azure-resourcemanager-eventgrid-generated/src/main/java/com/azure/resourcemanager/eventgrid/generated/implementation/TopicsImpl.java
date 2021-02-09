@@ -66,24 +66,24 @@ public final class TopicsImpl implements Topics {
 
     public PagedIterable<Topic> list() {
         PagedIterable<TopicInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new TopicImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new TopicImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Topic> list(String filter, Integer top, Context context) {
         PagedIterable<TopicInner> inner = this.serviceClient().list(filter, top, context);
-        return inner.mapPage(inner1 -> new TopicImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new TopicImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Topic> listByResourceGroup(String resourceGroupName) {
         PagedIterable<TopicInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new TopicImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new TopicImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Topic> listByResourceGroup(
         String resourceGroupName, String filter, Integer top, Context context) {
         PagedIterable<TopicInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, filter, top, context);
-        return inner.mapPage(inner1 -> new TopicImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new TopicImpl(inner1, this.manager()));
     }
 
     public TopicSharedAccessKeys listSharedAccessKeys(String resourceGroupName, String topicName) {
@@ -136,7 +136,7 @@ public final class TopicsImpl implements Topics {
         String resourceGroupName, String providerNamespace, String resourceTypeName, String resourceName) {
         PagedIterable<EventTypeInner> inner =
             this.serviceClient().listEventTypes(resourceGroupName, providerNamespace, resourceTypeName, resourceName);
-        return inner.mapPage(inner1 -> new EventTypeImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new EventTypeImpl(inner1, this.manager()));
     }
 
     public PagedIterable<EventType> listEventTypes(
@@ -149,7 +149,7 @@ public final class TopicsImpl implements Topics {
             this
                 .serviceClient()
                 .listEventTypes(resourceGroupName, providerNamespace, resourceTypeName, resourceName, context);
-        return inner.mapPage(inner1 -> new EventTypeImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new EventTypeImpl(inner1, this.manager()));
     }
 
     public Topic getById(String id) {

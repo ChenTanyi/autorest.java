@@ -31,13 +31,13 @@ public final class LoadBalancerLoadBalancingRulesImpl implements LoadBalancerLoa
 
     public PagedIterable<LoadBalancingRule> list(String resourceGroupName, String loadBalancerName) {
         PagedIterable<LoadBalancingRuleInner> inner = this.serviceClient().list(resourceGroupName, loadBalancerName);
-        return inner.mapPage(inner1 -> new LoadBalancingRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new LoadBalancingRuleImpl(inner1, this.manager()));
     }
 
     public PagedIterable<LoadBalancingRule> list(String resourceGroupName, String loadBalancerName, Context context) {
         PagedIterable<LoadBalancingRuleInner> inner =
             this.serviceClient().list(resourceGroupName, loadBalancerName, context);
-        return inner.mapPage(inner1 -> new LoadBalancingRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new LoadBalancingRuleImpl(inner1, this.manager()));
     }
 
     public LoadBalancingRule get(String resourceGroupName, String loadBalancerName, String loadBalancingRuleName) {

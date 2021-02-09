@@ -64,23 +64,23 @@ public final class SqlVirtualMachineGroupsImpl implements SqlVirtualMachineGroup
 
     public PagedIterable<SqlVirtualMachineGroup> listByResourceGroup(String resourceGroupName) {
         PagedIterable<SqlVirtualMachineGroupInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new SqlVirtualMachineGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SqlVirtualMachineGroupImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SqlVirtualMachineGroup> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<SqlVirtualMachineGroupInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new SqlVirtualMachineGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SqlVirtualMachineGroupImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SqlVirtualMachineGroup> list() {
         PagedIterable<SqlVirtualMachineGroupInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new SqlVirtualMachineGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SqlVirtualMachineGroupImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SqlVirtualMachineGroup> list(Context context) {
         PagedIterable<SqlVirtualMachineGroupInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new SqlVirtualMachineGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SqlVirtualMachineGroupImpl(inner1, this.manager()));
     }
 
     public SqlVirtualMachineGroup getById(String id) {

@@ -32,14 +32,14 @@ public final class FrontendEndpointsImpl implements FrontendEndpoints {
     public PagedIterable<FrontendEndpoint> listByFrontDoor(String resourceGroupName, String frontDoorName) {
         PagedIterable<FrontendEndpointInner> inner =
             this.serviceClient().listByFrontDoor(resourceGroupName, frontDoorName);
-        return inner.mapPage(inner1 -> new FrontendEndpointImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new FrontendEndpointImpl(inner1, this.manager()));
     }
 
     public PagedIterable<FrontendEndpoint> listByFrontDoor(
         String resourceGroupName, String frontDoorName, Context context) {
         PagedIterable<FrontendEndpointInner> inner =
             this.serviceClient().listByFrontDoor(resourceGroupName, frontDoorName, context);
-        return inner.mapPage(inner1 -> new FrontendEndpointImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new FrontendEndpointImpl(inner1, this.manager()));
     }
 
     public FrontendEndpoint get(String resourceGroupName, String frontDoorName, String frontendEndpointName) {

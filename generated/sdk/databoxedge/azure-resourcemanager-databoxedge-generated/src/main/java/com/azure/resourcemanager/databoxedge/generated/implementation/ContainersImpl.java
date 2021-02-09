@@ -32,14 +32,14 @@ public final class ContainersImpl implements Containers {
         String deviceName, String storageAccountName, String resourceGroupName) {
         PagedIterable<ContainerInner> inner =
             this.serviceClient().listByStorageAccount(deviceName, storageAccountName, resourceGroupName);
-        return inner.mapPage(inner1 -> new ContainerImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ContainerImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Container> listByStorageAccount(
         String deviceName, String storageAccountName, String resourceGroupName, Context context) {
         PagedIterable<ContainerInner> inner =
             this.serviceClient().listByStorageAccount(deviceName, storageAccountName, resourceGroupName, context);
-        return inner.mapPage(inner1 -> new ContainerImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ContainerImpl(inner1, this.manager()));
     }
 
     public Container get(String deviceName, String storageAccountName, String containerName, String resourceGroupName) {

@@ -30,13 +30,13 @@ public final class LoadBalancerOutboundRulesImpl implements LoadBalancerOutbound
 
     public PagedIterable<OutboundRule> list(String resourceGroupName, String loadBalancerName) {
         PagedIterable<OutboundRuleInner> inner = this.serviceClient().list(resourceGroupName, loadBalancerName);
-        return inner.mapPage(inner1 -> new OutboundRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new OutboundRuleImpl(inner1, this.manager()));
     }
 
     public PagedIterable<OutboundRule> list(String resourceGroupName, String loadBalancerName, Context context) {
         PagedIterable<OutboundRuleInner> inner =
             this.serviceClient().list(resourceGroupName, loadBalancerName, context);
-        return inner.mapPage(inner1 -> new OutboundRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new OutboundRuleImpl(inner1, this.manager()));
     }
 
     public OutboundRule get(String resourceGroupName, String loadBalancerName, String outboundRuleName) {

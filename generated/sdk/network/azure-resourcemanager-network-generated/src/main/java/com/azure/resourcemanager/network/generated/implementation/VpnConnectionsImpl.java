@@ -143,14 +143,14 @@ public final class VpnConnectionsImpl implements VpnConnections {
 
     public PagedIterable<VpnConnection> listByVpnGateway(String resourceGroupName, String gatewayName) {
         PagedIterable<VpnConnectionInner> inner = this.serviceClient().listByVpnGateway(resourceGroupName, gatewayName);
-        return inner.mapPage(inner1 -> new VpnConnectionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VpnConnectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VpnConnection> listByVpnGateway(
         String resourceGroupName, String gatewayName, Context context) {
         PagedIterable<VpnConnectionInner> inner =
             this.serviceClient().listByVpnGateway(resourceGroupName, gatewayName, context);
-        return inner.mapPage(inner1 -> new VpnConnectionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VpnConnectionImpl(inner1, this.manager()));
     }
 
     private VpnConnectionsClient serviceClient() {

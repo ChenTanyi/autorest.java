@@ -28,25 +28,25 @@ public final class AvailableServiceAliasesImpl implements AvailableServiceAliase
 
     public PagedIterable<AvailableServiceAlias> list(String location) {
         PagedIterable<AvailableServiceAliasInner> inner = this.serviceClient().list(location);
-        return inner.mapPage(inner1 -> new AvailableServiceAliasImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AvailableServiceAliasImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AvailableServiceAlias> list(String location, Context context) {
         PagedIterable<AvailableServiceAliasInner> inner = this.serviceClient().list(location, context);
-        return inner.mapPage(inner1 -> new AvailableServiceAliasImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AvailableServiceAliasImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AvailableServiceAlias> listByResourceGroup(String resourceGroupName, String location) {
         PagedIterable<AvailableServiceAliasInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, location);
-        return inner.mapPage(inner1 -> new AvailableServiceAliasImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AvailableServiceAliasImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AvailableServiceAlias> listByResourceGroup(
         String resourceGroupName, String location, Context context) {
         PagedIterable<AvailableServiceAliasInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, location, context);
-        return inner.mapPage(inner1 -> new AvailableServiceAliasImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AvailableServiceAliasImpl(inner1, this.manager()));
     }
 
     private AvailableServiceAliasesClient serviceClient() {

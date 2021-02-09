@@ -78,27 +78,29 @@ public final class VirtualNetworkGatewaysImpl implements VirtualNetworkGateways 
 
     public PagedIterable<VirtualNetworkGateway> listByResourceGroup(String resourceGroupName) {
         PagedIterable<VirtualNetworkGatewayInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new VirtualNetworkGatewayImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualNetworkGatewayImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualNetworkGateway> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<VirtualNetworkGatewayInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new VirtualNetworkGatewayImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualNetworkGatewayImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualNetworkGatewayConnectionListEntity> listConnections(
         String resourceGroupName, String virtualNetworkGatewayName) {
         PagedIterable<VirtualNetworkGatewayConnectionListEntityInner> inner =
             this.serviceClient().listConnections(resourceGroupName, virtualNetworkGatewayName);
-        return inner.mapPage(inner1 -> new VirtualNetworkGatewayConnectionListEntityImpl(inner1, this.manager()));
+        return Utils
+            .mapPage(inner, inner1 -> new VirtualNetworkGatewayConnectionListEntityImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualNetworkGatewayConnectionListEntity> listConnections(
         String resourceGroupName, String virtualNetworkGatewayName, Context context) {
         PagedIterable<VirtualNetworkGatewayConnectionListEntityInner> inner =
             this.serviceClient().listConnections(resourceGroupName, virtualNetworkGatewayName, context);
-        return inner.mapPage(inner1 -> new VirtualNetworkGatewayConnectionListEntityImpl(inner1, this.manager()));
+        return Utils
+            .mapPage(inner, inner1 -> new VirtualNetworkGatewayConnectionListEntityImpl(inner1, this.manager()));
     }
 
     public VirtualNetworkGateway reset(String resourceGroupName, String virtualNetworkGatewayName, String gatewayVip) {

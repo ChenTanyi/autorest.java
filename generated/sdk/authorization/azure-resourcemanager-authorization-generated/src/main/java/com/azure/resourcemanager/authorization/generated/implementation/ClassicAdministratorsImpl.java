@@ -28,12 +28,12 @@ public final class ClassicAdministratorsImpl implements ClassicAdministrators {
 
     public PagedIterable<ClassicAdministrator> list() {
         PagedIterable<ClassicAdministratorInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new ClassicAdministratorImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ClassicAdministratorImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ClassicAdministrator> list(Context context) {
         PagedIterable<ClassicAdministratorInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new ClassicAdministratorImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ClassicAdministratorImpl(inner1, this.manager()));
     }
 
     private ClassicAdministratorsClient serviceClient() {

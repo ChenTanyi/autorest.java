@@ -62,13 +62,13 @@ public final class VirtualHubIpConfigurationsImpl implements VirtualHubIpConfigu
 
     public PagedIterable<HubIpConfiguration> list(String resourceGroupName, String virtualHubName) {
         PagedIterable<HubIpConfigurationInner> inner = this.serviceClient().list(resourceGroupName, virtualHubName);
-        return inner.mapPage(inner1 -> new HubIpConfigurationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new HubIpConfigurationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<HubIpConfiguration> list(String resourceGroupName, String virtualHubName, Context context) {
         PagedIterable<HubIpConfigurationInner> inner =
             this.serviceClient().list(resourceGroupName, virtualHubName, context);
-        return inner.mapPage(inner1 -> new HubIpConfigurationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new HubIpConfigurationImpl(inner1, this.manager()));
     }
 
     public HubIpConfiguration getById(String id) {

@@ -62,22 +62,22 @@ public final class AzureFirewallsImpl implements AzureFirewalls {
 
     public PagedIterable<AzureFirewall> listByResourceGroup(String resourceGroupName) {
         PagedIterable<AzureFirewallInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new AzureFirewallImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AzureFirewallImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AzureFirewall> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<AzureFirewallInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new AzureFirewallImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AzureFirewallImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AzureFirewall> list() {
         PagedIterable<AzureFirewallInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new AzureFirewallImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AzureFirewallImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AzureFirewall> list(Context context) {
         PagedIterable<AzureFirewallInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new AzureFirewallImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AzureFirewallImpl(inner1, this.manager()));
     }
 
     public AzureFirewall getById(String id) {

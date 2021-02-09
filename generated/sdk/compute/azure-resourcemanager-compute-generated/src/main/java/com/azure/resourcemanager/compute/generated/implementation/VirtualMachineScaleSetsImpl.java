@@ -43,12 +43,12 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
 
     public PagedIterable<VirtualMachineScaleSet> listByLocation(String location) {
         PagedIterable<VirtualMachineScaleSetInner> inner = this.serviceClient().listByLocation(location);
-        return inner.mapPage(inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachineScaleSet> listByLocation(String location, Context context) {
         PagedIterable<VirtualMachineScaleSetInner> inner = this.serviceClient().listByLocation(location, context);
-        return inner.mapPage(inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
     }
 
     public void delete(String resourceGroupName, String vmScaleSetName, Boolean forceDeletion) {
@@ -153,50 +153,50 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
 
     public PagedIterable<VirtualMachineScaleSet> listByResourceGroup(String resourceGroupName) {
         PagedIterable<VirtualMachineScaleSetInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachineScaleSet> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<VirtualMachineScaleSetInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachineScaleSet> list() {
         PagedIterable<VirtualMachineScaleSetInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachineScaleSet> list(Context context) {
         PagedIterable<VirtualMachineScaleSetInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualMachineScaleSetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachineScaleSetSku> listSkus(String resourceGroupName, String vmScaleSetName) {
         PagedIterable<VirtualMachineScaleSetSkuInner> inner =
             this.serviceClient().listSkus(resourceGroupName, vmScaleSetName);
-        return inner.mapPage(inner1 -> new VirtualMachineScaleSetSkuImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualMachineScaleSetSkuImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachineScaleSetSku> listSkus(
         String resourceGroupName, String vmScaleSetName, Context context) {
         PagedIterable<VirtualMachineScaleSetSkuInner> inner =
             this.serviceClient().listSkus(resourceGroupName, vmScaleSetName, context);
-        return inner.mapPage(inner1 -> new VirtualMachineScaleSetSkuImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualMachineScaleSetSkuImpl(inner1, this.manager()));
     }
 
     public PagedIterable<UpgradeOperationHistoricalStatusInfo> getOSUpgradeHistory(
         String resourceGroupName, String vmScaleSetName) {
         PagedIterable<UpgradeOperationHistoricalStatusInfoInner> inner =
             this.serviceClient().getOSUpgradeHistory(resourceGroupName, vmScaleSetName);
-        return inner.mapPage(inner1 -> new UpgradeOperationHistoricalStatusInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new UpgradeOperationHistoricalStatusInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<UpgradeOperationHistoricalStatusInfo> getOSUpgradeHistory(
         String resourceGroupName, String vmScaleSetName, Context context) {
         PagedIterable<UpgradeOperationHistoricalStatusInfoInner> inner =
             this.serviceClient().getOSUpgradeHistory(resourceGroupName, vmScaleSetName, context);
-        return inner.mapPage(inner1 -> new UpgradeOperationHistoricalStatusInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new UpgradeOperationHistoricalStatusInfoImpl(inner1, this.manager()));
     }
 
     public void powerOff(

@@ -65,23 +65,23 @@ public final class ServiceEndpointPoliciesImpl implements ServiceEndpointPolicie
 
     public PagedIterable<ServiceEndpointPolicy> list() {
         PagedIterable<ServiceEndpointPolicyInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new ServiceEndpointPolicyImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ServiceEndpointPolicyImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ServiceEndpointPolicy> list(Context context) {
         PagedIterable<ServiceEndpointPolicyInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new ServiceEndpointPolicyImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ServiceEndpointPolicyImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ServiceEndpointPolicy> listByResourceGroup(String resourceGroupName) {
         PagedIterable<ServiceEndpointPolicyInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new ServiceEndpointPolicyImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ServiceEndpointPolicyImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ServiceEndpointPolicy> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<ServiceEndpointPolicyInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new ServiceEndpointPolicyImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ServiceEndpointPolicyImpl(inner1, this.manager()));
     }
 
     public ServiceEndpointPolicy getById(String id) {

@@ -128,14 +128,14 @@ public final class VirtualNetworkGatewayConnectionsImpl implements VirtualNetwor
     public PagedIterable<VirtualNetworkGatewayConnection> listByResourceGroup(String resourceGroupName) {
         PagedIterable<VirtualNetworkGatewayConnectionInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new VirtualNetworkGatewayConnectionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualNetworkGatewayConnectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualNetworkGatewayConnection> listByResourceGroup(
         String resourceGroupName, Context context) {
         PagedIterable<VirtualNetworkGatewayConnectionInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new VirtualNetworkGatewayConnectionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualNetworkGatewayConnectionImpl(inner1, this.manager()));
     }
 
     public ConnectionResetSharedKey resetSharedKey(

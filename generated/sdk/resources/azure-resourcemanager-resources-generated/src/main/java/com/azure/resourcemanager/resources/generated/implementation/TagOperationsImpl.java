@@ -96,12 +96,12 @@ public final class TagOperationsImpl implements TagOperations {
 
     public PagedIterable<TagDetails> list() {
         PagedIterable<TagDetailsInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new TagDetailsImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new TagDetailsImpl(inner1, this.manager()));
     }
 
     public PagedIterable<TagDetails> list(Context context) {
         PagedIterable<TagDetailsInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new TagDetailsImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new TagDetailsImpl(inner1, this.manager()));
     }
 
     public TagsResource createOrUpdateAtScope(String scope, TagsResourceInner parameters) {

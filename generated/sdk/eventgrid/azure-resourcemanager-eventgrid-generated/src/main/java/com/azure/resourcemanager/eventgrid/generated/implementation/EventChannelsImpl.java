@@ -64,14 +64,14 @@ public final class EventChannelsImpl implements EventChannels {
     public PagedIterable<EventChannel> listByPartnerNamespace(String resourceGroupName, String partnerNamespaceName) {
         PagedIterable<EventChannelInner> inner =
             this.serviceClient().listByPartnerNamespace(resourceGroupName, partnerNamespaceName);
-        return inner.mapPage(inner1 -> new EventChannelImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new EventChannelImpl(inner1, this.manager()));
     }
 
     public PagedIterable<EventChannel> listByPartnerNamespace(
         String resourceGroupName, String partnerNamespaceName, String filter, Integer top, Context context) {
         PagedIterable<EventChannelInner> inner =
             this.serviceClient().listByPartnerNamespace(resourceGroupName, partnerNamespaceName, filter, top, context);
-        return inner.mapPage(inner1 -> new EventChannelImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new EventChannelImpl(inner1, this.manager()));
     }
 
     public EventChannel getById(String id) {

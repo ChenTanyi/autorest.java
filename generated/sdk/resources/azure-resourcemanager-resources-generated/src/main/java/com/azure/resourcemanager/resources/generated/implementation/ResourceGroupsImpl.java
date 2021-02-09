@@ -95,12 +95,12 @@ public final class ResourceGroupsImpl implements ResourceGroups {
 
     public PagedIterable<ResourceGroup> list() {
         PagedIterable<ResourceGroupInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new ResourceGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ResourceGroupImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ResourceGroup> list(String filter, Integer top, Context context) {
         PagedIterable<ResourceGroupInner> inner = this.serviceClient().list(filter, top, context);
-        return inner.mapPage(inner1 -> new ResourceGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ResourceGroupImpl(inner1, this.manager()));
     }
 
     public ResourceGroup getById(String id) {

@@ -49,12 +49,12 @@ public final class VirtualMachinesImpl implements VirtualMachines {
 
     public PagedIterable<VirtualMachine> listByLocation(String location) {
         PagedIterable<VirtualMachineInner> inner = this.serviceClient().listByLocation(location);
-        return inner.mapPage(inner1 -> new VirtualMachineImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualMachineImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachine> listByLocation(String location, Context context) {
         PagedIterable<VirtualMachineInner> inner = this.serviceClient().listByLocation(location, context);
-        return inner.mapPage(inner1 -> new VirtualMachineImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualMachineImpl(inner1, this.manager()));
     }
 
     public VirtualMachineCaptureResult capture(
@@ -164,35 +164,35 @@ public final class VirtualMachinesImpl implements VirtualMachines {
 
     public PagedIterable<VirtualMachine> listByResourceGroup(String resourceGroupName) {
         PagedIterable<VirtualMachineInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new VirtualMachineImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualMachineImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachine> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<VirtualMachineInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new VirtualMachineImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualMachineImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachine> list() {
         PagedIterable<VirtualMachineInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new VirtualMachineImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualMachineImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachine> list(String statusOnly, Context context) {
         PagedIterable<VirtualMachineInner> inner = this.serviceClient().list(statusOnly, context);
-        return inner.mapPage(inner1 -> new VirtualMachineImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualMachineImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachineSize> listAvailableSizes(String resourceGroupName, String vmName) {
         PagedIterable<VirtualMachineSizeInner> inner =
             this.serviceClient().listAvailableSizes(resourceGroupName, vmName);
-        return inner.mapPage(inner1 -> new VirtualMachineSizeImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualMachineSizeImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachineSize> listAvailableSizes(
         String resourceGroupName, String vmName, Context context) {
         PagedIterable<VirtualMachineSizeInner> inner =
             this.serviceClient().listAvailableSizes(resourceGroupName, vmName, context);
-        return inner.mapPage(inner1 -> new VirtualMachineSizeImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualMachineSizeImpl(inner1, this.manager()));
     }
 
     public void powerOff(String resourceGroupName, String vmName, Boolean skipShutdown) {

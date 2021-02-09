@@ -31,13 +31,13 @@ public final class AutoscaleSettingsImpl implements AutoscaleSettings {
     public PagedIterable<AutoscaleSettingResource> listByResourceGroup(String resourceGroupName) {
         PagedIterable<AutoscaleSettingResourceInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new AutoscaleSettingResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AutoscaleSettingResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AutoscaleSettingResource> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<AutoscaleSettingResourceInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new AutoscaleSettingResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AutoscaleSettingResourceImpl(inner1, this.manager()));
     }
 
     public void deleteByResourceGroup(String resourceGroupName, String autoscaleSettingName) {
@@ -75,12 +75,12 @@ public final class AutoscaleSettingsImpl implements AutoscaleSettings {
 
     public PagedIterable<AutoscaleSettingResource> list() {
         PagedIterable<AutoscaleSettingResourceInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new AutoscaleSettingResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AutoscaleSettingResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AutoscaleSettingResource> list(Context context) {
         PagedIterable<AutoscaleSettingResourceInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new AutoscaleSettingResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AutoscaleSettingResourceImpl(inner1, this.manager()));
     }
 
     public AutoscaleSettingResource getById(String id) {

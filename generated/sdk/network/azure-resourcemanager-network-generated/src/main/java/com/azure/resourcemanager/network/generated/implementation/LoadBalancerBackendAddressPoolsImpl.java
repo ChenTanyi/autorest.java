@@ -31,13 +31,13 @@ public final class LoadBalancerBackendAddressPoolsImpl implements LoadBalancerBa
 
     public PagedIterable<BackendAddressPool> list(String resourceGroupName, String loadBalancerName) {
         PagedIterable<BackendAddressPoolInner> inner = this.serviceClient().list(resourceGroupName, loadBalancerName);
-        return inner.mapPage(inner1 -> new BackendAddressPoolImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BackendAddressPoolImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BackendAddressPool> list(String resourceGroupName, String loadBalancerName, Context context) {
         PagedIterable<BackendAddressPoolInner> inner =
             this.serviceClient().list(resourceGroupName, loadBalancerName, context);
-        return inner.mapPage(inner1 -> new BackendAddressPoolImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BackendAddressPoolImpl(inner1, this.manager()));
     }
 
     public BackendAddressPool get(String resourceGroupName, String loadBalancerName, String backendAddressPoolName) {

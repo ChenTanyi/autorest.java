@@ -57,12 +57,12 @@ public final class ClustersImpl implements Clusters {
 
     public PagedIterable<Cluster> listByResourceGroup(String resourceGroupName) {
         PagedIterable<ClusterInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new ClusterImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ClusterImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Cluster> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<ClusterInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new ClusterImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ClusterImpl(inner1, this.manager()));
     }
 
     public Cluster getByResourceGroup(String resourceGroupName, String clusterName) {

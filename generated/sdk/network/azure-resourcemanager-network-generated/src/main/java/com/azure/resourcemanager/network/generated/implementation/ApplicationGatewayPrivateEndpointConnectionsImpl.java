@@ -99,14 +99,16 @@ public final class ApplicationGatewayPrivateEndpointConnectionsImpl
         String resourceGroupName, String applicationGatewayName) {
         PagedIterable<ApplicationGatewayPrivateEndpointConnectionInner> inner =
             this.serviceClient().list(resourceGroupName, applicationGatewayName);
-        return inner.mapPage(inner1 -> new ApplicationGatewayPrivateEndpointConnectionImpl(inner1, this.manager()));
+        return Utils
+            .mapPage(inner, inner1 -> new ApplicationGatewayPrivateEndpointConnectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ApplicationGatewayPrivateEndpointConnection> list(
         String resourceGroupName, String applicationGatewayName, Context context) {
         PagedIterable<ApplicationGatewayPrivateEndpointConnectionInner> inner =
             this.serviceClient().list(resourceGroupName, applicationGatewayName, context);
-        return inner.mapPage(inner1 -> new ApplicationGatewayPrivateEndpointConnectionImpl(inner1, this.manager()));
+        return Utils
+            .mapPage(inner, inner1 -> new ApplicationGatewayPrivateEndpointConnectionImpl(inner1, this.manager()));
     }
 
     private ApplicationGatewayPrivateEndpointConnectionsClient serviceClient() {

@@ -46,12 +46,12 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
 
     public PagedIterable<AppServiceCertificateOrder> list() {
         PagedIterable<AppServiceCertificateOrderInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new AppServiceCertificateOrderImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AppServiceCertificateOrderImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AppServiceCertificateOrder> list(Context context) {
         PagedIterable<AppServiceCertificateOrderInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new AppServiceCertificateOrderImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AppServiceCertificateOrderImpl(inner1, this.manager()));
     }
 
     public void validatePurchaseInformation(AppServiceCertificateOrderInner appServiceCertificateOrder) {
@@ -66,13 +66,13 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
     public PagedIterable<AppServiceCertificateOrder> listByResourceGroup(String resourceGroupName) {
         PagedIterable<AppServiceCertificateOrderInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new AppServiceCertificateOrderImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AppServiceCertificateOrderImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AppServiceCertificateOrder> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<AppServiceCertificateOrderInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new AppServiceCertificateOrderImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AppServiceCertificateOrderImpl(inner1, this.manager()));
     }
 
     public AppServiceCertificateOrder getByResourceGroup(String resourceGroupName, String certificateOrderName) {
@@ -112,14 +112,14 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         String resourceGroupName, String certificateOrderName) {
         PagedIterable<AppServiceCertificateResourceInner> inner =
             this.serviceClient().listCertificates(resourceGroupName, certificateOrderName);
-        return inner.mapPage(inner1 -> new AppServiceCertificateResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AppServiceCertificateResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AppServiceCertificateResource> listCertificates(
         String resourceGroupName, String certificateOrderName, Context context) {
         PagedIterable<AppServiceCertificateResourceInner> inner =
             this.serviceClient().listCertificates(resourceGroupName, certificateOrderName, context);
-        return inner.mapPage(inner1 -> new AppServiceCertificateResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AppServiceCertificateResourceImpl(inner1, this.manager()));
     }
 
     public AppServiceCertificateResource getCertificate(

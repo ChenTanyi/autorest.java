@@ -33,22 +33,22 @@ public final class FrontDoorsImpl implements FrontDoors {
 
     public PagedIterable<FrontDoor> list() {
         PagedIterable<FrontDoorInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new FrontDoorImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new FrontDoorImpl(inner1, this.manager()));
     }
 
     public PagedIterable<FrontDoor> list(Context context) {
         PagedIterable<FrontDoorInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new FrontDoorImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new FrontDoorImpl(inner1, this.manager()));
     }
 
     public PagedIterable<FrontDoor> listByResourceGroup(String resourceGroupName) {
         PagedIterable<FrontDoorInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new FrontDoorImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new FrontDoorImpl(inner1, this.manager()));
     }
 
     public PagedIterable<FrontDoor> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<FrontDoorInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new FrontDoorImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new FrontDoorImpl(inner1, this.manager()));
     }
 
     public FrontDoor getByResourceGroup(String resourceGroupName, String frontDoorName) {

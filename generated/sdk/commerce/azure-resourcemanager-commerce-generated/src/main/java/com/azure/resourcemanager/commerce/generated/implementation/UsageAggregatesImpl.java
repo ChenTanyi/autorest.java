@@ -30,7 +30,7 @@ public final class UsageAggregatesImpl implements UsageAggregates {
 
     public PagedIterable<UsageAggregation> list(OffsetDateTime reportedStartTime, OffsetDateTime reportedEndTime) {
         PagedIterable<UsageAggregationInner> inner = this.serviceClient().list(reportedStartTime, reportedEndTime);
-        return inner.mapPage(inner1 -> new UsageAggregationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new UsageAggregationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<UsageAggregation> list(
@@ -50,7 +50,7 @@ public final class UsageAggregatesImpl implements UsageAggregates {
                     aggregationGranularity,
                     continuationToken,
                     context);
-        return inner.mapPage(inner1 -> new UsageAggregationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new UsageAggregationImpl(inner1, this.manager()));
     }
 
     private UsageAggregatesClient serviceClient() {

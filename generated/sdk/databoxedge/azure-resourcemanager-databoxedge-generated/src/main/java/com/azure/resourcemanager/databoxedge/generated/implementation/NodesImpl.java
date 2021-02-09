@@ -28,13 +28,13 @@ public final class NodesImpl implements Nodes {
 
     public PagedIterable<Node> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName) {
         PagedIterable<NodeInner> inner = this.serviceClient().listByDataBoxEdgeDevice(deviceName, resourceGroupName);
-        return inner.mapPage(inner1 -> new NodeImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NodeImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Node> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName, Context context) {
         PagedIterable<NodeInner> inner =
             this.serviceClient().listByDataBoxEdgeDevice(deviceName, resourceGroupName, context);
-        return inner.mapPage(inner1 -> new NodeImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NodeImpl(inner1, this.manager()));
     }
 
     private NodesClient serviceClient() {

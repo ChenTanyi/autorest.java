@@ -65,22 +65,22 @@ public final class ZonesImpl implements Zones {
 
     public PagedIterable<Zone> listByResourceGroup(String resourceGroupName) {
         PagedIterable<ZoneInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new ZoneImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ZoneImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Zone> listByResourceGroup(String resourceGroupName, Integer top, Context context) {
         PagedIterable<ZoneInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, top, context);
-        return inner.mapPage(inner1 -> new ZoneImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ZoneImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Zone> list() {
         PagedIterable<ZoneInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new ZoneImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ZoneImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Zone> list(Integer top, Context context) {
         PagedIterable<ZoneInner> inner = this.serviceClient().list(top, context);
-        return inner.mapPage(inner1 -> new ZoneImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ZoneImpl(inner1, this.manager()));
     }
 
     public Zone getById(String id) {

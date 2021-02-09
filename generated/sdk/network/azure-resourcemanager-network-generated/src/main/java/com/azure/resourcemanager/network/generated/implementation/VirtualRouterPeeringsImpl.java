@@ -63,14 +63,14 @@ public final class VirtualRouterPeeringsImpl implements VirtualRouterPeerings {
     public PagedIterable<VirtualRouterPeering> list(String resourceGroupName, String virtualRouterName) {
         PagedIterable<VirtualRouterPeeringInner> inner =
             this.serviceClient().list(resourceGroupName, virtualRouterName);
-        return inner.mapPage(inner1 -> new VirtualRouterPeeringImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualRouterPeeringImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualRouterPeering> list(
         String resourceGroupName, String virtualRouterName, Context context) {
         PagedIterable<VirtualRouterPeeringInner> inner =
             this.serviceClient().list(resourceGroupName, virtualRouterName, context);
-        return inner.mapPage(inner1 -> new VirtualRouterPeeringImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualRouterPeeringImpl(inner1, this.manager()));
     }
 
     public VirtualRouterPeering getById(String id) {

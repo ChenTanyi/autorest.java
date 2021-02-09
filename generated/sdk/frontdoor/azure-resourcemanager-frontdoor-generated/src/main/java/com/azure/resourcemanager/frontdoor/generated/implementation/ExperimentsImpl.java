@@ -30,13 +30,13 @@ public final class ExperimentsImpl implements Experiments {
 
     public PagedIterable<Experiment> listByProfile(String resourceGroupName, String profileName) {
         PagedIterable<ExperimentInner> inner = this.serviceClient().listByProfile(resourceGroupName, profileName);
-        return inner.mapPage(inner1 -> new ExperimentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ExperimentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Experiment> listByProfile(String resourceGroupName, String profileName, Context context) {
         PagedIterable<ExperimentInner> inner =
             this.serviceClient().listByProfile(resourceGroupName, profileName, context);
-        return inner.mapPage(inner1 -> new ExperimentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ExperimentImpl(inner1, this.manager()));
     }
 
     public Experiment get(String resourceGroupName, String profileName, String experimentName) {

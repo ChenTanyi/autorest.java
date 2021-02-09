@@ -81,14 +81,14 @@ public final class GalleryImageVersionsImpl implements GalleryImageVersions {
         String resourceGroupName, String galleryName, String galleryImageName) {
         PagedIterable<GalleryImageVersionInner> inner =
             this.serviceClient().listByGalleryImage(resourceGroupName, galleryName, galleryImageName);
-        return inner.mapPage(inner1 -> new GalleryImageVersionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new GalleryImageVersionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<GalleryImageVersion> listByGalleryImage(
         String resourceGroupName, String galleryName, String galleryImageName, Context context) {
         PagedIterable<GalleryImageVersionInner> inner =
             this.serviceClient().listByGalleryImage(resourceGroupName, galleryName, galleryImageName, context);
-        return inner.mapPage(inner1 -> new GalleryImageVersionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new GalleryImageVersionImpl(inner1, this.manager()));
     }
 
     public GalleryImageVersion getById(String id) {

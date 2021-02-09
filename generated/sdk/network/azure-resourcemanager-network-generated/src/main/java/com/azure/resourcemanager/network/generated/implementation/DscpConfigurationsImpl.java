@@ -63,23 +63,23 @@ public final class DscpConfigurationsImpl implements DscpConfigurations {
 
     public PagedIterable<DscpConfiguration> listByResourceGroup(String resourceGroupName) {
         PagedIterable<DscpConfigurationInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new DscpConfigurationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DscpConfigurationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DscpConfiguration> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<DscpConfigurationInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new DscpConfigurationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DscpConfigurationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DscpConfiguration> list() {
         PagedIterable<DscpConfigurationInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new DscpConfigurationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DscpConfigurationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DscpConfiguration> list(Context context) {
         PagedIterable<DscpConfigurationInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new DscpConfigurationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DscpConfigurationImpl(inner1, this.manager()));
     }
 
     public DscpConfiguration getById(String id) {

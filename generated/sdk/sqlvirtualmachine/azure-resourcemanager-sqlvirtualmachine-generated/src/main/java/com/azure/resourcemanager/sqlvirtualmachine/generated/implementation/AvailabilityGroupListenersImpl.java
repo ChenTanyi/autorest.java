@@ -79,14 +79,14 @@ public final class AvailabilityGroupListenersImpl implements AvailabilityGroupLi
         String resourceGroupName, String sqlVirtualMachineGroupName) {
         PagedIterable<AvailabilityGroupListenerInner> inner =
             this.serviceClient().listByGroup(resourceGroupName, sqlVirtualMachineGroupName);
-        return inner.mapPage(inner1 -> new AvailabilityGroupListenerImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AvailabilityGroupListenerImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AvailabilityGroupListener> listByGroup(
         String resourceGroupName, String sqlVirtualMachineGroupName, Context context) {
         PagedIterable<AvailabilityGroupListenerInner> inner =
             this.serviceClient().listByGroup(resourceGroupName, sqlVirtualMachineGroupName, context);
-        return inner.mapPage(inner1 -> new AvailabilityGroupListenerImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AvailabilityGroupListenerImpl(inner1, this.manager()));
     }
 
     public AvailabilityGroupListener getById(String id) {

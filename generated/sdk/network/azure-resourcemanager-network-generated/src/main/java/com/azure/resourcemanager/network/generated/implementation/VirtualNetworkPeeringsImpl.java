@@ -107,14 +107,14 @@ public final class VirtualNetworkPeeringsImpl implements VirtualNetworkPeerings 
     public PagedIterable<VirtualNetworkPeering> list(String resourceGroupName, String virtualNetworkName) {
         PagedIterable<VirtualNetworkPeeringInner> inner =
             this.serviceClient().list(resourceGroupName, virtualNetworkName);
-        return inner.mapPage(inner1 -> new VirtualNetworkPeeringImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualNetworkPeeringImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualNetworkPeering> list(
         String resourceGroupName, String virtualNetworkName, Context context) {
         PagedIterable<VirtualNetworkPeeringInner> inner =
             this.serviceClient().list(resourceGroupName, virtualNetworkName, context);
-        return inner.mapPage(inner1 -> new VirtualNetworkPeeringImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualNetworkPeeringImpl(inner1, this.manager()));
     }
 
     private VirtualNetworkPeeringsClient serviceClient() {

@@ -73,23 +73,23 @@ public final class StaticSitesImpl implements StaticSites {
 
     public PagedIterable<StaticSiteArmResource> list() {
         PagedIterable<StaticSiteArmResourceInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new StaticSiteArmResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new StaticSiteArmResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<StaticSiteArmResource> list(Context context) {
         PagedIterable<StaticSiteArmResourceInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new StaticSiteArmResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new StaticSiteArmResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<StaticSiteArmResource> listByResourceGroup(String resourceGroupName) {
         PagedIterable<StaticSiteArmResourceInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new StaticSiteArmResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new StaticSiteArmResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<StaticSiteArmResource> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<StaticSiteArmResourceInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new StaticSiteArmResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new StaticSiteArmResourceImpl(inner1, this.manager()));
     }
 
     public StaticSiteArmResource getByResourceGroup(String resourceGroupName, String name) {
@@ -128,14 +128,14 @@ public final class StaticSitesImpl implements StaticSites {
         String resourceGroupName, String name, String authprovider) {
         PagedIterable<StaticSiteUserArmResourceInner> inner =
             this.serviceClient().listStaticSiteUsers(resourceGroupName, name, authprovider);
-        return inner.mapPage(inner1 -> new StaticSiteUserArmResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new StaticSiteUserArmResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<StaticSiteUserArmResource> listStaticSiteUsers(
         String resourceGroupName, String name, String authprovider, Context context) {
         PagedIterable<StaticSiteUserArmResourceInner> inner =
             this.serviceClient().listStaticSiteUsers(resourceGroupName, name, authprovider, context);
-        return inner.mapPage(inner1 -> new StaticSiteUserArmResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new StaticSiteUserArmResourceImpl(inner1, this.manager()));
     }
 
     public void deleteStaticSiteUser(String resourceGroupName, String name, String authprovider, String userid) {
@@ -192,14 +192,14 @@ public final class StaticSitesImpl implements StaticSites {
     public PagedIterable<StaticSiteBuildArmResource> getStaticSiteBuilds(String resourceGroupName, String name) {
         PagedIterable<StaticSiteBuildArmResourceInner> inner =
             this.serviceClient().getStaticSiteBuilds(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new StaticSiteBuildArmResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new StaticSiteBuildArmResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<StaticSiteBuildArmResource> getStaticSiteBuilds(
         String resourceGroupName, String name, Context context) {
         PagedIterable<StaticSiteBuildArmResourceInner> inner =
             this.serviceClient().getStaticSiteBuilds(resourceGroupName, name, context);
-        return inner.mapPage(inner1 -> new StaticSiteBuildArmResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new StaticSiteBuildArmResourceImpl(inner1, this.manager()));
     }
 
     public StaticSiteBuildArmResource getStaticSiteBuild(String resourceGroupName, String name, String prId) {
@@ -270,14 +270,14 @@ public final class StaticSitesImpl implements StaticSites {
         String resourceGroupName, String name, String prId) {
         PagedIterable<StaticSiteFunctionOverviewArmResourceInner> inner =
             this.serviceClient().listStaticSiteBuildFunctions(resourceGroupName, name, prId);
-        return inner.mapPage(inner1 -> new StaticSiteFunctionOverviewArmResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new StaticSiteFunctionOverviewArmResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<StaticSiteFunctionOverviewArmResource> listStaticSiteBuildFunctions(
         String resourceGroupName, String name, String prId, Context context) {
         PagedIterable<StaticSiteFunctionOverviewArmResourceInner> inner =
             this.serviceClient().listStaticSiteBuildFunctions(resourceGroupName, name, prId, context);
-        return inner.mapPage(inner1 -> new StaticSiteFunctionOverviewArmResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new StaticSiteFunctionOverviewArmResourceImpl(inner1, this.manager()));
     }
 
     public StringDictionary listStaticSiteBuildFunctionAppSettings(String resourceGroupName, String name, String prId) {
@@ -375,14 +375,16 @@ public final class StaticSitesImpl implements StaticSites {
         String resourceGroupName, String name) {
         PagedIterable<StaticSiteCustomDomainOverviewArmResourceInner> inner =
             this.serviceClient().listStaticSiteCustomDomains(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new StaticSiteCustomDomainOverviewArmResourceImpl(inner1, this.manager()));
+        return Utils
+            .mapPage(inner, inner1 -> new StaticSiteCustomDomainOverviewArmResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<StaticSiteCustomDomainOverviewArmResource> listStaticSiteCustomDomains(
         String resourceGroupName, String name, Context context) {
         PagedIterable<StaticSiteCustomDomainOverviewArmResourceInner> inner =
             this.serviceClient().listStaticSiteCustomDomains(resourceGroupName, name, context);
-        return inner.mapPage(inner1 -> new StaticSiteCustomDomainOverviewArmResourceImpl(inner1, this.manager()));
+        return Utils
+            .mapPage(inner, inner1 -> new StaticSiteCustomDomainOverviewArmResourceImpl(inner1, this.manager()));
     }
 
     public StaticSiteCustomDomainOverviewArmResource createOrUpdateStaticSiteCustomDomain(
@@ -447,14 +449,14 @@ public final class StaticSitesImpl implements StaticSites {
         String resourceGroupName, String name) {
         PagedIterable<StaticSiteFunctionOverviewArmResourceInner> inner =
             this.serviceClient().listStaticSiteFunctions(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new StaticSiteFunctionOverviewArmResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new StaticSiteFunctionOverviewArmResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<StaticSiteFunctionOverviewArmResource> listStaticSiteFunctions(
         String resourceGroupName, String name, Context context) {
         PagedIterable<StaticSiteFunctionOverviewArmResourceInner> inner =
             this.serviceClient().listStaticSiteFunctions(resourceGroupName, name, context);
-        return inner.mapPage(inner1 -> new StaticSiteFunctionOverviewArmResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new StaticSiteFunctionOverviewArmResourceImpl(inner1, this.manager()));
     }
 
     public StringDictionary listStaticSiteFunctionAppSettings(String resourceGroupName, String name) {

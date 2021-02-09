@@ -171,14 +171,14 @@ public final class SystemTopicEventSubscriptionsImpl implements SystemTopicEvent
     public PagedIterable<EventSubscription> listBySystemTopic(String resourceGroupName, String systemTopicName) {
         PagedIterable<EventSubscriptionInner> inner =
             this.serviceClient().listBySystemTopic(resourceGroupName, systemTopicName);
-        return inner.mapPage(inner1 -> new EventSubscriptionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new EventSubscriptionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<EventSubscription> listBySystemTopic(
         String resourceGroupName, String systemTopicName, String filter, Integer top, Context context) {
         PagedIterable<EventSubscriptionInner> inner =
             this.serviceClient().listBySystemTopic(resourceGroupName, systemTopicName, filter, top, context);
-        return inner.mapPage(inner1 -> new EventSubscriptionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new EventSubscriptionImpl(inner1, this.manager()));
     }
 
     public DeliveryAttributeListResult getDeliveryAttributes(

@@ -63,22 +63,22 @@ public final class VirtualHubsImpl implements VirtualHubs {
 
     public PagedIterable<VirtualHub> listByResourceGroup(String resourceGroupName) {
         PagedIterable<VirtualHubInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new VirtualHubImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualHubImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualHub> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<VirtualHubInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new VirtualHubImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualHubImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualHub> list() {
         PagedIterable<VirtualHubInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new VirtualHubImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualHubImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualHub> list(Context context) {
         PagedIterable<VirtualHubInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new VirtualHubImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualHubImpl(inner1, this.manager()));
     }
 
     public void getEffectiveVirtualHubRoutes(

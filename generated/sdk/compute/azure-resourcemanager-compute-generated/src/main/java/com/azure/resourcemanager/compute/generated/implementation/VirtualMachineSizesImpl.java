@@ -28,12 +28,12 @@ public final class VirtualMachineSizesImpl implements VirtualMachineSizes {
 
     public PagedIterable<VirtualMachineSize> list(String location) {
         PagedIterable<VirtualMachineSizeInner> inner = this.serviceClient().list(location);
-        return inner.mapPage(inner1 -> new VirtualMachineSizeImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualMachineSizeImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachineSize> list(String location, Context context) {
         PagedIterable<VirtualMachineSizeInner> inner = this.serviceClient().list(location, context);
-        return inner.mapPage(inner1 -> new VirtualMachineSizeImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualMachineSizeImpl(inner1, this.manager()));
     }
 
     private VirtualMachineSizesClient serviceClient() {

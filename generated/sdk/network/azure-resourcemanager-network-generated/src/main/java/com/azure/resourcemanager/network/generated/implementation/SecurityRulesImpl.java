@@ -66,14 +66,14 @@ public final class SecurityRulesImpl implements SecurityRules {
 
     public PagedIterable<SecurityRule> list(String resourceGroupName, String networkSecurityGroupName) {
         PagedIterable<SecurityRuleInner> inner = this.serviceClient().list(resourceGroupName, networkSecurityGroupName);
-        return inner.mapPage(inner1 -> new SecurityRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SecurityRuleImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SecurityRule> list(
         String resourceGroupName, String networkSecurityGroupName, Context context) {
         PagedIterable<SecurityRuleInner> inner =
             this.serviceClient().list(resourceGroupName, networkSecurityGroupName, context);
-        return inner.mapPage(inner1 -> new SecurityRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SecurityRuleImpl(inner1, this.manager()));
     }
 
     public SecurityRule getById(String id) {

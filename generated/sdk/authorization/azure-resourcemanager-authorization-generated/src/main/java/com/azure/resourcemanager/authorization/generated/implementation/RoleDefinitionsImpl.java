@@ -74,12 +74,12 @@ public final class RoleDefinitionsImpl implements RoleDefinitions {
 
     public PagedIterable<RoleDefinition> list(String scope) {
         PagedIterable<RoleDefinitionInner> inner = this.serviceClient().list(scope);
-        return inner.mapPage(inner1 -> new RoleDefinitionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RoleDefinitionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RoleDefinition> list(String scope, String filter, Context context) {
         PagedIterable<RoleDefinitionInner> inner = this.serviceClient().list(scope, filter, context);
-        return inner.mapPage(inner1 -> new RoleDefinitionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RoleDefinitionImpl(inner1, this.manager()));
     }
 
     public RoleDefinition getById(String roleId) {

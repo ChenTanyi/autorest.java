@@ -52,12 +52,12 @@ public final class KeysImpl implements Keys {
 
     public PagedIterable<Key> list(String resourceGroupName, String vaultName) {
         PagedIterable<KeyInner> inner = this.serviceClient().list(resourceGroupName, vaultName);
-        return inner.mapPage(inner1 -> new KeyImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new KeyImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Key> list(String resourceGroupName, String vaultName, Context context) {
         PagedIterable<KeyInner> inner = this.serviceClient().list(resourceGroupName, vaultName, context);
-        return inner.mapPage(inner1 -> new KeyImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new KeyImpl(inner1, this.manager()));
     }
 
     public Key getVersion(String resourceGroupName, String vaultName, String keyName, String keyVersion) {
@@ -86,14 +86,14 @@ public final class KeysImpl implements Keys {
 
     public PagedIterable<Key> listVersions(String resourceGroupName, String vaultName, String keyName) {
         PagedIterable<KeyInner> inner = this.serviceClient().listVersions(resourceGroupName, vaultName, keyName);
-        return inner.mapPage(inner1 -> new KeyImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new KeyImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Key> listVersions(
         String resourceGroupName, String vaultName, String keyName, Context context) {
         PagedIterable<KeyInner> inner =
             this.serviceClient().listVersions(resourceGroupName, vaultName, keyName, context);
-        return inner.mapPage(inner1 -> new KeyImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new KeyImpl(inner1, this.manager()));
     }
 
     public Key getById(String id) {

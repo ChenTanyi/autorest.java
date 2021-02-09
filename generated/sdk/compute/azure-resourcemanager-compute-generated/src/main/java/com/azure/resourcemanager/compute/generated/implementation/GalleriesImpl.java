@@ -62,22 +62,22 @@ public final class GalleriesImpl implements Galleries {
 
     public PagedIterable<Gallery> listByResourceGroup(String resourceGroupName) {
         PagedIterable<GalleryInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new GalleryImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new GalleryImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Gallery> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<GalleryInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new GalleryImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new GalleryImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Gallery> list() {
         PagedIterable<GalleryInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new GalleryImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new GalleryImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Gallery> list(Context context) {
         PagedIterable<GalleryInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new GalleryImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new GalleryImpl(inner1, this.manager()));
     }
 
     public Gallery getById(String id) {

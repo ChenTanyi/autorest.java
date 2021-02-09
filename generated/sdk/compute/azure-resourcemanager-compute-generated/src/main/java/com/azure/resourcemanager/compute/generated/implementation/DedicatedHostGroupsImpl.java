@@ -63,23 +63,23 @@ public final class DedicatedHostGroupsImpl implements DedicatedHostGroups {
 
     public PagedIterable<DedicatedHostGroup> listByResourceGroup(String resourceGroupName) {
         PagedIterable<DedicatedHostGroupInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new DedicatedHostGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DedicatedHostGroupImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DedicatedHostGroup> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<DedicatedHostGroupInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new DedicatedHostGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DedicatedHostGroupImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DedicatedHostGroup> list() {
         PagedIterable<DedicatedHostGroupInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new DedicatedHostGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DedicatedHostGroupImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DedicatedHostGroup> list(Context context) {
         PagedIterable<DedicatedHostGroupInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new DedicatedHostGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DedicatedHostGroupImpl(inner1, this.manager()));
     }
 
     public DedicatedHostGroup getById(String id) {

@@ -29,12 +29,12 @@ public final class AvailableResourceGroupDelegationsImpl implements AvailableRes
 
     public PagedIterable<AvailableDelegation> list(String location, String resourceGroupName) {
         PagedIterable<AvailableDelegationInner> inner = this.serviceClient().list(location, resourceGroupName);
-        return inner.mapPage(inner1 -> new AvailableDelegationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AvailableDelegationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AvailableDelegation> list(String location, String resourceGroupName, Context context) {
         PagedIterable<AvailableDelegationInner> inner = this.serviceClient().list(location, resourceGroupName, context);
-        return inner.mapPage(inner1 -> new AvailableDelegationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AvailableDelegationImpl(inner1, this.manager()));
     }
 
     private AvailableResourceGroupDelegationsClient serviceClient() {

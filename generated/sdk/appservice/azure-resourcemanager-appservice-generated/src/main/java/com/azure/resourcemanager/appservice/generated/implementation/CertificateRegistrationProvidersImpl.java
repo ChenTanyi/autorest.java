@@ -29,12 +29,12 @@ public final class CertificateRegistrationProvidersImpl implements CertificateRe
 
     public PagedIterable<CsmOperationDescription> listOperations() {
         PagedIterable<CsmOperationDescriptionInner> inner = this.serviceClient().listOperations();
-        return inner.mapPage(inner1 -> new CsmOperationDescriptionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new CsmOperationDescriptionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<CsmOperationDescription> listOperations(Context context) {
         PagedIterable<CsmOperationDescriptionInner> inner = this.serviceClient().listOperations(context);
-        return inner.mapPage(inner1 -> new CsmOperationDescriptionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new CsmOperationDescriptionImpl(inner1, this.manager()));
     }
 
     private CertificateRegistrationProvidersClient serviceClient() {

@@ -54,13 +54,13 @@ public final class VpnSiteLinksImpl implements VpnSiteLinks {
 
     public PagedIterable<VpnSiteLink> listByVpnSite(String resourceGroupName, String vpnSiteName) {
         PagedIterable<VpnSiteLinkInner> inner = this.serviceClient().listByVpnSite(resourceGroupName, vpnSiteName);
-        return inner.mapPage(inner1 -> new VpnSiteLinkImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VpnSiteLinkImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VpnSiteLink> listByVpnSite(String resourceGroupName, String vpnSiteName, Context context) {
         PagedIterable<VpnSiteLinkInner> inner =
             this.serviceClient().listByVpnSite(resourceGroupName, vpnSiteName, context);
-        return inner.mapPage(inner1 -> new VpnSiteLinkImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VpnSiteLinkImpl(inner1, this.manager()));
     }
 
     private VpnSiteLinksClient serviceClient() {

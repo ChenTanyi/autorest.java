@@ -64,14 +64,14 @@ public final class GalleryApplicationsImpl implements GalleryApplications {
     public PagedIterable<GalleryApplication> listByGallery(String resourceGroupName, String galleryName) {
         PagedIterable<GalleryApplicationInner> inner =
             this.serviceClient().listByGallery(resourceGroupName, galleryName);
-        return inner.mapPage(inner1 -> new GalleryApplicationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new GalleryApplicationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<GalleryApplication> listByGallery(
         String resourceGroupName, String galleryName, Context context) {
         PagedIterable<GalleryApplicationInner> inner =
             this.serviceClient().listByGallery(resourceGroupName, galleryName, context);
-        return inner.mapPage(inner1 -> new GalleryApplicationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new GalleryApplicationImpl(inner1, this.manager()));
     }
 
     public GalleryApplication getById(String id) {

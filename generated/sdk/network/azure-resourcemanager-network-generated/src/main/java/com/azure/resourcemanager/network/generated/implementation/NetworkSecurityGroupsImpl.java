@@ -65,23 +65,23 @@ public final class NetworkSecurityGroupsImpl implements NetworkSecurityGroups {
 
     public PagedIterable<NetworkSecurityGroup> list() {
         PagedIterable<NetworkSecurityGroupInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new NetworkSecurityGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkSecurityGroupImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkSecurityGroup> list(Context context) {
         PagedIterable<NetworkSecurityGroupInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new NetworkSecurityGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkSecurityGroupImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkSecurityGroup> listByResourceGroup(String resourceGroupName) {
         PagedIterable<NetworkSecurityGroupInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new NetworkSecurityGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkSecurityGroupImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkSecurityGroup> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<NetworkSecurityGroupInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new NetworkSecurityGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkSecurityGroupImpl(inner1, this.manager()));
     }
 
     public NetworkSecurityGroup getById(String id) {

@@ -105,32 +105,32 @@ public final class VaultsImpl implements Vaults {
 
     public PagedIterable<Vault> listByResourceGroup(String resourceGroupName) {
         PagedIterable<VaultInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new VaultImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VaultImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Vault> listByResourceGroup(String resourceGroupName, Integer top, Context context) {
         PagedIterable<VaultInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, top, context);
-        return inner.mapPage(inner1 -> new VaultImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VaultImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Vault> listBySubscription() {
         PagedIterable<VaultInner> inner = this.serviceClient().listBySubscription();
-        return inner.mapPage(inner1 -> new VaultImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VaultImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Vault> listBySubscription(Integer top, Context context) {
         PagedIterable<VaultInner> inner = this.serviceClient().listBySubscription(top, context);
-        return inner.mapPage(inner1 -> new VaultImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VaultImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DeletedVault> listDeleted() {
         PagedIterable<DeletedVaultInner> inner = this.serviceClient().listDeleted();
-        return inner.mapPage(inner1 -> new DeletedVaultImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DeletedVaultImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DeletedVault> listDeleted(Context context) {
         PagedIterable<DeletedVaultInner> inner = this.serviceClient().listDeleted(context);
-        return inner.mapPage(inner1 -> new DeletedVaultImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DeletedVaultImpl(inner1, this.manager()));
     }
 
     public DeletedVault getDeleted(String vaultName, String location) {

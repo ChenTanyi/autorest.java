@@ -166,7 +166,7 @@ public final class RecordSetsImpl implements RecordSets {
 
     public PagedIterable<RecordSet> listByType(String resourceGroupName, String zoneName, RecordType recordType) {
         PagedIterable<RecordSetInner> inner = this.serviceClient().listByType(resourceGroupName, zoneName, recordType);
-        return inner.mapPage(inner1 -> new RecordSetImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RecordSetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RecordSet> listByType(
@@ -178,31 +178,31 @@ public final class RecordSetsImpl implements RecordSets {
         Context context) {
         PagedIterable<RecordSetInner> inner =
             this.serviceClient().listByType(resourceGroupName, zoneName, recordType, top, recordsetnamesuffix, context);
-        return inner.mapPage(inner1 -> new RecordSetImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RecordSetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RecordSet> listByDnsZone(String resourceGroupName, String zoneName) {
         PagedIterable<RecordSetInner> inner = this.serviceClient().listByDnsZone(resourceGroupName, zoneName);
-        return inner.mapPage(inner1 -> new RecordSetImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RecordSetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RecordSet> listByDnsZone(
         String resourceGroupName, String zoneName, Integer top, String recordsetnamesuffix, Context context) {
         PagedIterable<RecordSetInner> inner =
             this.serviceClient().listByDnsZone(resourceGroupName, zoneName, top, recordsetnamesuffix, context);
-        return inner.mapPage(inner1 -> new RecordSetImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RecordSetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RecordSet> listAllByDnsZone(String resourceGroupName, String zoneName) {
         PagedIterable<RecordSetInner> inner = this.serviceClient().listAllByDnsZone(resourceGroupName, zoneName);
-        return inner.mapPage(inner1 -> new RecordSetImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RecordSetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RecordSet> listAllByDnsZone(
         String resourceGroupName, String zoneName, Integer top, String recordSetNameSuffix, Context context) {
         PagedIterable<RecordSetInner> inner =
             this.serviceClient().listAllByDnsZone(resourceGroupName, zoneName, top, recordSetNameSuffix, context);
-        return inner.mapPage(inner1 -> new RecordSetImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RecordSetImpl(inner1, this.manager()));
     }
 
     private RecordSetsClient serviceClient() {

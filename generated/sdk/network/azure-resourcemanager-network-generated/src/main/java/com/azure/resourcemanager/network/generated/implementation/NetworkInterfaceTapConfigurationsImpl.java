@@ -69,14 +69,14 @@ public final class NetworkInterfaceTapConfigurationsImpl implements NetworkInter
     public PagedIterable<NetworkInterfaceTapConfiguration> list(String resourceGroupName, String networkInterfaceName) {
         PagedIterable<NetworkInterfaceTapConfigurationInner> inner =
             this.serviceClient().list(resourceGroupName, networkInterfaceName);
-        return inner.mapPage(inner1 -> new NetworkInterfaceTapConfigurationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceTapConfigurationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkInterfaceTapConfiguration> list(
         String resourceGroupName, String networkInterfaceName, Context context) {
         PagedIterable<NetworkInterfaceTapConfigurationInner> inner =
             this.serviceClient().list(resourceGroupName, networkInterfaceName, context);
-        return inner.mapPage(inner1 -> new NetworkInterfaceTapConfigurationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceTapConfigurationImpl(inner1, this.manager()));
     }
 
     public NetworkInterfaceTapConfiguration getById(String id) {

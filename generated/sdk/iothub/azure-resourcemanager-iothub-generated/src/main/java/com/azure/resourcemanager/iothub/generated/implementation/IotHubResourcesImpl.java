@@ -97,23 +97,23 @@ public final class IotHubResourcesImpl implements IotHubResources {
 
     public PagedIterable<IotHubDescription> list() {
         PagedIterable<IotHubDescriptionInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new IotHubDescriptionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new IotHubDescriptionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<IotHubDescription> list(Context context) {
         PagedIterable<IotHubDescriptionInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new IotHubDescriptionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new IotHubDescriptionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<IotHubDescription> listByResourceGroup(String resourceGroupName) {
         PagedIterable<IotHubDescriptionInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new IotHubDescriptionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new IotHubDescriptionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<IotHubDescription> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<IotHubDescriptionInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new IotHubDescriptionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new IotHubDescriptionImpl(inner1, this.manager()));
     }
 
     public RegistryStatistics getStats(String resourceGroupName, String resourceName) {
@@ -143,21 +143,21 @@ public final class IotHubResourcesImpl implements IotHubResources {
     public PagedIterable<IotHubSkuDescription> getValidSkus(String resourceGroupName, String resourceName) {
         PagedIterable<IotHubSkuDescriptionInner> inner =
             this.serviceClient().getValidSkus(resourceGroupName, resourceName);
-        return inner.mapPage(inner1 -> new IotHubSkuDescriptionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new IotHubSkuDescriptionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<IotHubSkuDescription> getValidSkus(
         String resourceGroupName, String resourceName, Context context) {
         PagedIterable<IotHubSkuDescriptionInner> inner =
             this.serviceClient().getValidSkus(resourceGroupName, resourceName, context);
-        return inner.mapPage(inner1 -> new IotHubSkuDescriptionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new IotHubSkuDescriptionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<EventHubConsumerGroupInfo> listEventHubConsumerGroups(
         String resourceGroupName, String resourceName, String eventHubEndpointName) {
         PagedIterable<EventHubConsumerGroupInfoInner> inner =
             this.serviceClient().listEventHubConsumerGroups(resourceGroupName, resourceName, eventHubEndpointName);
-        return inner.mapPage(inner1 -> new EventHubConsumerGroupInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new EventHubConsumerGroupInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<EventHubConsumerGroupInfo> listEventHubConsumerGroups(
@@ -166,7 +166,7 @@ public final class IotHubResourcesImpl implements IotHubResources {
             this
                 .serviceClient()
                 .listEventHubConsumerGroups(resourceGroupName, resourceName, eventHubEndpointName, context);
-        return inner.mapPage(inner1 -> new EventHubConsumerGroupInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new EventHubConsumerGroupInfoImpl(inner1, this.manager()));
     }
 
     public EventHubConsumerGroupInfo getEventHubConsumerGroup(
@@ -213,12 +213,12 @@ public final class IotHubResourcesImpl implements IotHubResources {
 
     public PagedIterable<JobResponse> listJobs(String resourceGroupName, String resourceName) {
         PagedIterable<JobResponseInner> inner = this.serviceClient().listJobs(resourceGroupName, resourceName);
-        return inner.mapPage(inner1 -> new JobResponseImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new JobResponseImpl(inner1, this.manager()));
     }
 
     public PagedIterable<JobResponse> listJobs(String resourceGroupName, String resourceName, Context context) {
         PagedIterable<JobResponseInner> inner = this.serviceClient().listJobs(resourceGroupName, resourceName, context);
-        return inner.mapPage(inner1 -> new JobResponseImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new JobResponseImpl(inner1, this.manager()));
     }
 
     public JobResponse getJob(String resourceGroupName, String resourceName, String jobId) {
@@ -248,27 +248,27 @@ public final class IotHubResourcesImpl implements IotHubResources {
     public PagedIterable<IotHubQuotaMetricInfo> getQuotaMetrics(String resourceGroupName, String resourceName) {
         PagedIterable<IotHubQuotaMetricInfoInner> inner =
             this.serviceClient().getQuotaMetrics(resourceGroupName, resourceName);
-        return inner.mapPage(inner1 -> new IotHubQuotaMetricInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new IotHubQuotaMetricInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<IotHubQuotaMetricInfo> getQuotaMetrics(
         String resourceGroupName, String resourceName, Context context) {
         PagedIterable<IotHubQuotaMetricInfoInner> inner =
             this.serviceClient().getQuotaMetrics(resourceGroupName, resourceName, context);
-        return inner.mapPage(inner1 -> new IotHubQuotaMetricInfoImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new IotHubQuotaMetricInfoImpl(inner1, this.manager()));
     }
 
     public PagedIterable<EndpointHealthData> getEndpointHealth(String resourceGroupName, String iotHubName) {
         PagedIterable<EndpointHealthDataInner> inner =
             this.serviceClient().getEndpointHealth(resourceGroupName, iotHubName);
-        return inner.mapPage(inner1 -> new EndpointHealthDataImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new EndpointHealthDataImpl(inner1, this.manager()));
     }
 
     public PagedIterable<EndpointHealthData> getEndpointHealth(
         String resourceGroupName, String iotHubName, Context context) {
         PagedIterable<EndpointHealthDataInner> inner =
             this.serviceClient().getEndpointHealth(resourceGroupName, iotHubName, context);
-        return inner.mapPage(inner1 -> new EndpointHealthDataImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new EndpointHealthDataImpl(inner1, this.manager()));
     }
 
     public IotHubNameAvailabilityInfo checkNameAvailability(OperationInputs operationInputs) {
@@ -347,14 +347,14 @@ public final class IotHubResourcesImpl implements IotHubResources {
         String resourceGroupName, String resourceName) {
         PagedIterable<SharedAccessSignatureAuthorizationRuleInner> inner =
             this.serviceClient().listKeys(resourceGroupName, resourceName);
-        return inner.mapPage(inner1 -> new SharedAccessSignatureAuthorizationRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SharedAccessSignatureAuthorizationRuleImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SharedAccessSignatureAuthorizationRule> listKeys(
         String resourceGroupName, String resourceName, Context context) {
         PagedIterable<SharedAccessSignatureAuthorizationRuleInner> inner =
             this.serviceClient().listKeys(resourceGroupName, resourceName, context);
-        return inner.mapPage(inner1 -> new SharedAccessSignatureAuthorizationRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SharedAccessSignatureAuthorizationRuleImpl(inner1, this.manager()));
     }
 
     public SharedAccessSignatureAuthorizationRule getKeysForKeyName(

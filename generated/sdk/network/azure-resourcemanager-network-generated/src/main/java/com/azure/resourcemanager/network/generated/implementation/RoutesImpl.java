@@ -62,12 +62,12 @@ public final class RoutesImpl implements Routes {
 
     public PagedIterable<Route> list(String resourceGroupName, String routeTableName) {
         PagedIterable<RouteInner> inner = this.serviceClient().list(resourceGroupName, routeTableName);
-        return inner.mapPage(inner1 -> new RouteImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RouteImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Route> list(String resourceGroupName, String routeTableName, Context context) {
         PagedIterable<RouteInner> inner = this.serviceClient().list(resourceGroupName, routeTableName, context);
-        return inner.mapPage(inner1 -> new RouteImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RouteImpl(inner1, this.manager()));
     }
 
     public Route getById(String id) {

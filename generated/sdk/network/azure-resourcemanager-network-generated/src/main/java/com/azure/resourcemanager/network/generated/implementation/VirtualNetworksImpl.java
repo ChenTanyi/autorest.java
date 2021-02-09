@@ -66,22 +66,22 @@ public final class VirtualNetworksImpl implements VirtualNetworks {
 
     public PagedIterable<VirtualNetwork> list() {
         PagedIterable<VirtualNetworkInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new VirtualNetworkImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualNetworkImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualNetwork> list(Context context) {
         PagedIterable<VirtualNetworkInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new VirtualNetworkImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualNetworkImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualNetwork> listByResourceGroup(String resourceGroupName) {
         PagedIterable<VirtualNetworkInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new VirtualNetworkImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualNetworkImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualNetwork> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<VirtualNetworkInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new VirtualNetworkImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualNetworkImpl(inner1, this.manager()));
     }
 
     public IpAddressAvailabilityResult checkIpAddressAvailability(
@@ -115,14 +115,14 @@ public final class VirtualNetworksImpl implements VirtualNetworks {
     public PagedIterable<VirtualNetworkUsage> listUsage(String resourceGroupName, String virtualNetworkName) {
         PagedIterable<VirtualNetworkUsageInner> inner =
             this.serviceClient().listUsage(resourceGroupName, virtualNetworkName);
-        return inner.mapPage(inner1 -> new VirtualNetworkUsageImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualNetworkUsageImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualNetworkUsage> listUsage(
         String resourceGroupName, String virtualNetworkName, Context context) {
         PagedIterable<VirtualNetworkUsageInner> inner =
             this.serviceClient().listUsage(resourceGroupName, virtualNetworkName, context);
-        return inner.mapPage(inner1 -> new VirtualNetworkUsageImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualNetworkUsageImpl(inner1, this.manager()));
     }
 
     public VirtualNetwork getById(String id) {

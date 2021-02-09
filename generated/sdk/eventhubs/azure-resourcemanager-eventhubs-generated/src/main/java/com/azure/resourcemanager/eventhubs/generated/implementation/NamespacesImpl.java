@@ -45,14 +45,14 @@ public final class NamespacesImpl implements Namespaces {
     public PagedIterable<IpFilterRule> listIpFilterRules(String resourceGroupName, String namespaceName) {
         PagedIterable<IpFilterRuleInner> inner =
             this.serviceClient().listIpFilterRules(resourceGroupName, namespaceName);
-        return inner.mapPage(inner1 -> new IpFilterRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new IpFilterRuleImpl(inner1, this.manager()));
     }
 
     public PagedIterable<IpFilterRule> listIpFilterRules(
         String resourceGroupName, String namespaceName, Context context) {
         PagedIterable<IpFilterRuleInner> inner =
             this.serviceClient().listIpFilterRules(resourceGroupName, namespaceName, context);
-        return inner.mapPage(inner1 -> new IpFilterRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new IpFilterRuleImpl(inner1, this.manager()));
     }
 
     public void deleteIpFilterRule(String resourceGroupName, String namespaceName, String ipFilterRuleName) {
@@ -95,22 +95,22 @@ public final class NamespacesImpl implements Namespaces {
 
     public PagedIterable<EHNamespace> list() {
         PagedIterable<EHNamespaceInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new EHNamespaceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new EHNamespaceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<EHNamespace> list(Context context) {
         PagedIterable<EHNamespaceInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new EHNamespaceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new EHNamespaceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<EHNamespace> listByResourceGroup(String resourceGroupName) {
         PagedIterable<EHNamespaceInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new EHNamespaceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new EHNamespaceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<EHNamespace> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<EHNamespaceInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new EHNamespaceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new EHNamespaceImpl(inner1, this.manager()));
     }
 
     public void deleteByResourceGroup(String resourceGroupName, String namespaceName) {
@@ -148,14 +148,14 @@ public final class NamespacesImpl implements Namespaces {
     public PagedIterable<VirtualNetworkRule> listVirtualNetworkRules(String resourceGroupName, String namespaceName) {
         PagedIterable<VirtualNetworkRuleInner> inner =
             this.serviceClient().listVirtualNetworkRules(resourceGroupName, namespaceName);
-        return inner.mapPage(inner1 -> new VirtualNetworkRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualNetworkRuleImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualNetworkRule> listVirtualNetworkRules(
         String resourceGroupName, String namespaceName, Context context) {
         PagedIterable<VirtualNetworkRuleInner> inner =
             this.serviceClient().listVirtualNetworkRules(resourceGroupName, namespaceName, context);
-        return inner.mapPage(inner1 -> new VirtualNetworkRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualNetworkRuleImpl(inner1, this.manager()));
     }
 
     public void deleteVirtualNetworkRule(
@@ -253,14 +253,14 @@ public final class NamespacesImpl implements Namespaces {
     public PagedIterable<AuthorizationRule> listAuthorizationRules(String resourceGroupName, String namespaceName) {
         PagedIterable<AuthorizationRuleInner> inner =
             this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName);
-        return inner.mapPage(inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AuthorizationRule> listAuthorizationRules(
         String resourceGroupName, String namespaceName, Context context) {
         PagedIterable<AuthorizationRuleInner> inner =
             this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, context);
-        return inner.mapPage(inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
     public void deleteAuthorizationRule(String resourceGroupName, String namespaceName, String authorizationRuleName) {

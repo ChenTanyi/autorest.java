@@ -31,14 +31,14 @@ public final class StorageAccountsImpl implements StorageAccounts {
     public PagedIterable<StorageAccount> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName) {
         PagedIterable<StorageAccountInner> inner =
             this.serviceClient().listByDataBoxEdgeDevice(deviceName, resourceGroupName);
-        return inner.mapPage(inner1 -> new StorageAccountImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new StorageAccountImpl(inner1, this.manager()));
     }
 
     public PagedIterable<StorageAccount> listByDataBoxEdgeDevice(
         String deviceName, String resourceGroupName, Context context) {
         PagedIterable<StorageAccountInner> inner =
             this.serviceClient().listByDataBoxEdgeDevice(deviceName, resourceGroupName, context);
-        return inner.mapPage(inner1 -> new StorageAccountImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new StorageAccountImpl(inner1, this.manager()));
     }
 
     public StorageAccount get(String deviceName, String storageAccountName, String resourceGroupName) {

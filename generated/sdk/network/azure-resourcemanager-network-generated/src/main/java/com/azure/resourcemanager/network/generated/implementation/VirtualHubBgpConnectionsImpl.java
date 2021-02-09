@@ -64,12 +64,12 @@ public final class VirtualHubBgpConnectionsImpl implements VirtualHubBgpConnecti
 
     public PagedIterable<BgpConnection> list(String resourceGroupName, String virtualHubName) {
         PagedIterable<BgpConnectionInner> inner = this.serviceClient().list(resourceGroupName, virtualHubName);
-        return inner.mapPage(inner1 -> new BgpConnectionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BgpConnectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BgpConnection> list(String resourceGroupName, String virtualHubName, Context context) {
         PagedIterable<BgpConnectionInner> inner = this.serviceClient().list(resourceGroupName, virtualHubName, context);
-        return inner.mapPage(inner1 -> new BgpConnectionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BgpConnectionImpl(inner1, this.manager()));
     }
 
     public PeerRouteList listLearnedRoutes(String resourceGroupName, String hubName, String connectionName) {

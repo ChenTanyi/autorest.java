@@ -28,12 +28,12 @@ public final class MetricNamespacesImpl implements MetricNamespaces {
 
     public PagedIterable<MetricNamespace> list(String resourceUri) {
         PagedIterable<MetricNamespaceInner> inner = this.serviceClient().list(resourceUri);
-        return inner.mapPage(inner1 -> new MetricNamespaceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new MetricNamespaceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<MetricNamespace> list(String resourceUri, String startTime, Context context) {
         PagedIterable<MetricNamespaceInner> inner = this.serviceClient().list(resourceUri, startTime, context);
-        return inner.mapPage(inner1 -> new MetricNamespaceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new MetricNamespaceImpl(inner1, this.manager()));
     }
 
     private MetricNamespacesClient serviceClient() {

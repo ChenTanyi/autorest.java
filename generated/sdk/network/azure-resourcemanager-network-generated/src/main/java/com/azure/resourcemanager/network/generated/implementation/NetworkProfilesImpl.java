@@ -62,22 +62,22 @@ public final class NetworkProfilesImpl implements NetworkProfiles {
 
     public PagedIterable<NetworkProfile> list() {
         PagedIterable<NetworkProfileInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new NetworkProfileImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkProfileImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkProfile> list(Context context) {
         PagedIterable<NetworkProfileInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new NetworkProfileImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkProfileImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkProfile> listByResourceGroup(String resourceGroupName) {
         PagedIterable<NetworkProfileInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new NetworkProfileImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkProfileImpl(inner1, this.manager()));
     }
 
     public PagedIterable<NetworkProfile> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<NetworkProfileInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new NetworkProfileImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new NetworkProfileImpl(inner1, this.manager()));
     }
 
     public NetworkProfile getById(String id) {

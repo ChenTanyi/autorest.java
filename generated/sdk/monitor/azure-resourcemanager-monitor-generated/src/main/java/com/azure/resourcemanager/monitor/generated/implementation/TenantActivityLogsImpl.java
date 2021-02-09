@@ -28,12 +28,12 @@ public final class TenantActivityLogsImpl implements TenantActivityLogs {
 
     public PagedIterable<EventData> list() {
         PagedIterable<EventDataInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new EventDataImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new EventDataImpl(inner1, this.manager()));
     }
 
     public PagedIterable<EventData> list(String filter, String select, Context context) {
         PagedIterable<EventDataInner> inner = this.serviceClient().list(filter, select, context);
-        return inner.mapPage(inner1 -> new EventDataImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new EventDataImpl(inner1, this.manager()));
     }
 
     private TenantActivityLogsClient serviceClient() {

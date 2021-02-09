@@ -17,6 +17,12 @@ public class PrivateEndpointConnectionItem {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(PrivateEndpointConnectionItem.class);
 
     /*
+     * Id of private endpoint connection.
+     */
+    @JsonProperty(value = "id")
+    private String id;
+
+    /*
      * Properties of the private endpoint object.
      */
     @JsonProperty(value = "properties.privateEndpoint")
@@ -33,6 +39,26 @@ public class PrivateEndpointConnectionItem {
      */
     @JsonProperty(value = "properties.provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private PrivateEndpointConnectionProvisioningState provisioningState;
+
+    /**
+     * Get the id property: Id of private endpoint connection.
+     *
+     * @return the id value.
+     */
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Set the id property: Id of private endpoint connection.
+     *
+     * @param id the id value to set.
+     * @return the PrivateEndpointConnectionItem object itself.
+     */
+    public PrivateEndpointConnectionItem withId(String id) {
+        this.id = id;
+        return this;
+    }
 
     /**
      * Get the privateEndpoint property: Properties of the private endpoint object.

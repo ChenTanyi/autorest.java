@@ -62,22 +62,22 @@ public final class RouteTablesImpl implements RouteTables {
 
     public PagedIterable<RouteTable> listByResourceGroup(String resourceGroupName) {
         PagedIterable<RouteTableInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new RouteTableImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RouteTableImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RouteTable> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<RouteTableInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new RouteTableImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RouteTableImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RouteTable> list() {
         PagedIterable<RouteTableInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new RouteTableImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RouteTableImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RouteTable> list(Context context) {
         PagedIterable<RouteTableInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new RouteTableImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RouteTableImpl(inner1, this.manager()));
     }
 
     public RouteTable getById(String id) {

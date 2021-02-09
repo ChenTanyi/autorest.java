@@ -29,12 +29,12 @@ public final class AuthorizationOperationsImpl implements AuthorizationOperation
 
     public PagedIterable<Operation> list() {
         PagedIterable<OperationInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new OperationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new OperationImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Operation> list(Context context) {
         PagedIterable<OperationInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new OperationImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new OperationImpl(inner1, this.manager()));
     }
 
     private AuthorizationOperationsClient serviceClient() {

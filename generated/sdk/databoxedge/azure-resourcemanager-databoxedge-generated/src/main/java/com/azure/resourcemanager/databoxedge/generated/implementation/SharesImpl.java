@@ -30,13 +30,13 @@ public final class SharesImpl implements Shares {
 
     public PagedIterable<Share> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName) {
         PagedIterable<ShareInner> inner = this.serviceClient().listByDataBoxEdgeDevice(deviceName, resourceGroupName);
-        return inner.mapPage(inner1 -> new ShareImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ShareImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Share> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName, Context context) {
         PagedIterable<ShareInner> inner =
             this.serviceClient().listByDataBoxEdgeDevice(deviceName, resourceGroupName, context);
-        return inner.mapPage(inner1 -> new ShareImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ShareImpl(inner1, this.manager()));
     }
 
     public Share get(String deviceName, String name, String resourceGroupName) {

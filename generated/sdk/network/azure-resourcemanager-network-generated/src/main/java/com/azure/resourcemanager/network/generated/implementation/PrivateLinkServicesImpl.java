@@ -69,23 +69,23 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
 
     public PagedIterable<PrivateLinkService> listByResourceGroup(String resourceGroupName) {
         PagedIterable<PrivateLinkServiceInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new PrivateLinkServiceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PrivateLinkServiceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PrivateLinkService> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<PrivateLinkServiceInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new PrivateLinkServiceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PrivateLinkServiceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PrivateLinkService> list() {
         PagedIterable<PrivateLinkServiceInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new PrivateLinkServiceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PrivateLinkServiceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PrivateLinkService> list(Context context) {
         PagedIterable<PrivateLinkServiceInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new PrivateLinkServiceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PrivateLinkServiceImpl(inner1, this.manager()));
     }
 
     public PrivateEndpointConnection getPrivateEndpointConnection(
@@ -168,14 +168,14 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
         String resourceGroupName, String serviceName) {
         PagedIterable<PrivateEndpointConnectionInner> inner =
             this.serviceClient().listPrivateEndpointConnections(resourceGroupName, serviceName);
-        return inner.mapPage(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PrivateEndpointConnection> listPrivateEndpointConnections(
         String resourceGroupName, String serviceName, Context context) {
         PagedIterable<PrivateEndpointConnectionInner> inner =
             this.serviceClient().listPrivateEndpointConnections(resourceGroupName, serviceName, context);
-        return inner.mapPage(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()));
     }
 
     public PrivateLinkServiceVisibility checkPrivateLinkServiceVisibility(
@@ -232,21 +232,21 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
     public PagedIterable<AutoApprovedPrivateLinkService> listAutoApprovedPrivateLinkServices(String location) {
         PagedIterable<AutoApprovedPrivateLinkServiceInner> inner =
             this.serviceClient().listAutoApprovedPrivateLinkServices(location);
-        return inner.mapPage(inner1 -> new AutoApprovedPrivateLinkServiceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AutoApprovedPrivateLinkServiceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AutoApprovedPrivateLinkService> listAutoApprovedPrivateLinkServices(
         String location, Context context) {
         PagedIterable<AutoApprovedPrivateLinkServiceInner> inner =
             this.serviceClient().listAutoApprovedPrivateLinkServices(location, context);
-        return inner.mapPage(inner1 -> new AutoApprovedPrivateLinkServiceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AutoApprovedPrivateLinkServiceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AutoApprovedPrivateLinkService> listAutoApprovedPrivateLinkServicesByResourceGroup(
         String location, String resourceGroupName) {
         PagedIterable<AutoApprovedPrivateLinkServiceInner> inner =
             this.serviceClient().listAutoApprovedPrivateLinkServicesByResourceGroup(location, resourceGroupName);
-        return inner.mapPage(inner1 -> new AutoApprovedPrivateLinkServiceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AutoApprovedPrivateLinkServiceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AutoApprovedPrivateLinkService> listAutoApprovedPrivateLinkServicesByResourceGroup(
@@ -255,7 +255,7 @@ public final class PrivateLinkServicesImpl implements PrivateLinkServices {
             this
                 .serviceClient()
                 .listAutoApprovedPrivateLinkServicesByResourceGroup(location, resourceGroupName, context);
-        return inner.mapPage(inner1 -> new AutoApprovedPrivateLinkServiceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AutoApprovedPrivateLinkServiceImpl(inner1, this.manager()));
     }
 
     public PrivateLinkService getById(String id) {

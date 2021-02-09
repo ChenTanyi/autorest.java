@@ -65,23 +65,23 @@ public final class ExpressRoutePortsImpl implements ExpressRoutePorts {
 
     public PagedIterable<ExpressRoutePort> listByResourceGroup(String resourceGroupName) {
         PagedIterable<ExpressRoutePortInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new ExpressRoutePortImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ExpressRoutePortImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ExpressRoutePort> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<ExpressRoutePortInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new ExpressRoutePortImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ExpressRoutePortImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ExpressRoutePort> list() {
         PagedIterable<ExpressRoutePortInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new ExpressRoutePortImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ExpressRoutePortImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ExpressRoutePort> list(Context context) {
         PagedIterable<ExpressRoutePortInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new ExpressRoutePortImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ExpressRoutePortImpl(inner1, this.manager()));
     }
 
     public GenerateExpressRoutePortsLoaResult generateLoa(

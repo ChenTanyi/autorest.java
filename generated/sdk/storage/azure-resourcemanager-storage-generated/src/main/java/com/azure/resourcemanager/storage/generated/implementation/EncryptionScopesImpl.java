@@ -54,12 +54,12 @@ public final class EncryptionScopesImpl implements EncryptionScopes {
 
     public PagedIterable<EncryptionScope> list(String resourceGroupName, String accountName) {
         PagedIterable<EncryptionScopeInner> inner = this.serviceClient().list(resourceGroupName, accountName);
-        return inner.mapPage(inner1 -> new EncryptionScopeImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new EncryptionScopeImpl(inner1, this.manager()));
     }
 
     public PagedIterable<EncryptionScope> list(String resourceGroupName, String accountName, Context context) {
         PagedIterable<EncryptionScopeInner> inner = this.serviceClient().list(resourceGroupName, accountName, context);
-        return inner.mapPage(inner1 -> new EncryptionScopeImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new EncryptionScopeImpl(inner1, this.manager()));
     }
 
     public EncryptionScope getById(String id) {

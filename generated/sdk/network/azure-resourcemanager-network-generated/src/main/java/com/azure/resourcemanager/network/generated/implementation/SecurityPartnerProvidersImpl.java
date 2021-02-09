@@ -65,23 +65,23 @@ public final class SecurityPartnerProvidersImpl implements SecurityPartnerProvid
 
     public PagedIterable<SecurityPartnerProvider> listByResourceGroup(String resourceGroupName) {
         PagedIterable<SecurityPartnerProviderInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new SecurityPartnerProviderImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SecurityPartnerProviderImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SecurityPartnerProvider> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<SecurityPartnerProviderInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new SecurityPartnerProviderImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SecurityPartnerProviderImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SecurityPartnerProvider> list() {
         PagedIterable<SecurityPartnerProviderInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new SecurityPartnerProviderImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SecurityPartnerProviderImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SecurityPartnerProvider> list(Context context) {
         PagedIterable<SecurityPartnerProviderInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new SecurityPartnerProviderImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SecurityPartnerProviderImpl(inner1, this.manager()));
     }
 
     public SecurityPartnerProvider getById(String id) {

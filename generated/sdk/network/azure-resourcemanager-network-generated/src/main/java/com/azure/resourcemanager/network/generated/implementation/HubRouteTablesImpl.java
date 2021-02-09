@@ -62,12 +62,12 @@ public final class HubRouteTablesImpl implements HubRouteTables {
 
     public PagedIterable<HubRouteTable> list(String resourceGroupName, String virtualHubName) {
         PagedIterable<HubRouteTableInner> inner = this.serviceClient().list(resourceGroupName, virtualHubName);
-        return inner.mapPage(inner1 -> new HubRouteTableImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new HubRouteTableImpl(inner1, this.manager()));
     }
 
     public PagedIterable<HubRouteTable> list(String resourceGroupName, String virtualHubName, Context context) {
         PagedIterable<HubRouteTableInner> inner = this.serviceClient().list(resourceGroupName, virtualHubName, context);
-        return inner.mapPage(inner1 -> new HubRouteTableImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new HubRouteTableImpl(inner1, this.manager()));
     }
 
     public HubRouteTable getById(String id) {

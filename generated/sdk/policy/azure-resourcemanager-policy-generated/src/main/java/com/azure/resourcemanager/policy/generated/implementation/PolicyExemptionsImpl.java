@@ -61,24 +61,24 @@ public final class PolicyExemptionsImpl implements PolicyExemptions {
 
     public PagedIterable<PolicyExemption> list() {
         PagedIterable<PolicyExemptionInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyExemption> list(String filter, Context context) {
         PagedIterable<PolicyExemptionInner> inner = this.serviceClient().list(filter, context);
-        return inner.mapPage(inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyExemption> listByResourceGroup(String resourceGroupName) {
         PagedIterable<PolicyExemptionInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyExemption> listByResourceGroup(
         String resourceGroupName, String filter, Context context) {
         PagedIterable<PolicyExemptionInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, filter, context);
-        return inner.mapPage(inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyExemption> listForResource(
@@ -92,7 +92,7 @@ public final class PolicyExemptionsImpl implements PolicyExemptions {
                 .serviceClient()
                 .listForResource(
                     resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType, resourceName);
-        return inner.mapPage(inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyExemption> listForResource(
@@ -114,19 +114,19 @@ public final class PolicyExemptionsImpl implements PolicyExemptions {
                     resourceName,
                     filter,
                     context);
-        return inner.mapPage(inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyExemption> listForManagementGroup(String managementGroupId) {
         PagedIterable<PolicyExemptionInner> inner = this.serviceClient().listForManagementGroup(managementGroupId);
-        return inner.mapPage(inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyExemption> listForManagementGroup(
         String managementGroupId, String filter, Context context) {
         PagedIterable<PolicyExemptionInner> inner =
             this.serviceClient().listForManagementGroup(managementGroupId, filter, context);
-        return inner.mapPage(inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PolicyExemptionImpl(inner1, this.manager()));
     }
 
     public PolicyExemption getById(String id) {

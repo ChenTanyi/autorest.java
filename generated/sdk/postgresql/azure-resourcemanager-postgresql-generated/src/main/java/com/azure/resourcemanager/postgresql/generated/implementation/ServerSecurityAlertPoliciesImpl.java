@@ -59,14 +59,14 @@ public final class ServerSecurityAlertPoliciesImpl implements ServerSecurityAler
     public PagedIterable<ServerSecurityAlertPolicy> listByServer(String resourceGroupName, String serverName) {
         PagedIterable<ServerSecurityAlertPolicyInner> inner =
             this.serviceClient().listByServer(resourceGroupName, serverName);
-        return inner.mapPage(inner1 -> new ServerSecurityAlertPolicyImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ServerSecurityAlertPolicyImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ServerSecurityAlertPolicy> listByServer(
         String resourceGroupName, String serverName, Context context) {
         PagedIterable<ServerSecurityAlertPolicyInner> inner =
             this.serviceClient().listByServer(resourceGroupName, serverName, context);
-        return inner.mapPage(inner1 -> new ServerSecurityAlertPolicyImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ServerSecurityAlertPolicyImpl(inner1, this.manager()));
     }
 
     public ServerSecurityAlertPolicy getById(String id) {

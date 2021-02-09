@@ -62,24 +62,24 @@ public final class SystemTopicsImpl implements SystemTopics {
 
     public PagedIterable<SystemTopic> list() {
         PagedIterable<SystemTopicInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new SystemTopicImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SystemTopicImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SystemTopic> list(String filter, Integer top, Context context) {
         PagedIterable<SystemTopicInner> inner = this.serviceClient().list(filter, top, context);
-        return inner.mapPage(inner1 -> new SystemTopicImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SystemTopicImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SystemTopic> listByResourceGroup(String resourceGroupName) {
         PagedIterable<SystemTopicInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new SystemTopicImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SystemTopicImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SystemTopic> listByResourceGroup(
         String resourceGroupName, String filter, Integer top, Context context) {
         PagedIterable<SystemTopicInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, filter, top, context);
-        return inner.mapPage(inner1 -> new SystemTopicImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SystemTopicImpl(inner1, this.manager()));
     }
 
     public SystemTopic getById(String id) {

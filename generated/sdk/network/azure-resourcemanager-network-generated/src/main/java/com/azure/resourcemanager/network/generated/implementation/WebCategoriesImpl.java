@@ -52,12 +52,12 @@ public final class WebCategoriesImpl implements WebCategories {
 
     public PagedIterable<AzureWebCategory> list() {
         PagedIterable<AzureWebCategoryInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new AzureWebCategoryImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AzureWebCategoryImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AzureWebCategory> list(Context context) {
         PagedIterable<AzureWebCategoryInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new AzureWebCategoryImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AzureWebCategoryImpl(inner1, this.manager()));
     }
 
     private WebCategoriesClient serviceClient() {

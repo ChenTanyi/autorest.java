@@ -52,12 +52,12 @@ public final class DataPolicyManifestsImpl implements DataPolicyManifests {
 
     public PagedIterable<DataPolicyManifest> list() {
         PagedIterable<DataPolicyManifestInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new DataPolicyManifestImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DataPolicyManifestImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DataPolicyManifest> list(String filter, Context context) {
         PagedIterable<DataPolicyManifestInner> inner = this.serviceClient().list(filter, context);
-        return inner.mapPage(inner1 -> new DataPolicyManifestImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DataPolicyManifestImpl(inner1, this.manager()));
     }
 
     private DataPolicyManifestsClient serviceClient() {

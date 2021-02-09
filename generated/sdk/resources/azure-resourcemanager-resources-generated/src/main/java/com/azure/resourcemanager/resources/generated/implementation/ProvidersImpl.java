@@ -85,22 +85,22 @@ public final class ProvidersImpl implements Providers {
 
     public PagedIterable<Provider> list() {
         PagedIterable<ProviderInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new ProviderImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProviderImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Provider> list(Integer top, String expand, Context context) {
         PagedIterable<ProviderInner> inner = this.serviceClient().list(top, expand, context);
-        return inner.mapPage(inner1 -> new ProviderImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProviderImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Provider> listAtTenantScope() {
         PagedIterable<ProviderInner> inner = this.serviceClient().listAtTenantScope();
-        return inner.mapPage(inner1 -> new ProviderImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProviderImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Provider> listAtTenantScope(Integer top, String expand, Context context) {
         PagedIterable<ProviderInner> inner = this.serviceClient().listAtTenantScope(top, expand, context);
-        return inner.mapPage(inner1 -> new ProviderImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProviderImpl(inner1, this.manager()));
     }
 
     public Provider get(String resourceProviderNamespace) {

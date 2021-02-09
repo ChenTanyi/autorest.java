@@ -74,13 +74,13 @@ public final class BlobInventoryPoliciesImpl implements BlobInventoryPolicies {
 
     public PagedIterable<BlobInventoryPolicy> list(String resourceGroupName, String accountName) {
         PagedIterable<BlobInventoryPolicyInner> inner = this.serviceClient().list(resourceGroupName, accountName);
-        return inner.mapPage(inner1 -> new BlobInventoryPolicyImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BlobInventoryPolicyImpl(inner1, this.manager()));
     }
 
     public PagedIterable<BlobInventoryPolicy> list(String resourceGroupName, String accountName, Context context) {
         PagedIterable<BlobInventoryPolicyInner> inner =
             this.serviceClient().list(resourceGroupName, accountName, context);
-        return inner.mapPage(inner1 -> new BlobInventoryPolicyImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new BlobInventoryPolicyImpl(inner1, this.manager()));
     }
 
     public BlobInventoryPolicy getById(String id) {

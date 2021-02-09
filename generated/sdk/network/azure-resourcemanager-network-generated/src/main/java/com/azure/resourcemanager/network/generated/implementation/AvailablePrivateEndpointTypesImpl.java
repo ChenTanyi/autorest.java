@@ -29,25 +29,25 @@ public final class AvailablePrivateEndpointTypesImpl implements AvailablePrivate
 
     public PagedIterable<AvailablePrivateEndpointType> list(String location) {
         PagedIterable<AvailablePrivateEndpointTypeInner> inner = this.serviceClient().list(location);
-        return inner.mapPage(inner1 -> new AvailablePrivateEndpointTypeImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AvailablePrivateEndpointTypeImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AvailablePrivateEndpointType> list(String location, Context context) {
         PagedIterable<AvailablePrivateEndpointTypeInner> inner = this.serviceClient().list(location, context);
-        return inner.mapPage(inner1 -> new AvailablePrivateEndpointTypeImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AvailablePrivateEndpointTypeImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AvailablePrivateEndpointType> listByResourceGroup(String location, String resourceGroupName) {
         PagedIterable<AvailablePrivateEndpointTypeInner> inner =
             this.serviceClient().listByResourceGroup(location, resourceGroupName);
-        return inner.mapPage(inner1 -> new AvailablePrivateEndpointTypeImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AvailablePrivateEndpointTypeImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AvailablePrivateEndpointType> listByResourceGroup(
         String location, String resourceGroupName, Context context) {
         PagedIterable<AvailablePrivateEndpointTypeInner> inner =
             this.serviceClient().listByResourceGroup(location, resourceGroupName, context);
-        return inner.mapPage(inner1 -> new AvailablePrivateEndpointTypeImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AvailablePrivateEndpointTypeImpl(inner1, this.manager()));
     }
 
     private AvailablePrivateEndpointTypesClient serviceClient() {

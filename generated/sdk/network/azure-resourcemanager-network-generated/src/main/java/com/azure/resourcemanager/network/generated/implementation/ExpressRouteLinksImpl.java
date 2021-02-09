@@ -54,14 +54,14 @@ public final class ExpressRouteLinksImpl implements ExpressRouteLinks {
 
     public PagedIterable<ExpressRouteLink> list(String resourceGroupName, String expressRoutePortName) {
         PagedIterable<ExpressRouteLinkInner> inner = this.serviceClient().list(resourceGroupName, expressRoutePortName);
-        return inner.mapPage(inner1 -> new ExpressRouteLinkImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ExpressRouteLinkImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ExpressRouteLink> list(
         String resourceGroupName, String expressRoutePortName, Context context) {
         PagedIterable<ExpressRouteLinkInner> inner =
             this.serviceClient().list(resourceGroupName, expressRoutePortName, context);
-        return inner.mapPage(inner1 -> new ExpressRouteLinkImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ExpressRouteLinkImpl(inner1, this.manager()));
     }
 
     private ExpressRouteLinksClient serviceClient() {

@@ -138,12 +138,12 @@ public final class SubnetsImpl implements Subnets {
 
     public PagedIterable<Subnet> list(String resourceGroupName, String virtualNetworkName) {
         PagedIterable<SubnetInner> inner = this.serviceClient().list(resourceGroupName, virtualNetworkName);
-        return inner.mapPage(inner1 -> new SubnetImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SubnetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Subnet> list(String resourceGroupName, String virtualNetworkName, Context context) {
         PagedIterable<SubnetInner> inner = this.serviceClient().list(resourceGroupName, virtualNetworkName, context);
-        return inner.mapPage(inner1 -> new SubnetImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SubnetImpl(inner1, this.manager()));
     }
 
     private SubnetsClient serviceClient() {

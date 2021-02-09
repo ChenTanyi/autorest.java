@@ -67,23 +67,23 @@ public final class ProximityPlacementGroupsImpl implements ProximityPlacementGro
 
     public PagedIterable<ProximityPlacementGroup> list() {
         PagedIterable<ProximityPlacementGroupInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new ProximityPlacementGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProximityPlacementGroupImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProximityPlacementGroup> list(Context context) {
         PagedIterable<ProximityPlacementGroupInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new ProximityPlacementGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProximityPlacementGroupImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProximityPlacementGroup> listByResourceGroup(String resourceGroupName) {
         PagedIterable<ProximityPlacementGroupInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new ProximityPlacementGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProximityPlacementGroupImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ProximityPlacementGroup> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<ProximityPlacementGroupInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new ProximityPlacementGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProximityPlacementGroupImpl(inner1, this.manager()));
     }
 
     public ProximityPlacementGroup getById(String id) {

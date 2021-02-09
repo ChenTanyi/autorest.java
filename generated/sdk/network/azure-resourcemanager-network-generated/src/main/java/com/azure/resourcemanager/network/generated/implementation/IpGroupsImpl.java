@@ -62,22 +62,22 @@ public final class IpGroupsImpl implements IpGroups {
 
     public PagedIterable<IpGroup> listByResourceGroup(String resourceGroupName) {
         PagedIterable<IpGroupInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new IpGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new IpGroupImpl(inner1, this.manager()));
     }
 
     public PagedIterable<IpGroup> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<IpGroupInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new IpGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new IpGroupImpl(inner1, this.manager()));
     }
 
     public PagedIterable<IpGroup> list() {
         PagedIterable<IpGroupInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new IpGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new IpGroupImpl(inner1, this.manager()));
     }
 
     public PagedIterable<IpGroup> list(Context context) {
         PagedIterable<IpGroupInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new IpGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new IpGroupImpl(inner1, this.manager()));
     }
 
     public IpGroup getById(String id) {

@@ -30,12 +30,12 @@ public final class LoadBalancerProbesImpl implements LoadBalancerProbes {
 
     public PagedIterable<Probe> list(String resourceGroupName, String loadBalancerName) {
         PagedIterable<ProbeInner> inner = this.serviceClient().list(resourceGroupName, loadBalancerName);
-        return inner.mapPage(inner1 -> new ProbeImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProbeImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Probe> list(String resourceGroupName, String loadBalancerName, Context context) {
         PagedIterable<ProbeInner> inner = this.serviceClient().list(resourceGroupName, loadBalancerName, context);
-        return inner.mapPage(inner1 -> new ProbeImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ProbeImpl(inner1, this.manager()));
     }
 
     public Probe get(String resourceGroupName, String loadBalancerName, String probeName) {

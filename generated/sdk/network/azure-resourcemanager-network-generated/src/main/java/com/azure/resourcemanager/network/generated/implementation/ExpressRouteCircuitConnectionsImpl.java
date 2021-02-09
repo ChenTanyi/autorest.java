@@ -68,14 +68,14 @@ public final class ExpressRouteCircuitConnectionsImpl implements ExpressRouteCir
         String resourceGroupName, String circuitName, String peeringName) {
         PagedIterable<ExpressRouteCircuitConnectionInner> inner =
             this.serviceClient().list(resourceGroupName, circuitName, peeringName);
-        return inner.mapPage(inner1 -> new ExpressRouteCircuitConnectionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ExpressRouteCircuitConnectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ExpressRouteCircuitConnection> list(
         String resourceGroupName, String circuitName, String peeringName, Context context) {
         PagedIterable<ExpressRouteCircuitConnectionInner> inner =
             this.serviceClient().list(resourceGroupName, circuitName, peeringName, context);
-        return inner.mapPage(inner1 -> new ExpressRouteCircuitConnectionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ExpressRouteCircuitConnectionImpl(inner1, this.manager()));
     }
 
     public ExpressRouteCircuitConnection getById(String id) {

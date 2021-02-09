@@ -79,7 +79,7 @@ public final class ConsumerGroupsImpl implements ConsumerGroups {
         String resourceGroupName, String namespaceName, String eventHubName) {
         PagedIterable<ConsumerGroupInner> inner =
             this.serviceClient().listByEventHub(resourceGroupName, namespaceName, eventHubName);
-        return inner.mapPage(inner1 -> new ConsumerGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ConsumerGroupImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ConsumerGroup> listByEventHub(
@@ -91,7 +91,7 @@ public final class ConsumerGroupsImpl implements ConsumerGroups {
         Context context) {
         PagedIterable<ConsumerGroupInner> inner =
             this.serviceClient().listByEventHub(resourceGroupName, namespaceName, eventHubName, skip, top, context);
-        return inner.mapPage(inner1 -> new ConsumerGroupImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ConsumerGroupImpl(inner1, this.manager()));
     }
 
     public ConsumerGroup getById(String id) {

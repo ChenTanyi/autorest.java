@@ -64,23 +64,23 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
 
     public PagedIterable<PublicIpAddress> list() {
         PagedIterable<PublicIpAddressInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicIpAddress> list(Context context) {
         PagedIterable<PublicIpAddressInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicIpAddress> listByResourceGroup(String resourceGroupName) {
         PagedIterable<PublicIpAddressInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicIpAddress> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<PublicIpAddressInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicIpAddress> listVirtualMachineScaleSetPublicIpAddresses(
@@ -89,7 +89,7 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
             this
                 .serviceClient()
                 .listVirtualMachineScaleSetPublicIpAddresses(resourceGroupName, virtualMachineScaleSetName);
-        return inner.mapPage(inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicIpAddress> listVirtualMachineScaleSetPublicIpAddresses(
@@ -98,7 +98,7 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
             this
                 .serviceClient()
                 .listVirtualMachineScaleSetPublicIpAddresses(resourceGroupName, virtualMachineScaleSetName, context);
-        return inner.mapPage(inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicIpAddress> listVirtualMachineScaleSetVMPublicIpAddresses(
@@ -116,7 +116,7 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
                     virtualmachineIndex,
                     networkInterfaceName,
                     ipConfigurationName);
-        return inner.mapPage(inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicIpAddress> listVirtualMachineScaleSetVMPublicIpAddresses(
@@ -136,7 +136,7 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
                     networkInterfaceName,
                     ipConfigurationName,
                     context);
-        return inner.mapPage(inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public PublicIpAddress getVirtualMachineScaleSetPublicIpAddress(
@@ -199,14 +199,14 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
         String resourceGroupName, String cloudServiceName) {
         PagedIterable<PublicIpAddressInner> inner =
             this.serviceClient().listCloudServicePublicIpAddresses(resourceGroupName, cloudServiceName);
-        return inner.mapPage(inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicIpAddress> listCloudServicePublicIpAddresses(
         String resourceGroupName, String cloudServiceName, Context context) {
         PagedIterable<PublicIpAddressInner> inner =
             this.serviceClient().listCloudServicePublicIpAddresses(resourceGroupName, cloudServiceName, context);
-        return inner.mapPage(inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicIpAddress> listCloudServiceRoleInstancePublicIpAddresses(
@@ -220,7 +220,7 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
                 .serviceClient()
                 .listCloudServiceRoleInstancePublicIpAddresses(
                     resourceGroupName, cloudServiceName, roleInstanceName, networkInterfaceName, ipConfigurationName);
-        return inner.mapPage(inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PublicIpAddress> listCloudServiceRoleInstancePublicIpAddresses(
@@ -240,7 +240,7 @@ public final class PublicIpAddressesImpl implements PublicIpAddresses {
                     networkInterfaceName,
                     ipConfigurationName,
                     context);
-        return inner.mapPage(inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PublicIpAddressImpl(inner1, this.manager()));
     }
 
     public PublicIpAddress getCloudServicePublicIpAddress(

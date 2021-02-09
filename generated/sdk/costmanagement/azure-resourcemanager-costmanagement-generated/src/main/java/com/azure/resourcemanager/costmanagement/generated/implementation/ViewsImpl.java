@@ -30,22 +30,22 @@ public final class ViewsImpl implements Views {
 
     public PagedIterable<View> list() {
         PagedIterable<ViewInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new ViewImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ViewImpl(inner1, this.manager()));
     }
 
     public PagedIterable<View> list(Context context) {
         PagedIterable<ViewInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new ViewImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ViewImpl(inner1, this.manager()));
     }
 
     public PagedIterable<View> listByScope(String scope) {
         PagedIterable<ViewInner> inner = this.serviceClient().listByScope(scope);
-        return inner.mapPage(inner1 -> new ViewImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ViewImpl(inner1, this.manager()));
     }
 
     public PagedIterable<View> listByScope(String scope, Context context) {
         PagedIterable<ViewInner> inner = this.serviceClient().listByScope(scope, context);
-        return inner.mapPage(inner1 -> new ViewImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ViewImpl(inner1, this.manager()));
     }
 
     public View get(String viewName) {

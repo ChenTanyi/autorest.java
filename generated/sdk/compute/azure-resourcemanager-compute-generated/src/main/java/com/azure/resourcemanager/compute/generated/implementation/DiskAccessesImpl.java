@@ -66,22 +66,22 @@ public final class DiskAccessesImpl implements DiskAccesses {
 
     public PagedIterable<DiskAccess> listByResourceGroup(String resourceGroupName) {
         PagedIterable<DiskAccessInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new DiskAccessImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DiskAccessImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DiskAccess> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<DiskAccessInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new DiskAccessImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DiskAccessImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DiskAccess> list() {
         PagedIterable<DiskAccessInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new DiskAccessImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DiskAccessImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DiskAccess> list(Context context) {
         PagedIterable<DiskAccessInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new DiskAccessImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DiskAccessImpl(inner1, this.manager()));
     }
 
     public PrivateLinkResourceListResult getPrivateLinkResources(String resourceGroupName, String diskAccessName) {
@@ -198,14 +198,14 @@ public final class DiskAccessesImpl implements DiskAccesses {
         String resourceGroupName, String diskAccessName) {
         PagedIterable<PrivateEndpointConnectionInner> inner =
             this.serviceClient().listPrivateEndpointConnections(resourceGroupName, diskAccessName);
-        return inner.mapPage(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PrivateEndpointConnection> listPrivateEndpointConnections(
         String resourceGroupName, String diskAccessName, Context context) {
         PagedIterable<PrivateEndpointConnectionInner> inner =
             this.serviceClient().listPrivateEndpointConnections(resourceGroupName, diskAccessName, context);
-        return inner.mapPage(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()));
     }
 
     public DiskAccess getById(String id) {

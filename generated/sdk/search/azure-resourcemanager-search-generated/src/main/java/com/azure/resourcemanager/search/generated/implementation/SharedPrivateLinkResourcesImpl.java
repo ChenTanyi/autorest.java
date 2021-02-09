@@ -90,14 +90,14 @@ public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkRe
     public PagedIterable<SharedPrivateLinkResource> listByService(String resourceGroupName, String searchServiceName) {
         PagedIterable<SharedPrivateLinkResourceInner> inner =
             this.serviceClient().listByService(resourceGroupName, searchServiceName);
-        return inner.mapPage(inner1 -> new SharedPrivateLinkResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SharedPrivateLinkResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<SharedPrivateLinkResource> listByService(
         String resourceGroupName, String searchServiceName, UUID clientRequestId, Context context) {
         PagedIterable<SharedPrivateLinkResourceInner> inner =
             this.serviceClient().listByService(resourceGroupName, searchServiceName, clientRequestId, context);
-        return inner.mapPage(inner1 -> new SharedPrivateLinkResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SharedPrivateLinkResourceImpl(inner1, this.manager()));
     }
 
     public SharedPrivateLinkResource getById(String id) {

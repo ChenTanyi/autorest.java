@@ -62,22 +62,22 @@ public final class VirtualWansImpl implements VirtualWans {
 
     public PagedIterable<VirtualWan> listByResourceGroup(String resourceGroupName) {
         PagedIterable<VirtualWanInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new VirtualWanImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualWanImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualWan> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<VirtualWanInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new VirtualWanImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualWanImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualWan> list() {
         PagedIterable<VirtualWanInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new VirtualWanImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualWanImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualWan> list(Context context) {
         PagedIterable<VirtualWanInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new VirtualWanImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualWanImpl(inner1, this.manager()));
     }
 
     public VirtualWan getById(String id) {

@@ -54,12 +54,12 @@ public final class AlertRuleIncidentsImpl implements AlertRuleIncidents {
 
     public PagedIterable<Incident> listByAlertRule(String resourceGroupName, String ruleName) {
         PagedIterable<IncidentInner> inner = this.serviceClient().listByAlertRule(resourceGroupName, ruleName);
-        return inner.mapPage(inner1 -> new IncidentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new IncidentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Incident> listByAlertRule(String resourceGroupName, String ruleName, Context context) {
         PagedIterable<IncidentInner> inner = this.serviceClient().listByAlertRule(resourceGroupName, ruleName, context);
-        return inner.mapPage(inner1 -> new IncidentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new IncidentImpl(inner1, this.manager()));
     }
 
     private AlertRuleIncidentsClient serviceClient() {

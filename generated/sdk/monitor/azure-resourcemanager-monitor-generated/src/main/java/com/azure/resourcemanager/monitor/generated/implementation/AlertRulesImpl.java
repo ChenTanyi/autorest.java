@@ -62,23 +62,23 @@ public final class AlertRulesImpl implements AlertRules {
 
     public PagedIterable<AlertRuleResource> listByResourceGroup(String resourceGroupName) {
         PagedIterable<AlertRuleResourceInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new AlertRuleResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AlertRuleResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AlertRuleResource> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<AlertRuleResourceInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new AlertRuleResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AlertRuleResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AlertRuleResource> list() {
         PagedIterable<AlertRuleResourceInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new AlertRuleResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AlertRuleResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AlertRuleResource> list(Context context) {
         PagedIterable<AlertRuleResourceInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new AlertRuleResourceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AlertRuleResourceImpl(inner1, this.manager()));
     }
 
     public AlertRuleResource getById(String id) {

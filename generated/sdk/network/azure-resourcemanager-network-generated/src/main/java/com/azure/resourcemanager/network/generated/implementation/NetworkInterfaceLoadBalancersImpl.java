@@ -29,13 +29,13 @@ public final class NetworkInterfaceLoadBalancersImpl implements NetworkInterface
 
     public PagedIterable<LoadBalancer> list(String resourceGroupName, String networkInterfaceName) {
         PagedIterable<LoadBalancerInner> inner = this.serviceClient().list(resourceGroupName, networkInterfaceName);
-        return inner.mapPage(inner1 -> new LoadBalancerImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new LoadBalancerImpl(inner1, this.manager()));
     }
 
     public PagedIterable<LoadBalancer> list(String resourceGroupName, String networkInterfaceName, Context context) {
         PagedIterable<LoadBalancerInner> inner =
             this.serviceClient().list(resourceGroupName, networkInterfaceName, context);
-        return inner.mapPage(inner1 -> new LoadBalancerImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new LoadBalancerImpl(inner1, this.manager()));
     }
 
     private NetworkInterfaceLoadBalancersClient serviceClient() {

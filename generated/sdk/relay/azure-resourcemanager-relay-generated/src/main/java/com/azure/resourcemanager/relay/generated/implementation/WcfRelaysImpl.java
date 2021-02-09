@@ -35,13 +35,13 @@ public final class WcfRelaysImpl implements WcfRelays {
 
     public PagedIterable<WcfRelay> listByNamespace(String resourceGroupName, String namespaceName) {
         PagedIterable<WcfRelayInner> inner = this.serviceClient().listByNamespace(resourceGroupName, namespaceName);
-        return inner.mapPage(inner1 -> new WcfRelayImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new WcfRelayImpl(inner1, this.manager()));
     }
 
     public PagedIterable<WcfRelay> listByNamespace(String resourceGroupName, String namespaceName, Context context) {
         PagedIterable<WcfRelayInner> inner =
             this.serviceClient().listByNamespace(resourceGroupName, namespaceName, context);
-        return inner.mapPage(inner1 -> new WcfRelayImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new WcfRelayImpl(inner1, this.manager()));
     }
 
     public void delete(String resourceGroupName, String namespaceName, String relayName) {
@@ -81,14 +81,14 @@ public final class WcfRelaysImpl implements WcfRelays {
         String resourceGroupName, String namespaceName, String relayName) {
         PagedIterable<AuthorizationRuleInner> inner =
             this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, relayName);
-        return inner.mapPage(inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AuthorizationRule> listAuthorizationRules(
         String resourceGroupName, String namespaceName, String relayName, Context context) {
         PagedIterable<AuthorizationRuleInner> inner =
             this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, relayName, context);
-        return inner.mapPage(inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
     public AuthorizationRule createOrUpdateAuthorizationRule(

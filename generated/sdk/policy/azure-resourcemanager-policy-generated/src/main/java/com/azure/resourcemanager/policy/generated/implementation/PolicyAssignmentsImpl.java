@@ -76,14 +76,14 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
 
     public PagedIterable<PolicyAssignment> listByResourceGroup(String resourceGroupName) {
         PagedIterable<PolicyAssignmentInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyAssignment> listByResourceGroup(
         String resourceGroupName, String filter, Integer top, Context context) {
         PagedIterable<PolicyAssignmentInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, filter, top, context);
-        return inner.mapPage(inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyAssignment> listForResource(
@@ -97,7 +97,7 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
                 .serviceClient()
                 .listForResource(
                     resourceGroupName, resourceProviderNamespace, parentResourcePath, resourceType, resourceName);
-        return inner.mapPage(inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyAssignment> listForResource(
@@ -121,29 +121,29 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
                     filter,
                     top,
                     context);
-        return inner.mapPage(inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyAssignment> listForManagementGroup(String managementGroupId) {
         PagedIterable<PolicyAssignmentInner> inner = this.serviceClient().listForManagementGroup(managementGroupId);
-        return inner.mapPage(inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyAssignment> listForManagementGroup(
         String managementGroupId, String filter, Integer top, Context context) {
         PagedIterable<PolicyAssignmentInner> inner =
             this.serviceClient().listForManagementGroup(managementGroupId, filter, top, context);
-        return inner.mapPage(inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyAssignment> list() {
         PagedIterable<PolicyAssignmentInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
     public PagedIterable<PolicyAssignment> list(String filter, Integer top, Context context) {
         PagedIterable<PolicyAssignmentInner> inner = this.serviceClient().list(filter, top, context);
-        return inner.mapPage(inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new PolicyAssignmentImpl(inner1, this.manager()));
     }
 
     public PolicyAssignment deleteById(String policyAssignmentId) {

@@ -51,22 +51,22 @@ public final class AppServicePlansImpl implements AppServicePlans {
 
     public PagedIterable<AppServicePlan> list() {
         PagedIterable<AppServicePlanInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new AppServicePlanImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AppServicePlanImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AppServicePlan> list(Boolean detailed, Context context) {
         PagedIterable<AppServicePlanInner> inner = this.serviceClient().list(detailed, context);
-        return inner.mapPage(inner1 -> new AppServicePlanImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AppServicePlanImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AppServicePlan> listByResourceGroup(String resourceGroupName) {
         PagedIterable<AppServicePlanInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new AppServicePlanImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AppServicePlanImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AppServicePlan> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<AppServicePlanInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new AppServicePlanImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AppServicePlanImpl(inner1, this.manager()));
     }
 
     public AppServicePlan getByResourceGroup(String resourceGroupName, String name) {
@@ -240,14 +240,14 @@ public final class AppServicePlansImpl implements AppServicePlans {
     public PagedIterable<HybridConnection> listHybridConnections(String resourceGroupName, String name) {
         PagedIterable<HybridConnectionInner> inner =
             this.serviceClient().listHybridConnections(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new HybridConnectionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new HybridConnectionImpl(inner1, this.manager()));
     }
 
     public PagedIterable<HybridConnection> listHybridConnections(
         String resourceGroupName, String name, Context context) {
         PagedIterable<HybridConnectionInner> inner =
             this.serviceClient().listHybridConnections(resourceGroupName, name, context);
-        return inner.mapPage(inner1 -> new HybridConnectionImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new HybridConnectionImpl(inner1, this.manager()));
     }
 
     public void restartWebApps(String resourceGroupName, String name) {
@@ -261,14 +261,14 @@ public final class AppServicePlansImpl implements AppServicePlans {
 
     public PagedIterable<Site> listWebApps(String resourceGroupName, String name) {
         PagedIterable<SiteInner> inner = this.serviceClient().listWebApps(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new SiteImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Site> listWebApps(
         String resourceGroupName, String name, String skipToken, String filter, String top, Context context) {
         PagedIterable<SiteInner> inner =
             this.serviceClient().listWebApps(resourceGroupName, name, skipToken, filter, top, context);
-        return inner.mapPage(inner1 -> new SiteImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
     }
 
     public Object getServerFarmSkus(String resourceGroupName, String name) {
@@ -281,14 +281,14 @@ public final class AppServicePlansImpl implements AppServicePlans {
 
     public PagedIterable<CsmUsageQuota> listUsages(String resourceGroupName, String name) {
         PagedIterable<CsmUsageQuotaInner> inner = this.serviceClient().listUsages(resourceGroupName, name);
-        return inner.mapPage(inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
     }
 
     public PagedIterable<CsmUsageQuota> listUsages(
         String resourceGroupName, String name, String filter, Context context) {
         PagedIterable<CsmUsageQuotaInner> inner =
             this.serviceClient().listUsages(resourceGroupName, name, filter, context);
-        return inner.mapPage(inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new CsmUsageQuotaImpl(inner1, this.manager()));
     }
 
     public List<VnetInfo> listVnets(String resourceGroupName, String name) {

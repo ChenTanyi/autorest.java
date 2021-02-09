@@ -62,22 +62,22 @@ public final class NamespacesImpl implements Namespaces {
 
     public PagedIterable<RelayNamespace> list() {
         PagedIterable<RelayNamespaceInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new RelayNamespaceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RelayNamespaceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RelayNamespace> list(Context context) {
         PagedIterable<RelayNamespaceInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new RelayNamespaceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RelayNamespaceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RelayNamespace> listByResourceGroup(String resourceGroupName) {
         PagedIterable<RelayNamespaceInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new RelayNamespaceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RelayNamespaceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RelayNamespace> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<RelayNamespaceInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new RelayNamespaceImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RelayNamespaceImpl(inner1, this.manager()));
     }
 
     public void deleteByResourceGroup(String resourceGroupName, String namespaceName) {
@@ -115,14 +115,14 @@ public final class NamespacesImpl implements Namespaces {
     public PagedIterable<AuthorizationRule> listAuthorizationRules(String resourceGroupName, String namespaceName) {
         PagedIterable<AuthorizationRuleInner> inner =
             this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName);
-        return inner.mapPage(inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
     public PagedIterable<AuthorizationRule> listAuthorizationRules(
         String resourceGroupName, String namespaceName, Context context) {
         PagedIterable<AuthorizationRuleInner> inner =
             this.serviceClient().listAuthorizationRules(resourceGroupName, namespaceName, context);
-        return inner.mapPage(inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new AuthorizationRuleImpl(inner1, this.manager()));
     }
 
     public void deleteAuthorizationRule(String resourceGroupName, String namespaceName, String authorizationRuleName) {

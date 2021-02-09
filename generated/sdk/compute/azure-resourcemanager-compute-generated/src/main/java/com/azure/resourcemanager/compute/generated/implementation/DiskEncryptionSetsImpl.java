@@ -63,23 +63,23 @@ public final class DiskEncryptionSetsImpl implements DiskEncryptionSets {
 
     public PagedIterable<DiskEncryptionSet> listByResourceGroup(String resourceGroupName) {
         PagedIterable<DiskEncryptionSetInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new DiskEncryptionSetImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DiskEncryptionSetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DiskEncryptionSet> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<DiskEncryptionSetInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new DiskEncryptionSetImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DiskEncryptionSetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DiskEncryptionSet> list() {
         PagedIterable<DiskEncryptionSetInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new DiskEncryptionSetImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DiskEncryptionSetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<DiskEncryptionSet> list(Context context) {
         PagedIterable<DiskEncryptionSetInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new DiskEncryptionSetImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DiskEncryptionSetImpl(inner1, this.manager()));
     }
 
     public PagedIterable<String> listAssociatedResources(String resourceGroupName, String diskEncryptionSetName) {

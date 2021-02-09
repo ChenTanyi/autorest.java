@@ -65,22 +65,22 @@ public final class SnapshotsImpl implements Snapshots {
 
     public PagedIterable<Snapshot> listByResourceGroup(String resourceGroupName) {
         PagedIterable<SnapshotInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new SnapshotImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Snapshot> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<SnapshotInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new SnapshotImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Snapshot> list() {
         PagedIterable<SnapshotInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new SnapshotImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Snapshot> list(Context context) {
         PagedIterable<SnapshotInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new SnapshotImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new SnapshotImpl(inner1, this.manager()));
     }
 
     public AccessUri grantAccess(String resourceGroupName, String snapshotName, GrantAccessData grantAccessData) {

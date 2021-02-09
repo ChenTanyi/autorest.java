@@ -76,23 +76,23 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
 
     public PagedIterable<ApplicationGateway> listByResourceGroup(String resourceGroupName) {
         PagedIterable<ApplicationGatewayInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new ApplicationGatewayImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ApplicationGatewayImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ApplicationGateway> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<ApplicationGatewayInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new ApplicationGatewayImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ApplicationGatewayImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ApplicationGateway> list() {
         PagedIterable<ApplicationGatewayInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new ApplicationGatewayImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ApplicationGatewayImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ApplicationGateway> list(Context context) {
         PagedIterable<ApplicationGatewayInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new ApplicationGatewayImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ApplicationGatewayImpl(inner1, this.manager()));
     }
 
     public void start(String resourceGroupName, String applicationGatewayName) {
@@ -274,13 +274,13 @@ public final class ApplicationGatewaysImpl implements ApplicationGateways {
     public PagedIterable<ApplicationGatewaySslPredefinedPolicy> listAvailableSslPredefinedPolicies() {
         PagedIterable<ApplicationGatewaySslPredefinedPolicyInner> inner =
             this.serviceClient().listAvailableSslPredefinedPolicies();
-        return inner.mapPage(inner1 -> new ApplicationGatewaySslPredefinedPolicyImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ApplicationGatewaySslPredefinedPolicyImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ApplicationGatewaySslPredefinedPolicy> listAvailableSslPredefinedPolicies(Context context) {
         PagedIterable<ApplicationGatewaySslPredefinedPolicyInner> inner =
             this.serviceClient().listAvailableSslPredefinedPolicies(context);
-        return inner.mapPage(inner1 -> new ApplicationGatewaySslPredefinedPolicyImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new ApplicationGatewaySslPredefinedPolicyImpl(inner1, this.manager()));
     }
 
     public ApplicationGatewaySslPredefinedPolicy getSslPredefinedPolicy(String predefinedPolicyName) {

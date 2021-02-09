@@ -34,12 +34,12 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
 
     public PagedIterable<RunCommandDocumentBase> list(String location) {
         PagedIterable<RunCommandDocumentBaseInner> inner = this.serviceClient().list(location);
-        return inner.mapPage(inner1 -> new RunCommandDocumentBaseImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RunCommandDocumentBaseImpl(inner1, this.manager()));
     }
 
     public PagedIterable<RunCommandDocumentBase> list(String location, Context context) {
         PagedIterable<RunCommandDocumentBaseInner> inner = this.serviceClient().list(location, context);
-        return inner.mapPage(inner1 -> new RunCommandDocumentBaseImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new RunCommandDocumentBaseImpl(inner1, this.manager()));
     }
 
     public RunCommandDocument get(String location, String commandId) {
@@ -103,14 +103,14 @@ public final class VirtualMachineRunCommandsImpl implements VirtualMachineRunCom
     public PagedIterable<VirtualMachineRunCommand> listByVirtualMachine(String resourceGroupName, String vmName) {
         PagedIterable<VirtualMachineRunCommandInner> inner =
             this.serviceClient().listByVirtualMachine(resourceGroupName, vmName);
-        return inner.mapPage(inner1 -> new VirtualMachineRunCommandImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualMachineRunCommandImpl(inner1, this.manager()));
     }
 
     public PagedIterable<VirtualMachineRunCommand> listByVirtualMachine(
         String resourceGroupName, String vmName, String expand, Context context) {
         PagedIterable<VirtualMachineRunCommandInner> inner =
             this.serviceClient().listByVirtualMachine(resourceGroupName, vmName, expand, context);
-        return inner.mapPage(inner1 -> new VirtualMachineRunCommandImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new VirtualMachineRunCommandImpl(inner1, this.manager()));
     }
 
     public VirtualMachineRunCommand getById(String id) {

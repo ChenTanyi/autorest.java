@@ -64,22 +64,22 @@ public final class DisksImpl implements Disks {
 
     public PagedIterable<Disk> listByResourceGroup(String resourceGroupName) {
         PagedIterable<DiskInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName);
-        return inner.mapPage(inner1 -> new DiskImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DiskImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Disk> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<DiskInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
-        return inner.mapPage(inner1 -> new DiskImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DiskImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Disk> list() {
         PagedIterable<DiskInner> inner = this.serviceClient().list();
-        return inner.mapPage(inner1 -> new DiskImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DiskImpl(inner1, this.manager()));
     }
 
     public PagedIterable<Disk> list(Context context) {
         PagedIterable<DiskInner> inner = this.serviceClient().list(context);
-        return inner.mapPage(inner1 -> new DiskImpl(inner1, this.manager()));
+        return Utils.mapPage(inner, inner1 -> new DiskImpl(inner1, this.manager()));
     }
 
     public AccessUri grantAccess(String resourceGroupName, String diskName, GrantAccessData grantAccessData) {
