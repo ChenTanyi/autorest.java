@@ -73,7 +73,7 @@ def generate(config: dict, **kwargs):
     if kwargs['compile']:
         curdir = os.path.abspath('.')
         os.chdir(output_dir)
-        if os.system('mvn clean compile verify') != 0:
+        if os.system('mvn clean compile verify --no-transfer-progress') != 0:
             raise RuntimeError('Maven verify error')
         os.chdir(curdir)
 
