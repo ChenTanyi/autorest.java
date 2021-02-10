@@ -21,49 +21,9 @@ import com.azure.core.management.profile.AzureProfile;
 import com.azure.core.util.Configuration;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.fluent.MonitorClient;
-import com.azure.resourcemanager.monitor.generated.implementation.ActionGroupsImpl;
 import com.azure.resourcemanager.monitor.generated.implementation.ActivityLogAlertsImpl;
-import com.azure.resourcemanager.monitor.generated.implementation.ActivityLogsImpl;
-import com.azure.resourcemanager.monitor.generated.implementation.AlertRuleIncidentsImpl;
-import com.azure.resourcemanager.monitor.generated.implementation.AlertRulesImpl;
-import com.azure.resourcemanager.monitor.generated.implementation.AutoscaleSettingsImpl;
-import com.azure.resourcemanager.monitor.generated.implementation.BaselinesImpl;
-import com.azure.resourcemanager.monitor.generated.implementation.DiagnosticSettingsCategoriesImpl;
-import com.azure.resourcemanager.monitor.generated.implementation.DiagnosticSettingsImpl;
-import com.azure.resourcemanager.monitor.generated.implementation.EventCategoriesImpl;
-import com.azure.resourcemanager.monitor.generated.implementation.LogProfilesImpl;
-import com.azure.resourcemanager.monitor.generated.implementation.MetricAlertsImpl;
-import com.azure.resourcemanager.monitor.generated.implementation.MetricAlertsStatusImpl;
-import com.azure.resourcemanager.monitor.generated.implementation.MetricBaselinesImpl;
-import com.azure.resourcemanager.monitor.generated.implementation.MetricDefinitionsImpl;
-import com.azure.resourcemanager.monitor.generated.implementation.MetricNamespacesImpl;
-import com.azure.resourcemanager.monitor.generated.implementation.MetricsImpl;
 import com.azure.resourcemanager.monitor.generated.implementation.MonitorClientBuilder;
-import com.azure.resourcemanager.monitor.generated.implementation.OperationsImpl;
-import com.azure.resourcemanager.monitor.generated.implementation.ScheduledQueryRulesImpl;
-import com.azure.resourcemanager.monitor.generated.implementation.TenantActivityLogsImpl;
-import com.azure.resourcemanager.monitor.generated.implementation.VMInsightsImpl;
-import com.azure.resourcemanager.monitor.generated.models.ActionGroups;
 import com.azure.resourcemanager.monitor.generated.models.ActivityLogAlerts;
-import com.azure.resourcemanager.monitor.generated.models.ActivityLogs;
-import com.azure.resourcemanager.monitor.generated.models.AlertRuleIncidents;
-import com.azure.resourcemanager.monitor.generated.models.AlertRules;
-import com.azure.resourcemanager.monitor.generated.models.AutoscaleSettings;
-import com.azure.resourcemanager.monitor.generated.models.Baselines;
-import com.azure.resourcemanager.monitor.generated.models.DiagnosticSettings;
-import com.azure.resourcemanager.monitor.generated.models.DiagnosticSettingsCategories;
-import com.azure.resourcemanager.monitor.generated.models.EventCategories;
-import com.azure.resourcemanager.monitor.generated.models.LogProfiles;
-import com.azure.resourcemanager.monitor.generated.models.MetricAlerts;
-import com.azure.resourcemanager.monitor.generated.models.MetricAlertsStatus;
-import com.azure.resourcemanager.monitor.generated.models.MetricBaselines;
-import com.azure.resourcemanager.monitor.generated.models.MetricDefinitions;
-import com.azure.resourcemanager.monitor.generated.models.MetricNamespaces;
-import com.azure.resourcemanager.monitor.generated.models.Metrics;
-import com.azure.resourcemanager.monitor.generated.models.Operations;
-import com.azure.resourcemanager.monitor.generated.models.ScheduledQueryRules;
-import com.azure.resourcemanager.monitor.generated.models.TenantActivityLogs;
-import com.azure.resourcemanager.monitor.generated.models.VMInsights;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -72,47 +32,7 @@ import java.util.Objects;
 
 /** Entry point to MonitorManager. Monitor Management Client. */
 public final class MonitorManager {
-    private AutoscaleSettings autoscaleSettings;
-
-    private Operations operations;
-
-    private AlertRuleIncidents alertRuleIncidents;
-
-    private AlertRules alertRules;
-
-    private LogProfiles logProfiles;
-
-    private DiagnosticSettings diagnosticSettings;
-
-    private DiagnosticSettingsCategories diagnosticSettingsCategories;
-
-    private ActionGroups actionGroups;
-
     private ActivityLogAlerts activityLogAlerts;
-
-    private ActivityLogs activityLogs;
-
-    private EventCategories eventCategories;
-
-    private TenantActivityLogs tenantActivityLogs;
-
-    private MetricDefinitions metricDefinitions;
-
-    private Metrics metrics;
-
-    private MetricBaselines metricBaselines;
-
-    private Baselines baselines;
-
-    private MetricAlerts metricAlerts;
-
-    private MetricAlertsStatus metricAlertsStatus;
-
-    private ScheduledQueryRules scheduledQueryRules;
-
-    private MetricNamespaces metricNamespaces;
-
-    private VMInsights vMInsights;
 
     private final MonitorClient clientObject;
 
@@ -276,173 +196,12 @@ public final class MonitorManager {
         }
     }
 
-    /** @return Resource collection API of AutoscaleSettings. */
-    public AutoscaleSettings autoscaleSettings() {
-        if (this.autoscaleSettings == null) {
-            this.autoscaleSettings = new AutoscaleSettingsImpl(clientObject.getAutoscaleSettings(), this);
-        }
-        return autoscaleSettings;
-    }
-
-    /** @return Resource collection API of Operations. */
-    public Operations operations() {
-        if (this.operations == null) {
-            this.operations = new OperationsImpl(clientObject.getOperations(), this);
-        }
-        return operations;
-    }
-
-    /** @return Resource collection API of AlertRuleIncidents. */
-    public AlertRuleIncidents alertRuleIncidents() {
-        if (this.alertRuleIncidents == null) {
-            this.alertRuleIncidents = new AlertRuleIncidentsImpl(clientObject.getAlertRuleIncidents(), this);
-        }
-        return alertRuleIncidents;
-    }
-
-    /** @return Resource collection API of AlertRules. */
-    public AlertRules alertRules() {
-        if (this.alertRules == null) {
-            this.alertRules = new AlertRulesImpl(clientObject.getAlertRules(), this);
-        }
-        return alertRules;
-    }
-
-    /** @return Resource collection API of LogProfiles. */
-    public LogProfiles logProfiles() {
-        if (this.logProfiles == null) {
-            this.logProfiles = new LogProfilesImpl(clientObject.getLogProfiles(), this);
-        }
-        return logProfiles;
-    }
-
-    /** @return Resource collection API of DiagnosticSettings. */
-    public DiagnosticSettings diagnosticSettings() {
-        if (this.diagnosticSettings == null) {
-            this.diagnosticSettings = new DiagnosticSettingsImpl(clientObject.getDiagnosticSettings(), this);
-        }
-        return diagnosticSettings;
-    }
-
-    /** @return Resource collection API of DiagnosticSettingsCategories. */
-    public DiagnosticSettingsCategories diagnosticSettingsCategories() {
-        if (this.diagnosticSettingsCategories == null) {
-            this.diagnosticSettingsCategories =
-                new DiagnosticSettingsCategoriesImpl(clientObject.getDiagnosticSettingsCategories(), this);
-        }
-        return diagnosticSettingsCategories;
-    }
-
-    /** @return Resource collection API of ActionGroups. */
-    public ActionGroups actionGroups() {
-        if (this.actionGroups == null) {
-            this.actionGroups = new ActionGroupsImpl(clientObject.getActionGroups(), this);
-        }
-        return actionGroups;
-    }
-
     /** @return Resource collection API of ActivityLogAlerts. */
     public ActivityLogAlerts activityLogAlerts() {
         if (this.activityLogAlerts == null) {
             this.activityLogAlerts = new ActivityLogAlertsImpl(clientObject.getActivityLogAlerts(), this);
         }
         return activityLogAlerts;
-    }
-
-    /** @return Resource collection API of ActivityLogs. */
-    public ActivityLogs activityLogs() {
-        if (this.activityLogs == null) {
-            this.activityLogs = new ActivityLogsImpl(clientObject.getActivityLogs(), this);
-        }
-        return activityLogs;
-    }
-
-    /** @return Resource collection API of EventCategories. */
-    public EventCategories eventCategories() {
-        if (this.eventCategories == null) {
-            this.eventCategories = new EventCategoriesImpl(clientObject.getEventCategories(), this);
-        }
-        return eventCategories;
-    }
-
-    /** @return Resource collection API of TenantActivityLogs. */
-    public TenantActivityLogs tenantActivityLogs() {
-        if (this.tenantActivityLogs == null) {
-            this.tenantActivityLogs = new TenantActivityLogsImpl(clientObject.getTenantActivityLogs(), this);
-        }
-        return tenantActivityLogs;
-    }
-
-    /** @return Resource collection API of MetricDefinitions. */
-    public MetricDefinitions metricDefinitions() {
-        if (this.metricDefinitions == null) {
-            this.metricDefinitions = new MetricDefinitionsImpl(clientObject.getMetricDefinitions(), this);
-        }
-        return metricDefinitions;
-    }
-
-    /** @return Resource collection API of Metrics. */
-    public Metrics metrics() {
-        if (this.metrics == null) {
-            this.metrics = new MetricsImpl(clientObject.getMetrics(), this);
-        }
-        return metrics;
-    }
-
-    /** @return Resource collection API of MetricBaselines. */
-    public MetricBaselines metricBaselines() {
-        if (this.metricBaselines == null) {
-            this.metricBaselines = new MetricBaselinesImpl(clientObject.getMetricBaselines(), this);
-        }
-        return metricBaselines;
-    }
-
-    /** @return Resource collection API of Baselines. */
-    public Baselines baselines() {
-        if (this.baselines == null) {
-            this.baselines = new BaselinesImpl(clientObject.getBaselines(), this);
-        }
-        return baselines;
-    }
-
-    /** @return Resource collection API of MetricAlerts. */
-    public MetricAlerts metricAlerts() {
-        if (this.metricAlerts == null) {
-            this.metricAlerts = new MetricAlertsImpl(clientObject.getMetricAlerts(), this);
-        }
-        return metricAlerts;
-    }
-
-    /** @return Resource collection API of MetricAlertsStatus. */
-    public MetricAlertsStatus metricAlertsStatus() {
-        if (this.metricAlertsStatus == null) {
-            this.metricAlertsStatus = new MetricAlertsStatusImpl(clientObject.getMetricAlertsStatus(), this);
-        }
-        return metricAlertsStatus;
-    }
-
-    /** @return Resource collection API of ScheduledQueryRules. */
-    public ScheduledQueryRules scheduledQueryRules() {
-        if (this.scheduledQueryRules == null) {
-            this.scheduledQueryRules = new ScheduledQueryRulesImpl(clientObject.getScheduledQueryRules(), this);
-        }
-        return scheduledQueryRules;
-    }
-
-    /** @return Resource collection API of MetricNamespaces. */
-    public MetricNamespaces metricNamespaces() {
-        if (this.metricNamespaces == null) {
-            this.metricNamespaces = new MetricNamespacesImpl(clientObject.getMetricNamespaces(), this);
-        }
-        return metricNamespaces;
-    }
-
-    /** @return Resource collection API of VMInsights. */
-    public VMInsights vMInsights() {
-        if (this.vMInsights == null) {
-            this.vMInsights = new VMInsightsImpl(clientObject.getVMInsights(), this);
-        }
-        return vMInsights;
     }
 
     /**

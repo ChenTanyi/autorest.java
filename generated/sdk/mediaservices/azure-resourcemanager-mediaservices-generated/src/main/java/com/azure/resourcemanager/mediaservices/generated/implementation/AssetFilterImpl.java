@@ -11,6 +11,7 @@ import com.azure.resourcemanager.mediaservices.generated.models.AssetFilter;
 import com.azure.resourcemanager.mediaservices.generated.models.FilterTrackSelection;
 import com.azure.resourcemanager.mediaservices.generated.models.FirstQuality;
 import com.azure.resourcemanager.mediaservices.generated.models.PresentationTimeRange;
+import com.azure.resourcemanager.mediaservices.generated.models.SystemData;
 import java.util.Collections;
 import java.util.List;
 
@@ -29,6 +30,10 @@ public final class AssetFilterImpl implements AssetFilter, AssetFilter.Definitio
 
     public String type() {
         return this.innerModel().type();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public PresentationTimeRange presentationTimeRange() {

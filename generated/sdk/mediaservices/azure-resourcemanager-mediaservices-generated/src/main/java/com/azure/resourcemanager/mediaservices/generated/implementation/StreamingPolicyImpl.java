@@ -12,6 +12,7 @@ import com.azure.resourcemanager.mediaservices.generated.models.CommonEncryption
 import com.azure.resourcemanager.mediaservices.generated.models.EnvelopeEncryption;
 import com.azure.resourcemanager.mediaservices.generated.models.NoEncryption;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingPolicy;
+import com.azure.resourcemanager.mediaservices.generated.models.SystemData;
 import java.time.OffsetDateTime;
 
 public final class StreamingPolicyImpl implements StreamingPolicy, StreamingPolicy.Definition {
@@ -34,6 +35,10 @@ public final class StreamingPolicyImpl implements StreamingPolicy, StreamingPoli
 
     public String type() {
         return this.innerModel().type();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public OffsetDateTime created() {

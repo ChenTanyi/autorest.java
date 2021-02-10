@@ -296,6 +296,12 @@ public class SiteInner extends Resource {
     private UUID inProgressOperationId;
 
     /*
+     * Checks if Customer provided storage account is required
+     */
+    @JsonProperty(value = "properties.storageAccountRequired")
+    private Boolean storageAccountRequired;
+
+    /*
      * Kind of resource.
      */
     @JsonProperty(value = "kind")
@@ -919,6 +925,26 @@ public class SiteInner extends Resource {
      */
     public UUID inProgressOperationId() {
         return this.inProgressOperationId;
+    }
+
+    /**
+     * Get the storageAccountRequired property: Checks if Customer provided storage account is required.
+     *
+     * @return the storageAccountRequired value.
+     */
+    public Boolean storageAccountRequired() {
+        return this.storageAccountRequired;
+    }
+
+    /**
+     * Set the storageAccountRequired property: Checks if Customer provided storage account is required.
+     *
+     * @param storageAccountRequired the storageAccountRequired value to set.
+     * @return the SiteInner object itself.
+     */
+    public SiteInner withStorageAccountRequired(Boolean storageAccountRequired) {
+        this.storageAccountRequired = storageAccountRequired;
+        return this;
     }
 
     /**

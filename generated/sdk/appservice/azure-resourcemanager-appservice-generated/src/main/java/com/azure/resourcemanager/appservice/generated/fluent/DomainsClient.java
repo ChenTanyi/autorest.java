@@ -372,7 +372,7 @@ public interface DomainsClient {
 
     /**
      * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
-     * identifer.
+     * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -393,7 +393,7 @@ public interface DomainsClient {
 
     /**
      * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
-     * identifer.
+     * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -447,7 +447,7 @@ public interface DomainsClient {
 
     /**
      * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
-     * identifer.
+     * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -468,7 +468,7 @@ public interface DomainsClient {
 
     /**
      * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
-     * identifer.
+     * identifier.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.

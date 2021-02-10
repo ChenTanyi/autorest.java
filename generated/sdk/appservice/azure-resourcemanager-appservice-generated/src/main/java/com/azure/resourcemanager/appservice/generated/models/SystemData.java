@@ -46,7 +46,7 @@ public final class SystemData {
     private CreatedByType lastModifiedByType;
 
     /*
-     * The type of identity that last modified the resource.
+     * The timestamp of resource last modification (UTC)
      */
     @JsonProperty(value = "lastModifiedAt")
     private OffsetDateTime lastModifiedAt;
@@ -152,7 +152,7 @@ public final class SystemData {
     }
 
     /**
-     * Get the lastModifiedAt property: The type of identity that last modified the resource.
+     * Get the lastModifiedAt property: The timestamp of resource last modification (UTC).
      *
      * @return the lastModifiedAt value.
      */
@@ -161,7 +161,7 @@ public final class SystemData {
     }
 
     /**
-     * Set the lastModifiedAt property: The type of identity that last modified the resource.
+     * Set the lastModifiedAt property: The timestamp of resource last modification (UTC).
      *
      * @param lastModifiedAt the lastModifiedAt value to set.
      * @return the SystemData object itself.

@@ -8,10 +8,10 @@ import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.ActivityLogAlertResourceInner;
-import com.azure.resourcemanager.monitor.generated.models.ActivityLogAlertActionList;
-import com.azure.resourcemanager.monitor.generated.models.ActivityLogAlertAllOfCondition;
-import com.azure.resourcemanager.monitor.generated.models.ActivityLogAlertPatchBody;
+import com.azure.resourcemanager.monitor.generated.models.ActionList;
 import com.azure.resourcemanager.monitor.generated.models.ActivityLogAlertResource;
+import com.azure.resourcemanager.monitor.generated.models.AlertRuleAllOfCondition;
+import com.azure.resourcemanager.monitor.generated.models.AlertRulePatchObject;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -56,16 +56,16 @@ public final class ActivityLogAlertResourceImpl
         }
     }
 
-    public Boolean enabled() {
-        return this.innerModel().enabled();
-    }
-
-    public ActivityLogAlertAllOfCondition condition() {
+    public AlertRuleAllOfCondition condition() {
         return this.innerModel().condition();
     }
 
-    public ActivityLogAlertActionList actions() {
+    public ActionList actions() {
         return this.innerModel().actions();
+    }
+
+    public Boolean enabled() {
+        return this.innerModel().enabled();
     }
 
     public String description() {
@@ -92,7 +92,7 @@ public final class ActivityLogAlertResourceImpl
 
     private String activityLogAlertName;
 
-    private ActivityLogAlertPatchBody updateActivityLogAlertPatch;
+    private AlertRulePatchObject updateActivityLogAlertRulePatch;
 
     public ActivityLogAlertResourceImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -126,7 +126,7 @@ public final class ActivityLogAlertResourceImpl
     }
 
     public ActivityLogAlertResourceImpl update() {
-        this.updateActivityLogAlertPatch = new ActivityLogAlertPatchBody();
+        this.updateActivityLogAlertRulePatch = new AlertRulePatchObject();
         return this;
     }
 
@@ -135,7 +135,8 @@ public final class ActivityLogAlertResourceImpl
             serviceManager
                 .serviceClient()
                 .getActivityLogAlerts()
-                .updateWithResponse(resourceGroupName, activityLogAlertName, updateActivityLogAlertPatch, Context.NONE)
+                .updateWithResponse(
+                    resourceGroupName, activityLogAlertName, updateActivityLogAlertRulePatch, Context.NONE)
                 .getValue();
         return this;
     }
@@ -145,7 +146,7 @@ public final class ActivityLogAlertResourceImpl
             serviceManager
                 .serviceClient()
                 .getActivityLogAlerts()
-                .updateWithResponse(resourceGroupName, activityLogAlertName, updateActivityLogAlertPatch, context)
+                .updateWithResponse(resourceGroupName, activityLogAlertName, updateActivityLogAlertRulePatch, context)
                 .getValue();
         return this;
     }
@@ -192,7 +193,7 @@ public final class ActivityLogAlertResourceImpl
             this.innerModel().withTags(tags);
             return this;
         } else {
-            this.updateActivityLogAlertPatch.withTags(tags);
+            this.updateActivityLogAlertRulePatch.withTags(tags);
             return this;
         }
     }
@@ -202,24 +203,24 @@ public final class ActivityLogAlertResourceImpl
         return this;
     }
 
+    public ActivityLogAlertResourceImpl withCondition(AlertRuleAllOfCondition condition) {
+        this.innerModel().withCondition(condition);
+        return this;
+    }
+
+    public ActivityLogAlertResourceImpl withActions(ActionList actions) {
+        this.innerModel().withActions(actions);
+        return this;
+    }
+
     public ActivityLogAlertResourceImpl withEnabled(Boolean enabled) {
         if (isInCreateMode()) {
             this.innerModel().withEnabled(enabled);
             return this;
         } else {
-            this.updateActivityLogAlertPatch.withEnabled(enabled);
+            this.updateActivityLogAlertRulePatch.withEnabled(enabled);
             return this;
         }
-    }
-
-    public ActivityLogAlertResourceImpl withCondition(ActivityLogAlertAllOfCondition condition) {
-        this.innerModel().withCondition(condition);
-        return this;
-    }
-
-    public ActivityLogAlertResourceImpl withActions(ActivityLogAlertActionList actions) {
-        this.innerModel().withActions(actions);
-        return this;
     }
 
     public ActivityLogAlertResourceImpl withDescription(String description) {

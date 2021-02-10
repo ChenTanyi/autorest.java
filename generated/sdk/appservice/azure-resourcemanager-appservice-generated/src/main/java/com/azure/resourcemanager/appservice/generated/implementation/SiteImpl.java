@@ -257,6 +257,10 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         return this.innerModel().inProgressOperationId();
     }
 
+    public Boolean storageAccountRequired() {
+        return this.innerModel().storageAccountRequired();
+    }
+
     public String kind() {
         return this.innerModel().kind();
     }
@@ -777,6 +781,11 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
             this.updateSiteEnvelope.withRedundancyMode(redundancyMode);
             return this;
         }
+    }
+
+    public SiteImpl withStorageAccountRequired(Boolean storageAccountRequired) {
+        this.innerModel().withStorageAccountRequired(storageAccountRequired);
+        return this;
     }
 
     public SiteImpl withKind(String kind) {

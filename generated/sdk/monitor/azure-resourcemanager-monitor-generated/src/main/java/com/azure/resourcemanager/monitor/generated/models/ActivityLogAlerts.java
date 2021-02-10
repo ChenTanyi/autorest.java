@@ -11,36 +11,36 @@ import com.azure.core.util.Context;
 /** Resource collection API of ActivityLogAlerts. */
 public interface ActivityLogAlerts {
     /**
-     * Get an activity log alert.
+     * Get an Activity Log Alert rule.
      *
-     * @param resourceGroupName The name of the resource group.
-     * @param activityLogAlertName The name of the activity log alert.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param activityLogAlertName The name of the Activity Log Alert rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an activity log alert.
+     * @return an Activity Log Alert rule.
      */
     ActivityLogAlertResource getByResourceGroup(String resourceGroupName, String activityLogAlertName);
 
     /**
-     * Get an activity log alert.
+     * Get an Activity Log Alert rule.
      *
-     * @param resourceGroupName The name of the resource group.
-     * @param activityLogAlertName The name of the activity log alert.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param activityLogAlertName The name of the Activity Log Alert rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an activity log alert.
+     * @return an Activity Log Alert rule.
      */
     Response<ActivityLogAlertResource> getByResourceGroupWithResponse(
         String resourceGroupName, String activityLogAlertName, Context context);
 
     /**
-     * Delete an activity log alert.
+     * Delete an Activity Log Alert rule.
      *
-     * @param resourceGroupName The name of the resource group.
-     * @param activityLogAlertName The name of the activity log alert.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param activityLogAlertName The name of the Activity Log Alert rule.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -48,10 +48,10 @@ public interface ActivityLogAlerts {
     void deleteByResourceGroup(String resourceGroupName, String activityLogAlertName);
 
     /**
-     * Delete an activity log alert.
+     * Delete an Activity Log Alert rule.
      *
-     * @param resourceGroupName The name of the resource group.
-     * @param activityLogAlertName The name of the activity log alert.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param activityLogAlertName The name of the Activity Log Alert rule.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -61,73 +61,73 @@ public interface ActivityLogAlerts {
     Response<Void> deleteWithResponse(String resourceGroupName, String activityLogAlertName, Context context);
 
     /**
-     * Get a list of all activity log alerts in a subscription.
+     * Get a list of all Activity Log Alert rules in a subscription.
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all activity log alerts in a subscription.
+     * @return a list of all Activity Log Alert rules in a subscription.
      */
     PagedIterable<ActivityLogAlertResource> list();
 
     /**
-     * Get a list of all activity log alerts in a subscription.
+     * Get a list of all Activity Log Alert rules in a subscription.
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all activity log alerts in a subscription.
+     * @return a list of all Activity Log Alert rules in a subscription.
      */
     PagedIterable<ActivityLogAlertResource> list(Context context);
 
     /**
-     * Get a list of all activity log alerts in a resource group.
+     * Get a list of all Activity Log Alert rules in a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all activity log alerts in a resource group.
+     * @return a list of all Activity Log Alert rules in a resource group.
      */
     PagedIterable<ActivityLogAlertResource> listByResourceGroup(String resourceGroupName);
 
     /**
-     * Get a list of all activity log alerts in a resource group.
+     * Get a list of all Activity Log Alert rules in a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all activity log alerts in a resource group.
+     * @return a list of all Activity Log Alert rules in a resource group.
      */
     PagedIterable<ActivityLogAlertResource> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
-     * Get an activity log alert.
+     * Get an Activity Log Alert rule.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an activity log alert.
+     * @return an Activity Log Alert rule.
      */
     ActivityLogAlertResource getById(String id);
 
     /**
-     * Get an activity log alert.
+     * Get an Activity Log Alert rule.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an activity log alert.
+     * @return an Activity Log Alert rule.
      */
     Response<ActivityLogAlertResource> getByIdWithResponse(String id, Context context);
 
     /**
-     * Delete an activity log alert.
+     * Delete an Activity Log Alert rule.
      *
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -137,7 +137,7 @@ public interface ActivityLogAlerts {
     void deleteById(String id);
 
     /**
-     * Delete an activity log alert.
+     * Delete an Activity Log Alert rule.
      *
      * @param id the resource ID.
      * @param context The context to associate with this operation.

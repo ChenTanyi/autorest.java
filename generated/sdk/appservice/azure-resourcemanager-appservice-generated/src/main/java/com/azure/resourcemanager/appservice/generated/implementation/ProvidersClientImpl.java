@@ -28,10 +28,15 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.fluent.ProvidersClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ApplicationStackResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmOperationDescriptionInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.FunctionAppStackInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.WebAppStackInner;
 import com.azure.resourcemanager.appservice.generated.models.ApplicationStackCollection;
 import com.azure.resourcemanager.appservice.generated.models.CsmOperationCollection;
 import com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException;
+import com.azure.resourcemanager.appservice.generated.models.FunctionAppStackCollection;
 import com.azure.resourcemanager.appservice.generated.models.ProviderOsTypeSelected;
+import com.azure.resourcemanager.appservice.generated.models.ProviderStackOsType;
+import com.azure.resourcemanager.appservice.generated.models.WebAppStackCollection;
 import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in ProvidersClient. */
@@ -74,11 +79,57 @@ public final class ProvidersClientImpl implements ProvidersClient {
             Context context);
 
         @Headers({"Content-Type: application/json"})
+        @Get("/providers/Microsoft.Web/functionAppStacks")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<FunctionAppStackCollection>> getFunctionAppStacks(
+            @HostParam("$host") String endpoint,
+            @QueryParam("stackOsType") ProviderStackOsType stackOsType,
+            @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get("/providers/Microsoft.Web/locations/{location}/functionAppStacks")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<FunctionAppStackCollection>> getFunctionAppStacksForLocation(
+            @HostParam("$host") String endpoint,
+            @PathParam("location") String location,
+            @QueryParam("stackOsType") ProviderStackOsType stackOsType,
+            @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get("/providers/Microsoft.Web/locations/{location}/webAppStacks")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<WebAppStackCollection>> getWebAppStacksForLocation(
+            @HostParam("$host") String endpoint,
+            @PathParam("location") String location,
+            @QueryParam("stackOsType") ProviderStackOsType stackOsType,
+            @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
         @Get("/providers/Microsoft.Web/operations")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<CsmOperationCollection>> listOperations(
             @HostParam("$host") String endpoint,
+            @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get("/providers/Microsoft.Web/webAppStacks")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<WebAppStackCollection>> getWebAppStacks(
+            @HostParam("$host") String endpoint,
+            @QueryParam("stackOsType") ProviderStackOsType stackOsType,
             @QueryParam("api-version") String apiVersion,
             @HeaderParam("Accept") String accept,
             Context context);
@@ -109,7 +160,47 @@ public final class ProvidersClientImpl implements ProvidersClient {
         @Get("{nextLink}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<FunctionAppStackCollection>> getFunctionAppStacksNext(
+            @PathParam(value = "nextLink", encoded = true) String nextLink,
+            @HostParam("$host") String endpoint,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get("{nextLink}")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<FunctionAppStackCollection>> getFunctionAppStacksForLocationNext(
+            @PathParam(value = "nextLink", encoded = true) String nextLink,
+            @HostParam("$host") String endpoint,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get("{nextLink}")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<WebAppStackCollection>> getWebAppStacksForLocationNext(
+            @PathParam(value = "nextLink", encoded = true) String nextLink,
+            @HostParam("$host") String endpoint,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get("{nextLink}")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<CsmOperationCollection>> listOperationsNext(
+            @PathParam(value = "nextLink", encoded = true) String nextLink,
+            @HostParam("$host") String endpoint,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get("{nextLink}")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<WebAppStackCollection>> getWebAppStacksNext(
             @PathParam(value = "nextLink", encoded = true) String nextLink,
             @HostParam("$host") String endpoint,
             @HeaderParam("Accept") String accept,
@@ -276,6 +367,496 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
+     * Description for Get available Function app frameworks and their versions.
+     *
+     * @param stackOsType The stackOsType parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Function app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<FunctionAppStackInner>> getFunctionAppStacksSinglePageAsync(
+        ProviderStackOsType stackOsType) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .getFunctionAppStacks(
+                            this.client.getEndpoint(), stackOsType, this.client.getApiVersion(), accept, context))
+            .<PagedResponse<FunctionAppStackInner>>map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null))
+            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+    }
+
+    /**
+     * Description for Get available Function app frameworks and their versions.
+     *
+     * @param stackOsType The stackOsType parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Function app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<FunctionAppStackInner>> getFunctionAppStacksSinglePageAsync(
+        ProviderStackOsType stackOsType, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getFunctionAppStacks(this.client.getEndpoint(), stackOsType, this.client.getApiVersion(), accept, context)
+            .map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null));
+    }
+
+    /**
+     * Description for Get available Function app frameworks and their versions.
+     *
+     * @param stackOsType The stackOsType parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Function app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<FunctionAppStackInner> getFunctionAppStacksAsync(ProviderStackOsType stackOsType) {
+        return new PagedFlux<>(
+            () -> getFunctionAppStacksSinglePageAsync(stackOsType),
+            nextLink -> getFunctionAppStacksNextSinglePageAsync(nextLink));
+    }
+
+    /**
+     * Description for Get available Function app frameworks and their versions.
+     *
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Function app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<FunctionAppStackInner> getFunctionAppStacksAsync() {
+        final ProviderStackOsType stackOsType = null;
+        return new PagedFlux<>(
+            () -> getFunctionAppStacksSinglePageAsync(stackOsType),
+            nextLink -> getFunctionAppStacksNextSinglePageAsync(nextLink));
+    }
+
+    /**
+     * Description for Get available Function app frameworks and their versions.
+     *
+     * @param stackOsType The stackOsType parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Function app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<FunctionAppStackInner> getFunctionAppStacksAsync(
+        ProviderStackOsType stackOsType, Context context) {
+        return new PagedFlux<>(
+            () -> getFunctionAppStacksSinglePageAsync(stackOsType, context),
+            nextLink -> getFunctionAppStacksNextSinglePageAsync(nextLink, context));
+    }
+
+    /**
+     * Description for Get available Function app frameworks and their versions.
+     *
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Function app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    public PagedIterable<FunctionAppStackInner> getFunctionAppStacks() {
+        final ProviderStackOsType stackOsType = null;
+        return new PagedIterable<>(getFunctionAppStacksAsync(stackOsType));
+    }
+
+    /**
+     * Description for Get available Function app frameworks and their versions.
+     *
+     * @param stackOsType The stackOsType parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Function app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    public PagedIterable<FunctionAppStackInner> getFunctionAppStacks(ProviderStackOsType stackOsType, Context context) {
+        return new PagedIterable<>(getFunctionAppStacksAsync(stackOsType, context));
+    }
+
+    /**
+     * Description for Get available Function app frameworks and their versions for location.
+     *
+     * @param location The location parameter.
+     * @param stackOsType The stackOsType parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Function app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<FunctionAppStackInner>> getFunctionAppStacksForLocationSinglePageAsync(
+        String location, ProviderStackOsType stackOsType) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (location == null) {
+            return Mono.error(new IllegalArgumentException("Parameter location is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .getFunctionAppStacksForLocation(
+                            this.client.getEndpoint(),
+                            location,
+                            stackOsType,
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
+            .<PagedResponse<FunctionAppStackInner>>map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null))
+            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+    }
+
+    /**
+     * Description for Get available Function app frameworks and their versions for location.
+     *
+     * @param location The location parameter.
+     * @param stackOsType The stackOsType parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Function app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<FunctionAppStackInner>> getFunctionAppStacksForLocationSinglePageAsync(
+        String location, ProviderStackOsType stackOsType, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (location == null) {
+            return Mono.error(new IllegalArgumentException("Parameter location is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getFunctionAppStacksForLocation(
+                this.client.getEndpoint(), location, stackOsType, this.client.getApiVersion(), accept, context)
+            .map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null));
+    }
+
+    /**
+     * Description for Get available Function app frameworks and their versions for location.
+     *
+     * @param location The location parameter.
+     * @param stackOsType The stackOsType parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Function app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<FunctionAppStackInner> getFunctionAppStacksForLocationAsync(
+        String location, ProviderStackOsType stackOsType) {
+        return new PagedFlux<>(
+            () -> getFunctionAppStacksForLocationSinglePageAsync(location, stackOsType),
+            nextLink -> getFunctionAppStacksForLocationNextSinglePageAsync(nextLink));
+    }
+
+    /**
+     * Description for Get available Function app frameworks and their versions for location.
+     *
+     * @param location The location parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Function app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<FunctionAppStackInner> getFunctionAppStacksForLocationAsync(String location) {
+        final ProviderStackOsType stackOsType = null;
+        return new PagedFlux<>(
+            () -> getFunctionAppStacksForLocationSinglePageAsync(location, stackOsType),
+            nextLink -> getFunctionAppStacksForLocationNextSinglePageAsync(nextLink));
+    }
+
+    /**
+     * Description for Get available Function app frameworks and their versions for location.
+     *
+     * @param location The location parameter.
+     * @param stackOsType The stackOsType parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Function app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<FunctionAppStackInner> getFunctionAppStacksForLocationAsync(
+        String location, ProviderStackOsType stackOsType, Context context) {
+        return new PagedFlux<>(
+            () -> getFunctionAppStacksForLocationSinglePageAsync(location, stackOsType, context),
+            nextLink -> getFunctionAppStacksForLocationNextSinglePageAsync(nextLink, context));
+    }
+
+    /**
+     * Description for Get available Function app frameworks and their versions for location.
+     *
+     * @param location The location parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Function app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    public PagedIterable<FunctionAppStackInner> getFunctionAppStacksForLocation(String location) {
+        final ProviderStackOsType stackOsType = null;
+        return new PagedIterable<>(getFunctionAppStacksForLocationAsync(location, stackOsType));
+    }
+
+    /**
+     * Description for Get available Function app frameworks and their versions for location.
+     *
+     * @param location The location parameter.
+     * @param stackOsType The stackOsType parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Function app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    public PagedIterable<FunctionAppStackInner> getFunctionAppStacksForLocation(
+        String location, ProviderStackOsType stackOsType, Context context) {
+        return new PagedIterable<>(getFunctionAppStacksForLocationAsync(location, stackOsType, context));
+    }
+
+    /**
+     * Description for Get available Web app frameworks and their versions for location.
+     *
+     * @param location The location parameter.
+     * @param stackOsType The stackOsType parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Web app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<WebAppStackInner>> getWebAppStacksForLocationSinglePageAsync(
+        String location, ProviderStackOsType stackOsType) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (location == null) {
+            return Mono.error(new IllegalArgumentException("Parameter location is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .getWebAppStacksForLocation(
+                            this.client.getEndpoint(),
+                            location,
+                            stackOsType,
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
+            .<PagedResponse<WebAppStackInner>>map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null))
+            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+    }
+
+    /**
+     * Description for Get available Web app frameworks and their versions for location.
+     *
+     * @param location The location parameter.
+     * @param stackOsType The stackOsType parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Web app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<WebAppStackInner>> getWebAppStacksForLocationSinglePageAsync(
+        String location, ProviderStackOsType stackOsType, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (location == null) {
+            return Mono.error(new IllegalArgumentException("Parameter location is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getWebAppStacksForLocation(
+                this.client.getEndpoint(), location, stackOsType, this.client.getApiVersion(), accept, context)
+            .map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null));
+    }
+
+    /**
+     * Description for Get available Web app frameworks and their versions for location.
+     *
+     * @param location The location parameter.
+     * @param stackOsType The stackOsType parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Web app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<WebAppStackInner> getWebAppStacksForLocationAsync(
+        String location, ProviderStackOsType stackOsType) {
+        return new PagedFlux<>(
+            () -> getWebAppStacksForLocationSinglePageAsync(location, stackOsType),
+            nextLink -> getWebAppStacksForLocationNextSinglePageAsync(nextLink));
+    }
+
+    /**
+     * Description for Get available Web app frameworks and their versions for location.
+     *
+     * @param location The location parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Web app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<WebAppStackInner> getWebAppStacksForLocationAsync(String location) {
+        final ProviderStackOsType stackOsType = null;
+        return new PagedFlux<>(
+            () -> getWebAppStacksForLocationSinglePageAsync(location, stackOsType),
+            nextLink -> getWebAppStacksForLocationNextSinglePageAsync(nextLink));
+    }
+
+    /**
+     * Description for Get available Web app frameworks and their versions for location.
+     *
+     * @param location The location parameter.
+     * @param stackOsType The stackOsType parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Web app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<WebAppStackInner> getWebAppStacksForLocationAsync(
+        String location, ProviderStackOsType stackOsType, Context context) {
+        return new PagedFlux<>(
+            () -> getWebAppStacksForLocationSinglePageAsync(location, stackOsType, context),
+            nextLink -> getWebAppStacksForLocationNextSinglePageAsync(nextLink, context));
+    }
+
+    /**
+     * Description for Get available Web app frameworks and their versions for location.
+     *
+     * @param location The location parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Web app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    public PagedIterable<WebAppStackInner> getWebAppStacksForLocation(String location) {
+        final ProviderStackOsType stackOsType = null;
+        return new PagedIterable<>(getWebAppStacksForLocationAsync(location, stackOsType));
+    }
+
+    /**
+     * Description for Get available Web app frameworks and their versions for location.
+     *
+     * @param location The location parameter.
+     * @param stackOsType The stackOsType parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Web app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    public PagedIterable<WebAppStackInner> getWebAppStacksForLocation(
+        String location, ProviderStackOsType stackOsType, Context context) {
+        return new PagedIterable<>(getWebAppStacksForLocationAsync(location, stackOsType, context));
+    }
+
+    /**
      * Description for Gets all available operations for the Microsoft.Web resource provider. Also exposes resource
      * metric definitions.
      *
@@ -398,6 +979,152 @@ public final class ProvidersClientImpl implements ProvidersClient {
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<CsmOperationDescriptionInner> listOperations(Context context) {
         return new PagedIterable<>(listOperationsAsync(context));
+    }
+
+    /**
+     * Description for Get available Web app frameworks and their versions.
+     *
+     * @param stackOsType The stackOsType parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Web app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<WebAppStackInner>> getWebAppStacksSinglePageAsync(ProviderStackOsType stackOsType) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .getWebAppStacks(
+                            this.client.getEndpoint(), stackOsType, this.client.getApiVersion(), accept, context))
+            .<PagedResponse<WebAppStackInner>>map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null))
+            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+    }
+
+    /**
+     * Description for Get available Web app frameworks and their versions.
+     *
+     * @param stackOsType The stackOsType parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Web app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<WebAppStackInner>> getWebAppStacksSinglePageAsync(
+        ProviderStackOsType stackOsType, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getWebAppStacks(this.client.getEndpoint(), stackOsType, this.client.getApiVersion(), accept, context)
+            .map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null));
+    }
+
+    /**
+     * Description for Get available Web app frameworks and their versions.
+     *
+     * @param stackOsType The stackOsType parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Web app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<WebAppStackInner> getWebAppStacksAsync(ProviderStackOsType stackOsType) {
+        return new PagedFlux<>(
+            () -> getWebAppStacksSinglePageAsync(stackOsType),
+            nextLink -> getWebAppStacksNextSinglePageAsync(nextLink));
+    }
+
+    /**
+     * Description for Get available Web app frameworks and their versions.
+     *
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Web app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<WebAppStackInner> getWebAppStacksAsync() {
+        final ProviderStackOsType stackOsType = null;
+        return new PagedFlux<>(
+            () -> getWebAppStacksSinglePageAsync(stackOsType),
+            nextLink -> getWebAppStacksNextSinglePageAsync(nextLink));
+    }
+
+    /**
+     * Description for Get available Web app frameworks and their versions.
+     *
+     * @param stackOsType The stackOsType parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Web app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<WebAppStackInner> getWebAppStacksAsync(ProviderStackOsType stackOsType, Context context) {
+        return new PagedFlux<>(
+            () -> getWebAppStacksSinglePageAsync(stackOsType, context),
+            nextLink -> getWebAppStacksNextSinglePageAsync(nextLink, context));
+    }
+
+    /**
+     * Description for Get available Web app frameworks and their versions.
+     *
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Web app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    public PagedIterable<WebAppStackInner> getWebAppStacks() {
+        final ProviderStackOsType stackOsType = null;
+        return new PagedIterable<>(getWebAppStacksAsync(stackOsType));
+    }
+
+    /**
+     * Description for Get available Web app frameworks and their versions.
+     *
+     * @param stackOsType The stackOsType parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Web app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    public PagedIterable<WebAppStackInner> getWebAppStacks(ProviderStackOsType stackOsType, Context context) {
+        return new PagedIterable<>(getWebAppStacksAsync(stackOsType, context));
     }
 
     /**
@@ -650,6 +1377,227 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Function app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<FunctionAppStackInner>> getFunctionAppStacksNextSinglePageAsync(String nextLink) {
+        if (nextLink == null) {
+            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
+        }
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context -> service.getFunctionAppStacksNext(nextLink, this.client.getEndpoint(), accept, context))
+            .<PagedResponse<FunctionAppStackInner>>map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null))
+            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+    }
+
+    /**
+     * Get the next page of items.
+     *
+     * @param nextLink The nextLink parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Function app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<FunctionAppStackInner>> getFunctionAppStacksNextSinglePageAsync(
+        String nextLink, Context context) {
+        if (nextLink == null) {
+            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
+        }
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getFunctionAppStacksNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null));
+    }
+
+    /**
+     * Get the next page of items.
+     *
+     * @param nextLink The nextLink parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Function app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<FunctionAppStackInner>> getFunctionAppStacksForLocationNextSinglePageAsync(
+        String nextLink) {
+        if (nextLink == null) {
+            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
+        }
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service.getFunctionAppStacksForLocationNext(nextLink, this.client.getEndpoint(), accept, context))
+            .<PagedResponse<FunctionAppStackInner>>map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null))
+            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+    }
+
+    /**
+     * Get the next page of items.
+     *
+     * @param nextLink The nextLink parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Function app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<FunctionAppStackInner>> getFunctionAppStacksForLocationNextSinglePageAsync(
+        String nextLink, Context context) {
+        if (nextLink == null) {
+            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
+        }
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getFunctionAppStacksForLocationNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null));
+    }
+
+    /**
+     * Get the next page of items.
+     *
+     * @param nextLink The nextLink parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Web app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<WebAppStackInner>> getWebAppStacksForLocationNextSinglePageAsync(String nextLink) {
+        if (nextLink == null) {
+            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
+        }
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context -> service.getWebAppStacksForLocationNext(nextLink, this.client.getEndpoint(), accept, context))
+            .<PagedResponse<WebAppStackInner>>map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null))
+            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+    }
+
+    /**
+     * Get the next page of items.
+     *
+     * @param nextLink The nextLink parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Web app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<WebAppStackInner>> getWebAppStacksForLocationNextSinglePageAsync(
+        String nextLink, Context context) {
+        if (nextLink == null) {
+            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
+        }
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getWebAppStacksForLocationNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null));
+    }
+
+    /**
+     * Get the next page of items.
+     *
+     * @param nextLink The nextLink parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of Azure resource manager operation metadata.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
@@ -704,6 +1652,77 @@ public final class ProvidersClientImpl implements ProvidersClient {
         context = this.client.mergeContext(context);
         return service
             .listOperationsNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null));
+    }
+
+    /**
+     * Get the next page of items.
+     *
+     * @param nextLink The nextLink parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Web app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<WebAppStackInner>> getWebAppStacksNextSinglePageAsync(String nextLink) {
+        if (nextLink == null) {
+            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
+        }
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(context -> service.getWebAppStacksNext(nextLink, this.client.getEndpoint(), accept, context))
+            .<PagedResponse<WebAppStackInner>>map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null))
+            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+    }
+
+    /**
+     * Get the next page of items.
+     *
+     * @param nextLink The nextLink parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of Web app Stacks.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<WebAppStackInner>> getWebAppStacksNextSinglePageAsync(String nextLink, Context context) {
+        if (nextLink == null) {
+            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
+        }
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getWebAppStacksNext(nextLink, this.client.getEndpoint(), accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(

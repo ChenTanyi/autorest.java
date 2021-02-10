@@ -49,6 +49,13 @@ public interface StreamingEndpoint {
     Map<String, String> tags();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the description property: The streaming endpoint description.
      *
      * @return the description value.

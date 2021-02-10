@@ -34,6 +34,13 @@ public interface Asset {
     String type();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the assetId property: The Asset ID.
      *
      * @return the assetId value.

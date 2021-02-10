@@ -14,6 +14,7 @@ import com.azure.resourcemanager.mediaservices.generated.models.AssetStorageEncr
 import com.azure.resourcemanager.mediaservices.generated.models.ListContainerSasInput;
 import com.azure.resourcemanager.mediaservices.generated.models.ListStreamingLocatorsResponse;
 import com.azure.resourcemanager.mediaservices.generated.models.StorageEncryptedAssetDecryptionData;
+import com.azure.resourcemanager.mediaservices.generated.models.SystemData;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
@@ -32,6 +33,10 @@ public final class AssetImpl implements Asset, Asset.Definition, Asset.Update {
 
     public String type() {
         return this.innerModel().type();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public UUID assetId() {

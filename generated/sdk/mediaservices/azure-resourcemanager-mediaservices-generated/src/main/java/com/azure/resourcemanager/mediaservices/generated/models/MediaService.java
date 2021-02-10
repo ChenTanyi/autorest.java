@@ -57,6 +57,13 @@ public interface MediaService {
     MediaServiceIdentity identity();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the mediaServiceId property: The Media Services account ID.
      *
      * @return the mediaServiceId value.

@@ -13,6 +13,7 @@ import com.azure.resourcemanager.mediaservices.generated.models.JobInput;
 import com.azure.resourcemanager.mediaservices.generated.models.JobOutput;
 import com.azure.resourcemanager.mediaservices.generated.models.JobState;
 import com.azure.resourcemanager.mediaservices.generated.models.Priority;
+import com.azure.resourcemanager.mediaservices.generated.models.SystemData;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -33,6 +34,10 @@ public final class JobImpl implements Job, Job.Definition, Job.Update {
 
     public String type() {
         return this.innerModel().type();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public OffsetDateTime created() {

@@ -12,6 +12,7 @@ import com.azure.resourcemanager.mediaservices.generated.models.ListContentKeysR
 import com.azure.resourcemanager.mediaservices.generated.models.ListPathsResponse;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingLocator;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingLocatorContentKey;
+import com.azure.resourcemanager.mediaservices.generated.models.SystemData;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -37,6 +38,10 @@ public final class StreamingLocatorImpl implements StreamingLocator, StreamingLo
 
     public String type() {
         return this.innerModel().type();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String assetName() {

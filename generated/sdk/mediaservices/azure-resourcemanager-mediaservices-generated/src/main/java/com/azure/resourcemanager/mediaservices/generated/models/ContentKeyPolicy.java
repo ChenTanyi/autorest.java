@@ -35,6 +35,13 @@ public interface ContentKeyPolicy {
     String type();
 
     /**
+     * Gets the systemData property: The system metadata relating to this resource.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
+
+    /**
      * Gets the policyId property: The legacy Policy ID.
      *
      * @return the policyId value.

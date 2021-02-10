@@ -11,10 +11,15 @@ import com.azure.resourcemanager.appservice.generated.WebSiteManager;
 import com.azure.resourcemanager.appservice.generated.fluent.ProvidersClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ApplicationStackResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmOperationDescriptionInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.FunctionAppStackInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.WebAppStackInner;
 import com.azure.resourcemanager.appservice.generated.models.ApplicationStackResource;
 import com.azure.resourcemanager.appservice.generated.models.CsmOperationDescription;
+import com.azure.resourcemanager.appservice.generated.models.FunctionAppStack;
 import com.azure.resourcemanager.appservice.generated.models.ProviderOsTypeSelected;
+import com.azure.resourcemanager.appservice.generated.models.ProviderStackOsType;
 import com.azure.resourcemanager.appservice.generated.models.Providers;
+import com.azure.resourcemanager.appservice.generated.models.WebAppStack;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class ProvidersImpl implements Providers {
@@ -41,6 +46,40 @@ public final class ProvidersImpl implements Providers {
         return Utils.mapPage(inner, inner1 -> new ApplicationStackResourceImpl(inner1, this.manager()));
     }
 
+    public PagedIterable<FunctionAppStack> getFunctionAppStacks() {
+        PagedIterable<FunctionAppStackInner> inner = this.serviceClient().getFunctionAppStacks();
+        return Utils.mapPage(inner, inner1 -> new FunctionAppStackImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<FunctionAppStack> getFunctionAppStacks(ProviderStackOsType stackOsType, Context context) {
+        PagedIterable<FunctionAppStackInner> inner = this.serviceClient().getFunctionAppStacks(stackOsType, context);
+        return Utils.mapPage(inner, inner1 -> new FunctionAppStackImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<FunctionAppStack> getFunctionAppStacksForLocation(String location) {
+        PagedIterable<FunctionAppStackInner> inner = this.serviceClient().getFunctionAppStacksForLocation(location);
+        return Utils.mapPage(inner, inner1 -> new FunctionAppStackImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<FunctionAppStack> getFunctionAppStacksForLocation(
+        String location, ProviderStackOsType stackOsType, Context context) {
+        PagedIterable<FunctionAppStackInner> inner =
+            this.serviceClient().getFunctionAppStacksForLocation(location, stackOsType, context);
+        return Utils.mapPage(inner, inner1 -> new FunctionAppStackImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<WebAppStack> getWebAppStacksForLocation(String location) {
+        PagedIterable<WebAppStackInner> inner = this.serviceClient().getWebAppStacksForLocation(location);
+        return Utils.mapPage(inner, inner1 -> new WebAppStackImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<WebAppStack> getWebAppStacksForLocation(
+        String location, ProviderStackOsType stackOsType, Context context) {
+        PagedIterable<WebAppStackInner> inner =
+            this.serviceClient().getWebAppStacksForLocation(location, stackOsType, context);
+        return Utils.mapPage(inner, inner1 -> new WebAppStackImpl(inner1, this.manager()));
+    }
+
     public PagedIterable<CsmOperationDescription> listOperations() {
         PagedIterable<CsmOperationDescriptionInner> inner = this.serviceClient().listOperations();
         return Utils.mapPage(inner, inner1 -> new CsmOperationDescriptionImpl(inner1, this.manager()));
@@ -49,6 +88,16 @@ public final class ProvidersImpl implements Providers {
     public PagedIterable<CsmOperationDescription> listOperations(Context context) {
         PagedIterable<CsmOperationDescriptionInner> inner = this.serviceClient().listOperations(context);
         return Utils.mapPage(inner, inner1 -> new CsmOperationDescriptionImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<WebAppStack> getWebAppStacks() {
+        PagedIterable<WebAppStackInner> inner = this.serviceClient().getWebAppStacks();
+        return Utils.mapPage(inner, inner1 -> new WebAppStackImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<WebAppStack> getWebAppStacks(ProviderStackOsType stackOsType, Context context) {
+        PagedIterable<WebAppStackInner> inner = this.serviceClient().getWebAppStacks(stackOsType, context);
+        return Utils.mapPage(inner, inner1 -> new WebAppStackImpl(inner1, this.manager()));
     }
 
     public PagedIterable<ApplicationStackResource> list() {

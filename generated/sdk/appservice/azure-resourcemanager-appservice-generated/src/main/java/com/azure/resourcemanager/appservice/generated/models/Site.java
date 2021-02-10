@@ -350,6 +350,13 @@ public interface Site {
     UUID inProgressOperationId();
 
     /**
+     * Gets the storageAccountRequired property: Checks if Customer provided storage account is required.
+     *
+     * @return the storageAccountRequired value.
+     */
+    Boolean storageAccountRequired();
+
+    /**
      * Gets the kind property: Kind of resource.
      *
      * @return the kind value.
@@ -451,6 +458,7 @@ public interface Site {
                 DefinitionStages.WithCloningInfo,
                 DefinitionStages.WithHttpsOnly,
                 DefinitionStages.WithRedundancyMode,
+                DefinitionStages.WithStorageAccountRequired,
                 DefinitionStages.WithKind {
             /**
              * Executes the create request.
@@ -722,6 +730,16 @@ public interface Site {
              * @return the next definition stage.
              */
             WithCreate withRedundancyMode(RedundancyMode redundancyMode);
+        }
+        /** The stage of the Site definition allowing to specify storageAccountRequired. */
+        interface WithStorageAccountRequired {
+            /**
+             * Specifies the storageAccountRequired property: Checks if Customer provided storage account is required.
+             *
+             * @param storageAccountRequired Checks if Customer provided storage account is required.
+             * @return the next definition stage.
+             */
+            WithCreate withStorageAccountRequired(Boolean storageAccountRequired);
         }
         /** The stage of the Site definition allowing to specify kind. */
         interface WithKind {

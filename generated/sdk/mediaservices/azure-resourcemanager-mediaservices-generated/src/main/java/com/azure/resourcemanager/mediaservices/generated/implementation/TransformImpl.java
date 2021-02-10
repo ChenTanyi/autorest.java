@@ -7,6 +7,7 @@ package com.azure.resourcemanager.mediaservices.generated.implementation;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.mediaservices.generated.MediaservicesManager;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.TransformInner;
+import com.azure.resourcemanager.mediaservices.generated.models.SystemData;
 import com.azure.resourcemanager.mediaservices.generated.models.Transform;
 import com.azure.resourcemanager.mediaservices.generated.models.TransformOutput;
 import java.time.OffsetDateTime;
@@ -28,6 +29,10 @@ public final class TransformImpl implements Transform, Transform.Definition, Tra
 
     public String type() {
         return this.innerModel().type();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public OffsetDateTime created() {

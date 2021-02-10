@@ -48,37 +48,38 @@ public interface ActivityLogAlertResource {
     Map<String, String> tags();
 
     /**
-     * Gets the scopes property: A list of resourceIds that will be used as prefixes. The alert will only apply to
-     * activityLogs with resourceIds that fall under one of these prefixes. This list must include at least one item.
+     * Gets the scopes property: A list of resource IDs that will be used as prefixes. The alert will only apply to
+     * Activity Log events with resource IDs that fall under one of these prefixes. This list must include at least one
+     * item.
      *
      * @return the scopes value.
      */
     List<String> scopes();
 
     /**
-     * Gets the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not
-     * enabled, then none of its actions will be activated.
-     *
-     * @return the enabled value.
-     */
-    Boolean enabled();
-
-    /**
      * Gets the condition property: The condition that will cause this alert to activate.
      *
      * @return the condition value.
      */
-    ActivityLogAlertAllOfCondition condition();
+    AlertRuleAllOfCondition condition();
 
     /**
      * Gets the actions property: The actions that will activate when the condition is met.
      *
      * @return the actions value.
      */
-    ActivityLogAlertActionList actions();
+    ActionList actions();
 
     /**
-     * Gets the description property: A description of this activity log alert.
+     * Gets the enabled property: Indicates whether this Activity Log Alert rule is enabled. If an Activity Log Alert
+     * rule is not enabled, then none of its actions will be activated.
+     *
+     * @return the enabled value.
+     */
+    Boolean enabled();
+
+    /**
+     * Gets the description property: A description of this Activity Log Alert rule.
      *
      * @return the description value.
      */
@@ -140,7 +141,7 @@ public interface ActivityLogAlertResource {
             /**
              * Specifies resourceGroupName.
              *
-             * @param resourceGroupName The name of the resource group.
+             * @param resourceGroupName The name of the resource group. The name is case insensitive.
              * @return the next definition stage.
              */
             WithCreate withExistingResourceGroup(String resourceGroupName);
@@ -152,9 +153,9 @@ public interface ActivityLogAlertResource {
         interface WithCreate
             extends DefinitionStages.WithTags,
                 DefinitionStages.WithScopes,
-                DefinitionStages.WithEnabled,
                 DefinitionStages.WithCondition,
                 DefinitionStages.WithActions,
+                DefinitionStages.WithEnabled,
                 DefinitionStages.WithDescription {
             /**
              * Executes the create request.
@@ -184,28 +185,16 @@ public interface ActivityLogAlertResource {
         /** The stage of the ActivityLogAlertResource definition allowing to specify scopes. */
         interface WithScopes {
             /**
-             * Specifies the scopes property: A list of resourceIds that will be used as prefixes. The alert will only
-             * apply to activityLogs with resourceIds that fall under one of these prefixes. This list must include at
-             * least one item..
+             * Specifies the scopes property: A list of resource IDs that will be used as prefixes. The alert will only
+             * apply to Activity Log events with resource IDs that fall under one of these prefixes. This list must
+             * include at least one item..
              *
-             * @param scopes A list of resourceIds that will be used as prefixes. The alert will only apply to
-             *     activityLogs with resourceIds that fall under one of these prefixes. This list must include at least
+             * @param scopes A list of resource IDs that will be used as prefixes. The alert will only apply to Activity
+             *     Log events with resource IDs that fall under one of these prefixes. This list must include at least
              *     one item.
              * @return the next definition stage.
              */
             WithCreate withScopes(List<String> scopes);
-        }
-        /** The stage of the ActivityLogAlertResource definition allowing to specify enabled. */
-        interface WithEnabled {
-            /**
-             * Specifies the enabled property: Indicates whether this activity log alert is enabled. If an activity log
-             * alert is not enabled, then none of its actions will be activated..
-             *
-             * @param enabled Indicates whether this activity log alert is enabled. If an activity log alert is not
-             *     enabled, then none of its actions will be activated.
-             * @return the next definition stage.
-             */
-            WithCreate withEnabled(Boolean enabled);
         }
         /** The stage of the ActivityLogAlertResource definition allowing to specify condition. */
         interface WithCondition {
@@ -215,7 +204,7 @@ public interface ActivityLogAlertResource {
              * @param condition The condition that will cause this alert to activate.
              * @return the next definition stage.
              */
-            WithCreate withCondition(ActivityLogAlertAllOfCondition condition);
+            WithCreate withCondition(AlertRuleAllOfCondition condition);
         }
         /** The stage of the ActivityLogAlertResource definition allowing to specify actions. */
         interface WithActions {
@@ -225,14 +214,26 @@ public interface ActivityLogAlertResource {
              * @param actions The actions that will activate when the condition is met.
              * @return the next definition stage.
              */
-            WithCreate withActions(ActivityLogAlertActionList actions);
+            WithCreate withActions(ActionList actions);
+        }
+        /** The stage of the ActivityLogAlertResource definition allowing to specify enabled. */
+        interface WithEnabled {
+            /**
+             * Specifies the enabled property: Indicates whether this Activity Log Alert rule is enabled. If an Activity
+             * Log Alert rule is not enabled, then none of its actions will be activated..
+             *
+             * @param enabled Indicates whether this Activity Log Alert rule is enabled. If an Activity Log Alert rule
+             *     is not enabled, then none of its actions will be activated.
+             * @return the next definition stage.
+             */
+            WithCreate withEnabled(Boolean enabled);
         }
         /** The stage of the ActivityLogAlertResource definition allowing to specify description. */
         interface WithDescription {
             /**
-             * Specifies the description property: A description of this activity log alert..
+             * Specifies the description property: A description of this Activity Log Alert rule..
              *
-             * @param description A description of this activity log alert.
+             * @param description A description of this Activity Log Alert rule.
              * @return the next definition stage.
              */
             WithCreate withDescription(String description);
@@ -267,9 +268,9 @@ public interface ActivityLogAlertResource {
         /** The stage of the ActivityLogAlertResource update allowing to specify tags. */
         interface WithTags {
             /**
-             * Specifies the tags property: Resource tags.
+             * Specifies the tags property: The resource tags.
              *
-             * @param tags Resource tags.
+             * @param tags The resource tags.
              * @return the next definition stage.
              */
             Update withTags(Map<String, String> tags);
@@ -277,11 +278,11 @@ public interface ActivityLogAlertResource {
         /** The stage of the ActivityLogAlertResource update allowing to specify enabled. */
         interface WithEnabled {
             /**
-             * Specifies the enabled property: Indicates whether this activity log alert is enabled. If an activity log
-             * alert is not enabled, then none of its actions will be activated..
+             * Specifies the enabled property: Indicates whether this Activity Log Alert rule is enabled. If an Activity
+             * Log Alert rule is not enabled, then none of its actions will be activated..
              *
-             * @param enabled Indicates whether this activity log alert is enabled. If an activity log alert is not
-             *     enabled, then none of its actions will be activated.
+             * @param enabled Indicates whether this Activity Log Alert rule is enabled. If an Activity Log Alert rule
+             *     is not enabled, then none of its actions will be activated.
              * @return the next definition stage.
              */
             Update withEnabled(Boolean enabled);

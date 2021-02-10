@@ -17,6 +17,7 @@ import com.azure.resourcemanager.mediaservices.generated.models.MediaServiceIden
 import com.azure.resourcemanager.mediaservices.generated.models.StorageAccount;
 import com.azure.resourcemanager.mediaservices.generated.models.StorageAuthentication;
 import com.azure.resourcemanager.mediaservices.generated.models.SyncStorageKeysInput;
+import com.azure.resourcemanager.mediaservices.generated.models.SystemData;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -54,6 +55,10 @@ public final class MediaServiceImpl implements MediaService, MediaService.Defini
 
     public MediaServiceIdentity identity() {
         return this.innerModel().identity();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public UUID mediaServiceId() {

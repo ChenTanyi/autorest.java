@@ -13,6 +13,7 @@ import com.azure.resourcemanager.mediaservices.generated.models.StreamingEndpoin
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingEndpointAccessControl;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingEndpointResourceState;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingEntityScaleUnit;
+import com.azure.resourcemanager.mediaservices.generated.models.SystemData;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -47,6 +48,10 @@ public final class StreamingEndpointImpl
         } else {
             return Collections.emptyMap();
         }
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String description() {

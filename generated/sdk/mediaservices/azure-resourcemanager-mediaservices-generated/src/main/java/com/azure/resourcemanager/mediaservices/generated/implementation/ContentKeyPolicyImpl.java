@@ -11,6 +11,7 @@ import com.azure.resourcemanager.mediaservices.generated.fluent.models.ContentKe
 import com.azure.resourcemanager.mediaservices.generated.models.ContentKeyPolicy;
 import com.azure.resourcemanager.mediaservices.generated.models.ContentKeyPolicyOption;
 import com.azure.resourcemanager.mediaservices.generated.models.ContentKeyPolicyProperties;
+import com.azure.resourcemanager.mediaservices.generated.models.SystemData;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -32,6 +33,10 @@ public final class ContentKeyPolicyImpl
 
     public String type() {
         return this.innerModel().type();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public UUID policyId() {
