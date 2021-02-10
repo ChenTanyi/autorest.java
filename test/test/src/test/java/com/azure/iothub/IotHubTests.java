@@ -19,7 +19,6 @@ import java.util.Map;
 public class IotHubTests extends Base {
 
     @Test
-    @Disabled("The api version '2020-08-01' is not supported yet.")
     public void testIotHub() {
         String iotHubName = randomString("iot", 15);
 
