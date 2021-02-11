@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetValidationFailureDetailsInner;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.VnetValidationFailureDetails;
@@ -15,9 +15,9 @@ import java.util.List;
 public final class VnetValidationFailureDetailsImpl implements VnetValidationFailureDetails {
     private VnetValidationFailureDetailsInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    VnetValidationFailureDetailsImpl(VnetValidationFailureDetailsInner innerObject, WebSiteManager serviceManager) {
+    VnetValidationFailureDetailsImpl(VnetValidationFailureDetailsInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -59,7 +59,7 @@ public final class VnetValidationFailureDetailsImpl implements VnetValidationFai
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

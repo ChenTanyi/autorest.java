@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteAuthSettingsInner;
 import com.azure.resourcemanager.appservice.generated.models.BuiltInAuthenticationProvider;
 import com.azure.resourcemanager.appservice.generated.models.SiteAuthSettings;
@@ -16,9 +16,9 @@ import java.util.List;
 public final class SiteAuthSettingsImpl implements SiteAuthSettings {
     private SiteAuthSettingsInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    SiteAuthSettingsImpl(SiteAuthSettingsInner innerObject, WebSiteManager serviceManager) {
+    SiteAuthSettingsImpl(SiteAuthSettingsInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -230,7 +230,7 @@ public final class SiteAuthSettingsImpl implements SiteAuthSettings {
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

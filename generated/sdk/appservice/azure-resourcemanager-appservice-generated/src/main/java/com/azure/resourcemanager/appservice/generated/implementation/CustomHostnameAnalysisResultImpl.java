@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CustomHostnameAnalysisResultInner;
 import com.azure.resourcemanager.appservice.generated.models.CustomHostnameAnalysisResult;
 import com.azure.resourcemanager.appservice.generated.models.DnsVerificationTestResult;
@@ -16,9 +16,9 @@ import java.util.List;
 public final class CustomHostnameAnalysisResultImpl implements CustomHostnameAnalysisResult {
     private CustomHostnameAnalysisResultInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    CustomHostnameAnalysisResultImpl(CustomHostnameAnalysisResultInner innerObject, WebSiteManager serviceManager) {
+    CustomHostnameAnalysisResultImpl(CustomHostnameAnalysisResultInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -116,7 +116,7 @@ public final class CustomHostnameAnalysisResultImpl implements CustomHostnameAna
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

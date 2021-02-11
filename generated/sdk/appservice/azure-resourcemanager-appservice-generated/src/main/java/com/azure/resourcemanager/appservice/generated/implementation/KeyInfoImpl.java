@@ -4,16 +4,16 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.KeyInfoInner;
 import com.azure.resourcemanager.appservice.generated.models.KeyInfo;
 
 public final class KeyInfoImpl implements KeyInfo {
     private KeyInfoInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    KeyInfoImpl(KeyInfoInner innerObject, WebSiteManager serviceManager) {
+    KeyInfoImpl(KeyInfoInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -30,7 +30,7 @@ public final class KeyInfoImpl implements KeyInfo {
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

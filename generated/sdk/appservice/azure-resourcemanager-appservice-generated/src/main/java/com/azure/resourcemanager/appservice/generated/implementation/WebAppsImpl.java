@@ -10,7 +10,7 @@ import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.http.rest.StreamResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.WebAppsClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AzureStoragePropertyDictionaryResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.BackupItemInner;
@@ -150,9 +150,9 @@ public final class WebAppsImpl implements WebApps {
 
     private final WebAppsClient innerClient;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    public WebAppsImpl(WebAppsClient innerClient, WebSiteManager serviceManager) {
+    public WebAppsImpl(WebAppsClient innerClient, AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -8555,7 +8555,7 @@ public final class WebAppsImpl implements WebApps {
         return this.innerClient;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 

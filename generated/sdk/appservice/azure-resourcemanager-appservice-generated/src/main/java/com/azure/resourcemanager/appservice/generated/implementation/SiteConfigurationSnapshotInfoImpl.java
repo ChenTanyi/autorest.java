@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigurationSnapshotInfoInner;
 import com.azure.resourcemanager.appservice.generated.models.SiteConfigurationSnapshotInfo;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -13,9 +13,10 @@ import java.time.OffsetDateTime;
 public final class SiteConfigurationSnapshotInfoImpl implements SiteConfigurationSnapshotInfo {
     private SiteConfigurationSnapshotInfoInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    SiteConfigurationSnapshotInfoImpl(SiteConfigurationSnapshotInfoInner innerObject, WebSiteManager serviceManager) {
+    SiteConfigurationSnapshotInfoImpl(
+        SiteConfigurationSnapshotInfoInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -52,7 +53,7 @@ public final class SiteConfigurationSnapshotInfoImpl implements SiteConfiguratio
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

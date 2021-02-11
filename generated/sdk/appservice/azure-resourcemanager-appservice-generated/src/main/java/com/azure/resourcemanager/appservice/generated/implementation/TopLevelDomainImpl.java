@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.TopLevelDomainInner;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.TopLevelDomain;
@@ -12,9 +12,9 @@ import com.azure.resourcemanager.appservice.generated.models.TopLevelDomain;
 public final class TopLevelDomainImpl implements TopLevelDomain {
     private TopLevelDomainInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    TopLevelDomainImpl(TopLevelDomainInner innerObject, WebSiteManager serviceManager) {
+    TopLevelDomainImpl(TopLevelDomainInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -47,7 +47,7 @@ public final class TopLevelDomainImpl implements TopLevelDomain {
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DiagnosticCategoryInner;
 import com.azure.resourcemanager.appservice.generated.models.DiagnosticCategory;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -12,9 +12,9 @@ import com.azure.resourcemanager.appservice.generated.models.SystemData;
 public final class DiagnosticCategoryImpl implements DiagnosticCategory {
     private DiagnosticCategoryInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    DiagnosticCategoryImpl(DiagnosticCategoryInner innerObject, WebSiteManager serviceManager) {
+    DiagnosticCategoryImpl(DiagnosticCategoryInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -47,7 +47,7 @@ public final class DiagnosticCategoryImpl implements DiagnosticCategory {
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.MSDeployStatusInner;
 import com.azure.resourcemanager.appservice.generated.models.MSDeployProvisioningState;
 import com.azure.resourcemanager.appservice.generated.models.MSDeployStatus;
@@ -14,9 +14,9 @@ import java.time.OffsetDateTime;
 public final class MSDeployStatusImpl implements MSDeployStatus {
     private MSDeployStatusInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    MSDeployStatusImpl(MSDeployStatusInner innerObject, WebSiteManager serviceManager) {
+    MSDeployStatusImpl(MSDeployStatusInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -65,7 +65,7 @@ public final class MSDeployStatusImpl implements MSDeployStatus {
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

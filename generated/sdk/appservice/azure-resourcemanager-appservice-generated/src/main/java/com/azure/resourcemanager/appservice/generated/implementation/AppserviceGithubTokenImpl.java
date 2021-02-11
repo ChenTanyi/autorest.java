@@ -4,16 +4,16 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppserviceGithubTokenInner;
 import com.azure.resourcemanager.appservice.generated.models.AppserviceGithubToken;
 
 public final class AppserviceGithubTokenImpl implements AppserviceGithubToken {
     private AppserviceGithubTokenInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    AppserviceGithubTokenImpl(AppserviceGithubTokenInner innerObject, WebSiteManager serviceManager) {
+    AppserviceGithubTokenImpl(AppserviceGithubTokenInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -42,7 +42,7 @@ public final class AppserviceGithubTokenImpl implements AppserviceGithubToken {
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

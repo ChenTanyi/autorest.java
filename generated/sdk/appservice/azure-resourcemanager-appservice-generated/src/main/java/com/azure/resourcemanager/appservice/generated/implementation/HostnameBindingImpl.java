@@ -5,7 +5,7 @@
 package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.HostnameBindingInner;
 import com.azure.resourcemanager.appservice.generated.models.AzureResourceType;
 import com.azure.resourcemanager.appservice.generated.models.CustomHostnameDnsRecordType;
@@ -17,7 +17,7 @@ import com.azure.resourcemanager.appservice.generated.models.SystemData;
 public final class HostnameBindingImpl implements HostnameBinding, HostnameBinding.Definition, HostnameBinding.Update {
     private HostnameBindingInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -79,7 +79,7 @@ public final class HostnameBindingImpl implements HostnameBinding, HostnameBindi
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 
@@ -117,7 +117,7 @@ public final class HostnameBindingImpl implements HostnameBinding, HostnameBindi
         return this;
     }
 
-    HostnameBindingImpl(String name, WebSiteManager serviceManager) {
+    HostnameBindingImpl(String name, AppServiceManager serviceManager) {
         this.innerObject = new HostnameBindingInner();
         this.serviceManager = serviceManager;
         this.hostname = name;
@@ -149,7 +149,7 @@ public final class HostnameBindingImpl implements HostnameBinding, HostnameBindi
         return this;
     }
 
-    HostnameBindingImpl(HostnameBindingInner innerObject, WebSiteManager serviceManager) {
+    HostnameBindingImpl(HostnameBindingInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

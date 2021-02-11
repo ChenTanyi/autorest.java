@@ -9,7 +9,7 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.StaticSitesClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteBuildArmResourceInner;
@@ -38,9 +38,9 @@ public final class StaticSitesImpl implements StaticSites {
 
     private final StaticSitesClient innerClient;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    public StaticSitesImpl(StaticSitesClient innerClient, WebSiteManager serviceManager) {
+    public StaticSitesImpl(StaticSitesClient innerClient, AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -602,7 +602,7 @@ public final class StaticSitesImpl implements StaticSites {
         return this.innerClient;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 

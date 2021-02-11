@@ -5,7 +5,7 @@
 package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetRouteInner;
 import com.azure.resourcemanager.appservice.generated.models.RouteType;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -14,7 +14,7 @@ import com.azure.resourcemanager.appservice.generated.models.VnetRoute;
 public final class VnetRouteImpl implements VnetRoute, VnetRoute.Definition, VnetRoute.Update {
     private VnetRouteInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -52,7 +52,7 @@ public final class VnetRouteImpl implements VnetRoute, VnetRoute.Definition, Vne
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 
@@ -93,7 +93,7 @@ public final class VnetRouteImpl implements VnetRoute, VnetRoute.Definition, Vne
         return this;
     }
 
-    VnetRouteImpl(String name, WebSiteManager serviceManager) {
+    VnetRouteImpl(String name, AppServiceManager serviceManager) {
         this.innerObject = new VnetRouteInner();
         this.serviceManager = serviceManager;
         this.routeName = name;
@@ -124,7 +124,7 @@ public final class VnetRouteImpl implements VnetRoute, VnetRoute.Definition, Vne
         return this;
     }
 
-    VnetRouteImpl(VnetRouteInner innerObject, WebSiteManager serviceManager) {
+    VnetRouteImpl(VnetRouteInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

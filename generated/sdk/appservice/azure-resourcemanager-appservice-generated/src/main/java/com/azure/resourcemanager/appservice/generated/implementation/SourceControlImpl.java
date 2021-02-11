@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SourceControlInner;
 import com.azure.resourcemanager.appservice.generated.models.SourceControl;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -13,9 +13,9 @@ import java.time.OffsetDateTime;
 public final class SourceControlImpl implements SourceControl {
     private SourceControlInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    SourceControlImpl(SourceControlInner innerObject, WebSiteManager serviceManager) {
+    SourceControlImpl(SourceControlInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -60,7 +60,7 @@ public final class SourceControlImpl implements SourceControl {
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

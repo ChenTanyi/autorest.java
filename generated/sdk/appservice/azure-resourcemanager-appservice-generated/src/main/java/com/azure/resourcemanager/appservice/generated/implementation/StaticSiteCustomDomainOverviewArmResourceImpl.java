@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteCustomDomainOverviewArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteCustomDomainOverviewArmResource;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -13,10 +13,10 @@ import java.time.OffsetDateTime;
 public final class StaticSiteCustomDomainOverviewArmResourceImpl implements StaticSiteCustomDomainOverviewArmResource {
     private StaticSiteCustomDomainOverviewArmResourceInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
     StaticSiteCustomDomainOverviewArmResourceImpl(
-        StaticSiteCustomDomainOverviewArmResourceInner innerObject, WebSiteManager serviceManager) {
+        StaticSiteCustomDomainOverviewArmResourceInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -53,7 +53,7 @@ public final class StaticSiteCustomDomainOverviewArmResourceImpl implements Stat
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

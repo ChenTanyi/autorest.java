@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceCertificateOrderInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.NameIdentifierInner;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceCertificate;
@@ -32,7 +32,7 @@ public final class AppServiceCertificateOrderImpl
     implements AppServiceCertificateOrder, AppServiceCertificateOrder.Definition, AppServiceCertificateOrder.Update {
     private AppServiceCertificateOrderInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -167,7 +167,7 @@ public final class AppServiceCertificateOrderImpl
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 
@@ -200,7 +200,7 @@ public final class AppServiceCertificateOrderImpl
         return this;
     }
 
-    AppServiceCertificateOrderImpl(String name, WebSiteManager serviceManager) {
+    AppServiceCertificateOrderImpl(String name, AppServiceManager serviceManager) {
         this.innerObject = new AppServiceCertificateOrderInner();
         this.serviceManager = serviceManager;
         this.certificateOrderName = name;
@@ -233,7 +233,7 @@ public final class AppServiceCertificateOrderImpl
         return this;
     }
 
-    AppServiceCertificateOrderImpl(AppServiceCertificateOrderInner innerObject, WebSiteManager serviceManager) {
+    AppServiceCertificateOrderImpl(AppServiceCertificateOrderInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

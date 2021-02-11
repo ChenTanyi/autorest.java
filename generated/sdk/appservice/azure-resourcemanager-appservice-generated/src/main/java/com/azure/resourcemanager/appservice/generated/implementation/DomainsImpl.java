@@ -9,7 +9,7 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.DomainsClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DomainAvailabilityCheckResultInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DomainControlCenterSsoRequestInner;
@@ -30,9 +30,9 @@ public final class DomainsImpl implements Domains {
 
     private final DomainsClient innerClient;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    public DomainsImpl(DomainsClient innerClient, WebSiteManager serviceManager) {
+    public DomainsImpl(DomainsClient innerClient, AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -401,7 +401,7 @@ public final class DomainsImpl implements Domains {
         return this.innerClient;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 

@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ContinuousWebJobInner;
 import com.azure.resourcemanager.appservice.generated.models.ContinuousWebJob;
 import com.azure.resourcemanager.appservice.generated.models.ContinuousWebJobStatus;
@@ -16,9 +16,9 @@ import java.util.Map;
 public final class ContinuousWebJobImpl implements ContinuousWebJob {
     private ContinuousWebJobInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    ContinuousWebJobImpl(ContinuousWebJobInner innerObject, WebSiteManager serviceManager) {
+    ContinuousWebJobImpl(ContinuousWebJobInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -92,7 +92,7 @@ public final class ContinuousWebJobImpl implements ContinuousWebJob {
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

@@ -6,8 +6,8 @@
     <version>1.0.0-beta.1</version> <!-- {x-version-update;com.azure.resourcemanager:azure-resourcemanager-appservice-generated;current} -->
     <packaging>jar</packaging>
 
-    <name>Microsoft Azure SDK for WebSite Management</name>
-    <description>This package contains Microsoft Azure SDK for WebSite Management SDK. WebSite Management Client. Package tag package-2020-10. For documentation on how to use this package, please see https://aka.ms/azsdk/java/mgmt</description>
+    <name>Microsoft Azure SDK for AppService Management</name>
+    <description>This package contains Microsoft Azure SDK for AppService Management SDK. WebSite Management Client. Package tag package-2020-10. For documentation on how to use this package, please see https://aka.ms/azsdk/java/mgmt</description>
     <url>https://github.com/Azure/azure-sdk-for-java</url>
 
     <licenses>

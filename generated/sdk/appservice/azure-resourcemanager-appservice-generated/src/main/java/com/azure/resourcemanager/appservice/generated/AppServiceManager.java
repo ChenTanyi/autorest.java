@@ -60,8 +60,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-/** Entry point to WebSiteManager. WebSite Management Client. */
-public final class WebSiteManager {
+/** Entry point to AppServiceManager. WebSite Management Client. */
+public final class AppServiceManager {
     private AppServiceCertificateOrders appServiceCertificateOrders;
 
     private CertificateRegistrationProviders certificateRegistrationProviders;
@@ -96,7 +96,7 @@ public final class WebSiteManager {
 
     private final WebSiteManagementClient clientObject;
 
-    private WebSiteManager(HttpPipeline httpPipeline, AzureProfile profile, Duration defaultPollInterval) {
+    private AppServiceManager(HttpPipeline httpPipeline, AzureProfile profile, Duration defaultPollInterval) {
         Objects.requireNonNull(httpPipeline, "'httpPipeline' cannot be null.");
         Objects.requireNonNull(profile, "'profile' cannot be null.");
         this.clientObject =
@@ -109,25 +109,25 @@ public final class WebSiteManager {
     }
 
     /**
-     * Creates an instance of WebSite service API entry point.
+     * Creates an instance of AppService service API entry point.
      *
      * @param credential the credential to use.
      * @param profile the Azure profile for client.
-     * @return the WebSite service API instance.
+     * @return the AppService service API instance.
      */
-    public static WebSiteManager authenticate(TokenCredential credential, AzureProfile profile) {
+    public static AppServiceManager authenticate(TokenCredential credential, AzureProfile profile) {
         Objects.requireNonNull(credential, "'credential' cannot be null.");
         Objects.requireNonNull(profile, "'profile' cannot be null.");
         return configure().authenticate(credential, profile);
     }
 
     /**
-     * Gets a Configurable instance that can be used to create WebSiteManager with optional configuration.
+     * Gets a Configurable instance that can be used to create AppServiceManager with optional configuration.
      *
      * @return the Configurable instance allowing configurations.
      */
     public static Configurable configure() {
-        return new WebSiteManager.Configurable();
+        return new AppServiceManager.Configurable();
     }
 
     /** The Configurable allowing configurations to be set. */
@@ -202,13 +202,13 @@ public final class WebSiteManager {
         }
 
         /**
-         * Creates an instance of WebSite service API entry point.
+         * Creates an instance of AppService service API entry point.
          *
          * @param credential the credential to use.
          * @param profile the Azure profile for client.
-         * @return the WebSite service API instance.
+         * @return the AppService service API instance.
          */
-        public WebSiteManager authenticate(TokenCredential credential, AzureProfile profile) {
+        public AppServiceManager authenticate(TokenCredential credential, AzureProfile profile) {
             Objects.requireNonNull(credential, "'credential' cannot be null.");
             Objects.requireNonNull(profile, "'profile' cannot be null.");
 
@@ -252,7 +252,7 @@ public final class WebSiteManager {
                     .httpClient(httpClient)
                     .policies(policies.toArray(new HttpPipelinePolicy[0]))
                     .build();
-            return new WebSiteManager(httpPipeline, profile, defaultPollInterval);
+            return new AppServiceManager(httpPipeline, profile, defaultPollInterval);
         }
     }
 

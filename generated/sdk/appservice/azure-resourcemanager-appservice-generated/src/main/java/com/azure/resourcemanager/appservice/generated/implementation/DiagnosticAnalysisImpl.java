@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AnalysisDataInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DetectorDefinitionInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DiagnosticAnalysisInner;
@@ -21,9 +21,9 @@ import java.util.stream.Collectors;
 public final class DiagnosticAnalysisImpl implements DiagnosticAnalysis {
     private DiagnosticAnalysisInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    DiagnosticAnalysisImpl(DiagnosticAnalysisInner innerObject, WebSiteManager serviceManager) {
+    DiagnosticAnalysisImpl(DiagnosticAnalysisInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -97,7 +97,7 @@ public final class DiagnosticAnalysisImpl implements DiagnosticAnalysis {
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

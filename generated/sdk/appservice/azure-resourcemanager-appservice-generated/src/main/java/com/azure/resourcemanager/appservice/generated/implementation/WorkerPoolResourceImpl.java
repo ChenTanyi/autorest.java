@@ -5,7 +5,7 @@
 package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.WorkerPoolResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.ComputeModeOptions;
 import com.azure.resourcemanager.appservice.generated.models.SkuDescription;
@@ -18,7 +18,7 @@ public final class WorkerPoolResourceImpl
     implements WorkerPoolResource, WorkerPoolResource.Definition, WorkerPoolResource.Update {
     private WorkerPoolResourceInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -73,7 +73,7 @@ public final class WorkerPoolResourceImpl
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 
@@ -107,7 +107,7 @@ public final class WorkerPoolResourceImpl
         return this;
     }
 
-    WorkerPoolResourceImpl(String name, WebSiteManager serviceManager) {
+    WorkerPoolResourceImpl(String name, AppServiceManager serviceManager) {
         this.innerObject = new WorkerPoolResourceInner();
         this.serviceManager = serviceManager;
         this.workerPoolName = name;
@@ -137,7 +137,7 @@ public final class WorkerPoolResourceImpl
         return this;
     }
 
-    WorkerPoolResourceImpl(WorkerPoolResourceInner innerObject, WebSiteManager serviceManager) {
+    WorkerPoolResourceImpl(WorkerPoolResourceInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

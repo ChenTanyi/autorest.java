@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ProcessInfoInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ProcessModuleInfoInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ProcessThreadInfoInner;
@@ -21,9 +21,9 @@ import java.util.stream.Collectors;
 public final class ProcessInfoImpl implements ProcessInfo {
     private ProcessInfoInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    ProcessInfoImpl(ProcessInfoInner innerObject, WebSiteManager serviceManager) {
+    ProcessInfoImpl(ProcessInfoInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -231,7 +231,7 @@ public final class ProcessInfoImpl implements ProcessInfo {
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

@@ -5,7 +5,7 @@
 package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.PrivateEndpointConnectionResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.ArmIdWrapper;
 import com.azure.resourcemanager.appservice.generated.models.PrivateEndpointConnectionResource;
@@ -19,7 +19,7 @@ public final class PrivateEndpointConnectionResourceImpl
         PrivateEndpointConnectionResource.Update {
     private PrivateEndpointConnectionResourceInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -57,7 +57,7 @@ public final class PrivateEndpointConnectionResourceImpl
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 
@@ -97,7 +97,7 @@ public final class PrivateEndpointConnectionResourceImpl
         return this;
     }
 
-    PrivateEndpointConnectionResourceImpl(String name, WebSiteManager serviceManager) {
+    PrivateEndpointConnectionResourceImpl(String name, AppServiceManager serviceManager) {
         this.innerObject = new PrivateEndpointConnectionResourceInner();
         this.serviceManager = serviceManager;
         this.privateEndpointConnectionName = name;
@@ -130,7 +130,7 @@ public final class PrivateEndpointConnectionResourceImpl
     }
 
     PrivateEndpointConnectionResourceImpl(
-        PrivateEndpointConnectionResourceInner innerObject, WebSiteManager serviceManager) {
+        PrivateEndpointConnectionResourceInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

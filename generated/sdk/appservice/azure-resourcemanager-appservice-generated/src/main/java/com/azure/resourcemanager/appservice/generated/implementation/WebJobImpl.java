@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.WebJobInner;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.WebJob;
@@ -15,9 +15,9 @@ import java.util.Map;
 public final class WebJobImpl implements WebJob {
     private WebJobInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    WebJobImpl(WebJobInner innerObject, WebSiteManager serviceManager) {
+    WebJobImpl(WebJobInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -79,7 +79,7 @@ public final class WebJobImpl implements WebJob {
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

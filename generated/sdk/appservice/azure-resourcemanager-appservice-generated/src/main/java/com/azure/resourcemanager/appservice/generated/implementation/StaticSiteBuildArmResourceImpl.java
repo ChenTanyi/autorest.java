@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteBuildArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.BuildStatus;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteBuildArmResource;
@@ -14,9 +14,9 @@ import java.time.OffsetDateTime;
 public final class StaticSiteBuildArmResourceImpl implements StaticSiteBuildArmResource {
     private StaticSiteBuildArmResourceInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    StaticSiteBuildArmResourceImpl(StaticSiteBuildArmResourceInner innerObject, WebSiteManager serviceManager) {
+    StaticSiteBuildArmResourceImpl(StaticSiteBuildArmResourceInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -73,7 +73,7 @@ public final class StaticSiteBuildArmResourceImpl implements StaticSiteBuildArmR
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

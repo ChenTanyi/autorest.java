@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteFunctionOverviewArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteFunctionOverviewArmResource;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -13,10 +13,10 @@ import com.azure.resourcemanager.appservice.generated.models.TriggerTypes;
 public final class StaticSiteFunctionOverviewArmResourceImpl implements StaticSiteFunctionOverviewArmResource {
     private StaticSiteFunctionOverviewArmResourceInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
     StaticSiteFunctionOverviewArmResourceImpl(
-        StaticSiteFunctionOverviewArmResourceInner innerObject, WebSiteManager serviceManager) {
+        StaticSiteFunctionOverviewArmResourceInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -53,7 +53,7 @@ public final class StaticSiteFunctionOverviewArmResourceImpl implements StaticSi
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

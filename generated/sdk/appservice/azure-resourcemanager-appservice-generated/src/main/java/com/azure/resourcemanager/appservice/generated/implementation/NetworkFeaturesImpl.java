@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.HybridConnectionInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.NetworkFeaturesInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RelayServiceConnectionEntityInner;
@@ -21,9 +21,9 @@ import java.util.stream.Collectors;
 public final class NetworkFeaturesImpl implements NetworkFeatures {
     private NetworkFeaturesInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    NetworkFeaturesImpl(NetworkFeaturesInner innerObject, WebSiteManager serviceManager) {
+    NetworkFeaturesImpl(NetworkFeaturesInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -93,7 +93,7 @@ public final class NetworkFeaturesImpl implements NetworkFeatures {
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

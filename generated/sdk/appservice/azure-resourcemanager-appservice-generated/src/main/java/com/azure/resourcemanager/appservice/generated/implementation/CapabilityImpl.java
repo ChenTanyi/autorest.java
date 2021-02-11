@@ -4,16 +4,16 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CapabilityInner;
 import com.azure.resourcemanager.appservice.generated.models.Capability;
 
 public final class CapabilityImpl implements Capability {
     private CapabilityInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    CapabilityImpl(CapabilityInner innerObject, WebSiteManager serviceManager) {
+    CapabilityImpl(CapabilityInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,7 +34,7 @@ public final class CapabilityImpl implements Capability {
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

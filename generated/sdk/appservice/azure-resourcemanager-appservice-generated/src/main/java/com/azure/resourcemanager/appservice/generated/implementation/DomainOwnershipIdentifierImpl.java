@@ -5,7 +5,7 @@
 package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DomainOwnershipIdentifierInner;
 import com.azure.resourcemanager.appservice.generated.models.DomainOwnershipIdentifier;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -14,7 +14,7 @@ public final class DomainOwnershipIdentifierImpl
     implements DomainOwnershipIdentifier, DomainOwnershipIdentifier.Definition, DomainOwnershipIdentifier.Update {
     private DomainOwnershipIdentifierInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -44,7 +44,7 @@ public final class DomainOwnershipIdentifierImpl
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 
@@ -82,7 +82,7 @@ public final class DomainOwnershipIdentifierImpl
         return this;
     }
 
-    DomainOwnershipIdentifierImpl(String name, WebSiteManager serviceManager) {
+    DomainOwnershipIdentifierImpl(String name, AppServiceManager serviceManager) {
         this.innerObject = new DomainOwnershipIdentifierInner();
         this.serviceManager = serviceManager;
         this.name = name;
@@ -113,7 +113,7 @@ public final class DomainOwnershipIdentifierImpl
         return this;
     }
 
-    DomainOwnershipIdentifierImpl(DomainOwnershipIdentifierInner innerObject, WebSiteManager serviceManager) {
+    DomainOwnershipIdentifierImpl(DomainOwnershipIdentifierInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

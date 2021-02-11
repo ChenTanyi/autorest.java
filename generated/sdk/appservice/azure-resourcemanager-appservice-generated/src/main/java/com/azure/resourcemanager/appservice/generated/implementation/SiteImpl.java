@@ -9,7 +9,7 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.StreamResponse;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.BackupRequestInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmCopySlotEntityInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RestoreRequestInner;
@@ -49,7 +49,7 @@ import java.util.UUID;
 public final class SiteImpl implements Site, Site.Definition, Site.Update {
     private SiteInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -281,7 +281,7 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 
@@ -314,7 +314,7 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         return this;
     }
 
-    SiteImpl(String name, WebSiteManager serviceManager) {
+    SiteImpl(String name, AppServiceManager serviceManager) {
         this.innerObject = new SiteInner();
         this.serviceManager = serviceManager;
         this.name = name;
@@ -345,7 +345,7 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         return this;
     }
 
-    SiteImpl(SiteInner innerObject, WebSiteManager serviceManager) {
+    SiteImpl(SiteInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ConnectionStringDictionaryInner;
 import com.azure.resourcemanager.appservice.generated.models.ConnStringValueTypePair;
 import com.azure.resourcemanager.appservice.generated.models.ConnectionStringDictionary;
@@ -15,9 +15,9 @@ import java.util.Map;
 public final class ConnectionStringDictionaryImpl implements ConnectionStringDictionary {
     private ConnectionStringDictionaryInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    ConnectionStringDictionaryImpl(ConnectionStringDictionaryInner innerObject, WebSiteManager serviceManager) {
+    ConnectionStringDictionaryImpl(ConnectionStringDictionaryInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -55,7 +55,7 @@ public final class ConnectionStringDictionaryImpl implements ConnectionStringDic
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

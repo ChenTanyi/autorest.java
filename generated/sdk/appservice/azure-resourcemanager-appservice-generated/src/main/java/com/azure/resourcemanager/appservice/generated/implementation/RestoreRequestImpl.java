@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RestoreRequestInner;
 import com.azure.resourcemanager.appservice.generated.models.BackupRestoreOperationType;
 import com.azure.resourcemanager.appservice.generated.models.DatabaseBackupSetting;
@@ -16,9 +16,9 @@ import java.util.List;
 public final class RestoreRequestImpl implements RestoreRequest {
     private RestoreRequestInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    RestoreRequestImpl(RestoreRequestInner innerObject, WebSiteManager serviceManager) {
+    RestoreRequestImpl(RestoreRequestInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -96,7 +96,7 @@ public final class RestoreRequestImpl implements RestoreRequest {
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

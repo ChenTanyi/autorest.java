@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.BackupItemInner;
 import com.azure.resourcemanager.appservice.generated.models.BackupItem;
 import com.azure.resourcemanager.appservice.generated.models.BackupItemStatus;
@@ -17,9 +17,9 @@ import java.util.List;
 public final class BackupItemImpl implements BackupItem {
     private BackupItemInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    BackupItemImpl(BackupItemInner innerObject, WebSiteManager serviceManager) {
+    BackupItemImpl(BackupItemInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -109,7 +109,7 @@ public final class BackupItemImpl implements BackupItem {
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

@@ -6,7 +6,7 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.FunctionEnvelopeInner;
 import com.azure.resourcemanager.appservice.generated.models.FunctionEnvelope;
 import com.azure.resourcemanager.appservice.generated.models.FunctionSecrets;
@@ -18,9 +18,9 @@ import java.util.Map;
 public final class FunctionEnvelopeImpl implements FunctionEnvelope, FunctionEnvelope.Definition {
     private FunctionEnvelopeInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    FunctionEnvelopeImpl(FunctionEnvelopeInner innerObject, WebSiteManager serviceManager) {
+    FunctionEnvelopeImpl(FunctionEnvelopeInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -106,7 +106,7 @@ public final class FunctionEnvelopeImpl implements FunctionEnvelope, FunctionEnv
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 
@@ -140,7 +140,7 @@ public final class FunctionEnvelopeImpl implements FunctionEnvelope, FunctionEnv
         return this;
     }
 
-    FunctionEnvelopeImpl(String name, WebSiteManager serviceManager) {
+    FunctionEnvelopeImpl(String name, AppServiceManager serviceManager) {
         this.innerObject = new FunctionEnvelopeInner();
         this.serviceManager = serviceManager;
         this.functionName = name;

@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserInvitationResponseResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserInvitationResponseResource;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -13,10 +13,10 @@ import java.time.OffsetDateTime;
 public final class StaticSiteUserInvitationResponseResourceImpl implements StaticSiteUserInvitationResponseResource {
     private StaticSiteUserInvitationResponseResourceInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
     StaticSiteUserInvitationResponseResourceImpl(
-        StaticSiteUserInvitationResponseResourceInner innerObject, WebSiteManager serviceManager) {
+        StaticSiteUserInvitationResponseResourceInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -53,7 +53,7 @@ public final class StaticSiteUserInvitationResponseResourceImpl implements Stati
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

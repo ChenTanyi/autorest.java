@@ -9,7 +9,7 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.ResourceProvidersClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppserviceGithubTokenInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.BillingMeterInner;
@@ -50,9 +50,9 @@ public final class ResourceProvidersImpl implements ResourceProviders {
 
     private final ResourceProvidersClient innerClient;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    public ResourceProvidersImpl(ResourceProvidersClient innerClient, WebSiteManager serviceManager) {
+    public ResourceProvidersImpl(ResourceProvidersClient innerClient, AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -372,7 +372,7 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         return this.innerClient;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

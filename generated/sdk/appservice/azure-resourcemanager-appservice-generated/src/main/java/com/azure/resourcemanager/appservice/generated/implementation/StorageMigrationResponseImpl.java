@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StorageMigrationResponseInner;
 import com.azure.resourcemanager.appservice.generated.models.StorageMigrationResponse;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -12,9 +12,9 @@ import com.azure.resourcemanager.appservice.generated.models.SystemData;
 public final class StorageMigrationResponseImpl implements StorageMigrationResponse {
     private StorageMigrationResponseInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    StorageMigrationResponseImpl(StorageMigrationResponseInner innerObject, WebSiteManager serviceManager) {
+    StorageMigrationResponseImpl(StorageMigrationResponseInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -47,7 +47,7 @@ public final class StorageMigrationResponseImpl implements StorageMigrationRespo
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

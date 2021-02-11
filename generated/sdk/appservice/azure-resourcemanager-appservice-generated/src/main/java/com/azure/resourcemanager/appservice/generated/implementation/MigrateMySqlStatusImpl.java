@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.MigrateMySqlStatusInner;
 import com.azure.resourcemanager.appservice.generated.models.MigrateMySqlStatus;
 import com.azure.resourcemanager.appservice.generated.models.OperationStatus;
@@ -13,9 +13,9 @@ import com.azure.resourcemanager.appservice.generated.models.SystemData;
 public final class MigrateMySqlStatusImpl implements MigrateMySqlStatus {
     private MigrateMySqlStatusInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    MigrateMySqlStatusImpl(MigrateMySqlStatusInner innerObject, WebSiteManager serviceManager) {
+    MigrateMySqlStatusImpl(MigrateMySqlStatusInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -56,7 +56,7 @@ public final class MigrateMySqlStatusImpl implements MigrateMySqlStatus {
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

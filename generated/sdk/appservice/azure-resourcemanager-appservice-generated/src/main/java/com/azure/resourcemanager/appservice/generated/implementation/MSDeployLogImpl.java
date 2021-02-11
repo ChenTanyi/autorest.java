@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.MSDeployLogInner;
 import com.azure.resourcemanager.appservice.generated.models.MSDeployLog;
 import com.azure.resourcemanager.appservice.generated.models.MSDeployLogEntry;
@@ -15,9 +15,9 @@ import java.util.List;
 public final class MSDeployLogImpl implements MSDeployLog {
     private MSDeployLogInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    MSDeployLogImpl(MSDeployLogInner innerObject, WebSiteManager serviceManager) {
+    MSDeployLogImpl(MSDeployLogInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -55,7 +55,7 @@ public final class MSDeployLogImpl implements MSDeployLog {
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

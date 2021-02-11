@@ -4,16 +4,16 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.NetworkTraceInner;
 import com.azure.resourcemanager.appservice.generated.models.NetworkTrace;
 
 public final class NetworkTraceImpl implements NetworkTrace {
     private NetworkTraceInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    NetworkTraceImpl(NetworkTraceInner innerObject, WebSiteManager serviceManager) {
+    NetworkTraceImpl(NetworkTraceInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,7 +34,7 @@ public final class NetworkTraceImpl implements NetworkTrace {
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

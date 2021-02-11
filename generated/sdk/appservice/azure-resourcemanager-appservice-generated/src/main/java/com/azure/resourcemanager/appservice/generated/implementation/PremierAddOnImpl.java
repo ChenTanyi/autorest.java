@@ -6,7 +6,7 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.PremierAddOnInner;
 import com.azure.resourcemanager.appservice.generated.models.PremierAddOn;
 import com.azure.resourcemanager.appservice.generated.models.PremierAddOnPatchResource;
@@ -17,7 +17,7 @@ import java.util.Map;
 public final class PremierAddOnImpl implements PremierAddOn, PremierAddOn.Definition, PremierAddOn.Update {
     private PremierAddOnInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -84,7 +84,7 @@ public final class PremierAddOnImpl implements PremierAddOn, PremierAddOn.Defini
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 
@@ -122,7 +122,7 @@ public final class PremierAddOnImpl implements PremierAddOn, PremierAddOn.Defini
         return this;
     }
 
-    PremierAddOnImpl(String name, WebSiteManager serviceManager) {
+    PremierAddOnImpl(String name, AppServiceManager serviceManager) {
         this.innerObject = new PremierAddOnInner();
         this.serviceManager = serviceManager;
         this.premierAddOnName = name;
@@ -154,7 +154,7 @@ public final class PremierAddOnImpl implements PremierAddOn, PremierAddOn.Defini
         return this;
     }
 
-    PremierAddOnImpl(PremierAddOnInner innerObject, WebSiteManager serviceManager) {
+    PremierAddOnImpl(PremierAddOnInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

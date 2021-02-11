@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DomainAvailabilityCheckResultInner;
 import com.azure.resourcemanager.appservice.generated.models.DomainAvailabilityCheckResult;
 import com.azure.resourcemanager.appservice.generated.models.DomainType;
@@ -12,9 +12,10 @@ import com.azure.resourcemanager.appservice.generated.models.DomainType;
 public final class DomainAvailabilityCheckResultImpl implements DomainAvailabilityCheckResult {
     private DomainAvailabilityCheckResultInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    DomainAvailabilityCheckResultImpl(DomainAvailabilityCheckResultInner innerObject, WebSiteManager serviceManager) {
+    DomainAvailabilityCheckResultImpl(
+        DomainAvailabilityCheckResultInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -35,7 +36,7 @@ public final class DomainAvailabilityCheckResultImpl implements DomainAvailabili
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

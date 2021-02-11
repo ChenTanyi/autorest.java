@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DeletedSiteInner;
 import com.azure.resourcemanager.appservice.generated.models.DeletedSite;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -12,9 +12,9 @@ import com.azure.resourcemanager.appservice.generated.models.SystemData;
 public final class DeletedSiteImpl implements DeletedSite {
     private DeletedSiteInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    DeletedSiteImpl(DeletedSiteInner innerObject, WebSiteManager serviceManager) {
+    DeletedSiteImpl(DeletedSiteInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -75,7 +75,7 @@ public final class DeletedSiteImpl implements DeletedSite {
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

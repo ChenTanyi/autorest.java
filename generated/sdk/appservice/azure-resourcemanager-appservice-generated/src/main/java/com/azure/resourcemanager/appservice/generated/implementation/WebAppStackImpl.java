@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.WebAppStackInner;
 import com.azure.resourcemanager.appservice.generated.models.StackOsTypes;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -16,9 +16,9 @@ import java.util.List;
 public final class WebAppStackImpl implements WebAppStack {
     private WebAppStackInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    WebAppStackImpl(WebAppStackInner innerObject, WebSiteManager serviceManager) {
+    WebAppStackImpl(WebAppStackInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -72,7 +72,7 @@ public final class WebAppStackImpl implements WebAppStack {
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

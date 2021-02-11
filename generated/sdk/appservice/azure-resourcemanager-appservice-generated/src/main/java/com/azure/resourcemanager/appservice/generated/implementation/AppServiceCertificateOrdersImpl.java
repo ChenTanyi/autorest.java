@@ -9,7 +9,7 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.AppServiceCertificateOrdersClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceCertificateOrderInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceCertificateResourceInner;
@@ -36,10 +36,10 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
 
     private final AppServiceCertificateOrdersClient innerClient;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
     public AppServiceCertificateOrdersImpl(
-        AppServiceCertificateOrdersClient innerClient, WebSiteManager serviceManager) {
+        AppServiceCertificateOrdersClient innerClient, AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -519,7 +519,7 @@ public final class AppServiceCertificateOrdersImpl implements AppServiceCertific
         return this.innerClient;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 

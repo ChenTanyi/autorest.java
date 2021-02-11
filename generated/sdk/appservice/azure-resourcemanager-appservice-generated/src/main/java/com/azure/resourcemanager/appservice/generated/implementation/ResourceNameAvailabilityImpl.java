@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ResourceNameAvailabilityInner;
 import com.azure.resourcemanager.appservice.generated.models.InAvailabilityReasonType;
 import com.azure.resourcemanager.appservice.generated.models.ResourceNameAvailability;
@@ -12,9 +12,9 @@ import com.azure.resourcemanager.appservice.generated.models.ResourceNameAvailab
 public final class ResourceNameAvailabilityImpl implements ResourceNameAvailability {
     private ResourceNameAvailabilityInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    ResourceNameAvailabilityImpl(ResourceNameAvailabilityInner innerObject, WebSiteManager serviceManager) {
+    ResourceNameAvailabilityImpl(ResourceNameAvailabilityInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -35,7 +35,7 @@ public final class ResourceNameAvailabilityImpl implements ResourceNameAvailabil
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

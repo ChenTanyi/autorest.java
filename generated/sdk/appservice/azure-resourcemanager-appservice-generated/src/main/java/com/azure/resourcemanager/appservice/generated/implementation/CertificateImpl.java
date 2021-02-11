@@ -6,7 +6,7 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CertificateInner;
 import com.azure.resourcemanager.appservice.generated.models.Certificate;
 import com.azure.resourcemanager.appservice.generated.models.CertificatePatchResource;
@@ -21,7 +21,7 @@ import java.util.Map;
 public final class CertificateImpl implements Certificate, Certificate.Definition, Certificate.Update {
     private CertificateInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -153,7 +153,7 @@ public final class CertificateImpl implements Certificate, Certificate.Definitio
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 
@@ -188,7 +188,7 @@ public final class CertificateImpl implements Certificate, Certificate.Definitio
         return this;
     }
 
-    CertificateImpl(String name, WebSiteManager serviceManager) {
+    CertificateImpl(String name, AppServiceManager serviceManager) {
         this.innerObject = new CertificateInner();
         this.serviceManager = serviceManager;
         this.name = name;
@@ -219,7 +219,7 @@ public final class CertificateImpl implements Certificate, Certificate.Definitio
         return this;
     }
 
-    CertificateImpl(CertificateInner innerObject, WebSiteManager serviceManager) {
+    CertificateImpl(CertificateInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

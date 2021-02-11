@@ -7,7 +7,7 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.CertificateRegistrationProvidersClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmOperationDescriptionInner;
 import com.azure.resourcemanager.appservice.generated.models.CertificateRegistrationProviders;
@@ -19,10 +19,10 @@ public final class CertificateRegistrationProvidersImpl implements CertificateRe
 
     private final CertificateRegistrationProvidersClient innerClient;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
     public CertificateRegistrationProvidersImpl(
-        CertificateRegistrationProvidersClient innerClient, WebSiteManager serviceManager) {
+        CertificateRegistrationProvidersClient innerClient, AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -41,7 +41,7 @@ public final class CertificateRegistrationProvidersImpl implements CertificateRe
         return this.innerClient;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SkuInfosInner;
 import com.azure.resourcemanager.appservice.generated.models.GlobalCsmSkuDescription;
 import com.azure.resourcemanager.appservice.generated.models.SkuInfos;
@@ -14,9 +14,9 @@ import java.util.List;
 public final class SkuInfosImpl implements SkuInfos {
     private SkuInfosInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    SkuInfosImpl(SkuInfosInner innerObject, WebSiteManager serviceManager) {
+    SkuInfosImpl(SkuInfosInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -38,7 +38,7 @@ public final class SkuInfosImpl implements SkuInfos {
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

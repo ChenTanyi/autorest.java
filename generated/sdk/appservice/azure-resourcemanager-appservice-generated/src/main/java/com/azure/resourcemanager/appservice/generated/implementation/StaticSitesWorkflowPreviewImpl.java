@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSitesWorkflowPreviewInner;
 import com.azure.resourcemanager.appservice.generated.models.StaticSitesWorkflowPreview;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -12,9 +12,9 @@ import com.azure.resourcemanager.appservice.generated.models.SystemData;
 public final class StaticSitesWorkflowPreviewImpl implements StaticSitesWorkflowPreview {
     private StaticSitesWorkflowPreviewInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    StaticSitesWorkflowPreviewImpl(StaticSitesWorkflowPreviewInner innerObject, WebSiteManager serviceManager) {
+    StaticSitesWorkflowPreviewImpl(StaticSitesWorkflowPreviewInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -51,7 +51,7 @@ public final class StaticSitesWorkflowPreviewImpl implements StaticSitesWorkflow
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

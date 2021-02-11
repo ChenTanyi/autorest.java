@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.TriggeredJobHistoryInner;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.TriggeredJobHistory;
@@ -15,9 +15,9 @@ import java.util.List;
 public final class TriggeredJobHistoryImpl implements TriggeredJobHistory {
     private TriggeredJobHistoryInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    TriggeredJobHistoryImpl(TriggeredJobHistoryInner innerObject, WebSiteManager serviceManager) {
+    TriggeredJobHistoryImpl(TriggeredJobHistoryInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -55,7 +55,7 @@ public final class TriggeredJobHistoryImpl implements TriggeredJobHistory {
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

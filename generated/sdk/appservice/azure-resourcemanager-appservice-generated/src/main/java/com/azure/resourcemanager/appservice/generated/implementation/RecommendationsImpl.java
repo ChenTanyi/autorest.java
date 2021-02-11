@@ -9,7 +9,7 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.RecommendationsClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RecommendationInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RecommendationRuleInner;
@@ -23,9 +23,9 @@ public final class RecommendationsImpl implements Recommendations {
 
     private final RecommendationsClient innerClient;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    public RecommendationsImpl(RecommendationsClient innerClient, WebSiteManager serviceManager) {
+    public RecommendationsImpl(RecommendationsClient innerClient, AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -260,7 +260,7 @@ public final class RecommendationsImpl implements Recommendations {
         return this.innerClient;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

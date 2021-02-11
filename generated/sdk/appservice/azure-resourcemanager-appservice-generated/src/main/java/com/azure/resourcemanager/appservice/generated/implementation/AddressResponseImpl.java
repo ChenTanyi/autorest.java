@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AddressResponseInner;
 import com.azure.resourcemanager.appservice.generated.models.AddressResponse;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -15,9 +15,9 @@ import java.util.List;
 public final class AddressResponseImpl implements AddressResponse {
     private AddressResponseInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    AddressResponseImpl(AddressResponseInner innerObject, WebSiteManager serviceManager) {
+    AddressResponseImpl(AddressResponseInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -72,7 +72,7 @@ public final class AddressResponseImpl implements AddressResponse {
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

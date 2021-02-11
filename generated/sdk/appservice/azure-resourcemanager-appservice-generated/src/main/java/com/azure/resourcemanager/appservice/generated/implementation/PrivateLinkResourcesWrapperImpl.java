@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.PrivateLinkResourcesWrapperInner;
 import com.azure.resourcemanager.appservice.generated.models.PrivateLinkResource;
 import com.azure.resourcemanager.appservice.generated.models.PrivateLinkResourcesWrapper;
@@ -14,9 +14,9 @@ import java.util.List;
 public final class PrivateLinkResourcesWrapperImpl implements PrivateLinkResourcesWrapper {
     private PrivateLinkResourcesWrapperInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    PrivateLinkResourcesWrapperImpl(PrivateLinkResourcesWrapperInner innerObject, WebSiteManager serviceManager) {
+    PrivateLinkResourcesWrapperImpl(PrivateLinkResourcesWrapperInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,7 +34,7 @@ public final class PrivateLinkResourcesWrapperImpl implements PrivateLinkResourc
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }

@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RecommendationInner;
 import com.azure.resourcemanager.appservice.generated.models.Channels;
 import com.azure.resourcemanager.appservice.generated.models.NotificationLevel;
@@ -19,9 +19,9 @@ import java.util.UUID;
 public final class RecommendationImpl implements Recommendation {
     private RecommendationInner innerObject;
 
-    private final WebSiteManager serviceManager;
+    private final AppServiceManager serviceManager;
 
-    RecommendationImpl(RecommendationInner innerObject, WebSiteManager serviceManager) {
+    RecommendationImpl(RecommendationInner innerObject, AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -152,7 +152,7 @@ public final class RecommendationImpl implements Recommendation {
         return this.innerObject;
     }
 
-    private WebSiteManager manager() {
+    private AppServiceManager manager() {
         return this.serviceManager;
     }
 }
