@@ -97,6 +97,10 @@ public final class FileShareItemImpl implements FileShareItem {
         return this.innerModel().shareUsageBytes();
     }
 
+    public OffsetDateTime snapshotTime() {
+        return this.innerModel().snapshotTime();
+    }
+
     public FileShareItemInner innerModel() {
         return this.innerObject;
     }

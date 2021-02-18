@@ -102,10 +102,6 @@ public final class VirtualMachineUpdateImpl implements VirtualMachineUpdate {
         return this.innerModel().proximityPlacementGroup();
     }
 
-    public Integer platformFaultDomain() {
-        return this.innerModel().platformFaultDomain();
-    }
-
     public VirtualMachinePriorityTypes priority() {
         return this.innerModel().priority();
     }
@@ -149,6 +145,10 @@ public final class VirtualMachineUpdateImpl implements VirtualMachineUpdate {
 
     public String extensionsTimeBudget() {
         return this.innerModel().extensionsTimeBudget();
+    }
+
+    public Integer platformFaultDomain() {
+        return this.innerModel().platformFaultDomain();
     }
 
     public VirtualMachineUpdateInner innerModel() {

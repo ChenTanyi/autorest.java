@@ -20,6 +20,7 @@ import com.azure.resourcemanager.storage.generated.models.BlobRestoreStatus;
 import com.azure.resourcemanager.storage.generated.models.CustomDomain;
 import com.azure.resourcemanager.storage.generated.models.Encryption;
 import com.azure.resourcemanager.storage.generated.models.Endpoints;
+import com.azure.resourcemanager.storage.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.storage.generated.models.GeoReplicationStats;
 import com.azure.resourcemanager.storage.generated.models.Identity;
 import com.azure.resourcemanager.storage.generated.models.Kind;
@@ -86,6 +87,10 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
 
     public Identity identity() {
         return this.innerModel().identity();
+    }
+
+    public ExtendedLocation extendedLocation() {
+        return this.innerModel().extendedLocation();
     }
 
     public ProvisioningState provisioningState() {
@@ -201,6 +206,10 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
 
     public Boolean allowSharedKeyAccess() {
         return this.innerModel().allowSharedKeyAccess();
+    }
+
+    public Boolean enableNfsV3() {
+        return this.innerModel().enableNfsV3();
     }
 
     public Region region() {
@@ -418,6 +427,11 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         }
     }
 
+    public StorageAccountImpl withExtendedLocation(ExtendedLocation extendedLocation) {
+        this.createParameters.withExtendedLocation(extendedLocation);
+        return this;
+    }
+
     public StorageAccountImpl withIdentity(Identity identity) {
         if (isInCreateMode()) {
             this.createParameters.withIdentity(identity);
@@ -542,6 +556,11 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
             this.updateParameters.withAllowSharedKeyAccess(allowSharedKeyAccess);
             return this;
         }
+    }
+
+    public StorageAccountImpl withEnableNfsV3(Boolean enableNfsV3) {
+        this.createParameters.withEnableNfsV3(enableNfsV3);
+        return this;
     }
 
     private boolean isInCreateMode() {

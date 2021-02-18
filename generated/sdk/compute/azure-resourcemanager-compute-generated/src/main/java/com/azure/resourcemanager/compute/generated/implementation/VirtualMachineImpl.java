@@ -139,10 +139,6 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         return this.innerModel().proximityPlacementGroup();
     }
 
-    public Integer platformFaultDomain() {
-        return this.innerModel().platformFaultDomain();
-    }
-
     public VirtualMachinePriorityTypes priority() {
         return this.innerModel().priority();
     }
@@ -186,6 +182,10 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
 
     public String extensionsTimeBudget() {
         return this.innerModel().extensionsTimeBudget();
+    }
+
+    public Integer platformFaultDomain() {
+        return this.innerModel().platformFaultDomain();
     }
 
     public Region region() {
@@ -446,16 +446,6 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         }
     }
 
-    public VirtualMachineImpl withPlatformFaultDomain(Integer platformFaultDomain) {
-        if (isInCreateMode()) {
-            this.innerModel().withPlatformFaultDomain(platformFaultDomain);
-            return this;
-        } else {
-            this.updateParameters.withPlatformFaultDomain(platformFaultDomain);
-            return this;
-        }
-    }
-
     public VirtualMachineImpl withPriority(VirtualMachinePriorityTypes priority) {
         if (isInCreateMode()) {
             this.innerModel().withPriority(priority);
@@ -522,6 +512,16 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
             return this;
         } else {
             this.updateParameters.withExtensionsTimeBudget(extensionsTimeBudget);
+            return this;
+        }
+    }
+
+    public VirtualMachineImpl withPlatformFaultDomain(Integer platformFaultDomain) {
+        if (isInCreateMode()) {
+            this.innerModel().withPlatformFaultDomain(platformFaultDomain);
+            return this;
+        } else {
+            this.updateParameters.withPlatformFaultDomain(platformFaultDomain);
             return this;
         }
     }

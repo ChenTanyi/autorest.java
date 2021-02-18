@@ -10,7 +10,10 @@ import com.fasterxml.jackson.annotation.JsonValue;
 /** Defines values for ListSharesExpand. */
 public enum ListSharesExpand {
     /** Enum value deleted. */
-    DELETED("deleted");
+    DELETED("deleted"),
+
+    /** Enum value snapshots. */
+    SNAPSHOTS("snapshots");
 
     /** The actual serialized value for a ListSharesExpand instance. */
     private final String value;

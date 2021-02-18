@@ -50,6 +50,10 @@ public final class EncryptionScopeImpl implements EncryptionScope, EncryptionSco
         return this.innerModel().keyVaultProperties();
     }
 
+    public Boolean requireInfrastructureEncryption() {
+        return this.innerModel().requireInfrastructureEncryption();
+    }
+
     public EncryptionScopeInner innerModel() {
         return this.innerObject;
     }
@@ -160,6 +164,11 @@ public final class EncryptionScopeImpl implements EncryptionScope, EncryptionSco
 
     public EncryptionScopeImpl withKeyVaultProperties(EncryptionScopeKeyVaultProperties keyVaultProperties) {
         this.innerModel().withKeyVaultProperties(keyVaultProperties);
+        return this;
+    }
+
+    public EncryptionScopeImpl withRequireInfrastructureEncryption(Boolean requireInfrastructureEncryption) {
+        this.innerModel().withRequireInfrastructureEncryption(requireInfrastructureEncryption);
         return this;
     }
 }

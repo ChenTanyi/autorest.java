@@ -27,6 +27,7 @@ import com.azure.resourcemanager.recoveryservices.generated.fluent.RecoveryServi
 import com.azure.resourcemanager.recoveryservices.generated.fluent.RecoveryServicesManagementClient;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.RegisteredIdentitiesClient;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.ReplicationUsagesClient;
+import com.azure.resourcemanager.recoveryservices.generated.fluent.ResourceProvidersClient;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.UsagesClient;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.VaultCertificatesClient;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.VaultExtendedInfoesClient;
@@ -214,6 +215,18 @@ public final class RecoveryServicesManagementClientImpl implements RecoveryServi
         return this.vaultExtendedInfoes;
     }
 
+    /** The ResourceProvidersClient object to access its operations. */
+    private final ResourceProvidersClient resourceProviders;
+
+    /**
+     * Gets the ResourceProvidersClient object to access its operations.
+     *
+     * @return the ResourceProvidersClient object.
+     */
+    public ResourceProvidersClient getResourceProviders() {
+        return this.resourceProviders;
+    }
+
     /** The UsagesClient object to access its operations. */
     private final UsagesClient usages;
 
@@ -248,7 +261,7 @@ public final class RecoveryServicesManagementClientImpl implements RecoveryServi
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
-        this.apiVersion = "2016-06-01";
+        this.apiVersion = "2020-10-01";
         this.vaultCertificates = new VaultCertificatesClientImpl(this);
         this.registeredIdentities = new RegisteredIdentitiesClientImpl(this);
         this.replicationUsages = new ReplicationUsagesClientImpl(this);
@@ -257,6 +270,7 @@ public final class RecoveryServicesManagementClientImpl implements RecoveryServi
         this.vaults = new VaultsClientImpl(this);
         this.operations = new OperationsClientImpl(this);
         this.vaultExtendedInfoes = new VaultExtendedInfoesClientImpl(this);
+        this.resourceProviders = new ResourceProvidersClientImpl(this);
         this.usages = new UsagesClientImpl(this);
     }
 

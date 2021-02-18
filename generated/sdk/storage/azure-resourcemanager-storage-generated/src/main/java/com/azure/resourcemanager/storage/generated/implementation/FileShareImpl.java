@@ -12,6 +12,7 @@ import com.azure.resourcemanager.storage.generated.models.DeletedShare;
 import com.azure.resourcemanager.storage.generated.models.EnabledProtocols;
 import com.azure.resourcemanager.storage.generated.models.FileShare;
 import com.azure.resourcemanager.storage.generated.models.GetShareExpand;
+import com.azure.resourcemanager.storage.generated.models.PutSharesExpand;
 import com.azure.resourcemanager.storage.generated.models.RootSquashType;
 import com.azure.resourcemanager.storage.generated.models.ShareAccessTier;
 import java.time.OffsetDateTime;
@@ -96,6 +97,10 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
         return this.innerModel().shareUsageBytes();
     }
 
+    public OffsetDateTime snapshotTime() {
+        return this.innerModel().snapshotTime();
+    }
+
     public FileShareInner innerModel() {
         return this.innerObject;
     }
@@ -110,6 +115,8 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
 
     private String shareName;
 
+    private PutSharesExpand createExpand;
+
     public FileShareImpl withExistingStorageAccount(String resourceGroupName, String accountName) {
         this.resourceGroupName = resourceGroupName;
         this.accountName = accountName;
@@ -121,7 +128,8 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
             serviceManager
                 .serviceClient()
                 .getFileShares()
-                .createWithResponse(resourceGroupName, accountName, shareName, this.innerModel(), Context.NONE)
+                .createWithResponse(
+                    resourceGroupName, accountName, shareName, this.innerModel(), createExpand, Context.NONE)
                 .getValue();
         return this;
     }
@@ -131,7 +139,7 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
             serviceManager
                 .serviceClient()
                 .getFileShares()
-                .createWithResponse(resourceGroupName, accountName, shareName, this.innerModel(), context)
+                .createWithResponse(resourceGroupName, accountName, shareName, this.innerModel(), createExpand, context)
                 .getValue();
         return this;
     }
@@ -140,6 +148,7 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
         this.innerObject = new FileShareInner();
         this.serviceManager = serviceManager;
         this.shareName = name;
+        this.createExpand = null;
     }
 
     public FileShareImpl update() {
@@ -176,22 +185,24 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
 
     public FileShare refresh() {
         GetShareExpand localExpand = null;
+        String localXMsSnapshot = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getFileShares()
-                .getWithResponse(resourceGroupName, accountName, shareName, localExpand, Context.NONE)
+                .getWithResponse(resourceGroupName, accountName, shareName, localExpand, localXMsSnapshot, Context.NONE)
                 .getValue();
         return this;
     }
 
     public FileShare refresh(Context context) {
         GetShareExpand localExpand = null;
+        String localXMsSnapshot = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getFileShares()
-                .getWithResponse(resourceGroupName, accountName, shareName, localExpand, context)
+                .getWithResponse(resourceGroupName, accountName, shareName, localExpand, localXMsSnapshot, context)
                 .getValue();
         return this;
     }
@@ -228,6 +239,11 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
 
     public FileShareImpl withAccessTier(ShareAccessTier accessTier) {
         this.innerModel().withAccessTier(accessTier);
+        return this;
+    }
+
+    public FileShareImpl withExpand(PutSharesExpand expand) {
+        this.createExpand = expand;
         return this;
     }
 }

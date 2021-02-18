@@ -27,6 +27,7 @@ import com.azure.resourcemanager.recoveryservices.generated.implementation.Recov
 import com.azure.resourcemanager.recoveryservices.generated.implementation.RecoveryServicesManagementClientBuilder;
 import com.azure.resourcemanager.recoveryservices.generated.implementation.RegisteredIdentitiesImpl;
 import com.azure.resourcemanager.recoveryservices.generated.implementation.ReplicationUsagesImpl;
+import com.azure.resourcemanager.recoveryservices.generated.implementation.ResourceProvidersImpl;
 import com.azure.resourcemanager.recoveryservices.generated.implementation.UsagesImpl;
 import com.azure.resourcemanager.recoveryservices.generated.implementation.VaultCertificatesImpl;
 import com.azure.resourcemanager.recoveryservices.generated.implementation.VaultExtendedInfoesImpl;
@@ -36,6 +37,7 @@ import com.azure.resourcemanager.recoveryservices.generated.models.PrivateLinkRe
 import com.azure.resourcemanager.recoveryservices.generated.models.RecoveryServices;
 import com.azure.resourcemanager.recoveryservices.generated.models.RegisteredIdentities;
 import com.azure.resourcemanager.recoveryservices.generated.models.ReplicationUsages;
+import com.azure.resourcemanager.recoveryservices.generated.models.ResourceProviders;
 import com.azure.resourcemanager.recoveryservices.generated.models.Usages;
 import com.azure.resourcemanager.recoveryservices.generated.models.VaultCertificates;
 import com.azure.resourcemanager.recoveryservices.generated.models.VaultExtendedInfoes;
@@ -63,6 +65,8 @@ public final class RecoveryServicesManager {
     private Operations operations;
 
     private VaultExtendedInfoes vaultExtendedInfoes;
+
+    private ResourceProviders resourceProviders;
 
     private Usages usages;
 
@@ -291,6 +295,14 @@ public final class RecoveryServicesManager {
             this.vaultExtendedInfoes = new VaultExtendedInfoesImpl(clientObject.getVaultExtendedInfoes(), this);
         }
         return vaultExtendedInfoes;
+    }
+
+    /** @return Resource collection API of ResourceProviders. */
+    public ResourceProviders resourceProviders() {
+        if (this.resourceProviders == null) {
+            this.resourceProviders = new ResourceProvidersImpl(clientObject.getResourceProviders(), this);
+        }
+        return resourceProviders;
     }
 
     /** @return Resource collection API of Usages. */
