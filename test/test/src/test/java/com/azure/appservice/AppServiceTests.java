@@ -4,7 +4,7 @@ import com.azure.Base;
 import com.azure.core.http.policy.HttpLogDetailLevel;
 import com.azure.core.http.policy.HttpLogOptions;
 import com.azure.core.management.exception.ManagementException;
-import com.azure.resourcemanager.appservice.generated.WebSiteManager;
+import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.AppServicePlan;
 import com.azure.resourcemanager.appservice.generated.models.Site;
@@ -20,7 +20,7 @@ public class AppServiceTests extends Base {
         String servicePlanName = randomString("plan", 10);
         String webappName = randomString("webapp", 10);
 
-        WebSiteManager appserviceManager = WebSiteManager.configure()
+        AppServiceManager appserviceManager = AppServiceManager.configure()
                 .withHttpClient(client)
                 .withLogOptions(new HttpLogOptions().setLogLevel(HttpLogDetailLevel.BODY_AND_HEADERS))
                 .authenticate(credential, profile);
