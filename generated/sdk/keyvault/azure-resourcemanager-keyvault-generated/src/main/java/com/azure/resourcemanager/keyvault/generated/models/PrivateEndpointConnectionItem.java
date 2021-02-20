@@ -23,6 +23,13 @@ public class PrivateEndpointConnectionItem {
     private String id;
 
     /*
+     * Modified whenever there is a change in the state of private endpoint
+     * connection.
+     */
+    @JsonProperty(value = "etag")
+    private String etag;
+
+    /*
      * Properties of the private endpoint object.
      */
     @JsonProperty(value = "properties.privateEndpoint")
@@ -57,6 +64,26 @@ public class PrivateEndpointConnectionItem {
      */
     public PrivateEndpointConnectionItem withId(String id) {
         this.id = id;
+        return this;
+    }
+
+    /**
+     * Get the etag property: Modified whenever there is a change in the state of private endpoint connection.
+     *
+     * @return the etag value.
+     */
+    public String etag() {
+        return this.etag;
+    }
+
+    /**
+     * Set the etag property: Modified whenever there is a change in the state of private endpoint connection.
+     *
+     * @param etag the etag value to set.
+     * @return the PrivateEndpointConnectionItem object itself.
+     */
+    public PrivateEndpointConnectionItem withEtag(String etag) {
+        this.etag = etag;
         return this;
     }
 

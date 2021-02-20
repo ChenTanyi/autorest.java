@@ -62,34 +62,6 @@ public final class SubnetsImpl implements Subnets {
         }
     }
 
-    public Subnet createOrUpdate(
-        String resourceGroupName, String virtualNetworkName, String subnetName, SubnetInner subnetParameters) {
-        SubnetInner inner =
-            this.serviceClient().createOrUpdate(resourceGroupName, virtualNetworkName, subnetName, subnetParameters);
-        if (inner != null) {
-            return new SubnetImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Subnet createOrUpdate(
-        String resourceGroupName,
-        String virtualNetworkName,
-        String subnetName,
-        SubnetInner subnetParameters,
-        Context context) {
-        SubnetInner inner =
-            this
-                .serviceClient()
-                .createOrUpdate(resourceGroupName, virtualNetworkName, subnetName, subnetParameters, context);
-        if (inner != null) {
-            return new SubnetImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public void prepareNetworkPolicies(
         String resourceGroupName,
         String virtualNetworkName,
@@ -146,11 +118,126 @@ public final class SubnetsImpl implements Subnets {
         return Utils.mapPage(inner, inner1 -> new SubnetImpl(inner1, this.manager()));
     }
 
+    public Subnet getById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String virtualNetworkName = Utils.getValueFromIdByName(id, "virtualNetworks");
+        if (virtualNetworkName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworks'.", id)));
+        }
+        String subnetName = Utils.getValueFromIdByName(id, "subnets");
+        if (subnetName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'subnets'.", id)));
+        }
+        String localExpand = null;
+        return this
+            .getWithResponse(resourceGroupName, virtualNetworkName, subnetName, localExpand, Context.NONE)
+            .getValue();
+    }
+
+    public Response<Subnet> getByIdWithResponse(String id, String expand, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String virtualNetworkName = Utils.getValueFromIdByName(id, "virtualNetworks");
+        if (virtualNetworkName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworks'.", id)));
+        }
+        String subnetName = Utils.getValueFromIdByName(id, "subnets");
+        if (subnetName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'subnets'.", id)));
+        }
+        return this.getWithResponse(resourceGroupName, virtualNetworkName, subnetName, expand, context);
+    }
+
+    public void deleteById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String virtualNetworkName = Utils.getValueFromIdByName(id, "virtualNetworks");
+        if (virtualNetworkName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworks'.", id)));
+        }
+        String subnetName = Utils.getValueFromIdByName(id, "subnets");
+        if (subnetName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'subnets'.", id)));
+        }
+        this.delete(resourceGroupName, virtualNetworkName, subnetName, Context.NONE);
+    }
+
+    public void deleteByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String virtualNetworkName = Utils.getValueFromIdByName(id, "virtualNetworks");
+        if (virtualNetworkName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'virtualNetworks'.", id)));
+        }
+        String subnetName = Utils.getValueFromIdByName(id, "subnets");
+        if (subnetName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'subnets'.", id)));
+        }
+        this.delete(resourceGroupName, virtualNetworkName, subnetName, context);
+    }
+
     private SubnetsClient serviceClient() {
         return this.innerClient;
     }
 
     private NetworkManager manager() {
         return this.serviceManager;
+    }
+
+    public SubnetImpl define(String name) {
+        return new SubnetImpl(name, this.manager());
     }
 }

@@ -8,11 +8,14 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.resourcemanager.network.generated.models.ApplicationGatewayIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.Delegation;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.ResourceNavigationLink;
 import com.azure.resourcemanager.network.generated.models.ServiceAssociationLink;
 import com.azure.resourcemanager.network.generated.models.ServiceEndpointPropertiesFormat;
+import com.azure.resourcemanager.network.generated.models.VirtualNetworkPrivateEndpointNetworkPolicies;
+import com.azure.resourcemanager.network.generated.models.VirtualNetworkPrivateLinkServiceNetworkPolicies;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -35,6 +38,12 @@ public class SubnetInner extends SubResource {
      */
     @JsonProperty(value = "etag", access = JsonProperty.Access.WRITE_ONLY)
     private String etag;
+
+    /*
+     * Resource type.
+     */
+    @JsonProperty(value = "type")
+    private String type;
 
     /*
      * The address prefix for the subnet.
@@ -139,14 +148,20 @@ public class SubnetInner extends SubResource {
      * subnet.
      */
     @JsonProperty(value = "properties.privateEndpointNetworkPolicies")
-    private String privateEndpointNetworkPolicies;
+    private VirtualNetworkPrivateEndpointNetworkPolicies privateEndpointNetworkPolicies;
 
     /*
      * Enable or Disable apply network policies on private link service in the
      * subnet.
      */
     @JsonProperty(value = "properties.privateLinkServiceNetworkPolicies")
-    private String privateLinkServiceNetworkPolicies;
+    private VirtualNetworkPrivateLinkServiceNetworkPolicies privateLinkServiceNetworkPolicies;
+
+    /*
+     * Application gateway IP configurations of virtual network resource.
+     */
+    @JsonProperty(value = "properties.applicationGatewayIpConfigurations")
+    private List<ApplicationGatewayIpConfiguration> applicationGatewayIpConfigurations;
 
     /**
      * Get the name property: The name of the resource that is unique within a resource group. This name can be used to
@@ -177,6 +192,26 @@ public class SubnetInner extends SubResource {
      */
     public String etag() {
         return this.etag;
+    }
+
+    /**
+     * Get the type property: Resource type.
+     *
+     * @return the type value.
+     */
+    public String type() {
+        return this.type;
+    }
+
+    /**
+     * Set the type property: Resource type.
+     *
+     * @param type the type value to set.
+     * @return the SubnetInner object itself.
+     */
+    public SubnetInner withType(String type) {
+        this.type = type;
+        return this;
     }
 
     /**
@@ -430,7 +465,7 @@ public class SubnetInner extends SubResource {
      *
      * @return the privateEndpointNetworkPolicies value.
      */
-    public String privateEndpointNetworkPolicies() {
+    public VirtualNetworkPrivateEndpointNetworkPolicies privateEndpointNetworkPolicies() {
         return this.privateEndpointNetworkPolicies;
     }
 
@@ -441,7 +476,8 @@ public class SubnetInner extends SubResource {
      * @param privateEndpointNetworkPolicies the privateEndpointNetworkPolicies value to set.
      * @return the SubnetInner object itself.
      */
-    public SubnetInner withPrivateEndpointNetworkPolicies(String privateEndpointNetworkPolicies) {
+    public SubnetInner withPrivateEndpointNetworkPolicies(
+        VirtualNetworkPrivateEndpointNetworkPolicies privateEndpointNetworkPolicies) {
         this.privateEndpointNetworkPolicies = privateEndpointNetworkPolicies;
         return this;
     }
@@ -452,7 +488,7 @@ public class SubnetInner extends SubResource {
      *
      * @return the privateLinkServiceNetworkPolicies value.
      */
-    public String privateLinkServiceNetworkPolicies() {
+    public VirtualNetworkPrivateLinkServiceNetworkPolicies privateLinkServiceNetworkPolicies() {
         return this.privateLinkServiceNetworkPolicies;
     }
 
@@ -463,8 +499,32 @@ public class SubnetInner extends SubResource {
      * @param privateLinkServiceNetworkPolicies the privateLinkServiceNetworkPolicies value to set.
      * @return the SubnetInner object itself.
      */
-    public SubnetInner withPrivateLinkServiceNetworkPolicies(String privateLinkServiceNetworkPolicies) {
+    public SubnetInner withPrivateLinkServiceNetworkPolicies(
+        VirtualNetworkPrivateLinkServiceNetworkPolicies privateLinkServiceNetworkPolicies) {
         this.privateLinkServiceNetworkPolicies = privateLinkServiceNetworkPolicies;
+        return this;
+    }
+
+    /**
+     * Get the applicationGatewayIpConfigurations property: Application gateway IP configurations of virtual network
+     * resource.
+     *
+     * @return the applicationGatewayIpConfigurations value.
+     */
+    public List<ApplicationGatewayIpConfiguration> applicationGatewayIpConfigurations() {
+        return this.applicationGatewayIpConfigurations;
+    }
+
+    /**
+     * Set the applicationGatewayIpConfigurations property: Application gateway IP configurations of virtual network
+     * resource.
+     *
+     * @param applicationGatewayIpConfigurations the applicationGatewayIpConfigurations value to set.
+     * @return the SubnetInner object itself.
+     */
+    public SubnetInner withApplicationGatewayIpConfigurations(
+        List<ApplicationGatewayIpConfiguration> applicationGatewayIpConfigurations) {
+        this.applicationGatewayIpConfigurations = applicationGatewayIpConfigurations;
         return this;
     }
 
@@ -510,6 +570,9 @@ public class SubnetInner extends SubResource {
         }
         if (delegations() != null) {
             delegations().forEach(e -> e.validate());
+        }
+        if (applicationGatewayIpConfigurations() != null) {
+            applicationGatewayIpConfigurations().forEach(e -> e.validate());
         }
     }
 }

@@ -6,59 +6,57 @@ package com.azure.resourcemanager.monitor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
+import com.azure.core.management.Resource;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.monitor.generated.models.ActionList;
-import com.azure.resourcemanager.monitor.generated.models.AlertRuleAllOfCondition;
-import com.azure.resourcemanager.monitor.generated.models.AzureResource;
+import com.azure.resourcemanager.monitor.generated.models.ActivityLogAlertActionList;
+import com.azure.resourcemanager.monitor.generated.models.ActivityLogAlertAllOfCondition;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Map;
 
-/** An Activity Log Alert rule resource. */
+/** An activity log alert resource. */
 @JsonFlatten
 @Fluent
-public class ActivityLogAlertResourceInner extends AzureResource {
+public class ActivityLogAlertResourceInner extends Resource {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(ActivityLogAlertResourceInner.class);
 
     /*
-     * A list of resource IDs that will be used as prefixes. The alert will
-     * only apply to Activity Log events with resource IDs that fall under one
-     * of these prefixes. This list must include at least one item.
+     * A list of resourceIds that will be used as prefixes. The alert will only
+     * apply to activityLogs with resourceIds that fall under one of these
+     * prefixes. This list must include at least one item.
      */
     @JsonProperty(value = "properties.scopes")
     private List<String> scopes;
 
     /*
-     * The condition that will cause this alert to activate.
-     */
-    @JsonProperty(value = "properties.condition")
-    private AlertRuleAllOfCondition condition;
-
-    /*
-     * The actions that will activate when the condition is met.
-     */
-    @JsonProperty(value = "properties.actions")
-    private ActionList actions;
-
-    /*
-     * Indicates whether this Activity Log Alert rule is enabled. If an
-     * Activity Log Alert rule is not enabled, then none of its actions will be
-     * activated.
+     * Indicates whether this activity log alert is enabled. If an activity log
+     * alert is not enabled, then none of its actions will be activated.
      */
     @JsonProperty(value = "properties.enabled")
     private Boolean enabled;
 
     /*
-     * A description of this Activity Log Alert rule.
+     * The condition that will cause this alert to activate.
+     */
+    @JsonProperty(value = "properties.condition")
+    private ActivityLogAlertAllOfCondition condition;
+
+    /*
+     * The actions that will activate when the condition is met.
+     */
+    @JsonProperty(value = "properties.actions")
+    private ActivityLogAlertActionList actions;
+
+    /*
+     * A description of this activity log alert.
      */
     @JsonProperty(value = "properties.description")
     private String description;
 
     /**
-     * Get the scopes property: A list of resource IDs that will be used as prefixes. The alert will only apply to
-     * Activity Log events with resource IDs that fall under one of these prefixes. This list must include at least one
-     * item.
+     * Get the scopes property: A list of resourceIds that will be used as prefixes. The alert will only apply to
+     * activityLogs with resourceIds that fall under one of these prefixes. This list must include at least one item.
      *
      * @return the scopes value.
      */
@@ -67,9 +65,8 @@ public class ActivityLogAlertResourceInner extends AzureResource {
     }
 
     /**
-     * Set the scopes property: A list of resource IDs that will be used as prefixes. The alert will only apply to
-     * Activity Log events with resource IDs that fall under one of these prefixes. This list must include at least one
-     * item.
+     * Set the scopes property: A list of resourceIds that will be used as prefixes. The alert will only apply to
+     * activityLogs with resourceIds that fall under one of these prefixes. This list must include at least one item.
      *
      * @param scopes the scopes value to set.
      * @return the ActivityLogAlertResourceInner object itself.
@@ -80,48 +77,8 @@ public class ActivityLogAlertResourceInner extends AzureResource {
     }
 
     /**
-     * Get the condition property: The condition that will cause this alert to activate.
-     *
-     * @return the condition value.
-     */
-    public AlertRuleAllOfCondition condition() {
-        return this.condition;
-    }
-
-    /**
-     * Set the condition property: The condition that will cause this alert to activate.
-     *
-     * @param condition the condition value to set.
-     * @return the ActivityLogAlertResourceInner object itself.
-     */
-    public ActivityLogAlertResourceInner withCondition(AlertRuleAllOfCondition condition) {
-        this.condition = condition;
-        return this;
-    }
-
-    /**
-     * Get the actions property: The actions that will activate when the condition is met.
-     *
-     * @return the actions value.
-     */
-    public ActionList actions() {
-        return this.actions;
-    }
-
-    /**
-     * Set the actions property: The actions that will activate when the condition is met.
-     *
-     * @param actions the actions value to set.
-     * @return the ActivityLogAlertResourceInner object itself.
-     */
-    public ActivityLogAlertResourceInner withActions(ActionList actions) {
-        this.actions = actions;
-        return this;
-    }
-
-    /**
-     * Get the enabled property: Indicates whether this Activity Log Alert rule is enabled. If an Activity Log Alert
-     * rule is not enabled, then none of its actions will be activated.
+     * Get the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not
+     * enabled, then none of its actions will be activated.
      *
      * @return the enabled value.
      */
@@ -130,8 +87,8 @@ public class ActivityLogAlertResourceInner extends AzureResource {
     }
 
     /**
-     * Set the enabled property: Indicates whether this Activity Log Alert rule is enabled. If an Activity Log Alert
-     * rule is not enabled, then none of its actions will be activated.
+     * Set the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not
+     * enabled, then none of its actions will be activated.
      *
      * @param enabled the enabled value to set.
      * @return the ActivityLogAlertResourceInner object itself.
@@ -142,7 +99,47 @@ public class ActivityLogAlertResourceInner extends AzureResource {
     }
 
     /**
-     * Get the description property: A description of this Activity Log Alert rule.
+     * Get the condition property: The condition that will cause this alert to activate.
+     *
+     * @return the condition value.
+     */
+    public ActivityLogAlertAllOfCondition condition() {
+        return this.condition;
+    }
+
+    /**
+     * Set the condition property: The condition that will cause this alert to activate.
+     *
+     * @param condition the condition value to set.
+     * @return the ActivityLogAlertResourceInner object itself.
+     */
+    public ActivityLogAlertResourceInner withCondition(ActivityLogAlertAllOfCondition condition) {
+        this.condition = condition;
+        return this;
+    }
+
+    /**
+     * Get the actions property: The actions that will activate when the condition is met.
+     *
+     * @return the actions value.
+     */
+    public ActivityLogAlertActionList actions() {
+        return this.actions;
+    }
+
+    /**
+     * Set the actions property: The actions that will activate when the condition is met.
+     *
+     * @param actions the actions value to set.
+     * @return the ActivityLogAlertResourceInner object itself.
+     */
+    public ActivityLogAlertResourceInner withActions(ActivityLogAlertActionList actions) {
+        this.actions = actions;
+        return this;
+    }
+
+    /**
+     * Get the description property: A description of this activity log alert.
      *
      * @return the description value.
      */
@@ -151,7 +148,7 @@ public class ActivityLogAlertResourceInner extends AzureResource {
     }
 
     /**
-     * Set the description property: A description of this Activity Log Alert rule.
+     * Set the description property: A description of this activity log alert.
      *
      * @param description the description value to set.
      * @return the ActivityLogAlertResourceInner object itself.
@@ -180,9 +177,7 @@ public class ActivityLogAlertResourceInner extends AzureResource {
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
-    @Override
     public void validate() {
-        super.validate();
         if (condition() != null) {
             condition().validate();
         }

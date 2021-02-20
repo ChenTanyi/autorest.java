@@ -8,6 +8,7 @@ import com.azure.resourcemanager.eventgrid.generated.EventGridManager;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.DomainTopicInner;
 import com.azure.resourcemanager.eventgrid.generated.models.DomainTopic;
 import com.azure.resourcemanager.eventgrid.generated.models.DomainTopicProvisioningState;
+import com.azure.resourcemanager.eventgrid.generated.models.SystemData;
 
 public final class DomainTopicImpl implements DomainTopic {
     private DomainTopicInner innerObject;
@@ -29,6 +30,10 @@ public final class DomainTopicImpl implements DomainTopic {
 
     public String type() {
         return this.innerModel().type();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public DomainTopicProvisioningState provisioningState() {

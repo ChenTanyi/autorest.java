@@ -19,6 +19,7 @@ import com.azure.resourcemanager.eventgrid.generated.models.PrivateEndpointConne
 import com.azure.resourcemanager.eventgrid.generated.models.PublicNetworkAccess;
 import com.azure.resourcemanager.eventgrid.generated.models.ResourceKind;
 import com.azure.resourcemanager.eventgrid.generated.models.ResourceSku;
+import com.azure.resourcemanager.eventgrid.generated.models.SystemData;
 import com.azure.resourcemanager.eventgrid.generated.models.Topic;
 import com.azure.resourcemanager.eventgrid.generated.models.TopicProvisioningState;
 import com.azure.resourcemanager.eventgrid.generated.models.TopicRegenerateKeyRequest;
@@ -73,6 +74,10 @@ public final class TopicImpl implements Topic, Topic.Definition, Topic.Update {
 
     public ExtendedLocation extendedLocation() {
         return this.innerModel().extendedLocation();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public List<PrivateEndpointConnection> privateEndpointConnections() {

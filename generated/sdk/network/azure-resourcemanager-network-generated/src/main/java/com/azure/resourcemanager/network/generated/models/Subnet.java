@@ -5,6 +5,10 @@
 package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.core.management.SubResource;
+import com.azure.core.util.Context;
+import com.azure.resourcemanager.network.generated.fluent.models.NetworkSecurityGroupInner;
+import com.azure.resourcemanager.network.generated.fluent.models.RouteTableInner;
+import com.azure.resourcemanager.network.generated.fluent.models.ServiceEndpointPolicyInner;
 import com.azure.resourcemanager.network.generated.fluent.models.SubnetInner;
 import java.util.List;
 
@@ -31,6 +35,13 @@ public interface Subnet {
      * @return the etag value.
      */
     String etag();
+
+    /**
+     * Gets the type property: Resource type.
+     *
+     * @return the type value.
+     */
+    String type();
 
     /**
      * Gets the addressPrefix property: The address prefix for the subnet.
@@ -152,7 +163,7 @@ public interface Subnet {
      *
      * @return the privateEndpointNetworkPolicies value.
      */
-    String privateEndpointNetworkPolicies();
+    VirtualNetworkPrivateEndpointNetworkPolicies privateEndpointNetworkPolicies();
 
     /**
      * Gets the privateLinkServiceNetworkPolicies property: Enable or Disable apply network policies on private link
@@ -160,7 +171,15 @@ public interface Subnet {
      *
      * @return the privateLinkServiceNetworkPolicies value.
      */
-    String privateLinkServiceNetworkPolicies();
+    VirtualNetworkPrivateLinkServiceNetworkPolicies privateLinkServiceNetworkPolicies();
+
+    /**
+     * Gets the applicationGatewayIpConfigurations property: Application gateway IP configurations of virtual network
+     * resource.
+     *
+     * @return the applicationGatewayIpConfigurations value.
+     */
+    List<ApplicationGatewayIpConfiguration> applicationGatewayIpConfigurations();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.SubnetInner object.
@@ -168,4 +187,417 @@ public interface Subnet {
      * @return the inner object.
      */
     SubnetInner innerModel();
+
+    /** The entirety of the Subnet definition. */
+    interface Definition
+        extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
+    }
+    /** The Subnet definition stages. */
+    interface DefinitionStages {
+        /** The first stage of the Subnet definition. */
+        interface Blank extends WithParentResource {
+        }
+        /** The stage of the Subnet definition allowing to specify parent resource. */
+        interface WithParentResource {
+            /**
+             * Specifies resourceGroupName, virtualNetworkName.
+             *
+             * @param resourceGroupName The name of the resource group.
+             * @param virtualNetworkName The name of the virtual network.
+             * @return the next definition stage.
+             */
+            WithCreate withExistingVirtualNetwork(String resourceGroupName, String virtualNetworkName);
+        }
+        /**
+         * The stage of the Subnet definition which contains all the minimum required properties for the resource to be
+         * created, but also allows for any other optional properties to be specified.
+         */
+        interface WithCreate
+            extends DefinitionStages.WithName,
+                DefinitionStages.WithType,
+                DefinitionStages.WithAddressPrefix,
+                DefinitionStages.WithAddressPrefixes,
+                DefinitionStages.WithNetworkSecurityGroup,
+                DefinitionStages.WithRouteTable,
+                DefinitionStages.WithNatGateway,
+                DefinitionStages.WithServiceEndpoints,
+                DefinitionStages.WithServiceEndpointPolicies,
+                DefinitionStages.WithIpAllocations,
+                DefinitionStages.WithDelegations,
+                DefinitionStages.WithPrivateEndpointNetworkPolicies,
+                DefinitionStages.WithPrivateLinkServiceNetworkPolicies,
+                DefinitionStages.WithApplicationGatewayIpConfigurations {
+            /**
+             * Executes the create request.
+             *
+             * @return the created resource.
+             */
+            Subnet create();
+
+            /**
+             * Executes the create request.
+             *
+             * @param context The context to associate with this operation.
+             * @return the created resource.
+             */
+            Subnet create(Context context);
+        }
+        /** The stage of the Subnet definition allowing to specify name. */
+        interface WithName {
+            /**
+             * Specifies the name property: The name of the resource that is unique within a resource group. This name
+             * can be used to access the resource..
+             *
+             * @param name The name of the resource that is unique within a resource group. This name can be used to
+             *     access the resource.
+             * @return the next definition stage.
+             */
+            WithCreate withName(String name);
+        }
+        /** The stage of the Subnet definition allowing to specify type. */
+        interface WithType {
+            /**
+             * Specifies the type property: Resource type..
+             *
+             * @param type Resource type.
+             * @return the next definition stage.
+             */
+            WithCreate withType(String type);
+        }
+        /** The stage of the Subnet definition allowing to specify addressPrefix. */
+        interface WithAddressPrefix {
+            /**
+             * Specifies the addressPrefix property: The address prefix for the subnet..
+             *
+             * @param addressPrefix The address prefix for the subnet.
+             * @return the next definition stage.
+             */
+            WithCreate withAddressPrefix(String addressPrefix);
+        }
+        /** The stage of the Subnet definition allowing to specify addressPrefixes. */
+        interface WithAddressPrefixes {
+            /**
+             * Specifies the addressPrefixes property: List of address prefixes for the subnet..
+             *
+             * @param addressPrefixes List of address prefixes for the subnet.
+             * @return the next definition stage.
+             */
+            WithCreate withAddressPrefixes(List<String> addressPrefixes);
+        }
+        /** The stage of the Subnet definition allowing to specify networkSecurityGroup. */
+        interface WithNetworkSecurityGroup {
+            /**
+             * Specifies the networkSecurityGroup property: The reference to the NetworkSecurityGroup resource..
+             *
+             * @param networkSecurityGroup The reference to the NetworkSecurityGroup resource.
+             * @return the next definition stage.
+             */
+            WithCreate withNetworkSecurityGroup(NetworkSecurityGroupInner networkSecurityGroup);
+        }
+        /** The stage of the Subnet definition allowing to specify routeTable. */
+        interface WithRouteTable {
+            /**
+             * Specifies the routeTable property: The reference to the RouteTable resource..
+             *
+             * @param routeTable The reference to the RouteTable resource.
+             * @return the next definition stage.
+             */
+            WithCreate withRouteTable(RouteTableInner routeTable);
+        }
+        /** The stage of the Subnet definition allowing to specify natGateway. */
+        interface WithNatGateway {
+            /**
+             * Specifies the natGateway property: Nat gateway associated with this subnet..
+             *
+             * @param natGateway Nat gateway associated with this subnet.
+             * @return the next definition stage.
+             */
+            WithCreate withNatGateway(SubResource natGateway);
+        }
+        /** The stage of the Subnet definition allowing to specify serviceEndpoints. */
+        interface WithServiceEndpoints {
+            /**
+             * Specifies the serviceEndpoints property: An array of service endpoints..
+             *
+             * @param serviceEndpoints An array of service endpoints.
+             * @return the next definition stage.
+             */
+            WithCreate withServiceEndpoints(List<ServiceEndpointPropertiesFormat> serviceEndpoints);
+        }
+        /** The stage of the Subnet definition allowing to specify serviceEndpointPolicies. */
+        interface WithServiceEndpointPolicies {
+            /**
+             * Specifies the serviceEndpointPolicies property: An array of service endpoint policies..
+             *
+             * @param serviceEndpointPolicies An array of service endpoint policies.
+             * @return the next definition stage.
+             */
+            WithCreate withServiceEndpointPolicies(List<ServiceEndpointPolicyInner> serviceEndpointPolicies);
+        }
+        /** The stage of the Subnet definition allowing to specify ipAllocations. */
+        interface WithIpAllocations {
+            /**
+             * Specifies the ipAllocations property: Array of IpAllocation which reference this subnet..
+             *
+             * @param ipAllocations Array of IpAllocation which reference this subnet.
+             * @return the next definition stage.
+             */
+            WithCreate withIpAllocations(List<SubResource> ipAllocations);
+        }
+        /** The stage of the Subnet definition allowing to specify delegations. */
+        interface WithDelegations {
+            /**
+             * Specifies the delegations property: An array of references to the delegations on the subnet..
+             *
+             * @param delegations An array of references to the delegations on the subnet.
+             * @return the next definition stage.
+             */
+            WithCreate withDelegations(List<Delegation> delegations);
+        }
+        /** The stage of the Subnet definition allowing to specify privateEndpointNetworkPolicies. */
+        interface WithPrivateEndpointNetworkPolicies {
+            /**
+             * Specifies the privateEndpointNetworkPolicies property: Enable or Disable apply network policies on
+             * private end point in the subnet..
+             *
+             * @param privateEndpointNetworkPolicies Enable or Disable apply network policies on private end point in
+             *     the subnet.
+             * @return the next definition stage.
+             */
+            WithCreate withPrivateEndpointNetworkPolicies(
+                VirtualNetworkPrivateEndpointNetworkPolicies privateEndpointNetworkPolicies);
+        }
+        /** The stage of the Subnet definition allowing to specify privateLinkServiceNetworkPolicies. */
+        interface WithPrivateLinkServiceNetworkPolicies {
+            /**
+             * Specifies the privateLinkServiceNetworkPolicies property: Enable or Disable apply network policies on
+             * private link service in the subnet..
+             *
+             * @param privateLinkServiceNetworkPolicies Enable or Disable apply network policies on private link service
+             *     in the subnet.
+             * @return the next definition stage.
+             */
+            WithCreate withPrivateLinkServiceNetworkPolicies(
+                VirtualNetworkPrivateLinkServiceNetworkPolicies privateLinkServiceNetworkPolicies);
+        }
+        /** The stage of the Subnet definition allowing to specify applicationGatewayIpConfigurations. */
+        interface WithApplicationGatewayIpConfigurations {
+            /**
+             * Specifies the applicationGatewayIpConfigurations property: Application gateway IP configurations of
+             * virtual network resource..
+             *
+             * @param applicationGatewayIpConfigurations Application gateway IP configurations of virtual network
+             *     resource.
+             * @return the next definition stage.
+             */
+            WithCreate withApplicationGatewayIpConfigurations(
+                List<ApplicationGatewayIpConfiguration> applicationGatewayIpConfigurations);
+        }
+    }
+    /**
+     * Begins update for the Subnet resource.
+     *
+     * @return the stage of resource update.
+     */
+    Subnet.Update update();
+
+    /** The template for Subnet update. */
+    interface Update
+        extends UpdateStages.WithName,
+            UpdateStages.WithType,
+            UpdateStages.WithAddressPrefix,
+            UpdateStages.WithAddressPrefixes,
+            UpdateStages.WithNetworkSecurityGroup,
+            UpdateStages.WithRouteTable,
+            UpdateStages.WithNatGateway,
+            UpdateStages.WithServiceEndpoints,
+            UpdateStages.WithServiceEndpointPolicies,
+            UpdateStages.WithIpAllocations,
+            UpdateStages.WithDelegations,
+            UpdateStages.WithPrivateEndpointNetworkPolicies,
+            UpdateStages.WithPrivateLinkServiceNetworkPolicies,
+            UpdateStages.WithApplicationGatewayIpConfigurations {
+        /**
+         * Executes the update request.
+         *
+         * @return the updated resource.
+         */
+        Subnet apply();
+
+        /**
+         * Executes the update request.
+         *
+         * @param context The context to associate with this operation.
+         * @return the updated resource.
+         */
+        Subnet apply(Context context);
+    }
+    /** The Subnet update stages. */
+    interface UpdateStages {
+        /** The stage of the Subnet update allowing to specify name. */
+        interface WithName {
+            /**
+             * Specifies the name property: The name of the resource that is unique within a resource group. This name
+             * can be used to access the resource..
+             *
+             * @param name The name of the resource that is unique within a resource group. This name can be used to
+             *     access the resource.
+             * @return the next definition stage.
+             */
+            Update withName(String name);
+        }
+        /** The stage of the Subnet update allowing to specify type. */
+        interface WithType {
+            /**
+             * Specifies the type property: Resource type..
+             *
+             * @param type Resource type.
+             * @return the next definition stage.
+             */
+            Update withType(String type);
+        }
+        /** The stage of the Subnet update allowing to specify addressPrefix. */
+        interface WithAddressPrefix {
+            /**
+             * Specifies the addressPrefix property: The address prefix for the subnet..
+             *
+             * @param addressPrefix The address prefix for the subnet.
+             * @return the next definition stage.
+             */
+            Update withAddressPrefix(String addressPrefix);
+        }
+        /** The stage of the Subnet update allowing to specify addressPrefixes. */
+        interface WithAddressPrefixes {
+            /**
+             * Specifies the addressPrefixes property: List of address prefixes for the subnet..
+             *
+             * @param addressPrefixes List of address prefixes for the subnet.
+             * @return the next definition stage.
+             */
+            Update withAddressPrefixes(List<String> addressPrefixes);
+        }
+        /** The stage of the Subnet update allowing to specify networkSecurityGroup. */
+        interface WithNetworkSecurityGroup {
+            /**
+             * Specifies the networkSecurityGroup property: The reference to the NetworkSecurityGroup resource..
+             *
+             * @param networkSecurityGroup The reference to the NetworkSecurityGroup resource.
+             * @return the next definition stage.
+             */
+            Update withNetworkSecurityGroup(NetworkSecurityGroupInner networkSecurityGroup);
+        }
+        /** The stage of the Subnet update allowing to specify routeTable. */
+        interface WithRouteTable {
+            /**
+             * Specifies the routeTable property: The reference to the RouteTable resource..
+             *
+             * @param routeTable The reference to the RouteTable resource.
+             * @return the next definition stage.
+             */
+            Update withRouteTable(RouteTableInner routeTable);
+        }
+        /** The stage of the Subnet update allowing to specify natGateway. */
+        interface WithNatGateway {
+            /**
+             * Specifies the natGateway property: Nat gateway associated with this subnet..
+             *
+             * @param natGateway Nat gateway associated with this subnet.
+             * @return the next definition stage.
+             */
+            Update withNatGateway(SubResource natGateway);
+        }
+        /** The stage of the Subnet update allowing to specify serviceEndpoints. */
+        interface WithServiceEndpoints {
+            /**
+             * Specifies the serviceEndpoints property: An array of service endpoints..
+             *
+             * @param serviceEndpoints An array of service endpoints.
+             * @return the next definition stage.
+             */
+            Update withServiceEndpoints(List<ServiceEndpointPropertiesFormat> serviceEndpoints);
+        }
+        /** The stage of the Subnet update allowing to specify serviceEndpointPolicies. */
+        interface WithServiceEndpointPolicies {
+            /**
+             * Specifies the serviceEndpointPolicies property: An array of service endpoint policies..
+             *
+             * @param serviceEndpointPolicies An array of service endpoint policies.
+             * @return the next definition stage.
+             */
+            Update withServiceEndpointPolicies(List<ServiceEndpointPolicyInner> serviceEndpointPolicies);
+        }
+        /** The stage of the Subnet update allowing to specify ipAllocations. */
+        interface WithIpAllocations {
+            /**
+             * Specifies the ipAllocations property: Array of IpAllocation which reference this subnet..
+             *
+             * @param ipAllocations Array of IpAllocation which reference this subnet.
+             * @return the next definition stage.
+             */
+            Update withIpAllocations(List<SubResource> ipAllocations);
+        }
+        /** The stage of the Subnet update allowing to specify delegations. */
+        interface WithDelegations {
+            /**
+             * Specifies the delegations property: An array of references to the delegations on the subnet..
+             *
+             * @param delegations An array of references to the delegations on the subnet.
+             * @return the next definition stage.
+             */
+            Update withDelegations(List<Delegation> delegations);
+        }
+        /** The stage of the Subnet update allowing to specify privateEndpointNetworkPolicies. */
+        interface WithPrivateEndpointNetworkPolicies {
+            /**
+             * Specifies the privateEndpointNetworkPolicies property: Enable or Disable apply network policies on
+             * private end point in the subnet..
+             *
+             * @param privateEndpointNetworkPolicies Enable or Disable apply network policies on private end point in
+             *     the subnet.
+             * @return the next definition stage.
+             */
+            Update withPrivateEndpointNetworkPolicies(
+                VirtualNetworkPrivateEndpointNetworkPolicies privateEndpointNetworkPolicies);
+        }
+        /** The stage of the Subnet update allowing to specify privateLinkServiceNetworkPolicies. */
+        interface WithPrivateLinkServiceNetworkPolicies {
+            /**
+             * Specifies the privateLinkServiceNetworkPolicies property: Enable or Disable apply network policies on
+             * private link service in the subnet..
+             *
+             * @param privateLinkServiceNetworkPolicies Enable or Disable apply network policies on private link service
+             *     in the subnet.
+             * @return the next definition stage.
+             */
+            Update withPrivateLinkServiceNetworkPolicies(
+                VirtualNetworkPrivateLinkServiceNetworkPolicies privateLinkServiceNetworkPolicies);
+        }
+        /** The stage of the Subnet update allowing to specify applicationGatewayIpConfigurations. */
+        interface WithApplicationGatewayIpConfigurations {
+            /**
+             * Specifies the applicationGatewayIpConfigurations property: Application gateway IP configurations of
+             * virtual network resource..
+             *
+             * @param applicationGatewayIpConfigurations Application gateway IP configurations of virtual network
+             *     resource.
+             * @return the next definition stage.
+             */
+            Update withApplicationGatewayIpConfigurations(
+                List<ApplicationGatewayIpConfiguration> applicationGatewayIpConfigurations);
+        }
+    }
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @return the refreshed resource.
+     */
+    Subnet refresh();
+
+    /**
+     * Refreshes the resource to sync with Azure.
+     *
+     * @param context The context to associate with this operation.
+     * @return the refreshed resource.
+     */
+    Subnet refresh(Context context);
 }

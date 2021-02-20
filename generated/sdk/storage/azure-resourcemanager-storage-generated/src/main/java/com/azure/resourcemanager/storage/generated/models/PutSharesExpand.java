@@ -4,41 +4,28 @@
 
 package com.azure.resourcemanager.storage.generated.models;
 
+import com.azure.core.util.ExpandableStringEnum;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
+import java.util.Collection;
 
 /** Defines values for PutSharesExpand. */
-public enum PutSharesExpand {
-    /** Enum value snapshots. */
-    SNAPSHOTS("snapshots");
-
-    /** The actual serialized value for a PutSharesExpand instance. */
-    private final String value;
-
-    PutSharesExpand(String value) {
-        this.value = value;
-    }
+public final class PutSharesExpand extends ExpandableStringEnum<PutSharesExpand> {
+    /** Static value snapshots for PutSharesExpand. */
+    public static final PutSharesExpand SNAPSHOTS = fromString("snapshots");
 
     /**
-     * Parses a serialized value to a PutSharesExpand instance.
+     * Creates or finds a PutSharesExpand from its string representation.
      *
-     * @param value the serialized value to parse.
-     * @return the parsed PutSharesExpand object, or null if unable to parse.
+     * @param name a name to look for.
+     * @return the corresponding PutSharesExpand.
      */
     @JsonCreator
-    public static PutSharesExpand fromString(String value) {
-        PutSharesExpand[] items = PutSharesExpand.values();
-        for (PutSharesExpand item : items) {
-            if (item.toString().equalsIgnoreCase(value)) {
-                return item;
-            }
-        }
-        return null;
+    public static PutSharesExpand fromString(String name) {
+        return fromString(name, PutSharesExpand.class);
     }
 
-    @JsonValue
-    @Override
-    public String toString() {
-        return this.value;
+    /** @return known PutSharesExpand values. */
+    public static Collection<PutSharesExpand> values() {
+        return values(PutSharesExpand.class);
     }
 }

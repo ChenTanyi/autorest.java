@@ -10,6 +10,7 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceInner;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceIpConfigurationInner;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkSecurityGroupInner;
+import com.azure.resourcemanager.network.generated.fluent.models.PrivateLinkServiceInner;
 import java.util.List;
 import java.util.Map;
 
@@ -157,6 +158,27 @@ public interface NetworkInterface {
     ProvisioningState provisioningState();
 
     /**
+     * Gets the nicType property: Type of Network Interface resource.
+     *
+     * @return the nicType value.
+     */
+    NetworkInterfaceNicType nicType();
+
+    /**
+     * Gets the privateLinkService property: Privatelinkservice of the network interface resource.
+     *
+     * @return the privateLinkService value.
+     */
+    PrivateLinkService privateLinkService();
+
+    /**
+     * Gets the migrationPhase property: Migration phase of Network Interface resource.
+     *
+     * @return the migrationPhase value.
+     */
+    NetworkInterfaceMigrationPhase migrationPhase();
+
+    /**
      * Gets the id property: Resource ID.
      *
      * @return the id value.
@@ -235,7 +257,10 @@ public interface NetworkInterface {
                 DefinitionStages.WithIpConfigurations,
                 DefinitionStages.WithDnsSettings,
                 DefinitionStages.WithEnableAcceleratedNetworking,
-                DefinitionStages.WithEnableIpForwarding {
+                DefinitionStages.WithEnableIpForwarding,
+                DefinitionStages.WithNicType,
+                DefinitionStages.WithPrivateLinkService,
+                DefinitionStages.WithMigrationPhase {
             /**
              * Executes the create request.
              *
@@ -322,6 +347,36 @@ public interface NetworkInterface {
              * @return the next definition stage.
              */
             WithCreate withEnableIpForwarding(Boolean enableIpForwarding);
+        }
+        /** The stage of the NetworkInterface definition allowing to specify nicType. */
+        interface WithNicType {
+            /**
+             * Specifies the nicType property: Type of Network Interface resource..
+             *
+             * @param nicType Type of Network Interface resource.
+             * @return the next definition stage.
+             */
+            WithCreate withNicType(NetworkInterfaceNicType nicType);
+        }
+        /** The stage of the NetworkInterface definition allowing to specify privateLinkService. */
+        interface WithPrivateLinkService {
+            /**
+             * Specifies the privateLinkService property: Privatelinkservice of the network interface resource..
+             *
+             * @param privateLinkService Privatelinkservice of the network interface resource.
+             * @return the next definition stage.
+             */
+            WithCreate withPrivateLinkService(PrivateLinkServiceInner privateLinkService);
+        }
+        /** The stage of the NetworkInterface definition allowing to specify migrationPhase. */
+        interface WithMigrationPhase {
+            /**
+             * Specifies the migrationPhase property: Migration phase of Network Interface resource..
+             *
+             * @param migrationPhase Migration phase of Network Interface resource.
+             * @return the next definition stage.
+             */
+            WithCreate withMigrationPhase(NetworkInterfaceMigrationPhase migrationPhase);
         }
     }
     /**
