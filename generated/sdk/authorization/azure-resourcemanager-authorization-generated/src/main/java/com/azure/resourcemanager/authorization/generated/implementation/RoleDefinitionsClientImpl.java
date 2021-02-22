@@ -64,7 +64,7 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
     private interface RoleDefinitionsService {
         @Headers({"Content-Type: application/json"})
         @Delete("/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}")
-        @ExpectedResponses({200})
+        @ExpectedResponses({200, 204})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<RoleDefinitionInner>> delete(
             @HostParam("$host") String endpoint,

@@ -185,7 +185,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
     /**
      * Gets deny assignments for a resource.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
@@ -276,7 +276,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
     /**
      * Gets deny assignments for a resource.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
@@ -366,7 +366,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
     /**
      * Gets deny assignments for a resource.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
@@ -407,7 +407,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
     /**
      * Gets deny assignments for a resource.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
@@ -440,7 +440,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
     /**
      * Gets deny assignments for a resource.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
@@ -484,7 +484,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
     /**
      * Gets deny assignments for a resource.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
@@ -510,7 +510,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
     /**
      * Gets deny assignments for a resource.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
@@ -552,7 +552,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
     /**
      * Gets deny assignments for a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
      *     above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
      *     scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
@@ -614,7 +614,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
     /**
      * Gets deny assignments for a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
      *     above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
      *     scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
@@ -674,7 +674,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
     /**
      * Gets deny assignments for a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
      *     above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
      *     scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
@@ -698,7 +698,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
     /**
      * Gets deny assignments for a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -715,7 +715,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
     /**
      * Gets deny assignments for a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
      *     above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
      *     scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
@@ -741,7 +741,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
     /**
      * Gets deny assignments for a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -756,7 +756,7 @@ public final class DenyAssignmentsClientImpl implements DenyAssignmentsClient {
     /**
      * Gets deny assignments for a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
      *     above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
      *     scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the

@@ -100,7 +100,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
 
         @Headers({"Content-Type: application/json"})
         @Delete("/{scope}/providers/Microsoft.Authorization/roleAssignments/{roleAssignmentName}")
-        @ExpectedResponses({200})
+        @ExpectedResponses({200, 204})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<RoleAssignmentInner>> delete(
             @HostParam("$host") String endpoint,
@@ -137,7 +137,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
 
         @Headers({"Content-Type: application/json"})
         @Delete("/{roleId}")
-        @ExpectedResponses({200})
+        @ExpectedResponses({200, 204})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<RoleAssignmentInner>> deleteById(
             @HostParam("$host") String endpoint,
@@ -237,7 +237,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     /**
      * Gets role assignments for a resource.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
@@ -323,7 +323,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     /**
      * Gets role assignments for a resource.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
@@ -408,7 +408,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     /**
      * Gets role assignments for a resource.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
@@ -444,7 +444,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     /**
      * Gets role assignments for a resource.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
@@ -477,7 +477,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     /**
      * Gets role assignments for a resource.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
@@ -516,7 +516,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     /**
      * Gets role assignments for a resource.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
@@ -542,7 +542,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     /**
      * Gets role assignments for a resource.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
@@ -579,7 +579,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     /**
      * Gets role assignments for a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
      *     above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope
      *     for the specified principal.
@@ -636,7 +636,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     /**
      * Gets role assignments for a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
      *     above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope
      *     for the specified principal.
@@ -691,7 +691,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     /**
      * Gets role assignments for a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
      *     above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope
      *     for the specified principal.
@@ -710,7 +710,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     /**
      * Gets role assignments for a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -727,7 +727,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     /**
      * Gets role assignments for a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
      *     above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope
      *     for the specified principal.
@@ -748,7 +748,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     /**
      * Gets role assignments for a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -763,7 +763,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     /**
      * Gets role assignments for a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
      *     above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope
      *     for the specified principal.

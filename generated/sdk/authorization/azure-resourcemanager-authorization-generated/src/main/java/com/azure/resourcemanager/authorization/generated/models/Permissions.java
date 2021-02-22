@@ -12,7 +12,7 @@ public interface Permissions {
     /**
      * Gets all permissions the caller has for a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -23,7 +23,7 @@ public interface Permissions {
     /**
      * Gets all permissions the caller has for a resource group.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -35,7 +35,7 @@ public interface Permissions {
     /**
      * Gets all permissions the caller has for a resource.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
@@ -55,7 +55,7 @@ public interface Permissions {
     /**
      * Gets all permissions the caller has for a resource.
      *
-     * @param resourceGroupName The name of the resource group.
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
