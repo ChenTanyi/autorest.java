@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.monitor.generated.implementation;
 
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSettingsResourceCollectionInner;
 import com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSettingsResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.DiagnosticSettingsResource;
@@ -16,10 +15,11 @@ import java.util.stream.Collectors;
 public final class DiagnosticSettingsResourceCollectionImpl implements DiagnosticSettingsResourceCollection {
     private DiagnosticSettingsResourceCollectionInner innerObject;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
     DiagnosticSettingsResourceCollectionImpl(
-        DiagnosticSettingsResourceCollectionInner innerObject, MonitorManager serviceManager) {
+        DiagnosticSettingsResourceCollectionInner innerObject,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -42,7 +42,7 @@ public final class DiagnosticSettingsResourceCollectionImpl implements Diagnosti
         return this.innerObject;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 }

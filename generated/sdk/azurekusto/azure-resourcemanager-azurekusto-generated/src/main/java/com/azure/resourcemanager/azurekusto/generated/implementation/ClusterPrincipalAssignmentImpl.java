@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.azurekusto.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.azurekusto.generated.KustoManager;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.ClusterPrincipalAssignmentInner;
 import com.azure.resourcemanager.azurekusto.generated.models.ClusterPrincipalAssignment;
 import com.azure.resourcemanager.azurekusto.generated.models.ClusterPrincipalRole;
@@ -16,7 +15,7 @@ public final class ClusterPrincipalAssignmentImpl
     implements ClusterPrincipalAssignment, ClusterPrincipalAssignment.Definition, ClusterPrincipalAssignment.Update {
     private ClusterPrincipalAssignmentInner innerObject;
 
-    private final KustoManager serviceManager;
+    private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -62,7 +61,7 @@ public final class ClusterPrincipalAssignmentImpl
         return this.innerObject;
     }
 
-    private KustoManager manager() {
+    private com.azure.resourcemanager.azurekusto.generated.KustoManager manager() {
         return this.serviceManager;
     }
 
@@ -97,7 +96,8 @@ public final class ClusterPrincipalAssignmentImpl
         return this;
     }
 
-    ClusterPrincipalAssignmentImpl(String name, KustoManager serviceManager) {
+    ClusterPrincipalAssignmentImpl(
+        String name, com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = new ClusterPrincipalAssignmentInner();
         this.serviceManager = serviceManager;
         this.principalAssignmentName = name;
@@ -126,7 +126,9 @@ public final class ClusterPrincipalAssignmentImpl
         return this;
     }
 
-    ClusterPrincipalAssignmentImpl(ClusterPrincipalAssignmentInner innerObject, KustoManager serviceManager) {
+    ClusterPrincipalAssignmentImpl(
+        ClusterPrincipalAssignmentInner innerObject,
+        com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

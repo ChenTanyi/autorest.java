@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetGatewayInner;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.VnetGateway;
@@ -13,7 +12,7 @@ import com.azure.resourcemanager.appservice.generated.models.VnetGateway;
 public final class VnetGatewayImpl implements VnetGateway, VnetGateway.Definition, VnetGateway.Update {
     private VnetGatewayInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -47,7 +46,7 @@ public final class VnetGatewayImpl implements VnetGateway, VnetGateway.Definitio
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 
@@ -92,7 +91,7 @@ public final class VnetGatewayImpl implements VnetGateway, VnetGateway.Definitio
         return this;
     }
 
-    VnetGatewayImpl(String name, AppServiceManager serviceManager) {
+    VnetGatewayImpl(String name, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = new VnetGatewayInner();
         this.serviceManager = serviceManager;
         this.gatewayName = name;
@@ -124,7 +123,8 @@ public final class VnetGatewayImpl implements VnetGateway, VnetGateway.Definitio
         return this;
     }
 
-    VnetGatewayImpl(VnetGatewayInner innerObject, AppServiceManager serviceManager) {
+    VnetGatewayImpl(
+        VnetGatewayInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

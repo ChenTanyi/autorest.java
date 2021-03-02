@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.HostKeysInner;
 import com.azure.resourcemanager.appservice.generated.models.HostKeys;
 import java.util.Collections;
@@ -13,9 +12,10 @@ import java.util.Map;
 public final class HostKeysImpl implements HostKeys {
     private HostKeysInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    HostKeysImpl(HostKeysInner innerObject, AppServiceManager serviceManager) {
+    HostKeysImpl(
+        HostKeysInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -46,7 +46,7 @@ public final class HostKeysImpl implements HostKeys {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

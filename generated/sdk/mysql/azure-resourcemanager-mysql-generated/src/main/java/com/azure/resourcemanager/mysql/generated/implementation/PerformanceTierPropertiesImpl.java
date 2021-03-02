@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.mysql.generated.implementation;
 
-import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.models.PerformanceTierPropertiesInner;
 import com.azure.resourcemanager.mysql.generated.models.PerformanceTierProperties;
 import com.azure.resourcemanager.mysql.generated.models.PerformanceTierServiceLevelObjectives;
@@ -14,9 +13,11 @@ import java.util.List;
 public final class PerformanceTierPropertiesImpl implements PerformanceTierProperties {
     private PerformanceTierPropertiesInner innerObject;
 
-    private final MySqlManager serviceManager;
+    private final com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager;
 
-    PerformanceTierPropertiesImpl(PerformanceTierPropertiesInner innerObject, MySqlManager serviceManager) {
+    PerformanceTierPropertiesImpl(
+        PerformanceTierPropertiesInner innerObject,
+        com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -62,7 +63,7 @@ public final class PerformanceTierPropertiesImpl implements PerformanceTierPrope
         return this.innerObject;
     }
 
-    private MySqlManager manager() {
+    private com.azure.resourcemanager.mysql.generated.MySqlManager manager() {
         return this.serviceManager;
     }
 }

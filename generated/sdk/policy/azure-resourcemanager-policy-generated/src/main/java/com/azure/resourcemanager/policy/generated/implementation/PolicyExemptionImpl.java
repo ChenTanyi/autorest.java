@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.policy.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.policy.generated.PolicyManager;
 import com.azure.resourcemanager.policy.generated.fluent.models.PolicyExemptionInner;
 import com.azure.resourcemanager.policy.generated.models.ExemptionCategory;
 import com.azure.resourcemanager.policy.generated.models.PolicyExemption;
@@ -17,7 +16,7 @@ import java.util.List;
 public final class PolicyExemptionImpl implements PolicyExemption, PolicyExemption.Definition, PolicyExemption.Update {
     private PolicyExemptionInner innerObject;
 
-    private final PolicyManager serviceManager;
+    private final com.azure.resourcemanager.policy.generated.PolicyManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -72,7 +71,7 @@ public final class PolicyExemptionImpl implements PolicyExemption, PolicyExempti
         return this.innerObject;
     }
 
-    private PolicyManager manager() {
+    private com.azure.resourcemanager.policy.generated.PolicyManager manager() {
         return this.serviceManager;
     }
 
@@ -105,7 +104,7 @@ public final class PolicyExemptionImpl implements PolicyExemption, PolicyExempti
         return this;
     }
 
-    PolicyExemptionImpl(String name, PolicyManager serviceManager) {
+    PolicyExemptionImpl(String name, com.azure.resourcemanager.policy.generated.PolicyManager serviceManager) {
         this.innerObject = new PolicyExemptionInner();
         this.serviceManager = serviceManager;
         this.policyExemptionName = name;
@@ -135,7 +134,8 @@ public final class PolicyExemptionImpl implements PolicyExemption, PolicyExempti
         return this;
     }
 
-    PolicyExemptionImpl(PolicyExemptionInner innerObject, PolicyManager serviceManager) {
+    PolicyExemptionImpl(
+        PolicyExemptionInner innerObject, com.azure.resourcemanager.policy.generated.PolicyManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.scope =

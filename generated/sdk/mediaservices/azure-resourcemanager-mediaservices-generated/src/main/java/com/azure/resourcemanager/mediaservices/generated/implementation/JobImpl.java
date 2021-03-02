@@ -6,7 +6,6 @@ package com.azure.resourcemanager.mediaservices.generated.implementation;
 
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.mediaservices.generated.MediaservicesManager;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.JobInner;
 import com.azure.resourcemanager.mediaservices.generated.models.Job;
 import com.azure.resourcemanager.mediaservices.generated.models.JobInput;
@@ -22,7 +21,7 @@ import java.util.Map;
 public final class JobImpl implements Job, Job.Definition, Job.Update {
     private JobInner innerObject;
 
-    private final MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -94,7 +93,7 @@ public final class JobImpl implements Job, Job.Definition, Job.Update {
         return this.innerObject;
     }
 
-    private MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
         return this.serviceManager;
     }
 
@@ -134,7 +133,7 @@ public final class JobImpl implements Job, Job.Definition, Job.Update {
         return this;
     }
 
-    JobImpl(String name, MediaservicesManager serviceManager) {
+    JobImpl(String name, com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
         this.innerObject = new JobInner();
         this.serviceManager = serviceManager;
         this.jobName = name;
@@ -165,7 +164,8 @@ public final class JobImpl implements Job, Job.Definition, Job.Update {
         return this;
     }
 
-    JobImpl(JobInner innerObject, MediaservicesManager serviceManager) {
+    JobImpl(
+        JobInner innerObject, com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

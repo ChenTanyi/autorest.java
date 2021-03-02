@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.search.generated.SearchManager;
 import com.azure.resourcemanager.search.generated.fluent.AdminKeysClient;
 import com.azure.resourcemanager.search.generated.fluent.models.AdminKeyResultInner;
 import com.azure.resourcemanager.search.generated.models.AdminKeyKind;
@@ -22,9 +21,10 @@ public final class AdminKeysImpl implements AdminKeys {
 
     private final AdminKeysClient innerClient;
 
-    private final SearchManager serviceManager;
+    private final com.azure.resourcemanager.search.generated.SearchManager serviceManager;
 
-    public AdminKeysImpl(AdminKeysClient innerClient, SearchManager serviceManager) {
+    public AdminKeysImpl(
+        AdminKeysClient innerClient, com.azure.resourcemanager.search.generated.SearchManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -87,7 +87,7 @@ public final class AdminKeysImpl implements AdminKeys {
         return this.innerClient;
     }
 
-    private SearchManager manager() {
+    private com.azure.resourcemanager.search.generated.SearchManager manager() {
         return this.serviceManager;
     }
 }

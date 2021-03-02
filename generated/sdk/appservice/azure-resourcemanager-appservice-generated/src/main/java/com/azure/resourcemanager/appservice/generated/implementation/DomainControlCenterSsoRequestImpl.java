@@ -4,17 +4,17 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DomainControlCenterSsoRequestInner;
 import com.azure.resourcemanager.appservice.generated.models.DomainControlCenterSsoRequest;
 
 public final class DomainControlCenterSsoRequestImpl implements DomainControlCenterSsoRequest {
     private DomainControlCenterSsoRequestInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
     DomainControlCenterSsoRequestImpl(
-        DomainControlCenterSsoRequestInner innerObject, AppServiceManager serviceManager) {
+        DomainControlCenterSsoRequestInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -35,7 +35,7 @@ public final class DomainControlCenterSsoRequestImpl implements DomainControlCen
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

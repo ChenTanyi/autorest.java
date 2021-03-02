@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.DeletedWebAppsClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DeletedSiteInner;
 import com.azure.resourcemanager.appservice.generated.models.DeletedSite;
@@ -21,9 +20,11 @@ public final class DeletedWebAppsImpl implements DeletedWebApps {
 
     private final DeletedWebAppsClient innerClient;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    public DeletedWebAppsImpl(DeletedWebAppsClient innerClient, AppServiceManager serviceManager) {
+    public DeletedWebAppsImpl(
+        DeletedWebAppsClient innerClient,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -76,7 +77,7 @@ public final class DeletedWebAppsImpl implements DeletedWebApps {
         return this.innerClient;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

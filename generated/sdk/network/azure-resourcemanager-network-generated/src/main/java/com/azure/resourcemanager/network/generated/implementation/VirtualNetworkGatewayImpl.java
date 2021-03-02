@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkGatewayInner;
 import com.azure.resourcemanager.network.generated.models.AddressSpace;
 import com.azure.resourcemanager.network.generated.models.BgpSettings;
@@ -29,7 +28,7 @@ public final class VirtualNetworkGatewayImpl
     implements VirtualNetworkGateway, VirtualNetworkGateway.Definition, VirtualNetworkGateway.Update {
     private VirtualNetworkGatewayInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -149,7 +148,7 @@ public final class VirtualNetworkGatewayImpl
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -182,7 +181,7 @@ public final class VirtualNetworkGatewayImpl
         return this;
     }
 
-    VirtualNetworkGatewayImpl(String name, NetworkManager serviceManager) {
+    VirtualNetworkGatewayImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new VirtualNetworkGatewayInner();
         this.serviceManager = serviceManager;
         this.virtualNetworkGatewayName = name;
@@ -211,7 +210,9 @@ public final class VirtualNetworkGatewayImpl
         return this;
     }
 
-    VirtualNetworkGatewayImpl(VirtualNetworkGatewayInner innerObject, NetworkManager serviceManager) {
+    VirtualNetworkGatewayImpl(
+        VirtualNetworkGatewayInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

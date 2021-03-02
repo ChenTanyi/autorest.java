@@ -7,7 +7,6 @@ package com.azure.resourcemanager.databoxedge.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.DataBoxEdgeDeviceInner;
 import com.azure.resourcemanager.databoxedge.generated.models.DataBoxEdgeDevice;
 import com.azure.resourcemanager.databoxedge.generated.models.DataBoxEdgeDeviceExtendedInfo;
@@ -26,7 +25,7 @@ public final class DataBoxEdgeDeviceImpl
     implements DataBoxEdgeDevice, DataBoxEdgeDevice.Definition, DataBoxEdgeDevice.Update {
     private DataBoxEdgeDeviceInner innerObject;
 
-    private final DataBoxEdgeManager serviceManager;
+    private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -134,7 +133,7 @@ public final class DataBoxEdgeDeviceImpl
         return this.innerObject;
     }
 
-    private DataBoxEdgeManager manager() {
+    private com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager manager() {
         return this.serviceManager;
     }
 
@@ -167,7 +166,8 @@ public final class DataBoxEdgeDeviceImpl
         return this;
     }
 
-    DataBoxEdgeDeviceImpl(String name, DataBoxEdgeManager serviceManager) {
+    DataBoxEdgeDeviceImpl(
+        String name, com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = new DataBoxEdgeDeviceInner();
         this.serviceManager = serviceManager;
         this.deviceName = name;
@@ -198,7 +198,9 @@ public final class DataBoxEdgeDeviceImpl
         return this;
     }
 
-    DataBoxEdgeDeviceImpl(DataBoxEdgeDeviceInner innerObject, DataBoxEdgeManager serviceManager) {
+    DataBoxEdgeDeviceImpl(
+        DataBoxEdgeDeviceInner innerObject,
+        com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");

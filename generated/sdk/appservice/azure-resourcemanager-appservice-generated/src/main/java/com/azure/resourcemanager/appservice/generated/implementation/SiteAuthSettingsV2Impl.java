@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteAuthSettingsV2Inner;
 import com.azure.resourcemanager.appservice.generated.models.AuthPlatform;
 import com.azure.resourcemanager.appservice.generated.models.GlobalValidation;
@@ -17,9 +16,11 @@ import com.azure.resourcemanager.appservice.generated.models.SystemData;
 public final class SiteAuthSettingsV2Impl implements SiteAuthSettingsV2 {
     private SiteAuthSettingsV2Inner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SiteAuthSettingsV2Impl(SiteAuthSettingsV2Inner innerObject, AppServiceManager serviceManager) {
+    SiteAuthSettingsV2Impl(
+        SiteAuthSettingsV2Inner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -68,7 +69,7 @@ public final class SiteAuthSettingsV2Impl implements SiteAuthSettingsV2 {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

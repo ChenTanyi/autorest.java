@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.eventgrid.generated.EventGridManager;
 import com.azure.resourcemanager.eventgrid.generated.fluent.SystemTopicsClient;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.SystemTopicInner;
 import com.azure.resourcemanager.eventgrid.generated.models.SystemTopic;
@@ -21,9 +20,10 @@ public final class SystemTopicsImpl implements SystemTopics {
 
     private final SystemTopicsClient innerClient;
 
-    private final EventGridManager serviceManager;
+    private final com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager;
 
-    public SystemTopicsImpl(SystemTopicsClient innerClient, EventGridManager serviceManager) {
+    public SystemTopicsImpl(
+        SystemTopicsClient innerClient, com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -162,7 +162,7 @@ public final class SystemTopicsImpl implements SystemTopics {
         return this.innerClient;
     }
 
-    private EventGridManager manager() {
+    private com.azure.resourcemanager.eventgrid.generated.EventGridManager manager() {
         return this.serviceManager;
     }
 

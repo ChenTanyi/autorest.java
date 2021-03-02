@@ -6,7 +6,6 @@ package com.azure.resourcemanager.sqlvirtualmachine.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.sqlvirtualmachine.generated.SqlVirtualMachineManager;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models.SqlVirtualMachineGroupInner;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.ClusterConfiguration;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.ClusterManagerType;
@@ -22,7 +21,7 @@ public final class SqlVirtualMachineGroupImpl
     implements SqlVirtualMachineGroup, SqlVirtualMachineGroup.Definition, SqlVirtualMachineGroup.Update {
     private SqlVirtualMachineGroupInner innerObject;
 
-    private final SqlVirtualMachineManager serviceManager;
+    private final com.azure.resourcemanager.sqlvirtualmachine.generated.SqlVirtualMachineManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -89,7 +88,7 @@ public final class SqlVirtualMachineGroupImpl
         return this.innerObject;
     }
 
-    private SqlVirtualMachineManager manager() {
+    private com.azure.resourcemanager.sqlvirtualmachine.generated.SqlVirtualMachineManager manager() {
         return this.serviceManager;
     }
 
@@ -122,7 +121,8 @@ public final class SqlVirtualMachineGroupImpl
         return this;
     }
 
-    SqlVirtualMachineGroupImpl(String name, SqlVirtualMachineManager serviceManager) {
+    SqlVirtualMachineGroupImpl(
+        String name, com.azure.resourcemanager.sqlvirtualmachine.generated.SqlVirtualMachineManager serviceManager) {
         this.innerObject = new SqlVirtualMachineGroupInner();
         this.serviceManager = serviceManager;
         this.sqlVirtualMachineGroupName = name;
@@ -151,7 +151,9 @@ public final class SqlVirtualMachineGroupImpl
         return this;
     }
 
-    SqlVirtualMachineGroupImpl(SqlVirtualMachineGroupInner innerObject, SqlVirtualMachineManager serviceManager) {
+    SqlVirtualMachineGroupImpl(
+        SqlVirtualMachineGroupInner innerObject,
+        com.azure.resourcemanager.sqlvirtualmachine.generated.SqlVirtualMachineManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

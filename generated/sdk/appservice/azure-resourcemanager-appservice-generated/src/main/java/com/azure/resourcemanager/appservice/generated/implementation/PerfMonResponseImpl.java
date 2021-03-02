@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.PerfMonResponseInner;
 import com.azure.resourcemanager.appservice.generated.models.PerfMonResponse;
 import com.azure.resourcemanager.appservice.generated.models.PerfMonSet;
@@ -12,9 +11,11 @@ import com.azure.resourcemanager.appservice.generated.models.PerfMonSet;
 public final class PerfMonResponseImpl implements PerfMonResponse {
     private PerfMonResponseInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    PerfMonResponseImpl(PerfMonResponseInner innerObject, AppServiceManager serviceManager) {
+    PerfMonResponseImpl(
+        PerfMonResponseInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -35,7 +36,7 @@ public final class PerfMonResponseImpl implements PerfMonResponse {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

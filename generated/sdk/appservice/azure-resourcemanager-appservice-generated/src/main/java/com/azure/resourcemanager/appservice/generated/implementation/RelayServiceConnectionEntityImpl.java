@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RelayServiceConnectionEntityInner;
 import com.azure.resourcemanager.appservice.generated.models.RelayServiceConnectionEntity;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -16,7 +15,7 @@ public final class RelayServiceConnectionEntityImpl
         RelayServiceConnectionEntity.Update {
     private RelayServiceConnectionEntityInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -70,7 +69,7 @@ public final class RelayServiceConnectionEntityImpl
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 
@@ -108,7 +107,8 @@ public final class RelayServiceConnectionEntityImpl
         return this;
     }
 
-    RelayServiceConnectionEntityImpl(String name, AppServiceManager serviceManager) {
+    RelayServiceConnectionEntityImpl(
+        String name, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = new RelayServiceConnectionEntityInner();
         this.serviceManager = serviceManager;
         this.entityName = name;
@@ -140,7 +140,9 @@ public final class RelayServiceConnectionEntityImpl
         return this;
     }
 
-    RelayServiceConnectionEntityImpl(RelayServiceConnectionEntityInner innerObject, AppServiceManager serviceManager) {
+    RelayServiceConnectionEntityImpl(
+        RelayServiceConnectionEntityInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

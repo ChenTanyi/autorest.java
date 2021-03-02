@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.authorization.generated.AuthorizationManager;
 import com.azure.resourcemanager.authorization.generated.fluent.DenyAssignmentsClient;
 import com.azure.resourcemanager.authorization.generated.fluent.models.DenyAssignmentInner;
 import com.azure.resourcemanager.authorization.generated.models.DenyAssignment;
@@ -21,9 +20,11 @@ public final class DenyAssignmentsImpl implements DenyAssignments {
 
     private final DenyAssignmentsClient innerClient;
 
-    private final AuthorizationManager serviceManager;
+    private final com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager;
 
-    public DenyAssignmentsImpl(DenyAssignmentsClient innerClient, AuthorizationManager serviceManager) {
+    public DenyAssignmentsImpl(
+        DenyAssignmentsClient innerClient,
+        com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -143,7 +144,7 @@ public final class DenyAssignmentsImpl implements DenyAssignments {
         return this.innerClient;
     }
 
-    private AuthorizationManager manager() {
+    private com.azure.resourcemanager.authorization.generated.AuthorizationManager manager() {
         return this.serviceManager;
     }
 }

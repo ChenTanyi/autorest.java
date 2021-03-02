@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteSourceControlInner;
 import com.azure.resourcemanager.appservice.generated.models.SiteSourceControl;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -12,9 +11,11 @@ import com.azure.resourcemanager.appservice.generated.models.SystemData;
 public final class SiteSourceControlImpl implements SiteSourceControl {
     private SiteSourceControlInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SiteSourceControlImpl(SiteSourceControlInner innerObject, AppServiceManager serviceManager) {
+    SiteSourceControlImpl(
+        SiteSourceControlInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -67,7 +68,7 @@ public final class SiteSourceControlImpl implements SiteSourceControl {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

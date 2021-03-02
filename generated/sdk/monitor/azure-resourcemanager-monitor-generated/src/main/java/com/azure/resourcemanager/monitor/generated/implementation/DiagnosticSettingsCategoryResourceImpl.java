@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.monitor.generated.implementation;
 
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSettingsCategoryResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.CategoryType;
 import com.azure.resourcemanager.monitor.generated.models.DiagnosticSettingsCategoryResource;
@@ -12,10 +11,11 @@ import com.azure.resourcemanager.monitor.generated.models.DiagnosticSettingsCate
 public final class DiagnosticSettingsCategoryResourceImpl implements DiagnosticSettingsCategoryResource {
     private DiagnosticSettingsCategoryResourceInner innerObject;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
     DiagnosticSettingsCategoryResourceImpl(
-        DiagnosticSettingsCategoryResourceInner innerObject, MonitorManager serviceManager) {
+        DiagnosticSettingsCategoryResourceInner innerObject,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +40,7 @@ public final class DiagnosticSettingsCategoryResourceImpl implements DiagnosticS
         return this.innerObject;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 }

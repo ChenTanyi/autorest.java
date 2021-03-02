@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ResourceMetricDefinitionInner;
 import com.azure.resourcemanager.appservice.generated.models.ResourceMetricAvailability;
 import com.azure.resourcemanager.appservice.generated.models.ResourceMetricDefinition;
@@ -16,9 +15,11 @@ import java.util.Map;
 public final class ResourceMetricDefinitionImpl implements ResourceMetricDefinition {
     private ResourceMetricDefinitionInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    ResourceMetricDefinitionImpl(ResourceMetricDefinitionInner innerObject, AppServiceManager serviceManager) {
+    ResourceMetricDefinitionImpl(
+        ResourceMetricDefinitionInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -77,7 +78,7 @@ public final class ResourceMetricDefinitionImpl implements ResourceMetricDefinit
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

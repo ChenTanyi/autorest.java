@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.OperationsClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.OperationListResultInner;
 import com.azure.resourcemanager.monitor.generated.models.OperationListResult;
@@ -20,9 +19,10 @@ public final class OperationsImpl implements Operations {
 
     private final OperationsClient innerClient;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public OperationsImpl(OperationsClient innerClient, MonitorManager serviceManager) {
+    public OperationsImpl(
+        OperationsClient innerClient, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -53,7 +53,7 @@ public final class OperationsImpl implements Operations {
         return this.innerClient;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 }

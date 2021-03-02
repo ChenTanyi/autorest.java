@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.AppServiceEnvironmentsClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AddressResponseInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceEnvironmentResourceInner;
@@ -51,9 +50,11 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
 
     private final AppServiceEnvironmentsClient innerClient;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    public AppServiceEnvironmentsImpl(AppServiceEnvironmentsClient innerClient, AppServiceManager serviceManager) {
+    public AppServiceEnvironmentsImpl(
+        AppServiceEnvironmentsClient innerClient,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -716,7 +717,7 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         return this.innerClient;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmCopySlotEntityInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigInner;
 import com.azure.resourcemanager.appservice.generated.models.CsmCopySlotEntity;
@@ -13,9 +12,11 @@ import com.azure.resourcemanager.appservice.generated.models.SiteConfig;
 public final class CsmCopySlotEntityImpl implements CsmCopySlotEntity {
     private CsmCopySlotEntityInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    CsmCopySlotEntityImpl(CsmCopySlotEntityInner innerObject, AppServiceManager serviceManager) {
+    CsmCopySlotEntityImpl(
+        CsmCopySlotEntityInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -37,7 +38,7 @@ public final class CsmCopySlotEntityImpl implements CsmCopySlotEntity {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

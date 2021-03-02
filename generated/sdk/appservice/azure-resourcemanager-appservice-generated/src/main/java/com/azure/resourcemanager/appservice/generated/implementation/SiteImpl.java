@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.StreamResponse;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.BackupRequestInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmCopySlotEntityInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RestoreRequestInner;
@@ -49,7 +48,7 @@ import java.util.UUID;
 public final class SiteImpl implements Site, Site.Definition, Site.Update {
     private SiteInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -281,7 +280,7 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 
@@ -314,7 +313,7 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         return this;
     }
 
-    SiteImpl(String name, AppServiceManager serviceManager) {
+    SiteImpl(String name, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = new SiteInner();
         this.serviceManager = serviceManager;
         this.name = name;
@@ -345,7 +344,7 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         return this;
     }
 
-    SiteImpl(SiteInner innerObject, AppServiceManager serviceManager) {
+    SiteImpl(SiteInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

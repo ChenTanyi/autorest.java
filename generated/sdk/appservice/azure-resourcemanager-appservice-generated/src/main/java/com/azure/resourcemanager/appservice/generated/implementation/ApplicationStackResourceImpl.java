@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ApplicationStackResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.ApplicationStack;
 import com.azure.resourcemanager.appservice.generated.models.ApplicationStackResource;
@@ -16,9 +15,11 @@ import java.util.List;
 public final class ApplicationStackResourceImpl implements ApplicationStackResource {
     private ApplicationStackResourceInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    ApplicationStackResourceImpl(ApplicationStackResourceInner innerObject, AppServiceManager serviceManager) {
+    ApplicationStackResourceImpl(
+        ApplicationStackResourceInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -77,7 +78,7 @@ public final class ApplicationStackResourceImpl implements ApplicationStackResou
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

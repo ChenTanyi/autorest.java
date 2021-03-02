@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.monitor.generated.implementation;
 
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.SingleMetricBaselineInner;
 import com.azure.resourcemanager.monitor.generated.models.SingleMetricBaseline;
 import com.azure.resourcemanager.monitor.generated.models.TimeSeriesBaseline;
@@ -15,9 +14,11 @@ import java.util.List;
 public final class SingleMetricBaselineImpl implements SingleMetricBaseline {
     private SingleMetricBaselineInner innerObject;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    SingleMetricBaselineImpl(SingleMetricBaselineInner innerObject, MonitorManager serviceManager) {
+    SingleMetricBaselineImpl(
+        SingleMetricBaselineInner innerObject,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -59,7 +60,7 @@ public final class SingleMetricBaselineImpl implements SingleMetricBaseline {
         return this.innerObject;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 }

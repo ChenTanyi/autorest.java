@@ -6,7 +6,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkPeeringInner;
 import com.azure.resourcemanager.network.generated.models.AddressSpace;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
@@ -18,7 +17,7 @@ public final class VirtualNetworkPeeringImpl
     implements VirtualNetworkPeering, VirtualNetworkPeering.Definition, VirtualNetworkPeering.Update {
     private VirtualNetworkPeeringInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -84,7 +83,7 @@ public final class VirtualNetworkPeeringImpl
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -120,7 +119,7 @@ public final class VirtualNetworkPeeringImpl
         return this;
     }
 
-    VirtualNetworkPeeringImpl(String name, NetworkManager serviceManager) {
+    VirtualNetworkPeeringImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new VirtualNetworkPeeringInner();
         this.serviceManager = serviceManager;
         this.virtualNetworkPeeringName = name;
@@ -150,7 +149,9 @@ public final class VirtualNetworkPeeringImpl
         return this;
     }
 
-    VirtualNetworkPeeringImpl(VirtualNetworkPeeringInner innerObject, NetworkManager serviceManager) {
+    VirtualNetworkPeeringImpl(
+        VirtualNetworkPeeringInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.sqlvirtualmachine.generated.SqlVirtualMachineManager;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.AvailabilityGroupListenersClient;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models.AvailabilityGroupListenerInner;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AvailabilityGroupListener;
@@ -21,10 +20,11 @@ public final class AvailabilityGroupListenersImpl implements AvailabilityGroupLi
 
     private final AvailabilityGroupListenersClient innerClient;
 
-    private final SqlVirtualMachineManager serviceManager;
+    private final com.azure.resourcemanager.sqlvirtualmachine.generated.SqlVirtualMachineManager serviceManager;
 
     public AvailabilityGroupListenersImpl(
-        AvailabilityGroupListenersClient innerClient, SqlVirtualMachineManager serviceManager) {
+        AvailabilityGroupListenersClient innerClient,
+        com.azure.resourcemanager.sqlvirtualmachine.generated.SqlVirtualMachineManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -224,7 +224,7 @@ public final class AvailabilityGroupListenersImpl implements AvailabilityGroupLi
         return this.innerClient;
     }
 
-    private SqlVirtualMachineManager manager() {
+    private com.azure.resourcemanager.sqlvirtualmachine.generated.SqlVirtualMachineManager manager() {
         return this.serviceManager;
     }
 

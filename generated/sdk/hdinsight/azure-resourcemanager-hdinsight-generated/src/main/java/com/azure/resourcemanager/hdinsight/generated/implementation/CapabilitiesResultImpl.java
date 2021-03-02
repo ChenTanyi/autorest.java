@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.hdinsight.generated.implementation;
 
-import com.azure.resourcemanager.hdinsight.generated.HDInsightManager;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.CapabilitiesResultInner;
 import com.azure.resourcemanager.hdinsight.generated.models.CapabilitiesResult;
 import com.azure.resourcemanager.hdinsight.generated.models.QuotaCapability;
@@ -19,9 +18,11 @@ import java.util.Map;
 public final class CapabilitiesResultImpl implements CapabilitiesResult {
     private CapabilitiesResultInner innerObject;
 
-    private final HDInsightManager serviceManager;
+    private final com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager;
 
-    CapabilitiesResultImpl(CapabilitiesResultInner innerObject, HDInsightManager serviceManager) {
+    CapabilitiesResultImpl(
+        CapabilitiesResultInner innerObject,
+        com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -79,7 +80,7 @@ public final class CapabilitiesResultImpl implements CapabilitiesResult {
         return this.innerObject;
     }
 
-    private HDInsightManager manager() {
+    private com.azure.resourcemanager.hdinsight.generated.HDInsightManager manager() {
         return this.serviceManager;
     }
 }

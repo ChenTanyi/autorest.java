@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.frontdoor.generated.FrontDoorManager;
 import com.azure.resourcemanager.frontdoor.generated.fluent.FrontendEndpointsClient;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.FrontendEndpointInner;
 import com.azure.resourcemanager.frontdoor.generated.models.CustomHttpsConfiguration;
@@ -22,9 +21,11 @@ public final class FrontendEndpointsImpl implements FrontendEndpoints {
 
     private final FrontendEndpointsClient innerClient;
 
-    private final FrontDoorManager serviceManager;
+    private final com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager;
 
-    public FrontendEndpointsImpl(FrontendEndpointsClient innerClient, FrontDoorManager serviceManager) {
+    public FrontendEndpointsImpl(
+        FrontendEndpointsClient innerClient,
+        com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -100,7 +101,7 @@ public final class FrontendEndpointsImpl implements FrontendEndpoints {
         return this.innerClient;
     }
 
-    private FrontDoorManager manager() {
+    private com.azure.resourcemanager.frontdoor.generated.FrontDoorManager manager() {
         return this.serviceManager;
     }
 }

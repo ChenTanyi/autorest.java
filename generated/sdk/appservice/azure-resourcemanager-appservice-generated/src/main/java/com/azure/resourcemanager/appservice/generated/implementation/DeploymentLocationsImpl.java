@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DeploymentLocationsInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.GeoRegionInner;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceEnvironment;
@@ -18,9 +17,11 @@ import java.util.stream.Collectors;
 public final class DeploymentLocationsImpl implements DeploymentLocations {
     private DeploymentLocationsInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    DeploymentLocationsImpl(DeploymentLocationsInner innerObject, AppServiceManager serviceManager) {
+    DeploymentLocationsImpl(
+        DeploymentLocationsInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -61,7 +62,7 @@ public final class DeploymentLocationsImpl implements DeploymentLocations {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

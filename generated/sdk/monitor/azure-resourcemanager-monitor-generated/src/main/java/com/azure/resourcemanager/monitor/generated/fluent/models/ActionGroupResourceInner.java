@@ -6,12 +6,12 @@ package com.azure.resourcemanager.monitor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
-import com.azure.core.management.Resource;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.models.ArmRoleReceiver;
 import com.azure.resourcemanager.monitor.generated.models.AutomationRunbookReceiver;
 import com.azure.resourcemanager.monitor.generated.models.AzureAppPushReceiver;
 import com.azure.resourcemanager.monitor.generated.models.AzureFunctionReceiver;
+import com.azure.resourcemanager.monitor.generated.models.AzureResource;
 import com.azure.resourcemanager.monitor.generated.models.EmailReceiver;
 import com.azure.resourcemanager.monitor.generated.models.ItsmReceiver;
 import com.azure.resourcemanager.monitor.generated.models.LogicAppReceiver;
@@ -26,7 +26,7 @@ import java.util.Map;
 /** An action group resource. */
 @JsonFlatten
 @Fluent
-public class ActionGroupResourceInner extends Resource {
+public class ActionGroupResourceInner extends AzureResource {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(ActionGroupResourceInner.class);
 
     /*
@@ -370,7 +370,9 @@ public class ActionGroupResourceInner extends Resource {
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
+    @Override
     public void validate() {
+        super.validate();
         if (emailReceivers() != null) {
             emailReceivers().forEach(e -> e.validate());
         }

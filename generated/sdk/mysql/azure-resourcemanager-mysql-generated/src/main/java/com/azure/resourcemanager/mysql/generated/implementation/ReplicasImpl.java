@@ -7,7 +7,6 @@ package com.azure.resourcemanager.mysql.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.ReplicasClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.ServerInner;
 import com.azure.resourcemanager.mysql.generated.models.Replicas;
@@ -19,9 +18,10 @@ public final class ReplicasImpl implements Replicas {
 
     private final ReplicasClient innerClient;
 
-    private final MySqlManager serviceManager;
+    private final com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager;
 
-    public ReplicasImpl(ReplicasClient innerClient, MySqlManager serviceManager) {
+    public ReplicasImpl(
+        ReplicasClient innerClient, com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +40,7 @@ public final class ReplicasImpl implements Replicas {
         return this.innerClient;
     }
 
-    private MySqlManager manager() {
+    private com.azure.resourcemanager.mysql.generated.MySqlManager manager() {
         return this.serviceManager;
     }
 }

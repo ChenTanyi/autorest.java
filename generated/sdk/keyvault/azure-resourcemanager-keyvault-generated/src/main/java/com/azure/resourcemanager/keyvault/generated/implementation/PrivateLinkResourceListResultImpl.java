@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.keyvault.generated.implementation;
 
-import com.azure.resourcemanager.keyvault.generated.KeyVaultManager;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.PrivateLinkResourceListResultInner;
 import com.azure.resourcemanager.keyvault.generated.models.PrivateLinkResource;
 import com.azure.resourcemanager.keyvault.generated.models.PrivateLinkResourceListResult;
@@ -14,9 +13,11 @@ import java.util.List;
 public final class PrivateLinkResourceListResultImpl implements PrivateLinkResourceListResult {
     private PrivateLinkResourceListResultInner innerObject;
 
-    private final KeyVaultManager serviceManager;
+    private final com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager;
 
-    PrivateLinkResourceListResultImpl(PrivateLinkResourceListResultInner innerObject, KeyVaultManager serviceManager) {
+    PrivateLinkResourceListResultImpl(
+        PrivateLinkResourceListResultInner innerObject,
+        com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,7 +35,7 @@ public final class PrivateLinkResourceListResultImpl implements PrivateLinkResou
         return this.innerObject;
     }
 
-    private KeyVaultManager manager() {
+    private com.azure.resourcemanager.keyvault.generated.KeyVaultManager manager() {
         return this.serviceManager;
     }
 }

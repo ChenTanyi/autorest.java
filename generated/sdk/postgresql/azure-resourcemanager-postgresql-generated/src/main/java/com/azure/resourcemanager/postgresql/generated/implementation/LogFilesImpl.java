@@ -7,7 +7,6 @@ package com.azure.resourcemanager.postgresql.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.postgresql.generated.PostgreSqlManager;
 import com.azure.resourcemanager.postgresql.generated.fluent.LogFilesClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.LogFileInner;
 import com.azure.resourcemanager.postgresql.generated.models.LogFile;
@@ -19,9 +18,10 @@ public final class LogFilesImpl implements LogFiles {
 
     private final LogFilesClient innerClient;
 
-    private final PostgreSqlManager serviceManager;
+    private final com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager;
 
-    public LogFilesImpl(LogFilesClient innerClient, PostgreSqlManager serviceManager) {
+    public LogFilesImpl(
+        LogFilesClient innerClient, com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +40,7 @@ public final class LogFilesImpl implements LogFiles {
         return this.innerClient;
     }
 
-    private PostgreSqlManager manager() {
+    private com.azure.resourcemanager.postgresql.generated.PostgreSqlManager manager() {
         return this.serviceManager;
     }
 }

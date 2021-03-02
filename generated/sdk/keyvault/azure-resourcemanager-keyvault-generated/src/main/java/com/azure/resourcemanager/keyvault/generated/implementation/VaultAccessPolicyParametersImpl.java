@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.keyvault.generated.implementation;
 
-import com.azure.resourcemanager.keyvault.generated.KeyVaultManager;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.VaultAccessPolicyParametersInner;
 import com.azure.resourcemanager.keyvault.generated.models.VaultAccessPolicyParameters;
 import com.azure.resourcemanager.keyvault.generated.models.VaultAccessPolicyProperties;
@@ -12,9 +11,11 @@ import com.azure.resourcemanager.keyvault.generated.models.VaultAccessPolicyProp
 public final class VaultAccessPolicyParametersImpl implements VaultAccessPolicyParameters {
     private VaultAccessPolicyParametersInner innerObject;
 
-    private final KeyVaultManager serviceManager;
+    private final com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager;
 
-    VaultAccessPolicyParametersImpl(VaultAccessPolicyParametersInner innerObject, KeyVaultManager serviceManager) {
+    VaultAccessPolicyParametersImpl(
+        VaultAccessPolicyParametersInner innerObject,
+        com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -43,7 +44,7 @@ public final class VaultAccessPolicyParametersImpl implements VaultAccessPolicyP
         return this.innerObject;
     }
 
-    private KeyVaultManager manager() {
+    private com.azure.resourcemanager.keyvault.generated.KeyVaultManager manager() {
         return this.serviceManager;
     }
 }

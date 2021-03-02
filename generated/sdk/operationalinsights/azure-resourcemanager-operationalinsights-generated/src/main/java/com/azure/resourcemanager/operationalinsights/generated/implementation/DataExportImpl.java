@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.operationalinsights.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.DataExportInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.DataExport;
 import com.azure.resourcemanager.operationalinsights.generated.models.Type;
@@ -15,7 +14,7 @@ import java.util.List;
 public final class DataExportImpl implements DataExport, DataExport.Definition, DataExport.Update {
     private DataExportInner innerObject;
 
-    private final LogAnalyticsManager serviceManager;
+    private final com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -70,7 +69,7 @@ public final class DataExportImpl implements DataExport, DataExport.Definition, 
         return this.innerObject;
     }
 
-    private LogAnalyticsManager manager() {
+    private com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager manager() {
         return this.serviceManager;
     }
 
@@ -108,7 +107,8 @@ public final class DataExportImpl implements DataExport, DataExport.Definition, 
         return this;
     }
 
-    DataExportImpl(String name, LogAnalyticsManager serviceManager) {
+    DataExportImpl(
+        String name, com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = new DataExportInner();
         this.serviceManager = serviceManager;
         this.dataExportName = name;
@@ -140,7 +140,9 @@ public final class DataExportImpl implements DataExport, DataExport.Definition, 
         return this;
     }
 
-    DataExportImpl(DataExportInner innerObject, LogAnalyticsManager serviceManager) {
+    DataExportImpl(
+        DataExportInner innerObject,
+        com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourcegroups");

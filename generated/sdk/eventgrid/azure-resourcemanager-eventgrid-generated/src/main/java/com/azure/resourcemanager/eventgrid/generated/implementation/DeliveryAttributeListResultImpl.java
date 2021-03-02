@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.eventgrid.generated.implementation;
 
-import com.azure.resourcemanager.eventgrid.generated.EventGridManager;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.DeliveryAttributeListResultInner;
 import com.azure.resourcemanager.eventgrid.generated.models.DeliveryAttributeListResult;
 import com.azure.resourcemanager.eventgrid.generated.models.DeliveryAttributeMapping;
@@ -14,9 +13,11 @@ import java.util.List;
 public final class DeliveryAttributeListResultImpl implements DeliveryAttributeListResult {
     private DeliveryAttributeListResultInner innerObject;
 
-    private final EventGridManager serviceManager;
+    private final com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager;
 
-    DeliveryAttributeListResultImpl(DeliveryAttributeListResultInner innerObject, EventGridManager serviceManager) {
+    DeliveryAttributeListResultImpl(
+        DeliveryAttributeListResultInner innerObject,
+        com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,7 +35,7 @@ public final class DeliveryAttributeListResultImpl implements DeliveryAttributeL
         return this.innerObject;
     }
 
-    private EventGridManager manager() {
+    private com.azure.resourcemanager.eventgrid.generated.EventGridManager manager() {
         return this.serviceManager;
     }
 }

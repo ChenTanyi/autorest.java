@@ -7,7 +7,6 @@ package com.azure.resourcemanager.locks.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.locks.generated.ManagementLockManager;
 import com.azure.resourcemanager.locks.generated.fluent.AuthorizationOperationsClient;
 import com.azure.resourcemanager.locks.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.locks.generated.models.AuthorizationOperations;
@@ -19,10 +18,11 @@ public final class AuthorizationOperationsImpl implements AuthorizationOperation
 
     private final AuthorizationOperationsClient innerClient;
 
-    private final ManagementLockManager serviceManager;
+    private final com.azure.resourcemanager.locks.generated.ManagementLockManager serviceManager;
 
     public AuthorizationOperationsImpl(
-        AuthorizationOperationsClient innerClient, ManagementLockManager serviceManager) {
+        AuthorizationOperationsClient innerClient,
+        com.azure.resourcemanager.locks.generated.ManagementLockManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -41,7 +41,7 @@ public final class AuthorizationOperationsImpl implements AuthorizationOperation
         return this.innerClient;
     }
 
-    private ManagementLockManager manager() {
+    private com.azure.resourcemanager.locks.generated.ManagementLockManager manager() {
         return this.serviceManager;
     }
 }

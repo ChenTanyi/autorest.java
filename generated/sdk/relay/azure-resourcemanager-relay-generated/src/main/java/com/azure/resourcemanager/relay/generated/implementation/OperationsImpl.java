@@ -7,7 +7,6 @@ package com.azure.resourcemanager.relay.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.relay.generated.RelayManager;
 import com.azure.resourcemanager.relay.generated.fluent.OperationsClient;
 import com.azure.resourcemanager.relay.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.relay.generated.models.Operation;
@@ -19,9 +18,10 @@ public final class OperationsImpl implements Operations {
 
     private final OperationsClient innerClient;
 
-    private final RelayManager serviceManager;
+    private final com.azure.resourcemanager.relay.generated.RelayManager serviceManager;
 
-    public OperationsImpl(OperationsClient innerClient, RelayManager serviceManager) {
+    public OperationsImpl(
+        OperationsClient innerClient, com.azure.resourcemanager.relay.generated.RelayManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +40,7 @@ public final class OperationsImpl implements Operations {
         return this.innerClient;
     }
 
-    private RelayManager manager() {
+    private com.azure.resourcemanager.relay.generated.RelayManager manager() {
         return this.serviceManager;
     }
 }

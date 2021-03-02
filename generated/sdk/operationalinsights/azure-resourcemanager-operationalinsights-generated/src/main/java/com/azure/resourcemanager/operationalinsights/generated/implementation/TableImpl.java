@@ -4,16 +4,17 @@
 
 package com.azure.resourcemanager.operationalinsights.generated.implementation;
 
-import com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.TableInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.Table;
 
 public final class TableImpl implements Table {
     private TableInner innerObject;
 
-    private final LogAnalyticsManager serviceManager;
+    private final com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager;
 
-    TableImpl(TableInner innerObject, LogAnalyticsManager serviceManager) {
+    TableImpl(
+        TableInner innerObject,
+        com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,11 +35,23 @@ public final class TableImpl implements Table {
         return this.innerModel().retentionInDays();
     }
 
+    public Boolean isTroubleshootingAllowed() {
+        return this.innerModel().isTroubleshootingAllowed();
+    }
+
+    public Boolean isTroubleshootEnabled() {
+        return this.innerModel().isTroubleshootEnabled();
+    }
+
+    public String lastTroubleshootDate() {
+        return this.innerModel().lastTroubleshootDate();
+    }
+
     public TableInner innerModel() {
         return this.innerObject;
     }
 
-    private LogAnalyticsManager manager() {
+    private com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager manager() {
         return this.serviceManager;
     }
 }

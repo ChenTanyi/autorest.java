@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.authorization.generated.AuthorizationManager;
 import com.azure.resourcemanager.authorization.generated.fluent.RoleAssignmentsClient;
 import com.azure.resourcemanager.authorization.generated.fluent.models.RoleAssignmentInner;
 import com.azure.resourcemanager.authorization.generated.models.RoleAssignment;
@@ -22,9 +21,11 @@ public final class RoleAssignmentsImpl implements RoleAssignments {
 
     private final RoleAssignmentsClient innerClient;
 
-    private final AuthorizationManager serviceManager;
+    private final com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager;
 
-    public RoleAssignmentsImpl(RoleAssignmentsClient innerClient, AuthorizationManager serviceManager) {
+    public RoleAssignmentsImpl(
+        RoleAssignmentsClient innerClient,
+        com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -212,7 +213,7 @@ public final class RoleAssignmentsImpl implements RoleAssignments {
         return this.innerClient;
     }
 
-    private AuthorizationManager manager() {
+    private com.azure.resourcemanager.authorization.generated.AuthorizationManager manager() {
         return this.serviceManager;
     }
 

@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.eventgrid.generated.EventGridManager;
 import com.azure.resourcemanager.eventgrid.generated.fluent.PartnerTopicsClient;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.PartnerTopicInner;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerTopic;
@@ -22,9 +21,11 @@ public final class PartnerTopicsImpl implements PartnerTopics {
 
     private final PartnerTopicsClient innerClient;
 
-    private final EventGridManager serviceManager;
+    private final com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager;
 
-    public PartnerTopicsImpl(PartnerTopicsClient innerClient, EventGridManager serviceManager) {
+    public PartnerTopicsImpl(
+        PartnerTopicsClient innerClient,
+        com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -166,7 +167,7 @@ public final class PartnerTopicsImpl implements PartnerTopics {
         return this.innerClient;
     }
 
-    private EventGridManager manager() {
+    private com.azure.resourcemanager.eventgrid.generated.EventGridManager manager() {
         return this.serviceManager;
     }
 }

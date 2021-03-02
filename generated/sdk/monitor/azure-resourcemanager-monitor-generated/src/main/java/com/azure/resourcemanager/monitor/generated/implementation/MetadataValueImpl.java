@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.monitor.generated.implementation;
 
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.LocalizableStringInner;
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetadataValueInner;
 import com.azure.resourcemanager.monitor.generated.models.LocalizableString;
@@ -13,9 +12,10 @@ import com.azure.resourcemanager.monitor.generated.models.MetadataValue;
 public final class MetadataValueImpl implements MetadataValue {
     private MetadataValueInner innerObject;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    MetadataValueImpl(MetadataValueInner innerObject, MonitorManager serviceManager) {
+    MetadataValueImpl(
+        MetadataValueInner innerObject, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -37,7 +37,7 @@ public final class MetadataValueImpl implements MetadataValue {
         return this.innerObject;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 }

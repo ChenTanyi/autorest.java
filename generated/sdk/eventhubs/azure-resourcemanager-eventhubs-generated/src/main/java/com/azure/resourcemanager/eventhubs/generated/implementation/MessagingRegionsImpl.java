@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
-import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.MessagingRegionsInner;
 import com.azure.resourcemanager.eventhubs.generated.models.MessagingRegions;
 import com.azure.resourcemanager.eventhubs.generated.models.MessagingRegionsProperties;
@@ -14,9 +13,11 @@ import java.util.Map;
 public final class MessagingRegionsImpl implements MessagingRegions {
     private MessagingRegionsInner innerObject;
 
-    private final EventHubsManager serviceManager;
+    private final com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager;
 
-    MessagingRegionsImpl(MessagingRegionsInner innerObject, EventHubsManager serviceManager) {
+    MessagingRegionsImpl(
+        MessagingRegionsInner innerObject,
+        com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -54,7 +55,7 @@ public final class MessagingRegionsImpl implements MessagingRegions {
         return this.innerObject;
     }
 
-    private EventHubsManager manager() {
+    private com.azure.resourcemanager.eventhubs.generated.EventHubsManager manager() {
         return this.serviceManager;
     }
 }

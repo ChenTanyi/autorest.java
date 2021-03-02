@@ -6,7 +6,6 @@ package com.azure.resourcemanager.eventhubs.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.EHNamespaceInner;
 import com.azure.resourcemanager.eventhubs.generated.models.EHNamespace;
 import com.azure.resourcemanager.eventhubs.generated.models.Encryption;
@@ -19,7 +18,7 @@ import java.util.Map;
 public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definition, EHNamespace.Update {
     private EHNamespaceInner innerObject;
 
-    private final EventHubsManager serviceManager;
+    private final com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -110,7 +109,7 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
         return this.innerObject;
     }
 
-    private EventHubsManager manager() {
+    private com.azure.resourcemanager.eventhubs.generated.EventHubsManager manager() {
         return this.serviceManager;
     }
 
@@ -141,7 +140,7 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
         return this;
     }
 
-    EHNamespaceImpl(String name, EventHubsManager serviceManager) {
+    EHNamespaceImpl(String name, com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = new EHNamespaceInner();
         this.serviceManager = serviceManager;
         this.namespaceName = name;
@@ -171,7 +170,8 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
         return this;
     }
 
-    EHNamespaceImpl(EHNamespaceInner innerObject, EventHubsManager serviceManager) {
+    EHNamespaceImpl(
+        EHNamespaceInner innerObject, com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

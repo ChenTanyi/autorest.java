@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.databoxedge.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.BandwidthScheduleInner;
 import com.azure.resourcemanager.databoxedge.generated.models.BandwidthSchedule;
 import com.azure.resourcemanager.databoxedge.generated.models.DayOfWeek;
@@ -16,7 +15,7 @@ public final class BandwidthScheduleImpl
     implements BandwidthSchedule, BandwidthSchedule.Definition, BandwidthSchedule.Update {
     private BandwidthScheduleInner innerObject;
 
-    private final DataBoxEdgeManager serviceManager;
+    private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -55,7 +54,7 @@ public final class BandwidthScheduleImpl
         return this.innerObject;
     }
 
-    private DataBoxEdgeManager manager() {
+    private com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager manager() {
         return this.serviceManager;
     }
 
@@ -89,7 +88,8 @@ public final class BandwidthScheduleImpl
         return this;
     }
 
-    BandwidthScheduleImpl(String name, DataBoxEdgeManager serviceManager) {
+    BandwidthScheduleImpl(
+        String name, com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = new BandwidthScheduleInner();
         this.serviceManager = serviceManager;
         this.name = name;
@@ -117,7 +117,9 @@ public final class BandwidthScheduleImpl
         return this;
     }
 
-    BandwidthScheduleImpl(BandwidthScheduleInner innerObject, DataBoxEdgeManager serviceManager) {
+    BandwidthScheduleImpl(
+        BandwidthScheduleInner innerObject,
+        com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");

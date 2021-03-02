@@ -7,7 +7,6 @@ package com.azure.resourcemanager.storage.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.BlobRestoreStatusInner;
 import com.azure.resourcemanager.storage.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.storage.generated.fluent.models.StorageAccountInner;
@@ -50,7 +49,7 @@ import java.util.stream.Collectors;
 public final class StorageAccountImpl implements StorageAccount, StorageAccount.Definition, StorageAccount.Update {
     private StorageAccountInner innerObject;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -224,7 +223,7 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this.innerObject;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 
@@ -259,7 +258,7 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this;
     }
 
-    StorageAccountImpl(String name, StorageManager serviceManager) {
+    StorageAccountImpl(String name, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = new StorageAccountInner();
         this.serviceManager = serviceManager;
         this.accountName = name;
@@ -291,7 +290,8 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this;
     }
 
-    StorageAccountImpl(StorageAccountInner innerObject, StorageManager serviceManager) {
+    StorageAccountImpl(
+        StorageAccountInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

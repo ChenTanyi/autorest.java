@@ -5,14 +5,13 @@
 package com.azure.resourcemanager.mysql.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.models.DatabaseInner;
 import com.azure.resourcemanager.mysql.generated.models.Database;
 
 public final class DatabaseImpl implements Database, Database.Definition, Database.Update {
     private DatabaseInner innerObject;
 
-    private final MySqlManager serviceManager;
+    private final com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -38,7 +37,7 @@ public final class DatabaseImpl implements Database, Database.Definition, Databa
         return this.innerObject;
     }
 
-    private MySqlManager manager() {
+    private com.azure.resourcemanager.mysql.generated.MySqlManager manager() {
         return this.serviceManager;
     }
 
@@ -72,7 +71,7 @@ public final class DatabaseImpl implements Database, Database.Definition, Databa
         return this;
     }
 
-    DatabaseImpl(String name, MySqlManager serviceManager) {
+    DatabaseImpl(String name, com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
         this.innerObject = new DatabaseInner();
         this.serviceManager = serviceManager;
         this.databaseName = name;
@@ -100,7 +99,7 @@ public final class DatabaseImpl implements Database, Database.Definition, Databa
         return this;
     }
 
-    DatabaseImpl(DatabaseInner innerObject, MySqlManager serviceManager) {
+    DatabaseImpl(DatabaseInner innerObject, com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

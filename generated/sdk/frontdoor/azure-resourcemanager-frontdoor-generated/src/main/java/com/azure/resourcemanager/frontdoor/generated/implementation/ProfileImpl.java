@@ -6,7 +6,6 @@ package com.azure.resourcemanager.frontdoor.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.frontdoor.generated.FrontDoorManager;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.ProfileInner;
 import com.azure.resourcemanager.frontdoor.generated.models.NetworkExperimentResourceState;
 import com.azure.resourcemanager.frontdoor.generated.models.Profile;
@@ -18,7 +17,7 @@ import java.util.Map;
 public final class ProfileImpl implements Profile, Profile.Definition, Profile.Update {
     private ProfileInner innerObject;
 
-    private final FrontDoorManager serviceManager;
+    private final com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -69,7 +68,7 @@ public final class ProfileImpl implements Profile, Profile.Definition, Profile.U
         return this.innerObject;
     }
 
-    private FrontDoorManager manager() {
+    private com.azure.resourcemanager.frontdoor.generated.FrontDoorManager manager() {
         return this.serviceManager;
     }
 
@@ -102,7 +101,7 @@ public final class ProfileImpl implements Profile, Profile.Definition, Profile.U
         return this;
     }
 
-    ProfileImpl(String name, FrontDoorManager serviceManager) {
+    ProfileImpl(String name, com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerObject = new ProfileInner();
         this.serviceManager = serviceManager;
         this.profileName = name;
@@ -131,7 +130,8 @@ public final class ProfileImpl implements Profile, Profile.Definition, Profile.U
         return this;
     }
 
-    ProfileImpl(ProfileInner innerObject, FrontDoorManager serviceManager) {
+    ProfileImpl(
+        ProfileInner innerObject, com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

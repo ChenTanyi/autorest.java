@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.hdinsight.generated.implementation;
 
-import com.azure.resourcemanager.hdinsight.generated.HDInsightManager;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.hdinsight.generated.models.Operation;
 import com.azure.resourcemanager.hdinsight.generated.models.OperationDisplay;
@@ -13,9 +12,10 @@ import com.azure.resourcemanager.hdinsight.generated.models.OperationProperties;
 public final class OperationImpl implements Operation {
     private OperationInner innerObject;
 
-    private final HDInsightManager serviceManager;
+    private final com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager;
 
-    OperationImpl(OperationInner innerObject, HDInsightManager serviceManager) {
+    OperationImpl(
+        OperationInner innerObject, com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -36,7 +36,7 @@ public final class OperationImpl implements Operation {
         return this.innerObject;
     }
 
-    private HDInsightManager manager() {
+    private com.azure.resourcemanager.hdinsight.generated.HDInsightManager manager() {
         return this.serviceManager;
     }
 }

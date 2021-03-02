@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.EventhubInner;
 import com.azure.resourcemanager.eventhubs.generated.models.CaptureDescription;
 import com.azure.resourcemanager.eventhubs.generated.models.EntityStatus;
@@ -17,7 +16,7 @@ import java.util.List;
 public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventhub.Update {
     private EventhubInner innerObject;
 
-    private final EventHubsManager serviceManager;
+    private final com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -68,7 +67,7 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
         return this.innerObject;
     }
 
-    private EventHubsManager manager() {
+    private com.azure.resourcemanager.eventhubs.generated.EventHubsManager manager() {
         return this.serviceManager;
     }
 
@@ -105,7 +104,7 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
         return this;
     }
 
-    EventhubImpl(String name, EventHubsManager serviceManager) {
+    EventhubImpl(String name, com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = new EventhubInner();
         this.serviceManager = serviceManager;
         this.eventHubName = name;
@@ -136,7 +135,8 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
         return this;
     }
 
-    EventhubImpl(EventhubInner innerObject, EventHubsManager serviceManager) {
+    EventhubImpl(
+        EventhubInner innerObject, com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.mediaservices.generated.implementation;
 
-import com.azure.resourcemanager.mediaservices.generated.MediaservicesManager;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.EdgePoliciesInner;
 import com.azure.resourcemanager.mediaservices.generated.models.EdgePolicies;
 import com.azure.resourcemanager.mediaservices.generated.models.EdgeUsageDataCollectionPolicy;
@@ -12,9 +11,11 @@ import com.azure.resourcemanager.mediaservices.generated.models.EdgeUsageDataCol
 public final class EdgePoliciesImpl implements EdgePolicies {
     private EdgePoliciesInner innerObject;
 
-    private final MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
 
-    EdgePoliciesImpl(EdgePoliciesInner innerObject, MediaservicesManager serviceManager) {
+    EdgePoliciesImpl(
+        EdgePoliciesInner innerObject,
+        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -27,7 +28,7 @@ public final class EdgePoliciesImpl implements EdgePolicies {
         return this.innerObject;
     }
 
-    private MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
         return this.serviceManager;
     }
 }

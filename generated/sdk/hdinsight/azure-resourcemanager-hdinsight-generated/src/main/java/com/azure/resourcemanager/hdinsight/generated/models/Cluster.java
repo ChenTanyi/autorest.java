@@ -296,6 +296,27 @@ public interface Cluster {
     void updateGatewaySettings(UpdateGatewaySettingsParameters parameters, Context context);
 
     /**
+     * Updates the cluster identity certificate.
+     *
+     * @param parameters The cluster configurations.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void updateIdentityCertificate(UpdateClusterIdentityCertificateParameters parameters);
+
+    /**
+     * Updates the cluster identity certificate.
+     *
+     * @param parameters The cluster configurations.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void updateIdentityCertificate(UpdateClusterIdentityCertificateParameters parameters, Context context);
+
+    /**
      * Executes script actions on the specified HDInsight cluster.
      *
      * @param parameters The parameters for executing script actions.

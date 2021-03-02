@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.eventhubs.generated.models.ConnectionState;
 import com.azure.resourcemanager.eventhubs.generated.models.EndPointProvisioningState;
@@ -16,7 +15,7 @@ public final class PrivateEndpointConnectionImpl
     implements PrivateEndpointConnection, PrivateEndpointConnection.Definition, PrivateEndpointConnection.Update {
     private PrivateEndpointConnectionInner innerObject;
 
-    private final EventHubsManager serviceManager;
+    private final com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -46,7 +45,7 @@ public final class PrivateEndpointConnectionImpl
         return this.innerObject;
     }
 
-    private EventHubsManager manager() {
+    private com.azure.resourcemanager.eventhubs.generated.EventHubsManager manager() {
         return this.serviceManager;
     }
 
@@ -84,7 +83,8 @@ public final class PrivateEndpointConnectionImpl
         return this;
     }
 
-    PrivateEndpointConnectionImpl(String name, EventHubsManager serviceManager) {
+    PrivateEndpointConnectionImpl(
+        String name, com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = new PrivateEndpointConnectionInner();
         this.serviceManager = serviceManager;
         this.privateEndpointConnectionName = name;
@@ -116,7 +116,9 @@ public final class PrivateEndpointConnectionImpl
         return this;
     }
 
-    PrivateEndpointConnectionImpl(PrivateEndpointConnectionInner innerObject, EventHubsManager serviceManager) {
+    PrivateEndpointConnectionImpl(
+        PrivateEndpointConnectionInner innerObject,
+        com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

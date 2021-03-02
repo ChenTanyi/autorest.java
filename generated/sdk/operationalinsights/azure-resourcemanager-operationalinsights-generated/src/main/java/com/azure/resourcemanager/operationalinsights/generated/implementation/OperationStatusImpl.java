@@ -5,16 +5,17 @@
 package com.azure.resourcemanager.operationalinsights.generated.implementation;
 
 import com.azure.core.management.exception.ManagementError;
-import com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.OperationStatusInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.OperationStatus;
 
 public final class OperationStatusImpl implements OperationStatus {
     private OperationStatusInner innerObject;
 
-    private final LogAnalyticsManager serviceManager;
+    private final com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager;
 
-    OperationStatusImpl(OperationStatusInner innerObject, LogAnalyticsManager serviceManager) {
+    OperationStatusImpl(
+        OperationStatusInner innerObject,
+        com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -47,7 +48,7 @@ public final class OperationStatusImpl implements OperationStatus {
         return this.innerObject;
     }
 
-    private LogAnalyticsManager manager() {
+    private com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager manager() {
         return this.serviceManager;
     }
 }

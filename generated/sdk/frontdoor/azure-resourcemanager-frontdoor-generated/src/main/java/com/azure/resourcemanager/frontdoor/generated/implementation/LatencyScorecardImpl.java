@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.frontdoor.generated.implementation;
 
-import com.azure.resourcemanager.frontdoor.generated.FrontDoorManager;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.LatencyScorecardInner;
 import com.azure.resourcemanager.frontdoor.generated.models.LatencyMetric;
 import com.azure.resourcemanager.frontdoor.generated.models.LatencyScorecard;
@@ -16,9 +15,11 @@ import java.util.Map;
 public final class LatencyScorecardImpl implements LatencyScorecard {
     private LatencyScorecardInner innerObject;
 
-    private final FrontDoorManager serviceManager;
+    private final com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager;
 
-    LatencyScorecardImpl(LatencyScorecardInner innerObject, FrontDoorManager serviceManager) {
+    LatencyScorecardImpl(
+        LatencyScorecardInner innerObject,
+        com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -93,7 +94,7 @@ public final class LatencyScorecardImpl implements LatencyScorecard {
         return this.innerObject;
     }
 
-    private FrontDoorManager manager() {
+    private com.azure.resourcemanager.frontdoor.generated.FrontDoorManager manager() {
         return this.serviceManager;
     }
 }

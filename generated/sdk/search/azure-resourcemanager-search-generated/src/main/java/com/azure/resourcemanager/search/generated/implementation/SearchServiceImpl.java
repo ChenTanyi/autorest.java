@@ -6,7 +6,6 @@ package com.azure.resourcemanager.search.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.search.generated.SearchManager;
 import com.azure.resourcemanager.search.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.search.generated.fluent.models.SearchServiceInner;
 import com.azure.resourcemanager.search.generated.fluent.models.SharedPrivateLinkResourceInner;
@@ -30,7 +29,7 @@ import java.util.stream.Collectors;
 public final class SearchServiceImpl implements SearchService, SearchService.Definition, SearchService.Update {
     private SearchServiceInner innerObject;
 
-    private final SearchManager serviceManager;
+    private final com.azure.resourcemanager.search.generated.SearchManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -137,7 +136,7 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
         return this.innerObject;
     }
 
-    private SearchManager manager() {
+    private com.azure.resourcemanager.search.generated.SearchManager manager() {
         return this.serviceManager;
     }
 
@@ -176,7 +175,7 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
         return this;
     }
 
-    SearchServiceImpl(String name, SearchManager serviceManager) {
+    SearchServiceImpl(String name, com.azure.resourcemanager.search.generated.SearchManager serviceManager) {
         this.innerObject = new SearchServiceInner();
         this.serviceManager = serviceManager;
         this.searchServiceName = name;
@@ -211,7 +210,8 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
         return this;
     }
 
-    SearchServiceImpl(SearchServiceInner innerObject, SearchManager serviceManager) {
+    SearchServiceImpl(
+        SearchServiceInner innerObject, com.azure.resourcemanager.search.generated.SearchManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

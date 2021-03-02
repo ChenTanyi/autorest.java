@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.databoxedge.generated.implementation;
 
-import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.UploadCertificateResponseInner;
 import com.azure.resourcemanager.databoxedge.generated.models.AuthenticationType;
 import com.azure.resourcemanager.databoxedge.generated.models.UploadCertificateResponse;
@@ -12,9 +11,11 @@ import com.azure.resourcemanager.databoxedge.generated.models.UploadCertificateR
 public final class UploadCertificateResponseImpl implements UploadCertificateResponse {
     private UploadCertificateResponseInner innerObject;
 
-    private final DataBoxEdgeManager serviceManager;
+    private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    UploadCertificateResponseImpl(UploadCertificateResponseInner innerObject, DataBoxEdgeManager serviceManager) {
+    UploadCertificateResponseImpl(
+        UploadCertificateResponseInner innerObject,
+        com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -55,7 +56,7 @@ public final class UploadCertificateResponseImpl implements UploadCertificateRes
         return this.innerObject;
     }
 
-    private DataBoxEdgeManager manager() {
+    private com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager manager() {
         return this.serviceManager;
     }
 }

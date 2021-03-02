@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.policy.generated.PolicyManager;
 import com.azure.resourcemanager.policy.generated.fluent.PolicyExemptionsClient;
 import com.azure.resourcemanager.policy.generated.fluent.models.PolicyExemptionInner;
 import com.azure.resourcemanager.policy.generated.models.PolicyExemption;
@@ -21,9 +20,10 @@ public final class PolicyExemptionsImpl implements PolicyExemptions {
 
     private final PolicyExemptionsClient innerClient;
 
-    private final PolicyManager serviceManager;
+    private final com.azure.resourcemanager.policy.generated.PolicyManager serviceManager;
 
-    public PolicyExemptionsImpl(PolicyExemptionsClient innerClient, PolicyManager serviceManager) {
+    public PolicyExemptionsImpl(
+        PolicyExemptionsClient innerClient, com.azure.resourcemanager.policy.generated.PolicyManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -245,7 +245,7 @@ public final class PolicyExemptionsImpl implements PolicyExemptions {
         return this.innerClient;
     }
 
-    private PolicyManager manager() {
+    private com.azure.resourcemanager.policy.generated.PolicyManager manager() {
         return this.serviceManager;
     }
 

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.operationalinsights.generated.implementation;
 
-import com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.SavedSearchInner;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.SavedSearchesListResultInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.SavedSearch;
@@ -16,9 +15,11 @@ import java.util.stream.Collectors;
 public final class SavedSearchesListResultImpl implements SavedSearchesListResult {
     private SavedSearchesListResultInner innerObject;
 
-    private final LogAnalyticsManager serviceManager;
+    private final com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager;
 
-    SavedSearchesListResultImpl(SavedSearchesListResultInner innerObject, LogAnalyticsManager serviceManager) {
+    SavedSearchesListResultImpl(
+        SavedSearchesListResultInner innerObject,
+        com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -41,7 +42,7 @@ public final class SavedSearchesListResultImpl implements SavedSearchesListResul
         return this.innerObject;
     }
 
-    private LogAnalyticsManager manager() {
+    private com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager manager() {
         return this.serviceManager;
     }
 }

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.azurekusto.generated.implementation;
 
-import com.azure.resourcemanager.azurekusto.generated.KustoManager;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.DatabasePrincipalInner;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.DatabasePrincipalListResultInner;
 import com.azure.resourcemanager.azurekusto.generated.models.DatabasePrincipal;
@@ -16,9 +15,11 @@ import java.util.stream.Collectors;
 public final class DatabasePrincipalListResultImpl implements DatabasePrincipalListResult {
     private DatabasePrincipalListResultInner innerObject;
 
-    private final KustoManager serviceManager;
+    private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
-    DatabasePrincipalListResultImpl(DatabasePrincipalListResultInner innerObject, KustoManager serviceManager) {
+    DatabasePrincipalListResultImpl(
+        DatabasePrincipalListResultInner innerObject,
+        com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -41,7 +42,7 @@ public final class DatabasePrincipalListResultImpl implements DatabasePrincipalL
         return this.innerObject;
     }
 
-    private KustoManager manager() {
+    private com.azure.resourcemanager.azurekusto.generated.KustoManager manager() {
         return this.serviceManager;
     }
 }

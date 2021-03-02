@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.keyvault.generated.KeyVaultManager;
 import com.azure.resourcemanager.keyvault.generated.fluent.PrivateEndpointConnectionsClient;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.keyvault.generated.models.PrivateEndpointConnection;
@@ -20,10 +19,11 @@ public final class PrivateEndpointConnectionsImpl implements PrivateEndpointConn
 
     private final PrivateEndpointConnectionsClient innerClient;
 
-    private final KeyVaultManager serviceManager;
+    private final com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager;
 
     public PrivateEndpointConnectionsImpl(
-        PrivateEndpointConnectionsClient innerClient, KeyVaultManager serviceManager) {
+        PrivateEndpointConnectionsClient innerClient,
+        com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -198,7 +198,7 @@ public final class PrivateEndpointConnectionsImpl implements PrivateEndpointConn
         return this.innerClient;
     }
 
-    private KeyVaultManager manager() {
+    private com.azure.resourcemanager.keyvault.generated.KeyVaultManager manager() {
         return this.serviceManager;
     }
 

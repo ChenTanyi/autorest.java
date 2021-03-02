@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.operationalinsights.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.StorageInsightInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.StorageAccount;
 import com.azure.resourcemanager.operationalinsights.generated.models.StorageInsight;
@@ -17,7 +16,7 @@ import java.util.Map;
 public final class StorageInsightImpl implements StorageInsight, StorageInsight.Definition, StorageInsight.Update {
     private StorageInsightInner innerObject;
 
-    private final LogAnalyticsManager serviceManager;
+    private final com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -74,7 +73,7 @@ public final class StorageInsightImpl implements StorageInsight, StorageInsight.
         return this.innerObject;
     }
 
-    private LogAnalyticsManager manager() {
+    private com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager manager() {
         return this.serviceManager;
     }
 
@@ -112,7 +111,8 @@ public final class StorageInsightImpl implements StorageInsight, StorageInsight.
         return this;
     }
 
-    StorageInsightImpl(String name, LogAnalyticsManager serviceManager) {
+    StorageInsightImpl(
+        String name, com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = new StorageInsightInner();
         this.serviceManager = serviceManager;
         this.storageInsightName = name;
@@ -144,7 +144,9 @@ public final class StorageInsightImpl implements StorageInsight, StorageInsight.
         return this;
     }
 
-    StorageInsightImpl(StorageInsightInner innerObject, LogAnalyticsManager serviceManager) {
+    StorageInsightImpl(
+        StorageInsightInner innerObject,
+        com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourcegroups");

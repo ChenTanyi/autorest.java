@@ -30,6 +30,7 @@ import com.azure.resourcemanager.resourcegraph.generated.models.QueryRequest;
 import com.azure.resourcemanager.resourcegraph.generated.models.ResourceChangeDetailsRequestParameters;
 import com.azure.resourcemanager.resourcegraph.generated.models.ResourceChangesRequestParameters;
 import com.azure.resourcemanager.resourcegraph.generated.models.ResourcesHistoryRequest;
+import java.util.List;
 import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in ResourceProvidersClient. */
@@ -61,17 +62,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     @ServiceInterface(name = "ResourceGraphClientR")
     private interface ResourceProvidersService {
         @Headers({"Content-Type: application/json"})
-        @Post("/providers/Microsoft.ResourceGraph/resources")
-        @ExpectedResponses({200})
-        @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<QueryResponseInner>> resources(
-            @HostParam("$host") String endpoint,
-            @QueryParam("api-version") String apiVersion,
-            @BodyParam("application/json") QueryRequest query,
-            @HeaderParam("Accept") String accept,
-            Context context);
-
-        @Headers({"Content-Type: application/json"})
         @Post("/providers/Microsoft.ResourceGraph/resourceChanges")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
@@ -86,10 +76,21 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         @Post("/providers/Microsoft.ResourceGraph/resourceChangeDetails")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<ResourceChangeDataInner>> resourceChangeDetails(
+        Mono<Response<List<ResourceChangeDataInner>>> resourceChangeDetails(
             @HostParam("$host") String endpoint,
             @QueryParam("api-version") String apiVersion,
             @BodyParam("application/json") ResourceChangeDetailsRequestParameters parameters,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Post("/providers/Microsoft.ResourceGraph/resources")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<QueryResponseInner>> resources(
+            @HostParam("$host") String endpoint,
+            @QueryParam("api-version") String apiVersion,
+            @BodyParam("application/json") QueryRequest query,
             @HeaderParam("Accept") String accept,
             Context context);
 
@@ -103,115 +104,6 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
             @BodyParam("application/json") ResourcesHistoryRequest request,
             @HeaderParam("Accept") String accept,
             Context context);
-    }
-
-    /**
-     * Queries the resources managed by Azure Resource Manager for all subscriptions specified in the request.
-     *
-     * @param query Request specifying query and its options.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return query result.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<QueryResponseInner>> resourcesWithResponseAsync(QueryRequest query) {
-        if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
-        }
-        if (query == null) {
-            return Mono.error(new IllegalArgumentException("Parameter query is required and cannot be null."));
-        } else {
-            query.validate();
-        }
-        final String accept = "application/json";
-        return FluxUtil
-            .withContext(
-                context ->
-                    service.resources(this.client.getEndpoint(), this.client.getApiVersion(), query, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
-    }
-
-    /**
-     * Queries the resources managed by Azure Resource Manager for all subscriptions specified in the request.
-     *
-     * @param query Request specifying query and its options.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return query result.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<QueryResponseInner>> resourcesWithResponseAsync(QueryRequest query, Context context) {
-        if (this.client.getEndpoint() == null) {
-            return Mono
-                .error(
-                    new IllegalArgumentException(
-                        "Parameter this.client.getEndpoint() is required and cannot be null."));
-        }
-        if (query == null) {
-            return Mono.error(new IllegalArgumentException("Parameter query is required and cannot be null."));
-        } else {
-            query.validate();
-        }
-        final String accept = "application/json";
-        context = this.client.mergeContext(context);
-        return service.resources(this.client.getEndpoint(), this.client.getApiVersion(), query, accept, context);
-    }
-
-    /**
-     * Queries the resources managed by Azure Resource Manager for all subscriptions specified in the request.
-     *
-     * @param query Request specifying query and its options.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return query result.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<QueryResponseInner> resourcesAsync(QueryRequest query) {
-        return resourcesWithResponseAsync(query)
-            .flatMap(
-                (Response<QueryResponseInner> res) -> {
-                    if (res.getValue() != null) {
-                        return Mono.just(res.getValue());
-                    } else {
-                        return Mono.empty();
-                    }
-                });
-    }
-
-    /**
-     * Queries the resources managed by Azure Resource Manager for all subscriptions specified in the request.
-     *
-     * @param query Request specifying query and its options.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return query result.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public QueryResponseInner resources(QueryRequest query) {
-        return resourcesAsync(query).block();
-    }
-
-    /**
-     * Queries the resources managed by Azure Resource Manager for all subscriptions specified in the request.
-     *
-     * @param query Request specifying query and its options.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return query result.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<QueryResponseInner> resourcesWithResponse(QueryRequest query, Context context) {
-        return resourcesWithResponseAsync(query, context).block();
     }
 
     /**
@@ -237,13 +129,11 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2020-09-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
-                context ->
-                    service
-                        .resourceChanges(
-                            this.client.getEndpoint(), this.client.getApiVersion(), parameters, accept, context))
+                context -> service.resourceChanges(this.client.getEndpoint(), apiVersion, parameters, accept, context))
             .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
     }
 
@@ -271,10 +161,10 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2020-09-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .resourceChanges(this.client.getEndpoint(), this.client.getApiVersion(), parameters, accept, context);
+        return service.resourceChanges(this.client.getEndpoint(), apiVersion, parameters, accept, context);
     }
 
     /**
@@ -339,7 +229,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @return resource change details.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<ResourceChangeDataInner>> resourceChangeDetailsWithResponseAsync(
+    private Mono<Response<List<ResourceChangeDataInner>>> resourceChangeDetailsWithResponseAsync(
         ResourceChangeDetailsRequestParameters parameters) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -352,13 +242,12 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2020-09-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
-                    service
-                        .resourceChangeDetails(
-                            this.client.getEndpoint(), this.client.getApiVersion(), parameters, accept, context))
+                    service.resourceChangeDetails(this.client.getEndpoint(), apiVersion, parameters, accept, context))
             .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
     }
 
@@ -373,7 +262,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @return resource change details.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<ResourceChangeDataInner>> resourceChangeDetailsWithResponseAsync(
+    private Mono<Response<List<ResourceChangeDataInner>>> resourceChangeDetailsWithResponseAsync(
         ResourceChangeDetailsRequestParameters parameters, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -386,10 +275,10 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2020-09-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .resourceChangeDetails(this.client.getEndpoint(), this.client.getApiVersion(), parameters, accept, context);
+        return service.resourceChangeDetails(this.client.getEndpoint(), apiVersion, parameters, accept, context);
     }
 
     /**
@@ -402,11 +291,11 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @return resource change details.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ResourceChangeDataInner> resourceChangeDetailsAsync(
+    private Mono<List<ResourceChangeDataInner>> resourceChangeDetailsAsync(
         ResourceChangeDetailsRequestParameters parameters) {
         return resourceChangeDetailsWithResponseAsync(parameters)
             .flatMap(
-                (Response<ResourceChangeDataInner> res) -> {
+                (Response<List<ResourceChangeDataInner>> res) -> {
                     if (res.getValue() != null) {
                         return Mono.just(res.getValue());
                     } else {
@@ -425,7 +314,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @return resource change details.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public ResourceChangeDataInner resourceChangeDetails(ResourceChangeDetailsRequestParameters parameters) {
+    public List<ResourceChangeDataInner> resourceChangeDetails(ResourceChangeDetailsRequestParameters parameters) {
         return resourceChangeDetailsAsync(parameters).block();
     }
 
@@ -440,9 +329,118 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @return resource change details.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ResourceChangeDataInner> resourceChangeDetailsWithResponse(
+    public Response<List<ResourceChangeDataInner>> resourceChangeDetailsWithResponse(
         ResourceChangeDetailsRequestParameters parameters, Context context) {
         return resourceChangeDetailsWithResponseAsync(parameters, context).block();
+    }
+
+    /**
+     * Queries the resources managed by Azure Resource Manager for all subscriptions specified in the request.
+     *
+     * @param query Request specifying query and its options.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return query result.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<QueryResponseInner>> resourcesWithResponseAsync(QueryRequest query) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (query == null) {
+            return Mono.error(new IllegalArgumentException("Parameter query is required and cannot be null."));
+        } else {
+            query.validate();
+        }
+        final String apiVersion = "2020-04-01-preview";
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(context -> service.resources(this.client.getEndpoint(), apiVersion, query, accept, context))
+            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+    }
+
+    /**
+     * Queries the resources managed by Azure Resource Manager for all subscriptions specified in the request.
+     *
+     * @param query Request specifying query and its options.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return query result.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<QueryResponseInner>> resourcesWithResponseAsync(QueryRequest query, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (query == null) {
+            return Mono.error(new IllegalArgumentException("Parameter query is required and cannot be null."));
+        } else {
+            query.validate();
+        }
+        final String apiVersion = "2020-04-01-preview";
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service.resources(this.client.getEndpoint(), apiVersion, query, accept, context);
+    }
+
+    /**
+     * Queries the resources managed by Azure Resource Manager for all subscriptions specified in the request.
+     *
+     * @param query Request specifying query and its options.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return query result.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<QueryResponseInner> resourcesAsync(QueryRequest query) {
+        return resourcesWithResponseAsync(query)
+            .flatMap(
+                (Response<QueryResponseInner> res) -> {
+                    if (res.getValue() != null) {
+                        return Mono.just(res.getValue());
+                    } else {
+                        return Mono.empty();
+                    }
+                });
+    }
+
+    /**
+     * Queries the resources managed by Azure Resource Manager for all subscriptions specified in the request.
+     *
+     * @param query Request specifying query and its options.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return query result.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public QueryResponseInner resources(QueryRequest query) {
+        return resourcesAsync(query).block();
+    }
+
+    /**
+     * Queries the resources managed by Azure Resource Manager for all subscriptions specified in the request.
+     *
+     * @param query Request specifying query and its options.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return query result.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<QueryResponseInner> resourcesWithResponse(QueryRequest query, Context context) {
+        return resourcesWithResponseAsync(query, context).block();
     }
 
     /**
@@ -467,13 +465,11 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         } else {
             request.validate();
         }
+        final String apiVersion = "2020-04-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
-                context ->
-                    service
-                        .resourcesHistory(
-                            this.client.getEndpoint(), this.client.getApiVersion(), request, accept, context))
+                context -> service.resourcesHistory(this.client.getEndpoint(), apiVersion, request, accept, context))
             .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
     }
 
@@ -500,10 +496,10 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
         } else {
             request.validate();
         }
+        final String apiVersion = "2020-04-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .resourcesHistory(this.client.getEndpoint(), this.client.getApiVersion(), request, accept, context);
+        return service.resourcesHistory(this.client.getEndpoint(), apiVersion, request, accept, context);
     }
 
     /**

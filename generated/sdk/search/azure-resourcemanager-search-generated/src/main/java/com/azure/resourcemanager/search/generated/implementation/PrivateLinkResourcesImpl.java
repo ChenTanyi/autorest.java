@@ -7,7 +7,6 @@ package com.azure.resourcemanager.search.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.search.generated.SearchManager;
 import com.azure.resourcemanager.search.generated.fluent.PrivateLinkResourcesClient;
 import com.azure.resourcemanager.search.generated.fluent.models.PrivateLinkResourceInner;
 import com.azure.resourcemanager.search.generated.models.PrivateLinkResource;
@@ -20,9 +19,11 @@ public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
 
     private final PrivateLinkResourcesClient innerClient;
 
-    private final SearchManager serviceManager;
+    private final com.azure.resourcemanager.search.generated.SearchManager serviceManager;
 
-    public PrivateLinkResourcesImpl(PrivateLinkResourcesClient innerClient, SearchManager serviceManager) {
+    public PrivateLinkResourcesImpl(
+        PrivateLinkResourcesClient innerClient,
+        com.azure.resourcemanager.search.generated.SearchManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -44,7 +45,7 @@ public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
         return this.innerClient;
     }
 
-    private SearchManager manager() {
+    private com.azure.resourcemanager.search.generated.SearchManager manager() {
         return this.serviceManager;
     }
 }

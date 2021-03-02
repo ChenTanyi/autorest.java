@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.HostnameBindingInner;
 import com.azure.resourcemanager.appservice.generated.models.AzureResourceType;
 import com.azure.resourcemanager.appservice.generated.models.CustomHostnameDnsRecordType;
@@ -17,7 +16,7 @@ import com.azure.resourcemanager.appservice.generated.models.SystemData;
 public final class HostnameBindingImpl implements HostnameBinding, HostnameBinding.Definition, HostnameBinding.Update {
     private HostnameBindingInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -79,7 +78,7 @@ public final class HostnameBindingImpl implements HostnameBinding, HostnameBindi
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 
@@ -117,7 +116,7 @@ public final class HostnameBindingImpl implements HostnameBinding, HostnameBindi
         return this;
     }
 
-    HostnameBindingImpl(String name, AppServiceManager serviceManager) {
+    HostnameBindingImpl(String name, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = new HostnameBindingInner();
         this.serviceManager = serviceManager;
         this.hostname = name;
@@ -149,7 +148,9 @@ public final class HostnameBindingImpl implements HostnameBinding, HostnameBindi
         return this;
     }
 
-    HostnameBindingImpl(HostnameBindingInner innerObject, AppServiceManager serviceManager) {
+    HostnameBindingImpl(
+        HostnameBindingInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

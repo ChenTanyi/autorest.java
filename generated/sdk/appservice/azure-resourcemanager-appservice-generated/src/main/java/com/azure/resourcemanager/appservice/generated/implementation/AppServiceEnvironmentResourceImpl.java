@@ -8,7 +8,6 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceEnvironmentResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StampCapacityInner;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceEnvironmentPatchResource;
@@ -35,7 +34,7 @@ public final class AppServiceEnvironmentResourceImpl
         AppServiceEnvironmentResource.Update {
     private AppServiceEnvironmentResourceInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -273,7 +272,7 @@ public final class AppServiceEnvironmentResourceImpl
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 
@@ -306,7 +305,8 @@ public final class AppServiceEnvironmentResourceImpl
         return this;
     }
 
-    AppServiceEnvironmentResourceImpl(String name, AppServiceManager serviceManager) {
+    AppServiceEnvironmentResourceImpl(
+        String name, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = new AppServiceEnvironmentResourceInner();
         this.serviceManager = serviceManager;
         this.name = name;
@@ -338,7 +338,8 @@ public final class AppServiceEnvironmentResourceImpl
     }
 
     AppServiceEnvironmentResourceImpl(
-        AppServiceEnvironmentResourceInner innerObject, AppServiceManager serviceManager) {
+        AppServiceEnvironmentResourceInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

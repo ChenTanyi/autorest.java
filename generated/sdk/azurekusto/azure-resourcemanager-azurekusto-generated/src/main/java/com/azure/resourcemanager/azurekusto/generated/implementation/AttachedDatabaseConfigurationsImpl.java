@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.azurekusto.generated.KustoManager;
 import com.azure.resourcemanager.azurekusto.generated.fluent.AttachedDatabaseConfigurationsClient;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.AttachedDatabaseConfigurationInner;
 import com.azure.resourcemanager.azurekusto.generated.models.AttachedDatabaseConfiguration;
@@ -21,10 +20,11 @@ public final class AttachedDatabaseConfigurationsImpl implements AttachedDatabas
 
     private final AttachedDatabaseConfigurationsClient innerClient;
 
-    private final KustoManager serviceManager;
+    private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
     public AttachedDatabaseConfigurationsImpl(
-        AttachedDatabaseConfigurationsClient innerClient, KustoManager serviceManager) {
+        AttachedDatabaseConfigurationsClient innerClient,
+        com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -205,7 +205,7 @@ public final class AttachedDatabaseConfigurationsImpl implements AttachedDatabas
         return this.innerClient;
     }
 
-    private KustoManager manager() {
+    private com.azure.resourcemanager.azurekusto.generated.KustoManager manager() {
         return this.serviceManager;
     }
 

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RecommendationRuleInner;
 import com.azure.resourcemanager.appservice.generated.models.Channels;
 import com.azure.resourcemanager.appservice.generated.models.NotificationLevel;
@@ -17,9 +16,11 @@ import java.util.UUID;
 public final class RecommendationRuleImpl implements RecommendationRule {
     private RecommendationRuleInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    RecommendationRuleImpl(RecommendationRuleInner innerObject, AppServiceManager serviceManager) {
+    RecommendationRuleImpl(
+        RecommendationRuleInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -105,7 +106,7 @@ public final class RecommendationRuleImpl implements RecommendationRule {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

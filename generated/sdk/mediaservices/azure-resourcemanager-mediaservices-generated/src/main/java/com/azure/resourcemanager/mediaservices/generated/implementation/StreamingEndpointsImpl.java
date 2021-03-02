@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.mediaservices.generated.MediaservicesManager;
 import com.azure.resourcemanager.mediaservices.generated.fluent.StreamingEndpointsClient;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.StreamingEndpointInner;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingEndpoint;
@@ -22,9 +21,11 @@ public final class StreamingEndpointsImpl implements StreamingEndpoints {
 
     private final StreamingEndpointsClient innerClient;
 
-    private final MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
 
-    public StreamingEndpointsImpl(StreamingEndpointsClient innerClient, MediaservicesManager serviceManager) {
+    public StreamingEndpointsImpl(
+        StreamingEndpointsClient innerClient,
+        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -221,7 +222,7 @@ public final class StreamingEndpointsImpl implements StreamingEndpoints {
         return this.innerClient;
     }
 
-    private MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
         return this.serviceManager;
     }
 

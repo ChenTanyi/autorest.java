@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmOperationDescriptionInner;
 import com.azure.resourcemanager.appservice.generated.models.CsmOperationDescription;
 import com.azure.resourcemanager.appservice.generated.models.CsmOperationDescriptionProperties;
@@ -13,9 +12,11 @@ import com.azure.resourcemanager.appservice.generated.models.CsmOperationDisplay
 public final class CsmOperationDescriptionImpl implements CsmOperationDescription {
     private CsmOperationDescriptionInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    CsmOperationDescriptionImpl(CsmOperationDescriptionInner innerObject, AppServiceManager serviceManager) {
+    CsmOperationDescriptionImpl(
+        CsmOperationDescriptionInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +41,7 @@ public final class CsmOperationDescriptionImpl implements CsmOperationDescriptio
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.policy.generated.implementation;
 
-import com.azure.resourcemanager.policy.generated.PolicyManager;
 import com.azure.resourcemanager.policy.generated.fluent.models.DataPolicyManifestInner;
 import com.azure.resourcemanager.policy.generated.models.DataEffect;
 import com.azure.resourcemanager.policy.generated.models.DataManifestCustomResourceFunctionDefinition;
@@ -16,9 +15,10 @@ import java.util.List;
 public final class DataPolicyManifestImpl implements DataPolicyManifest {
     private DataPolicyManifestInner innerObject;
 
-    private final PolicyManager serviceManager;
+    private final com.azure.resourcemanager.policy.generated.PolicyManager serviceManager;
 
-    DataPolicyManifestImpl(DataPolicyManifestInner innerObject, PolicyManager serviceManager) {
+    DataPolicyManifestImpl(
+        DataPolicyManifestInner innerObject, com.azure.resourcemanager.policy.generated.PolicyManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -101,7 +101,7 @@ public final class DataPolicyManifestImpl implements DataPolicyManifest {
         return this.innerObject;
     }
 
-    private PolicyManager manager() {
+    private com.azure.resourcemanager.policy.generated.PolicyManager manager() {
         return this.serviceManager;
     }
 }

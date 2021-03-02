@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StringDictionaryInner;
 import com.azure.resourcemanager.appservice.generated.models.StringDictionary;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -14,9 +13,11 @@ import java.util.Map;
 public final class StringDictionaryImpl implements StringDictionary {
     private StringDictionaryInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    StringDictionaryImpl(StringDictionaryInner innerObject, AppServiceManager serviceManager) {
+    StringDictionaryImpl(
+        StringDictionaryInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -54,7 +55,7 @@ public final class StringDictionaryImpl implements StringDictionary {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

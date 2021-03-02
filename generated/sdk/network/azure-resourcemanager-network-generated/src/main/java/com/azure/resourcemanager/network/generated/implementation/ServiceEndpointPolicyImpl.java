@@ -6,7 +6,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.ServiceEndpointPolicyDefinitionInner;
 import com.azure.resourcemanager.network.generated.fluent.models.ServiceEndpointPolicyInner;
 import com.azure.resourcemanager.network.generated.fluent.models.SubnetInner;
@@ -24,7 +23,7 @@ public final class ServiceEndpointPolicyImpl
     implements ServiceEndpointPolicy, ServiceEndpointPolicy.Definition, ServiceEndpointPolicy.Update {
     private ServiceEndpointPolicyInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -100,7 +99,7 @@ public final class ServiceEndpointPolicyImpl
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -133,7 +132,7 @@ public final class ServiceEndpointPolicyImpl
         return this;
     }
 
-    ServiceEndpointPolicyImpl(String name, NetworkManager serviceManager) {
+    ServiceEndpointPolicyImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new ServiceEndpointPolicyInner();
         this.serviceManager = serviceManager;
         this.serviceEndpointPolicyName = name;
@@ -164,7 +163,9 @@ public final class ServiceEndpointPolicyImpl
         return this;
     }
 
-    ServiceEndpointPolicyImpl(ServiceEndpointPolicyInner innerObject, NetworkManager serviceManager) {
+    ServiceEndpointPolicyImpl(
+        ServiceEndpointPolicyInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -7,7 +7,6 @@ package com.azure.resourcemanager.frontdoor.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.frontdoor.generated.FrontDoorManager;
 import com.azure.resourcemanager.frontdoor.generated.fluent.PreconfiguredEndpointsClient;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.PreconfiguredEndpointInner;
 import com.azure.resourcemanager.frontdoor.generated.models.PreconfiguredEndpoint;
@@ -19,9 +18,11 @@ public final class PreconfiguredEndpointsImpl implements PreconfiguredEndpoints 
 
     private final PreconfiguredEndpointsClient innerClient;
 
-    private final FrontDoorManager serviceManager;
+    private final com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager;
 
-    public PreconfiguredEndpointsImpl(PreconfiguredEndpointsClient innerClient, FrontDoorManager serviceManager) {
+    public PreconfiguredEndpointsImpl(
+        PreconfiguredEndpointsClient innerClient,
+        com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -41,7 +42,7 @@ public final class PreconfiguredEndpointsImpl implements PreconfiguredEndpoints 
         return this.innerClient;
     }
 
-    private FrontDoorManager manager() {
+    private com.azure.resourcemanager.frontdoor.generated.FrontDoorManager manager() {
         return this.serviceManager;
     }
 }

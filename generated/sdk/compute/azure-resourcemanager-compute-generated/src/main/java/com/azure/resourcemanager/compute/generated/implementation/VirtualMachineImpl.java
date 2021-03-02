@@ -7,7 +7,6 @@ package com.azure.resourcemanager.compute.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.compute.generated.ComputeManager;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineExtensionInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineInstanceViewInner;
@@ -37,7 +36,7 @@ import java.util.stream.Collectors;
 public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.Definition, VirtualMachine.Update {
     private VirtualMachineInner innerObject;
 
-    private final ComputeManager serviceManager;
+    private final com.azure.resourcemanager.compute.generated.ComputeManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -200,7 +199,7 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         return this.innerObject;
     }
 
-    private ComputeManager manager() {
+    private com.azure.resourcemanager.compute.generated.ComputeManager manager() {
         return this.serviceManager;
     }
 
@@ -233,7 +232,7 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         return this;
     }
 
-    VirtualMachineImpl(String name, ComputeManager serviceManager) {
+    VirtualMachineImpl(String name, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = new VirtualMachineInner();
         this.serviceManager = serviceManager;
         this.vmName = name;
@@ -262,7 +261,8 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
         return this;
     }
 
-    VirtualMachineImpl(VirtualMachineInner innerObject, ComputeManager serviceManager) {
+    VirtualMachineImpl(
+        VirtualMachineInner innerObject, com.azure.resourcemanager.compute.generated.ComputeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

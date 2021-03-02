@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.authorization.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.authorization.generated.AuthorizationManager;
 import com.azure.resourcemanager.authorization.generated.fluent.models.PermissionInner;
 import com.azure.resourcemanager.authorization.generated.fluent.models.RoleDefinitionInner;
 import com.azure.resourcemanager.authorization.generated.models.Permission;
@@ -17,7 +16,7 @@ import java.util.stream.Collectors;
 public final class RoleDefinitionImpl implements RoleDefinition, RoleDefinition.Definition, RoleDefinition.Update {
     private RoleDefinitionInner innerObject;
 
-    private final AuthorizationManager serviceManager;
+    private final com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -70,7 +69,7 @@ public final class RoleDefinitionImpl implements RoleDefinition, RoleDefinition.
         return this.innerObject;
     }
 
-    private AuthorizationManager manager() {
+    private com.azure.resourcemanager.authorization.generated.AuthorizationManager manager() {
         return this.serviceManager;
     }
 
@@ -103,7 +102,8 @@ public final class RoleDefinitionImpl implements RoleDefinition, RoleDefinition.
         return this;
     }
 
-    RoleDefinitionImpl(String name, AuthorizationManager serviceManager) {
+    RoleDefinitionImpl(
+        String name, com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerObject = new RoleDefinitionInner();
         this.serviceManager = serviceManager;
         this.roleDefinitionId = name;
@@ -133,7 +133,9 @@ public final class RoleDefinitionImpl implements RoleDefinition, RoleDefinition.
         return this;
     }
 
-    RoleDefinitionImpl(RoleDefinitionInner innerObject, AuthorizationManager serviceManager) {
+    RoleDefinitionImpl(
+        RoleDefinitionInner innerObject,
+        com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.scope =

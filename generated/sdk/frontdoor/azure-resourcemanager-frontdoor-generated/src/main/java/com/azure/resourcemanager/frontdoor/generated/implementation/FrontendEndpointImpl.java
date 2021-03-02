@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.frontdoor.generated.implementation;
 
-import com.azure.resourcemanager.frontdoor.generated.FrontDoorManager;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.FrontendEndpointInner;
 import com.azure.resourcemanager.frontdoor.generated.models.CustomHttpsConfiguration;
 import com.azure.resourcemanager.frontdoor.generated.models.CustomHttpsProvisioningState;
@@ -17,9 +16,11 @@ import com.azure.resourcemanager.frontdoor.generated.models.SessionAffinityEnabl
 public final class FrontendEndpointImpl implements FrontendEndpoint {
     private FrontendEndpointInner innerObject;
 
-    private final FrontDoorManager serviceManager;
+    private final com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager;
 
-    FrontendEndpointImpl(FrontendEndpointInner innerObject, FrontDoorManager serviceManager) {
+    FrontendEndpointImpl(
+        FrontendEndpointInner innerObject,
+        com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -72,7 +73,7 @@ public final class FrontendEndpointImpl implements FrontendEndpoint {
         return this.innerObject;
     }
 
-    private FrontDoorManager manager() {
+    private com.azure.resourcemanager.frontdoor.generated.FrontDoorManager manager() {
         return this.serviceManager;
     }
 }

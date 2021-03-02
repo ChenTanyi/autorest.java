@@ -7,7 +7,6 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.DomainRegistrationProvidersClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmOperationDescriptionInner;
 import com.azure.resourcemanager.appservice.generated.models.CsmOperationDescription;
@@ -19,10 +18,11 @@ public final class DomainRegistrationProvidersImpl implements DomainRegistration
 
     private final DomainRegistrationProvidersClient innerClient;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
     public DomainRegistrationProvidersImpl(
-        DomainRegistrationProvidersClient innerClient, AppServiceManager serviceManager) {
+        DomainRegistrationProvidersClient innerClient,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -41,7 +41,7 @@ public final class DomainRegistrationProvidersImpl implements DomainRegistration
         return this.innerClient;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

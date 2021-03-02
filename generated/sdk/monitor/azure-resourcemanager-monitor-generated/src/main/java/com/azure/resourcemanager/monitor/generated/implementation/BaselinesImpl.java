@@ -7,7 +7,6 @@ package com.azure.resourcemanager.monitor.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.BaselinesClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.SingleMetricBaselineInner;
 import com.azure.resourcemanager.monitor.generated.models.Baselines;
@@ -21,9 +20,10 @@ public final class BaselinesImpl implements Baselines {
 
     private final BaselinesClient innerClient;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public BaselinesImpl(BaselinesClient innerClient, MonitorManager serviceManager) {
+    public BaselinesImpl(
+        BaselinesClient innerClient, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -65,7 +65,7 @@ public final class BaselinesImpl implements Baselines {
         return this.innerClient;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 }

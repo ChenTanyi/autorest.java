@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.dns.generated.DnsManager;
 import com.azure.resourcemanager.dns.generated.fluent.RecordSetsClient;
 import com.azure.resourcemanager.dns.generated.fluent.models.RecordSetInner;
 import com.azure.resourcemanager.dns.generated.models.RecordSet;
@@ -22,9 +21,10 @@ public final class RecordSetsImpl implements RecordSets {
 
     private final RecordSetsClient innerClient;
 
-    private final DnsManager serviceManager;
+    private final com.azure.resourcemanager.dns.generated.DnsManager serviceManager;
 
-    public RecordSetsImpl(RecordSetsClient innerClient, DnsManager serviceManager) {
+    public RecordSetsImpl(
+        RecordSetsClient innerClient, com.azure.resourcemanager.dns.generated.DnsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -209,7 +209,7 @@ public final class RecordSetsImpl implements RecordSets {
         return this.innerClient;
     }
 
-    private DnsManager manager() {
+    private com.azure.resourcemanager.dns.generated.DnsManager manager() {
         return this.serviceManager;
     }
 }

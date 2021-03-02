@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.relay.generated.implementation;
 
-import com.azure.resourcemanager.relay.generated.RelayManager;
 import com.azure.resourcemanager.relay.generated.fluent.models.CheckNameAvailabilityResultInner;
 import com.azure.resourcemanager.relay.generated.models.CheckNameAvailabilityResult;
 import com.azure.resourcemanager.relay.generated.models.UnavailableReason;
@@ -12,9 +11,11 @@ import com.azure.resourcemanager.relay.generated.models.UnavailableReason;
 public final class CheckNameAvailabilityResultImpl implements CheckNameAvailabilityResult {
     private CheckNameAvailabilityResultInner innerObject;
 
-    private final RelayManager serviceManager;
+    private final com.azure.resourcemanager.relay.generated.RelayManager serviceManager;
 
-    CheckNameAvailabilityResultImpl(CheckNameAvailabilityResultInner innerObject, RelayManager serviceManager) {
+    CheckNameAvailabilityResultImpl(
+        CheckNameAvailabilityResultInner innerObject,
+        com.azure.resourcemanager.relay.generated.RelayManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -35,7 +36,7 @@ public final class CheckNameAvailabilityResultImpl implements CheckNameAvailabil
         return this.innerObject;
     }
 
-    private RelayManager manager() {
+    private com.azure.resourcemanager.relay.generated.RelayManager manager() {
         return this.serviceManager;
     }
 }

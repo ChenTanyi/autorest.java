@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.ClustersClient;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.AvailableClustersListInner;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ClusterInner;
@@ -25,9 +24,10 @@ public final class ClustersImpl implements Clusters {
 
     private final ClustersClient innerClient;
 
-    private final EventHubsManager serviceManager;
+    private final com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager;
 
-    public ClustersImpl(ClustersClient innerClient, EventHubsManager serviceManager) {
+    public ClustersImpl(
+        ClustersClient innerClient, com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -201,7 +201,7 @@ public final class ClustersImpl implements Clusters {
         return this.innerClient;
     }
 
-    private EventHubsManager manager() {
+    private com.azure.resourcemanager.eventhubs.generated.EventHubsManager manager() {
         return this.serviceManager;
     }
 

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.commerce.generated.implementation;
 
-import com.azure.resourcemanager.commerce.generated.UsageManager;
 import com.azure.resourcemanager.commerce.generated.fluent.models.UsageAggregationInner;
 import com.azure.resourcemanager.commerce.generated.models.InfoField;
 import com.azure.resourcemanager.commerce.generated.models.UsageAggregation;
@@ -14,9 +13,10 @@ import java.util.UUID;
 public final class UsageAggregationImpl implements UsageAggregation {
     private UsageAggregationInner innerObject;
 
-    private final UsageManager serviceManager;
+    private final com.azure.resourcemanager.commerce.generated.UsageManager serviceManager;
 
-    UsageAggregationImpl(UsageAggregationInner innerObject, UsageManager serviceManager) {
+    UsageAggregationImpl(
+        UsageAggregationInner innerObject, com.azure.resourcemanager.commerce.generated.UsageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -85,7 +85,7 @@ public final class UsageAggregationImpl implements UsageAggregation {
         return this.innerObject;
     }
 
-    private UsageManager manager() {
+    private com.azure.resourcemanager.commerce.generated.UsageManager manager() {
         return this.serviceManager;
     }
 }

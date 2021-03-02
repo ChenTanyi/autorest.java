@@ -103,4 +103,58 @@ public interface Locations {
      */
     Response<AsyncOperationResult> getAzureAsyncOperationStatusWithResponse(
         String location, String operationId, Context context);
+
+    /**
+     * Check the cluster name is available or not.
+     *
+     * @param location The Azure location (region) for which to make the request.
+     * @param parameters The request spec of checking name availability.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response spec of checking name availability.
+     */
+    NameAvailabilityCheckResult checkNameAvailability(
+        String location, NameAvailabilityCheckRequestParameters parameters);
+
+    /**
+     * Check the cluster name is available or not.
+     *
+     * @param location The Azure location (region) for which to make the request.
+     * @param parameters The request spec of checking name availability.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response spec of checking name availability.
+     */
+    Response<NameAvailabilityCheckResult> checkNameAvailabilityWithResponse(
+        String location, NameAvailabilityCheckRequestParameters parameters, Context context);
+
+    /**
+     * Validate the cluster create request spec is valid or not.
+     *
+     * @param location The Azure location (region) for which to make the request.
+     * @param parameters The cluster create request specification.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response of cluster create request validation.
+     */
+    ClusterCreateValidationResult validateClusterCreateRequest(
+        String location, ClusterCreateRequestValidationParameters parameters);
+
+    /**
+     * Validate the cluster create request spec is valid or not.
+     *
+     * @param location The Azure location (region) for which to make the request.
+     * @param parameters The cluster create request specification.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response of cluster create request validation.
+     */
+    Response<ClusterCreateValidationResult> validateClusterCreateRequestWithResponse(
+        String location, ClusterCreateRequestValidationParameters parameters, Context context);
 }

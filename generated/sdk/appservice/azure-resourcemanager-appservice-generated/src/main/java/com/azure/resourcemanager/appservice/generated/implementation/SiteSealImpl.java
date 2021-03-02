@@ -4,16 +4,16 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteSealInner;
 import com.azure.resourcemanager.appservice.generated.models.SiteSeal;
 
 public final class SiteSealImpl implements SiteSeal {
     private SiteSealInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SiteSealImpl(SiteSealInner innerObject, AppServiceManager serviceManager) {
+    SiteSealImpl(
+        SiteSealInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -26,7 +26,7 @@ public final class SiteSealImpl implements SiteSeal {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

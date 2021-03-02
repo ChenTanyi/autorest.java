@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.monitor.generated.implementation;
 
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricNamespaceInner;
 import com.azure.resourcemanager.monitor.generated.models.MetricNamespace;
 import com.azure.resourcemanager.monitor.generated.models.MetricNamespaceName;
@@ -12,9 +11,10 @@ import com.azure.resourcemanager.monitor.generated.models.MetricNamespaceName;
 public final class MetricNamespaceImpl implements MetricNamespace {
     private MetricNamespaceInner innerObject;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    MetricNamespaceImpl(MetricNamespaceInner innerObject, MonitorManager serviceManager) {
+    MetricNamespaceImpl(
+        MetricNamespaceInner innerObject, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -39,7 +39,7 @@ public final class MetricNamespaceImpl implements MetricNamespace {
         return this.innerObject;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 }

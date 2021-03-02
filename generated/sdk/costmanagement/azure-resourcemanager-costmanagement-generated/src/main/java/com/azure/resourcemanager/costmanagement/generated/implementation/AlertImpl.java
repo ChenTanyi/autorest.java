@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.costmanagement.generated.implementation;
 
-import com.azure.resourcemanager.costmanagement.generated.CostManagementManager;
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.AlertInner;
 import com.azure.resourcemanager.costmanagement.generated.models.Alert;
 import com.azure.resourcemanager.costmanagement.generated.models.AlertPropertiesDefinition;
@@ -17,9 +16,11 @@ import java.util.Map;
 public final class AlertImpl implements Alert {
     private AlertInner innerObject;
 
-    private final CostManagementManager serviceManager;
+    private final com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager;
 
-    AlertImpl(AlertInner innerObject, CostManagementManager serviceManager) {
+    AlertImpl(
+        AlertInner innerObject,
+        com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -93,7 +94,7 @@ public final class AlertImpl implements Alert {
         return this.innerObject;
     }
 
-    private CostManagementManager manager() {
+    private com.azure.resourcemanager.costmanagement.generated.CostManagementManager manager() {
         return this.serviceManager;
     }
 }

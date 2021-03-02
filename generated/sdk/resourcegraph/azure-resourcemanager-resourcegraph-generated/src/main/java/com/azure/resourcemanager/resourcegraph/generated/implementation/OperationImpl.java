@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.resourcegraph.generated.implementation;
 
-import com.azure.resourcemanager.resourcegraph.generated.ResourceGraphManager;
 import com.azure.resourcemanager.resourcegraph.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.resourcegraph.generated.models.Operation;
 import com.azure.resourcemanager.resourcegraph.generated.models.OperationDisplay;
@@ -12,9 +11,11 @@ import com.azure.resourcemanager.resourcegraph.generated.models.OperationDisplay
 public final class OperationImpl implements Operation {
     private OperationInner innerObject;
 
-    private final ResourceGraphManager serviceManager;
+    private final com.azure.resourcemanager.resourcegraph.generated.ResourceGraphManager serviceManager;
 
-    OperationImpl(OperationInner innerObject, ResourceGraphManager serviceManager) {
+    OperationImpl(
+        OperationInner innerObject,
+        com.azure.resourcemanager.resourcegraph.generated.ResourceGraphManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -35,7 +36,7 @@ public final class OperationImpl implements Operation {
         return this.innerObject;
     }
 
-    private ResourceGraphManager manager() {
+    private com.azure.resourcemanager.resourcegraph.generated.ResourceGraphManager manager() {
         return this.serviceManager;
     }
 }

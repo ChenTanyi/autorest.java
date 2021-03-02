@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.commerce.generated.implementation;
 
-import com.azure.resourcemanager.commerce.generated.UsageManager;
 import com.azure.resourcemanager.commerce.generated.fluent.models.ResourceRateCardInfoInner;
 import com.azure.resourcemanager.commerce.generated.models.MeterInfo;
 import com.azure.resourcemanager.commerce.generated.models.OfferTermInfo;
@@ -15,9 +14,11 @@ import java.util.List;
 public final class ResourceRateCardInfoImpl implements ResourceRateCardInfo {
     private ResourceRateCardInfoInner innerObject;
 
-    private final UsageManager serviceManager;
+    private final com.azure.resourcemanager.commerce.generated.UsageManager serviceManager;
 
-    ResourceRateCardInfoImpl(ResourceRateCardInfoInner innerObject, UsageManager serviceManager) {
+    ResourceRateCardInfoImpl(
+        ResourceRateCardInfoInner innerObject,
+        com.azure.resourcemanager.commerce.generated.UsageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -56,7 +57,7 @@ public final class ResourceRateCardInfoImpl implements ResourceRateCardInfo {
         return this.innerObject;
     }
 
-    private UsageManager manager() {
+    private com.azure.resourcemanager.commerce.generated.UsageManager manager() {
         return this.serviceManager;
     }
 }

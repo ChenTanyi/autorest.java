@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
-import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.NetworkRuleSetInner;
 import com.azure.resourcemanager.eventhubs.generated.models.DefaultAction;
 import com.azure.resourcemanager.eventhubs.generated.models.NWRuleSetIpRules;
@@ -16,9 +15,11 @@ import java.util.List;
 public final class NetworkRuleSetImpl implements NetworkRuleSet {
     private NetworkRuleSetInner innerObject;
 
-    private final EventHubsManager serviceManager;
+    private final com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager;
 
-    NetworkRuleSetImpl(NetworkRuleSetInner innerObject, EventHubsManager serviceManager) {
+    NetworkRuleSetImpl(
+        NetworkRuleSetInner innerObject,
+        com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -65,7 +66,7 @@ public final class NetworkRuleSetImpl implements NetworkRuleSet {
         return this.innerObject;
     }
 
-    private EventHubsManager manager() {
+    private com.azure.resourcemanager.eventhubs.generated.EventHubsManager manager() {
         return this.serviceManager;
     }
 }

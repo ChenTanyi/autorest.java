@@ -6,7 +6,6 @@ package com.azure.resourcemanager.eventhubs.generated.implementation;
 
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ArmDisasterRecoveryInner;
 import com.azure.resourcemanager.eventhubs.generated.models.ArmDisasterRecovery;
 import com.azure.resourcemanager.eventhubs.generated.models.ProvisioningStateDR;
@@ -16,7 +15,7 @@ public final class ArmDisasterRecoveryImpl
     implements ArmDisasterRecovery, ArmDisasterRecovery.Definition, ArmDisasterRecovery.Update {
     private ArmDisasterRecoveryInner innerObject;
 
-    private final EventHubsManager serviceManager;
+    private final com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -54,7 +53,7 @@ public final class ArmDisasterRecoveryImpl
         return this.innerObject;
     }
 
-    private EventHubsManager manager() {
+    private com.azure.resourcemanager.eventhubs.generated.EventHubsManager manager() {
         return this.serviceManager;
     }
 
@@ -90,7 +89,8 @@ public final class ArmDisasterRecoveryImpl
         return this;
     }
 
-    ArmDisasterRecoveryImpl(String name, EventHubsManager serviceManager) {
+    ArmDisasterRecoveryImpl(
+        String name, com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = new ArmDisasterRecoveryInner();
         this.serviceManager = serviceManager;
         this.alias = name;
@@ -120,7 +120,9 @@ public final class ArmDisasterRecoveryImpl
         return this;
     }
 
-    ArmDisasterRecoveryImpl(ArmDisasterRecoveryInner innerObject, EventHubsManager serviceManager) {
+    ArmDisasterRecoveryImpl(
+        ArmDisasterRecoveryInner innerObject,
+        com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

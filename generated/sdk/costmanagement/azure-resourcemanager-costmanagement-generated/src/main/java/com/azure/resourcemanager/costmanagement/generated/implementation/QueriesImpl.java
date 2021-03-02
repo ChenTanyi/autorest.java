@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.costmanagement.generated.CostManagementManager;
 import com.azure.resourcemanager.costmanagement.generated.fluent.QueriesClient;
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.QueryResultInner;
 import com.azure.resourcemanager.costmanagement.generated.models.ExternalCloudProviderType;
@@ -22,9 +21,11 @@ public final class QueriesImpl implements Queries {
 
     private final QueriesClient innerClient;
 
-    private final CostManagementManager serviceManager;
+    private final com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager;
 
-    public QueriesImpl(QueriesClient innerClient, CostManagementManager serviceManager) {
+    public QueriesImpl(
+        QueriesClient innerClient,
+        com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -91,7 +92,7 @@ public final class QueriesImpl implements Queries {
         return this.innerClient;
     }
 
-    private CostManagementManager manager() {
+    private com.azure.resourcemanager.costmanagement.generated.CostManagementManager manager() {
         return this.serviceManager;
     }
 }

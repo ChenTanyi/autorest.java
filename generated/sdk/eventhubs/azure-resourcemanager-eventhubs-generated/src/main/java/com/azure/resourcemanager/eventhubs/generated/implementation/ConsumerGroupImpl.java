@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ConsumerGroupInner;
 import com.azure.resourcemanager.eventhubs.generated.models.ConsumerGroup;
 import java.time.OffsetDateTime;
@@ -13,7 +12,7 @@ import java.time.OffsetDateTime;
 public final class ConsumerGroupImpl implements ConsumerGroup, ConsumerGroup.Definition, ConsumerGroup.Update {
     private ConsumerGroupInner innerObject;
 
-    private final EventHubsManager serviceManager;
+    private final com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -43,7 +42,7 @@ public final class ConsumerGroupImpl implements ConsumerGroup, ConsumerGroup.Def
         return this.innerObject;
     }
 
-    private EventHubsManager manager() {
+    private com.azure.resourcemanager.eventhubs.generated.EventHubsManager manager() {
         return this.serviceManager;
     }
 
@@ -84,7 +83,7 @@ public final class ConsumerGroupImpl implements ConsumerGroup, ConsumerGroup.Def
         return this;
     }
 
-    ConsumerGroupImpl(String name, EventHubsManager serviceManager) {
+    ConsumerGroupImpl(String name, com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = new ConsumerGroupInner();
         this.serviceManager = serviceManager;
         this.consumerGroupName = name;
@@ -116,7 +115,8 @@ public final class ConsumerGroupImpl implements ConsumerGroup, ConsumerGroup.Def
         return this;
     }
 
-    ConsumerGroupImpl(ConsumerGroupInner innerObject, EventHubsManager serviceManager) {
+    ConsumerGroupImpl(
+        ConsumerGroupInner innerObject, com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

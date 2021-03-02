@@ -7,7 +7,6 @@ package com.azure.resourcemanager.operationalinsights.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.OperationsClient;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.Operation;
@@ -19,9 +18,11 @@ public final class OperationsImpl implements Operations {
 
     private final OperationsClient innerClient;
 
-    private final LogAnalyticsManager serviceManager;
+    private final com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager;
 
-    public OperationsImpl(OperationsClient innerClient, LogAnalyticsManager serviceManager) {
+    public OperationsImpl(
+        OperationsClient innerClient,
+        com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +41,7 @@ public final class OperationsImpl implements Operations {
         return this.innerClient;
     }
 
-    private LogAnalyticsManager manager() {
+    private com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager manager() {
         return this.serviceManager;
     }
 }

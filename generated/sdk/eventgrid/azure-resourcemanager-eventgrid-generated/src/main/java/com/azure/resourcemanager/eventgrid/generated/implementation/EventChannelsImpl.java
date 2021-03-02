@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.eventgrid.generated.EventGridManager;
 import com.azure.resourcemanager.eventgrid.generated.fluent.EventChannelsClient;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.EventChannelInner;
 import com.azure.resourcemanager.eventgrid.generated.models.EventChannel;
@@ -21,9 +20,11 @@ public final class EventChannelsImpl implements EventChannels {
 
     private final EventChannelsClient innerClient;
 
-    private final EventGridManager serviceManager;
+    private final com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager;
 
-    public EventChannelsImpl(EventChannelsClient innerClient, EventGridManager serviceManager) {
+    public EventChannelsImpl(
+        EventChannelsClient innerClient,
+        com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -190,7 +191,7 @@ public final class EventChannelsImpl implements EventChannels {
         return this.innerClient;
     }
 
-    private EventGridManager manager() {
+    private com.azure.resourcemanager.eventgrid.generated.EventGridManager manager() {
         return this.serviceManager;
     }
 

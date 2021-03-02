@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.costmanagement.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.costmanagement.generated.CostManagementManager;
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.ViewInner;
 import com.azure.resourcemanager.costmanagement.generated.models.AccumulatedType;
 import com.azure.resourcemanager.costmanagement.generated.models.ChartType;
@@ -24,7 +23,7 @@ import java.util.List;
 public final class ViewImpl implements View, View.Definition, View.Update {
     private ViewInner innerObject;
 
-    private final CostManagementManager serviceManager;
+    private final com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -108,7 +107,7 @@ public final class ViewImpl implements View, View.Definition, View.Update {
         return this.innerObject;
     }
 
-    private CostManagementManager manager() {
+    private com.azure.resourcemanager.costmanagement.generated.CostManagementManager manager() {
         return this.serviceManager;
     }
 
@@ -141,7 +140,7 @@ public final class ViewImpl implements View, View.Definition, View.Update {
         return this;
     }
 
-    ViewImpl(String name, CostManagementManager serviceManager) {
+    ViewImpl(String name, com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager) {
         this.innerObject = new ViewInner();
         this.serviceManager = serviceManager;
         this.viewName = name;
@@ -171,7 +170,9 @@ public final class ViewImpl implements View, View.Definition, View.Update {
         return this;
     }
 
-    ViewImpl(ViewInner innerObject, CostManagementManager serviceManager) {
+    ViewImpl(
+        ViewInner innerObject,
+        com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.scope =

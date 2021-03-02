@@ -6,7 +6,6 @@ package com.azure.resourcemanager.mediaservices.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.mediaservices.generated.MediaservicesManager;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.LiveEventInner;
 import com.azure.resourcemanager.mediaservices.generated.models.CrossSiteAccessPolicies;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEvent;
@@ -26,7 +25,7 @@ import java.util.Map;
 public final class LiveEventImpl implements LiveEvent, LiveEvent.Definition, LiveEvent.Update {
     private LiveEventInner innerObject;
 
-    private final MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -131,7 +130,7 @@ public final class LiveEventImpl implements LiveEvent, LiveEvent.Definition, Liv
         return this.innerObject;
     }
 
-    private MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
         return this.serviceManager;
     }
 
@@ -168,7 +167,7 @@ public final class LiveEventImpl implements LiveEvent, LiveEvent.Definition, Liv
         return this;
     }
 
-    LiveEventImpl(String name, MediaservicesManager serviceManager) {
+    LiveEventImpl(String name, com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
         this.innerObject = new LiveEventInner();
         this.serviceManager = serviceManager;
         this.liveEventName = name;
@@ -197,7 +196,9 @@ public final class LiveEventImpl implements LiveEvent, LiveEvent.Definition, Liv
         return this;
     }
 
-    LiveEventImpl(LiveEventInner innerObject, MediaservicesManager serviceManager) {
+    LiveEventImpl(
+        LiveEventInner innerObject,
+        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

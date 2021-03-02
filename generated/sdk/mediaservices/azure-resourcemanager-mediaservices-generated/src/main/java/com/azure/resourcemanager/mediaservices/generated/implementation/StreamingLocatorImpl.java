@@ -6,7 +6,6 @@ package com.azure.resourcemanager.mediaservices.generated.implementation;
 
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.mediaservices.generated.MediaservicesManager;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.StreamingLocatorInner;
 import com.azure.resourcemanager.mediaservices.generated.models.ListContentKeysResponse;
 import com.azure.resourcemanager.mediaservices.generated.models.ListPathsResponse;
@@ -21,9 +20,11 @@ import java.util.UUID;
 public final class StreamingLocatorImpl implements StreamingLocator, StreamingLocator.Definition {
     private StreamingLocatorInner innerObject;
 
-    private final MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
 
-    StreamingLocatorImpl(StreamingLocatorInner innerObject, MediaservicesManager serviceManager) {
+    StreamingLocatorImpl(
+        StreamingLocatorInner innerObject,
+        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -98,7 +99,7 @@ public final class StreamingLocatorImpl implements StreamingLocator, StreamingLo
         return this.innerObject;
     }
 
-    private MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
         return this.serviceManager;
     }
 
@@ -135,7 +136,8 @@ public final class StreamingLocatorImpl implements StreamingLocator, StreamingLo
         return this;
     }
 
-    StreamingLocatorImpl(String name, MediaservicesManager serviceManager) {
+    StreamingLocatorImpl(
+        String name, com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
         this.innerObject = new StreamingLocatorInner();
         this.serviceManager = serviceManager;
         this.streamingLocatorName = name;

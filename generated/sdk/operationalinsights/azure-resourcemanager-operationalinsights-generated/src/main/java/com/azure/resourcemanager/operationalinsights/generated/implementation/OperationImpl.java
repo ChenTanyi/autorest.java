@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.operationalinsights.generated.implementation;
 
-import com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.Operation;
 import com.azure.resourcemanager.operationalinsights.generated.models.OperationDisplay;
@@ -12,9 +11,11 @@ import com.azure.resourcemanager.operationalinsights.generated.models.OperationD
 public final class OperationImpl implements Operation {
     private OperationInner innerObject;
 
-    private final LogAnalyticsManager serviceManager;
+    private final com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager;
 
-    OperationImpl(OperationInner innerObject, LogAnalyticsManager serviceManager) {
+    OperationImpl(
+        OperationInner innerObject,
+        com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -31,7 +32,7 @@ public final class OperationImpl implements Operation {
         return this.innerObject;
     }
 
-    private LogAnalyticsManager manager() {
+    private com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager manager() {
         return this.serviceManager;
     }
 }

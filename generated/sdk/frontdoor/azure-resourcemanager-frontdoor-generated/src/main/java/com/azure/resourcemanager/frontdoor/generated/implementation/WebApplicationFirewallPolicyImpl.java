@@ -6,7 +6,6 @@ package com.azure.resourcemanager.frontdoor.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.frontdoor.generated.FrontDoorManager;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.WebApplicationFirewallPolicyInner;
 import com.azure.resourcemanager.frontdoor.generated.models.CustomRuleList;
 import com.azure.resourcemanager.frontdoor.generated.models.FrontendEndpointLink;
@@ -27,7 +26,7 @@ public final class WebApplicationFirewallPolicyImpl
         WebApplicationFirewallPolicy.Update {
     private WebApplicationFirewallPolicyInner innerObject;
 
-    private final FrontDoorManager serviceManager;
+    private final com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -121,7 +120,7 @@ public final class WebApplicationFirewallPolicyImpl
         return this.innerObject;
     }
 
-    private FrontDoorManager manager() {
+    private com.azure.resourcemanager.frontdoor.generated.FrontDoorManager manager() {
         return this.serviceManager;
     }
 
@@ -152,7 +151,8 @@ public final class WebApplicationFirewallPolicyImpl
         return this;
     }
 
-    WebApplicationFirewallPolicyImpl(String name, FrontDoorManager serviceManager) {
+    WebApplicationFirewallPolicyImpl(
+        String name, com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerObject = new WebApplicationFirewallPolicyInner();
         this.serviceManager = serviceManager;
         this.policyName = name;
@@ -180,7 +180,9 @@ public final class WebApplicationFirewallPolicyImpl
         return this;
     }
 
-    WebApplicationFirewallPolicyImpl(WebApplicationFirewallPolicyInner innerObject, FrontDoorManager serviceManager) {
+    WebApplicationFirewallPolicyImpl(
+        WebApplicationFirewallPolicyInner innerObject,
+        com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

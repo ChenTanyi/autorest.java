@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.DiagnosticSettingsClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSettingsResourceCollectionInner;
 import com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSettingsResourceInner;
@@ -22,9 +21,11 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
 
     private final DiagnosticSettingsClient innerClient;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public DiagnosticSettingsImpl(DiagnosticSettingsClient innerClient, MonitorManager serviceManager) {
+    public DiagnosticSettingsImpl(
+        DiagnosticSettingsClient innerClient,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -191,7 +192,7 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
         return this.innerClient;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 

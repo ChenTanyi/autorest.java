@@ -7,7 +7,6 @@ package com.azure.resourcemanager.postgresql.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.postgresql.generated.PostgreSqlManager;
 import com.azure.resourcemanager.postgresql.generated.fluent.ReplicasClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.ServerInner;
 import com.azure.resourcemanager.postgresql.generated.models.Replicas;
@@ -19,9 +18,10 @@ public final class ReplicasImpl implements Replicas {
 
     private final ReplicasClient innerClient;
 
-    private final PostgreSqlManager serviceManager;
+    private final com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager;
 
-    public ReplicasImpl(ReplicasClient innerClient, PostgreSqlManager serviceManager) {
+    public ReplicasImpl(
+        ReplicasClient innerClient, com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +40,7 @@ public final class ReplicasImpl implements Replicas {
         return this.innerClient;
     }
 
-    private PostgreSqlManager manager() {
+    private com.azure.resourcemanager.postgresql.generated.PostgreSqlManager manager() {
         return this.serviceManager;
     }
 }

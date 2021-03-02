@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.relay.generated.implementation;
 
-import com.azure.resourcemanager.relay.generated.RelayManager;
 import com.azure.resourcemanager.relay.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.relay.generated.models.Operation;
 import com.azure.resourcemanager.relay.generated.models.OperationDisplay;
@@ -12,9 +11,9 @@ import com.azure.resourcemanager.relay.generated.models.OperationDisplay;
 public final class OperationImpl implements Operation {
     private OperationInner innerObject;
 
-    private final RelayManager serviceManager;
+    private final com.azure.resourcemanager.relay.generated.RelayManager serviceManager;
 
-    OperationImpl(OperationInner innerObject, RelayManager serviceManager) {
+    OperationImpl(OperationInner innerObject, com.azure.resourcemanager.relay.generated.RelayManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -31,7 +30,7 @@ public final class OperationImpl implements Operation {
         return this.innerObject;
     }
 
-    private RelayManager manager() {
+    private com.azure.resourcemanager.relay.generated.RelayManager manager() {
         return this.serviceManager;
     }
 }

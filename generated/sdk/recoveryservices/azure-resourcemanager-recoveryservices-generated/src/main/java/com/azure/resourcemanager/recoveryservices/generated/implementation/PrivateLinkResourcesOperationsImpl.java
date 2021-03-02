@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.PrivateLinkResourcesOperationsClient;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.models.PrivateLinkResourceInner;
 import com.azure.resourcemanager.recoveryservices.generated.models.PrivateLinkResource;
@@ -21,10 +20,11 @@ public final class PrivateLinkResourcesOperationsImpl implements PrivateLinkReso
 
     private final PrivateLinkResourcesOperationsClient innerClient;
 
-    private final RecoveryServicesManager serviceManager;
+    private final com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager serviceManager;
 
     public PrivateLinkResourcesOperationsImpl(
-        PrivateLinkResourcesOperationsClient innerClient, RecoveryServicesManager serviceManager) {
+        PrivateLinkResourcesOperationsClient innerClient,
+        com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -69,7 +69,7 @@ public final class PrivateLinkResourcesOperationsImpl implements PrivateLinkReso
         return this.innerClient;
     }
 
-    private RecoveryServicesManager manager() {
+    private com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager manager() {
         return this.serviceManager;
     }
 }

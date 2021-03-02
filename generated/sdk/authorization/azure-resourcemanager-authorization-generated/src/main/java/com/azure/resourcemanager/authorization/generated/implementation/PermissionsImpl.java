@@ -7,7 +7,6 @@ package com.azure.resourcemanager.authorization.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.authorization.generated.AuthorizationManager;
 import com.azure.resourcemanager.authorization.generated.fluent.PermissionsClient;
 import com.azure.resourcemanager.authorization.generated.fluent.models.PermissionInner;
 import com.azure.resourcemanager.authorization.generated.models.Permission;
@@ -19,9 +18,11 @@ public final class PermissionsImpl implements Permissions {
 
     private final PermissionsClient innerClient;
 
-    private final AuthorizationManager serviceManager;
+    private final com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager;
 
-    public PermissionsImpl(PermissionsClient innerClient, AuthorizationManager serviceManager) {
+    public PermissionsImpl(
+        PermissionsClient innerClient,
+        com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -74,7 +75,7 @@ public final class PermissionsImpl implements Permissions {
         return this.innerClient;
     }
 
-    private AuthorizationManager manager() {
+    private com.azure.resourcemanager.authorization.generated.AuthorizationManager manager() {
         return this.serviceManager;
     }
 }

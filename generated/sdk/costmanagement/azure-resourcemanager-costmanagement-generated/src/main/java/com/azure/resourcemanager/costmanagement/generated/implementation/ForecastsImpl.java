@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.costmanagement.generated.CostManagementManager;
 import com.azure.resourcemanager.costmanagement.generated.fluent.ForecastsClient;
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.QueryResultInner;
 import com.azure.resourcemanager.costmanagement.generated.models.ExternalCloudProviderType;
@@ -22,9 +21,11 @@ public final class ForecastsImpl implements Forecasts {
 
     private final ForecastsClient innerClient;
 
-    private final CostManagementManager serviceManager;
+    private final com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager;
 
-    public ForecastsImpl(ForecastsClient innerClient, CostManagementManager serviceManager) {
+    public ForecastsImpl(
+        ForecastsClient innerClient,
+        com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -93,7 +94,7 @@ public final class ForecastsImpl implements Forecasts {
         return this.innerClient;
     }
 
-    private CostManagementManager manager() {
+    private com.azure.resourcemanager.costmanagement.generated.CostManagementManager manager() {
         return this.serviceManager;
     }
 }

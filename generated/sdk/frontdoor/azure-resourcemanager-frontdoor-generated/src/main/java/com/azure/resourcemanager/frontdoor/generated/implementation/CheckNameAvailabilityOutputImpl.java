@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.frontdoor.generated.implementation;
 
-import com.azure.resourcemanager.frontdoor.generated.FrontDoorManager;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.CheckNameAvailabilityOutputInner;
 import com.azure.resourcemanager.frontdoor.generated.models.Availability;
 import com.azure.resourcemanager.frontdoor.generated.models.CheckNameAvailabilityOutput;
@@ -12,9 +11,11 @@ import com.azure.resourcemanager.frontdoor.generated.models.CheckNameAvailabilit
 public final class CheckNameAvailabilityOutputImpl implements CheckNameAvailabilityOutput {
     private CheckNameAvailabilityOutputInner innerObject;
 
-    private final FrontDoorManager serviceManager;
+    private final com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager;
 
-    CheckNameAvailabilityOutputImpl(CheckNameAvailabilityOutputInner innerObject, FrontDoorManager serviceManager) {
+    CheckNameAvailabilityOutputImpl(
+        CheckNameAvailabilityOutputInner innerObject,
+        com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -35,7 +36,7 @@ public final class CheckNameAvailabilityOutputImpl implements CheckNameAvailabil
         return this.innerObject;
     }
 
-    private FrontDoorManager manager() {
+    private com.azure.resourcemanager.frontdoor.generated.FrontDoorManager manager() {
         return this.serviceManager;
     }
 }

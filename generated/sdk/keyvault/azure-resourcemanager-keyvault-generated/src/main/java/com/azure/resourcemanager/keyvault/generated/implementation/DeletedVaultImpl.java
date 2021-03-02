@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.keyvault.generated.implementation;
 
-import com.azure.resourcemanager.keyvault.generated.KeyVaultManager;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.DeletedVaultInner;
 import com.azure.resourcemanager.keyvault.generated.models.DeletedVault;
 import com.azure.resourcemanager.keyvault.generated.models.DeletedVaultProperties;
@@ -12,9 +11,10 @@ import com.azure.resourcemanager.keyvault.generated.models.DeletedVaultPropertie
 public final class DeletedVaultImpl implements DeletedVault {
     private DeletedVaultInner innerObject;
 
-    private final KeyVaultManager serviceManager;
+    private final com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager;
 
-    DeletedVaultImpl(DeletedVaultInner innerObject, KeyVaultManager serviceManager) {
+    DeletedVaultImpl(
+        DeletedVaultInner innerObject, com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -39,7 +39,7 @@ public final class DeletedVaultImpl implements DeletedVault {
         return this.innerObject;
     }
 
-    private KeyVaultManager manager() {
+    private com.azure.resourcemanager.keyvault.generated.KeyVaultManager manager() {
         return this.serviceManager;
     }
 }

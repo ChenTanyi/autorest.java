@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.frontdoor.generated.FrontDoorManager;
 import com.azure.resourcemanager.frontdoor.generated.fluent.FrontDoorNameAvailabilitiesClient;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.CheckNameAvailabilityOutputInner;
 import com.azure.resourcemanager.frontdoor.generated.models.CheckNameAvailabilityInput;
@@ -21,10 +20,11 @@ public final class FrontDoorNameAvailabilitiesImpl implements FrontDoorNameAvail
 
     private final FrontDoorNameAvailabilitiesClient innerClient;
 
-    private final FrontDoorManager serviceManager;
+    private final com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager;
 
     public FrontDoorNameAvailabilitiesImpl(
-        FrontDoorNameAvailabilitiesClient innerClient, FrontDoorManager serviceManager) {
+        FrontDoorNameAvailabilitiesClient innerClient,
+        com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -57,7 +57,7 @@ public final class FrontDoorNameAvailabilitiesImpl implements FrontDoorNameAvail
         return this.innerClient;
     }
 
-    private FrontDoorManager manager() {
+    private com.azure.resourcemanager.frontdoor.generated.FrontDoorManager manager() {
         return this.serviceManager;
     }
 }

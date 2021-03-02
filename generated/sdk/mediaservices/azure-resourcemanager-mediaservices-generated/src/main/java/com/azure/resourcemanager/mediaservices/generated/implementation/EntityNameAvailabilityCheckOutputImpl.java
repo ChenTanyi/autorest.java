@@ -4,17 +4,17 @@
 
 package com.azure.resourcemanager.mediaservices.generated.implementation;
 
-import com.azure.resourcemanager.mediaservices.generated.MediaservicesManager;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.EntityNameAvailabilityCheckOutputInner;
 import com.azure.resourcemanager.mediaservices.generated.models.EntityNameAvailabilityCheckOutput;
 
 public final class EntityNameAvailabilityCheckOutputImpl implements EntityNameAvailabilityCheckOutput {
     private EntityNameAvailabilityCheckOutputInner innerObject;
 
-    private final MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
 
     EntityNameAvailabilityCheckOutputImpl(
-        EntityNameAvailabilityCheckOutputInner innerObject, MediaservicesManager serviceManager) {
+        EntityNameAvailabilityCheckOutputInner innerObject,
+        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -35,7 +35,7 @@ public final class EntityNameAvailabilityCheckOutputImpl implements EntityNameAv
         return this.innerObject;
     }
 
-    private MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
         return this.serviceManager;
     }
 }

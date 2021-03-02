@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.AlertRuleIncidentsClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.IncidentInner;
 import com.azure.resourcemanager.monitor.generated.models.AlertRuleIncidents;
@@ -21,9 +20,11 @@ public final class AlertRuleIncidentsImpl implements AlertRuleIncidents {
 
     private final AlertRuleIncidentsClient innerClient;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public AlertRuleIncidentsImpl(AlertRuleIncidentsClient innerClient, MonitorManager serviceManager) {
+    public AlertRuleIncidentsImpl(
+        AlertRuleIncidentsClient innerClient,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -66,7 +67,7 @@ public final class AlertRuleIncidentsImpl implements AlertRuleIncidents {
         return this.innerClient;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 }

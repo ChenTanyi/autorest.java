@@ -10,7 +10,6 @@ import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.management.Resource;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.keyvault.generated.KeyVaultManager;
 import com.azure.resourcemanager.keyvault.generated.fluent.VaultsClient;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.CheckNameAvailabilityResultInner;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.DeletedVaultInner;
@@ -30,9 +29,10 @@ public final class VaultsImpl implements Vaults {
 
     private final VaultsClient innerClient;
 
-    private final KeyVaultManager serviceManager;
+    private final com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager;
 
-    public VaultsImpl(VaultsClient innerClient, KeyVaultManager serviceManager) {
+    public VaultsImpl(
+        VaultsClient innerClient, com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -275,7 +275,7 @@ public final class VaultsImpl implements Vaults {
         return this.innerClient;
     }
 
-    private KeyVaultManager manager() {
+    private com.azure.resourcemanager.keyvault.generated.KeyVaultManager manager() {
         return this.serviceManager;
     }
 

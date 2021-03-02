@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.MetricAlertsStatusClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricAlertStatusCollectionInner;
 import com.azure.resourcemanager.monitor.generated.models.MetricAlertStatusCollection;
@@ -20,9 +19,11 @@ public final class MetricAlertsStatusImpl implements MetricAlertsStatus {
 
     private final MetricAlertsStatusClient innerClient;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public MetricAlertsStatusImpl(MetricAlertsStatusClient innerClient, MonitorManager serviceManager) {
+    public MetricAlertsStatusImpl(
+        MetricAlertsStatusClient innerClient,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -80,7 +81,7 @@ public final class MetricAlertsStatusImpl implements MetricAlertsStatus {
         return this.innerClient;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 }

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.mediaservices.generated.implementation;
 
-import com.azure.resourcemanager.mediaservices.generated.MediaservicesManager;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.PrivateLinkResourceInner;
 import com.azure.resourcemanager.mediaservices.generated.models.PrivateLinkResource;
 import java.util.Collections;
@@ -13,9 +12,11 @@ import java.util.List;
 public final class PrivateLinkResourceImpl implements PrivateLinkResource {
     private PrivateLinkResourceInner innerObject;
 
-    private final MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
 
-    PrivateLinkResourceImpl(PrivateLinkResourceInner innerObject, MediaservicesManager serviceManager) {
+    PrivateLinkResourceImpl(
+        PrivateLinkResourceInner innerObject,
+        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -58,7 +59,7 @@ public final class PrivateLinkResourceImpl implements PrivateLinkResource {
         return this.innerObject;
     }
 
-    private MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
         return this.serviceManager;
     }
 }

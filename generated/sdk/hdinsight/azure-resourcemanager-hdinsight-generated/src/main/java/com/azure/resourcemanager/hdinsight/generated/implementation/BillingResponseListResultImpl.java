@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.hdinsight.generated.implementation;
 
-import com.azure.resourcemanager.hdinsight.generated.HDInsightManager;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.BillingResponseListResultInner;
 import com.azure.resourcemanager.hdinsight.generated.models.BillingResources;
 import com.azure.resourcemanager.hdinsight.generated.models.BillingResponseListResult;
@@ -16,9 +15,11 @@ import java.util.List;
 public final class BillingResponseListResultImpl implements BillingResponseListResult {
     private BillingResponseListResultInner innerObject;
 
-    private final HDInsightManager serviceManager;
+    private final com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager;
 
-    BillingResponseListResultImpl(BillingResponseListResultInner innerObject, HDInsightManager serviceManager) {
+    BillingResponseListResultImpl(
+        BillingResponseListResultInner innerObject,
+        com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -72,7 +73,7 @@ public final class BillingResponseListResultImpl implements BillingResponseListR
         return this.innerObject;
     }
 
-    private HDInsightManager manager() {
+    private com.azure.resourcemanager.hdinsight.generated.HDInsightManager manager() {
         return this.serviceManager;
     }
 }

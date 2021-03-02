@@ -4,16 +4,17 @@
 
 package com.azure.resourcemanager.eventgrid.generated.implementation;
 
-import com.azure.resourcemanager.eventgrid.generated.EventGridManager;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.DomainSharedAccessKeysInner;
 import com.azure.resourcemanager.eventgrid.generated.models.DomainSharedAccessKeys;
 
 public final class DomainSharedAccessKeysImpl implements DomainSharedAccessKeys {
     private DomainSharedAccessKeysInner innerObject;
 
-    private final EventGridManager serviceManager;
+    private final com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager;
 
-    DomainSharedAccessKeysImpl(DomainSharedAccessKeysInner innerObject, EventGridManager serviceManager) {
+    DomainSharedAccessKeysImpl(
+        DomainSharedAccessKeysInner innerObject,
+        com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -30,7 +31,7 @@ public final class DomainSharedAccessKeysImpl implements DomainSharedAccessKeys 
         return this.innerObject;
     }
 
-    private EventGridManager manager() {
+    private com.azure.resourcemanager.eventgrid.generated.EventGridManager manager() {
         return this.serviceManager;
     }
 }

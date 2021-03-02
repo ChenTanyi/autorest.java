@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.policy.generated.PolicyManager;
 import com.azure.resourcemanager.policy.generated.fluent.DataPolicyManifestsClient;
 import com.azure.resourcemanager.policy.generated.fluent.models.DataPolicyManifestInner;
 import com.azure.resourcemanager.policy.generated.models.DataPolicyManifest;
@@ -21,9 +20,11 @@ public final class DataPolicyManifestsImpl implements DataPolicyManifests {
 
     private final DataPolicyManifestsClient innerClient;
 
-    private final PolicyManager serviceManager;
+    private final com.azure.resourcemanager.policy.generated.PolicyManager serviceManager;
 
-    public DataPolicyManifestsImpl(DataPolicyManifestsClient innerClient, PolicyManager serviceManager) {
+    public DataPolicyManifestsImpl(
+        DataPolicyManifestsClient innerClient,
+        com.azure.resourcemanager.policy.generated.PolicyManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -64,7 +65,7 @@ public final class DataPolicyManifestsImpl implements DataPolicyManifests {
         return this.innerClient;
     }
 
-    private PolicyManager manager() {
+    private com.azure.resourcemanager.policy.generated.PolicyManager manager() {
         return this.serviceManager;
     }
 }

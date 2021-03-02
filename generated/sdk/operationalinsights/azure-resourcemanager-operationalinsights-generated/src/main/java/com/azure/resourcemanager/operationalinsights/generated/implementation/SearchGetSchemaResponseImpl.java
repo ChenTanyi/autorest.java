@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.operationalinsights.generated.implementation;
 
-import com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.SearchGetSchemaResponseInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.SearchGetSchemaResponse;
 import com.azure.resourcemanager.operationalinsights.generated.models.SearchMetadata;
@@ -15,9 +14,11 @@ import java.util.List;
 public final class SearchGetSchemaResponseImpl implements SearchGetSchemaResponse {
     private SearchGetSchemaResponseInner innerObject;
 
-    private final LogAnalyticsManager serviceManager;
+    private final com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager;
 
-    SearchGetSchemaResponseImpl(SearchGetSchemaResponseInner innerObject, LogAnalyticsManager serviceManager) {
+    SearchGetSchemaResponseImpl(
+        SearchGetSchemaResponseInner innerObject,
+        com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -39,7 +40,7 @@ public final class SearchGetSchemaResponseImpl implements SearchGetSchemaRespons
         return this.innerObject;
     }
 
-    private LogAnalyticsManager manager() {
+    private com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager manager() {
         return this.serviceManager;
     }
 }

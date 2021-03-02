@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.StorageAccountCredentialsClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.StorageAccountCredentialInner;
 import com.azure.resourcemanager.databoxedge.generated.models.StorageAccountCredential;
@@ -21,10 +20,11 @@ public final class StorageAccountCredentialsImpl implements StorageAccountCreden
 
     private final StorageAccountCredentialsClient innerClient;
 
-    private final DataBoxEdgeManager serviceManager;
+    private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
     public StorageAccountCredentialsImpl(
-        StorageAccountCredentialsClient innerClient, DataBoxEdgeManager serviceManager) {
+        StorageAccountCredentialsClient innerClient,
+        com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -203,7 +203,7 @@ public final class StorageAccountCredentialsImpl implements StorageAccountCreden
         return this.innerClient;
     }
 
-    private DataBoxEdgeManager manager() {
+    private com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager manager() {
         return this.serviceManager;
     }
 

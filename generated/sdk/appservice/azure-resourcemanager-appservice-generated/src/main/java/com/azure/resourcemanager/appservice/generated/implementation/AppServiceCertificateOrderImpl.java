@@ -7,7 +7,6 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceCertificateOrderInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.NameIdentifierInner;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceCertificate;
@@ -32,7 +31,7 @@ public final class AppServiceCertificateOrderImpl
     implements AppServiceCertificateOrder, AppServiceCertificateOrder.Definition, AppServiceCertificateOrder.Update {
     private AppServiceCertificateOrderInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -167,7 +166,7 @@ public final class AppServiceCertificateOrderImpl
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 
@@ -200,7 +199,8 @@ public final class AppServiceCertificateOrderImpl
         return this;
     }
 
-    AppServiceCertificateOrderImpl(String name, AppServiceManager serviceManager) {
+    AppServiceCertificateOrderImpl(
+        String name, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = new AppServiceCertificateOrderInner();
         this.serviceManager = serviceManager;
         this.certificateOrderName = name;
@@ -233,7 +233,9 @@ public final class AppServiceCertificateOrderImpl
         return this;
     }
 
-    AppServiceCertificateOrderImpl(AppServiceCertificateOrderInner innerObject, AppServiceManager serviceManager) {
+    AppServiceCertificateOrderImpl(
+        AppServiceCertificateOrderInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

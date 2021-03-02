@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.azurekusto.generated.KustoManager;
 import com.azure.resourcemanager.azurekusto.generated.fluent.DataConnectionsClient;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.CheckNameResultInner;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.DataConnectionInner;
@@ -27,9 +26,10 @@ public final class DataConnectionsImpl implements DataConnections {
 
     private final DataConnectionsClient innerClient;
 
-    private final KustoManager serviceManager;
+    private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
-    public DataConnectionsImpl(DataConnectionsClient innerClient, KustoManager serviceManager) {
+    public DataConnectionsImpl(
+        DataConnectionsClient innerClient, com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -223,7 +223,7 @@ public final class DataConnectionsImpl implements DataConnections {
         return this.innerClient;
     }
 
-    private KustoManager manager() {
+    private com.azure.resourcemanager.azurekusto.generated.KustoManager manager() {
         return this.serviceManager;
     }
 }

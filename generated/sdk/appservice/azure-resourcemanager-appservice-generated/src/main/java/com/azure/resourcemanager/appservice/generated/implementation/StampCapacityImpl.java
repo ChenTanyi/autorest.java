@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StampCapacityInner;
 import com.azure.resourcemanager.appservice.generated.models.ComputeModeOptions;
 import com.azure.resourcemanager.appservice.generated.models.StampCapacity;
@@ -13,9 +12,11 @@ import com.azure.resourcemanager.appservice.generated.models.WorkerSizeOptions;
 public final class StampCapacityImpl implements StampCapacity {
     private StampCapacityInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    StampCapacityImpl(StampCapacityInner innerObject, AppServiceManager serviceManager) {
+    StampCapacityImpl(
+        StampCapacityInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -68,7 +69,7 @@ public final class StampCapacityImpl implements StampCapacity {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

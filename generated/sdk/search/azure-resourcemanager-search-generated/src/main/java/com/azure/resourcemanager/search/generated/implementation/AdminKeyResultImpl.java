@@ -4,16 +4,16 @@
 
 package com.azure.resourcemanager.search.generated.implementation;
 
-import com.azure.resourcemanager.search.generated.SearchManager;
 import com.azure.resourcemanager.search.generated.fluent.models.AdminKeyResultInner;
 import com.azure.resourcemanager.search.generated.models.AdminKeyResult;
 
 public final class AdminKeyResultImpl implements AdminKeyResult {
     private AdminKeyResultInner innerObject;
 
-    private final SearchManager serviceManager;
+    private final com.azure.resourcemanager.search.generated.SearchManager serviceManager;
 
-    AdminKeyResultImpl(AdminKeyResultInner innerObject, SearchManager serviceManager) {
+    AdminKeyResultImpl(
+        AdminKeyResultInner innerObject, com.azure.resourcemanager.search.generated.SearchManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -30,7 +30,7 @@ public final class AdminKeyResultImpl implements AdminKeyResult {
         return this.innerObject;
     }
 
-    private SearchManager manager() {
+    private com.azure.resourcemanager.search.generated.SearchManager manager() {
         return this.serviceManager;
     }
 }

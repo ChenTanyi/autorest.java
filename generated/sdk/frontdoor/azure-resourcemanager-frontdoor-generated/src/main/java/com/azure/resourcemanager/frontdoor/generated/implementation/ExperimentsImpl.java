@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.frontdoor.generated.FrontDoorManager;
 import com.azure.resourcemanager.frontdoor.generated.fluent.ExperimentsClient;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.ExperimentInner;
 import com.azure.resourcemanager.frontdoor.generated.models.Experiment;
@@ -21,9 +20,10 @@ public final class ExperimentsImpl implements Experiments {
 
     private final ExperimentsClient innerClient;
 
-    private final FrontDoorManager serviceManager;
+    private final com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager;
 
-    public ExperimentsImpl(ExperimentsClient innerClient, FrontDoorManager serviceManager) {
+    public ExperimentsImpl(
+        ExperimentsClient innerClient, com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -191,7 +191,7 @@ public final class ExperimentsImpl implements Experiments {
         return this.innerClient;
     }
 
-    private FrontDoorManager manager() {
+    private com.azure.resourcemanager.frontdoor.generated.FrontDoorManager manager() {
         return this.serviceManager;
     }
 

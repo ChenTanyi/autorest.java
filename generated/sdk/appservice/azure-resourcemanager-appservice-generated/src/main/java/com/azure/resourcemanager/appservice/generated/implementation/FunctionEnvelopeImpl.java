@@ -6,7 +6,6 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.FunctionEnvelopeInner;
 import com.azure.resourcemanager.appservice.generated.models.FunctionEnvelope;
 import com.azure.resourcemanager.appservice.generated.models.FunctionSecrets;
@@ -18,9 +17,11 @@ import java.util.Map;
 public final class FunctionEnvelopeImpl implements FunctionEnvelope, FunctionEnvelope.Definition {
     private FunctionEnvelopeInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    FunctionEnvelopeImpl(FunctionEnvelopeInner innerObject, AppServiceManager serviceManager) {
+    FunctionEnvelopeImpl(
+        FunctionEnvelopeInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -106,7 +107,7 @@ public final class FunctionEnvelopeImpl implements FunctionEnvelope, FunctionEnv
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 
@@ -140,7 +141,7 @@ public final class FunctionEnvelopeImpl implements FunctionEnvelope, FunctionEnv
         return this;
     }
 
-    FunctionEnvelopeImpl(String name, AppServiceManager serviceManager) {
+    FunctionEnvelopeImpl(String name, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = new FunctionEnvelopeInner();
         this.serviceManager = serviceManager;
         this.functionName = name;

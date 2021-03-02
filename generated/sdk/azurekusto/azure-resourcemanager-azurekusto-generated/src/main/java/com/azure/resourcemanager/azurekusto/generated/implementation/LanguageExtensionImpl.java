@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.azurekusto.generated.implementation;
 
-import com.azure.resourcemanager.azurekusto.generated.KustoManager;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.LanguageExtensionInner;
 import com.azure.resourcemanager.azurekusto.generated.models.LanguageExtension;
 import com.azure.resourcemanager.azurekusto.generated.models.LanguageExtensionName;
@@ -12,9 +11,11 @@ import com.azure.resourcemanager.azurekusto.generated.models.LanguageExtensionNa
 public final class LanguageExtensionImpl implements LanguageExtension {
     private LanguageExtensionInner innerObject;
 
-    private final KustoManager serviceManager;
+    private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
-    LanguageExtensionImpl(LanguageExtensionInner innerObject, KustoManager serviceManager) {
+    LanguageExtensionImpl(
+        LanguageExtensionInner innerObject,
+        com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -27,7 +28,7 @@ public final class LanguageExtensionImpl implements LanguageExtension {
         return this.innerObject;
     }
 
-    private KustoManager manager() {
+    private com.azure.resourcemanager.azurekusto.generated.KustoManager manager() {
         return this.serviceManager;
     }
 }

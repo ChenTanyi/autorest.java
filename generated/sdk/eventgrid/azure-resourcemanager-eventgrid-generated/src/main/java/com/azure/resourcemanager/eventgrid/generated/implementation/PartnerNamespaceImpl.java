@@ -7,7 +7,6 @@ package com.azure.resourcemanager.eventgrid.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.eventgrid.generated.EventGridManager;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.PartnerNamespaceInner;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerNamespace;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerNamespaceProvisioningState;
@@ -22,7 +21,7 @@ public final class PartnerNamespaceImpl
     implements PartnerNamespace, PartnerNamespace.Definition, PartnerNamespace.Update {
     private PartnerNamespaceInner innerObject;
 
-    private final EventGridManager serviceManager;
+    private final com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -77,7 +76,7 @@ public final class PartnerNamespaceImpl
         return this.innerObject;
     }
 
-    private EventGridManager manager() {
+    private com.azure.resourcemanager.eventgrid.generated.EventGridManager manager() {
         return this.serviceManager;
     }
 
@@ -110,7 +109,7 @@ public final class PartnerNamespaceImpl
         return this;
     }
 
-    PartnerNamespaceImpl(String name, EventGridManager serviceManager) {
+    PartnerNamespaceImpl(String name, com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = new PartnerNamespaceInner();
         this.serviceManager = serviceManager;
         this.partnerNamespaceName = name;
@@ -139,7 +138,9 @@ public final class PartnerNamespaceImpl
         return this;
     }
 
-    PartnerNamespaceImpl(PartnerNamespaceInner innerObject, EventGridManager serviceManager) {
+    PartnerNamespaceImpl(
+        PartnerNamespaceInner innerObject,
+        com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

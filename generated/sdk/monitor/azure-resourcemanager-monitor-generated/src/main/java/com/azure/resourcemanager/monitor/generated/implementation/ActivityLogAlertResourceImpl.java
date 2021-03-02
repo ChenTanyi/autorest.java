@@ -6,7 +6,6 @@ package com.azure.resourcemanager.monitor.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.ActivityLogAlertResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.ActivityLogAlertActionList;
 import com.azure.resourcemanager.monitor.generated.models.ActivityLogAlertAllOfCondition;
@@ -20,7 +19,7 @@ public final class ActivityLogAlertResourceImpl
     implements ActivityLogAlertResource, ActivityLogAlertResource.Definition, ActivityLogAlertResource.Update {
     private ActivityLogAlertResourceInner innerObject;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -84,7 +83,7 @@ public final class ActivityLogAlertResourceImpl
         return this.innerObject;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 
@@ -119,7 +118,8 @@ public final class ActivityLogAlertResourceImpl
         return this;
     }
 
-    ActivityLogAlertResourceImpl(String name, MonitorManager serviceManager) {
+    ActivityLogAlertResourceImpl(
+        String name, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = new ActivityLogAlertResourceInner();
         this.serviceManager = serviceManager;
         this.activityLogAlertName = name;
@@ -150,7 +150,9 @@ public final class ActivityLogAlertResourceImpl
         return this;
     }
 
-    ActivityLogAlertResourceImpl(ActivityLogAlertResourceInner innerObject, MonitorManager serviceManager) {
+    ActivityLogAlertResourceImpl(
+        ActivityLogAlertResourceInner innerObject,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

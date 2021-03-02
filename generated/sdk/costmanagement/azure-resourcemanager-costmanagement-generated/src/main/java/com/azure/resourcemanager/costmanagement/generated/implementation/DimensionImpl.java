@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.costmanagement.generated.implementation;
 
-import com.azure.resourcemanager.costmanagement.generated.CostManagementManager;
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.DimensionInner;
 import com.azure.resourcemanager.costmanagement.generated.models.Dimension;
 import java.time.OffsetDateTime;
@@ -15,9 +14,11 @@ import java.util.Map;
 public final class DimensionImpl implements Dimension {
     private DimensionInner innerObject;
 
-    private final CostManagementManager serviceManager;
+    private final com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager;
 
-    DimensionImpl(DimensionInner innerObject, CostManagementManager serviceManager) {
+    DimensionImpl(
+        DimensionInner innerObject,
+        com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -88,7 +89,7 @@ public final class DimensionImpl implements Dimension {
         return this.innerObject;
     }
 
-    private CostManagementManager manager() {
+    private com.azure.resourcemanager.costmanagement.generated.CostManagementManager manager() {
         return this.serviceManager;
     }
 }

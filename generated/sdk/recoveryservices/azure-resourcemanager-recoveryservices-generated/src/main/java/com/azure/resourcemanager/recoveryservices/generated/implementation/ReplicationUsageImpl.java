@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.recoveryservices.generated.implementation;
 
-import com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.models.ReplicationUsageInner;
 import com.azure.resourcemanager.recoveryservices.generated.models.JobsSummary;
 import com.azure.resourcemanager.recoveryservices.generated.models.MonitoringSummary;
@@ -13,9 +12,11 @@ import com.azure.resourcemanager.recoveryservices.generated.models.ReplicationUs
 public final class ReplicationUsageImpl implements ReplicationUsage {
     private ReplicationUsageInner innerObject;
 
-    private final RecoveryServicesManager serviceManager;
+    private final com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager serviceManager;
 
-    ReplicationUsageImpl(ReplicationUsageInner innerObject, RecoveryServicesManager serviceManager) {
+    ReplicationUsageImpl(
+        ReplicationUsageInner innerObject,
+        com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -48,7 +49,7 @@ public final class ReplicationUsageImpl implements ReplicationUsage {
         return this.innerObject;
     }
 
-    private RecoveryServicesManager manager() {
+    private com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager manager() {
         return this.serviceManager;
     }
 }

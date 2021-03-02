@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SitePhpErrorLogFlagInner;
 import com.azure.resourcemanager.appservice.generated.models.SitePhpErrorLogFlag;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -12,9 +11,11 @@ import com.azure.resourcemanager.appservice.generated.models.SystemData;
 public final class SitePhpErrorLogFlagImpl implements SitePhpErrorLogFlag {
     private SitePhpErrorLogFlagInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SitePhpErrorLogFlagImpl(SitePhpErrorLogFlagInner innerObject, AppServiceManager serviceManager) {
+    SitePhpErrorLogFlagImpl(
+        SitePhpErrorLogFlagInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -59,7 +60,7 @@ public final class SitePhpErrorLogFlagImpl implements SitePhpErrorLogFlag {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

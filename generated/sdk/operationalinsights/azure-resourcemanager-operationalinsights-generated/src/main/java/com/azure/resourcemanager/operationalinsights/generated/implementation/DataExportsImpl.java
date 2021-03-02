@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.DataExportsClient;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.DataExportInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.DataExport;
@@ -21,9 +20,11 @@ public final class DataExportsImpl implements DataExports {
 
     private final DataExportsClient innerClient;
 
-    private final LogAnalyticsManager serviceManager;
+    private final com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager;
 
-    public DataExportsImpl(DataExportsClient innerClient, LogAnalyticsManager serviceManager) {
+    public DataExportsImpl(
+        DataExportsClient innerClient,
+        com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -180,7 +181,7 @@ public final class DataExportsImpl implements DataExports {
         return this.innerClient;
     }
 
-    private LogAnalyticsManager manager() {
+    private com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager manager() {
         return this.serviceManager;
     }
 

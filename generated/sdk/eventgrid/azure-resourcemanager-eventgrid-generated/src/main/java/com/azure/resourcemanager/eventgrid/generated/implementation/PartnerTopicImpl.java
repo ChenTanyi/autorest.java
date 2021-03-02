@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.eventgrid.generated.implementation;
 
-import com.azure.resourcemanager.eventgrid.generated.EventGridManager;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.PartnerTopicInner;
 import com.azure.resourcemanager.eventgrid.generated.models.IdentityInfo;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerTopic;
@@ -18,9 +17,10 @@ import java.util.Map;
 public final class PartnerTopicImpl implements PartnerTopic {
     private PartnerTopicInner innerObject;
 
-    private final EventGridManager serviceManager;
+    private final com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager;
 
-    PartnerTopicImpl(PartnerTopicInner innerObject, EventGridManager serviceManager) {
+    PartnerTopicImpl(
+        PartnerTopicInner innerObject, com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -82,7 +82,7 @@ public final class PartnerTopicImpl implements PartnerTopic {
         return this.innerObject;
     }
 
-    private EventGridManager manager() {
+    private com.azure.resourcemanager.eventgrid.generated.EventGridManager manager() {
         return this.serviceManager;
     }
 }

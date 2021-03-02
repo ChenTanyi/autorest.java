@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.mysql.generated.implementation;
 
-import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.models.ServerAdministratorResourceInner;
 import com.azure.resourcemanager.mysql.generated.models.AdministratorType;
 import com.azure.resourcemanager.mysql.generated.models.ServerAdministratorResource;
@@ -13,9 +12,11 @@ import java.util.UUID;
 public final class ServerAdministratorResourceImpl implements ServerAdministratorResource {
     private ServerAdministratorResourceInner innerObject;
 
-    private final MySqlManager serviceManager;
+    private final com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager;
 
-    ServerAdministratorResourceImpl(ServerAdministratorResourceInner innerObject, MySqlManager serviceManager) {
+    ServerAdministratorResourceImpl(
+        ServerAdministratorResourceInner innerObject,
+        com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -52,7 +53,7 @@ public final class ServerAdministratorResourceImpl implements ServerAdministrato
         return this.innerObject;
     }
 
-    private MySqlManager manager() {
+    private com.azure.resourcemanager.mysql.generated.MySqlManager manager() {
         return this.serviceManager;
     }
 }

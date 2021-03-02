@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.databoxedge.generated.implementation;
 
-import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.OrderInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Address;
 import com.azure.resourcemanager.databoxedge.generated.models.ContactDetails;
@@ -17,9 +16,10 @@ import java.util.List;
 public final class OrderImpl implements Order {
     private OrderInner innerObject;
 
-    private final DataBoxEdgeManager serviceManager;
+    private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    OrderImpl(OrderInner innerObject, DataBoxEdgeManager serviceManager) {
+    OrderImpl(
+        OrderInner innerObject, com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -83,7 +83,7 @@ public final class OrderImpl implements Order {
         return this.innerObject;
     }
 
-    private DataBoxEdgeManager manager() {
+    private com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager manager() {
         return this.serviceManager;
     }
 }

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.search.generated.implementation;
 
-import com.azure.resourcemanager.search.generated.SearchManager;
 import com.azure.resourcemanager.search.generated.fluent.models.PrivateLinkResourceInner;
 import com.azure.resourcemanager.search.generated.models.PrivateLinkResource;
 import com.azure.resourcemanager.search.generated.models.PrivateLinkResourceProperties;
@@ -12,9 +11,10 @@ import com.azure.resourcemanager.search.generated.models.PrivateLinkResourceProp
 public final class PrivateLinkResourceImpl implements PrivateLinkResource {
     private PrivateLinkResourceInner innerObject;
 
-    private final SearchManager serviceManager;
+    private final com.azure.resourcemanager.search.generated.SearchManager serviceManager;
 
-    PrivateLinkResourceImpl(PrivateLinkResourceInner innerObject, SearchManager serviceManager) {
+    PrivateLinkResourceImpl(
+        PrivateLinkResourceInner innerObject, com.azure.resourcemanager.search.generated.SearchManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -39,7 +39,7 @@ public final class PrivateLinkResourceImpl implements PrivateLinkResource {
         return this.innerObject;
     }
 
-    private SearchManager manager() {
+    private com.azure.resourcemanager.search.generated.SearchManager manager() {
         return this.serviceManager;
     }
 }

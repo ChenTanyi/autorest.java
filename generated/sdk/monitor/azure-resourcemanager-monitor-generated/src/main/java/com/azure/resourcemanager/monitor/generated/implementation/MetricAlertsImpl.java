@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.MetricAlertsClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricAlertResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.MetricAlertResource;
@@ -21,9 +20,10 @@ public final class MetricAlertsImpl implements MetricAlerts {
 
     private final MetricAlertsClient innerClient;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public MetricAlertsImpl(MetricAlertsClient innerClient, MonitorManager serviceManager) {
+    public MetricAlertsImpl(
+        MetricAlertsClient innerClient, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -161,7 +161,7 @@ public final class MetricAlertsImpl implements MetricAlerts {
         return this.innerClient;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 

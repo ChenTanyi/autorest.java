@@ -5,16 +5,17 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.Resource;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.BastionShareableLinkInner;
 import com.azure.resourcemanager.network.generated.models.BastionShareableLink;
 
 public final class BastionShareableLinkImpl implements BastionShareableLink {
     private BastionShareableLinkInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
-    BastionShareableLinkImpl(BastionShareableLinkInner innerObject, NetworkManager serviceManager) {
+    BastionShareableLinkImpl(
+        BastionShareableLinkInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -39,7 +40,7 @@ public final class BastionShareableLinkImpl implements BastionShareableLink {
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 }

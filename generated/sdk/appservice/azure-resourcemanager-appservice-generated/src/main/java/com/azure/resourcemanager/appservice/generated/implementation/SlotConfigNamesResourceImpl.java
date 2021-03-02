@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SlotConfigNamesResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.SlotConfigNamesResource;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -14,9 +13,11 @@ import java.util.List;
 public final class SlotConfigNamesResourceImpl implements SlotConfigNamesResource {
     private SlotConfigNamesResourceInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SlotConfigNamesResourceImpl(SlotConfigNamesResourceInner innerObject, AppServiceManager serviceManager) {
+    SlotConfigNamesResourceImpl(
+        SlotConfigNamesResourceInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -72,7 +73,7 @@ public final class SlotConfigNamesResourceImpl implements SlotConfigNamesResourc
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.eventgrid.generated.EventGridManager;
 import com.azure.resourcemanager.eventgrid.generated.fluent.ExtensionTopicsClient;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.ExtensionTopicInner;
 import com.azure.resourcemanager.eventgrid.generated.models.ExtensionTopic;
@@ -20,9 +19,11 @@ public final class ExtensionTopicsImpl implements ExtensionTopics {
 
     private final ExtensionTopicsClient innerClient;
 
-    private final EventGridManager serviceManager;
+    private final com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager;
 
-    public ExtensionTopicsImpl(ExtensionTopicsClient innerClient, EventGridManager serviceManager) {
+    public ExtensionTopicsImpl(
+        ExtensionTopicsClient innerClient,
+        com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -53,7 +54,7 @@ public final class ExtensionTopicsImpl implements ExtensionTopics {
         return this.innerClient;
     }
 
-    private EventGridManager manager() {
+    private com.azure.resourcemanager.eventgrid.generated.EventGridManager manager() {
         return this.serviceManager;
     }
 }

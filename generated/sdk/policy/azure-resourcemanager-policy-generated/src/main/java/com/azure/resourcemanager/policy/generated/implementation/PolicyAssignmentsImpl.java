@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.policy.generated.PolicyManager;
 import com.azure.resourcemanager.policy.generated.fluent.PolicyAssignmentsClient;
 import com.azure.resourcemanager.policy.generated.fluent.models.PolicyAssignmentInner;
 import com.azure.resourcemanager.policy.generated.models.PolicyAssignment;
@@ -21,9 +20,10 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
 
     private final PolicyAssignmentsClient innerClient;
 
-    private final PolicyManager serviceManager;
+    private final com.azure.resourcemanager.policy.generated.PolicyManager serviceManager;
 
-    public PolicyAssignmentsImpl(PolicyAssignmentsClient innerClient, PolicyManager serviceManager) {
+    public PolicyAssignmentsImpl(
+        PolicyAssignmentsClient innerClient, com.azure.resourcemanager.policy.generated.PolicyManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -219,7 +219,7 @@ public final class PolicyAssignmentsImpl implements PolicyAssignments {
         return this.innerClient;
     }
 
-    private PolicyManager manager() {
+    private com.azure.resourcemanager.policy.generated.PolicyManager manager() {
         return this.serviceManager;
     }
 

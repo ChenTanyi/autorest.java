@@ -6,7 +6,6 @@ package com.azure.resourcemanager.mediaservices.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.mediaservices.generated.MediaservicesManager;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.StreamingEndpointInner;
 import com.azure.resourcemanager.mediaservices.generated.models.CrossSiteAccessPolicies;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingEndpoint;
@@ -23,7 +22,7 @@ public final class StreamingEndpointImpl
     implements StreamingEndpoint, StreamingEndpoint.Definition, StreamingEndpoint.Update {
     private StreamingEndpointInner innerObject;
 
-    private final MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -135,7 +134,7 @@ public final class StreamingEndpointImpl
         return this.innerObject;
     }
 
-    private MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
         return this.serviceManager;
     }
 
@@ -178,7 +177,8 @@ public final class StreamingEndpointImpl
         return this;
     }
 
-    StreamingEndpointImpl(String name, MediaservicesManager serviceManager) {
+    StreamingEndpointImpl(
+        String name, com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
         this.innerObject = new StreamingEndpointInner();
         this.serviceManager = serviceManager;
         this.streamingEndpointName = name;
@@ -207,7 +207,9 @@ public final class StreamingEndpointImpl
         return this;
     }
 
-    StreamingEndpointImpl(StreamingEndpointInner innerObject, MediaservicesManager serviceManager) {
+    StreamingEndpointImpl(
+        StreamingEndpointInner innerObject,
+        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

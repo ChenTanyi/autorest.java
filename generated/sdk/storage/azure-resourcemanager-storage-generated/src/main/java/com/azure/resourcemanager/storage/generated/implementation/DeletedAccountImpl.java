@@ -4,16 +4,16 @@
 
 package com.azure.resourcemanager.storage.generated.implementation;
 
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.DeletedAccountInner;
 import com.azure.resourcemanager.storage.generated.models.DeletedAccount;
 
 public final class DeletedAccountImpl implements DeletedAccount {
     private DeletedAccountInner innerObject;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    DeletedAccountImpl(DeletedAccountInner innerObject, StorageManager serviceManager) {
+    DeletedAccountImpl(
+        DeletedAccountInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -54,7 +54,7 @@ public final class DeletedAccountImpl implements DeletedAccount {
         return this.innerObject;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 }

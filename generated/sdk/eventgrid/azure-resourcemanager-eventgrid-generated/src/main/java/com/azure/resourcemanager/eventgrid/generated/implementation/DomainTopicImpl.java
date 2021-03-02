@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.eventgrid.generated.implementation;
 
-import com.azure.resourcemanager.eventgrid.generated.EventGridManager;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.DomainTopicInner;
 import com.azure.resourcemanager.eventgrid.generated.models.DomainTopic;
 import com.azure.resourcemanager.eventgrid.generated.models.DomainTopicProvisioningState;
@@ -13,9 +12,10 @@ import com.azure.resourcemanager.eventgrid.generated.models.SystemData;
 public final class DomainTopicImpl implements DomainTopic {
     private DomainTopicInner innerObject;
 
-    private final EventGridManager serviceManager;
+    private final com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager;
 
-    DomainTopicImpl(DomainTopicInner innerObject, EventGridManager serviceManager) {
+    DomainTopicImpl(
+        DomainTopicInner innerObject, com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -44,7 +44,7 @@ public final class DomainTopicImpl implements DomainTopic {
         return this.innerObject;
     }
 
-    private EventGridManager manager() {
+    private com.azure.resourcemanager.eventgrid.generated.EventGridManager manager() {
         return this.serviceManager;
     }
 }

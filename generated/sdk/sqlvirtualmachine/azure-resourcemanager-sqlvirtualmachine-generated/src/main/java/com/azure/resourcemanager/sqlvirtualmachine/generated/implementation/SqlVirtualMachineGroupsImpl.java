@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.sqlvirtualmachine.generated.SqlVirtualMachineManager;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.SqlVirtualMachineGroupsClient;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models.SqlVirtualMachineGroupInner;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlVirtualMachineGroup;
@@ -21,10 +20,11 @@ public final class SqlVirtualMachineGroupsImpl implements SqlVirtualMachineGroup
 
     private final SqlVirtualMachineGroupsClient innerClient;
 
-    private final SqlVirtualMachineManager serviceManager;
+    private final com.azure.resourcemanager.sqlvirtualmachine.generated.SqlVirtualMachineManager serviceManager;
 
     public SqlVirtualMachineGroupsImpl(
-        SqlVirtualMachineGroupsClient innerClient, SqlVirtualMachineManager serviceManager) {
+        SqlVirtualMachineGroupsClient innerClient,
+        com.azure.resourcemanager.sqlvirtualmachine.generated.SqlVirtualMachineManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -177,7 +177,7 @@ public final class SqlVirtualMachineGroupsImpl implements SqlVirtualMachineGroup
         return this.innerClient;
     }
 
-    private SqlVirtualMachineManager manager() {
+    private com.azure.resourcemanager.sqlvirtualmachine.generated.SqlVirtualMachineManager manager() {
         return this.serviceManager;
     }
 

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.mediaservices.generated.MediaservicesManager;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.StreamingPolicyInner;
 import com.azure.resourcemanager.mediaservices.generated.models.CommonEncryptionCbcs;
 import com.azure.resourcemanager.mediaservices.generated.models.CommonEncryptionCenc;
@@ -18,9 +17,11 @@ import java.time.OffsetDateTime;
 public final class StreamingPolicyImpl implements StreamingPolicy, StreamingPolicy.Definition {
     private StreamingPolicyInner innerObject;
 
-    private final MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
 
-    StreamingPolicyImpl(StreamingPolicyInner innerObject, MediaservicesManager serviceManager) {
+    StreamingPolicyImpl(
+        StreamingPolicyInner innerObject,
+        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -69,7 +70,7 @@ public final class StreamingPolicyImpl implements StreamingPolicy, StreamingPoli
         return this.innerObject;
     }
 
-    private MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
         return this.serviceManager;
     }
 
@@ -106,7 +107,8 @@ public final class StreamingPolicyImpl implements StreamingPolicy, StreamingPoli
         return this;
     }
 
-    StreamingPolicyImpl(String name, MediaservicesManager serviceManager) {
+    StreamingPolicyImpl(
+        String name, com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
         this.innerObject = new StreamingPolicyInner();
         this.serviceManager = serviceManager;
         this.streamingPolicyName = name;

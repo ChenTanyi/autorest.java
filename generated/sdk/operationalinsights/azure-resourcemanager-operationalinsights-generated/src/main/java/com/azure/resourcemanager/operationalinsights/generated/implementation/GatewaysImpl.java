@@ -7,7 +7,6 @@ package com.azure.resourcemanager.operationalinsights.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.GatewaysClient;
 import com.azure.resourcemanager.operationalinsights.generated.models.Gateways;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -17,9 +16,11 @@ public final class GatewaysImpl implements Gateways {
 
     private final GatewaysClient innerClient;
 
-    private final LogAnalyticsManager serviceManager;
+    private final com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager;
 
-    public GatewaysImpl(GatewaysClient innerClient, LogAnalyticsManager serviceManager) {
+    public GatewaysImpl(
+        GatewaysClient innerClient,
+        com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -37,7 +38,7 @@ public final class GatewaysImpl implements Gateways {
         return this.innerClient;
     }
 
-    private LogAnalyticsManager manager() {
+    private com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager manager() {
         return this.serviceManager;
     }
 }

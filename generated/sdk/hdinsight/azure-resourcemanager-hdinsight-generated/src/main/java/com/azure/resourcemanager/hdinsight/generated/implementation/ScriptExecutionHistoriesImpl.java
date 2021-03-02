@@ -8,7 +8,6 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.hdinsight.generated.HDInsightManager;
 import com.azure.resourcemanager.hdinsight.generated.fluent.ScriptExecutionHistoriesClient;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.RuntimeScriptActionDetailInner;
 import com.azure.resourcemanager.hdinsight.generated.models.RuntimeScriptActionDetail;
@@ -20,9 +19,11 @@ public final class ScriptExecutionHistoriesImpl implements ScriptExecutionHistor
 
     private final ScriptExecutionHistoriesClient innerClient;
 
-    private final HDInsightManager serviceManager;
+    private final com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager;
 
-    public ScriptExecutionHistoriesImpl(ScriptExecutionHistoriesClient innerClient, HDInsightManager serviceManager) {
+    public ScriptExecutionHistoriesImpl(
+        ScriptExecutionHistoriesClient innerClient,
+        com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -53,7 +54,7 @@ public final class ScriptExecutionHistoriesImpl implements ScriptExecutionHistor
         return this.innerClient;
     }
 
-    private HDInsightManager manager() {
+    private com.azure.resourcemanager.hdinsight.generated.HDInsightManager manager() {
         return this.serviceManager;
     }
 }

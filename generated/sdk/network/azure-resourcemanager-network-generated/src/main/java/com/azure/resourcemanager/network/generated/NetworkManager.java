@@ -21,6 +21,8 @@ import com.azure.core.management.profile.AzureProfile;
 import com.azure.core.util.Configuration;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.fluent.NetworkManagementClient;
+import com.azure.resourcemanager.network.generated.implementation.ActiveConfigurationsImpl;
+import com.azure.resourcemanager.network.generated.implementation.AdminRulesImpl;
 import com.azure.resourcemanager.network.generated.implementation.ApplicationGatewayPrivateEndpointConnectionsImpl;
 import com.azure.resourcemanager.network.generated.implementation.ApplicationGatewayPrivateLinkResourcesImpl;
 import com.azure.resourcemanager.network.generated.implementation.ApplicationGatewaysImpl;
@@ -35,11 +37,14 @@ import com.azure.resourcemanager.network.generated.implementation.AzureFirewalls
 import com.azure.resourcemanager.network.generated.implementation.BastionHostsImpl;
 import com.azure.resourcemanager.network.generated.implementation.BgpServiceCommunitiesImpl;
 import com.azure.resourcemanager.network.generated.implementation.ConnectionMonitorsImpl;
+import com.azure.resourcemanager.network.generated.implementation.ConnectivityConfigurationsImpl;
 import com.azure.resourcemanager.network.generated.implementation.CustomIpPrefixesImpl;
 import com.azure.resourcemanager.network.generated.implementation.DdosCustomPoliciesImpl;
 import com.azure.resourcemanager.network.generated.implementation.DdosProtectionPlansImpl;
 import com.azure.resourcemanager.network.generated.implementation.DefaultSecurityRulesImpl;
 import com.azure.resourcemanager.network.generated.implementation.DscpConfigurationsImpl;
+import com.azure.resourcemanager.network.generated.implementation.EffectiveConfigurationsImpl;
+import com.azure.resourcemanager.network.generated.implementation.EffectiveVirtualNetworksImpl;
 import com.azure.resourcemanager.network.generated.implementation.ExpressRouteCircuitAuthorizationsImpl;
 import com.azure.resourcemanager.network.generated.implementation.ExpressRouteCircuitConnectionsImpl;
 import com.azure.resourcemanager.network.generated.implementation.ExpressRouteCircuitPeeringsImpl;
@@ -71,11 +76,15 @@ import com.azure.resourcemanager.network.generated.implementation.LoadBalancersI
 import com.azure.resourcemanager.network.generated.implementation.LocalNetworkGatewaysImpl;
 import com.azure.resourcemanager.network.generated.implementation.NatGatewaysImpl;
 import com.azure.resourcemanager.network.generated.implementation.NatRulesImpl;
+import com.azure.resourcemanager.network.generated.implementation.NetworkGroupsImpl;
 import com.azure.resourcemanager.network.generated.implementation.NetworkInterfaceIpConfigurationsImpl;
 import com.azure.resourcemanager.network.generated.implementation.NetworkInterfaceLoadBalancersImpl;
 import com.azure.resourcemanager.network.generated.implementation.NetworkInterfaceTapConfigurationsImpl;
 import com.azure.resourcemanager.network.generated.implementation.NetworkInterfacesImpl;
 import com.azure.resourcemanager.network.generated.implementation.NetworkManagementClientBuilder;
+import com.azure.resourcemanager.network.generated.implementation.NetworkManagerCommitsImpl;
+import com.azure.resourcemanager.network.generated.implementation.NetworkManagerDeploymentStatusOperationsImpl;
+import com.azure.resourcemanager.network.generated.implementation.NetworkManagersImpl;
 import com.azure.resourcemanager.network.generated.implementation.NetworkProfilesImpl;
 import com.azure.resourcemanager.network.generated.implementation.NetworkSecurityGroupsImpl;
 import com.azure.resourcemanager.network.generated.implementation.NetworkVirtualAppliancesImpl;
@@ -95,6 +104,7 @@ import com.azure.resourcemanager.network.generated.implementation.RouteFilterRul
 import com.azure.resourcemanager.network.generated.implementation.RouteFiltersImpl;
 import com.azure.resourcemanager.network.generated.implementation.RouteTablesImpl;
 import com.azure.resourcemanager.network.generated.implementation.RoutesImpl;
+import com.azure.resourcemanager.network.generated.implementation.SecurityConfigurationsImpl;
 import com.azure.resourcemanager.network.generated.implementation.SecurityPartnerProvidersImpl;
 import com.azure.resourcemanager.network.generated.implementation.SecurityRulesImpl;
 import com.azure.resourcemanager.network.generated.implementation.ServiceAssociationLinksImpl;
@@ -103,6 +113,7 @@ import com.azure.resourcemanager.network.generated.implementation.ServiceEndpoin
 import com.azure.resourcemanager.network.generated.implementation.ServiceTagsImpl;
 import com.azure.resourcemanager.network.generated.implementation.SubnetsImpl;
 import com.azure.resourcemanager.network.generated.implementation.UsagesImpl;
+import com.azure.resourcemanager.network.generated.implementation.UserRulesImpl;
 import com.azure.resourcemanager.network.generated.implementation.VirtualApplianceSitesImpl;
 import com.azure.resourcemanager.network.generated.implementation.VirtualApplianceSkusImpl;
 import com.azure.resourcemanager.network.generated.implementation.VirtualHubBgpConnectionsImpl;
@@ -128,6 +139,8 @@ import com.azure.resourcemanager.network.generated.implementation.VpnSitesConfig
 import com.azure.resourcemanager.network.generated.implementation.VpnSitesImpl;
 import com.azure.resourcemanager.network.generated.implementation.WebApplicationFirewallPoliciesImpl;
 import com.azure.resourcemanager.network.generated.implementation.WebCategoriesImpl;
+import com.azure.resourcemanager.network.generated.models.ActiveConfigurations;
+import com.azure.resourcemanager.network.generated.models.AdminRules;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayPrivateEndpointConnections;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayPrivateLinkResources;
 import com.azure.resourcemanager.network.generated.models.ApplicationGateways;
@@ -142,11 +155,14 @@ import com.azure.resourcemanager.network.generated.models.AzureFirewalls;
 import com.azure.resourcemanager.network.generated.models.BastionHosts;
 import com.azure.resourcemanager.network.generated.models.BgpServiceCommunities;
 import com.azure.resourcemanager.network.generated.models.ConnectionMonitors;
+import com.azure.resourcemanager.network.generated.models.ConnectivityConfigurations;
 import com.azure.resourcemanager.network.generated.models.CustomIpPrefixes;
 import com.azure.resourcemanager.network.generated.models.DdosCustomPolicies;
 import com.azure.resourcemanager.network.generated.models.DdosProtectionPlans;
 import com.azure.resourcemanager.network.generated.models.DefaultSecurityRules;
 import com.azure.resourcemanager.network.generated.models.DscpConfigurations;
+import com.azure.resourcemanager.network.generated.models.EffectiveConfigurations;
+import com.azure.resourcemanager.network.generated.models.EffectiveVirtualNetworks;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuitAuthorizations;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuitConnections;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteCircuitPeerings;
@@ -178,10 +194,14 @@ import com.azure.resourcemanager.network.generated.models.LoadBalancers;
 import com.azure.resourcemanager.network.generated.models.LocalNetworkGateways;
 import com.azure.resourcemanager.network.generated.models.NatGateways;
 import com.azure.resourcemanager.network.generated.models.NatRules;
+import com.azure.resourcemanager.network.generated.models.NetworkGroups;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceIpConfigurations;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceLoadBalancers;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceTapConfigurations;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaces;
+import com.azure.resourcemanager.network.generated.models.NetworkManagerCommits;
+import com.azure.resourcemanager.network.generated.models.NetworkManagerDeploymentStatusOperations;
+import com.azure.resourcemanager.network.generated.models.NetworkManagers;
 import com.azure.resourcemanager.network.generated.models.NetworkProfiles;
 import com.azure.resourcemanager.network.generated.models.NetworkSecurityGroups;
 import com.azure.resourcemanager.network.generated.models.NetworkVirtualAppliances;
@@ -201,6 +221,7 @@ import com.azure.resourcemanager.network.generated.models.RouteFilterRules;
 import com.azure.resourcemanager.network.generated.models.RouteFilters;
 import com.azure.resourcemanager.network.generated.models.RouteTables;
 import com.azure.resourcemanager.network.generated.models.Routes;
+import com.azure.resourcemanager.network.generated.models.SecurityConfigurations;
 import com.azure.resourcemanager.network.generated.models.SecurityPartnerProviders;
 import com.azure.resourcemanager.network.generated.models.SecurityRules;
 import com.azure.resourcemanager.network.generated.models.ServiceAssociationLinks;
@@ -209,6 +230,7 @@ import com.azure.resourcemanager.network.generated.models.ServiceEndpointPolicyD
 import com.azure.resourcemanager.network.generated.models.ServiceTags;
 import com.azure.resourcemanager.network.generated.models.Subnets;
 import com.azure.resourcemanager.network.generated.models.Usages;
+import com.azure.resourcemanager.network.generated.models.UserRules;
 import com.azure.resourcemanager.network.generated.models.VirtualApplianceSites;
 import com.azure.resourcemanager.network.generated.models.VirtualApplianceSkus;
 import com.azure.resourcemanager.network.generated.models.VirtualHubBgpConnections;
@@ -331,6 +353,28 @@ public final class NetworkManager {
     private NetworkInterfaceLoadBalancers networkInterfaceLoadBalancers;
 
     private NetworkInterfaceTapConfigurations networkInterfaceTapConfigurations;
+
+    private NetworkManagers networkManagers;
+
+    private NetworkManagerCommits networkManagerCommits;
+
+    private NetworkManagerDeploymentStatusOperations networkManagerDeploymentStatusOperations;
+
+    private EffectiveVirtualNetworks effectiveVirtualNetworks;
+
+    private ActiveConfigurations activeConfigurations;
+
+    private ConnectivityConfigurations connectivityConfigurations;
+
+    private EffectiveConfigurations effectiveConfigurations;
+
+    private NetworkGroups networkGroups;
+
+    private SecurityConfigurations securityConfigurations;
+
+    private AdminRules adminRules;
+
+    private UserRules userRules;
 
     private NetworkProfiles networkProfiles;
 
@@ -1001,6 +1045,100 @@ public final class NetworkManager {
                 new NetworkInterfaceTapConfigurationsImpl(clientObject.getNetworkInterfaceTapConfigurations(), this);
         }
         return networkInterfaceTapConfigurations;
+    }
+
+    /** @return Resource collection API of NetworkManagers. */
+    public NetworkManagers networkManagers() {
+        if (this.networkManagers == null) {
+            this.networkManagers = new NetworkManagersImpl(clientObject.getNetworkManagers(), this);
+        }
+        return networkManagers;
+    }
+
+    /** @return Resource collection API of NetworkManagerCommits. */
+    public NetworkManagerCommits networkManagerCommits() {
+        if (this.networkManagerCommits == null) {
+            this.networkManagerCommits = new NetworkManagerCommitsImpl(clientObject.getNetworkManagerCommits(), this);
+        }
+        return networkManagerCommits;
+    }
+
+    /** @return Resource collection API of NetworkManagerDeploymentStatusOperations. */
+    public NetworkManagerDeploymentStatusOperations networkManagerDeploymentStatusOperations() {
+        if (this.networkManagerDeploymentStatusOperations == null) {
+            this.networkManagerDeploymentStatusOperations =
+                new NetworkManagerDeploymentStatusOperationsImpl(
+                    clientObject.getNetworkManagerDeploymentStatusOperations(), this);
+        }
+        return networkManagerDeploymentStatusOperations;
+    }
+
+    /** @return Resource collection API of EffectiveVirtualNetworks. */
+    public EffectiveVirtualNetworks effectiveVirtualNetworks() {
+        if (this.effectiveVirtualNetworks == null) {
+            this.effectiveVirtualNetworks =
+                new EffectiveVirtualNetworksImpl(clientObject.getEffectiveVirtualNetworks(), this);
+        }
+        return effectiveVirtualNetworks;
+    }
+
+    /** @return Resource collection API of ActiveConfigurations. */
+    public ActiveConfigurations activeConfigurations() {
+        if (this.activeConfigurations == null) {
+            this.activeConfigurations = new ActiveConfigurationsImpl(clientObject.getActiveConfigurations(), this);
+        }
+        return activeConfigurations;
+    }
+
+    /** @return Resource collection API of ConnectivityConfigurations. */
+    public ConnectivityConfigurations connectivityConfigurations() {
+        if (this.connectivityConfigurations == null) {
+            this.connectivityConfigurations =
+                new ConnectivityConfigurationsImpl(clientObject.getConnectivityConfigurations(), this);
+        }
+        return connectivityConfigurations;
+    }
+
+    /** @return Resource collection API of EffectiveConfigurations. */
+    public EffectiveConfigurations effectiveConfigurations() {
+        if (this.effectiveConfigurations == null) {
+            this.effectiveConfigurations =
+                new EffectiveConfigurationsImpl(clientObject.getEffectiveConfigurations(), this);
+        }
+        return effectiveConfigurations;
+    }
+
+    /** @return Resource collection API of NetworkGroups. */
+    public NetworkGroups networkGroups() {
+        if (this.networkGroups == null) {
+            this.networkGroups = new NetworkGroupsImpl(clientObject.getNetworkGroups(), this);
+        }
+        return networkGroups;
+    }
+
+    /** @return Resource collection API of SecurityConfigurations. */
+    public SecurityConfigurations securityConfigurations() {
+        if (this.securityConfigurations == null) {
+            this.securityConfigurations =
+                new SecurityConfigurationsImpl(clientObject.getSecurityConfigurations(), this);
+        }
+        return securityConfigurations;
+    }
+
+    /** @return Resource collection API of AdminRules. */
+    public AdminRules adminRules() {
+        if (this.adminRules == null) {
+            this.adminRules = new AdminRulesImpl(clientObject.getAdminRules(), this);
+        }
+        return adminRules;
+    }
+
+    /** @return Resource collection API of UserRules. */
+    public UserRules userRules() {
+        if (this.userRules == null) {
+            this.userRules = new UserRulesImpl(clientObject.getUserRules(), this);
+        }
+        return userRules;
     }
 
     /** @return Resource collection API of NetworkProfiles. */

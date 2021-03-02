@@ -7,7 +7,6 @@ package com.azure.resourcemanager.postgresql.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.postgresql.generated.PostgreSqlManager;
 import com.azure.resourcemanager.postgresql.generated.fluent.LocationBasedPerformanceTiersClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.PerformanceTierPropertiesInner;
 import com.azure.resourcemanager.postgresql.generated.models.LocationBasedPerformanceTiers;
@@ -19,10 +18,11 @@ public final class LocationBasedPerformanceTiersImpl implements LocationBasedPer
 
     private final LocationBasedPerformanceTiersClient innerClient;
 
-    private final PostgreSqlManager serviceManager;
+    private final com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager;
 
     public LocationBasedPerformanceTiersImpl(
-        LocationBasedPerformanceTiersClient innerClient, PostgreSqlManager serviceManager) {
+        LocationBasedPerformanceTiersClient innerClient,
+        com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -41,7 +41,7 @@ public final class LocationBasedPerformanceTiersImpl implements LocationBasedPer
         return this.innerClient;
     }
 
-    private PostgreSqlManager manager() {
+    private com.azure.resourcemanager.postgresql.generated.PostgreSqlManager manager() {
         return this.serviceManager;
     }
 }

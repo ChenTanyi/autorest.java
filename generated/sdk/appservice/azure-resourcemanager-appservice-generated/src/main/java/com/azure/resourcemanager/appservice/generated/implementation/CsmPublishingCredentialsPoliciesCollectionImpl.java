@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmPublishingCredentialsPoliciesCollectionInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmPublishingCredentialsPoliciesEntityInner;
 import com.azure.resourcemanager.appservice.generated.models.CsmPublishingCredentialsPoliciesCollection;
@@ -15,10 +14,11 @@ public final class CsmPublishingCredentialsPoliciesCollectionImpl
     implements CsmPublishingCredentialsPoliciesCollection {
     private CsmPublishingCredentialsPoliciesCollectionInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
     CsmPublishingCredentialsPoliciesCollectionImpl(
-        CsmPublishingCredentialsPoliciesCollectionInner innerObject, AppServiceManager serviceManager) {
+        CsmPublishingCredentialsPoliciesCollectionInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -65,7 +65,7 @@ public final class CsmPublishingCredentialsPoliciesCollectionImpl
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

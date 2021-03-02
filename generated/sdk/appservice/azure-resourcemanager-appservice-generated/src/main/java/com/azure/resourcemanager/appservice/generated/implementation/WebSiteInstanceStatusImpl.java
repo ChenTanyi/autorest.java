@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.WebSiteInstanceStatusInner;
 import com.azure.resourcemanager.appservice.generated.models.ContainerInfo;
 import com.azure.resourcemanager.appservice.generated.models.SiteRuntimeState;
@@ -16,9 +15,11 @@ import java.util.Map;
 public final class WebSiteInstanceStatusImpl implements WebSiteInstanceStatus {
     private WebSiteInstanceStatusInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    WebSiteInstanceStatusImpl(WebSiteInstanceStatusInner innerObject, AppServiceManager serviceManager) {
+    WebSiteInstanceStatusImpl(
+        WebSiteInstanceStatusInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -76,7 +77,7 @@ public final class WebSiteInstanceStatusImpl implements WebSiteInstanceStatus {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

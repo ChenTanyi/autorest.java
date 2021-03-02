@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.WorkerPoolResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.ComputeModeOptions;
 import com.azure.resourcemanager.appservice.generated.models.SkuDescription;
@@ -18,7 +17,7 @@ public final class WorkerPoolResourceImpl
     implements WorkerPoolResource, WorkerPoolResource.Definition, WorkerPoolResource.Update {
     private WorkerPoolResourceInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -73,7 +72,7 @@ public final class WorkerPoolResourceImpl
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 
@@ -107,7 +106,8 @@ public final class WorkerPoolResourceImpl
         return this;
     }
 
-    WorkerPoolResourceImpl(String name, AppServiceManager serviceManager) {
+    WorkerPoolResourceImpl(
+        String name, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = new WorkerPoolResourceInner();
         this.serviceManager = serviceManager;
         this.workerPoolName = name;
@@ -137,7 +137,9 @@ public final class WorkerPoolResourceImpl
         return this;
     }
 
-    WorkerPoolResourceImpl(WorkerPoolResourceInner innerObject, AppServiceManager serviceManager) {
+    WorkerPoolResourceImpl(
+        WorkerPoolResourceInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

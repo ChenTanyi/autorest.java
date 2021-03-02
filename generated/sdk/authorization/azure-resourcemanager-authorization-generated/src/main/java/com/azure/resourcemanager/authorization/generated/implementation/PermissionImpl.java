@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.authorization.generated.implementation;
 
-import com.azure.resourcemanager.authorization.generated.AuthorizationManager;
 import com.azure.resourcemanager.authorization.generated.fluent.models.PermissionInner;
 import com.azure.resourcemanager.authorization.generated.models.Permission;
 import java.util.Collections;
@@ -13,9 +12,11 @@ import java.util.List;
 public final class PermissionImpl implements Permission {
     private PermissionInner innerObject;
 
-    private final AuthorizationManager serviceManager;
+    private final com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager;
 
-    PermissionImpl(PermissionInner innerObject, AuthorizationManager serviceManager) {
+    PermissionImpl(
+        PermissionInner innerObject,
+        com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -60,7 +61,7 @@ public final class PermissionImpl implements Permission {
         return this.innerObject;
     }
 
-    private AuthorizationManager manager() {
+    private com.azure.resourcemanager.authorization.generated.AuthorizationManager manager() {
         return this.serviceManager;
     }
 }

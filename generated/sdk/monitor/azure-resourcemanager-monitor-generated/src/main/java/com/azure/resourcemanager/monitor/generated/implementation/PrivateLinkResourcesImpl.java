@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.PrivateLinkResourcesClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.PrivateLinkResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.PrivateLinkResource;
@@ -21,9 +20,11 @@ public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
 
     private final PrivateLinkResourcesClient innerClient;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public PrivateLinkResourcesImpl(PrivateLinkResourcesClient innerClient, MonitorManager serviceManager) {
+    public PrivateLinkResourcesImpl(
+        PrivateLinkResourcesClient innerClient,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -69,7 +70,7 @@ public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
         return this.innerClient;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 }

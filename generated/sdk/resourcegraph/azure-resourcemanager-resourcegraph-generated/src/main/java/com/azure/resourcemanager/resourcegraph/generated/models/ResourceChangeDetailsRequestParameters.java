@@ -8,6 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.List;
 
 /** The parameters for a specific change details request. */
 @Fluent
@@ -15,54 +16,54 @@ public final class ResourceChangeDetailsRequestParameters {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(ResourceChangeDetailsRequestParameters.class);
 
     /*
-     * Specifies the resource for a change details request.
+     * Specifies the list of resources for a change details request.
      */
-    @JsonProperty(value = "resourceId", required = true)
-    private String resourceId;
+    @JsonProperty(value = "resourceIds", required = true)
+    private List<String> resourceIds;
 
     /*
-     * Specifies the change ID.
+     * Specifies the list of change IDs for a change details request.
      */
-    @JsonProperty(value = "changeId", required = true)
-    private String changeId;
+    @JsonProperty(value = "changeIds", required = true)
+    private List<String> changeIds;
 
     /**
-     * Get the resourceId property: Specifies the resource for a change details request.
+     * Get the resourceIds property: Specifies the list of resources for a change details request.
      *
-     * @return the resourceId value.
+     * @return the resourceIds value.
      */
-    public String resourceId() {
-        return this.resourceId;
+    public List<String> resourceIds() {
+        return this.resourceIds;
     }
 
     /**
-     * Set the resourceId property: Specifies the resource for a change details request.
+     * Set the resourceIds property: Specifies the list of resources for a change details request.
      *
-     * @param resourceId the resourceId value to set.
+     * @param resourceIds the resourceIds value to set.
      * @return the ResourceChangeDetailsRequestParameters object itself.
      */
-    public ResourceChangeDetailsRequestParameters withResourceId(String resourceId) {
-        this.resourceId = resourceId;
+    public ResourceChangeDetailsRequestParameters withResourceIds(List<String> resourceIds) {
+        this.resourceIds = resourceIds;
         return this;
     }
 
     /**
-     * Get the changeId property: Specifies the change ID.
+     * Get the changeIds property: Specifies the list of change IDs for a change details request.
      *
-     * @return the changeId value.
+     * @return the changeIds value.
      */
-    public String changeId() {
-        return this.changeId;
+    public List<String> changeIds() {
+        return this.changeIds;
     }
 
     /**
-     * Set the changeId property: Specifies the change ID.
+     * Set the changeIds property: Specifies the list of change IDs for a change details request.
      *
-     * @param changeId the changeId value to set.
+     * @param changeIds the changeIds value to set.
      * @return the ResourceChangeDetailsRequestParameters object itself.
      */
-    public ResourceChangeDetailsRequestParameters withChangeId(String changeId) {
-        this.changeId = changeId;
+    public ResourceChangeDetailsRequestParameters withChangeIds(List<String> changeIds) {
+        this.changeIds = changeIds;
         return this;
     }
 
@@ -72,17 +73,17 @@ public final class ResourceChangeDetailsRequestParameters {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
-        if (resourceId() == null) {
+        if (resourceIds() == null) {
             throw logger
                 .logExceptionAsError(
                     new IllegalArgumentException(
-                        "Missing required property resourceId in model ResourceChangeDetailsRequestParameters"));
+                        "Missing required property resourceIds in model ResourceChangeDetailsRequestParameters"));
         }
-        if (changeId() == null) {
+        if (changeIds() == null) {
             throw logger
                 .logExceptionAsError(
                     new IllegalArgumentException(
-                        "Missing required property changeId in model ResourceChangeDetailsRequestParameters"));
+                        "Missing required property changeIds in model ResourceChangeDetailsRequestParameters"));
         }
     }
 }

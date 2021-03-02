@@ -6,7 +6,6 @@ package com.azure.resourcemanager.keyvault.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.keyvault.generated.KeyVaultManager;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.VaultInner;
 import com.azure.resourcemanager.keyvault.generated.models.Vault;
 import com.azure.resourcemanager.keyvault.generated.models.VaultCreateOrUpdateParameters;
@@ -19,7 +18,7 @@ import java.util.Map;
 public final class VaultImpl implements Vault, Vault.Definition, Vault.Update {
     private VaultInner innerObject;
 
-    private final KeyVaultManager serviceManager;
+    private final com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -62,7 +61,7 @@ public final class VaultImpl implements Vault, Vault.Definition, Vault.Update {
         return this.innerObject;
     }
 
-    private KeyVaultManager manager() {
+    private com.azure.resourcemanager.keyvault.generated.KeyVaultManager manager() {
         return this.serviceManager;
     }
 
@@ -97,7 +96,7 @@ public final class VaultImpl implements Vault, Vault.Definition, Vault.Update {
         return this;
     }
 
-    VaultImpl(String name, KeyVaultManager serviceManager) {
+    VaultImpl(String name, com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerObject = new VaultInner();
         this.serviceManager = serviceManager;
         this.vaultName = name;
@@ -129,7 +128,7 @@ public final class VaultImpl implements Vault, Vault.Definition, Vault.Update {
         return this;
     }
 
-    VaultImpl(VaultInner innerObject, KeyVaultManager serviceManager) {
+    VaultImpl(VaultInner innerObject, com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DomainOwnershipIdentifierInner;
 import com.azure.resourcemanager.appservice.generated.models.DomainOwnershipIdentifier;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -14,7 +13,7 @@ public final class DomainOwnershipIdentifierImpl
     implements DomainOwnershipIdentifier, DomainOwnershipIdentifier.Definition, DomainOwnershipIdentifier.Update {
     private DomainOwnershipIdentifierInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -44,7 +43,7 @@ public final class DomainOwnershipIdentifierImpl
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 
@@ -82,7 +81,8 @@ public final class DomainOwnershipIdentifierImpl
         return this;
     }
 
-    DomainOwnershipIdentifierImpl(String name, AppServiceManager serviceManager) {
+    DomainOwnershipIdentifierImpl(
+        String name, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = new DomainOwnershipIdentifierInner();
         this.serviceManager = serviceManager;
         this.name = name;
@@ -113,7 +113,9 @@ public final class DomainOwnershipIdentifierImpl
         return this;
     }
 
-    DomainOwnershipIdentifierImpl(DomainOwnershipIdentifierInner innerObject, AppServiceManager serviceManager) {
+    DomainOwnershipIdentifierImpl(
+        DomainOwnershipIdentifierInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

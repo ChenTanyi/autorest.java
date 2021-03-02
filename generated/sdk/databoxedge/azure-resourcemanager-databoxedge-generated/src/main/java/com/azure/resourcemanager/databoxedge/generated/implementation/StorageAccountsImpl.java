@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.StorageAccountsClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.StorageAccountInner;
 import com.azure.resourcemanager.databoxedge.generated.models.StorageAccount;
@@ -21,9 +20,11 @@ public final class StorageAccountsImpl implements StorageAccounts {
 
     private final StorageAccountsClient innerClient;
 
-    private final DataBoxEdgeManager serviceManager;
+    private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    public StorageAccountsImpl(StorageAccountsClient innerClient, DataBoxEdgeManager serviceManager) {
+    public StorageAccountsImpl(
+        StorageAccountsClient innerClient,
+        com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -193,7 +194,7 @@ public final class StorageAccountsImpl implements StorageAccounts {
         return this.innerClient;
     }
 
-    private DataBoxEdgeManager manager() {
+    private com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager manager() {
         return this.serviceManager;
     }
 

@@ -6,7 +6,6 @@ package com.azure.resourcemanager.postgresql.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.postgresql.generated.PostgreSqlManager;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.ServerInner;
 import com.azure.resourcemanager.postgresql.generated.models.InfrastructureEncryption;
 import com.azure.resourcemanager.postgresql.generated.models.MinimalTlsVersionEnum;
@@ -30,7 +29,7 @@ import java.util.Map;
 public final class ServerImpl implements Server, Server.Definition, Server.Update {
     private ServerInner innerObject;
 
-    private final PostgreSqlManager serviceManager;
+    private final com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -142,7 +141,7 @@ public final class ServerImpl implements Server, Server.Definition, Server.Updat
         return this.innerObject;
     }
 
-    private PostgreSqlManager manager() {
+    private com.azure.resourcemanager.postgresql.generated.PostgreSqlManager manager() {
         return this.serviceManager;
     }
 
@@ -177,7 +176,7 @@ public final class ServerImpl implements Server, Server.Definition, Server.Updat
         return this;
     }
 
-    ServerImpl(String name, PostgreSqlManager serviceManager) {
+    ServerImpl(String name, com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager) {
         this.innerObject = new ServerInner();
         this.serviceManager = serviceManager;
         this.serverName = name;
@@ -207,7 +206,8 @@ public final class ServerImpl implements Server, Server.Definition, Server.Updat
         return this;
     }
 
-    ServerImpl(ServerInner innerObject, PostgreSqlManager serviceManager) {
+    ServerImpl(
+        ServerInner innerObject, com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

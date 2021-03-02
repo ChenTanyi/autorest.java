@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AnalysisDefinitionInner;
 import com.azure.resourcemanager.appservice.generated.models.AnalysisDefinition;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -12,9 +11,11 @@ import com.azure.resourcemanager.appservice.generated.models.SystemData;
 public final class AnalysisDefinitionImpl implements AnalysisDefinition {
     private AnalysisDefinitionInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    AnalysisDefinitionImpl(AnalysisDefinitionInner innerObject, AppServiceManager serviceManager) {
+    AnalysisDefinitionImpl(
+        AnalysisDefinitionInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -47,7 +48,7 @@ public final class AnalysisDefinitionImpl implements AnalysisDefinition {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

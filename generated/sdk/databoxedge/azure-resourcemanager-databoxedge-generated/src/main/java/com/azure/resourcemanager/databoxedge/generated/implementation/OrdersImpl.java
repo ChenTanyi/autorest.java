@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.OrdersClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.OrderInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Order;
@@ -21,9 +20,10 @@ public final class OrdersImpl implements Orders {
 
     private final OrdersClient innerClient;
 
-    private final DataBoxEdgeManager serviceManager;
+    private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    public OrdersImpl(OrdersClient innerClient, DataBoxEdgeManager serviceManager) {
+    public OrdersImpl(
+        OrdersClient innerClient, com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -91,7 +91,7 @@ public final class OrdersImpl implements Orders {
         return this.innerClient;
     }
 
-    private DataBoxEdgeManager manager() {
+    private com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager manager() {
         return this.serviceManager;
     }
 }

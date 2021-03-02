@@ -4,16 +4,16 @@
 
 package com.azure.resourcemanager.azurekusto.generated.implementation;
 
-import com.azure.resourcemanager.azurekusto.generated.KustoManager;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.DatabaseInner;
 import com.azure.resourcemanager.azurekusto.generated.models.Database;
 
 public final class DatabaseImpl implements Database {
     private DatabaseInner innerObject;
 
-    private final KustoManager serviceManager;
+    private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
-    DatabaseImpl(DatabaseInner innerObject, KustoManager serviceManager) {
+    DatabaseImpl(
+        DatabaseInner innerObject, com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -38,7 +38,7 @@ public final class DatabaseImpl implements Database {
         return this.innerObject;
     }
 
-    private KustoManager manager() {
+    private com.azure.resourcemanager.azurekusto.generated.KustoManager manager() {
         return this.serviceManager;
     }
 }

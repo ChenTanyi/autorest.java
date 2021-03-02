@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.monitor.generated.implementation;
 
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.BaselineMetadataValueInner;
 import com.azure.resourcemanager.monitor.generated.fluent.models.BaselineResponseInner;
 import com.azure.resourcemanager.monitor.generated.fluent.models.LocalizableStringInner;
@@ -21,9 +20,10 @@ import java.util.stream.Collectors;
 public final class BaselineResponseImpl implements BaselineResponse {
     private BaselineResponseInner innerObject;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    BaselineResponseImpl(BaselineResponseInner innerObject, MonitorManager serviceManager) {
+    BaselineResponseImpl(
+        BaselineResponseInner innerObject, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -93,7 +93,7 @@ public final class BaselineResponseImpl implements BaselineResponse {
         return this.innerObject;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 }

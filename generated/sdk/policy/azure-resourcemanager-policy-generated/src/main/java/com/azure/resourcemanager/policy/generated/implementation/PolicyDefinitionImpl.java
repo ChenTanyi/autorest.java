@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.policy.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.policy.generated.PolicyManager;
 import com.azure.resourcemanager.policy.generated.fluent.models.PolicyDefinitionInner;
 import com.azure.resourcemanager.policy.generated.models.ParameterDefinitionsValue;
 import com.azure.resourcemanager.policy.generated.models.PolicyDefinition;
@@ -17,7 +16,7 @@ public final class PolicyDefinitionImpl
     implements PolicyDefinition, PolicyDefinition.Definition, PolicyDefinition.Update {
     private PolicyDefinitionInner innerObject;
 
-    private final PolicyManager serviceManager;
+    private final com.azure.resourcemanager.policy.generated.PolicyManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -68,7 +67,7 @@ public final class PolicyDefinitionImpl
         return this.innerObject;
     }
 
-    private PolicyManager manager() {
+    private com.azure.resourcemanager.policy.generated.PolicyManager manager() {
         return this.serviceManager;
     }
 
@@ -94,7 +93,7 @@ public final class PolicyDefinitionImpl
         return this;
     }
 
-    PolicyDefinitionImpl(String name, PolicyManager serviceManager) {
+    PolicyDefinitionImpl(String name, com.azure.resourcemanager.policy.generated.PolicyManager serviceManager) {
         this.innerObject = new PolicyDefinitionInner();
         this.serviceManager = serviceManager;
         this.policyDefinitionName = name;
@@ -124,7 +123,8 @@ public final class PolicyDefinitionImpl
         return this;
     }
 
-    PolicyDefinitionImpl(PolicyDefinitionInner innerObject, PolicyManager serviceManager) {
+    PolicyDefinitionImpl(
+        PolicyDefinitionInner innerObject, com.azure.resourcemanager.policy.generated.PolicyManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.policyDefinitionName = Utils.getValueFromIdByName(innerObject.id(), "policyDefinitions");

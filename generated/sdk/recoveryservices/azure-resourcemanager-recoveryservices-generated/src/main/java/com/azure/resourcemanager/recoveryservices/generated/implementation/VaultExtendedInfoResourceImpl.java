@@ -4,16 +4,17 @@
 
 package com.azure.resourcemanager.recoveryservices.generated.implementation;
 
-import com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.models.VaultExtendedInfoResourceInner;
 import com.azure.resourcemanager.recoveryservices.generated.models.VaultExtendedInfoResource;
 
 public final class VaultExtendedInfoResourceImpl implements VaultExtendedInfoResource {
     private VaultExtendedInfoResourceInner innerObject;
 
-    private final RecoveryServicesManager serviceManager;
+    private final com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager serviceManager;
 
-    VaultExtendedInfoResourceImpl(VaultExtendedInfoResourceInner innerObject, RecoveryServicesManager serviceManager) {
+    VaultExtendedInfoResourceImpl(
+        VaultExtendedInfoResourceInner innerObject,
+        com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -54,7 +55,7 @@ public final class VaultExtendedInfoResourceImpl implements VaultExtendedInfoRes
         return this.innerObject;
     }
 
-    private RecoveryServicesManager manager() {
+    private com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager manager() {
         return this.serviceManager;
     }
 }

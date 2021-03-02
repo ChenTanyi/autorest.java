@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.resourcegraph.generated.implementation;
 
-import com.azure.resourcemanager.resourcegraph.generated.ResourceGraphManager;
 import com.azure.resourcemanager.resourcegraph.generated.fluent.models.ResourceChangeDataInner;
 import com.azure.resourcemanager.resourcegraph.generated.models.ChangeType;
 import com.azure.resourcemanager.resourcegraph.generated.models.ResourceChangeData;
@@ -16,9 +15,11 @@ import java.util.List;
 public final class ResourceChangeDataImpl implements ResourceChangeData {
     private ResourceChangeDataInner innerObject;
 
-    private final ResourceGraphManager serviceManager;
+    private final com.azure.resourcemanager.resourcegraph.generated.ResourceGraphManager serviceManager;
 
-    ResourceChangeDataImpl(ResourceChangeDataInner innerObject, ResourceGraphManager serviceManager) {
+    ResourceChangeDataImpl(
+        ResourceChangeDataInner innerObject,
+        com.azure.resourcemanager.resourcegraph.generated.ResourceGraphManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -56,7 +57,7 @@ public final class ResourceChangeDataImpl implements ResourceChangeData {
         return this.innerObject;
     }
 
-    private ResourceGraphManager manager() {
+    private com.azure.resourcemanager.resourcegraph.generated.ResourceGraphManager manager() {
         return this.serviceManager;
     }
 }

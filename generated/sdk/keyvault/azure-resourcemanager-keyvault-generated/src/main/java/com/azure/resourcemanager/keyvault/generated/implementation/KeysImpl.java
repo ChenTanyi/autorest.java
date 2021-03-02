@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.keyvault.generated.KeyVaultManager;
 import com.azure.resourcemanager.keyvault.generated.fluent.KeysClient;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.KeyInner;
 import com.azure.resourcemanager.keyvault.generated.models.Key;
@@ -21,9 +20,10 @@ public final class KeysImpl implements Keys {
 
     private final KeysClient innerClient;
 
-    private final KeyVaultManager serviceManager;
+    private final com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager;
 
-    public KeysImpl(KeysClient innerClient, KeyVaultManager serviceManager) {
+    public KeysImpl(
+        KeysClient innerClient, com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -152,7 +152,7 @@ public final class KeysImpl implements Keys {
         return this.innerClient;
     }
 
-    private KeyVaultManager manager() {
+    private com.azure.resourcemanager.keyvault.generated.KeyVaultManager manager() {
         return this.serviceManager;
     }
 

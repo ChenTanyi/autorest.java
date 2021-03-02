@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.IpFilterRuleInner;
 import com.azure.resourcemanager.eventhubs.generated.models.IpAction;
 import com.azure.resourcemanager.eventhubs.generated.models.IpFilterRule;
@@ -13,7 +12,7 @@ import com.azure.resourcemanager.eventhubs.generated.models.IpFilterRule;
 public final class IpFilterRuleImpl implements IpFilterRule, IpFilterRule.Definition, IpFilterRule.Update {
     private IpFilterRuleInner innerObject;
 
-    private final EventHubsManager serviceManager;
+    private final com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -43,7 +42,7 @@ public final class IpFilterRuleImpl implements IpFilterRule, IpFilterRule.Defini
         return this.innerObject;
     }
 
-    private EventHubsManager manager() {
+    private com.azure.resourcemanager.eventhubs.generated.EventHubsManager manager() {
         return this.serviceManager;
     }
 
@@ -81,7 +80,7 @@ public final class IpFilterRuleImpl implements IpFilterRule, IpFilterRule.Defini
         return this;
     }
 
-    IpFilterRuleImpl(String name, EventHubsManager serviceManager) {
+    IpFilterRuleImpl(String name, com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = new IpFilterRuleInner();
         this.serviceManager = serviceManager;
         this.ipFilterRuleName = name;
@@ -113,7 +112,8 @@ public final class IpFilterRuleImpl implements IpFilterRule, IpFilterRule.Defini
         return this;
     }
 
-    IpFilterRuleImpl(IpFilterRuleInner innerObject, EventHubsManager serviceManager) {
+    IpFilterRuleImpl(
+        IpFilterRuleInner innerObject, com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

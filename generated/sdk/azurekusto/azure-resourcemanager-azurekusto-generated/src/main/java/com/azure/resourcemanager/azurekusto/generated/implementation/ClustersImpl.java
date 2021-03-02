@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.azurekusto.generated.KustoManager;
 import com.azure.resourcemanager.azurekusto.generated.fluent.ClustersClient;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.AzureResourceSkuInner;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.CheckNameResultInner;
@@ -35,9 +34,10 @@ public final class ClustersImpl implements Clusters {
 
     private final ClustersClient innerClient;
 
-    private final KustoManager serviceManager;
+    private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
-    public ClustersImpl(ClustersClient innerClient, KustoManager serviceManager) {
+    public ClustersImpl(
+        ClustersClient innerClient, com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -323,7 +323,7 @@ public final class ClustersImpl implements Clusters {
         return this.innerClient;
     }
 
-    private KustoManager manager() {
+    private com.azure.resourcemanager.azurekusto.generated.KustoManager manager() {
         return this.serviceManager;
     }
 

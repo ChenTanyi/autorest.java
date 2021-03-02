@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AddressResponseInner;
 import com.azure.resourcemanager.appservice.generated.models.AddressResponse;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -15,9 +14,11 @@ import java.util.List;
 public final class AddressResponseImpl implements AddressResponse {
     private AddressResponseInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    AddressResponseImpl(AddressResponseInner innerObject, AppServiceManager serviceManager) {
+    AddressResponseImpl(
+        AddressResponseInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -72,7 +73,7 @@ public final class AddressResponseImpl implements AddressResponse {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

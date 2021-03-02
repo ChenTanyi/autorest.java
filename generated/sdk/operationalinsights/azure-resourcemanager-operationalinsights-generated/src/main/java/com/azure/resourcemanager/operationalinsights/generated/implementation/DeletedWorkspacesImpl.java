@@ -7,7 +7,6 @@ package com.azure.resourcemanager.operationalinsights.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.DeletedWorkspacesClient;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.WorkspaceInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.DeletedWorkspaces;
@@ -19,9 +18,11 @@ public final class DeletedWorkspacesImpl implements DeletedWorkspaces {
 
     private final DeletedWorkspacesClient innerClient;
 
-    private final LogAnalyticsManager serviceManager;
+    private final com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager;
 
-    public DeletedWorkspacesImpl(DeletedWorkspacesClient innerClient, LogAnalyticsManager serviceManager) {
+    public DeletedWorkspacesImpl(
+        DeletedWorkspacesClient innerClient,
+        com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -50,7 +51,7 @@ public final class DeletedWorkspacesImpl implements DeletedWorkspaces {
         return this.innerClient;
     }
 
-    private LogAnalyticsManager manager() {
+    private com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager manager() {
         return this.serviceManager;
     }
 }

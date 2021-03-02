@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.locks.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.locks.generated.ManagementLockManager;
 import com.azure.resourcemanager.locks.generated.fluent.models.ManagementLockObjectInner;
 import com.azure.resourcemanager.locks.generated.models.LockLevel;
 import com.azure.resourcemanager.locks.generated.models.ManagementLockObject;
@@ -17,7 +16,7 @@ public final class ManagementLockObjectImpl
     implements ManagementLockObject, ManagementLockObject.Definition, ManagementLockObject.Update {
     private ManagementLockObjectInner innerObject;
 
-    private final ManagementLockManager serviceManager;
+    private final com.azure.resourcemanager.locks.generated.ManagementLockManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -52,7 +51,7 @@ public final class ManagementLockObjectImpl
         return this.innerObject;
     }
 
-    private ManagementLockManager manager() {
+    private com.azure.resourcemanager.locks.generated.ManagementLockManager manager() {
         return this.serviceManager;
     }
 
@@ -86,7 +85,8 @@ public final class ManagementLockObjectImpl
         return this;
     }
 
-    ManagementLockObjectImpl(String name, ManagementLockManager serviceManager) {
+    ManagementLockObjectImpl(
+        String name, com.azure.resourcemanager.locks.generated.ManagementLockManager serviceManager) {
         this.innerObject = new ManagementLockObjectInner();
         this.serviceManager = serviceManager;
         this.lockName = name;
@@ -117,7 +117,9 @@ public final class ManagementLockObjectImpl
         return this;
     }
 
-    ManagementLockObjectImpl(ManagementLockObjectInner innerObject, ManagementLockManager serviceManager) {
+    ManagementLockObjectImpl(
+        ManagementLockObjectInner innerObject,
+        com.azure.resourcemanager.locks.generated.ManagementLockManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

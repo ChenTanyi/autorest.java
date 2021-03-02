@@ -7,7 +7,6 @@ package com.azure.resourcemanager.sqlvirtualmachine.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.sqlvirtualmachine.generated.SqlVirtualMachineManager;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.OperationsClient;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.Operation;
@@ -19,9 +18,11 @@ public final class OperationsImpl implements Operations {
 
     private final OperationsClient innerClient;
 
-    private final SqlVirtualMachineManager serviceManager;
+    private final com.azure.resourcemanager.sqlvirtualmachine.generated.SqlVirtualMachineManager serviceManager;
 
-    public OperationsImpl(OperationsClient innerClient, SqlVirtualMachineManager serviceManager) {
+    public OperationsImpl(
+        OperationsClient innerClient,
+        com.azure.resourcemanager.sqlvirtualmachine.generated.SqlVirtualMachineManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +41,7 @@ public final class OperationsImpl implements Operations {
         return this.innerClient;
     }
 
-    private SqlVirtualMachineManager manager() {
+    private com.azure.resourcemanager.sqlvirtualmachine.generated.SqlVirtualMachineManager manager() {
         return this.serviceManager;
     }
 }

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.monitor.generated.implementation;
 
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.LocalizableStringInner;
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricInner;
 import com.azure.resourcemanager.monitor.generated.models.LocalizableString;
@@ -17,9 +16,9 @@ import java.util.List;
 public final class MetricImpl implements Metric {
     private MetricInner innerObject;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    MetricImpl(MetricInner innerObject, MonitorManager serviceManager) {
+    MetricImpl(MetricInner innerObject, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -58,7 +57,7 @@ public final class MetricImpl implements Metric {
         return this.innerObject;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 }

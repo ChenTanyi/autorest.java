@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.operationalinsights.generated.implementation;
 
-import com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.UsageMetricInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.MetricName;
 import com.azure.resourcemanager.operationalinsights.generated.models.UsageMetric;
@@ -13,9 +12,11 @@ import java.time.OffsetDateTime;
 public final class UsageMetricImpl implements UsageMetric {
     private UsageMetricInner innerObject;
 
-    private final LogAnalyticsManager serviceManager;
+    private final com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager;
 
-    UsageMetricImpl(UsageMetricInner innerObject, LogAnalyticsManager serviceManager) {
+    UsageMetricImpl(
+        UsageMetricInner innerObject,
+        com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -48,7 +49,7 @@ public final class UsageMetricImpl implements UsageMetric {
         return this.innerObject;
     }
 
-    private LogAnalyticsManager manager() {
+    private com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager manager() {
         return this.serviceManager;
     }
 }

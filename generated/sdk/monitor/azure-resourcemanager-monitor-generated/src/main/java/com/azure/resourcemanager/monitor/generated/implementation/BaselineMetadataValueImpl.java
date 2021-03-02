@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.monitor.generated.implementation;
 
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.BaselineMetadataValueInner;
 import com.azure.resourcemanager.monitor.generated.fluent.models.LocalizableStringInner;
 import com.azure.resourcemanager.monitor.generated.models.BaselineMetadataValue;
@@ -13,9 +12,11 @@ import com.azure.resourcemanager.monitor.generated.models.LocalizableString;
 public final class BaselineMetadataValueImpl implements BaselineMetadataValue {
     private BaselineMetadataValueInner innerObject;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    BaselineMetadataValueImpl(BaselineMetadataValueInner innerObject, MonitorManager serviceManager) {
+    BaselineMetadataValueImpl(
+        BaselineMetadataValueInner innerObject,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -37,7 +38,7 @@ public final class BaselineMetadataValueImpl implements BaselineMetadataValue {
         return this.innerObject;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 }

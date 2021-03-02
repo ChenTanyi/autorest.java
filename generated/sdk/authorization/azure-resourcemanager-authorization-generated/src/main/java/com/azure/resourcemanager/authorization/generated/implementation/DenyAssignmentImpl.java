@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.authorization.generated.implementation;
 
-import com.azure.resourcemanager.authorization.generated.AuthorizationManager;
 import com.azure.resourcemanager.authorization.generated.fluent.models.DenyAssignmentInner;
 import com.azure.resourcemanager.authorization.generated.models.DenyAssignment;
 import com.azure.resourcemanager.authorization.generated.models.DenyAssignmentPermission;
@@ -15,9 +14,11 @@ import java.util.List;
 public final class DenyAssignmentImpl implements DenyAssignment {
     private DenyAssignmentInner innerObject;
 
-    private final AuthorizationManager serviceManager;
+    private final com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager;
 
-    DenyAssignmentImpl(DenyAssignmentInner innerObject, AuthorizationManager serviceManager) {
+    DenyAssignmentImpl(
+        DenyAssignmentInner innerObject,
+        com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -85,7 +86,7 @@ public final class DenyAssignmentImpl implements DenyAssignment {
         return this.innerObject;
     }
 
-    private AuthorizationManager manager() {
+    private com.azure.resourcemanager.authorization.generated.AuthorizationManager manager() {
         return this.serviceManager;
     }
 }

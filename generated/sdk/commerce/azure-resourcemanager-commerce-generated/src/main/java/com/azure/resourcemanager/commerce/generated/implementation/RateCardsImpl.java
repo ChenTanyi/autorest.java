@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.commerce.generated.UsageManager;
 import com.azure.resourcemanager.commerce.generated.fluent.RateCardsClient;
 import com.azure.resourcemanager.commerce.generated.fluent.models.ResourceRateCardInfoInner;
 import com.azure.resourcemanager.commerce.generated.models.RateCards;
@@ -20,9 +19,10 @@ public final class RateCardsImpl implements RateCards {
 
     private final RateCardsClient innerClient;
 
-    private final UsageManager serviceManager;
+    private final com.azure.resourcemanager.commerce.generated.UsageManager serviceManager;
 
-    public RateCardsImpl(RateCardsClient innerClient, UsageManager serviceManager) {
+    public RateCardsImpl(
+        RateCardsClient innerClient, com.azure.resourcemanager.commerce.generated.UsageManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -53,7 +53,7 @@ public final class RateCardsImpl implements RateCards {
         return this.innerClient;
     }
 
-    private UsageManager manager() {
+    private com.azure.resourcemanager.commerce.generated.UsageManager manager() {
         return this.serviceManager;
     }
 }

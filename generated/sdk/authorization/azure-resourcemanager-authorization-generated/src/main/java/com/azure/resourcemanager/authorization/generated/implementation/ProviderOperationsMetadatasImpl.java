@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.authorization.generated.AuthorizationManager;
 import com.azure.resourcemanager.authorization.generated.fluent.ProviderOperationsMetadatasClient;
 import com.azure.resourcemanager.authorization.generated.fluent.models.ProviderOperationsMetadataInner;
 import com.azure.resourcemanager.authorization.generated.models.ProviderOperationsMetadata;
@@ -21,10 +20,11 @@ public final class ProviderOperationsMetadatasImpl implements ProviderOperations
 
     private final ProviderOperationsMetadatasClient innerClient;
 
-    private final AuthorizationManager serviceManager;
+    private final com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager;
 
     public ProviderOperationsMetadatasImpl(
-        ProviderOperationsMetadatasClient innerClient, AuthorizationManager serviceManager) {
+        ProviderOperationsMetadatasClient innerClient,
+        com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -67,7 +67,7 @@ public final class ProviderOperationsMetadatasImpl implements ProviderOperations
         return this.innerClient;
     }
 
-    private AuthorizationManager manager() {
+    private com.azure.resourcemanager.authorization.generated.AuthorizationManager manager() {
         return this.serviceManager;
     }
 }

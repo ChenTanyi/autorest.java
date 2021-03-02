@@ -5,14 +5,13 @@
 package com.azure.resourcemanager.monitor.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.ScopedResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.ScopedResource;
 
 public final class ScopedResourceImpl implements ScopedResource, ScopedResource.Definition, ScopedResource.Update {
     private ScopedResourceInner innerObject;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -38,7 +37,7 @@ public final class ScopedResourceImpl implements ScopedResource, ScopedResource.
         return this.innerObject;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 
@@ -72,7 +71,7 @@ public final class ScopedResourceImpl implements ScopedResource, ScopedResource.
         return this;
     }
 
-    ScopedResourceImpl(String name, MonitorManager serviceManager) {
+    ScopedResourceImpl(String name, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = new ScopedResourceInner();
         this.serviceManager = serviceManager;
         this.name = name;
@@ -100,7 +99,8 @@ public final class ScopedResourceImpl implements ScopedResource, ScopedResource.
         return this;
     }
 
-    ScopedResourceImpl(ScopedResourceInner innerObject, MonitorManager serviceManager) {
+    ScopedResourceImpl(
+        ScopedResourceInner innerObject, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

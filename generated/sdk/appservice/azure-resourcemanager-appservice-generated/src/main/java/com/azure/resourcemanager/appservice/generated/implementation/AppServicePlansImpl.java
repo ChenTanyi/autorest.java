@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.AppServicePlansClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServicePlanInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CapabilityInner;
@@ -42,9 +41,11 @@ public final class AppServicePlansImpl implements AppServicePlans {
 
     private final AppServicePlansClient innerClient;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    public AppServicePlansImpl(AppServicePlansClient innerClient, AppServiceManager serviceManager) {
+    public AppServicePlansImpl(
+        AppServicePlansClient innerClient,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -645,7 +646,7 @@ public final class AppServicePlansImpl implements AppServicePlans {
         return this.innerClient;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 

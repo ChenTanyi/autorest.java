@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.authorization.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.authorization.generated.AuthorizationManager;
 import com.azure.resourcemanager.authorization.generated.fluent.models.RoleAssignmentInner;
 import com.azure.resourcemanager.authorization.generated.models.PrincipalType;
 import com.azure.resourcemanager.authorization.generated.models.RoleAssignment;
@@ -14,9 +13,11 @@ import com.azure.resourcemanager.authorization.generated.models.RoleAssignmentCr
 public final class RoleAssignmentImpl implements RoleAssignment, RoleAssignment.Definition {
     private RoleAssignmentInner innerObject;
 
-    private final AuthorizationManager serviceManager;
+    private final com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager;
 
-    RoleAssignmentImpl(RoleAssignmentInner innerObject, AuthorizationManager serviceManager) {
+    RoleAssignmentImpl(
+        RoleAssignmentInner innerObject,
+        com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -57,7 +58,7 @@ public final class RoleAssignmentImpl implements RoleAssignment, RoleAssignment.
         return this.innerObject;
     }
 
-    private AuthorizationManager manager() {
+    private com.azure.resourcemanager.authorization.generated.AuthorizationManager manager() {
         return this.serviceManager;
     }
 
@@ -92,7 +93,8 @@ public final class RoleAssignmentImpl implements RoleAssignment, RoleAssignment.
         return this;
     }
 
-    RoleAssignmentImpl(String name, AuthorizationManager serviceManager) {
+    RoleAssignmentImpl(
+        String name, com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerObject = new RoleAssignmentInner();
         this.serviceManager = serviceManager;
         this.roleAssignmentName = name;

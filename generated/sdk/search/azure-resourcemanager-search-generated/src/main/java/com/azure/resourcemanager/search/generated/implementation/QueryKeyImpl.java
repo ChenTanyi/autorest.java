@@ -4,16 +4,15 @@
 
 package com.azure.resourcemanager.search.generated.implementation;
 
-import com.azure.resourcemanager.search.generated.SearchManager;
 import com.azure.resourcemanager.search.generated.fluent.models.QueryKeyInner;
 import com.azure.resourcemanager.search.generated.models.QueryKey;
 
 public final class QueryKeyImpl implements QueryKey {
     private QueryKeyInner innerObject;
 
-    private final SearchManager serviceManager;
+    private final com.azure.resourcemanager.search.generated.SearchManager serviceManager;
 
-    QueryKeyImpl(QueryKeyInner innerObject, SearchManager serviceManager) {
+    QueryKeyImpl(QueryKeyInner innerObject, com.azure.resourcemanager.search.generated.SearchManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -30,7 +29,7 @@ public final class QueryKeyImpl implements QueryKey {
         return this.innerObject;
     }
 
-    private SearchManager manager() {
+    private com.azure.resourcemanager.search.generated.SearchManager manager() {
         return this.serviceManager;
     }
 }

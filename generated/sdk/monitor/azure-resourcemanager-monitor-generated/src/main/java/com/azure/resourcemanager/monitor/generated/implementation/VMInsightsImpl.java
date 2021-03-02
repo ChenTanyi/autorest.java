@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.VMInsightsClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.VMInsightsOnboardingStatusInner;
 import com.azure.resourcemanager.monitor.generated.models.VMInsights;
@@ -20,9 +19,10 @@ public final class VMInsightsImpl implements VMInsights {
 
     private final VMInsightsClient innerClient;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public VMInsightsImpl(VMInsightsClient innerClient, MonitorManager serviceManager) {
+    public VMInsightsImpl(
+        VMInsightsClient innerClient, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -54,7 +54,7 @@ public final class VMInsightsImpl implements VMInsights {
         return this.innerClient;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 }

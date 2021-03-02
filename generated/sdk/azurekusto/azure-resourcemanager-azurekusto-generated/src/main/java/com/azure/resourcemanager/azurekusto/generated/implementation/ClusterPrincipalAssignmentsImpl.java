@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.azurekusto.generated.KustoManager;
 import com.azure.resourcemanager.azurekusto.generated.fluent.ClusterPrincipalAssignmentsClient;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.CheckNameResultInner;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.ClusterPrincipalAssignmentInner;
@@ -24,9 +23,11 @@ public final class ClusterPrincipalAssignmentsImpl implements ClusterPrincipalAs
 
     private final ClusterPrincipalAssignmentsClient innerClient;
 
-    private final KustoManager serviceManager;
+    private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
-    public ClusterPrincipalAssignmentsImpl(ClusterPrincipalAssignmentsClient innerClient, KustoManager serviceManager) {
+    public ClusterPrincipalAssignmentsImpl(
+        ClusterPrincipalAssignmentsClient innerClient,
+        com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -231,7 +232,7 @@ public final class ClusterPrincipalAssignmentsImpl implements ClusterPrincipalAs
         return this.innerClient;
     }
 
-    private KustoManager manager() {
+    private com.azure.resourcemanager.azurekusto.generated.KustoManager manager() {
         return this.serviceManager;
     }
 

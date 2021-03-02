@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.costmanagement.generated.CostManagementManager;
 import com.azure.resourcemanager.costmanagement.generated.fluent.ViewsClient;
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.ViewInner;
 import com.azure.resourcemanager.costmanagement.generated.models.View;
@@ -21,9 +20,11 @@ public final class ViewsImpl implements Views {
 
     private final ViewsClient innerClient;
 
-    private final CostManagementManager serviceManager;
+    private final com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager;
 
-    public ViewsImpl(ViewsClient innerClient, CostManagementManager serviceManager) {
+    public ViewsImpl(
+        ViewsClient innerClient,
+        com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -230,7 +231,7 @@ public final class ViewsImpl implements Views {
         return this.innerClient;
     }
 
-    private CostManagementManager manager() {
+    private com.azure.resourcemanager.costmanagement.generated.CostManagementManager manager() {
         return this.serviceManager;
     }
 

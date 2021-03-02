@@ -7,7 +7,6 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.ProvidersClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ApplicationStackResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmOperationDescriptionInner;
@@ -27,9 +26,10 @@ public final class ProvidersImpl implements Providers {
 
     private final ProvidersClient innerClient;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    public ProvidersImpl(ProvidersClient innerClient, AppServiceManager serviceManager) {
+    public ProvidersImpl(
+        ProvidersClient innerClient, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -114,7 +114,7 @@ public final class ProvidersImpl implements Providers {
         return this.innerClient;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

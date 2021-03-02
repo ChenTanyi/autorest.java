@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.azurekusto.generated.implementation;
 
-import com.azure.resourcemanager.azurekusto.generated.KustoManager;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.DiagnoseVirtualNetworkResultInner;
 import com.azure.resourcemanager.azurekusto.generated.models.DiagnoseVirtualNetworkResult;
 import java.util.Collections;
@@ -13,9 +12,11 @@ import java.util.List;
 public final class DiagnoseVirtualNetworkResultImpl implements DiagnoseVirtualNetworkResult {
     private DiagnoseVirtualNetworkResultInner innerObject;
 
-    private final KustoManager serviceManager;
+    private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
-    DiagnoseVirtualNetworkResultImpl(DiagnoseVirtualNetworkResultInner innerObject, KustoManager serviceManager) {
+    DiagnoseVirtualNetworkResultImpl(
+        DiagnoseVirtualNetworkResultInner innerObject,
+        com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -33,7 +34,7 @@ public final class DiagnoseVirtualNetworkResultImpl implements DiagnoseVirtualNe
         return this.innerObject;
     }
 
-    private KustoManager manager() {
+    private com.azure.resourcemanager.azurekusto.generated.KustoManager manager() {
         return this.serviceManager;
     }
 }

@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.azurekusto.generated.KustoManager;
 import com.azure.resourcemanager.azurekusto.generated.fluent.DatabasesClient;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.CheckNameResultInner;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.DatabaseInner;
@@ -29,9 +28,10 @@ public final class DatabasesImpl implements Databases {
 
     private final DatabasesClient innerClient;
 
-    private final KustoManager serviceManager;
+    private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
-    public DatabasesImpl(DatabasesClient innerClient, KustoManager serviceManager) {
+    public DatabasesImpl(
+        DatabasesClient innerClient, com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -242,7 +242,7 @@ public final class DatabasesImpl implements Databases {
         return this.innerClient;
     }
 
-    private KustoManager manager() {
+    private com.azure.resourcemanager.azurekusto.generated.KustoManager manager() {
         return this.serviceManager;
     }
 }

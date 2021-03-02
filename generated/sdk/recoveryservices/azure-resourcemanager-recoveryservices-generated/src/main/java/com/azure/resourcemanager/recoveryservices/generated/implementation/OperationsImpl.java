@@ -7,7 +7,6 @@ package com.azure.resourcemanager.recoveryservices.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.OperationsClient;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.models.ClientDiscoveryValueForSingleApiInner;
 import com.azure.resourcemanager.recoveryservices.generated.models.ClientDiscoveryValueForSingleApi;
@@ -19,9 +18,11 @@ public final class OperationsImpl implements Operations {
 
     private final OperationsClient innerClient;
 
-    private final RecoveryServicesManager serviceManager;
+    private final com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager serviceManager;
 
-    public OperationsImpl(OperationsClient innerClient, RecoveryServicesManager serviceManager) {
+    public OperationsImpl(
+        OperationsClient innerClient,
+        com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +41,7 @@ public final class OperationsImpl implements Operations {
         return this.innerClient;
     }
 
-    private RecoveryServicesManager manager() {
+    private com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager manager() {
         return this.serviceManager;
     }
 }

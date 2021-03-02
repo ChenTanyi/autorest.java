@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.SharesClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.ShareInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Share;
@@ -21,9 +20,10 @@ public final class SharesImpl implements Shares {
 
     private final SharesClient innerClient;
 
-    private final DataBoxEdgeManager serviceManager;
+    private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    public SharesImpl(SharesClient innerClient, DataBoxEdgeManager serviceManager) {
+    public SharesImpl(
+        SharesClient innerClient, com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -193,7 +193,7 @@ public final class SharesImpl implements Shares {
         return this.innerClient;
     }
 
-    private DataBoxEdgeManager manager() {
+    private com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager manager() {
         return this.serviceManager;
     }
 

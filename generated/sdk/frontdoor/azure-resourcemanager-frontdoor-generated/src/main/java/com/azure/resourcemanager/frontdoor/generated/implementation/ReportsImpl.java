@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.frontdoor.generated.FrontDoorManager;
 import com.azure.resourcemanager.frontdoor.generated.fluent.ReportsClient;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.LatencyScorecardInner;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.TimeseriesInner;
@@ -26,9 +25,10 @@ public final class ReportsImpl implements Reports {
 
     private final ReportsClient innerClient;
 
-    private final FrontDoorManager serviceManager;
+    private final com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager;
 
-    public ReportsImpl(ReportsClient innerClient, FrontDoorManager serviceManager) {
+    public ReportsImpl(
+        ReportsClient innerClient, com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -145,7 +145,7 @@ public final class ReportsImpl implements Reports {
         return this.innerClient;
     }
 
-    private FrontDoorManager manager() {
+    private com.azure.resourcemanager.frontdoor.generated.FrontDoorManager manager() {
         return this.serviceManager;
     }
 }

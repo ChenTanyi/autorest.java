@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.frontdoor.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.frontdoor.generated.FrontDoorManager;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.RulesEngineInner;
 import com.azure.resourcemanager.frontdoor.generated.models.FrontDoorResourceState;
 import com.azure.resourcemanager.frontdoor.generated.models.RulesEngine;
@@ -16,7 +15,7 @@ import java.util.List;
 public final class RulesEngineImpl implements RulesEngine, RulesEngine.Definition, RulesEngine.Update {
     private RulesEngineInner innerObject;
 
-    private final FrontDoorManager serviceManager;
+    private final com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -47,7 +46,7 @@ public final class RulesEngineImpl implements RulesEngine, RulesEngine.Definitio
         return this.innerObject;
     }
 
-    private FrontDoorManager manager() {
+    private com.azure.resourcemanager.frontdoor.generated.FrontDoorManager manager() {
         return this.serviceManager;
     }
 
@@ -81,7 +80,7 @@ public final class RulesEngineImpl implements RulesEngine, RulesEngine.Definitio
         return this;
     }
 
-    RulesEngineImpl(String name, FrontDoorManager serviceManager) {
+    RulesEngineImpl(String name, com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerObject = new RulesEngineInner();
         this.serviceManager = serviceManager;
         this.rulesEngineName = name;
@@ -109,7 +108,8 @@ public final class RulesEngineImpl implements RulesEngine, RulesEngine.Definitio
         return this;
     }
 
-    RulesEngineImpl(RulesEngineInner innerObject, FrontDoorManager serviceManager) {
+    RulesEngineImpl(
+        RulesEngineInner innerObject, com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

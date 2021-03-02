@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.monitor.generated.implementation;
 
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.IncidentInner;
 import com.azure.resourcemanager.monitor.generated.models.Incident;
 import java.time.OffsetDateTime;
@@ -12,9 +11,9 @@ import java.time.OffsetDateTime;
 public final class IncidentImpl implements Incident {
     private IncidentInner innerObject;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    IncidentImpl(IncidentInner innerObject, MonitorManager serviceManager) {
+    IncidentImpl(IncidentInner innerObject, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -43,7 +42,7 @@ public final class IncidentImpl implements Incident {
         return this.innerObject;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 }

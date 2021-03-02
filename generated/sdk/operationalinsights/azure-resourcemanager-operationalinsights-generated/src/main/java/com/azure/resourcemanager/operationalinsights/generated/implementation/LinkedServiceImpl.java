@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.operationalinsights.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.LinkedServiceInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.LinkedService;
 import com.azure.resourcemanager.operationalinsights.generated.models.LinkedServiceEntityStatus;
@@ -15,7 +14,7 @@ import java.util.Map;
 public final class LinkedServiceImpl implements LinkedService, LinkedService.Definition, LinkedService.Update {
     private LinkedServiceInner innerObject;
 
-    private final LogAnalyticsManager serviceManager;
+    private final com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -54,7 +53,7 @@ public final class LinkedServiceImpl implements LinkedService, LinkedService.Def
         return this.innerObject;
     }
 
-    private LogAnalyticsManager manager() {
+    private com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager manager() {
         return this.serviceManager;
     }
 
@@ -88,7 +87,8 @@ public final class LinkedServiceImpl implements LinkedService, LinkedService.Def
         return this;
     }
 
-    LinkedServiceImpl(String name, LogAnalyticsManager serviceManager) {
+    LinkedServiceImpl(
+        String name, com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = new LinkedServiceInner();
         this.serviceManager = serviceManager;
         this.linkedServiceName = name;
@@ -116,7 +116,9 @@ public final class LinkedServiceImpl implements LinkedService, LinkedService.Def
         return this;
     }
 
-    LinkedServiceImpl(LinkedServiceInner innerObject, LogAnalyticsManager serviceManager) {
+    LinkedServiceImpl(
+        LinkedServiceInner innerObject,
+        com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourcegroups");

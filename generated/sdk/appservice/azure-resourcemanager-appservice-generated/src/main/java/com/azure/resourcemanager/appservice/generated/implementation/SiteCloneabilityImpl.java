@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteCloneabilityInner;
 import com.azure.resourcemanager.appservice.generated.models.CloneAbilityResult;
 import com.azure.resourcemanager.appservice.generated.models.SiteCloneability;
@@ -15,9 +14,11 @@ import java.util.List;
 public final class SiteCloneabilityImpl implements SiteCloneability {
     private SiteCloneabilityInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SiteCloneabilityImpl(SiteCloneabilityInner innerObject, AppServiceManager serviceManager) {
+    SiteCloneabilityImpl(
+        SiteCloneabilityInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -57,7 +58,7 @@ public final class SiteCloneabilityImpl implements SiteCloneability {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

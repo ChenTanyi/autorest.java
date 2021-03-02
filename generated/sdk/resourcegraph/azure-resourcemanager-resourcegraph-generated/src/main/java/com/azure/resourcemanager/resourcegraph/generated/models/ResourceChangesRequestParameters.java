@@ -8,6 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.List;
 
 /** The parameters for a specific changes request. */
 @Fluent
@@ -15,10 +16,16 @@ public final class ResourceChangesRequestParameters {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(ResourceChangesRequestParameters.class);
 
     /*
-     * Specifies the resource for a changes request.
+     * Specifies the list of resources for a changes request.
      */
-    @JsonProperty(value = "resourceId", required = true)
-    private String resourceId;
+    @JsonProperty(value = "resourceIds")
+    private List<String> resourceIds;
+
+    /*
+     * The subscription id of resources to query the changes from.
+     */
+    @JsonProperty(value = "subscriptionId")
+    private String subscriptionId;
 
     /*
      * Specifies the date and time interval for a changes request.
@@ -39,28 +46,60 @@ public final class ResourceChangesRequestParameters {
     private Integer top;
 
     /*
+     * The table name to query resources from.
+     */
+    @JsonProperty(value = "table")
+    private String table;
+
+    /*
      * The flag if set to true will fetch property changes
      */
     @JsonProperty(value = "fetchPropertyChanges")
     private Boolean fetchPropertyChanges;
 
-    /**
-     * Get the resourceId property: Specifies the resource for a changes request.
-     *
-     * @return the resourceId value.
+    /*
+     * The flag if set to true will fetch change snapshots
      */
-    public String resourceId() {
-        return this.resourceId;
+    @JsonProperty(value = "fetchSnapshots")
+    private Boolean fetchSnapshots;
+
+    /**
+     * Get the resourceIds property: Specifies the list of resources for a changes request.
+     *
+     * @return the resourceIds value.
+     */
+    public List<String> resourceIds() {
+        return this.resourceIds;
     }
 
     /**
-     * Set the resourceId property: Specifies the resource for a changes request.
+     * Set the resourceIds property: Specifies the list of resources for a changes request.
      *
-     * @param resourceId the resourceId value to set.
+     * @param resourceIds the resourceIds value to set.
      * @return the ResourceChangesRequestParameters object itself.
      */
-    public ResourceChangesRequestParameters withResourceId(String resourceId) {
-        this.resourceId = resourceId;
+    public ResourceChangesRequestParameters withResourceIds(List<String> resourceIds) {
+        this.resourceIds = resourceIds;
+        return this;
+    }
+
+    /**
+     * Get the subscriptionId property: The subscription id of resources to query the changes from.
+     *
+     * @return the subscriptionId value.
+     */
+    public String subscriptionId() {
+        return this.subscriptionId;
+    }
+
+    /**
+     * Set the subscriptionId property: The subscription id of resources to query the changes from.
+     *
+     * @param subscriptionId the subscriptionId value to set.
+     * @return the ResourceChangesRequestParameters object itself.
+     */
+    public ResourceChangesRequestParameters withSubscriptionId(String subscriptionId) {
+        this.subscriptionId = subscriptionId;
         return this;
     }
 
@@ -125,6 +164,26 @@ public final class ResourceChangesRequestParameters {
     }
 
     /**
+     * Get the table property: The table name to query resources from.
+     *
+     * @return the table value.
+     */
+    public String table() {
+        return this.table;
+    }
+
+    /**
+     * Set the table property: The table name to query resources from.
+     *
+     * @param table the table value to set.
+     * @return the ResourceChangesRequestParameters object itself.
+     */
+    public ResourceChangesRequestParameters withTable(String table) {
+        this.table = table;
+        return this;
+    }
+
+    /**
      * Get the fetchPropertyChanges property: The flag if set to true will fetch property changes.
      *
      * @return the fetchPropertyChanges value.
@@ -145,17 +204,31 @@ public final class ResourceChangesRequestParameters {
     }
 
     /**
+     * Get the fetchSnapshots property: The flag if set to true will fetch change snapshots.
+     *
+     * @return the fetchSnapshots value.
+     */
+    public Boolean fetchSnapshots() {
+        return this.fetchSnapshots;
+    }
+
+    /**
+     * Set the fetchSnapshots property: The flag if set to true will fetch change snapshots.
+     *
+     * @param fetchSnapshots the fetchSnapshots value to set.
+     * @return the ResourceChangesRequestParameters object itself.
+     */
+    public ResourceChangesRequestParameters withFetchSnapshots(Boolean fetchSnapshots) {
+        this.fetchSnapshots = fetchSnapshots;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
-        if (resourceId() == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        "Missing required property resourceId in model ResourceChangesRequestParameters"));
-        }
         if (interval() == null) {
             throw logger
                 .logExceptionAsError(

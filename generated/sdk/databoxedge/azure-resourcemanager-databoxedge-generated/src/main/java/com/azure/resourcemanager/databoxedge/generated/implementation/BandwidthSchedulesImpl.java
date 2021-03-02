@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.BandwidthSchedulesClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.BandwidthScheduleInner;
 import com.azure.resourcemanager.databoxedge.generated.models.BandwidthSchedule;
@@ -21,9 +20,11 @@ public final class BandwidthSchedulesImpl implements BandwidthSchedules {
 
     private final BandwidthSchedulesClient innerClient;
 
-    private final DataBoxEdgeManager serviceManager;
+    private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    public BandwidthSchedulesImpl(BandwidthSchedulesClient innerClient, DataBoxEdgeManager serviceManager) {
+    public BandwidthSchedulesImpl(
+        BandwidthSchedulesClient innerClient,
+        com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -197,7 +198,7 @@ public final class BandwidthSchedulesImpl implements BandwidthSchedules {
         return this.innerClient;
     }
 
-    private DataBoxEdgeManager manager() {
+    private com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager manager() {
         return this.serviceManager;
     }
 

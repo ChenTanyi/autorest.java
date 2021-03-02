@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.ContainersClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.ContainerInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Container;
@@ -21,9 +20,11 @@ public final class ContainersImpl implements Containers {
 
     private final ContainersClient innerClient;
 
-    private final DataBoxEdgeManager serviceManager;
+    private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    public ContainersImpl(ContainersClient innerClient, DataBoxEdgeManager serviceManager) {
+    public ContainersImpl(
+        ContainersClient innerClient,
+        com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -237,7 +238,7 @@ public final class ContainersImpl implements Containers {
         return this.innerClient;
     }
 
-    private DataBoxEdgeManager manager() {
+    private com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager manager() {
         return this.serviceManager;
     }
 

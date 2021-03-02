@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.monitor.generated.implementation;
 
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.OperationStatusInner;
 import com.azure.resourcemanager.monitor.generated.models.ErrorResponseCommon;
 import com.azure.resourcemanager.monitor.generated.models.OperationStatus;
@@ -13,9 +12,10 @@ import java.time.OffsetDateTime;
 public final class OperationStatusImpl implements OperationStatus {
     private OperationStatusInner innerObject;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    OperationStatusImpl(OperationStatusInner innerObject, MonitorManager serviceManager) {
+    OperationStatusImpl(
+        OperationStatusInner innerObject, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -48,7 +48,7 @@ public final class OperationStatusImpl implements OperationStatus {
         return this.innerObject;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 }

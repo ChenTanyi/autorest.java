@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.authorization.generated.implementation;
 
-import com.azure.resourcemanager.authorization.generated.AuthorizationManager;
 import com.azure.resourcemanager.authorization.generated.fluent.models.ProviderOperationsMetadataInner;
 import com.azure.resourcemanager.authorization.generated.models.ProviderOperation;
 import com.azure.resourcemanager.authorization.generated.models.ProviderOperationsMetadata;
@@ -15,9 +14,11 @@ import java.util.List;
 public final class ProviderOperationsMetadataImpl implements ProviderOperationsMetadata {
     private ProviderOperationsMetadataInner innerObject;
 
-    private final AuthorizationManager serviceManager;
+    private final com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager;
 
-    ProviderOperationsMetadataImpl(ProviderOperationsMetadataInner innerObject, AuthorizationManager serviceManager) {
+    ProviderOperationsMetadataImpl(
+        ProviderOperationsMetadataInner innerObject,
+        com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -60,7 +61,7 @@ public final class ProviderOperationsMetadataImpl implements ProviderOperationsM
         return this.innerObject;
     }
 
-    private AuthorizationManager manager() {
+    private com.azure.resourcemanager.authorization.generated.AuthorizationManager manager() {
         return this.serviceManager;
     }
 }

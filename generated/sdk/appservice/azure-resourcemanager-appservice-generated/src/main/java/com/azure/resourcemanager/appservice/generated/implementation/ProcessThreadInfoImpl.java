@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ProcessThreadInfoInner;
 import com.azure.resourcemanager.appservice.generated.models.ProcessThreadInfo;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -13,9 +12,11 @@ import java.time.OffsetDateTime;
 public final class ProcessThreadInfoImpl implements ProcessThreadInfo {
     private ProcessThreadInfoInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    ProcessThreadInfoImpl(ProcessThreadInfoInner innerObject, AppServiceManager serviceManager) {
+    ProcessThreadInfoImpl(
+        ProcessThreadInfoInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -92,7 +93,7 @@ public final class ProcessThreadInfoImpl implements ProcessThreadInfo {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

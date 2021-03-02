@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.recoveryservices.generated.implementation;
 
 import com.azure.core.management.exception.ManagementError;
-import com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.models.OperationResourceInner;
 import com.azure.resourcemanager.recoveryservices.generated.models.OperationResource;
 import java.time.OffsetDateTime;
@@ -13,9 +12,11 @@ import java.time.OffsetDateTime;
 public final class OperationResourceImpl implements OperationResource {
     private OperationResourceInner innerObject;
 
-    private final RecoveryServicesManager serviceManager;
+    private final com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager serviceManager;
 
-    OperationResourceImpl(OperationResourceInner innerObject, RecoveryServicesManager serviceManager) {
+    OperationResourceImpl(
+        OperationResourceInner innerObject,
+        com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -48,7 +49,7 @@ public final class OperationResourceImpl implements OperationResource {
         return this.innerObject;
     }
 
-    private RecoveryServicesManager manager() {
+    private com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager manager() {
         return this.serviceManager;
     }
 }

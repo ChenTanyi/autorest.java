@@ -6,7 +6,6 @@ package com.azure.resourcemanager.keyvault.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.keyvault.generated.KeyVaultManager;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.keyvault.generated.models.PrivateEndpoint;
 import com.azure.resourcemanager.keyvault.generated.models.PrivateEndpointConnection;
@@ -19,7 +18,7 @@ public final class PrivateEndpointConnectionImpl
     implements PrivateEndpointConnection, PrivateEndpointConnection.Definition, PrivateEndpointConnection.Update {
     private PrivateEndpointConnectionInner innerObject;
 
-    private final KeyVaultManager serviceManager;
+    private final com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -74,7 +73,7 @@ public final class PrivateEndpointConnectionImpl
         return this.innerObject;
     }
 
-    private KeyVaultManager manager() {
+    private com.azure.resourcemanager.keyvault.generated.KeyVaultManager manager() {
         return this.serviceManager;
     }
 
@@ -112,7 +111,8 @@ public final class PrivateEndpointConnectionImpl
         return this;
     }
 
-    PrivateEndpointConnectionImpl(String name, KeyVaultManager serviceManager) {
+    PrivateEndpointConnectionImpl(
+        String name, com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerObject = new PrivateEndpointConnectionInner();
         this.serviceManager = serviceManager;
         this.privateEndpointConnectionName = name;
@@ -144,7 +144,9 @@ public final class PrivateEndpointConnectionImpl
         return this;
     }
 
-    PrivateEndpointConnectionImpl(PrivateEndpointConnectionInner innerObject, KeyVaultManager serviceManager) {
+    PrivateEndpointConnectionImpl(
+        PrivateEndpointConnectionInner innerObject,
+        com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

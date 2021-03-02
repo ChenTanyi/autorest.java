@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.ServerAdministratorsClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.ServerAdministratorResourceInner;
 import com.azure.resourcemanager.mysql.generated.models.ServerAdministratorResource;
@@ -21,9 +20,10 @@ public final class ServerAdministratorsImpl implements ServerAdministrators {
 
     private final ServerAdministratorsClient innerClient;
 
-    private final MySqlManager serviceManager;
+    private final com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager;
 
-    public ServerAdministratorsImpl(ServerAdministratorsClient innerClient, MySqlManager serviceManager) {
+    public ServerAdministratorsImpl(
+        ServerAdministratorsClient innerClient, com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -99,7 +99,7 @@ public final class ServerAdministratorsImpl implements ServerAdministrators {
         return this.innerClient;
     }
 
-    private MySqlManager manager() {
+    private com.azure.resourcemanager.mysql.generated.MySqlManager manager() {
         return this.serviceManager;
     }
 }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.VirtualNetworkRuleInner;
 import com.azure.resourcemanager.eventhubs.generated.models.VirtualNetworkRule;
 
@@ -13,7 +12,7 @@ public final class VirtualNetworkRuleImpl
     implements VirtualNetworkRule, VirtualNetworkRule.Definition, VirtualNetworkRule.Update {
     private VirtualNetworkRuleInner innerObject;
 
-    private final EventHubsManager serviceManager;
+    private final com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -35,7 +34,7 @@ public final class VirtualNetworkRuleImpl
         return this.innerObject;
     }
 
-    private EventHubsManager manager() {
+    private com.azure.resourcemanager.eventhubs.generated.EventHubsManager manager() {
         return this.serviceManager;
     }
 
@@ -73,7 +72,7 @@ public final class VirtualNetworkRuleImpl
         return this;
     }
 
-    VirtualNetworkRuleImpl(String name, EventHubsManager serviceManager) {
+    VirtualNetworkRuleImpl(String name, com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = new VirtualNetworkRuleInner();
         this.serviceManager = serviceManager;
         this.virtualNetworkRuleName = name;
@@ -105,7 +104,9 @@ public final class VirtualNetworkRuleImpl
         return this;
     }
 
-    VirtualNetworkRuleImpl(VirtualNetworkRuleInner innerObject, EventHubsManager serviceManager) {
+    VirtualNetworkRuleImpl(
+        VirtualNetworkRuleInner innerObject,
+        com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

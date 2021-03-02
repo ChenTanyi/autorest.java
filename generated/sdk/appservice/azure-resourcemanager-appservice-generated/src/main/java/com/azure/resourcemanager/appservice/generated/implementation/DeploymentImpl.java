@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DeploymentInner;
 import com.azure.resourcemanager.appservice.generated.models.Deployment;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -14,9 +13,10 @@ import java.time.OffsetDateTime;
 public final class DeploymentImpl implements Deployment, Deployment.Definition {
     private DeploymentInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    DeploymentImpl(DeploymentInner innerObject, AppServiceManager serviceManager) {
+    DeploymentImpl(
+        DeploymentInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -81,7 +81,7 @@ public final class DeploymentImpl implements Deployment, Deployment.Definition {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 
@@ -117,7 +117,7 @@ public final class DeploymentImpl implements Deployment, Deployment.Definition {
         return this;
     }
 
-    DeploymentImpl(String name, AppServiceManager serviceManager) {
+    DeploymentImpl(String name, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = new DeploymentInner();
         this.serviceManager = serviceManager;
         this.id = name;

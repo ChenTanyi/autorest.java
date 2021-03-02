@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.ResourceProvidersClient;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.models.OperationResourceInner;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.models.VaultInner;
@@ -22,9 +21,11 @@ public final class ResourceProvidersImpl implements ResourceProviders {
 
     private final ResourceProvidersClient innerClient;
 
-    private final RecoveryServicesManager serviceManager;
+    private final com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager serviceManager;
 
-    public ResourceProvidersImpl(ResourceProvidersClient innerClient, RecoveryServicesManager serviceManager) {
+    public ResourceProvidersImpl(
+        ResourceProvidersClient innerClient,
+        com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -76,7 +77,7 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         return this.innerClient;
     }
 
-    private RecoveryServicesManager manager() {
+    private com.azure.resourcemanager.recoveryservices.generated.RecoveryServicesManager manager() {
         return this.serviceManager;
     }
 }

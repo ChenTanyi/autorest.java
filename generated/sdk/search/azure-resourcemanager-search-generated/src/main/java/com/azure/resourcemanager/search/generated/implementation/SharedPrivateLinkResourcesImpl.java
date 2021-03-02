@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.search.generated.SearchManager;
 import com.azure.resourcemanager.search.generated.fluent.SharedPrivateLinkResourcesClient;
 import com.azure.resourcemanager.search.generated.fluent.models.SharedPrivateLinkResourceInner;
 import com.azure.resourcemanager.search.generated.models.SharedPrivateLinkResource;
@@ -22,9 +21,11 @@ public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkRe
 
     private final SharedPrivateLinkResourcesClient innerClient;
 
-    private final SearchManager serviceManager;
+    private final com.azure.resourcemanager.search.generated.SearchManager serviceManager;
 
-    public SharedPrivateLinkResourcesImpl(SharedPrivateLinkResourcesClient innerClient, SearchManager serviceManager) {
+    public SharedPrivateLinkResourcesImpl(
+        SharedPrivateLinkResourcesClient innerClient,
+        com.azure.resourcemanager.search.generated.SearchManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -237,7 +238,7 @@ public final class SharedPrivateLinkResourcesImpl implements SharedPrivateLinkRe
         return this.innerClient;
     }
 
-    private SearchManager manager() {
+    private com.azure.resourcemanager.search.generated.SearchManager manager() {
         return this.serviceManager;
     }
 

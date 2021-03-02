@@ -7,7 +7,6 @@ package com.azure.resourcemanager.authorization.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.authorization.generated.AuthorizationManager;
 import com.azure.resourcemanager.authorization.generated.fluent.GlobalAdministratorsClient;
 import com.azure.resourcemanager.authorization.generated.models.GlobalAdministrators;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -17,9 +16,11 @@ public final class GlobalAdministratorsImpl implements GlobalAdministrators {
 
     private final GlobalAdministratorsClient innerClient;
 
-    private final AuthorizationManager serviceManager;
+    private final com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager;
 
-    public GlobalAdministratorsImpl(GlobalAdministratorsClient innerClient, AuthorizationManager serviceManager) {
+    public GlobalAdministratorsImpl(
+        GlobalAdministratorsClient innerClient,
+        com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -36,7 +37,7 @@ public final class GlobalAdministratorsImpl implements GlobalAdministrators {
         return this.innerClient;
     }
 
-    private AuthorizationManager manager() {
+    private com.azure.resourcemanager.authorization.generated.AuthorizationManager manager() {
         return this.serviceManager;
     }
 }

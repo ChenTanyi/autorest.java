@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.operationalinsights.generated.implementation;
 
-import com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.ManagementGroupInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.ManagementGroup;
 import java.time.OffsetDateTime;
@@ -12,9 +11,11 @@ import java.time.OffsetDateTime;
 public final class ManagementGroupImpl implements ManagementGroup {
     private ManagementGroupInner innerObject;
 
-    private final LogAnalyticsManager serviceManager;
+    private final com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager;
 
-    ManagementGroupImpl(ManagementGroupInner innerObject, LogAnalyticsManager serviceManager) {
+    ManagementGroupImpl(
+        ManagementGroupInner innerObject,
+        com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -55,7 +56,7 @@ public final class ManagementGroupImpl implements ManagementGroup {
         return this.innerObject;
     }
 
-    private LogAnalyticsManager manager() {
+    private com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager manager() {
         return this.serviceManager;
     }
 }

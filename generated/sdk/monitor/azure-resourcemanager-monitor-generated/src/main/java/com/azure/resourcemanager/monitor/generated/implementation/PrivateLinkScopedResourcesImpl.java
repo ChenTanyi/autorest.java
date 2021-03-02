@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.PrivateLinkScopedResourcesClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.ScopedResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.PrivateLinkScopedResources;
@@ -21,9 +20,11 @@ public final class PrivateLinkScopedResourcesImpl implements PrivateLinkScopedRe
 
     private final PrivateLinkScopedResourcesClient innerClient;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public PrivateLinkScopedResourcesImpl(PrivateLinkScopedResourcesClient innerClient, MonitorManager serviceManager) {
+    public PrivateLinkScopedResourcesImpl(
+        PrivateLinkScopedResourcesClient innerClient,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -193,7 +194,7 @@ public final class PrivateLinkScopedResourcesImpl implements PrivateLinkScopedRe
         return this.innerClient;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 

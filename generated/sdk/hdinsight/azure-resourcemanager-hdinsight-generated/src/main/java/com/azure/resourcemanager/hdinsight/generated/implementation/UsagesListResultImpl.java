@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.hdinsight.generated.implementation;
 
-import com.azure.resourcemanager.hdinsight.generated.HDInsightManager;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.UsagesListResultInner;
 import com.azure.resourcemanager.hdinsight.generated.models.Usage;
 import com.azure.resourcemanager.hdinsight.generated.models.UsagesListResult;
@@ -14,9 +13,11 @@ import java.util.List;
 public final class UsagesListResultImpl implements UsagesListResult {
     private UsagesListResultInner innerObject;
 
-    private final HDInsightManager serviceManager;
+    private final com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager;
 
-    UsagesListResultImpl(UsagesListResultInner innerObject, HDInsightManager serviceManager) {
+    UsagesListResultImpl(
+        UsagesListResultInner innerObject,
+        com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,7 +35,7 @@ public final class UsagesListResultImpl implements UsagesListResult {
         return this.innerObject;
     }
 
-    private HDInsightManager manager() {
+    private com.azure.resourcemanager.hdinsight.generated.HDInsightManager manager() {
         return this.serviceManager;
     }
 }

@@ -4,16 +4,17 @@
 
 package com.azure.resourcemanager.eventgrid.generated.implementation;
 
-import com.azure.resourcemanager.eventgrid.generated.EventGridManager;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.EventSubscriptionFullUrlInner;
 import com.azure.resourcemanager.eventgrid.generated.models.EventSubscriptionFullUrl;
 
 public final class EventSubscriptionFullUrlImpl implements EventSubscriptionFullUrl {
     private EventSubscriptionFullUrlInner innerObject;
 
-    private final EventGridManager serviceManager;
+    private final com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager;
 
-    EventSubscriptionFullUrlImpl(EventSubscriptionFullUrlInner innerObject, EventGridManager serviceManager) {
+    EventSubscriptionFullUrlImpl(
+        EventSubscriptionFullUrlInner innerObject,
+        com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -26,7 +27,7 @@ public final class EventSubscriptionFullUrlImpl implements EventSubscriptionFull
         return this.innerObject;
     }
 
-    private EventGridManager manager() {
+    private com.azure.resourcemanager.eventgrid.generated.EventGridManager manager() {
         return this.serviceManager;
     }
 }

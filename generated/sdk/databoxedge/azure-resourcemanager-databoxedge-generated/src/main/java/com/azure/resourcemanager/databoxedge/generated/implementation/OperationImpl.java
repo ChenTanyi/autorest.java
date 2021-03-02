@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.databoxedge.generated.implementation;
 
-import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Operation;
 import com.azure.resourcemanager.databoxedge.generated.models.OperationDisplay;
@@ -13,9 +12,10 @@ import com.azure.resourcemanager.databoxedge.generated.models.ServiceSpecificati
 public final class OperationImpl implements Operation {
     private OperationInner innerObject;
 
-    private final DataBoxEdgeManager serviceManager;
+    private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    OperationImpl(OperationInner innerObject, DataBoxEdgeManager serviceManager) {
+    OperationImpl(
+        OperationInner innerObject, com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +40,7 @@ public final class OperationImpl implements Operation {
         return this.innerObject;
     }
 
-    private DataBoxEdgeManager manager() {
+    private com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager manager() {
         return this.serviceManager;
     }
 }

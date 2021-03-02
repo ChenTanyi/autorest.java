@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.monitor.generated.implementation;
 
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricAlertStatusCollectionInner;
 import com.azure.resourcemanager.monitor.generated.models.MetricAlertStatus;
 import com.azure.resourcemanager.monitor.generated.models.MetricAlertStatusCollection;
@@ -14,9 +13,11 @@ import java.util.List;
 public final class MetricAlertStatusCollectionImpl implements MetricAlertStatusCollection {
     private MetricAlertStatusCollectionInner innerObject;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    MetricAlertStatusCollectionImpl(MetricAlertStatusCollectionInner innerObject, MonitorManager serviceManager) {
+    MetricAlertStatusCollectionImpl(
+        MetricAlertStatusCollectionInner innerObject,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,7 +35,7 @@ public final class MetricAlertStatusCollectionImpl implements MetricAlertStatusC
         return this.innerObject;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 }

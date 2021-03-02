@@ -4,16 +4,16 @@
 
 package com.azure.resourcemanager.azurekusto.generated.implementation;
 
-import com.azure.resourcemanager.azurekusto.generated.KustoManager;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.DataConnectionInner;
 import com.azure.resourcemanager.azurekusto.generated.models.DataConnection;
 
 public final class DataConnectionImpl implements DataConnection {
     private DataConnectionInner innerObject;
 
-    private final KustoManager serviceManager;
+    private final com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager;
 
-    DataConnectionImpl(DataConnectionInner innerObject, KustoManager serviceManager) {
+    DataConnectionImpl(
+        DataConnectionInner innerObject, com.azure.resourcemanager.azurekusto.generated.KustoManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -38,7 +38,7 @@ public final class DataConnectionImpl implements DataConnection {
         return this.innerObject;
     }
 
-    private KustoManager manager() {
+    private com.azure.resourcemanager.azurekusto.generated.KustoManager manager() {
         return this.serviceManager;
     }
 }

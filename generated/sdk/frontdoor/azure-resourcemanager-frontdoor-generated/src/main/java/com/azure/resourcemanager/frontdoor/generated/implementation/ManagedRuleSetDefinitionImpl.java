@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.frontdoor.generated.implementation;
 
-import com.azure.resourcemanager.frontdoor.generated.FrontDoorManager;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.ManagedRuleSetDefinitionInner;
 import com.azure.resourcemanager.frontdoor.generated.models.ManagedRuleGroupDefinition;
 import com.azure.resourcemanager.frontdoor.generated.models.ManagedRuleSetDefinition;
@@ -15,9 +14,11 @@ import java.util.Map;
 public final class ManagedRuleSetDefinitionImpl implements ManagedRuleSetDefinition {
     private ManagedRuleSetDefinitionInner innerObject;
 
-    private final FrontDoorManager serviceManager;
+    private final com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager;
 
-    ManagedRuleSetDefinitionImpl(ManagedRuleSetDefinitionInner innerObject, FrontDoorManager serviceManager) {
+    ManagedRuleSetDefinitionImpl(
+        ManagedRuleSetDefinitionInner innerObject,
+        com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -76,7 +77,7 @@ public final class ManagedRuleSetDefinitionImpl implements ManagedRuleSetDefinit
         return this.innerObject;
     }
 
-    private FrontDoorManager manager() {
+    private com.azure.resourcemanager.frontdoor.generated.FrontDoorManager manager() {
         return this.serviceManager;
     }
 }

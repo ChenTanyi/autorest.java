@@ -6,7 +6,6 @@ package com.azure.resourcemanager.relay.generated.implementation;
 
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.relay.generated.RelayManager;
 import com.azure.resourcemanager.relay.generated.fluent.models.AuthorizationRuleInner;
 import com.azure.resourcemanager.relay.generated.models.AccessKeys;
 import com.azure.resourcemanager.relay.generated.models.AccessRights;
@@ -19,7 +18,7 @@ public final class AuthorizationRuleImpl
     implements AuthorizationRule, AuthorizationRule.Definition, AuthorizationRule.Update {
     private AuthorizationRuleInner innerObject;
 
-    private final RelayManager serviceManager;
+    private final com.azure.resourcemanager.relay.generated.RelayManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -46,7 +45,7 @@ public final class AuthorizationRuleImpl
         return this.innerObject;
     }
 
-    private RelayManager manager() {
+    private com.azure.resourcemanager.relay.generated.RelayManager manager() {
         return this.serviceManager;
     }
 
@@ -84,7 +83,7 @@ public final class AuthorizationRuleImpl
         return this;
     }
 
-    AuthorizationRuleImpl(String name, RelayManager serviceManager) {
+    AuthorizationRuleImpl(String name, com.azure.resourcemanager.relay.generated.RelayManager serviceManager) {
         this.innerObject = new AuthorizationRuleInner();
         this.serviceManager = serviceManager;
         this.authorizationRuleName = name;
@@ -116,7 +115,8 @@ public final class AuthorizationRuleImpl
         return this;
     }
 
-    AuthorizationRuleImpl(AuthorizationRuleInner innerObject, RelayManager serviceManager) {
+    AuthorizationRuleImpl(
+        AuthorizationRuleInner innerObject, com.azure.resourcemanager.relay.generated.RelayManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

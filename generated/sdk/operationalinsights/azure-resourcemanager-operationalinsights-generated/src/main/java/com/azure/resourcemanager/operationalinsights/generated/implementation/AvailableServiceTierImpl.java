@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.operationalinsights.generated.implementation;
 
-import com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.AvailableServiceTierInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.AvailableServiceTier;
 import com.azure.resourcemanager.operationalinsights.generated.models.SkuNameEnum;
@@ -12,9 +11,11 @@ import com.azure.resourcemanager.operationalinsights.generated.models.SkuNameEnu
 public final class AvailableServiceTierImpl implements AvailableServiceTier {
     private AvailableServiceTierInner innerObject;
 
-    private final LogAnalyticsManager serviceManager;
+    private final com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager;
 
-    AvailableServiceTierImpl(AvailableServiceTierInner innerObject, LogAnalyticsManager serviceManager) {
+    AvailableServiceTierImpl(
+        AvailableServiceTierInner innerObject,
+        com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -51,7 +52,7 @@ public final class AvailableServiceTierImpl implements AvailableServiceTier {
         return this.innerObject;
     }
 
-    private LogAnalyticsManager manager() {
+    private com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager manager() {
         return this.serviceManager;
     }
 }

@@ -7,7 +7,6 @@ package com.azure.resourcemanager.postgresql.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.postgresql.generated.PostgreSqlManager;
 import com.azure.resourcemanager.postgresql.generated.fluent.ServerBasedPerformanceTiersClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.PerformanceTierPropertiesInner;
 import com.azure.resourcemanager.postgresql.generated.models.PerformanceTierProperties;
@@ -19,10 +18,11 @@ public final class ServerBasedPerformanceTiersImpl implements ServerBasedPerform
 
     private final ServerBasedPerformanceTiersClient innerClient;
 
-    private final PostgreSqlManager serviceManager;
+    private final com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager;
 
     public ServerBasedPerformanceTiersImpl(
-        ServerBasedPerformanceTiersClient innerClient, PostgreSqlManager serviceManager) {
+        ServerBasedPerformanceTiersClient innerClient,
+        com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -42,7 +42,7 @@ public final class ServerBasedPerformanceTiersImpl implements ServerBasedPerform
         return this.innerClient;
     }
 
-    private PostgreSqlManager manager() {
+    private com.azure.resourcemanager.postgresql.generated.PostgreSqlManager manager() {
         return this.serviceManager;
     }
 }

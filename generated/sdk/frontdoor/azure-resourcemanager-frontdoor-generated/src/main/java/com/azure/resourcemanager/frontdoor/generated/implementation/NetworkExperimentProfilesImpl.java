@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.frontdoor.generated.FrontDoorManager;
 import com.azure.resourcemanager.frontdoor.generated.fluent.NetworkExperimentProfilesClient;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.ProfileInner;
 import com.azure.resourcemanager.frontdoor.generated.models.NetworkExperimentProfiles;
@@ -21,9 +20,11 @@ public final class NetworkExperimentProfilesImpl implements NetworkExperimentPro
 
     private final NetworkExperimentProfilesClient innerClient;
 
-    private final FrontDoorManager serviceManager;
+    private final com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager;
 
-    public NetworkExperimentProfilesImpl(NetworkExperimentProfilesClient innerClient, FrontDoorManager serviceManager) {
+    public NetworkExperimentProfilesImpl(
+        NetworkExperimentProfilesClient innerClient,
+        com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -172,7 +173,7 @@ public final class NetworkExperimentProfilesImpl implements NetworkExperimentPro
         return this.innerClient;
     }
 
-    private FrontDoorManager manager() {
+    private com.azure.resourcemanager.frontdoor.generated.FrontDoorManager manager() {
         return this.serviceManager;
     }
 

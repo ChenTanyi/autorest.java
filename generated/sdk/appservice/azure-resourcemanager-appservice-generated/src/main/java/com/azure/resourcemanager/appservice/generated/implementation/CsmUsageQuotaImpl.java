@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmUsageQuotaInner;
 import com.azure.resourcemanager.appservice.generated.models.CsmUsageQuota;
 import com.azure.resourcemanager.appservice.generated.models.LocalizableString;
@@ -13,9 +12,11 @@ import java.time.OffsetDateTime;
 public final class CsmUsageQuotaImpl implements CsmUsageQuota {
     private CsmUsageQuotaInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    CsmUsageQuotaImpl(CsmUsageQuotaInner innerObject, AppServiceManager serviceManager) {
+    CsmUsageQuotaImpl(
+        CsmUsageQuotaInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -44,7 +45,7 @@ public final class CsmUsageQuotaImpl implements CsmUsageQuota {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.PublicCertificateInner;
 import com.azure.resourcemanager.appservice.generated.models.PublicCertificate;
 import com.azure.resourcemanager.appservice.generated.models.PublicCertificateLocation;
@@ -15,7 +14,7 @@ public final class PublicCertificateImpl
     implements PublicCertificate, PublicCertificate.Definition, PublicCertificate.Update {
     private PublicCertificateInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -53,7 +52,7 @@ public final class PublicCertificateImpl
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 
@@ -91,7 +90,8 @@ public final class PublicCertificateImpl
         return this;
     }
 
-    PublicCertificateImpl(String name, AppServiceManager serviceManager) {
+    PublicCertificateImpl(
+        String name, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = new PublicCertificateInner();
         this.serviceManager = serviceManager;
         this.publicCertificateName = name;
@@ -123,7 +123,9 @@ public final class PublicCertificateImpl
         return this;
     }
 
-    PublicCertificateImpl(PublicCertificateInner innerObject, AppServiceManager serviceManager) {
+    PublicCertificateImpl(
+        PublicCertificateInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

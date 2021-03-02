@@ -6,7 +6,6 @@ package com.azure.resourcemanager.monitor.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricAlertResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.MetricAlertAction;
 import com.azure.resourcemanager.monitor.generated.models.MetricAlertCriteria;
@@ -22,7 +21,7 @@ public final class MetricAlertResourceImpl
     implements MetricAlertResource, MetricAlertResource.Definition, MetricAlertResource.Update {
     private MetricAlertResourceInner innerObject;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -123,7 +122,7 @@ public final class MetricAlertResourceImpl
         return this.innerObject;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 
@@ -158,7 +157,7 @@ public final class MetricAlertResourceImpl
         return this;
     }
 
-    MetricAlertResourceImpl(String name, MonitorManager serviceManager) {
+    MetricAlertResourceImpl(String name, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = new MetricAlertResourceInner();
         this.serviceManager = serviceManager;
         this.ruleName = name;
@@ -189,7 +188,9 @@ public final class MetricAlertResourceImpl
         return this;
     }
 
-    MetricAlertResourceImpl(MetricAlertResourceInner innerObject, MonitorManager serviceManager) {
+    MetricAlertResourceImpl(
+        MetricAlertResourceInner innerObject,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

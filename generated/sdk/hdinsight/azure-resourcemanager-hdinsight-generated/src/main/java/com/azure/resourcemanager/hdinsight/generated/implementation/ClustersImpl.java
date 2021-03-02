@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.hdinsight.generated.HDInsightManager;
 import com.azure.resourcemanager.hdinsight.generated.fluent.ClustersClient;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.AsyncOperationResultInner;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.ClusterInner;
@@ -23,6 +22,7 @@ import com.azure.resourcemanager.hdinsight.generated.models.Clusters;
 import com.azure.resourcemanager.hdinsight.generated.models.ExecuteScriptActionParameters;
 import com.azure.resourcemanager.hdinsight.generated.models.GatewaySettings;
 import com.azure.resourcemanager.hdinsight.generated.models.RoleName;
+import com.azure.resourcemanager.hdinsight.generated.models.UpdateClusterIdentityCertificateParameters;
 import com.azure.resourcemanager.hdinsight.generated.models.UpdateGatewaySettingsParameters;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -31,9 +31,10 @@ public final class ClustersImpl implements Clusters {
 
     private final ClustersClient innerClient;
 
-    private final HDInsightManager serviceManager;
+    private final com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager;
 
-    public ClustersImpl(ClustersClient innerClient, HDInsightManager serviceManager) {
+    public ClustersImpl(
+        ClustersClient innerClient, com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -195,6 +196,19 @@ public final class ClustersImpl implements Clusters {
         }
     }
 
+    public void updateIdentityCertificate(
+        String resourceGroupName, String clusterName, UpdateClusterIdentityCertificateParameters parameters) {
+        this.serviceClient().updateIdentityCertificate(resourceGroupName, clusterName, parameters);
+    }
+
+    public void updateIdentityCertificate(
+        String resourceGroupName,
+        String clusterName,
+        UpdateClusterIdentityCertificateParameters parameters,
+        Context context) {
+        this.serviceClient().updateIdentityCertificate(resourceGroupName, clusterName, parameters, context);
+    }
+
     public void executeScriptActions(
         String resourceGroupName, String clusterName, ExecuteScriptActionParameters parameters) {
         this.serviceClient().executeScriptActions(resourceGroupName, clusterName, parameters);
@@ -285,7 +299,7 @@ public final class ClustersImpl implements Clusters {
         return this.innerClient;
     }
 
-    private HDInsightManager manager() {
+    private com.azure.resourcemanager.hdinsight.generated.HDInsightManager manager() {
         return this.serviceManager;
     }
 

@@ -6,7 +6,6 @@ package com.azure.resourcemanager.costmanagement.generated.implementation;
 
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.costmanagement.generated.CostManagementManager;
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.ExportExecutionListResultInner;
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.ExportInner;
 import com.azure.resourcemanager.costmanagement.generated.models.Export;
@@ -20,7 +19,7 @@ import java.time.OffsetDateTime;
 public final class ExportImpl implements Export, Export.Definition, Export.Update {
     private ExportInner innerObject;
 
-    private final CostManagementManager serviceManager;
+    private final com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -71,7 +70,7 @@ public final class ExportImpl implements Export, Export.Definition, Export.Updat
         return this.innerObject;
     }
 
-    private CostManagementManager manager() {
+    private com.azure.resourcemanager.costmanagement.generated.CostManagementManager manager() {
         return this.serviceManager;
     }
 
@@ -104,7 +103,7 @@ public final class ExportImpl implements Export, Export.Definition, Export.Updat
         return this;
     }
 
-    ExportImpl(String name, CostManagementManager serviceManager) {
+    ExportImpl(String name, com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager) {
         this.innerObject = new ExportInner();
         this.serviceManager = serviceManager;
         this.exportName = name;
@@ -134,7 +133,9 @@ public final class ExportImpl implements Export, Export.Definition, Export.Updat
         return this;
     }
 
-    ExportImpl(ExportInner innerObject, CostManagementManager serviceManager) {
+    ExportImpl(
+        ExportInner innerObject,
+        com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.scope =

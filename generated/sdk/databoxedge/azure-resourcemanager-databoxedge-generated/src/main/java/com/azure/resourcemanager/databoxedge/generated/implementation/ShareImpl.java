@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.databoxedge.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.ShareInner;
 import com.azure.resourcemanager.databoxedge.generated.models.AzureContainerInfo;
 import com.azure.resourcemanager.databoxedge.generated.models.ClientAccessRight;
@@ -23,7 +22,7 @@ import java.util.List;
 public final class ShareImpl implements Share, Share.Definition, Share.Update {
     private ShareInner innerObject;
 
-    private final DataBoxEdgeManager serviceManager;
+    private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -96,7 +95,7 @@ public final class ShareImpl implements Share, Share.Definition, Share.Update {
         return this.innerObject;
     }
 
-    private DataBoxEdgeManager manager() {
+    private com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager manager() {
         return this.serviceManager;
     }
 
@@ -130,7 +129,7 @@ public final class ShareImpl implements Share, Share.Definition, Share.Update {
         return this;
     }
 
-    ShareImpl(String name, DataBoxEdgeManager serviceManager) {
+    ShareImpl(String name, com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = new ShareInner();
         this.serviceManager = serviceManager;
         this.name = name;
@@ -158,7 +157,8 @@ public final class ShareImpl implements Share, Share.Definition, Share.Update {
         return this;
     }
 
-    ShareImpl(ShareInner innerObject, DataBoxEdgeManager serviceManager) {
+    ShareImpl(
+        ShareInner innerObject, com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");

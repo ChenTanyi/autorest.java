@@ -6,7 +6,6 @@ package com.azure.resourcemanager.policy.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.policy.generated.PolicyManager;
 import com.azure.resourcemanager.policy.generated.fluent.models.PolicyAssignmentInner;
 import com.azure.resourcemanager.policy.generated.models.EnforcementMode;
 import com.azure.resourcemanager.policy.generated.models.Identity;
@@ -20,9 +19,10 @@ import java.util.Map;
 public final class PolicyAssignmentImpl implements PolicyAssignment, PolicyAssignment.Definition {
     private PolicyAssignmentInner innerObject;
 
-    private final PolicyManager serviceManager;
+    private final com.azure.resourcemanager.policy.generated.PolicyManager serviceManager;
 
-    PolicyAssignmentImpl(PolicyAssignmentInner innerObject, PolicyManager serviceManager) {
+    PolicyAssignmentImpl(
+        PolicyAssignmentInner innerObject, com.azure.resourcemanager.policy.generated.PolicyManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -110,7 +110,7 @@ public final class PolicyAssignmentImpl implements PolicyAssignment, PolicyAssig
         return this.innerObject;
     }
 
-    private PolicyManager manager() {
+    private com.azure.resourcemanager.policy.generated.PolicyManager manager() {
         return this.serviceManager;
     }
 
@@ -143,7 +143,7 @@ public final class PolicyAssignmentImpl implements PolicyAssignment, PolicyAssig
         return this;
     }
 
-    PolicyAssignmentImpl(String name, PolicyManager serviceManager) {
+    PolicyAssignmentImpl(String name, com.azure.resourcemanager.policy.generated.PolicyManager serviceManager) {
         this.innerObject = new PolicyAssignmentInner();
         this.serviceManager = serviceManager;
         this.policyAssignmentName = name;

@@ -4,16 +4,17 @@
 
 package com.azure.resourcemanager.operationalinsights.generated.implementation;
 
-import com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.SharedKeysInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.SharedKeys;
 
 public final class SharedKeysImpl implements SharedKeys {
     private SharedKeysInner innerObject;
 
-    private final LogAnalyticsManager serviceManager;
+    private final com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager;
 
-    SharedKeysImpl(SharedKeysInner innerObject, LogAnalyticsManager serviceManager) {
+    SharedKeysImpl(
+        SharedKeysInner innerObject,
+        com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -30,7 +31,7 @@ public final class SharedKeysImpl implements SharedKeys {
         return this.innerObject;
     }
 
-    private LogAnalyticsManager manager() {
+    private com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager manager() {
         return this.serviceManager;
     }
 }

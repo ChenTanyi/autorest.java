@@ -6,7 +6,6 @@ package com.azure.resourcemanager.monitor.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.LogProfileResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.LogProfileResource;
 import com.azure.resourcemanager.monitor.generated.models.LogProfileResourcePatch;
@@ -19,7 +18,7 @@ public final class LogProfileResourceImpl
     implements LogProfileResource, LogProfileResource.Definition, LogProfileResource.Update {
     private LogProfileResourceInner innerObject;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -88,7 +87,7 @@ public final class LogProfileResourceImpl
         return this.innerObject;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 
@@ -116,7 +115,7 @@ public final class LogProfileResourceImpl
         return this;
     }
 
-    LogProfileResourceImpl(String name, MonitorManager serviceManager) {
+    LogProfileResourceImpl(String name, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = new LogProfileResourceInner();
         this.serviceManager = serviceManager;
         this.logProfileName = name;
@@ -147,7 +146,9 @@ public final class LogProfileResourceImpl
         return this;
     }
 
-    LogProfileResourceImpl(LogProfileResourceInner innerObject, MonitorManager serviceManager) {
+    LogProfileResourceImpl(
+        LogProfileResourceInner innerObject,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.logProfileName = Utils.getValueFromIdByName(innerObject.id(), "logprofiles");

@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.TopLevelDomainsClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.TldLegalAgreementInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.TopLevelDomainInner;
@@ -24,9 +23,11 @@ public final class TopLevelDomainsImpl implements TopLevelDomains {
 
     private final TopLevelDomainsClient innerClient;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    public TopLevelDomainsImpl(TopLevelDomainsClient innerClient, AppServiceManager serviceManager) {
+    public TopLevelDomainsImpl(
+        TopLevelDomainsClient innerClient,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -79,7 +80,7 @@ public final class TopLevelDomainsImpl implements TopLevelDomains {
         return this.innerClient;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

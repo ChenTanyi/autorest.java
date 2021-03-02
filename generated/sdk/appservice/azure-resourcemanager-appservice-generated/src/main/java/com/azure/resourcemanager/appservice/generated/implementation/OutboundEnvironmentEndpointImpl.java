@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.OutboundEnvironmentEndpointInner;
 import com.azure.resourcemanager.appservice.generated.models.EndpointDependency;
 import com.azure.resourcemanager.appservice.generated.models.OutboundEnvironmentEndpoint;
@@ -14,9 +13,11 @@ import java.util.List;
 public final class OutboundEnvironmentEndpointImpl implements OutboundEnvironmentEndpoint {
     private OutboundEnvironmentEndpointInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    OutboundEnvironmentEndpointImpl(OutboundEnvironmentEndpointInner innerObject, AppServiceManager serviceManager) {
+    OutboundEnvironmentEndpointImpl(
+        OutboundEnvironmentEndpointInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -38,7 +39,7 @@ public final class OutboundEnvironmentEndpointImpl implements OutboundEnvironmen
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.mediaservices.generated.MediaservicesManager;
 import com.azure.resourcemanager.mediaservices.generated.fluent.LiveEventsClient;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.LiveEventInner;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEvent;
@@ -22,9 +21,11 @@ public final class LiveEventsImpl implements LiveEvents {
 
     private final LiveEventsClient innerClient;
 
-    private final MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
 
-    public LiveEventsImpl(LiveEventsClient innerClient, MediaservicesManager serviceManager) {
+    public LiveEventsImpl(
+        LiveEventsClient innerClient,
+        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -217,7 +218,7 @@ public final class LiveEventsImpl implements LiveEvents {
         return this.innerClient;
     }
 
-    private MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
         return this.serviceManager;
     }
 

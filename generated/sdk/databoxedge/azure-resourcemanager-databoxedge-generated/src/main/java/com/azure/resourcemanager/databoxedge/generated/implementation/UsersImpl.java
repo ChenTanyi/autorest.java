@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.UsersClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.UserInner;
 import com.azure.resourcemanager.databoxedge.generated.models.User;
@@ -21,9 +20,10 @@ public final class UsersImpl implements Users {
 
     private final UsersClient innerClient;
 
-    private final DataBoxEdgeManager serviceManager;
+    private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    public UsersImpl(UsersClient innerClient, DataBoxEdgeManager serviceManager) {
+    public UsersImpl(
+        UsersClient innerClient, com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -186,7 +186,7 @@ public final class UsersImpl implements Users {
         return this.innerClient;
     }
 
-    private DataBoxEdgeManager manager() {
+    private com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager manager() {
         return this.serviceManager;
     }
 

@@ -6,7 +6,6 @@ package com.azure.resourcemanager.eventgrid.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.eventgrid.generated.EventGridManager;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.PartnerRegistrationInner;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerRegistration;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerRegistrationProvisioningState;
@@ -21,7 +20,7 @@ public final class PartnerRegistrationImpl
     implements PartnerRegistration, PartnerRegistration.Definition, PartnerRegistration.Update {
     private PartnerRegistrationInner innerObject;
 
-    private final EventGridManager serviceManager;
+    private final com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -121,7 +120,7 @@ public final class PartnerRegistrationImpl
         return this.innerObject;
     }
 
-    private EventGridManager manager() {
+    private com.azure.resourcemanager.eventgrid.generated.EventGridManager manager() {
         return this.serviceManager;
     }
 
@@ -156,7 +155,8 @@ public final class PartnerRegistrationImpl
         return this;
     }
 
-    PartnerRegistrationImpl(String name, EventGridManager serviceManager) {
+    PartnerRegistrationImpl(
+        String name, com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = new PartnerRegistrationInner();
         this.serviceManager = serviceManager;
         this.partnerRegistrationName = name;
@@ -189,7 +189,9 @@ public final class PartnerRegistrationImpl
         return this;
     }
 
-    PartnerRegistrationImpl(PartnerRegistrationInner innerObject, EventGridManager serviceManager) {
+    PartnerRegistrationImpl(
+        PartnerRegistrationInner innerObject,
+        com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

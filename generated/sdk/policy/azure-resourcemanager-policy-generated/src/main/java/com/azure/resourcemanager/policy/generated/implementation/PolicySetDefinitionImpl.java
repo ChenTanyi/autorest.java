@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.policy.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.policy.generated.PolicyManager;
 import com.azure.resourcemanager.policy.generated.fluent.models.PolicySetDefinitionInner;
 import com.azure.resourcemanager.policy.generated.models.ParameterDefinitionsValue;
 import com.azure.resourcemanager.policy.generated.models.PolicyDefinitionGroup;
@@ -20,7 +19,7 @@ public final class PolicySetDefinitionImpl
     implements PolicySetDefinition, PolicySetDefinition.Definition, PolicySetDefinition.Update {
     private PolicySetDefinitionInner innerObject;
 
-    private final PolicyManager serviceManager;
+    private final com.azure.resourcemanager.policy.generated.PolicyManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -81,7 +80,7 @@ public final class PolicySetDefinitionImpl
         return this.innerObject;
     }
 
-    private PolicyManager manager() {
+    private com.azure.resourcemanager.policy.generated.PolicyManager manager() {
         return this.serviceManager;
     }
 
@@ -107,7 +106,7 @@ public final class PolicySetDefinitionImpl
         return this;
     }
 
-    PolicySetDefinitionImpl(String name, PolicyManager serviceManager) {
+    PolicySetDefinitionImpl(String name, com.azure.resourcemanager.policy.generated.PolicyManager serviceManager) {
         this.innerObject = new PolicySetDefinitionInner();
         this.serviceManager = serviceManager;
         this.policySetDefinitionName = name;
@@ -137,7 +136,8 @@ public final class PolicySetDefinitionImpl
         return this;
     }
 
-    PolicySetDefinitionImpl(PolicySetDefinitionInner innerObject, PolicyManager serviceManager) {
+    PolicySetDefinitionImpl(
+        PolicySetDefinitionInner innerObject, com.azure.resourcemanager.policy.generated.PolicyManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.policySetDefinitionName = Utils.getValueFromIdByName(innerObject.id(), "policySetDefinitions");

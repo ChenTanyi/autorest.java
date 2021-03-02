@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.search.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.search.generated.SearchManager;
 import com.azure.resourcemanager.search.generated.fluent.models.SharedPrivateLinkResourceInner;
 import com.azure.resourcemanager.search.generated.models.SharedPrivateLinkResource;
 import com.azure.resourcemanager.search.generated.models.SharedPrivateLinkResourceProperties;
@@ -15,7 +14,7 @@ public final class SharedPrivateLinkResourceImpl
     implements SharedPrivateLinkResource, SharedPrivateLinkResource.Definition, SharedPrivateLinkResource.Update {
     private SharedPrivateLinkResourceInner innerObject;
 
-    private final SearchManager serviceManager;
+    private final com.azure.resourcemanager.search.generated.SearchManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -37,7 +36,7 @@ public final class SharedPrivateLinkResourceImpl
         return this.innerObject;
     }
 
-    private SearchManager manager() {
+    private com.azure.resourcemanager.search.generated.SearchManager manager() {
         return this.serviceManager;
     }
 
@@ -87,7 +86,8 @@ public final class SharedPrivateLinkResourceImpl
         return this;
     }
 
-    SharedPrivateLinkResourceImpl(String name, SearchManager serviceManager) {
+    SharedPrivateLinkResourceImpl(
+        String name, com.azure.resourcemanager.search.generated.SearchManager serviceManager) {
         this.innerObject = new SharedPrivateLinkResourceInner();
         this.serviceManager = serviceManager;
         this.sharedPrivateLinkResourceName = name;
@@ -129,7 +129,9 @@ public final class SharedPrivateLinkResourceImpl
         return this;
     }
 
-    SharedPrivateLinkResourceImpl(SharedPrivateLinkResourceInner innerObject, SearchManager serviceManager) {
+    SharedPrivateLinkResourceImpl(
+        SharedPrivateLinkResourceInner innerObject,
+        com.azure.resourcemanager.search.generated.SearchManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.ActionGroupsClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.ActionGroupResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.ActionGroupResource;
@@ -22,9 +21,10 @@ public final class ActionGroupsImpl implements ActionGroups {
 
     private final ActionGroupsClient innerClient;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public ActionGroupsImpl(ActionGroupsClient innerClient, MonitorManager serviceManager) {
+    public ActionGroupsImpl(
+        ActionGroupsClient innerClient, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -173,7 +173,7 @@ public final class ActionGroupsImpl implements ActionGroups {
         return this.innerClient;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 

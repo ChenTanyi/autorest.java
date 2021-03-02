@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetRouteInner;
 import com.azure.resourcemanager.appservice.generated.models.RouteType;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -14,7 +13,7 @@ import com.azure.resourcemanager.appservice.generated.models.VnetRoute;
 public final class VnetRouteImpl implements VnetRoute, VnetRoute.Definition, VnetRoute.Update {
     private VnetRouteInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -52,7 +51,7 @@ public final class VnetRouteImpl implements VnetRoute, VnetRoute.Definition, Vne
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 
@@ -93,7 +92,7 @@ public final class VnetRouteImpl implements VnetRoute, VnetRoute.Definition, Vne
         return this;
     }
 
-    VnetRouteImpl(String name, AppServiceManager serviceManager) {
+    VnetRouteImpl(String name, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = new VnetRouteInner();
         this.serviceManager = serviceManager;
         this.routeName = name;
@@ -124,7 +123,8 @@ public final class VnetRouteImpl implements VnetRoute, VnetRoute.Definition, Vne
         return this;
     }
 
-    VnetRouteImpl(VnetRouteInner innerObject, AppServiceManager serviceManager) {
+    VnetRouteImpl(
+        VnetRouteInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

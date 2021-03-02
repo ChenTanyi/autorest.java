@@ -4,16 +4,17 @@
 
 package com.azure.resourcemanager.frontdoor.generated.implementation;
 
-import com.azure.resourcemanager.frontdoor.generated.FrontDoorManager;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.ValidateCustomDomainOutputInner;
 import com.azure.resourcemanager.frontdoor.generated.models.ValidateCustomDomainOutput;
 
 public final class ValidateCustomDomainOutputImpl implements ValidateCustomDomainOutput {
     private ValidateCustomDomainOutputInner innerObject;
 
-    private final FrontDoorManager serviceManager;
+    private final com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager;
 
-    ValidateCustomDomainOutputImpl(ValidateCustomDomainOutputInner innerObject, FrontDoorManager serviceManager) {
+    ValidateCustomDomainOutputImpl(
+        ValidateCustomDomainOutputInner innerObject,
+        com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,7 +35,7 @@ public final class ValidateCustomDomainOutputImpl implements ValidateCustomDomai
         return this.innerObject;
     }
 
-    private FrontDoorManager manager() {
+    private com.azure.resourcemanager.frontdoor.generated.FrontDoorManager manager() {
         return this.serviceManager;
     }
 }

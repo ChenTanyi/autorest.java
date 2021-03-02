@@ -6,7 +6,6 @@ package com.azure.resourcemanager.monitor.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.AzureMonitorPrivateLinkScopeInner;
 import com.azure.resourcemanager.monitor.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.monitor.generated.models.AzureMonitorPrivateLinkScope;
@@ -23,7 +22,7 @@ public final class AzureMonitorPrivateLinkScopeImpl
         AzureMonitorPrivateLinkScope.Update {
     private AzureMonitorPrivateLinkScopeInner innerObject;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -80,7 +79,7 @@ public final class AzureMonitorPrivateLinkScopeImpl
         return this.innerObject;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 
@@ -115,7 +114,8 @@ public final class AzureMonitorPrivateLinkScopeImpl
         return this;
     }
 
-    AzureMonitorPrivateLinkScopeImpl(String name, MonitorManager serviceManager) {
+    AzureMonitorPrivateLinkScopeImpl(
+        String name, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = new AzureMonitorPrivateLinkScopeInner();
         this.serviceManager = serviceManager;
         this.scopeName = name;
@@ -146,7 +146,9 @@ public final class AzureMonitorPrivateLinkScopeImpl
         return this;
     }
 
-    AzureMonitorPrivateLinkScopeImpl(AzureMonitorPrivateLinkScopeInner innerObject, MonitorManager serviceManager) {
+    AzureMonitorPrivateLinkScopeImpl(
+        AzureMonitorPrivateLinkScopeInner innerObject,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

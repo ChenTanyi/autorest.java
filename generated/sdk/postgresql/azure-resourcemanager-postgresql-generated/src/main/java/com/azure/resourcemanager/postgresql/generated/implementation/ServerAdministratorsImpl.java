@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.postgresql.generated.PostgreSqlManager;
 import com.azure.resourcemanager.postgresql.generated.fluent.ServerAdministratorsClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.ServerAdministratorResourceInner;
 import com.azure.resourcemanager.postgresql.generated.models.ServerAdministratorResource;
@@ -21,9 +20,11 @@ public final class ServerAdministratorsImpl implements ServerAdministrators {
 
     private final ServerAdministratorsClient innerClient;
 
-    private final PostgreSqlManager serviceManager;
+    private final com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager;
 
-    public ServerAdministratorsImpl(ServerAdministratorsClient innerClient, PostgreSqlManager serviceManager) {
+    public ServerAdministratorsImpl(
+        ServerAdministratorsClient innerClient,
+        com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -99,7 +100,7 @@ public final class ServerAdministratorsImpl implements ServerAdministrators {
         return this.innerClient;
     }
 
-    private PostgreSqlManager manager() {
+    private com.azure.resourcemanager.postgresql.generated.PostgreSqlManager manager() {
         return this.serviceManager;
     }
 }

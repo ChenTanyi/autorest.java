@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.DiagnosticsClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AnalysisDefinitionInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DetectorDefinitionInner;
@@ -32,9 +31,11 @@ public final class DiagnosticsImpl implements Diagnostics {
 
     private final DiagnosticsClient innerClient;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    public DiagnosticsImpl(DiagnosticsClient innerClient, AppServiceManager serviceManager) {
+    public DiagnosticsImpl(
+        DiagnosticsClient innerClient,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -637,7 +638,7 @@ public final class DiagnosticsImpl implements Diagnostics {
         return this.innerClient;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.mediaservices.generated.MediaservicesManager;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.TransformInner;
 import com.azure.resourcemanager.mediaservices.generated.models.SystemData;
 import com.azure.resourcemanager.mediaservices.generated.models.Transform;
@@ -17,7 +16,7 @@ import java.util.List;
 public final class TransformImpl implements Transform, Transform.Definition, Transform.Update {
     private TransformInner innerObject;
 
-    private final MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -60,7 +59,7 @@ public final class TransformImpl implements Transform, Transform.Definition, Tra
         return this.innerObject;
     }
 
-    private MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
         return this.serviceManager;
     }
 
@@ -97,7 +96,7 @@ public final class TransformImpl implements Transform, Transform.Definition, Tra
         return this;
     }
 
-    TransformImpl(String name, MediaservicesManager serviceManager) {
+    TransformImpl(String name, com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
         this.innerObject = new TransformInner();
         this.serviceManager = serviceManager;
         this.transformName = name;
@@ -127,7 +126,9 @@ public final class TransformImpl implements Transform, Transform.Definition, Tra
         return this;
     }
 
-    TransformImpl(TransformInner innerObject, MediaservicesManager serviceManager) {
+    TransformImpl(
+        TransformInner innerObject,
+        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

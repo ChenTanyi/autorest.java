@@ -7,7 +7,6 @@ package com.azure.resourcemanager.databoxedge.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.SkusClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.ResourceTypeSkuInner;
 import com.azure.resourcemanager.databoxedge.generated.models.ResourceTypeSku;
@@ -19,9 +18,10 @@ public final class SkusImpl implements Skus {
 
     private final SkusClient innerClient;
 
-    private final DataBoxEdgeManager serviceManager;
+    private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    public SkusImpl(SkusClient innerClient, DataBoxEdgeManager serviceManager) {
+    public SkusImpl(
+        SkusClient innerClient, com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +40,7 @@ public final class SkusImpl implements Skus {
         return this.innerClient;
     }
 
-    private DataBoxEdgeManager manager() {
+    private com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager manager() {
         return this.serviceManager;
     }
 }

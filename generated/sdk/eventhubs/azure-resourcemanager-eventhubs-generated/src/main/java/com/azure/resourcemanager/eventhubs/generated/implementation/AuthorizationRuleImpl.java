@@ -6,7 +6,6 @@ package com.azure.resourcemanager.eventhubs.generated.implementation;
 
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.AuthorizationRuleInner;
 import com.azure.resourcemanager.eventhubs.generated.models.AccessKeys;
 import com.azure.resourcemanager.eventhubs.generated.models.AccessRights;
@@ -19,7 +18,7 @@ public final class AuthorizationRuleImpl
     implements AuthorizationRule, AuthorizationRule.Definition, AuthorizationRule.Update {
     private AuthorizationRuleInner innerObject;
 
-    private final EventHubsManager serviceManager;
+    private final com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -46,7 +45,7 @@ public final class AuthorizationRuleImpl
         return this.innerObject;
     }
 
-    private EventHubsManager manager() {
+    private com.azure.resourcemanager.eventhubs.generated.EventHubsManager manager() {
         return this.serviceManager;
     }
 
@@ -84,7 +83,7 @@ public final class AuthorizationRuleImpl
         return this;
     }
 
-    AuthorizationRuleImpl(String name, EventHubsManager serviceManager) {
+    AuthorizationRuleImpl(String name, com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = new AuthorizationRuleInner();
         this.serviceManager = serviceManager;
         this.authorizationRuleName = name;
@@ -116,7 +115,9 @@ public final class AuthorizationRuleImpl
         return this;
     }
 
-    AuthorizationRuleImpl(AuthorizationRuleInner innerObject, EventHubsManager serviceManager) {
+    AuthorizationRuleImpl(
+        AuthorizationRuleInner innerObject,
+        com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

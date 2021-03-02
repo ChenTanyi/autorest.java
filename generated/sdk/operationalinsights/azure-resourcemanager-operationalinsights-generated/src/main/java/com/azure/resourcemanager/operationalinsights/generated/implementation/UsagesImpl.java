@@ -7,7 +7,6 @@ package com.azure.resourcemanager.operationalinsights.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.UsagesClient;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.UsageMetricInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.UsageMetric;
@@ -19,9 +18,11 @@ public final class UsagesImpl implements Usages {
 
     private final UsagesClient innerClient;
 
-    private final LogAnalyticsManager serviceManager;
+    private final com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager;
 
-    public UsagesImpl(UsagesClient innerClient, LogAnalyticsManager serviceManager) {
+    public UsagesImpl(
+        UsagesClient innerClient,
+        com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +41,7 @@ public final class UsagesImpl implements Usages {
         return this.innerClient;
     }
 
-    private LogAnalyticsManager manager() {
+    private com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager manager() {
         return this.serviceManager;
     }
 }

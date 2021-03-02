@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.postgresql.generated.implementation;
 
-import com.azure.resourcemanager.postgresql.generated.PostgreSqlManager;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.PerformanceTierPropertiesInner;
 import com.azure.resourcemanager.postgresql.generated.models.PerformanceTierProperties;
 import com.azure.resourcemanager.postgresql.generated.models.PerformanceTierServiceLevelObjectives;
@@ -14,9 +13,11 @@ import java.util.List;
 public final class PerformanceTierPropertiesImpl implements PerformanceTierProperties {
     private PerformanceTierPropertiesInner innerObject;
 
-    private final PostgreSqlManager serviceManager;
+    private final com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager;
 
-    PerformanceTierPropertiesImpl(PerformanceTierPropertiesInner innerObject, PostgreSqlManager serviceManager) {
+    PerformanceTierPropertiesImpl(
+        PerformanceTierPropertiesInner innerObject,
+        com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -62,7 +63,7 @@ public final class PerformanceTierPropertiesImpl implements PerformanceTierPrope
         return this.innerObject;
     }
 
-    private PostgreSqlManager manager() {
+    private com.azure.resourcemanager.postgresql.generated.PostgreSqlManager manager() {
         return this.serviceManager;
     }
 }

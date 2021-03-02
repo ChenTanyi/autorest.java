@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.search.generated.implementation;
 
-import com.azure.resourcemanager.search.generated.SearchManager;
 import com.azure.resourcemanager.search.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.search.generated.models.Operation;
 import com.azure.resourcemanager.search.generated.models.OperationDisplay;
@@ -12,9 +11,9 @@ import com.azure.resourcemanager.search.generated.models.OperationDisplay;
 public final class OperationImpl implements Operation {
     private OperationInner innerObject;
 
-    private final SearchManager serviceManager;
+    private final com.azure.resourcemanager.search.generated.SearchManager serviceManager;
 
-    OperationImpl(OperationInner innerObject, SearchManager serviceManager) {
+    OperationImpl(OperationInner innerObject, com.azure.resourcemanager.search.generated.SearchManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -31,7 +30,7 @@ public final class OperationImpl implements Operation {
         return this.innerObject;
     }
 
-    private SearchManager manager() {
+    private com.azure.resourcemanager.search.generated.SearchManager manager() {
         return this.serviceManager;
     }
 }

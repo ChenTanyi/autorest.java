@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.PushSettingsInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.ApiDefinitionInfo;
@@ -34,9 +33,11 @@ import java.util.List;
 public final class SiteConfigResourceImpl implements SiteConfigResource {
     private SiteConfigResourceInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SiteConfigResourceImpl(SiteConfigResourceInner innerObject, AppServiceManager serviceManager) {
+    SiteConfigResourceImpl(
+        SiteConfigResourceInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -337,7 +338,7 @@ public final class SiteConfigResourceImpl implements SiteConfigResource {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

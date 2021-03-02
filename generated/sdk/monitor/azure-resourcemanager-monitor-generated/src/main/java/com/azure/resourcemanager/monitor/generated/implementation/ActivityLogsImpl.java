@@ -7,7 +7,6 @@ package com.azure.resourcemanager.monitor.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.ActivityLogsClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.EventDataInner;
 import com.azure.resourcemanager.monitor.generated.models.ActivityLogs;
@@ -19,9 +18,10 @@ public final class ActivityLogsImpl implements ActivityLogs {
 
     private final ActivityLogsClient innerClient;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public ActivityLogsImpl(ActivityLogsClient innerClient, MonitorManager serviceManager) {
+    public ActivityLogsImpl(
+        ActivityLogsClient innerClient, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +40,7 @@ public final class ActivityLogsImpl implements ActivityLogs {
         return this.innerClient;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 }

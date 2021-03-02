@@ -7,7 +7,6 @@ package com.azure.resourcemanager.monitor.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.MetricNamespacesClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricNamespaceInner;
 import com.azure.resourcemanager.monitor.generated.models.MetricNamespace;
@@ -19,9 +18,10 @@ public final class MetricNamespacesImpl implements MetricNamespaces {
 
     private final MetricNamespacesClient innerClient;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public MetricNamespacesImpl(MetricNamespacesClient innerClient, MonitorManager serviceManager) {
+    public MetricNamespacesImpl(
+        MetricNamespacesClient innerClient, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +40,7 @@ public final class MetricNamespacesImpl implements MetricNamespaces {
         return this.innerClient;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 }

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.databoxedge.generated.implementation;
 
-import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.JobInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Job;
 import com.azure.resourcemanager.databoxedge.generated.models.JobErrorDetails;
@@ -18,9 +17,9 @@ import java.time.OffsetDateTime;
 public final class JobImpl implements Job {
     private JobInner innerObject;
 
-    private final DataBoxEdgeManager serviceManager;
+    private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    JobImpl(JobInner innerObject, DataBoxEdgeManager serviceManager) {
+    JobImpl(JobInner innerObject, com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -93,7 +92,7 @@ public final class JobImpl implements Job {
         return this.innerObject;
     }
 
-    private DataBoxEdgeManager manager() {
+    private com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager manager() {
         return this.serviceManager;
     }
 }

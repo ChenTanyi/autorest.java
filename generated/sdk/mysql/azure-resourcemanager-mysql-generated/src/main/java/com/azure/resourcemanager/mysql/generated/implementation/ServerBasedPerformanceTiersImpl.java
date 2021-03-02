@@ -7,7 +7,6 @@ package com.azure.resourcemanager.mysql.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.ServerBasedPerformanceTiersClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.PerformanceTierPropertiesInner;
 import com.azure.resourcemanager.mysql.generated.models.PerformanceTierProperties;
@@ -19,9 +18,11 @@ public final class ServerBasedPerformanceTiersImpl implements ServerBasedPerform
 
     private final ServerBasedPerformanceTiersClient innerClient;
 
-    private final MySqlManager serviceManager;
+    private final com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager;
 
-    public ServerBasedPerformanceTiersImpl(ServerBasedPerformanceTiersClient innerClient, MySqlManager serviceManager) {
+    public ServerBasedPerformanceTiersImpl(
+        ServerBasedPerformanceTiersClient innerClient,
+        com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -41,7 +42,7 @@ public final class ServerBasedPerformanceTiersImpl implements ServerBasedPerform
         return this.innerClient;
     }
 
-    private MySqlManager manager() {
+    private com.azure.resourcemanager.mysql.generated.MySqlManager manager() {
         return this.serviceManager;
     }
 }

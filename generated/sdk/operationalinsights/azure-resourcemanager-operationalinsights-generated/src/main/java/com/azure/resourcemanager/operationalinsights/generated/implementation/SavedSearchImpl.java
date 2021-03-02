@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.operationalinsights.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.SavedSearchInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.SavedSearch;
 import com.azure.resourcemanager.operationalinsights.generated.models.Tag;
@@ -15,7 +14,7 @@ import java.util.List;
 public final class SavedSearchImpl implements SavedSearch, SavedSearch.Definition, SavedSearch.Update {
     private SavedSearchInner innerObject;
 
-    private final LogAnalyticsManager serviceManager;
+    private final com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -70,7 +69,7 @@ public final class SavedSearchImpl implements SavedSearch, SavedSearch.Definitio
         return this.innerObject;
     }
 
-    private LogAnalyticsManager manager() {
+    private com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager manager() {
         return this.serviceManager;
     }
 
@@ -107,7 +106,8 @@ public final class SavedSearchImpl implements SavedSearch, SavedSearch.Definitio
         return this;
     }
 
-    SavedSearchImpl(String name, LogAnalyticsManager serviceManager) {
+    SavedSearchImpl(
+        String name, com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = new SavedSearchInner();
         this.serviceManager = serviceManager;
         this.savedSearchId = name;
@@ -138,7 +138,9 @@ public final class SavedSearchImpl implements SavedSearch, SavedSearch.Definitio
         return this;
     }
 
-    SavedSearchImpl(SavedSearchInner innerObject, LogAnalyticsManager serviceManager) {
+    SavedSearchImpl(
+        SavedSearchInner innerObject,
+        com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourcegroups");

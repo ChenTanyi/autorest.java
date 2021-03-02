@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.eventgrid.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.eventgrid.generated.EventGridManager;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.EventChannelInner;
 import com.azure.resourcemanager.eventgrid.generated.models.EventChannel;
 import com.azure.resourcemanager.eventgrid.generated.models.EventChannelDestination;
@@ -19,7 +18,7 @@ import java.time.OffsetDateTime;
 public final class EventChannelImpl implements EventChannel, EventChannel.Definition, EventChannel.Update {
     private EventChannelInner innerObject;
 
-    private final EventGridManager serviceManager;
+    private final com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -69,7 +68,7 @@ public final class EventChannelImpl implements EventChannel, EventChannel.Defini
         return this.innerObject;
     }
 
-    private EventGridManager manager() {
+    private com.azure.resourcemanager.eventgrid.generated.EventGridManager manager() {
         return this.serviceManager;
     }
 
@@ -107,7 +106,7 @@ public final class EventChannelImpl implements EventChannel, EventChannel.Defini
         return this;
     }
 
-    EventChannelImpl(String name, EventGridManager serviceManager) {
+    EventChannelImpl(String name, com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = new EventChannelInner();
         this.serviceManager = serviceManager;
         this.eventChannelName = name;
@@ -139,7 +138,8 @@ public final class EventChannelImpl implements EventChannel, EventChannel.Defini
         return this;
     }
 
-    EventChannelImpl(EventChannelInner innerObject, EventGridManager serviceManager) {
+    EventChannelImpl(
+        EventChannelInner innerObject, com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

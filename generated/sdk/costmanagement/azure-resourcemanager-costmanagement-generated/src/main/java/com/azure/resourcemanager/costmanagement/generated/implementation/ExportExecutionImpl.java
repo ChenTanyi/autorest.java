@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.costmanagement.generated.implementation;
 
 import com.azure.core.management.exception.ManagementError;
-import com.azure.resourcemanager.costmanagement.generated.CostManagementManager;
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.CommonExportPropertiesInner;
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.ExportExecutionInner;
 import com.azure.resourcemanager.costmanagement.generated.models.CommonExportProperties;
@@ -17,9 +16,11 @@ import java.time.OffsetDateTime;
 public final class ExportExecutionImpl implements ExportExecution {
     private ExportExecutionInner innerObject;
 
-    private final CostManagementManager serviceManager;
+    private final com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager;
 
-    ExportExecutionImpl(ExportExecutionInner innerObject, CostManagementManager serviceManager) {
+    ExportExecutionImpl(
+        ExportExecutionInner innerObject,
+        com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -85,7 +86,7 @@ public final class ExportExecutionImpl implements ExportExecution {
         return this.innerObject;
     }
 
-    private CostManagementManager manager() {
+    private com.azure.resourcemanager.costmanagement.generated.CostManagementManager manager() {
         return this.serviceManager;
     }
 }

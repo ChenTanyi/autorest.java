@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SkuInfoInner;
 import com.azure.resourcemanager.appservice.generated.models.SkuCapacity;
 import com.azure.resourcemanager.appservice.generated.models.SkuDescription;
@@ -13,9 +12,10 @@ import com.azure.resourcemanager.appservice.generated.models.SkuInfo;
 public final class SkuInfoImpl implements SkuInfo {
     private SkuInfoInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SkuInfoImpl(SkuInfoInner innerObject, AppServiceManager serviceManager) {
+    SkuInfoImpl(
+        SkuInfoInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -36,7 +36,7 @@ public final class SkuInfoImpl implements SkuInfo {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

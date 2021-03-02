@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.ScheduledQueryRulesClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.LogSearchRuleResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.LogSearchRuleResource;
@@ -21,9 +20,11 @@ public final class ScheduledQueryRulesImpl implements ScheduledQueryRules {
 
     private final ScheduledQueryRulesClient innerClient;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public ScheduledQueryRulesImpl(ScheduledQueryRulesClient innerClient, MonitorManager serviceManager) {
+    public ScheduledQueryRulesImpl(
+        ScheduledQueryRulesClient innerClient,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -170,7 +171,7 @@ public final class ScheduledQueryRulesImpl implements ScheduledQueryRules {
         return this.innerClient;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 

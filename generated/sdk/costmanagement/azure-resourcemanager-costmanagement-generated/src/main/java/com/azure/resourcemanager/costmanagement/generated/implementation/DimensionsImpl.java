@@ -7,7 +7,6 @@ package com.azure.resourcemanager.costmanagement.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.costmanagement.generated.CostManagementManager;
 import com.azure.resourcemanager.costmanagement.generated.fluent.DimensionsClient;
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.DimensionInner;
 import com.azure.resourcemanager.costmanagement.generated.models.Dimension;
@@ -20,9 +19,11 @@ public final class DimensionsImpl implements Dimensions {
 
     private final DimensionsClient innerClient;
 
-    private final CostManagementManager serviceManager;
+    private final com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager;
 
-    public DimensionsImpl(DimensionsClient innerClient, CostManagementManager serviceManager) {
+    public DimensionsImpl(
+        DimensionsClient innerClient,
+        com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -65,7 +66,7 @@ public final class DimensionsImpl implements Dimensions {
         return this.innerClient;
     }
 
-    private CostManagementManager manager() {
+    private com.azure.resourcemanager.costmanagement.generated.CostManagementManager manager() {
         return this.serviceManager;
     }
 }

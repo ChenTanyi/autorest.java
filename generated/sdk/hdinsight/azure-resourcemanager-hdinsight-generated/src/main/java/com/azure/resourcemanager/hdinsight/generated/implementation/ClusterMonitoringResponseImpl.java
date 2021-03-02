@@ -4,16 +4,17 @@
 
 package com.azure.resourcemanager.hdinsight.generated.implementation;
 
-import com.azure.resourcemanager.hdinsight.generated.HDInsightManager;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.ClusterMonitoringResponseInner;
 import com.azure.resourcemanager.hdinsight.generated.models.ClusterMonitoringResponse;
 
 public final class ClusterMonitoringResponseImpl implements ClusterMonitoringResponse {
     private ClusterMonitoringResponseInner innerObject;
 
-    private final HDInsightManager serviceManager;
+    private final com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager;
 
-    ClusterMonitoringResponseImpl(ClusterMonitoringResponseInner innerObject, HDInsightManager serviceManager) {
+    ClusterMonitoringResponseImpl(
+        ClusterMonitoringResponseInner innerObject,
+        com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -30,7 +31,7 @@ public final class ClusterMonitoringResponseImpl implements ClusterMonitoringRes
         return this.innerObject;
     }
 
-    private HDInsightManager manager() {
+    private com.azure.resourcemanager.hdinsight.generated.HDInsightManager manager() {
         return this.serviceManager;
     }
 }

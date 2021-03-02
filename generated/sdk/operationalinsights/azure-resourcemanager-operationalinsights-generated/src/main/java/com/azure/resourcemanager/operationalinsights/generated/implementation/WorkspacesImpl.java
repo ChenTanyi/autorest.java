@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.WorkspacesClient;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.WorkspaceInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.Workspace;
@@ -21,9 +20,11 @@ public final class WorkspacesImpl implements Workspaces {
 
     private final WorkspacesClient innerClient;
 
-    private final LogAnalyticsManager serviceManager;
+    private final com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager;
 
-    public WorkspacesImpl(WorkspacesClient innerClient, LogAnalyticsManager serviceManager) {
+    public WorkspacesImpl(
+        WorkspacesClient innerClient,
+        com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -165,7 +166,7 @@ public final class WorkspacesImpl implements Workspaces {
         return this.innerClient;
     }
 
-    private LogAnalyticsManager manager() {
+    private com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager manager() {
         return this.serviceManager;
     }
 

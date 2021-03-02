@@ -6,7 +6,6 @@ package com.azure.resourcemanager.monitor.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.AutoscaleSettingResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.AutoscaleNotification;
 import com.azure.resourcemanager.monitor.generated.models.AutoscaleProfile;
@@ -20,7 +19,7 @@ public final class AutoscaleSettingResourceImpl
     implements AutoscaleSettingResource, AutoscaleSettingResource.Definition, AutoscaleSettingResource.Update {
     private AutoscaleSettingResourceInner innerObject;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -89,7 +88,7 @@ public final class AutoscaleSettingResourceImpl
         return this.innerObject;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 
@@ -124,7 +123,8 @@ public final class AutoscaleSettingResourceImpl
         return this;
     }
 
-    AutoscaleSettingResourceImpl(String name, MonitorManager serviceManager) {
+    AutoscaleSettingResourceImpl(
+        String name, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = new AutoscaleSettingResourceInner();
         this.serviceManager = serviceManager;
         this.autoscaleSettingName = name;
@@ -156,7 +156,9 @@ public final class AutoscaleSettingResourceImpl
         return this;
     }
 
-    AutoscaleSettingResourceImpl(AutoscaleSettingResourceInner innerObject, MonitorManager serviceManager) {
+    AutoscaleSettingResourceImpl(
+        AutoscaleSettingResourceInner innerObject,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourcegroups");

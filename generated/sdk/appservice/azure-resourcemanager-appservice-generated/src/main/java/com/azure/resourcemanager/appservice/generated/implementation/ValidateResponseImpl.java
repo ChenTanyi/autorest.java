@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ValidateResponseInner;
 import com.azure.resourcemanager.appservice.generated.models.ValidateResponse;
 import com.azure.resourcemanager.appservice.generated.models.ValidateResponseError;
@@ -12,9 +11,11 @@ import com.azure.resourcemanager.appservice.generated.models.ValidateResponseErr
 public final class ValidateResponseImpl implements ValidateResponse {
     private ValidateResponseInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    ValidateResponseImpl(ValidateResponseInner innerObject, AppServiceManager serviceManager) {
+    ValidateResponseImpl(
+        ValidateResponseInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -31,7 +32,7 @@ public final class ValidateResponseImpl implements ValidateResponse {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

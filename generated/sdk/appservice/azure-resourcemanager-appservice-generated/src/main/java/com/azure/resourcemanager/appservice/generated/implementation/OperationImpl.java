@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.appservice.generated.models.ErrorEntity;
 import com.azure.resourcemanager.appservice.generated.models.Operation;
@@ -17,9 +16,10 @@ import java.util.UUID;
 public final class OperationImpl implements Operation {
     private OperationInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    OperationImpl(OperationInner innerObject, AppServiceManager serviceManager) {
+    OperationImpl(
+        OperationInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -65,7 +65,7 @@ public final class OperationImpl implements Operation {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

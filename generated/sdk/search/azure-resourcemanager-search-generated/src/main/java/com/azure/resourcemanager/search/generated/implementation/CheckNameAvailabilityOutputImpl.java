@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.search.generated.implementation;
 
-import com.azure.resourcemanager.search.generated.SearchManager;
 import com.azure.resourcemanager.search.generated.fluent.models.CheckNameAvailabilityOutputInner;
 import com.azure.resourcemanager.search.generated.models.CheckNameAvailabilityOutput;
 import com.azure.resourcemanager.search.generated.models.UnavailableNameReason;
@@ -12,9 +11,11 @@ import com.azure.resourcemanager.search.generated.models.UnavailableNameReason;
 public final class CheckNameAvailabilityOutputImpl implements CheckNameAvailabilityOutput {
     private CheckNameAvailabilityOutputInner innerObject;
 
-    private final SearchManager serviceManager;
+    private final com.azure.resourcemanager.search.generated.SearchManager serviceManager;
 
-    CheckNameAvailabilityOutputImpl(CheckNameAvailabilityOutputInner innerObject, SearchManager serviceManager) {
+    CheckNameAvailabilityOutputImpl(
+        CheckNameAvailabilityOutputInner innerObject,
+        com.azure.resourcemanager.search.generated.SearchManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -35,7 +36,7 @@ public final class CheckNameAvailabilityOutputImpl implements CheckNameAvailabil
         return this.innerObject;
     }
 
-    private SearchManager manager() {
+    private com.azure.resourcemanager.search.generated.SearchManager manager() {
         return this.serviceManager;
     }
 }

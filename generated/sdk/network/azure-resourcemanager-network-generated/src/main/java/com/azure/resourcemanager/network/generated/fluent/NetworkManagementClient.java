@@ -354,6 +354,83 @@ public interface NetworkManagementClient {
     NetworkInterfaceTapConfigurationsClient getNetworkInterfaceTapConfigurations();
 
     /**
+     * Gets the NetworkManagersClient object to access its operations.
+     *
+     * @return the NetworkManagersClient object.
+     */
+    NetworkManagersClient getNetworkManagers();
+
+    /**
+     * Gets the NetworkManagerCommitsClient object to access its operations.
+     *
+     * @return the NetworkManagerCommitsClient object.
+     */
+    NetworkManagerCommitsClient getNetworkManagerCommits();
+
+    /**
+     * Gets the NetworkManagerDeploymentStatusOperationsClient object to access its operations.
+     *
+     * @return the NetworkManagerDeploymentStatusOperationsClient object.
+     */
+    NetworkManagerDeploymentStatusOperationsClient getNetworkManagerDeploymentStatusOperations();
+
+    /**
+     * Gets the EffectiveVirtualNetworksClient object to access its operations.
+     *
+     * @return the EffectiveVirtualNetworksClient object.
+     */
+    EffectiveVirtualNetworksClient getEffectiveVirtualNetworks();
+
+    /**
+     * Gets the ActiveConfigurationsClient object to access its operations.
+     *
+     * @return the ActiveConfigurationsClient object.
+     */
+    ActiveConfigurationsClient getActiveConfigurations();
+
+    /**
+     * Gets the ConnectivityConfigurationsClient object to access its operations.
+     *
+     * @return the ConnectivityConfigurationsClient object.
+     */
+    ConnectivityConfigurationsClient getConnectivityConfigurations();
+
+    /**
+     * Gets the EffectiveConfigurationsClient object to access its operations.
+     *
+     * @return the EffectiveConfigurationsClient object.
+     */
+    EffectiveConfigurationsClient getEffectiveConfigurations();
+
+    /**
+     * Gets the NetworkGroupsClient object to access its operations.
+     *
+     * @return the NetworkGroupsClient object.
+     */
+    NetworkGroupsClient getNetworkGroups();
+
+    /**
+     * Gets the SecurityConfigurationsClient object to access its operations.
+     *
+     * @return the SecurityConfigurationsClient object.
+     */
+    SecurityConfigurationsClient getSecurityConfigurations();
+
+    /**
+     * Gets the AdminRulesClient object to access its operations.
+     *
+     * @return the AdminRulesClient object.
+     */
+    AdminRulesClient getAdminRules();
+
+    /**
+     * Gets the UserRulesClient object to access its operations.
+     *
+     * @return the UserRulesClient object.
+     */
+    UserRulesClient getUserRules();
+
+    /**
      * Gets the NetworkProfilesClient object to access its operations.
      *
      * @return the NetworkProfilesClient object.

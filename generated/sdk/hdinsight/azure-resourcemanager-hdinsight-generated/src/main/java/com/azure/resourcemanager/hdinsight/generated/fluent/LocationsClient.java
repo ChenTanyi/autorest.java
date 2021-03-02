@@ -11,7 +11,11 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.AsyncOperationResultInner;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.BillingResponseListResultInner;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.CapabilitiesResultInner;
+import com.azure.resourcemanager.hdinsight.generated.fluent.models.ClusterCreateValidationResultInner;
+import com.azure.resourcemanager.hdinsight.generated.fluent.models.NameAvailabilityCheckResultInner;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.UsagesListResultInner;
+import com.azure.resourcemanager.hdinsight.generated.models.ClusterCreateRequestValidationParameters;
+import com.azure.resourcemanager.hdinsight.generated.models.NameAvailabilityCheckRequestParameters;
 
 /** An instance of this class provides access to all the operations defined in LocationsClient. */
 public interface LocationsClient {
@@ -117,4 +121,62 @@ public interface LocationsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<AsyncOperationResultInner> getAzureAsyncOperationStatusWithResponse(
         String location, String operationId, Context context);
+
+    /**
+     * Check the cluster name is available or not.
+     *
+     * @param location The Azure location (region) for which to make the request.
+     * @param parameters The request spec of checking name availability.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response spec of checking name availability.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    NameAvailabilityCheckResultInner checkNameAvailability(
+        String location, NameAvailabilityCheckRequestParameters parameters);
+
+    /**
+     * Check the cluster name is available or not.
+     *
+     * @param location The Azure location (region) for which to make the request.
+     * @param parameters The request spec of checking name availability.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response spec of checking name availability.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    Response<NameAvailabilityCheckResultInner> checkNameAvailabilityWithResponse(
+        String location, NameAvailabilityCheckRequestParameters parameters, Context context);
+
+    /**
+     * Validate the cluster create request spec is valid or not.
+     *
+     * @param location The Azure location (region) for which to make the request.
+     * @param parameters The cluster create request specification.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response of cluster create request validation.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    ClusterCreateValidationResultInner validateClusterCreateRequest(
+        String location, ClusterCreateRequestValidationParameters parameters);
+
+    /**
+     * Validate the cluster create request spec is valid or not.
+     *
+     * @param location The Azure location (region) for which to make the request.
+     * @param parameters The cluster create request specification.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response of cluster create request validation.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    Response<ClusterCreateValidationResultInner> validateClusterCreateRequestWithResponse(
+        String location, ClusterCreateRequestValidationParameters parameters, Context context);
 }

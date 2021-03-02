@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.monitor.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSettingsResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.DiagnosticSettingsResource;
 import com.azure.resourcemanager.monitor.generated.models.LogSettings;
@@ -17,7 +16,7 @@ public final class DiagnosticSettingsResourceImpl
     implements DiagnosticSettingsResource, DiagnosticSettingsResource.Definition, DiagnosticSettingsResource.Update {
     private DiagnosticSettingsResourceInner innerObject;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -77,7 +76,7 @@ public final class DiagnosticSettingsResourceImpl
         return this.innerObject;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 
@@ -110,7 +109,8 @@ public final class DiagnosticSettingsResourceImpl
         return this;
     }
 
-    DiagnosticSettingsResourceImpl(String name, MonitorManager serviceManager) {
+    DiagnosticSettingsResourceImpl(
+        String name, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = new DiagnosticSettingsResourceInner();
         this.serviceManager = serviceManager;
         this.name = name;
@@ -140,7 +140,9 @@ public final class DiagnosticSettingsResourceImpl
         return this;
     }
 
-    DiagnosticSettingsResourceImpl(DiagnosticSettingsResourceInner innerObject, MonitorManager serviceManager) {
+    DiagnosticSettingsResourceImpl(
+        DiagnosticSettingsResourceInner innerObject,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceUri =

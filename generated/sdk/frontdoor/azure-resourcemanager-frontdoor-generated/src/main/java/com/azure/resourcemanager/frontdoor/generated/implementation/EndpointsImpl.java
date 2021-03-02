@@ -6,7 +6,6 @@ package com.azure.resourcemanager.frontdoor.generated.implementation;
 
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.frontdoor.generated.FrontDoorManager;
 import com.azure.resourcemanager.frontdoor.generated.fluent.EndpointsClient;
 import com.azure.resourcemanager.frontdoor.generated.models.Endpoints;
 import com.azure.resourcemanager.frontdoor.generated.models.PurgeParameters;
@@ -17,9 +16,10 @@ public final class EndpointsImpl implements Endpoints {
 
     private final EndpointsClient innerClient;
 
-    private final FrontDoorManager serviceManager;
+    private final com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager;
 
-    public EndpointsImpl(EndpointsClient innerClient, FrontDoorManager serviceManager) {
+    public EndpointsImpl(
+        EndpointsClient innerClient, com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -37,7 +37,7 @@ public final class EndpointsImpl implements Endpoints {
         return this.innerClient;
     }
 
-    private FrontDoorManager manager() {
+    private com.azure.resourcemanager.frontdoor.generated.FrontDoorManager manager() {
         return this.serviceManager;
     }
 }

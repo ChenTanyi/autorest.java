@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.dns.generated.DnsManager;
 import com.azure.resourcemanager.dns.generated.fluent.ZonesClient;
 import com.azure.resourcemanager.dns.generated.fluent.models.ZoneInner;
 import com.azure.resourcemanager.dns.generated.models.Zone;
@@ -21,9 +20,9 @@ public final class ZonesImpl implements Zones {
 
     private final ZonesClient innerClient;
 
-    private final DnsManager serviceManager;
+    private final com.azure.resourcemanager.dns.generated.DnsManager serviceManager;
 
-    public ZonesImpl(ZonesClient innerClient, DnsManager serviceManager) {
+    public ZonesImpl(ZonesClient innerClient, com.azure.resourcemanager.dns.generated.DnsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -164,7 +163,7 @@ public final class ZonesImpl implements Zones {
         return this.innerClient;
     }
 
-    private DnsManager manager() {
+    private com.azure.resourcemanager.dns.generated.DnsManager manager() {
         return this.serviceManager;
     }
 

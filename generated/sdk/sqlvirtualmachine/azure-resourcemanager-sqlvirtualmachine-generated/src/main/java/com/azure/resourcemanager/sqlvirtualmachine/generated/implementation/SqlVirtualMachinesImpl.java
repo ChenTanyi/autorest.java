@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.sqlvirtualmachine.generated.SqlVirtualMachineManager;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.SqlVirtualMachinesClient;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models.SqlVirtualMachineInner;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlVirtualMachine;
@@ -21,9 +20,11 @@ public final class SqlVirtualMachinesImpl implements SqlVirtualMachines {
 
     private final SqlVirtualMachinesClient innerClient;
 
-    private final SqlVirtualMachineManager serviceManager;
+    private final com.azure.resourcemanager.sqlvirtualmachine.generated.SqlVirtualMachineManager serviceManager;
 
-    public SqlVirtualMachinesImpl(SqlVirtualMachinesClient innerClient, SqlVirtualMachineManager serviceManager) {
+    public SqlVirtualMachinesImpl(
+        SqlVirtualMachinesClient innerClient,
+        com.azure.resourcemanager.sqlvirtualmachine.generated.SqlVirtualMachineManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -189,7 +190,7 @@ public final class SqlVirtualMachinesImpl implements SqlVirtualMachines {
         return this.innerClient;
     }
 
-    private SqlVirtualMachineManager manager() {
+    private com.azure.resourcemanager.sqlvirtualmachine.generated.SqlVirtualMachineManager manager() {
         return this.serviceManager;
     }
 

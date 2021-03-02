@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.eventhubs.generated.implementation;
 
-import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.CheckNameAvailabilityResultInner;
 import com.azure.resourcemanager.eventhubs.generated.models.CheckNameAvailabilityResult;
 import com.azure.resourcemanager.eventhubs.generated.models.UnavailableReason;
@@ -12,9 +11,11 @@ import com.azure.resourcemanager.eventhubs.generated.models.UnavailableReason;
 public final class CheckNameAvailabilityResultImpl implements CheckNameAvailabilityResult {
     private CheckNameAvailabilityResultInner innerObject;
 
-    private final EventHubsManager serviceManager;
+    private final com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager;
 
-    CheckNameAvailabilityResultImpl(CheckNameAvailabilityResultInner innerObject, EventHubsManager serviceManager) {
+    CheckNameAvailabilityResultImpl(
+        CheckNameAvailabilityResultInner innerObject,
+        com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -35,7 +36,7 @@ public final class CheckNameAvailabilityResultImpl implements CheckNameAvailabil
         return this.innerObject;
     }
 
-    private EventHubsManager manager() {
+    private com.azure.resourcemanager.eventhubs.generated.EventHubsManager manager() {
         return this.serviceManager;
     }
 }

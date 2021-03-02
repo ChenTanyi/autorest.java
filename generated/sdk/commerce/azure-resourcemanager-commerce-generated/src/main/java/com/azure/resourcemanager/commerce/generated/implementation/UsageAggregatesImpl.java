@@ -7,7 +7,6 @@ package com.azure.resourcemanager.commerce.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.commerce.generated.UsageManager;
 import com.azure.resourcemanager.commerce.generated.fluent.UsageAggregatesClient;
 import com.azure.resourcemanager.commerce.generated.fluent.models.UsageAggregationInner;
 import com.azure.resourcemanager.commerce.generated.models.AggregationGranularity;
@@ -21,9 +20,10 @@ public final class UsageAggregatesImpl implements UsageAggregates {
 
     private final UsageAggregatesClient innerClient;
 
-    private final UsageManager serviceManager;
+    private final com.azure.resourcemanager.commerce.generated.UsageManager serviceManager;
 
-    public UsageAggregatesImpl(UsageAggregatesClient innerClient, UsageManager serviceManager) {
+    public UsageAggregatesImpl(
+        UsageAggregatesClient innerClient, com.azure.resourcemanager.commerce.generated.UsageManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -57,7 +57,7 @@ public final class UsageAggregatesImpl implements UsageAggregates {
         return this.innerClient;
     }
 
-    private UsageManager manager() {
+    private com.azure.resourcemanager.commerce.generated.UsageManager manager() {
         return this.serviceManager;
     }
 }

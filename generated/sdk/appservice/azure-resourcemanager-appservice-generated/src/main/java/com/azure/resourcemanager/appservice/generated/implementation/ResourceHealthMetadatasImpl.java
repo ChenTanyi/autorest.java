@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.ResourceHealthMetadatasClient;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ResourceHealthMetadataInner;
 import com.azure.resourcemanager.appservice.generated.models.ResourceHealthMetadata;
@@ -21,9 +20,11 @@ public final class ResourceHealthMetadatasImpl implements ResourceHealthMetadata
 
     private final ResourceHealthMetadatasClient innerClient;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    public ResourceHealthMetadatasImpl(ResourceHealthMetadatasClient innerClient, AppServiceManager serviceManager) {
+    public ResourceHealthMetadatasImpl(
+        ResourceHealthMetadatasClient innerClient,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -125,7 +126,7 @@ public final class ResourceHealthMetadatasImpl implements ResourceHealthMetadata
         return this.innerClient;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

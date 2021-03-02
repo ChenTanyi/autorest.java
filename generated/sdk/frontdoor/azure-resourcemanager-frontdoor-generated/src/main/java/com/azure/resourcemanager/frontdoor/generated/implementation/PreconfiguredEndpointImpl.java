@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.frontdoor.generated.implementation;
 
-import com.azure.resourcemanager.frontdoor.generated.FrontDoorManager;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.PreconfiguredEndpointInner;
 import com.azure.resourcemanager.frontdoor.generated.models.EndpointType;
 import com.azure.resourcemanager.frontdoor.generated.models.PreconfiguredEndpoint;
@@ -14,9 +13,11 @@ import java.util.Map;
 public final class PreconfiguredEndpointImpl implements PreconfiguredEndpoint {
     private PreconfiguredEndpointInner innerObject;
 
-    private final FrontDoorManager serviceManager;
+    private final com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager;
 
-    PreconfiguredEndpointImpl(PreconfiguredEndpointInner innerObject, FrontDoorManager serviceManager) {
+    PreconfiguredEndpointImpl(
+        PreconfiguredEndpointInner innerObject,
+        com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -66,7 +67,7 @@ public final class PreconfiguredEndpointImpl implements PreconfiguredEndpoint {
         return this.innerObject;
     }
 
-    private FrontDoorManager manager() {
+    private com.azure.resourcemanager.frontdoor.generated.FrontDoorManager manager() {
         return this.serviceManager;
     }
 }

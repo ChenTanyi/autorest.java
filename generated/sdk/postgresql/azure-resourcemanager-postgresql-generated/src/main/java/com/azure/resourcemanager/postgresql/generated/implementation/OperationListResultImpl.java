@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.postgresql.generated.implementation;
 
-import com.azure.resourcemanager.postgresql.generated.PostgreSqlManager;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.OperationListResultInner;
 import com.azure.resourcemanager.postgresql.generated.models.Operation;
 import com.azure.resourcemanager.postgresql.generated.models.OperationListResult;
@@ -14,9 +13,11 @@ import java.util.List;
 public final class OperationListResultImpl implements OperationListResult {
     private OperationListResultInner innerObject;
 
-    private final PostgreSqlManager serviceManager;
+    private final com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager;
 
-    OperationListResultImpl(OperationListResultInner innerObject, PostgreSqlManager serviceManager) {
+    OperationListResultImpl(
+        OperationListResultInner innerObject,
+        com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,7 +35,7 @@ public final class OperationListResultImpl implements OperationListResult {
         return this.innerObject;
     }
 
-    private PostgreSqlManager manager() {
+    private com.azure.resourcemanager.postgresql.generated.PostgreSqlManager manager() {
         return this.serviceManager;
     }
 }

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.BillingMeterInner;
 import com.azure.resourcemanager.appservice.generated.models.BillingMeter;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -12,9 +11,11 @@ import com.azure.resourcemanager.appservice.generated.models.SystemData;
 public final class BillingMeterImpl implements BillingMeter {
     private BillingMeterInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    BillingMeterImpl(BillingMeterInner innerObject, AppServiceManager serviceManager) {
+    BillingMeterImpl(
+        BillingMeterInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -67,7 +68,7 @@ public final class BillingMeterImpl implements BillingMeter {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.keyvault.generated.implementation;
 
-import com.azure.resourcemanager.keyvault.generated.KeyVaultManager;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.keyvault.generated.models.Operation;
 import com.azure.resourcemanager.keyvault.generated.models.OperationDisplay;
@@ -13,9 +12,10 @@ import com.azure.resourcemanager.keyvault.generated.models.ServiceSpecification;
 public final class OperationImpl implements Operation {
     private OperationInner innerObject;
 
-    private final KeyVaultManager serviceManager;
+    private final com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager;
 
-    OperationImpl(OperationInner innerObject, KeyVaultManager serviceManager) {
+    OperationImpl(
+        OperationInner innerObject, com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -44,7 +44,7 @@ public final class OperationImpl implements Operation {
         return this.innerObject;
     }
 
-    private KeyVaultManager manager() {
+    private com.azure.resourcemanager.keyvault.generated.KeyVaultManager manager() {
         return this.serviceManager;
     }
 }

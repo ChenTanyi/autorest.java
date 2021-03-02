@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.monitor.generated.implementation;
 
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricInner;
 import com.azure.resourcemanager.monitor.generated.fluent.models.ResponseInner;
 import com.azure.resourcemanager.monitor.generated.models.Metric;
@@ -17,9 +16,10 @@ import java.util.stream.Collectors;
 public final class ResponseModelImpl implements ResponseModel {
     private ResponseInner innerObject;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    ResponseModelImpl(ResponseInner innerObject, MonitorManager serviceManager) {
+    ResponseModelImpl(
+        ResponseInner innerObject, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -59,7 +59,7 @@ public final class ResponseModelImpl implements ResponseModel {
         return this.innerObject;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 }

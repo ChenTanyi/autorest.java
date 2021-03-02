@@ -7,7 +7,6 @@ package com.azure.resourcemanager.frontdoor.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.frontdoor.generated.FrontDoorManager;
 import com.azure.resourcemanager.frontdoor.generated.fluent.ManagedRuleSetsClient;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.ManagedRuleSetDefinitionInner;
 import com.azure.resourcemanager.frontdoor.generated.models.ManagedRuleSetDefinition;
@@ -19,9 +18,11 @@ public final class ManagedRuleSetsImpl implements ManagedRuleSets {
 
     private final ManagedRuleSetsClient innerClient;
 
-    private final FrontDoorManager serviceManager;
+    private final com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager;
 
-    public ManagedRuleSetsImpl(ManagedRuleSetsClient innerClient, FrontDoorManager serviceManager) {
+    public ManagedRuleSetsImpl(
+        ManagedRuleSetsClient innerClient,
+        com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +41,7 @@ public final class ManagedRuleSetsImpl implements ManagedRuleSets {
         return this.innerClient;
     }
 
-    private FrontDoorManager manager() {
+    private com.azure.resourcemanager.frontdoor.generated.FrontDoorManager manager() {
         return this.serviceManager;
     }
 }

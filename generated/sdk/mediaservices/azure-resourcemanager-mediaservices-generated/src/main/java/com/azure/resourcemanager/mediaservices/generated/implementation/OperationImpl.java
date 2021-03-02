@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.mediaservices.generated.implementation;
 
-import com.azure.resourcemanager.mediaservices.generated.MediaservicesManager;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.mediaservices.generated.models.Operation;
 import com.azure.resourcemanager.mediaservices.generated.models.OperationDisplay;
@@ -13,9 +12,11 @@ import com.azure.resourcemanager.mediaservices.generated.models.Properties;
 public final class OperationImpl implements Operation {
     private OperationInner innerObject;
 
-    private final MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
 
-    OperationImpl(OperationInner innerObject, MediaservicesManager serviceManager) {
+    OperationImpl(
+        OperationInner innerObject,
+        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +41,7 @@ public final class OperationImpl implements Operation {
         return this.innerObject;
     }
 
-    private MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
         return this.serviceManager;
     }
 }

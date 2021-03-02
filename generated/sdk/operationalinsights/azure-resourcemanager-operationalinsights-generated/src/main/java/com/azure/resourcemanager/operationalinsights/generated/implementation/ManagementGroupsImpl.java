@@ -7,7 +7,6 @@ package com.azure.resourcemanager.operationalinsights.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.ManagementGroupsClient;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.ManagementGroupInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.ManagementGroup;
@@ -19,9 +18,11 @@ public final class ManagementGroupsImpl implements ManagementGroups {
 
     private final ManagementGroupsClient innerClient;
 
-    private final LogAnalyticsManager serviceManager;
+    private final com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager;
 
-    public ManagementGroupsImpl(ManagementGroupsClient innerClient, LogAnalyticsManager serviceManager) {
+    public ManagementGroupsImpl(
+        ManagementGroupsClient innerClient,
+        com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -41,7 +42,7 @@ public final class ManagementGroupsImpl implements ManagementGroups {
         return this.innerClient;
     }
 
-    private LogAnalyticsManager manager() {
+    private com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager manager() {
         return this.serviceManager;
     }
 }

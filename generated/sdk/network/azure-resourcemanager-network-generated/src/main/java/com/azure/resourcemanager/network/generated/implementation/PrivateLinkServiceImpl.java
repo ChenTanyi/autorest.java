@@ -6,7 +6,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.fluent.models.FrontendIpConfigurationInner;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceInner;
 import com.azure.resourcemanager.network.generated.fluent.models.PrivateEndpointConnectionInner;
@@ -29,7 +28,7 @@ public final class PrivateLinkServiceImpl
     implements PrivateLinkService, PrivateLinkService.Definition, PrivateLinkService.Update {
     private PrivateLinkServiceInner innerObject;
 
-    private final NetworkManager serviceManager;
+    private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
 
     public String name() {
         return this.innerModel().name();
@@ -161,7 +160,7 @@ public final class PrivateLinkServiceImpl
         return this.innerObject;
     }
 
-    private NetworkManager manager() {
+    private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
     }
 
@@ -192,7 +191,7 @@ public final class PrivateLinkServiceImpl
         return this;
     }
 
-    PrivateLinkServiceImpl(String name, NetworkManager serviceManager) {
+    PrivateLinkServiceImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = new PrivateLinkServiceInner();
         this.serviceManager = serviceManager;
         this.serviceName = name;
@@ -220,7 +219,9 @@ public final class PrivateLinkServiceImpl
         return this;
     }
 
-    PrivateLinkServiceImpl(PrivateLinkServiceInner innerObject, NetworkManager serviceManager) {
+    PrivateLinkServiceImpl(
+        PrivateLinkServiceInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

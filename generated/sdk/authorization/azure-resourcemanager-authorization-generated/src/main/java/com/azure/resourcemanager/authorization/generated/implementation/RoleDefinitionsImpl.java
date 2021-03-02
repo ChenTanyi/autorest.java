@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.authorization.generated.AuthorizationManager;
 import com.azure.resourcemanager.authorization.generated.fluent.RoleDefinitionsClient;
 import com.azure.resourcemanager.authorization.generated.fluent.models.RoleDefinitionInner;
 import com.azure.resourcemanager.authorization.generated.models.RoleDefinition;
@@ -21,9 +20,11 @@ public final class RoleDefinitionsImpl implements RoleDefinitions {
 
     private final RoleDefinitionsClient innerClient;
 
-    private final AuthorizationManager serviceManager;
+    private final com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager;
 
-    public RoleDefinitionsImpl(RoleDefinitionsClient innerClient, AuthorizationManager serviceManager) {
+    public RoleDefinitionsImpl(
+        RoleDefinitionsClient innerClient,
+        com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -162,7 +163,7 @@ public final class RoleDefinitionsImpl implements RoleDefinitions {
         return this.innerClient;
     }
 
-    private AuthorizationManager manager() {
+    private com.azure.resourcemanager.authorization.generated.AuthorizationManager manager() {
         return this.serviceManager;
     }
 

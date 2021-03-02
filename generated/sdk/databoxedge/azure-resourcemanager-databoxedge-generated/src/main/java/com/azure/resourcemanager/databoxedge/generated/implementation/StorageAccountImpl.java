@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.databoxedge.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.StorageAccountInner;
 import com.azure.resourcemanager.databoxedge.generated.models.DataPolicy;
 import com.azure.resourcemanager.databoxedge.generated.models.StorageAccount;
@@ -14,7 +13,7 @@ import com.azure.resourcemanager.databoxedge.generated.models.StorageAccountStat
 public final class StorageAccountImpl implements StorageAccount, StorageAccount.Definition, StorageAccount.Update {
     private StorageAccountInner innerObject;
 
-    private final DataBoxEdgeManager serviceManager;
+    private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -56,7 +55,7 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this.innerObject;
     }
 
-    private DataBoxEdgeManager manager() {
+    private com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager manager() {
         return this.serviceManager;
     }
 
@@ -90,7 +89,7 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this;
     }
 
-    StorageAccountImpl(String name, DataBoxEdgeManager serviceManager) {
+    StorageAccountImpl(String name, com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = new StorageAccountInner();
         this.serviceManager = serviceManager;
         this.storageAccountName = name;
@@ -118,7 +117,9 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this;
     }
 
-    StorageAccountImpl(StorageAccountInner innerObject, DataBoxEdgeManager serviceManager) {
+    StorageAccountImpl(
+        StorageAccountInner innerObject,
+        com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.deviceName = Utils.getValueFromIdByName(innerObject.id(), "dataBoxEdgeDevices");

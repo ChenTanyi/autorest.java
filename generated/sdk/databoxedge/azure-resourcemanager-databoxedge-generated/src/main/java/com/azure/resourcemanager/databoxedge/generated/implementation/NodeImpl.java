@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.databoxedge.generated.implementation;
 
-import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.NodeInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Node;
 import com.azure.resourcemanager.databoxedge.generated.models.NodeStatus;
@@ -12,9 +11,9 @@ import com.azure.resourcemanager.databoxedge.generated.models.NodeStatus;
 public final class NodeImpl implements Node {
     private NodeInner innerObject;
 
-    private final DataBoxEdgeManager serviceManager;
+    private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    NodeImpl(NodeInner innerObject, DataBoxEdgeManager serviceManager) {
+    NodeImpl(NodeInner innerObject, com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -63,7 +62,7 @@ public final class NodeImpl implements Node {
         return this.innerObject;
     }
 
-    private DataBoxEdgeManager manager() {
+    private com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager manager() {
         return this.serviceManager;
     }
 }

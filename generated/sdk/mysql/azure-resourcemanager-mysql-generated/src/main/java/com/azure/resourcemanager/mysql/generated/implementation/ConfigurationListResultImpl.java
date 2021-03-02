@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.mysql.generated.implementation;
 
-import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.models.ConfigurationInner;
 import com.azure.resourcemanager.mysql.generated.fluent.models.ConfigurationListResultInner;
 import com.azure.resourcemanager.mysql.generated.models.Configuration;
@@ -16,9 +15,11 @@ import java.util.stream.Collectors;
 public final class ConfigurationListResultImpl implements ConfigurationListResult {
     private ConfigurationListResultInner innerObject;
 
-    private final MySqlManager serviceManager;
+    private final com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager;
 
-    ConfigurationListResultImpl(ConfigurationListResultInner innerObject, MySqlManager serviceManager) {
+    ConfigurationListResultImpl(
+        ConfigurationListResultInner innerObject,
+        com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -41,7 +42,7 @@ public final class ConfigurationListResultImpl implements ConfigurationListResul
         return this.innerObject;
     }
 
-    private MySqlManager manager() {
+    private com.azure.resourcemanager.mysql.generated.MySqlManager manager() {
         return this.serviceManager;
     }
 }

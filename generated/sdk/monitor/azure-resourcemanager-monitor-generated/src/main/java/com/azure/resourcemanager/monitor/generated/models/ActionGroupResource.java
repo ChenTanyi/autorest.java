@@ -48,6 +48,20 @@ public interface ActionGroupResource {
     Map<String, String> tags();
 
     /**
+     * Gets the kind property: Azure resource kind.
+     *
+     * @return the kind value.
+     */
+    String kind();
+
+    /**
+     * Gets the identity property: Azure resource identity.
+     *
+     * @return the identity value.
+     */
+    String identity();
+
+    /**
      * Gets the groupShortName property: The short name of the action group. This will be used in SMS messages.
      *
      * @return the groupShortName value.

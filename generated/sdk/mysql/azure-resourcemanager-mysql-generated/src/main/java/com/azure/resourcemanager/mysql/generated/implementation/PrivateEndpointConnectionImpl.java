@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mysql.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.mysql.generated.models.PrivateEndpointConnection;
 import com.azure.resourcemanager.mysql.generated.models.PrivateEndpointProperty;
@@ -17,7 +16,7 @@ public final class PrivateEndpointConnectionImpl
     implements PrivateEndpointConnection, PrivateEndpointConnection.Definition, PrivateEndpointConnection.Update {
     private PrivateEndpointConnectionInner innerObject;
 
-    private final MySqlManager serviceManager;
+    private final com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -47,7 +46,7 @@ public final class PrivateEndpointConnectionImpl
         return this.innerObject;
     }
 
-    private MySqlManager manager() {
+    private com.azure.resourcemanager.mysql.generated.MySqlManager manager() {
         return this.serviceManager;
     }
 
@@ -85,7 +84,7 @@ public final class PrivateEndpointConnectionImpl
         return this;
     }
 
-    PrivateEndpointConnectionImpl(String name, MySqlManager serviceManager) {
+    PrivateEndpointConnectionImpl(String name, com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
         this.innerObject = new PrivateEndpointConnectionInner();
         this.serviceManager = serviceManager;
         this.privateEndpointConnectionName = name;
@@ -115,7 +114,9 @@ public final class PrivateEndpointConnectionImpl
         return this;
     }
 
-    PrivateEndpointConnectionImpl(PrivateEndpointConnectionInner innerObject, MySqlManager serviceManager) {
+    PrivateEndpointConnectionImpl(
+        PrivateEndpointConnectionInner innerObject,
+        com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -7,7 +7,6 @@ package com.azure.resourcemanager.mediaservices.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.mediaservices.generated.MediaservicesManager;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.MediaServiceInner;
 import com.azure.resourcemanager.mediaservices.generated.models.AccountEncryption;
 import com.azure.resourcemanager.mediaservices.generated.models.EdgePolicies;
@@ -26,7 +25,7 @@ import java.util.UUID;
 public final class MediaServiceImpl implements MediaService, MediaService.Definition, MediaService.Update {
     private MediaServiceInner innerObject;
 
-    private final MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -94,7 +93,7 @@ public final class MediaServiceImpl implements MediaService, MediaService.Defini
         return this.innerObject;
     }
 
-    private MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
         return this.serviceManager;
     }
 
@@ -127,7 +126,8 @@ public final class MediaServiceImpl implements MediaService, MediaService.Defini
         return this;
     }
 
-    MediaServiceImpl(String name, MediaservicesManager serviceManager) {
+    MediaServiceImpl(
+        String name, com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
         this.innerObject = new MediaServiceInner();
         this.serviceManager = serviceManager;
         this.accountName = name;
@@ -157,7 +157,9 @@ public final class MediaServiceImpl implements MediaService, MediaService.Defini
         return this;
     }
 
-    MediaServiceImpl(MediaServiceInner innerObject, MediaservicesManager serviceManager) {
+    MediaServiceImpl(
+        MediaServiceInner innerObject,
+        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

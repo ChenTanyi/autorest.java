@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteLogsConfigInner;
 import com.azure.resourcemanager.appservice.generated.models.ApplicationLogsConfig;
 import com.azure.resourcemanager.appservice.generated.models.EnabledConfig;
@@ -15,9 +14,11 @@ import com.azure.resourcemanager.appservice.generated.models.SystemData;
 public final class SiteLogsConfigImpl implements SiteLogsConfig {
     private SiteLogsConfigInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SiteLogsConfigImpl(SiteLogsConfigInner innerObject, AppServiceManager serviceManager) {
+    SiteLogsConfigImpl(
+        SiteLogsConfigInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -62,7 +63,7 @@ public final class SiteLogsConfigImpl implements SiteLogsConfig {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

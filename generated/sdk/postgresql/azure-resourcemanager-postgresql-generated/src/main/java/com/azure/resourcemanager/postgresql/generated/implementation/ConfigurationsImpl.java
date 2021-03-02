@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.postgresql.generated.PostgreSqlManager;
 import com.azure.resourcemanager.postgresql.generated.fluent.ConfigurationsClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.ConfigurationInner;
 import com.azure.resourcemanager.postgresql.generated.models.Configuration;
@@ -21,9 +20,11 @@ public final class ConfigurationsImpl implements Configurations {
 
     private final ConfigurationsClient innerClient;
 
-    private final PostgreSqlManager serviceManager;
+    private final com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager;
 
-    public ConfigurationsImpl(ConfigurationsClient innerClient, PostgreSqlManager serviceManager) {
+    public ConfigurationsImpl(
+        ConfigurationsClient innerClient,
+        com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -121,7 +122,7 @@ public final class ConfigurationsImpl implements Configurations {
         return this.innerClient;
     }
 
-    private PostgreSqlManager manager() {
+    private com.azure.resourcemanager.postgresql.generated.PostgreSqlManager manager() {
         return this.serviceManager;
     }
 

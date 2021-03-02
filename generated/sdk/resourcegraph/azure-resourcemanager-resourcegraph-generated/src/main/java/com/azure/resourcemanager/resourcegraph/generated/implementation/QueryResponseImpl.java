@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.resourcegraph.generated.implementation;
 
-import com.azure.resourcemanager.resourcegraph.generated.ResourceGraphManager;
 import com.azure.resourcemanager.resourcegraph.generated.fluent.models.QueryResponseInner;
 import com.azure.resourcemanager.resourcegraph.generated.models.Facet;
 import com.azure.resourcemanager.resourcegraph.generated.models.QueryResponse;
@@ -15,9 +14,11 @@ import java.util.List;
 public final class QueryResponseImpl implements QueryResponse {
     private QueryResponseInner innerObject;
 
-    private final ResourceGraphManager serviceManager;
+    private final com.azure.resourcemanager.resourcegraph.generated.ResourceGraphManager serviceManager;
 
-    QueryResponseImpl(QueryResponseInner innerObject, ResourceGraphManager serviceManager) {
+    QueryResponseImpl(
+        QueryResponseInner innerObject,
+        com.azure.resourcemanager.resourcegraph.generated.ResourceGraphManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -55,7 +56,7 @@ public final class QueryResponseImpl implements QueryResponse {
         return this.innerObject;
     }
 
-    private ResourceGraphManager manager() {
+    private com.azure.resourcemanager.resourcegraph.generated.ResourceGraphManager manager() {
         return this.serviceManager;
     }
 }

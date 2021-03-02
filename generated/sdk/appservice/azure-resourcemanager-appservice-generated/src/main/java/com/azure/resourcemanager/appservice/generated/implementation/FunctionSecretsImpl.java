@@ -4,16 +4,17 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.FunctionSecretsInner;
 import com.azure.resourcemanager.appservice.generated.models.FunctionSecrets;
 
 public final class FunctionSecretsImpl implements FunctionSecrets {
     private FunctionSecretsInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    FunctionSecretsImpl(FunctionSecretsInner innerObject, AppServiceManager serviceManager) {
+    FunctionSecretsImpl(
+        FunctionSecretsInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -30,7 +31,7 @@ public final class FunctionSecretsImpl implements FunctionSecrets {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

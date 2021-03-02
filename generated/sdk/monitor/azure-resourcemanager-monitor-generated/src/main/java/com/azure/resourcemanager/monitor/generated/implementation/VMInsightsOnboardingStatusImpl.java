@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.monitor.generated.implementation;
 
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.VMInsightsOnboardingStatusInner;
 import com.azure.resourcemanager.monitor.generated.models.DataContainer;
 import com.azure.resourcemanager.monitor.generated.models.DataStatus;
@@ -16,9 +15,11 @@ import java.util.List;
 public final class VMInsightsOnboardingStatusImpl implements VMInsightsOnboardingStatus {
     private VMInsightsOnboardingStatusInner innerObject;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    VMInsightsOnboardingStatusImpl(VMInsightsOnboardingStatusInner innerObject, MonitorManager serviceManager) {
+    VMInsightsOnboardingStatusImpl(
+        VMInsightsOnboardingStatusInner innerObject,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -60,7 +61,7 @@ public final class VMInsightsOnboardingStatusImpl implements VMInsightsOnboardin
         return this.innerObject;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 }

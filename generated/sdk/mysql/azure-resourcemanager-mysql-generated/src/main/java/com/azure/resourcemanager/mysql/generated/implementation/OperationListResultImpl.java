@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.mysql.generated.implementation;
 
-import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.models.OperationListResultInner;
 import com.azure.resourcemanager.mysql.generated.models.Operation;
 import com.azure.resourcemanager.mysql.generated.models.OperationListResult;
@@ -14,9 +13,10 @@ import java.util.List;
 public final class OperationListResultImpl implements OperationListResult {
     private OperationListResultInner innerObject;
 
-    private final MySqlManager serviceManager;
+    private final com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager;
 
-    OperationListResultImpl(OperationListResultInner innerObject, MySqlManager serviceManager) {
+    OperationListResultImpl(
+        OperationListResultInner innerObject, com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,7 +34,7 @@ public final class OperationListResultImpl implements OperationListResult {
         return this.innerObject;
     }
 
-    private MySqlManager manager() {
+    private com.azure.resourcemanager.mysql.generated.MySqlManager manager() {
         return this.serviceManager;
     }
 }

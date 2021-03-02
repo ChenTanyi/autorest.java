@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.DatabasesClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.DatabaseInner;
 import com.azure.resourcemanager.mysql.generated.models.Database;
@@ -21,9 +20,10 @@ public final class DatabasesImpl implements Databases {
 
     private final DatabasesClient innerClient;
 
-    private final MySqlManager serviceManager;
+    private final com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager;
 
-    public DatabasesImpl(DatabasesClient innerClient, MySqlManager serviceManager) {
+    public DatabasesImpl(
+        DatabasesClient innerClient, com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -178,7 +178,7 @@ public final class DatabasesImpl implements Databases {
         return this.innerClient;
     }
 
-    private MySqlManager manager() {
+    private com.azure.resourcemanager.mysql.generated.MySqlManager manager() {
         return this.serviceManager;
     }
 

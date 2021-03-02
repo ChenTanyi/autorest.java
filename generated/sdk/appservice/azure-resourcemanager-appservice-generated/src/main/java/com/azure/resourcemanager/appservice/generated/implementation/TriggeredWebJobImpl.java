@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.TriggeredWebJobInner;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.TriggeredJobRun;
@@ -16,9 +15,11 @@ import java.util.Map;
 public final class TriggeredWebJobImpl implements TriggeredWebJob {
     private TriggeredWebJobInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    TriggeredWebJobImpl(TriggeredWebJobInner innerObject, AppServiceManager serviceManager) {
+    TriggeredWebJobImpl(
+        TriggeredWebJobInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -92,7 +93,7 @@ public final class TriggeredWebJobImpl implements TriggeredWebJob {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

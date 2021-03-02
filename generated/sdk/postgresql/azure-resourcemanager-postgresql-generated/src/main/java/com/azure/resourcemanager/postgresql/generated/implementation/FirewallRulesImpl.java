@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.postgresql.generated.PostgreSqlManager;
 import com.azure.resourcemanager.postgresql.generated.fluent.FirewallRulesClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.FirewallRuleInner;
 import com.azure.resourcemanager.postgresql.generated.models.FirewallRule;
@@ -21,9 +20,11 @@ public final class FirewallRulesImpl implements FirewallRules {
 
     private final FirewallRulesClient innerClient;
 
-    private final PostgreSqlManager serviceManager;
+    private final com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager;
 
-    public FirewallRulesImpl(FirewallRulesClient innerClient, PostgreSqlManager serviceManager) {
+    public FirewallRulesImpl(
+        FirewallRulesClient innerClient,
+        com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -179,7 +180,7 @@ public final class FirewallRulesImpl implements FirewallRules {
         return this.innerClient;
     }
 
-    private PostgreSqlManager manager() {
+    private com.azure.resourcemanager.postgresql.generated.PostgreSqlManager manager() {
         return this.serviceManager;
     }
 

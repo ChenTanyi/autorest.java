@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.monitor.generated.implementation;
 
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.CalculateBaselineResponseInner;
 import com.azure.resourcemanager.monitor.generated.models.Baseline;
 import com.azure.resourcemanager.monitor.generated.models.CalculateBaselineResponse;
@@ -15,9 +14,11 @@ import java.util.List;
 public final class CalculateBaselineResponseImpl implements CalculateBaselineResponse {
     private CalculateBaselineResponseInner innerObject;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    CalculateBaselineResponseImpl(CalculateBaselineResponseInner innerObject, MonitorManager serviceManager) {
+    CalculateBaselineResponseImpl(
+        CalculateBaselineResponseInner innerObject,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -48,7 +49,7 @@ public final class CalculateBaselineResponseImpl implements CalculateBaselineRes
         return this.innerObject;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 }

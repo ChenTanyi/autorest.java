@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.AutoscaleSettingsClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.AutoscaleSettingResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.AutoscaleSettingResource;
@@ -21,9 +20,11 @@ public final class AutoscaleSettingsImpl implements AutoscaleSettings {
 
     private final AutoscaleSettingsClient innerClient;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public AutoscaleSettingsImpl(AutoscaleSettingsClient innerClient, MonitorManager serviceManager) {
+    public AutoscaleSettingsImpl(
+        AutoscaleSettingsClient innerClient,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -171,7 +172,7 @@ public final class AutoscaleSettingsImpl implements AutoscaleSettings {
         return this.innerClient;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 

@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.policy.generated.PolicyManager;
 import com.azure.resourcemanager.policy.generated.fluent.PolicySetDefinitionsClient;
 import com.azure.resourcemanager.policy.generated.fluent.models.PolicySetDefinitionInner;
 import com.azure.resourcemanager.policy.generated.models.PolicySetDefinition;
@@ -21,9 +20,11 @@ public final class PolicySetDefinitionsImpl implements PolicySetDefinitions {
 
     private final PolicySetDefinitionsClient innerClient;
 
-    private final PolicyManager serviceManager;
+    private final com.azure.resourcemanager.policy.generated.PolicyManager serviceManager;
 
-    public PolicySetDefinitionsImpl(PolicySetDefinitionsClient innerClient, PolicyManager serviceManager) {
+    public PolicySetDefinitionsImpl(
+        PolicySetDefinitionsClient innerClient,
+        com.azure.resourcemanager.policy.generated.PolicyManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -244,7 +245,7 @@ public final class PolicySetDefinitionsImpl implements PolicySetDefinitions {
         return this.innerClient;
     }
 
-    private PolicyManager manager() {
+    private com.azure.resourcemanager.policy.generated.PolicyManager manager() {
         return this.serviceManager;
     }
 

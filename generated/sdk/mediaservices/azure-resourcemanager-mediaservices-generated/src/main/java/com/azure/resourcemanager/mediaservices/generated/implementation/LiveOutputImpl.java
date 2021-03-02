@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.mediaservices.generated.MediaservicesManager;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.LiveOutputInner;
 import com.azure.resourcemanager.mediaservices.generated.models.Hls;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveOutput;
@@ -16,9 +15,11 @@ import java.time.OffsetDateTime;
 public final class LiveOutputImpl implements LiveOutput, LiveOutput.Definition {
     private LiveOutputInner innerObject;
 
-    private final MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
 
-    LiveOutputImpl(LiveOutputInner innerObject, MediaservicesManager serviceManager) {
+    LiveOutputImpl(
+        LiveOutputInner innerObject,
+        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -79,7 +80,7 @@ public final class LiveOutputImpl implements LiveOutput, LiveOutput.Definition {
         return this.innerObject;
     }
 
-    private MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
         return this.serviceManager;
     }
 
@@ -116,7 +117,7 @@ public final class LiveOutputImpl implements LiveOutput, LiveOutput.Definition {
         return this;
     }
 
-    LiveOutputImpl(String name, MediaservicesManager serviceManager) {
+    LiveOutputImpl(String name, com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
         this.innerObject = new LiveOutputInner();
         this.serviceManager = serviceManager;
         this.liveOutputName = name;

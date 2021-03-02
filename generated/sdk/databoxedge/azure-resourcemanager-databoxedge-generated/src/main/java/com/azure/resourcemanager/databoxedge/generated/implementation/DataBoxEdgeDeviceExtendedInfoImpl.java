@@ -4,17 +4,17 @@
 
 package com.azure.resourcemanager.databoxedge.generated.implementation;
 
-import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.DataBoxEdgeDeviceExtendedInfoInner;
 import com.azure.resourcemanager.databoxedge.generated.models.DataBoxEdgeDeviceExtendedInfo;
 
 public final class DataBoxEdgeDeviceExtendedInfoImpl implements DataBoxEdgeDeviceExtendedInfo {
     private DataBoxEdgeDeviceExtendedInfoInner innerObject;
 
-    private final DataBoxEdgeManager serviceManager;
+    private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
     DataBoxEdgeDeviceExtendedInfoImpl(
-        DataBoxEdgeDeviceExtendedInfoInner innerObject, DataBoxEdgeManager serviceManager) {
+        DataBoxEdgeDeviceExtendedInfoInner innerObject,
+        com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -47,7 +47,7 @@ public final class DataBoxEdgeDeviceExtendedInfoImpl implements DataBoxEdgeDevic
         return this.innerObject;
     }
 
-    private DataBoxEdgeManager manager() {
+    private com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager manager() {
         return this.serviceManager;
     }
 }

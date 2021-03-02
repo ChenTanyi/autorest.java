@@ -6,7 +6,6 @@ package com.azure.resourcemanager.monitor.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.AlertRuleResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.AlertRuleResource;
 import com.azure.resourcemanager.monitor.generated.models.AlertRuleResourcePatch;
@@ -21,7 +20,7 @@ public final class AlertRuleResourceImpl
     implements AlertRuleResource, AlertRuleResource.Definition, AlertRuleResource.Update {
     private AlertRuleResourceInner innerObject;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -97,7 +96,7 @@ public final class AlertRuleResourceImpl
         return this.innerObject;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 
@@ -132,7 +131,7 @@ public final class AlertRuleResourceImpl
         return this;
     }
 
-    AlertRuleResourceImpl(String name, MonitorManager serviceManager) {
+    AlertRuleResourceImpl(String name, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = new AlertRuleResourceInner();
         this.serviceManager = serviceManager;
         this.ruleName = name;
@@ -163,7 +162,8 @@ public final class AlertRuleResourceImpl
         return this;
     }
 
-    AlertRuleResourceImpl(AlertRuleResourceInner innerObject, MonitorManager serviceManager) {
+    AlertRuleResourceImpl(
+        AlertRuleResourceInner innerObject, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourcegroups");

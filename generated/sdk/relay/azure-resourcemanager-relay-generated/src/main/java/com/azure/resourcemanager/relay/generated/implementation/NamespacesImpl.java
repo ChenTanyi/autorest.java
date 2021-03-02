@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.relay.generated.RelayManager;
 import com.azure.resourcemanager.relay.generated.fluent.NamespacesClient;
 import com.azure.resourcemanager.relay.generated.fluent.models.AccessKeysInner;
 import com.azure.resourcemanager.relay.generated.fluent.models.AuthorizationRuleInner;
@@ -29,9 +28,10 @@ public final class NamespacesImpl implements Namespaces {
 
     private final NamespacesClient innerClient;
 
-    private final RelayManager serviceManager;
+    private final com.azure.resourcemanager.relay.generated.RelayManager serviceManager;
 
-    public NamespacesImpl(NamespacesClient innerClient, RelayManager serviceManager) {
+    public NamespacesImpl(
+        NamespacesClient innerClient, com.azure.resourcemanager.relay.generated.RelayManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -421,7 +421,7 @@ public final class NamespacesImpl implements Namespaces {
         return this.innerClient;
     }
 
-    private RelayManager manager() {
+    private com.azure.resourcemanager.relay.generated.RelayManager manager() {
         return this.serviceManager;
     }
 

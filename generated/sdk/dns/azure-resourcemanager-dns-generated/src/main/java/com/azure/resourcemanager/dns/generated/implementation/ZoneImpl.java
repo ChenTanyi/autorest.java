@@ -7,7 +7,6 @@ package com.azure.resourcemanager.dns.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.dns.generated.DnsManager;
 import com.azure.resourcemanager.dns.generated.fluent.models.ZoneInner;
 import com.azure.resourcemanager.dns.generated.models.Zone;
 import com.azure.resourcemanager.dns.generated.models.ZoneType;
@@ -19,7 +18,7 @@ import java.util.Map;
 public final class ZoneImpl implements Zone, Zone.Definition, Zone.Update {
     private ZoneInner innerObject;
 
-    private final DnsManager serviceManager;
+    private final com.azure.resourcemanager.dns.generated.DnsManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -105,7 +104,7 @@ public final class ZoneImpl implements Zone, Zone.Definition, Zone.Update {
         return this.innerObject;
     }
 
-    private DnsManager manager() {
+    private com.azure.resourcemanager.dns.generated.DnsManager manager() {
         return this.serviceManager;
     }
 
@@ -148,7 +147,7 @@ public final class ZoneImpl implements Zone, Zone.Definition, Zone.Update {
         return this;
     }
 
-    ZoneImpl(String name, DnsManager serviceManager) {
+    ZoneImpl(String name, com.azure.resourcemanager.dns.generated.DnsManager serviceManager) {
         this.innerObject = new ZoneInner();
         this.serviceManager = serviceManager;
         this.zoneName = name;
@@ -182,7 +181,7 @@ public final class ZoneImpl implements Zone, Zone.Definition, Zone.Update {
         return this;
     }
 
-    ZoneImpl(ZoneInner innerObject, DnsManager serviceManager) {
+    ZoneImpl(ZoneInner innerObject, com.azure.resourcemanager.dns.generated.DnsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

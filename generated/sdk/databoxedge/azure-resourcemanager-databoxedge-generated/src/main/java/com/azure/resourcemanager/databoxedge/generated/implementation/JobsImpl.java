@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.JobsClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.JobInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Job;
@@ -20,9 +19,10 @@ public final class JobsImpl implements Jobs {
 
     private final JobsClient innerClient;
 
-    private final DataBoxEdgeManager serviceManager;
+    private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    public JobsImpl(JobsClient innerClient, DataBoxEdgeManager serviceManager) {
+    public JobsImpl(
+        JobsClient innerClient, com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -53,7 +53,7 @@ public final class JobsImpl implements Jobs {
         return this.innerClient;
     }
 
-    private DataBoxEdgeManager manager() {
+    private com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager manager() {
         return this.serviceManager;
     }
 }

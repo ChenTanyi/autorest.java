@@ -6,7 +6,6 @@ package com.azure.resourcemanager.keyvault.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.keyvault.generated.KeyVaultManager;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.KeyInner;
 import com.azure.resourcemanager.keyvault.generated.models.Attributes;
 import com.azure.resourcemanager.keyvault.generated.models.JsonWebKeyCurveName;
@@ -22,9 +21,9 @@ import java.util.Map;
 public final class KeyImpl implements Key, Key.Definition {
     private KeyInner innerObject;
 
-    private final KeyVaultManager serviceManager;
+    private final com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager;
 
-    KeyImpl(KeyInner innerObject, KeyVaultManager serviceManager) {
+    KeyImpl(KeyInner innerObject, com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -99,7 +98,7 @@ public final class KeyImpl implements Key, Key.Definition {
         return this.innerObject;
     }
 
-    private KeyVaultManager manager() {
+    private com.azure.resourcemanager.keyvault.generated.KeyVaultManager manager() {
         return this.serviceManager;
     }
 
@@ -137,7 +136,7 @@ public final class KeyImpl implements Key, Key.Definition {
         return this;
     }
 
-    KeyImpl(String name, KeyVaultManager serviceManager) {
+    KeyImpl(String name, com.azure.resourcemanager.keyvault.generated.KeyVaultManager serviceManager) {
         this.innerObject = new KeyInner();
         this.serviceManager = serviceManager;
         this.keyName = name;

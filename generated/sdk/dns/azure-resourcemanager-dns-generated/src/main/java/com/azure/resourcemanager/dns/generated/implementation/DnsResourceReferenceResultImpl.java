@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.dns.generated.implementation;
 
-import com.azure.resourcemanager.dns.generated.DnsManager;
 import com.azure.resourcemanager.dns.generated.fluent.models.DnsResourceReferenceResultInner;
 import com.azure.resourcemanager.dns.generated.models.DnsResourceReference;
 import com.azure.resourcemanager.dns.generated.models.DnsResourceReferenceResult;
@@ -14,9 +13,11 @@ import java.util.List;
 public final class DnsResourceReferenceResultImpl implements DnsResourceReferenceResult {
     private DnsResourceReferenceResultInner innerObject;
 
-    private final DnsManager serviceManager;
+    private final com.azure.resourcemanager.dns.generated.DnsManager serviceManager;
 
-    DnsResourceReferenceResultImpl(DnsResourceReferenceResultInner innerObject, DnsManager serviceManager) {
+    DnsResourceReferenceResultImpl(
+        DnsResourceReferenceResultInner innerObject,
+        com.azure.resourcemanager.dns.generated.DnsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -34,7 +35,7 @@ public final class DnsResourceReferenceResultImpl implements DnsResourceReferenc
         return this.innerObject;
     }
 
-    private DnsManager manager() {
+    private com.azure.resourcemanager.dns.generated.DnsManager manager() {
         return this.serviceManager;
     }
 }

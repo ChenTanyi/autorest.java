@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.postgresql.generated.implementation;
 
-import com.azure.resourcemanager.postgresql.generated.PostgreSqlManager;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.LogFileInner;
 import com.azure.resourcemanager.postgresql.generated.models.LogFile;
 import java.time.OffsetDateTime;
@@ -12,9 +11,10 @@ import java.time.OffsetDateTime;
 public final class LogFileImpl implements LogFile {
     private LogFileInner innerObject;
 
-    private final PostgreSqlManager serviceManager;
+    private final com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager;
 
-    LogFileImpl(LogFileInner innerObject, PostgreSqlManager serviceManager) {
+    LogFileImpl(
+        LogFileInner innerObject, com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -55,7 +55,7 @@ public final class LogFileImpl implements LogFile {
         return this.innerObject;
     }
 
-    private PostgreSqlManager manager() {
+    private com.azure.resourcemanager.postgresql.generated.PostgreSqlManager manager() {
         return this.serviceManager;
     }
 }

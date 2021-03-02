@@ -7,7 +7,6 @@ package com.azure.resourcemanager.eventgrid.generated.implementation;
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.eventgrid.generated.EventGridManager;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.DomainInner;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.eventgrid.generated.models.Domain;
@@ -31,7 +30,7 @@ import java.util.stream.Collectors;
 public final class DomainImpl implements Domain, Domain.Definition, Domain.Update {
     private DomainInner innerObject;
 
-    private final EventGridManager serviceManager;
+    private final com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -129,7 +128,7 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
         return this.innerObject;
     }
 
-    private EventGridManager manager() {
+    private com.azure.resourcemanager.eventgrid.generated.EventGridManager manager() {
         return this.serviceManager;
     }
 
@@ -162,7 +161,7 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
         return this;
     }
 
-    DomainImpl(String name, EventGridManager serviceManager) {
+    DomainImpl(String name, com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = new DomainInner();
         this.serviceManager = serviceManager;
         this.domainName = name;
@@ -191,7 +190,7 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
         return this;
     }
 
-    DomainImpl(DomainInner innerObject, EventGridManager serviceManager) {
+    DomainImpl(DomainInner innerObject, com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

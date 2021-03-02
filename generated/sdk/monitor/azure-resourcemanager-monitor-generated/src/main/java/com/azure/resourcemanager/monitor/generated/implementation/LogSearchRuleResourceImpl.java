@@ -6,7 +6,6 @@ package com.azure.resourcemanager.monitor.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.LogSearchRuleResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.Action;
 import com.azure.resourcemanager.monitor.generated.models.Enabled;
@@ -23,7 +22,7 @@ public final class LogSearchRuleResourceImpl
     implements LogSearchRuleResource, LogSearchRuleResource.Definition, LogSearchRuleResource.Update {
     private LogSearchRuleResourceInner innerObject;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -110,7 +109,7 @@ public final class LogSearchRuleResourceImpl
         return this.innerObject;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 
@@ -145,7 +144,7 @@ public final class LogSearchRuleResourceImpl
         return this;
     }
 
-    LogSearchRuleResourceImpl(String name, MonitorManager serviceManager) {
+    LogSearchRuleResourceImpl(String name, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = new LogSearchRuleResourceInner();
         this.serviceManager = serviceManager;
         this.ruleName = name;
@@ -176,7 +175,9 @@ public final class LogSearchRuleResourceImpl
         return this;
     }
 
-    LogSearchRuleResourceImpl(LogSearchRuleResourceInner innerObject, MonitorManager serviceManager) {
+    LogSearchRuleResourceImpl(
+        LogSearchRuleResourceInner innerObject,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourcegroups");

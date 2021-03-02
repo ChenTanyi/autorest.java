@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.eventhubs.generated.EventHubsManager;
 import com.azure.resourcemanager.eventhubs.generated.fluent.PrivateLinkResourcesClient;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.PrivateLinkResourcesListResultInner;
 import com.azure.resourcemanager.eventhubs.generated.models.PrivateLinkResources;
@@ -20,9 +19,11 @@ public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
 
     private final PrivateLinkResourcesClient innerClient;
 
-    private final EventHubsManager serviceManager;
+    private final com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager;
 
-    public PrivateLinkResourcesImpl(PrivateLinkResourcesClient innerClient, EventHubsManager serviceManager) {
+    public PrivateLinkResourcesImpl(
+        PrivateLinkResourcesClient innerClient,
+        com.azure.resourcemanager.eventhubs.generated.EventHubsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -55,7 +56,7 @@ public final class PrivateLinkResourcesImpl implements PrivateLinkResources {
         return this.innerClient;
     }
 
-    private EventHubsManager manager() {
+    private com.azure.resourcemanager.eventhubs.generated.EventHubsManager manager() {
         return this.serviceManager;
     }
 }

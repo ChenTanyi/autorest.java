@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.DeletedAccountsClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.DeletedAccountInner;
 import com.azure.resourcemanager.storage.generated.models.DeletedAccount;
@@ -21,9 +20,10 @@ public final class DeletedAccountsImpl implements DeletedAccounts {
 
     private final DeletedAccountsClient innerClient;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
-    public DeletedAccountsImpl(DeletedAccountsClient innerClient, StorageManager serviceManager) {
+    public DeletedAccountsImpl(
+        DeletedAccountsClient innerClient, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -65,7 +65,7 @@ public final class DeletedAccountsImpl implements DeletedAccounts {
         return this.innerClient;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 }

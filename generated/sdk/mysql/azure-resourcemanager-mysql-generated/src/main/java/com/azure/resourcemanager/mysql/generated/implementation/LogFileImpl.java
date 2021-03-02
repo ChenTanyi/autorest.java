@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.mysql.generated.implementation;
 
-import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.models.LogFileInner;
 import com.azure.resourcemanager.mysql.generated.models.LogFile;
 import java.time.OffsetDateTime;
@@ -12,9 +11,9 @@ import java.time.OffsetDateTime;
 public final class LogFileImpl implements LogFile {
     private LogFileInner innerObject;
 
-    private final MySqlManager serviceManager;
+    private final com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager;
 
-    LogFileImpl(LogFileInner innerObject, MySqlManager serviceManager) {
+    LogFileImpl(LogFileInner innerObject, com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -55,7 +54,7 @@ public final class LogFileImpl implements LogFile {
         return this.innerObject;
     }
 
-    private MySqlManager manager() {
+    private com.azure.resourcemanager.mysql.generated.MySqlManager manager() {
         return this.serviceManager;
     }
 }

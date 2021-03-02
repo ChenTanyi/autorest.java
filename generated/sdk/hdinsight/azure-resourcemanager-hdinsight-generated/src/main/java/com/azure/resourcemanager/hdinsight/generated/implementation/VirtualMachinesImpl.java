@@ -8,9 +8,10 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.hdinsight.generated.HDInsightManager;
 import com.azure.resourcemanager.hdinsight.generated.fluent.VirtualMachinesClient;
+import com.azure.resourcemanager.hdinsight.generated.fluent.models.AsyncOperationResultInner;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.HostInfoInner;
+import com.azure.resourcemanager.hdinsight.generated.models.AsyncOperationResult;
 import com.azure.resourcemanager.hdinsight.generated.models.HostInfo;
 import com.azure.resourcemanager.hdinsight.generated.models.VirtualMachines;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -23,9 +24,11 @@ public final class VirtualMachinesImpl implements VirtualMachines {
 
     private final VirtualMachinesClient innerClient;
 
-    private final HDInsightManager serviceManager;
+    private final com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager;
 
-    public VirtualMachinesImpl(VirtualMachinesClient innerClient, HDInsightManager serviceManager) {
+    public VirtualMachinesImpl(
+        VirtualMachinesClient innerClient,
+        com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -71,11 +74,39 @@ public final class VirtualMachinesImpl implements VirtualMachines {
         this.serviceClient().restartHosts(resourceGroupName, clusterName, hosts, context);
     }
 
+    public AsyncOperationResult getAsyncOperationStatus(
+        String resourceGroupName, String clusterName, String operationId) {
+        AsyncOperationResultInner inner =
+            this.serviceClient().getAsyncOperationStatus(resourceGroupName, clusterName, operationId);
+        if (inner != null) {
+            return new AsyncOperationResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<AsyncOperationResult> getAsyncOperationStatusWithResponse(
+        String resourceGroupName, String clusterName, String operationId, Context context) {
+        Response<AsyncOperationResultInner> inner =
+            this
+                .serviceClient()
+                .getAsyncOperationStatusWithResponse(resourceGroupName, clusterName, operationId, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new AsyncOperationResultImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
     private VirtualMachinesClient serviceClient() {
         return this.innerClient;
     }
 
-    private HDInsightManager manager() {
+    private com.azure.resourcemanager.hdinsight.generated.HDInsightManager manager() {
         return this.serviceManager;
     }
 }

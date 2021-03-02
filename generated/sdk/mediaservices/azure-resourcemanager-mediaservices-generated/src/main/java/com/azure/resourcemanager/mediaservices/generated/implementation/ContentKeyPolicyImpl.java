@@ -6,7 +6,6 @@ package com.azure.resourcemanager.mediaservices.generated.implementation;
 
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.mediaservices.generated.MediaservicesManager;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.ContentKeyPolicyInner;
 import com.azure.resourcemanager.mediaservices.generated.models.ContentKeyPolicy;
 import com.azure.resourcemanager.mediaservices.generated.models.ContentKeyPolicyOption;
@@ -21,7 +20,7 @@ public final class ContentKeyPolicyImpl
     implements ContentKeyPolicy, ContentKeyPolicy.Definition, ContentKeyPolicy.Update {
     private ContentKeyPolicyInner innerObject;
 
-    private final MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -68,7 +67,7 @@ public final class ContentKeyPolicyImpl
         return this.innerObject;
     }
 
-    private MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
         return this.serviceManager;
     }
 
@@ -106,7 +105,8 @@ public final class ContentKeyPolicyImpl
         return this;
     }
 
-    ContentKeyPolicyImpl(String name, MediaservicesManager serviceManager) {
+    ContentKeyPolicyImpl(
+        String name, com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
         this.innerObject = new ContentKeyPolicyInner();
         this.serviceManager = serviceManager;
         this.contentKeyPolicyName = name;
@@ -137,7 +137,9 @@ public final class ContentKeyPolicyImpl
         return this;
     }
 
-    ContentKeyPolicyImpl(ContentKeyPolicyInner innerObject, MediaservicesManager serviceManager) {
+    ContentKeyPolicyImpl(
+        ContentKeyPolicyInner innerObject,
+        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.TriggersClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.TriggerInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Trigger;
@@ -21,9 +20,10 @@ public final class TriggersImpl implements Triggers {
 
     private final TriggersClient innerClient;
 
-    private final DataBoxEdgeManager serviceManager;
+    private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    public TriggersImpl(TriggersClient innerClient, DataBoxEdgeManager serviceManager) {
+    public TriggersImpl(
+        TriggersClient innerClient, com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -95,7 +95,7 @@ public final class TriggersImpl implements Triggers {
         return this.innerClient;
     }
 
-    private DataBoxEdgeManager manager() {
+    private com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager manager() {
         return this.serviceManager;
     }
 }

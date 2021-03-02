@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.RecommendedActionsClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.RecommendationActionInner;
 import com.azure.resourcemanager.mysql.generated.models.RecommendationAction;
@@ -21,9 +20,10 @@ public final class RecommendedActionsImpl implements RecommendedActions {
 
     private final RecommendedActionsClient innerClient;
 
-    private final MySqlManager serviceManager;
+    private final com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager;
 
-    public RecommendedActionsImpl(RecommendedActionsClient innerClient, MySqlManager serviceManager) {
+    public RecommendedActionsImpl(
+        RecommendedActionsClient innerClient, com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -78,7 +78,7 @@ public final class RecommendedActionsImpl implements RecommendedActions {
         return this.innerClient;
     }
 
-    private MySqlManager manager() {
+    private com.azure.resourcemanager.mysql.generated.MySqlManager manager() {
         return this.serviceManager;
     }
 }

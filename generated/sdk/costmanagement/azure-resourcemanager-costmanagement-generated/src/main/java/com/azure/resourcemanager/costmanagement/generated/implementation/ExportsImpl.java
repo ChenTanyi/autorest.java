@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.costmanagement.generated.CostManagementManager;
 import com.azure.resourcemanager.costmanagement.generated.fluent.ExportsClient;
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.ExportExecutionListResultInner;
 import com.azure.resourcemanager.costmanagement.generated.fluent.models.ExportInner;
@@ -24,9 +23,11 @@ public final class ExportsImpl implements Exports {
 
     private final ExportsClient innerClient;
 
-    private final CostManagementManager serviceManager;
+    private final com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager;
 
-    public ExportsImpl(ExportsClient innerClient, CostManagementManager serviceManager) {
+    public ExportsImpl(
+        ExportsClient innerClient,
+        com.azure.resourcemanager.costmanagement.generated.CostManagementManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -216,7 +217,7 @@ public final class ExportsImpl implements Exports {
         return this.innerClient;
     }
 
-    private CostManagementManager manager() {
+    private com.azure.resourcemanager.costmanagement.generated.CostManagementManager manager() {
         return this.serviceManager;
     }
 

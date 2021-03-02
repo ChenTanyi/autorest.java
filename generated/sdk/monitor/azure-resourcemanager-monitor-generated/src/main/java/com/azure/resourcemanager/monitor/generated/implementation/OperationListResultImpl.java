@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.monitor.generated.implementation;
 
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.OperationListResultInner;
 import com.azure.resourcemanager.monitor.generated.models.Operation;
 import com.azure.resourcemanager.monitor.generated.models.OperationListResult;
@@ -14,9 +13,11 @@ import java.util.List;
 public final class OperationListResultImpl implements OperationListResult {
     private OperationListResultInner innerObject;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    OperationListResultImpl(OperationListResultInner innerObject, MonitorManager serviceManager) {
+    OperationListResultImpl(
+        OperationListResultInner innerObject,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -38,7 +39,7 @@ public final class OperationListResultImpl implements OperationListResult {
         return this.innerObject;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 }

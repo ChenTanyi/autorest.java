@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.RolesClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.RoleInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Role;
@@ -21,9 +20,10 @@ public final class RolesImpl implements Roles {
 
     private final RolesClient innerClient;
 
-    private final DataBoxEdgeManager serviceManager;
+    private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    public RolesImpl(RolesClient innerClient, DataBoxEdgeManager serviceManager) {
+    public RolesImpl(
+        RolesClient innerClient, com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -92,7 +92,7 @@ public final class RolesImpl implements Roles {
         return this.innerClient;
     }
 
-    private DataBoxEdgeManager manager() {
+    private com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager manager() {
         return this.serviceManager;
     }
 }

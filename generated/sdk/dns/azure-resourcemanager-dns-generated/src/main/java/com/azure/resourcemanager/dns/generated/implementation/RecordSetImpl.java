@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.dns.generated.implementation;
 
 import com.azure.core.management.SubResource;
-import com.azure.resourcemanager.dns.generated.DnsManager;
 import com.azure.resourcemanager.dns.generated.fluent.models.RecordSetInner;
 import com.azure.resourcemanager.dns.generated.models.ARecord;
 import com.azure.resourcemanager.dns.generated.models.AaaaRecord;
@@ -25,9 +24,9 @@ import java.util.Map;
 public final class RecordSetImpl implements RecordSet {
     private RecordSetInner innerObject;
 
-    private final DnsManager serviceManager;
+    private final com.azure.resourcemanager.dns.generated.DnsManager serviceManager;
 
-    RecordSetImpl(RecordSetInner innerObject, DnsManager serviceManager) {
+    RecordSetImpl(RecordSetInner innerObject, com.azure.resourcemanager.dns.generated.DnsManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -157,7 +156,7 @@ public final class RecordSetImpl implements RecordSet {
         return this.innerObject;
     }
 
-    private DnsManager manager() {
+    private com.azure.resourcemanager.dns.generated.DnsManager manager() {
         return this.serviceManager;
     }
 }

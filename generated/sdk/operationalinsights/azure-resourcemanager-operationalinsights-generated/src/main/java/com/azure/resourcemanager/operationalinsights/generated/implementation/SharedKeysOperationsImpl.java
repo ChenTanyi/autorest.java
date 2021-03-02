@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.SharedKeysOperationsClient;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.SharedKeysInner;
 import com.azure.resourcemanager.operationalinsights.generated.models.SharedKeys;
@@ -20,9 +19,11 @@ public final class SharedKeysOperationsImpl implements SharedKeysOperations {
 
     private final SharedKeysOperationsClient innerClient;
 
-    private final LogAnalyticsManager serviceManager;
+    private final com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager;
 
-    public SharedKeysOperationsImpl(SharedKeysOperationsClient innerClient, LogAnalyticsManager serviceManager) {
+    public SharedKeysOperationsImpl(
+        SharedKeysOperationsClient innerClient,
+        com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -79,7 +80,7 @@ public final class SharedKeysOperationsImpl implements SharedKeysOperations {
         return this.innerClient;
     }
 
-    private LogAnalyticsManager manager() {
+    private com.azure.resourcemanager.operationalinsights.generated.LogAnalyticsManager manager() {
         return this.serviceManager;
     }
 }

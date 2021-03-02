@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.AdvisorsClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.AdvisorInner;
 import com.azure.resourcemanager.mysql.generated.models.Advisor;
@@ -21,9 +20,10 @@ public final class AdvisorsImpl implements Advisors {
 
     private final AdvisorsClient innerClient;
 
-    private final MySqlManager serviceManager;
+    private final com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager;
 
-    public AdvisorsImpl(AdvisorsClient innerClient, MySqlManager serviceManager) {
+    public AdvisorsImpl(
+        AdvisorsClient innerClient, com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -66,7 +66,7 @@ public final class AdvisorsImpl implements Advisors {
         return this.innerClient;
     }
 
-    private MySqlManager manager() {
+    private com.azure.resourcemanager.mysql.generated.MySqlManager manager() {
         return this.serviceManager;
     }
 }

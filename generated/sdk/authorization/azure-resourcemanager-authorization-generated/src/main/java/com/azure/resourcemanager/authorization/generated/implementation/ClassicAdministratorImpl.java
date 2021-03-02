@@ -4,16 +4,17 @@
 
 package com.azure.resourcemanager.authorization.generated.implementation;
 
-import com.azure.resourcemanager.authorization.generated.AuthorizationManager;
 import com.azure.resourcemanager.authorization.generated.fluent.models.ClassicAdministratorInner;
 import com.azure.resourcemanager.authorization.generated.models.ClassicAdministrator;
 
 public final class ClassicAdministratorImpl implements ClassicAdministrator {
     private ClassicAdministratorInner innerObject;
 
-    private final AuthorizationManager serviceManager;
+    private final com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager;
 
-    ClassicAdministratorImpl(ClassicAdministratorInner innerObject, AuthorizationManager serviceManager) {
+    ClassicAdministratorImpl(
+        ClassicAdministratorInner innerObject,
+        com.azure.resourcemanager.authorization.generated.AuthorizationManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -42,7 +43,7 @@ public final class ClassicAdministratorImpl implements ClassicAdministrator {
         return this.innerObject;
     }
 
-    private AuthorizationManager manager() {
+    private com.azure.resourcemanager.authorization.generated.AuthorizationManager manager() {
         return this.serviceManager;
     }
 }

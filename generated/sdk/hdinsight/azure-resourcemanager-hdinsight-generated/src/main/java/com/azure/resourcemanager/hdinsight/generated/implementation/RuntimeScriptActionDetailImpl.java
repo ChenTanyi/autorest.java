@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.hdinsight.generated.implementation;
 
-import com.azure.resourcemanager.hdinsight.generated.HDInsightManager;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.RuntimeScriptActionDetailInner;
 import com.azure.resourcemanager.hdinsight.generated.models.RuntimeScriptActionDetail;
 import com.azure.resourcemanager.hdinsight.generated.models.ScriptActionExecutionSummary;
@@ -14,9 +13,11 @@ import java.util.List;
 public final class RuntimeScriptActionDetailImpl implements RuntimeScriptActionDetail {
     private RuntimeScriptActionDetailInner innerObject;
 
-    private final HDInsightManager serviceManager;
+    private final com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager;
 
-    RuntimeScriptActionDetailImpl(RuntimeScriptActionDetailInner innerObject, HDInsightManager serviceManager) {
+    RuntimeScriptActionDetailImpl(
+        RuntimeScriptActionDetailInner innerObject,
+        com.azure.resourcemanager.hdinsight.generated.HDInsightManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -83,7 +84,7 @@ public final class RuntimeScriptActionDetailImpl implements RuntimeScriptActionD
         return this.innerObject;
     }
 
-    private HDInsightManager manager() {
+    private com.azure.resourcemanager.hdinsight.generated.HDInsightManager manager() {
         return this.serviceManager;
     }
 }

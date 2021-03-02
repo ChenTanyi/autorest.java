@@ -6,7 +6,6 @@ package com.azure.resourcemanager.monitor.generated.implementation;
 
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.ActionGroupResourceInner;
 import com.azure.resourcemanager.monitor.generated.models.ActionGroupPatchBody;
 import com.azure.resourcemanager.monitor.generated.models.ActionGroupResource;
@@ -28,7 +27,7 @@ public final class ActionGroupResourceImpl
     implements ActionGroupResource, ActionGroupResource.Definition, ActionGroupResource.Update {
     private ActionGroupResourceInner innerObject;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -53,6 +52,14 @@ public final class ActionGroupResourceImpl
         } else {
             return Collections.emptyMap();
         }
+    }
+
+    public String kind() {
+        return this.innerModel().kind();
+    }
+
+    public String identity() {
+        return this.innerModel().identity();
     }
 
     public String groupShortName() {
@@ -165,7 +172,7 @@ public final class ActionGroupResourceImpl
         return this.innerObject;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 
@@ -200,7 +207,7 @@ public final class ActionGroupResourceImpl
         return this;
     }
 
-    ActionGroupResourceImpl(String name, MonitorManager serviceManager) {
+    ActionGroupResourceImpl(String name, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = new ActionGroupResourceInner();
         this.serviceManager = serviceManager;
         this.actionGroupName = name;
@@ -231,7 +238,9 @@ public final class ActionGroupResourceImpl
         return this;
     }
 
-    ActionGroupResourceImpl(ActionGroupResourceInner innerObject, MonitorManager serviceManager) {
+    ActionGroupResourceImpl(
+        ActionGroupResourceInner innerObject,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

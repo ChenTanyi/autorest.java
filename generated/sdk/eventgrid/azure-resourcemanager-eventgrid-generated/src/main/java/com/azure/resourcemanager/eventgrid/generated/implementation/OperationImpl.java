@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.eventgrid.generated.implementation;
 
-import com.azure.resourcemanager.eventgrid.generated.EventGridManager;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.eventgrid.generated.models.Operation;
 import com.azure.resourcemanager.eventgrid.generated.models.OperationInfo;
@@ -12,9 +11,10 @@ import com.azure.resourcemanager.eventgrid.generated.models.OperationInfo;
 public final class OperationImpl implements Operation {
     private OperationInner innerObject;
 
-    private final EventGridManager serviceManager;
+    private final com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager;
 
-    OperationImpl(OperationInner innerObject, EventGridManager serviceManager) {
+    OperationImpl(
+        OperationInner innerObject, com.azure.resourcemanager.eventgrid.generated.EventGridManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -39,7 +39,7 @@ public final class OperationImpl implements Operation {
         return this.innerObject;
     }
 
-    private EventGridManager manager() {
+    private com.azure.resourcemanager.eventgrid.generated.EventGridManager manager() {
         return this.serviceManager;
     }
 }

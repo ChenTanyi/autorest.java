@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SnapshotInner;
 import com.azure.resourcemanager.appservice.generated.models.Snapshot;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -12,9 +11,10 @@ import com.azure.resourcemanager.appservice.generated.models.SystemData;
 public final class SnapshotImpl implements Snapshot {
     private SnapshotInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    SnapshotImpl(SnapshotInner innerObject, AppServiceManager serviceManager) {
+    SnapshotImpl(
+        SnapshotInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -47,7 +47,7 @@ public final class SnapshotImpl implements Snapshot {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

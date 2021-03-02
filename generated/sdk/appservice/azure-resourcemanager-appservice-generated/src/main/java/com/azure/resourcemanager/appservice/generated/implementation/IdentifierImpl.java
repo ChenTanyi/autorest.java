@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.IdentifierInner;
 import com.azure.resourcemanager.appservice.generated.models.Identifier;
 import com.azure.resourcemanager.appservice.generated.models.SystemData;
@@ -13,7 +12,7 @@ import com.azure.resourcemanager.appservice.generated.models.SystemData;
 public final class IdentifierImpl implements Identifier, Identifier.Definition, Identifier.Update {
     private IdentifierInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -43,7 +42,7 @@ public final class IdentifierImpl implements Identifier, Identifier.Definition, 
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 
@@ -81,7 +80,7 @@ public final class IdentifierImpl implements Identifier, Identifier.Definition, 
         return this;
     }
 
-    IdentifierImpl(String name, AppServiceManager serviceManager) {
+    IdentifierImpl(String name, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = new IdentifierInner();
         this.serviceManager = serviceManager;
         this.domainOwnershipIdentifierName = name;
@@ -113,7 +112,8 @@ public final class IdentifierImpl implements Identifier, Identifier.Definition, 
         return this;
     }
 
-    IdentifierImpl(IdentifierInner innerObject, AppServiceManager serviceManager) {
+    IdentifierImpl(
+        IdentifierInner innerObject, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

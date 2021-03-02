@@ -6,7 +6,6 @@ package com.azure.resourcemanager.storage.generated.implementation;
 
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.storage.generated.StorageManager;
 import com.azure.resourcemanager.storage.generated.fluent.models.FileShareInner;
 import com.azure.resourcemanager.storage.generated.models.DeletedShare;
 import com.azure.resourcemanager.storage.generated.models.EnabledProtocols;
@@ -22,7 +21,7 @@ import java.util.Map;
 public final class FileShareImpl implements FileShare, FileShare.Definition, FileShare.Update {
     private FileShareInner innerObject;
 
-    private final StorageManager serviceManager;
+    private final com.azure.resourcemanager.storage.generated.StorageManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -105,7 +104,7 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
         return this.innerObject;
     }
 
-    private StorageManager manager() {
+    private com.azure.resourcemanager.storage.generated.StorageManager manager() {
         return this.serviceManager;
     }
 
@@ -144,7 +143,7 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
         return this;
     }
 
-    FileShareImpl(String name, StorageManager serviceManager) {
+    FileShareImpl(String name, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = new FileShareInner();
         this.serviceManager = serviceManager;
         this.shareName = name;
@@ -175,7 +174,8 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
         return this;
     }
 
-    FileShareImpl(FileShareInner innerObject, StorageManager serviceManager) {
+    FileShareImpl(
+        FileShareInner innerObject, com.azure.resourcemanager.storage.generated.StorageManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

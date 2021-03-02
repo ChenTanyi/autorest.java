@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.frontdoor.generated.FrontDoorManager;
 import com.azure.resourcemanager.frontdoor.generated.fluent.FrontDoorsClient;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.FrontDoorInner;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.ValidateCustomDomainOutputInner;
@@ -24,9 +23,10 @@ public final class FrontDoorsImpl implements FrontDoors {
 
     private final FrontDoorsClient innerClient;
 
-    private final FrontDoorManager serviceManager;
+    private final com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager;
 
-    public FrontDoorsImpl(FrontDoorsClient innerClient, FrontDoorManager serviceManager) {
+    public FrontDoorsImpl(
+        FrontDoorsClient innerClient, com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -194,7 +194,7 @@ public final class FrontDoorsImpl implements FrontDoors {
         return this.innerClient;
     }
 
-    private FrontDoorManager manager() {
+    private com.azure.resourcemanager.frontdoor.generated.FrontDoorManager manager() {
         return this.serviceManager;
     }
 

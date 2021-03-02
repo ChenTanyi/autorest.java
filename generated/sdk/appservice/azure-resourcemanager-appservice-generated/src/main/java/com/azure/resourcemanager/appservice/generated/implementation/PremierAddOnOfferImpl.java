@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.resourcemanager.appservice.generated.AppServiceManager;
 import com.azure.resourcemanager.appservice.generated.fluent.models.PremierAddOnOfferInner;
 import com.azure.resourcemanager.appservice.generated.models.AppServicePlanRestrictions;
 import com.azure.resourcemanager.appservice.generated.models.PremierAddOnOffer;
@@ -13,9 +12,11 @@ import com.azure.resourcemanager.appservice.generated.models.SystemData;
 public final class PremierAddOnOfferImpl implements PremierAddOnOffer {
     private PremierAddOnOfferInner innerObject;
 
-    private final AppServiceManager serviceManager;
+    private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
-    PremierAddOnOfferImpl(PremierAddOnOfferInner innerObject, AppServiceManager serviceManager) {
+    PremierAddOnOfferImpl(
+        PremierAddOnOfferInner innerObject,
+        com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -84,7 +85,7 @@ public final class PremierAddOnOfferImpl implements PremierAddOnOffer {
         return this.innerObject;
     }
 
-    private AppServiceManager manager() {
+    private com.azure.resourcemanager.appservice.generated.AppServiceManager manager() {
         return this.serviceManager;
     }
 }

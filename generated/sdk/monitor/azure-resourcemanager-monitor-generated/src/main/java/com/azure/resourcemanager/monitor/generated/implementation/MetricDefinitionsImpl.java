@@ -7,7 +7,6 @@ package com.azure.resourcemanager.monitor.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.MetricDefinitionsClient;
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricDefinitionInner;
 import com.azure.resourcemanager.monitor.generated.models.MetricDefinition;
@@ -19,9 +18,11 @@ public final class MetricDefinitionsImpl implements MetricDefinitions {
 
     private final MetricDefinitionsClient innerClient;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    public MetricDefinitionsImpl(MetricDefinitionsClient innerClient, MonitorManager serviceManager) {
+    public MetricDefinitionsImpl(
+        MetricDefinitionsClient innerClient,
+        com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -40,7 +41,7 @@ public final class MetricDefinitionsImpl implements MetricDefinitions {
         return this.innerClient;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 }

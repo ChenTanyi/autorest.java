@@ -7,7 +7,6 @@ package com.azure.resourcemanager.databoxedge.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.NodesClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.NodeInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Node;
@@ -19,9 +18,10 @@ public final class NodesImpl implements Nodes {
 
     private final NodesClient innerClient;
 
-    private final DataBoxEdgeManager serviceManager;
+    private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    public NodesImpl(NodesClient innerClient, DataBoxEdgeManager serviceManager) {
+    public NodesImpl(
+        NodesClient innerClient, com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -41,7 +41,7 @@ public final class NodesImpl implements Nodes {
         return this.innerClient;
     }
 
-    private DataBoxEdgeManager manager() {
+    private com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager manager() {
         return this.serviceManager;
     }
 }

@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.postgresql.generated.PostgreSqlManager;
 import com.azure.resourcemanager.postgresql.generated.fluent.VirtualNetworkRulesClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.VirtualNetworkRuleInner;
 import com.azure.resourcemanager.postgresql.generated.models.VirtualNetworkRule;
@@ -21,9 +20,11 @@ public final class VirtualNetworkRulesImpl implements VirtualNetworkRules {
 
     private final VirtualNetworkRulesClient innerClient;
 
-    private final PostgreSqlManager serviceManager;
+    private final com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager;
 
-    public VirtualNetworkRulesImpl(VirtualNetworkRulesClient innerClient, PostgreSqlManager serviceManager) {
+    public VirtualNetworkRulesImpl(
+        VirtualNetworkRulesClient innerClient,
+        com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -188,7 +189,7 @@ public final class VirtualNetworkRulesImpl implements VirtualNetworkRules {
         return this.innerClient;
     }
 
-    private PostgreSqlManager manager() {
+    private com.azure.resourcemanager.postgresql.generated.PostgreSqlManager manager() {
         return this.serviceManager;
     }
 

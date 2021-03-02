@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.monitor.generated.implementation;
 
-import com.azure.resourcemanager.monitor.generated.MonitorManager;
 import com.azure.resourcemanager.monitor.generated.fluent.models.LocalizableStringInner;
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricDefinitionInner;
 import com.azure.resourcemanager.monitor.generated.models.AggregationType;
@@ -19,9 +18,10 @@ import java.util.stream.Collectors;
 public final class MetricDefinitionImpl implements MetricDefinition {
     private MetricDefinitionInner innerObject;
 
-    private final MonitorManager serviceManager;
+    private final com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager;
 
-    MetricDefinitionImpl(MetricDefinitionInner innerObject, MonitorManager serviceManager) {
+    MetricDefinitionImpl(
+        MetricDefinitionInner innerObject, com.azure.resourcemanager.monitor.generated.MonitorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -95,7 +95,7 @@ public final class MetricDefinitionImpl implements MetricDefinition {
         return this.innerObject;
     }
 
-    private MonitorManager manager() {
+    private com.azure.resourcemanager.monitor.generated.MonitorManager manager() {
         return this.serviceManager;
     }
 }

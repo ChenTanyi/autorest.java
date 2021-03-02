@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.mysql.generated.MySqlManager;
 import com.azure.resourcemanager.mysql.generated.fluent.QueryTextsClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.QueryTextInner;
 import com.azure.resourcemanager.mysql.generated.models.QueryText;
@@ -22,9 +21,10 @@ public final class QueryTextsImpl implements QueryTexts {
 
     private final QueryTextsClient innerClient;
 
-    private final MySqlManager serviceManager;
+    private final com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager;
 
-    public QueryTextsImpl(QueryTextsClient innerClient, MySqlManager serviceManager) {
+    public QueryTextsImpl(
+        QueryTextsClient innerClient, com.azure.resourcemanager.mysql.generated.MySqlManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -70,7 +70,7 @@ public final class QueryTextsImpl implements QueryTexts {
         return this.innerClient;
     }
 
-    private MySqlManager manager() {
+    private com.azure.resourcemanager.mysql.generated.MySqlManager manager() {
         return this.serviceManager;
     }
 }

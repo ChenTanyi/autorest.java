@@ -8,7 +8,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager;
 import com.azure.resourcemanager.databoxedge.generated.fluent.OperationsStatusClient;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.JobInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Job;
@@ -20,9 +19,11 @@ public final class OperationsStatusImpl implements OperationsStatus {
 
     private final OperationsStatusClient innerClient;
 
-    private final DataBoxEdgeManager serviceManager;
+    private final com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager;
 
-    public OperationsStatusImpl(OperationsStatusClient innerClient, DataBoxEdgeManager serviceManager) {
+    public OperationsStatusImpl(
+        OperationsStatusClient innerClient,
+        com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -53,7 +54,7 @@ public final class OperationsStatusImpl implements OperationsStatus {
         return this.innerClient;
     }
 
-    private DataBoxEdgeManager manager() {
+    private com.azure.resourcemanager.databoxedge.generated.DataBoxEdgeManager manager() {
         return this.serviceManager;
     }
 }

@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.postgresql.generated.PostgreSqlManager;
 import com.azure.resourcemanager.postgresql.generated.fluent.ServerKeysClient;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.ServerKeyInner;
 import com.azure.resourcemanager.postgresql.generated.models.ServerKey;
@@ -21,9 +20,10 @@ public final class ServerKeysImpl implements ServerKeys {
 
     private final ServerKeysClient innerClient;
 
-    private final PostgreSqlManager serviceManager;
+    private final com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager;
 
-    public ServerKeysImpl(ServerKeysClient innerClient, PostgreSqlManager serviceManager) {
+    public ServerKeysImpl(
+        ServerKeysClient innerClient, com.azure.resourcemanager.postgresql.generated.PostgreSqlManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -178,7 +178,7 @@ public final class ServerKeysImpl implements ServerKeys {
         return this.innerClient;
     }
 
-    private PostgreSqlManager manager() {
+    private com.azure.resourcemanager.postgresql.generated.PostgreSqlManager manager() {
         return this.serviceManager;
     }
 

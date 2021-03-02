@@ -9,7 +9,6 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.search.generated.SearchManager;
 import com.azure.resourcemanager.search.generated.fluent.ServicesClient;
 import com.azure.resourcemanager.search.generated.fluent.models.CheckNameAvailabilityOutputInner;
 import com.azure.resourcemanager.search.generated.fluent.models.SearchServiceInner;
@@ -25,9 +24,10 @@ public final class ServicesImpl implements Services {
 
     private final ServicesClient innerClient;
 
-    private final SearchManager serviceManager;
+    private final com.azure.resourcemanager.search.generated.SearchManager serviceManager;
 
-    public ServicesImpl(ServicesClient innerClient, SearchManager serviceManager) {
+    public ServicesImpl(
+        ServicesClient innerClient, com.azure.resourcemanager.search.generated.SearchManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -203,7 +203,7 @@ public final class ServicesImpl implements Services {
         return this.innerClient;
     }
 
-    private SearchManager manager() {
+    private com.azure.resourcemanager.search.generated.SearchManager manager() {
         return this.serviceManager;
     }
 

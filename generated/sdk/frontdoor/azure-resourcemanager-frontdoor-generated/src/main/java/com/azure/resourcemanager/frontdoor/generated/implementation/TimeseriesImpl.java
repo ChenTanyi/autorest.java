@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.frontdoor.generated.implementation;
 
-import com.azure.resourcemanager.frontdoor.generated.FrontDoorManager;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.TimeseriesInner;
 import com.azure.resourcemanager.frontdoor.generated.models.AggregationInterval;
 import com.azure.resourcemanager.frontdoor.generated.models.Timeseries;
@@ -17,9 +16,10 @@ import java.util.Map;
 public final class TimeseriesImpl implements Timeseries {
     private TimeseriesInner innerObject;
 
-    private final FrontDoorManager serviceManager;
+    private final com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager;
 
-    TimeseriesImpl(TimeseriesInner innerObject, FrontDoorManager serviceManager) {
+    TimeseriesImpl(
+        TimeseriesInner innerObject, com.azure.resourcemanager.frontdoor.generated.FrontDoorManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -86,7 +86,7 @@ public final class TimeseriesImpl implements Timeseries {
         return this.innerObject;
     }
 
-    private FrontDoorManager manager() {
+    private com.azure.resourcemanager.frontdoor.generated.FrontDoorManager manager() {
         return this.serviceManager;
     }
 }
