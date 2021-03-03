@@ -7,7 +7,7 @@
     <packaging>jar</packaging>
 
     <name>Microsoft Azure SDK for ManagementLock Management</name>
-    <description>This package contains Microsoft Azure SDK for ManagementLock Management SDK. Azure resources can be locked to prevent other users in your organization from deleting or modifying resources. Package tag package-locks-2016-09. For documentation on how to use this package, please see https://aka.ms/azsdk/java/mgmt</description>
+    <description>This package contains Microsoft Azure SDK for ManagementLock Management SDK. For documentation on how to use this package, please see https://aka.ms/azsdk/java/mgmt. Azure resources can be locked to prevent other users in your organization from deleting or modifying resources. Package tag package-locks-2016-09.</description>
     <url>https://github.com/Azure/azure-sdk-for-java</url>
 
     <licenses>

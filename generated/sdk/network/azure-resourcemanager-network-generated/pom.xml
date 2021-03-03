@@ -7,7 +7,7 @@
     <packaging>jar</packaging>
 
     <name>Microsoft Azure SDK for Network Management</name>
-    <description>This package contains Microsoft Azure SDK for Network Management SDK. Network Client. Package tag package-2021-02-preview. For documentation on how to use this package, please see https://aka.ms/azsdk/java/mgmt</description>
+    <description>This package contains Microsoft Azure SDK for Network Management SDK. For documentation on how to use this package, please see https://aka.ms/azsdk/java/mgmt. Network Client. Package tag package-2021-02-preview.</description>
     <url>https://github.com/Azure/azure-sdk-for-java</url>
 
     <licenses>
