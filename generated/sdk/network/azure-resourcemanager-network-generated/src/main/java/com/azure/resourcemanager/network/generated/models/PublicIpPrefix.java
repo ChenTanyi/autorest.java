@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.fluent.models.NatGatewayInner;
 import com.azure.resourcemanager.network.generated.fluent.models.PublicIpPrefixInner;
 import java.util.List;
 import java.util.Map;
@@ -136,13 +135,6 @@ public interface PublicIpPrefix {
     ProvisioningState provisioningState();
 
     /**
-     * Gets the natGateway property: NatGateway of Public IP Prefix.
-     *
-     * @return the natGateway value.
-     */
-    NatGateway natGateway();
-
-    /**
      * Gets the id property: Resource ID.
      *
      * @return the id value.
@@ -222,8 +214,7 @@ public interface PublicIpPrefix {
                 DefinitionStages.WithPublicIpAddressVersion,
                 DefinitionStages.WithIpTags,
                 DefinitionStages.WithPrefixLength,
-                DefinitionStages.WithCustomIpPrefix,
-                DefinitionStages.WithNatGateway {
+                DefinitionStages.WithCustomIpPrefix {
             /**
              * Executes the create request.
              *
@@ -319,16 +310,6 @@ public interface PublicIpPrefix {
              * @return the next definition stage.
              */
             WithCreate withCustomIpPrefix(SubResource customIpPrefix);
-        }
-        /** The stage of the PublicIpPrefix definition allowing to specify natGateway. */
-        interface WithNatGateway {
-            /**
-             * Specifies the natGateway property: NatGateway of Public IP Prefix..
-             *
-             * @param natGateway NatGateway of Public IP Prefix.
-             * @return the next definition stage.
-             */
-            WithCreate withNatGateway(NatGatewayInner natGateway);
         }
     }
     /**

@@ -217,6 +217,14 @@ public final class VirtualNetworkGatewayConnectionsImpl implements VirtualNetwor
         return this.serviceClient().getIkeSas(resourceGroupName, virtualNetworkGatewayConnectionName, context);
     }
 
+    public void resetConnection(String resourceGroupName, String virtualNetworkGatewayConnectionName) {
+        this.serviceClient().resetConnection(resourceGroupName, virtualNetworkGatewayConnectionName);
+    }
+
+    public void resetConnection(String resourceGroupName, String virtualNetworkGatewayConnectionName, Context context) {
+        this.serviceClient().resetConnection(resourceGroupName, virtualNetworkGatewayConnectionName, context);
+    }
+
     public VirtualNetworkGatewayConnection getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {

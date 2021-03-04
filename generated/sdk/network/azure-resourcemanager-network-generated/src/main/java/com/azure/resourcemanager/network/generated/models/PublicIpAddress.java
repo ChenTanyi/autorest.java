@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.fluent.models.NatGatewayInner;
 import com.azure.resourcemanager.network.generated.fluent.models.PublicIpAddressInner;
 import java.util.List;
 import java.util.Map;
@@ -149,34 +148,6 @@ public interface PublicIpAddress {
     ProvisioningState provisioningState();
 
     /**
-     * Gets the servicePublicIpAddress property: The service public IP address of the public IP address resource.
-     *
-     * @return the servicePublicIpAddress value.
-     */
-    PublicIpAddress servicePublicIpAddress();
-
-    /**
-     * Gets the natGateway property: The NatGateway for the Public IP address.
-     *
-     * @return the natGateway value.
-     */
-    NatGateway natGateway();
-
-    /**
-     * Gets the migrationPhase property: Migration phase of Public IP Address.
-     *
-     * @return the migrationPhase value.
-     */
-    PublicIpAddressMigrationPhase migrationPhase();
-
-    /**
-     * Gets the linkedPublicIpAddress property: The source Public IP Address (IPv6) that links to this address (IPv4).
-     *
-     * @return the linkedPublicIpAddress value.
-     */
-    PublicIpAddress linkedPublicIpAddress();
-
-    /**
      * Gets the id property: Resource ID.
      *
      * @return the id value.
@@ -260,11 +231,7 @@ public interface PublicIpAddress {
                 DefinitionStages.WithIpTags,
                 DefinitionStages.WithIpAddress,
                 DefinitionStages.WithPublicIpPrefix,
-                DefinitionStages.WithIdleTimeoutInMinutes,
-                DefinitionStages.WithServicePublicIpAddress,
-                DefinitionStages.WithNatGateway,
-                DefinitionStages.WithMigrationPhase,
-                DefinitionStages.WithLinkedPublicIpAddress {
+                DefinitionStages.WithIdleTimeoutInMinutes {
             /**
              * Executes the create request.
              *
@@ -402,48 +369,6 @@ public interface PublicIpAddress {
              * @return the next definition stage.
              */
             WithCreate withIdleTimeoutInMinutes(Integer idleTimeoutInMinutes);
-        }
-        /** The stage of the PublicIpAddress definition allowing to specify servicePublicIpAddress. */
-        interface WithServicePublicIpAddress {
-            /**
-             * Specifies the servicePublicIpAddress property: The service public IP address of the public IP address
-             * resource..
-             *
-             * @param servicePublicIpAddress The service public IP address of the public IP address resource.
-             * @return the next definition stage.
-             */
-            WithCreate withServicePublicIpAddress(PublicIpAddressInner servicePublicIpAddress);
-        }
-        /** The stage of the PublicIpAddress definition allowing to specify natGateway. */
-        interface WithNatGateway {
-            /**
-             * Specifies the natGateway property: The NatGateway for the Public IP address..
-             *
-             * @param natGateway The NatGateway for the Public IP address.
-             * @return the next definition stage.
-             */
-            WithCreate withNatGateway(NatGatewayInner natGateway);
-        }
-        /** The stage of the PublicIpAddress definition allowing to specify migrationPhase. */
-        interface WithMigrationPhase {
-            /**
-             * Specifies the migrationPhase property: Migration phase of Public IP Address..
-             *
-             * @param migrationPhase Migration phase of Public IP Address.
-             * @return the next definition stage.
-             */
-            WithCreate withMigrationPhase(PublicIpAddressMigrationPhase migrationPhase);
-        }
-        /** The stage of the PublicIpAddress definition allowing to specify linkedPublicIpAddress. */
-        interface WithLinkedPublicIpAddress {
-            /**
-             * Specifies the linkedPublicIpAddress property: The source Public IP Address (IPv6) that links to this
-             * address (IPv4)..
-             *
-             * @param linkedPublicIpAddress The source Public IP Address (IPv6) that links to this address (IPv4).
-             * @return the next definition stage.
-             */
-            WithCreate withLinkedPublicIpAddress(PublicIpAddressInner linkedPublicIpAddress);
         }
     }
     /**

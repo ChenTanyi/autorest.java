@@ -32,13 +32,6 @@ public interface NetworkInterfaceIpConfiguration {
     String etag();
 
     /**
-     * Gets the type property: Resource type.
-     *
-     * @return the type value.
-     */
-    String type();
-
-    /**
      * Gets the virtualNetworkTaps property: The reference to Virtual Network Taps.
      *
      * @return the virtualNetworkTaps value.

@@ -27,6 +27,38 @@ public final class VpnLinkConnectionsImpl implements VpnLinkConnections {
         this.serviceManager = serviceManager;
     }
 
+    public void resetConnection(
+        String resourceGroupName, String gatewayName, String connectionName, String linkConnectionName) {
+        this.serviceClient().resetConnection(resourceGroupName, gatewayName, connectionName, linkConnectionName);
+    }
+
+    public void resetConnection(
+        String resourceGroupName,
+        String gatewayName,
+        String connectionName,
+        String linkConnectionName,
+        Context context) {
+        this
+            .serviceClient()
+            .resetConnection(resourceGroupName, gatewayName, connectionName, linkConnectionName, context);
+    }
+
+    public String getIkeSas(
+        String resourceGroupName, String gatewayName, String connectionName, String linkConnectionName) {
+        return this.serviceClient().getIkeSas(resourceGroupName, gatewayName, connectionName, linkConnectionName);
+    }
+
+    public String getIkeSas(
+        String resourceGroupName,
+        String gatewayName,
+        String connectionName,
+        String linkConnectionName,
+        Context context) {
+        return this
+            .serviceClient()
+            .getIkeSas(resourceGroupName, gatewayName, connectionName, linkConnectionName, context);
+    }
+
     public PagedIterable<VpnSiteLinkConnection> listByVpnConnection(
         String resourceGroupName, String gatewayName, String connectionName) {
         PagedIterable<VpnSiteLinkConnectionInner> inner =

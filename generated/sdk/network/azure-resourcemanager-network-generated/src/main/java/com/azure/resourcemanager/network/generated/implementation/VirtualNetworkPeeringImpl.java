@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.SubResource;
-import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkPeeringInner;
 import com.azure.resourcemanager.network.generated.models.AddressSpace;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
@@ -13,11 +12,17 @@ import com.azure.resourcemanager.network.generated.models.VirtualNetworkBgpCommu
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkPeering;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkPeeringState;
 
-public final class VirtualNetworkPeeringImpl
-    implements VirtualNetworkPeering, VirtualNetworkPeering.Definition, VirtualNetworkPeering.Update {
+public final class VirtualNetworkPeeringImpl implements VirtualNetworkPeering {
     private VirtualNetworkPeeringInner innerObject;
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
+
+    VirtualNetworkPeeringImpl(
+        VirtualNetworkPeeringInner innerObject,
+        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+        this.innerObject = innerObject;
+        this.serviceManager = serviceManager;
+    }
 
     public String id() {
         return this.innerModel().id();
@@ -29,10 +34,6 @@ public final class VirtualNetworkPeeringImpl
 
     public String etag() {
         return this.innerModel().etag();
-    }
-
-    public String type() {
-        return this.innerModel().type();
     }
 
     public Boolean allowVirtualNetworkAccess() {
@@ -71,166 +72,11 @@ public final class VirtualNetworkPeeringImpl
         return this.innerModel().provisioningState();
     }
 
-    public Boolean doNotVerifyRemoteGateways() {
-        return this.innerModel().doNotVerifyRemoteGateways();
-    }
-
-    public String resourceGuid() {
-        return this.innerModel().resourceGuid();
-    }
-
     public VirtualNetworkPeeringInner innerModel() {
         return this.innerObject;
     }
 
     private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
-    }
-
-    private String resourceGroupName;
-
-    private String virtualNetworkName;
-
-    private String virtualNetworkPeeringName;
-
-    public VirtualNetworkPeeringImpl withExistingVirtualNetwork(String resourceGroupName, String virtualNetworkName) {
-        this.resourceGroupName = resourceGroupName;
-        this.virtualNetworkName = virtualNetworkName;
-        return this;
-    }
-
-    public VirtualNetworkPeering create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkPeerings()
-                .createOrUpdate(
-                    resourceGroupName, virtualNetworkName, virtualNetworkPeeringName, this.innerModel(), Context.NONE);
-        return this;
-    }
-
-    public VirtualNetworkPeering create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkPeerings()
-                .createOrUpdate(
-                    resourceGroupName, virtualNetworkName, virtualNetworkPeeringName, this.innerModel(), context);
-        return this;
-    }
-
-    VirtualNetworkPeeringImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
-        this.innerObject = new VirtualNetworkPeeringInner();
-        this.serviceManager = serviceManager;
-        this.virtualNetworkPeeringName = name;
-    }
-
-    public VirtualNetworkPeeringImpl update() {
-        return this;
-    }
-
-    public VirtualNetworkPeering apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkPeerings()
-                .createOrUpdate(
-                    resourceGroupName, virtualNetworkName, virtualNetworkPeeringName, this.innerModel(), Context.NONE);
-        return this;
-    }
-
-    public VirtualNetworkPeering apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkPeerings()
-                .createOrUpdate(
-                    resourceGroupName, virtualNetworkName, virtualNetworkPeeringName, this.innerModel(), context);
-        return this;
-    }
-
-    VirtualNetworkPeeringImpl(
-        VirtualNetworkPeeringInner innerObject,
-        com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
-        this.innerObject = innerObject;
-        this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.virtualNetworkName = Utils.getValueFromIdByName(innerObject.id(), "virtualNetworks");
-        this.virtualNetworkPeeringName = Utils.getValueFromIdByName(innerObject.id(), "virtualNetworkPeerings");
-    }
-
-    public VirtualNetworkPeering refresh() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkPeerings()
-                .getWithResponse(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName, Context.NONE)
-                .getValue();
-        return this;
-    }
-
-    public VirtualNetworkPeering refresh(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getVirtualNetworkPeerings()
-                .getWithResponse(resourceGroupName, virtualNetworkName, virtualNetworkPeeringName, context)
-                .getValue();
-        return this;
-    }
-
-    public VirtualNetworkPeeringImpl withName(String name) {
-        this.innerModel().withName(name);
-        return this;
-    }
-
-    public VirtualNetworkPeeringImpl withType(String type) {
-        this.innerModel().withType(type);
-        return this;
-    }
-
-    public VirtualNetworkPeeringImpl withAllowVirtualNetworkAccess(Boolean allowVirtualNetworkAccess) {
-        this.innerModel().withAllowVirtualNetworkAccess(allowVirtualNetworkAccess);
-        return this;
-    }
-
-    public VirtualNetworkPeeringImpl withAllowForwardedTraffic(Boolean allowForwardedTraffic) {
-        this.innerModel().withAllowForwardedTraffic(allowForwardedTraffic);
-        return this;
-    }
-
-    public VirtualNetworkPeeringImpl withAllowGatewayTransit(Boolean allowGatewayTransit) {
-        this.innerModel().withAllowGatewayTransit(allowGatewayTransit);
-        return this;
-    }
-
-    public VirtualNetworkPeeringImpl withUseRemoteGateways(Boolean useRemoteGateways) {
-        this.innerModel().withUseRemoteGateways(useRemoteGateways);
-        return this;
-    }
-
-    public VirtualNetworkPeeringImpl withRemoteVirtualNetwork(SubResource remoteVirtualNetwork) {
-        this.innerModel().withRemoteVirtualNetwork(remoteVirtualNetwork);
-        return this;
-    }
-
-    public VirtualNetworkPeeringImpl withRemoteAddressSpace(AddressSpace remoteAddressSpace) {
-        this.innerModel().withRemoteAddressSpace(remoteAddressSpace);
-        return this;
-    }
-
-    public VirtualNetworkPeeringImpl withRemoteBgpCommunities(VirtualNetworkBgpCommunities remoteBgpCommunities) {
-        this.innerModel().withRemoteBgpCommunities(remoteBgpCommunities);
-        return this;
-    }
-
-    public VirtualNetworkPeeringImpl withPeeringState(VirtualNetworkPeeringState peeringState) {
-        this.innerModel().withPeeringState(peeringState);
-        return this;
-    }
-
-    public VirtualNetworkPeeringImpl withDoNotVerifyRemoteGateways(Boolean doNotVerifyRemoteGateways) {
-        this.innerModel().withDoNotVerifyRemoteGateways(doNotVerifyRemoteGateways);
-        return this;
     }
 }

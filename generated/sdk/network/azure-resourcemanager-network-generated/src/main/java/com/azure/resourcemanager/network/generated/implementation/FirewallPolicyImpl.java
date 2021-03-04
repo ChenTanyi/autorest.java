@@ -11,8 +11,10 @@ import com.azure.resourcemanager.network.generated.fluent.models.FirewallPolicyI
 import com.azure.resourcemanager.network.generated.models.AzureFirewallThreatIntelMode;
 import com.azure.resourcemanager.network.generated.models.DnsSettings;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicy;
+import com.azure.resourcemanager.network.generated.models.FirewallPolicyInsights;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicyIntrusionDetection;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicySku;
+import com.azure.resourcemanager.network.generated.models.FirewallPolicySnat;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicyThreatIntelWhitelist;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicyTransportSecurity;
 import com.azure.resourcemanager.network.generated.models.ManagedServiceIdentity;
@@ -96,6 +98,14 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
 
     public FirewallPolicyThreatIntelWhitelist threatIntelWhitelist() {
         return this.innerModel().threatIntelWhitelist();
+    }
+
+    public FirewallPolicyInsights insights() {
+        return this.innerModel().insights();
+    }
+
+    public FirewallPolicySnat snat() {
+        return this.innerModel().snat();
     }
 
     public DnsSettings dnsSettings() {
@@ -251,6 +261,16 @@ public final class FirewallPolicyImpl implements FirewallPolicy, FirewallPolicy.
 
     public FirewallPolicyImpl withThreatIntelWhitelist(FirewallPolicyThreatIntelWhitelist threatIntelWhitelist) {
         this.innerModel().withThreatIntelWhitelist(threatIntelWhitelist);
+        return this;
+    }
+
+    public FirewallPolicyImpl withInsights(FirewallPolicyInsights insights) {
+        this.innerModel().withInsights(insights);
+        return this;
+    }
+
+    public FirewallPolicyImpl withSnat(FirewallPolicySnat snat) {
+        this.innerModel().withSnat(snat);
         return this;
     }
 

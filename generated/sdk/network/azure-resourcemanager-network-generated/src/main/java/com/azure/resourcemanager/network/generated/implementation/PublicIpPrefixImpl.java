@@ -7,12 +7,10 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.network.generated.fluent.models.NatGatewayInner;
 import com.azure.resourcemanager.network.generated.fluent.models.PublicIpPrefixInner;
 import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.IpTag;
 import com.azure.resourcemanager.network.generated.models.IpVersion;
-import com.azure.resourcemanager.network.generated.models.NatGateway;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.PublicIpPrefix;
 import com.azure.resourcemanager.network.generated.models.PublicIpPrefixSku;
@@ -113,15 +111,6 @@ public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.
 
     public ProvisioningState provisioningState() {
         return this.innerModel().provisioningState();
-    }
-
-    public NatGateway natGateway() {
-        NatGatewayInner inner = this.innerModel().natGateway();
-        if (inner != null) {
-            return new NatGatewayImpl(inner, this.manager());
-        } else {
-            return null;
-        }
     }
 
     public String id() {
@@ -286,11 +275,6 @@ public final class PublicIpPrefixImpl implements PublicIpPrefix, PublicIpPrefix.
 
     public PublicIpPrefixImpl withCustomIpPrefix(SubResource customIpPrefix) {
         this.innerModel().withCustomIpPrefix(customIpPrefix);
-        return this;
-    }
-
-    public PublicIpPrefixImpl withNatGateway(NatGatewayInner natGateway) {
-        this.innerModel().withNatGateway(natGateway);
         return this;
     }
 

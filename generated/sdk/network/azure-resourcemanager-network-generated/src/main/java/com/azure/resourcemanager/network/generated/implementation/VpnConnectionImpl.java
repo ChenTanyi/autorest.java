@@ -10,6 +10,7 @@ import com.azure.resourcemanager.network.generated.fluent.models.VpnSiteLinkConn
 import com.azure.resourcemanager.network.generated.models.IpsecPolicy;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.RoutingConfiguration;
+import com.azure.resourcemanager.network.generated.models.TrafficSelectorPolicy;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnectionProtocol;
 import com.azure.resourcemanager.network.generated.models.VpnConnection;
 import com.azure.resourcemanager.network.generated.models.VpnConnectionStatus;
@@ -87,6 +88,15 @@ public final class VpnConnectionImpl implements VpnConnection {
 
     public List<IpsecPolicy> ipsecPolicies() {
         List<IpsecPolicy> inner = this.innerModel().ipsecPolicies();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public List<TrafficSelectorPolicy> trafficSelectorPolicies() {
+        List<TrafficSelectorPolicy> inner = this.innerModel().trafficSelectorPolicies();
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {

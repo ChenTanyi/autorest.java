@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.network.generated.implementation;
 
 import com.azure.core.management.SubResource;
-import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.IpConfigurationInner;
 import com.azure.resourcemanager.network.generated.fluent.models.IpConfigurationProfileInner;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkSecurityGroupInner;
@@ -13,7 +12,6 @@ import com.azure.resourcemanager.network.generated.fluent.models.PrivateEndpoint
 import com.azure.resourcemanager.network.generated.fluent.models.RouteTableInner;
 import com.azure.resourcemanager.network.generated.fluent.models.ServiceEndpointPolicyInner;
 import com.azure.resourcemanager.network.generated.fluent.models.SubnetInner;
-import com.azure.resourcemanager.network.generated.models.ApplicationGatewayIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.Delegation;
 import com.azure.resourcemanager.network.generated.models.IpConfiguration;
 import com.azure.resourcemanager.network.generated.models.IpConfigurationProfile;
@@ -26,16 +24,19 @@ import com.azure.resourcemanager.network.generated.models.ServiceAssociationLink
 import com.azure.resourcemanager.network.generated.models.ServiceEndpointPolicy;
 import com.azure.resourcemanager.network.generated.models.ServiceEndpointPropertiesFormat;
 import com.azure.resourcemanager.network.generated.models.Subnet;
-import com.azure.resourcemanager.network.generated.models.VirtualNetworkPrivateEndpointNetworkPolicies;
-import com.azure.resourcemanager.network.generated.models.VirtualNetworkPrivateLinkServiceNetworkPolicies;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public final class SubnetImpl implements Subnet, Subnet.Definition, Subnet.Update {
+public final class SubnetImpl implements Subnet {
     private SubnetInner innerObject;
 
     private final com.azure.resourcemanager.network.generated.NetworkManager serviceManager;
+
+    SubnetImpl(SubnetInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
+        this.innerObject = innerObject;
+        this.serviceManager = serviceManager;
+    }
 
     public String id() {
         return this.innerModel().id();
@@ -47,10 +48,6 @@ public final class SubnetImpl implements Subnet, Subnet.Definition, Subnet.Updat
 
     public String etag() {
         return this.innerModel().etag();
-    }
-
-    public String type() {
-        return this.innerModel().type();
     }
 
     public String addressPrefix() {
@@ -197,21 +194,12 @@ public final class SubnetImpl implements Subnet, Subnet.Definition, Subnet.Updat
         return this.innerModel().provisioningState();
     }
 
-    public VirtualNetworkPrivateEndpointNetworkPolicies privateEndpointNetworkPolicies() {
+    public String privateEndpointNetworkPolicies() {
         return this.innerModel().privateEndpointNetworkPolicies();
     }
 
-    public VirtualNetworkPrivateLinkServiceNetworkPolicies privateLinkServiceNetworkPolicies() {
+    public String privateLinkServiceNetworkPolicies() {
         return this.innerModel().privateLinkServiceNetworkPolicies();
-    }
-
-    public List<ApplicationGatewayIpConfiguration> applicationGatewayIpConfigurations() {
-        List<ApplicationGatewayIpConfiguration> inner = this.innerModel().applicationGatewayIpConfigurations();
-        if (inner != null) {
-            return Collections.unmodifiableList(inner);
-        } else {
-            return Collections.emptyList();
-        }
     }
 
     public SubnetInner innerModel() {
@@ -220,166 +208,5 @@ public final class SubnetImpl implements Subnet, Subnet.Definition, Subnet.Updat
 
     private com.azure.resourcemanager.network.generated.NetworkManager manager() {
         return this.serviceManager;
-    }
-
-    private String resourceGroupName;
-
-    private String virtualNetworkName;
-
-    private String subnetName;
-
-    public SubnetImpl withExistingVirtualNetwork(String resourceGroupName, String virtualNetworkName) {
-        this.resourceGroupName = resourceGroupName;
-        this.virtualNetworkName = virtualNetworkName;
-        return this;
-    }
-
-    public Subnet create() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSubnets()
-                .createOrUpdate(resourceGroupName, virtualNetworkName, subnetName, this.innerModel(), Context.NONE);
-        return this;
-    }
-
-    public Subnet create(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSubnets()
-                .createOrUpdate(resourceGroupName, virtualNetworkName, subnetName, this.innerModel(), context);
-        return this;
-    }
-
-    SubnetImpl(String name, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
-        this.innerObject = new SubnetInner();
-        this.serviceManager = serviceManager;
-        this.subnetName = name;
-    }
-
-    public SubnetImpl update() {
-        return this;
-    }
-
-    public Subnet apply() {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSubnets()
-                .createOrUpdate(resourceGroupName, virtualNetworkName, subnetName, this.innerModel(), Context.NONE);
-        return this;
-    }
-
-    public Subnet apply(Context context) {
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSubnets()
-                .createOrUpdate(resourceGroupName, virtualNetworkName, subnetName, this.innerModel(), context);
-        return this;
-    }
-
-    SubnetImpl(SubnetInner innerObject, com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
-        this.innerObject = innerObject;
-        this.serviceManager = serviceManager;
-        this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.virtualNetworkName = Utils.getValueFromIdByName(innerObject.id(), "virtualNetworks");
-        this.subnetName = Utils.getValueFromIdByName(innerObject.id(), "subnets");
-    }
-
-    public Subnet refresh() {
-        String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSubnets()
-                .getWithResponse(resourceGroupName, virtualNetworkName, subnetName, localExpand, Context.NONE)
-                .getValue();
-        return this;
-    }
-
-    public Subnet refresh(Context context) {
-        String localExpand = null;
-        this.innerObject =
-            serviceManager
-                .serviceClient()
-                .getSubnets()
-                .getWithResponse(resourceGroupName, virtualNetworkName, subnetName, localExpand, context)
-                .getValue();
-        return this;
-    }
-
-    public SubnetImpl withName(String name) {
-        this.innerModel().withName(name);
-        return this;
-    }
-
-    public SubnetImpl withType(String type) {
-        this.innerModel().withType(type);
-        return this;
-    }
-
-    public SubnetImpl withAddressPrefix(String addressPrefix) {
-        this.innerModel().withAddressPrefix(addressPrefix);
-        return this;
-    }
-
-    public SubnetImpl withAddressPrefixes(List<String> addressPrefixes) {
-        this.innerModel().withAddressPrefixes(addressPrefixes);
-        return this;
-    }
-
-    public SubnetImpl withNetworkSecurityGroup(NetworkSecurityGroupInner networkSecurityGroup) {
-        this.innerModel().withNetworkSecurityGroup(networkSecurityGroup);
-        return this;
-    }
-
-    public SubnetImpl withRouteTable(RouteTableInner routeTable) {
-        this.innerModel().withRouteTable(routeTable);
-        return this;
-    }
-
-    public SubnetImpl withNatGateway(SubResource natGateway) {
-        this.innerModel().withNatGateway(natGateway);
-        return this;
-    }
-
-    public SubnetImpl withServiceEndpoints(List<ServiceEndpointPropertiesFormat> serviceEndpoints) {
-        this.innerModel().withServiceEndpoints(serviceEndpoints);
-        return this;
-    }
-
-    public SubnetImpl withServiceEndpointPolicies(List<ServiceEndpointPolicyInner> serviceEndpointPolicies) {
-        this.innerModel().withServiceEndpointPolicies(serviceEndpointPolicies);
-        return this;
-    }
-
-    public SubnetImpl withIpAllocations(List<SubResource> ipAllocations) {
-        this.innerModel().withIpAllocations(ipAllocations);
-        return this;
-    }
-
-    public SubnetImpl withDelegations(List<Delegation> delegations) {
-        this.innerModel().withDelegations(delegations);
-        return this;
-    }
-
-    public SubnetImpl withPrivateEndpointNetworkPolicies(
-        VirtualNetworkPrivateEndpointNetworkPolicies privateEndpointNetworkPolicies) {
-        this.innerModel().withPrivateEndpointNetworkPolicies(privateEndpointNetworkPolicies);
-        return this;
-    }
-
-    public SubnetImpl withPrivateLinkServiceNetworkPolicies(
-        VirtualNetworkPrivateLinkServiceNetworkPolicies privateLinkServiceNetworkPolicies) {
-        this.innerModel().withPrivateLinkServiceNetworkPolicies(privateLinkServiceNetworkPolicies);
-        return this;
-    }
-
-    public SubnetImpl withApplicationGatewayIpConfigurations(
-        List<ApplicationGatewayIpConfiguration> applicationGatewayIpConfigurations) {
-        this.innerModel().withApplicationGatewayIpConfigurations(applicationGatewayIpConfigurations);
-        return this;
     }
 }

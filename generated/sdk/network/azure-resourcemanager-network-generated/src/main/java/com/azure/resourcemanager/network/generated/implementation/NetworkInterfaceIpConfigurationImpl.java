@@ -51,10 +51,6 @@ public final class NetworkInterfaceIpConfigurationImpl implements NetworkInterfa
         return this.innerModel().etag();
     }
 
-    public String type() {
-        return this.innerModel().type();
-    }
-
     public List<VirtualNetworkTap> virtualNetworkTaps() {
         List<VirtualNetworkTapInner> inner = this.innerModel().virtualNetworkTaps();
         if (inner != null) {

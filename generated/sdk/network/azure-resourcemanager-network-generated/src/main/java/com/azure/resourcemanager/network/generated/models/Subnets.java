@@ -7,6 +7,7 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
+import com.azure.resourcemanager.network.generated.fluent.models.SubnetInner;
 
 /** Resource collection API of Subnets. */
 public interface Subnets {
@@ -63,6 +64,41 @@ public interface Subnets {
      */
     Response<Subnet> getWithResponse(
         String resourceGroupName, String virtualNetworkName, String subnetName, String expand, Context context);
+
+    /**
+     * Creates or updates a subnet in the specified virtual network.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualNetworkName The name of the virtual network.
+     * @param subnetName The name of the subnet.
+     * @param subnetParameters Parameters supplied to the create or update subnet operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return subnet in a virtual network resource.
+     */
+    Subnet createOrUpdate(
+        String resourceGroupName, String virtualNetworkName, String subnetName, SubnetInner subnetParameters);
+
+    /**
+     * Creates or updates a subnet in the specified virtual network.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param virtualNetworkName The name of the virtual network.
+     * @param subnetName The name of the subnet.
+     * @param subnetParameters Parameters supplied to the create or update subnet operation.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return subnet in a virtual network resource.
+     */
+    Subnet createOrUpdate(
+        String resourceGroupName,
+        String virtualNetworkName,
+        String subnetName,
+        SubnetInner subnetParameters,
+        Context context);
 
     /**
      * Prepares a subnet by applying network intent policies.
@@ -164,57 +200,4 @@ public interface Subnets {
      * @return all subnets in a virtual network.
      */
     PagedIterable<Subnet> list(String resourceGroupName, String virtualNetworkName, Context context);
-
-    /**
-     * Gets the specified subnet by virtual network and resource group.
-     *
-     * @param id the resource ID.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified subnet by virtual network and resource group.
-     */
-    Subnet getById(String id);
-
-    /**
-     * Gets the specified subnet by virtual network and resource group.
-     *
-     * @param id the resource ID.
-     * @param expand Expands referenced resources.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified subnet by virtual network and resource group.
-     */
-    Response<Subnet> getByIdWithResponse(String id, String expand, Context context);
-
-    /**
-     * Deletes the specified subnet.
-     *
-     * @param id the resource ID.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void deleteById(String id);
-
-    /**
-     * Deletes the specified subnet.
-     *
-     * @param id the resource ID.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void deleteByIdWithResponse(String id, Context context);
-
-    /**
-     * Begins definition for a new Subnet resource.
-     *
-     * @param name resource name.
-     * @return the first stage of the new Subnet definition.
-     */
-    Subnet.DefinitionStages.Blank define(String name);
 }

@@ -35,6 +35,76 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
         this.serviceManager = serviceManager;
     }
 
+    public PagedIterable<NetworkInterface> listCloudServiceRoleInstanceNetworkInterfaces(
+        String resourceGroupName, String cloudServiceName, String roleInstanceName) {
+        PagedIterable<NetworkInterfaceInner> inner =
+            this
+                .serviceClient()
+                .listCloudServiceRoleInstanceNetworkInterfaces(resourceGroupName, cloudServiceName, roleInstanceName);
+        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<NetworkInterface> listCloudServiceRoleInstanceNetworkInterfaces(
+        String resourceGroupName, String cloudServiceName, String roleInstanceName, Context context) {
+        PagedIterable<NetworkInterfaceInner> inner =
+            this
+                .serviceClient()
+                .listCloudServiceRoleInstanceNetworkInterfaces(
+                    resourceGroupName, cloudServiceName, roleInstanceName, context);
+        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<NetworkInterface> listCloudServiceNetworkInterfaces(
+        String resourceGroupName, String cloudServiceName) {
+        PagedIterable<NetworkInterfaceInner> inner =
+            this.serviceClient().listCloudServiceNetworkInterfaces(resourceGroupName, cloudServiceName);
+        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<NetworkInterface> listCloudServiceNetworkInterfaces(
+        String resourceGroupName, String cloudServiceName, Context context) {
+        PagedIterable<NetworkInterfaceInner> inner =
+            this.serviceClient().listCloudServiceNetworkInterfaces(resourceGroupName, cloudServiceName, context);
+        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
+    }
+
+    public NetworkInterface getCloudServiceNetworkInterface(
+        String resourceGroupName, String cloudServiceName, String roleInstanceName, String networkInterfaceName) {
+        NetworkInterfaceInner inner =
+            this
+                .serviceClient()
+                .getCloudServiceNetworkInterface(
+                    resourceGroupName, cloudServiceName, roleInstanceName, networkInterfaceName);
+        if (inner != null) {
+            return new NetworkInterfaceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<NetworkInterface> getCloudServiceNetworkInterfaceWithResponse(
+        String resourceGroupName,
+        String cloudServiceName,
+        String roleInstanceName,
+        String networkInterfaceName,
+        String expand,
+        Context context) {
+        Response<NetworkInterfaceInner> inner =
+            this
+                .serviceClient()
+                .getCloudServiceNetworkInterfaceWithResponse(
+                    resourceGroupName, cloudServiceName, roleInstanceName, networkInterfaceName, expand, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new NetworkInterfaceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
     public void deleteByResourceGroup(String resourceGroupName, String networkInterfaceName) {
         this.serviceClient().delete(resourceGroupName, networkInterfaceName);
     }
@@ -296,76 +366,6 @@ public final class NetworkInterfacesImpl implements NetworkInterfaces {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new NetworkInterfaceIpConfigurationImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
-    }
-
-    public PagedIterable<NetworkInterface> listCloudServiceRoleInstanceNetworkInterfaces(
-        String resourceGroupName, String cloudServiceName, String roleInstanceName) {
-        PagedIterable<NetworkInterfaceInner> inner =
-            this
-                .serviceClient()
-                .listCloudServiceRoleInstanceNetworkInterfaces(resourceGroupName, cloudServiceName, roleInstanceName);
-        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
-    }
-
-    public PagedIterable<NetworkInterface> listCloudServiceRoleInstanceNetworkInterfaces(
-        String resourceGroupName, String cloudServiceName, String roleInstanceName, Context context) {
-        PagedIterable<NetworkInterfaceInner> inner =
-            this
-                .serviceClient()
-                .listCloudServiceRoleInstanceNetworkInterfaces(
-                    resourceGroupName, cloudServiceName, roleInstanceName, context);
-        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
-    }
-
-    public PagedIterable<NetworkInterface> listCloudServiceNetworkInterfaces(
-        String resourceGroupName, String cloudServiceName) {
-        PagedIterable<NetworkInterfaceInner> inner =
-            this.serviceClient().listCloudServiceNetworkInterfaces(resourceGroupName, cloudServiceName);
-        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
-    }
-
-    public PagedIterable<NetworkInterface> listCloudServiceNetworkInterfaces(
-        String resourceGroupName, String cloudServiceName, Context context) {
-        PagedIterable<NetworkInterfaceInner> inner =
-            this.serviceClient().listCloudServiceNetworkInterfaces(resourceGroupName, cloudServiceName, context);
-        return Utils.mapPage(inner, inner1 -> new NetworkInterfaceImpl(inner1, this.manager()));
-    }
-
-    public NetworkInterface getCloudServiceNetworkInterface(
-        String resourceGroupName, String cloudServiceName, String roleInstanceName, String networkInterfaceName) {
-        NetworkInterfaceInner inner =
-            this
-                .serviceClient()
-                .getCloudServiceNetworkInterface(
-                    resourceGroupName, cloudServiceName, roleInstanceName, networkInterfaceName);
-        if (inner != null) {
-            return new NetworkInterfaceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<NetworkInterface> getCloudServiceNetworkInterfaceWithResponse(
-        String resourceGroupName,
-        String cloudServiceName,
-        String roleInstanceName,
-        String networkInterfaceName,
-        String expand,
-        Context context) {
-        Response<NetworkInterfaceInner> inner =
-            this
-                .serviceClient()
-                .getCloudServiceNetworkInterfaceWithResponse(
-                    resourceGroupName, cloudServiceName, roleInstanceName, networkInterfaceName, expand, context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new NetworkInterfaceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }

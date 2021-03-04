@@ -123,6 +123,20 @@ public interface NetworkManagementClient {
     ResourceProvidersClient getResourceProviders();
 
     /**
+     * Gets the NetworkInterfacesClient object to access its operations.
+     *
+     * @return the NetworkInterfacesClient object.
+     */
+    NetworkInterfacesClient getNetworkInterfaces();
+
+    /**
+     * Gets the PublicIpAddressesClient object to access its operations.
+     *
+     * @return the PublicIpAddressesClient object.
+     */
+    PublicIpAddressesClient getPublicIpAddresses();
+
+    /**
      * Gets the CustomIpPrefixesClient object to access its operations.
      *
      * @return the CustomIpPrefixesClient object.
@@ -326,13 +340,6 @@ public interface NetworkManagementClient {
     NatGatewaysClient getNatGateways();
 
     /**
-     * Gets the NetworkInterfacesClient object to access its operations.
-     *
-     * @return the NetworkInterfacesClient object.
-     */
-    NetworkInterfacesClient getNetworkInterfaces();
-
-    /**
      * Gets the NetworkInterfaceIpConfigurationsClient object to access its operations.
      *
      * @return the NetworkInterfaceIpConfigurationsClient object.
@@ -352,83 +359,6 @@ public interface NetworkManagementClient {
      * @return the NetworkInterfaceTapConfigurationsClient object.
      */
     NetworkInterfaceTapConfigurationsClient getNetworkInterfaceTapConfigurations();
-
-    /**
-     * Gets the NetworkManagersClient object to access its operations.
-     *
-     * @return the NetworkManagersClient object.
-     */
-    NetworkManagersClient getNetworkManagers();
-
-    /**
-     * Gets the NetworkManagerCommitsClient object to access its operations.
-     *
-     * @return the NetworkManagerCommitsClient object.
-     */
-    NetworkManagerCommitsClient getNetworkManagerCommits();
-
-    /**
-     * Gets the NetworkManagerDeploymentStatusOperationsClient object to access its operations.
-     *
-     * @return the NetworkManagerDeploymentStatusOperationsClient object.
-     */
-    NetworkManagerDeploymentStatusOperationsClient getNetworkManagerDeploymentStatusOperations();
-
-    /**
-     * Gets the EffectiveVirtualNetworksClient object to access its operations.
-     *
-     * @return the EffectiveVirtualNetworksClient object.
-     */
-    EffectiveVirtualNetworksClient getEffectiveVirtualNetworks();
-
-    /**
-     * Gets the ActiveConfigurationsClient object to access its operations.
-     *
-     * @return the ActiveConfigurationsClient object.
-     */
-    ActiveConfigurationsClient getActiveConfigurations();
-
-    /**
-     * Gets the ConnectivityConfigurationsClient object to access its operations.
-     *
-     * @return the ConnectivityConfigurationsClient object.
-     */
-    ConnectivityConfigurationsClient getConnectivityConfigurations();
-
-    /**
-     * Gets the EffectiveConfigurationsClient object to access its operations.
-     *
-     * @return the EffectiveConfigurationsClient object.
-     */
-    EffectiveConfigurationsClient getEffectiveConfigurations();
-
-    /**
-     * Gets the NetworkGroupsClient object to access its operations.
-     *
-     * @return the NetworkGroupsClient object.
-     */
-    NetworkGroupsClient getNetworkGroups();
-
-    /**
-     * Gets the SecurityConfigurationsClient object to access its operations.
-     *
-     * @return the SecurityConfigurationsClient object.
-     */
-    SecurityConfigurationsClient getSecurityConfigurations();
-
-    /**
-     * Gets the AdminRulesClient object to access its operations.
-     *
-     * @return the AdminRulesClient object.
-     */
-    AdminRulesClient getAdminRules();
-
-    /**
-     * Gets the UserRulesClient object to access its operations.
-     *
-     * @return the UserRulesClient object.
-     */
-    UserRulesClient getUserRules();
 
     /**
      * Gets the NetworkProfilesClient object to access its operations.
@@ -548,13 +478,6 @@ public interface NetworkManagementClient {
      * @return the PrivateLinkServicesClient object.
      */
     PrivateLinkServicesClient getPrivateLinkServices();
-
-    /**
-     * Gets the PublicIpAddressesClient object to access its operations.
-     *
-     * @return the PublicIpAddressesClient object.
-     */
-    PublicIpAddressesClient getPublicIpAddresses();
 
     /**
      * Gets the PublicIpPrefixesClient object to access its operations.
@@ -767,6 +690,13 @@ public interface NetworkManagementClient {
     VpnGatewaysClient getVpnGateways();
 
     /**
+     * Gets the VpnLinkConnectionsClient object to access its operations.
+     *
+     * @return the VpnLinkConnectionsClient object.
+     */
+    VpnLinkConnectionsClient getVpnLinkConnections();
+
+    /**
      * Gets the VpnConnectionsClient object to access its operations.
      *
      * @return the VpnConnectionsClient object.
@@ -779,13 +709,6 @@ public interface NetworkManagementClient {
      * @return the VpnSiteLinkConnectionsClient object.
      */
     VpnSiteLinkConnectionsClient getVpnSiteLinkConnections();
-
-    /**
-     * Gets the VpnLinkConnectionsClient object to access its operations.
-     *
-     * @return the VpnLinkConnectionsClient object.
-     */
-    VpnLinkConnectionsClient getVpnLinkConnections();
 
     /**
      * Gets the NatRulesClient object to access its operations.
