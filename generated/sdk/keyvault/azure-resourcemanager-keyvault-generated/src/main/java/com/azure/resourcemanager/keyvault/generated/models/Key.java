@@ -52,7 +52,7 @@ public interface Key {
      *
      * @return the attributes value.
      */
-    Attributes attributes();
+    KeyAttributes attributes();
 
     /**
      * Gets the kty property: The type of the key. For valid values, see JsonWebKeyType.

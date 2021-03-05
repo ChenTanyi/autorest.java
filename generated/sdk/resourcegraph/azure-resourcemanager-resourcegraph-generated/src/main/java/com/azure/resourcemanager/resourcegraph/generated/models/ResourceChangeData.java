@@ -28,14 +28,14 @@ public interface ResourceChangeData {
      *
      * @return the beforeSnapshot value.
      */
-    ResourceSnapshotData beforeSnapshot();
+    ResourceChangeDataBeforeSnapshot beforeSnapshot();
 
     /**
      * Gets the afterSnapshot property: The snapshot after the change.
      *
      * @return the afterSnapshot value.
      */
-    ResourceSnapshotData afterSnapshot();
+    ResourceChangeDataAfterSnapshot afterSnapshot();
 
     /**
      * Gets the changeType property: The change type for snapshot. PropertyChanges will be provided in case of Update

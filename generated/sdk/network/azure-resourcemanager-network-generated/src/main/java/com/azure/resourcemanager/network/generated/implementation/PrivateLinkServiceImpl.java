@@ -17,8 +17,9 @@ import com.azure.resourcemanager.network.generated.models.NetworkInterface;
 import com.azure.resourcemanager.network.generated.models.PrivateEndpointConnection;
 import com.azure.resourcemanager.network.generated.models.PrivateLinkService;
 import com.azure.resourcemanager.network.generated.models.PrivateLinkServiceIpConfiguration;
+import com.azure.resourcemanager.network.generated.models.PrivateLinkServicePropertiesAutoApproval;
+import com.azure.resourcemanager.network.generated.models.PrivateLinkServicePropertiesVisibility;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
-import com.azure.resourcemanager.network.generated.models.ResourceSet;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -119,11 +120,11 @@ public final class PrivateLinkServiceImpl
         }
     }
 
-    public ResourceSet visibility() {
+    public PrivateLinkServicePropertiesVisibility visibility() {
         return this.innerModel().visibility();
     }
 
-    public ResourceSet autoApproval() {
+    public PrivateLinkServicePropertiesAutoApproval autoApproval() {
         return this.innerModel().autoApproval();
     }
 
@@ -281,12 +282,12 @@ public final class PrivateLinkServiceImpl
         return this;
     }
 
-    public PrivateLinkServiceImpl withVisibility(ResourceSet visibility) {
+    public PrivateLinkServiceImpl withVisibility(PrivateLinkServicePropertiesVisibility visibility) {
         this.innerModel().withVisibility(visibility);
         return this;
     }
 
-    public PrivateLinkServiceImpl withAutoApproval(ResourceSet autoApproval) {
+    public PrivateLinkServiceImpl withAutoApproval(PrivateLinkServicePropertiesAutoApproval autoApproval) {
         this.innerModel().withAutoApproval(autoApproval);
         return this;
     }

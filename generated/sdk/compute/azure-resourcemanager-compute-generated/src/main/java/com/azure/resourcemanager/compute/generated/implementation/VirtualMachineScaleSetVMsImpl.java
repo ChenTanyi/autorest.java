@@ -18,9 +18,9 @@ import com.azure.resourcemanager.compute.generated.models.InstanceViewTypes;
 import com.azure.resourcemanager.compute.generated.models.RetrieveBootDiagnosticsDataResult;
 import com.azure.resourcemanager.compute.generated.models.RunCommandInput;
 import com.azure.resourcemanager.compute.generated.models.RunCommandResult;
-import com.azure.resourcemanager.compute.generated.models.VirtualMachineReimageParameters;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVM;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMInstanceView;
+import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMReimageParameters;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMs;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -42,7 +42,7 @@ public final class VirtualMachineScaleSetVMsImpl implements VirtualMachineScaleS
         String resourceGroupName,
         String vmScaleSetName,
         String instanceId,
-        VirtualMachineReimageParameters vmScaleSetVMReimageInput) {
+        VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput) {
         this.serviceClient().reimage(resourceGroupName, vmScaleSetName, instanceId, vmScaleSetVMReimageInput);
     }
 
@@ -54,7 +54,7 @@ public final class VirtualMachineScaleSetVMsImpl implements VirtualMachineScaleS
         String resourceGroupName,
         String vmScaleSetName,
         String instanceId,
-        VirtualMachineReimageParameters vmScaleSetVMReimageInput,
+        VirtualMachineScaleSetVMReimageParameters vmScaleSetVMReimageInput,
         Context context) {
         this.serviceClient().reimage(resourceGroupName, vmScaleSetName, instanceId, vmScaleSetVMReimageInput, context);
     }

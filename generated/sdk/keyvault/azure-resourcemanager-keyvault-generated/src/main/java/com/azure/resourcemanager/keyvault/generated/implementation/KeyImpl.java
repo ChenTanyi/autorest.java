@@ -7,11 +7,11 @@ package com.azure.resourcemanager.keyvault.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.KeyInner;
-import com.azure.resourcemanager.keyvault.generated.models.Attributes;
 import com.azure.resourcemanager.keyvault.generated.models.JsonWebKeyCurveName;
 import com.azure.resourcemanager.keyvault.generated.models.JsonWebKeyOperation;
 import com.azure.resourcemanager.keyvault.generated.models.JsonWebKeyType;
 import com.azure.resourcemanager.keyvault.generated.models.Key;
+import com.azure.resourcemanager.keyvault.generated.models.KeyAttributes;
 import com.azure.resourcemanager.keyvault.generated.models.KeyCreateParameters;
 import com.azure.resourcemanager.keyvault.generated.models.KeyProperties;
 import java.util.Collections;
@@ -53,7 +53,7 @@ public final class KeyImpl implements Key, Key.Definition {
         }
     }
 
-    public Attributes attributes() {
+    public KeyAttributes attributes() {
         return this.innerModel().attributes();
     }
 

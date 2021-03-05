@@ -7,9 +7,9 @@ package com.azure.resourcemanager.compute.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.GalleryImageVersionInner;
-import com.azure.resourcemanager.compute.generated.models.GalleryArtifactPublishingProfileBase;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersion;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionPropertiesProvisioningState;
+import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionPublishingProfile;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionStorageProfile;
 import com.azure.resourcemanager.compute.generated.models.GalleryImageVersionUpdate;
 import com.azure.resourcemanager.compute.generated.models.ReplicationStatus;
@@ -48,7 +48,7 @@ public final class GalleryImageVersionImpl
         }
     }
 
-    public GalleryArtifactPublishingProfileBase publishingProfile() {
+    public GalleryImageVersionPublishingProfile publishingProfile() {
         return this.innerModel().publishingProfile();
     }
 
@@ -229,7 +229,7 @@ public final class GalleryImageVersionImpl
         }
     }
 
-    public GalleryImageVersionImpl withPublishingProfile(GalleryArtifactPublishingProfileBase publishingProfile) {
+    public GalleryImageVersionImpl withPublishingProfile(GalleryImageVersionPublishingProfile publishingProfile) {
         if (isInCreateMode()) {
             this.innerModel().withPublishingProfile(publishingProfile);
             return this;

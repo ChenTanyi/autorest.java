@@ -4,9 +4,9 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.core.management.Resource;
 import com.azure.resourcemanager.network.generated.fluent.models.BastionShareableLinkInner;
 import com.azure.resourcemanager.network.generated.models.BastionShareableLink;
+import com.azure.resourcemanager.network.generated.models.VM;
 
 public final class BastionShareableLinkImpl implements BastionShareableLink {
     private BastionShareableLinkInner innerObject;
@@ -20,7 +20,7 @@ public final class BastionShareableLinkImpl implements BastionShareableLink {
         this.serviceManager = serviceManager;
     }
 
-    public Resource vm() {
+    public VM vm() {
         return this.innerModel().vm();
     }
 

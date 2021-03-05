@@ -8,10 +8,10 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.management.Resource;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.resourcemanager.keyvault.generated.models.Attributes;
 import com.azure.resourcemanager.keyvault.generated.models.JsonWebKeyCurveName;
 import com.azure.resourcemanager.keyvault.generated.models.JsonWebKeyOperation;
 import com.azure.resourcemanager.keyvault.generated.models.JsonWebKeyType;
+import com.azure.resourcemanager.keyvault.generated.models.KeyAttributes;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -27,7 +27,7 @@ public class KeyInner extends Resource {
      * The attributes of the key.
      */
     @JsonProperty(value = "properties.attributes")
-    private Attributes attributes;
+    private KeyAttributes attributes;
 
     /*
      * The type of the key. For valid values, see JsonWebKeyType.
@@ -70,7 +70,7 @@ public class KeyInner extends Resource {
      *
      * @return the attributes value.
      */
-    public Attributes attributes() {
+    public KeyAttributes attributes() {
         return this.attributes;
     }
 
@@ -80,7 +80,7 @@ public class KeyInner extends Resource {
      * @param attributes the attributes value to set.
      * @return the KeyInner object itself.
      */
-    public KeyInner withAttributes(Attributes attributes) {
+    public KeyInner withAttributes(KeyAttributes attributes) {
         this.attributes = attributes;
         return this;
     }

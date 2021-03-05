@@ -7,8 +7,9 @@ package com.azure.resourcemanager.resourcegraph.generated.implementation;
 import com.azure.resourcemanager.resourcegraph.generated.fluent.models.ResourceChangeDataInner;
 import com.azure.resourcemanager.resourcegraph.generated.models.ChangeType;
 import com.azure.resourcemanager.resourcegraph.generated.models.ResourceChangeData;
+import com.azure.resourcemanager.resourcegraph.generated.models.ResourceChangeDataAfterSnapshot;
+import com.azure.resourcemanager.resourcegraph.generated.models.ResourceChangeDataBeforeSnapshot;
 import com.azure.resourcemanager.resourcegraph.generated.models.ResourcePropertyChange;
-import com.azure.resourcemanager.resourcegraph.generated.models.ResourceSnapshotData;
 import java.util.Collections;
 import java.util.List;
 
@@ -32,11 +33,11 @@ public final class ResourceChangeDataImpl implements ResourceChangeData {
         return this.innerModel().changeId();
     }
 
-    public ResourceSnapshotData beforeSnapshot() {
+    public ResourceChangeDataBeforeSnapshot beforeSnapshot() {
         return this.innerModel().beforeSnapshot();
     }
 
-    public ResourceSnapshotData afterSnapshot() {
+    public ResourceChangeDataAfterSnapshot afterSnapshot() {
         return this.innerModel().afterSnapshot();
     }
 

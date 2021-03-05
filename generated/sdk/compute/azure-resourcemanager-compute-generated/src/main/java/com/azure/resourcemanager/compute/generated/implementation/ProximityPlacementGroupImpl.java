@@ -10,8 +10,8 @@ import com.azure.resourcemanager.compute.generated.fluent.models.ProximityPlacem
 import com.azure.resourcemanager.compute.generated.models.InstanceViewStatus;
 import com.azure.resourcemanager.compute.generated.models.ProximityPlacementGroup;
 import com.azure.resourcemanager.compute.generated.models.ProximityPlacementGroupType;
+import com.azure.resourcemanager.compute.generated.models.ProximityPlacementGroupUpdate;
 import com.azure.resourcemanager.compute.generated.models.SubResourceWithColocationStatus;
-import com.azure.resourcemanager.compute.generated.models.UpdateResource;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -102,7 +102,7 @@ public final class ProximityPlacementGroupImpl
 
     private String proximityPlacementGroupName;
 
-    private UpdateResource updateParameters;
+    private ProximityPlacementGroupUpdate updateParameters;
 
     public ProximityPlacementGroupImpl withExistingResourceGroup(String resourceGroupName) {
         this.resourceGroupName = resourceGroupName;
@@ -138,7 +138,7 @@ public final class ProximityPlacementGroupImpl
     }
 
     public ProximityPlacementGroupImpl update() {
-        this.updateParameters = new UpdateResource();
+        this.updateParameters = new ProximityPlacementGroupUpdate();
         return this;
     }
 

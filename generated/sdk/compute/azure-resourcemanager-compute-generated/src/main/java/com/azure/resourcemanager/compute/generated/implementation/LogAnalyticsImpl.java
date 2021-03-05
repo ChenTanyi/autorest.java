@@ -9,9 +9,9 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.fluent.LogAnalyticsClient;
 import com.azure.resourcemanager.compute.generated.fluent.models.LogAnalyticsOperationResultInner;
 import com.azure.resourcemanager.compute.generated.models.LogAnalytics;
-import com.azure.resourcemanager.compute.generated.models.LogAnalyticsInputBase;
 import com.azure.resourcemanager.compute.generated.models.LogAnalyticsOperationResult;
 import com.azure.resourcemanager.compute.generated.models.RequestRateByIntervalInput;
+import com.azure.resourcemanager.compute.generated.models.ThrottledRequestsInput;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class LogAnalyticsImpl implements LogAnalytics {
@@ -48,7 +48,7 @@ public final class LogAnalyticsImpl implements LogAnalytics {
         }
     }
 
-    public LogAnalyticsOperationResult exportThrottledRequests(String location, LogAnalyticsInputBase parameters) {
+    public LogAnalyticsOperationResult exportThrottledRequests(String location, ThrottledRequestsInput parameters) {
         LogAnalyticsOperationResultInner inner = this.serviceClient().exportThrottledRequests(location, parameters);
         if (inner != null) {
             return new LogAnalyticsOperationResultImpl(inner, this.manager());
@@ -58,7 +58,7 @@ public final class LogAnalyticsImpl implements LogAnalytics {
     }
 
     public LogAnalyticsOperationResult exportThrottledRequests(
-        String location, LogAnalyticsInputBase parameters, Context context) {
+        String location, ThrottledRequestsInput parameters, Context context) {
         LogAnalyticsOperationResultInner inner =
             this.serviceClient().exportThrottledRequests(location, parameters, context);
         if (inner != null) {

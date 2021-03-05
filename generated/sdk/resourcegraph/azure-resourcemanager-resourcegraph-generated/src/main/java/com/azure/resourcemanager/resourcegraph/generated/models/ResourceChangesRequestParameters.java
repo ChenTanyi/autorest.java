@@ -31,7 +31,7 @@ public final class ResourceChangesRequestParameters {
      * Specifies the date and time interval for a changes request.
      */
     @JsonProperty(value = "interval", required = true)
-    private DateTimeInterval interval;
+    private ResourceChangesRequestParametersInterval interval;
 
     /*
      * Acts as the continuation token for paged responses.
@@ -108,7 +108,7 @@ public final class ResourceChangesRequestParameters {
      *
      * @return the interval value.
      */
-    public DateTimeInterval interval() {
+    public ResourceChangesRequestParametersInterval interval() {
         return this.interval;
     }
 
@@ -118,7 +118,7 @@ public final class ResourceChangesRequestParameters {
      * @param interval the interval value to set.
      * @return the ResourceChangesRequestParameters object itself.
      */
-    public ResourceChangesRequestParameters withInterval(DateTimeInterval interval) {
+    public ResourceChangesRequestParameters withInterval(ResourceChangesRequestParametersInterval interval) {
         this.interval = interval;
         return this;
     }

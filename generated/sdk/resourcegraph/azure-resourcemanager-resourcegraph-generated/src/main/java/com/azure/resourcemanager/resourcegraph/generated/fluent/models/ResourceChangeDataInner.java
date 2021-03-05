@@ -7,8 +7,9 @@ package com.azure.resourcemanager.resourcegraph.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.resourcegraph.generated.models.ChangeType;
+import com.azure.resourcemanager.resourcegraph.generated.models.ResourceChangeDataAfterSnapshot;
+import com.azure.resourcemanager.resourcegraph.generated.models.ResourceChangeDataBeforeSnapshot;
 import com.azure.resourcemanager.resourcegraph.generated.models.ResourcePropertyChange;
-import com.azure.resourcemanager.resourcegraph.generated.models.ResourceSnapshotData;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -34,13 +35,13 @@ public final class ResourceChangeDataInner {
      * The snapshot before the change.
      */
     @JsonProperty(value = "beforeSnapshot", required = true)
-    private ResourceSnapshotData beforeSnapshot;
+    private ResourceChangeDataBeforeSnapshot beforeSnapshot;
 
     /*
      * The snapshot after the change.
      */
     @JsonProperty(value = "afterSnapshot", required = true)
-    private ResourceSnapshotData afterSnapshot;
+    private ResourceChangeDataAfterSnapshot afterSnapshot;
 
     /*
      * The change type for snapshot. PropertyChanges will be provided in case
@@ -100,7 +101,7 @@ public final class ResourceChangeDataInner {
      *
      * @return the beforeSnapshot value.
      */
-    public ResourceSnapshotData beforeSnapshot() {
+    public ResourceChangeDataBeforeSnapshot beforeSnapshot() {
         return this.beforeSnapshot;
     }
 
@@ -110,7 +111,7 @@ public final class ResourceChangeDataInner {
      * @param beforeSnapshot the beforeSnapshot value to set.
      * @return the ResourceChangeDataInner object itself.
      */
-    public ResourceChangeDataInner withBeforeSnapshot(ResourceSnapshotData beforeSnapshot) {
+    public ResourceChangeDataInner withBeforeSnapshot(ResourceChangeDataBeforeSnapshot beforeSnapshot) {
         this.beforeSnapshot = beforeSnapshot;
         return this;
     }
@@ -120,7 +121,7 @@ public final class ResourceChangeDataInner {
      *
      * @return the afterSnapshot value.
      */
-    public ResourceSnapshotData afterSnapshot() {
+    public ResourceChangeDataAfterSnapshot afterSnapshot() {
         return this.afterSnapshot;
     }
 
@@ -130,7 +131,7 @@ public final class ResourceChangeDataInner {
      * @param afterSnapshot the afterSnapshot value to set.
      * @return the ResourceChangeDataInner object itself.
      */
-    public ResourceChangeDataInner withAfterSnapshot(ResourceSnapshotData afterSnapshot) {
+    public ResourceChangeDataInner withAfterSnapshot(ResourceChangeDataAfterSnapshot afterSnapshot) {
         this.afterSnapshot = afterSnapshot;
         return this;
     }

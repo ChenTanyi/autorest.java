@@ -19,7 +19,7 @@ public final class KeyProperties {
      * The attributes of the key.
      */
     @JsonProperty(value = "attributes")
-    private Attributes attributes;
+    private KeyAttributes attributes;
 
     /*
      * The type of the key. For valid values, see JsonWebKeyType.
@@ -62,7 +62,7 @@ public final class KeyProperties {
      *
      * @return the attributes value.
      */
-    public Attributes attributes() {
+    public KeyAttributes attributes() {
         return this.attributes;
     }
 
@@ -72,7 +72,7 @@ public final class KeyProperties {
      * @param attributes the attributes value to set.
      * @return the KeyProperties object itself.
      */
-    public KeyProperties withAttributes(Attributes attributes) {
+    public KeyProperties withAttributes(KeyAttributes attributes) {
         this.attributes = attributes;
         return this;
     }
