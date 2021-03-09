@@ -4,9 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DetectorDefinitionInner;
 import com.azure.resourcemanager.appservice.generated.models.DetectorDefinition;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class DetectorDefinitionImpl implements DetectorDefinition {
     private DetectorDefinitionInner innerObject;

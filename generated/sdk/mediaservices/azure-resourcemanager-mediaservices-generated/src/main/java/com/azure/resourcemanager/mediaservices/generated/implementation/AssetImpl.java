@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.mediaservices.generated.implementation;
 
 import com.azure.core.http.rest.Response;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.AssetInner;
 import com.azure.resourcemanager.mediaservices.generated.models.Asset;
@@ -13,7 +14,6 @@ import com.azure.resourcemanager.mediaservices.generated.models.AssetStorageEncr
 import com.azure.resourcemanager.mediaservices.generated.models.ListContainerSasInput;
 import com.azure.resourcemanager.mediaservices.generated.models.ListStreamingLocatorsResponse;
 import com.azure.resourcemanager.mediaservices.generated.models.StorageEncryptedAssetDecryptionData;
-import com.azure.resourcemanager.mediaservices.generated.models.SystemData;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 

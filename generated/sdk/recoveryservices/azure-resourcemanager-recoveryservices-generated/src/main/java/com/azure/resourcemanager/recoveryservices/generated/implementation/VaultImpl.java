@@ -5,12 +5,12 @@
 package com.azure.resourcemanager.recoveryservices.generated.implementation;
 
 import com.azure.core.management.Region;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.models.VaultInner;
 import com.azure.resourcemanager.recoveryservices.generated.models.IdentityData;
 import com.azure.resourcemanager.recoveryservices.generated.models.PatchVault;
 import com.azure.resourcemanager.recoveryservices.generated.models.Sku;
-import com.azure.resourcemanager.recoveryservices.generated.models.SystemData;
 import com.azure.resourcemanager.recoveryservices.generated.models.Vault;
 import com.azure.resourcemanager.recoveryservices.generated.models.VaultProperties;
 import java.util.Collections;

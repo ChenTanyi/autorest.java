@@ -5,12 +5,12 @@
 package com.azure.resourcemanager.mediaservices.generated.implementation;
 
 import com.azure.core.http.rest.Response;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.ContentKeyPolicyInner;
 import com.azure.resourcemanager.mediaservices.generated.models.ContentKeyPolicy;
 import com.azure.resourcemanager.mediaservices.generated.models.ContentKeyPolicyOption;
 import com.azure.resourcemanager.mediaservices.generated.models.ContentKeyPolicyProperties;
-import com.azure.resourcemanager.mediaservices.generated.models.SystemData;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;

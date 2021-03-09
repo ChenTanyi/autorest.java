@@ -4,10 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ContinuousWebJobInner;
 import com.azure.resourcemanager.appservice.generated.models.ContinuousWebJob;
 import com.azure.resourcemanager.appservice.generated.models.ContinuousWebJobStatus;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.WebJobType;
 import java.util.Collections;
 import java.util.Map;

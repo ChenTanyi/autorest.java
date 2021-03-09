@@ -4,10 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AzureStoragePropertyDictionaryResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.AzureStorageInfoValue;
 import com.azure.resourcemanager.appservice.generated.models.AzureStoragePropertyDictionaryResource;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.util.Collections;
 import java.util.Map;
 

@@ -4,9 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteCustomDomainOverviewArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteCustomDomainOverviewArmResource;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.time.OffsetDateTime;
 
 public final class StaticSiteCustomDomainOverviewArmResourceImpl implements StaticSiteCustomDomainOverviewArmResource {

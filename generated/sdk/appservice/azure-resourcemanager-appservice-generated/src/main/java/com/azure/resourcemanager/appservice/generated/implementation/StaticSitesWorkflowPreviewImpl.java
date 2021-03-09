@@ -4,9 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSitesWorkflowPreviewInner;
 import com.azure.resourcemanager.appservice.generated.models.StaticSitesWorkflowPreview;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class StaticSitesWorkflowPreviewImpl implements StaticSitesWorkflowPreview {
     private StaticSitesWorkflowPreviewInner innerObject;

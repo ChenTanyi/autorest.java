@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.HybridConnectionInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.NetworkFeaturesInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RelayServiceConnectionEntityInner;
@@ -11,7 +12,6 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.VnetInfoInne
 import com.azure.resourcemanager.appservice.generated.models.HybridConnection;
 import com.azure.resourcemanager.appservice.generated.models.NetworkFeatures;
 import com.azure.resourcemanager.appservice.generated.models.RelayServiceConnectionEntity;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.VnetInfo;
 import java.util.Collections;
 import java.util.List;

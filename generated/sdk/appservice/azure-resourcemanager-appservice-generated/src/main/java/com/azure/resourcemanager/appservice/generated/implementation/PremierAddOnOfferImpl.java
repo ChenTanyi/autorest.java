@@ -4,10 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.PremierAddOnOfferInner;
 import com.azure.resourcemanager.appservice.generated.models.AppServicePlanRestrictions;
 import com.azure.resourcemanager.appservice.generated.models.PremierAddOnOffer;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class PremierAddOnOfferImpl implements PremierAddOnOffer {
     private PremierAddOnOfferInner innerObject;

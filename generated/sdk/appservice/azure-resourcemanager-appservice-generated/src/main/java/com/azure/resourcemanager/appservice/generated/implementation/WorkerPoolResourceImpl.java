@@ -4,11 +4,11 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.WorkerPoolResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.ComputeModeOptions;
 import com.azure.resourcemanager.appservice.generated.models.SkuDescription;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.WorkerPoolResource;
 import java.util.Collections;
 import java.util.List;

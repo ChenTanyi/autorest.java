@@ -5,13 +5,13 @@
 package com.azure.resourcemanager.eventgrid.generated.implementation;
 
 import com.azure.core.management.Region;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.PartnerRegistrationInner;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerRegistration;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerRegistrationProvisioningState;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerRegistrationUpdateParameters;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerRegistrationVisibilityState;
-import com.azure.resourcemanager.eventgrid.generated.models.SystemData;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;

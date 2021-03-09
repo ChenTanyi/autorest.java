@@ -4,10 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetInfoInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetRouteInner;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.VnetInfo;
 import com.azure.resourcemanager.appservice.generated.models.VnetRoute;
 import java.util.Collections;

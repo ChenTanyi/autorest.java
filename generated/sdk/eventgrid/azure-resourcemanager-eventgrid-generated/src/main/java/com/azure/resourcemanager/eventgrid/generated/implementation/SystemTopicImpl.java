@@ -5,11 +5,11 @@
 package com.azure.resourcemanager.eventgrid.generated.implementation;
 
 import com.azure.core.management.Region;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.SystemTopicInner;
 import com.azure.resourcemanager.eventgrid.generated.models.IdentityInfo;
 import com.azure.resourcemanager.eventgrid.generated.models.ResourceProvisioningState;
-import com.azure.resourcemanager.eventgrid.generated.models.SystemData;
 import com.azure.resourcemanager.eventgrid.generated.models.SystemTopic;
 import com.azure.resourcemanager.eventgrid.generated.models.SystemTopicUpdateParameters;
 import java.util.Collections;

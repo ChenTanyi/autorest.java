@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DetectorDefinitionInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DiagnosticDetectorResponseInner;
 import com.azure.resourcemanager.appservice.generated.models.DetectorAbnormalTimePeriod;
@@ -12,7 +13,6 @@ import com.azure.resourcemanager.appservice.generated.models.DiagnosticDetectorR
 import com.azure.resourcemanager.appservice.generated.models.DiagnosticMetricSet;
 import com.azure.resourcemanager.appservice.generated.models.NameValuePair;
 import com.azure.resourcemanager.appservice.generated.models.ResponseMetadata;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;

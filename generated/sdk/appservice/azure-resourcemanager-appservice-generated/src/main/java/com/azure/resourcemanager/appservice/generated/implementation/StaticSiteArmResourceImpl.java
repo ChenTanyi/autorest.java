@@ -6,6 +6,7 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.SkuDescription;
@@ -16,7 +17,6 @@ import com.azure.resourcemanager.appservice.generated.models.StaticSiteResetProp
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserInvitationRequestResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserInvitationResponseResource;
 import com.azure.resourcemanager.appservice.generated.models.StringDictionary;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;

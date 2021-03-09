@@ -4,9 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DiagnosticCategoryInner;
 import com.azure.resourcemanager.appservice.generated.models.DiagnosticCategory;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class DiagnosticCategoryImpl implements DiagnosticCategory {
     private DiagnosticCategoryInner innerObject;

@@ -4,10 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.MSDeployLogInner;
 import com.azure.resourcemanager.appservice.generated.models.MSDeployLog;
 import com.azure.resourcemanager.appservice.generated.models.MSDeployLogEntry;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.util.Collections;
 import java.util.List;
 

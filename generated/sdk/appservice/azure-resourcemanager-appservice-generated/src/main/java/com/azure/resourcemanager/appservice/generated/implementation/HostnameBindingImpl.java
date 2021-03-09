@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.HostnameBindingInner;
 import com.azure.resourcemanager.appservice.generated.models.AzureResourceType;
@@ -11,7 +12,6 @@ import com.azure.resourcemanager.appservice.generated.models.CustomHostnameDnsRe
 import com.azure.resourcemanager.appservice.generated.models.HostnameBinding;
 import com.azure.resourcemanager.appservice.generated.models.HostnameType;
 import com.azure.resourcemanager.appservice.generated.models.SslState;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class HostnameBindingImpl implements HostnameBinding, HostnameBinding.Definition, HostnameBinding.Update {
     private HostnameBindingInner innerObject;

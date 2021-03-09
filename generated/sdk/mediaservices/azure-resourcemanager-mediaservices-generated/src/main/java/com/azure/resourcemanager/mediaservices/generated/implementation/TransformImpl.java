@@ -4,9 +4,9 @@
 
 package com.azure.resourcemanager.mediaservices.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.TransformInner;
-import com.azure.resourcemanager.mediaservices.generated.models.SystemData;
 import com.azure.resourcemanager.mediaservices.generated.models.Transform;
 import com.azure.resourcemanager.mediaservices.generated.models.TransformOutput;
 import java.time.OffsetDateTime;

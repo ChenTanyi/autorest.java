@@ -4,11 +4,11 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmPublishingCredentialsPoliciesCollectionInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmPublishingCredentialsPoliciesEntityInner;
 import com.azure.resourcemanager.appservice.generated.models.CsmPublishingCredentialsPoliciesCollection;
 import com.azure.resourcemanager.appservice.generated.models.CsmPublishingCredentialsPoliciesEntity;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class CsmPublishingCredentialsPoliciesCollectionImpl
     implements CsmPublishingCredentialsPoliciesCollection {

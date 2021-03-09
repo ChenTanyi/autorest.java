@@ -4,10 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteBuildArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.BuildStatus;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteBuildArmResource;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.time.OffsetDateTime;
 
 public final class StaticSiteBuildArmResourceImpl implements StaticSiteBuildArmResource {

@@ -6,6 +6,7 @@ package com.azure.resourcemanager.eventgrid.generated.implementation;
 
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.DomainInner;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.PrivateEndpointConnectionInner;
@@ -21,7 +22,6 @@ import com.azure.resourcemanager.eventgrid.generated.models.InputSchemaMapping;
 import com.azure.resourcemanager.eventgrid.generated.models.PrivateEndpointConnection;
 import com.azure.resourcemanager.eventgrid.generated.models.PublicNetworkAccess;
 import com.azure.resourcemanager.eventgrid.generated.models.ResourceSku;
-import com.azure.resourcemanager.eventgrid.generated.models.SystemData;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;

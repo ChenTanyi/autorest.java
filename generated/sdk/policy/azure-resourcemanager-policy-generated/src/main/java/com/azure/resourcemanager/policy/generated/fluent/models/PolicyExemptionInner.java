@@ -7,9 +7,9 @@ package com.azure.resourcemanager.policy.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.management.ProxyResource;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.policy.generated.models.ExemptionCategory;
-import com.azure.resourcemanager.policy.generated.models.SystemData;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
@@ -234,9 +234,6 @@ public class PolicyExemptionInner extends ProxyResource {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
-        if (systemData() != null) {
-            systemData().validate();
-        }
         if (policyAssignmentId() == null) {
             throw logger
                 .logExceptionAsError(

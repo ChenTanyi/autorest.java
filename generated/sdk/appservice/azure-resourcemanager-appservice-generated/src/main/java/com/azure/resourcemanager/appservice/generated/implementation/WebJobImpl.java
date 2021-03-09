@@ -4,8 +4,8 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.WebJobInner;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.WebJob;
 import com.azure.resourcemanager.appservice.generated.models.WebJobType;
 import java.util.Collections;

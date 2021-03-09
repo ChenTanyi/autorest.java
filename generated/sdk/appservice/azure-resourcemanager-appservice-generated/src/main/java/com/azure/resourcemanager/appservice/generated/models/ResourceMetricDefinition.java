@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ResourceMetricDefinitionInner;
 import java.util.List;
 import java.util.Map;

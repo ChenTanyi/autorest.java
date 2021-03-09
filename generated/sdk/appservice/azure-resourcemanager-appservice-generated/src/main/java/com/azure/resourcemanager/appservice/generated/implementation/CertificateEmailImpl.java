@@ -4,9 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CertificateEmailInner;
 import com.azure.resourcemanager.appservice.generated.models.CertificateEmail;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.time.OffsetDateTime;
 
 public final class CertificateEmailImpl implements CertificateEmail {

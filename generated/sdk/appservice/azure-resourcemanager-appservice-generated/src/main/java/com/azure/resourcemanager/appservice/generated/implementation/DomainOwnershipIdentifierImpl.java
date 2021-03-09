@@ -4,10 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DomainOwnershipIdentifierInner;
 import com.azure.resourcemanager.appservice.generated.models.DomainOwnershipIdentifier;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class DomainOwnershipIdentifierImpl
     implements DomainOwnershipIdentifier, DomainOwnershipIdentifier.Definition, DomainOwnershipIdentifier.Update {

@@ -4,9 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SlotDifferenceInner;
 import com.azure.resourcemanager.appservice.generated.models.SlotDifference;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class SlotDifferenceImpl implements SlotDifference {
     private SlotDifferenceInner innerObject;

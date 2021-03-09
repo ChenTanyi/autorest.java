@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.eventgrid.generated.models;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.DomainTopicInner;
 
 /** An immutable client-side representation of DomainTopic. */

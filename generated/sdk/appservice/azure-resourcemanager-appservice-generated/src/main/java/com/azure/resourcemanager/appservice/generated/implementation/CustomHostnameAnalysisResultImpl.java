@@ -4,11 +4,11 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CustomHostnameAnalysisResultInner;
 import com.azure.resourcemanager.appservice.generated.models.CustomHostnameAnalysisResult;
 import com.azure.resourcemanager.appservice.generated.models.DnsVerificationTestResult;
 import com.azure.resourcemanager.appservice.generated.models.ErrorEntity;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.util.Collections;
 import java.util.List;
 

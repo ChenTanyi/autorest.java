@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.HybridConnectionLimitsInner;
 
 /** An immutable client-side representation of HybridConnectionLimits. */

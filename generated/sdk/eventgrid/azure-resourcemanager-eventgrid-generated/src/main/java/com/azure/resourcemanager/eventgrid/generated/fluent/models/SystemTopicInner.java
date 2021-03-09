@@ -7,10 +7,10 @@ package com.azure.resourcemanager.eventgrid.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.management.Resource;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventgrid.generated.models.IdentityInfo;
 import com.azure.resourcemanager.eventgrid.generated.models.ResourceProvisioningState;
-import com.azure.resourcemanager.eventgrid.generated.models.SystemData;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
@@ -166,9 +166,6 @@ public class SystemTopicInner extends Resource {
     public void validate() {
         if (identity() != null) {
             identity().validate();
-        }
-        if (systemData() != null) {
-            systemData().validate();
         }
     }
 }

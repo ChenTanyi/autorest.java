@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.mediaservices.generated.implementation;
 
 import com.azure.core.management.Region;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.StreamingEndpointInner;
 import com.azure.resourcemanager.mediaservices.generated.models.CrossSiteAccessPolicies;
@@ -12,7 +13,6 @@ import com.azure.resourcemanager.mediaservices.generated.models.StreamingEndpoin
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingEndpointAccessControl;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingEndpointResourceState;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingEntityScaleUnit;
-import com.azure.resourcemanager.mediaservices.generated.models.SystemData;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;

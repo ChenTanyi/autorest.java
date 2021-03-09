@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AnalysisDataInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DetectorDefinitionInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DiagnosticAnalysisInner;
@@ -11,7 +12,6 @@ import com.azure.resourcemanager.appservice.generated.models.AbnormalTimePeriod;
 import com.azure.resourcemanager.appservice.generated.models.AnalysisData;
 import com.azure.resourcemanager.appservice.generated.models.DetectorDefinition;
 import com.azure.resourcemanager.appservice.generated.models.DiagnosticAnalysis;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;

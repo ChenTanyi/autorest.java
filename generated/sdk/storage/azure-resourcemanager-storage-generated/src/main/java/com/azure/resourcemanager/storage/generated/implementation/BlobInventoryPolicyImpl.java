@@ -4,12 +4,12 @@
 
 package com.azure.resourcemanager.storage.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.storage.generated.fluent.models.BlobInventoryPolicyInner;
 import com.azure.resourcemanager.storage.generated.models.BlobInventoryPolicy;
 import com.azure.resourcemanager.storage.generated.models.BlobInventoryPolicyName;
 import com.azure.resourcemanager.storage.generated.models.BlobInventoryPolicySchema;
-import com.azure.resourcemanager.storage.generated.models.SystemData;
 import java.time.OffsetDateTime;
 
 public final class BlobInventoryPolicyImpl

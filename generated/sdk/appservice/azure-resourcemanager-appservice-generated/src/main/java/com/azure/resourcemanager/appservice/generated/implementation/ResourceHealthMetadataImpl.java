@@ -4,9 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ResourceHealthMetadataInner;
 import com.azure.resourcemanager.appservice.generated.models.ResourceHealthMetadata;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class ResourceHealthMetadataImpl implements ResourceHealthMetadata {
     private ResourceHealthMetadataInner innerObject;

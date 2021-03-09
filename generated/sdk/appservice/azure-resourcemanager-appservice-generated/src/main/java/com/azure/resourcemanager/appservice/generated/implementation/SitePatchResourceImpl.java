@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SitePatchResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.ClientCertMode;
@@ -16,7 +17,6 @@ import com.azure.resourcemanager.appservice.generated.models.SiteAvailabilitySta
 import com.azure.resourcemanager.appservice.generated.models.SiteConfig;
 import com.azure.resourcemanager.appservice.generated.models.SitePatchResource;
 import com.azure.resourcemanager.appservice.generated.models.SlotSwapStatus;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.UsageState;
 import java.time.OffsetDateTime;
 import java.util.Collections;

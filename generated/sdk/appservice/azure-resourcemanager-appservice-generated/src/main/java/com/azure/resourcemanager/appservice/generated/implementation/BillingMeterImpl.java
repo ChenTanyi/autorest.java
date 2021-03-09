@@ -4,9 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.BillingMeterInner;
 import com.azure.resourcemanager.appservice.generated.models.BillingMeter;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class BillingMeterImpl implements BillingMeter {
     private BillingMeterInner innerObject;

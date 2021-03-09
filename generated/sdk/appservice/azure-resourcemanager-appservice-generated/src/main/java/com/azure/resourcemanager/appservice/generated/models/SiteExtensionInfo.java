@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteExtensionInfoInner;
 import java.time.OffsetDateTime;
 import java.util.List;

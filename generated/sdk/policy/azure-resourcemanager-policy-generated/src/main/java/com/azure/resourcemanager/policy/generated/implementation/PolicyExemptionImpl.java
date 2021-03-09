@@ -4,11 +4,11 @@
 
 package com.azure.resourcemanager.policy.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.policy.generated.fluent.models.PolicyExemptionInner;
 import com.azure.resourcemanager.policy.generated.models.ExemptionCategory;
 import com.azure.resourcemanager.policy.generated.models.PolicyExemption;
-import com.azure.resourcemanager.policy.generated.models.SystemData;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;

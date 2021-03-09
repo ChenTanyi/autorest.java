@@ -4,10 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.MigrateMySqlStatusInner;
 import com.azure.resourcemanager.appservice.generated.models.MigrateMySqlStatus;
 import com.azure.resourcemanager.appservice.generated.models.OperationStatus;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class MigrateMySqlStatusImpl implements MigrateMySqlStatus {
     private MigrateMySqlStatusInner innerObject;

@@ -4,10 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ConnectionStringDictionaryInner;
 import com.azure.resourcemanager.appservice.generated.models.ConnStringValueTypePair;
 import com.azure.resourcemanager.appservice.generated.models.ConnectionStringDictionary;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.util.Collections;
 import java.util.Map;
 

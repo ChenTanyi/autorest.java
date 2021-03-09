@@ -4,9 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DeletedSiteInner;
 import com.azure.resourcemanager.appservice.generated.models.DeletedSite;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class DeletedSiteImpl implements DeletedSite {
     private DeletedSiteInner innerObject;

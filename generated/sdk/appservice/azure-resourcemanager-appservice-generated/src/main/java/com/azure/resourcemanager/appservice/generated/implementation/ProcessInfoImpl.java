@@ -4,13 +4,13 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ProcessInfoInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ProcessModuleInfoInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ProcessThreadInfoInner;
 import com.azure.resourcemanager.appservice.generated.models.ProcessInfo;
 import com.azure.resourcemanager.appservice.generated.models.ProcessModuleInfo;
 import com.azure.resourcemanager.appservice.generated.models.ProcessThreadInfo;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;

@@ -50,6 +50,10 @@ public final class ServiceEndpointPolicyImpl
         return this.innerModel().etag();
     }
 
+    public String kind() {
+        return this.innerModel().kind();
+    }
+
     public List<ServiceEndpointPolicyDefinition> serviceEndpointPolicyDefinitions() {
         List<ServiceEndpointPolicyDefinitionInner> inner = this.innerModel().serviceEndpointPolicyDefinitions();
         if (inner != null) {

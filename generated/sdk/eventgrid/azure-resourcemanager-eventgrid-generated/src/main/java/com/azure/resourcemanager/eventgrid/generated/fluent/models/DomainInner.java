@@ -7,6 +7,7 @@ package com.azure.resourcemanager.eventgrid.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.management.Resource;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventgrid.generated.models.DomainProvisioningState;
 import com.azure.resourcemanager.eventgrid.generated.models.IdentityInfo;
@@ -15,7 +16,6 @@ import com.azure.resourcemanager.eventgrid.generated.models.InputSchema;
 import com.azure.resourcemanager.eventgrid.generated.models.InputSchemaMapping;
 import com.azure.resourcemanager.eventgrid.generated.models.PublicNetworkAccess;
 import com.azure.resourcemanager.eventgrid.generated.models.ResourceSku;
-import com.azure.resourcemanager.eventgrid.generated.models.SystemData;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -311,9 +311,6 @@ public class DomainInner extends Resource {
         }
         if (identity() != null) {
             identity().validate();
-        }
-        if (systemData() != null) {
-            systemData().validate();
         }
         if (privateEndpointConnections() != null) {
             privateEndpointConnections().forEach(e -> e.validate());

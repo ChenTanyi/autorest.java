@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.eventgrid.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.EventChannelInner;
 import com.azure.resourcemanager.eventgrid.generated.models.EventChannel;
@@ -12,7 +13,6 @@ import com.azure.resourcemanager.eventgrid.generated.models.EventChannelFilter;
 import com.azure.resourcemanager.eventgrid.generated.models.EventChannelProvisioningState;
 import com.azure.resourcemanager.eventgrid.generated.models.EventChannelSource;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerTopicReadinessState;
-import com.azure.resourcemanager.eventgrid.generated.models.SystemData;
 import java.time.OffsetDateTime;
 
 public final class EventChannelImpl implements EventChannel, EventChannel.Definition, EventChannel.Update {

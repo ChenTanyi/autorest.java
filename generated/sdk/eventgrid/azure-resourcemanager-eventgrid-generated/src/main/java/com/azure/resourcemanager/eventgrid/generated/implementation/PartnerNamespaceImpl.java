@@ -6,6 +6,7 @@ package com.azure.resourcemanager.eventgrid.generated.implementation;
 
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.PartnerNamespaceInner;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerNamespace;
@@ -13,7 +14,6 @@ import com.azure.resourcemanager.eventgrid.generated.models.PartnerNamespaceProv
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerNamespaceRegenerateKeyRequest;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerNamespaceSharedAccessKeys;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerNamespaceUpdateParameters;
-import com.azure.resourcemanager.eventgrid.generated.models.SystemData;
 import java.util.Collections;
 import java.util.Map;
 

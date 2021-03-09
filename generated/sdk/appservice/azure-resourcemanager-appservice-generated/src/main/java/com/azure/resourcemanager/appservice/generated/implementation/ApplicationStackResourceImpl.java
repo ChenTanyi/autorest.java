@@ -4,11 +4,11 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ApplicationStackResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.ApplicationStack;
 import com.azure.resourcemanager.appservice.generated.models.ApplicationStackResource;
 import com.azure.resourcemanager.appservice.generated.models.StackMajorVersion;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.util.Collections;
 import java.util.List;
 

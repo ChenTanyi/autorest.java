@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.appservice.generated.models;
 
 import com.azure.core.management.Region;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CertificateInner;
 import java.time.OffsetDateTime;

@@ -4,10 +4,10 @@
 
 package com.azure.resourcemanager.eventgrid.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.DomainTopicInner;
 import com.azure.resourcemanager.eventgrid.generated.models.DomainTopic;
 import com.azure.resourcemanager.eventgrid.generated.models.DomainTopicProvisioningState;
-import com.azure.resourcemanager.eventgrid.generated.models.SystemData;
 
 public final class DomainTopicImpl implements DomainTopic {
     private DomainTopicInner innerObject;

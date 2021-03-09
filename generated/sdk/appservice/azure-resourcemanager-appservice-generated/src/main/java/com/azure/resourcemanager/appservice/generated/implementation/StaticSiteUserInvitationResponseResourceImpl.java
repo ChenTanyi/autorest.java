@@ -4,9 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserInvitationResponseResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserInvitationResponseResource;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.time.OffsetDateTime;
 
 public final class StaticSiteUserInvitationResponseResourceImpl implements StaticSiteUserInvitationResponseResource {

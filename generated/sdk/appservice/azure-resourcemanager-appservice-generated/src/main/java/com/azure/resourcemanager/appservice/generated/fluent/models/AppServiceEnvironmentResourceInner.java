@@ -7,13 +7,13 @@ package com.azure.resourcemanager.appservice.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.management.Resource;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentStatus;
 import com.azure.resourcemanager.appservice.generated.models.LoadBalancingMode;
 import com.azure.resourcemanager.appservice.generated.models.NameValuePair;
 import com.azure.resourcemanager.appservice.generated.models.NetworkAccessControlEntry;
 import com.azure.resourcemanager.appservice.generated.models.ProvisioningState;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.VirtualIpMapping;
 import com.azure.resourcemanager.appservice.generated.models.VirtualNetworkProfile;
 import com.azure.resourcemanager.appservice.generated.models.WorkerPool;
@@ -972,9 +972,6 @@ public class AppServiceEnvironmentResourceInner extends Resource {
         }
         if (clusterSettings() != null) {
             clusterSettings().forEach(e -> e.validate());
-        }
-        if (systemData() != null) {
-            systemData().validate();
         }
     }
 }

@@ -4,9 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmPublishingCredentialsPoliciesEntityInner;
 import com.azure.resourcemanager.appservice.generated.models.CsmPublishingCredentialsPoliciesEntity;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class CsmPublishingCredentialsPoliciesEntityImpl implements CsmPublishingCredentialsPoliciesEntity {
     private CsmPublishingCredentialsPoliciesEntityInner innerObject;

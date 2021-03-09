@@ -7,6 +7,7 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceEnvironmentResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StampCapacityInner;
@@ -19,7 +20,6 @@ import com.azure.resourcemanager.appservice.generated.models.NetworkAccessContro
 import com.azure.resourcemanager.appservice.generated.models.ProvisioningState;
 import com.azure.resourcemanager.appservice.generated.models.Site;
 import com.azure.resourcemanager.appservice.generated.models.StampCapacity;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.VirtualIpMapping;
 import com.azure.resourcemanager.appservice.generated.models.VirtualNetworkProfile;
 import com.azure.resourcemanager.appservice.generated.models.WorkerPool;

@@ -7,6 +7,7 @@ package com.azure.resourcemanager.eventgrid.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.management.Resource;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventgrid.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.eventgrid.generated.models.IdentityInfo;
@@ -16,7 +17,6 @@ import com.azure.resourcemanager.eventgrid.generated.models.InputSchemaMapping;
 import com.azure.resourcemanager.eventgrid.generated.models.PublicNetworkAccess;
 import com.azure.resourcemanager.eventgrid.generated.models.ResourceKind;
 import com.azure.resourcemanager.eventgrid.generated.models.ResourceSku;
-import com.azure.resourcemanager.eventgrid.generated.models.SystemData;
 import com.azure.resourcemanager.eventgrid.generated.models.TopicProvisioningState;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -372,9 +372,6 @@ public class TopicInner extends Resource {
         }
         if (extendedLocation() != null) {
             extendedLocation().validate();
-        }
-        if (systemData() != null) {
-            systemData().validate();
         }
         if (privateEndpointConnections() != null) {
             privateEndpointConnections().forEach(e -> e.validate());

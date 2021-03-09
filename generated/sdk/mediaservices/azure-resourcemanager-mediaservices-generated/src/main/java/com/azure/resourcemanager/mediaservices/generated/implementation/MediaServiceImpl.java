@@ -6,6 +6,7 @@ package com.azure.resourcemanager.mediaservices.generated.implementation;
 
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.MediaServiceInner;
 import com.azure.resourcemanager.mediaservices.generated.models.AccountEncryption;
@@ -16,7 +17,6 @@ import com.azure.resourcemanager.mediaservices.generated.models.MediaServiceIden
 import com.azure.resourcemanager.mediaservices.generated.models.StorageAccount;
 import com.azure.resourcemanager.mediaservices.generated.models.StorageAuthentication;
 import com.azure.resourcemanager.mediaservices.generated.models.SyncStorageKeysInput;
-import com.azure.resourcemanager.mediaservices.generated.models.SystemData;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;

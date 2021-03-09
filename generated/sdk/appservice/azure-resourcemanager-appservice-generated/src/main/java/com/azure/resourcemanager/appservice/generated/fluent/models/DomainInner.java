@@ -7,6 +7,7 @@ package com.azure.resourcemanager.appservice.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.management.Resource;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.Contact;
 import com.azure.resourcemanager.appservice.generated.models.DnsType;
@@ -15,7 +16,6 @@ import com.azure.resourcemanager.appservice.generated.models.DomainPurchaseConse
 import com.azure.resourcemanager.appservice.generated.models.DomainStatus;
 import com.azure.resourcemanager.appservice.generated.models.Hostname;
 import com.azure.resourcemanager.appservice.generated.models.ProvisioningState;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
@@ -538,9 +538,6 @@ public class DomainInner extends Resource {
         }
         if (consent() != null) {
             consent().validate();
-        }
-        if (systemData() != null) {
-            systemData().validate();
         }
     }
 }

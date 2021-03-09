@@ -4,10 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.IdentifierInner;
 import com.azure.resourcemanager.appservice.generated.models.Identifier;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class IdentifierImpl implements Identifier, Identifier.Definition, Identifier.Update {
     private IdentifierInner innerObject;

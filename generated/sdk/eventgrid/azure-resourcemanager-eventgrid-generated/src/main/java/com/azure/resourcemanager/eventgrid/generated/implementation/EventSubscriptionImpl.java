@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.eventgrid.generated.implementation;
 
 import com.azure.core.http.rest.Response;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.EventSubscriptionInner;
 import com.azure.resourcemanager.eventgrid.generated.models.DeadLetterDestination;
@@ -19,7 +20,6 @@ import com.azure.resourcemanager.eventgrid.generated.models.EventSubscriptionFul
 import com.azure.resourcemanager.eventgrid.generated.models.EventSubscriptionProvisioningState;
 import com.azure.resourcemanager.eventgrid.generated.models.EventSubscriptionUpdateParameters;
 import com.azure.resourcemanager.eventgrid.generated.models.RetryPolicy;
-import com.azure.resourcemanager.eventgrid.generated.models.SystemData;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;

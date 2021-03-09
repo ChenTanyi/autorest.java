@@ -4,8 +4,8 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetValidationFailureDetailsInner;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.VnetValidationFailureDetails;
 import com.azure.resourcemanager.appservice.generated.models.VnetValidationTestFailure;
 import java.util.Collections;

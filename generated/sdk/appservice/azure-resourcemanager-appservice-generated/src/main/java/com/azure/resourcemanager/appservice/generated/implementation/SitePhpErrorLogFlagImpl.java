@@ -4,9 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SitePhpErrorLogFlagInner;
 import com.azure.resourcemanager.appservice.generated.models.SitePhpErrorLogFlag;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class SitePhpErrorLogFlagImpl implements SitePhpErrorLogFlag {
     private SitePhpErrorLogFlagInner innerObject;

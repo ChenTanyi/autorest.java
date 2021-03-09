@@ -7,6 +7,7 @@ package com.azure.resourcemanager.appservice.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.management.Resource;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceCertificate;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceCertificateOrderPropertiesAppServiceCertificateNotRenewableReasonsItem;
@@ -14,7 +15,6 @@ import com.azure.resourcemanager.appservice.generated.models.CertificateDetails;
 import com.azure.resourcemanager.appservice.generated.models.CertificateOrderStatus;
 import com.azure.resourcemanager.appservice.generated.models.CertificateProductType;
 import com.azure.resourcemanager.appservice.generated.models.ProvisioningState;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
@@ -479,9 +479,6 @@ public class AppServiceCertificateOrderInner extends Resource {
         }
         if (root() != null) {
             root().validate();
-        }
-        if (systemData() != null) {
-            systemData().validate();
         }
     }
 }

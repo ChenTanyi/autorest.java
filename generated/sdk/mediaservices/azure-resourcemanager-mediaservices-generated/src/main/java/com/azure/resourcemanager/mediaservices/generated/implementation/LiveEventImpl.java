@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.mediaservices.generated.implementation;
 
 import com.azure.core.management.Region;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.LiveEventInner;
 import com.azure.resourcemanager.mediaservices.generated.models.CrossSiteAccessPolicies;
@@ -16,7 +17,6 @@ import com.azure.resourcemanager.mediaservices.generated.models.LiveEventPreview
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEventResourceState;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEventTranscription;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamOptionsFlag;
-import com.azure.resourcemanager.mediaservices.generated.models.SystemData;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;

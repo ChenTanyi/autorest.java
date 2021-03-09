@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.policy.generated.models;
 
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.policy.generated.fluent.models.PolicyExemptionInner;
 import java.time.OffsetDateTime;

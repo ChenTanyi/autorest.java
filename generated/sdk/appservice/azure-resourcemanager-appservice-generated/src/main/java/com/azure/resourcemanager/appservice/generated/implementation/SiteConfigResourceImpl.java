@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.PushSettingsInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.ApiDefinitionInfo;
@@ -24,7 +25,6 @@ import com.azure.resourcemanager.appservice.generated.models.SiteLimits;
 import com.azure.resourcemanager.appservice.generated.models.SiteLoadBalancing;
 import com.azure.resourcemanager.appservice.generated.models.SiteMachineKey;
 import com.azure.resourcemanager.appservice.generated.models.SupportedTlsVersions;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.azure.resourcemanager.appservice.generated.models.VirtualApplication;
 import java.time.OffsetDateTime;
 import java.util.Collections;

@@ -4,11 +4,11 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DetectorResponseInner;
 import com.azure.resourcemanager.appservice.generated.models.DetectorInfo;
 import com.azure.resourcemanager.appservice.generated.models.DetectorResponse;
 import com.azure.resourcemanager.appservice.generated.models.DiagnosticData;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.util.Collections;
 import java.util.List;
 

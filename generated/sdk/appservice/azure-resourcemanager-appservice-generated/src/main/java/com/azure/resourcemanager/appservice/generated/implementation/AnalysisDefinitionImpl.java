@@ -4,9 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AnalysisDefinitionInner;
 import com.azure.resourcemanager.appservice.generated.models.AnalysisDefinition;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class AnalysisDefinitionImpl implements AnalysisDefinition {
     private AnalysisDefinitionInner innerObject;

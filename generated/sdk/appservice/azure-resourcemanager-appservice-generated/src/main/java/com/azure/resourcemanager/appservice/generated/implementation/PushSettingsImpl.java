@@ -4,9 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.PushSettingsInner;
 import com.azure.resourcemanager.appservice.generated.models.PushSettings;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class PushSettingsImpl implements PushSettings {
     private PushSettingsInner innerObject;

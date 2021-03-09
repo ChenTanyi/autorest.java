@@ -4,11 +4,11 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RecommendationRuleInner;
 import com.azure.resourcemanager.appservice.generated.models.Channels;
 import com.azure.resourcemanager.appservice.generated.models.NotificationLevel;
 import com.azure.resourcemanager.appservice.generated.models.RecommendationRule;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;

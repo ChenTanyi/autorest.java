@@ -4,9 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteSourceControlInner;
 import com.azure.resourcemanager.appservice.generated.models.SiteSourceControl;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class SiteSourceControlImpl implements SiteSourceControl {
     private SiteSourceControlInner innerObject;

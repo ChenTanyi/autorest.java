@@ -5,12 +5,12 @@
 package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.management.Region;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceCertificateResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceCertificatePatchResource;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceCertificateResource;
 import com.azure.resourcemanager.appservice.generated.models.KeyVaultSecretStatus;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import java.util.Collections;
 import java.util.Map;
 

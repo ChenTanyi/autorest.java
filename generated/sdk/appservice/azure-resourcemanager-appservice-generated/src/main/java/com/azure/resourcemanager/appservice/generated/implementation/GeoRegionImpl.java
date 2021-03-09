@@ -4,9 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.GeoRegionInner;
 import com.azure.resourcemanager.appservice.generated.models.GeoRegion;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class GeoRegionImpl implements GeoRegion {
     private GeoRegionInner innerObject;

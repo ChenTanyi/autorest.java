@@ -4,12 +4,12 @@
 
 package com.azure.resourcemanager.eventgrid.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.PartnerTopicInner;
 import com.azure.resourcemanager.eventgrid.generated.models.IdentityInfo;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerTopic;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerTopicActivationState;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerTopicProvisioningState;
-import com.azure.resourcemanager.eventgrid.generated.models.SystemData;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.Map;

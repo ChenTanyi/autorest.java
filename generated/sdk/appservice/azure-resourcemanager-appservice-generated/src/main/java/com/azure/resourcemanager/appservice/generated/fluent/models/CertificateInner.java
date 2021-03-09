@@ -7,11 +7,11 @@ package com.azure.resourcemanager.appservice.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.management.Resource;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentProfile;
 import com.azure.resourcemanager.appservice.generated.models.KeyVaultSecretStatus;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
@@ -472,9 +472,6 @@ public class CertificateInner extends Resource {
     public void validate() {
         if (hostingEnvironmentProfile() != null) {
             hostingEnvironmentProfile().validate();
-        }
-        if (systemData() != null) {
-            systemData().validate();
         }
     }
 }

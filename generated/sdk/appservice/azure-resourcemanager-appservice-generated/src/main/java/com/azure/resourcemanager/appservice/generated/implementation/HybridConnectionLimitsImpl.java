@@ -4,9 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.HybridConnectionLimitsInner;
 import com.azure.resourcemanager.appservice.generated.models.HybridConnectionLimits;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class HybridConnectionLimitsImpl implements HybridConnectionLimits {
     private HybridConnectionLimitsInner innerObject;

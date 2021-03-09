@@ -4,13 +4,13 @@
 
 package com.azure.resourcemanager.mediaservices.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.AccountFilterInner;
 import com.azure.resourcemanager.mediaservices.generated.models.AccountFilter;
 import com.azure.resourcemanager.mediaservices.generated.models.FilterTrackSelection;
 import com.azure.resourcemanager.mediaservices.generated.models.FirstQuality;
 import com.azure.resourcemanager.mediaservices.generated.models.PresentationTimeRange;
-import com.azure.resourcemanager.mediaservices.generated.models.SystemData;
 import java.util.Collections;
 import java.util.List;
 

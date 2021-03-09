@@ -4,11 +4,11 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.PublicCertificateInner;
 import com.azure.resourcemanager.appservice.generated.models.PublicCertificate;
 import com.azure.resourcemanager.appservice.generated.models.PublicCertificateLocation;
-import com.azure.resourcemanager.appservice.generated.models.SystemData;
 
 public final class PublicCertificateImpl
     implements PublicCertificate, PublicCertificate.Definition, PublicCertificate.Update {
