@@ -22,6 +22,11 @@ import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.serializer.SerializerAdapter;
 import com.azure.core.util.serializer.SerializerEncoding;
 import com.azure.resourcemanager.compute.generated.fluent.AvailabilitySetsClient;
+import com.azure.resourcemanager.compute.generated.fluent.CloudServiceOperatingSystemsClient;
+import com.azure.resourcemanager.compute.generated.fluent.CloudServiceRoleInstancesClient;
+import com.azure.resourcemanager.compute.generated.fluent.CloudServiceRolesClient;
+import com.azure.resourcemanager.compute.generated.fluent.CloudServicesClient;
+import com.azure.resourcemanager.compute.generated.fluent.CloudServicesUpdateDomainsClient;
 import com.azure.resourcemanager.compute.generated.fluent.ComputeManagementClient;
 import com.azure.resourcemanager.compute.generated.fluent.DedicatedHostGroupsClient;
 import com.azure.resourcemanager.compute.generated.fluent.DedicatedHostsClient;
@@ -530,6 +535,66 @@ public final class ComputeManagementClientImpl implements ComputeManagementClien
         return this.galleryApplicationVersions;
     }
 
+    /** The CloudServiceRoleInstancesClient object to access its operations. */
+    private final CloudServiceRoleInstancesClient cloudServiceRoleInstances;
+
+    /**
+     * Gets the CloudServiceRoleInstancesClient object to access its operations.
+     *
+     * @return the CloudServiceRoleInstancesClient object.
+     */
+    public CloudServiceRoleInstancesClient getCloudServiceRoleInstances() {
+        return this.cloudServiceRoleInstances;
+    }
+
+    /** The CloudServiceRolesClient object to access its operations. */
+    private final CloudServiceRolesClient cloudServiceRoles;
+
+    /**
+     * Gets the CloudServiceRolesClient object to access its operations.
+     *
+     * @return the CloudServiceRolesClient object.
+     */
+    public CloudServiceRolesClient getCloudServiceRoles() {
+        return this.cloudServiceRoles;
+    }
+
+    /** The CloudServicesClient object to access its operations. */
+    private final CloudServicesClient cloudServices;
+
+    /**
+     * Gets the CloudServicesClient object to access its operations.
+     *
+     * @return the CloudServicesClient object.
+     */
+    public CloudServicesClient getCloudServices() {
+        return this.cloudServices;
+    }
+
+    /** The CloudServicesUpdateDomainsClient object to access its operations. */
+    private final CloudServicesUpdateDomainsClient cloudServicesUpdateDomains;
+
+    /**
+     * Gets the CloudServicesUpdateDomainsClient object to access its operations.
+     *
+     * @return the CloudServicesUpdateDomainsClient object.
+     */
+    public CloudServicesUpdateDomainsClient getCloudServicesUpdateDomains() {
+        return this.cloudServicesUpdateDomains;
+    }
+
+    /** The CloudServiceOperatingSystemsClient object to access its operations. */
+    private final CloudServiceOperatingSystemsClient cloudServiceOperatingSystems;
+
+    /**
+     * Gets the CloudServiceOperatingSystemsClient object to access its operations.
+     *
+     * @return the CloudServiceOperatingSystemsClient object.
+     */
+    public CloudServiceOperatingSystemsClient getCloudServiceOperatingSystems() {
+        return this.cloudServiceOperatingSystems;
+    }
+
     /**
      * Initializes an instance of ComputeManagementClient client.
      *
@@ -586,6 +651,11 @@ public final class ComputeManagementClientImpl implements ComputeManagementClien
         this.galleryImageVersions = new GalleryImageVersionsClientImpl(this);
         this.galleryApplications = new GalleryApplicationsClientImpl(this);
         this.galleryApplicationVersions = new GalleryApplicationVersionsClientImpl(this);
+        this.cloudServiceRoleInstances = new CloudServiceRoleInstancesClientImpl(this);
+        this.cloudServiceRoles = new CloudServiceRolesClientImpl(this);
+        this.cloudServices = new CloudServicesClientImpl(this);
+        this.cloudServicesUpdateDomains = new CloudServicesUpdateDomainsClientImpl(this);
+        this.cloudServiceOperatingSystems = new CloudServiceOperatingSystemsClientImpl(this);
     }
 
     /**

@@ -46,6 +46,12 @@ public final class VaultProperties {
     private String vaultUri;
 
     /*
+     * The resource id of HSM Pool.
+     */
+    @JsonProperty(value = "hsmPoolResourceId", access = JsonProperty.Access.WRITE_ONLY)
+    private String hsmPoolResourceId;
+
+    /*
      * Property to specify whether Azure Virtual Machines are permitted to
      * retrieve certificates stored as secrets from the key vault.
      */
@@ -217,6 +223,15 @@ public final class VaultProperties {
     public VaultProperties withVaultUri(String vaultUri) {
         this.vaultUri = vaultUri;
         return this;
+    }
+
+    /**
+     * Get the hsmPoolResourceId property: The resource id of HSM Pool.
+     *
+     * @return the hsmPoolResourceId value.
+     */
+    public String hsmPoolResourceId() {
+        return this.hsmPoolResourceId;
     }
 
     /**

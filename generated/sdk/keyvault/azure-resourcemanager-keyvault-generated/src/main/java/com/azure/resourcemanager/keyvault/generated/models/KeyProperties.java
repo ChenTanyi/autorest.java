@@ -30,13 +30,13 @@ public final class KeyProperties {
     /*
      * The keyOps property.
      */
-    @JsonProperty(value = "keyOps")
+    @JsonProperty(value = "keyOps", access = JsonProperty.Access.WRITE_ONLY)
     private List<JsonWebKeyOperation> keyOps;
 
     /*
      * The key size in bits. For example: 2048, 3072, or 4096 for RSA.
      */
-    @JsonProperty(value = "keySize")
+    @JsonProperty(value = "keySize", access = JsonProperty.Access.WRITE_ONLY)
     private Integer keySize;
 
     /*
@@ -107,34 +107,12 @@ public final class KeyProperties {
     }
 
     /**
-     * Set the keyOps property: The keyOps property.
-     *
-     * @param keyOps the keyOps value to set.
-     * @return the KeyProperties object itself.
-     */
-    public KeyProperties withKeyOps(List<JsonWebKeyOperation> keyOps) {
-        this.keyOps = keyOps;
-        return this;
-    }
-
-    /**
      * Get the keySize property: The key size in bits. For example: 2048, 3072, or 4096 for RSA.
      *
      * @return the keySize value.
      */
     public Integer keySize() {
         return this.keySize;
-    }
-
-    /**
-     * Set the keySize property: The key size in bits. For example: 2048, 3072, or 4096 for RSA.
-     *
-     * @param keySize the keySize value to set.
-     * @return the KeyProperties object itself.
-     */
-    public KeyProperties withKeySize(Integer keySize) {
-        this.keySize = keySize;
-        return this;
     }
 
     /**
