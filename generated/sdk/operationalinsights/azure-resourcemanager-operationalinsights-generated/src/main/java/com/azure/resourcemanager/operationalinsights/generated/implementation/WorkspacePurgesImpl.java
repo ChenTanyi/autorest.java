@@ -15,6 +15,7 @@ import com.azure.resourcemanager.operationalinsights.generated.models.WorkspaceP
 import com.azure.resourcemanager.operationalinsights.generated.models.WorkspacePurgeResponse;
 import com.azure.resourcemanager.operationalinsights.generated.models.WorkspacePurgeStatusResponse;
 import com.azure.resourcemanager.operationalinsights.generated.models.WorkspacePurges;
+import com.azure.resourcemanager.operationalinsights.generated.models.WorkspacePurgesPurgeResponse;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class WorkspacePurgesImpl implements WorkspacePurges {
@@ -42,7 +43,7 @@ public final class WorkspacePurgesImpl implements WorkspacePurges {
 
     public Response<WorkspacePurgeResponse> purgeWithResponse(
         String resourceGroupName, String workspaceName, WorkspacePurgeBody body, Context context) {
-        Response<WorkspacePurgeResponseInner> inner =
+        WorkspacePurgesPurgeResponse inner =
             this.serviceClient().purgeWithResponse(resourceGroupName, workspaceName, body, context);
         if (inner != null) {
             return new SimpleResponse<>(

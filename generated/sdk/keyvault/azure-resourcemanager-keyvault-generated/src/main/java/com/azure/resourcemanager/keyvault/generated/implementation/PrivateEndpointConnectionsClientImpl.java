@@ -480,7 +480,7 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
      * @return private endpoint connection resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<PrivateEndpointConnectionInner> putWithResponse(
+    public PrivateEndpointConnectionsPutResponse putWithResponse(
         String resourceGroupName,
         String vaultName,
         String privateEndpointConnectionName,

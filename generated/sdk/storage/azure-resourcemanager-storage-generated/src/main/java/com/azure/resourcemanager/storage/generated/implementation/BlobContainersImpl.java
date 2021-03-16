@@ -17,6 +17,10 @@ import com.azure.resourcemanager.storage.generated.fluent.models.LegalHoldInner;
 import com.azure.resourcemanager.storage.generated.fluent.models.ListContainerItemInner;
 import com.azure.resourcemanager.storage.generated.models.BlobContainer;
 import com.azure.resourcemanager.storage.generated.models.BlobContainers;
+import com.azure.resourcemanager.storage.generated.models.BlobContainersDeleteImmutabilityPolicyResponse;
+import com.azure.resourcemanager.storage.generated.models.BlobContainersExtendImmutabilityPolicyResponse;
+import com.azure.resourcemanager.storage.generated.models.BlobContainersGetImmutabilityPolicyResponse;
+import com.azure.resourcemanager.storage.generated.models.BlobContainersLockImmutabilityPolicyResponse;
 import com.azure.resourcemanager.storage.generated.models.ImmutabilityPolicy;
 import com.azure.resourcemanager.storage.generated.models.LeaseContainerRequest;
 import com.azure.resourcemanager.storage.generated.models.LeaseContainerResponse;
@@ -157,7 +161,7 @@ public final class BlobContainersImpl implements BlobContainers {
 
     public Response<ImmutabilityPolicy> getImmutabilityPolicyWithResponse(
         String resourceGroupName, String accountName, String containerName, String ifMatch, Context context) {
-        Response<ImmutabilityPolicyInner> inner =
+        BlobContainersGetImmutabilityPolicyResponse inner =
             this
                 .serviceClient()
                 .getImmutabilityPolicyWithResponse(resourceGroupName, accountName, containerName, ifMatch, context);
@@ -185,7 +189,7 @@ public final class BlobContainersImpl implements BlobContainers {
 
     public Response<ImmutabilityPolicy> deleteImmutabilityPolicyWithResponse(
         String resourceGroupName, String accountName, String containerName, String ifMatch, Context context) {
-        Response<ImmutabilityPolicyInner> inner =
+        BlobContainersDeleteImmutabilityPolicyResponse inner =
             this
                 .serviceClient()
                 .deleteImmutabilityPolicyWithResponse(resourceGroupName, accountName, containerName, ifMatch, context);
@@ -213,7 +217,7 @@ public final class BlobContainersImpl implements BlobContainers {
 
     public Response<ImmutabilityPolicy> lockImmutabilityPolicyWithResponse(
         String resourceGroupName, String accountName, String containerName, String ifMatch, Context context) {
-        Response<ImmutabilityPolicyInner> inner =
+        BlobContainersLockImmutabilityPolicyResponse inner =
             this
                 .serviceClient()
                 .lockImmutabilityPolicyWithResponse(resourceGroupName, accountName, containerName, ifMatch, context);
@@ -246,7 +250,7 @@ public final class BlobContainersImpl implements BlobContainers {
         String ifMatch,
         ImmutabilityPolicyInner parameters,
         Context context) {
-        Response<ImmutabilityPolicyInner> inner =
+        BlobContainersExtendImmutabilityPolicyResponse inner =
             this
                 .serviceClient()
                 .extendImmutabilityPolicyWithResponse(

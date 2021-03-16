@@ -293,11 +293,6 @@ public final class TopicImpl implements Topic, Topic.Definition, Topic.Update {
         return this;
     }
 
-    public TopicImpl withPrivateEndpointConnections(List<PrivateEndpointConnectionInner> privateEndpointConnections) {
-        this.innerModel().withPrivateEndpointConnections(privateEndpointConnections);
-        return this;
-    }
-
     public TopicImpl withInputSchema(InputSchema inputSchema) {
         this.innerModel().withInputSchema(inputSchema);
         return this;

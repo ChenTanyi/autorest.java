@@ -2043,7 +2043,7 @@ public final class BlobContainersClientImpl implements BlobContainersClient {
      * @return the ImmutabilityPolicy property of a blob container, including Id, resource name, resource type, Etag.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ImmutabilityPolicyInner> createOrUpdateImmutabilityPolicyWithResponse(
+    public BlobContainersCreateOrUpdateImmutabilityPolicyResponse createOrUpdateImmutabilityPolicyWithResponse(
         String resourceGroupName,
         String accountName,
         String containerName,
@@ -2283,7 +2283,7 @@ public final class BlobContainersClientImpl implements BlobContainersClient {
      * @return the existing immutability policy along with the corresponding ETag in response headers and body.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ImmutabilityPolicyInner> getImmutabilityPolicyWithResponse(
+    public BlobContainersGetImmutabilityPolicyResponse getImmutabilityPolicyWithResponse(
         String resourceGroupName, String accountName, String containerName, String ifMatch, Context context) {
         return getImmutabilityPolicyWithResponseAsync(resourceGroupName, accountName, containerName, ifMatch, context)
             .block();
@@ -2505,7 +2505,7 @@ public final class BlobContainersClientImpl implements BlobContainersClient {
      * @return the ImmutabilityPolicy property of a blob container, including Id, resource name, resource type, Etag.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ImmutabilityPolicyInner> deleteImmutabilityPolicyWithResponse(
+    public BlobContainersDeleteImmutabilityPolicyResponse deleteImmutabilityPolicyWithResponse(
         String resourceGroupName, String accountName, String containerName, String ifMatch, Context context) {
         return deleteImmutabilityPolicyWithResponseAsync(
                 resourceGroupName, accountName, containerName, ifMatch, context)
@@ -2719,7 +2719,7 @@ public final class BlobContainersClientImpl implements BlobContainersClient {
      * @return the ImmutabilityPolicy property of a blob container, including Id, resource name, resource type, Etag.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ImmutabilityPolicyInner> lockImmutabilityPolicyWithResponse(
+    public BlobContainersLockImmutabilityPolicyResponse lockImmutabilityPolicyWithResponse(
         String resourceGroupName, String accountName, String containerName, String ifMatch, Context context) {
         return lockImmutabilityPolicyWithResponseAsync(resourceGroupName, accountName, containerName, ifMatch, context)
             .block();
@@ -2995,7 +2995,7 @@ public final class BlobContainersClientImpl implements BlobContainersClient {
      * @return the ImmutabilityPolicy property of a blob container, including Id, resource name, resource type, Etag.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public Response<ImmutabilityPolicyInner> extendImmutabilityPolicyWithResponse(
+    public BlobContainersExtendImmutabilityPolicyResponse extendImmutabilityPolicyWithResponse(
         String resourceGroupName,
         String accountName,
         String containerName,

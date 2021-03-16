@@ -48,7 +48,7 @@ public class DomainInner extends Resource {
     /*
      * List of private endpoint connections.
      */
-    @JsonProperty(value = "properties.privateEndpointConnections")
+    @JsonProperty(value = "properties.privateEndpointConnections", access = JsonProperty.Access.WRITE_ONLY)
     private List<PrivateEndpointConnectionInner> privateEndpointConnections;
 
     /*
@@ -156,17 +156,6 @@ public class DomainInner extends Resource {
      */
     public List<PrivateEndpointConnectionInner> privateEndpointConnections() {
         return this.privateEndpointConnections;
-    }
-
-    /**
-     * Set the privateEndpointConnections property: List of private endpoint connections.
-     *
-     * @param privateEndpointConnections the privateEndpointConnections value to set.
-     * @return the DomainInner object itself.
-     */
-    public DomainInner withPrivateEndpointConnections(List<PrivateEndpointConnectionInner> privateEndpointConnections) {
-        this.privateEndpointConnections = privateEndpointConnections;
-        return this;
     }
 
     /**

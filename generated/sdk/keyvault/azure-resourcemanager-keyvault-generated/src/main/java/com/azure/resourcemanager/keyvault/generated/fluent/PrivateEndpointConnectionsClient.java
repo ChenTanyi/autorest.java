@@ -11,6 +11,7 @@ import com.azure.core.management.polling.PollResult;
 import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.PrivateEndpointConnectionInner;
+import com.azure.resourcemanager.keyvault.generated.models.PrivateEndpointConnectionsPutResponse;
 
 /** An instance of this class provides access to all the operations defined in PrivateEndpointConnectionsClient. */
 public interface PrivateEndpointConnectionsClient {
@@ -78,7 +79,7 @@ public interface PrivateEndpointConnectionsClient {
      * @return private endpoint connection resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    Response<PrivateEndpointConnectionInner> putWithResponse(
+    PrivateEndpointConnectionsPutResponse putWithResponse(
         String resourceGroupName,
         String vaultName,
         String privateEndpointConnectionName,

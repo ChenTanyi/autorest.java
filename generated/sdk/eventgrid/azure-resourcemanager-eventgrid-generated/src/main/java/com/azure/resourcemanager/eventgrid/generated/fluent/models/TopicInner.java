@@ -62,7 +62,7 @@ public class TopicInner extends Resource {
     /*
      * The privateEndpointConnections property.
      */
-    @JsonProperty(value = "properties.privateEndpointConnections")
+    @JsonProperty(value = "properties.privateEndpointConnections", access = JsonProperty.Access.WRITE_ONLY)
     private List<PrivateEndpointConnectionInner> privateEndpointConnections;
 
     /*
@@ -212,17 +212,6 @@ public class TopicInner extends Resource {
      */
     public List<PrivateEndpointConnectionInner> privateEndpointConnections() {
         return this.privateEndpointConnections;
-    }
-
-    /**
-     * Set the privateEndpointConnections property: The privateEndpointConnections property.
-     *
-     * @param privateEndpointConnections the privateEndpointConnections value to set.
-     * @return the TopicInner object itself.
-     */
-    public TopicInner withPrivateEndpointConnections(List<PrivateEndpointConnectionInner> privateEndpointConnections) {
-        this.privateEndpointConnections = privateEndpointConnections;
-        return this;
     }
 
     /**

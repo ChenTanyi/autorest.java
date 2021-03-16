@@ -276,11 +276,6 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
         }
     }
 
-    public DomainImpl withPrivateEndpointConnections(List<PrivateEndpointConnectionInner> privateEndpointConnections) {
-        this.innerModel().withPrivateEndpointConnections(privateEndpointConnections);
-        return this;
-    }
-
     public DomainImpl withInputSchema(InputSchema inputSchema) {
         this.innerModel().withInputSchema(inputSchema);
         return this;
