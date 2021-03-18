@@ -9,10 +9,10 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The properties of the KeyVault identity. */
+/** The properties of the Managed identity. */
 @Fluent
-public class KekIdentity {
-    @JsonIgnore private final ClientLogger logger = new ClientLogger(KekIdentity.class);
+public class ManagedIdentity {
+    @JsonIgnore private final ClientLogger logger = new ClientLogger(ManagedIdentity.class);
 
     /*
      * The user assigned identity.
@@ -33,9 +33,9 @@ public class KekIdentity {
      * Set the userAssignedIdentity property: The user assigned identity.
      *
      * @param userAssignedIdentity the userAssignedIdentity value to set.
-     * @return the KekIdentity object itself.
+     * @return the ManagedIdentity object itself.
      */
-    public KekIdentity withUserAssignedIdentity(String userAssignedIdentity) {
+    public ManagedIdentity withUserAssignedIdentity(String userAssignedIdentity) {
         this.userAssignedIdentity = userAssignedIdentity;
         return this;
     }

@@ -22,10 +22,11 @@ public final class QueryRequest {
     private List<String> subscriptions;
 
     /*
-     * The management group identifier.
+     * Azure management groups against which to execute the query. Example: [
+     * 'mg1', 'mg2' ]
      */
-    @JsonProperty(value = "managementGroupId")
-    private String managementGroupId;
+    @JsonProperty(value = "managementGroups")
+    private List<String> managementGroups;
 
     /*
      * The resources query.
@@ -66,22 +67,24 @@ public final class QueryRequest {
     }
 
     /**
-     * Get the managementGroupId property: The management group identifier.
+     * Get the managementGroups property: Azure management groups against which to execute the query. Example: [ 'mg1',
+     * 'mg2' ].
      *
-     * @return the managementGroupId value.
+     * @return the managementGroups value.
      */
-    public String managementGroupId() {
-        return this.managementGroupId;
+    public List<String> managementGroups() {
+        return this.managementGroups;
     }
 
     /**
-     * Set the managementGroupId property: The management group identifier.
+     * Set the managementGroups property: Azure management groups against which to execute the query. Example: [ 'mg1',
+     * 'mg2' ].
      *
-     * @param managementGroupId the managementGroupId value to set.
+     * @param managementGroups the managementGroups value to set.
      * @return the QueryRequest object itself.
      */
-    public QueryRequest withManagementGroupId(String managementGroupId) {
-        this.managementGroupId = managementGroupId;
+    public QueryRequest withManagementGroups(List<String> managementGroups) {
+        this.managementGroups = managementGroups;
         return this;
     }
 

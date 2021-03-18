@@ -21,10 +21,10 @@ public final class KeyVaultKeyProperties {
     private String keyIdentifier;
 
     /*
-     * The identity.
+     * Managed identity properties of KeyVault Key.
      */
     @JsonProperty(value = "identity")
-    private KekIdentity identity;
+    private ManagedIdentity identity;
 
     /**
      * Get the keyIdentifier property: The identifier of the key.
@@ -47,21 +47,21 @@ public final class KeyVaultKeyProperties {
     }
 
     /**
-     * Get the identity property: The identity.
+     * Get the identity property: Managed identity properties of KeyVault Key.
      *
      * @return the identity value.
      */
-    public KekIdentity identity() {
+    public ManagedIdentity identity() {
         return this.identity;
     }
 
     /**
-     * Set the identity property: The identity.
+     * Set the identity property: Managed identity properties of KeyVault Key.
      *
      * @param identity the identity value to set.
      * @return the KeyVaultKeyProperties object itself.
      */
-    public KeyVaultKeyProperties withIdentity(KekIdentity identity) {
+    public KeyVaultKeyProperties withIdentity(ManagedIdentity identity) {
         this.identity = identity;
         return this;
     }
