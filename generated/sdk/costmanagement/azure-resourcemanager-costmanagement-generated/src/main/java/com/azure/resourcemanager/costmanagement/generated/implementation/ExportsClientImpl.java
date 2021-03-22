@@ -175,7 +175,7 @@ public final class ExportsClientImpl implements ExportsClient {
                 context ->
                     service
                         .list(this.client.getEndpoint(), scope, this.client.getApiVersion(), expand, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -402,7 +402,7 @@ public final class ExportsClientImpl implements ExportsClient {
                             expand,
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -645,7 +645,7 @@ public final class ExportsClientImpl implements ExportsClient {
                             parameters,
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -845,7 +845,7 @@ public final class ExportsClientImpl implements ExportsClient {
                     service
                         .delete(
                             this.client.getEndpoint(), scope, this.client.getApiVersion(), exportName, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -1020,7 +1020,7 @@ public final class ExportsClientImpl implements ExportsClient {
                     service
                         .execute(
                             this.client.getEndpoint(), scope, this.client.getApiVersion(), exportName, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -1196,7 +1196,7 @@ public final class ExportsClientImpl implements ExportsClient {
                     service
                         .getExecutionHistory(
                             this.client.getEndpoint(), scope, this.client.getApiVersion(), exportName, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**

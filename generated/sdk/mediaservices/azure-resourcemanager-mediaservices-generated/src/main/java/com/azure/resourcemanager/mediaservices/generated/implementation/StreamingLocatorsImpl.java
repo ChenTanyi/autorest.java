@@ -24,11 +24,11 @@ public final class StreamingLocatorsImpl implements StreamingLocators {
 
     private final StreamingLocatorsClient innerClient;
 
-    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager;
 
     public StreamingLocatorsImpl(
         StreamingLocatorsClient innerClient,
-        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
+        com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -247,7 +247,7 @@ public final class StreamingLocatorsImpl implements StreamingLocators {
         return this.innerClient;
     }
 
-    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaServicesManager manager() {
         return this.serviceManager;
     }
 

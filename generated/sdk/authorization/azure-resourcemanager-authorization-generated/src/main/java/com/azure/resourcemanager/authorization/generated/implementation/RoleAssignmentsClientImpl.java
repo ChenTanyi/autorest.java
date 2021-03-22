@@ -317,7 +317,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -630,7 +630,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -810,7 +810,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
             .withContext(
                 context ->
                     service.delete(this.client.getEndpoint(), scope, roleAssignmentName, apiVersion, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -950,7 +950,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
                             parameters,
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -1100,7 +1100,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
             .withContext(
                 context ->
                     service.get(this.client.getEndpoint(), scope, roleAssignmentName, apiVersion, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -1214,7 +1214,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.deleteById(this.client.getEndpoint(), roleId, apiVersion, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -1328,7 +1328,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
             .withContext(
                 context ->
                     service.createById(this.client.getEndpoint(), roleId, apiVersion, parameters, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -1444,7 +1444,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.getById(this.client.getEndpoint(), roleId, apiVersion, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -1572,7 +1572,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -1731,7 +1731,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -1894,7 +1894,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -1967,7 +1967,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -2039,7 +2039,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -2110,7 +2110,7 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**

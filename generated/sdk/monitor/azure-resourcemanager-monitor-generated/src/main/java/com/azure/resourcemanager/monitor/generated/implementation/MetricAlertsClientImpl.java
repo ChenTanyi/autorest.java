@@ -184,7 +184,7 @@ public final class MetricAlertsClientImpl implements MetricAlertsClient {
                 res ->
                     new PagedResponseBase<>(
                         res.getRequest(), res.getStatusCode(), res.getHeaders(), res.getValue().value(), null, null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -317,7 +317,7 @@ public final class MetricAlertsClientImpl implements MetricAlertsClient {
                 res ->
                     new PagedResponseBase<>(
                         res.getRequest(), res.getStatusCode(), res.getHeaders(), res.getValue().value(), null, null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -470,7 +470,7 @@ public final class MetricAlertsClientImpl implements MetricAlertsClient {
                             apiVersion,
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -628,7 +628,7 @@ public final class MetricAlertsClientImpl implements MetricAlertsClient {
                             parameters,
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -798,7 +798,7 @@ public final class MetricAlertsClientImpl implements MetricAlertsClient {
                             parameters,
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -960,7 +960,7 @@ public final class MetricAlertsClientImpl implements MetricAlertsClient {
                             apiVersion,
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**

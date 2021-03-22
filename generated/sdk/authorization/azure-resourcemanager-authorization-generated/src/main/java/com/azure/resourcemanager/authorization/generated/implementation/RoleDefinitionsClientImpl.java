@@ -164,7 +164,7 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
             .withContext(
                 context ->
                     service.delete(this.client.getEndpoint(), scope, roleDefinitionId, apiVersion, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -284,7 +284,7 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
         return FluxUtil
             .withContext(
                 context -> service.get(this.client.getEndpoint(), scope, roleDefinitionId, apiVersion, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -420,7 +420,7 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
                             roleDefinition,
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -559,7 +559,7 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -709,7 +709,7 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.getById(this.client.getEndpoint(), roleId, apiVersion, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -834,7 +834,7 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**

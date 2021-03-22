@@ -17,7 +17,7 @@ import java.util.List;
 public final class AssetFilterImpl implements AssetFilter, AssetFilter.Definition, AssetFilter.Update {
     private AssetFilterInner innerObject;
 
-    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -56,7 +56,7 @@ public final class AssetFilterImpl implements AssetFilter, AssetFilter.Definitio
         return this.innerObject;
     }
 
-    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaServicesManager manager() {
         return this.serviceManager;
     }
 
@@ -98,7 +98,7 @@ public final class AssetFilterImpl implements AssetFilter, AssetFilter.Definitio
     }
 
     AssetFilterImpl(
-        String name, com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
+        String name, com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = new AssetFilterInner();
         this.serviceManager = serviceManager;
         this.filterName = name;
@@ -131,7 +131,7 @@ public final class AssetFilterImpl implements AssetFilter, AssetFilter.Definitio
 
     AssetFilterImpl(
         AssetFilterInner innerObject,
-        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
+        com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

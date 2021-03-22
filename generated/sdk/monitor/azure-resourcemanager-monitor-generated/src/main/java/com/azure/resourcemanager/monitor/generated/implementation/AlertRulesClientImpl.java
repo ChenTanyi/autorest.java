@@ -205,7 +205,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
                             parameters,
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -367,7 +367,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
                             this.client.getSubscriptionId(),
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -507,7 +507,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
                             this.client.getSubscriptionId(),
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -666,7 +666,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
                             alertRulesResource,
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -828,7 +828,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
                 res ->
                     new PagedResponseBase<>(
                         res.getRequest(), res.getStatusCode(), res.getHeaders(), res.getValue().value(), null, null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -967,7 +967,7 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
                 res ->
                     new PagedResponseBase<>(
                         res.getRequest(), res.getStatusCode(), res.getHeaders(), res.getValue().value(), null, null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**

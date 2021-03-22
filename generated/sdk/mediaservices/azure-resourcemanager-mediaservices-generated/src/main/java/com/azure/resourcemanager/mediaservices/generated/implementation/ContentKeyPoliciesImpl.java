@@ -22,11 +22,11 @@ public final class ContentKeyPoliciesImpl implements ContentKeyPolicies {
 
     private final ContentKeyPoliciesClient innerClient;
 
-    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager;
 
     public ContentKeyPoliciesImpl(
         ContentKeyPoliciesClient innerClient,
-        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
+        com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -221,7 +221,7 @@ public final class ContentKeyPoliciesImpl implements ContentKeyPolicies {
         return this.innerClient;
     }
 
-    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaServicesManager manager() {
         return this.serviceManager;
     }
 

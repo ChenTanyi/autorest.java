@@ -245,7 +245,7 @@ public final class DisksClientImpl implements DisksClient {
         } else {
             disk.validate();
         }
-        final String apiVersion = "2020-09-30";
+        final String apiVersion = "2020-12-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -260,7 +260,7 @@ public final class DisksClientImpl implements DisksClient {
                             disk,
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -303,7 +303,7 @@ public final class DisksClientImpl implements DisksClient {
         } else {
             disk.validate();
         }
-        final String apiVersion = "2020-09-30";
+        final String apiVersion = "2020-12-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -516,7 +516,7 @@ public final class DisksClientImpl implements DisksClient {
         } else {
             disk.validate();
         }
-        final String apiVersion = "2020-09-30";
+        final String apiVersion = "2020-12-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -531,7 +531,7 @@ public final class DisksClientImpl implements DisksClient {
                             disk,
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -574,7 +574,7 @@ public final class DisksClientImpl implements DisksClient {
         } else {
             disk.validate();
         }
-        final String apiVersion = "2020-09-30";
+        final String apiVersion = "2020-12-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -778,7 +778,7 @@ public final class DisksClientImpl implements DisksClient {
         if (diskName == null) {
             return Mono.error(new IllegalArgumentException("Parameter diskName is required and cannot be null."));
         }
-        final String apiVersion = "2020-09-30";
+        final String apiVersion = "2020-12-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -792,7 +792,7 @@ public final class DisksClientImpl implements DisksClient {
                             apiVersion,
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -829,7 +829,7 @@ public final class DisksClientImpl implements DisksClient {
         if (diskName == null) {
             return Mono.error(new IllegalArgumentException("Parameter diskName is required and cannot be null."));
         }
-        final String apiVersion = "2020-09-30";
+        final String apiVersion = "2020-12-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -933,7 +933,7 @@ public final class DisksClientImpl implements DisksClient {
         if (diskName == null) {
             return Mono.error(new IllegalArgumentException("Parameter diskName is required and cannot be null."));
         }
-        final String apiVersion = "2020-09-30";
+        final String apiVersion = "2020-12-01";
         return FluxUtil
             .withContext(
                 context ->
@@ -945,7 +945,7 @@ public final class DisksClientImpl implements DisksClient {
                             diskName,
                             apiVersion,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -982,7 +982,7 @@ public final class DisksClientImpl implements DisksClient {
         if (diskName == null) {
             return Mono.error(new IllegalArgumentException("Parameter diskName is required and cannot be null."));
         }
-        final String apiVersion = "2020-09-30";
+        final String apiVersion = "2020-12-01";
         context = this.client.mergeContext(context);
         return service
             .delete(
@@ -1161,7 +1161,7 @@ public final class DisksClientImpl implements DisksClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2020-09-30";
+        final String apiVersion = "2020-12-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1183,7 +1183,7 @@ public final class DisksClientImpl implements DisksClient {
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -1215,7 +1215,7 @@ public final class DisksClientImpl implements DisksClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2020-09-30";
+        final String apiVersion = "2020-12-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1320,7 +1320,7 @@ public final class DisksClientImpl implements DisksClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-09-30";
+        final String apiVersion = "2020-12-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1336,7 +1336,7 @@ public final class DisksClientImpl implements DisksClient {
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -1362,7 +1362,7 @@ public final class DisksClientImpl implements DisksClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-09-30";
+        final String apiVersion = "2020-12-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1471,7 +1471,7 @@ public final class DisksClientImpl implements DisksClient {
         } else {
             grantAccessData.validate();
         }
-        final String apiVersion = "2020-09-30";
+        final String apiVersion = "2020-12-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1486,7 +1486,7 @@ public final class DisksClientImpl implements DisksClient {
                             grantAccessData,
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -1530,7 +1530,7 @@ public final class DisksClientImpl implements DisksClient {
         } else {
             grantAccessData.validate();
         }
-        final String apiVersion = "2020-09-30";
+        final String apiVersion = "2020-12-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1739,7 +1739,7 @@ public final class DisksClientImpl implements DisksClient {
         if (diskName == null) {
             return Mono.error(new IllegalArgumentException("Parameter diskName is required and cannot be null."));
         }
-        final String apiVersion = "2020-09-30";
+        final String apiVersion = "2020-12-01";
         return FluxUtil
             .withContext(
                 context ->
@@ -1751,7 +1751,7 @@ public final class DisksClientImpl implements DisksClient {
                             diskName,
                             apiVersion,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -1788,7 +1788,7 @@ public final class DisksClientImpl implements DisksClient {
         if (diskName == null) {
             return Mono.error(new IllegalArgumentException("Parameter diskName is required and cannot be null."));
         }
-        final String apiVersion = "2020-09-30";
+        final String apiVersion = "2020-12-01";
         context = this.client.mergeContext(context);
         return service
             .revokeAccess(
@@ -1976,7 +1976,7 @@ public final class DisksClientImpl implements DisksClient {
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -2047,7 +2047,7 @@ public final class DisksClientImpl implements DisksClient {
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**

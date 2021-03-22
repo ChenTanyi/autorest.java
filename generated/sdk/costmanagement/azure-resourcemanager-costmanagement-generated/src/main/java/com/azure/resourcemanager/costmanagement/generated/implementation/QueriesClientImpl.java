@@ -129,7 +129,7 @@ public final class QueriesClientImpl implements QueriesClient {
                     service
                         .usage(
                             this.client.getEndpoint(), scope, this.client.getApiVersion(), parameters, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -330,7 +330,7 @@ public final class QueriesClientImpl implements QueriesClient {
                             parameters,
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**

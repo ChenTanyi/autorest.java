@@ -116,7 +116,7 @@ public final class GatewaysClientImpl implements GatewaysClient {
                             gatewayId,
                             apiVersion,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**

@@ -20,7 +20,7 @@ public final class ContentKeyPolicyImpl
     implements ContentKeyPolicy, ContentKeyPolicy.Definition, ContentKeyPolicy.Update {
     private ContentKeyPolicyInner innerObject;
 
-    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -67,7 +67,7 @@ public final class ContentKeyPolicyImpl
         return this.innerObject;
     }
 
-    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaServicesManager manager() {
         return this.serviceManager;
     }
 
@@ -106,7 +106,7 @@ public final class ContentKeyPolicyImpl
     }
 
     ContentKeyPolicyImpl(
-        String name, com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
+        String name, com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = new ContentKeyPolicyInner();
         this.serviceManager = serviceManager;
         this.contentKeyPolicyName = name;
@@ -139,7 +139,7 @@ public final class ContentKeyPolicyImpl
 
     ContentKeyPolicyImpl(
         ContentKeyPolicyInner innerObject,
-        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
+        com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

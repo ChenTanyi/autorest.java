@@ -89,6 +89,13 @@ public interface DiskRestorePoint {
     Encryption encryption();
 
     /**
+     * Gets the supportsHibernation property: Indicates the OS on a disk supports hibernation.
+     *
+     * @return the supportsHibernation value.
+     */
+    Boolean supportsHibernation();
+
+    /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.DiskRestorePointInner object.
      *
      * @return the inner object.

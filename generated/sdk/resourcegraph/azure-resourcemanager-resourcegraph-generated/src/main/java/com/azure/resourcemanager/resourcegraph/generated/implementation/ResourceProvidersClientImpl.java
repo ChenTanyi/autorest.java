@@ -94,7 +94,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
             .withContext(
                 context ->
                     service.resources(this.client.getEndpoint(), this.client.getApiVersion(), query, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**

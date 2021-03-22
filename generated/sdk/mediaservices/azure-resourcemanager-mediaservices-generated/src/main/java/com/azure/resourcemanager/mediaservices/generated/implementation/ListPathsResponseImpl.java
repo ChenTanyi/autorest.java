@@ -13,11 +13,11 @@ import java.util.List;
 public final class ListPathsResponseImpl implements ListPathsResponse {
     private ListPathsResponseInner innerObject;
 
-    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager;
 
     ListPathsResponseImpl(
         ListPathsResponseInner innerObject,
-        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
+        com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -44,7 +44,7 @@ public final class ListPathsResponseImpl implements ListPathsResponse {
         return this.innerObject;
     }
 
-    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaServicesManager manager() {
         return this.serviceManager;
     }
 }

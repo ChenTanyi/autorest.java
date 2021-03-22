@@ -152,7 +152,7 @@ public final class IntelligencePacksClientImpl implements IntelligencePacksClien
                             apiVersion,
                             this.client.getSubscriptionId(),
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -306,7 +306,7 @@ public final class IntelligencePacksClientImpl implements IntelligencePacksClien
                             apiVersion,
                             this.client.getSubscriptionId(),
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -456,7 +456,7 @@ public final class IntelligencePacksClientImpl implements IntelligencePacksClien
                             this.client.getSubscriptionId(),
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**

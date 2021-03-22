@@ -67,6 +67,10 @@ public final class DiskRestorePointImpl implements DiskRestorePoint {
         return this.innerModel().encryption();
     }
 
+    public Boolean supportsHibernation() {
+        return this.innerModel().supportsHibernation();
+    }
+
     public DiskRestorePointInner innerModel() {
         return this.innerObject;
     }

@@ -25,7 +25,7 @@ import java.util.Map;
 public final class LiveEventImpl implements LiveEvent, LiveEvent.Definition, LiveEvent.Update {
     private LiveEventInner innerObject;
 
-    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -130,7 +130,7 @@ public final class LiveEventImpl implements LiveEvent, LiveEvent.Definition, Liv
         return this.innerObject;
     }
 
-    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaServicesManager manager() {
         return this.serviceManager;
     }
 
@@ -167,7 +167,7 @@ public final class LiveEventImpl implements LiveEvent, LiveEvent.Definition, Liv
         return this;
     }
 
-    LiveEventImpl(String name, com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
+    LiveEventImpl(String name, com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = new LiveEventInner();
         this.serviceManager = serviceManager;
         this.liveEventName = name;
@@ -198,7 +198,7 @@ public final class LiveEventImpl implements LiveEvent, LiveEvent.Definition, Liv
 
     LiveEventImpl(
         LiveEventInner innerObject,
-        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
+        com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

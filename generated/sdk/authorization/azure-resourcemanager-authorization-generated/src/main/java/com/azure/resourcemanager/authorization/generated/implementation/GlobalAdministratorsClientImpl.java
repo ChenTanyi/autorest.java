@@ -83,7 +83,7 @@ public final class GlobalAdministratorsClientImpl implements GlobalAdministrator
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.elevateAccess(this.client.getEndpoint(), apiVersion, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**

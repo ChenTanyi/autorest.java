@@ -20,7 +20,7 @@ import java.util.UUID;
 public final class AssetImpl implements Asset, Asset.Definition, Asset.Update {
     private AssetInner innerObject;
 
-    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -74,7 +74,7 @@ public final class AssetImpl implements Asset, Asset.Definition, Asset.Update {
         return this.innerObject;
     }
 
-    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaServicesManager manager() {
         return this.serviceManager;
     }
 
@@ -110,7 +110,7 @@ public final class AssetImpl implements Asset, Asset.Definition, Asset.Update {
         return this;
     }
 
-    AssetImpl(String name, com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
+    AssetImpl(String name, com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = new AssetInner();
         this.serviceManager = serviceManager;
         this.assetName = name;
@@ -141,7 +141,7 @@ public final class AssetImpl implements Asset, Asset.Definition, Asset.Update {
     }
 
     AssetImpl(
-        AssetInner innerObject, com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
+        AssetInner innerObject, com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

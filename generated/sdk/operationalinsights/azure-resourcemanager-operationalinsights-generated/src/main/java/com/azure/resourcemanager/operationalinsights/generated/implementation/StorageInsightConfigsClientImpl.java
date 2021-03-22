@@ -196,7 +196,7 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
                             parameters,
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -384,7 +384,7 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
                             this.client.getSubscriptionId(),
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -549,7 +549,7 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
                             apiVersion,
                             this.client.getSubscriptionId(),
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -708,7 +708,7 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
                         res.getValue().value(),
                         res.getValue().odataNextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -867,7 +867,7 @@ public final class StorageInsightConfigsClientImpl implements StorageInsightConf
                         res.getValue().value(),
                         res.getValue().odataNextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**

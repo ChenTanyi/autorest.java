@@ -93,7 +93,7 @@ public final class VMInsightsClientImpl implements VMInsightsClient {
             .withContext(
                 context ->
                     service.getOnboardingStatus(this.client.getEndpoint(), apiVersion, resourceUri, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**

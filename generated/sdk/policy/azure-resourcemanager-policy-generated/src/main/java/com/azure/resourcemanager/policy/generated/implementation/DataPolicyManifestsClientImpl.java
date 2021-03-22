@@ -117,7 +117,7 @@ public final class DataPolicyManifestsClientImpl implements DataPolicyManifestsC
         return FluxUtil
             .withContext(
                 context -> service.getByPolicyMode(this.client.getEndpoint(), policyMode, apiVersion, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -234,7 +234,7 @@ public final class DataPolicyManifestsClientImpl implements DataPolicyManifestsC
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -400,7 +400,7 @@ public final class DataPolicyManifestsClientImpl implements DataPolicyManifestsC
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**

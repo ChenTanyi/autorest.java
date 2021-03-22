@@ -12,6 +12,7 @@ import com.azure.resourcemanager.compute.generated.models.DiskEncryptionSetType;
 import com.azure.resourcemanager.compute.generated.models.DiskEncryptionSetUpdate;
 import com.azure.resourcemanager.compute.generated.models.EncryptionSetIdentity;
 import com.azure.resourcemanager.compute.generated.models.KeyForDiskEncryptionSet;
+import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -70,6 +71,14 @@ public final class DiskEncryptionSetImpl
 
     public String provisioningState() {
         return this.innerModel().provisioningState();
+    }
+
+    public Boolean rotationToLatestKeyVersionEnabled() {
+        return this.innerModel().rotationToLatestKeyVersionEnabled();
+    }
+
+    public OffsetDateTime lastKeyRotationTimestamp() {
+        return this.innerModel().lastKeyRotationTimestamp();
     }
 
     public Region region() {
@@ -195,8 +204,13 @@ public final class DiskEncryptionSetImpl
     }
 
     public DiskEncryptionSetImpl withIdentity(EncryptionSetIdentity identity) {
-        this.innerModel().withIdentity(identity);
-        return this;
+        if (isInCreateMode()) {
+            this.innerModel().withIdentity(identity);
+            return this;
+        } else {
+            this.updateDiskEncryptionSet.withIdentity(identity);
+            return this;
+        }
     }
 
     public DiskEncryptionSetImpl withEncryptionType(DiskEncryptionSetType encryptionType) {
@@ -215,6 +229,16 @@ public final class DiskEncryptionSetImpl
             return this;
         } else {
             this.updateDiskEncryptionSet.withActiveKey(activeKey);
+            return this;
+        }
+    }
+
+    public DiskEncryptionSetImpl withRotationToLatestKeyVersionEnabled(Boolean rotationToLatestKeyVersionEnabled) {
+        if (isInCreateMode()) {
+            this.innerModel().withRotationToLatestKeyVersionEnabled(rotationToLatestKeyVersionEnabled);
+            return this;
+        } else {
+            this.updateDiskEncryptionSet.withRotationToLatestKeyVersionEnabled(rotationToLatestKeyVersionEnabled);
             return this;
         }
     }

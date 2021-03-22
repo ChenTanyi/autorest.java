@@ -20,11 +20,11 @@ import java.util.UUID;
 public final class StreamingLocatorImpl implements StreamingLocator, StreamingLocator.Definition {
     private StreamingLocatorInner innerObject;
 
-    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager;
 
     StreamingLocatorImpl(
         StreamingLocatorInner innerObject,
-        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
+        com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -99,7 +99,7 @@ public final class StreamingLocatorImpl implements StreamingLocator, StreamingLo
         return this.innerObject;
     }
 
-    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaServicesManager manager() {
         return this.serviceManager;
     }
 
@@ -137,7 +137,7 @@ public final class StreamingLocatorImpl implements StreamingLocator, StreamingLo
     }
 
     StreamingLocatorImpl(
-        String name, com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
+        String name, com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = new StreamingLocatorInner();
         this.serviceManager = serviceManager;
         this.streamingLocatorName = name;

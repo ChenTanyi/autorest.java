@@ -148,7 +148,7 @@ public final class MetricBaselinesClientImpl implements MetricBaselinesClient {
                             apiVersion,
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -378,7 +378,7 @@ public final class MetricBaselinesClientImpl implements MetricBaselinesClient {
                     service
                         .calculateBaseline(
                             this.client.getEndpoint(), resourceUri, apiVersion, timeSeriesInformation, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**

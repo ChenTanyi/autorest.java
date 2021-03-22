@@ -111,7 +111,7 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
         return FluxUtil
             .withContext(
                 context -> service.get(this.client.getEndpoint(), resourceUri, apiVersion, name, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -226,7 +226,7 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.list(this.client.getEndpoint(), resourceUri, apiVersion, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**

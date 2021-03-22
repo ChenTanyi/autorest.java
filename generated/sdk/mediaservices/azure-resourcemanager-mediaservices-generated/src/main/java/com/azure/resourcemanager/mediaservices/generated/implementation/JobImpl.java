@@ -21,7 +21,7 @@ import java.util.Map;
 public final class JobImpl implements Job, Job.Definition, Job.Update {
     private JobInner innerObject;
 
-    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -93,7 +93,7 @@ public final class JobImpl implements Job, Job.Definition, Job.Update {
         return this.innerObject;
     }
 
-    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaServicesManager manager() {
         return this.serviceManager;
     }
 
@@ -133,7 +133,7 @@ public final class JobImpl implements Job, Job.Definition, Job.Update {
         return this;
     }
 
-    JobImpl(String name, com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
+    JobImpl(String name, com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = new JobInner();
         this.serviceManager = serviceManager;
         this.jobName = name;
@@ -165,7 +165,7 @@ public final class JobImpl implements Job, Job.Definition, Job.Update {
     }
 
     JobImpl(
-        JobInner innerObject, com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
+        JobInner innerObject, com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

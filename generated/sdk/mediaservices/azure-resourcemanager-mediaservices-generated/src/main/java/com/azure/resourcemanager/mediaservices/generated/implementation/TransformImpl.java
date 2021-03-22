@@ -16,7 +16,7 @@ import java.util.List;
 public final class TransformImpl implements Transform, Transform.Definition, Transform.Update {
     private TransformInner innerObject;
 
-    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager;
 
     public String id() {
         return this.innerModel().id();
@@ -59,7 +59,7 @@ public final class TransformImpl implements Transform, Transform.Definition, Tra
         return this.innerObject;
     }
 
-    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaServicesManager manager() {
         return this.serviceManager;
     }
 
@@ -96,7 +96,7 @@ public final class TransformImpl implements Transform, Transform.Definition, Tra
         return this;
     }
 
-    TransformImpl(String name, com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
+    TransformImpl(String name, com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = new TransformInner();
         this.serviceManager = serviceManager;
         this.transformName = name;
@@ -128,7 +128,7 @@ public final class TransformImpl implements Transform, Transform.Definition, Tra
 
     TransformImpl(
         TransformInner innerObject,
-        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
+        com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");

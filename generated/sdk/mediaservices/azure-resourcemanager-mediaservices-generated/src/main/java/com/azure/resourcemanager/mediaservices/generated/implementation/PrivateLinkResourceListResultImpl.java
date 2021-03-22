@@ -15,11 +15,11 @@ import java.util.stream.Collectors;
 public final class PrivateLinkResourceListResultImpl implements PrivateLinkResourceListResult {
     private PrivateLinkResourceListResultInner innerObject;
 
-    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager;
 
     PrivateLinkResourceListResultImpl(
         PrivateLinkResourceListResultInner innerObject,
-        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
+        com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -42,7 +42,7 @@ public final class PrivateLinkResourceListResultImpl implements PrivateLinkResou
         return this.innerObject;
     }
 
-    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaServicesManager manager() {
         return this.serviceManager;
     }
 }

@@ -125,6 +125,10 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
         return this.innerModel().diskAccessId();
     }
 
+    public Boolean supportsHibernation() {
+        return this.innerModel().supportsHibernation();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -337,6 +341,16 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
             return this;
         } else {
             this.updateSnapshot.withDiskAccessId(diskAccessId);
+            return this;
+        }
+    }
+
+    public SnapshotImpl withSupportsHibernation(Boolean supportsHibernation) {
+        if (isInCreateMode()) {
+            this.innerModel().withSupportsHibernation(supportsHibernation);
+            return this;
+        } else {
+            this.updateSnapshot.withSupportsHibernation(supportsHibernation);
             return this;
         }
     }

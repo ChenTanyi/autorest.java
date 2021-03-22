@@ -133,7 +133,7 @@ public final class EndpointsClientImpl implements EndpointsClient {
                             contentFilePaths,
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**

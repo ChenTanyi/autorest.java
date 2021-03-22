@@ -391,7 +391,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                             this.client.getSubscriptionId(),
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -628,7 +628,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                             this.client.getSubscriptionId(),
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -791,7 +791,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                             parameters,
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -1068,7 +1068,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                             parameters,
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -1236,7 +1236,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -1388,7 +1388,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -1531,7 +1531,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                             this.client.getSubscriptionId(),
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -1768,7 +1768,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                             this.client.getSubscriptionId(),
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -2006,7 +2006,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                             expand,
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -2321,7 +2321,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                             probeRequest,
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -2686,7 +2686,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     service
                         .listAvailableServerVariables(
                             this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -2795,7 +2795,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     service
                         .listAvailableRequestHeaders(
                             this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -2904,7 +2904,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     service
                         .listAvailableResponseHeaders(
                             this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -3014,7 +3014,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     service
                         .listAvailableWafRuleSets(
                             this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -3125,7 +3125,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                     service
                         .listAvailableSslOptions(
                             this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -3245,7 +3245,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -3388,7 +3388,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                             predefinedPolicyName,
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -3517,7 +3517,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -3588,7 +3588,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -3663,7 +3663,7 @@ public final class ApplicationGatewaysClientImpl implements ApplicationGatewaysC
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**

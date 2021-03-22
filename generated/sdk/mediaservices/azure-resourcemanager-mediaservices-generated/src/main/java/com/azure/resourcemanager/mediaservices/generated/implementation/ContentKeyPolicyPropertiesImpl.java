@@ -15,11 +15,11 @@ import java.util.UUID;
 public final class ContentKeyPolicyPropertiesImpl implements ContentKeyPolicyProperties {
     private ContentKeyPolicyPropertiesInner innerObject;
 
-    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager;
 
     ContentKeyPolicyPropertiesImpl(
         ContentKeyPolicyPropertiesInner innerObject,
-        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
+        com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -53,7 +53,7 @@ public final class ContentKeyPolicyPropertiesImpl implements ContentKeyPolicyPro
         return this.innerObject;
     }
 
-    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaServicesManager manager() {
         return this.serviceManager;
     }
 }

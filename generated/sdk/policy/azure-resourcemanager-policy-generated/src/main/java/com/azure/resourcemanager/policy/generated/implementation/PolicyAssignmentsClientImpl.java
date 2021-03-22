@@ -276,7 +276,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
             .withContext(
                 context ->
                     service.delete(this.client.getEndpoint(), scope, policyAssignmentName, apiVersion, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -443,7 +443,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
                             parameters,
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -604,7 +604,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
             .withContext(
                 context ->
                     service.get(this.client.getEndpoint(), scope, policyAssignmentName, apiVersion, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -779,7 +779,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -1116,7 +1116,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -1585,7 +1585,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -1843,7 +1843,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -2076,7 +2076,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
             .withContext(
                 context ->
                     service.deleteById(this.client.getEndpoint(), policyAssignmentId, apiVersion, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -2231,7 +2231,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
                     service
                         .createById(
                             this.client.getEndpoint(), policyAssignmentId, apiVersion, parameters, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -2389,7 +2389,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
         return FluxUtil
             .withContext(
                 context -> service.getById(this.client.getEndpoint(), policyAssignmentId, apiVersion, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -2528,7 +2528,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -2600,7 +2600,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -2673,7 +2673,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -2745,7 +2745,7 @@ public final class PolicyAssignmentsClientImpl implements PolicyAssignmentsClien
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**

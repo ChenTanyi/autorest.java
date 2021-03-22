@@ -183,7 +183,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                     service
                         .listBySubscription(
                             this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -304,7 +304,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                             this.client.getSubscriptionId(),
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -461,7 +461,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                             putExpressRouteGatewayParameters,
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -776,7 +776,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                             expressRouteGatewayParameters,
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -1068,7 +1068,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                             this.client.getSubscriptionId(),
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -1225,7 +1225,7 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
                             this.client.getSubscriptionId(),
                             accept,
                             context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**

@@ -186,6 +186,13 @@ public interface Snapshot {
     String diskAccessId();
 
     /**
+     * Gets the supportsHibernation property: Indicates the OS on a snapshot supports hibernation.
+     *
+     * @return the supportsHibernation value.
+     */
+    Boolean supportsHibernation();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -263,7 +270,8 @@ public interface Snapshot {
                 DefinitionStages.WithIncremental,
                 DefinitionStages.WithEncryption,
                 DefinitionStages.WithNetworkAccessPolicy,
-                DefinitionStages.WithDiskAccessId {
+                DefinitionStages.WithDiskAccessId,
+                DefinitionStages.WithSupportsHibernation {
             /**
              * Executes the create request.
              *
@@ -433,6 +441,16 @@ public interface Snapshot {
              */
             WithCreate withDiskAccessId(String diskAccessId);
         }
+        /** The stage of the Snapshot definition allowing to specify supportsHibernation. */
+        interface WithSupportsHibernation {
+            /**
+             * Specifies the supportsHibernation property: Indicates the OS on a snapshot supports hibernation..
+             *
+             * @param supportsHibernation Indicates the OS on a snapshot supports hibernation.
+             * @return the next definition stage.
+             */
+            WithCreate withSupportsHibernation(Boolean supportsHibernation);
+        }
     }
     /**
      * Begins update for the Snapshot resource.
@@ -450,7 +468,8 @@ public interface Snapshot {
             UpdateStages.WithEncryptionSettingsCollection,
             UpdateStages.WithEncryption,
             UpdateStages.WithNetworkAccessPolicy,
-            UpdateStages.WithDiskAccessId {
+            UpdateStages.WithDiskAccessId,
+            UpdateStages.WithSupportsHibernation {
         /**
          * Executes the update request.
          *
@@ -562,6 +581,16 @@ public interface Snapshot {
              * @return the next definition stage.
              */
             Update withDiskAccessId(String diskAccessId);
+        }
+        /** The stage of the Snapshot update allowing to specify supportsHibernation. */
+        interface WithSupportsHibernation {
+            /**
+             * Specifies the supportsHibernation property: Indicates the OS on a snapshot supports hibernation..
+             *
+             * @param supportsHibernation Indicates the OS on a snapshot supports hibernation.
+             * @return the next definition stage.
+             */
+            Update withSupportsHibernation(Boolean supportsHibernation);
         }
     }
     /**

@@ -20,11 +20,11 @@ public final class StreamingPoliciesImpl implements StreamingPolicies {
 
     private final StreamingPoliciesClient innerClient;
 
-    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager;
 
     public StreamingPoliciesImpl(
         StreamingPoliciesClient innerClient,
-        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
+        com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -190,7 +190,7 @@ public final class StreamingPoliciesImpl implements StreamingPolicies {
         return this.innerClient;
     }
 
-    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaServicesManager manager() {
         return this.serviceManager;
     }
 

@@ -17,11 +17,11 @@ import java.time.OffsetDateTime;
 public final class StreamingPolicyImpl implements StreamingPolicy, StreamingPolicy.Definition {
     private StreamingPolicyInner innerObject;
 
-    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager;
 
     StreamingPolicyImpl(
         StreamingPolicyInner innerObject,
-        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
+        com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -70,7 +70,7 @@ public final class StreamingPolicyImpl implements StreamingPolicy, StreamingPoli
         return this.innerObject;
     }
 
-    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaServicesManager manager() {
         return this.serviceManager;
     }
 
@@ -108,7 +108,7 @@ public final class StreamingPolicyImpl implements StreamingPolicy, StreamingPoli
     }
 
     StreamingPolicyImpl(
-        String name, com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
+        String name, com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = new StreamingPolicyInner();
         this.serviceManager = serviceManager;
         this.streamingPolicyName = name;

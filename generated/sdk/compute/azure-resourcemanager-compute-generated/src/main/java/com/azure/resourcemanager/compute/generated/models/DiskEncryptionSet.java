@@ -7,6 +7,7 @@ package com.azure.resourcemanager.compute.generated.models;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.DiskEncryptionSetInner;
+import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -85,6 +86,21 @@ public interface DiskEncryptionSet {
     String provisioningState();
 
     /**
+     * Gets the rotationToLatestKeyVersionEnabled property: Set this flag to true to enable auto-updating of this disk
+     * encryption set to the latest key version.
+     *
+     * @return the rotationToLatestKeyVersionEnabled value.
+     */
+    Boolean rotationToLatestKeyVersionEnabled();
+
+    /**
+     * Gets the lastKeyRotationTimestamp property: The time when the active key of this disk encryption set was updated.
+     *
+     * @return the lastKeyRotationTimestamp value.
+     */
+    OffsetDateTime lastKeyRotationTimestamp();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -153,7 +169,8 @@ public interface DiskEncryptionSet {
             extends DefinitionStages.WithTags,
                 DefinitionStages.WithIdentity,
                 DefinitionStages.WithEncryptionType,
-                DefinitionStages.WithActiveKey {
+                DefinitionStages.WithActiveKey,
+                DefinitionStages.WithRotationToLatestKeyVersionEnabled {
             /**
              * Executes the create request.
              *
@@ -211,6 +228,18 @@ public interface DiskEncryptionSet {
              */
             WithCreate withActiveKey(KeyForDiskEncryptionSet activeKey);
         }
+        /** The stage of the DiskEncryptionSet definition allowing to specify rotationToLatestKeyVersionEnabled. */
+        interface WithRotationToLatestKeyVersionEnabled {
+            /**
+             * Specifies the rotationToLatestKeyVersionEnabled property: Set this flag to true to enable auto-updating
+             * of this disk encryption set to the latest key version..
+             *
+             * @param rotationToLatestKeyVersionEnabled Set this flag to true to enable auto-updating of this disk
+             *     encryption set to the latest key version.
+             * @return the next definition stage.
+             */
+            WithCreate withRotationToLatestKeyVersionEnabled(Boolean rotationToLatestKeyVersionEnabled);
+        }
     }
     /**
      * Begins update for the DiskEncryptionSet resource.
@@ -220,7 +249,12 @@ public interface DiskEncryptionSet {
     DiskEncryptionSet.Update update();
 
     /** The template for DiskEncryptionSet update. */
-    interface Update extends UpdateStages.WithTags, UpdateStages.WithEncryptionType, UpdateStages.WithActiveKey {
+    interface Update
+        extends UpdateStages.WithTags,
+            UpdateStages.WithIdentity,
+            UpdateStages.WithEncryptionType,
+            UpdateStages.WithActiveKey,
+            UpdateStages.WithRotationToLatestKeyVersionEnabled {
         /**
          * Executes the update request.
          *
@@ -248,6 +282,18 @@ public interface DiskEncryptionSet {
              */
             Update withTags(Map<String, String> tags);
         }
+        /** The stage of the DiskEncryptionSet update allowing to specify identity. */
+        interface WithIdentity {
+            /**
+             * Specifies the identity property: The managed identity for the disk encryption set. It should be given
+             * permission on the key vault before it can be used to encrypt disks..
+             *
+             * @param identity The managed identity for the disk encryption set. It should be given permission on the
+             *     key vault before it can be used to encrypt disks.
+             * @return the next definition stage.
+             */
+            Update withIdentity(EncryptionSetIdentity identity);
+        }
         /** The stage of the DiskEncryptionSet update allowing to specify encryptionType. */
         interface WithEncryptionType {
             /**
@@ -268,6 +314,18 @@ public interface DiskEncryptionSet {
              * @return the next definition stage.
              */
             Update withActiveKey(KeyForDiskEncryptionSet activeKey);
+        }
+        /** The stage of the DiskEncryptionSet update allowing to specify rotationToLatestKeyVersionEnabled. */
+        interface WithRotationToLatestKeyVersionEnabled {
+            /**
+             * Specifies the rotationToLatestKeyVersionEnabled property: Set this flag to true to enable auto-updating
+             * of this disk encryption set to the latest key version..
+             *
+             * @param rotationToLatestKeyVersionEnabled Set this flag to true to enable auto-updating of this disk
+             *     encryption set to the latest key version.
+             * @return the next definition stage.
+             */
+            Update withRotationToLatestKeyVersionEnabled(Boolean rotationToLatestKeyVersionEnabled);
         }
     }
     /**

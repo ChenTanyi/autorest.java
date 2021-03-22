@@ -64,7 +64,8 @@ public interface Disk {
     List<String> managedByExtended();
 
     /**
-     * Gets the sku property: The disks sku name. Can be Standard_LRS, Premium_LRS, StandardSSD_LRS, or UltraSSD_LRS.
+     * Gets the sku property: The disks sku name. Can be Standard_LRS, Premium_LRS, StandardSSD_LRS, UltraSSD_LRS,
+     * Premium_ZRS, or StandardSSD_ZRS.
      *
      * @return the sku value.
      */
@@ -257,6 +258,27 @@ public interface Disk {
     Boolean burstingEnabled();
 
     /**
+     * Gets the propertyUpdatesInProgress property: Properties of the disk for which update is pending.
+     *
+     * @return the propertyUpdatesInProgress value.
+     */
+    PropertyUpdatesInProgress propertyUpdatesInProgress();
+
+    /**
+     * Gets the supportsHibernation property: Indicates the OS on a disk supports hibernation.
+     *
+     * @return the supportsHibernation value.
+     */
+    Boolean supportsHibernation();
+
+    /**
+     * Gets the securityProfile property: Contains the security related information for the resource.
+     *
+     * @return the securityProfile value.
+     */
+    DiskSecurityProfile securityProfile();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -341,7 +363,9 @@ public interface Disk {
                 DefinitionStages.WithNetworkAccessPolicy,
                 DefinitionStages.WithDiskAccessId,
                 DefinitionStages.WithTier,
-                DefinitionStages.WithBurstingEnabled {
+                DefinitionStages.WithBurstingEnabled,
+                DefinitionStages.WithSupportsHibernation,
+                DefinitionStages.WithSecurityProfile {
             /**
              * Executes the create request.
              *
@@ -370,10 +394,11 @@ public interface Disk {
         /** The stage of the Disk definition allowing to specify sku. */
         interface WithSku {
             /**
-             * Specifies the sku property: The disks sku name. Can be Standard_LRS, Premium_LRS, StandardSSD_LRS, or
-             * UltraSSD_LRS..
+             * Specifies the sku property: The disks sku name. Can be Standard_LRS, Premium_LRS, StandardSSD_LRS,
+             * UltraSSD_LRS, Premium_ZRS, or StandardSSD_ZRS..
              *
-             * @param sku The disks sku name. Can be Standard_LRS, Premium_LRS, StandardSSD_LRS, or UltraSSD_LRS.
+             * @param sku The disks sku name. Can be Standard_LRS, Premium_LRS, StandardSSD_LRS, UltraSSD_LRS,
+             *     Premium_ZRS, or StandardSSD_ZRS.
              * @return the next definition stage.
              */
             WithCreate withSku(DiskSku sku);
@@ -592,6 +617,26 @@ public interface Disk {
              */
             WithCreate withBurstingEnabled(Boolean burstingEnabled);
         }
+        /** The stage of the Disk definition allowing to specify supportsHibernation. */
+        interface WithSupportsHibernation {
+            /**
+             * Specifies the supportsHibernation property: Indicates the OS on a disk supports hibernation..
+             *
+             * @param supportsHibernation Indicates the OS on a disk supports hibernation.
+             * @return the next definition stage.
+             */
+            WithCreate withSupportsHibernation(Boolean supportsHibernation);
+        }
+        /** The stage of the Disk definition allowing to specify securityProfile. */
+        interface WithSecurityProfile {
+            /**
+             * Specifies the securityProfile property: Contains the security related information for the resource..
+             *
+             * @param securityProfile Contains the security related information for the resource.
+             * @return the next definition stage.
+             */
+            WithCreate withSecurityProfile(DiskSecurityProfile securityProfile);
+        }
     }
     /**
      * Begins update for the Disk resource.
@@ -617,7 +662,8 @@ public interface Disk {
             UpdateStages.WithDiskAccessId,
             UpdateStages.WithTier,
             UpdateStages.WithBurstingEnabled,
-            UpdateStages.WithPurchasePlan {
+            UpdateStages.WithPurchasePlan,
+            UpdateStages.WithSupportsHibernation {
         /**
          * Executes the update request.
          *
@@ -648,10 +694,11 @@ public interface Disk {
         /** The stage of the Disk update allowing to specify sku. */
         interface WithSku {
             /**
-             * Specifies the sku property: The disks sku name. Can be Standard_LRS, Premium_LRS, StandardSSD_LRS, or
-             * UltraSSD_LRS..
+             * Specifies the sku property: The disks sku name. Can be Standard_LRS, Premium_LRS, StandardSSD_LRS,
+             * UltraSSD_LRS, Premium_ZRS, or StandardSSD_ZRS..
              *
-             * @param sku The disks sku name. Can be Standard_LRS, Premium_LRS, StandardSSD_LRS, or UltraSSD_LRS.
+             * @param sku The disks sku name. Can be Standard_LRS, Premium_LRS, StandardSSD_LRS, UltraSSD_LRS,
+             *     Premium_ZRS, or StandardSSD_ZRS.
              * @return the next definition stage.
              */
             Update withSku(DiskSku sku);
@@ -822,6 +869,16 @@ public interface Disk {
              * @return the next definition stage.
              */
             Update withPurchasePlan(PurchasePlanAutoGenerated purchasePlan);
+        }
+        /** The stage of the Disk update allowing to specify supportsHibernation. */
+        interface WithSupportsHibernation {
+            /**
+             * Specifies the supportsHibernation property: Indicates the OS on a disk supports hibernation..
+             *
+             * @param supportsHibernation Indicates the OS on a disk supports hibernation.
+             * @return the next definition stage.
+             */
+            Update withSupportsHibernation(Boolean supportsHibernation);
         }
     }
     /**

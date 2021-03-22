@@ -15,11 +15,11 @@ import java.time.OffsetDateTime;
 public final class LiveOutputImpl implements LiveOutput, LiveOutput.Definition {
     private LiveOutputInner innerObject;
 
-    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager;
 
     LiveOutputImpl(
         LiveOutputInner innerObject,
-        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
+        com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -80,7 +80,7 @@ public final class LiveOutputImpl implements LiveOutput, LiveOutput.Definition {
         return this.innerObject;
     }
 
-    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaServicesManager manager() {
         return this.serviceManager;
     }
 
@@ -117,7 +117,7 @@ public final class LiveOutputImpl implements LiveOutput, LiveOutput.Definition {
         return this;
     }
 
-    LiveOutputImpl(String name, com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
+    LiveOutputImpl(String name, com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = new LiveOutputInner();
         this.serviceManager = serviceManager;
         this.liveOutputName = name;

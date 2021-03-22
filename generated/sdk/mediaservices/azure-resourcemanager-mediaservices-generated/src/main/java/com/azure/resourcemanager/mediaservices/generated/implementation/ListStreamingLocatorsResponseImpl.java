@@ -13,11 +13,11 @@ import java.util.List;
 public final class ListStreamingLocatorsResponseImpl implements ListStreamingLocatorsResponse {
     private ListStreamingLocatorsResponseInner innerObject;
 
-    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager;
 
     ListStreamingLocatorsResponseImpl(
         ListStreamingLocatorsResponseInner innerObject,
-        com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
+        com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
     }
@@ -35,7 +35,7 @@ public final class ListStreamingLocatorsResponseImpl implements ListStreamingLoc
         return this.innerObject;
     }
 
-    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaServicesManager manager() {
         return this.serviceManager;
     }
 }

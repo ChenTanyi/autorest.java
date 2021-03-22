@@ -127,7 +127,7 @@ public final class ProviderOperationsMetadatasClientImpl implements ProviderOper
                 context ->
                     service
                         .get(this.client.getEndpoint(), resourceProviderNamespace, apiVersion, expand, accept, context))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -270,7 +270,7 @@ public final class ProviderOperationsMetadatasClientImpl implements ProviderOper
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**
@@ -410,7 +410,7 @@ public final class ProviderOperationsMetadatasClientImpl implements ProviderOper
                         res.getValue().value(),
                         res.getValue().nextLink(),
                         null))
-            .subscriberContext(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext())));
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
     /**

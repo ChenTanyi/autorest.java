@@ -20,10 +20,10 @@ public final class JobsImpl implements Jobs {
 
     private final JobsClient innerClient;
 
-    private final com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager;
+    private final com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager;
 
     public JobsImpl(
-        JobsClient innerClient, com.azure.resourcemanager.mediaservices.generated.MediaservicesManager serviceManager) {
+        JobsClient innerClient, com.azure.resourcemanager.mediaservices.generated.MediaServicesManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
     }
@@ -225,7 +225,7 @@ public final class JobsImpl implements Jobs {
         return this.innerClient;
     }
 
-    private com.azure.resourcemanager.mediaservices.generated.MediaservicesManager manager() {
+    private com.azure.resourcemanager.mediaservices.generated.MediaServicesManager manager() {
         return this.serviceManager;
     }
 
