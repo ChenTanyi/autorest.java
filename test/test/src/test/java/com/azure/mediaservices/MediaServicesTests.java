@@ -5,7 +5,7 @@ import com.azure.core.http.policy.HttpLogDetailLevel;
 import com.azure.core.http.policy.HttpLogOptions;
 import com.azure.core.management.Region;
 import com.azure.core.management.exception.ManagementException;
-import com.azure.resourcemanager.mediaservices.generated.MediaservicesManager;
+import com.azure.resourcemanager.mediaservices.generated.MediaServicesManager;
 import com.azure.resourcemanager.mediaservices.generated.models.MediaService;
 import com.azure.resourcemanager.mediaservices.generated.models.StorageAccount;
 import com.azure.resourcemanager.mediaservices.generated.models.StorageAccountType;
@@ -41,7 +41,7 @@ public class MediaServicesTests extends Base {
                 .withKind(Kind.STORAGE)
                 .create();
 
-        MediaservicesManager mediaservicesManager = MediaservicesManager.configure()
+        MediaServicesManager mediaservicesManager = MediaServicesManager.configure()
                 .withHttpClient(client)
                 .withLogOptions(new HttpLogOptions().setLogLevel(HttpLogDetailLevel.BODY_AND_HEADERS))
                 .authenticate(credential, profile);
