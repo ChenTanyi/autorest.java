@@ -126,6 +126,14 @@ public class SearchServiceUpdate extends ProxyResource {
     private ProvisioningState provisioningState;
 
     /*
+     * Details related to encrypting resources (.i.e. index, indexer, skillset,
+     * synonym map and debug session) with customer managed keys by the Azure
+     * Cognitive Search service.
+     */
+    @JsonProperty(value = "properties.encryptionWithCmk")
+    private EncryptionWithCmk encryptionWithCmk;
+
+    /*
      * Network specific rules that determine how the Azure Cognitive Search
      * service may be reached.
      */
@@ -370,6 +378,28 @@ public class SearchServiceUpdate extends ProxyResource {
     }
 
     /**
+     * Get the encryptionWithCmk property: Details related to encrypting resources (.i.e. index, indexer, skillset,
+     * synonym map and debug session) with customer managed keys by the Azure Cognitive Search service.
+     *
+     * @return the encryptionWithCmk value.
+     */
+    public EncryptionWithCmk encryptionWithCmk() {
+        return this.encryptionWithCmk;
+    }
+
+    /**
+     * Set the encryptionWithCmk property: Details related to encrypting resources (.i.e. index, indexer, skillset,
+     * synonym map and debug session) with customer managed keys by the Azure Cognitive Search service.
+     *
+     * @param encryptionWithCmk the encryptionWithCmk value to set.
+     * @return the SearchServiceUpdate object itself.
+     */
+    public SearchServiceUpdate withEncryptionWithCmk(EncryptionWithCmk encryptionWithCmk) {
+        this.encryptionWithCmk = encryptionWithCmk;
+        return this;
+    }
+
+    /**
      * Get the networkRuleSet property: Network specific rules that determine how the Azure Cognitive Search service may
      * be reached.
      *
@@ -422,6 +452,9 @@ public class SearchServiceUpdate extends ProxyResource {
         }
         if (identity() != null) {
             identity().validate();
+        }
+        if (encryptionWithCmk() != null) {
+            encryptionWithCmk().validate();
         }
         if (networkRuleSet() != null) {
             networkRuleSet().validate();

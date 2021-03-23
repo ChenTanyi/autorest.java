@@ -152,7 +152,7 @@ public interface Subnet {
      *
      * @return the privateEndpointNetworkPolicies value.
      */
-    String privateEndpointNetworkPolicies();
+    VirtualNetworkPrivateEndpointNetworkPolicies privateEndpointNetworkPolicies();
 
     /**
      * Gets the privateLinkServiceNetworkPolicies property: Enable or Disable apply network policies on private link
@@ -160,7 +160,7 @@ public interface Subnet {
      *
      * @return the privateLinkServiceNetworkPolicies value.
      */
-    String privateLinkServiceNetworkPolicies();
+    VirtualNetworkPrivateLinkServiceNetworkPolicies privateLinkServiceNetworkPolicies();
 
     /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.SubnetInner object.

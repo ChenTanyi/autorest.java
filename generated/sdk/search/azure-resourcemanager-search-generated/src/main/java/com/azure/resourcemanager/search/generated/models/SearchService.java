@@ -135,6 +135,14 @@ public interface SearchService {
     ProvisioningState provisioningState();
 
     /**
+     * Gets the encryptionWithCmk property: Details related to encrypting resources (.i.e. index, indexer, skillset,
+     * synonym map and debug session) with customer managed keys by the Azure Cognitive Search service.
+     *
+     * @return the encryptionWithCmk value.
+     */
+    EncryptionWithCmk encryptionWithCmk();
+
+    /**
      * Gets the networkRuleSet property: Network specific rules that determine how the Azure Cognitive Search service
      * may be reached.
      *
@@ -232,6 +240,7 @@ public interface SearchService {
                 DefinitionStages.WithPartitionCount,
                 DefinitionStages.WithHostingMode,
                 DefinitionStages.WithPublicNetworkAccess,
+                DefinitionStages.WithEncryptionWithCmk,
                 DefinitionStages.WithNetworkRuleSet,
                 DefinitionStages.WithClientRequestId {
             /**
@@ -337,6 +346,19 @@ public interface SearchService {
              */
             WithCreate withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
         }
+        /** The stage of the SearchService definition allowing to specify encryptionWithCmk. */
+        interface WithEncryptionWithCmk {
+            /**
+             * Specifies the encryptionWithCmk property: Details related to encrypting resources (.i.e. index, indexer,
+             * skillset, synonym map and debug session) with customer managed keys by the Azure Cognitive Search
+             * service. .
+             *
+             * @param encryptionWithCmk Details related to encrypting resources (.i.e. index, indexer, skillset, synonym
+             *     map and debug session) with customer managed keys by the Azure Cognitive Search service.
+             * @return the next definition stage.
+             */
+            WithCreate withEncryptionWithCmk(EncryptionWithCmk encryptionWithCmk);
+        }
         /** The stage of the SearchService definition allowing to specify networkRuleSet. */
         interface WithNetworkRuleSet {
             /**
@@ -378,6 +400,7 @@ public interface SearchService {
             UpdateStages.WithPartitionCount,
             UpdateStages.WithHostingMode,
             UpdateStages.WithPublicNetworkAccess,
+            UpdateStages.WithEncryptionWithCmk,
             UpdateStages.WithNetworkRuleSet,
             UpdateStages.WithClientRequestId {
         /**
@@ -484,6 +507,19 @@ public interface SearchService {
              * @return the next definition stage.
              */
             Update withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
+        }
+        /** The stage of the SearchService update allowing to specify encryptionWithCmk. */
+        interface WithEncryptionWithCmk {
+            /**
+             * Specifies the encryptionWithCmk property: Details related to encrypting resources (.i.e. index, indexer,
+             * skillset, synonym map and debug session) with customer managed keys by the Azure Cognitive Search
+             * service. .
+             *
+             * @param encryptionWithCmk Details related to encrypting resources (.i.e. index, indexer, skillset, synonym
+             *     map and debug session) with customer managed keys by the Azure Cognitive Search service.
+             * @return the next definition stage.
+             */
+            Update withEncryptionWithCmk(EncryptionWithCmk encryptionWithCmk);
         }
         /** The stage of the SearchService update allowing to specify networkRuleSet. */
         interface WithNetworkRuleSet {

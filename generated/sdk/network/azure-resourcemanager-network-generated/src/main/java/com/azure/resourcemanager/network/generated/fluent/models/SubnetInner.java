@@ -13,6 +13,8 @@ import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.ResourceNavigationLink;
 import com.azure.resourcemanager.network.generated.models.ServiceAssociationLink;
 import com.azure.resourcemanager.network.generated.models.ServiceEndpointPropertiesFormat;
+import com.azure.resourcemanager.network.generated.models.VirtualNetworkPrivateEndpointNetworkPolicies;
+import com.azure.resourcemanager.network.generated.models.VirtualNetworkPrivateLinkServiceNetworkPolicies;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -139,14 +141,14 @@ public class SubnetInner extends SubResource {
      * subnet.
      */
     @JsonProperty(value = "properties.privateEndpointNetworkPolicies")
-    private String privateEndpointNetworkPolicies;
+    private VirtualNetworkPrivateEndpointNetworkPolicies privateEndpointNetworkPolicies;
 
     /*
      * Enable or Disable apply network policies on private link service in the
      * subnet.
      */
     @JsonProperty(value = "properties.privateLinkServiceNetworkPolicies")
-    private String privateLinkServiceNetworkPolicies;
+    private VirtualNetworkPrivateLinkServiceNetworkPolicies privateLinkServiceNetworkPolicies;
 
     /**
      * Get the name property: The name of the resource that is unique within a resource group. This name can be used to
@@ -430,7 +432,7 @@ public class SubnetInner extends SubResource {
      *
      * @return the privateEndpointNetworkPolicies value.
      */
-    public String privateEndpointNetworkPolicies() {
+    public VirtualNetworkPrivateEndpointNetworkPolicies privateEndpointNetworkPolicies() {
         return this.privateEndpointNetworkPolicies;
     }
 
@@ -441,7 +443,8 @@ public class SubnetInner extends SubResource {
      * @param privateEndpointNetworkPolicies the privateEndpointNetworkPolicies value to set.
      * @return the SubnetInner object itself.
      */
-    public SubnetInner withPrivateEndpointNetworkPolicies(String privateEndpointNetworkPolicies) {
+    public SubnetInner withPrivateEndpointNetworkPolicies(
+        VirtualNetworkPrivateEndpointNetworkPolicies privateEndpointNetworkPolicies) {
         this.privateEndpointNetworkPolicies = privateEndpointNetworkPolicies;
         return this;
     }
@@ -452,7 +455,7 @@ public class SubnetInner extends SubResource {
      *
      * @return the privateLinkServiceNetworkPolicies value.
      */
-    public String privateLinkServiceNetworkPolicies() {
+    public VirtualNetworkPrivateLinkServiceNetworkPolicies privateLinkServiceNetworkPolicies() {
         return this.privateLinkServiceNetworkPolicies;
     }
 
@@ -463,7 +466,8 @@ public class SubnetInner extends SubResource {
      * @param privateLinkServiceNetworkPolicies the privateLinkServiceNetworkPolicies value to set.
      * @return the SubnetInner object itself.
      */
-    public SubnetInner withPrivateLinkServiceNetworkPolicies(String privateLinkServiceNetworkPolicies) {
+    public SubnetInner withPrivateLinkServiceNetworkPolicies(
+        VirtualNetworkPrivateLinkServiceNetworkPolicies privateLinkServiceNetworkPolicies) {
         this.privateLinkServiceNetworkPolicies = privateLinkServiceNetworkPolicies;
         return this;
     }

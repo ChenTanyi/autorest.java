@@ -24,6 +24,8 @@ import com.azure.resourcemanager.network.generated.models.ServiceAssociationLink
 import com.azure.resourcemanager.network.generated.models.ServiceEndpointPolicy;
 import com.azure.resourcemanager.network.generated.models.ServiceEndpointPropertiesFormat;
 import com.azure.resourcemanager.network.generated.models.Subnet;
+import com.azure.resourcemanager.network.generated.models.VirtualNetworkPrivateEndpointNetworkPolicies;
+import com.azure.resourcemanager.network.generated.models.VirtualNetworkPrivateLinkServiceNetworkPolicies;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -194,11 +196,11 @@ public final class SubnetImpl implements Subnet {
         return this.innerModel().provisioningState();
     }
 
-    public String privateEndpointNetworkPolicies() {
+    public VirtualNetworkPrivateEndpointNetworkPolicies privateEndpointNetworkPolicies() {
         return this.innerModel().privateEndpointNetworkPolicies();
     }
 
-    public String privateLinkServiceNetworkPolicies() {
+    public VirtualNetworkPrivateLinkServiceNetworkPolicies privateLinkServiceNetworkPolicies() {
         return this.innerModel().privateLinkServiceNetworkPolicies();
     }
 
