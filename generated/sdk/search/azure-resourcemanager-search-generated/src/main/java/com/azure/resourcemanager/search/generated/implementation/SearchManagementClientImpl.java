@@ -227,7 +227,7 @@ public final class SearchManagementClientImpl implements SearchManagementClient 
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
-        this.apiVersion = "2021-01-04";
+        this.apiVersion = "2020-08-01";
         this.operations = new OperationsClientImpl(this);
         this.adminKeys = new AdminKeysClientImpl(this);
         this.queryKeys = new QueryKeysClientImpl(this);

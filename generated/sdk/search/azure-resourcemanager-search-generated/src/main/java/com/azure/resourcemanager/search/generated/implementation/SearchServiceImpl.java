@@ -9,7 +9,6 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.search.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.search.generated.fluent.models.SearchServiceInner;
 import com.azure.resourcemanager.search.generated.fluent.models.SharedPrivateLinkResourceInner;
-import com.azure.resourcemanager.search.generated.models.EncryptionWithCmk;
 import com.azure.resourcemanager.search.generated.models.HostingMode;
 import com.azure.resourcemanager.search.generated.models.Identity;
 import com.azure.resourcemanager.search.generated.models.NetworkRuleSet;
@@ -91,10 +90,6 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
 
     public ProvisioningState provisioningState() {
         return this.innerModel().provisioningState();
-    }
-
-    public EncryptionWithCmk encryptionWithCmk() {
-        return this.innerModel().encryptionWithCmk();
     }
 
     public NetworkRuleSet networkRuleSet() {
@@ -322,16 +317,6 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
             return this;
         } else {
             this.updateServiceParam.withPublicNetworkAccess(publicNetworkAccess);
-            return this;
-        }
-    }
-
-    public SearchServiceImpl withEncryptionWithCmk(EncryptionWithCmk encryptionWithCmk) {
-        if (isInCreateMode()) {
-            this.innerModel().withEncryptionWithCmk(encryptionWithCmk);
-            return this;
-        } else {
-            this.updateServiceParam.withEncryptionWithCmk(encryptionWithCmk);
             return this;
         }
     }
