@@ -147,6 +147,27 @@ public interface StorageAccount {
     CustomDomain customDomain();
 
     /**
+     * Gets the sasPolicy property: SasPolicy assigned to the storage account.
+     *
+     * @return the sasPolicy value.
+     */
+    SasPolicy sasPolicy();
+
+    /**
+     * Gets the keyPolicy property: KeyPolicy assigned to the storage account.
+     *
+     * @return the keyPolicy value.
+     */
+    KeyPolicy keyPolicy();
+
+    /**
+     * Gets the keyCreationTime property: Gets the list of storage account keys creation time.
+     *
+     * @return the keyCreationTime value.
+     */
+    Map<String, OffsetDateTime> keyCreationTime();
+
+    /**
      * Gets the secondaryEndpoints property: Gets the URLs that are used to perform a retrieval of a public blob, queue,
      * or table object from the secondary location of the storage account. Only available if the SKU name is
      * Standard_RAGRS.
@@ -376,6 +397,8 @@ public interface StorageAccount {
             extends DefinitionStages.WithTags,
                 DefinitionStages.WithExtendedLocation,
                 DefinitionStages.WithIdentity,
+                DefinitionStages.WithSasPolicy,
+                DefinitionStages.WithKeyPolicy,
                 DefinitionStages.WithCustomDomain,
                 DefinitionStages.WithEncryption,
                 DefinitionStages.WithNetworkRuleSet,
@@ -443,6 +466,26 @@ public interface StorageAccount {
              * @return the next definition stage.
              */
             WithCreate withIdentity(Identity identity);
+        }
+        /** The stage of the StorageAccount definition allowing to specify sasPolicy. */
+        interface WithSasPolicy {
+            /**
+             * Specifies the sasPolicy property: SasPolicy assigned to the storage account..
+             *
+             * @param sasPolicy SasPolicy assigned to the storage account.
+             * @return the next definition stage.
+             */
+            WithCreate withSasPolicy(SasPolicy sasPolicy);
+        }
+        /** The stage of the StorageAccount definition allowing to specify keyPolicy. */
+        interface WithKeyPolicy {
+            /**
+             * Specifies the keyPolicy property: KeyPolicy assigned to the storage account..
+             *
+             * @param keyPolicy KeyPolicy assigned to the storage account.
+             * @return the next definition stage.
+             */
+            WithCreate withKeyPolicy(KeyPolicy keyPolicy);
         }
         /** The stage of the StorageAccount definition allowing to specify customDomain. */
         interface WithCustomDomain {
@@ -617,6 +660,8 @@ public interface StorageAccount {
             UpdateStages.WithKind,
             UpdateStages.WithCustomDomain,
             UpdateStages.WithEncryption,
+            UpdateStages.WithSasPolicy,
+            UpdateStages.WithKeyPolicy,
             UpdateStages.WithAccessTier,
             UpdateStages.WithAzureFilesIdentityBasedAuthentication,
             UpdateStages.WithEnableHttpsTrafficOnly,
@@ -718,6 +763,26 @@ public interface StorageAccount {
              * @return the next definition stage.
              */
             Update withEncryption(Encryption encryption);
+        }
+        /** The stage of the StorageAccount update allowing to specify sasPolicy. */
+        interface WithSasPolicy {
+            /**
+             * Specifies the sasPolicy property: SasPolicy assigned to the storage account..
+             *
+             * @param sasPolicy SasPolicy assigned to the storage account.
+             * @return the next definition stage.
+             */
+            Update withSasPolicy(SasPolicy sasPolicy);
+        }
+        /** The stage of the StorageAccount update allowing to specify keyPolicy. */
+        interface WithKeyPolicy {
+            /**
+             * Specifies the keyPolicy property: KeyPolicy assigned to the storage account..
+             *
+             * @param keyPolicy KeyPolicy assigned to the storage account.
+             * @return the next definition stage.
+             */
+            Update withKeyPolicy(KeyPolicy keyPolicy);
         }
         /** The stage of the StorageAccount update allowing to specify accessTier. */
         interface WithAccessTier {

@@ -22,6 +22,7 @@ import com.azure.resourcemanager.storage.generated.models.Endpoints;
 import com.azure.resourcemanager.storage.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.storage.generated.models.GeoReplicationStats;
 import com.azure.resourcemanager.storage.generated.models.Identity;
+import com.azure.resourcemanager.storage.generated.models.KeyPolicy;
 import com.azure.resourcemanager.storage.generated.models.Kind;
 import com.azure.resourcemanager.storage.generated.models.LargeFileSharesState;
 import com.azure.resourcemanager.storage.generated.models.ListAccountSasResponse;
@@ -32,6 +33,7 @@ import com.azure.resourcemanager.storage.generated.models.NetworkRuleSet;
 import com.azure.resourcemanager.storage.generated.models.PrivateEndpointConnection;
 import com.azure.resourcemanager.storage.generated.models.ProvisioningState;
 import com.azure.resourcemanager.storage.generated.models.RoutingPreference;
+import com.azure.resourcemanager.storage.generated.models.SasPolicy;
 import com.azure.resourcemanager.storage.generated.models.ServiceSasParameters;
 import com.azure.resourcemanager.storage.generated.models.Sku;
 import com.azure.resourcemanager.storage.generated.models.StorageAccount;
@@ -126,6 +128,23 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
 
     public CustomDomain customDomain() {
         return this.innerModel().customDomain();
+    }
+
+    public SasPolicy sasPolicy() {
+        return this.innerModel().sasPolicy();
+    }
+
+    public KeyPolicy keyPolicy() {
+        return this.innerModel().keyPolicy();
+    }
+
+    public Map<String, OffsetDateTime> keyCreationTime() {
+        Map<String, OffsetDateTime> inner = this.innerModel().keyCreationTime();
+        if (inner != null) {
+            return Collections.unmodifiableMap(inner);
+        } else {
+            return Collections.emptyMap();
+        }
     }
 
     public Endpoints secondaryEndpoints() {
@@ -438,6 +457,26 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
             return this;
         } else {
             this.updateParameters.withIdentity(identity);
+            return this;
+        }
+    }
+
+    public StorageAccountImpl withSasPolicy(SasPolicy sasPolicy) {
+        if (isInCreateMode()) {
+            this.createParameters.withSasPolicy(sasPolicy);
+            return this;
+        } else {
+            this.updateParameters.withSasPolicy(sasPolicy);
+            return this;
+        }
+    }
+
+    public StorageAccountImpl withKeyPolicy(KeyPolicy keyPolicy) {
+        if (isInCreateMode()) {
+            this.createParameters.withKeyPolicy(keyPolicy);
+            return this;
+        } else {
+            this.updateParameters.withKeyPolicy(keyPolicy);
             return this;
         }
     }
