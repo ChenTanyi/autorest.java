@@ -37,6 +37,7 @@ import com.azure.resourcemanager.compute.generated.fluent.models.GalleryInner;
 import com.azure.resourcemanager.compute.generated.models.ApiErrorException;
 import com.azure.resourcemanager.compute.generated.models.GalleryList;
 import com.azure.resourcemanager.compute.generated.models.GalleryUpdate;
+import com.azure.resourcemanager.compute.generated.models.SelectPermissions;
 import java.nio.ByteBuffer;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -113,6 +114,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
             @PathParam("resourceGroupName") String resourceGroupName,
             @PathParam("galleryName") String galleryName,
             @QueryParam("api-version") String apiVersion,
+            @QueryParam("$select") SelectPermissions select,
             @HeaderParam("Accept") String accept,
             Context context);
 
@@ -214,7 +216,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
         } else {
             gallery.validate();
         }
-        final String apiVersion = "2019-12-01";
+        final String apiVersion = "2020-09-30";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -272,7 +274,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
         } else {
             gallery.validate();
         }
-        final String apiVersion = "2019-12-01";
+        final String apiVersion = "2020-09-30";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -487,7 +489,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
         } else {
             gallery.validate();
         }
-        final String apiVersion = "2019-12-01";
+        final String apiVersion = "2020-09-30";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -545,7 +547,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
         } else {
             gallery.validate();
         }
-        final String apiVersion = "2019-12-01";
+        final String apiVersion = "2020-09-30";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -724,6 +726,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery.
+     * @param select The select expression to apply on the operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -731,7 +734,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<GalleryInner>> getByResourceGroupWithResponseAsync(
-        String resourceGroupName, String galleryName) {
+        String resourceGroupName, String galleryName, SelectPermissions select) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -751,7 +754,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
         if (galleryName == null) {
             return Mono.error(new IllegalArgumentException("Parameter galleryName is required and cannot be null."));
         }
-        final String apiVersion = "2019-12-01";
+        final String apiVersion = "2020-09-30";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -763,6 +766,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
                             resourceGroupName,
                             galleryName,
                             apiVersion,
+                            select,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -773,6 +777,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery.
+     * @param select The select expression to apply on the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -781,7 +786,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<GalleryInner>> getByResourceGroupWithResponseAsync(
-        String resourceGroupName, String galleryName, Context context) {
+        String resourceGroupName, String galleryName, SelectPermissions select, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -801,7 +806,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
         if (galleryName == null) {
             return Mono.error(new IllegalArgumentException("Parameter galleryName is required and cannot be null."));
         }
-        final String apiVersion = "2019-12-01";
+        final String apiVersion = "2020-09-30";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -811,8 +816,34 @@ public final class GalleriesClientImpl implements GalleriesClient {
                 resourceGroupName,
                 galleryName,
                 apiVersion,
+                select,
                 accept,
                 context);
+    }
+
+    /**
+     * Retrieves information about a Shared Image Gallery.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param galleryName The name of the Shared Image Gallery.
+     * @param select The select expression to apply on the operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ApiErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies information about the Shared Image Gallery that you want to create or update.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<GalleryInner> getByResourceGroupAsync(
+        String resourceGroupName, String galleryName, SelectPermissions select) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, galleryName, select)
+            .flatMap(
+                (Response<GalleryInner> res) -> {
+                    if (res.getValue() != null) {
+                        return Mono.just(res.getValue());
+                    } else {
+                        return Mono.empty();
+                    }
+                });
     }
 
     /**
@@ -827,7 +858,8 @@ public final class GalleriesClientImpl implements GalleriesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<GalleryInner> getByResourceGroupAsync(String resourceGroupName, String galleryName) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, galleryName)
+        final SelectPermissions select = null;
+        return getByResourceGroupWithResponseAsync(resourceGroupName, galleryName, select)
             .flatMap(
                 (Response<GalleryInner> res) -> {
                     if (res.getValue() != null) {
@@ -850,7 +882,8 @@ public final class GalleriesClientImpl implements GalleriesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public GalleryInner getByResourceGroup(String resourceGroupName, String galleryName) {
-        return getByResourceGroupAsync(resourceGroupName, galleryName).block();
+        final SelectPermissions select = null;
+        return getByResourceGroupAsync(resourceGroupName, galleryName, select).block();
     }
 
     /**
@@ -858,6 +891,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
      *
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Image Gallery.
+     * @param select The select expression to apply on the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -866,8 +900,8 @@ public final class GalleriesClientImpl implements GalleriesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<GalleryInner> getByResourceGroupWithResponse(
-        String resourceGroupName, String galleryName, Context context) {
-        return getByResourceGroupWithResponseAsync(resourceGroupName, galleryName, context).block();
+        String resourceGroupName, String galleryName, SelectPermissions select, Context context) {
+        return getByResourceGroupWithResponseAsync(resourceGroupName, galleryName, select, context).block();
     }
 
     /**
@@ -901,7 +935,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
         if (galleryName == null) {
             return Mono.error(new IllegalArgumentException("Parameter galleryName is required and cannot be null."));
         }
-        final String apiVersion = "2019-12-01";
+        final String apiVersion = "2020-09-30";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -951,7 +985,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
         if (galleryName == null) {
             return Mono.error(new IllegalArgumentException("Parameter galleryName is required and cannot be null."));
         }
-        final String apiVersion = "2019-12-01";
+        final String apiVersion = "2020-09-30";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1125,7 +1159,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2019-12-01";
+        final String apiVersion = "2020-09-30";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1179,7 +1213,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2019-12-01";
+        final String apiVersion = "2020-09-30";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1284,7 +1318,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2019-12-01";
+        final String apiVersion = "2020-09-30";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1326,7 +1360,7 @@ public final class GalleriesClientImpl implements GalleriesClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2019-12-01";
+        final String apiVersion = "2020-09-30";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

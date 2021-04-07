@@ -39,11 +39,15 @@ import com.azure.resourcemanager.compute.generated.fluent.GalleryApplicationVers
 import com.azure.resourcemanager.compute.generated.fluent.GalleryApplicationsClient;
 import com.azure.resourcemanager.compute.generated.fluent.GalleryImageVersionsClient;
 import com.azure.resourcemanager.compute.generated.fluent.GalleryImagesClient;
+import com.azure.resourcemanager.compute.generated.fluent.GallerySharingProfilesClient;
 import com.azure.resourcemanager.compute.generated.fluent.ImagesClient;
 import com.azure.resourcemanager.compute.generated.fluent.LogAnalyticsClient;
 import com.azure.resourcemanager.compute.generated.fluent.OperationsClient;
 import com.azure.resourcemanager.compute.generated.fluent.ProximityPlacementGroupsClient;
 import com.azure.resourcemanager.compute.generated.fluent.ResourceSkusClient;
+import com.azure.resourcemanager.compute.generated.fluent.SharedGalleriesClient;
+import com.azure.resourcemanager.compute.generated.fluent.SharedGalleryImageVersionsClient;
+import com.azure.resourcemanager.compute.generated.fluent.SharedGalleryImagesClient;
 import com.azure.resourcemanager.compute.generated.fluent.SnapshotsClient;
 import com.azure.resourcemanager.compute.generated.fluent.SshPublicKeysClient;
 import com.azure.resourcemanager.compute.generated.fluent.UsagesClient;
@@ -535,6 +539,54 @@ public final class ComputeManagementClientImpl implements ComputeManagementClien
         return this.galleryApplicationVersions;
     }
 
+    /** The GallerySharingProfilesClient object to access its operations. */
+    private final GallerySharingProfilesClient gallerySharingProfiles;
+
+    /**
+     * Gets the GallerySharingProfilesClient object to access its operations.
+     *
+     * @return the GallerySharingProfilesClient object.
+     */
+    public GallerySharingProfilesClient getGallerySharingProfiles() {
+        return this.gallerySharingProfiles;
+    }
+
+    /** The SharedGalleriesClient object to access its operations. */
+    private final SharedGalleriesClient sharedGalleries;
+
+    /**
+     * Gets the SharedGalleriesClient object to access its operations.
+     *
+     * @return the SharedGalleriesClient object.
+     */
+    public SharedGalleriesClient getSharedGalleries() {
+        return this.sharedGalleries;
+    }
+
+    /** The SharedGalleryImagesClient object to access its operations. */
+    private final SharedGalleryImagesClient sharedGalleryImages;
+
+    /**
+     * Gets the SharedGalleryImagesClient object to access its operations.
+     *
+     * @return the SharedGalleryImagesClient object.
+     */
+    public SharedGalleryImagesClient getSharedGalleryImages() {
+        return this.sharedGalleryImages;
+    }
+
+    /** The SharedGalleryImageVersionsClient object to access its operations. */
+    private final SharedGalleryImageVersionsClient sharedGalleryImageVersions;
+
+    /**
+     * Gets the SharedGalleryImageVersionsClient object to access its operations.
+     *
+     * @return the SharedGalleryImageVersionsClient object.
+     */
+    public SharedGalleryImageVersionsClient getSharedGalleryImageVersions() {
+        return this.sharedGalleryImageVersions;
+    }
+
     /** The CloudServiceRoleInstancesClient object to access its operations. */
     private final CloudServiceRoleInstancesClient cloudServiceRoleInstances;
 
@@ -651,6 +703,10 @@ public final class ComputeManagementClientImpl implements ComputeManagementClien
         this.galleryImageVersions = new GalleryImageVersionsClientImpl(this);
         this.galleryApplications = new GalleryApplicationsClientImpl(this);
         this.galleryApplicationVersions = new GalleryApplicationVersionsClientImpl(this);
+        this.gallerySharingProfiles = new GallerySharingProfilesClientImpl(this);
+        this.sharedGalleries = new SharedGalleriesClientImpl(this);
+        this.sharedGalleryImages = new SharedGalleryImagesClientImpl(this);
+        this.sharedGalleryImageVersions = new SharedGalleryImageVersionsClientImpl(this);
         this.cloudServiceRoleInstances = new CloudServiceRoleInstancesClientImpl(this);
         this.cloudServiceRoles = new CloudServiceRolesClientImpl(this);
         this.cloudServices = new CloudServicesClientImpl(this);
