@@ -61,6 +61,8 @@ public class DataBoxEdgeTests extends Base {
         Assertions.assertTrue(device.tags().containsKey("key1"));
         Assertions.assertEquals("value1", updatedDevice.tags().get("key1"));
 
+        DataBoxEdgeDevice getDevice = dataBoxEdgeManager.devices().getByResourceGroup(deviceName, rgName);
+
         // delete device
         dataBoxEdgeManager.devices().deleteByResourceGroup(deviceName, rgName);
 

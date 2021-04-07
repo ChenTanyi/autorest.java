@@ -5,6 +5,7 @@ import com.azure.core.http.policy.HttpLogDetailLevel;
 import com.azure.core.http.policy.HttpLogOptions;
 import com.azure.core.management.Region;
 import com.azure.core.management.exception.ManagementException;
+import com.azure.core.util.CoreUtils;
 import com.azure.resourcemanager.network.generated.NetworkManager;
 import com.azure.resourcemanager.network.generated.models.NetworkSecurityGroup;
 import org.junit.jupiter.api.Assertions;
@@ -32,7 +33,7 @@ public class NetworkTests extends Base {
 
         Assertions.assertNotNull(networkSecurityGroup);
         Assertions.assertFalse(networkSecurityGroup.defaultSecurityRules().isEmpty());
-        Assertions.assertNull(networkSecurityGroup.tags());
+        Assertions.assertTrue(CoreUtils.isNullOrEmpty(networkSecurityGroup.tags()));
 
         // list nsg
         boolean foundNsg = false;
