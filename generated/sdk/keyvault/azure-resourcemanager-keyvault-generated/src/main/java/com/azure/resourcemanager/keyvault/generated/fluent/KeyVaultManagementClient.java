@@ -67,6 +67,27 @@ public interface KeyVaultManagementClient {
     PrivateLinkResourcesClient getPrivateLinkResources();
 
     /**
+     * Gets the ManagedHsmsClient object to access its operations.
+     *
+     * @return the ManagedHsmsClient object.
+     */
+    ManagedHsmsClient getManagedHsms();
+
+    /**
+     * Gets the MhsmPrivateEndpointConnectionsClient object to access its operations.
+     *
+     * @return the MhsmPrivateEndpointConnectionsClient object.
+     */
+    MhsmPrivateEndpointConnectionsClient getMhsmPrivateEndpointConnections();
+
+    /**
+     * Gets the MhsmPrivateLinkResourcesClient object to access its operations.
+     *
+     * @return the MhsmPrivateLinkResourcesClient object.
+     */
+    MhsmPrivateLinkResourcesClient getMhsmPrivateLinkResources();
+
+    /**
      * Gets the OperationsClient object to access its operations.
      *
      * @return the OperationsClient object.
@@ -74,9 +95,9 @@ public interface KeyVaultManagementClient {
     OperationsClient getOperations();
 
     /**
-     * Gets the KeysClient object to access its operations.
+     * Gets the SecretsClient object to access its operations.
      *
-     * @return the KeysClient object.
+     * @return the SecretsClient object.
      */
-    KeysClient getKeys();
+    SecretsClient getSecrets();
 }

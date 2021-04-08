@@ -32,7 +32,7 @@ public final class PrivateLinkServiceConnectionState {
      * updates on the consumer.
      */
     @JsonProperty(value = "actionsRequired")
-    private String actionsRequired;
+    private ActionsRequired actionsRequired;
 
     /**
      * Get the status property: Indicates whether the connection has been approved, rejected or removed by the key vault
@@ -82,7 +82,7 @@ public final class PrivateLinkServiceConnectionState {
      *
      * @return the actionsRequired value.
      */
-    public String actionsRequired() {
+    public ActionsRequired actionsRequired() {
         return this.actionsRequired;
     }
 
@@ -93,7 +93,7 @@ public final class PrivateLinkServiceConnectionState {
      * @param actionsRequired the actionsRequired value to set.
      * @return the PrivateLinkServiceConnectionState object itself.
      */
-    public PrivateLinkServiceConnectionState withActionsRequired(String actionsRequired) {
+    public PrivateLinkServiceConnectionState withActionsRequired(ActionsRequired actionsRequired) {
         this.actionsRequired = actionsRequired;
         return this;
     }

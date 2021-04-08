@@ -17,19 +17,6 @@ public class PrivateEndpointConnectionItem {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(PrivateEndpointConnectionItem.class);
 
     /*
-     * Id of private endpoint connection.
-     */
-    @JsonProperty(value = "id")
-    private String id;
-
-    /*
-     * Modified whenever there is a change in the state of private endpoint
-     * connection.
-     */
-    @JsonProperty(value = "etag")
-    private String etag;
-
-    /*
      * Properties of the private endpoint object.
      */
     @JsonProperty(value = "properties.privateEndpoint")
@@ -44,48 +31,8 @@ public class PrivateEndpointConnectionItem {
     /*
      * Provisioning state of the private endpoint connection.
      */
-    @JsonProperty(value = "properties.provisioningState", access = JsonProperty.Access.WRITE_ONLY)
+    @JsonProperty(value = "properties.provisioningState")
     private PrivateEndpointConnectionProvisioningState provisioningState;
-
-    /**
-     * Get the id property: Id of private endpoint connection.
-     *
-     * @return the id value.
-     */
-    public String id() {
-        return this.id;
-    }
-
-    /**
-     * Set the id property: Id of private endpoint connection.
-     *
-     * @param id the id value to set.
-     * @return the PrivateEndpointConnectionItem object itself.
-     */
-    public PrivateEndpointConnectionItem withId(String id) {
-        this.id = id;
-        return this;
-    }
-
-    /**
-     * Get the etag property: Modified whenever there is a change in the state of private endpoint connection.
-     *
-     * @return the etag value.
-     */
-    public String etag() {
-        return this.etag;
-    }
-
-    /**
-     * Set the etag property: Modified whenever there is a change in the state of private endpoint connection.
-     *
-     * @param etag the etag value to set.
-     * @return the PrivateEndpointConnectionItem object itself.
-     */
-    public PrivateEndpointConnectionItem withEtag(String etag) {
-        this.etag = etag;
-        return this;
-    }
 
     /**
      * Get the privateEndpoint property: Properties of the private endpoint object.
@@ -135,6 +82,18 @@ public class PrivateEndpointConnectionItem {
      */
     public PrivateEndpointConnectionProvisioningState provisioningState() {
         return this.provisioningState;
+    }
+
+    /**
+     * Set the provisioningState property: Provisioning state of the private endpoint connection.
+     *
+     * @param provisioningState the provisioningState value to set.
+     * @return the PrivateEndpointConnectionItem object itself.
+     */
+    public PrivateEndpointConnectionItem withProvisioningState(
+        PrivateEndpointConnectionProvisioningState provisioningState) {
+        this.provisioningState = provisioningState;
+        return this;
     }
 
     /**

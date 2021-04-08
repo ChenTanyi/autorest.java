@@ -161,11 +161,11 @@ public interface StorageAccount {
     KeyPolicy keyPolicy();
 
     /**
-     * Gets the keyCreationTime property: Gets the list of storage account keys creation time.
+     * Gets the keyCreationTime property: Storage account keys creation time.
      *
      * @return the keyCreationTime value.
      */
-    Map<String, OffsetDateTime> keyCreationTime();
+    KeyCreationTime keyCreationTime();
 
     /**
      * Gets the secondaryEndpoints property: Gets the URLs that are used to perform a retrieval of a public blob, queue,

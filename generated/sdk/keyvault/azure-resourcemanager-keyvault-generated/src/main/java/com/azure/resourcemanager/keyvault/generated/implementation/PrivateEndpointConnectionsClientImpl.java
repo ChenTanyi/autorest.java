@@ -19,6 +19,10 @@ import com.azure.core.annotation.ReturnType;
 import com.azure.core.annotation.ServiceInterface;
 import com.azure.core.annotation.ServiceMethod;
 import com.azure.core.annotation.UnexpectedResponseExceptionType;
+import com.azure.core.http.rest.PagedFlux;
+import com.azure.core.http.rest.PagedIterable;
+import com.azure.core.http.rest.PagedResponse;
+import com.azure.core.http.rest.PagedResponseBase;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
@@ -30,6 +34,7 @@ import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.keyvault.generated.fluent.PrivateEndpointConnectionsClient;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.PrivateEndpointConnectionInner;
+import com.azure.resourcemanager.keyvault.generated.models.PrivateEndpointConnectionListResult;
 import com.azure.resourcemanager.keyvault.generated.models.PrivateEndpointConnectionsPutResponse;
 import java.nio.ByteBuffer;
 import reactor.core.publisher.Flux;
@@ -111,6 +116,31 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
             @PathParam("vaultName") String vaultName,
             @PathParam("privateEndpointConnectionName") String privateEndpointConnectionName,
             @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults"
+                + "/{vaultName}/privateEndpointConnections")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<PrivateEndpointConnectionListResult>> listByResource(
+            @HostParam("$host") String endpoint,
+            @PathParam("subscriptionId") String subscriptionId,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("vaultName") String vaultName,
+            @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get("{nextLink}")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<PrivateEndpointConnectionListResult>> listByResourceNext(
+            @PathParam(value = "nextLink", encoded = true) String nextLink,
+            @HostParam("$host") String endpoint,
             @HeaderParam("Accept") String accept,
             Context context);
     }
@@ -761,5 +791,257 @@ public final class PrivateEndpointConnectionsClientImpl implements PrivateEndpoi
     public PrivateEndpointConnectionInner delete(
         String resourceGroupName, String vaultName, String privateEndpointConnectionName, Context context) {
         return deleteAsync(resourceGroupName, vaultName, privateEndpointConnectionName, context).block();
+    }
+
+    /**
+     * The List operation gets information about the private endpoint connections associated with the vault.
+     *
+     * @param resourceGroupName Name of the resource group that contains the key vault.
+     * @param vaultName The name of the key vault.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of private endpoint connections.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<PrivateEndpointConnectionInner>> listByResourceSinglePageAsync(
+        String resourceGroupName, String vaultName) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (vaultName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter vaultName is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .listByResource(
+                            this.client.getEndpoint(),
+                            this.client.getSubscriptionId(),
+                            resourceGroupName,
+                            vaultName,
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
+            .<PagedResponse<PrivateEndpointConnectionInner>>map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * The List operation gets information about the private endpoint connections associated with the vault.
+     *
+     * @param resourceGroupName Name of the resource group that contains the key vault.
+     * @param vaultName The name of the key vault.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of private endpoint connections.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<PrivateEndpointConnectionInner>> listByResourceSinglePageAsync(
+        String resourceGroupName, String vaultName, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (vaultName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter vaultName is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .listByResource(
+                this.client.getEndpoint(),
+                this.client.getSubscriptionId(),
+                resourceGroupName,
+                vaultName,
+                this.client.getApiVersion(),
+                accept,
+                context)
+            .map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null));
+    }
+
+    /**
+     * The List operation gets information about the private endpoint connections associated with the vault.
+     *
+     * @param resourceGroupName Name of the resource group that contains the key vault.
+     * @param vaultName The name of the key vault.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of private endpoint connections.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<PrivateEndpointConnectionInner> listByResourceAsync(String resourceGroupName, String vaultName) {
+        return new PagedFlux<>(
+            () -> listByResourceSinglePageAsync(resourceGroupName, vaultName),
+            nextLink -> listByResourceNextSinglePageAsync(nextLink));
+    }
+
+    /**
+     * The List operation gets information about the private endpoint connections associated with the vault.
+     *
+     * @param resourceGroupName Name of the resource group that contains the key vault.
+     * @param vaultName The name of the key vault.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of private endpoint connections.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<PrivateEndpointConnectionInner> listByResourceAsync(
+        String resourceGroupName, String vaultName, Context context) {
+        return new PagedFlux<>(
+            () -> listByResourceSinglePageAsync(resourceGroupName, vaultName, context),
+            nextLink -> listByResourceNextSinglePageAsync(nextLink, context));
+    }
+
+    /**
+     * The List operation gets information about the private endpoint connections associated with the vault.
+     *
+     * @param resourceGroupName Name of the resource group that contains the key vault.
+     * @param vaultName The name of the key vault.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of private endpoint connections.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    public PagedIterable<PrivateEndpointConnectionInner> listByResource(String resourceGroupName, String vaultName) {
+        return new PagedIterable<>(listByResourceAsync(resourceGroupName, vaultName));
+    }
+
+    /**
+     * The List operation gets information about the private endpoint connections associated with the vault.
+     *
+     * @param resourceGroupName Name of the resource group that contains the key vault.
+     * @param vaultName The name of the key vault.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of private endpoint connections.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    public PagedIterable<PrivateEndpointConnectionInner> listByResource(
+        String resourceGroupName, String vaultName, Context context) {
+        return new PagedIterable<>(listByResourceAsync(resourceGroupName, vaultName, context));
+    }
+
+    /**
+     * Get the next page of items.
+     *
+     * @param nextLink The nextLink parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of private endpoint connections.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<PrivateEndpointConnectionInner>> listByResourceNextSinglePageAsync(String nextLink) {
+        if (nextLink == null) {
+            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
+        }
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(context -> service.listByResourceNext(nextLink, this.client.getEndpoint(), accept, context))
+            .<PagedResponse<PrivateEndpointConnectionInner>>map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Get the next page of items.
+     *
+     * @param nextLink The nextLink parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of private endpoint connections.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<PrivateEndpointConnectionInner>> listByResourceNextSinglePageAsync(
+        String nextLink, Context context) {
+        if (nextLink == null) {
+            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
+        }
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .listByResourceNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null));
     }
 }

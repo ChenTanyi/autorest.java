@@ -43,7 +43,7 @@ public class PrivateEndpointConnectionInner extends Resource {
     /*
      * Provisioning state of the private endpoint connection.
      */
-    @JsonProperty(value = "properties.provisioningState", access = JsonProperty.Access.WRITE_ONLY)
+    @JsonProperty(value = "properties.provisioningState")
     private PrivateEndpointConnectionProvisioningState provisioningState;
 
     /**
@@ -114,6 +114,18 @@ public class PrivateEndpointConnectionInner extends Resource {
      */
     public PrivateEndpointConnectionProvisioningState provisioningState() {
         return this.provisioningState;
+    }
+
+    /**
+     * Set the provisioningState property: Provisioning state of the private endpoint connection.
+     *
+     * @param provisioningState the provisioningState value to set.
+     * @return the PrivateEndpointConnectionInner object itself.
+     */
+    public PrivateEndpointConnectionInner withProvisioningState(
+        PrivateEndpointConnectionProvisioningState provisioningState) {
+        this.provisioningState = provisioningState;
+        return this;
     }
 
     /** {@inheritDoc} */

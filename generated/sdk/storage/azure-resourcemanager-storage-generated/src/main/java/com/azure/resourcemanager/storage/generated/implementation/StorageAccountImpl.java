@@ -22,6 +22,7 @@ import com.azure.resourcemanager.storage.generated.models.Endpoints;
 import com.azure.resourcemanager.storage.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.storage.generated.models.GeoReplicationStats;
 import com.azure.resourcemanager.storage.generated.models.Identity;
+import com.azure.resourcemanager.storage.generated.models.KeyCreationTime;
 import com.azure.resourcemanager.storage.generated.models.KeyPolicy;
 import com.azure.resourcemanager.storage.generated.models.Kind;
 import com.azure.resourcemanager.storage.generated.models.LargeFileSharesState;
@@ -138,13 +139,8 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this.innerModel().keyPolicy();
     }
 
-    public Map<String, OffsetDateTime> keyCreationTime() {
-        Map<String, OffsetDateTime> inner = this.innerModel().keyCreationTime();
-        if (inner != null) {
-            return Collections.unmodifiableMap(inner);
-        } else {
-            return Collections.emptyMap();
-        }
+    public KeyCreationTime keyCreationTime() {
+        return this.innerModel().keyCreationTime();
     }
 
     public Endpoints secondaryEndpoints() {

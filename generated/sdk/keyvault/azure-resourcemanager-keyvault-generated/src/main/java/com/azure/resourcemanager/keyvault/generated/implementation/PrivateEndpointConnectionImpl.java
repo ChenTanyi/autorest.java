@@ -204,4 +204,10 @@ public final class PrivateEndpointConnectionImpl
         this.innerModel().withPrivateLinkServiceConnectionState(privateLinkServiceConnectionState);
         return this;
     }
+
+    public PrivateEndpointConnectionImpl withProvisioningState(
+        PrivateEndpointConnectionProvisioningState provisioningState) {
+        this.innerModel().withProvisioningState(provisioningState);
+        return this;
+    }
 }

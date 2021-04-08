@@ -144,7 +144,8 @@ public interface PrivateEndpointConnection {
             extends DefinitionStages.WithTags,
                 DefinitionStages.WithEtag,
                 DefinitionStages.WithPrivateEndpoint,
-                DefinitionStages.WithPrivateLinkServiceConnectionState {
+                DefinitionStages.WithPrivateLinkServiceConnectionState,
+                DefinitionStages.WithProvisioningState {
             /**
              * Executes the create request.
              *
@@ -204,6 +205,16 @@ public interface PrivateEndpointConnection {
             WithCreate withPrivateLinkServiceConnectionState(
                 PrivateLinkServiceConnectionState privateLinkServiceConnectionState);
         }
+        /** The stage of the PrivateEndpointConnection definition allowing to specify provisioningState. */
+        interface WithProvisioningState {
+            /**
+             * Specifies the provisioningState property: Provisioning state of the private endpoint connection..
+             *
+             * @param provisioningState Provisioning state of the private endpoint connection.
+             * @return the next definition stage.
+             */
+            WithCreate withProvisioningState(PrivateEndpointConnectionProvisioningState provisioningState);
+        }
     }
     /**
      * Begins update for the PrivateEndpointConnection resource.
@@ -217,7 +228,8 @@ public interface PrivateEndpointConnection {
         extends UpdateStages.WithTags,
             UpdateStages.WithEtag,
             UpdateStages.WithPrivateEndpoint,
-            UpdateStages.WithPrivateLinkServiceConnectionState {
+            UpdateStages.WithPrivateLinkServiceConnectionState,
+            UpdateStages.WithProvisioningState {
         /**
          * Executes the update request.
          *
@@ -276,6 +288,16 @@ public interface PrivateEndpointConnection {
              */
             Update withPrivateLinkServiceConnectionState(
                 PrivateLinkServiceConnectionState privateLinkServiceConnectionState);
+        }
+        /** The stage of the PrivateEndpointConnection update allowing to specify provisioningState. */
+        interface WithProvisioningState {
+            /**
+             * Specifies the provisioningState property: Provisioning state of the private endpoint connection..
+             *
+             * @param provisioningState Provisioning state of the private endpoint connection.
+             * @return the next definition stage.
+             */
+            Update withProvisioningState(PrivateEndpointConnectionProvisioningState provisioningState);
         }
     }
     /**

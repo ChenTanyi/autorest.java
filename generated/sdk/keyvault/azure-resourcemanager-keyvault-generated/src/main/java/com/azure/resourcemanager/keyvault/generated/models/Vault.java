@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.management.Region;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.VaultInner;
 import java.util.Map;
@@ -45,6 +46,13 @@ public interface Vault {
      * @return the tags value.
      */
     Map<String, String> tags();
+
+    /**
+     * Gets the systemData property: System metadata for the key vault.
+     *
+     * @return the systemData value.
+     */
+    SystemData systemData();
 
     /**
      * Gets the properties property: Properties of the vault.

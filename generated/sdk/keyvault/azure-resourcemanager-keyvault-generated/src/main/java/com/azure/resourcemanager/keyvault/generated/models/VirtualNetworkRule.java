@@ -21,13 +21,6 @@ public final class VirtualNetworkRule {
     @JsonProperty(value = "id", required = true)
     private String id;
 
-    /*
-     * Property to specify whether NRP will ignore the check if parent subnet
-     * has serviceEndpoints configured.
-     */
-    @JsonProperty(value = "ignoreMissingVnetServiceEndpoint")
-    private Boolean ignoreMissingVnetServiceEndpoint;
-
     /**
      * Get the id property: Full resource id of a vnet subnet, such as
      * '/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet/subnets/subnet1'.
@@ -47,28 +40,6 @@ public final class VirtualNetworkRule {
      */
     public VirtualNetworkRule withId(String id) {
         this.id = id;
-        return this;
-    }
-
-    /**
-     * Get the ignoreMissingVnetServiceEndpoint property: Property to specify whether NRP will ignore the check if
-     * parent subnet has serviceEndpoints configured.
-     *
-     * @return the ignoreMissingVnetServiceEndpoint value.
-     */
-    public Boolean ignoreMissingVnetServiceEndpoint() {
-        return this.ignoreMissingVnetServiceEndpoint;
-    }
-
-    /**
-     * Set the ignoreMissingVnetServiceEndpoint property: Property to specify whether NRP will ignore the check if
-     * parent subnet has serviceEndpoints configured.
-     *
-     * @param ignoreMissingVnetServiceEndpoint the ignoreMissingVnetServiceEndpoint value to set.
-     * @return the VirtualNetworkRule object itself.
-     */
-    public VirtualNetworkRule withIgnoreMissingVnetServiceEndpoint(Boolean ignoreMissingVnetServiceEndpoint) {
-        this.ignoreMissingVnetServiceEndpoint = ignoreMissingVnetServiceEndpoint;
         return this;
     }
 

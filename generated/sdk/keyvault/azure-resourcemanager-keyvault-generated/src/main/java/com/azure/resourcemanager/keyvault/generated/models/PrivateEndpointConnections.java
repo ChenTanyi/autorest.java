@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.keyvault.generated.models;
 
+import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 
@@ -64,6 +65,32 @@ public interface PrivateEndpointConnections {
      */
     PrivateEndpointConnection delete(
         String resourceGroupName, String vaultName, String privateEndpointConnectionName, Context context);
+
+    /**
+     * The List operation gets information about the private endpoint connections associated with the vault.
+     *
+     * @param resourceGroupName Name of the resource group that contains the key vault.
+     * @param vaultName The name of the key vault.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of private endpoint connections.
+     */
+    PagedIterable<PrivateEndpointConnection> listByResource(String resourceGroupName, String vaultName);
+
+    /**
+     * The List operation gets information about the private endpoint connections associated with the vault.
+     *
+     * @param resourceGroupName Name of the resource group that contains the key vault.
+     * @param vaultName The name of the key vault.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of private endpoint connections.
+     */
+    PagedIterable<PrivateEndpointConnection> listByResource(
+        String resourceGroupName, String vaultName, Context context);
 
     /**
      * Gets the specified private endpoint connection associated with the key vault.

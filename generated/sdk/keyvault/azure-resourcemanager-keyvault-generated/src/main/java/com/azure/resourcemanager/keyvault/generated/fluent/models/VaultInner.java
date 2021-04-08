@@ -6,6 +6,7 @@ package com.azure.resourcemanager.keyvault.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.keyvault.generated.models.VaultProperties;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -18,10 +19,25 @@ public final class VaultInner extends Resource {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(VaultInner.class);
 
     /*
+     * System metadata for the key vault.
+     */
+    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
+    private SystemData systemData;
+
+    /*
      * Properties of the vault
      */
     @JsonProperty(value = "properties", required = true)
     private VaultProperties properties;
+
+    /**
+     * Get the systemData property: System metadata for the key vault.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
+    }
 
     /**
      * Get the properties property: Properties of the vault.

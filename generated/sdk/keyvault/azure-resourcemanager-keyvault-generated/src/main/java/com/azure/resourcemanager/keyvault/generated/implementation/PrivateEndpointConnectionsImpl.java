@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.keyvault.generated.implementation;
 
+import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
@@ -74,6 +75,19 @@ public final class PrivateEndpointConnectionsImpl implements PrivateEndpointConn
         } else {
             return null;
         }
+    }
+
+    public PagedIterable<PrivateEndpointConnection> listByResource(String resourceGroupName, String vaultName) {
+        PagedIterable<PrivateEndpointConnectionInner> inner =
+            this.serviceClient().listByResource(resourceGroupName, vaultName);
+        return Utils.mapPage(inner, inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<PrivateEndpointConnection> listByResource(
+        String resourceGroupName, String vaultName, Context context) {
+        PagedIterable<PrivateEndpointConnectionInner> inner =
+            this.serviceClient().listByResource(resourceGroupName, vaultName, context);
+        return Utils.mapPage(inner, inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()));
     }
 
     public PrivateEndpointConnection getById(String id) {

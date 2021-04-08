@@ -9,13 +9,13 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-/** The object attributes managed by the Azure Key Vault service. */
+/** The object attributes managed by the KeyVault service. */
 @Fluent
 public class Attributes {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(Attributes.class);
 
     /*
-     * Determines whether or not the object is enabled.
+     * Determines whether the object is enabled.
      */
     @JsonProperty(value = "enabled")
     private Boolean enabled;
@@ -44,17 +44,8 @@ public class Attributes {
     @JsonProperty(value = "updated", access = JsonProperty.Access.WRITE_ONLY)
     private Long updated;
 
-    /*
-     * The deletion recovery level currently in effect for the object. If it
-     * contains 'Purgeable', then the object can be permanently deleted by a
-     * privileged user; otherwise, only the system can purge the object at the
-     * end of the retention interval.
-     */
-    @JsonProperty(value = "recoveryLevel", access = JsonProperty.Access.WRITE_ONLY)
-    private DeletionRecoveryLevel recoveryLevel;
-
     /**
-     * Get the enabled property: Determines whether or not the object is enabled.
+     * Get the enabled property: Determines whether the object is enabled.
      *
      * @return the enabled value.
      */
@@ -63,7 +54,7 @@ public class Attributes {
     }
 
     /**
-     * Set the enabled property: Determines whether or not the object is enabled.
+     * Set the enabled property: Determines whether the object is enabled.
      *
      * @param enabled the enabled value to set.
      * @return the Attributes object itself.
@@ -129,17 +120,6 @@ public class Attributes {
      */
     public Long updated() {
         return this.updated;
-    }
-
-    /**
-     * Get the recoveryLevel property: The deletion recovery level currently in effect for the object. If it contains
-     * 'Purgeable', then the object can be permanently deleted by a privileged user; otherwise, only the system can
-     * purge the object at the end of the retention interval.
-     *
-     * @return the recoveryLevel value.
-     */
-    public DeletionRecoveryLevel recoveryLevel() {
-        return this.recoveryLevel;
     }
 
     /**

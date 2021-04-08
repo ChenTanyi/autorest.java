@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.keyvault.generated.implementation;
 
 import com.azure.core.management.Region;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.VaultInner;
 import com.azure.resourcemanager.keyvault.generated.models.Vault;
@@ -43,6 +44,10 @@ public final class VaultImpl implements Vault, Vault.Definition, Vault.Update {
         } else {
             return Collections.emptyMap();
         }
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public VaultProperties properties() {

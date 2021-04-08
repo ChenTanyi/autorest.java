@@ -22,10 +22,13 @@ import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.serializer.SerializerAdapter;
 import com.azure.core.util.serializer.SerializerEncoding;
 import com.azure.resourcemanager.keyvault.generated.fluent.KeyVaultManagementClient;
-import com.azure.resourcemanager.keyvault.generated.fluent.KeysClient;
+import com.azure.resourcemanager.keyvault.generated.fluent.ManagedHsmsClient;
+import com.azure.resourcemanager.keyvault.generated.fluent.MhsmPrivateEndpointConnectionsClient;
+import com.azure.resourcemanager.keyvault.generated.fluent.MhsmPrivateLinkResourcesClient;
 import com.azure.resourcemanager.keyvault.generated.fluent.OperationsClient;
 import com.azure.resourcemanager.keyvault.generated.fluent.PrivateEndpointConnectionsClient;
 import com.azure.resourcemanager.keyvault.generated.fluent.PrivateLinkResourcesClient;
+import com.azure.resourcemanager.keyvault.generated.fluent.SecretsClient;
 import com.azure.resourcemanager.keyvault.generated.fluent.VaultsClient;
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -154,6 +157,42 @@ public final class KeyVaultManagementClientImpl implements KeyVaultManagementCli
         return this.privateLinkResources;
     }
 
+    /** The ManagedHsmsClient object to access its operations. */
+    private final ManagedHsmsClient managedHsms;
+
+    /**
+     * Gets the ManagedHsmsClient object to access its operations.
+     *
+     * @return the ManagedHsmsClient object.
+     */
+    public ManagedHsmsClient getManagedHsms() {
+        return this.managedHsms;
+    }
+
+    /** The MhsmPrivateEndpointConnectionsClient object to access its operations. */
+    private final MhsmPrivateEndpointConnectionsClient mhsmPrivateEndpointConnections;
+
+    /**
+     * Gets the MhsmPrivateEndpointConnectionsClient object to access its operations.
+     *
+     * @return the MhsmPrivateEndpointConnectionsClient object.
+     */
+    public MhsmPrivateEndpointConnectionsClient getMhsmPrivateEndpointConnections() {
+        return this.mhsmPrivateEndpointConnections;
+    }
+
+    /** The MhsmPrivateLinkResourcesClient object to access its operations. */
+    private final MhsmPrivateLinkResourcesClient mhsmPrivateLinkResources;
+
+    /**
+     * Gets the MhsmPrivateLinkResourcesClient object to access its operations.
+     *
+     * @return the MhsmPrivateLinkResourcesClient object.
+     */
+    public MhsmPrivateLinkResourcesClient getMhsmPrivateLinkResources() {
+        return this.mhsmPrivateLinkResources;
+    }
+
     /** The OperationsClient object to access its operations. */
     private final OperationsClient operations;
 
@@ -166,16 +205,16 @@ public final class KeyVaultManagementClientImpl implements KeyVaultManagementCli
         return this.operations;
     }
 
-    /** The KeysClient object to access its operations. */
-    private final KeysClient keys;
+    /** The SecretsClient object to access its operations. */
+    private final SecretsClient secrets;
 
     /**
-     * Gets the KeysClient object to access its operations.
+     * Gets the SecretsClient object to access its operations.
      *
-     * @return the KeysClient object.
+     * @return the SecretsClient object.
      */
-    public KeysClient getKeys() {
-        return this.keys;
+    public SecretsClient getSecrets() {
+        return this.secrets;
     }
 
     /**
@@ -201,12 +240,15 @@ public final class KeyVaultManagementClientImpl implements KeyVaultManagementCli
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
-        this.apiVersion = "2019-09-01";
+        this.apiVersion = "2021-04-01-preview";
         this.vaults = new VaultsClientImpl(this);
         this.privateEndpointConnections = new PrivateEndpointConnectionsClientImpl(this);
         this.privateLinkResources = new PrivateLinkResourcesClientImpl(this);
+        this.managedHsms = new ManagedHsmsClientImpl(this);
+        this.mhsmPrivateEndpointConnections = new MhsmPrivateEndpointConnectionsClientImpl(this);
+        this.mhsmPrivateLinkResources = new MhsmPrivateLinkResourcesClientImpl(this);
         this.operations = new OperationsClientImpl(this);
-        this.keys = new KeysClientImpl(this);
+        this.secrets = new SecretsClientImpl(this);
     }
 
     /**

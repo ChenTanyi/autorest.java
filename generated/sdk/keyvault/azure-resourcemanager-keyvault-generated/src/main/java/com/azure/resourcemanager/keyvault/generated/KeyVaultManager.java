@@ -22,15 +22,21 @@ import com.azure.core.util.Configuration;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.keyvault.generated.fluent.KeyVaultManagementClient;
 import com.azure.resourcemanager.keyvault.generated.implementation.KeyVaultManagementClientBuilder;
-import com.azure.resourcemanager.keyvault.generated.implementation.KeysImpl;
+import com.azure.resourcemanager.keyvault.generated.implementation.ManagedHsmsImpl;
+import com.azure.resourcemanager.keyvault.generated.implementation.MhsmPrivateEndpointConnectionsImpl;
+import com.azure.resourcemanager.keyvault.generated.implementation.MhsmPrivateLinkResourcesImpl;
 import com.azure.resourcemanager.keyvault.generated.implementation.OperationsImpl;
 import com.azure.resourcemanager.keyvault.generated.implementation.PrivateEndpointConnectionsImpl;
 import com.azure.resourcemanager.keyvault.generated.implementation.PrivateLinkResourcesImpl;
+import com.azure.resourcemanager.keyvault.generated.implementation.SecretsImpl;
 import com.azure.resourcemanager.keyvault.generated.implementation.VaultsImpl;
-import com.azure.resourcemanager.keyvault.generated.models.Keys;
+import com.azure.resourcemanager.keyvault.generated.models.ManagedHsms;
+import com.azure.resourcemanager.keyvault.generated.models.MhsmPrivateEndpointConnections;
+import com.azure.resourcemanager.keyvault.generated.models.MhsmPrivateLinkResources;
 import com.azure.resourcemanager.keyvault.generated.models.Operations;
 import com.azure.resourcemanager.keyvault.generated.models.PrivateEndpointConnections;
 import com.azure.resourcemanager.keyvault.generated.models.PrivateLinkResources;
+import com.azure.resourcemanager.keyvault.generated.models.Secrets;
 import com.azure.resourcemanager.keyvault.generated.models.Vaults;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
@@ -49,9 +55,15 @@ public final class KeyVaultManager {
 
     private PrivateLinkResources privateLinkResources;
 
+    private ManagedHsms managedHsms;
+
+    private MhsmPrivateEndpointConnections mhsmPrivateEndpointConnections;
+
+    private MhsmPrivateLinkResources mhsmPrivateLinkResources;
+
     private Operations operations;
 
-    private Keys keys;
+    private Secrets secrets;
 
     private final KeyVaultManagementClient clientObject;
 
@@ -241,6 +253,32 @@ public final class KeyVaultManager {
         return privateLinkResources;
     }
 
+    /** @return Resource collection API of ManagedHsms. */
+    public ManagedHsms managedHsms() {
+        if (this.managedHsms == null) {
+            this.managedHsms = new ManagedHsmsImpl(clientObject.getManagedHsms(), this);
+        }
+        return managedHsms;
+    }
+
+    /** @return Resource collection API of MhsmPrivateEndpointConnections. */
+    public MhsmPrivateEndpointConnections mhsmPrivateEndpointConnections() {
+        if (this.mhsmPrivateEndpointConnections == null) {
+            this.mhsmPrivateEndpointConnections =
+                new MhsmPrivateEndpointConnectionsImpl(clientObject.getMhsmPrivateEndpointConnections(), this);
+        }
+        return mhsmPrivateEndpointConnections;
+    }
+
+    /** @return Resource collection API of MhsmPrivateLinkResources. */
+    public MhsmPrivateLinkResources mhsmPrivateLinkResources() {
+        if (this.mhsmPrivateLinkResources == null) {
+            this.mhsmPrivateLinkResources =
+                new MhsmPrivateLinkResourcesImpl(clientObject.getMhsmPrivateLinkResources(), this);
+        }
+        return mhsmPrivateLinkResources;
+    }
+
     /** @return Resource collection API of Operations. */
     public Operations operations() {
         if (this.operations == null) {
@@ -249,12 +287,12 @@ public final class KeyVaultManager {
         return operations;
     }
 
-    /** @return Resource collection API of Keys. */
-    public Keys keys() {
-        if (this.keys == null) {
-            this.keys = new KeysImpl(clientObject.getKeys(), this);
+    /** @return Resource collection API of Secrets. */
+    public Secrets secrets() {
+        if (this.secrets == null) {
+            this.secrets = new SecretsImpl(clientObject.getSecrets(), this);
         }
-        return keys;
+        return secrets;
     }
 
     /**

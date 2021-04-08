@@ -39,17 +39,10 @@ public final class VaultProperties {
     private List<AccessPolicyEntry> accessPolicies;
 
     /*
-     * The URI of the vault for performing operations on keys and secrets. This
-     * property is readonly
+     * The URI of the vault for performing operations on keys and secrets.
      */
     @JsonProperty(value = "vaultUri")
     private String vaultUri;
-
-    /*
-     * The resource id of HSM Pool.
-     */
-    @JsonProperty(value = "hsmPoolResourceId", access = JsonProperty.Access.WRITE_ONLY)
-    private String hsmPoolResourceId;
 
     /*
      * Property to specify whether Azure Virtual Machines are permitted to
@@ -204,8 +197,7 @@ public final class VaultProperties {
     }
 
     /**
-     * Get the vaultUri property: The URI of the vault for performing operations on keys and secrets. This property is
-     * readonly.
+     * Get the vaultUri property: The URI of the vault for performing operations on keys and secrets.
      *
      * @return the vaultUri value.
      */
@@ -214,8 +206,7 @@ public final class VaultProperties {
     }
 
     /**
-     * Set the vaultUri property: The URI of the vault for performing operations on keys and secrets. This property is
-     * readonly.
+     * Set the vaultUri property: The URI of the vault for performing operations on keys and secrets.
      *
      * @param vaultUri the vaultUri value to set.
      * @return the VaultProperties object itself.
@@ -223,15 +214,6 @@ public final class VaultProperties {
     public VaultProperties withVaultUri(String vaultUri) {
         this.vaultUri = vaultUri;
         return this;
-    }
-
-    /**
-     * Get the hsmPoolResourceId property: The resource id of HSM Pool.
-     *
-     * @return the hsmPoolResourceId value.
-     */
-    public String hsmPoolResourceId() {
-        return this.hsmPoolResourceId;
     }
 
     /**
