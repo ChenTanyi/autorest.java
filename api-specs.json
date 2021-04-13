@@ -23,7 +23,7 @@
     "consumption": {
         "source": "specification/consumption/resource-manager/readme.md",
         "namespace": "com.azure.resourcemanager.consumption.generated",
-        "output": "sdk/compute/azure-resourcemanager-consumption-generated"
+        "output": "sdk/consumption/azure-resourcemanager-consumption-generated"
     },
     "databoxedge": {
         "source": "specification/databoxedge/resource-manager/readme.md",

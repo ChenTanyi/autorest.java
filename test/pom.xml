@@ -12,6 +12,7 @@
         <module>../generated/sdk/commerce/azure-resourcemanager-commerce-generated</module>
         <module>../generated/sdk/compute/azure-resourcemanager-compute-generated</module>
         <module>../generated/sdk/costmanagement/azure-resourcemanager-costmanagement-generated</module>
+        <module>../generated/sdk/consumption/azure-resourcemanager-consumption-generated</module>
         <module>../generated/sdk/databoxedge/azure-resourcemanager-databoxedge-generated</module>
         <module>../generated/sdk/dns/azure-resourcemanager-dns-generated</module>
         <module>../generated/sdk/eventgrid/azure-resourcemanager-eventgrid-generated</module>
