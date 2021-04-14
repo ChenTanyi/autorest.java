@@ -249,17 +249,17 @@ public final class ZoneImpl implements Zone, Zone.Definition, Zone.Update {
     }
 
     public ZoneImpl withIfMatch(String ifMatch) {
-        if (isInCreateMode()) {
-            this.createIfMatch = ifMatch;
-            return this;
-        } else {
-            this.updateIfMatch = ifMatch;
-            return this;
-        }
+        this.createIfMatch = ifMatch;
+        return this;
     }
 
     public ZoneImpl withIfNoneMatch(String ifNoneMatch) {
         this.createIfNoneMatch = ifNoneMatch;
+        return this;
+    }
+
+    public ZoneImpl ifMatch(String ifMatch) {
+        this.updateIfMatch = ifMatch;
         return this;
     }
 

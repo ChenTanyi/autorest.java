@@ -173,16 +173,12 @@ public final class SharedPrivateLinkResourceImpl
     }
 
     public SharedPrivateLinkResourceImpl withClientRequestId(UUID clientRequestId) {
-        if (isInCreateMode()) {
-            this.createClientRequestId = clientRequestId;
-            return this;
-        } else {
-            this.updateClientRequestId = clientRequestId;
-            return this;
-        }
+        this.createClientRequestId = clientRequestId;
+        return this;
     }
 
-    private boolean isInCreateMode() {
-        return this.innerModel().id() == null;
+    public SharedPrivateLinkResourceImpl clientRequestId(UUID clientRequestId) {
+        this.updateClientRequestId = clientRequestId;
+        return this;
     }
 }

@@ -6,6 +6,7 @@
     <version>1.0.0</version> <!-- Need not change for every release-->
     <modules>
         <module>test</module>
+        <module>../generated/sdk/applicationinsights/azure-resourcemanager-applicationinsights-generated</module>
         <module>../generated/sdk/appservice/azure-resourcemanager-appservice-generated</module>
         <module>../generated/sdk/authorization/azure-resourcemanager-authorization-generated</module>
         <module>../generated/sdk/azurekusto/azure-resourcemanager-azurekusto-generated</module>

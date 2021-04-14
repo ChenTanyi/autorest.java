@@ -121,7 +121,7 @@ public interface SharedPrivateLinkResource {
     SharedPrivateLinkResource.Update update();
 
     /** The template for SharedPrivateLinkResource update. */
-    interface Update extends UpdateStages.WithProperties, UpdateStages.WithClientRequestId {
+    interface Update extends UpdateStages.WithProperties, UpdateStages.WithclientRequestId {
         /**
          * Executes the update request.
          *
@@ -152,7 +152,7 @@ public interface SharedPrivateLinkResource {
             Update withProperties(SharedPrivateLinkResourceProperties properties);
         }
         /** The stage of the SharedPrivateLinkResource update allowing to specify clientRequestId. */
-        interface WithClientRequestId {
+        interface WithclientRequestId {
             /**
              * Specifies the clientRequestId property: A client-generated GUID value that identifies this request. If
              * specified, this will be included in response information as a way to track the request..
@@ -161,7 +161,7 @@ public interface SharedPrivateLinkResource {
              *     will be included in response information as a way to track the request.
              * @return the next definition stage.
              */
-            Update withClientRequestId(UUID clientRequestId);
+            Update clientRequestId(UUID clientRequestId);
         }
     }
     /**

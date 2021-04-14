@@ -285,7 +285,7 @@ public interface Zone {
     Zone.Update update();
 
     /** The template for Zone update. */
-    interface Update extends UpdateStages.WithTags, UpdateStages.WithIfMatch {
+    interface Update extends UpdateStages.WithTags, UpdateStages.WithifMatch {
         /**
          * Executes the update request.
          *
@@ -314,7 +314,7 @@ public interface Zone {
             Update withTags(Map<String, String> tags);
         }
         /** The stage of the Zone update allowing to specify ifMatch. */
-        interface WithIfMatch {
+        interface WithifMatch {
             /**
              * Specifies the ifMatch property: The etag of the DNS zone. Omit this value to always overwrite the current
              * zone. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes..
@@ -323,7 +323,7 @@ public interface Zone {
              *     the last-seen etag value to prevent accidentally overwriting any concurrent changes.
              * @return the next definition stage.
              */
-            Update withIfMatch(String ifMatch);
+            Update ifMatch(String ifMatch);
         }
     }
     /**
