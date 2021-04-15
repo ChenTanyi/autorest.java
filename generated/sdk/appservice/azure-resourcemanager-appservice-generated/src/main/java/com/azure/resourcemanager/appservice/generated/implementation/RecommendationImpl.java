@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RecommendationInner;
 import com.azure.resourcemanager.appservice.generated.models.Channels;
 import com.azure.resourcemanager.appservice.generated.models.NotificationLevel;
@@ -41,10 +40,6 @@ public final class RecommendationImpl implements Recommendation {
 
     public String kind() {
         return this.innerModel().kind();
-    }
-
-    public SystemData systemData() {
-        return this.innerModel().systemData();
     }
 
     public OffsetDateTime creationTime() {

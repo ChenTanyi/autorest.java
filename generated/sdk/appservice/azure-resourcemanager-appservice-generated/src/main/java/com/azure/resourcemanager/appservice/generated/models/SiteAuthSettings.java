@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteAuthSettingsInner;
 import java.util.List;
 
@@ -39,13 +38,6 @@ public interface SiteAuthSettings {
     String kind();
 
     /**
-     * Gets the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    SystemData systemData();
-
-    /**
      * Gets the enabled property: &lt;code&gt;true&lt;/code&gt; if the Authentication / Authorization feature is enabled
      * for the current app; otherwise, &lt;code&gt;false&lt;/code&gt;.
      *
@@ -61,6 +53,15 @@ public interface SiteAuthSettings {
      * @return the runtimeVersion value.
      */
     String runtimeVersion();
+
+    /**
+     * Gets the configVersion property: The ConfigVersion of the Authentication / Authorization feature in use for the
+     * current app. The setting in this value can control the behavior of the control plane for Authentication /
+     * Authorization.
+     *
+     * @return the configVersion value.
+     */
+    String configVersion();
 
     /**
      * Gets the unauthenticatedClientAction property: The action to take when an unauthenticated client attempts to

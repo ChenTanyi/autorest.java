@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.TopLevelDomainInner;
 
 /** An immutable client-side representation of TopLevelDomain. */
@@ -36,13 +35,6 @@ public interface TopLevelDomain {
      * @return the kind value.
      */
     String kind();
-
-    /**
-     * Gets the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    SystemData systemData();
 
     /**
      * Gets the privacy property: If &lt;code&gt;true&lt;/code&gt;, then the top level domain supports domain privacy;

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.HybridConnectionKeyInner;
 import com.azure.resourcemanager.appservice.generated.models.HybridConnectionKey;
 
@@ -34,10 +33,6 @@ public final class HybridConnectionKeyImpl implements HybridConnectionKey {
 
     public String kind() {
         return this.innerModel().kind();
-    }
-
-    public SystemData systemData() {
-        return this.innerModel().systemData();
     }
 
     public String sendKeyName() {

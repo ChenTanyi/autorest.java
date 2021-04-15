@@ -274,6 +274,12 @@ public class SitePatchResourceInner extends ProxyOnlyResource {
     private SlotSwapStatus slotSwapStatus;
 
     /*
+     * Identity to use for Key Vault Reference authentication.
+     */
+    @JsonProperty(value = "properties.keyVaultReferenceIdentity")
+    private String keyVaultReferenceIdentity;
+
+    /*
      * HttpsOnly: configures a web site to accept only https requests. Issues
      * redirect for
      * http requests
@@ -292,6 +298,12 @@ public class SitePatchResourceInner extends ProxyOnlyResource {
      */
     @JsonProperty(value = "properties.inProgressOperationId", access = JsonProperty.Access.WRITE_ONLY)
     private UUID inProgressOperationId;
+
+    /*
+     * Checks if Customer provided storage account is required
+     */
+    @JsonProperty(value = "properties.storageAccountRequired")
+    private Boolean storageAccountRequired;
 
     /**
      * Get the identity property: Managed service identity.
@@ -857,6 +869,26 @@ public class SitePatchResourceInner extends ProxyOnlyResource {
     }
 
     /**
+     * Get the keyVaultReferenceIdentity property: Identity to use for Key Vault Reference authentication.
+     *
+     * @return the keyVaultReferenceIdentity value.
+     */
+    public String keyVaultReferenceIdentity() {
+        return this.keyVaultReferenceIdentity;
+    }
+
+    /**
+     * Set the keyVaultReferenceIdentity property: Identity to use for Key Vault Reference authentication.
+     *
+     * @param keyVaultReferenceIdentity the keyVaultReferenceIdentity value to set.
+     * @return the SitePatchResourceInner object itself.
+     */
+    public SitePatchResourceInner withKeyVaultReferenceIdentity(String keyVaultReferenceIdentity) {
+        this.keyVaultReferenceIdentity = keyVaultReferenceIdentity;
+        return this;
+    }
+
+    /**
      * Get the httpsOnly property: HttpsOnly: configures a web site to accept only https requests. Issues redirect for
      * http requests.
      *
@@ -905,6 +937,26 @@ public class SitePatchResourceInner extends ProxyOnlyResource {
      */
     public UUID inProgressOperationId() {
         return this.inProgressOperationId;
+    }
+
+    /**
+     * Get the storageAccountRequired property: Checks if Customer provided storage account is required.
+     *
+     * @return the storageAccountRequired value.
+     */
+    public Boolean storageAccountRequired() {
+        return this.storageAccountRequired;
+    }
+
+    /**
+     * Set the storageAccountRequired property: Checks if Customer provided storage account is required.
+     *
+     * @param storageAccountRequired the storageAccountRequired value to set.
+     * @return the SitePatchResourceInner object itself.
+     */
+    public SitePatchResourceInner withStorageAccountRequired(Boolean storageAccountRequired) {
+        this.storageAccountRequired = storageAccountRequired;
+        return this;
     }
 
     /** {@inheritDoc} */

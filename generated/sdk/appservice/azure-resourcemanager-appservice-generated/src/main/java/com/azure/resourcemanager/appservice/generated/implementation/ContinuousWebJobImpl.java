@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ContinuousWebJobInner;
 import com.azure.resourcemanager.appservice.generated.models.ContinuousWebJob;
 import com.azure.resourcemanager.appservice.generated.models.ContinuousWebJobStatus;
@@ -38,10 +37,6 @@ public final class ContinuousWebJobImpl implements ContinuousWebJob {
 
     public String kind() {
         return this.innerModel().kind();
-    }
-
-    public SystemData systemData() {
-        return this.innerModel().systemData();
     }
 
     public ContinuousWebJobStatus status() {

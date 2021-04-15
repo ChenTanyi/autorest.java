@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetRouteInner;
 
@@ -37,13 +36,6 @@ public interface VnetRoute {
      * @return the kind value.
      */
     String kind();
-
-    /**
-     * Gets the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    SystemData systemData();
 
     /**
      * Gets the startAddress property: The starting address for this route. This may also include a CIDR notation, in

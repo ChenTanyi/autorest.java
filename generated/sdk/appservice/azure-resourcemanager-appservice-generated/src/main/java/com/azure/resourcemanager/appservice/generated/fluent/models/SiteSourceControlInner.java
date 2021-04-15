@@ -7,6 +7,7 @@ package com.azure.resourcemanager.appservice.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.resourcemanager.appservice.generated.models.GitHubActionConfiguration;
 import com.azure.resourcemanager.appservice.generated.models.ProxyOnlyResource;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -56,6 +57,12 @@ public class SiteSourceControlInner extends ProxyOnlyResource {
      */
     @JsonProperty(value = "properties.isMercurial")
     private Boolean isMercurial;
+
+    /*
+     * If GitHub Action is selected, than the associated configuration.
+     */
+    @JsonProperty(value = "properties.gitHubActionConfiguration")
+    private GitHubActionConfiguration gitHubActionConfiguration;
 
     /**
      * Get the repoUrl property: Repository or source control URL.
@@ -185,6 +192,26 @@ public class SiteSourceControlInner extends ProxyOnlyResource {
         return this;
     }
 
+    /**
+     * Get the gitHubActionConfiguration property: If GitHub Action is selected, than the associated configuration.
+     *
+     * @return the gitHubActionConfiguration value.
+     */
+    public GitHubActionConfiguration gitHubActionConfiguration() {
+        return this.gitHubActionConfiguration;
+    }
+
+    /**
+     * Set the gitHubActionConfiguration property: If GitHub Action is selected, than the associated configuration.
+     *
+     * @param gitHubActionConfiguration the gitHubActionConfiguration value to set.
+     * @return the SiteSourceControlInner object itself.
+     */
+    public SiteSourceControlInner withGitHubActionConfiguration(GitHubActionConfiguration gitHubActionConfiguration) {
+        this.gitHubActionConfiguration = gitHubActionConfiguration;
+        return this;
+    }
+
     /** {@inheritDoc} */
     @Override
     public SiteSourceControlInner withKind(String kind) {
@@ -200,5 +227,8 @@ public class SiteSourceControlInner extends ProxyOnlyResource {
     @Override
     public void validate() {
         super.validate();
+        if (gitHubActionConfiguration() != null) {
+            gitHubActionConfiguration().validate();
+        }
     }
 }

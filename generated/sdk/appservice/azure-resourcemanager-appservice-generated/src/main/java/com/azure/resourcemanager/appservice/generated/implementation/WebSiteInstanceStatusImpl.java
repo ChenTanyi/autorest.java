@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.WebSiteInstanceStatusInner;
 import com.azure.resourcemanager.appservice.generated.models.ContainerInfo;
 import com.azure.resourcemanager.appservice.generated.models.SiteRuntimeState;
@@ -38,10 +37,6 @@ public final class WebSiteInstanceStatusImpl implements WebSiteInstanceStatus {
 
     public String kind() {
         return this.innerModel().kind();
-    }
-
-    public SystemData systemData() {
-        return this.innerModel().systemData();
     }
 
     public SiteRuntimeState state() {

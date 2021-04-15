@@ -6,17 +6,23 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteArmResourceInner;
+import com.azure.resourcemanager.appservice.generated.models.ManagedServiceIdentity;
+import com.azure.resourcemanager.appservice.generated.models.ResponseMessageEnvelopeRemotePrivateEndpointConnection;
 import com.azure.resourcemanager.appservice.generated.models.SkuDescription;
+import com.azure.resourcemanager.appservice.generated.models.StagingEnvironmentPolicy;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteBuildProperties;
 import com.azure.resourcemanager.appservice.generated.models.StaticSitePatchResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteResetPropertiesArmResource;
+import com.azure.resourcemanager.appservice.generated.models.StaticSiteTemplateOptions;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserInvitationRequestResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserInvitationResponseResource;
+import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserProvidedFunctionApp;
+import com.azure.resourcemanager.appservice.generated.models.StaticSiteZipDeploymentArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StringDictionary;
+import com.azure.resourcemanager.appservice.generated.models.StringList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -56,6 +62,10 @@ public final class StaticSiteArmResourceImpl
         return this.innerModel().sku();
     }
 
+    public ManagedServiceIdentity identity() {
+        return this.innerModel().identity();
+    }
+
     public String defaultHostname() {
         return this.innerModel().defaultHostname();
     }
@@ -66,6 +76,10 @@ public final class StaticSiteArmResourceImpl
 
     public String branch() {
         return this.innerModel().branch();
+    }
+
+    public String provider() {
+        return this.innerModel().provider();
     }
 
     public List<String> customDomains() {
@@ -85,12 +99,47 @@ public final class StaticSiteArmResourceImpl
         return this.innerModel().buildProperties();
     }
 
-    public String kind() {
-        return this.innerModel().kind();
+    public StaticSiteTemplateOptions templateProperties() {
+        return this.innerModel().templateProperties();
     }
 
-    public SystemData systemData() {
-        return this.innerModel().systemData();
+    public List<ResponseMessageEnvelopeRemotePrivateEndpointConnection> privateEndpointConnections() {
+        List<ResponseMessageEnvelopeRemotePrivateEndpointConnection> inner =
+            this.innerModel().privateEndpointConnections();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public String contentDistributionEndpoint() {
+        return this.innerModel().contentDistributionEndpoint();
+    }
+
+    public String keyVaultReferenceIdentity() {
+        return this.innerModel().keyVaultReferenceIdentity();
+    }
+
+    public List<StaticSiteUserProvidedFunctionApp> userProvidedFunctionApps() {
+        List<StaticSiteUserProvidedFunctionApp> inner = this.innerModel().userProvidedFunctionApps();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public StagingEnvironmentPolicy stagingEnvironmentPolicy() {
+        return this.innerModel().stagingEnvironmentPolicy();
+    }
+
+    public Boolean allowConfigFileUpdates() {
+        return this.innerModel().allowConfigFileUpdates();
+    }
+
+    public String kind() {
+        return this.innerModel().kind();
     }
 
     public Region region() {
@@ -125,8 +174,7 @@ public final class StaticSiteArmResourceImpl
             serviceManager
                 .serviceClient()
                 .getStaticSites()
-                .createOrUpdateStaticSiteWithResponse(resourceGroupName, name, this.innerModel(), Context.NONE)
-                .getValue();
+                .createOrUpdateStaticSite(resourceGroupName, name, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -135,8 +183,7 @@ public final class StaticSiteArmResourceImpl
             serviceManager
                 .serviceClient()
                 .getStaticSites()
-                .createOrUpdateStaticSiteWithResponse(resourceGroupName, name, this.innerModel(), context)
-                .getValue();
+                .createOrUpdateStaticSite(resourceGroupName, name, this.innerModel(), context);
         return this;
     }
 
@@ -220,8 +267,24 @@ public final class StaticSiteArmResourceImpl
         serviceManager.staticSites().detachStaticSite(resourceGroupName, name);
     }
 
-    public Response<Void> detachStaticSiteWithResponse(Context context) {
-        return serviceManager.staticSites().detachStaticSiteWithResponse(resourceGroupName, name, context);
+    public void detachStaticSite(Context context) {
+        serviceManager.staticSites().detachStaticSite(resourceGroupName, name, context);
+    }
+
+    public StringDictionary listStaticSiteAppSettings() {
+        return serviceManager.staticSites().listStaticSiteAppSettings(resourceGroupName, name);
+    }
+
+    public Response<StringDictionary> listStaticSiteAppSettingsWithResponse(Context context) {
+        return serviceManager.staticSites().listStaticSiteAppSettingsWithResponse(resourceGroupName, name, context);
+    }
+
+    public StringList listStaticSiteConfiguredRoles() {
+        return serviceManager.staticSites().listStaticSiteConfiguredRoles(resourceGroupName, name);
+    }
+
+    public Response<StringList> listStaticSiteConfiguredRolesWithResponse(Context context) {
+        return serviceManager.staticSites().listStaticSiteConfiguredRolesWithResponse(resourceGroupName, name, context);
     }
 
     public StringDictionary listStaticSiteFunctionAppSettings() {
@@ -253,6 +316,19 @@ public final class StaticSiteArmResourceImpl
             .resetStaticSiteApiKeyWithResponse(resourceGroupName, name, resetPropertiesEnvelope, context);
     }
 
+    public void createZipDeploymentForStaticSite(StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope) {
+        serviceManager
+            .staticSites()
+            .createZipDeploymentForStaticSite(resourceGroupName, name, staticSiteZipDeploymentEnvelope);
+    }
+
+    public void createZipDeploymentForStaticSite(
+        StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope, Context context) {
+        serviceManager
+            .staticSites()
+            .createZipDeploymentForStaticSite(resourceGroupName, name, staticSiteZipDeploymentEnvelope, context);
+    }
+
     public StaticSiteArmResourceImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;
@@ -270,6 +346,11 @@ public final class StaticSiteArmResourceImpl
 
     public StaticSiteArmResourceImpl withSku(SkuDescription sku) {
         this.innerModel().withSku(sku);
+        return this;
+    }
+
+    public StaticSiteArmResourceImpl withIdentity(ManagedServiceIdentity identity) {
+        this.innerModel().withIdentity(identity);
         return this;
     }
 
@@ -309,6 +390,36 @@ public final class StaticSiteArmResourceImpl
             return this;
         } else {
             this.updateStaticSiteEnvelope.withBuildProperties(buildProperties);
+            return this;
+        }
+    }
+
+    public StaticSiteArmResourceImpl withTemplateProperties(StaticSiteTemplateOptions templateProperties) {
+        if (isInCreateMode()) {
+            this.innerModel().withTemplateProperties(templateProperties);
+            return this;
+        } else {
+            this.updateStaticSiteEnvelope.withTemplateProperties(templateProperties);
+            return this;
+        }
+    }
+
+    public StaticSiteArmResourceImpl withStagingEnvironmentPolicy(StagingEnvironmentPolicy stagingEnvironmentPolicy) {
+        if (isInCreateMode()) {
+            this.innerModel().withStagingEnvironmentPolicy(stagingEnvironmentPolicy);
+            return this;
+        } else {
+            this.updateStaticSiteEnvelope.withStagingEnvironmentPolicy(stagingEnvironmentPolicy);
+            return this;
+        }
+    }
+
+    public StaticSiteArmResourceImpl withAllowConfigFileUpdates(Boolean allowConfigFileUpdates) {
+        if (isInCreateMode()) {
+            this.innerModel().withAllowConfigFileUpdates(allowConfigFileUpdates);
+            return this;
+        } else {
+            this.updateStaticSiteEnvelope.withAllowConfigFileUpdates(allowConfigFileUpdates);
             return this;
         }
     }

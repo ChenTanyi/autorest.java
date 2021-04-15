@@ -8,10 +8,8 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.StreamResponse;
 import com.azure.core.management.Region;
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.BackupRequestInner;
-import com.azure.resourcemanager.appservice.generated.fluent.models.CsmCopySlotEntityInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RestoreRequestInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteInner;
@@ -244,6 +242,10 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         return this.innerModel().slotSwapStatus();
     }
 
+    public String keyVaultReferenceIdentity() {
+        return this.innerModel().keyVaultReferenceIdentity();
+    }
+
     public Boolean httpsOnly() {
         return this.innerModel().httpsOnly();
     }
@@ -262,10 +264,6 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
 
     public String kind() {
         return this.innerModel().kind();
-    }
-
-    public SystemData systemData() {
-        return this.innerModel().systemData();
     }
 
     public Region region() {
@@ -497,14 +495,6 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
 
     public void restoreSnapshot(SnapshotRestoreRequest restoreRequest, Context context) {
         serviceManager.webApps().restoreSnapshot(resourceGroupName, name, restoreRequest, context);
-    }
-
-    public void copyProductionSlot(CsmCopySlotEntityInner copySlotEntity) {
-        serviceManager.webApps().copyProductionSlot(resourceGroupName, name, copySlotEntity);
-    }
-
-    public void copyProductionSlot(CsmCopySlotEntityInner copySlotEntity, Context context) {
-        serviceManager.webApps().copyProductionSlot(resourceGroupName, name, copySlotEntity, context);
     }
 
     public PagedIterable<SlotDifference> listSlotDifferencesFromProduction(CsmSlotEntity slotSwapEntity) {
@@ -762,6 +752,16 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         return this;
     }
 
+    public SiteImpl withKeyVaultReferenceIdentity(String keyVaultReferenceIdentity) {
+        if (isInCreateMode()) {
+            this.innerModel().withKeyVaultReferenceIdentity(keyVaultReferenceIdentity);
+            return this;
+        } else {
+            this.updateSiteEnvelope.withKeyVaultReferenceIdentity(keyVaultReferenceIdentity);
+            return this;
+        }
+    }
+
     public SiteImpl withHttpsOnly(Boolean httpsOnly) {
         if (isInCreateMode()) {
             this.innerModel().withHttpsOnly(httpsOnly);
@@ -783,8 +783,13 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
     }
 
     public SiteImpl withStorageAccountRequired(Boolean storageAccountRequired) {
-        this.innerModel().withStorageAccountRequired(storageAccountRequired);
-        return this;
+        if (isInCreateMode()) {
+            this.innerModel().withStorageAccountRequired(storageAccountRequired);
+            return this;
+        } else {
+            this.updateSiteEnvelope.withStorageAccountRequired(storageAccountRequired);
+            return this;
+        }
     }
 
     public SiteImpl withKind(String kind) {

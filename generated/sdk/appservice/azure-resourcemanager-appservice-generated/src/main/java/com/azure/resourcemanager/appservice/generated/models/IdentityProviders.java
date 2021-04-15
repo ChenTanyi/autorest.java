@@ -42,10 +42,28 @@ public class IdentityProviders extends ProxyOnlyResource {
     private Google google;
 
     /*
+     * The legacyMicrosoftAccount property.
+     */
+    @JsonProperty(value = "properties.legacyMicrosoftAccount")
+    private LegacyMicrosoftAccount legacyMicrosoftAccount;
+
+    /*
      * The twitter property.
      */
     @JsonProperty(value = "properties.twitter")
     private Twitter twitter;
+
+    /*
+     * The apple property.
+     */
+    @JsonProperty(value = "properties.apple")
+    private Apple apple;
+
+    /*
+     * The azureStaticWebApps property.
+     */
+    @JsonProperty(value = "properties.azureStaticWebApps")
+    private AzureStaticWebApps azureStaticWebApps;
 
     /*
      * Dictionary of <CustomOpenIdConnectProvider>
@@ -134,6 +152,26 @@ public class IdentityProviders extends ProxyOnlyResource {
     }
 
     /**
+     * Get the legacyMicrosoftAccount property: The legacyMicrosoftAccount property.
+     *
+     * @return the legacyMicrosoftAccount value.
+     */
+    public LegacyMicrosoftAccount legacyMicrosoftAccount() {
+        return this.legacyMicrosoftAccount;
+    }
+
+    /**
+     * Set the legacyMicrosoftAccount property: The legacyMicrosoftAccount property.
+     *
+     * @param legacyMicrosoftAccount the legacyMicrosoftAccount value to set.
+     * @return the IdentityProviders object itself.
+     */
+    public IdentityProviders withLegacyMicrosoftAccount(LegacyMicrosoftAccount legacyMicrosoftAccount) {
+        this.legacyMicrosoftAccount = legacyMicrosoftAccount;
+        return this;
+    }
+
+    /**
      * Get the twitter property: The twitter property.
      *
      * @return the twitter value.
@@ -150,6 +188,46 @@ public class IdentityProviders extends ProxyOnlyResource {
      */
     public IdentityProviders withTwitter(Twitter twitter) {
         this.twitter = twitter;
+        return this;
+    }
+
+    /**
+     * Get the apple property: The apple property.
+     *
+     * @return the apple value.
+     */
+    public Apple apple() {
+        return this.apple;
+    }
+
+    /**
+     * Set the apple property: The apple property.
+     *
+     * @param apple the apple value to set.
+     * @return the IdentityProviders object itself.
+     */
+    public IdentityProviders withApple(Apple apple) {
+        this.apple = apple;
+        return this;
+    }
+
+    /**
+     * Get the azureStaticWebApps property: The azureStaticWebApps property.
+     *
+     * @return the azureStaticWebApps value.
+     */
+    public AzureStaticWebApps azureStaticWebApps() {
+        return this.azureStaticWebApps;
+    }
+
+    /**
+     * Set the azureStaticWebApps property: The azureStaticWebApps property.
+     *
+     * @param azureStaticWebApps the azureStaticWebApps value to set.
+     * @return the IdentityProviders object itself.
+     */
+    public IdentityProviders withAzureStaticWebApps(AzureStaticWebApps azureStaticWebApps) {
+        this.azureStaticWebApps = azureStaticWebApps;
         return this;
     }
 
@@ -201,8 +279,17 @@ public class IdentityProviders extends ProxyOnlyResource {
         if (google() != null) {
             google().validate();
         }
+        if (legacyMicrosoftAccount() != null) {
+            legacyMicrosoftAccount().validate();
+        }
         if (twitter() != null) {
             twitter().validate();
+        }
+        if (apple() != null) {
+            apple().validate();
+        }
+        if (azureStaticWebApps() != null) {
+            azureStaticWebApps().validate();
         }
         if (customOpenIdConnectProviders() != null) {
             customOpenIdConnectProviders()

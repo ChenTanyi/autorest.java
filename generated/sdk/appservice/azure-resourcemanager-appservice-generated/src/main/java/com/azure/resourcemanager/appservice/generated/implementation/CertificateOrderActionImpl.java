@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CertificateOrderActionInner;
 import com.azure.resourcemanager.appservice.generated.models.CertificateOrderAction;
 import com.azure.resourcemanager.appservice.generated.models.CertificateOrderActionType;
@@ -36,10 +35,6 @@ public final class CertificateOrderActionImpl implements CertificateOrderAction 
 
     public String kind() {
         return this.innerModel().kind();
-    }
-
-    public SystemData systemData() {
-        return this.innerModel().systemData();
     }
 
     public CertificateOrderActionType actionType() {

@@ -6,12 +6,12 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServicePlanInner;
 import com.azure.resourcemanager.appservice.generated.models.AppServicePlan;
 import com.azure.resourcemanager.appservice.generated.models.AppServicePlanPatchResource;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentProfile;
+import com.azure.resourcemanager.appservice.generated.models.KubeEnvironmentProfile;
 import com.azure.resourcemanager.appservice.generated.models.ProvisioningState;
 import com.azure.resourcemanager.appservice.generated.models.SkuDescription;
 import com.azure.resourcemanager.appservice.generated.models.StatusOptions;
@@ -129,12 +129,12 @@ public final class AppServicePlanImpl implements AppServicePlan, AppServicePlan.
         return this.innerModel().provisioningState();
     }
 
-    public String kind() {
-        return this.innerModel().kind();
+    public KubeEnvironmentProfile kubeEnvironmentProfile() {
+        return this.innerModel().kubeEnvironmentProfile();
     }
 
-    public SystemData systemData() {
-        return this.innerModel().systemData();
+    public String kind() {
+        return this.innerModel().kind();
     }
 
     public Region region() {
@@ -368,6 +368,16 @@ public final class AppServicePlanImpl implements AppServicePlan, AppServicePlan.
             return this;
         } else {
             this.updateAppServicePlan.withTargetWorkerSizeId(targetWorkerSizeId);
+            return this;
+        }
+    }
+
+    public AppServicePlanImpl withKubeEnvironmentProfile(KubeEnvironmentProfile kubeEnvironmentProfile) {
+        if (isInCreateMode()) {
+            this.innerModel().withKubeEnvironmentProfile(kubeEnvironmentProfile);
+            return this;
+        } else {
+            this.updateAppServicePlan.withKubeEnvironmentProfile(kubeEnvironmentProfile);
             return this;
         }
     }

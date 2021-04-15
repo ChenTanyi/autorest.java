@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DetectorResponseInner;
 import java.util.List;
 
@@ -39,13 +38,6 @@ public interface DetectorResponse {
     String kind();
 
     /**
-     * Gets the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    SystemData systemData();
-
-    /**
      * Gets the metadata property: metadata for the detector.
      *
      * @return the metadata value.
@@ -58,6 +50,28 @@ public interface DetectorResponse {
      * @return the dataset value.
      */
     List<DiagnosticData> dataset();
+
+    /**
+     * Gets the status property: Indicates status of the most severe insight.
+     *
+     * @return the status value.
+     */
+    Status status();
+
+    /**
+     * Gets the dataProvidersMetadata property: Additional configuration for different data providers to be used by the
+     * UI.
+     *
+     * @return the dataProvidersMetadata value.
+     */
+    List<DataProviderMetadata> dataProvidersMetadata();
+
+    /**
+     * Gets the suggestedUtterances property: Suggested utterances where the detector can be applicable.
+     *
+     * @return the suggestedUtterances value.
+     */
+    QueryUtterancesResults suggestedUtterances();
 
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.DetectorResponseInner object.

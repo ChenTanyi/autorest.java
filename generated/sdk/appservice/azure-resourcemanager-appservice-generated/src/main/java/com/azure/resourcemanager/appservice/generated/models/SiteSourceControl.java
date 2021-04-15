@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteSourceControlInner;
 
 /** An immutable client-side representation of SiteSourceControl. */
@@ -36,13 +35,6 @@ public interface SiteSourceControl {
      * @return the kind value.
      */
     String kind();
-
-    /**
-     * Gets the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    SystemData systemData();
 
     /**
      * Gets the repoUrl property: Repository or source control URL.
@@ -89,6 +81,13 @@ public interface SiteSourceControl {
      * @return the isMercurial value.
      */
     Boolean isMercurial();
+
+    /**
+     * Gets the gitHubActionConfiguration property: If GitHub Action is selected, than the associated configuration.
+     *
+     * @return the gitHubActionConfiguration value.
+     */
+    GitHubActionConfiguration gitHubActionConfiguration();
 
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.SiteSourceControlInner object.

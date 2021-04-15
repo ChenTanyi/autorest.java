@@ -7,7 +7,7 @@
     <packaging>jar</packaging>
 
     <name>Microsoft Azure SDK for AppService Management</name>
-    <description>This package contains Microsoft Azure SDK for AppService Management SDK. For documentation on how to use this package, please see https://aka.ms/azsdk/java/mgmt. WebSite Management Client. Package tag package-2020-10.</description>
+    <description>This package contains Microsoft Azure SDK for AppService Management SDK. For documentation on how to use this package, please see https://aka.ms/azsdk/java/mgmt. WebSite Management Client. Package tag package-2020-12.</description>
     <url>https://github.com/Azure/azure-sdk-for-java</url>
 
     <licenses>

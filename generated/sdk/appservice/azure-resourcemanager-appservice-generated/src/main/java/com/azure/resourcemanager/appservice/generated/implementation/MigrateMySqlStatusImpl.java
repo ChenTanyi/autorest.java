@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.MigrateMySqlStatusInner;
 import com.azure.resourcemanager.appservice.generated.models.MigrateMySqlStatus;
 import com.azure.resourcemanager.appservice.generated.models.OperationStatus;
@@ -35,10 +34,6 @@ public final class MigrateMySqlStatusImpl implements MigrateMySqlStatus {
 
     public String kind() {
         return this.innerModel().kind();
-    }
-
-    public SystemData systemData() {
-        return this.innerModel().systemData();
     }
 
     public OperationStatus migrationOperationStatus() {

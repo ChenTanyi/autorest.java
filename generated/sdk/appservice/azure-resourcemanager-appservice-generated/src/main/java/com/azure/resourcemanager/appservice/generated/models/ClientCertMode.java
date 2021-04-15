@@ -13,7 +13,10 @@ public enum ClientCertMode {
     REQUIRED("Required"),
 
     /** Enum value Optional. */
-    OPTIONAL("Optional");
+    OPTIONAL("Optional"),
+
+    /** Enum value OptionalInteractiveUser. */
+    OPTIONAL_INTERACTIVE_USER("OptionalInteractiveUser");
 
     /** The actual serialized value for a ClientCertMode instance. */
     private final String value;

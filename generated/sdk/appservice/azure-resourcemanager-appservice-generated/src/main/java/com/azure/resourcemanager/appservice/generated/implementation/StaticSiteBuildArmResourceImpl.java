@@ -4,11 +4,13 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteBuildArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.BuildStatus;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteBuildArmResource;
+import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserProvidedFunctionApp;
 import java.time.OffsetDateTime;
+import java.util.Collections;
+import java.util.List;
 
 public final class StaticSiteBuildArmResourceImpl implements StaticSiteBuildArmResource {
     private StaticSiteBuildArmResourceInner innerObject;
@@ -38,10 +40,6 @@ public final class StaticSiteBuildArmResourceImpl implements StaticSiteBuildArmR
         return this.innerModel().kind();
     }
 
-    public SystemData systemData() {
-        return this.innerModel().systemData();
-    }
-
     public String buildId() {
         return this.innerModel().buildId();
     }
@@ -68,6 +66,15 @@ public final class StaticSiteBuildArmResourceImpl implements StaticSiteBuildArmR
 
     public BuildStatus status() {
         return this.innerModel().status();
+    }
+
+    public List<StaticSiteUserProvidedFunctionApp> userProvidedFunctionApps() {
+        List<StaticSiteUserProvidedFunctionApp> inner = this.innerModel().userProvidedFunctionApps();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     public StaticSiteBuildArmResourceInner innerModel() {

@@ -7,7 +7,6 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceEnvironmentResourceInner;
 import java.util.List;
@@ -51,20 +50,6 @@ public interface AppServiceEnvironmentResource {
     Map<String, String> tags();
 
     /**
-     * Gets the namePropertiesName property: Name of the App Service Environment.
-     *
-     * @return the namePropertiesName value.
-     */
-    String namePropertiesName();
-
-    /**
-     * Gets the locationPropertiesLocation property: Location of the App Service Environment, e.g. "West US".
-     *
-     * @return the locationPropertiesLocation value.
-     */
-    String locationPropertiesLocation();
-
-    /**
      * Gets the provisioningState property: Provisioning state of the App Service Environment.
      *
      * @return the provisioningState value.
@@ -77,27 +62,6 @@ public interface AppServiceEnvironmentResource {
      * @return the status value.
      */
     HostingEnvironmentStatus status();
-
-    /**
-     * Gets the vnetName property: Name of the Virtual Network for the App Service Environment.
-     *
-     * @return the vnetName value.
-     */
-    String vnetName();
-
-    /**
-     * Gets the vnetResourceGroupName property: Resource group of the Virtual Network.
-     *
-     * @return the vnetResourceGroupName value.
-     */
-    String vnetResourceGroupName();
-
-    /**
-     * Gets the vnetSubnetName property: Subnet of the Virtual Network.
-     *
-     * @return the vnetSubnetName value.
-     */
-    String vnetSubnetName();
 
     /**
      * Gets the virtualNetwork property: Description of the Virtual Network.
@@ -129,49 +93,11 @@ public interface AppServiceEnvironmentResource {
     Integer multiRoleCount();
 
     /**
-     * Gets the workerPools property: Description of worker pools with worker size IDs, VM sizes, and number of workers
-     * in each pool.
-     *
-     * @return the workerPools value.
-     */
-    List<WorkerPool> workerPools();
-
-    /**
      * Gets the ipsslAddressCount property: Number of IP SSL addresses reserved for the App Service Environment.
      *
      * @return the ipsslAddressCount value.
      */
     Integer ipsslAddressCount();
-
-    /**
-     * Gets the databaseEdition property: Edition of the metadata database for the App Service Environment, e.g.
-     * "Standard".
-     *
-     * @return the databaseEdition value.
-     */
-    String databaseEdition();
-
-    /**
-     * Gets the databaseServiceObjective property: Service objective of the metadata database for the App Service
-     * Environment, e.g. "S0".
-     *
-     * @return the databaseServiceObjective value.
-     */
-    String databaseServiceObjective();
-
-    /**
-     * Gets the upgradeDomains property: Number of upgrade domains of the App Service Environment.
-     *
-     * @return the upgradeDomains value.
-     */
-    Integer upgradeDomains();
-
-    /**
-     * Gets the subscriptionId property: Subscription of the App Service Environment.
-     *
-     * @return the subscriptionId value.
-     */
-    String subscriptionId();
 
     /**
      * Gets the dnsSuffix property: DNS suffix of the App Service Environment.
@@ -181,85 +107,11 @@ public interface AppServiceEnvironmentResource {
     String dnsSuffix();
 
     /**
-     * Gets the lastAction property: Last deployment action on the App Service Environment.
-     *
-     * @return the lastAction value.
-     */
-    String lastAction();
-
-    /**
-     * Gets the lastActionResult property: Result of the last deployment action on the App Service Environment.
-     *
-     * @return the lastActionResult value.
-     */
-    String lastActionResult();
-
-    /**
-     * Gets the allowedMultiSizes property: List of comma separated strings describing which VM sizes are allowed for
-     * front-ends.
-     *
-     * @return the allowedMultiSizes value.
-     */
-    String allowedMultiSizes();
-
-    /**
-     * Gets the allowedWorkerSizes property: List of comma separated strings describing which VM sizes are allowed for
-     * workers.
-     *
-     * @return the allowedWorkerSizes value.
-     */
-    String allowedWorkerSizes();
-
-    /**
      * Gets the maximumNumberOfMachines property: Maximum number of VMs in the App Service Environment.
      *
      * @return the maximumNumberOfMachines value.
      */
     Integer maximumNumberOfMachines();
-
-    /**
-     * Gets the vipMappings property: Description of IP SSL mapping for the App Service Environment.
-     *
-     * @return the vipMappings value.
-     */
-    List<VirtualIpMapping> vipMappings();
-
-    /**
-     * Gets the environmentCapacities property: Current total, used, and available worker capacities.
-     *
-     * @return the environmentCapacities value.
-     */
-    List<StampCapacity> environmentCapacities();
-
-    /**
-     * Gets the networkAccessControlList property: Access control list for controlling traffic to the App Service
-     * Environment.
-     *
-     * @return the networkAccessControlList value.
-     */
-    List<NetworkAccessControlEntry> networkAccessControlList();
-
-    /**
-     * Gets the environmentIsHealthy property: True/false indicating whether the App Service Environment is healthy.
-     *
-     * @return the environmentIsHealthy value.
-     */
-    Boolean environmentIsHealthy();
-
-    /**
-     * Gets the environmentStatus property: Detailed message about with results of the last check of the App Service
-     * Environment.
-     *
-     * @return the environmentStatus value.
-     */
-    String environmentStatus();
-
-    /**
-     * Gets the resourceGroup property: Resource group of the App Service Environment.
-     *
-     * @return the resourceGroup value.
-     */
-    String resourceGroup();
 
     /**
      * Gets the frontEndScaleFactor property: Scale factor for front-ends.
@@ -269,20 +121,6 @@ public interface AppServiceEnvironmentResource {
     Integer frontEndScaleFactor();
 
     /**
-     * Gets the defaultFrontEndScaleFactor property: Default Scale Factor for FrontEnds.
-     *
-     * @return the defaultFrontEndScaleFactor value.
-     */
-    Integer defaultFrontEndScaleFactor();
-
-    /**
-     * Gets the apiManagementAccountId property: API Management Account associated with the App Service Environment.
-     *
-     * @return the apiManagementAccountId value.
-     */
-    String apiManagementAccountId();
-
-    /**
      * Gets the suspended property: &lt;code&gt;true&lt;/code&gt; if the App Service Environment is suspended;
      * otherwise, &lt;code&gt;false&lt;/code&gt;. The environment can be suspended, e.g. when the management endpoint is
      * no longer available (most likely because NSG blocked the incoming traffic).
@@ -290,15 +128,6 @@ public interface AppServiceEnvironmentResource {
      * @return the suspended value.
      */
     Boolean suspended();
-
-    /**
-     * Gets the dynamicCacheEnabled property: True/false indicating whether the App Service Environment is suspended.
-     * The environment can be suspended e.g. when the management endpoint is no longer available (most likely because
-     * NSG blocked the incoming traffic).
-     *
-     * @return the dynamicCacheEnabled value.
-     */
-    Boolean dynamicCacheEnabled();
 
     /**
      * Gets the clusterSettings property: Custom settings for changing the behavior of the App Service Environment.
@@ -322,19 +151,11 @@ public interface AppServiceEnvironmentResource {
     Boolean hasLinuxWorkers();
 
     /**
-     * Gets the sslCertKeyVaultId property: Key Vault ID for ILB App Service Environment default SSL certificate.
+     * Gets the dedicatedHostCount property: Dedicated Host Count.
      *
-     * @return the sslCertKeyVaultId value.
+     * @return the dedicatedHostCount value.
      */
-    String sslCertKeyVaultId();
-
-    /**
-     * Gets the sslCertKeyVaultSecretName property: Key Vault Secret Name for ILB App Service Environment default SSL
-     * certificate.
-     *
-     * @return the sslCertKeyVaultSecretName value.
-     */
-    String sslCertKeyVaultSecretName();
+    Integer dedicatedHostCount();
 
     /**
      * Gets the kind property: Kind of resource.
@@ -342,13 +163,6 @@ public interface AppServiceEnvironmentResource {
      * @return the kind value.
      */
     String kind();
-
-    /**
-     * Gets the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    SystemData systemData();
 
     /**
      * Gets the region of the resource.
@@ -418,28 +232,14 @@ public interface AppServiceEnvironmentResource {
          */
         interface WithCreate
             extends DefinitionStages.WithTags,
-                DefinitionStages.WithNamePropertiesName,
-                DefinitionStages.WithLocationPropertiesLocation,
-                DefinitionStages.WithVnetName,
-                DefinitionStages.WithVnetResourceGroupName,
-                DefinitionStages.WithVnetSubnetName,
                 DefinitionStages.WithVirtualNetwork,
                 DefinitionStages.WithInternalLoadBalancingMode,
                 DefinitionStages.WithMultiSize,
-                DefinitionStages.WithMultiRoleCount,
-                DefinitionStages.WithWorkerPools,
                 DefinitionStages.WithIpsslAddressCount,
                 DefinitionStages.WithDnsSuffix,
-                DefinitionStages.WithNetworkAccessControlList,
                 DefinitionStages.WithFrontEndScaleFactor,
-                DefinitionStages.WithApiManagementAccountId,
-                DefinitionStages.WithSuspended,
-                DefinitionStages.WithDynamicCacheEnabled,
                 DefinitionStages.WithClusterSettings,
                 DefinitionStages.WithUserWhitelistedIpRanges,
-                DefinitionStages.WithHasLinuxWorkers,
-                DefinitionStages.WithSslCertKeyVaultId,
-                DefinitionStages.WithSslCertKeyVaultSecretName,
                 DefinitionStages.WithKind {
             /**
              * Executes the create request.
@@ -465,57 +265,6 @@ public interface AppServiceEnvironmentResource {
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
-        }
-        /** The stage of the AppServiceEnvironmentResource definition allowing to specify namePropertiesName. */
-        interface WithNamePropertiesName {
-            /**
-             * Specifies the namePropertiesName property: Name of the App Service Environment..
-             *
-             * @param namePropertiesName Name of the App Service Environment.
-             * @return the next definition stage.
-             */
-            WithCreate withNamePropertiesName(String namePropertiesName);
-        }
-        /** The stage of the AppServiceEnvironmentResource definition allowing to specify locationPropertiesLocation. */
-        interface WithLocationPropertiesLocation {
-            /**
-             * Specifies the locationPropertiesLocation property: Location of the App Service Environment, e.g. "West
-             * US"..
-             *
-             * @param locationPropertiesLocation Location of the App Service Environment, e.g. "West US".
-             * @return the next definition stage.
-             */
-            WithCreate withLocationPropertiesLocation(String locationPropertiesLocation);
-        }
-        /** The stage of the AppServiceEnvironmentResource definition allowing to specify vnetName. */
-        interface WithVnetName {
-            /**
-             * Specifies the vnetName property: Name of the Virtual Network for the App Service Environment..
-             *
-             * @param vnetName Name of the Virtual Network for the App Service Environment.
-             * @return the next definition stage.
-             */
-            WithCreate withVnetName(String vnetName);
-        }
-        /** The stage of the AppServiceEnvironmentResource definition allowing to specify vnetResourceGroupName. */
-        interface WithVnetResourceGroupName {
-            /**
-             * Specifies the vnetResourceGroupName property: Resource group of the Virtual Network..
-             *
-             * @param vnetResourceGroupName Resource group of the Virtual Network.
-             * @return the next definition stage.
-             */
-            WithCreate withVnetResourceGroupName(String vnetResourceGroupName);
-        }
-        /** The stage of the AppServiceEnvironmentResource definition allowing to specify vnetSubnetName. */
-        interface WithVnetSubnetName {
-            /**
-             * Specifies the vnetSubnetName property: Subnet of the Virtual Network..
-             *
-             * @param vnetSubnetName Subnet of the Virtual Network.
-             * @return the next definition stage.
-             */
-            WithCreate withVnetSubnetName(String vnetSubnetName);
         }
         /** The stage of the AppServiceEnvironmentResource definition allowing to specify virtualNetwork. */
         interface WithVirtualNetwork {
@@ -549,28 +298,6 @@ public interface AppServiceEnvironmentResource {
              */
             WithCreate withMultiSize(String multiSize);
         }
-        /** The stage of the AppServiceEnvironmentResource definition allowing to specify multiRoleCount. */
-        interface WithMultiRoleCount {
-            /**
-             * Specifies the multiRoleCount property: Number of front-end instances..
-             *
-             * @param multiRoleCount Number of front-end instances.
-             * @return the next definition stage.
-             */
-            WithCreate withMultiRoleCount(Integer multiRoleCount);
-        }
-        /** The stage of the AppServiceEnvironmentResource definition allowing to specify workerPools. */
-        interface WithWorkerPools {
-            /**
-             * Specifies the workerPools property: Description of worker pools with worker size IDs, VM sizes, and
-             * number of workers in each pool..
-             *
-             * @param workerPools Description of worker pools with worker size IDs, VM sizes, and number of workers in
-             *     each pool.
-             * @return the next definition stage.
-             */
-            WithCreate withWorkerPools(List<WorkerPool> workerPools);
-        }
         /** The stage of the AppServiceEnvironmentResource definition allowing to specify ipsslAddressCount. */
         interface WithIpsslAddressCount {
             /**
@@ -592,18 +319,6 @@ public interface AppServiceEnvironmentResource {
              */
             WithCreate withDnsSuffix(String dnsSuffix);
         }
-        /** The stage of the AppServiceEnvironmentResource definition allowing to specify networkAccessControlList. */
-        interface WithNetworkAccessControlList {
-            /**
-             * Specifies the networkAccessControlList property: Access control list for controlling traffic to the App
-             * Service Environment..
-             *
-             * @param networkAccessControlList Access control list for controlling traffic to the App Service
-             *     Environment.
-             * @return the next definition stage.
-             */
-            WithCreate withNetworkAccessControlList(List<NetworkAccessControlEntry> networkAccessControlList);
-        }
         /** The stage of the AppServiceEnvironmentResource definition allowing to specify frontEndScaleFactor. */
         interface WithFrontEndScaleFactor {
             /**
@@ -613,45 +328,6 @@ public interface AppServiceEnvironmentResource {
              * @return the next definition stage.
              */
             WithCreate withFrontEndScaleFactor(Integer frontEndScaleFactor);
-        }
-        /** The stage of the AppServiceEnvironmentResource definition allowing to specify apiManagementAccountId. */
-        interface WithApiManagementAccountId {
-            /**
-             * Specifies the apiManagementAccountId property: API Management Account associated with the App Service
-             * Environment..
-             *
-             * @param apiManagementAccountId API Management Account associated with the App Service Environment.
-             * @return the next definition stage.
-             */
-            WithCreate withApiManagementAccountId(String apiManagementAccountId);
-        }
-        /** The stage of the AppServiceEnvironmentResource definition allowing to specify suspended. */
-        interface WithSuspended {
-            /**
-             * Specifies the suspended property: &lt;code&gt;true&lt;/code&gt; if the App Service Environment is
-             * suspended; otherwise, &lt;code&gt;false&lt;/code&gt;. The environment can be suspended, e.g. when the
-             * management endpoint is no longer available (most likely because NSG blocked the incoming traffic)..
-             *
-             * @param suspended &lt;code&gt;true&lt;/code&gt; if the App Service Environment is suspended; otherwise,
-             *     &lt;code&gt;false&lt;/code&gt;. The environment can be suspended, e.g. when the management endpoint
-             *     is no longer available (most likely because NSG blocked the incoming traffic).
-             * @return the next definition stage.
-             */
-            WithCreate withSuspended(Boolean suspended);
-        }
-        /** The stage of the AppServiceEnvironmentResource definition allowing to specify dynamicCacheEnabled. */
-        interface WithDynamicCacheEnabled {
-            /**
-             * Specifies the dynamicCacheEnabled property: True/false indicating whether the App Service Environment is
-             * suspended. The environment can be suspended e.g. when the management endpoint is no longer available
-             * (most likely because NSG blocked the incoming traffic)..
-             *
-             * @param dynamicCacheEnabled True/false indicating whether the App Service Environment is suspended. The
-             *     environment can be suspended e.g. when the management endpoint is no longer available (most likely
-             *     because NSG blocked the incoming traffic).
-             * @return the next definition stage.
-             */
-            WithCreate withDynamicCacheEnabled(Boolean dynamicCacheEnabled);
         }
         /** The stage of the AppServiceEnvironmentResource definition allowing to specify clusterSettings. */
         interface WithClusterSettings {
@@ -674,39 +350,6 @@ public interface AppServiceEnvironmentResource {
              */
             WithCreate withUserWhitelistedIpRanges(List<String> userWhitelistedIpRanges);
         }
-        /** The stage of the AppServiceEnvironmentResource definition allowing to specify hasLinuxWorkers. */
-        interface WithHasLinuxWorkers {
-            /**
-             * Specifies the hasLinuxWorkers property: Flag that displays whether an ASE has linux workers or not.
-             *
-             * @param hasLinuxWorkers Flag that displays whether an ASE has linux workers or not.
-             * @return the next definition stage.
-             */
-            WithCreate withHasLinuxWorkers(Boolean hasLinuxWorkers);
-        }
-        /** The stage of the AppServiceEnvironmentResource definition allowing to specify sslCertKeyVaultId. */
-        interface WithSslCertKeyVaultId {
-            /**
-             * Specifies the sslCertKeyVaultId property: Key Vault ID for ILB App Service Environment default SSL
-             * certificate.
-             *
-             * @param sslCertKeyVaultId Key Vault ID for ILB App Service Environment default SSL certificate.
-             * @return the next definition stage.
-             */
-            WithCreate withSslCertKeyVaultId(String sslCertKeyVaultId);
-        }
-        /** The stage of the AppServiceEnvironmentResource definition allowing to specify sslCertKeyVaultSecretName. */
-        interface WithSslCertKeyVaultSecretName {
-            /**
-             * Specifies the sslCertKeyVaultSecretName property: Key Vault Secret Name for ILB App Service Environment
-             * default SSL certificate.
-             *
-             * @param sslCertKeyVaultSecretName Key Vault Secret Name for ILB App Service Environment default SSL
-             *     certificate.
-             * @return the next definition stage.
-             */
-            WithCreate withSslCertKeyVaultSecretName(String sslCertKeyVaultSecretName);
-        }
         /** The stage of the AppServiceEnvironmentResource definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -728,27 +371,14 @@ public interface AppServiceEnvironmentResource {
     /** The template for AppServiceEnvironmentResource update. */
     interface Update
         extends UpdateStages.WithKind,
-            UpdateStages.WithNamePropertiesName,
-            UpdateStages.WithVnetName,
-            UpdateStages.WithVnetResourceGroupName,
-            UpdateStages.WithVnetSubnetName,
             UpdateStages.WithVirtualNetwork,
             UpdateStages.WithInternalLoadBalancingMode,
             UpdateStages.WithMultiSize,
-            UpdateStages.WithMultiRoleCount,
-            UpdateStages.WithWorkerPools,
             UpdateStages.WithIpsslAddressCount,
             UpdateStages.WithDnsSuffix,
-            UpdateStages.WithNetworkAccessControlList,
             UpdateStages.WithFrontEndScaleFactor,
-            UpdateStages.WithApiManagementAccountId,
-            UpdateStages.WithSuspended,
-            UpdateStages.WithDynamicCacheEnabled,
             UpdateStages.WithClusterSettings,
-            UpdateStages.WithUserWhitelistedIpRanges,
-            UpdateStages.WithHasLinuxWorkers,
-            UpdateStages.WithSslCertKeyVaultId,
-            UpdateStages.WithSslCertKeyVaultSecretName {
+            UpdateStages.WithUserWhitelistedIpRanges {
         /**
          * Executes the update request.
          *
@@ -775,46 +405,6 @@ public interface AppServiceEnvironmentResource {
              * @return the next definition stage.
              */
             Update withKind(String kind);
-        }
-        /** The stage of the AppServiceEnvironmentResource update allowing to specify namePropertiesName. */
-        interface WithNamePropertiesName {
-            /**
-             * Specifies the namePropertiesName property: Name of the App Service Environment..
-             *
-             * @param namePropertiesName Name of the App Service Environment.
-             * @return the next definition stage.
-             */
-            Update withNamePropertiesName(String namePropertiesName);
-        }
-        /** The stage of the AppServiceEnvironmentResource update allowing to specify vnetName. */
-        interface WithVnetName {
-            /**
-             * Specifies the vnetName property: Name of the Virtual Network for the App Service Environment..
-             *
-             * @param vnetName Name of the Virtual Network for the App Service Environment.
-             * @return the next definition stage.
-             */
-            Update withVnetName(String vnetName);
-        }
-        /** The stage of the AppServiceEnvironmentResource update allowing to specify vnetResourceGroupName. */
-        interface WithVnetResourceGroupName {
-            /**
-             * Specifies the vnetResourceGroupName property: Resource group of the Virtual Network..
-             *
-             * @param vnetResourceGroupName Resource group of the Virtual Network.
-             * @return the next definition stage.
-             */
-            Update withVnetResourceGroupName(String vnetResourceGroupName);
-        }
-        /** The stage of the AppServiceEnvironmentResource update allowing to specify vnetSubnetName. */
-        interface WithVnetSubnetName {
-            /**
-             * Specifies the vnetSubnetName property: Subnet of the Virtual Network..
-             *
-             * @param vnetSubnetName Subnet of the Virtual Network.
-             * @return the next definition stage.
-             */
-            Update withVnetSubnetName(String vnetSubnetName);
         }
         /** The stage of the AppServiceEnvironmentResource update allowing to specify virtualNetwork. */
         interface WithVirtualNetwork {
@@ -848,28 +438,6 @@ public interface AppServiceEnvironmentResource {
              */
             Update withMultiSize(String multiSize);
         }
-        /** The stage of the AppServiceEnvironmentResource update allowing to specify multiRoleCount. */
-        interface WithMultiRoleCount {
-            /**
-             * Specifies the multiRoleCount property: Number of front-end instances..
-             *
-             * @param multiRoleCount Number of front-end instances.
-             * @return the next definition stage.
-             */
-            Update withMultiRoleCount(Integer multiRoleCount);
-        }
-        /** The stage of the AppServiceEnvironmentResource update allowing to specify workerPools. */
-        interface WithWorkerPools {
-            /**
-             * Specifies the workerPools property: Description of worker pools with worker size IDs, VM sizes, and
-             * number of workers in each pool..
-             *
-             * @param workerPools Description of worker pools with worker size IDs, VM sizes, and number of workers in
-             *     each pool.
-             * @return the next definition stage.
-             */
-            Update withWorkerPools(List<WorkerPool> workerPools);
-        }
         /** The stage of the AppServiceEnvironmentResource update allowing to specify ipsslAddressCount. */
         interface WithIpsslAddressCount {
             /**
@@ -891,18 +459,6 @@ public interface AppServiceEnvironmentResource {
              */
             Update withDnsSuffix(String dnsSuffix);
         }
-        /** The stage of the AppServiceEnvironmentResource update allowing to specify networkAccessControlList. */
-        interface WithNetworkAccessControlList {
-            /**
-             * Specifies the networkAccessControlList property: Access control list for controlling traffic to the App
-             * Service Environment..
-             *
-             * @param networkAccessControlList Access control list for controlling traffic to the App Service
-             *     Environment.
-             * @return the next definition stage.
-             */
-            Update withNetworkAccessControlList(List<NetworkAccessControlEntry> networkAccessControlList);
-        }
         /** The stage of the AppServiceEnvironmentResource update allowing to specify frontEndScaleFactor. */
         interface WithFrontEndScaleFactor {
             /**
@@ -912,45 +468,6 @@ public interface AppServiceEnvironmentResource {
              * @return the next definition stage.
              */
             Update withFrontEndScaleFactor(Integer frontEndScaleFactor);
-        }
-        /** The stage of the AppServiceEnvironmentResource update allowing to specify apiManagementAccountId. */
-        interface WithApiManagementAccountId {
-            /**
-             * Specifies the apiManagementAccountId property: API Management Account associated with the App Service
-             * Environment..
-             *
-             * @param apiManagementAccountId API Management Account associated with the App Service Environment.
-             * @return the next definition stage.
-             */
-            Update withApiManagementAccountId(String apiManagementAccountId);
-        }
-        /** The stage of the AppServiceEnvironmentResource update allowing to specify suspended. */
-        interface WithSuspended {
-            /**
-             * Specifies the suspended property: &lt;code&gt;true&lt;/code&gt; if the App Service Environment is
-             * suspended; otherwise, &lt;code&gt;false&lt;/code&gt;. The environment can be suspended, e.g. when the
-             * management endpoint is no longer available (most likely because NSG blocked the incoming traffic)..
-             *
-             * @param suspended &lt;code&gt;true&lt;/code&gt; if the App Service Environment is suspended; otherwise,
-             *     &lt;code&gt;false&lt;/code&gt;. The environment can be suspended, e.g. when the management endpoint
-             *     is no longer available (most likely because NSG blocked the incoming traffic).
-             * @return the next definition stage.
-             */
-            Update withSuspended(Boolean suspended);
-        }
-        /** The stage of the AppServiceEnvironmentResource update allowing to specify dynamicCacheEnabled. */
-        interface WithDynamicCacheEnabled {
-            /**
-             * Specifies the dynamicCacheEnabled property: True/false indicating whether the App Service Environment is
-             * suspended. The environment can be suspended e.g. when the management endpoint is no longer available
-             * (most likely because NSG blocked the incoming traffic)..
-             *
-             * @param dynamicCacheEnabled True/false indicating whether the App Service Environment is suspended. The
-             *     environment can be suspended e.g. when the management endpoint is no longer available (most likely
-             *     because NSG blocked the incoming traffic).
-             * @return the next definition stage.
-             */
-            Update withDynamicCacheEnabled(Boolean dynamicCacheEnabled);
         }
         /** The stage of the AppServiceEnvironmentResource update allowing to specify clusterSettings. */
         interface WithClusterSettings {
@@ -972,39 +489,6 @@ public interface AppServiceEnvironmentResource {
              * @return the next definition stage.
              */
             Update withUserWhitelistedIpRanges(List<String> userWhitelistedIpRanges);
-        }
-        /** The stage of the AppServiceEnvironmentResource update allowing to specify hasLinuxWorkers. */
-        interface WithHasLinuxWorkers {
-            /**
-             * Specifies the hasLinuxWorkers property: Flag that displays whether an ASE has linux workers or not.
-             *
-             * @param hasLinuxWorkers Flag that displays whether an ASE has linux workers or not.
-             * @return the next definition stage.
-             */
-            Update withHasLinuxWorkers(Boolean hasLinuxWorkers);
-        }
-        /** The stage of the AppServiceEnvironmentResource update allowing to specify sslCertKeyVaultId. */
-        interface WithSslCertKeyVaultId {
-            /**
-             * Specifies the sslCertKeyVaultId property: Key Vault ID for ILB App Service Environment default SSL
-             * certificate.
-             *
-             * @param sslCertKeyVaultId Key Vault ID for ILB App Service Environment default SSL certificate.
-             * @return the next definition stage.
-             */
-            Update withSslCertKeyVaultId(String sslCertKeyVaultId);
-        }
-        /** The stage of the AppServiceEnvironmentResource update allowing to specify sslCertKeyVaultSecretName. */
-        interface WithSslCertKeyVaultSecretName {
-            /**
-             * Specifies the sslCertKeyVaultSecretName property: Key Vault Secret Name for ILB App Service Environment
-             * default SSL certificate.
-             *
-             * @param sslCertKeyVaultSecretName Key Vault Secret Name for ILB App Service Environment default SSL
-             *     certificate.
-             * @return the next definition stage.
-             */
-            Update withSslCertKeyVaultSecretName(String sslCertKeyVaultSecretName);
         }
     }
     /**

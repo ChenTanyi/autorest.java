@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CertificateEmailInner;
 import com.azure.resourcemanager.appservice.generated.models.CertificateEmail;
 import java.time.OffsetDateTime;
@@ -35,10 +34,6 @@ public final class CertificateEmailImpl implements CertificateEmail {
 
     public String kind() {
         return this.innerModel().kind();
-    }
-
-    public SystemData systemData() {
-        return this.innerModel().systemData();
     }
 
     public String emailId() {

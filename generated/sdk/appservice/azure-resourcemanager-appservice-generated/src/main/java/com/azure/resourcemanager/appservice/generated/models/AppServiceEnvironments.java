@@ -7,6 +7,7 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
+import com.azure.resourcemanager.appservice.generated.fluent.models.AseV3NetworkingConfigurationInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.WorkerPoolResourceInner;
 import java.util.List;
 
@@ -211,6 +212,68 @@ public interface AppServiceEnvironments {
      */
     PagedIterable<Site> changeVnet(
         String resourceGroupName, String name, VirtualNetworkProfile vnetInfo, Context context);
+
+    /**
+     * Description for Get networking configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return full view of networking configuration for an ASE.
+     */
+    AseV3NetworkingConfiguration getAseV3NetworkingConfiguration(String resourceGroupName, String name);
+
+    /**
+     * Description for Get networking configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return full view of networking configuration for an ASE.
+     */
+    Response<AseV3NetworkingConfiguration> getAseV3NetworkingConfigurationWithResponse(
+        String resourceGroupName, String name, Context context);
+
+    /**
+     * Description for Update networking configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param aseNetworkingConfiguration Full view of networking configuration for an ASE.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return full view of networking configuration for an ASE.
+     */
+    AseV3NetworkingConfiguration updateAseNetworkingConfiguration(
+        String resourceGroupName, String name, AseV3NetworkingConfigurationInner aseNetworkingConfiguration);
+
+    /**
+     * Description for Update networking configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param aseNetworkingConfiguration Full view of networking configuration for an ASE.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return full view of networking configuration for an ASE.
+     */
+    Response<AseV3NetworkingConfiguration> updateAseNetworkingConfigurationWithResponse(
+        String resourceGroupName,
+        String name,
+        AseV3NetworkingConfigurationInner aseNetworkingConfiguration,
+        Context context);
 
     /**
      * Description for Get diagnostic information for an App Service Environment.
@@ -584,6 +647,164 @@ public interface AppServiceEnvironments {
      * @return collection of Outbound Environment Endpoints.
      */
     PagedIterable<OutboundEnvironmentEndpoint> getOutboundNetworkDependenciesEndpoints(
+        String resourceGroupName, String name, Context context);
+
+    /**
+     * Description for Gets the list of private endpoints associated with a hosting environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    PagedIterable<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionList(
+        String resourceGroupName, String name);
+
+    /**
+     * Description for Gets the list of private endpoints associated with a hosting environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    PagedIterable<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionList(
+        String resourceGroupName, String name, Context context);
+
+    /**
+     * Description for Gets a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName Name of the private endpoint connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return remote Private Endpoint Connection ARM resource.
+     */
+    RemotePrivateEndpointConnectionArmResource getPrivateEndpointConnection(
+        String resourceGroupName, String name, String privateEndpointConnectionName);
+
+    /**
+     * Description for Gets a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName Name of the private endpoint connection.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return remote Private Endpoint Connection ARM resource.
+     */
+    Response<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionWithResponse(
+        String resourceGroupName, String name, String privateEndpointConnectionName, Context context);
+
+    /**
+     * Description for Approves or rejects a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
+     * @param privateEndpointWrapper Private Endpoint Connection Approval ARM resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return remote Private Endpoint Connection ARM resource.
+     */
+    RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnection(
+        String resourceGroupName,
+        String name,
+        String privateEndpointConnectionName,
+        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper);
+
+    /**
+     * Description for Approves or rejects a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
+     * @param privateEndpointWrapper Private Endpoint Connection Approval ARM resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return remote Private Endpoint Connection ARM resource.
+     */
+    RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnection(
+        String resourceGroupName,
+        String name,
+        String privateEndpointConnectionName,
+        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper,
+        Context context);
+
+    /**
+     * Description for Deletes a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object.
+     */
+    Object deletePrivateEndpointConnection(String resourceGroupName, String name, String privateEndpointConnectionName);
+
+    /**
+     * Description for Deletes a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object.
+     */
+    Object deletePrivateEndpointConnection(
+        String resourceGroupName, String name, String privateEndpointConnectionName, Context context);
+
+    /**
+     * Description for Gets the private link resources.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return wrapper for a collection of private link resources.
+     */
+    PrivateLinkResourcesWrapper getPrivateLinkResources(String resourceGroupName, String name);
+
+    /**
+     * Description for Gets the private link resources.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return wrapper for a collection of private link resources.
+     */
+    Response<PrivateLinkResourcesWrapper> getPrivateLinkResourcesWithResponse(
         String resourceGroupName, String name, Context context);
 
     /**

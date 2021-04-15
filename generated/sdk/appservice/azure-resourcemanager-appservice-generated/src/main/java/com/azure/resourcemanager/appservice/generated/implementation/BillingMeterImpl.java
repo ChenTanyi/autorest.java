@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.BillingMeterInner;
 import com.azure.resourcemanager.appservice.generated.models.BillingMeter;
 
@@ -36,10 +35,6 @@ public final class BillingMeterImpl implements BillingMeter {
         return this.innerModel().kind();
     }
 
-    public SystemData systemData() {
-        return this.innerModel().systemData();
-    }
-
     public String meterId() {
         return this.innerModel().meterId();
     }
@@ -62,6 +57,10 @@ public final class BillingMeterImpl implements BillingMeter {
 
     public String osType() {
         return this.innerModel().osType();
+    }
+
+    public Double multiplier() {
+        return this.innerModel().multiplier();
     }
 
     public BillingMeterInner innerModel() {

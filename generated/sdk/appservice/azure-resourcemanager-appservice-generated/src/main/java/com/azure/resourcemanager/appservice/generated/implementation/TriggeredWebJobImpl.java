@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.TriggeredWebJobInner;
 import com.azure.resourcemanager.appservice.generated.models.TriggeredJobRun;
 import com.azure.resourcemanager.appservice.generated.models.TriggeredWebJob;
@@ -38,10 +37,6 @@ public final class TriggeredWebJobImpl implements TriggeredWebJob {
 
     public String kind() {
         return this.innerModel().kind();
-    }
-
-    public SystemData systemData() {
-        return this.innerModel().systemData();
     }
 
     public TriggeredJobRun latestRun() {

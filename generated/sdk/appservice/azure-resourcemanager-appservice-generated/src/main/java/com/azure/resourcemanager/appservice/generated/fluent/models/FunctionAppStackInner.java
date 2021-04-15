@@ -9,7 +9,7 @@ import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.FunctionAppMajorVersion;
 import com.azure.resourcemanager.appservice.generated.models.ProxyOnlyResource;
-import com.azure.resourcemanager.appservice.generated.models.StackOsTypes;
+import com.azure.resourcemanager.appservice.generated.models.StackPreferredOs;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -48,7 +48,7 @@ public class FunctionAppStackInner extends ProxyOnlyResource {
      * Function App stack preferred OS.
      */
     @JsonProperty(value = "properties.preferredOs", access = JsonProperty.Access.WRITE_ONLY)
-    private StackOsTypes preferredOs;
+    private StackPreferredOs preferredOs;
 
     /**
      * Get the location property: Function App stack location.
@@ -91,7 +91,7 @@ public class FunctionAppStackInner extends ProxyOnlyResource {
      *
      * @return the preferredOs value.
      */
-    public StackOsTypes preferredOs() {
+    public StackPreferredOs preferredOs() {
         return this.preferredOs;
     }
 

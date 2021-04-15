@@ -8,10 +8,8 @@ import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.StreamResponse;
 import com.azure.core.management.Region;
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.BackupRequestInner;
-import com.azure.resourcemanager.appservice.generated.fluent.models.CsmCopySlotEntityInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RestoreRequestInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteInner;
@@ -329,6 +327,13 @@ public interface Site {
     SlotSwapStatus slotSwapStatus();
 
     /**
+     * Gets the keyVaultReferenceIdentity property: Identity to use for Key Vault Reference authentication.
+     *
+     * @return the keyVaultReferenceIdentity value.
+     */
+    String keyVaultReferenceIdentity();
+
+    /**
      * Gets the httpsOnly property: HttpsOnly: configures a web site to accept only https requests. Issues redirect for
      * http requests.
      *
@@ -363,13 +368,6 @@ public interface Site {
      * @return the kind value.
      */
     String kind();
-
-    /**
-     * Gets the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    SystemData systemData();
 
     /**
      * Gets the region of the resource.
@@ -457,6 +455,7 @@ public interface Site {
                 DefinitionStages.WithContainerSize,
                 DefinitionStages.WithDailyMemoryTimeQuota,
                 DefinitionStages.WithCloningInfo,
+                DefinitionStages.WithKeyVaultReferenceIdentity,
                 DefinitionStages.WithHttpsOnly,
                 DefinitionStages.WithRedundancyMode,
                 DefinitionStages.WithStorageAccountRequired,
@@ -710,6 +709,17 @@ public interface Site {
              */
             WithCreate withCloningInfo(CloningInfo cloningInfo);
         }
+        /** The stage of the Site definition allowing to specify keyVaultReferenceIdentity. */
+        interface WithKeyVaultReferenceIdentity {
+            /**
+             * Specifies the keyVaultReferenceIdentity property: Identity to use for Key Vault Reference
+             * authentication..
+             *
+             * @param keyVaultReferenceIdentity Identity to use for Key Vault Reference authentication.
+             * @return the next definition stage.
+             */
+            WithCreate withKeyVaultReferenceIdentity(String keyVaultReferenceIdentity);
+        }
         /** The stage of the Site definition allowing to specify httpsOnly. */
         interface WithHttpsOnly {
             /**
@@ -777,8 +787,10 @@ public interface Site {
             UpdateStages.WithCustomDomainVerificationId,
             UpdateStages.WithContainerSize,
             UpdateStages.WithDailyMemoryTimeQuota,
+            UpdateStages.WithKeyVaultReferenceIdentity,
             UpdateStages.WithHttpsOnly,
-            UpdateStages.WithRedundancyMode {
+            UpdateStages.WithRedundancyMode,
+            UpdateStages.WithStorageAccountRequired {
         /**
          * Executes the update request.
          *
@@ -978,6 +990,17 @@ public interface Site {
              */
             Update withDailyMemoryTimeQuota(Integer dailyMemoryTimeQuota);
         }
+        /** The stage of the Site update allowing to specify keyVaultReferenceIdentity. */
+        interface WithKeyVaultReferenceIdentity {
+            /**
+             * Specifies the keyVaultReferenceIdentity property: Identity to use for Key Vault Reference
+             * authentication..
+             *
+             * @param keyVaultReferenceIdentity Identity to use for Key Vault Reference authentication.
+             * @return the next definition stage.
+             */
+            Update withKeyVaultReferenceIdentity(String keyVaultReferenceIdentity);
+        }
         /** The stage of the Site update allowing to specify httpsOnly. */
         interface WithHttpsOnly {
             /**
@@ -999,6 +1022,16 @@ public interface Site {
              * @return the next definition stage.
              */
             Update withRedundancyMode(RedundancyMode redundancyMode);
+        }
+        /** The stage of the Site update allowing to specify storageAccountRequired. */
+        interface WithStorageAccountRequired {
+            /**
+             * Specifies the storageAccountRequired property: Checks if Customer provided storage account is required.
+             *
+             * @param storageAccountRequired Checks if Customer provided storage account is required.
+             * @return the next definition stage.
+             */
+            Update withStorageAccountRequired(Boolean storageAccountRequired);
         }
     }
     /**
@@ -1370,31 +1403,6 @@ public interface Site {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void restoreSnapshot(SnapshotRestoreRequest restoreRequest, Context context);
-
-    /**
-     * Description for Copies a deployment slot to another deployment slot of an app.
-     *
-     * @param copySlotEntity JSON object that contains the target slot name and site config properties to override the
-     *     source slot config. See example.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void copyProductionSlot(CsmCopySlotEntityInner copySlotEntity);
-
-    /**
-     * Description for Copies a deployment slot to another deployment slot of an app.
-     *
-     * @param copySlotEntity JSON object that contains the target slot name and site config properties to override the
-     *     source slot config. See example.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void copyProductionSlot(CsmCopySlotEntityInner copySlotEntity, Context context);
 
     /**
      * Description for Get the difference in configuration settings between two web app slots.

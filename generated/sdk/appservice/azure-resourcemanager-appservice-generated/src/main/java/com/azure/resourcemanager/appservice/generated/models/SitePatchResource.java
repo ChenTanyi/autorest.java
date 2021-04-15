@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SitePatchResourceInner;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -39,13 +38,6 @@ public interface SitePatchResource {
      * @return the kind value.
      */
     String kind();
-
-    /**
-     * Gets the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    SystemData systemData();
 
     /**
      * Gets the identity property: Managed service identity.
@@ -318,6 +310,13 @@ public interface SitePatchResource {
     SlotSwapStatus slotSwapStatus();
 
     /**
+     * Gets the keyVaultReferenceIdentity property: Identity to use for Key Vault Reference authentication.
+     *
+     * @return the keyVaultReferenceIdentity value.
+     */
+    String keyVaultReferenceIdentity();
+
+    /**
      * Gets the httpsOnly property: HttpsOnly: configures a web site to accept only https requests. Issues redirect for
      * http requests.
      *
@@ -338,6 +337,13 @@ public interface SitePatchResource {
      * @return the inProgressOperationId value.
      */
     UUID inProgressOperationId();
+
+    /**
+     * Gets the storageAccountRequired property: Checks if Customer provided storage account is required.
+     *
+     * @return the storageAccountRequired value.
+     */
+    Boolean storageAccountRequired();
 
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.SitePatchResourceInner object.

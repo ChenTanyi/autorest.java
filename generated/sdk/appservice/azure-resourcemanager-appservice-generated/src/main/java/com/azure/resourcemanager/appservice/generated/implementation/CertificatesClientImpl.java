@@ -70,6 +70,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<CertificateCollection>> list(
             @HostParam("$host") String endpoint,
+            @QueryParam(value = "$filter", encoded = true) String filter,
             @PathParam("subscriptionId") String subscriptionId,
             @QueryParam("api-version") String apiVersion,
             @HeaderParam("Accept") String accept,
@@ -173,12 +174,15 @@ public final class CertificatesClientImpl implements CertificatesClient {
     /**
      * Description for Get all certificates for a subscription.
      *
+     * @param filter Return only information specified in the filter (using OData syntax). For example:
+     *     $filter=KeyVaultId eq 'KeyVaultId'.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of certificates.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<CertificateInner>> listSinglePageAsync() {
+    private Mono<PagedResponse<CertificateInner>> listSinglePageAsync(String filter) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -198,6 +202,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
                     service
                         .list(
                             this.client.getEndpoint(),
+                            filter,
                             this.client.getSubscriptionId(),
                             this.client.getApiVersion(),
                             accept,
@@ -217,6 +222,8 @@ public final class CertificatesClientImpl implements CertificatesClient {
     /**
      * Description for Get all certificates for a subscription.
      *
+     * @param filter Return only information specified in the filter (using OData syntax). For example:
+     *     $filter=KeyVaultId eq 'KeyVaultId'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -224,7 +231,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * @return collection of certificates.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<CertificateInner>> listSinglePageAsync(Context context) {
+    private Mono<PagedResponse<CertificateInner>> listSinglePageAsync(String filter, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono
                 .error(
@@ -242,6 +249,7 @@ public final class CertificatesClientImpl implements CertificatesClient {
         return service
             .list(
                 this.client.getEndpoint(),
+                filter,
                 this.client.getSubscriptionId(),
                 this.client.getApiVersion(),
                 accept,
@@ -260,18 +268,36 @@ public final class CertificatesClientImpl implements CertificatesClient {
     /**
      * Description for Get all certificates for a subscription.
      *
+     * @param filter Return only information specified in the filter (using OData syntax). For example:
+     *     $filter=KeyVaultId eq 'KeyVaultId'.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of certificates.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<CertificateInner> listAsync(String filter) {
+        return new PagedFlux<>(() -> listSinglePageAsync(filter), nextLink -> listNextSinglePageAsync(nextLink));
+    }
+
+    /**
+     * Description for Get all certificates for a subscription.
+     *
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of certificates.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<CertificateInner> listAsync() {
-        return new PagedFlux<>(() -> listSinglePageAsync(), nextLink -> listNextSinglePageAsync(nextLink));
+        final String filter = null;
+        return new PagedFlux<>(() -> listSinglePageAsync(filter), nextLink -> listNextSinglePageAsync(nextLink));
     }
 
     /**
      * Description for Get all certificates for a subscription.
      *
+     * @param filter Return only information specified in the filter (using OData syntax). For example:
+     *     $filter=KeyVaultId eq 'KeyVaultId'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -279,9 +305,9 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * @return collection of certificates.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<CertificateInner> listAsync(Context context) {
+    private PagedFlux<CertificateInner> listAsync(String filter, Context context) {
         return new PagedFlux<>(
-            () -> listSinglePageAsync(context), nextLink -> listNextSinglePageAsync(nextLink, context));
+            () -> listSinglePageAsync(filter, context), nextLink -> listNextSinglePageAsync(nextLink, context));
     }
 
     /**
@@ -293,12 +319,15 @@ public final class CertificatesClientImpl implements CertificatesClient {
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<CertificateInner> list() {
-        return new PagedIterable<>(listAsync());
+        final String filter = null;
+        return new PagedIterable<>(listAsync(filter));
     }
 
     /**
      * Description for Get all certificates for a subscription.
      *
+     * @param filter Return only information specified in the filter (using OData syntax). For example:
+     *     $filter=KeyVaultId eq 'KeyVaultId'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -306,8 +335,8 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * @return collection of certificates.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<CertificateInner> list(Context context) {
-        return new PagedIterable<>(listAsync(context));
+    public PagedIterable<CertificateInner> list(String filter, Context context) {
+        return new PagedIterable<>(listAsync(filter, context));
     }
 
     /**

@@ -37,6 +37,15 @@ public class SiteAuthSettingsInner extends ProxyOnlyResource {
     private String runtimeVersion;
 
     /*
+     * The ConfigVersion of the Authentication / Authorization feature in use
+     * for the current app.
+     * The setting in this value can control the behavior of the control plane
+     * for Authentication / Authorization.
+     */
+    @JsonProperty(value = "properties.configVersion")
+    private String configVersion;
+
+    /*
      * The action to take when an unauthenticated client attempts to access the
      * app.
      */
@@ -381,6 +390,30 @@ public class SiteAuthSettingsInner extends ProxyOnlyResource {
      */
     public SiteAuthSettingsInner withRuntimeVersion(String runtimeVersion) {
         this.runtimeVersion = runtimeVersion;
+        return this;
+    }
+
+    /**
+     * Get the configVersion property: The ConfigVersion of the Authentication / Authorization feature in use for the
+     * current app. The setting in this value can control the behavior of the control plane for Authentication /
+     * Authorization.
+     *
+     * @return the configVersion value.
+     */
+    public String configVersion() {
+        return this.configVersion;
+    }
+
+    /**
+     * Set the configVersion property: The ConfigVersion of the Authentication / Authorization feature in use for the
+     * current app. The setting in this value can control the behavior of the control plane for Authentication /
+     * Authorization.
+     *
+     * @param configVersion the configVersion value to set.
+     * @return the SiteAuthSettingsInner object itself.
+     */
+    public SiteAuthSettingsInner withConfigVersion(String configVersion) {
+        this.configVersion = configVersion;
         return this;
     }
 

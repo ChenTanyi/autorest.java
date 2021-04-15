@@ -45,7 +45,7 @@ public interface Providers {
     /**
      * Description for Get available Function app frameworks and their versions.
      *
-     * @param stackOsType The stackOsType parameter.
+     * @param stackOsType Stack OS Type.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -58,7 +58,7 @@ public interface Providers {
     /**
      * Description for Get available Function app frameworks and their versions for location.
      *
-     * @param location The location parameter.
+     * @param location Function App stack location.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -70,8 +70,8 @@ public interface Providers {
     /**
      * Description for Get available Function app frameworks and their versions for location.
      *
-     * @param location The location parameter.
-     * @param stackOsType The stackOsType parameter.
+     * @param location Function App stack location.
+     * @param stackOsType Stack OS Type.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -85,7 +85,7 @@ public interface Providers {
     /**
      * Description for Get available Web app frameworks and their versions for location.
      *
-     * @param location The location parameter.
+     * @param location Web App stack location.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
@@ -97,8 +97,8 @@ public interface Providers {
     /**
      * Description for Get available Web app frameworks and their versions for location.
      *
-     * @param location The location parameter.
-     * @param stackOsType The stackOsType parameter.
+     * @param location Web App stack location.
+     * @param stackOsType Stack OS Type.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -146,7 +146,7 @@ public interface Providers {
     /**
      * Description for Get available Web app frameworks and their versions.
      *
-     * @param stackOsType The stackOsType parameter.
+     * @param stackOsType Stack OS Type.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the

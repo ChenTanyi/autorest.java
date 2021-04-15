@@ -34,8 +34,8 @@ public final class CertificatesImpl implements Certificates {
         return Utils.mapPage(inner, inner1 -> new CertificateImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<Certificate> list(Context context) {
-        PagedIterable<CertificateInner> inner = this.serviceClient().list(context);
+    public PagedIterable<Certificate> list(String filter, Context context) {
+        PagedIterable<CertificateInner> inner = this.serviceClient().list(filter, context);
         return Utils.mapPage(inner, inner1 -> new CertificateImpl(inner1, this.manager()));
     }
 

@@ -13,11 +13,14 @@ import com.azure.resourcemanager.appservice.generated.fluent.AppServiceEnvironme
 import com.azure.resourcemanager.appservice.generated.fluent.models.AddressResponseInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceEnvironmentResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServicePlanInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.AseV3NetworkingConfigurationInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmUsageQuotaInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.HostingEnvironmentDiagnosticsInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.InboundEnvironmentEndpointInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.OutboundEnvironmentEndpointInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.PrivateLinkResourcesWrapperInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.RemotePrivateEndpointConnectionArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ResourceMetricDefinitionInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SkuInfoInner;
@@ -28,11 +31,15 @@ import com.azure.resourcemanager.appservice.generated.models.AddressResponse;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceEnvironmentResource;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceEnvironments;
 import com.azure.resourcemanager.appservice.generated.models.AppServicePlan;
+import com.azure.resourcemanager.appservice.generated.models.AseV3NetworkingConfiguration;
 import com.azure.resourcemanager.appservice.generated.models.CsmUsageQuota;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentDiagnostics;
 import com.azure.resourcemanager.appservice.generated.models.InboundEnvironmentEndpoint;
 import com.azure.resourcemanager.appservice.generated.models.Operation;
 import com.azure.resourcemanager.appservice.generated.models.OutboundEnvironmentEndpoint;
+import com.azure.resourcemanager.appservice.generated.models.PrivateLinkConnectionApprovalRequestResource;
+import com.azure.resourcemanager.appservice.generated.models.PrivateLinkResourcesWrapper;
+import com.azure.resourcemanager.appservice.generated.models.RemotePrivateEndpointConnectionArmResource;
 import com.azure.resourcemanager.appservice.generated.models.ResourceMetricDefinition;
 import com.azure.resourcemanager.appservice.generated.models.Site;
 import com.azure.resourcemanager.appservice.generated.models.SkuInfo;
@@ -159,6 +166,63 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         String resourceGroupName, String name, VirtualNetworkProfile vnetInfo, Context context) {
         PagedIterable<SiteInner> inner = this.serviceClient().changeVnet(resourceGroupName, name, vnetInfo, context);
         return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
+    }
+
+    public AseV3NetworkingConfiguration getAseV3NetworkingConfiguration(String resourceGroupName, String name) {
+        AseV3NetworkingConfigurationInner inner =
+            this.serviceClient().getAseV3NetworkingConfiguration(resourceGroupName, name);
+        if (inner != null) {
+            return new AseV3NetworkingConfigurationImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<AseV3NetworkingConfiguration> getAseV3NetworkingConfigurationWithResponse(
+        String resourceGroupName, String name, Context context) {
+        Response<AseV3NetworkingConfigurationInner> inner =
+            this.serviceClient().getAseV3NetworkingConfigurationWithResponse(resourceGroupName, name, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new AseV3NetworkingConfigurationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public AseV3NetworkingConfiguration updateAseNetworkingConfiguration(
+        String resourceGroupName, String name, AseV3NetworkingConfigurationInner aseNetworkingConfiguration) {
+        AseV3NetworkingConfigurationInner inner =
+            this.serviceClient().updateAseNetworkingConfiguration(resourceGroupName, name, aseNetworkingConfiguration);
+        if (inner != null) {
+            return new AseV3NetworkingConfigurationImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<AseV3NetworkingConfiguration> updateAseNetworkingConfigurationWithResponse(
+        String resourceGroupName,
+        String name,
+        AseV3NetworkingConfigurationInner aseNetworkingConfiguration,
+        Context context) {
+        Response<AseV3NetworkingConfigurationInner> inner =
+            this
+                .serviceClient()
+                .updateAseNetworkingConfigurationWithResponse(
+                    resourceGroupName, name, aseNetworkingConfiguration, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new AseV3NetworkingConfigurationImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
     }
 
     public List<HostingEnvironmentDiagnostics> listDiagnostics(String resourceGroupName, String name) {
@@ -414,6 +478,124 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         PagedIterable<OutboundEnvironmentEndpointInner> inner =
             this.serviceClient().getOutboundNetworkDependenciesEndpoints(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new OutboundEnvironmentEndpointImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionList(
+        String resourceGroupName, String name) {
+        PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> inner =
+            this.serviceClient().getPrivateEndpointConnectionList(resourceGroupName, name);
+        return Utils
+            .mapPage(inner, inner1 -> new RemotePrivateEndpointConnectionArmResourceImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionList(
+        String resourceGroupName, String name, Context context) {
+        PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> inner =
+            this.serviceClient().getPrivateEndpointConnectionList(resourceGroupName, name, context);
+        return Utils
+            .mapPage(inner, inner1 -> new RemotePrivateEndpointConnectionArmResourceImpl(inner1, this.manager()));
+    }
+
+    public RemotePrivateEndpointConnectionArmResource getPrivateEndpointConnection(
+        String resourceGroupName, String name, String privateEndpointConnectionName) {
+        RemotePrivateEndpointConnectionArmResourceInner inner =
+            this.serviceClient().getPrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName);
+        if (inner != null) {
+            return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionWithResponse(
+        String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
+        Response<RemotePrivateEndpointConnectionArmResourceInner> inner =
+            this
+                .serviceClient()
+                .getPrivateEndpointConnectionWithResponse(
+                    resourceGroupName, name, privateEndpointConnectionName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new RemotePrivateEndpointConnectionArmResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnection(
+        String resourceGroupName,
+        String name,
+        String privateEndpointConnectionName,
+        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper) {
+        RemotePrivateEndpointConnectionArmResourceInner inner =
+            this
+                .serviceClient()
+                .approveOrRejectPrivateEndpointConnection(
+                    resourceGroupName, name, privateEndpointConnectionName, privateEndpointWrapper);
+        if (inner != null) {
+            return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnection(
+        String resourceGroupName,
+        String name,
+        String privateEndpointConnectionName,
+        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper,
+        Context context) {
+        RemotePrivateEndpointConnectionArmResourceInner inner =
+            this
+                .serviceClient()
+                .approveOrRejectPrivateEndpointConnection(
+                    resourceGroupName, name, privateEndpointConnectionName, privateEndpointWrapper, context);
+        if (inner != null) {
+            return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Object deletePrivateEndpointConnection(
+        String resourceGroupName, String name, String privateEndpointConnectionName) {
+        return this
+            .serviceClient()
+            .deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName);
+    }
+
+    public Object deletePrivateEndpointConnection(
+        String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
+        return this
+            .serviceClient()
+            .deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName, context);
+    }
+
+    public PrivateLinkResourcesWrapper getPrivateLinkResources(String resourceGroupName, String name) {
+        PrivateLinkResourcesWrapperInner inner = this.serviceClient().getPrivateLinkResources(resourceGroupName, name);
+        if (inner != null) {
+            return new PrivateLinkResourcesWrapperImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<PrivateLinkResourcesWrapper> getPrivateLinkResourcesWithResponse(
+        String resourceGroupName, String name, Context context) {
+        Response<PrivateLinkResourcesWrapperInner> inner =
+            this.serviceClient().getPrivateLinkResourcesWithResponse(resourceGroupName, name, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new PrivateLinkResourcesWrapperImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
     }
 
     public void reboot(String resourceGroupName, String name) {

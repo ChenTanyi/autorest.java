@@ -7,26 +7,19 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceEnvironmentResourceInner;
-import com.azure.resourcemanager.appservice.generated.fluent.models.StampCapacityInner;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceEnvironmentPatchResource;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceEnvironmentResource;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentStatus;
 import com.azure.resourcemanager.appservice.generated.models.LoadBalancingMode;
 import com.azure.resourcemanager.appservice.generated.models.NameValuePair;
-import com.azure.resourcemanager.appservice.generated.models.NetworkAccessControlEntry;
 import com.azure.resourcemanager.appservice.generated.models.ProvisioningState;
 import com.azure.resourcemanager.appservice.generated.models.Site;
-import com.azure.resourcemanager.appservice.generated.models.StampCapacity;
-import com.azure.resourcemanager.appservice.generated.models.VirtualIpMapping;
 import com.azure.resourcemanager.appservice.generated.models.VirtualNetworkProfile;
-import com.azure.resourcemanager.appservice.generated.models.WorkerPool;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public final class AppServiceEnvironmentResourceImpl
     implements AppServiceEnvironmentResource,
@@ -61,32 +54,12 @@ public final class AppServiceEnvironmentResourceImpl
         }
     }
 
-    public String namePropertiesName() {
-        return this.innerModel().namePropertiesName();
-    }
-
-    public String locationPropertiesLocation() {
-        return this.innerModel().locationPropertiesLocation();
-    }
-
     public ProvisioningState provisioningState() {
         return this.innerModel().provisioningState();
     }
 
     public HostingEnvironmentStatus status() {
         return this.innerModel().status();
-    }
-
-    public String vnetName() {
-        return this.innerModel().vnetName();
-    }
-
-    public String vnetResourceGroupName() {
-        return this.innerModel().vnetResourceGroupName();
-    }
-
-    public String vnetSubnetName() {
-        return this.innerModel().vnetSubnetName();
     }
 
     public VirtualNetworkProfile virtualNetwork() {
@@ -105,121 +78,24 @@ public final class AppServiceEnvironmentResourceImpl
         return this.innerModel().multiRoleCount();
     }
 
-    public List<WorkerPool> workerPools() {
-        List<WorkerPool> inner = this.innerModel().workerPools();
-        if (inner != null) {
-            return Collections.unmodifiableList(inner);
-        } else {
-            return Collections.emptyList();
-        }
-    }
-
     public Integer ipsslAddressCount() {
         return this.innerModel().ipsslAddressCount();
-    }
-
-    public String databaseEdition() {
-        return this.innerModel().databaseEdition();
-    }
-
-    public String databaseServiceObjective() {
-        return this.innerModel().databaseServiceObjective();
-    }
-
-    public Integer upgradeDomains() {
-        return this.innerModel().upgradeDomains();
-    }
-
-    public String subscriptionId() {
-        return this.innerModel().subscriptionId();
     }
 
     public String dnsSuffix() {
         return this.innerModel().dnsSuffix();
     }
 
-    public String lastAction() {
-        return this.innerModel().lastAction();
-    }
-
-    public String lastActionResult() {
-        return this.innerModel().lastActionResult();
-    }
-
-    public String allowedMultiSizes() {
-        return this.innerModel().allowedMultiSizes();
-    }
-
-    public String allowedWorkerSizes() {
-        return this.innerModel().allowedWorkerSizes();
-    }
-
     public Integer maximumNumberOfMachines() {
         return this.innerModel().maximumNumberOfMachines();
-    }
-
-    public List<VirtualIpMapping> vipMappings() {
-        List<VirtualIpMapping> inner = this.innerModel().vipMappings();
-        if (inner != null) {
-            return Collections.unmodifiableList(inner);
-        } else {
-            return Collections.emptyList();
-        }
-    }
-
-    public List<StampCapacity> environmentCapacities() {
-        List<StampCapacityInner> inner = this.innerModel().environmentCapacities();
-        if (inner != null) {
-            return Collections
-                .unmodifiableList(
-                    inner
-                        .stream()
-                        .map(inner1 -> new StampCapacityImpl(inner1, this.manager()))
-                        .collect(Collectors.toList()));
-        } else {
-            return Collections.emptyList();
-        }
-    }
-
-    public List<NetworkAccessControlEntry> networkAccessControlList() {
-        List<NetworkAccessControlEntry> inner = this.innerModel().networkAccessControlList();
-        if (inner != null) {
-            return Collections.unmodifiableList(inner);
-        } else {
-            return Collections.emptyList();
-        }
-    }
-
-    public Boolean environmentIsHealthy() {
-        return this.innerModel().environmentIsHealthy();
-    }
-
-    public String environmentStatus() {
-        return this.innerModel().environmentStatus();
-    }
-
-    public String resourceGroup() {
-        return this.innerModel().resourceGroup();
     }
 
     public Integer frontEndScaleFactor() {
         return this.innerModel().frontEndScaleFactor();
     }
 
-    public Integer defaultFrontEndScaleFactor() {
-        return this.innerModel().defaultFrontEndScaleFactor();
-    }
-
-    public String apiManagementAccountId() {
-        return this.innerModel().apiManagementAccountId();
-    }
-
     public Boolean suspended() {
         return this.innerModel().suspended();
-    }
-
-    public Boolean dynamicCacheEnabled() {
-        return this.innerModel().dynamicCacheEnabled();
     }
 
     public List<NameValuePair> clusterSettings() {
@@ -244,20 +120,12 @@ public final class AppServiceEnvironmentResourceImpl
         return this.innerModel().hasLinuxWorkers();
     }
 
-    public String sslCertKeyVaultId() {
-        return this.innerModel().sslCertKeyVaultId();
-    }
-
-    public String sslCertKeyVaultSecretName() {
-        return this.innerModel().sslCertKeyVaultSecretName();
+    public Integer dedicatedHostCount() {
+        return this.innerModel().dedicatedHostCount();
     }
 
     public String kind() {
         return this.innerModel().kind();
-    }
-
-    public SystemData systemData() {
-        return this.innerModel().systemData();
     }
 
     public Region region() {
@@ -413,51 +281,6 @@ public final class AppServiceEnvironmentResourceImpl
         return this;
     }
 
-    public AppServiceEnvironmentResourceImpl withNamePropertiesName(String namePropertiesName) {
-        if (isInCreateMode()) {
-            this.innerModel().withNamePropertiesName(namePropertiesName);
-            return this;
-        } else {
-            this.updateHostingEnvironmentEnvelope.withNamePropertiesName(namePropertiesName);
-            return this;
-        }
-    }
-
-    public AppServiceEnvironmentResourceImpl withLocationPropertiesLocation(String locationPropertiesLocation) {
-        this.innerModel().withLocationPropertiesLocation(locationPropertiesLocation);
-        return this;
-    }
-
-    public AppServiceEnvironmentResourceImpl withVnetName(String vnetName) {
-        if (isInCreateMode()) {
-            this.innerModel().withVnetName(vnetName);
-            return this;
-        } else {
-            this.updateHostingEnvironmentEnvelope.withVnetName(vnetName);
-            return this;
-        }
-    }
-
-    public AppServiceEnvironmentResourceImpl withVnetResourceGroupName(String vnetResourceGroupName) {
-        if (isInCreateMode()) {
-            this.innerModel().withVnetResourceGroupName(vnetResourceGroupName);
-            return this;
-        } else {
-            this.updateHostingEnvironmentEnvelope.withVnetResourceGroupName(vnetResourceGroupName);
-            return this;
-        }
-    }
-
-    public AppServiceEnvironmentResourceImpl withVnetSubnetName(String vnetSubnetName) {
-        if (isInCreateMode()) {
-            this.innerModel().withVnetSubnetName(vnetSubnetName);
-            return this;
-        } else {
-            this.updateHostingEnvironmentEnvelope.withVnetSubnetName(vnetSubnetName);
-            return this;
-        }
-    }
-
     public AppServiceEnvironmentResourceImpl withVirtualNetwork(VirtualNetworkProfile virtualNetwork) {
         if (isInCreateMode()) {
             this.innerModel().withVirtualNetwork(virtualNetwork);
@@ -489,26 +312,6 @@ public final class AppServiceEnvironmentResourceImpl
         }
     }
 
-    public AppServiceEnvironmentResourceImpl withMultiRoleCount(Integer multiRoleCount) {
-        if (isInCreateMode()) {
-            this.innerModel().withMultiRoleCount(multiRoleCount);
-            return this;
-        } else {
-            this.updateHostingEnvironmentEnvelope.withMultiRoleCount(multiRoleCount);
-            return this;
-        }
-    }
-
-    public AppServiceEnvironmentResourceImpl withWorkerPools(List<WorkerPool> workerPools) {
-        if (isInCreateMode()) {
-            this.innerModel().withWorkerPools(workerPools);
-            return this;
-        } else {
-            this.updateHostingEnvironmentEnvelope.withWorkerPools(workerPools);
-            return this;
-        }
-    }
-
     public AppServiceEnvironmentResourceImpl withIpsslAddressCount(Integer ipsslAddressCount) {
         if (isInCreateMode()) {
             this.innerModel().withIpsslAddressCount(ipsslAddressCount);
@@ -529,53 +332,12 @@ public final class AppServiceEnvironmentResourceImpl
         }
     }
 
-    public AppServiceEnvironmentResourceImpl withNetworkAccessControlList(
-        List<NetworkAccessControlEntry> networkAccessControlList) {
-        if (isInCreateMode()) {
-            this.innerModel().withNetworkAccessControlList(networkAccessControlList);
-            return this;
-        } else {
-            this.updateHostingEnvironmentEnvelope.withNetworkAccessControlList(networkAccessControlList);
-            return this;
-        }
-    }
-
     public AppServiceEnvironmentResourceImpl withFrontEndScaleFactor(Integer frontEndScaleFactor) {
         if (isInCreateMode()) {
             this.innerModel().withFrontEndScaleFactor(frontEndScaleFactor);
             return this;
         } else {
             this.updateHostingEnvironmentEnvelope.withFrontEndScaleFactor(frontEndScaleFactor);
-            return this;
-        }
-    }
-
-    public AppServiceEnvironmentResourceImpl withApiManagementAccountId(String apiManagementAccountId) {
-        if (isInCreateMode()) {
-            this.innerModel().withApiManagementAccountId(apiManagementAccountId);
-            return this;
-        } else {
-            this.updateHostingEnvironmentEnvelope.withApiManagementAccountId(apiManagementAccountId);
-            return this;
-        }
-    }
-
-    public AppServiceEnvironmentResourceImpl withSuspended(Boolean suspended) {
-        if (isInCreateMode()) {
-            this.innerModel().withSuspended(suspended);
-            return this;
-        } else {
-            this.updateHostingEnvironmentEnvelope.withSuspended(suspended);
-            return this;
-        }
-    }
-
-    public AppServiceEnvironmentResourceImpl withDynamicCacheEnabled(Boolean dynamicCacheEnabled) {
-        if (isInCreateMode()) {
-            this.innerModel().withDynamicCacheEnabled(dynamicCacheEnabled);
-            return this;
-        } else {
-            this.updateHostingEnvironmentEnvelope.withDynamicCacheEnabled(dynamicCacheEnabled);
             return this;
         }
     }
@@ -596,36 +358,6 @@ public final class AppServiceEnvironmentResourceImpl
             return this;
         } else {
             this.updateHostingEnvironmentEnvelope.withUserWhitelistedIpRanges(userWhitelistedIpRanges);
-            return this;
-        }
-    }
-
-    public AppServiceEnvironmentResourceImpl withHasLinuxWorkers(Boolean hasLinuxWorkers) {
-        if (isInCreateMode()) {
-            this.innerModel().withHasLinuxWorkers(hasLinuxWorkers);
-            return this;
-        } else {
-            this.updateHostingEnvironmentEnvelope.withHasLinuxWorkers(hasLinuxWorkers);
-            return this;
-        }
-    }
-
-    public AppServiceEnvironmentResourceImpl withSslCertKeyVaultId(String sslCertKeyVaultId) {
-        if (isInCreateMode()) {
-            this.innerModel().withSslCertKeyVaultId(sslCertKeyVaultId);
-            return this;
-        } else {
-            this.updateHostingEnvironmentEnvelope.withSslCertKeyVaultId(sslCertKeyVaultId);
-            return this;
-        }
-    }
-
-    public AppServiceEnvironmentResourceImpl withSslCertKeyVaultSecretName(String sslCertKeyVaultSecretName) {
-        if (isInCreateMode()) {
-            this.innerModel().withSslCertKeyVaultSecretName(sslCertKeyVaultSecretName);
-            return this;
-        } else {
-            this.updateHostingEnvironmentEnvelope.withSslCertKeyVaultSecretName(sslCertKeyVaultSecretName);
             return this;
         }
     }

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ApplicationStackResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.ApplicationStack;
 import com.azure.resourcemanager.appservice.generated.models.ApplicationStackResource;
@@ -40,10 +39,6 @@ public final class ApplicationStackResourceImpl implements ApplicationStackResou
         return this.innerModel().kind();
     }
 
-    public SystemData systemData() {
-        return this.innerModel().systemData();
-    }
-
     public String namePropertiesName() {
         return this.innerModel().namePropertiesName();
     }
@@ -67,6 +62,15 @@ public final class ApplicationStackResourceImpl implements ApplicationStackResou
 
     public List<ApplicationStack> frameworks() {
         List<ApplicationStack> inner = this.innerModel().frameworks();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public List<ApplicationStack> isDeprecated() {
+        List<ApplicationStack> inner = this.innerModel().isDeprecated();
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {

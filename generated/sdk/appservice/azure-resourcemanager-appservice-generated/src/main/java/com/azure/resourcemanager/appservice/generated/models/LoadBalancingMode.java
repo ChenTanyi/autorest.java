@@ -19,8 +19,8 @@ public final class LoadBalancingMode extends ExpandableStringEnum<LoadBalancingM
     /** Static value Publishing for LoadBalancingMode. */
     public static final LoadBalancingMode PUBLISHING = fromString("Publishing");
 
-    /** Static value Web,Publishing for LoadBalancingMode. */
-    public static final LoadBalancingMode WEB_PUBLISHING = fromString("Web,Publishing");
+    /** Static value Web, Publishing for LoadBalancingMode. */
+    public static final LoadBalancingMode WEB_PUBLISHING = fromString("Web, Publishing");
 
     /**
      * Creates or finds a LoadBalancingMode from its string representation.

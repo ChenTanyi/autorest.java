@@ -4,9 +4,8 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.WebAppStackInner;
-import com.azure.resourcemanager.appservice.generated.models.StackOsTypes;
+import com.azure.resourcemanager.appservice.generated.models.StackPreferredOs;
 import com.azure.resourcemanager.appservice.generated.models.WebAppMajorVersion;
 import com.azure.resourcemanager.appservice.generated.models.WebAppStack;
 import java.util.Collections;
@@ -39,10 +38,6 @@ public final class WebAppStackImpl implements WebAppStack {
         return this.innerModel().kind();
     }
 
-    public SystemData systemData() {
-        return this.innerModel().systemData();
-    }
-
     public String location() {
         return this.innerModel().location();
     }
@@ -64,7 +59,7 @@ public final class WebAppStackImpl implements WebAppStack {
         }
     }
 
-    public StackOsTypes preferredOs() {
+    public StackPreferredOs preferredOs() {
         return this.innerModel().preferredOs();
     }
 

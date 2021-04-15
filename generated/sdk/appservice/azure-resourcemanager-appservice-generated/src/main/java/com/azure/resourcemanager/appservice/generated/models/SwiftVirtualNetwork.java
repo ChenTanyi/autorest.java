@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SwiftVirtualNetworkInner;
 
 /** An immutable client-side representation of SwiftVirtualNetwork. */
@@ -36,13 +35,6 @@ public interface SwiftVirtualNetwork {
      * @return the kind value.
      */
     String kind();
-
-    /**
-     * Gets the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    SystemData systemData();
 
     /**
      * Gets the subnetResourceId property: The Virtual Network subnet's resource ID. This is the subnet that this Web

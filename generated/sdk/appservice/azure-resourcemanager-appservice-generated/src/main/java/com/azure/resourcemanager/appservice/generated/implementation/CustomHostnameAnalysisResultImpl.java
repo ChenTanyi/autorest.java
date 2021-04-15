@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CustomHostnameAnalysisResultInner;
 import com.azure.resourcemanager.appservice.generated.models.CustomHostnameAnalysisResult;
 import com.azure.resourcemanager.appservice.generated.models.DnsVerificationTestResult;
@@ -38,10 +37,6 @@ public final class CustomHostnameAnalysisResultImpl implements CustomHostnameAna
 
     public String kind() {
         return this.innerModel().kind();
-    }
-
-    public SystemData systemData() {
-        return this.innerModel().systemData();
     }
 
     public Boolean isHostnameAlreadyVerified() {

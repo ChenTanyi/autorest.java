@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ProcessInfoInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ProcessModuleInfoInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ProcessThreadInfoInner;
@@ -42,10 +41,6 @@ public final class ProcessInfoImpl implements ProcessInfo {
 
     public String kind() {
         return this.innerModel().kind();
-    }
-
-    public SystemData systemData() {
-        return this.innerModel().systemData();
     }
 
     public Integer identifier() {

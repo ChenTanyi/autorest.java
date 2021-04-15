@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DeletedSiteInner;
 import com.azure.resourcemanager.appservice.generated.models.DeletedSite;
 
@@ -33,10 +32,6 @@ public final class DeletedSiteImpl implements DeletedSite {
 
     public String kind() {
         return this.innerModel().kind();
-    }
-
-    public SystemData systemData() {
-        return this.innerModel().systemData();
     }
 
     public Integer deletedSiteId() {

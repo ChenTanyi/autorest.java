@@ -4,10 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigResourceInner;
 import java.time.OffsetDateTime;
 import java.util.List;
+import java.util.Map;
 
 /** An immutable client-side representation of SiteConfigResource. */
 public interface SiteConfigResource {
@@ -38,13 +38,6 @@ public interface SiteConfigResource {
      * @return the kind value.
      */
     String kind();
-
-    /**
-     * Gets the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    SystemData systemData();
 
     /**
      * Gets the numberOfWorkers property: Number of workers.
@@ -175,6 +168,13 @@ public interface SiteConfigResource {
      * @return the appSettings value.
      */
     List<NameValuePair> appSettings();
+
+    /**
+     * Gets the azureStorageAccounts property: List of Azure Storage Accounts.
+     *
+     * @return the azureStorageAccounts value.
+     */
+    Map<String, AzureStorageInfoValue> azureStorageAccounts();
 
     /**
      * Gets the connectionStrings property: Connection strings.
@@ -401,6 +401,13 @@ public interface SiteConfigResource {
     Integer xManagedServiceIdentityId();
 
     /**
+     * Gets the keyVaultReferenceIdentity property: Identity to use for Key Vault Reference authentication.
+     *
+     * @return the keyVaultReferenceIdentity value.
+     */
+    String keyVaultReferenceIdentity();
+
+    /**
      * Gets the ipSecurityRestrictions property: IP security restrictions for main.
      *
      * @return the ipSecurityRestrictions value.
@@ -459,11 +466,47 @@ public interface SiteConfigResource {
     Integer preWarmedInstanceCount();
 
     /**
+     * Gets the functionAppScaleLimit property: Maximum number of workers that a site can scale out to. This setting
+     * only applies to the Consumption and Elastic Premium Plans.
+     *
+     * @return the functionAppScaleLimit value.
+     */
+    Integer functionAppScaleLimit();
+
+    /**
      * Gets the healthCheckPath property: Health check path.
      *
      * @return the healthCheckPath value.
      */
     String healthCheckPath();
+
+    /**
+     * Gets the functionsRuntimeScaleMonitoringEnabled property: Gets or sets a value indicating whether functions
+     * runtime scale monitoring is enabled. When enabled, the ScaleController will not monitor event sources directly,
+     * but will instead call to the runtime to get scale status.
+     *
+     * @return the functionsRuntimeScaleMonitoringEnabled value.
+     */
+    Boolean functionsRuntimeScaleMonitoringEnabled();
+
+    /**
+     * Gets the websiteTimeZone property: Sets the time zone a site uses for generating timestamps. Compatible with
+     * Linux and Windows App Service. Setting the WEBSITE_TIME_ZONE app setting takes precedence over this config. For
+     * Linux, expects tz database values https://www.iana.org/time-zones (for a quick reference see
+     * https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). For Windows, expects one of the time zones listed
+     * under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time Zones.
+     *
+     * @return the websiteTimeZone value.
+     */
+    String websiteTimeZone();
+
+    /**
+     * Gets the minimumElasticInstanceCount property: Number of minimum instance count for a site This setting only
+     * applies to the Elastic Plans.
+     *
+     * @return the minimumElasticInstanceCount value.
+     */
+    Integer minimumElasticInstanceCount();
 
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigResourceInner object.

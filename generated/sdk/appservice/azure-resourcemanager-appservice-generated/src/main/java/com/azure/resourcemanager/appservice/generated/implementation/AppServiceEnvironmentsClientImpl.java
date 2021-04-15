@@ -37,11 +37,14 @@ import com.azure.resourcemanager.appservice.generated.fluent.AppServiceEnvironme
 import com.azure.resourcemanager.appservice.generated.fluent.models.AddressResponseInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceEnvironmentResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServicePlanInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.AseV3NetworkingConfigurationInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmUsageQuotaInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.HostingEnvironmentDiagnosticsInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.InboundEnvironmentEndpointInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.OperationInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.OutboundEnvironmentEndpointInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.PrivateLinkResourcesWrapperInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.RemotePrivateEndpointConnectionArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ResourceMetricDefinitionInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SkuInfoInner;
@@ -55,6 +58,8 @@ import com.azure.resourcemanager.appservice.generated.models.CsmUsageQuotaCollec
 import com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException;
 import com.azure.resourcemanager.appservice.generated.models.InboundEnvironmentEndpointCollection;
 import com.azure.resourcemanager.appservice.generated.models.OutboundEnvironmentEndpointCollection;
+import com.azure.resourcemanager.appservice.generated.models.PrivateEndpointConnectionCollection;
+import com.azure.resourcemanager.appservice.generated.models.PrivateLinkConnectionApprovalRequestResource;
 import com.azure.resourcemanager.appservice.generated.models.ResourceMetricDefinitionCollection;
 import com.azure.resourcemanager.appservice.generated.models.SkuInfoCollection;
 import com.azure.resourcemanager.appservice.generated.models.StampCapacityCollection;
@@ -227,6 +232,37 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
             @PathParam("subscriptionId") String subscriptionId,
             @QueryParam("api-version") String apiVersion,
             @BodyParam("application/json") VirtualNetworkProfile vnetInfo,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web"
+                + "/hostingEnvironments/{name}/configurations/networking")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<AseV3NetworkingConfigurationInner>> getAseV3NetworkingConfiguration(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Put(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web"
+                + "/hostingEnvironments/{name}/configurations/networking")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<AseV3NetworkingConfigurationInner>> updateAseNetworkingConfiguration(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @BodyParam("application/json") AseV3NetworkingConfigurationInner aseNetworkingConfiguration,
             @HeaderParam("Accept") String accept,
             Context context);
 
@@ -421,6 +457,85 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<OutboundEnvironmentEndpointCollection>> getOutboundNetworkDependenciesEndpoints(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web"
+                + "/hostingEnvironments/{name}/privateEndpointConnections")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<PrivateEndpointConnectionCollection>> getPrivateEndpointConnectionList(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web"
+                + "/hostingEnvironments/{name}/privateEndpointConnections/{privateEndpointConnectionName}")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<RemotePrivateEndpointConnectionArmResourceInner>> getPrivateEndpointConnection(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("privateEndpointConnectionName") String privateEndpointConnectionName,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Put(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web"
+                + "/hostingEnvironments/{name}/privateEndpointConnections/{privateEndpointConnectionName}")
+        @ExpectedResponses({200, 202})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<Flux<ByteBuffer>>> approveOrRejectPrivateEndpointConnection(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("privateEndpointConnectionName") String privateEndpointConnectionName,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @BodyParam("application/json") PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Delete(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web"
+                + "/hostingEnvironments/{name}/privateEndpointConnections/{privateEndpointConnectionName}")
+        @ExpectedResponses({200, 202, 204})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<Flux<ByteBuffer>>> deletePrivateEndpointConnection(
+            @HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("name") String name,
+            @PathParam("privateEndpointConnectionName") String privateEndpointConnectionName,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get(
+            "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web"
+                + "/hostingEnvironments/{name}/privateLinkResources")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<PrivateLinkResourcesWrapperInner>> getPrivateLinkResources(
             @HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
             @PathParam("name") String name,
@@ -756,6 +871,16 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
         Mono<Response<OutboundEnvironmentEndpointCollection>> getOutboundNetworkDependenciesEndpointsNext(
+            @PathParam(value = "nextLink", encoded = true) String nextLink,
+            @HostParam("$host") String endpoint,
+            @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({"Content-Type: application/json"})
+        @Get("{nextLink}")
+        @ExpectedResponses({200})
+        @UnexpectedResponseExceptionType(DefaultErrorResponseErrorException.class)
+        Mono<Response<PrivateEndpointConnectionCollection>> getPrivateEndpointConnectionListNext(
             @PathParam(value = "nextLink", encoded = true) String nextLink,
             @HostParam("$host") String endpoint,
             @HeaderParam("Accept") String accept,
@@ -2628,6 +2753,338 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     public PagedIterable<SiteInner> changeVnet(
         String resourceGroupName, String name, VirtualNetworkProfile vnetInfo, Context context) {
         return new PagedIterable<>(changeVnetAsync(resourceGroupName, name, vnetInfo, context));
+    }
+
+    /**
+     * Description for Get networking configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return full view of networking configuration for an ASE.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<AseV3NetworkingConfigurationInner>> getAseV3NetworkingConfigurationWithResponseAsync(
+        String resourceGroupName, String name) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .getAseV3NetworkingConfiguration(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Description for Get networking configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return full view of networking configuration for an ASE.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<AseV3NetworkingConfigurationInner>> getAseV3NetworkingConfigurationWithResponseAsync(
+        String resourceGroupName, String name, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getAseV3NetworkingConfiguration(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                accept,
+                context);
+    }
+
+    /**
+     * Description for Get networking configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return full view of networking configuration for an ASE.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<AseV3NetworkingConfigurationInner> getAseV3NetworkingConfigurationAsync(
+        String resourceGroupName, String name) {
+        return getAseV3NetworkingConfigurationWithResponseAsync(resourceGroupName, name)
+            .flatMap(
+                (Response<AseV3NetworkingConfigurationInner> res) -> {
+                    if (res.getValue() != null) {
+                        return Mono.just(res.getValue());
+                    } else {
+                        return Mono.empty();
+                    }
+                });
+    }
+
+    /**
+     * Description for Get networking configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return full view of networking configuration for an ASE.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public AseV3NetworkingConfigurationInner getAseV3NetworkingConfiguration(String resourceGroupName, String name) {
+        return getAseV3NetworkingConfigurationAsync(resourceGroupName, name).block();
+    }
+
+    /**
+     * Description for Get networking configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return full view of networking configuration for an ASE.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<AseV3NetworkingConfigurationInner> getAseV3NetworkingConfigurationWithResponse(
+        String resourceGroupName, String name, Context context) {
+        return getAseV3NetworkingConfigurationWithResponseAsync(resourceGroupName, name, context).block();
+    }
+
+    /**
+     * Description for Update networking configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param aseNetworkingConfiguration Full view of networking configuration for an ASE.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return full view of networking configuration for an ASE.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<AseV3NetworkingConfigurationInner>> updateAseNetworkingConfigurationWithResponseAsync(
+        String resourceGroupName, String name, AseV3NetworkingConfigurationInner aseNetworkingConfiguration) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (aseNetworkingConfiguration == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter aseNetworkingConfiguration is required and cannot be null."));
+        } else {
+            aseNetworkingConfiguration.validate();
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .updateAseNetworkingConfiguration(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            aseNetworkingConfiguration,
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Description for Update networking configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param aseNetworkingConfiguration Full view of networking configuration for an ASE.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return full view of networking configuration for an ASE.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<AseV3NetworkingConfigurationInner>> updateAseNetworkingConfigurationWithResponseAsync(
+        String resourceGroupName,
+        String name,
+        AseV3NetworkingConfigurationInner aseNetworkingConfiguration,
+        Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (aseNetworkingConfiguration == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter aseNetworkingConfiguration is required and cannot be null."));
+        } else {
+            aseNetworkingConfiguration.validate();
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .updateAseNetworkingConfiguration(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                aseNetworkingConfiguration,
+                accept,
+                context);
+    }
+
+    /**
+     * Description for Update networking configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param aseNetworkingConfiguration Full view of networking configuration for an ASE.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return full view of networking configuration for an ASE.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<AseV3NetworkingConfigurationInner> updateAseNetworkingConfigurationAsync(
+        String resourceGroupName, String name, AseV3NetworkingConfigurationInner aseNetworkingConfiguration) {
+        return updateAseNetworkingConfigurationWithResponseAsync(resourceGroupName, name, aseNetworkingConfiguration)
+            .flatMap(
+                (Response<AseV3NetworkingConfigurationInner> res) -> {
+                    if (res.getValue() != null) {
+                        return Mono.just(res.getValue());
+                    } else {
+                        return Mono.empty();
+                    }
+                });
+    }
+
+    /**
+     * Description for Update networking configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param aseNetworkingConfiguration Full view of networking configuration for an ASE.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return full view of networking configuration for an ASE.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public AseV3NetworkingConfigurationInner updateAseNetworkingConfiguration(
+        String resourceGroupName, String name, AseV3NetworkingConfigurationInner aseNetworkingConfiguration) {
+        return updateAseNetworkingConfigurationAsync(resourceGroupName, name, aseNetworkingConfiguration).block();
+    }
+
+    /**
+     * Description for Update networking configuration of an App Service Environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param aseNetworkingConfiguration Full view of networking configuration for an ASE.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return full view of networking configuration for an ASE.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<AseV3NetworkingConfigurationInner> updateAseNetworkingConfigurationWithResponse(
+        String resourceGroupName,
+        String name,
+        AseV3NetworkingConfigurationInner aseNetworkingConfiguration,
+        Context context) {
+        return updateAseNetworkingConfigurationWithResponseAsync(
+                resourceGroupName, name, aseNetworkingConfiguration, context)
+            .block();
     }
 
     /**
@@ -4973,6 +5430,1141 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
     public PagedIterable<OutboundEnvironmentEndpointInner> getOutboundNetworkDependenciesEndpoints(
         String resourceGroupName, String name, Context context) {
         return new PagedIterable<>(getOutboundNetworkDependenciesEndpointsAsync(resourceGroupName, name, context));
+    }
+
+    /**
+     * Description for Gets the list of private endpoints associated with a hosting environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<RemotePrivateEndpointConnectionArmResourceInner>>
+        getPrivateEndpointConnectionListSinglePageAsync(String resourceGroupName, String name) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .getPrivateEndpointConnectionList(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
+            .<PagedResponse<RemotePrivateEndpointConnectionArmResourceInner>>map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Description for Gets the list of private endpoints associated with a hosting environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<RemotePrivateEndpointConnectionArmResourceInner>>
+        getPrivateEndpointConnectionListSinglePageAsync(String resourceGroupName, String name, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getPrivateEndpointConnectionList(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                accept,
+                context)
+            .map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null));
+    }
+
+    /**
+     * Description for Gets the list of private endpoints associated with a hosting environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<RemotePrivateEndpointConnectionArmResourceInner> getPrivateEndpointConnectionListAsync(
+        String resourceGroupName, String name) {
+        return new PagedFlux<>(
+            () -> getPrivateEndpointConnectionListSinglePageAsync(resourceGroupName, name),
+            nextLink -> getPrivateEndpointConnectionListNextSinglePageAsync(nextLink));
+    }
+
+    /**
+     * Description for Gets the list of private endpoints associated with a hosting environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<RemotePrivateEndpointConnectionArmResourceInner> getPrivateEndpointConnectionListAsync(
+        String resourceGroupName, String name, Context context) {
+        return new PagedFlux<>(
+            () -> getPrivateEndpointConnectionListSinglePageAsync(resourceGroupName, name, context),
+            nextLink -> getPrivateEndpointConnectionListNextSinglePageAsync(nextLink, context));
+    }
+
+    /**
+     * Description for Gets the list of private endpoints associated with a hosting environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    public PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> getPrivateEndpointConnectionList(
+        String resourceGroupName, String name) {
+        return new PagedIterable<>(getPrivateEndpointConnectionListAsync(resourceGroupName, name));
+    }
+
+    /**
+     * Description for Gets the list of private endpoints associated with a hosting environment.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    public PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> getPrivateEndpointConnectionList(
+        String resourceGroupName, String name, Context context) {
+        return new PagedIterable<>(getPrivateEndpointConnectionListAsync(resourceGroupName, name, context));
+    }
+
+    /**
+     * Description for Gets a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName Name of the private endpoint connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return remote Private Endpoint Connection ARM resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<RemotePrivateEndpointConnectionArmResourceInner>>
+        getPrivateEndpointConnectionWithResponseAsync(
+            String resourceGroupName, String name, String privateEndpointConnectionName) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (privateEndpointConnectionName == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter privateEndpointConnectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .getPrivateEndpointConnection(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            privateEndpointConnectionName,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Description for Gets a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName Name of the private endpoint connection.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return remote Private Endpoint Connection ARM resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<RemotePrivateEndpointConnectionArmResourceInner>>
+        getPrivateEndpointConnectionWithResponseAsync(
+            String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (privateEndpointConnectionName == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter privateEndpointConnectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getPrivateEndpointConnection(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                privateEndpointConnectionName,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                accept,
+                context);
+    }
+
+    /**
+     * Description for Gets a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName Name of the private endpoint connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return remote Private Endpoint Connection ARM resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<RemotePrivateEndpointConnectionArmResourceInner> getPrivateEndpointConnectionAsync(
+        String resourceGroupName, String name, String privateEndpointConnectionName) {
+        return getPrivateEndpointConnectionWithResponseAsync(resourceGroupName, name, privateEndpointConnectionName)
+            .flatMap(
+                (Response<RemotePrivateEndpointConnectionArmResourceInner> res) -> {
+                    if (res.getValue() != null) {
+                        return Mono.just(res.getValue());
+                    } else {
+                        return Mono.empty();
+                    }
+                });
+    }
+
+    /**
+     * Description for Gets a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName Name of the private endpoint connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return remote Private Endpoint Connection ARM resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public RemotePrivateEndpointConnectionArmResourceInner getPrivateEndpointConnection(
+        String resourceGroupName, String name, String privateEndpointConnectionName) {
+        return getPrivateEndpointConnectionAsync(resourceGroupName, name, privateEndpointConnectionName).block();
+    }
+
+    /**
+     * Description for Gets a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName Name of the private endpoint connection.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return remote Private Endpoint Connection ARM resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<RemotePrivateEndpointConnectionArmResourceInner> getPrivateEndpointConnectionWithResponse(
+        String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
+        return getPrivateEndpointConnectionWithResponseAsync(
+                resourceGroupName, name, privateEndpointConnectionName, context)
+            .block();
+    }
+
+    /**
+     * Description for Approves or rejects a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
+     * @param privateEndpointWrapper Private Endpoint Connection Approval ARM resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return remote Private Endpoint Connection ARM resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Flux<ByteBuffer>>> approveOrRejectPrivateEndpointConnectionWithResponseAsync(
+        String resourceGroupName,
+        String name,
+        String privateEndpointConnectionName,
+        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (privateEndpointConnectionName == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter privateEndpointConnectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (privateEndpointWrapper == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException("Parameter privateEndpointWrapper is required and cannot be null."));
+        } else {
+            privateEndpointWrapper.validate();
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .approveOrRejectPrivateEndpointConnection(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            privateEndpointConnectionName,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            privateEndpointWrapper,
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Description for Approves or rejects a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
+     * @param privateEndpointWrapper Private Endpoint Connection Approval ARM resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return remote Private Endpoint Connection ARM resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Flux<ByteBuffer>>> approveOrRejectPrivateEndpointConnectionWithResponseAsync(
+        String resourceGroupName,
+        String name,
+        String privateEndpointConnectionName,
+        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper,
+        Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (privateEndpointConnectionName == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter privateEndpointConnectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (privateEndpointWrapper == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException("Parameter privateEndpointWrapper is required and cannot be null."));
+        } else {
+            privateEndpointWrapper.validate();
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .approveOrRejectPrivateEndpointConnection(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                privateEndpointConnectionName,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                privateEndpointWrapper,
+                accept,
+                context);
+    }
+
+    /**
+     * Description for Approves or rejects a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
+     * @param privateEndpointWrapper Private Endpoint Connection Approval ARM resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return remote Private Endpoint Connection ARM resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private PollerFlux<
+            PollResult<RemotePrivateEndpointConnectionArmResourceInner>,
+            RemotePrivateEndpointConnectionArmResourceInner>
+        beginApproveOrRejectPrivateEndpointConnectionAsync(
+            String resourceGroupName,
+            String name,
+            String privateEndpointConnectionName,
+            PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper) {
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            approveOrRejectPrivateEndpointConnectionWithResponseAsync(
+                resourceGroupName, name, privateEndpointConnectionName, privateEndpointWrapper);
+        return this
+            .client
+            .<RemotePrivateEndpointConnectionArmResourceInner, RemotePrivateEndpointConnectionArmResourceInner>
+                getLroResult(
+                    mono,
+                    this.client.getHttpPipeline(),
+                    RemotePrivateEndpointConnectionArmResourceInner.class,
+                    RemotePrivateEndpointConnectionArmResourceInner.class,
+                    Context.NONE);
+    }
+
+    /**
+     * Description for Approves or rejects a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
+     * @param privateEndpointWrapper Private Endpoint Connection Approval ARM resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return remote Private Endpoint Connection ARM resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private PollerFlux<
+            PollResult<RemotePrivateEndpointConnectionArmResourceInner>,
+            RemotePrivateEndpointConnectionArmResourceInner>
+        beginApproveOrRejectPrivateEndpointConnectionAsync(
+            String resourceGroupName,
+            String name,
+            String privateEndpointConnectionName,
+            PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper,
+            Context context) {
+        context = this.client.mergeContext(context);
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            approveOrRejectPrivateEndpointConnectionWithResponseAsync(
+                resourceGroupName, name, privateEndpointConnectionName, privateEndpointWrapper, context);
+        return this
+            .client
+            .<RemotePrivateEndpointConnectionArmResourceInner, RemotePrivateEndpointConnectionArmResourceInner>
+                getLroResult(
+                    mono,
+                    this.client.getHttpPipeline(),
+                    RemotePrivateEndpointConnectionArmResourceInner.class,
+                    RemotePrivateEndpointConnectionArmResourceInner.class,
+                    context);
+    }
+
+    /**
+     * Description for Approves or rejects a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
+     * @param privateEndpointWrapper Private Endpoint Connection Approval ARM resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return remote Private Endpoint Connection ARM resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public SyncPoller<
+            PollResult<RemotePrivateEndpointConnectionArmResourceInner>,
+            RemotePrivateEndpointConnectionArmResourceInner>
+        beginApproveOrRejectPrivateEndpointConnection(
+            String resourceGroupName,
+            String name,
+            String privateEndpointConnectionName,
+            PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper) {
+        return beginApproveOrRejectPrivateEndpointConnectionAsync(
+                resourceGroupName, name, privateEndpointConnectionName, privateEndpointWrapper)
+            .getSyncPoller();
+    }
+
+    /**
+     * Description for Approves or rejects a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
+     * @param privateEndpointWrapper Private Endpoint Connection Approval ARM resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return remote Private Endpoint Connection ARM resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public SyncPoller<
+            PollResult<RemotePrivateEndpointConnectionArmResourceInner>,
+            RemotePrivateEndpointConnectionArmResourceInner>
+        beginApproveOrRejectPrivateEndpointConnection(
+            String resourceGroupName,
+            String name,
+            String privateEndpointConnectionName,
+            PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper,
+            Context context) {
+        return beginApproveOrRejectPrivateEndpointConnectionAsync(
+                resourceGroupName, name, privateEndpointConnectionName, privateEndpointWrapper, context)
+            .getSyncPoller();
+    }
+
+    /**
+     * Description for Approves or rejects a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
+     * @param privateEndpointWrapper Private Endpoint Connection Approval ARM resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return remote Private Endpoint Connection ARM resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<RemotePrivateEndpointConnectionArmResourceInner> approveOrRejectPrivateEndpointConnectionAsync(
+        String resourceGroupName,
+        String name,
+        String privateEndpointConnectionName,
+        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper) {
+        return beginApproveOrRejectPrivateEndpointConnectionAsync(
+                resourceGroupName, name, privateEndpointConnectionName, privateEndpointWrapper)
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
+    }
+
+    /**
+     * Description for Approves or rejects a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
+     * @param privateEndpointWrapper Private Endpoint Connection Approval ARM resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return remote Private Endpoint Connection ARM resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<RemotePrivateEndpointConnectionArmResourceInner> approveOrRejectPrivateEndpointConnectionAsync(
+        String resourceGroupName,
+        String name,
+        String privateEndpointConnectionName,
+        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper,
+        Context context) {
+        return beginApproveOrRejectPrivateEndpointConnectionAsync(
+                resourceGroupName, name, privateEndpointConnectionName, privateEndpointWrapper, context)
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
+    }
+
+    /**
+     * Description for Approves or rejects a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
+     * @param privateEndpointWrapper Private Endpoint Connection Approval ARM resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return remote Private Endpoint Connection ARM resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public RemotePrivateEndpointConnectionArmResourceInner approveOrRejectPrivateEndpointConnection(
+        String resourceGroupName,
+        String name,
+        String privateEndpointConnectionName,
+        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper) {
+        return approveOrRejectPrivateEndpointConnectionAsync(
+                resourceGroupName, name, privateEndpointConnectionName, privateEndpointWrapper)
+            .block();
+    }
+
+    /**
+     * Description for Approves or rejects a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
+     * @param privateEndpointWrapper Private Endpoint Connection Approval ARM resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return remote Private Endpoint Connection ARM resource.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public RemotePrivateEndpointConnectionArmResourceInner approveOrRejectPrivateEndpointConnection(
+        String resourceGroupName,
+        String name,
+        String privateEndpointConnectionName,
+        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper,
+        Context context) {
+        return approveOrRejectPrivateEndpointConnectionAsync(
+                resourceGroupName, name, privateEndpointConnectionName, privateEndpointWrapper, context)
+            .block();
+    }
+
+    /**
+     * Description for Deletes a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Flux<ByteBuffer>>> deletePrivateEndpointConnectionWithResponseAsync(
+        String resourceGroupName, String name, String privateEndpointConnectionName) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (privateEndpointConnectionName == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter privateEndpointConnectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .deletePrivateEndpointConnection(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            privateEndpointConnectionName,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Description for Deletes a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Flux<ByteBuffer>>> deletePrivateEndpointConnectionWithResponseAsync(
+        String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (privateEndpointConnectionName == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter privateEndpointConnectionName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .deletePrivateEndpointConnection(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                privateEndpointConnectionName,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                accept,
+                context);
+    }
+
+    /**
+     * Description for Deletes a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private PollerFlux<PollResult<Object>, Object> beginDeletePrivateEndpointConnectionAsync(
+        String resourceGroupName, String name, String privateEndpointConnectionName) {
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            deletePrivateEndpointConnectionWithResponseAsync(resourceGroupName, name, privateEndpointConnectionName);
+        return this
+            .client
+            .<Object, Object>getLroResult(
+                mono, this.client.getHttpPipeline(), Object.class, Object.class, Context.NONE);
+    }
+
+    /**
+     * Description for Deletes a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private PollerFlux<PollResult<Object>, Object> beginDeletePrivateEndpointConnectionAsync(
+        String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
+        context = this.client.mergeContext(context);
+        Mono<Response<Flux<ByteBuffer>>> mono =
+            deletePrivateEndpointConnectionWithResponseAsync(
+                resourceGroupName, name, privateEndpointConnectionName, context);
+        return this
+            .client
+            .<Object, Object>getLroResult(mono, this.client.getHttpPipeline(), Object.class, Object.class, context);
+    }
+
+    /**
+     * Description for Deletes a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public SyncPoller<PollResult<Object>, Object> beginDeletePrivateEndpointConnection(
+        String resourceGroupName, String name, String privateEndpointConnectionName) {
+        return beginDeletePrivateEndpointConnectionAsync(resourceGroupName, name, privateEndpointConnectionName)
+            .getSyncPoller();
+    }
+
+    /**
+     * Description for Deletes a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public SyncPoller<PollResult<Object>, Object> beginDeletePrivateEndpointConnection(
+        String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
+        return beginDeletePrivateEndpointConnectionAsync(
+                resourceGroupName, name, privateEndpointConnectionName, context)
+            .getSyncPoller();
+    }
+
+    /**
+     * Description for Deletes a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Object> deletePrivateEndpointConnectionAsync(
+        String resourceGroupName, String name, String privateEndpointConnectionName) {
+        return beginDeletePrivateEndpointConnectionAsync(resourceGroupName, name, privateEndpointConnectionName)
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
+    }
+
+    /**
+     * Description for Deletes a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Object> deletePrivateEndpointConnectionAsync(
+        String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
+        return beginDeletePrivateEndpointConnectionAsync(
+                resourceGroupName, name, privateEndpointConnectionName, context)
+            .last()
+            .flatMap(this.client::getLroFinalResultOrError);
+    }
+
+    /**
+     * Description for Deletes a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Object deletePrivateEndpointConnection(
+        String resourceGroupName, String name, String privateEndpointConnectionName) {
+        return deletePrivateEndpointConnectionAsync(resourceGroupName, name, privateEndpointConnectionName).block();
+    }
+
+    /**
+     * Description for Deletes a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return any object.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Object deletePrivateEndpointConnection(
+        String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
+        return deletePrivateEndpointConnectionAsync(resourceGroupName, name, privateEndpointConnectionName, context)
+            .block();
+    }
+
+    /**
+     * Description for Gets the private link resources.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return wrapper for a collection of private link resources.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<PrivateLinkResourcesWrapperInner>> getPrivateLinkResourcesWithResponseAsync(
+        String resourceGroupName, String name) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service
+                        .getPrivateLinkResources(
+                            this.client.getEndpoint(),
+                            resourceGroupName,
+                            name,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
+                            accept,
+                            context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Description for Gets the private link resources.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return wrapper for a collection of private link resources.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<PrivateLinkResourcesWrapperInner>> getPrivateLinkResourcesWithResponseAsync(
+        String resourceGroupName, String name, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (name == null) {
+            return Mono.error(new IllegalArgumentException("Parameter name is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getPrivateLinkResources(
+                this.client.getEndpoint(),
+                resourceGroupName,
+                name,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
+                accept,
+                context);
+    }
+
+    /**
+     * Description for Gets the private link resources.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return wrapper for a collection of private link resources.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PrivateLinkResourcesWrapperInner> getPrivateLinkResourcesAsync(String resourceGroupName, String name) {
+        return getPrivateLinkResourcesWithResponseAsync(resourceGroupName, name)
+            .flatMap(
+                (Response<PrivateLinkResourcesWrapperInner> res) -> {
+                    if (res.getValue() != null) {
+                        return Mono.just(res.getValue());
+                    } else {
+                        return Mono.empty();
+                    }
+                });
+    }
+
+    /**
+     * Description for Gets the private link resources.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return wrapper for a collection of private link resources.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public PrivateLinkResourcesWrapperInner getPrivateLinkResources(String resourceGroupName, String name) {
+        return getPrivateLinkResourcesAsync(resourceGroupName, name).block();
+    }
+
+    /**
+     * Description for Gets the private link resources.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the App Service Environment.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return wrapper for a collection of private link resources.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<PrivateLinkResourcesWrapperInner> getPrivateLinkResourcesWithResponse(
+        String resourceGroupName, String name, Context context) {
+        return getPrivateLinkResourcesWithResponseAsync(resourceGroupName, name, context).block();
     }
 
     /**
@@ -8576,6 +10168,81 @@ public final class AppServiceEnvironmentsClientImpl implements AppServiceEnviron
         context = this.client.mergeContext(context);
         return service
             .getOutboundNetworkDependenciesEndpointsNext(nextLink, this.client.getEndpoint(), accept, context)
+            .map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null));
+    }
+
+    /**
+     * Get the next page of items.
+     *
+     * @param nextLink The nextLink parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<RemotePrivateEndpointConnectionArmResourceInner>>
+        getPrivateEndpointConnectionListNextSinglePageAsync(String nextLink) {
+        if (nextLink == null) {
+            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
+        }
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(
+                context ->
+                    service.getPrivateEndpointConnectionListNext(nextLink, this.client.getEndpoint(), accept, context))
+            .<PagedResponse<RemotePrivateEndpointConnectionArmResourceInner>>map(
+                res ->
+                    new PagedResponseBase<>(
+                        res.getRequest(),
+                        res.getStatusCode(),
+                        res.getHeaders(),
+                        res.getValue().value(),
+                        res.getValue().nextLink(),
+                        null))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Get the next page of items.
+     *
+     * @param nextLink The nextLink parameter.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<PagedResponse<RemotePrivateEndpointConnectionArmResourceInner>>
+        getPrivateEndpointConnectionListNextSinglePageAsync(String nextLink, Context context) {
+        if (nextLink == null) {
+            return Mono.error(new IllegalArgumentException("Parameter nextLink is required and cannot be null."));
+        }
+        if (this.client.getEndpoint() == null) {
+            return Mono
+                .error(
+                    new IllegalArgumentException(
+                        "Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service
+            .getPrivateEndpointConnectionListNext(nextLink, this.client.getEndpoint(), accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(

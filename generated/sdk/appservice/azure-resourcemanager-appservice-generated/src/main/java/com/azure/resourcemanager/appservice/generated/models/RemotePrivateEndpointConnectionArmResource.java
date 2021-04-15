@@ -4,12 +4,12 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.appservice.generated.fluent.models.PrivateEndpointConnectionResourceInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.RemotePrivateEndpointConnectionArmResourceInner;
+import java.util.List;
 
-/** An immutable client-side representation of PrivateEndpointConnectionResource. */
-public interface PrivateEndpointConnectionResource {
+/** An immutable client-side representation of RemotePrivateEndpointConnectionArmResource. */
+public interface RemotePrivateEndpointConnectionArmResource {
     /**
      * Gets the id property: Fully qualified resource Id for the resource.
      *
@@ -39,13 +39,6 @@ public interface PrivateEndpointConnectionResource {
     String kind();
 
     /**
-     * Gets the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    SystemData systemData();
-
-    /**
      * Gets the provisioningState property: The provisioningState property.
      *
      * @return the provisioningState value.
@@ -67,23 +60,33 @@ public interface PrivateEndpointConnectionResource {
     PrivateLinkConnectionState privateLinkServiceConnectionState();
 
     /**
+     * Gets the ipAddresses property: Private IPAddresses mapped to the remote private endpoint.
+     *
+     * @return the ipAddresses value.
+     */
+    List<String> ipAddresses();
+
+    /**
      * Gets the inner
-     * com.azure.resourcemanager.appservice.generated.fluent.models.PrivateEndpointConnectionResourceInner object.
+     * com.azure.resourcemanager.appservice.generated.fluent.models.RemotePrivateEndpointConnectionArmResourceInner
+     * object.
      *
      * @return the inner object.
      */
-    PrivateEndpointConnectionResourceInner innerModel();
+    RemotePrivateEndpointConnectionArmResourceInner innerModel();
 
-    /** The entirety of the PrivateEndpointConnectionResource definition. */
+    /** The entirety of the RemotePrivateEndpointConnectionArmResource definition. */
     interface Definition
         extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
     }
-    /** The PrivateEndpointConnectionResource definition stages. */
+    /** The RemotePrivateEndpointConnectionArmResource definition stages. */
     interface DefinitionStages {
-        /** The first stage of the PrivateEndpointConnectionResource definition. */
+        /** The first stage of the RemotePrivateEndpointConnectionArmResource definition. */
         interface Blank extends WithParentResource {
         }
-        /** The stage of the PrivateEndpointConnectionResource definition allowing to specify parent resource. */
+        /**
+         * The stage of the RemotePrivateEndpointConnectionArmResource definition allowing to specify parent resource.
+         */
         interface WithParentResource {
             /**
              * Specifies resourceGroupName, name.
@@ -95,8 +98,9 @@ public interface PrivateEndpointConnectionResource {
             WithCreate withExistingSite(String resourceGroupName, String name);
         }
         /**
-         * The stage of the PrivateEndpointConnectionResource definition which contains all the minimum required
-         * properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the RemotePrivateEndpointConnectionArmResource definition which contains all the minimum
+         * required properties for the resource to be created, but also allows for any other optional properties to be
+         * specified.
          */
         interface WithCreate extends DefinitionStages.WithKind, DefinitionStages.WithPrivateLinkServiceConnectionState {
             /**
@@ -104,7 +108,7 @@ public interface PrivateEndpointConnectionResource {
              *
              * @return the created resource.
              */
-            PrivateEndpointConnectionResource create();
+            RemotePrivateEndpointConnectionArmResource create();
 
             /**
              * Executes the create request.
@@ -112,9 +116,9 @@ public interface PrivateEndpointConnectionResource {
              * @param context The context to associate with this operation.
              * @return the created resource.
              */
-            PrivateEndpointConnectionResource create(Context context);
+            RemotePrivateEndpointConnectionArmResource create(Context context);
         }
-        /** The stage of the PrivateEndpointConnectionResource definition allowing to specify kind. */
+        /** The stage of the RemotePrivateEndpointConnectionArmResource definition allowing to specify kind. */
         interface WithKind {
             /**
              * Specifies the kind property: Kind of resource..
@@ -125,7 +129,7 @@ public interface PrivateEndpointConnectionResource {
             WithCreate withKind(String kind);
         }
         /**
-         * The stage of the PrivateEndpointConnectionResource definition allowing to specify
+         * The stage of the RemotePrivateEndpointConnectionArmResource definition allowing to specify
          * privateLinkServiceConnectionState.
          */
         interface WithPrivateLinkServiceConnectionState {
@@ -140,20 +144,20 @@ public interface PrivateEndpointConnectionResource {
         }
     }
     /**
-     * Begins update for the PrivateEndpointConnectionResource resource.
+     * Begins update for the RemotePrivateEndpointConnectionArmResource resource.
      *
      * @return the stage of resource update.
      */
-    PrivateEndpointConnectionResource.Update update();
+    RemotePrivateEndpointConnectionArmResource.Update update();
 
-    /** The template for PrivateEndpointConnectionResource update. */
+    /** The template for RemotePrivateEndpointConnectionArmResource update. */
     interface Update extends UpdateStages.WithKind, UpdateStages.WithPrivateLinkServiceConnectionState {
         /**
          * Executes the update request.
          *
          * @return the updated resource.
          */
-        PrivateEndpointConnectionResource apply();
+        RemotePrivateEndpointConnectionArmResource apply();
 
         /**
          * Executes the update request.
@@ -161,11 +165,11 @@ public interface PrivateEndpointConnectionResource {
          * @param context The context to associate with this operation.
          * @return the updated resource.
          */
-        PrivateEndpointConnectionResource apply(Context context);
+        RemotePrivateEndpointConnectionArmResource apply(Context context);
     }
-    /** The PrivateEndpointConnectionResource update stages. */
+    /** The RemotePrivateEndpointConnectionArmResource update stages. */
     interface UpdateStages {
-        /** The stage of the PrivateEndpointConnectionResource update allowing to specify kind. */
+        /** The stage of the RemotePrivateEndpointConnectionArmResource update allowing to specify kind. */
         interface WithKind {
             /**
              * Specifies the kind property: Kind of resource..
@@ -176,7 +180,7 @@ public interface PrivateEndpointConnectionResource {
             Update withKind(String kind);
         }
         /**
-         * The stage of the PrivateEndpointConnectionResource update allowing to specify
+         * The stage of the RemotePrivateEndpointConnectionArmResource update allowing to specify
          * privateLinkServiceConnectionState.
          */
         interface WithPrivateLinkServiceConnectionState {
@@ -194,7 +198,7 @@ public interface PrivateEndpointConnectionResource {
      *
      * @return the refreshed resource.
      */
-    PrivateEndpointConnectionResource refresh();
+    RemotePrivateEndpointConnectionArmResource refresh();
 
     /**
      * Refreshes the resource to sync with Azure.
@@ -202,5 +206,5 @@ public interface PrivateEndpointConnectionResource {
      * @param context The context to associate with this operation.
      * @return the refreshed resource.
      */
-    PrivateEndpointConnectionResource refresh(Context context);
+    RemotePrivateEndpointConnectionArmResource refresh(Context context);
 }

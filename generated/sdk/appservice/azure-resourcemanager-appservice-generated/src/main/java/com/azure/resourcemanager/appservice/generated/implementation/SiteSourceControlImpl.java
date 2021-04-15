@@ -4,8 +4,8 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteSourceControlInner;
+import com.azure.resourcemanager.appservice.generated.models.GitHubActionConfiguration;
 import com.azure.resourcemanager.appservice.generated.models.SiteSourceControl;
 
 public final class SiteSourceControlImpl implements SiteSourceControl {
@@ -36,10 +36,6 @@ public final class SiteSourceControlImpl implements SiteSourceControl {
         return this.innerModel().kind();
     }
 
-    public SystemData systemData() {
-        return this.innerModel().systemData();
-    }
-
     public String repoUrl() {
         return this.innerModel().repoUrl();
     }
@@ -62,6 +58,10 @@ public final class SiteSourceControlImpl implements SiteSourceControl {
 
     public Boolean isMercurial() {
         return this.innerModel().isMercurial();
+    }
+
+    public GitHubActionConfiguration gitHubActionConfiguration() {
+        return this.innerModel().gitHubActionConfiguration();
     }
 
     public SiteSourceControlInner innerModel() {

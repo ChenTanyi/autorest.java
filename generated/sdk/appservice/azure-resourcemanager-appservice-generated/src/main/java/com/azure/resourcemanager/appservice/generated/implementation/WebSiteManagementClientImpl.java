@@ -24,12 +24,14 @@ import com.azure.core.util.serializer.SerializerEncoding;
 import com.azure.resourcemanager.appservice.generated.fluent.AppServiceCertificateOrdersClient;
 import com.azure.resourcemanager.appservice.generated.fluent.AppServiceEnvironmentsClient;
 import com.azure.resourcemanager.appservice.generated.fluent.AppServicePlansClient;
+import com.azure.resourcemanager.appservice.generated.fluent.CertificateOrdersDiagnosticsClient;
 import com.azure.resourcemanager.appservice.generated.fluent.CertificateRegistrationProvidersClient;
 import com.azure.resourcemanager.appservice.generated.fluent.CertificatesClient;
 import com.azure.resourcemanager.appservice.generated.fluent.DeletedWebAppsClient;
 import com.azure.resourcemanager.appservice.generated.fluent.DiagnosticsClient;
 import com.azure.resourcemanager.appservice.generated.fluent.DomainRegistrationProvidersClient;
 import com.azure.resourcemanager.appservice.generated.fluent.DomainsClient;
+import com.azure.resourcemanager.appservice.generated.fluent.GlobalsClient;
 import com.azure.resourcemanager.appservice.generated.fluent.ProvidersClient;
 import com.azure.resourcemanager.appservice.generated.fluent.RecommendationsClient;
 import com.azure.resourcemanager.appservice.generated.fluent.ResourceHealthMetadatasClient;
@@ -137,6 +139,18 @@ public final class WebSiteManagementClientImpl implements WebSiteManagementClien
         return this.appServiceCertificateOrders;
     }
 
+    /** The CertificateOrdersDiagnosticsClient object to access its operations. */
+    private final CertificateOrdersDiagnosticsClient certificateOrdersDiagnostics;
+
+    /**
+     * Gets the CertificateOrdersDiagnosticsClient object to access its operations.
+     *
+     * @return the CertificateOrdersDiagnosticsClient object.
+     */
+    public CertificateOrdersDiagnosticsClient getCertificateOrdersDiagnostics() {
+        return this.certificateOrdersDiagnostics;
+    }
+
     /** The CertificateRegistrationProvidersClient object to access its operations. */
     private final CertificateRegistrationProvidersClient certificateRegistrationProviders;
 
@@ -219,6 +233,18 @@ public final class WebSiteManagementClientImpl implements WebSiteManagementClien
      */
     public DiagnosticsClient getDiagnostics() {
         return this.diagnostics;
+    }
+
+    /** The GlobalsClient object to access its operations. */
+    private final GlobalsClient globals;
+
+    /**
+     * Gets the GlobalsClient object to access its operations.
+     *
+     * @return the GlobalsClient object.
+     */
+    public GlobalsClient getGlobals() {
+        return this.globals;
     }
 
     /** The ProvidersClient object to access its operations. */
@@ -340,8 +366,9 @@ public final class WebSiteManagementClientImpl implements WebSiteManagementClien
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
-        this.apiVersion = "2020-10-01";
+        this.apiVersion = "2020-12-01";
         this.appServiceCertificateOrders = new AppServiceCertificateOrdersClientImpl(this);
+        this.certificateOrdersDiagnostics = new CertificateOrdersDiagnosticsClientImpl(this);
         this.certificateRegistrationProviders = new CertificateRegistrationProvidersClientImpl(this);
         this.domains = new DomainsClientImpl(this);
         this.topLevelDomains = new TopLevelDomainsClientImpl(this);
@@ -349,6 +376,7 @@ public final class WebSiteManagementClientImpl implements WebSiteManagementClien
         this.certificates = new CertificatesClientImpl(this);
         this.deletedWebApps = new DeletedWebAppsClientImpl(this);
         this.diagnostics = new DiagnosticsClientImpl(this);
+        this.globals = new GlobalsClientImpl(this);
         this.providers = new ProvidersClientImpl(this);
         this.recommendations = new RecommendationsClientImpl(this);
         this.resourceProviders = new ResourceProvidersClientImpl(this);

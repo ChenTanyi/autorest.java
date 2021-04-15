@@ -4,19 +4,20 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
-import com.azure.resourcemanager.appservice.generated.fluent.models.PrivateEndpointConnectionResourceInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.RemotePrivateEndpointConnectionArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.ArmIdWrapper;
-import com.azure.resourcemanager.appservice.generated.models.PrivateEndpointConnectionResource;
 import com.azure.resourcemanager.appservice.generated.models.PrivateLinkConnectionApprovalRequestResource;
 import com.azure.resourcemanager.appservice.generated.models.PrivateLinkConnectionState;
+import com.azure.resourcemanager.appservice.generated.models.RemotePrivateEndpointConnectionArmResource;
+import java.util.Collections;
+import java.util.List;
 
-public final class PrivateEndpointConnectionResourceImpl
-    implements PrivateEndpointConnectionResource,
-        PrivateEndpointConnectionResource.Definition,
-        PrivateEndpointConnectionResource.Update {
-    private PrivateEndpointConnectionResourceInner innerObject;
+public final class RemotePrivateEndpointConnectionArmResourceImpl
+    implements RemotePrivateEndpointConnectionArmResource,
+        RemotePrivateEndpointConnectionArmResource.Definition,
+        RemotePrivateEndpointConnectionArmResource.Update {
+    private RemotePrivateEndpointConnectionArmResourceInner innerObject;
 
     private final com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager;
 
@@ -36,10 +37,6 @@ public final class PrivateEndpointConnectionResourceImpl
         return this.innerModel().kind();
     }
 
-    public SystemData systemData() {
-        return this.innerModel().systemData();
-    }
-
     public String provisioningState() {
         return this.innerModel().provisioningState();
     }
@@ -52,7 +49,16 @@ public final class PrivateEndpointConnectionResourceImpl
         return this.innerModel().privateLinkServiceConnectionState();
     }
 
-    public PrivateEndpointConnectionResourceInner innerModel() {
+    public List<String> ipAddresses() {
+        List<String> inner = this.innerModel().ipAddresses();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public RemotePrivateEndpointConnectionArmResourceInner innerModel() {
         return this.innerObject;
     }
 
@@ -70,13 +76,13 @@ public final class PrivateEndpointConnectionResourceImpl
 
     private PrivateLinkConnectionApprovalRequestResource updatePrivateEndpointWrapper;
 
-    public PrivateEndpointConnectionResourceImpl withExistingSite(String resourceGroupName, String name) {
+    public RemotePrivateEndpointConnectionArmResourceImpl withExistingSite(String resourceGroupName, String name) {
         this.resourceGroupName = resourceGroupName;
         this.name = name;
         return this;
     }
 
-    public PrivateEndpointConnectionResource create() {
+    public RemotePrivateEndpointConnectionArmResource create() {
         this.innerObject =
             serviceManager
                 .serviceClient()
@@ -86,7 +92,7 @@ public final class PrivateEndpointConnectionResourceImpl
         return this;
     }
 
-    public PrivateEndpointConnectionResource create(Context context) {
+    public RemotePrivateEndpointConnectionArmResource create(Context context) {
         this.innerObject =
             serviceManager
                 .serviceClient()
@@ -96,20 +102,20 @@ public final class PrivateEndpointConnectionResourceImpl
         return this;
     }
 
-    PrivateEndpointConnectionResourceImpl(
+    RemotePrivateEndpointConnectionArmResourceImpl(
         String name, com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
-        this.innerObject = new PrivateEndpointConnectionResourceInner();
+        this.innerObject = new RemotePrivateEndpointConnectionArmResourceInner();
         this.serviceManager = serviceManager;
         this.privateEndpointConnectionName = name;
         this.createPrivateEndpointWrapper = new PrivateLinkConnectionApprovalRequestResource();
     }
 
-    public PrivateEndpointConnectionResourceImpl update() {
+    public RemotePrivateEndpointConnectionArmResourceImpl update() {
         this.updatePrivateEndpointWrapper = new PrivateLinkConnectionApprovalRequestResource();
         return this;
     }
 
-    public PrivateEndpointConnectionResource apply() {
+    public RemotePrivateEndpointConnectionArmResource apply() {
         this.innerObject =
             serviceManager
                 .serviceClient()
@@ -119,7 +125,7 @@ public final class PrivateEndpointConnectionResourceImpl
         return this;
     }
 
-    public PrivateEndpointConnectionResource apply(Context context) {
+    public RemotePrivateEndpointConnectionArmResource apply(Context context) {
         this.innerObject =
             serviceManager
                 .serviceClient()
@@ -129,8 +135,8 @@ public final class PrivateEndpointConnectionResourceImpl
         return this;
     }
 
-    PrivateEndpointConnectionResourceImpl(
-        PrivateEndpointConnectionResourceInner innerObject,
+    RemotePrivateEndpointConnectionArmResourceImpl(
+        RemotePrivateEndpointConnectionArmResourceInner innerObject,
         com.azure.resourcemanager.appservice.generated.AppServiceManager serviceManager) {
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
@@ -139,7 +145,7 @@ public final class PrivateEndpointConnectionResourceImpl
         this.privateEndpointConnectionName = Utils.getValueFromIdByName(innerObject.id(), "privateEndpointConnections");
     }
 
-    public PrivateEndpointConnectionResource refresh() {
+    public RemotePrivateEndpointConnectionArmResource refresh() {
         this.innerObject =
             serviceManager
                 .serviceClient()
@@ -150,7 +156,7 @@ public final class PrivateEndpointConnectionResourceImpl
         return this;
     }
 
-    public PrivateEndpointConnectionResource refresh(Context context) {
+    public RemotePrivateEndpointConnectionArmResource refresh(Context context) {
         this.innerObject =
             serviceManager
                 .serviceClient()
@@ -161,7 +167,7 @@ public final class PrivateEndpointConnectionResourceImpl
         return this;
     }
 
-    public PrivateEndpointConnectionResourceImpl withKind(String kind) {
+    public RemotePrivateEndpointConnectionArmResourceImpl withKind(String kind) {
         if (isInCreateMode()) {
             this.createPrivateEndpointWrapper.withKind(kind);
             return this;
@@ -171,7 +177,7 @@ public final class PrivateEndpointConnectionResourceImpl
         }
     }
 
-    public PrivateEndpointConnectionResourceImpl withPrivateLinkServiceConnectionState(
+    public RemotePrivateEndpointConnectionArmResourceImpl withPrivateLinkServiceConnectionState(
         PrivateLinkConnectionState privateLinkServiceConnectionState) {
         if (isInCreateMode()) {
             this.createPrivateEndpointWrapper.withPrivateLinkServiceConnectionState(privateLinkServiceConnectionState);

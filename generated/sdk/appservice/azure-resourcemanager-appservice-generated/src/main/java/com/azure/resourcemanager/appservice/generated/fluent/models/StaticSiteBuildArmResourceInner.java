@@ -9,9 +9,11 @@ import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.BuildStatus;
 import com.azure.resourcemanager.appservice.generated.models.ProxyOnlyResource;
+import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserProvidedFunctionApp;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
+import java.util.List;
 
 /** Static Site Build ARM resource. */
 @JsonFlatten
@@ -60,6 +62,12 @@ public class StaticSiteBuildArmResourceInner extends ProxyOnlyResource {
      */
     @JsonProperty(value = "properties.status", access = JsonProperty.Access.WRITE_ONLY)
     private BuildStatus status;
+
+    /*
+     * User provided function apps registered with the static site build
+     */
+    @JsonProperty(value = "properties.userProvidedFunctionApps", access = JsonProperty.Access.WRITE_ONLY)
+    private List<StaticSiteUserProvidedFunctionApp> userProvidedFunctionApps;
 
     /**
      * Get the buildId property: An identifier for the static site build.
@@ -124,6 +132,15 @@ public class StaticSiteBuildArmResourceInner extends ProxyOnlyResource {
         return this.status;
     }
 
+    /**
+     * Get the userProvidedFunctionApps property: User provided function apps registered with the static site build.
+     *
+     * @return the userProvidedFunctionApps value.
+     */
+    public List<StaticSiteUserProvidedFunctionApp> userProvidedFunctionApps() {
+        return this.userProvidedFunctionApps;
+    }
+
     /** {@inheritDoc} */
     @Override
     public StaticSiteBuildArmResourceInner withKind(String kind) {
@@ -139,5 +156,8 @@ public class StaticSiteBuildArmResourceInner extends ProxyOnlyResource {
     @Override
     public void validate() {
         super.validate();
+        if (userProvidedFunctionApps() != null) {
+            userProvidedFunctionApps().forEach(e -> e.validate());
+        }
     }
 }

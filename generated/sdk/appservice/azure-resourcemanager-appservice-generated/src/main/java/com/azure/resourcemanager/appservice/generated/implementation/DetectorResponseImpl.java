@@ -4,11 +4,13 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DetectorResponseInner;
+import com.azure.resourcemanager.appservice.generated.models.DataProviderMetadata;
 import com.azure.resourcemanager.appservice.generated.models.DetectorInfo;
 import com.azure.resourcemanager.appservice.generated.models.DetectorResponse;
 import com.azure.resourcemanager.appservice.generated.models.DiagnosticData;
+import com.azure.resourcemanager.appservice.generated.models.QueryUtterancesResults;
+import com.azure.resourcemanager.appservice.generated.models.Status;
 import java.util.Collections;
 import java.util.List;
 
@@ -40,10 +42,6 @@ public final class DetectorResponseImpl implements DetectorResponse {
         return this.innerModel().kind();
     }
 
-    public SystemData systemData() {
-        return this.innerModel().systemData();
-    }
-
     public DetectorInfo metadata() {
         return this.innerModel().metadata();
     }
@@ -55,6 +53,23 @@ public final class DetectorResponseImpl implements DetectorResponse {
         } else {
             return Collections.emptyList();
         }
+    }
+
+    public Status status() {
+        return this.innerModel().status();
+    }
+
+    public List<DataProviderMetadata> dataProvidersMetadata() {
+        List<DataProviderMetadata> inner = this.innerModel().dataProvidersMetadata();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public QueryUtterancesResults suggestedUtterances() {
+        return this.innerModel().suggestedUtterances();
     }
 
     public DetectorResponseInner innerModel() {

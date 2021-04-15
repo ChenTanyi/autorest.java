@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmPublishingCredentialsPoliciesEntityInner;
 
 /** An immutable client-side representation of CsmPublishingCredentialsPoliciesEntity. */
@@ -36,13 +35,6 @@ public interface CsmPublishingCredentialsPoliciesEntity {
      * @return the kind value.
      */
     String kind();
-
-    /**
-     * Gets the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    SystemData systemData();
 
     /**
      * Gets the allow property: &lt;code&gt;true&lt;/code&gt; to allow access to a publishing method; otherwise,

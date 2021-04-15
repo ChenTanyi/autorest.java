@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetValidationFailureDetailsInner;
 import com.azure.resourcemanager.appservice.generated.models.VnetValidationFailureDetails;
 import com.azure.resourcemanager.appservice.generated.models.VnetValidationTestFailure;
@@ -39,8 +38,8 @@ public final class VnetValidationFailureDetailsImpl implements VnetValidationFai
         return this.innerModel().kind();
     }
 
-    public SystemData systemData() {
-        return this.innerModel().systemData();
+    public String message() {
+        return this.innerModel().message();
     }
 
     public Boolean failed() {
@@ -49,6 +48,15 @@ public final class VnetValidationFailureDetailsImpl implements VnetValidationFai
 
     public List<VnetValidationTestFailure> failedTests() {
         List<VnetValidationTestFailure> inner = this.innerModel().failedTests();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public List<VnetValidationTestFailure> warnings() {
+        List<VnetValidationTestFailure> inner = this.innerModel().warnings();
         if (inner != null) {
             return Collections.unmodifiableList(inner);
         } else {

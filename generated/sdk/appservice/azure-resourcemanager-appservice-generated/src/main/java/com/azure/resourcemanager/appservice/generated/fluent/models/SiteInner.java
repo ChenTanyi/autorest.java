@@ -7,7 +7,6 @@ package com.azure.resourcemanager.appservice.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.management.Resource;
-import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.ClientCertMode;
 import com.azure.resourcemanager.appservice.generated.models.CloningInfo;
@@ -276,6 +275,12 @@ public class SiteInner extends Resource {
     private SlotSwapStatus slotSwapStatus;
 
     /*
+     * Identity to use for Key Vault Reference authentication.
+     */
+    @JsonProperty(value = "properties.keyVaultReferenceIdentity")
+    private String keyVaultReferenceIdentity;
+
+    /*
      * HttpsOnly: configures a web site to accept only https requests. Issues
      * redirect for
      * http requests
@@ -306,12 +311,6 @@ public class SiteInner extends Resource {
      */
     @JsonProperty(value = "kind")
     private String kind;
-
-    /*
-     * The system metadata relating to this resource.
-     */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
-    private SystemData systemData;
 
     /**
      * Get the identity property: Managed service identity.
@@ -877,6 +876,26 @@ public class SiteInner extends Resource {
     }
 
     /**
+     * Get the keyVaultReferenceIdentity property: Identity to use for Key Vault Reference authentication.
+     *
+     * @return the keyVaultReferenceIdentity value.
+     */
+    public String keyVaultReferenceIdentity() {
+        return this.keyVaultReferenceIdentity;
+    }
+
+    /**
+     * Set the keyVaultReferenceIdentity property: Identity to use for Key Vault Reference authentication.
+     *
+     * @param keyVaultReferenceIdentity the keyVaultReferenceIdentity value to set.
+     * @return the SiteInner object itself.
+     */
+    public SiteInner withKeyVaultReferenceIdentity(String keyVaultReferenceIdentity) {
+        this.keyVaultReferenceIdentity = keyVaultReferenceIdentity;
+        return this;
+    }
+
+    /**
      * Get the httpsOnly property: HttpsOnly: configures a web site to accept only https requests. Issues redirect for
      * http requests.
      *
@@ -965,15 +984,6 @@ public class SiteInner extends Resource {
     public SiteInner withKind(String kind) {
         this.kind = kind;
         return this;
-    }
-
-    /**
-     * Get the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    public SystemData systemData() {
-        return this.systemData;
     }
 
     /** {@inheritDoc} */

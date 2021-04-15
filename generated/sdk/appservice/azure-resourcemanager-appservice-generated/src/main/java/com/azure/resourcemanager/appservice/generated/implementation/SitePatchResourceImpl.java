@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SitePatchResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.ClientCertMode;
@@ -49,10 +48,6 @@ public final class SitePatchResourceImpl implements SitePatchResource {
 
     public String kind() {
         return this.innerModel().kind();
-    }
-
-    public SystemData systemData() {
-        return this.innerModel().systemData();
     }
 
     public ManagedServiceIdentity identity() {
@@ -224,6 +219,10 @@ public final class SitePatchResourceImpl implements SitePatchResource {
         return this.innerModel().slotSwapStatus();
     }
 
+    public String keyVaultReferenceIdentity() {
+        return this.innerModel().keyVaultReferenceIdentity();
+    }
+
     public Boolean httpsOnly() {
         return this.innerModel().httpsOnly();
     }
@@ -234,6 +233,10 @@ public final class SitePatchResourceImpl implements SitePatchResource {
 
     public UUID inProgressOperationId() {
         return this.innerModel().inProgressOperationId();
+    }
+
+    public Boolean storageAccountRequired() {
+        return this.innerModel().storageAccountRequired();
     }
 
     public SitePatchResourceInner innerModel() {

@@ -6,7 +6,6 @@ package com.azure.resourcemanager.appservice.generated.models;
 
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServicePlanInner;
 import java.time.OffsetDateTime;
@@ -192,11 +191,19 @@ public interface AppServicePlan {
     Integer targetWorkerSizeId();
 
     /**
-     * Gets the provisioningState property: Provisioning state of the App Service Environment.
+     * Gets the provisioningState property: Provisioning state of the App Service Plan.
      *
      * @return the provisioningState value.
      */
     ProvisioningState provisioningState();
+
+    /**
+     * Gets the kubeEnvironmentProfile property: Specification for the Kubernetes Environment to use for the App Service
+     * plan.
+     *
+     * @return the kubeEnvironmentProfile value.
+     */
+    KubeEnvironmentProfile kubeEnvironmentProfile();
 
     /**
      * Gets the kind property: Kind of resource.
@@ -204,13 +211,6 @@ public interface AppServicePlan {
      * @return the kind value.
      */
     String kind();
-
-    /**
-     * Gets the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    SystemData systemData();
 
     /**
      * Gets the region of the resource.
@@ -292,6 +292,7 @@ public interface AppServicePlan {
                 DefinitionStages.WithHyperV,
                 DefinitionStages.WithTargetWorkerCount,
                 DefinitionStages.WithTargetWorkerSizeId,
+                DefinitionStages.WithKubeEnvironmentProfile,
                 DefinitionStages.WithKind {
             /**
              * Executes the create request.
@@ -464,6 +465,18 @@ public interface AppServicePlan {
              */
             WithCreate withTargetWorkerSizeId(Integer targetWorkerSizeId);
         }
+        /** The stage of the AppServicePlan definition allowing to specify kubeEnvironmentProfile. */
+        interface WithKubeEnvironmentProfile {
+            /**
+             * Specifies the kubeEnvironmentProfile property: Specification for the Kubernetes Environment to use for
+             * the App Service plan..
+             *
+             * @param kubeEnvironmentProfile Specification for the Kubernetes Environment to use for the App Service
+             *     plan.
+             * @return the next definition stage.
+             */
+            WithCreate withKubeEnvironmentProfile(KubeEnvironmentProfile kubeEnvironmentProfile);
+        }
         /** The stage of the AppServicePlan definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -492,7 +505,8 @@ public interface AppServicePlan {
             UpdateStages.WithSpotExpirationTime,
             UpdateStages.WithFreeOfferExpirationTime,
             UpdateStages.WithTargetWorkerCount,
-            UpdateStages.WithTargetWorkerSizeId {
+            UpdateStages.WithTargetWorkerSizeId,
+            UpdateStages.WithKubeEnvironmentProfile {
         /**
          * Executes the update request.
          *
@@ -607,6 +621,18 @@ public interface AppServicePlan {
              * @return the next definition stage.
              */
             Update withTargetWorkerSizeId(Integer targetWorkerSizeId);
+        }
+        /** The stage of the AppServicePlan update allowing to specify kubeEnvironmentProfile. */
+        interface WithKubeEnvironmentProfile {
+            /**
+             * Specifies the kubeEnvironmentProfile property: Specification for the Kubernetes Environment to use for
+             * the App Service plan..
+             *
+             * @param kubeEnvironmentProfile Specification for the Kubernetes Environment to use for the App Service
+             *     plan.
+             * @return the next definition stage.
+             */
+            Update withKubeEnvironmentProfile(KubeEnvironmentProfile kubeEnvironmentProfile);
         }
     }
     /**

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.HostnameBindingInner;
 import com.azure.resourcemanager.appservice.generated.models.AzureResourceType;
@@ -32,10 +31,6 @@ public final class HostnameBindingImpl implements HostnameBinding, HostnameBindi
 
     public String kind() {
         return this.innerModel().kind();
-    }
-
-    public SystemData systemData() {
-        return this.innerModel().systemData();
     }
 
     public String siteName() {

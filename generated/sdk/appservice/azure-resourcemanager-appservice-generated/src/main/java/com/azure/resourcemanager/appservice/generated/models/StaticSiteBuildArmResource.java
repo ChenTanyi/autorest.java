@@ -4,9 +4,9 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteBuildArmResourceInner;
 import java.time.OffsetDateTime;
+import java.util.List;
 
 /** An immutable client-side representation of StaticSiteBuildArmResource. */
 public interface StaticSiteBuildArmResource {
@@ -37,13 +37,6 @@ public interface StaticSiteBuildArmResource {
      * @return the kind value.
      */
     String kind();
-
-    /**
-     * Gets the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    SystemData systemData();
 
     /**
      * Gets the buildId property: An identifier for the static site build.
@@ -93,6 +86,13 @@ public interface StaticSiteBuildArmResource {
      * @return the status value.
      */
     BuildStatus status();
+
+    /**
+     * Gets the userProvidedFunctionApps property: User provided function apps registered with the static site build.
+     *
+     * @return the userProvidedFunctionApps value.
+     */
+    List<StaticSiteUserProvidedFunctionApp> userProvidedFunctionApps();
 
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteBuildArmResourceInner

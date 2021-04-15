@@ -6,7 +6,6 @@ package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceCertificateOrderInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.NameIdentifierInner;
@@ -15,6 +14,7 @@ import com.azure.resourcemanager.appservice.generated.models.AppServiceCertifica
 import com.azure.resourcemanager.appservice.generated.models.AppServiceCertificateOrderPatchResource;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceCertificateOrderPropertiesAppServiceCertificateNotRenewableReasonsItem;
 import com.azure.resourcemanager.appservice.generated.models.CertificateDetails;
+import com.azure.resourcemanager.appservice.generated.models.CertificateOrderContact;
 import com.azure.resourcemanager.appservice.generated.models.CertificateOrderStatus;
 import com.azure.resourcemanager.appservice.generated.models.CertificateProductType;
 import com.azure.resourcemanager.appservice.generated.models.ProvisioningState;
@@ -146,12 +146,12 @@ public final class AppServiceCertificateOrderImpl
         return this.innerModel().nextAutoRenewalTimestamp();
     }
 
-    public String kind() {
-        return this.innerModel().kind();
+    public CertificateOrderContact contact() {
+        return this.innerModel().contact();
     }
 
-    public SystemData systemData() {
-        return this.innerModel().systemData();
+    public String kind() {
+        return this.innerModel().kind();
     }
 
     public Region region() {

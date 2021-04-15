@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetRouteInner;
 import com.azure.resourcemanager.appservice.generated.models.RouteType;
@@ -29,10 +28,6 @@ public final class VnetRouteImpl implements VnetRoute, VnetRoute.Definition, Vne
 
     public String kind() {
         return this.innerModel().kind();
-    }
-
-    public SystemData systemData() {
-        return this.innerModel().systemData();
     }
 
     public String startAddress() {

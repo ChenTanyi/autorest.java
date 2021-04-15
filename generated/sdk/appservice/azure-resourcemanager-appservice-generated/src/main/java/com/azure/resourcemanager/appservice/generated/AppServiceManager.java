@@ -24,12 +24,14 @@ import com.azure.resourcemanager.appservice.generated.fluent.WebSiteManagementCl
 import com.azure.resourcemanager.appservice.generated.implementation.AppServiceCertificateOrdersImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.AppServiceEnvironmentsImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.AppServicePlansImpl;
+import com.azure.resourcemanager.appservice.generated.implementation.CertificateOrdersDiagnosticsImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.CertificateRegistrationProvidersImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.CertificatesImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.DeletedWebAppsImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.DiagnosticsImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.DomainRegistrationProvidersImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.DomainsImpl;
+import com.azure.resourcemanager.appservice.generated.implementation.GlobalsImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.ProvidersImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.RecommendationsImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.ResourceHealthMetadatasImpl;
@@ -41,12 +43,14 @@ import com.azure.resourcemanager.appservice.generated.implementation.WebSiteMana
 import com.azure.resourcemanager.appservice.generated.models.AppServiceCertificateOrders;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceEnvironments;
 import com.azure.resourcemanager.appservice.generated.models.AppServicePlans;
+import com.azure.resourcemanager.appservice.generated.models.CertificateOrdersDiagnostics;
 import com.azure.resourcemanager.appservice.generated.models.CertificateRegistrationProviders;
 import com.azure.resourcemanager.appservice.generated.models.Certificates;
 import com.azure.resourcemanager.appservice.generated.models.DeletedWebApps;
 import com.azure.resourcemanager.appservice.generated.models.Diagnostics;
 import com.azure.resourcemanager.appservice.generated.models.DomainRegistrationProviders;
 import com.azure.resourcemanager.appservice.generated.models.Domains;
+import com.azure.resourcemanager.appservice.generated.models.Globals;
 import com.azure.resourcemanager.appservice.generated.models.Providers;
 import com.azure.resourcemanager.appservice.generated.models.Recommendations;
 import com.azure.resourcemanager.appservice.generated.models.ResourceHealthMetadatas;
@@ -64,6 +68,8 @@ import java.util.Objects;
 public final class AppServiceManager {
     private AppServiceCertificateOrders appServiceCertificateOrders;
 
+    private CertificateOrdersDiagnostics certificateOrdersDiagnostics;
+
     private CertificateRegistrationProviders certificateRegistrationProviders;
 
     private Domains domains;
@@ -77,6 +83,8 @@ public final class AppServiceManager {
     private DeletedWebApps deletedWebApps;
 
     private Diagnostics diagnostics;
+
+    private Globals globals;
 
     private Providers providers;
 
@@ -266,6 +274,15 @@ public final class AppServiceManager {
         return appServiceCertificateOrders;
     }
 
+    /** @return Resource collection API of CertificateOrdersDiagnostics. */
+    public CertificateOrdersDiagnostics certificateOrdersDiagnostics() {
+        if (this.certificateOrdersDiagnostics == null) {
+            this.certificateOrdersDiagnostics =
+                new CertificateOrdersDiagnosticsImpl(clientObject.getCertificateOrdersDiagnostics(), this);
+        }
+        return certificateOrdersDiagnostics;
+    }
+
     /** @return Resource collection API of CertificateRegistrationProviders. */
     public CertificateRegistrationProviders certificateRegistrationProviders() {
         if (this.certificateRegistrationProviders == null) {
@@ -322,6 +339,14 @@ public final class AppServiceManager {
             this.diagnostics = new DiagnosticsImpl(clientObject.getDiagnostics(), this);
         }
         return diagnostics;
+    }
+
+    /** @return Resource collection API of Globals. */
+    public Globals globals() {
+        if (this.globals == null) {
+            this.globals = new GlobalsImpl(clientObject.getGlobals(), this);
+        }
+        return globals;
     }
 
     /** @return Resource collection API of Providers. */

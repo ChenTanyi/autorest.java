@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.management.Region;
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CertificateInner;
 import com.azure.resourcemanager.appservice.generated.models.Certificate;
@@ -132,12 +131,12 @@ public final class CertificateImpl implements Certificate, Certificate.Definitio
         return this.innerModel().canonicalName();
     }
 
-    public String kind() {
-        return this.innerModel().kind();
+    public String domainValidationMethod() {
+        return this.innerModel().domainValidationMethod();
     }
 
-    public SystemData systemData() {
-        return this.innerModel().systemData();
+    public String kind() {
+        return this.innerModel().kind();
     }
 
     public Region region() {
@@ -327,6 +326,16 @@ public final class CertificateImpl implements Certificate, Certificate.Definitio
             return this;
         } else {
             this.updateCertificateEnvelope.withCanonicalName(canonicalName);
+            return this;
+        }
+    }
+
+    public CertificateImpl withDomainValidationMethod(String domainValidationMethod) {
+        if (isInCreateMode()) {
+            this.innerModel().withDomainValidationMethod(domainValidationMethod);
+            return this;
+        } else {
+            this.updateCertificateEnvelope.withDomainValidationMethod(domainValidationMethod);
             return this;
         }
     }

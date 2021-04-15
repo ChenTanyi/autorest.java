@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.appservice.generated.models;
 
 import com.azure.core.management.Region;
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CertificateInner;
 import java.time.OffsetDateTime;
@@ -193,18 +192,18 @@ public interface Certificate {
     String canonicalName();
 
     /**
+     * Gets the domainValidationMethod property: Method of domain validation for free cert.
+     *
+     * @return the domainValidationMethod value.
+     */
+    String domainValidationMethod();
+
+    /**
      * Gets the kind property: Kind of resource.
      *
      * @return the kind value.
      */
     String kind();
-
-    /**
-     * Gets the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    SystemData systemData();
 
     /**
      * Gets the region of the resource.
@@ -280,6 +279,7 @@ public interface Certificate {
                 DefinitionStages.WithKeyVaultSecretName,
                 DefinitionStages.WithServerFarmId,
                 DefinitionStages.WithCanonicalName,
+                DefinitionStages.WithDomainValidationMethod,
                 DefinitionStages.WithKind {
             /**
              * Executes the create request.
@@ -380,6 +380,16 @@ public interface Certificate {
              */
             WithCreate withCanonicalName(String canonicalName);
         }
+        /** The stage of the Certificate definition allowing to specify domainValidationMethod. */
+        interface WithDomainValidationMethod {
+            /**
+             * Specifies the domainValidationMethod property: Method of domain validation for free cert.
+             *
+             * @param domainValidationMethod Method of domain validation for free cert.
+             * @return the next definition stage.
+             */
+            WithCreate withDomainValidationMethod(String domainValidationMethod);
+        }
         /** The stage of the Certificate definition allowing to specify kind. */
         interface WithKind {
             /**
@@ -407,7 +417,8 @@ public interface Certificate {
             UpdateStages.WithKeyVaultId,
             UpdateStages.WithKeyVaultSecretName,
             UpdateStages.WithServerFarmId,
-            UpdateStages.WithCanonicalName {
+            UpdateStages.WithCanonicalName,
+            UpdateStages.WithDomainValidationMethod {
         /**
          * Executes the update request.
          *
@@ -508,6 +519,16 @@ public interface Certificate {
              * @return the next definition stage.
              */
             Update withCanonicalName(String canonicalName);
+        }
+        /** The stage of the Certificate update allowing to specify domainValidationMethod. */
+        interface WithDomainValidationMethod {
+            /**
+             * Specifies the domainValidationMethod property: Method of domain validation for free cert.
+             *
+             * @param domainValidationMethod Method of domain validation for free cert.
+             * @return the next definition stage.
+             */
+            Update withDomainValidationMethod(String domainValidationMethod);
         }
     }
     /**

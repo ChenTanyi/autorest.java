@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteAuthSettingsInner;
 import com.azure.resourcemanager.appservice.generated.models.BuiltInAuthenticationProvider;
 import com.azure.resourcemanager.appservice.generated.models.SiteAuthSettings;
@@ -40,16 +39,16 @@ public final class SiteAuthSettingsImpl implements SiteAuthSettings {
         return this.innerModel().kind();
     }
 
-    public SystemData systemData() {
-        return this.innerModel().systemData();
-    }
-
     public Boolean enabled() {
         return this.innerModel().enabled();
     }
 
     public String runtimeVersion() {
         return this.innerModel().runtimeVersion();
+    }
+
+    public String configVersion() {
+        return this.innerModel().configVersion();
     }
 
     public UnauthenticatedClientAction unauthenticatedClientAction() {

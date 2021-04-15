@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DetectorDefinitionInner;
 import com.azure.resourcemanager.appservice.generated.models.DetectorDefinition;
 
@@ -34,10 +33,6 @@ public final class DetectorDefinitionImpl implements DetectorDefinition {
 
     public String kind() {
         return this.innerModel().kind();
-    }
-
-    public SystemData systemData() {
-        return this.innerModel().systemData();
     }
 
     public String displayName() {

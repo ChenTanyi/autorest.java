@@ -7,7 +7,6 @@ package com.azure.resourcemanager.appservice.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.management.Resource;
-import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.Contact;
 import com.azure.resourcemanager.appservice.generated.models.DnsType;
@@ -158,12 +157,6 @@ public class DomainInner extends Resource {
      */
     @JsonProperty(value = "kind")
     private String kind;
-
-    /*
-     * The system metadata relating to this resource.
-     */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
-    private SystemData systemData;
 
     /**
      * Get the contactAdmin property: Administrative contact.
@@ -490,15 +483,6 @@ public class DomainInner extends Resource {
     public DomainInner withKind(String kind) {
         this.kind = kind;
         return this;
-    }
-
-    /**
-     * Get the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    public SystemData systemData() {
-        return this.systemData;
     }
 
     /** {@inheritDoc} */

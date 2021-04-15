@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ProcessModuleInfoInner;
 import com.azure.resourcemanager.appservice.generated.models.ProcessModuleInfo;
 
@@ -34,10 +33,6 @@ public final class ProcessModuleInfoImpl implements ProcessModuleInfo {
 
     public String kind() {
         return this.innerModel().kind();
-    }
-
-    public SystemData systemData() {
-        return this.innerModel().systemData();
     }
 
     public String baseAddress() {

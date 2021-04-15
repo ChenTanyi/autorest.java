@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.PremierAddOnOfferInner;
 import com.azure.resourcemanager.appservice.generated.models.AppServicePlanRestrictions;
 import com.azure.resourcemanager.appservice.generated.models.PremierAddOnOffer;
@@ -35,10 +34,6 @@ public final class PremierAddOnOfferImpl implements PremierAddOnOffer {
 
     public String kind() {
         return this.innerModel().kind();
-    }
-
-    public SystemData systemData() {
-        return this.innerModel().systemData();
     }
 
     public String sku() {

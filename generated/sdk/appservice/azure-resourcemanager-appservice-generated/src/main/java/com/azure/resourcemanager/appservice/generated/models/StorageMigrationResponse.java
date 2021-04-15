@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StorageMigrationResponseInner;
 
 /** An immutable client-side representation of StorageMigrationResponse. */
@@ -36,13 +35,6 @@ public interface StorageMigrationResponse {
      * @return the kind value.
      */
     String kind();
-
-    /**
-     * Gets the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    SystemData systemData();
 
     /**
      * Gets the operationId property: When server starts the migration process, it will return an operation ID

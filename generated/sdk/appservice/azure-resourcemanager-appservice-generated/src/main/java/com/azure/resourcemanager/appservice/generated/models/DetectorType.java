@@ -7,31 +7,34 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for StackOsTypes. */
-public enum StackOsTypes {
-    /** Enum value windows. */
-    WINDOWS("windows"),
+/** Defines values for DetectorType. */
+public enum DetectorType {
+    /** Enum value Detector. */
+    DETECTOR("Detector"),
 
-    /** Enum value linux. */
-    LINUX("linux");
+    /** Enum value Analysis. */
+    ANALYSIS("Analysis"),
 
-    /** The actual serialized value for a StackOsTypes instance. */
+    /** Enum value CategoryOverview. */
+    CATEGORY_OVERVIEW("CategoryOverview");
+
+    /** The actual serialized value for a DetectorType instance. */
     private final String value;
 
-    StackOsTypes(String value) {
+    DetectorType(String value) {
         this.value = value;
     }
 
     /**
-     * Parses a serialized value to a StackOsTypes instance.
+     * Parses a serialized value to a DetectorType instance.
      *
      * @param value the serialized value to parse.
-     * @return the parsed StackOsTypes object, or null if unable to parse.
+     * @return the parsed DetectorType object, or null if unable to parse.
      */
     @JsonCreator
-    public static StackOsTypes fromString(String value) {
-        StackOsTypes[] items = StackOsTypes.values();
-        for (StackOsTypes item : items) {
+    public static DetectorType fromString(String value) {
+        DetectorType[] items = DetectorType.values();
+        for (DetectorType item : items) {
             if (item.toString().equalsIgnoreCase(value)) {
                 return item;
             }

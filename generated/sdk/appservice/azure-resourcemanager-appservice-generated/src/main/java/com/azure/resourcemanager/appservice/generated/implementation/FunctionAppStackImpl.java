@@ -4,11 +4,10 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.FunctionAppStackInner;
 import com.azure.resourcemanager.appservice.generated.models.FunctionAppMajorVersion;
 import com.azure.resourcemanager.appservice.generated.models.FunctionAppStack;
-import com.azure.resourcemanager.appservice.generated.models.StackOsTypes;
+import com.azure.resourcemanager.appservice.generated.models.StackPreferredOs;
 import java.util.Collections;
 import java.util.List;
 
@@ -40,10 +39,6 @@ public final class FunctionAppStackImpl implements FunctionAppStack {
         return this.innerModel().kind();
     }
 
-    public SystemData systemData() {
-        return this.innerModel().systemData();
-    }
-
     public String location() {
         return this.innerModel().location();
     }
@@ -65,7 +60,7 @@ public final class FunctionAppStackImpl implements FunctionAppStack {
         }
     }
 
-    public StackOsTypes preferredOs() {
+    public StackPreferredOs preferredOs() {
         return this.innerModel().preferredOs();
     }
 

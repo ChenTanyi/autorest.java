@@ -11,12 +11,12 @@ import com.azure.core.http.rest.StreamResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.fluent.WebAppsClient;
+import com.azure.resourcemanager.appservice.generated.fluent.models.ApiKVReferenceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AzureStoragePropertyDictionaryResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.BackupItemInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.BackupRequestInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ConnectionStringDictionaryInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ContinuousWebJobInner;
-import com.azure.resourcemanager.appservice.generated.fluent.models.CsmCopySlotEntityInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmPublishingCredentialsPoliciesCollectionInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmPublishingCredentialsPoliciesEntityInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmUsageQuotaInner;
@@ -38,7 +38,6 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.OperationInn
 import com.azure.resourcemanager.appservice.generated.fluent.models.PerfMonResponseInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.PremierAddOnInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.PrivateAccessInner;
-import com.azure.resourcemanager.appservice.generated.fluent.models.PrivateEndpointConnectionResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.PrivateLinkResourcesWrapperInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ProcessInfoInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ProcessModuleInfoInner;
@@ -46,6 +45,7 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.ProcessThrea
 import com.azure.resourcemanager.appservice.generated.fluent.models.PublicCertificateInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.PushSettingsInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RelayServiceConnectionEntityInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.RemotePrivateEndpointConnectionArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RestoreRequestInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteAuthSettingsInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteAuthSettingsV2Inner;
@@ -71,6 +71,7 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.VnetGatewayI
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetInfoInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.WebJobInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.WebSiteInstanceStatusInner;
+import com.azure.resourcemanager.appservice.generated.models.ApiKVReference;
 import com.azure.resourcemanager.appservice.generated.models.AzureStoragePropertyDictionaryResource;
 import com.azure.resourcemanager.appservice.generated.models.BackupItem;
 import com.azure.resourcemanager.appservice.generated.models.BackupRequest;
@@ -103,7 +104,7 @@ import com.azure.resourcemanager.appservice.generated.models.PerfMonResponse;
 import com.azure.resourcemanager.appservice.generated.models.PremierAddOn;
 import com.azure.resourcemanager.appservice.generated.models.PremierAddOnPatchResource;
 import com.azure.resourcemanager.appservice.generated.models.PrivateAccess;
-import com.azure.resourcemanager.appservice.generated.models.PrivateEndpointConnectionResource;
+import com.azure.resourcemanager.appservice.generated.models.PrivateLinkConnectionApprovalRequestResource;
 import com.azure.resourcemanager.appservice.generated.models.PrivateLinkResourcesWrapper;
 import com.azure.resourcemanager.appservice.generated.models.ProcessInfo;
 import com.azure.resourcemanager.appservice.generated.models.ProcessModuleInfo;
@@ -111,6 +112,7 @@ import com.azure.resourcemanager.appservice.generated.models.ProcessThreadInfo;
 import com.azure.resourcemanager.appservice.generated.models.PublicCertificate;
 import com.azure.resourcemanager.appservice.generated.models.PushSettings;
 import com.azure.resourcemanager.appservice.generated.models.RelayServiceConnectionEntity;
+import com.azure.resourcemanager.appservice.generated.models.RemotePrivateEndpointConnectionArmResource;
 import com.azure.resourcemanager.appservice.generated.models.RestoreRequest;
 import com.azure.resourcemanager.appservice.generated.models.Site;
 import com.azure.resourcemanager.appservice.generated.models.SiteAuthSettings;
@@ -761,6 +763,89 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new BackupRequestImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PagedIterable<ApiKVReference> getAppSettingsKeyVaultReferences(String resourceGroupName, String name) {
+        PagedIterable<ApiKVReferenceInner> inner =
+            this.serviceClient().getAppSettingsKeyVaultReferences(resourceGroupName, name);
+        return Utils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<ApiKVReference> getAppSettingsKeyVaultReferences(
+        String resourceGroupName, String name, Context context) {
+        PagedIterable<ApiKVReferenceInner> inner =
+            this.serviceClient().getAppSettingsKeyVaultReferences(resourceGroupName, name, context);
+        return Utils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
+    }
+
+    public ApiKVReference getAppSettingKeyVaultReference(String resourceGroupName, String name, String appSettingKey) {
+        ApiKVReferenceInner inner =
+            this.serviceClient().getAppSettingKeyVaultReference(resourceGroupName, name, appSettingKey);
+        if (inner != null) {
+            return new ApiKVReferenceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<ApiKVReference> getAppSettingKeyVaultReferenceWithResponse(
+        String resourceGroupName, String name, String appSettingKey, Context context) {
+        Response<ApiKVReferenceInner> inner =
+            this
+                .serviceClient()
+                .getAppSettingKeyVaultReferenceWithResponse(resourceGroupName, name, appSettingKey, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new ApiKVReferenceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PagedIterable<ApiKVReference> getSiteConnectionStringKeyVaultReferences(
+        String resourceGroupName, String name) {
+        PagedIterable<ApiKVReferenceInner> inner =
+            this.serviceClient().getSiteConnectionStringKeyVaultReferences(resourceGroupName, name);
+        return Utils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<ApiKVReference> getSiteConnectionStringKeyVaultReferences(
+        String resourceGroupName, String name, Context context) {
+        PagedIterable<ApiKVReferenceInner> inner =
+            this.serviceClient().getSiteConnectionStringKeyVaultReferences(resourceGroupName, name, context);
+        return Utils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
+    }
+
+    public ApiKVReference getSiteConnectionStringKeyVaultReference(
+        String resourceGroupName, String name, String connectionStringKey) {
+        ApiKVReferenceInner inner =
+            this.serviceClient().getSiteConnectionStringKeyVaultReference(resourceGroupName, name, connectionStringKey);
+        if (inner != null) {
+            return new ApiKVReferenceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<ApiKVReference> getSiteConnectionStringKeyVaultReferenceWithResponse(
+        String resourceGroupName, String name, String connectionStringKey, Context context) {
+        Response<ApiKVReferenceInner> inner =
+            this
+                .serviceClient()
+                .getSiteConnectionStringKeyVaultReferenceWithResponse(
+                    resourceGroupName, name, connectionStringKey, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new ApiKVReferenceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
@@ -2221,37 +2306,6 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SwiftVirtualNetwork createOrUpdateSwiftVirtualNetworkConnection(
-        String resourceGroupName, String name, SwiftVirtualNetworkInner connectionEnvelope) {
-        SwiftVirtualNetworkInner inner =
-            this
-                .serviceClient()
-                .createOrUpdateSwiftVirtualNetworkConnection(resourceGroupName, name, connectionEnvelope);
-        if (inner != null) {
-            return new SwiftVirtualNetworkImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<SwiftVirtualNetwork> createOrUpdateSwiftVirtualNetworkConnectionWithResponse(
-        String resourceGroupName, String name, SwiftVirtualNetworkInner connectionEnvelope, Context context) {
-        Response<SwiftVirtualNetworkInner> inner =
-            this
-                .serviceClient()
-                .createOrUpdateSwiftVirtualNetworkConnectionWithResponse(
-                    resourceGroupName, name, connectionEnvelope, context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new SwiftVirtualNetworkImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
-    }
-
     public void deleteSwiftVirtualNetwork(String resourceGroupName, String name) {
         this.serviceClient().deleteSwiftVirtualNetwork(resourceGroupName, name);
     }
@@ -2259,34 +2313,6 @@ public final class WebAppsImpl implements WebApps {
     public Response<Void> deleteSwiftVirtualNetworkWithResponse(
         String resourceGroupName, String name, Context context) {
         return this.serviceClient().deleteSwiftVirtualNetworkWithResponse(resourceGroupName, name, context);
-    }
-
-    public SwiftVirtualNetwork updateSwiftVirtualNetworkConnection(
-        String resourceGroupName, String name, SwiftVirtualNetworkInner connectionEnvelope) {
-        SwiftVirtualNetworkInner inner =
-            this.serviceClient().updateSwiftVirtualNetworkConnection(resourceGroupName, name, connectionEnvelope);
-        if (inner != null) {
-            return new SwiftVirtualNetworkImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<SwiftVirtualNetwork> updateSwiftVirtualNetworkConnectionWithResponse(
-        String resourceGroupName, String name, SwiftVirtualNetworkInner connectionEnvelope, Context context) {
-        Response<SwiftVirtualNetworkInner> inner =
-            this
-                .serviceClient()
-                .updateSwiftVirtualNetworkConnectionWithResponse(resourceGroupName, name, connectionEnvelope, context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new SwiftVirtualNetworkImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
     }
 
     public NetworkFeatures listNetworkFeatures(String resourceGroupName, String name, String view) {
@@ -2598,6 +2624,89 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public PagedIterable<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionList(
+        String resourceGroupName, String name) {
+        PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> inner =
+            this.serviceClient().getPrivateEndpointConnectionList(resourceGroupName, name);
+        return Utils
+            .mapPage(inner, inner1 -> new RemotePrivateEndpointConnectionArmResourceImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionList(
+        String resourceGroupName, String name, Context context) {
+        PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> inner =
+            this.serviceClient().getPrivateEndpointConnectionList(resourceGroupName, name, context);
+        return Utils
+            .mapPage(inner, inner1 -> new RemotePrivateEndpointConnectionArmResourceImpl(inner1, this.manager()));
+    }
+
+    public RemotePrivateEndpointConnectionArmResource getPrivateEndpointConnection(
+        String resourceGroupName, String name, String privateEndpointConnectionName) {
+        RemotePrivateEndpointConnectionArmResourceInner inner =
+            this.serviceClient().getPrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName);
+        if (inner != null) {
+            return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionWithResponse(
+        String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
+        Response<RemotePrivateEndpointConnectionArmResourceInner> inner =
+            this
+                .serviceClient()
+                .getPrivateEndpointConnectionWithResponse(
+                    resourceGroupName, name, privateEndpointConnectionName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new RemotePrivateEndpointConnectionArmResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public Object deletePrivateEndpointConnection(
+        String resourceGroupName, String name, String privateEndpointConnectionName) {
+        return this
+            .serviceClient()
+            .deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName);
+    }
+
+    public Object deletePrivateEndpointConnection(
+        String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
+        return this
+            .serviceClient()
+            .deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName, context);
+    }
+
+    public PrivateLinkResourcesWrapper getPrivateLinkResources(String resourceGroupName, String name) {
+        PrivateLinkResourcesWrapperInner inner = this.serviceClient().getPrivateLinkResources(resourceGroupName, name);
+        if (inner != null) {
+            return new PrivateLinkResourcesWrapperImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<PrivateLinkResourcesWrapper> getPrivateLinkResourcesWithResponse(
+        String resourceGroupName, String name, Context context) {
+        Response<PrivateLinkResourcesWrapperInner> inner =
+            this.serviceClient().getPrivateLinkResourcesWithResponse(resourceGroupName, name, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new PrivateLinkResourcesWrapperImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
     public PagedIterable<ProcessInfo> listProcesses(String resourceGroupName, String name) {
         PagedIterable<ProcessInfoInner> inner = this.serviceClient().listProcesses(resourceGroupName, name);
         return Utils.mapPage(inner, inner1 -> new ProcessInfoImpl(inner1, this.manager()));
@@ -2880,15 +2989,6 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().deleteSiteExtensionWithResponse(resourceGroupName, name, siteExtensionId, context);
     }
 
-    public void copyProductionSlot(String resourceGroupName, String name, CsmCopySlotEntityInner copySlotEntity) {
-        this.serviceClient().copyProductionSlot(resourceGroupName, name, copySlotEntity);
-    }
-
-    public void copyProductionSlot(
-        String resourceGroupName, String name, CsmCopySlotEntityInner copySlotEntity, Context context) {
-        this.serviceClient().copyProductionSlot(resourceGroupName, name, copySlotEntity, context);
-    }
-
     public PagedIterable<Site> listSlots(String resourceGroupName, String name) {
         PagedIterable<SiteInner> inner = this.serviceClient().listSlots(resourceGroupName, name);
         return Utils.mapPage(inner, inner1 -> new SiteImpl(inner1, this.manager()));
@@ -3134,6 +3234,158 @@ public final class WebAppsImpl implements WebApps {
         RestoreRequestInner request,
         Context context) {
         this.serviceClient().restoreSlot(resourceGroupName, name, backupId, slot, request, context);
+    }
+
+    public CsmPublishingCredentialsPoliciesCollection getBasicPublishingCredentialsPoliciesSlot(
+        String resourceGroupName, String name, String slot) {
+        CsmPublishingCredentialsPoliciesCollectionInner inner =
+            this.serviceClient().getBasicPublishingCredentialsPoliciesSlot(resourceGroupName, name, slot);
+        if (inner != null) {
+            return new CsmPublishingCredentialsPoliciesCollectionImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<CsmPublishingCredentialsPoliciesCollection> getBasicPublishingCredentialsPoliciesSlotWithResponse(
+        String resourceGroupName, String name, String slot, Context context) {
+        Response<CsmPublishingCredentialsPoliciesCollectionInner> inner =
+            this
+                .serviceClient()
+                .getBasicPublishingCredentialsPoliciesSlotWithResponse(resourceGroupName, name, slot, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new CsmPublishingCredentialsPoliciesCollectionImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public CsmPublishingCredentialsPoliciesEntity getFtpAllowedSlot(
+        String resourceGroupName, String name, String slot) {
+        CsmPublishingCredentialsPoliciesEntityInner inner =
+            this.serviceClient().getFtpAllowedSlot(resourceGroupName, name, slot);
+        if (inner != null) {
+            return new CsmPublishingCredentialsPoliciesEntityImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<CsmPublishingCredentialsPoliciesEntity> getFtpAllowedSlotWithResponse(
+        String resourceGroupName, String name, String slot, Context context) {
+        Response<CsmPublishingCredentialsPoliciesEntityInner> inner =
+            this.serviceClient().getFtpAllowedSlotWithResponse(resourceGroupName, name, slot, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new CsmPublishingCredentialsPoliciesEntityImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public CsmPublishingCredentialsPoliciesEntity updateFtpAllowedSlot(
+        String resourceGroupName,
+        String name,
+        String slot,
+        CsmPublishingCredentialsPoliciesEntityInner csmPublishingAccessPoliciesEntity) {
+        CsmPublishingCredentialsPoliciesEntityInner inner =
+            this.serviceClient().updateFtpAllowedSlot(resourceGroupName, name, slot, csmPublishingAccessPoliciesEntity);
+        if (inner != null) {
+            return new CsmPublishingCredentialsPoliciesEntityImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<CsmPublishingCredentialsPoliciesEntity> updateFtpAllowedSlotWithResponse(
+        String resourceGroupName,
+        String name,
+        String slot,
+        CsmPublishingCredentialsPoliciesEntityInner csmPublishingAccessPoliciesEntity,
+        Context context) {
+        Response<CsmPublishingCredentialsPoliciesEntityInner> inner =
+            this
+                .serviceClient()
+                .updateFtpAllowedSlotWithResponse(
+                    resourceGroupName, name, slot, csmPublishingAccessPoliciesEntity, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new CsmPublishingCredentialsPoliciesEntityImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public CsmPublishingCredentialsPoliciesEntity getScmAllowedSlot(
+        String resourceGroupName, String name, String slot) {
+        CsmPublishingCredentialsPoliciesEntityInner inner =
+            this.serviceClient().getScmAllowedSlot(resourceGroupName, name, slot);
+        if (inner != null) {
+            return new CsmPublishingCredentialsPoliciesEntityImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<CsmPublishingCredentialsPoliciesEntity> getScmAllowedSlotWithResponse(
+        String resourceGroupName, String name, String slot, Context context) {
+        Response<CsmPublishingCredentialsPoliciesEntityInner> inner =
+            this.serviceClient().getScmAllowedSlotWithResponse(resourceGroupName, name, slot, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new CsmPublishingCredentialsPoliciesEntityImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public CsmPublishingCredentialsPoliciesEntity updateScmAllowedSlot(
+        String resourceGroupName,
+        String name,
+        String slot,
+        CsmPublishingCredentialsPoliciesEntityInner csmPublishingAccessPoliciesEntity) {
+        CsmPublishingCredentialsPoliciesEntityInner inner =
+            this.serviceClient().updateScmAllowedSlot(resourceGroupName, name, slot, csmPublishingAccessPoliciesEntity);
+        if (inner != null) {
+            return new CsmPublishingCredentialsPoliciesEntityImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<CsmPublishingCredentialsPoliciesEntity> updateScmAllowedSlotWithResponse(
+        String resourceGroupName,
+        String name,
+        String slot,
+        CsmPublishingCredentialsPoliciesEntityInner csmPublishingAccessPoliciesEntity,
+        Context context) {
+        Response<CsmPublishingCredentialsPoliciesEntityInner> inner =
+            this
+                .serviceClient()
+                .updateScmAllowedSlotWithResponse(
+                    resourceGroupName, name, slot, csmPublishingAccessPoliciesEntity, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new CsmPublishingCredentialsPoliciesEntityImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
     }
 
     public PagedIterable<SiteConfigResource> listConfigurationsSlot(
@@ -3428,6 +3680,93 @@ public final class WebAppsImpl implements WebApps {
                 inner.getStatusCode(),
                 inner.getHeaders(),
                 new BackupRequestImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PagedIterable<ApiKVReference> getAppSettingsKeyVaultReferencesSlot(
+        String resourceGroupName, String name, String slot) {
+        PagedIterable<ApiKVReferenceInner> inner =
+            this.serviceClient().getAppSettingsKeyVaultReferencesSlot(resourceGroupName, name, slot);
+        return Utils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<ApiKVReference> getAppSettingsKeyVaultReferencesSlot(
+        String resourceGroupName, String name, String slot, Context context) {
+        PagedIterable<ApiKVReferenceInner> inner =
+            this.serviceClient().getAppSettingsKeyVaultReferencesSlot(resourceGroupName, name, slot, context);
+        return Utils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
+    }
+
+    public ApiKVReference getAppSettingKeyVaultReferenceSlot(
+        String resourceGroupName, String name, String appSettingKey, String slot) {
+        ApiKVReferenceInner inner =
+            this.serviceClient().getAppSettingKeyVaultReferenceSlot(resourceGroupName, name, appSettingKey, slot);
+        if (inner != null) {
+            return new ApiKVReferenceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<ApiKVReference> getAppSettingKeyVaultReferenceSlotWithResponse(
+        String resourceGroupName, String name, String appSettingKey, String slot, Context context) {
+        Response<ApiKVReferenceInner> inner =
+            this
+                .serviceClient()
+                .getAppSettingKeyVaultReferenceSlotWithResponse(resourceGroupName, name, appSettingKey, slot, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new ApiKVReferenceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PagedIterable<ApiKVReference> getSiteConnectionStringKeyVaultReferencesSlot(
+        String resourceGroupName, String name, String slot) {
+        PagedIterable<ApiKVReferenceInner> inner =
+            this.serviceClient().getSiteConnectionStringKeyVaultReferencesSlot(resourceGroupName, name, slot);
+        return Utils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<ApiKVReference> getSiteConnectionStringKeyVaultReferencesSlot(
+        String resourceGroupName, String name, String slot, Context context) {
+        PagedIterable<ApiKVReferenceInner> inner =
+            this.serviceClient().getSiteConnectionStringKeyVaultReferencesSlot(resourceGroupName, name, slot, context);
+        return Utils.mapPage(inner, inner1 -> new ApiKVReferenceImpl(inner1, this.manager()));
+    }
+
+    public ApiKVReference getSiteConnectionStringKeyVaultReferenceSlot(
+        String resourceGroupName, String name, String connectionStringKey, String slot) {
+        ApiKVReferenceInner inner =
+            this
+                .serviceClient()
+                .getSiteConnectionStringKeyVaultReferenceSlot(resourceGroupName, name, connectionStringKey, slot);
+        if (inner != null) {
+            return new ApiKVReferenceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<ApiKVReference> getSiteConnectionStringKeyVaultReferenceSlotWithResponse(
+        String resourceGroupName, String name, String connectionStringKey, String slot, Context context) {
+        Response<ApiKVReferenceInner> inner =
+            this
+                .serviceClient()
+                .getSiteConnectionStringKeyVaultReferenceSlotWithResponse(
+                    resourceGroupName, name, connectionStringKey, slot, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new ApiKVReferenceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
@@ -5263,41 +5602,6 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public SwiftVirtualNetwork createOrUpdateSwiftVirtualNetworkConnectionSlot(
-        String resourceGroupName, String name, String slot, SwiftVirtualNetworkInner connectionEnvelope) {
-        SwiftVirtualNetworkInner inner =
-            this
-                .serviceClient()
-                .createOrUpdateSwiftVirtualNetworkConnectionSlot(resourceGroupName, name, slot, connectionEnvelope);
-        if (inner != null) {
-            return new SwiftVirtualNetworkImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<SwiftVirtualNetwork> createOrUpdateSwiftVirtualNetworkConnectionSlotWithResponse(
-        String resourceGroupName,
-        String name,
-        String slot,
-        SwiftVirtualNetworkInner connectionEnvelope,
-        Context context) {
-        Response<SwiftVirtualNetworkInner> inner =
-            this
-                .serviceClient()
-                .createOrUpdateSwiftVirtualNetworkConnectionSlotWithResponse(
-                    resourceGroupName, name, slot, connectionEnvelope, context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new SwiftVirtualNetworkImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
-    }
-
     public void deleteSwiftVirtualNetworkSlot(String resourceGroupName, String name, String slot) {
         this.serviceClient().deleteSwiftVirtualNetworkSlot(resourceGroupName, name, slot);
     }
@@ -5305,41 +5609,6 @@ public final class WebAppsImpl implements WebApps {
     public Response<Void> deleteSwiftVirtualNetworkSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context) {
         return this.serviceClient().deleteSwiftVirtualNetworkSlotWithResponse(resourceGroupName, name, slot, context);
-    }
-
-    public SwiftVirtualNetwork updateSwiftVirtualNetworkConnectionSlot(
-        String resourceGroupName, String name, String slot, SwiftVirtualNetworkInner connectionEnvelope) {
-        SwiftVirtualNetworkInner inner =
-            this
-                .serviceClient()
-                .updateSwiftVirtualNetworkConnectionSlot(resourceGroupName, name, slot, connectionEnvelope);
-        if (inner != null) {
-            return new SwiftVirtualNetworkImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public Response<SwiftVirtualNetwork> updateSwiftVirtualNetworkConnectionSlotWithResponse(
-        String resourceGroupName,
-        String name,
-        String slot,
-        SwiftVirtualNetworkInner connectionEnvelope,
-        Context context) {
-        Response<SwiftVirtualNetworkInner> inner =
-            this
-                .serviceClient()
-                .updateSwiftVirtualNetworkConnectionSlotWithResponse(
-                    resourceGroupName, name, slot, connectionEnvelope, context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new SwiftVirtualNetworkImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
     }
 
     public NetworkFeatures listNetworkFeaturesSlot(String resourceGroupName, String name, String view, String slot) {
@@ -5751,51 +6020,107 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public PrivateEndpointConnectionResource getPrivateEndpointConnection(
-        String resourceGroupName, String name, String privateEndpointConnectionName) {
-        PrivateEndpointConnectionResourceInner inner =
-            this.serviceClient().getPrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName);
+    public PagedIterable<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionListSlot(
+        String resourceGroupName, String name, String slot) {
+        PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> inner =
+            this.serviceClient().getPrivateEndpointConnectionListSlot(resourceGroupName, name, slot);
+        return Utils
+            .mapPage(inner, inner1 -> new RemotePrivateEndpointConnectionArmResourceImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionListSlot(
+        String resourceGroupName, String name, String slot, Context context) {
+        PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> inner =
+            this.serviceClient().getPrivateEndpointConnectionListSlot(resourceGroupName, name, slot, context);
+        return Utils
+            .mapPage(inner, inner1 -> new RemotePrivateEndpointConnectionArmResourceImpl(inner1, this.manager()));
+    }
+
+    public RemotePrivateEndpointConnectionArmResource getPrivateEndpointConnectionSlot(
+        String resourceGroupName, String name, String privateEndpointConnectionName, String slot) {
+        RemotePrivateEndpointConnectionArmResourceInner inner =
+            this
+                .serviceClient()
+                .getPrivateEndpointConnectionSlot(resourceGroupName, name, privateEndpointConnectionName, slot);
         if (inner != null) {
-            return new PrivateEndpointConnectionResourceImpl(inner, this.manager());
+            return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
         } else {
             return null;
         }
     }
 
-    public Response<PrivateEndpointConnectionResource> getPrivateEndpointConnectionWithResponse(
-        String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
-        Response<PrivateEndpointConnectionResourceInner> inner =
+    public Response<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionSlotWithResponse(
+        String resourceGroupName, String name, String privateEndpointConnectionName, String slot, Context context) {
+        Response<RemotePrivateEndpointConnectionArmResourceInner> inner =
             this
                 .serviceClient()
-                .getPrivateEndpointConnectionWithResponse(
-                    resourceGroupName, name, privateEndpointConnectionName, context);
+                .getPrivateEndpointConnectionSlotWithResponse(
+                    resourceGroupName, name, privateEndpointConnectionName, slot, context);
         if (inner != null) {
             return new SimpleResponse<>(
                 inner.getRequest(),
                 inner.getStatusCode(),
                 inner.getHeaders(),
-                new PrivateEndpointConnectionResourceImpl(inner.getValue(), this.manager()));
+                new RemotePrivateEndpointConnectionArmResourceImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
     }
 
-    public Object deletePrivateEndpointConnection(
-        String resourceGroupName, String name, String privateEndpointConnectionName) {
-        return this
-            .serviceClient()
-            .deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName);
+    public RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnectionSlot(
+        String resourceGroupName,
+        String name,
+        String privateEndpointConnectionName,
+        String slot,
+        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper) {
+        RemotePrivateEndpointConnectionArmResourceInner inner =
+            this
+                .serviceClient()
+                .approveOrRejectPrivateEndpointConnectionSlot(
+                    resourceGroupName, name, privateEndpointConnectionName, slot, privateEndpointWrapper);
+        if (inner != null) {
+            return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
-    public Object deletePrivateEndpointConnection(
-        String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
-        return this
-            .serviceClient()
-            .deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName, context);
+    public RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnectionSlot(
+        String resourceGroupName,
+        String name,
+        String privateEndpointConnectionName,
+        String slot,
+        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper,
+        Context context) {
+        RemotePrivateEndpointConnectionArmResourceInner inner =
+            this
+                .serviceClient()
+                .approveOrRejectPrivateEndpointConnectionSlot(
+                    resourceGroupName, name, privateEndpointConnectionName, slot, privateEndpointWrapper, context);
+        if (inner != null) {
+            return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
-    public PrivateLinkResourcesWrapper getPrivateLinkResources(String resourceGroupName, String name) {
-        PrivateLinkResourcesWrapperInner inner = this.serviceClient().getPrivateLinkResources(resourceGroupName, name);
+    public Object deletePrivateEndpointConnectionSlot(
+        String resourceGroupName, String name, String privateEndpointConnectionName, String slot) {
+        return this
+            .serviceClient()
+            .deletePrivateEndpointConnectionSlot(resourceGroupName, name, privateEndpointConnectionName, slot);
+    }
+
+    public Object deletePrivateEndpointConnectionSlot(
+        String resourceGroupName, String name, String privateEndpointConnectionName, String slot, Context context) {
+        return this
+            .serviceClient()
+            .deletePrivateEndpointConnectionSlot(resourceGroupName, name, privateEndpointConnectionName, slot, context);
+    }
+
+    public PrivateLinkResourcesWrapper getPrivateLinkResourcesSlot(String resourceGroupName, String name, String slot) {
+        PrivateLinkResourcesWrapperInner inner =
+            this.serviceClient().getPrivateLinkResourcesSlot(resourceGroupName, name, slot);
         if (inner != null) {
             return new PrivateLinkResourcesWrapperImpl(inner, this.manager());
         } else {
@@ -5803,10 +6128,10 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
-    public Response<PrivateLinkResourcesWrapper> getPrivateLinkResourcesWithResponse(
-        String resourceGroupName, String name, Context context) {
+    public Response<PrivateLinkResourcesWrapper> getPrivateLinkResourcesSlotWithResponse(
+        String resourceGroupName, String name, String slot, Context context) {
         Response<PrivateLinkResourcesWrapperInner> inner =
-            this.serviceClient().getPrivateLinkResourcesWithResponse(resourceGroupName, name, context);
+            this.serviceClient().getPrivateLinkResourcesSlotWithResponse(resourceGroupName, name, slot, context);
         if (inner != null) {
             return new SimpleResponse<>(
                 inner.getRequest(),
@@ -6166,15 +6491,6 @@ public final class WebAppsImpl implements WebApps {
             .deleteSiteExtensionSlotWithResponse(resourceGroupName, name, siteExtensionId, slot, context);
     }
 
-    public void copySlot(String resourceGroupName, String name, String slot, CsmCopySlotEntityInner copySlotEntity) {
-        this.serviceClient().copySlot(resourceGroupName, name, slot, copySlotEntity);
-    }
-
-    public void copySlot(
-        String resourceGroupName, String name, String slot, CsmCopySlotEntityInner copySlotEntity, Context context) {
-        this.serviceClient().copySlot(resourceGroupName, name, slot, copySlotEntity, context);
-    }
-
     public PagedIterable<SlotDifference> listSlotDifferencesSlot(
         String resourceGroupName, String name, String slot, CsmSlotEntity slotSwapEntity) {
         PagedIterable<SlotDifferenceInner> inner =
@@ -6277,8 +6593,10 @@ public final class WebAppsImpl implements WebApps {
     }
 
     public Response<Void> deleteSourceControlSlotWithResponse(
-        String resourceGroupName, String name, String slot, Context context) {
-        return this.serviceClient().deleteSourceControlSlotWithResponse(resourceGroupName, name, slot, context);
+        String resourceGroupName, String name, String slot, String additionalFlags, Context context) {
+        return this
+            .serviceClient()
+            .deleteSourceControlSlotWithResponse(resourceGroupName, name, slot, additionalFlags, context);
     }
 
     public SiteSourceControl updateSourceControlSlot(
@@ -6722,8 +7040,9 @@ public final class WebAppsImpl implements WebApps {
         this.serviceClient().deleteSourceControl(resourceGroupName, name);
     }
 
-    public Response<Void> deleteSourceControlWithResponse(String resourceGroupName, String name, Context context) {
-        return this.serviceClient().deleteSourceControlWithResponse(resourceGroupName, name, context);
+    public Response<Void> deleteSourceControlWithResponse(
+        String resourceGroupName, String name, String additionalFlags, Context context) {
+        return this.serviceClient().deleteSourceControlWithResponse(resourceGroupName, name, additionalFlags, context);
     }
 
     public SiteSourceControl updateSourceControl(
@@ -7631,6 +7950,69 @@ public final class WebAppsImpl implements WebApps {
         return this.getPremierAddOnWithResponse(resourceGroupName, name, premierAddOnName, context);
     }
 
+    public RemotePrivateEndpointConnectionArmResource getPrivateEndpointConnectionById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
+        if (privateEndpointConnectionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.",
+                                id)));
+        }
+        return this
+            .getPrivateEndpointConnectionWithResponse(
+                resourceGroupName, name, privateEndpointConnectionName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionByIdWithResponse(
+        String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
+        if (privateEndpointConnectionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.",
+                                id)));
+        }
+        return this
+            .getPrivateEndpointConnectionWithResponse(resourceGroupName, name, privateEndpointConnectionName, context);
+    }
+
     public PublicCertificate getPublicCertificateById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
@@ -7687,69 +8069,6 @@ public final class WebAppsImpl implements WebApps {
                                 "The resource ID '%s' is not valid. Missing path segment 'publicCertificates'.", id)));
         }
         return this.getPublicCertificateWithResponse(resourceGroupName, name, publicCertificateName, context);
-    }
-
-    public PrivateEndpointConnectionResource getPrivateEndpointConnectionById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
-        if (resourceGroupName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
-        }
-        String name = Utils.getValueFromIdByName(id, "sites");
-        if (name == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
-        }
-        String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
-        if (privateEndpointConnectionName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.",
-                                id)));
-        }
-        return this
-            .getPrivateEndpointConnectionWithResponse(
-                resourceGroupName, name, privateEndpointConnectionName, Context.NONE)
-            .getValue();
-    }
-
-    public Response<PrivateEndpointConnectionResource> getPrivateEndpointConnectionByIdWithResponse(
-        String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
-        if (resourceGroupName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
-        }
-        String name = Utils.getValueFromIdByName(id, "sites");
-        if (name == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
-        }
-        String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
-        if (privateEndpointConnectionName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.",
-                                id)));
-        }
-        return this
-            .getPrivateEndpointConnectionWithResponse(resourceGroupName, name, privateEndpointConnectionName, context);
     }
 
     public VnetInfo getVnetConnectionSlotById(String id) {
@@ -8362,64 +8681,6 @@ public final class WebAppsImpl implements WebApps {
         return this.deletePremierAddOnWithResponse(resourceGroupName, name, premierAddOnName, context);
     }
 
-    public void deletePublicCertificateById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
-        if (resourceGroupName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
-        }
-        String name = Utils.getValueFromIdByName(id, "sites");
-        if (name == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
-        }
-        String publicCertificateName = Utils.getValueFromIdByName(id, "publicCertificates");
-        if (publicCertificateName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'publicCertificates'.", id)));
-        }
-        this
-            .deletePublicCertificateWithResponse(resourceGroupName, name, publicCertificateName, Context.NONE)
-            .getValue();
-    }
-
-    public Response<Void> deletePublicCertificateByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
-        if (resourceGroupName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
-        }
-        String name = Utils.getValueFromIdByName(id, "sites");
-        if (name == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
-        }
-        String publicCertificateName = Utils.getValueFromIdByName(id, "publicCertificates");
-        if (publicCertificateName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'publicCertificates'.", id)));
-        }
-        return this.deletePublicCertificateWithResponse(resourceGroupName, name, publicCertificateName, context);
-    }
-
     public Object deletePrivateEndpointConnectionById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
@@ -8477,6 +8738,64 @@ public final class WebAppsImpl implements WebApps {
                                 id)));
         }
         return this.deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName, context);
+    }
+
+    public void deletePublicCertificateById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String publicCertificateName = Utils.getValueFromIdByName(id, "publicCertificates");
+        if (publicCertificateName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'publicCertificates'.", id)));
+        }
+        this
+            .deletePublicCertificateWithResponse(resourceGroupName, name, publicCertificateName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<Void> deletePublicCertificateByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String publicCertificateName = Utils.getValueFromIdByName(id, "publicCertificates");
+        if (publicCertificateName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'publicCertificates'.", id)));
+        }
+        return this.deletePublicCertificateWithResponse(resourceGroupName, name, publicCertificateName, context);
     }
 
     public void deleteVnetConnectionSlotById(String id) {
@@ -8591,12 +8910,13 @@ public final class WebAppsImpl implements WebApps {
         return new PremierAddOnImpl(name, this.manager());
     }
 
-    public PublicCertificateImpl definePublicCertificate(String name) {
-        return new PublicCertificateImpl(name, this.manager());
+    public RemotePrivateEndpointConnectionArmResourceImpl defineRemotePrivateEndpointConnectionArmResource(
+        String name) {
+        return new RemotePrivateEndpointConnectionArmResourceImpl(name, this.manager());
     }
 
-    public PrivateEndpointConnectionResourceImpl definePrivateEndpointConnectionResource(String name) {
-        return new PrivateEndpointConnectionResourceImpl(name, this.manager());
+    public PublicCertificateImpl definePublicCertificate(String name) {
+        return new PublicCertificateImpl(name, this.manager());
     }
 
     public VnetInfoImpl defineVnetConnectionSlot(String name) {

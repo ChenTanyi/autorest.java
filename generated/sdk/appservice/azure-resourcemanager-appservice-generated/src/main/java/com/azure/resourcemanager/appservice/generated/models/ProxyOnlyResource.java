@@ -6,7 +6,6 @@ package com.azure.resourcemanager.appservice.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
-import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -21,12 +20,6 @@ public class ProxyOnlyResource extends ProxyResource {
      */
     @JsonProperty(value = "kind")
     private String kind;
-
-    /*
-     * The system metadata relating to this resource.
-     */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
-    private SystemData systemData;
 
     /**
      * Get the kind property: Kind of resource.
@@ -46,15 +39,6 @@ public class ProxyOnlyResource extends ProxyResource {
     public ProxyOnlyResource withKind(String kind) {
         this.kind = kind;
         return this;
-    }
-
-    /**
-     * Get the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    public SystemData systemData() {
-        return this.systemData;
     }
 
     /**

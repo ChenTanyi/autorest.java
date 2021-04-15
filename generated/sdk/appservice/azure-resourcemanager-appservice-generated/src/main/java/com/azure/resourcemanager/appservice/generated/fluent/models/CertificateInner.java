@@ -7,7 +7,6 @@ package com.azure.resourcemanager.appservice.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.management.Resource;
-import com.azure.core.management.SystemData;
 import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentProfile;
@@ -148,16 +147,16 @@ public class CertificateInner extends Resource {
     private String canonicalName;
 
     /*
+     * Method of domain validation for free cert
+     */
+    @JsonProperty(value = "properties.domainValidationMethod")
+    private String domainValidationMethod;
+
+    /*
      * Kind of resource.
      */
     @JsonProperty(value = "kind")
     private String kind;
-
-    /*
-     * The system metadata relating to this resource.
-     */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
-    private SystemData systemData;
 
     /**
      * Get the friendlyName property: Friendly name of the certificate.
@@ -422,6 +421,26 @@ public class CertificateInner extends Resource {
     }
 
     /**
+     * Get the domainValidationMethod property: Method of domain validation for free cert.
+     *
+     * @return the domainValidationMethod value.
+     */
+    public String domainValidationMethod() {
+        return this.domainValidationMethod;
+    }
+
+    /**
+     * Set the domainValidationMethod property: Method of domain validation for free cert.
+     *
+     * @param domainValidationMethod the domainValidationMethod value to set.
+     * @return the CertificateInner object itself.
+     */
+    public CertificateInner withDomainValidationMethod(String domainValidationMethod) {
+        this.domainValidationMethod = domainValidationMethod;
+        return this;
+    }
+
+    /**
      * Get the kind property: Kind of resource.
      *
      * @return the kind value.
@@ -439,15 +458,6 @@ public class CertificateInner extends Resource {
     public CertificateInner withKind(String kind) {
         this.kind = kind;
         return this;
-    }
-
-    /**
-     * Get the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    public SystemData systemData() {
-        return this.systemData;
     }
 
     /** {@inheritDoc} */

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DeploymentInner;
 import com.azure.resourcemanager.appservice.generated.models.Deployment;
@@ -35,10 +34,6 @@ public final class DeploymentImpl implements Deployment, Deployment.Definition {
 
     public String kind() {
         return this.innerModel().kind();
-    }
-
-    public SystemData systemData() {
-        return this.innerModel().systemData();
     }
 
     public Integer status() {

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.BillingMeterInner;
 
 /** An immutable client-side representation of BillingMeter. */
@@ -36,13 +35,6 @@ public interface BillingMeter {
      * @return the kind value.
      */
     String kind();
-
-    /**
-     * Gets the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    SystemData systemData();
 
     /**
      * Gets the meterId property: Meter GUID onboarded in Commerce.
@@ -85,6 +77,13 @@ public interface BillingMeter {
      * @return the osType value.
      */
     String osType();
+
+    /**
+     * Gets the multiplier property: Meter Multiplier.
+     *
+     * @return the multiplier value.
+     */
+    Double multiplier();
 
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.BillingMeterInner object.

@@ -10,26 +10,37 @@ import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.fluent.StaticSitesClient;
+import com.azure.resourcemanager.appservice.generated.fluent.models.PrivateLinkResourcesWrapperInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.RemotePrivateEndpointConnectionArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteBuildArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteCustomDomainOverviewArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteFunctionOverviewArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserInvitationResponseResourceInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserProvidedFunctionAppArmResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StaticSitesWorkflowPreviewInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.StringDictionaryInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.StringListInner;
+import com.azure.resourcemanager.appservice.generated.models.PrivateLinkConnectionApprovalRequestResource;
+import com.azure.resourcemanager.appservice.generated.models.PrivateLinkResourcesWrapper;
+import com.azure.resourcemanager.appservice.generated.models.RemotePrivateEndpointConnectionArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteBuildArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteCustomDomainOverviewArmResource;
+import com.azure.resourcemanager.appservice.generated.models.StaticSiteCustomDomainRequestPropertiesArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteFunctionOverviewArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteResetPropertiesArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserInvitationRequestResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserInvitationResponseResource;
+import com.azure.resourcemanager.appservice.generated.models.StaticSiteUserProvidedFunctionAppArmResource;
+import com.azure.resourcemanager.appservice.generated.models.StaticSiteZipDeploymentArmResource;
 import com.azure.resourcemanager.appservice.generated.models.StaticSites;
 import com.azure.resourcemanager.appservice.generated.models.StaticSitesWorkflowPreview;
 import com.azure.resourcemanager.appservice.generated.models.StaticSitesWorkflowPreviewRequest;
 import com.azure.resourcemanager.appservice.generated.models.StringDictionary;
+import com.azure.resourcemanager.appservice.generated.models.StringList;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class StaticSitesImpl implements StaticSites {
@@ -121,8 +132,8 @@ public final class StaticSitesImpl implements StaticSites {
         this.serviceClient().delete(resourceGroupName, name);
     }
 
-    public Response<Void> deleteWithResponse(String resourceGroupName, String name, Context context) {
-        return this.serviceClient().deleteWithResponse(resourceGroupName, name, context);
+    public void delete(String resourceGroupName, String name, Context context) {
+        this.serviceClient().delete(resourceGroupName, name, context);
     }
 
     public PagedIterable<StaticSiteUserArmResource> listStaticSiteUsers(
@@ -203,8 +214,10 @@ public final class StaticSitesImpl implements StaticSites {
         return Utils.mapPage(inner, inner1 -> new StaticSiteBuildArmResourceImpl(inner1, this.manager()));
     }
 
-    public StaticSiteBuildArmResource getStaticSiteBuild(String resourceGroupName, String name, String prId) {
-        StaticSiteBuildArmResourceInner inner = this.serviceClient().getStaticSiteBuild(resourceGroupName, name, prId);
+    public StaticSiteBuildArmResource getStaticSiteBuild(
+        String resourceGroupName, String name, String environmentName) {
+        StaticSiteBuildArmResourceInner inner =
+            this.serviceClient().getStaticSiteBuild(resourceGroupName, name, environmentName);
         if (inner != null) {
             return new StaticSiteBuildArmResourceImpl(inner, this.manager());
         } else {
@@ -213,9 +226,9 @@ public final class StaticSitesImpl implements StaticSites {
     }
 
     public Response<StaticSiteBuildArmResource> getStaticSiteBuildWithResponse(
-        String resourceGroupName, String name, String prId, Context context) {
+        String resourceGroupName, String name, String environmentName, Context context) {
         Response<StaticSiteBuildArmResourceInner> inner =
-            this.serviceClient().getStaticSiteBuildWithResponse(resourceGroupName, name, prId, context);
+            this.serviceClient().getStaticSiteBuildWithResponse(resourceGroupName, name, environmentName, context);
         if (inner != null) {
             return new SimpleResponse<>(
                 inner.getRequest(),
@@ -227,21 +240,56 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public void deleteStaticSiteBuild(String resourceGroupName, String name, String prId) {
-        this.serviceClient().deleteStaticSiteBuild(resourceGroupName, name, prId);
+    public void deleteStaticSiteBuild(String resourceGroupName, String name, String environmentName) {
+        this.serviceClient().deleteStaticSiteBuild(resourceGroupName, name, environmentName);
     }
 
-    public Response<Void> deleteStaticSiteBuildWithResponse(
-        String resourceGroupName, String name, String prId, Context context) {
-        return this.serviceClient().deleteStaticSiteBuildWithResponse(resourceGroupName, name, prId, context);
+    public void deleteStaticSiteBuild(String resourceGroupName, String name, String environmentName, Context context) {
+        this.serviceClient().deleteStaticSiteBuild(resourceGroupName, name, environmentName, context);
     }
 
-    public StringDictionary createOrUpdateStaticSiteBuildFunctionAppSettings(
-        String resourceGroupName, String name, String prId, StringDictionaryInner appSettings) {
+    public StringDictionary createOrUpdateStaticSiteBuildAppSettings(
+        String resourceGroupName, String name, String environmentName, StringDictionaryInner appSettings) {
         StringDictionaryInner inner =
             this
                 .serviceClient()
-                .createOrUpdateStaticSiteBuildFunctionAppSettings(resourceGroupName, name, prId, appSettings);
+                .createOrUpdateStaticSiteBuildAppSettings(resourceGroupName, name, environmentName, appSettings);
+        if (inner != null) {
+            return new StringDictionaryImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<StringDictionary> createOrUpdateStaticSiteBuildAppSettingsWithResponse(
+        String resourceGroupName,
+        String name,
+        String environmentName,
+        StringDictionaryInner appSettings,
+        Context context) {
+        Response<StringDictionaryInner> inner =
+            this
+                .serviceClient()
+                .createOrUpdateStaticSiteBuildAppSettingsWithResponse(
+                    resourceGroupName, name, environmentName, appSettings, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new StringDictionaryImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public StringDictionary createOrUpdateStaticSiteBuildFunctionAppSettings(
+        String resourceGroupName, String name, String environmentName, StringDictionaryInner appSettings) {
+        StringDictionaryInner inner =
+            this
+                .serviceClient()
+                .createOrUpdateStaticSiteBuildFunctionAppSettings(
+                    resourceGroupName, name, environmentName, appSettings);
         if (inner != null) {
             return new StringDictionaryImpl(inner, this.manager());
         } else {
@@ -250,12 +298,16 @@ public final class StaticSitesImpl implements StaticSites {
     }
 
     public Response<StringDictionary> createOrUpdateStaticSiteBuildFunctionAppSettingsWithResponse(
-        String resourceGroupName, String name, String prId, StringDictionaryInner appSettings, Context context) {
+        String resourceGroupName,
+        String name,
+        String environmentName,
+        StringDictionaryInner appSettings,
+        Context context) {
         Response<StringDictionaryInner> inner =
             this
                 .serviceClient()
                 .createOrUpdateStaticSiteBuildFunctionAppSettingsWithResponse(
-                    resourceGroupName, name, prId, appSettings, context);
+                    resourceGroupName, name, environmentName, appSettings, context);
         if (inner != null) {
             return new SimpleResponse<>(
                 inner.getRequest(),
@@ -268,22 +320,51 @@ public final class StaticSitesImpl implements StaticSites {
     }
 
     public PagedIterable<StaticSiteFunctionOverviewArmResource> listStaticSiteBuildFunctions(
-        String resourceGroupName, String name, String prId) {
+        String resourceGroupName, String name, String environmentName) {
         PagedIterable<StaticSiteFunctionOverviewArmResourceInner> inner =
-            this.serviceClient().listStaticSiteBuildFunctions(resourceGroupName, name, prId);
+            this.serviceClient().listStaticSiteBuildFunctions(resourceGroupName, name, environmentName);
         return Utils.mapPage(inner, inner1 -> new StaticSiteFunctionOverviewArmResourceImpl(inner1, this.manager()));
     }
 
     public PagedIterable<StaticSiteFunctionOverviewArmResource> listStaticSiteBuildFunctions(
-        String resourceGroupName, String name, String prId, Context context) {
+        String resourceGroupName, String name, String environmentName, Context context) {
         PagedIterable<StaticSiteFunctionOverviewArmResourceInner> inner =
-            this.serviceClient().listStaticSiteBuildFunctions(resourceGroupName, name, prId, context);
+            this.serviceClient().listStaticSiteBuildFunctions(resourceGroupName, name, environmentName, context);
         return Utils.mapPage(inner, inner1 -> new StaticSiteFunctionOverviewArmResourceImpl(inner1, this.manager()));
     }
 
-    public StringDictionary listStaticSiteBuildFunctionAppSettings(String resourceGroupName, String name, String prId) {
+    public StringDictionary listStaticSiteBuildAppSettings(
+        String resourceGroupName, String name, String environmentName) {
         StringDictionaryInner inner =
-            this.serviceClient().listStaticSiteBuildFunctionAppSettings(resourceGroupName, name, prId);
+            this.serviceClient().listStaticSiteBuildAppSettings(resourceGroupName, name, environmentName);
+        if (inner != null) {
+            return new StringDictionaryImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<StringDictionary> listStaticSiteBuildAppSettingsWithResponse(
+        String resourceGroupName, String name, String environmentName, Context context) {
+        Response<StringDictionaryInner> inner =
+            this
+                .serviceClient()
+                .listStaticSiteBuildAppSettingsWithResponse(resourceGroupName, name, environmentName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new StringDictionaryImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public StringDictionary listStaticSiteBuildFunctionAppSettings(
+        String resourceGroupName, String name, String environmentName) {
+        StringDictionaryInner inner =
+            this.serviceClient().listStaticSiteBuildFunctionAppSettings(resourceGroupName, name, environmentName);
         if (inner != null) {
             return new StringDictionaryImpl(inner, this.manager());
         } else {
@@ -292,11 +373,131 @@ public final class StaticSitesImpl implements StaticSites {
     }
 
     public Response<StringDictionary> listStaticSiteBuildFunctionAppSettingsWithResponse(
-        String resourceGroupName, String name, String prId, Context context) {
+        String resourceGroupName, String name, String environmentName, Context context) {
         Response<StringDictionaryInner> inner =
             this
                 .serviceClient()
-                .listStaticSiteBuildFunctionAppSettingsWithResponse(resourceGroupName, name, prId, context);
+                .listStaticSiteBuildFunctionAppSettingsWithResponse(resourceGroupName, name, environmentName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new StringDictionaryImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public PagedIterable<StaticSiteUserProvidedFunctionAppArmResource> getUserProvidedFunctionAppsForStaticSiteBuild(
+        String resourceGroupName, String name, String environmentName) {
+        PagedIterable<StaticSiteUserProvidedFunctionAppArmResourceInner> inner =
+            this
+                .serviceClient()
+                .getUserProvidedFunctionAppsForStaticSiteBuild(resourceGroupName, name, environmentName);
+        return Utils
+            .mapPage(inner, inner1 -> new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<StaticSiteUserProvidedFunctionAppArmResource> getUserProvidedFunctionAppsForStaticSiteBuild(
+        String resourceGroupName, String name, String environmentName, Context context) {
+        PagedIterable<StaticSiteUserProvidedFunctionAppArmResourceInner> inner =
+            this
+                .serviceClient()
+                .getUserProvidedFunctionAppsForStaticSiteBuild(resourceGroupName, name, environmentName, context);
+        return Utils
+            .mapPage(inner, inner1 -> new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner1, this.manager()));
+    }
+
+    public StaticSiteUserProvidedFunctionAppArmResource getUserProvidedFunctionAppForStaticSiteBuild(
+        String resourceGroupName, String name, String environmentName, String functionAppName) {
+        StaticSiteUserProvidedFunctionAppArmResourceInner inner =
+            this
+                .serviceClient()
+                .getUserProvidedFunctionAppForStaticSiteBuild(
+                    resourceGroupName, name, environmentName, functionAppName);
+        if (inner != null) {
+            return new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<StaticSiteUserProvidedFunctionAppArmResource>
+        getUserProvidedFunctionAppForStaticSiteBuildWithResponse(
+            String resourceGroupName, String name, String environmentName, String functionAppName, Context context) {
+        Response<StaticSiteUserProvidedFunctionAppArmResourceInner> inner =
+            this
+                .serviceClient()
+                .getUserProvidedFunctionAppForStaticSiteBuildWithResponse(
+                    resourceGroupName, name, environmentName, functionAppName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public void detachUserProvidedFunctionAppFromStaticSiteBuild(
+        String resourceGroupName, String name, String environmentName, String functionAppName) {
+        this
+            .serviceClient()
+            .detachUserProvidedFunctionAppFromStaticSiteBuild(
+                resourceGroupName, name, environmentName, functionAppName);
+    }
+
+    public Response<Void> detachUserProvidedFunctionAppFromStaticSiteBuildWithResponse(
+        String resourceGroupName, String name, String environmentName, String functionAppName, Context context) {
+        return this
+            .serviceClient()
+            .detachUserProvidedFunctionAppFromStaticSiteBuildWithResponse(
+                resourceGroupName, name, environmentName, functionAppName, context);
+    }
+
+    public void createZipDeploymentForStaticSiteBuild(
+        String resourceGroupName,
+        String name,
+        String environmentName,
+        StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope) {
+        this
+            .serviceClient()
+            .createZipDeploymentForStaticSiteBuild(
+                resourceGroupName, name, environmentName, staticSiteZipDeploymentEnvelope);
+    }
+
+    public void createZipDeploymentForStaticSiteBuild(
+        String resourceGroupName,
+        String name,
+        String environmentName,
+        StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope,
+        Context context) {
+        this
+            .serviceClient()
+            .createZipDeploymentForStaticSiteBuild(
+                resourceGroupName, name, environmentName, staticSiteZipDeploymentEnvelope, context);
+    }
+
+    public StringDictionary createOrUpdateStaticSiteAppSettings(
+        String resourceGroupName, String name, StringDictionaryInner appSettings) {
+        StringDictionaryInner inner =
+            this.serviceClient().createOrUpdateStaticSiteAppSettings(resourceGroupName, name, appSettings);
+        if (inner != null) {
+            return new StringDictionaryImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<StringDictionary> createOrUpdateStaticSiteAppSettingsWithResponse(
+        String resourceGroupName, String name, StringDictionaryInner appSettings, Context context) {
+        Response<StringDictionaryInner> inner =
+            this
+                .serviceClient()
+                .createOrUpdateStaticSiteAppSettingsWithResponse(resourceGroupName, name, appSettings, context);
         if (inner != null) {
             return new SimpleResponse<>(
                 inner.getRequest(),
@@ -388,10 +589,10 @@ public final class StaticSitesImpl implements StaticSites {
             .mapPage(inner, inner1 -> new StaticSiteCustomDomainOverviewArmResourceImpl(inner1, this.manager()));
     }
 
-    public StaticSiteCustomDomainOverviewArmResource createOrUpdateStaticSiteCustomDomain(
+    public StaticSiteCustomDomainOverviewArmResource getStaticSiteCustomDomain(
         String resourceGroupName, String name, String domainName) {
         StaticSiteCustomDomainOverviewArmResourceInner inner =
-            this.serviceClient().createOrUpdateStaticSiteCustomDomain(resourceGroupName, name, domainName);
+            this.serviceClient().getStaticSiteCustomDomain(resourceGroupName, name, domainName);
         if (inner != null) {
             return new StaticSiteCustomDomainOverviewArmResourceImpl(inner, this.manager());
         } else {
@@ -399,12 +600,10 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
-    public Response<StaticSiteCustomDomainOverviewArmResource> createOrUpdateStaticSiteCustomDomainWithResponse(
+    public Response<StaticSiteCustomDomainOverviewArmResource> getStaticSiteCustomDomainWithResponse(
         String resourceGroupName, String name, String domainName, Context context) {
         Response<StaticSiteCustomDomainOverviewArmResourceInner> inner =
-            this
-                .serviceClient()
-                .createOrUpdateStaticSiteCustomDomainWithResponse(resourceGroupName, name, domainName, context);
+            this.serviceClient().getStaticSiteCustomDomainWithResponse(resourceGroupName, name, domainName, context);
         if (inner != null) {
             return new SimpleResponse<>(
                 inner.getRequest(),
@@ -420,30 +619,40 @@ public final class StaticSitesImpl implements StaticSites {
         this.serviceClient().deleteStaticSiteCustomDomain(resourceGroupName, name, domainName);
     }
 
-    public Response<Void> deleteStaticSiteCustomDomainWithResponse(
+    public void deleteStaticSiteCustomDomain(
         String resourceGroupName, String name, String domainName, Context context) {
-        return this
-            .serviceClient()
-            .deleteStaticSiteCustomDomainWithResponse(resourceGroupName, name, domainName, context);
+        this.serviceClient().deleteStaticSiteCustomDomain(resourceGroupName, name, domainName, context);
     }
 
-    public void validateCustomDomainCanBeAddedToStaticSite(String resourceGroupName, String name, String domainName) {
-        this.serviceClient().validateCustomDomainCanBeAddedToStaticSite(resourceGroupName, name, domainName);
+    public void validateCustomDomainCanBeAddedToStaticSite(
+        String resourceGroupName,
+        String name,
+        String domainName,
+        StaticSiteCustomDomainRequestPropertiesArmResource staticSiteCustomDomainRequestPropertiesEnvelope) {
+        this
+            .serviceClient()
+            .validateCustomDomainCanBeAddedToStaticSite(
+                resourceGroupName, name, domainName, staticSiteCustomDomainRequestPropertiesEnvelope);
     }
 
-    public Response<Void> validateCustomDomainCanBeAddedToStaticSiteWithResponse(
-        String resourceGroupName, String name, String domainName, Context context) {
-        return this
+    public void validateCustomDomainCanBeAddedToStaticSite(
+        String resourceGroupName,
+        String name,
+        String domainName,
+        StaticSiteCustomDomainRequestPropertiesArmResource staticSiteCustomDomainRequestPropertiesEnvelope,
+        Context context) {
+        this
             .serviceClient()
-            .validateCustomDomainCanBeAddedToStaticSiteWithResponse(resourceGroupName, name, domainName, context);
+            .validateCustomDomainCanBeAddedToStaticSite(
+                resourceGroupName, name, domainName, staticSiteCustomDomainRequestPropertiesEnvelope, context);
     }
 
     public void detachStaticSite(String resourceGroupName, String name) {
         this.serviceClient().detachStaticSite(resourceGroupName, name);
     }
 
-    public Response<Void> detachStaticSiteWithResponse(String resourceGroupName, String name, Context context) {
-        return this.serviceClient().detachStaticSiteWithResponse(resourceGroupName, name, context);
+    public void detachStaticSite(String resourceGroupName, String name, Context context) {
+        this.serviceClient().detachStaticSite(resourceGroupName, name, context);
     }
 
     public PagedIterable<StaticSiteFunctionOverviewArmResource> listStaticSiteFunctions(
@@ -458,6 +667,54 @@ public final class StaticSitesImpl implements StaticSites {
         PagedIterable<StaticSiteFunctionOverviewArmResourceInner> inner =
             this.serviceClient().listStaticSiteFunctions(resourceGroupName, name, context);
         return Utils.mapPage(inner, inner1 -> new StaticSiteFunctionOverviewArmResourceImpl(inner1, this.manager()));
+    }
+
+    public StringDictionary listStaticSiteAppSettings(String resourceGroupName, String name) {
+        StringDictionaryInner inner = this.serviceClient().listStaticSiteAppSettings(resourceGroupName, name);
+        if (inner != null) {
+            return new StringDictionaryImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<StringDictionary> listStaticSiteAppSettingsWithResponse(
+        String resourceGroupName, String name, Context context) {
+        Response<StringDictionaryInner> inner =
+            this.serviceClient().listStaticSiteAppSettingsWithResponse(resourceGroupName, name, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new StringDictionaryImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public StringList listStaticSiteConfiguredRoles(String resourceGroupName, String name) {
+        StringListInner inner = this.serviceClient().listStaticSiteConfiguredRoles(resourceGroupName, name);
+        if (inner != null) {
+            return new StringListImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<StringList> listStaticSiteConfiguredRolesWithResponse(
+        String resourceGroupName, String name, Context context) {
+        Response<StringListInner> inner =
+            this.serviceClient().listStaticSiteConfiguredRolesWithResponse(resourceGroupName, name, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new StringListImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
     }
 
     public StringDictionary listStaticSiteFunctionAppSettings(String resourceGroupName, String name) {
@@ -508,6 +765,124 @@ public final class StaticSitesImpl implements StaticSites {
         }
     }
 
+    public PagedIterable<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionList(
+        String resourceGroupName, String name) {
+        PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> inner =
+            this.serviceClient().getPrivateEndpointConnectionList(resourceGroupName, name);
+        return Utils
+            .mapPage(inner, inner1 -> new RemotePrivateEndpointConnectionArmResourceImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionList(
+        String resourceGroupName, String name, Context context) {
+        PagedIterable<RemotePrivateEndpointConnectionArmResourceInner> inner =
+            this.serviceClient().getPrivateEndpointConnectionList(resourceGroupName, name, context);
+        return Utils
+            .mapPage(inner, inner1 -> new RemotePrivateEndpointConnectionArmResourceImpl(inner1, this.manager()));
+    }
+
+    public RemotePrivateEndpointConnectionArmResource getPrivateEndpointConnection(
+        String resourceGroupName, String name, String privateEndpointConnectionName) {
+        RemotePrivateEndpointConnectionArmResourceInner inner =
+            this.serviceClient().getPrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName);
+        if (inner != null) {
+            return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionWithResponse(
+        String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
+        Response<RemotePrivateEndpointConnectionArmResourceInner> inner =
+            this
+                .serviceClient()
+                .getPrivateEndpointConnectionWithResponse(
+                    resourceGroupName, name, privateEndpointConnectionName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new RemotePrivateEndpointConnectionArmResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnection(
+        String resourceGroupName,
+        String name,
+        String privateEndpointConnectionName,
+        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper) {
+        RemotePrivateEndpointConnectionArmResourceInner inner =
+            this
+                .serviceClient()
+                .approveOrRejectPrivateEndpointConnection(
+                    resourceGroupName, name, privateEndpointConnectionName, privateEndpointWrapper);
+        if (inner != null) {
+            return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnection(
+        String resourceGroupName,
+        String name,
+        String privateEndpointConnectionName,
+        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper,
+        Context context) {
+        RemotePrivateEndpointConnectionArmResourceInner inner =
+            this
+                .serviceClient()
+                .approveOrRejectPrivateEndpointConnection(
+                    resourceGroupName, name, privateEndpointConnectionName, privateEndpointWrapper, context);
+        if (inner != null) {
+            return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Object deletePrivateEndpointConnection(
+        String resourceGroupName, String name, String privateEndpointConnectionName) {
+        return this
+            .serviceClient()
+            .deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName);
+    }
+
+    public Object deletePrivateEndpointConnection(
+        String resourceGroupName, String name, String privateEndpointConnectionName, Context context) {
+        return this
+            .serviceClient()
+            .deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName, context);
+    }
+
+    public PrivateLinkResourcesWrapper getPrivateLinkResources(String resourceGroupName, String name) {
+        PrivateLinkResourcesWrapperInner inner = this.serviceClient().getPrivateLinkResources(resourceGroupName, name);
+        if (inner != null) {
+            return new PrivateLinkResourcesWrapperImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<PrivateLinkResourcesWrapper> getPrivateLinkResourcesWithResponse(
+        String resourceGroupName, String name, Context context) {
+        Response<PrivateLinkResourcesWrapperInner> inner =
+            this.serviceClient().getPrivateLinkResourcesWithResponse(resourceGroupName, name, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new PrivateLinkResourcesWrapperImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
     public void resetStaticSiteApiKey(
         String resourceGroupName, String name, StaticSiteResetPropertiesArmResource resetPropertiesEnvelope) {
         this.serviceClient().resetStaticSiteApiKey(resourceGroupName, name, resetPropertiesEnvelope);
@@ -521,6 +896,136 @@ public final class StaticSitesImpl implements StaticSites {
         return this
             .serviceClient()
             .resetStaticSiteApiKeyWithResponse(resourceGroupName, name, resetPropertiesEnvelope, context);
+    }
+
+    public PagedIterable<StaticSiteUserProvidedFunctionAppArmResource> getUserProvidedFunctionAppsForStaticSite(
+        String resourceGroupName, String name) {
+        PagedIterable<StaticSiteUserProvidedFunctionAppArmResourceInner> inner =
+            this.serviceClient().getUserProvidedFunctionAppsForStaticSite(resourceGroupName, name);
+        return Utils
+            .mapPage(inner, inner1 -> new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<StaticSiteUserProvidedFunctionAppArmResource> getUserProvidedFunctionAppsForStaticSite(
+        String resourceGroupName, String name, Context context) {
+        PagedIterable<StaticSiteUserProvidedFunctionAppArmResourceInner> inner =
+            this.serviceClient().getUserProvidedFunctionAppsForStaticSite(resourceGroupName, name, context);
+        return Utils
+            .mapPage(inner, inner1 -> new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner1, this.manager()));
+    }
+
+    public StaticSiteUserProvidedFunctionAppArmResource getUserProvidedFunctionAppForStaticSite(
+        String resourceGroupName, String name, String functionAppName) {
+        StaticSiteUserProvidedFunctionAppArmResourceInner inner =
+            this.serviceClient().getUserProvidedFunctionAppForStaticSite(resourceGroupName, name, functionAppName);
+        if (inner != null) {
+            return new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<StaticSiteUserProvidedFunctionAppArmResource> getUserProvidedFunctionAppForStaticSiteWithResponse(
+        String resourceGroupName, String name, String functionAppName, Context context) {
+        Response<StaticSiteUserProvidedFunctionAppArmResourceInner> inner =
+            this
+                .serviceClient()
+                .getUserProvidedFunctionAppForStaticSiteWithResponse(resourceGroupName, name, functionAppName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public StaticSiteUserProvidedFunctionAppArmResource registerUserProvidedFunctionAppWithStaticSite(
+        String resourceGroupName,
+        String name,
+        String functionAppName,
+        StaticSiteUserProvidedFunctionAppArmResourceInner staticSiteUserProvidedFunctionEnvelope,
+        Boolean isForced) {
+        StaticSiteUserProvidedFunctionAppArmResourceInner inner =
+            this
+                .serviceClient()
+                .registerUserProvidedFunctionAppWithStaticSite(
+                    resourceGroupName, name, functionAppName, staticSiteUserProvidedFunctionEnvelope, isForced);
+        if (inner != null) {
+            return new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public StaticSiteUserProvidedFunctionAppArmResource registerUserProvidedFunctionAppWithStaticSite(
+        String resourceGroupName,
+        String name,
+        String functionAppName,
+        StaticSiteUserProvidedFunctionAppArmResourceInner staticSiteUserProvidedFunctionEnvelope) {
+        StaticSiteUserProvidedFunctionAppArmResourceInner inner =
+            this
+                .serviceClient()
+                .registerUserProvidedFunctionAppWithStaticSite(
+                    resourceGroupName, name, functionAppName, staticSiteUserProvidedFunctionEnvelope);
+        if (inner != null) {
+            return new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public StaticSiteUserProvidedFunctionAppArmResource registerUserProvidedFunctionAppWithStaticSite(
+        String resourceGroupName,
+        String name,
+        String functionAppName,
+        StaticSiteUserProvidedFunctionAppArmResourceInner staticSiteUserProvidedFunctionEnvelope,
+        Boolean isForced,
+        Context context) {
+        StaticSiteUserProvidedFunctionAppArmResourceInner inner =
+            this
+                .serviceClient()
+                .registerUserProvidedFunctionAppWithStaticSite(
+                    resourceGroupName,
+                    name,
+                    functionAppName,
+                    staticSiteUserProvidedFunctionEnvelope,
+                    isForced,
+                    context);
+        if (inner != null) {
+            return new StaticSiteUserProvidedFunctionAppArmResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public void detachUserProvidedFunctionAppFromStaticSite(
+        String resourceGroupName, String name, String functionAppName) {
+        this.serviceClient().detachUserProvidedFunctionAppFromStaticSite(resourceGroupName, name, functionAppName);
+    }
+
+    public Response<Void> detachUserProvidedFunctionAppFromStaticSiteWithResponse(
+        String resourceGroupName, String name, String functionAppName, Context context) {
+        return this
+            .serviceClient()
+            .detachUserProvidedFunctionAppFromStaticSiteWithResponse(resourceGroupName, name, functionAppName, context);
+    }
+
+    public void createZipDeploymentForStaticSite(
+        String resourceGroupName, String name, StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope) {
+        this.serviceClient().createZipDeploymentForStaticSite(resourceGroupName, name, staticSiteZipDeploymentEnvelope);
+    }
+
+    public void createZipDeploymentForStaticSite(
+        String resourceGroupName,
+        String name,
+        StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope,
+        Context context) {
+        this
+            .serviceClient()
+            .createZipDeploymentForStaticSite(resourceGroupName, name, staticSiteZipDeploymentEnvelope, context);
     }
 
     public StaticSiteArmResource getById(String id) {
@@ -561,6 +1066,137 @@ public final class StaticSitesImpl implements StaticSites {
         return this.getByResourceGroupWithResponse(resourceGroupName, name, context);
     }
 
+    public StaticSiteUserProvidedFunctionAppArmResource getUserProvidedFunctionAppForStaticSiteBuildById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "staticSites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+        }
+        String environmentName = Utils.getValueFromIdByName(id, "builds");
+        if (environmentName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'builds'.", id)));
+        }
+        String functionAppName = Utils.getValueFromIdByName(id, "userProvidedFunctionApps");
+        if (functionAppName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'userProvidedFunctionApps'.",
+                                id)));
+        }
+        return this
+            .getUserProvidedFunctionAppForStaticSiteBuildWithResponse(
+                resourceGroupName, name, environmentName, functionAppName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<StaticSiteUserProvidedFunctionAppArmResource>
+        getUserProvidedFunctionAppForStaticSiteBuildByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "staticSites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+        }
+        String environmentName = Utils.getValueFromIdByName(id, "builds");
+        if (environmentName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'builds'.", id)));
+        }
+        String functionAppName = Utils.getValueFromIdByName(id, "userProvidedFunctionApps");
+        if (functionAppName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'userProvidedFunctionApps'.",
+                                id)));
+        }
+        return this
+            .getUserProvidedFunctionAppForStaticSiteBuildWithResponse(
+                resourceGroupName, name, environmentName, functionAppName, context);
+    }
+
+    public StaticSiteCustomDomainOverviewArmResource getStaticSiteCustomDomainById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "staticSites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+        }
+        String domainName = Utils.getValueFromIdByName(id, "customDomains");
+        if (domainName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'customDomains'.", id)));
+        }
+        return this.getStaticSiteCustomDomainWithResponse(resourceGroupName, name, domainName, Context.NONE).getValue();
+    }
+
+    public Response<StaticSiteCustomDomainOverviewArmResource> getStaticSiteCustomDomainByIdWithResponse(
+        String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "staticSites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+        }
+        String domainName = Utils.getValueFromIdByName(id, "customDomains");
+        if (domainName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'customDomains'.", id)));
+        }
+        return this.getStaticSiteCustomDomainWithResponse(resourceGroupName, name, domainName, context);
+    }
+
     public void deleteById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
@@ -577,10 +1213,10 @@ public final class StaticSitesImpl implements StaticSites {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
-        this.deleteWithResponse(resourceGroupName, name, Context.NONE).getValue();
+        this.delete(resourceGroupName, name, Context.NONE);
     }
 
-    public Response<Void> deleteByIdWithResponse(String id, Context context) {
+    public void deleteByIdWithResponse(String id, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw logger
@@ -596,7 +1232,59 @@ public final class StaticSitesImpl implements StaticSites {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
         }
-        return this.deleteWithResponse(resourceGroupName, name, context);
+        this.delete(resourceGroupName, name, context);
+    }
+
+    public void deleteStaticSiteCustomDomainById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "staticSites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+        }
+        String domainName = Utils.getValueFromIdByName(id, "customDomains");
+        if (domainName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'customDomains'.", id)));
+        }
+        this.deleteStaticSiteCustomDomain(resourceGroupName, name, domainName, Context.NONE);
+    }
+
+    public void deleteStaticSiteCustomDomainByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "staticSites");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'staticSites'.", id)));
+        }
+        String domainName = Utils.getValueFromIdByName(id, "customDomains");
+        if (domainName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String.format("The resource ID '%s' is not valid. Missing path segment 'customDomains'.", id)));
+        }
+        this.deleteStaticSiteCustomDomain(resourceGroupName, name, domainName, context);
     }
 
     private StaticSitesClient serviceClient() {
@@ -607,7 +1295,16 @@ public final class StaticSitesImpl implements StaticSites {
         return this.serviceManager;
     }
 
-    public StaticSiteArmResourceImpl define(String name) {
+    public StaticSiteArmResourceImpl defineStaticSite(String name) {
         return new StaticSiteArmResourceImpl(name, this.manager());
+    }
+
+    public StaticSiteUserProvidedFunctionAppArmResourceImpl defineStaticSiteUserProvidedFunctionAppArmResource(
+        String name) {
+        return new StaticSiteUserProvidedFunctionAppArmResourceImpl(name, this.manager());
+    }
+
+    public StaticSiteCustomDomainOverviewArmResourceImpl defineStaticSiteCustomDomain(String name) {
+        return new StaticSiteCustomDomainOverviewArmResourceImpl(name, this.manager());
     }
 }

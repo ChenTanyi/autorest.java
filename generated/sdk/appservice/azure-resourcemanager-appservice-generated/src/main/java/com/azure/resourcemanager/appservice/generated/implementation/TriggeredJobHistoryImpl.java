@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.TriggeredJobHistoryInner;
 import com.azure.resourcemanager.appservice.generated.models.TriggeredJobHistory;
 import com.azure.resourcemanager.appservice.generated.models.TriggeredJobRun;
@@ -37,10 +36,6 @@ public final class TriggeredJobHistoryImpl implements TriggeredJobHistory {
 
     public String kind() {
         return this.innerModel().kind();
-    }
-
-    public SystemData systemData() {
-        return this.innerModel().systemData();
     }
 
     public List<TriggeredJobRun> runs() {

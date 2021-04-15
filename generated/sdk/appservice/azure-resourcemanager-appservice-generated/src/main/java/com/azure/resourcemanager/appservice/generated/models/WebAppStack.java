@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.WebAppStackInner;
 import java.util.List;
 
@@ -39,13 +38,6 @@ public interface WebAppStack {
     String kind();
 
     /**
-     * Gets the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    SystemData systemData();
-
-    /**
      * Gets the location property: Web App stack location.
      *
      * @return the location value.
@@ -78,7 +70,7 @@ public interface WebAppStack {
      *
      * @return the preferredOs value.
      */
-    StackOsTypes preferredOs();
+    StackPreferredOs preferredOs();
 
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.WebAppStackInner object.

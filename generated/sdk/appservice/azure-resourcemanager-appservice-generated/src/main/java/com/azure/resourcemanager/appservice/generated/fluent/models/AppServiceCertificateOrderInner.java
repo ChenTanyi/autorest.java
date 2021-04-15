@@ -7,11 +7,11 @@ package com.azure.resourcemanager.appservice.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.management.Resource;
-import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceCertificate;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceCertificateOrderPropertiesAppServiceCertificateNotRenewableReasonsItem;
 import com.azure.resourcemanager.appservice.generated.models.CertificateDetails;
+import com.azure.resourcemanager.appservice.generated.models.CertificateOrderContact;
 import com.azure.resourcemanager.appservice.generated.models.CertificateOrderStatus;
 import com.azure.resourcemanager.appservice.generated.models.CertificateProductType;
 import com.azure.resourcemanager.appservice.generated.models.ProvisioningState;
@@ -46,7 +46,7 @@ public class AppServiceCertificateOrderInner extends Resource {
     private String domainVerificationToken;
 
     /*
-     * Duration in years (must be between 1 and 3).
+     * Duration in years (must be 1).
      */
     @JsonProperty(value = "properties.validityInYears")
     private Integer validityInYears;
@@ -148,16 +148,16 @@ public class AppServiceCertificateOrderInner extends Resource {
     private OffsetDateTime nextAutoRenewalTimestamp;
 
     /*
+     * Contact info
+     */
+    @JsonProperty(value = "properties.contact", access = JsonProperty.Access.WRITE_ONLY)
+    private CertificateOrderContact contact;
+
+    /*
      * Kind of resource.
      */
     @JsonProperty(value = "kind")
     private String kind;
-
-    /*
-     * The system metadata relating to this resource.
-     */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
-    private SystemData systemData;
 
     /**
      * Get the certificates property: State of the Key Vault secret.
@@ -209,7 +209,7 @@ public class AppServiceCertificateOrderInner extends Resource {
     }
 
     /**
-     * Get the validityInYears property: Duration in years (must be between 1 and 3).
+     * Get the validityInYears property: Duration in years (must be 1).
      *
      * @return the validityInYears value.
      */
@@ -218,7 +218,7 @@ public class AppServiceCertificateOrderInner extends Resource {
     }
 
     /**
-     * Set the validityInYears property: Duration in years (must be between 1 and 3).
+     * Set the validityInYears property: Duration in years (must be 1).
      *
      * @param validityInYears the validityInYears value to set.
      * @return the AppServiceCertificateOrderInner object itself.
@@ -413,6 +413,15 @@ public class AppServiceCertificateOrderInner extends Resource {
     }
 
     /**
+     * Get the contact property: Contact info.
+     *
+     * @return the contact value.
+     */
+    public CertificateOrderContact contact() {
+        return this.contact;
+    }
+
+    /**
      * Get the kind property: Kind of resource.
      *
      * @return the kind value.
@@ -430,15 +439,6 @@ public class AppServiceCertificateOrderInner extends Resource {
     public AppServiceCertificateOrderInner withKind(String kind) {
         this.kind = kind;
         return this;
-    }
-
-    /**
-     * Get the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    public SystemData systemData() {
-        return this.systemData;
     }
 
     /** {@inheritDoc} */
@@ -479,6 +479,9 @@ public class AppServiceCertificateOrderInner extends Resource {
         }
         if (root() != null) {
             root().validate();
+        }
+        if (contact() != null) {
+            contact().validate();
         }
     }
 }

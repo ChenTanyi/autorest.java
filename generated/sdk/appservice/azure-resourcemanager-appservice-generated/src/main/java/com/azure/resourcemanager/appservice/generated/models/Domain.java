@@ -6,7 +6,6 @@ package com.azure.resourcemanager.appservice.generated.models;
 
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.DomainInner;
 import java.time.OffsetDateTime;
@@ -200,13 +199,6 @@ public interface Domain {
      * @return the kind value.
      */
     String kind();
-
-    /**
-     * Gets the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    SystemData systemData();
 
     /**
      * Gets the region of the resource.

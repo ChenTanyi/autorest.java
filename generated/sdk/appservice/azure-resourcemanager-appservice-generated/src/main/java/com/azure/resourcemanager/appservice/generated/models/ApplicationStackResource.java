@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ApplicationStackResourceInner;
 import java.util.List;
 
@@ -37,13 +36,6 @@ public interface ApplicationStackResource {
      * @return the kind value.
      */
     String kind();
-
-    /**
-     * Gets the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    SystemData systemData();
 
     /**
      * Gets the namePropertiesName property: Application stack name.
@@ -79,6 +71,14 @@ public interface ApplicationStackResource {
      * @return the frameworks value.
      */
     List<ApplicationStack> frameworks();
+
+    /**
+     * Gets the isDeprecated property: &lt;code&gt;true&lt;/code&gt; if this is the stack is deprecated; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
+     *
+     * @return the isDeprecated value.
+     */
+    List<ApplicationStack> isDeprecated();
 
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.ApplicationStackResourceInner object.

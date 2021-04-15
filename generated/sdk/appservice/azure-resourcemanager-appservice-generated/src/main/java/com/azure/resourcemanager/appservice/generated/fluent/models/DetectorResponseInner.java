@@ -7,9 +7,12 @@ package com.azure.resourcemanager.appservice.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.resourcemanager.appservice.generated.models.DataProviderMetadata;
 import com.azure.resourcemanager.appservice.generated.models.DetectorInfo;
 import com.azure.resourcemanager.appservice.generated.models.DiagnosticData;
 import com.azure.resourcemanager.appservice.generated.models.ProxyOnlyResource;
+import com.azure.resourcemanager.appservice.generated.models.QueryUtterancesResults;
+import com.azure.resourcemanager.appservice.generated.models.Status;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -31,6 +34,25 @@ public class DetectorResponseInner extends ProxyOnlyResource {
      */
     @JsonProperty(value = "properties.dataset")
     private List<DiagnosticData> dataset;
+
+    /*
+     * Indicates status of the most severe insight.
+     */
+    @JsonProperty(value = "properties.status")
+    private Status status;
+
+    /*
+     * Additional configuration for different data providers to be used by the
+     * UI
+     */
+    @JsonProperty(value = "properties.dataProvidersMetadata")
+    private List<DataProviderMetadata> dataProvidersMetadata;
+
+    /*
+     * Suggested utterances where the detector can be applicable.
+     */
+    @JsonProperty(value = "properties.suggestedUtterances")
+    private QueryUtterancesResults suggestedUtterances;
 
     /**
      * Get the metadata property: metadata for the detector.
@@ -72,6 +94,68 @@ public class DetectorResponseInner extends ProxyOnlyResource {
         return this;
     }
 
+    /**
+     * Get the status property: Indicates status of the most severe insight.
+     *
+     * @return the status value.
+     */
+    public Status status() {
+        return this.status;
+    }
+
+    /**
+     * Set the status property: Indicates status of the most severe insight.
+     *
+     * @param status the status value to set.
+     * @return the DetectorResponseInner object itself.
+     */
+    public DetectorResponseInner withStatus(Status status) {
+        this.status = status;
+        return this;
+    }
+
+    /**
+     * Get the dataProvidersMetadata property: Additional configuration for different data providers to be used by the
+     * UI.
+     *
+     * @return the dataProvidersMetadata value.
+     */
+    public List<DataProviderMetadata> dataProvidersMetadata() {
+        return this.dataProvidersMetadata;
+    }
+
+    /**
+     * Set the dataProvidersMetadata property: Additional configuration for different data providers to be used by the
+     * UI.
+     *
+     * @param dataProvidersMetadata the dataProvidersMetadata value to set.
+     * @return the DetectorResponseInner object itself.
+     */
+    public DetectorResponseInner withDataProvidersMetadata(List<DataProviderMetadata> dataProvidersMetadata) {
+        this.dataProvidersMetadata = dataProvidersMetadata;
+        return this;
+    }
+
+    /**
+     * Get the suggestedUtterances property: Suggested utterances where the detector can be applicable.
+     *
+     * @return the suggestedUtterances value.
+     */
+    public QueryUtterancesResults suggestedUtterances() {
+        return this.suggestedUtterances;
+    }
+
+    /**
+     * Set the suggestedUtterances property: Suggested utterances where the detector can be applicable.
+     *
+     * @param suggestedUtterances the suggestedUtterances value to set.
+     * @return the DetectorResponseInner object itself.
+     */
+    public DetectorResponseInner withSuggestedUtterances(QueryUtterancesResults suggestedUtterances) {
+        this.suggestedUtterances = suggestedUtterances;
+        return this;
+    }
+
     /** {@inheritDoc} */
     @Override
     public DetectorResponseInner withKind(String kind) {
@@ -92,6 +176,15 @@ public class DetectorResponseInner extends ProxyOnlyResource {
         }
         if (dataset() != null) {
             dataset().forEach(e -> e.validate());
+        }
+        if (status() != null) {
+            status().validate();
+        }
+        if (dataProvidersMetadata() != null) {
+            dataProvidersMetadata().forEach(e -> e.validate());
+        }
+        if (suggestedUtterances() != null) {
+            suggestedUtterances().validate();
         }
     }
 }

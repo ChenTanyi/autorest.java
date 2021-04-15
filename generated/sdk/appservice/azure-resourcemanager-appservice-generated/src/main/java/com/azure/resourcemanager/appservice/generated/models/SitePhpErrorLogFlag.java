@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SitePhpErrorLogFlagInner;
 
 /** An immutable client-side representation of SitePhpErrorLogFlag. */
@@ -36,13 +35,6 @@ public interface SitePhpErrorLogFlag {
      * @return the kind value.
      */
     String kind();
-
-    /**
-     * Gets the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    SystemData systemData();
 
     /**
      * Gets the localLogErrors property: Local log_errors setting.

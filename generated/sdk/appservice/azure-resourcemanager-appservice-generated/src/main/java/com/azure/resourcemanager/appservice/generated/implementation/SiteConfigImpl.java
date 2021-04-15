@@ -9,6 +9,7 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigIn
 import com.azure.resourcemanager.appservice.generated.models.ApiDefinitionInfo;
 import com.azure.resourcemanager.appservice.generated.models.ApiManagementConfig;
 import com.azure.resourcemanager.appservice.generated.models.AutoHealRules;
+import com.azure.resourcemanager.appservice.generated.models.AzureStorageInfoValue;
 import com.azure.resourcemanager.appservice.generated.models.ConnStringInfo;
 import com.azure.resourcemanager.appservice.generated.models.CorsSettings;
 import com.azure.resourcemanager.appservice.generated.models.Experiments;
@@ -28,6 +29,7 @@ import com.azure.resourcemanager.appservice.generated.models.VirtualApplication;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 public final class SiteConfigImpl implements SiteConfig {
     private SiteConfigInner innerObject;
@@ -119,6 +121,15 @@ public final class SiteConfigImpl implements SiteConfig {
             return Collections.unmodifiableList(inner);
         } else {
             return Collections.emptyList();
+        }
+    }
+
+    public Map<String, AzureStorageInfoValue> azureStorageAccounts() {
+        Map<String, AzureStorageInfoValue> inner = this.innerModel().azureStorageAccounts();
+        if (inner != null) {
+            return Collections.unmodifiableMap(inner);
+        } else {
+            return Collections.emptyMap();
         }
     }
 
@@ -266,6 +277,10 @@ public final class SiteConfigImpl implements SiteConfig {
         return this.innerModel().xManagedServiceIdentityId();
     }
 
+    public String keyVaultReferenceIdentity() {
+        return this.innerModel().keyVaultReferenceIdentity();
+    }
+
     public List<IpSecurityRestriction> ipSecurityRestrictions() {
         List<IpSecurityRestriction> inner = this.innerModel().ipSecurityRestrictions();
         if (inner != null) {
@@ -308,8 +323,24 @@ public final class SiteConfigImpl implements SiteConfig {
         return this.innerModel().preWarmedInstanceCount();
     }
 
+    public Integer functionAppScaleLimit() {
+        return this.innerModel().functionAppScaleLimit();
+    }
+
     public String healthCheckPath() {
         return this.innerModel().healthCheckPath();
+    }
+
+    public Boolean functionsRuntimeScaleMonitoringEnabled() {
+        return this.innerModel().functionsRuntimeScaleMonitoringEnabled();
+    }
+
+    public String websiteTimeZone() {
+        return this.innerModel().websiteTimeZone();
+    }
+
+    public Integer minimumElasticInstanceCount() {
+        return this.innerModel().minimumElasticInstanceCount();
     }
 
     public SiteConfigInner innerModel() {

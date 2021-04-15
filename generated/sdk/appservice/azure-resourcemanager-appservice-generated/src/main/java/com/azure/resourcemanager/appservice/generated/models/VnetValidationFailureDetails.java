@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.VnetValidationFailureDetailsInner;
 import java.util.List;
 
@@ -39,11 +38,11 @@ public interface VnetValidationFailureDetails {
     String kind();
 
     /**
-     * Gets the systemData property: The system metadata relating to this resource.
+     * Gets the message property: Text describing the validation outcome.
      *
-     * @return the systemData value.
+     * @return the message value.
      */
-    SystemData systemData();
+    String message();
 
     /**
      * Gets the failed property: A flag describing whether or not validation failed.
@@ -58,6 +57,13 @@ public interface VnetValidationFailureDetails {
      * @return the failedTests value.
      */
     List<VnetValidationTestFailure> failedTests();
+
+    /**
+     * Gets the warnings property: A list of warnings generated during validation.
+     *
+     * @return the warnings value.
+     */
+    List<VnetValidationTestFailure> warnings();
 
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.VnetValidationFailureDetailsInner

@@ -9,6 +9,7 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.ApiDefinitionInfo;
 import com.azure.resourcemanager.appservice.generated.models.ApiManagementConfig;
 import com.azure.resourcemanager.appservice.generated.models.AutoHealRules;
+import com.azure.resourcemanager.appservice.generated.models.AzureStorageInfoValue;
 import com.azure.resourcemanager.appservice.generated.models.ConnStringInfo;
 import com.azure.resourcemanager.appservice.generated.models.CorsSettings;
 import com.azure.resourcemanager.appservice.generated.models.Experiments;
@@ -27,6 +28,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
+import java.util.Map;
 
 /** Configuration of an App Service app. */
 @Fluent
@@ -144,6 +146,12 @@ public final class SiteConfigInner {
      */
     @JsonProperty(value = "appSettings")
     private List<NameValuePair> appSettings;
+
+    /*
+     * List of Azure Storage Accounts.
+     */
+    @JsonProperty(value = "azureStorageAccounts")
+    private Map<String, AzureStorageInfoValue> azureStorageAccounts;
 
     /*
      * Connection strings.
@@ -338,6 +346,12 @@ public final class SiteConfigInner {
     private Integer xManagedServiceIdentityId;
 
     /*
+     * Identity to use for Key Vault Reference authentication.
+     */
+    @JsonProperty(value = "keyVaultReferenceIdentity")
+    private String keyVaultReferenceIdentity;
+
+    /*
      * IP security restrictions for main.
      */
     @JsonProperty(value = "ipSecurityRestrictions")
@@ -390,10 +404,47 @@ public final class SiteConfigInner {
     private Integer preWarmedInstanceCount;
 
     /*
+     * Maximum number of workers that a site can scale out to.
+     * This setting only applies to the Consumption and Elastic Premium Plans
+     */
+    @JsonProperty(value = "functionAppScaleLimit")
+    private Integer functionAppScaleLimit;
+
+    /*
      * Health check path
      */
     @JsonProperty(value = "healthCheckPath")
     private String healthCheckPath;
+
+    /*
+     * Gets or sets a value indicating whether functions runtime scale
+     * monitoring is enabled. When enabled,
+     * the ScaleController will not monitor event sources directly, but will
+     * instead call to the
+     * runtime to get scale status.
+     */
+    @JsonProperty(value = "functionsRuntimeScaleMonitoringEnabled")
+    private Boolean functionsRuntimeScaleMonitoringEnabled;
+
+    /*
+     * Sets the time zone a site uses for generating timestamps. Compatible
+     * with Linux and Windows App Service. Setting the WEBSITE_TIME_ZONE app
+     * setting takes precedence over this config. For Linux, expects tz
+     * database values https://www.iana.org/time-zones (for a quick reference
+     * see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). For
+     * Windows, expects one of the time zones listed under
+     * HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time
+     * Zones
+     */
+    @JsonProperty(value = "websiteTimeZone")
+    private String websiteTimeZone;
+
+    /*
+     * Number of minimum instance count for a site
+     * This setting only applies to the Elastic Plans
+     */
+    @JsonProperty(value = "minimumElasticInstanceCount")
+    private Integer minimumElasticInstanceCount;
 
     /**
      * Get the numberOfWorkers property: Number of workers.
@@ -760,6 +811,26 @@ public final class SiteConfigInner {
      */
     public SiteConfigInner withAppSettings(List<NameValuePair> appSettings) {
         this.appSettings = appSettings;
+        return this;
+    }
+
+    /**
+     * Get the azureStorageAccounts property: List of Azure Storage Accounts.
+     *
+     * @return the azureStorageAccounts value.
+     */
+    public Map<String, AzureStorageInfoValue> azureStorageAccounts() {
+        return this.azureStorageAccounts;
+    }
+
+    /**
+     * Set the azureStorageAccounts property: List of Azure Storage Accounts.
+     *
+     * @param azureStorageAccounts the azureStorageAccounts value to set.
+     * @return the SiteConfigInner object itself.
+     */
+    public SiteConfigInner withAzureStorageAccounts(Map<String, AzureStorageInfoValue> azureStorageAccounts) {
+        this.azureStorageAccounts = azureStorageAccounts;
         return this;
     }
 
@@ -1387,6 +1458,26 @@ public final class SiteConfigInner {
     }
 
     /**
+     * Get the keyVaultReferenceIdentity property: Identity to use for Key Vault Reference authentication.
+     *
+     * @return the keyVaultReferenceIdentity value.
+     */
+    public String keyVaultReferenceIdentity() {
+        return this.keyVaultReferenceIdentity;
+    }
+
+    /**
+     * Set the keyVaultReferenceIdentity property: Identity to use for Key Vault Reference authentication.
+     *
+     * @param keyVaultReferenceIdentity the keyVaultReferenceIdentity value to set.
+     * @return the SiteConfigInner object itself.
+     */
+    public SiteConfigInner withKeyVaultReferenceIdentity(String keyVaultReferenceIdentity) {
+        this.keyVaultReferenceIdentity = keyVaultReferenceIdentity;
+        return this;
+    }
+
+    /**
      * Get the ipSecurityRestrictions property: IP security restrictions for main.
      *
      * @return the ipSecurityRestrictions value.
@@ -1551,6 +1642,28 @@ public final class SiteConfigInner {
     }
 
     /**
+     * Get the functionAppScaleLimit property: Maximum number of workers that a site can scale out to. This setting only
+     * applies to the Consumption and Elastic Premium Plans.
+     *
+     * @return the functionAppScaleLimit value.
+     */
+    public Integer functionAppScaleLimit() {
+        return this.functionAppScaleLimit;
+    }
+
+    /**
+     * Set the functionAppScaleLimit property: Maximum number of workers that a site can scale out to. This setting only
+     * applies to the Consumption and Elastic Premium Plans.
+     *
+     * @param functionAppScaleLimit the functionAppScaleLimit value to set.
+     * @return the SiteConfigInner object itself.
+     */
+    public SiteConfigInner withFunctionAppScaleLimit(Integer functionAppScaleLimit) {
+        this.functionAppScaleLimit = functionAppScaleLimit;
+        return this;
+    }
+
+    /**
      * Get the healthCheckPath property: Health check path.
      *
      * @return the healthCheckPath value.
@@ -1571,6 +1684,80 @@ public final class SiteConfigInner {
     }
 
     /**
+     * Get the functionsRuntimeScaleMonitoringEnabled property: Gets or sets a value indicating whether functions
+     * runtime scale monitoring is enabled. When enabled, the ScaleController will not monitor event sources directly,
+     * but will instead call to the runtime to get scale status.
+     *
+     * @return the functionsRuntimeScaleMonitoringEnabled value.
+     */
+    public Boolean functionsRuntimeScaleMonitoringEnabled() {
+        return this.functionsRuntimeScaleMonitoringEnabled;
+    }
+
+    /**
+     * Set the functionsRuntimeScaleMonitoringEnabled property: Gets or sets a value indicating whether functions
+     * runtime scale monitoring is enabled. When enabled, the ScaleController will not monitor event sources directly,
+     * but will instead call to the runtime to get scale status.
+     *
+     * @param functionsRuntimeScaleMonitoringEnabled the functionsRuntimeScaleMonitoringEnabled value to set.
+     * @return the SiteConfigInner object itself.
+     */
+    public SiteConfigInner withFunctionsRuntimeScaleMonitoringEnabled(Boolean functionsRuntimeScaleMonitoringEnabled) {
+        this.functionsRuntimeScaleMonitoringEnabled = functionsRuntimeScaleMonitoringEnabled;
+        return this;
+    }
+
+    /**
+     * Get the websiteTimeZone property: Sets the time zone a site uses for generating timestamps. Compatible with Linux
+     * and Windows App Service. Setting the WEBSITE_TIME_ZONE app setting takes precedence over this config. For Linux,
+     * expects tz database values https://www.iana.org/time-zones (for a quick reference see
+     * https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). For Windows, expects one of the time zones listed
+     * under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time Zones.
+     *
+     * @return the websiteTimeZone value.
+     */
+    public String websiteTimeZone() {
+        return this.websiteTimeZone;
+    }
+
+    /**
+     * Set the websiteTimeZone property: Sets the time zone a site uses for generating timestamps. Compatible with Linux
+     * and Windows App Service. Setting the WEBSITE_TIME_ZONE app setting takes precedence over this config. For Linux,
+     * expects tz database values https://www.iana.org/time-zones (for a quick reference see
+     * https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). For Windows, expects one of the time zones listed
+     * under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time Zones.
+     *
+     * @param websiteTimeZone the websiteTimeZone value to set.
+     * @return the SiteConfigInner object itself.
+     */
+    public SiteConfigInner withWebsiteTimeZone(String websiteTimeZone) {
+        this.websiteTimeZone = websiteTimeZone;
+        return this;
+    }
+
+    /**
+     * Get the minimumElasticInstanceCount property: Number of minimum instance count for a site This setting only
+     * applies to the Elastic Plans.
+     *
+     * @return the minimumElasticInstanceCount value.
+     */
+    public Integer minimumElasticInstanceCount() {
+        return this.minimumElasticInstanceCount;
+    }
+
+    /**
+     * Set the minimumElasticInstanceCount property: Number of minimum instance count for a site This setting only
+     * applies to the Elastic Plans.
+     *
+     * @param minimumElasticInstanceCount the minimumElasticInstanceCount value to set.
+     * @return the SiteConfigInner object itself.
+     */
+    public SiteConfigInner withMinimumElasticInstanceCount(Integer minimumElasticInstanceCount) {
+        this.minimumElasticInstanceCount = minimumElasticInstanceCount;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -1578,6 +1765,16 @@ public final class SiteConfigInner {
     public void validate() {
         if (appSettings() != null) {
             appSettings().forEach(e -> e.validate());
+        }
+        if (azureStorageAccounts() != null) {
+            azureStorageAccounts()
+                .values()
+                .forEach(
+                    e -> {
+                        if (e != null) {
+                            e.validate();
+                        }
+                    });
         }
         if (connectionStrings() != null) {
             connectionStrings().forEach(e -> e.validate());

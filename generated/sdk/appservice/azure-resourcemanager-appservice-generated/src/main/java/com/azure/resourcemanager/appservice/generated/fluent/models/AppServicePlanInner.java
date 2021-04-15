@@ -7,9 +7,9 @@ package com.azure.resourcemanager.appservice.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.management.Resource;
-import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentProfile;
+import com.azure.resourcemanager.appservice.generated.models.KubeEnvironmentProfile;
 import com.azure.resourcemanager.appservice.generated.models.ProvisioningState;
 import com.azure.resourcemanager.appservice.generated.models.SkuDescription;
 import com.azure.resourcemanager.appservice.generated.models.StatusOptions;
@@ -149,22 +149,23 @@ public class AppServicePlanInner extends Resource {
     private Integer targetWorkerSizeId;
 
     /*
-     * Provisioning state of the App Service Environment.
+     * Provisioning state of the App Service Plan.
      */
     @JsonProperty(value = "properties.provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private ProvisioningState provisioningState;
+
+    /*
+     * Specification for the Kubernetes Environment to use for the App Service
+     * plan.
+     */
+    @JsonProperty(value = "properties.kubeEnvironmentProfile")
+    private KubeEnvironmentProfile kubeEnvironmentProfile;
 
     /*
      * Kind of resource.
      */
     @JsonProperty(value = "kind")
     private String kind;
-
-    /*
-     * The system metadata relating to this resource.
-     */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
-    private SystemData systemData;
 
     /**
      * Get the sku property: Description of a SKU for a scalable resource.
@@ -498,12 +499,34 @@ public class AppServicePlanInner extends Resource {
     }
 
     /**
-     * Get the provisioningState property: Provisioning state of the App Service Environment.
+     * Get the provisioningState property: Provisioning state of the App Service Plan.
      *
      * @return the provisioningState value.
      */
     public ProvisioningState provisioningState() {
         return this.provisioningState;
+    }
+
+    /**
+     * Get the kubeEnvironmentProfile property: Specification for the Kubernetes Environment to use for the App Service
+     * plan.
+     *
+     * @return the kubeEnvironmentProfile value.
+     */
+    public KubeEnvironmentProfile kubeEnvironmentProfile() {
+        return this.kubeEnvironmentProfile;
+    }
+
+    /**
+     * Set the kubeEnvironmentProfile property: Specification for the Kubernetes Environment to use for the App Service
+     * plan.
+     *
+     * @param kubeEnvironmentProfile the kubeEnvironmentProfile value to set.
+     * @return the AppServicePlanInner object itself.
+     */
+    public AppServicePlanInner withKubeEnvironmentProfile(KubeEnvironmentProfile kubeEnvironmentProfile) {
+        this.kubeEnvironmentProfile = kubeEnvironmentProfile;
+        return this;
     }
 
     /**
@@ -524,15 +547,6 @@ public class AppServicePlanInner extends Resource {
     public AppServicePlanInner withKind(String kind) {
         this.kind = kind;
         return this;
-    }
-
-    /**
-     * Get the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    public SystemData systemData() {
-        return this.systemData;
     }
 
     /** {@inheritDoc} */
@@ -560,6 +574,9 @@ public class AppServicePlanInner extends Resource {
         }
         if (hostingEnvironmentProfile() != null) {
             hostingEnvironmentProfile().validate();
+        }
+        if (kubeEnvironmentProfile() != null) {
+            kubeEnvironmentProfile().validate();
         }
     }
 }

@@ -6,7 +6,6 @@ package com.azure.resourcemanager.appservice.generated.models;
 
 import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceCertificateOrderInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.NameIdentifierInner;
@@ -73,7 +72,7 @@ public interface AppServiceCertificateOrder {
     String domainVerificationToken();
 
     /**
-     * Gets the validityInYears property: Duration in years (must be between 1 and 3).
+     * Gets the validityInYears property: Duration in years (must be 1).
      *
      * @return the validityInYears value.
      */
@@ -189,18 +188,18 @@ public interface AppServiceCertificateOrder {
     OffsetDateTime nextAutoRenewalTimestamp();
 
     /**
+     * Gets the contact property: Contact info.
+     *
+     * @return the contact value.
+     */
+    CertificateOrderContact contact();
+
+    /**
      * Gets the kind property: Kind of resource.
      *
      * @return the kind value.
      */
     String kind();
-
-    /**
-     * Gets the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    SystemData systemData();
 
     /**
      * Gets the region of the resource.
@@ -326,9 +325,9 @@ public interface AppServiceCertificateOrder {
         /** The stage of the AppServiceCertificateOrder definition allowing to specify validityInYears. */
         interface WithValidityInYears {
             /**
-             * Specifies the validityInYears property: Duration in years (must be between 1 and 3)..
+             * Specifies the validityInYears property: Duration in years (must be 1)..
              *
-             * @param validityInYears Duration in years (must be between 1 and 3).
+             * @param validityInYears Duration in years (must be 1).
              * @return the next definition stage.
              */
             WithCreate withValidityInYears(Integer validityInYears);

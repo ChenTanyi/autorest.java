@@ -28,6 +28,8 @@ public interface CertificatesClient {
     /**
      * Description for Get all certificates for a subscription.
      *
+     * @param filter Return only information specified in the filter (using OData syntax). For example:
+     *     $filter=KeyVaultId eq 'KeyVaultId'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -36,7 +38,7 @@ public interface CertificatesClient {
      * @return collection of certificates.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<CertificateInner> list(Context context);
+    PagedIterable<CertificateInner> list(String filter, Context context);
 
     /**
      * Description for Get all certificates in a resource group.

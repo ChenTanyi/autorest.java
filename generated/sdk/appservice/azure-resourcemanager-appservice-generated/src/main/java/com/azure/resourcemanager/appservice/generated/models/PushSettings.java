@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.appservice.generated.models;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.appservice.generated.fluent.models.PushSettingsInner;
 
 /** An immutable client-side representation of PushSettings. */
@@ -36,13 +35,6 @@ public interface PushSettings {
      * @return the kind value.
      */
     String kind();
-
-    /**
-     * Gets the systemData property: The system metadata relating to this resource.
-     *
-     * @return the systemData value.
-     */
-    SystemData systemData();
 
     /**
      * Gets the isPushEnabled property: Gets or sets a flag indicating whether the Push endpoint is enabled.

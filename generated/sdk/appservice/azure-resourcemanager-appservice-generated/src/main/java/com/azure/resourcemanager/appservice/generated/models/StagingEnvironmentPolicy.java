@@ -7,31 +7,31 @@ package com.azure.resourcemanager.appservice.generated.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
-/** Defines values for AccessControlEntryAction. */
-public enum AccessControlEntryAction {
-    /** Enum value Permit. */
-    PERMIT("Permit"),
+/** Defines values for StagingEnvironmentPolicy. */
+public enum StagingEnvironmentPolicy {
+    /** Enum value Enabled. */
+    ENABLED("Enabled"),
 
-    /** Enum value Deny. */
-    DENY("Deny");
+    /** Enum value Disabled. */
+    DISABLED("Disabled");
 
-    /** The actual serialized value for a AccessControlEntryAction instance. */
+    /** The actual serialized value for a StagingEnvironmentPolicy instance. */
     private final String value;
 
-    AccessControlEntryAction(String value) {
+    StagingEnvironmentPolicy(String value) {
         this.value = value;
     }
 
     /**
-     * Parses a serialized value to a AccessControlEntryAction instance.
+     * Parses a serialized value to a StagingEnvironmentPolicy instance.
      *
      * @param value the serialized value to parse.
-     * @return the parsed AccessControlEntryAction object, or null if unable to parse.
+     * @return the parsed StagingEnvironmentPolicy object, or null if unable to parse.
      */
     @JsonCreator
-    public static AccessControlEntryAction fromString(String value) {
-        AccessControlEntryAction[] items = AccessControlEntryAction.values();
-        for (AccessControlEntryAction item : items) {
+    public static StagingEnvironmentPolicy fromString(String value) {
+        StagingEnvironmentPolicy[] items = StagingEnvironmentPolicy.values();
+        for (StagingEnvironmentPolicy item : items) {
             if (item.toString().equalsIgnoreCase(value)) {
                 return item;
             }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.appservice.generated.implementation;
 
 import com.azure.core.management.Region;
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceCertificateResourceInner;
 import com.azure.resourcemanager.appservice.generated.models.AppServiceCertificatePatchResource;
@@ -61,10 +60,6 @@ public final class AppServiceCertificateResourceImpl
 
     public String kind() {
         return this.innerModel().kind();
-    }
-
-    public SystemData systemData() {
-        return this.innerModel().systemData();
     }
 
     public Region region() {
