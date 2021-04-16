@@ -10,6 +10,7 @@ import com.azure.resourcemanager.azurekusto.generated.fluent.models.AttachedData
 import com.azure.resourcemanager.azurekusto.generated.models.AttachedDatabaseConfiguration;
 import com.azure.resourcemanager.azurekusto.generated.models.DefaultPrincipalsModificationKind;
 import com.azure.resourcemanager.azurekusto.generated.models.ProvisioningState;
+import com.azure.resourcemanager.azurekusto.generated.models.TableLevelSharingProperties;
 import java.util.Collections;
 import java.util.List;
 
@@ -60,6 +61,10 @@ public final class AttachedDatabaseConfigurationImpl
 
     public DefaultPrincipalsModificationKind defaultPrincipalsModificationKind() {
         return this.innerModel().defaultPrincipalsModificationKind();
+    }
+
+    public TableLevelSharingProperties tableLevelSharingProperties() {
+        return this.innerModel().tableLevelSharingProperties();
     }
 
     public Region region() {
@@ -195,6 +200,12 @@ public final class AttachedDatabaseConfigurationImpl
     public AttachedDatabaseConfigurationImpl withDefaultPrincipalsModificationKind(
         DefaultPrincipalsModificationKind defaultPrincipalsModificationKind) {
         this.innerModel().withDefaultPrincipalsModificationKind(defaultPrincipalsModificationKind);
+        return this;
+    }
+
+    public AttachedDatabaseConfigurationImpl withTableLevelSharingProperties(
+        TableLevelSharingProperties tableLevelSharingProperties) {
+        this.innerModel().withTableLevelSharingProperties(tableLevelSharingProperties);
         return this;
     }
 }

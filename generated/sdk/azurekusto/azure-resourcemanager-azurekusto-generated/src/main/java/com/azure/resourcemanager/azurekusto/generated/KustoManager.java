@@ -29,6 +29,8 @@ import com.azure.resourcemanager.azurekusto.generated.implementation.DatabasePri
 import com.azure.resourcemanager.azurekusto.generated.implementation.DatabasesImpl;
 import com.azure.resourcemanager.azurekusto.generated.implementation.KustoManagementClientBuilder;
 import com.azure.resourcemanager.azurekusto.generated.implementation.OperationsImpl;
+import com.azure.resourcemanager.azurekusto.generated.implementation.OperationsResultsImpl;
+import com.azure.resourcemanager.azurekusto.generated.implementation.ScriptsImpl;
 import com.azure.resourcemanager.azurekusto.generated.models.AttachedDatabaseConfigurations;
 import com.azure.resourcemanager.azurekusto.generated.models.ClusterPrincipalAssignments;
 import com.azure.resourcemanager.azurekusto.generated.models.Clusters;
@@ -36,6 +38,8 @@ import com.azure.resourcemanager.azurekusto.generated.models.DataConnections;
 import com.azure.resourcemanager.azurekusto.generated.models.DatabasePrincipalAssignments;
 import com.azure.resourcemanager.azurekusto.generated.models.Databases;
 import com.azure.resourcemanager.azurekusto.generated.models.Operations;
+import com.azure.resourcemanager.azurekusto.generated.models.OperationsResults;
+import com.azure.resourcemanager.azurekusto.generated.models.Scripts;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -56,11 +60,15 @@ public final class KustoManager {
 
     private DatabasePrincipalAssignments databasePrincipalAssignments;
 
+    private Scripts scripts;
+
     private AttachedDatabaseConfigurations attachedDatabaseConfigurations;
 
     private DataConnections dataConnections;
 
     private Operations operations;
+
+    private OperationsResults operationsResults;
 
     private final KustoManagementClient clientObject;
 
@@ -259,6 +267,14 @@ public final class KustoManager {
         return databasePrincipalAssignments;
     }
 
+    /** @return Resource collection API of Scripts. */
+    public Scripts scripts() {
+        if (this.scripts == null) {
+            this.scripts = new ScriptsImpl(clientObject.getScripts(), this);
+        }
+        return scripts;
+    }
+
     /** @return Resource collection API of AttachedDatabaseConfigurations. */
     public AttachedDatabaseConfigurations attachedDatabaseConfigurations() {
         if (this.attachedDatabaseConfigurations == null) {
@@ -282,6 +298,14 @@ public final class KustoManager {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
         }
         return operations;
+    }
+
+    /** @return Resource collection API of OperationsResults. */
+    public OperationsResults operationsResults() {
+        if (this.operationsResults == null) {
+            this.operationsResults = new OperationsResultsImpl(clientObject.getOperationsResults(), this);
+        }
+        return operationsResults;
     }
 
     /**

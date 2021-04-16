@@ -75,6 +75,10 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
         return this.innerModel().identity();
     }
 
+    public String etag() {
+        return this.innerModel().etag();
+    }
+
     public State state() {
         return this.innerModel().state();
     }
@@ -160,6 +164,12 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
 
     private String clusterName;
 
+    private String createIfMatch;
+
+    private String createIfNoneMatch;
+
+    private String updateIfMatch;
+
     private ClusterUpdate updateParameters;
 
     public ClusterImpl withExistingResourceGroup(String resourceGroupName) {
@@ -172,7 +182,8 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
             serviceManager
                 .serviceClient()
                 .getClusters()
-                .createOrUpdate(resourceGroupName, clusterName, this.innerModel(), Context.NONE);
+                .createOrUpdate(
+                    resourceGroupName, clusterName, this.innerModel(), createIfMatch, createIfNoneMatch, Context.NONE);
         return this;
     }
 
@@ -181,7 +192,8 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
             serviceManager
                 .serviceClient()
                 .getClusters()
-                .createOrUpdate(resourceGroupName, clusterName, this.innerModel(), context);
+                .createOrUpdate(
+                    resourceGroupName, clusterName, this.innerModel(), createIfMatch, createIfNoneMatch, context);
         return this;
     }
 
@@ -189,9 +201,12 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
         this.innerObject = new ClusterInner();
         this.serviceManager = serviceManager;
         this.clusterName = name;
+        this.createIfMatch = null;
+        this.createIfNoneMatch = null;
     }
 
     public ClusterImpl update() {
+        this.updateIfMatch = null;
         this.updateParameters = new ClusterUpdate();
         return this;
     }
@@ -201,7 +216,7 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
             serviceManager
                 .serviceClient()
                 .getClusters()
-                .update(resourceGroupName, clusterName, updateParameters, Context.NONE);
+                .update(resourceGroupName, clusterName, updateParameters, updateIfMatch, Context.NONE);
         return this;
     }
 
@@ -210,7 +225,7 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
             serviceManager
                 .serviceClient()
                 .getClusters()
-                .update(resourceGroupName, clusterName, updateParameters, context);
+                .update(resourceGroupName, clusterName, updateParameters, updateIfMatch, context);
         return this;
     }
 
@@ -444,6 +459,21 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
             this.updateParameters.withEngineType(engineType);
             return this;
         }
+    }
+
+    public ClusterImpl withIfMatch(String ifMatch) {
+        this.createIfMatch = ifMatch;
+        return this;
+    }
+
+    public ClusterImpl withIfNoneMatch(String ifNoneMatch) {
+        this.createIfNoneMatch = ifNoneMatch;
+        return this;
+    }
+
+    public ClusterImpl ifMatch(String ifMatch) {
+        this.updateIfMatch = ifMatch;
+        return this;
     }
 
     private boolean isInCreateMode() {

@@ -71,6 +71,13 @@ public interface Cluster {
     Identity identity();
 
     /**
+     * Gets the etag property: A unique read-only string that changes whenever the resource is updated.
+     *
+     * @return the etag value.
+     */
+    String etag();
+
+    /**
      * Gets the state property: The state of the resource.
      *
      * @return the state value.
@@ -263,7 +270,9 @@ public interface Cluster {
                 DefinitionStages.WithKeyVaultProperties,
                 DefinitionStages.WithEnablePurge,
                 DefinitionStages.WithEnableDoubleEncryption,
-                DefinitionStages.WithEngineType {
+                DefinitionStages.WithEngineType,
+                DefinitionStages.WithIfMatch,
+                DefinitionStages.WithIfNoneMatch {
             /**
              * Executes the create request.
              *
@@ -402,6 +411,30 @@ public interface Cluster {
              */
             WithCreate withEngineType(EngineType engineType);
         }
+        /** The stage of the Cluster definition allowing to specify ifMatch. */
+        interface WithIfMatch {
+            /**
+             * Specifies the ifMatch property: The ETag of the cluster. Omit this value to always overwrite the current
+             * cluster. Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes..
+             *
+             * @param ifMatch The ETag of the cluster. Omit this value to always overwrite the current cluster. Specify
+             *     the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+             * @return the next definition stage.
+             */
+            WithCreate withIfMatch(String ifMatch);
+        }
+        /** The stage of the Cluster definition allowing to specify ifNoneMatch. */
+        interface WithIfNoneMatch {
+            /**
+             * Specifies the ifNoneMatch property: Set to '*' to allow a new cluster to be created, but to prevent
+             * updating an existing cluster. Other values will result in a 412 Pre-condition Failed response..
+             *
+             * @param ifNoneMatch Set to '*' to allow a new cluster to be created, but to prevent updating an existing
+             *     cluster. Other values will result in a 412 Pre-condition Failed response.
+             * @return the next definition stage.
+             */
+            WithCreate withIfNoneMatch(String ifNoneMatch);
+        }
     }
     /**
      * Begins update for the Cluster resource.
@@ -423,7 +456,8 @@ public interface Cluster {
             UpdateStages.WithKeyVaultProperties,
             UpdateStages.WithEnablePurge,
             UpdateStages.WithEnableDoubleEncryption,
-            UpdateStages.WithEngineType {
+            UpdateStages.WithEngineType,
+            UpdateStages.WithifMatch {
         /**
          * Executes the update request.
          *
@@ -563,6 +597,18 @@ public interface Cluster {
              * @return the next definition stage.
              */
             Update withEngineType(EngineType engineType);
+        }
+        /** The stage of the Cluster update allowing to specify ifMatch. */
+        interface WithifMatch {
+            /**
+             * Specifies the ifMatch property: The ETag of the cluster. Omit this value to always overwrite the current
+             * cluster. Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes..
+             *
+             * @param ifMatch The ETag of the cluster. Omit this value to always overwrite the current cluster. Specify
+             *     the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+             * @return the next definition stage.
+             */
+            Update ifMatch(String ifMatch);
         }
     }
     /**

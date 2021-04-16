@@ -78,6 +78,13 @@ public interface AttachedDatabaseConfiguration {
     DefaultPrincipalsModificationKind defaultPrincipalsModificationKind();
 
     /**
+     * Gets the tableLevelSharingProperties property: Table level sharing specifications.
+     *
+     * @return the tableLevelSharingProperties value.
+     */
+    TableLevelSharingProperties tableLevelSharingProperties();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -127,7 +134,8 @@ public interface AttachedDatabaseConfiguration {
             extends DefinitionStages.WithLocation,
                 DefinitionStages.WithDatabaseName,
                 DefinitionStages.WithClusterResourceId,
-                DefinitionStages.WithDefaultPrincipalsModificationKind {
+                DefinitionStages.WithDefaultPrincipalsModificationKind,
+                DefinitionStages.WithTableLevelSharingProperties {
             /**
              * Executes the create request.
              *
@@ -199,6 +207,18 @@ public interface AttachedDatabaseConfiguration {
             WithCreate withDefaultPrincipalsModificationKind(
                 DefaultPrincipalsModificationKind defaultPrincipalsModificationKind);
         }
+        /**
+         * The stage of the AttachedDatabaseConfiguration definition allowing to specify tableLevelSharingProperties.
+         */
+        interface WithTableLevelSharingProperties {
+            /**
+             * Specifies the tableLevelSharingProperties property: Table level sharing specifications.
+             *
+             * @param tableLevelSharingProperties Table level sharing specifications.
+             * @return the next definition stage.
+             */
+            WithCreate withTableLevelSharingProperties(TableLevelSharingProperties tableLevelSharingProperties);
+        }
     }
     /**
      * Begins update for the AttachedDatabaseConfiguration resource.
@@ -211,7 +231,8 @@ public interface AttachedDatabaseConfiguration {
     interface Update
         extends UpdateStages.WithDatabaseName,
             UpdateStages.WithClusterResourceId,
-            UpdateStages.WithDefaultPrincipalsModificationKind {
+            UpdateStages.WithDefaultPrincipalsModificationKind,
+            UpdateStages.WithTableLevelSharingProperties {
         /**
          * Executes the update request.
          *
@@ -265,6 +286,16 @@ public interface AttachedDatabaseConfiguration {
              */
             Update withDefaultPrincipalsModificationKind(
                 DefaultPrincipalsModificationKind defaultPrincipalsModificationKind);
+        }
+        /** The stage of the AttachedDatabaseConfiguration update allowing to specify tableLevelSharingProperties. */
+        interface WithTableLevelSharingProperties {
+            /**
+             * Specifies the tableLevelSharingProperties property: Table level sharing specifications.
+             *
+             * @param tableLevelSharingProperties Table level sharing specifications.
+             * @return the next definition stage.
+             */
+            Update withTableLevelSharingProperties(TableLevelSharingProperties tableLevelSharingProperties);
         }
     }
     /**
