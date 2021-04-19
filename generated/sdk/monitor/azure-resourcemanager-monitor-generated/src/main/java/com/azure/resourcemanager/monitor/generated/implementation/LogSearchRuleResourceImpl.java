@@ -65,6 +65,10 @@ public final class LogSearchRuleResourceImpl
         return this.innerModel().displayName();
     }
 
+    public Boolean autoMitigate() {
+        return this.innerModel().autoMitigate();
+    }
+
     public Enabled enabled() {
         return this.innerModel().enabled();
     }
@@ -241,6 +245,11 @@ public final class LogSearchRuleResourceImpl
 
     public LogSearchRuleResourceImpl withDisplayName(String displayName) {
         this.innerModel().withDisplayName(displayName);
+        return this;
+    }
+
+    public LogSearchRuleResourceImpl withAutoMitigate(Boolean autoMitigate) {
+        this.innerModel().withAutoMitigate(autoMitigate);
         return this;
     }
 

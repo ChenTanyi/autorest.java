@@ -49,6 +49,13 @@ public class LogSearchRuleResourceInner extends Resource {
     private String displayName;
 
     /*
+     * The flag that indicates whether the alert should be automatically
+     * resolved or not. The default is true.
+     */
+    @JsonProperty(value = "properties.autoMitigate")
+    private Boolean autoMitigate;
+
+    /*
      * The flag which indicates whether the Log Search rule is enabled. Value
      * should be true or false
      */
@@ -161,6 +168,28 @@ public class LogSearchRuleResourceInner extends Resource {
      */
     public LogSearchRuleResourceInner withDisplayName(String displayName) {
         this.displayName = displayName;
+        return this;
+    }
+
+    /**
+     * Get the autoMitigate property: The flag that indicates whether the alert should be automatically resolved or not.
+     * The default is true.
+     *
+     * @return the autoMitigate value.
+     */
+    public Boolean autoMitigate() {
+        return this.autoMitigate;
+    }
+
+    /**
+     * Set the autoMitigate property: The flag that indicates whether the alert should be automatically resolved or not.
+     * The default is true.
+     *
+     * @param autoMitigate the autoMitigate value to set.
+     * @return the LogSearchRuleResourceInner object itself.
+     */
+    public LogSearchRuleResourceInner withAutoMitigate(Boolean autoMitigate) {
+        this.autoMitigate = autoMitigate;
         return this;
     }
 

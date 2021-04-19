@@ -76,6 +76,14 @@ public interface LogSearchRuleResource {
     String displayName();
 
     /**
+     * Gets the autoMitigate property: The flag that indicates whether the alert should be automatically resolved or
+     * not. The default is true.
+     *
+     * @return the autoMitigate value.
+     */
+    Boolean autoMitigate();
+
+    /**
      * Gets the enabled property: The flag which indicates whether the Log Search rule is enabled. Value should be true
      * or false.
      *
@@ -229,6 +237,7 @@ public interface LogSearchRuleResource {
             extends DefinitionStages.WithTags,
                 DefinitionStages.WithDescription,
                 DefinitionStages.WithDisplayName,
+                DefinitionStages.WithAutoMitigate,
                 DefinitionStages.WithEnabled,
                 DefinitionStages.WithSchedule {
             /**
@@ -275,6 +284,18 @@ public interface LogSearchRuleResource {
              * @return the next definition stage.
              */
             WithCreate withDisplayName(String displayName);
+        }
+        /** The stage of the LogSearchRuleResource definition allowing to specify autoMitigate. */
+        interface WithAutoMitigate {
+            /**
+             * Specifies the autoMitigate property: The flag that indicates whether the alert should be automatically
+             * resolved or not. The default is true..
+             *
+             * @param autoMitigate The flag that indicates whether the alert should be automatically resolved or not.
+             *     The default is true.
+             * @return the next definition stage.
+             */
+            WithCreate withAutoMitigate(Boolean autoMitigate);
         }
         /** The stage of the LogSearchRuleResource definition allowing to specify enabled. */
         interface WithEnabled {
