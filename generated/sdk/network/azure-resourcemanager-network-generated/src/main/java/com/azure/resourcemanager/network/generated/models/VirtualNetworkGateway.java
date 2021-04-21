@@ -42,6 +42,13 @@ public interface VirtualNetworkGateway {
     Map<String, String> tags();
 
     /**
+     * Gets the extendedLocation property: The extended location of type local virtual network gateway.
+     *
+     * @return the extendedLocation value.
+     */
+    ExtendedLocation extendedLocation();
+
+    /**
      * Gets the etag property: A unique read-only string that changes whenever the resource is updated.
      *
      * @return the etag value.
@@ -168,19 +175,12 @@ public interface VirtualNetworkGateway {
     String inboundDnsForwardingEndpoint();
 
     /**
-     * Gets the vNetExtendedLocationResourceId property: MAS FIJI customer vnet resource id. VirtualNetworkGateway of
-     * type local gateway is associated with the customer vnet.
+     * Gets the vNetExtendedLocationResourceId property: Customer vnet resource id. VirtualNetworkGateway of type local
+     * gateway is associated with the customer vnet.
      *
      * @return the vNetExtendedLocationResourceId value.
      */
     String vNetExtendedLocationResourceId();
-
-    /**
-     * Gets the virtualNetworkExtendedLocation property: The extended location of type local virtual network gateway.
-     *
-     * @return the virtualNetworkExtendedLocation value.
-     */
-    ExtendedLocation virtualNetworkExtendedLocation();
 
     /**
      * Gets the id property: Resource ID.
@@ -256,6 +256,7 @@ public interface VirtualNetworkGateway {
          */
         interface WithCreate
             extends DefinitionStages.WithTags,
+                DefinitionStages.WithExtendedLocation,
                 DefinitionStages.WithIpConfigurations,
                 DefinitionStages.WithGatewayType,
                 DefinitionStages.WithVpnType,
@@ -269,8 +270,7 @@ public interface VirtualNetworkGateway {
                 DefinitionStages.WithBgpSettings,
                 DefinitionStages.WithCustomRoutes,
                 DefinitionStages.WithEnableDnsForwarding,
-                DefinitionStages.WithVNetExtendedLocationResourceId,
-                DefinitionStages.WithVirtualNetworkExtendedLocation {
+                DefinitionStages.WithVNetExtendedLocationResourceId {
             /**
              * Executes the create request.
              *
@@ -295,6 +295,16 @@ public interface VirtualNetworkGateway {
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
+        }
+        /** The stage of the VirtualNetworkGateway definition allowing to specify extendedLocation. */
+        interface WithExtendedLocation {
+            /**
+             * Specifies the extendedLocation property: The extended location of type local virtual network gateway..
+             *
+             * @param extendedLocation The extended location of type local virtual network gateway.
+             * @return the next definition stage.
+             */
+            WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
         /** The stage of the VirtualNetworkGateway definition allowing to specify ipConfigurations. */
         interface WithIpConfigurations {
@@ -443,25 +453,14 @@ public interface VirtualNetworkGateway {
         /** The stage of the VirtualNetworkGateway definition allowing to specify vNetExtendedLocationResourceId. */
         interface WithVNetExtendedLocationResourceId {
             /**
-             * Specifies the vNetExtendedLocationResourceId property: MAS FIJI customer vnet resource id.
-             * VirtualNetworkGateway of type local gateway is associated with the customer vnet..
+             * Specifies the vNetExtendedLocationResourceId property: Customer vnet resource id. VirtualNetworkGateway
+             * of type local gateway is associated with the customer vnet..
              *
-             * @param vNetExtendedLocationResourceId MAS FIJI customer vnet resource id. VirtualNetworkGateway of type
-             *     local gateway is associated with the customer vnet.
+             * @param vNetExtendedLocationResourceId Customer vnet resource id. VirtualNetworkGateway of type local
+             *     gateway is associated with the customer vnet.
              * @return the next definition stage.
              */
             WithCreate withVNetExtendedLocationResourceId(String vNetExtendedLocationResourceId);
-        }
-        /** The stage of the VirtualNetworkGateway definition allowing to specify virtualNetworkExtendedLocation. */
-        interface WithVirtualNetworkExtendedLocation {
-            /**
-             * Specifies the virtualNetworkExtendedLocation property: The extended location of type local virtual
-             * network gateway..
-             *
-             * @param virtualNetworkExtendedLocation The extended location of type local virtual network gateway.
-             * @return the next definition stage.
-             */
-            WithCreate withVirtualNetworkExtendedLocation(ExtendedLocation virtualNetworkExtendedLocation);
         }
     }
     /**

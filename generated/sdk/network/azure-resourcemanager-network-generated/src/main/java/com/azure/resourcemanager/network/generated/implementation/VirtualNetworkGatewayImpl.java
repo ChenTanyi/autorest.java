@@ -51,6 +51,10 @@ public final class VirtualNetworkGatewayImpl
         }
     }
 
+    public ExtendedLocation extendedLocation() {
+        return this.innerModel().extendedLocation();
+    }
+
     public String etag() {
         return this.innerModel().etag();
     }
@@ -126,10 +130,6 @@ public final class VirtualNetworkGatewayImpl
 
     public String vNetExtendedLocationResourceId() {
         return this.innerModel().vNetExtendedLocationResourceId();
-    }
-
-    public ExtendedLocation virtualNetworkExtendedLocation() {
-        return this.innerModel().virtualNetworkExtendedLocation();
     }
 
     public String id() {
@@ -259,6 +259,11 @@ public final class VirtualNetworkGatewayImpl
         }
     }
 
+    public VirtualNetworkGatewayImpl withExtendedLocation(ExtendedLocation extendedLocation) {
+        this.innerModel().withExtendedLocation(extendedLocation);
+        return this;
+    }
+
     public VirtualNetworkGatewayImpl withIpConfigurations(List<VirtualNetworkGatewayIpConfiguration> ipConfigurations) {
         this.innerModel().withIpConfigurations(ipConfigurations);
         return this;
@@ -326,12 +331,6 @@ public final class VirtualNetworkGatewayImpl
 
     public VirtualNetworkGatewayImpl withVNetExtendedLocationResourceId(String vNetExtendedLocationResourceId) {
         this.innerModel().withVNetExtendedLocationResourceId(vNetExtendedLocationResourceId);
-        return this;
-    }
-
-    public VirtualNetworkGatewayImpl withVirtualNetworkExtendedLocation(
-        ExtendedLocation virtualNetworkExtendedLocation) {
-        this.innerModel().withVirtualNetworkExtendedLocation(virtualNetworkExtendedLocation);
         return this;
     }
 

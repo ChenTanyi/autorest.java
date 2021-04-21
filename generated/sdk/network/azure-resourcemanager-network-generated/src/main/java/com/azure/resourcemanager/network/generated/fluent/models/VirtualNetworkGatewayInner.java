@@ -31,6 +31,12 @@ public class VirtualNetworkGatewayInner extends Resource {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(VirtualNetworkGatewayInner.class);
 
     /*
+     * The extended location of type local virtual network gateway.
+     */
+    @JsonProperty(value = "extendedLocation")
+    private ExtendedLocation extendedLocation;
+
+    /*
      * A unique read-only string that changes whenever the resource is updated.
      */
     @JsonProperty(value = "etag", access = JsonProperty.Access.WRITE_ONLY)
@@ -142,23 +148,37 @@ public class VirtualNetworkGatewayInner extends Resource {
     private String inboundDnsForwardingEndpoint;
 
     /*
-     * MAS FIJI customer vnet resource id. VirtualNetworkGateway of type local
-     * gateway is associated with the customer vnet.
+     * Customer vnet resource id. VirtualNetworkGateway of type local gateway
+     * is associated with the customer vnet.
      */
     @JsonProperty(value = "properties.vNetExtendedLocationResourceId")
     private String vNetExtendedLocationResourceId;
-
-    /*
-     * The extended location of type local virtual network gateway.
-     */
-    @JsonProperty(value = "properties.virtualNetworkExtendedLocation")
-    private ExtendedLocation virtualNetworkExtendedLocation;
 
     /*
      * Resource ID.
      */
     @JsonProperty(value = "id")
     private String id;
+
+    /**
+     * Get the extendedLocation property: The extended location of type local virtual network gateway.
+     *
+     * @return the extendedLocation value.
+     */
+    public ExtendedLocation extendedLocation() {
+        return this.extendedLocation;
+    }
+
+    /**
+     * Set the extendedLocation property: The extended location of type local virtual network gateway.
+     *
+     * @param extendedLocation the extendedLocation value to set.
+     * @return the VirtualNetworkGatewayInner object itself.
+     */
+    public VirtualNetworkGatewayInner withExtendedLocation(ExtendedLocation extendedLocation) {
+        this.extendedLocation = extendedLocation;
+        return this;
+    }
 
     /**
      * Get the etag property: A unique read-only string that changes whenever the resource is updated.
@@ -471,8 +491,8 @@ public class VirtualNetworkGatewayInner extends Resource {
     }
 
     /**
-     * Get the vNetExtendedLocationResourceId property: MAS FIJI customer vnet resource id. VirtualNetworkGateway of
-     * type local gateway is associated with the customer vnet.
+     * Get the vNetExtendedLocationResourceId property: Customer vnet resource id. VirtualNetworkGateway of type local
+     * gateway is associated with the customer vnet.
      *
      * @return the vNetExtendedLocationResourceId value.
      */
@@ -481,35 +501,14 @@ public class VirtualNetworkGatewayInner extends Resource {
     }
 
     /**
-     * Set the vNetExtendedLocationResourceId property: MAS FIJI customer vnet resource id. VirtualNetworkGateway of
-     * type local gateway is associated with the customer vnet.
+     * Set the vNetExtendedLocationResourceId property: Customer vnet resource id. VirtualNetworkGateway of type local
+     * gateway is associated with the customer vnet.
      *
      * @param vNetExtendedLocationResourceId the vNetExtendedLocationResourceId value to set.
      * @return the VirtualNetworkGatewayInner object itself.
      */
     public VirtualNetworkGatewayInner withVNetExtendedLocationResourceId(String vNetExtendedLocationResourceId) {
         this.vNetExtendedLocationResourceId = vNetExtendedLocationResourceId;
-        return this;
-    }
-
-    /**
-     * Get the virtualNetworkExtendedLocation property: The extended location of type local virtual network gateway.
-     *
-     * @return the virtualNetworkExtendedLocation value.
-     */
-    public ExtendedLocation virtualNetworkExtendedLocation() {
-        return this.virtualNetworkExtendedLocation;
-    }
-
-    /**
-     * Set the virtualNetworkExtendedLocation property: The extended location of type local virtual network gateway.
-     *
-     * @param virtualNetworkExtendedLocation the virtualNetworkExtendedLocation value to set.
-     * @return the VirtualNetworkGatewayInner object itself.
-     */
-    public VirtualNetworkGatewayInner withVirtualNetworkExtendedLocation(
-        ExtendedLocation virtualNetworkExtendedLocation) {
-        this.virtualNetworkExtendedLocation = virtualNetworkExtendedLocation;
         return this;
     }
 
@@ -553,6 +552,9 @@ public class VirtualNetworkGatewayInner extends Resource {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+        if (extendedLocation() != null) {
+            extendedLocation().validate();
+        }
         if (ipConfigurations() != null) {
             ipConfigurations().forEach(e -> e.validate());
         }
@@ -567,9 +569,6 @@ public class VirtualNetworkGatewayInner extends Resource {
         }
         if (customRoutes() != null) {
             customRoutes().validate();
-        }
-        if (virtualNetworkExtendedLocation() != null) {
-            virtualNetworkExtendedLocation().validate();
         }
     }
 }
