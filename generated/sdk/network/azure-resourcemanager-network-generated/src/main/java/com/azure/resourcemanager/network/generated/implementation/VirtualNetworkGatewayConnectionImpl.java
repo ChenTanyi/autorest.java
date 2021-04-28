@@ -22,6 +22,8 @@ import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayC
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnectionProtocol;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnectionStatus;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnectionType;
+import com.azure.resourcemanager.network.generated.models.VpnPacketCaptureStartParameters;
+import com.azure.resourcemanager.network.generated.models.VpnPacketCaptureStopParameters;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -288,6 +290,60 @@ public final class VirtualNetworkGatewayConnectionImpl
                 .getByResourceGroupWithResponse(resourceGroupName, virtualNetworkGatewayConnectionName, context)
                 .getValue();
         return this;
+    }
+
+    public String startPacketCapture(VpnPacketCaptureStartParameters parameters) {
+        return serviceManager
+            .virtualNetworkGatewayConnections()
+            .startPacketCapture(resourceGroupName, virtualNetworkGatewayConnectionName, parameters);
+    }
+
+    public String startPacketCapture() {
+        return serviceManager
+            .virtualNetworkGatewayConnections()
+            .startPacketCapture(resourceGroupName, virtualNetworkGatewayConnectionName);
+    }
+
+    public String startPacketCapture(VpnPacketCaptureStartParameters parameters, Context context) {
+        return serviceManager
+            .virtualNetworkGatewayConnections()
+            .startPacketCapture(resourceGroupName, virtualNetworkGatewayConnectionName, parameters, context);
+    }
+
+    public String stopPacketCapture(VpnPacketCaptureStopParameters parameters) {
+        return serviceManager
+            .virtualNetworkGatewayConnections()
+            .stopPacketCapture(resourceGroupName, virtualNetworkGatewayConnectionName, parameters);
+    }
+
+    public String stopPacketCapture(VpnPacketCaptureStopParameters parameters, Context context) {
+        return serviceManager
+            .virtualNetworkGatewayConnections()
+            .stopPacketCapture(resourceGroupName, virtualNetworkGatewayConnectionName, parameters, context);
+    }
+
+    public String getIkeSas() {
+        return serviceManager
+            .virtualNetworkGatewayConnections()
+            .getIkeSas(resourceGroupName, virtualNetworkGatewayConnectionName);
+    }
+
+    public String getIkeSas(Context context) {
+        return serviceManager
+            .virtualNetworkGatewayConnections()
+            .getIkeSas(resourceGroupName, virtualNetworkGatewayConnectionName, context);
+    }
+
+    public void resetConnection() {
+        serviceManager
+            .virtualNetworkGatewayConnections()
+            .resetConnection(resourceGroupName, virtualNetworkGatewayConnectionName);
+    }
+
+    public void resetConnection(Context context) {
+        serviceManager
+            .virtualNetworkGatewayConnections()
+            .resetConnection(resourceGroupName, virtualNetworkGatewayConnectionName, context);
     }
 
     public VirtualNetworkGatewayConnectionImpl withRegion(Region location) {

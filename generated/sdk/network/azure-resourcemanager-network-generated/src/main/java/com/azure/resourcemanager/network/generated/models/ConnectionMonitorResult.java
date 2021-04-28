@@ -401,4 +401,60 @@ public interface ConnectionMonitorResult {
      * @return the refreshed resource.
      */
     ConnectionMonitorResult refresh(Context context);
+
+    /**
+     * Stops the specified connection monitor.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void stop();
+
+    /**
+     * Stops the specified connection monitor.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void stop(Context context);
+
+    /**
+     * Starts the specified connection monitor.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void start();
+
+    /**
+     * Starts the specified connection monitor.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void start(Context context);
+
+    /**
+     * Query a snapshot of the most recent connection states.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of connection states snapshots.
+     */
+    ConnectionMonitorQueryResult query();
+
+    /**
+     * Query a snapshot of the most recent connection states.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of connection states snapshots.
+     */
+    ConnectionMonitorQueryResult query(Context context);
 }

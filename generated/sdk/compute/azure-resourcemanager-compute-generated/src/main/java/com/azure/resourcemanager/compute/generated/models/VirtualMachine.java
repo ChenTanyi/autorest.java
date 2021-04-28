@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
@@ -1102,4 +1103,369 @@ public interface VirtualMachine {
      * @return the refreshed resource.
      */
     VirtualMachine refresh(Context context);
+
+    /**
+     * Captures the VM by copying virtual hard disks of the VM and outputs a template that can be used to create similar
+     * VMs.
+     *
+     * @param parameters Parameters supplied to the Capture Virtual Machine operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return output of virtual machine capture operation.
+     */
+    VirtualMachineCaptureResult capture(VirtualMachineCaptureParameters parameters);
+
+    /**
+     * Captures the VM by copying virtual hard disks of the VM and outputs a template that can be used to create similar
+     * VMs.
+     *
+     * @param parameters Parameters supplied to the Capture Virtual Machine operation.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return output of virtual machine capture operation.
+     */
+    VirtualMachineCaptureResult capture(VirtualMachineCaptureParameters parameters, Context context);
+
+    /**
+     * Converts virtual machine disks from blob-based to managed disks. Virtual machine must be stop-deallocated before
+     * invoking this operation.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void convertToManagedDisks();
+
+    /**
+     * Converts virtual machine disks from blob-based to managed disks. Virtual machine must be stop-deallocated before
+     * invoking this operation.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void convertToManagedDisks(Context context);
+
+    /**
+     * Shuts down the virtual machine and releases the compute resources. You are not billed for the compute resources
+     * that this virtual machine uses.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deallocate();
+
+    /**
+     * Shuts down the virtual machine and releases the compute resources. You are not billed for the compute resources
+     * that this virtual machine uses.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deallocate(Context context);
+
+    /**
+     * Sets the OS state of the virtual machine to generalized. It is recommended to sysprep the virtual machine before
+     * performing this operation. &lt;br&gt;For Windows, please refer to [Create a managed image of a generalized VM in
+     * Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/capture-image-resource).&lt;br&gt;For
+     * Linux, please refer to [How to create an image of a virtual machine or
+     * VHD](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/capture-image).
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void generalize();
+
+    /**
+     * Sets the OS state of the virtual machine to generalized. It is recommended to sysprep the virtual machine before
+     * performing this operation. &lt;br&gt;For Windows, please refer to [Create a managed image of a generalized VM in
+     * Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/capture-image-resource).&lt;br&gt;For
+     * Linux, please refer to [How to create an image of a virtual machine or
+     * VHD](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/capture-image).
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    Response<Void> generalizeWithResponse(Context context);
+
+    /**
+     * The operation to power off (stop) a virtual machine. The virtual machine can be restarted with the same
+     * provisioned resources. You are still charged for this virtual machine.
+     *
+     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates
+     *     non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not
+     *     specified.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void powerOff(Boolean skipShutdown);
+
+    /**
+     * The operation to power off (stop) a virtual machine. The virtual machine can be restarted with the same
+     * provisioned resources. You are still charged for this virtual machine.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void powerOff();
+
+    /**
+     * The operation to power off (stop) a virtual machine. The virtual machine can be restarted with the same
+     * provisioned resources. You are still charged for this virtual machine.
+     *
+     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates
+     *     non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not
+     *     specified.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void powerOff(Boolean skipShutdown, Context context);
+
+    /**
+     * The operation to reapply a virtual machine's state.
+     *
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void reapply();
+
+    /**
+     * The operation to reapply a virtual machine's state.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void reapply(Context context);
+
+    /**
+     * The operation to restart a virtual machine.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void restart();
+
+    /**
+     * The operation to restart a virtual machine.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void restart(Context context);
+
+    /**
+     * The operation to start a virtual machine.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void start();
+
+    /**
+     * The operation to start a virtual machine.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void start(Context context);
+
+    /**
+     * Shuts down the virtual machine, moves it to a new node, and powers it back on.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void redeploy();
+
+    /**
+     * Shuts down the virtual machine, moves it to a new node, and powers it back on.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void redeploy(Context context);
+
+    /**
+     * Reimages the virtual machine which has an ephemeral OS disk back to its initial state.
+     *
+     * @param parameters Parameters supplied to the Reimage Virtual Machine operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void reimage(VirtualMachineReimageParameters parameters);
+
+    /**
+     * Reimages the virtual machine which has an ephemeral OS disk back to its initial state.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void reimage();
+
+    /**
+     * Reimages the virtual machine which has an ephemeral OS disk back to its initial state.
+     *
+     * @param parameters Parameters supplied to the Reimage Virtual Machine operation.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void reimage(VirtualMachineReimageParameters parameters, Context context);
+
+    /**
+     * The operation to retrieve SAS URIs for a virtual machine's boot diagnostic logs.
+     *
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the SAS URIs of the console screenshot and serial log blobs.
+     */
+    RetrieveBootDiagnosticsDataResult retrieveBootDiagnosticsData();
+
+    /**
+     * The operation to retrieve SAS URIs for a virtual machine's boot diagnostic logs.
+     *
+     * @param sasUriExpirationTimeInMinutes Expiration duration in minutes for the SAS URIs with a value between 1 to
+     *     1440 minutes. &lt;br&gt;&lt;br&gt;NOTE: If not specified, SAS URIs will be generated with a default
+     *     expiration duration of 120 minutes.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the SAS URIs of the console screenshot and serial log blobs.
+     */
+    Response<RetrieveBootDiagnosticsDataResult> retrieveBootDiagnosticsDataWithResponse(
+        Integer sasUriExpirationTimeInMinutes, Context context);
+
+    /**
+     * The operation to perform maintenance on a virtual machine.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void performMaintenance();
+
+    /**
+     * The operation to perform maintenance on a virtual machine.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void performMaintenance(Context context);
+
+    /**
+     * The operation to simulate the eviction of spot virtual machine.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void simulateEviction();
+
+    /**
+     * The operation to simulate the eviction of spot virtual machine.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    Response<Void> simulateEvictionWithResponse(Context context);
+
+    /**
+     * Assess patches on the VM.
+     *
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return describes the properties of an AssessPatches result.
+     */
+    VirtualMachineAssessPatchesResult assessPatches();
+
+    /**
+     * Assess patches on the VM.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return describes the properties of an AssessPatches result.
+     */
+    VirtualMachineAssessPatchesResult assessPatches(Context context);
+
+    /**
+     * Installs patches on the VM.
+     *
+     * @param installPatchesInput Input for InstallPatches as directly received by the API.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the result summary of an installation operation.
+     */
+    VirtualMachineInstallPatchesResult installPatches(VirtualMachineInstallPatchesParameters installPatchesInput);
+
+    /**
+     * Installs patches on the VM.
+     *
+     * @param installPatchesInput Input for InstallPatches as directly received by the API.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the result summary of an installation operation.
+     */
+    VirtualMachineInstallPatchesResult installPatches(
+        VirtualMachineInstallPatchesParameters installPatchesInput, Context context);
+
+    /**
+     * Run command on the VM.
+     *
+     * @param parameters Parameters supplied to the Run command operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    RunCommandResult runCommand(RunCommandInput parameters);
+
+    /**
+     * Run command on the VM.
+     *
+     * @param parameters Parameters supplied to the Run command operation.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    RunCommandResult runCommand(RunCommandInput parameters, Context context);
 }

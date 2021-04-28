@@ -12,6 +12,8 @@ import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfac
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceTapConfigurationInner;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkSecurityGroupInner;
 import com.azure.resourcemanager.network.generated.fluent.models.PrivateEndpointInner;
+import com.azure.resourcemanager.network.generated.models.EffectiveNetworkSecurityGroupListResult;
+import com.azure.resourcemanager.network.generated.models.EffectiveRouteListResult;
 import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.NetworkInterface;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceDnsSettings;
@@ -260,6 +262,28 @@ public final class NetworkInterfaceImpl
                 .getByResourceGroupWithResponse(resourceGroupName, networkInterfaceName, localExpand, context)
                 .getValue();
         return this;
+    }
+
+    public EffectiveRouteListResult getEffectiveRouteTable() {
+        return serviceManager.networkInterfaces().getEffectiveRouteTable(resourceGroupName, networkInterfaceName);
+    }
+
+    public EffectiveRouteListResult getEffectiveRouteTable(Context context) {
+        return serviceManager
+            .networkInterfaces()
+            .getEffectiveRouteTable(resourceGroupName, networkInterfaceName, context);
+    }
+
+    public EffectiveNetworkSecurityGroupListResult listEffectiveNetworkSecurityGroups() {
+        return serviceManager
+            .networkInterfaces()
+            .listEffectiveNetworkSecurityGroups(resourceGroupName, networkInterfaceName);
+    }
+
+    public EffectiveNetworkSecurityGroupListResult listEffectiveNetworkSecurityGroups(Context context) {
+        return serviceManager
+            .networkInterfaces()
+            .listEffectiveNetworkSecurityGroups(resourceGroupName, networkInterfaceName, context);
     }
 
     public NetworkInterfaceImpl withRegion(Region location) {

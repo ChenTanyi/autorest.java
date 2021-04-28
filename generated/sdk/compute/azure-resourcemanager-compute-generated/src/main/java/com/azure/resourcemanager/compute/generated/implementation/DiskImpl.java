@@ -7,6 +7,7 @@ package com.azure.resourcemanager.compute.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.DiskInner;
+import com.azure.resourcemanager.compute.generated.models.AccessUri;
 import com.azure.resourcemanager.compute.generated.models.CreationData;
 import com.azure.resourcemanager.compute.generated.models.Disk;
 import com.azure.resourcemanager.compute.generated.models.DiskSecurityProfile;
@@ -16,6 +17,7 @@ import com.azure.resourcemanager.compute.generated.models.DiskUpdate;
 import com.azure.resourcemanager.compute.generated.models.Encryption;
 import com.azure.resourcemanager.compute.generated.models.EncryptionSettingsCollection;
 import com.azure.resourcemanager.compute.generated.models.ExtendedLocation;
+import com.azure.resourcemanager.compute.generated.models.GrantAccessData;
 import com.azure.resourcemanager.compute.generated.models.HyperVGeneration;
 import com.azure.resourcemanager.compute.generated.models.NetworkAccessPolicy;
 import com.azure.resourcemanager.compute.generated.models.OperatingSystemTypes;
@@ -285,6 +287,22 @@ public final class DiskImpl implements Disk, Disk.Definition, Disk.Update {
                 .getByResourceGroupWithResponse(resourceGroupName, diskName, context)
                 .getValue();
         return this;
+    }
+
+    public AccessUri grantAccess(GrantAccessData grantAccessData) {
+        return serviceManager.disks().grantAccess(resourceGroupName, diskName, grantAccessData);
+    }
+
+    public AccessUri grantAccess(GrantAccessData grantAccessData, Context context) {
+        return serviceManager.disks().grantAccess(resourceGroupName, diskName, grantAccessData, context);
+    }
+
+    public void revokeAccess() {
+        serviceManager.disks().revokeAccess(resourceGroupName, diskName);
+    }
+
+    public void revokeAccess(Context context) {
+        serviceManager.disks().revokeAccess(resourceGroupName, diskName, context);
     }
 
     public DiskImpl withRegion(Region location) {

@@ -326,4 +326,94 @@ public interface P2SVpnGateway {
      * @return the refreshed resource.
      */
     P2SVpnGateway refresh(Context context);
+
+    /**
+     * Resets the primary of the p2s vpn gateway in the specified resource group.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return p2SVpnGateway Resource.
+     */
+    P2SVpnGateway reset();
+
+    /**
+     * Resets the primary of the p2s vpn gateway in the specified resource group.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return p2SVpnGateway Resource.
+     */
+    P2SVpnGateway reset(Context context);
+
+    /**
+     * Generates VPN profile for P2S client of the P2SVpnGateway in the specified resource group.
+     *
+     * @param parameters Parameters supplied to the generate P2SVpnGateway VPN client package operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return vpn Profile Response for package generation.
+     */
+    VpnProfileResponse generateVpnProfile(P2SVpnProfileParameters parameters);
+
+    /**
+     * Generates VPN profile for P2S client of the P2SVpnGateway in the specified resource group.
+     *
+     * @param parameters Parameters supplied to the generate P2SVpnGateway VPN client package operation.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return vpn Profile Response for package generation.
+     */
+    VpnProfileResponse generateVpnProfile(P2SVpnProfileParameters parameters, Context context);
+
+    /**
+     * Gets the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     */
+    P2SVpnGateway getP2SVpnConnectionHealth();
+
+    /**
+     * Gets the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     */
+    P2SVpnGateway getP2SVpnConnectionHealth(Context context);
+
+    /**
+     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
+     * specified resource group.
+     *
+     * @param request Request parameters supplied to get p2s vpn connections detailed health.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
+     *     specified resource group.
+     */
+    P2SVpnConnectionHealth getP2SVpnConnectionHealthDetailed(P2SVpnConnectionHealthRequest request);
+
+    /**
+     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
+     * specified resource group.
+     *
+     * @param request Request parameters supplied to get p2s vpn connections detailed health.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
+     *     specified resource group.
+     */
+    P2SVpnConnectionHealth getP2SVpnConnectionHealthDetailed(P2SVpnConnectionHealthRequest request, Context context);
 }

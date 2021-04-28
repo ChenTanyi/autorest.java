@@ -7,11 +7,13 @@ package com.azure.resourcemanager.compute.generated.implementation;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.SnapshotInner;
+import com.azure.resourcemanager.compute.generated.models.AccessUri;
 import com.azure.resourcemanager.compute.generated.models.CreationData;
 import com.azure.resourcemanager.compute.generated.models.DiskState;
 import com.azure.resourcemanager.compute.generated.models.Encryption;
 import com.azure.resourcemanager.compute.generated.models.EncryptionSettingsCollection;
 import com.azure.resourcemanager.compute.generated.models.ExtendedLocation;
+import com.azure.resourcemanager.compute.generated.models.GrantAccessData;
 import com.azure.resourcemanager.compute.generated.models.HyperVGeneration;
 import com.azure.resourcemanager.compute.generated.models.NetworkAccessPolicy;
 import com.azure.resourcemanager.compute.generated.models.OperatingSystemTypes;
@@ -228,6 +230,22 @@ public final class SnapshotImpl implements Snapshot, Snapshot.Definition, Snapsh
                 .getByResourceGroupWithResponse(resourceGroupName, snapshotName, context)
                 .getValue();
         return this;
+    }
+
+    public AccessUri grantAccess(GrantAccessData grantAccessData) {
+        return serviceManager.snapshots().grantAccess(resourceGroupName, snapshotName, grantAccessData);
+    }
+
+    public AccessUri grantAccess(GrantAccessData grantAccessData, Context context) {
+        return serviceManager.snapshots().grantAccess(resourceGroupName, snapshotName, grantAccessData, context);
+    }
+
+    public void revokeAccess() {
+        serviceManager.snapshots().revokeAccess(resourceGroupName, snapshotName);
+    }
+
+    public void revokeAccess(Context context) {
+        serviceManager.snapshots().revokeAccess(resourceGroupName, snapshotName, context);
     }
 
     public SnapshotImpl withRegion(Region location) {

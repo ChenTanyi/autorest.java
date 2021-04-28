@@ -821,4 +821,116 @@ public interface ApplicationGateway {
      * @return the refreshed resource.
      */
     ApplicationGateway refresh(Context context);
+
+    /**
+     * Starts the specified application gateway.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void start();
+
+    /**
+     * Starts the specified application gateway.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void start(Context context);
+
+    /**
+     * Stops the specified application gateway in a resource group.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void stop();
+
+    /**
+     * Stops the specified application gateway in a resource group.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void stop(Context context);
+
+    /**
+     * Gets the backend health of the specified application gateway in a resource group.
+     *
+     * @param expand Expands BackendAddressPool and BackendHttpSettings referenced in backend health.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the backend health of the specified application gateway in a resource group.
+     */
+    ApplicationGatewayBackendHealth backendHealth(String expand);
+
+    /**
+     * Gets the backend health of the specified application gateway in a resource group.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the backend health of the specified application gateway in a resource group.
+     */
+    ApplicationGatewayBackendHealth backendHealth();
+
+    /**
+     * Gets the backend health of the specified application gateway in a resource group.
+     *
+     * @param expand Expands BackendAddressPool and BackendHttpSettings referenced in backend health.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the backend health of the specified application gateway in a resource group.
+     */
+    ApplicationGatewayBackendHealth backendHealth(String expand, Context context);
+
+    /**
+     * Gets the backend health for given combination of backend pool and http setting of the specified application
+     * gateway in a resource group.
+     *
+     * @param probeRequest Request body for on-demand test probe operation.
+     * @param expand Expands BackendAddressPool and BackendHttpSettings referenced in backend health.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the backend health for given combination of backend pool and http setting of the specified application
+     *     gateway in a resource group.
+     */
+    ApplicationGatewayBackendHealthOnDemand backendHealthOnDemand(
+        ApplicationGatewayOnDemandProbe probeRequest, String expand);
+
+    /**
+     * Gets the backend health for given combination of backend pool and http setting of the specified application
+     * gateway in a resource group.
+     *
+     * @param probeRequest Request body for on-demand test probe operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the backend health for given combination of backend pool and http setting of the specified application
+     *     gateway in a resource group.
+     */
+    ApplicationGatewayBackendHealthOnDemand backendHealthOnDemand(ApplicationGatewayOnDemandProbe probeRequest);
+
+    /**
+     * Gets the backend health for given combination of backend pool and http setting of the specified application
+     * gateway in a resource group.
+     *
+     * @param probeRequest Request body for on-demand test probe operation.
+     * @param expand Expands BackendAddressPool and BackendHttpSettings referenced in backend health.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the backend health for given combination of backend pool and http setting of the specified application
+     *     gateway in a resource group.
+     */
+    ApplicationGatewayBackendHealthOnDemand backendHealthOnDemand(
+        ApplicationGatewayOnDemandProbe probeRequest, String expand, Context context);
 }

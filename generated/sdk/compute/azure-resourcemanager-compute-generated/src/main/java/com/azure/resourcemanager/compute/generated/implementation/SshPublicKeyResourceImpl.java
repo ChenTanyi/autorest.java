@@ -4,9 +4,11 @@
 
 package com.azure.resourcemanager.compute.generated.implementation;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.SshPublicKeyResourceInner;
+import com.azure.resourcemanager.compute.generated.models.SshPublicKeyGenerateKeyPairResult;
 import com.azure.resourcemanager.compute.generated.models.SshPublicKeyResource;
 import com.azure.resourcemanager.compute.generated.models.SshPublicKeyUpdateResource;
 import java.util.Collections;
@@ -152,6 +154,14 @@ public final class SshPublicKeyResourceImpl
                 .getByResourceGroupWithResponse(resourceGroupName, sshPublicKeyName, context)
                 .getValue();
         return this;
+    }
+
+    public SshPublicKeyGenerateKeyPairResult generateKeyPair() {
+        return serviceManager.sshPublicKeys().generateKeyPair(resourceGroupName, sshPublicKeyName);
+    }
+
+    public Response<SshPublicKeyGenerateKeyPairResult> generateKeyPairWithResponse(Context context) {
+        return serviceManager.sshPublicKeys().generateKeyPairWithResponse(resourceGroupName, sshPublicKeyName, context);
     }
 
     public SshPublicKeyResourceImpl withRegion(Region location) {

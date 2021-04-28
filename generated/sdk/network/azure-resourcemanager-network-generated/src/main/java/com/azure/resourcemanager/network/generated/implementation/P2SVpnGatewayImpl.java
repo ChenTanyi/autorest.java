@@ -9,10 +9,14 @@ import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.P2SVpnGatewayInner;
 import com.azure.resourcemanager.network.generated.models.P2SConnectionConfiguration;
+import com.azure.resourcemanager.network.generated.models.P2SVpnConnectionHealth;
+import com.azure.resourcemanager.network.generated.models.P2SVpnConnectionHealthRequest;
 import com.azure.resourcemanager.network.generated.models.P2SVpnGateway;
+import com.azure.resourcemanager.network.generated.models.P2SVpnProfileParameters;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 import com.azure.resourcemanager.network.generated.models.VpnClientConnectionHealth;
+import com.azure.resourcemanager.network.generated.models.VpnProfileResponse;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -193,6 +197,43 @@ public final class P2SVpnGatewayImpl implements P2SVpnGateway, P2SVpnGateway.Def
                 .getByResourceGroupWithResponse(resourceGroupName, gatewayName, context)
                 .getValue();
         return this;
+    }
+
+    public P2SVpnGateway reset() {
+        return serviceManager.p2SVpnGateways().reset(resourceGroupName, gatewayName);
+    }
+
+    public P2SVpnGateway reset(Context context) {
+        return serviceManager.p2SVpnGateways().reset(resourceGroupName, gatewayName, context);
+    }
+
+    public VpnProfileResponse generateVpnProfile(P2SVpnProfileParameters parameters) {
+        return serviceManager.p2SVpnGateways().generateVpnProfile(resourceGroupName, gatewayName, parameters);
+    }
+
+    public VpnProfileResponse generateVpnProfile(P2SVpnProfileParameters parameters, Context context) {
+        return serviceManager.p2SVpnGateways().generateVpnProfile(resourceGroupName, gatewayName, parameters, context);
+    }
+
+    public P2SVpnGateway getP2SVpnConnectionHealth() {
+        return serviceManager.p2SVpnGateways().getP2SVpnConnectionHealth(resourceGroupName, gatewayName);
+    }
+
+    public P2SVpnGateway getP2SVpnConnectionHealth(Context context) {
+        return serviceManager.p2SVpnGateways().getP2SVpnConnectionHealth(resourceGroupName, gatewayName, context);
+    }
+
+    public P2SVpnConnectionHealth getP2SVpnConnectionHealthDetailed(P2SVpnConnectionHealthRequest request) {
+        return serviceManager
+            .p2SVpnGateways()
+            .getP2SVpnConnectionHealthDetailed(resourceGroupName, gatewayName, request);
+    }
+
+    public P2SVpnConnectionHealth getP2SVpnConnectionHealthDetailed(
+        P2SVpnConnectionHealthRequest request, Context context) {
+        return serviceManager
+            .p2SVpnGateways()
+            .getP2SVpnConnectionHealthDetailed(resourceGroupName, gatewayName, request, context);
     }
 
     public P2SVpnGatewayImpl withRegion(Region location) {

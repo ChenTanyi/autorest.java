@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.frontdoor.generated.implementation;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.FrontDoorInner;
@@ -19,6 +20,8 @@ import com.azure.resourcemanager.frontdoor.generated.models.HealthProbeSettingsM
 import com.azure.resourcemanager.frontdoor.generated.models.LoadBalancingSettingsModel;
 import com.azure.resourcemanager.frontdoor.generated.models.RoutingRule;
 import com.azure.resourcemanager.frontdoor.generated.models.RulesEngine;
+import com.azure.resourcemanager.frontdoor.generated.models.ValidateCustomDomainInput;
+import com.azure.resourcemanager.frontdoor.generated.models.ValidateCustomDomainOutput;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -243,6 +246,19 @@ public final class FrontDoorImpl implements FrontDoor, FrontDoor.Definition, Fro
                 .getByResourceGroupWithResponse(resourceGroupName, frontDoorName, context)
                 .getValue();
         return this;
+    }
+
+    public ValidateCustomDomainOutput validateCustomDomain(ValidateCustomDomainInput customDomainProperties) {
+        return serviceManager
+            .frontDoors()
+            .validateCustomDomain(resourceGroupName, frontDoorName, customDomainProperties);
+    }
+
+    public Response<ValidateCustomDomainOutput> validateCustomDomainWithResponse(
+        ValidateCustomDomainInput customDomainProperties, Context context) {
+        return serviceManager
+            .frontDoors()
+            .validateCustomDomainWithResponse(resourceGroupName, frontDoorName, customDomainProperties, context);
     }
 
     public FrontDoorImpl withRegion(Region location) {

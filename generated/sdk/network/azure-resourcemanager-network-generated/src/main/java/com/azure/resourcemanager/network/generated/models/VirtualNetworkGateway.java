@@ -4,10 +4,12 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkGatewayInner;
+import com.azure.resourcemanager.network.generated.fluent.models.VpnClientIPsecParametersInner;
 import java.util.List;
 import java.util.Map;
 
@@ -514,4 +516,355 @@ public interface VirtualNetworkGateway {
      * @return the refreshed resource.
      */
     VirtualNetworkGateway refresh(Context context);
+
+    /**
+     * Resets the primary of the virtual network gateway in the specified resource group.
+     *
+     * @param gatewayVip Virtual network gateway vip address supplied to the begin reset of the active-active feature
+     *     enabled gateway.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a common class for general resource information.
+     */
+    VirtualNetworkGateway reset(String gatewayVip);
+
+    /**
+     * Resets the primary of the virtual network gateway in the specified resource group.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a common class for general resource information.
+     */
+    VirtualNetworkGateway reset();
+
+    /**
+     * Resets the primary of the virtual network gateway in the specified resource group.
+     *
+     * @param gatewayVip Virtual network gateway vip address supplied to the begin reset of the active-active feature
+     *     enabled gateway.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a common class for general resource information.
+     */
+    VirtualNetworkGateway reset(String gatewayVip, Context context);
+
+    /**
+     * Resets the VPN client shared key of the virtual network gateway in the specified resource group.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void resetVpnClientSharedKey();
+
+    /**
+     * Resets the VPN client shared key of the virtual network gateway in the specified resource group.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void resetVpnClientSharedKey(Context context);
+
+    /**
+     * Generates VPN client package for P2S client of the virtual network gateway in the specified resource group.
+     *
+     * @param parameters Parameters supplied to the generate virtual network gateway VPN client package operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    String generatevpnclientpackage(VpnClientParameters parameters);
+
+    /**
+     * Generates VPN client package for P2S client of the virtual network gateway in the specified resource group.
+     *
+     * @param parameters Parameters supplied to the generate virtual network gateway VPN client package operation.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    String generatevpnclientpackage(VpnClientParameters parameters, Context context);
+
+    /**
+     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for
+     * IKEV2 and radius based authentication.
+     *
+     * @param parameters Parameters supplied to the generate virtual network gateway VPN client package operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    String generateVpnProfile(VpnClientParameters parameters);
+
+    /**
+     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for
+     * IKEV2 and radius based authentication.
+     *
+     * @param parameters Parameters supplied to the generate virtual network gateway VPN client package operation.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    String generateVpnProfile(VpnClientParameters parameters, Context context);
+
+    /**
+     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The
+     * profile needs to be generated first using generateVpnProfile.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group.
+     */
+    String getVpnProfilePackageUrl();
+
+    /**
+     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The
+     * profile needs to be generated first using generateVpnProfile.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group.
+     */
+    String getVpnProfilePackageUrl(Context context);
+
+    /**
+     * The GetBgpPeerStatus operation retrieves the status of all BGP peers.
+     *
+     * @param peer The IP address of the peer to retrieve the status of.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return response for list BGP peer status API service call.
+     */
+    BgpPeerStatusListResult getBgpPeerStatus(String peer);
+
+    /**
+     * The GetBgpPeerStatus operation retrieves the status of all BGP peers.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return response for list BGP peer status API service call.
+     */
+    BgpPeerStatusListResult getBgpPeerStatus();
+
+    /**
+     * The GetBgpPeerStatus operation retrieves the status of all BGP peers.
+     *
+     * @param peer The IP address of the peer to retrieve the status of.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return response for list BGP peer status API service call.
+     */
+    BgpPeerStatusListResult getBgpPeerStatus(String peer, Context context);
+
+    /**
+     * Gets a xml format representation for supported vpn devices.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a xml format representation for supported vpn devices.
+     */
+    String supportedVpnDevices();
+
+    /**
+     * Gets a xml format representation for supported vpn devices.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a xml format representation for supported vpn devices.
+     */
+    Response<String> supportedVpnDevicesWithResponse(Context context);
+
+    /**
+     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from
+     * BGP peers.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of virtual network gateway routes.
+     */
+    GatewayRouteListResult getLearnedRoutes();
+
+    /**
+     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from
+     * BGP peers.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of virtual network gateway routes.
+     */
+    GatewayRouteListResult getLearnedRoutes(Context context);
+
+    /**
+     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network
+     * gateway in the specified resource group through Network resource provider.
+     *
+     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network
+     *     Gateway P2S client operation through Network resource provider.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an IPSec parameters for a virtual network gateway P2S connection.
+     */
+    VpnClientIPsecParameters setVpnclientIpsecParameters(VpnClientIPsecParametersInner vpnclientIpsecParams);
+
+    /**
+     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network
+     * gateway in the specified resource group through Network resource provider.
+     *
+     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network
+     *     Gateway P2S client operation through Network resource provider.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an IPSec parameters for a virtual network gateway P2S connection.
+     */
+    VpnClientIPsecParameters setVpnclientIpsecParameters(
+        VpnClientIPsecParametersInner vpnclientIpsecParams, Context context);
+
+    /**
+     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client
+     * of virtual network gateway in the specified resource group through Network resource provider.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an IPSec parameters for a virtual network gateway P2S connection.
+     */
+    VpnClientIPsecParameters getVpnclientIpsecParameters();
+
+    /**
+     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client
+     * of virtual network gateway in the specified resource group through Network resource provider.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return an IPSec parameters for a virtual network gateway P2S connection.
+     */
+    VpnClientIPsecParameters getVpnclientIpsecParameters(Context context);
+
+    /**
+     * Starts packet capture on virtual network gateway in the specified resource group.
+     *
+     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    String startPacketCapture(VpnPacketCaptureStartParameters parameters);
+
+    /**
+     * Starts packet capture on virtual network gateway in the specified resource group.
+     *
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    String startPacketCapture();
+
+    /**
+     * Starts packet capture on virtual network gateway in the specified resource group.
+     *
+     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    String startPacketCapture(VpnPacketCaptureStartParameters parameters, Context context);
+
+    /**
+     * Stops packet capture on virtual network gateway in the specified resource group.
+     *
+     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    String stopPacketCapture(VpnPacketCaptureStopParameters parameters);
+
+    /**
+     * Stops packet capture on virtual network gateway in the specified resource group.
+     *
+     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    String stopPacketCapture(VpnPacketCaptureStopParameters parameters, Context context);
+
+    /**
+     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified
+     * resource group.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return vPN client connection health detail per P2S client connection of the virtual network gateway in the
+     *     specified resource group.
+     */
+    VpnClientConnectionHealthDetailListResult getVpnclientConnectionHealth();
+
+    /**
+     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified
+     * resource group.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return vPN client connection health detail per P2S client connection of the virtual network gateway in the
+     *     specified resource group.
+     */
+    VpnClientConnectionHealthDetailListResult getVpnclientConnectionHealth(Context context);
+
+    /**
+     * Disconnect vpn connections of virtual network gateway in the specified resource group.
+     *
+     * @param request The parameters are supplied to disconnect vpn connections.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void disconnectVirtualNetworkGatewayVpnConnections(P2SVpnConnectionRequest request);
+
+    /**
+     * Disconnect vpn connections of virtual network gateway in the specified resource group.
+     *
+     * @param request The parameters are supplied to disconnect vpn connections.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void disconnectVirtualNetworkGatewayVpnConnections(P2SVpnConnectionRequest request, Context context);
 }

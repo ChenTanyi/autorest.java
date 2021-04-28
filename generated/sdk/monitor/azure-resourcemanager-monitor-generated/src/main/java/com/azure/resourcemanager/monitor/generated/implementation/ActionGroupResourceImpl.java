@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.monitor.generated.implementation;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.monitor.generated.fluent.models.ActionGroupResourceInner;
@@ -14,6 +15,7 @@ import com.azure.resourcemanager.monitor.generated.models.AutomationRunbookRecei
 import com.azure.resourcemanager.monitor.generated.models.AzureAppPushReceiver;
 import com.azure.resourcemanager.monitor.generated.models.AzureFunctionReceiver;
 import com.azure.resourcemanager.monitor.generated.models.EmailReceiver;
+import com.azure.resourcemanager.monitor.generated.models.EnableRequest;
 import com.azure.resourcemanager.monitor.generated.models.ItsmReceiver;
 import com.azure.resourcemanager.monitor.generated.models.LogicAppReceiver;
 import com.azure.resourcemanager.monitor.generated.models.SmsReceiver;
@@ -265,6 +267,16 @@ public final class ActionGroupResourceImpl
                 .getByResourceGroupWithResponse(resourceGroupName, actionGroupName, context)
                 .getValue();
         return this;
+    }
+
+    public void enableReceiver(EnableRequest enableRequest) {
+        serviceManager.actionGroups().enableReceiver(resourceGroupName, actionGroupName, enableRequest);
+    }
+
+    public Response<Void> enableReceiverWithResponse(EnableRequest enableRequest, Context context) {
+        return serviceManager
+            .actionGroups()
+            .enableReceiverWithResponse(resourceGroupName, actionGroupName, enableRequest, context);
     }
 
     public ActionGroupResourceImpl withRegion(Region location) {

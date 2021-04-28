@@ -556,4 +556,106 @@ public interface VirtualNetworkGatewayConnection {
      * @return the refreshed resource.
      */
     VirtualNetworkGatewayConnection refresh(Context context);
+
+    /**
+     * Starts packet capture on virtual network gateway connection in the specified resource group.
+     *
+     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway
+     *     connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    String startPacketCapture(VpnPacketCaptureStartParameters parameters);
+
+    /**
+     * Starts packet capture on virtual network gateway connection in the specified resource group.
+     *
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    String startPacketCapture();
+
+    /**
+     * Starts packet capture on virtual network gateway connection in the specified resource group.
+     *
+     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway
+     *     connection.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    String startPacketCapture(VpnPacketCaptureStartParameters parameters, Context context);
+
+    /**
+     * Stops packet capture on virtual network gateway connection in the specified resource group.
+     *
+     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway
+     *     connection.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    String stopPacketCapture(VpnPacketCaptureStopParameters parameters);
+
+    /**
+     * Stops packet capture on virtual network gateway connection in the specified resource group.
+     *
+     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway
+     *     connection.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    String stopPacketCapture(VpnPacketCaptureStopParameters parameters, Context context);
+
+    /**
+     * Lists IKE Security Associations for the virtual network gateway connection in the specified resource group.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    String getIkeSas();
+
+    /**
+     * Lists IKE Security Associations for the virtual network gateway connection in the specified resource group.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    String getIkeSas(Context context);
+
+    /**
+     * Resets the virtual network gateway connection specified.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void resetConnection();
+
+    /**
+     * Resets the virtual network gateway connection specified.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void resetConnection(Context context);
 }

@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.compute.generated.models;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.SshPublicKeyResourceInner;
@@ -231,4 +232,26 @@ public interface SshPublicKeyResource {
      * @return the refreshed resource.
      */
     SshPublicKeyResource refresh(Context context);
+
+    /**
+     * Generates and returns a public/private key pair and populates the SSH public key resource with the public key.
+     * The length of the key will be 3072 bits. This operation can only be performed once per SSH public key resource.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return response from generation of an SSH key pair.
+     */
+    SshPublicKeyGenerateKeyPairResult generateKeyPair();
+
+    /**
+     * Generates and returns a public/private key pair and populates the SSH public key resource with the public key.
+     * The length of the key will be 3072 bits. This operation can only be performed once per SSH public key resource.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return response from generation of an SSH key pair.
+     */
+    Response<SshPublicKeyGenerateKeyPairResult> generateKeyPairWithResponse(Context context);
 }

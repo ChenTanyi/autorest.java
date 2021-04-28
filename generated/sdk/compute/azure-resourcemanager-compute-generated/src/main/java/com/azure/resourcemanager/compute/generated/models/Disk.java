@@ -895,4 +895,45 @@ public interface Disk {
      * @return the refreshed resource.
      */
     Disk refresh(Context context);
+
+    /**
+     * Grants access to a disk.
+     *
+     * @param grantAccessData Access data object supplied in the body of the get disk access operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a disk access SAS uri.
+     */
+    AccessUri grantAccess(GrantAccessData grantAccessData);
+
+    /**
+     * Grants access to a disk.
+     *
+     * @param grantAccessData Access data object supplied in the body of the get disk access operation.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a disk access SAS uri.
+     */
+    AccessUri grantAccess(GrantAccessData grantAccessData, Context context);
+
+    /**
+     * Revokes access to a disk.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void revokeAccess();
+
+    /**
+     * Revokes access to a disk.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void revokeAccess(Context context);
 }

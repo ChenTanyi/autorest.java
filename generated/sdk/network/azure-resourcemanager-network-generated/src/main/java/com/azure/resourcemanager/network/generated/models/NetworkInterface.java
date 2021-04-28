@@ -375,4 +375,44 @@ public interface NetworkInterface {
      * @return the refreshed resource.
      */
     NetworkInterface refresh(Context context);
+
+    /**
+     * Gets all route tables applied to a network interface.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return all route tables applied to a network interface.
+     */
+    EffectiveRouteListResult getEffectiveRouteTable();
+
+    /**
+     * Gets all route tables applied to a network interface.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return all route tables applied to a network interface.
+     */
+    EffectiveRouteListResult getEffectiveRouteTable(Context context);
+
+    /**
+     * Gets all network security groups applied to a network interface.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return all network security groups applied to a network interface.
+     */
+    EffectiveNetworkSecurityGroupListResult listEffectiveNetworkSecurityGroups();
+
+    /**
+     * Gets all network security groups applied to a network interface.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return all network security groups applied to a network interface.
+     */
+    EffectiveNetworkSecurityGroupListResult listEffectiveNetworkSecurityGroups(Context context);
 }

@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.compute.generated.implementation;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
@@ -12,14 +13,19 @@ import com.azure.resourcemanager.compute.generated.models.AdditionalCapabilities
 import com.azure.resourcemanager.compute.generated.models.AutomaticRepairsPolicy;
 import com.azure.resourcemanager.compute.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.compute.generated.models.OrchestrationMode;
+import com.azure.resourcemanager.compute.generated.models.OrchestrationServiceStateInput;
 import com.azure.resourcemanager.compute.generated.models.Plan;
 import com.azure.resourcemanager.compute.generated.models.ScaleInPolicy;
 import com.azure.resourcemanager.compute.generated.models.Sku;
 import com.azure.resourcemanager.compute.generated.models.UpgradePolicy;
+import com.azure.resourcemanager.compute.generated.models.VMScaleSetConvertToSinglePlacementGroupInput;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSet;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetIdentity;
+import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetReimageParameters;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetUpdate;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetUpdateVMProfile;
+import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMInstanceIDs;
+import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMInstanceRequiredIDs;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMProfile;
 import java.util.Collections;
 import java.util.List;
@@ -242,6 +248,162 @@ public final class VirtualMachineScaleSetImpl
                 .getByResourceGroupWithResponse(resourceGroupName, vmScaleSetName, context)
                 .getValue();
         return this;
+    }
+
+    public void deallocate(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
+        serviceManager.virtualMachineScaleSets().deallocate(resourceGroupName, vmScaleSetName, vmInstanceIDs);
+    }
+
+    public void deallocate() {
+        serviceManager.virtualMachineScaleSets().deallocate(resourceGroupName, vmScaleSetName);
+    }
+
+    public void deallocate(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context) {
+        serviceManager.virtualMachineScaleSets().deallocate(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
+    }
+
+    public void deleteInstances(VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs, Boolean forceDeletion) {
+        serviceManager
+            .virtualMachineScaleSets()
+            .deleteInstances(resourceGroupName, vmScaleSetName, vmInstanceIDs, forceDeletion);
+    }
+
+    public void deleteInstances(VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs) {
+        serviceManager.virtualMachineScaleSets().deleteInstances(resourceGroupName, vmScaleSetName, vmInstanceIDs);
+    }
+
+    public void deleteInstances(
+        VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs, Boolean forceDeletion, Context context) {
+        serviceManager
+            .virtualMachineScaleSets()
+            .deleteInstances(resourceGroupName, vmScaleSetName, vmInstanceIDs, forceDeletion, context);
+    }
+
+    public void powerOff(Boolean skipShutdown, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
+        serviceManager
+            .virtualMachineScaleSets()
+            .powerOff(resourceGroupName, vmScaleSetName, skipShutdown, vmInstanceIDs);
+    }
+
+    public void powerOff() {
+        serviceManager.virtualMachineScaleSets().powerOff(resourceGroupName, vmScaleSetName);
+    }
+
+    public void powerOff(Boolean skipShutdown, VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context) {
+        serviceManager
+            .virtualMachineScaleSets()
+            .powerOff(resourceGroupName, vmScaleSetName, skipShutdown, vmInstanceIDs, context);
+    }
+
+    public void restart(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
+        serviceManager.virtualMachineScaleSets().restart(resourceGroupName, vmScaleSetName, vmInstanceIDs);
+    }
+
+    public void restart() {
+        serviceManager.virtualMachineScaleSets().restart(resourceGroupName, vmScaleSetName);
+    }
+
+    public void restart(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context) {
+        serviceManager.virtualMachineScaleSets().restart(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
+    }
+
+    public void start(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
+        serviceManager.virtualMachineScaleSets().start(resourceGroupName, vmScaleSetName, vmInstanceIDs);
+    }
+
+    public void start() {
+        serviceManager.virtualMachineScaleSets().start(resourceGroupName, vmScaleSetName);
+    }
+
+    public void start(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context) {
+        serviceManager.virtualMachineScaleSets().start(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
+    }
+
+    public void redeploy(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
+        serviceManager.virtualMachineScaleSets().redeploy(resourceGroupName, vmScaleSetName, vmInstanceIDs);
+    }
+
+    public void redeploy() {
+        serviceManager.virtualMachineScaleSets().redeploy(resourceGroupName, vmScaleSetName);
+    }
+
+    public void redeploy(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context) {
+        serviceManager.virtualMachineScaleSets().redeploy(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
+    }
+
+    public void performMaintenance(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
+        serviceManager.virtualMachineScaleSets().performMaintenance(resourceGroupName, vmScaleSetName, vmInstanceIDs);
+    }
+
+    public void performMaintenance() {
+        serviceManager.virtualMachineScaleSets().performMaintenance(resourceGroupName, vmScaleSetName);
+    }
+
+    public void performMaintenance(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context) {
+        serviceManager
+            .virtualMachineScaleSets()
+            .performMaintenance(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
+    }
+
+    public void updateInstances(VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs) {
+        serviceManager.virtualMachineScaleSets().updateInstances(resourceGroupName, vmScaleSetName, vmInstanceIDs);
+    }
+
+    public void updateInstances(VirtualMachineScaleSetVMInstanceRequiredIDs vmInstanceIDs, Context context) {
+        serviceManager
+            .virtualMachineScaleSets()
+            .updateInstances(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
+    }
+
+    public void reimage(VirtualMachineScaleSetReimageParameters vmScaleSetReimageInput) {
+        serviceManager.virtualMachineScaleSets().reimage(resourceGroupName, vmScaleSetName, vmScaleSetReimageInput);
+    }
+
+    public void reimage() {
+        serviceManager.virtualMachineScaleSets().reimage(resourceGroupName, vmScaleSetName);
+    }
+
+    public void reimage(VirtualMachineScaleSetReimageParameters vmScaleSetReimageInput, Context context) {
+        serviceManager
+            .virtualMachineScaleSets()
+            .reimage(resourceGroupName, vmScaleSetName, vmScaleSetReimageInput, context);
+    }
+
+    public void reimageAll(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs) {
+        serviceManager.virtualMachineScaleSets().reimageAll(resourceGroupName, vmScaleSetName, vmInstanceIDs);
+    }
+
+    public void reimageAll() {
+        serviceManager.virtualMachineScaleSets().reimageAll(resourceGroupName, vmScaleSetName);
+    }
+
+    public void reimageAll(VirtualMachineScaleSetVMInstanceIDs vmInstanceIDs, Context context) {
+        serviceManager.virtualMachineScaleSets().reimageAll(resourceGroupName, vmScaleSetName, vmInstanceIDs, context);
+    }
+
+    public void convertToSinglePlacementGroup(VMScaleSetConvertToSinglePlacementGroupInput parameters) {
+        serviceManager
+            .virtualMachineScaleSets()
+            .convertToSinglePlacementGroup(resourceGroupName, vmScaleSetName, parameters);
+    }
+
+    public Response<Void> convertToSinglePlacementGroupWithResponse(
+        VMScaleSetConvertToSinglePlacementGroupInput parameters, Context context) {
+        return serviceManager
+            .virtualMachineScaleSets()
+            .convertToSinglePlacementGroupWithResponse(resourceGroupName, vmScaleSetName, parameters, context);
+    }
+
+    public void setOrchestrationServiceState(OrchestrationServiceStateInput parameters) {
+        serviceManager
+            .virtualMachineScaleSets()
+            .setOrchestrationServiceState(resourceGroupName, vmScaleSetName, parameters);
+    }
+
+    public void setOrchestrationServiceState(OrchestrationServiceStateInput parameters, Context context) {
+        serviceManager
+            .virtualMachineScaleSets()
+            .setOrchestrationServiceState(resourceGroupName, vmScaleSetName, parameters, context);
     }
 
     public VirtualMachineScaleSetImpl withRegion(Region location) {

@@ -9,6 +9,7 @@ import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualHubInner;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualHubRouteTableV2Inner;
+import com.azure.resourcemanager.network.generated.models.EffectiveRoutesParameters;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.RoutingState;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
@@ -253,6 +254,22 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
                 .getByResourceGroupWithResponse(resourceGroupName, virtualHubName, context)
                 .getValue();
         return this;
+    }
+
+    public void getEffectiveVirtualHubRoutes(EffectiveRoutesParameters effectiveRoutesParameters) {
+        serviceManager
+            .virtualHubs()
+            .getEffectiveVirtualHubRoutes(resourceGroupName, virtualHubName, effectiveRoutesParameters);
+    }
+
+    public void getEffectiveVirtualHubRoutes() {
+        serviceManager.virtualHubs().getEffectiveVirtualHubRoutes(resourceGroupName, virtualHubName);
+    }
+
+    public void getEffectiveVirtualHubRoutes(EffectiveRoutesParameters effectiveRoutesParameters, Context context) {
+        serviceManager
+            .virtualHubs()
+            .getEffectiveVirtualHubRoutes(resourceGroupName, virtualHubName, effectiveRoutesParameters, context);
     }
 
     public VirtualHubImpl withRegion(Region location) {

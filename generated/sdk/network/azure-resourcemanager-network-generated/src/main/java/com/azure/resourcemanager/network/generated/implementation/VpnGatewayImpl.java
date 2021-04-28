@@ -17,6 +17,8 @@ import com.azure.resourcemanager.network.generated.models.VpnConnection;
 import com.azure.resourcemanager.network.generated.models.VpnGateway;
 import com.azure.resourcemanager.network.generated.models.VpnGatewayIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.VpnGatewayNatRule;
+import com.azure.resourcemanager.network.generated.models.VpnGatewayPacketCaptureStartParameters;
+import com.azure.resourcemanager.network.generated.models.VpnGatewayPacketCaptureStopParameters;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -213,6 +215,38 @@ public final class VpnGatewayImpl implements VpnGateway, VpnGateway.Definition, 
                 .getByResourceGroupWithResponse(resourceGroupName, gatewayName, context)
                 .getValue();
         return this;
+    }
+
+    public VpnGateway reset() {
+        return serviceManager.vpnGateways().reset(resourceGroupName, gatewayName);
+    }
+
+    public VpnGateway reset(Context context) {
+        return serviceManager.vpnGateways().reset(resourceGroupName, gatewayName, context);
+    }
+
+    public String startPacketCapture(VpnGatewayPacketCaptureStartParameters parameters) {
+        return serviceManager.vpnGateways().startPacketCapture(resourceGroupName, gatewayName, parameters);
+    }
+
+    public String startPacketCapture() {
+        return serviceManager.vpnGateways().startPacketCapture(resourceGroupName, gatewayName);
+    }
+
+    public String startPacketCapture(VpnGatewayPacketCaptureStartParameters parameters, Context context) {
+        return serviceManager.vpnGateways().startPacketCapture(resourceGroupName, gatewayName, parameters, context);
+    }
+
+    public String stopPacketCapture(VpnGatewayPacketCaptureStopParameters parameters) {
+        return serviceManager.vpnGateways().stopPacketCapture(resourceGroupName, gatewayName, parameters);
+    }
+
+    public String stopPacketCapture() {
+        return serviceManager.vpnGateways().stopPacketCapture(resourceGroupName, gatewayName);
+    }
+
+    public String stopPacketCapture(VpnGatewayPacketCaptureStopParameters parameters, Context context) {
+        return serviceManager.vpnGateways().stopPacketCapture(resourceGroupName, gatewayName, parameters, context);
     }
 
     public VpnGatewayImpl withRegion(Region location) {

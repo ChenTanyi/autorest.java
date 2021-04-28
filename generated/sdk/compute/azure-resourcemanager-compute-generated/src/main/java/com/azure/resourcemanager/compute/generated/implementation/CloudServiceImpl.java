@@ -10,6 +10,7 @@ import com.azure.resourcemanager.compute.generated.fluent.models.CloudServiceInn
 import com.azure.resourcemanager.compute.generated.models.CloudService;
 import com.azure.resourcemanager.compute.generated.models.CloudServiceProperties;
 import com.azure.resourcemanager.compute.generated.models.CloudServiceUpdate;
+import com.azure.resourcemanager.compute.generated.models.RoleInstances;
 import java.util.Collections;
 import java.util.Map;
 
@@ -147,6 +148,70 @@ public final class CloudServiceImpl implements CloudService, CloudService.Defini
                 .getByResourceGroupWithResponse(resourceGroupName, cloudServiceName, context)
                 .getValue();
         return this;
+    }
+
+    public void start() {
+        serviceManager.cloudServices().start(resourceGroupName, cloudServiceName);
+    }
+
+    public void start(Context context) {
+        serviceManager.cloudServices().start(resourceGroupName, cloudServiceName, context);
+    }
+
+    public void powerOff() {
+        serviceManager.cloudServices().powerOff(resourceGroupName, cloudServiceName);
+    }
+
+    public void powerOff(Context context) {
+        serviceManager.cloudServices().powerOff(resourceGroupName, cloudServiceName, context);
+    }
+
+    public void restart(RoleInstances parameters) {
+        serviceManager.cloudServices().restart(resourceGroupName, cloudServiceName, parameters);
+    }
+
+    public void restart() {
+        serviceManager.cloudServices().restart(resourceGroupName, cloudServiceName);
+    }
+
+    public void restart(RoleInstances parameters, Context context) {
+        serviceManager.cloudServices().restart(resourceGroupName, cloudServiceName, parameters, context);
+    }
+
+    public void reimage(RoleInstances parameters) {
+        serviceManager.cloudServices().reimage(resourceGroupName, cloudServiceName, parameters);
+    }
+
+    public void reimage() {
+        serviceManager.cloudServices().reimage(resourceGroupName, cloudServiceName);
+    }
+
+    public void reimage(RoleInstances parameters, Context context) {
+        serviceManager.cloudServices().reimage(resourceGroupName, cloudServiceName, parameters, context);
+    }
+
+    public void rebuild(RoleInstances parameters) {
+        serviceManager.cloudServices().rebuild(resourceGroupName, cloudServiceName, parameters);
+    }
+
+    public void rebuild() {
+        serviceManager.cloudServices().rebuild(resourceGroupName, cloudServiceName);
+    }
+
+    public void rebuild(RoleInstances parameters, Context context) {
+        serviceManager.cloudServices().rebuild(resourceGroupName, cloudServiceName, parameters, context);
+    }
+
+    public void deleteInstances(RoleInstances parameters) {
+        serviceManager.cloudServices().deleteInstances(resourceGroupName, cloudServiceName, parameters);
+    }
+
+    public void deleteInstances() {
+        serviceManager.cloudServices().deleteInstances(resourceGroupName, cloudServiceName);
+    }
+
+    public void deleteInstances(RoleInstances parameters, Context context) {
+        serviceManager.cloudServices().deleteInstances(resourceGroupName, cloudServiceName, parameters, context);
     }
 
     public CloudServiceImpl withRegion(Region location) {

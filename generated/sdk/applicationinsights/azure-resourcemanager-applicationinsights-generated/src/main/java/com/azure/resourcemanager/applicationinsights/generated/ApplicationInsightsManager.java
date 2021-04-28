@@ -28,6 +28,7 @@ import com.azure.resourcemanager.applicationinsights.generated.implementation.Ap
 import com.azure.resourcemanager.applicationinsights.generated.implementation.ComponentAvailableFeaturesImpl;
 import com.azure.resourcemanager.applicationinsights.generated.implementation.ComponentCurrentBillingFeaturesImpl;
 import com.azure.resourcemanager.applicationinsights.generated.implementation.ComponentFeatureCapabilitiesImpl;
+import com.azure.resourcemanager.applicationinsights.generated.implementation.ComponentLinkedStorageAccountsOperationsImpl;
 import com.azure.resourcemanager.applicationinsights.generated.implementation.ComponentQuotaStatusImpl;
 import com.azure.resourcemanager.applicationinsights.generated.implementation.ComponentsImpl;
 import com.azure.resourcemanager.applicationinsights.generated.implementation.ExportConfigurationsImpl;
@@ -45,6 +46,7 @@ import com.azure.resourcemanager.applicationinsights.generated.models.ApiKeys;
 import com.azure.resourcemanager.applicationinsights.generated.models.ComponentAvailableFeatures;
 import com.azure.resourcemanager.applicationinsights.generated.models.ComponentCurrentBillingFeatures;
 import com.azure.resourcemanager.applicationinsights.generated.models.ComponentFeatureCapabilities;
+import com.azure.resourcemanager.applicationinsights.generated.models.ComponentLinkedStorageAccountsOperations;
 import com.azure.resourcemanager.applicationinsights.generated.models.ComponentQuotaStatus;
 import com.azure.resourcemanager.applicationinsights.generated.models.Components;
 import com.azure.resourcemanager.applicationinsights.generated.models.ExportConfigurations;
@@ -64,7 +66,7 @@ import java.util.Objects;
 
 /** Entry point to ApplicationInsightsManager. Composite Swagger for Application Insights Management Client. */
 public final class ApplicationInsightsManager {
-    private AnalyticsItems analyticsItems;
+    private Operations operations;
 
     private Annotations annotations;
 
@@ -82,8 +84,6 @@ public final class ApplicationInsightsManager {
 
     private ProactiveDetectionConfigurations proactiveDetectionConfigurations;
 
-    private Components components;
-
     private WorkItemConfigurations workItemConfigurations;
 
     private Favorites favorites;
@@ -92,11 +92,15 @@ public final class ApplicationInsightsManager {
 
     private WebTests webTests;
 
-    private MyWorkbooks myWorkbooks;
+    private AnalyticsItems analyticsItems;
 
     private Workbooks workbooks;
 
-    private Operations operations;
+    private MyWorkbooks myWorkbooks;
+
+    private Components components;
+
+    private ComponentLinkedStorageAccountsOperations componentLinkedStorageAccountsOperations;
 
     private final ApplicationInsightsManagementClient clientObject;
 
@@ -261,12 +265,12 @@ public final class ApplicationInsightsManager {
         }
     }
 
-    /** @return Resource collection API of AnalyticsItems. */
-    public AnalyticsItems analyticsItems() {
-        if (this.analyticsItems == null) {
-            this.analyticsItems = new AnalyticsItemsImpl(clientObject.getAnalyticsItems(), this);
+    /** @return Resource collection API of Operations. */
+    public Operations operations() {
+        if (this.operations == null) {
+            this.operations = new OperationsImpl(clientObject.getOperations(), this);
         }
-        return analyticsItems;
+        return operations;
     }
 
     /** @return Resource collection API of Annotations. */
@@ -337,14 +341,6 @@ public final class ApplicationInsightsManager {
         return proactiveDetectionConfigurations;
     }
 
-    /** @return Resource collection API of Components. */
-    public Components components() {
-        if (this.components == null) {
-            this.components = new ComponentsImpl(clientObject.getComponents(), this);
-        }
-        return components;
-    }
-
     /** @return Resource collection API of WorkItemConfigurations. */
     public WorkItemConfigurations workItemConfigurations() {
         if (this.workItemConfigurations == null) {
@@ -378,12 +374,12 @@ public final class ApplicationInsightsManager {
         return webTests;
     }
 
-    /** @return Resource collection API of MyWorkbooks. */
-    public MyWorkbooks myWorkbooks() {
-        if (this.myWorkbooks == null) {
-            this.myWorkbooks = new MyWorkbooksImpl(clientObject.getMyWorkbooks(), this);
+    /** @return Resource collection API of AnalyticsItems. */
+    public AnalyticsItems analyticsItems() {
+        if (this.analyticsItems == null) {
+            this.analyticsItems = new AnalyticsItemsImpl(clientObject.getAnalyticsItems(), this);
         }
-        return myWorkbooks;
+        return analyticsItems;
     }
 
     /** @return Resource collection API of Workbooks. */
@@ -394,12 +390,30 @@ public final class ApplicationInsightsManager {
         return workbooks;
     }
 
-    /** @return Resource collection API of Operations. */
-    public Operations operations() {
-        if (this.operations == null) {
-            this.operations = new OperationsImpl(clientObject.getOperations(), this);
+    /** @return Resource collection API of MyWorkbooks. */
+    public MyWorkbooks myWorkbooks() {
+        if (this.myWorkbooks == null) {
+            this.myWorkbooks = new MyWorkbooksImpl(clientObject.getMyWorkbooks(), this);
         }
-        return operations;
+        return myWorkbooks;
+    }
+
+    /** @return Resource collection API of Components. */
+    public Components components() {
+        if (this.components == null) {
+            this.components = new ComponentsImpl(clientObject.getComponents(), this);
+        }
+        return components;
+    }
+
+    /** @return Resource collection API of ComponentLinkedStorageAccountsOperations. */
+    public ComponentLinkedStorageAccountsOperations componentLinkedStorageAccountsOperations() {
+        if (this.componentLinkedStorageAccountsOperations == null) {
+            this.componentLinkedStorageAccountsOperations =
+                new ComponentLinkedStorageAccountsOperationsImpl(
+                    clientObject.getComponentLinkedStorageAccountsOperations(), this);
+        }
+        return componentLinkedStorageAccountsOperations;
     }
 
     /**

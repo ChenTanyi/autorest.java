@@ -13,12 +13,15 @@ import com.azure.resourcemanager.network.generated.models.ApplicationGateway;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayAuthenticationCertificate;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayAutoscaleConfiguration;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBackendAddressPool;
+import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBackendHealth;
+import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBackendHealthOnDemand;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBackendHttpSettings;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayCustomError;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayFrontendIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayFrontendPort;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayHttpListener;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayIpConfiguration;
+import com.azure.resourcemanager.network.generated.models.ApplicationGatewayOnDemandProbe;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayOperationalState;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayPrivateEndpointConnection;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayPrivateLinkConfiguration;
@@ -413,6 +416,56 @@ public final class ApplicationGatewayImpl
                 .getByResourceGroupWithResponse(resourceGroupName, applicationGatewayName, context)
                 .getValue();
         return this;
+    }
+
+    public void start() {
+        serviceManager.applicationGateways().start(resourceGroupName, applicationGatewayName);
+    }
+
+    public void start(Context context) {
+        serviceManager.applicationGateways().start(resourceGroupName, applicationGatewayName, context);
+    }
+
+    public void stop() {
+        serviceManager.applicationGateways().stop(resourceGroupName, applicationGatewayName);
+    }
+
+    public void stop(Context context) {
+        serviceManager.applicationGateways().stop(resourceGroupName, applicationGatewayName, context);
+    }
+
+    public ApplicationGatewayBackendHealth backendHealth(String expand) {
+        return serviceManager.applicationGateways().backendHealth(resourceGroupName, applicationGatewayName, expand);
+    }
+
+    public ApplicationGatewayBackendHealth backendHealth() {
+        return serviceManager.applicationGateways().backendHealth(resourceGroupName, applicationGatewayName);
+    }
+
+    public ApplicationGatewayBackendHealth backendHealth(String expand, Context context) {
+        return serviceManager
+            .applicationGateways()
+            .backendHealth(resourceGroupName, applicationGatewayName, expand, context);
+    }
+
+    public ApplicationGatewayBackendHealthOnDemand backendHealthOnDemand(
+        ApplicationGatewayOnDemandProbe probeRequest, String expand) {
+        return serviceManager
+            .applicationGateways()
+            .backendHealthOnDemand(resourceGroupName, applicationGatewayName, probeRequest, expand);
+    }
+
+    public ApplicationGatewayBackendHealthOnDemand backendHealthOnDemand(ApplicationGatewayOnDemandProbe probeRequest) {
+        return serviceManager
+            .applicationGateways()
+            .backendHealthOnDemand(resourceGroupName, applicationGatewayName, probeRequest);
+    }
+
+    public ApplicationGatewayBackendHealthOnDemand backendHealthOnDemand(
+        ApplicationGatewayOnDemandProbe probeRequest, String expand, Context context) {
+        return serviceManager
+            .applicationGateways()
+            .backendHealthOnDemand(resourceGroupName, applicationGatewayName, probeRequest, expand, context);
     }
 
     public ApplicationGatewayImpl withRegion(Region location) {

@@ -11,6 +11,7 @@ import com.azure.resourcemanager.network.generated.models.ConnectionMonitor;
 import com.azure.resourcemanager.network.generated.models.ConnectionMonitorDestination;
 import com.azure.resourcemanager.network.generated.models.ConnectionMonitorEndpoint;
 import com.azure.resourcemanager.network.generated.models.ConnectionMonitorOutput;
+import com.azure.resourcemanager.network.generated.models.ConnectionMonitorQueryResult;
 import com.azure.resourcemanager.network.generated.models.ConnectionMonitorResult;
 import com.azure.resourcemanager.network.generated.models.ConnectionMonitorSource;
 import com.azure.resourcemanager.network.generated.models.ConnectionMonitorTestConfiguration;
@@ -258,6 +259,34 @@ public final class ConnectionMonitorResultImpl
                 .getWithResponse(resourceGroupName, networkWatcherName, connectionMonitorName, context)
                 .getValue();
         return this;
+    }
+
+    public void stop() {
+        serviceManager.connectionMonitors().stop(resourceGroupName, networkWatcherName, connectionMonitorName);
+    }
+
+    public void stop(Context context) {
+        serviceManager.connectionMonitors().stop(resourceGroupName, networkWatcherName, connectionMonitorName, context);
+    }
+
+    public void start() {
+        serviceManager.connectionMonitors().start(resourceGroupName, networkWatcherName, connectionMonitorName);
+    }
+
+    public void start(Context context) {
+        serviceManager
+            .connectionMonitors()
+            .start(resourceGroupName, networkWatcherName, connectionMonitorName, context);
+    }
+
+    public ConnectionMonitorQueryResult query() {
+        return serviceManager.connectionMonitors().query(resourceGroupName, networkWatcherName, connectionMonitorName);
+    }
+
+    public ConnectionMonitorQueryResult query(Context context) {
+        return serviceManager
+            .connectionMonitors()
+            .query(resourceGroupName, networkWatcherName, connectionMonitorName, context);
     }
 
     public ConnectionMonitorResultImpl withRegion(Region location) {

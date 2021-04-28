@@ -326,4 +326,88 @@ public interface VpnGateway {
      * @return the refreshed resource.
      */
     VpnGateway refresh(Context context);
+
+    /**
+     * Resets the primary of the vpn gateway in the specified resource group.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return vpnGateway Resource.
+     */
+    VpnGateway reset();
+
+    /**
+     * Resets the primary of the vpn gateway in the specified resource group.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return vpnGateway Resource.
+     */
+    VpnGateway reset(Context context);
+
+    /**
+     * Starts packet capture on vpn gateway in the specified resource group.
+     *
+     * @param parameters Vpn gateway packet capture parameters supplied to start packet capture on vpn gateway.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    String startPacketCapture(VpnGatewayPacketCaptureStartParameters parameters);
+
+    /**
+     * Starts packet capture on vpn gateway in the specified resource group.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    String startPacketCapture();
+
+    /**
+     * Starts packet capture on vpn gateway in the specified resource group.
+     *
+     * @param parameters Vpn gateway packet capture parameters supplied to start packet capture on vpn gateway.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    String startPacketCapture(VpnGatewayPacketCaptureStartParameters parameters, Context context);
+
+    /**
+     * Stops packet capture on vpn gateway in the specified resource group.
+     *
+     * @param parameters Vpn gateway packet capture parameters supplied to stop packet capture on vpn gateway.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    String stopPacketCapture(VpnGatewayPacketCaptureStopParameters parameters);
+
+    /**
+     * Stops packet capture on vpn gateway in the specified resource group.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    String stopPacketCapture();
+
+    /**
+     * Stops packet capture on vpn gateway in the specified resource group.
+     *
+     * @param parameters Vpn gateway packet capture parameters supplied to stop packet capture on vpn gateway.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the response.
+     */
+    String stopPacketCapture(VpnGatewayPacketCaptureStopParameters parameters, Context context);
 }

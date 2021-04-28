@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.mediaservices.generated.implementation;
 
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.OperationInner;
+import com.azure.resourcemanager.mediaservices.generated.models.ActionType;
 import com.azure.resourcemanager.mediaservices.generated.models.Operation;
 import com.azure.resourcemanager.mediaservices.generated.models.OperationDisplay;
 import com.azure.resourcemanager.mediaservices.generated.models.Properties;
@@ -35,6 +36,14 @@ public final class OperationImpl implements Operation {
 
     public Properties properties() {
         return this.innerModel().properties();
+    }
+
+    public Boolean isDataAction() {
+        return this.innerModel().isDataAction();
+    }
+
+    public ActionType actionType() {
+        return this.innerModel().actionType();
     }
 
     public OperationInner innerModel() {

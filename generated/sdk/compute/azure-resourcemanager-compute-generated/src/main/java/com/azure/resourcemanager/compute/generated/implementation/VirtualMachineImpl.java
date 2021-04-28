@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.compute.generated.implementation;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
@@ -20,14 +21,23 @@ import com.azure.resourcemanager.compute.generated.models.InstanceViewTypes;
 import com.azure.resourcemanager.compute.generated.models.NetworkProfile;
 import com.azure.resourcemanager.compute.generated.models.OSProfile;
 import com.azure.resourcemanager.compute.generated.models.Plan;
+import com.azure.resourcemanager.compute.generated.models.RetrieveBootDiagnosticsDataResult;
+import com.azure.resourcemanager.compute.generated.models.RunCommandInput;
+import com.azure.resourcemanager.compute.generated.models.RunCommandResult;
 import com.azure.resourcemanager.compute.generated.models.SecurityProfile;
 import com.azure.resourcemanager.compute.generated.models.StorageProfile;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachine;
+import com.azure.resourcemanager.compute.generated.models.VirtualMachineAssessPatchesResult;
+import com.azure.resourcemanager.compute.generated.models.VirtualMachineCaptureParameters;
+import com.azure.resourcemanager.compute.generated.models.VirtualMachineCaptureResult;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineEvictionPolicyTypes;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineExtension;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineIdentity;
+import com.azure.resourcemanager.compute.generated.models.VirtualMachineInstallPatchesParameters;
+import com.azure.resourcemanager.compute.generated.models.VirtualMachineInstallPatchesResult;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineInstanceView;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachinePriorityTypes;
+import com.azure.resourcemanager.compute.generated.models.VirtualMachineReimageParameters;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -289,6 +299,147 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
                 .getByResourceGroupWithResponse(resourceGroupName, vmName, localExpand, context)
                 .getValue();
         return this;
+    }
+
+    public VirtualMachineCaptureResult capture(VirtualMachineCaptureParameters parameters) {
+        return serviceManager.virtualMachines().capture(resourceGroupName, vmName, parameters);
+    }
+
+    public VirtualMachineCaptureResult capture(VirtualMachineCaptureParameters parameters, Context context) {
+        return serviceManager.virtualMachines().capture(resourceGroupName, vmName, parameters, context);
+    }
+
+    public void convertToManagedDisks() {
+        serviceManager.virtualMachines().convertToManagedDisks(resourceGroupName, vmName);
+    }
+
+    public void convertToManagedDisks(Context context) {
+        serviceManager.virtualMachines().convertToManagedDisks(resourceGroupName, vmName, context);
+    }
+
+    public void deallocate() {
+        serviceManager.virtualMachines().deallocate(resourceGroupName, vmName);
+    }
+
+    public void deallocate(Context context) {
+        serviceManager.virtualMachines().deallocate(resourceGroupName, vmName, context);
+    }
+
+    public void generalize() {
+        serviceManager.virtualMachines().generalize(resourceGroupName, vmName);
+    }
+
+    public Response<Void> generalizeWithResponse(Context context) {
+        return serviceManager.virtualMachines().generalizeWithResponse(resourceGroupName, vmName, context);
+    }
+
+    public void powerOff(Boolean skipShutdown) {
+        serviceManager.virtualMachines().powerOff(resourceGroupName, vmName, skipShutdown);
+    }
+
+    public void powerOff() {
+        serviceManager.virtualMachines().powerOff(resourceGroupName, vmName);
+    }
+
+    public void powerOff(Boolean skipShutdown, Context context) {
+        serviceManager.virtualMachines().powerOff(resourceGroupName, vmName, skipShutdown, context);
+    }
+
+    public void reapply() {
+        serviceManager.virtualMachines().reapply(resourceGroupName, vmName);
+    }
+
+    public void reapply(Context context) {
+        serviceManager.virtualMachines().reapply(resourceGroupName, vmName, context);
+    }
+
+    public void restart() {
+        serviceManager.virtualMachines().restart(resourceGroupName, vmName);
+    }
+
+    public void restart(Context context) {
+        serviceManager.virtualMachines().restart(resourceGroupName, vmName, context);
+    }
+
+    public void start() {
+        serviceManager.virtualMachines().start(resourceGroupName, vmName);
+    }
+
+    public void start(Context context) {
+        serviceManager.virtualMachines().start(resourceGroupName, vmName, context);
+    }
+
+    public void redeploy() {
+        serviceManager.virtualMachines().redeploy(resourceGroupName, vmName);
+    }
+
+    public void redeploy(Context context) {
+        serviceManager.virtualMachines().redeploy(resourceGroupName, vmName, context);
+    }
+
+    public void reimage(VirtualMachineReimageParameters parameters) {
+        serviceManager.virtualMachines().reimage(resourceGroupName, vmName, parameters);
+    }
+
+    public void reimage() {
+        serviceManager.virtualMachines().reimage(resourceGroupName, vmName);
+    }
+
+    public void reimage(VirtualMachineReimageParameters parameters, Context context) {
+        serviceManager.virtualMachines().reimage(resourceGroupName, vmName, parameters, context);
+    }
+
+    public RetrieveBootDiagnosticsDataResult retrieveBootDiagnosticsData() {
+        return serviceManager.virtualMachines().retrieveBootDiagnosticsData(resourceGroupName, vmName);
+    }
+
+    public Response<RetrieveBootDiagnosticsDataResult> retrieveBootDiagnosticsDataWithResponse(
+        Integer sasUriExpirationTimeInMinutes, Context context) {
+        return serviceManager
+            .virtualMachines()
+            .retrieveBootDiagnosticsDataWithResponse(resourceGroupName, vmName, sasUriExpirationTimeInMinutes, context);
+    }
+
+    public void performMaintenance() {
+        serviceManager.virtualMachines().performMaintenance(resourceGroupName, vmName);
+    }
+
+    public void performMaintenance(Context context) {
+        serviceManager.virtualMachines().performMaintenance(resourceGroupName, vmName, context);
+    }
+
+    public void simulateEviction() {
+        serviceManager.virtualMachines().simulateEviction(resourceGroupName, vmName);
+    }
+
+    public Response<Void> simulateEvictionWithResponse(Context context) {
+        return serviceManager.virtualMachines().simulateEvictionWithResponse(resourceGroupName, vmName, context);
+    }
+
+    public VirtualMachineAssessPatchesResult assessPatches() {
+        return serviceManager.virtualMachines().assessPatches(resourceGroupName, vmName);
+    }
+
+    public VirtualMachineAssessPatchesResult assessPatches(Context context) {
+        return serviceManager.virtualMachines().assessPatches(resourceGroupName, vmName, context);
+    }
+
+    public VirtualMachineInstallPatchesResult installPatches(
+        VirtualMachineInstallPatchesParameters installPatchesInput) {
+        return serviceManager.virtualMachines().installPatches(resourceGroupName, vmName, installPatchesInput);
+    }
+
+    public VirtualMachineInstallPatchesResult installPatches(
+        VirtualMachineInstallPatchesParameters installPatchesInput, Context context) {
+        return serviceManager.virtualMachines().installPatches(resourceGroupName, vmName, installPatchesInput, context);
+    }
+
+    public RunCommandResult runCommand(RunCommandInput parameters) {
+        return serviceManager.virtualMachines().runCommand(resourceGroupName, vmName, parameters);
+    }
+
+    public RunCommandResult runCommand(RunCommandInput parameters, Context context) {
+        return serviceManager.virtualMachines().runCommand(resourceGroupName, vmName, parameters, context);
     }
 
     public VirtualMachineImpl withRegion(Region location) {
