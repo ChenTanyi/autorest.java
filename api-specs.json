@@ -1,7 +1,7 @@
 {
     "applicationinsights": {
         "source": "specification/applicationinsights/resource-manager/readme.md",
-        "tag": "package-2020-10-20",
+        "tag": "package-2020-04",
         "namespace": "com.azure.resourcemanager.applicationinsights.generated",
         "output": "sdk/applicationinsights/azure-resourcemanager-applicationinsights-generated"
     },
