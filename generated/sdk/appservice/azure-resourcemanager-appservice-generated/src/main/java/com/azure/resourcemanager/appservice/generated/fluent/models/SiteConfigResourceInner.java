@@ -151,12 +151,6 @@ public class SiteConfigResourceInner extends ProxyOnlyResource {
     private List<NameValuePair> appSettings;
 
     /*
-     * List of Azure Storage Accounts.
-     */
-    @JsonProperty(value = "properties.azureStorageAccounts")
-    private Map<String, AzureStorageInfoValue> azureStorageAccounts;
-
-    /*
      * Connection strings.
      */
     @JsonProperty(value = "properties.connectionStrings")
@@ -448,6 +442,18 @@ public class SiteConfigResourceInner extends ProxyOnlyResource {
      */
     @JsonProperty(value = "properties.minimumElasticInstanceCount")
     private Integer minimumElasticInstanceCount;
+
+    /*
+     * List of Azure Storage Accounts.
+     */
+    @JsonProperty(value = "properties.azureStorageAccounts")
+    private Map<String, AzureStorageInfoValue> azureStorageAccounts;
+
+    /*
+     * Property to allow or block all public traffic.
+     */
+    @JsonProperty(value = "properties.publicNetworkAccess")
+    private String publicNetworkAccess;
 
     /**
      * Get the numberOfWorkers property: Number of workers.
@@ -814,26 +820,6 @@ public class SiteConfigResourceInner extends ProxyOnlyResource {
      */
     public SiteConfigResourceInner withAppSettings(List<NameValuePair> appSettings) {
         this.appSettings = appSettings;
-        return this;
-    }
-
-    /**
-     * Get the azureStorageAccounts property: List of Azure Storage Accounts.
-     *
-     * @return the azureStorageAccounts value.
-     */
-    public Map<String, AzureStorageInfoValue> azureStorageAccounts() {
-        return this.azureStorageAccounts;
-    }
-
-    /**
-     * Set the azureStorageAccounts property: List of Azure Storage Accounts.
-     *
-     * @param azureStorageAccounts the azureStorageAccounts value to set.
-     * @return the SiteConfigResourceInner object itself.
-     */
-    public SiteConfigResourceInner withAzureStorageAccounts(Map<String, AzureStorageInfoValue> azureStorageAccounts) {
-        this.azureStorageAccounts = azureStorageAccounts;
         return this;
     }
 
@@ -1762,6 +1748,46 @@ public class SiteConfigResourceInner extends ProxyOnlyResource {
         return this;
     }
 
+    /**
+     * Get the azureStorageAccounts property: List of Azure Storage Accounts.
+     *
+     * @return the azureStorageAccounts value.
+     */
+    public Map<String, AzureStorageInfoValue> azureStorageAccounts() {
+        return this.azureStorageAccounts;
+    }
+
+    /**
+     * Set the azureStorageAccounts property: List of Azure Storage Accounts.
+     *
+     * @param azureStorageAccounts the azureStorageAccounts value to set.
+     * @return the SiteConfigResourceInner object itself.
+     */
+    public SiteConfigResourceInner withAzureStorageAccounts(Map<String, AzureStorageInfoValue> azureStorageAccounts) {
+        this.azureStorageAccounts = azureStorageAccounts;
+        return this;
+    }
+
+    /**
+     * Get the publicNetworkAccess property: Property to allow or block all public traffic.
+     *
+     * @return the publicNetworkAccess value.
+     */
+    public String publicNetworkAccess() {
+        return this.publicNetworkAccess;
+    }
+
+    /**
+     * Set the publicNetworkAccess property: Property to allow or block all public traffic.
+     *
+     * @param publicNetworkAccess the publicNetworkAccess value to set.
+     * @return the SiteConfigResourceInner object itself.
+     */
+    public SiteConfigResourceInner withPublicNetworkAccess(String publicNetworkAccess) {
+        this.publicNetworkAccess = publicNetworkAccess;
+        return this;
+    }
+
     /** {@inheritDoc} */
     @Override
     public SiteConfigResourceInner withKind(String kind) {
@@ -1779,16 +1805,6 @@ public class SiteConfigResourceInner extends ProxyOnlyResource {
         super.validate();
         if (appSettings() != null) {
             appSettings().forEach(e -> e.validate());
-        }
-        if (azureStorageAccounts() != null) {
-            azureStorageAccounts()
-                .values()
-                .forEach(
-                    e -> {
-                        if (e != null) {
-                            e.validate();
-                        }
-                    });
         }
         if (connectionStrings() != null) {
             connectionStrings().forEach(e -> e.validate());
@@ -1828,6 +1844,16 @@ public class SiteConfigResourceInner extends ProxyOnlyResource {
         }
         if (scmIpSecurityRestrictions() != null) {
             scmIpSecurityRestrictions().forEach(e -> e.validate());
+        }
+        if (azureStorageAccounts() != null) {
+            azureStorageAccounts()
+                .values()
+                .forEach(
+                    e -> {
+                        if (e != null) {
+                            e.validate();
+                        }
+                    });
         }
     }
 }

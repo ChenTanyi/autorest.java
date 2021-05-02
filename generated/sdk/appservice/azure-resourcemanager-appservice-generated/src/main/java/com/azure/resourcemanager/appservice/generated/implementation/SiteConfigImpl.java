@@ -124,15 +124,6 @@ public final class SiteConfigImpl implements SiteConfig {
         }
     }
 
-    public Map<String, AzureStorageInfoValue> azureStorageAccounts() {
-        Map<String, AzureStorageInfoValue> inner = this.innerModel().azureStorageAccounts();
-        if (inner != null) {
-            return Collections.unmodifiableMap(inner);
-        } else {
-            return Collections.emptyMap();
-        }
-    }
-
     public List<ConnStringInfo> connectionStrings() {
         List<ConnStringInfo> inner = this.innerModel().connectionStrings();
         if (inner != null) {
@@ -341,6 +332,19 @@ public final class SiteConfigImpl implements SiteConfig {
 
     public Integer minimumElasticInstanceCount() {
         return this.innerModel().minimumElasticInstanceCount();
+    }
+
+    public Map<String, AzureStorageInfoValue> azureStorageAccounts() {
+        Map<String, AzureStorageInfoValue> inner = this.innerModel().azureStorageAccounts();
+        if (inner != null) {
+            return Collections.unmodifiableMap(inner);
+        } else {
+            return Collections.emptyMap();
+        }
+    }
+
+    public String publicNetworkAccess() {
+        return this.innerModel().publicNetworkAccess();
     }
 
     public SiteConfigInner innerModel() {

@@ -46,6 +46,10 @@ public final class CertificateImpl implements Certificate, Certificate.Definitio
         }
     }
 
+    public String password() {
+        return this.innerModel().password();
+    }
+
     public String friendlyName() {
         return this.innerModel().friendlyName();
     }
@@ -85,10 +89,6 @@ public final class CertificateImpl implements Certificate, Certificate.Definitio
 
     public OffsetDateTime expirationDate() {
         return this.innerModel().expirationDate();
-    }
-
-    public String password() {
-        return this.innerModel().password();
     }
 
     public String thumbprint() {
@@ -260,6 +260,16 @@ public final class CertificateImpl implements Certificate, Certificate.Definitio
         return this;
     }
 
+    public CertificateImpl withPassword(String password) {
+        if (isInCreateMode()) {
+            this.innerModel().withPassword(password);
+            return this;
+        } else {
+            this.updateCertificateEnvelope.withPassword(password);
+            return this;
+        }
+    }
+
     public CertificateImpl withHostNames(List<String> hostNames) {
         if (isInCreateMode()) {
             this.innerModel().withHostNames(hostNames);
@@ -276,16 +286,6 @@ public final class CertificateImpl implements Certificate, Certificate.Definitio
             return this;
         } else {
             this.updateCertificateEnvelope.withPfxBlob(pfxBlob);
-            return this;
-        }
-    }
-
-    public CertificateImpl withPassword(String password) {
-        if (isInCreateMode()) {
-            this.innerModel().withPassword(password);
-            return this;
-        } else {
-            this.updateCertificateEnvelope.withPassword(password);
             return this;
         }
     }

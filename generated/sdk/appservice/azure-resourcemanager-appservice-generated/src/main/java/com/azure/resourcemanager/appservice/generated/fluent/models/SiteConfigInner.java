@@ -148,12 +148,6 @@ public final class SiteConfigInner {
     private List<NameValuePair> appSettings;
 
     /*
-     * List of Azure Storage Accounts.
-     */
-    @JsonProperty(value = "azureStorageAccounts")
-    private Map<String, AzureStorageInfoValue> azureStorageAccounts;
-
-    /*
      * Connection strings.
      */
     @JsonProperty(value = "connectionStrings")
@@ -445,6 +439,18 @@ public final class SiteConfigInner {
      */
     @JsonProperty(value = "minimumElasticInstanceCount")
     private Integer minimumElasticInstanceCount;
+
+    /*
+     * List of Azure Storage Accounts.
+     */
+    @JsonProperty(value = "azureStorageAccounts")
+    private Map<String, AzureStorageInfoValue> azureStorageAccounts;
+
+    /*
+     * Property to allow or block all public traffic.
+     */
+    @JsonProperty(value = "publicNetworkAccess")
+    private String publicNetworkAccess;
 
     /**
      * Get the numberOfWorkers property: Number of workers.
@@ -811,26 +817,6 @@ public final class SiteConfigInner {
      */
     public SiteConfigInner withAppSettings(List<NameValuePair> appSettings) {
         this.appSettings = appSettings;
-        return this;
-    }
-
-    /**
-     * Get the azureStorageAccounts property: List of Azure Storage Accounts.
-     *
-     * @return the azureStorageAccounts value.
-     */
-    public Map<String, AzureStorageInfoValue> azureStorageAccounts() {
-        return this.azureStorageAccounts;
-    }
-
-    /**
-     * Set the azureStorageAccounts property: List of Azure Storage Accounts.
-     *
-     * @param azureStorageAccounts the azureStorageAccounts value to set.
-     * @return the SiteConfigInner object itself.
-     */
-    public SiteConfigInner withAzureStorageAccounts(Map<String, AzureStorageInfoValue> azureStorageAccounts) {
-        this.azureStorageAccounts = azureStorageAccounts;
         return this;
     }
 
@@ -1758,6 +1744,46 @@ public final class SiteConfigInner {
     }
 
     /**
+     * Get the azureStorageAccounts property: List of Azure Storage Accounts.
+     *
+     * @return the azureStorageAccounts value.
+     */
+    public Map<String, AzureStorageInfoValue> azureStorageAccounts() {
+        return this.azureStorageAccounts;
+    }
+
+    /**
+     * Set the azureStorageAccounts property: List of Azure Storage Accounts.
+     *
+     * @param azureStorageAccounts the azureStorageAccounts value to set.
+     * @return the SiteConfigInner object itself.
+     */
+    public SiteConfigInner withAzureStorageAccounts(Map<String, AzureStorageInfoValue> azureStorageAccounts) {
+        this.azureStorageAccounts = azureStorageAccounts;
+        return this;
+    }
+
+    /**
+     * Get the publicNetworkAccess property: Property to allow or block all public traffic.
+     *
+     * @return the publicNetworkAccess value.
+     */
+    public String publicNetworkAccess() {
+        return this.publicNetworkAccess;
+    }
+
+    /**
+     * Set the publicNetworkAccess property: Property to allow or block all public traffic.
+     *
+     * @param publicNetworkAccess the publicNetworkAccess value to set.
+     * @return the SiteConfigInner object itself.
+     */
+    public SiteConfigInner withPublicNetworkAccess(String publicNetworkAccess) {
+        this.publicNetworkAccess = publicNetworkAccess;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -1765,16 +1791,6 @@ public final class SiteConfigInner {
     public void validate() {
         if (appSettings() != null) {
             appSettings().forEach(e -> e.validate());
-        }
-        if (azureStorageAccounts() != null) {
-            azureStorageAccounts()
-                .values()
-                .forEach(
-                    e -> {
-                        if (e != null) {
-                            e.validate();
-                        }
-                    });
         }
         if (connectionStrings() != null) {
             connectionStrings().forEach(e -> e.validate());
@@ -1814,6 +1830,16 @@ public final class SiteConfigInner {
         }
         if (scmIpSecurityRestrictions() != null) {
             scmIpSecurityRestrictions().forEach(e -> e.validate());
+        }
+        if (azureStorageAccounts() != null) {
+            azureStorageAccounts()
+                .values()
+                .forEach(
+                    e -> {
+                        if (e != null) {
+                            e.validate();
+                        }
+                    });
         }
     }
 }

@@ -55,15 +55,6 @@ public interface SiteAuthSettings {
     String runtimeVersion();
 
     /**
-     * Gets the configVersion property: The ConfigVersion of the Authentication / Authorization feature in use for the
-     * current app. The setting in this value can control the behavior of the control plane for Authentication /
-     * Authorization.
-     *
-     * @return the configVersion value.
-     */
-    String configVersion();
-
-    /**
      * Gets the unauthenticatedClientAction property: The action to take when an unauthenticated client attempts to
      * access the app.
      *
@@ -363,6 +354,15 @@ public interface SiteAuthSettings {
      * @return the authFilePath value.
      */
     String authFilePath();
+
+    /**
+     * Gets the configVersion property: The ConfigVersion of the Authentication / Authorization feature in use for the
+     * current app. The setting in this value can control the behavior of the control plane for Authentication /
+     * Authorization.
+     *
+     * @return the configVersion value.
+     */
+    String configVersion();
 
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.SiteAuthSettingsInner object.

@@ -2306,6 +2306,37 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public SwiftVirtualNetwork createOrUpdateSwiftVirtualNetworkConnectionWithCheck(
+        String resourceGroupName, String name, SwiftVirtualNetworkInner connectionEnvelope) {
+        SwiftVirtualNetworkInner inner =
+            this
+                .serviceClient()
+                .createOrUpdateSwiftVirtualNetworkConnectionWithCheck(resourceGroupName, name, connectionEnvelope);
+        if (inner != null) {
+            return new SwiftVirtualNetworkImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<SwiftVirtualNetwork> createOrUpdateSwiftVirtualNetworkConnectionWithCheckWithResponse(
+        String resourceGroupName, String name, SwiftVirtualNetworkInner connectionEnvelope, Context context) {
+        Response<SwiftVirtualNetworkInner> inner =
+            this
+                .serviceClient()
+                .createOrUpdateSwiftVirtualNetworkConnectionWithCheckWithResponse(
+                    resourceGroupName, name, connectionEnvelope, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new SwiftVirtualNetworkImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
     public void deleteSwiftVirtualNetwork(String resourceGroupName, String name) {
         this.serviceClient().deleteSwiftVirtualNetwork(resourceGroupName, name);
     }

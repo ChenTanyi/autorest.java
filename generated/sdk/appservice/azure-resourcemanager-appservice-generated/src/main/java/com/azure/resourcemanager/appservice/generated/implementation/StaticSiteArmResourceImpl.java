@@ -78,10 +78,6 @@ public final class StaticSiteArmResourceImpl
         return this.innerModel().branch();
     }
 
-    public String provider() {
-        return this.innerModel().provider();
-    }
-
     public List<String> customDomains() {
         List<String> inner = this.innerModel().customDomains();
         if (inner != null) {
@@ -99,10 +95,6 @@ public final class StaticSiteArmResourceImpl
         return this.innerModel().buildProperties();
     }
 
-    public StaticSiteTemplateOptions templateProperties() {
-        return this.innerModel().templateProperties();
-    }
-
     public List<ResponseMessageEnvelopeRemotePrivateEndpointConnection> privateEndpointConnections() {
         List<ResponseMessageEnvelopeRemotePrivateEndpointConnection> inner =
             this.innerModel().privateEndpointConnections();
@@ -111,6 +103,18 @@ public final class StaticSiteArmResourceImpl
         } else {
             return Collections.emptyList();
         }
+    }
+
+    public StagingEnvironmentPolicy stagingEnvironmentPolicy() {
+        return this.innerModel().stagingEnvironmentPolicy();
+    }
+
+    public Boolean allowConfigFileUpdates() {
+        return this.innerModel().allowConfigFileUpdates();
+    }
+
+    public StaticSiteTemplateOptions templateProperties() {
+        return this.innerModel().templateProperties();
     }
 
     public String contentDistributionEndpoint() {
@@ -130,12 +134,8 @@ public final class StaticSiteArmResourceImpl
         }
     }
 
-    public StagingEnvironmentPolicy stagingEnvironmentPolicy() {
-        return this.innerModel().stagingEnvironmentPolicy();
-    }
-
-    public Boolean allowConfigFileUpdates() {
-        return this.innerModel().allowConfigFileUpdates();
+    public String provider() {
+        return this.innerModel().provider();
     }
 
     public String kind() {
@@ -394,16 +394,6 @@ public final class StaticSiteArmResourceImpl
         }
     }
 
-    public StaticSiteArmResourceImpl withTemplateProperties(StaticSiteTemplateOptions templateProperties) {
-        if (isInCreateMode()) {
-            this.innerModel().withTemplateProperties(templateProperties);
-            return this;
-        } else {
-            this.updateStaticSiteEnvelope.withTemplateProperties(templateProperties);
-            return this;
-        }
-    }
-
     public StaticSiteArmResourceImpl withStagingEnvironmentPolicy(StagingEnvironmentPolicy stagingEnvironmentPolicy) {
         if (isInCreateMode()) {
             this.innerModel().withStagingEnvironmentPolicy(stagingEnvironmentPolicy);
@@ -420,6 +410,16 @@ public final class StaticSiteArmResourceImpl
             return this;
         } else {
             this.updateStaticSiteEnvelope.withAllowConfigFileUpdates(allowConfigFileUpdates);
+            return this;
+        }
+    }
+
+    public StaticSiteArmResourceImpl withTemplateProperties(StaticSiteTemplateOptions templateProperties) {
+        if (isInCreateMode()) {
+            this.innerModel().withTemplateProperties(templateProperties);
+            return this;
+        } else {
+            this.updateStaticSiteEnvelope.withTemplateProperties(templateProperties);
             return this;
         }
     }

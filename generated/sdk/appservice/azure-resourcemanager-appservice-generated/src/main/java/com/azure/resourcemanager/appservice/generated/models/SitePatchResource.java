@@ -310,13 +310,6 @@ public interface SitePatchResource {
     SlotSwapStatus slotSwapStatus();
 
     /**
-     * Gets the keyVaultReferenceIdentity property: Identity to use for Key Vault Reference authentication.
-     *
-     * @return the keyVaultReferenceIdentity value.
-     */
-    String keyVaultReferenceIdentity();
-
-    /**
      * Gets the httpsOnly property: HttpsOnly: configures a web site to accept only https requests. Issues redirect for
      * http requests.
      *
@@ -344,6 +337,22 @@ public interface SitePatchResource {
      * @return the storageAccountRequired value.
      */
     Boolean storageAccountRequired();
+
+    /**
+     * Gets the keyVaultReferenceIdentity property: Identity to use for Key Vault Reference authentication.
+     *
+     * @return the keyVaultReferenceIdentity value.
+     */
+    String keyVaultReferenceIdentity();
+
+    /**
+     * Gets the virtualNetworkSubnetId property: Azure Resource Manager ID of the Virtual network and subnet to be
+     * joined by Regional VNET Integration. This must be of the form
+     * /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
+     *
+     * @return the virtualNetworkSubnetId value.
+     */
+    String virtualNetworkSubnetId();
 
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.SitePatchResourceInner object.

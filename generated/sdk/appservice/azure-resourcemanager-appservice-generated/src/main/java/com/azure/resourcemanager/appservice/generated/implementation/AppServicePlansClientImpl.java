@@ -309,11 +309,11 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
             @HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
             @PathParam("name") String name,
+            @PathParam("subscriptionId") String subscriptionId,
+            @QueryParam("api-version") String apiVersion,
             @QueryParam("$skipToken") String skipToken,
             @QueryParam(value = "$filter", encoded = true) String filter,
             @QueryParam("$top") String top,
-            @PathParam("subscriptionId") String subscriptionId,
-            @QueryParam("api-version") String apiVersion,
             @HeaderParam("Accept") String accept,
             Context context);
 
@@ -342,9 +342,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
             @HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
             @PathParam("name") String name,
-            @QueryParam(value = "$filter", encoded = true) String filter,
             @PathParam("subscriptionId") String subscriptionId,
             @QueryParam("api-version") String apiVersion,
+            @QueryParam(value = "$filter", encoded = true) String filter,
             @HeaderParam("Accept") String accept,
             Context context);
 
@@ -3069,11 +3069,11 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
                             this.client.getEndpoint(),
                             resourceGroupName,
                             name,
+                            this.client.getSubscriptionId(),
+                            this.client.getApiVersion(),
                             skipToken,
                             filter,
                             top,
-                            this.client.getSubscriptionId(),
-                            this.client.getApiVersion(),
                             accept,
                             context))
             .<PagedResponse<SiteInner>>map(
@@ -3133,11 +3133,11 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
                 this.client.getEndpoint(),
                 resourceGroupName,
                 name,
+                this.client.getSubscriptionId(),
+                this.client.getApiVersion(),
                 skipToken,
                 filter,
                 top,
-                this.client.getSubscriptionId(),
-                this.client.getApiVersion(),
                 accept,
                 context)
             .map(
@@ -3448,9 +3448,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
                             this.client.getEndpoint(),
                             resourceGroupName,
                             name,
-                            filter,
                             this.client.getSubscriptionId(),
                             this.client.getApiVersion(),
+                            filter,
                             accept,
                             context))
             .<PagedResponse<CsmUsageQuotaInner>>map(
@@ -3507,9 +3507,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
                 this.client.getEndpoint(),
                 resourceGroupName,
                 name,
-                filter,
                 this.client.getSubscriptionId(),
                 this.client.getApiVersion(),
+                filter,
                 accept,
                 context)
             .map(

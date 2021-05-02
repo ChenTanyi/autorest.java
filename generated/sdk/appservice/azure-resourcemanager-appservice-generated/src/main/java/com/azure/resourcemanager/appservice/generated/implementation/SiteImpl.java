@@ -242,10 +242,6 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         return this.innerModel().slotSwapStatus();
     }
 
-    public String keyVaultReferenceIdentity() {
-        return this.innerModel().keyVaultReferenceIdentity();
-    }
-
     public Boolean httpsOnly() {
         return this.innerModel().httpsOnly();
     }
@@ -260,6 +256,14 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
 
     public Boolean storageAccountRequired() {
         return this.innerModel().storageAccountRequired();
+    }
+
+    public String keyVaultReferenceIdentity() {
+        return this.innerModel().keyVaultReferenceIdentity();
+    }
+
+    public String virtualNetworkSubnetId() {
+        return this.innerModel().virtualNetworkSubnetId();
     }
 
     public String kind() {
@@ -752,16 +756,6 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         return this;
     }
 
-    public SiteImpl withKeyVaultReferenceIdentity(String keyVaultReferenceIdentity) {
-        if (isInCreateMode()) {
-            this.innerModel().withKeyVaultReferenceIdentity(keyVaultReferenceIdentity);
-            return this;
-        } else {
-            this.updateSiteEnvelope.withKeyVaultReferenceIdentity(keyVaultReferenceIdentity);
-            return this;
-        }
-    }
-
     public SiteImpl withHttpsOnly(Boolean httpsOnly) {
         if (isInCreateMode()) {
             this.innerModel().withHttpsOnly(httpsOnly);
@@ -788,6 +782,26 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
             return this;
         } else {
             this.updateSiteEnvelope.withStorageAccountRequired(storageAccountRequired);
+            return this;
+        }
+    }
+
+    public SiteImpl withKeyVaultReferenceIdentity(String keyVaultReferenceIdentity) {
+        if (isInCreateMode()) {
+            this.innerModel().withKeyVaultReferenceIdentity(keyVaultReferenceIdentity);
+            return this;
+        } else {
+            this.updateSiteEnvelope.withKeyVaultReferenceIdentity(keyVaultReferenceIdentity);
+            return this;
+        }
+    }
+
+    public SiteImpl withVirtualNetworkSubnetId(String virtualNetworkSubnetId) {
+        if (isInCreateMode()) {
+            this.innerModel().withVirtualNetworkSubnetId(virtualNetworkSubnetId);
+            return this;
+        } else {
+            this.updateSiteEnvelope.withVirtualNetworkSubnetId(virtualNetworkSubnetId);
             return this;
         }
     }

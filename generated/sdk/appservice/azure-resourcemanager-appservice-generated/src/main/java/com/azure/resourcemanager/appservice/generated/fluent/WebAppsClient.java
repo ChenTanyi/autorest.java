@@ -923,7 +923,7 @@ public interface WebAppsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return configuration settings for the Azure App Service Authentication / Authorization V2 feature.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     SiteAuthSettingsV2Inner updateAuthSettingsV2(
@@ -940,7 +940,7 @@ public interface WebAppsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return configuration settings for the Azure App Service Authentication / Authorization V2 feature.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<SiteAuthSettingsV2Inner> updateAuthSettingsV2WithResponse(
@@ -955,7 +955,7 @@ public interface WebAppsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return configuration settings for the Azure App Service Authentication / Authorization V2 feature.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     SiteAuthSettingsV2Inner getAuthSettingsV2(String resourceGroupName, String name);
@@ -970,7 +970,7 @@ public interface WebAppsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return configuration settings for the Azure App Service Authentication / Authorization V2 feature.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<SiteAuthSettingsV2Inner> getAuthSettingsV2WithResponse(
@@ -4258,6 +4258,43 @@ public interface WebAppsClient {
         String resourceGroupName, String name, Context context);
 
     /**
+     * Description for Integrates this Web App with a Virtual Network. This requires that 1) "swiftSupported" is true
+     * when doing a GET against this resource, and 2) that the target Subnet has already been delegated, and is not in
+     * use by another App Service Plan other than the one this App is in.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return swift Virtual Network Contract.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    SwiftVirtualNetworkInner createOrUpdateSwiftVirtualNetworkConnectionWithCheck(
+        String resourceGroupName, String name, SwiftVirtualNetworkInner connectionEnvelope);
+
+    /**
+     * Description for Integrates this Web App with a Virtual Network. This requires that 1) "swiftSupported" is true
+     * when doing a GET against this resource, and 2) that the target Subnet has already been delegated, and is not in
+     * use by another App Service Plan other than the one this App is in.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param connectionEnvelope Properties of the Virtual Network connection. See example.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return swift Virtual Network Contract.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    Response<SwiftVirtualNetworkInner> createOrUpdateSwiftVirtualNetworkConnectionWithCheckWithResponse(
+        String resourceGroupName, String name, SwiftVirtualNetworkInner connectionEnvelope, Context context);
+
+    /**
      * Description for Deletes a Swift Virtual Network connection from an app (or deployment slot).
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -6907,7 +6944,7 @@ public interface WebAppsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return configuration settings for the Azure App Service Authentication / Authorization V2 feature.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     SiteAuthSettingsV2Inner updateAuthSettingsV2Slot(
@@ -6925,7 +6962,7 @@ public interface WebAppsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return configuration settings for the Azure App Service Authentication / Authorization V2 feature.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<SiteAuthSettingsV2Inner> updateAuthSettingsV2SlotWithResponse(
@@ -6946,7 +6983,7 @@ public interface WebAppsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return configuration settings for the Azure App Service Authentication / Authorization V2 feature.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     SiteAuthSettingsV2Inner getAuthSettingsV2Slot(String resourceGroupName, String name, String slot);
@@ -6963,7 +7000,7 @@ public interface WebAppsClient {
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      *     request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response.
+     * @return configuration settings for the Azure App Service Authentication / Authorization V2 feature.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<SiteAuthSettingsV2Inner> getAuthSettingsV2SlotWithResponse(

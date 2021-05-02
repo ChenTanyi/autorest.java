@@ -327,13 +327,6 @@ public interface Site {
     SlotSwapStatus slotSwapStatus();
 
     /**
-     * Gets the keyVaultReferenceIdentity property: Identity to use for Key Vault Reference authentication.
-     *
-     * @return the keyVaultReferenceIdentity value.
-     */
-    String keyVaultReferenceIdentity();
-
-    /**
      * Gets the httpsOnly property: HttpsOnly: configures a web site to accept only https requests. Issues redirect for
      * http requests.
      *
@@ -361,6 +354,22 @@ public interface Site {
      * @return the storageAccountRequired value.
      */
     Boolean storageAccountRequired();
+
+    /**
+     * Gets the keyVaultReferenceIdentity property: Identity to use for Key Vault Reference authentication.
+     *
+     * @return the keyVaultReferenceIdentity value.
+     */
+    String keyVaultReferenceIdentity();
+
+    /**
+     * Gets the virtualNetworkSubnetId property: Azure Resource Manager ID of the Virtual network and subnet to be
+     * joined by Regional VNET Integration. This must be of the form
+     * /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
+     *
+     * @return the virtualNetworkSubnetId value.
+     */
+    String virtualNetworkSubnetId();
 
     /**
      * Gets the kind property: Kind of resource.
@@ -455,10 +464,11 @@ public interface Site {
                 DefinitionStages.WithContainerSize,
                 DefinitionStages.WithDailyMemoryTimeQuota,
                 DefinitionStages.WithCloningInfo,
-                DefinitionStages.WithKeyVaultReferenceIdentity,
                 DefinitionStages.WithHttpsOnly,
                 DefinitionStages.WithRedundancyMode,
                 DefinitionStages.WithStorageAccountRequired,
+                DefinitionStages.WithKeyVaultReferenceIdentity,
+                DefinitionStages.WithVirtualNetworkSubnetId,
                 DefinitionStages.WithKind {
             /**
              * Executes the create request.
@@ -709,17 +719,6 @@ public interface Site {
              */
             WithCreate withCloningInfo(CloningInfo cloningInfo);
         }
-        /** The stage of the Site definition allowing to specify keyVaultReferenceIdentity. */
-        interface WithKeyVaultReferenceIdentity {
-            /**
-             * Specifies the keyVaultReferenceIdentity property: Identity to use for Key Vault Reference
-             * authentication..
-             *
-             * @param keyVaultReferenceIdentity Identity to use for Key Vault Reference authentication.
-             * @return the next definition stage.
-             */
-            WithCreate withKeyVaultReferenceIdentity(String keyVaultReferenceIdentity);
-        }
         /** The stage of the Site definition allowing to specify httpsOnly. */
         interface WithHttpsOnly {
             /**
@@ -751,6 +750,31 @@ public interface Site {
              * @return the next definition stage.
              */
             WithCreate withStorageAccountRequired(Boolean storageAccountRequired);
+        }
+        /** The stage of the Site definition allowing to specify keyVaultReferenceIdentity. */
+        interface WithKeyVaultReferenceIdentity {
+            /**
+             * Specifies the keyVaultReferenceIdentity property: Identity to use for Key Vault Reference
+             * authentication..
+             *
+             * @param keyVaultReferenceIdentity Identity to use for Key Vault Reference authentication.
+             * @return the next definition stage.
+             */
+            WithCreate withKeyVaultReferenceIdentity(String keyVaultReferenceIdentity);
+        }
+        /** The stage of the Site definition allowing to specify virtualNetworkSubnetId. */
+        interface WithVirtualNetworkSubnetId {
+            /**
+             * Specifies the virtualNetworkSubnetId property: Azure Resource Manager ID of the Virtual network and
+             * subnet to be joined by Regional VNET Integration. This must be of the form
+             * /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
+             *
+             * @param virtualNetworkSubnetId Azure Resource Manager ID of the Virtual network and subnet to be joined by
+             *     Regional VNET Integration. This must be of the form
+             *     /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
+             * @return the next definition stage.
+             */
+            WithCreate withVirtualNetworkSubnetId(String virtualNetworkSubnetId);
         }
         /** The stage of the Site definition allowing to specify kind. */
         interface WithKind {
@@ -787,10 +811,11 @@ public interface Site {
             UpdateStages.WithCustomDomainVerificationId,
             UpdateStages.WithContainerSize,
             UpdateStages.WithDailyMemoryTimeQuota,
-            UpdateStages.WithKeyVaultReferenceIdentity,
             UpdateStages.WithHttpsOnly,
             UpdateStages.WithRedundancyMode,
-            UpdateStages.WithStorageAccountRequired {
+            UpdateStages.WithStorageAccountRequired,
+            UpdateStages.WithKeyVaultReferenceIdentity,
+            UpdateStages.WithVirtualNetworkSubnetId {
         /**
          * Executes the update request.
          *
@@ -990,17 +1015,6 @@ public interface Site {
              */
             Update withDailyMemoryTimeQuota(Integer dailyMemoryTimeQuota);
         }
-        /** The stage of the Site update allowing to specify keyVaultReferenceIdentity. */
-        interface WithKeyVaultReferenceIdentity {
-            /**
-             * Specifies the keyVaultReferenceIdentity property: Identity to use for Key Vault Reference
-             * authentication..
-             *
-             * @param keyVaultReferenceIdentity Identity to use for Key Vault Reference authentication.
-             * @return the next definition stage.
-             */
-            Update withKeyVaultReferenceIdentity(String keyVaultReferenceIdentity);
-        }
         /** The stage of the Site update allowing to specify httpsOnly. */
         interface WithHttpsOnly {
             /**
@@ -1032,6 +1046,31 @@ public interface Site {
              * @return the next definition stage.
              */
             Update withStorageAccountRequired(Boolean storageAccountRequired);
+        }
+        /** The stage of the Site update allowing to specify keyVaultReferenceIdentity. */
+        interface WithKeyVaultReferenceIdentity {
+            /**
+             * Specifies the keyVaultReferenceIdentity property: Identity to use for Key Vault Reference
+             * authentication..
+             *
+             * @param keyVaultReferenceIdentity Identity to use for Key Vault Reference authentication.
+             * @return the next definition stage.
+             */
+            Update withKeyVaultReferenceIdentity(String keyVaultReferenceIdentity);
+        }
+        /** The stage of the Site update allowing to specify virtualNetworkSubnetId. */
+        interface WithVirtualNetworkSubnetId {
+            /**
+             * Specifies the virtualNetworkSubnetId property: Azure Resource Manager ID of the Virtual network and
+             * subnet to be joined by Regional VNET Integration. This must be of the form
+             * /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
+             *
+             * @param virtualNetworkSubnetId Azure Resource Manager ID of the Virtual network and subnet to be joined by
+             *     Regional VNET Integration. This must be of the form
+             *     /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
+             * @return the next definition stage.
+             */
+            Update withVirtualNetworkSubnetId(String virtualNetworkSubnetId);
         }
     }
     /**

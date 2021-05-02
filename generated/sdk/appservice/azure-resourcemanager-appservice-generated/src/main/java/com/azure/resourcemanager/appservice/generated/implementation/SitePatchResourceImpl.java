@@ -219,10 +219,6 @@ public final class SitePatchResourceImpl implements SitePatchResource {
         return this.innerModel().slotSwapStatus();
     }
 
-    public String keyVaultReferenceIdentity() {
-        return this.innerModel().keyVaultReferenceIdentity();
-    }
-
     public Boolean httpsOnly() {
         return this.innerModel().httpsOnly();
     }
@@ -237,6 +233,14 @@ public final class SitePatchResourceImpl implements SitePatchResource {
 
     public Boolean storageAccountRequired() {
         return this.innerModel().storageAccountRequired();
+    }
+
+    public String keyVaultReferenceIdentity() {
+        return this.innerModel().keyVaultReferenceIdentity();
+    }
+
+    public String virtualNetworkSubnetId() {
+        return this.innerModel().virtualNetworkSubnetId();
     }
 
     public SitePatchResourceInner innerModel() {

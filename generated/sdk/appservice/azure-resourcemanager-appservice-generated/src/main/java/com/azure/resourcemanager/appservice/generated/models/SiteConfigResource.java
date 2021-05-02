@@ -170,13 +170,6 @@ public interface SiteConfigResource {
     List<NameValuePair> appSettings();
 
     /**
-     * Gets the azureStorageAccounts property: List of Azure Storage Accounts.
-     *
-     * @return the azureStorageAccounts value.
-     */
-    Map<String, AzureStorageInfoValue> azureStorageAccounts();
-
-    /**
      * Gets the connectionStrings property: Connection strings.
      *
      * @return the connectionStrings value.
@@ -507,6 +500,20 @@ public interface SiteConfigResource {
      * @return the minimumElasticInstanceCount value.
      */
     Integer minimumElasticInstanceCount();
+
+    /**
+     * Gets the azureStorageAccounts property: List of Azure Storage Accounts.
+     *
+     * @return the azureStorageAccounts value.
+     */
+    Map<String, AzureStorageInfoValue> azureStorageAccounts();
+
+    /**
+     * Gets the publicNetworkAccess property: Property to allow or block all public traffic.
+     *
+     * @return the publicNetworkAccess value.
+     */
+    String publicNetworkAccess();
 
     /**
      * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigResourceInner object.

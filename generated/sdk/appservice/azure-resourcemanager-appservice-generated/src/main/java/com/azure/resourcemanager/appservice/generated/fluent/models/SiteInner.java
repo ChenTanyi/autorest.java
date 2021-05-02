@@ -275,12 +275,6 @@ public class SiteInner extends Resource {
     private SlotSwapStatus slotSwapStatus;
 
     /*
-     * Identity to use for Key Vault Reference authentication.
-     */
-    @JsonProperty(value = "properties.keyVaultReferenceIdentity")
-    private String keyVaultReferenceIdentity;
-
-    /*
      * HttpsOnly: configures a web site to accept only https requests. Issues
      * redirect for
      * http requests
@@ -305,6 +299,21 @@ public class SiteInner extends Resource {
      */
     @JsonProperty(value = "properties.storageAccountRequired")
     private Boolean storageAccountRequired;
+
+    /*
+     * Identity to use for Key Vault Reference authentication.
+     */
+    @JsonProperty(value = "properties.keyVaultReferenceIdentity")
+    private String keyVaultReferenceIdentity;
+
+    /*
+     * Azure Resource Manager ID of the Virtual network and subnet to be joined
+     * by Regional VNET Integration.
+     * This must be of the form
+     * /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}
+     */
+    @JsonProperty(value = "properties.virtualNetworkSubnetId")
+    private String virtualNetworkSubnetId;
 
     /*
      * Kind of resource.
@@ -876,26 +885,6 @@ public class SiteInner extends Resource {
     }
 
     /**
-     * Get the keyVaultReferenceIdentity property: Identity to use for Key Vault Reference authentication.
-     *
-     * @return the keyVaultReferenceIdentity value.
-     */
-    public String keyVaultReferenceIdentity() {
-        return this.keyVaultReferenceIdentity;
-    }
-
-    /**
-     * Set the keyVaultReferenceIdentity property: Identity to use for Key Vault Reference authentication.
-     *
-     * @param keyVaultReferenceIdentity the keyVaultReferenceIdentity value to set.
-     * @return the SiteInner object itself.
-     */
-    public SiteInner withKeyVaultReferenceIdentity(String keyVaultReferenceIdentity) {
-        this.keyVaultReferenceIdentity = keyVaultReferenceIdentity;
-        return this;
-    }
-
-    /**
      * Get the httpsOnly property: HttpsOnly: configures a web site to accept only https requests. Issues redirect for
      * http requests.
      *
@@ -963,6 +952,50 @@ public class SiteInner extends Resource {
      */
     public SiteInner withStorageAccountRequired(Boolean storageAccountRequired) {
         this.storageAccountRequired = storageAccountRequired;
+        return this;
+    }
+
+    /**
+     * Get the keyVaultReferenceIdentity property: Identity to use for Key Vault Reference authentication.
+     *
+     * @return the keyVaultReferenceIdentity value.
+     */
+    public String keyVaultReferenceIdentity() {
+        return this.keyVaultReferenceIdentity;
+    }
+
+    /**
+     * Set the keyVaultReferenceIdentity property: Identity to use for Key Vault Reference authentication.
+     *
+     * @param keyVaultReferenceIdentity the keyVaultReferenceIdentity value to set.
+     * @return the SiteInner object itself.
+     */
+    public SiteInner withKeyVaultReferenceIdentity(String keyVaultReferenceIdentity) {
+        this.keyVaultReferenceIdentity = keyVaultReferenceIdentity;
+        return this;
+    }
+
+    /**
+     * Get the virtualNetworkSubnetId property: Azure Resource Manager ID of the Virtual network and subnet to be joined
+     * by Regional VNET Integration. This must be of the form
+     * /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
+     *
+     * @return the virtualNetworkSubnetId value.
+     */
+    public String virtualNetworkSubnetId() {
+        return this.virtualNetworkSubnetId;
+    }
+
+    /**
+     * Set the virtualNetworkSubnetId property: Azure Resource Manager ID of the Virtual network and subnet to be joined
+     * by Regional VNET Integration. This must be of the form
+     * /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
+     *
+     * @param virtualNetworkSubnetId the virtualNetworkSubnetId value to set.
+     * @return the SiteInner object itself.
+     */
+    public SiteInner withVirtualNetworkSubnetId(String virtualNetworkSubnetId) {
+        this.virtualNetworkSubnetId = virtualNetworkSubnetId;
         return this;
     }
 

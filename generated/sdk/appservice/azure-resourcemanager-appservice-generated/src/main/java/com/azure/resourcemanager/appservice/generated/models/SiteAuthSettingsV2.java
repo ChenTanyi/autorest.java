@@ -37,35 +37,40 @@ public interface SiteAuthSettingsV2 {
     String kind();
 
     /**
-     * Gets the platform property: The platform property.
+     * Gets the platform property: The configuration settings of the platform of App Service
+     * Authentication/Authorization.
      *
      * @return the platform value.
      */
     AuthPlatform platform();
 
     /**
-     * Gets the globalValidation property: The globalValidation property.
+     * Gets the globalValidation property: The configuration settings that determines the validation flow of users using
+     * App Service Authentication/Authorization.
      *
      * @return the globalValidation value.
      */
     GlobalValidation globalValidation();
 
     /**
-     * Gets the identityProviders property: The identityProviders property.
+     * Gets the identityProviders property: The configuration settings of each of the identity providers used to
+     * configure App Service Authentication/Authorization.
      *
      * @return the identityProviders value.
      */
     IdentityProviders identityProviders();
 
     /**
-     * Gets the login property: The login property.
+     * Gets the login property: The configuration settings of the login flow of users using App Service
+     * Authentication/Authorization.
      *
      * @return the login value.
      */
     Login login();
 
     /**
-     * Gets the httpSettings property: The httpSettings property.
+     * Gets the httpSettings property: The configuration settings of the HTTP requests for authentication and
+     * authorization requests made against App Service Authentication/Authorization.
      *
      * @return the httpSettings value.
      */

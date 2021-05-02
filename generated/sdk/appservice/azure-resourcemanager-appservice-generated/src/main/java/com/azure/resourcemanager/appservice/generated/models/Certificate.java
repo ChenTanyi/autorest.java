@@ -49,6 +49,13 @@ public interface Certificate {
     Map<String, String> tags();
 
     /**
+     * Gets the password property: Certificate password.
+     *
+     * @return the password value.
+     */
+    String password();
+
+    /**
      * Gets the friendlyName property: Friendly name of the certificate.
      *
      * @return the friendlyName value.
@@ -110,13 +117,6 @@ public interface Certificate {
      * @return the expirationDate value.
      */
     OffsetDateTime expirationDate();
-
-    /**
-     * Gets the password property: Certificate password.
-     *
-     * @return the password value.
-     */
-    String password();
 
     /**
      * Gets the thumbprint property: Certificate thumbprint.
@@ -272,9 +272,9 @@ public interface Certificate {
          */
         interface WithCreate
             extends DefinitionStages.WithTags,
+                DefinitionStages.WithPassword,
                 DefinitionStages.WithHostNames,
                 DefinitionStages.WithPfxBlob,
-                DefinitionStages.WithPassword,
                 DefinitionStages.WithKeyVaultId,
                 DefinitionStages.WithKeyVaultSecretName,
                 DefinitionStages.WithServerFarmId,
@@ -306,6 +306,16 @@ public interface Certificate {
              */
             WithCreate withTags(Map<String, String> tags);
         }
+        /** The stage of the Certificate definition allowing to specify password. */
+        interface WithPassword {
+            /**
+             * Specifies the password property: Certificate password..
+             *
+             * @param password Certificate password.
+             * @return the next definition stage.
+             */
+            WithCreate withPassword(String password);
+        }
         /** The stage of the Certificate definition allowing to specify hostNames. */
         interface WithHostNames {
             /**
@@ -325,16 +335,6 @@ public interface Certificate {
              * @return the next definition stage.
              */
             WithCreate withPfxBlob(byte[] pfxBlob);
-        }
-        /** The stage of the Certificate definition allowing to specify password. */
-        interface WithPassword {
-            /**
-             * Specifies the password property: Certificate password..
-             *
-             * @param password Certificate password.
-             * @return the next definition stage.
-             */
-            WithCreate withPassword(String password);
         }
         /** The stage of the Certificate definition allowing to specify keyVaultId. */
         interface WithKeyVaultId {
@@ -411,9 +411,9 @@ public interface Certificate {
     /** The template for Certificate update. */
     interface Update
         extends UpdateStages.WithKind,
+            UpdateStages.WithPassword,
             UpdateStages.WithHostNames,
             UpdateStages.WithPfxBlob,
-            UpdateStages.WithPassword,
             UpdateStages.WithKeyVaultId,
             UpdateStages.WithKeyVaultSecretName,
             UpdateStages.WithServerFarmId,
@@ -446,6 +446,16 @@ public interface Certificate {
              */
             Update withKind(String kind);
         }
+        /** The stage of the Certificate update allowing to specify password. */
+        interface WithPassword {
+            /**
+             * Specifies the password property: Certificate password..
+             *
+             * @param password Certificate password.
+             * @return the next definition stage.
+             */
+            Update withPassword(String password);
+        }
         /** The stage of the Certificate update allowing to specify hostNames. */
         interface WithHostNames {
             /**
@@ -465,16 +475,6 @@ public interface Certificate {
              * @return the next definition stage.
              */
             Update withPfxBlob(byte[] pfxBlob);
-        }
-        /** The stage of the Certificate update allowing to specify password. */
-        interface WithPassword {
-            /**
-             * Specifies the password property: Certificate password..
-             *
-             * @param password Certificate password.
-             * @return the next definition stage.
-             */
-            Update withPassword(String password);
         }
         /** The stage of the Certificate update allowing to specify keyVaultId. */
         interface WithKeyVaultId {

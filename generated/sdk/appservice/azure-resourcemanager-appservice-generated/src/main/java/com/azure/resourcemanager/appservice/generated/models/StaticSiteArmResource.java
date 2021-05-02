@@ -84,14 +84,6 @@ public interface StaticSiteArmResource {
     String branch();
 
     /**
-     * Gets the provider property: The provider that submitted the last deployment to the primary environment of the
-     * static site.
-     *
-     * @return the provider value.
-     */
-    String provider();
-
-    /**
      * Gets the customDomains property: The custom domains associated with this static site.
      *
      * @return the customDomains value.
@@ -114,18 +106,34 @@ public interface StaticSiteArmResource {
     StaticSiteBuildProperties buildProperties();
 
     /**
-     * Gets the templateProperties property: Template options for generating a new repository.
-     *
-     * @return the templateProperties value.
-     */
-    StaticSiteTemplateOptions templateProperties();
-
-    /**
      * Gets the privateEndpointConnections property: Private endpoint connections.
      *
      * @return the privateEndpointConnections value.
      */
     List<ResponseMessageEnvelopeRemotePrivateEndpointConnection> privateEndpointConnections();
+
+    /**
+     * Gets the stagingEnvironmentPolicy property: State indicating whether staging environments are allowed or not
+     * allowed for a static web app.
+     *
+     * @return the stagingEnvironmentPolicy value.
+     */
+    StagingEnvironmentPolicy stagingEnvironmentPolicy();
+
+    /**
+     * Gets the allowConfigFileUpdates property: &lt;code&gt;false&lt;/code&gt; if config file is locked for this static
+     * web app; otherwise, &lt;code&gt;true&lt;/code&gt;.
+     *
+     * @return the allowConfigFileUpdates value.
+     */
+    Boolean allowConfigFileUpdates();
+
+    /**
+     * Gets the templateProperties property: Template options for generating a new repository.
+     *
+     * @return the templateProperties value.
+     */
+    StaticSiteTemplateOptions templateProperties();
 
     /**
      * Gets the contentDistributionEndpoint property: The content distribution endpoint for the static site.
@@ -149,20 +157,12 @@ public interface StaticSiteArmResource {
     List<StaticSiteUserProvidedFunctionApp> userProvidedFunctionApps();
 
     /**
-     * Gets the stagingEnvironmentPolicy property: State indicating whether staging environments are allowed or not
-     * allowed for a static web app.
+     * Gets the provider property: The provider that submitted the last deployment to the primary environment of the
+     * static site.
      *
-     * @return the stagingEnvironmentPolicy value.
+     * @return the provider value.
      */
-    StagingEnvironmentPolicy stagingEnvironmentPolicy();
-
-    /**
-     * Gets the allowConfigFileUpdates property: &lt;code&gt;false&lt;/code&gt; if config file is locked for this static
-     * web app; otherwise, &lt;code&gt;true&lt;/code&gt;.
-     *
-     * @return the allowConfigFileUpdates value.
-     */
-    Boolean allowConfigFileUpdates();
+    String provider();
 
     /**
      * Gets the kind property: Kind of resource.
@@ -244,9 +244,9 @@ public interface StaticSiteArmResource {
                 DefinitionStages.WithBranch,
                 DefinitionStages.WithRepositoryToken,
                 DefinitionStages.WithBuildProperties,
-                DefinitionStages.WithTemplateProperties,
                 DefinitionStages.WithStagingEnvironmentPolicy,
                 DefinitionStages.WithAllowConfigFileUpdates,
+                DefinitionStages.WithTemplateProperties,
                 DefinitionStages.WithKind {
             /**
              * Executes the create request.
@@ -335,16 +335,6 @@ public interface StaticSiteArmResource {
              */
             WithCreate withBuildProperties(StaticSiteBuildProperties buildProperties);
         }
-        /** The stage of the StaticSiteArmResource definition allowing to specify templateProperties. */
-        interface WithTemplateProperties {
-            /**
-             * Specifies the templateProperties property: Template options for generating a new repository..
-             *
-             * @param templateProperties Template options for generating a new repository.
-             * @return the next definition stage.
-             */
-            WithCreate withTemplateProperties(StaticSiteTemplateOptions templateProperties);
-        }
         /** The stage of the StaticSiteArmResource definition allowing to specify stagingEnvironmentPolicy. */
         interface WithStagingEnvironmentPolicy {
             /**
@@ -368,6 +358,16 @@ public interface StaticSiteArmResource {
              * @return the next definition stage.
              */
             WithCreate withAllowConfigFileUpdates(Boolean allowConfigFileUpdates);
+        }
+        /** The stage of the StaticSiteArmResource definition allowing to specify templateProperties. */
+        interface WithTemplateProperties {
+            /**
+             * Specifies the templateProperties property: Template options for generating a new repository..
+             *
+             * @param templateProperties Template options for generating a new repository.
+             * @return the next definition stage.
+             */
+            WithCreate withTemplateProperties(StaticSiteTemplateOptions templateProperties);
         }
         /** The stage of the StaticSiteArmResource definition allowing to specify kind. */
         interface WithKind {
@@ -394,9 +394,9 @@ public interface StaticSiteArmResource {
             UpdateStages.WithBranch,
             UpdateStages.WithRepositoryToken,
             UpdateStages.WithBuildProperties,
-            UpdateStages.WithTemplateProperties,
             UpdateStages.WithStagingEnvironmentPolicy,
-            UpdateStages.WithAllowConfigFileUpdates {
+            UpdateStages.WithAllowConfigFileUpdates,
+            UpdateStages.WithTemplateProperties {
         /**
          * Executes the update request.
          *
@@ -466,16 +466,6 @@ public interface StaticSiteArmResource {
              */
             Update withBuildProperties(StaticSiteBuildProperties buildProperties);
         }
-        /** The stage of the StaticSiteArmResource update allowing to specify templateProperties. */
-        interface WithTemplateProperties {
-            /**
-             * Specifies the templateProperties property: Template options for generating a new repository..
-             *
-             * @param templateProperties Template options for generating a new repository.
-             * @return the next definition stage.
-             */
-            Update withTemplateProperties(StaticSiteTemplateOptions templateProperties);
-        }
         /** The stage of the StaticSiteArmResource update allowing to specify stagingEnvironmentPolicy. */
         interface WithStagingEnvironmentPolicy {
             /**
@@ -499,6 +489,16 @@ public interface StaticSiteArmResource {
              * @return the next definition stage.
              */
             Update withAllowConfigFileUpdates(Boolean allowConfigFileUpdates);
+        }
+        /** The stage of the StaticSiteArmResource update allowing to specify templateProperties. */
+        interface WithTemplateProperties {
+            /**
+             * Specifies the templateProperties property: Template options for generating a new repository..
+             *
+             * @param templateProperties Template options for generating a new repository.
+             * @return the next definition stage.
+             */
+            Update withTemplateProperties(StaticSiteTemplateOptions templateProperties);
         }
     }
     /**

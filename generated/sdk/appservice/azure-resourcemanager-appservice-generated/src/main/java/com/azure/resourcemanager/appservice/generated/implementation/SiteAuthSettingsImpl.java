@@ -47,10 +47,6 @@ public final class SiteAuthSettingsImpl implements SiteAuthSettings {
         return this.innerModel().runtimeVersion();
     }
 
-    public String configVersion() {
-        return this.innerModel().configVersion();
-    }
-
     public UnauthenticatedClientAction unauthenticatedClientAction() {
         return this.innerModel().unauthenticatedClientAction();
     }
@@ -224,6 +220,10 @@ public final class SiteAuthSettingsImpl implements SiteAuthSettings {
 
     public String authFilePath() {
         return this.innerModel().authFilePath();
+    }
+
+    public String configVersion() {
+        return this.innerModel().configVersion();
     }
 
     public SiteAuthSettingsInner innerModel() {
