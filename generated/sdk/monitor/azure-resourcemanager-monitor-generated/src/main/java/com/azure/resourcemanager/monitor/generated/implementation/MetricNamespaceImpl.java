@@ -7,6 +7,7 @@ package com.azure.resourcemanager.monitor.generated.implementation;
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricNamespaceInner;
 import com.azure.resourcemanager.monitor.generated.models.MetricNamespace;
 import com.azure.resourcemanager.monitor.generated.models.MetricNamespaceName;
+import com.azure.resourcemanager.monitor.generated.models.NamespaceClassification;
 
 public final class MetricNamespaceImpl implements MetricNamespace {
     private MetricNamespaceInner innerObject;
@@ -29,6 +30,10 @@ public final class MetricNamespaceImpl implements MetricNamespace {
 
     public String name() {
         return this.innerModel().name();
+    }
+
+    public NamespaceClassification classification() {
+        return this.innerModel().classification();
     }
 
     public MetricNamespaceName properties() {

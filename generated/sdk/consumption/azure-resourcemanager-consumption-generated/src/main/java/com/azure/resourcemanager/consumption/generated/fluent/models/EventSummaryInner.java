@@ -22,61 +22,94 @@ public class EventSummaryInner extends ProxyResource {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(EventSummaryInner.class);
 
     /*
-     * Transaction date.
+     * The date of the event.
      */
     @JsonProperty(value = "properties.transactionDate", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime transactionDate;
 
     /*
-     * Transaction description.
+     * The description of the event.
      */
     @JsonProperty(value = "properties.description", access = JsonProperty.Access.WRITE_ONLY)
     private String description;
 
     /*
-     * New Credit.
+     * The amount of new credit or commitment for NewCredit or SettleCharges
+     * event.
      */
     @JsonProperty(value = "properties.newCredit", access = JsonProperty.Access.WRITE_ONLY)
     private Amount newCredit;
 
     /*
-     * Adjustments amount.
+     * The amount of balance adjustment. The property is not available for
+     * ConsumptionCommitment lots.
      */
     @JsonProperty(value = "properties.adjustments", access = JsonProperty.Access.WRITE_ONLY)
     private Amount adjustments;
 
     /*
-     * Credit expired.
+     * The amount of expired credit or commitment for NewCredit or
+     * SettleCharges event.
      */
     @JsonProperty(value = "properties.creditExpired", access = JsonProperty.Access.WRITE_ONLY)
     private Amount creditExpired;
 
     /*
-     * Charges amount.
+     * The amount of charges for events of type SettleCharges and
+     * PendingEligibleCharges.
      */
     @JsonProperty(value = "properties.charges", access = JsonProperty.Access.WRITE_ONLY)
     private Amount charges;
 
     /*
-     * Closed balance.
+     * The balance after the event.
      */
     @JsonProperty(value = "properties.closedBalance", access = JsonProperty.Access.WRITE_ONLY)
     private Amount closedBalance;
 
     /*
-     * The type of event.
+     * Identifies the type of the event.
      */
     @JsonProperty(value = "properties.eventType")
     private EventType eventType;
 
     /*
-     * Invoice number.
+     * The number which uniquely identifies the invoice on which the event was
+     * billed. This will be empty for unbilled events.
      */
     @JsonProperty(value = "properties.invoiceNumber", access = JsonProperty.Access.WRITE_ONLY)
     private String invoiceNumber;
 
     /*
-     * Resource etag.
+     * The ID that uniquely identifies the billing profile for which the event
+     * happened. The property is only available for billing account of type
+     * MicrosoftCustomerAgreement.
+     */
+    @JsonProperty(value = "properties.billingProfileId", access = JsonProperty.Access.WRITE_ONLY)
+    private String billingProfileId;
+
+    /*
+     * The display name of the billing profile for which the event happened.
+     * The property is only available for billing account of type
+     * MicrosoftCustomerAgreement.
+     */
+    @JsonProperty(value = "properties.billingProfileDisplayName", access = JsonProperty.Access.WRITE_ONLY)
+    private String billingProfileDisplayName;
+
+    /*
+     * The ID that uniquely identifies the lot for which the event happened.
+     */
+    @JsonProperty(value = "properties.lotId", access = JsonProperty.Access.WRITE_ONLY)
+    private String lotId;
+
+    /*
+     * Identifies the source of the lot for which the event happened.
+     */
+    @JsonProperty(value = "properties.lotSource", access = JsonProperty.Access.WRITE_ONLY)
+    private String lotSource;
+
+    /*
+     * The etag for the resource.
      */
     @JsonProperty(value = "etag", access = JsonProperty.Access.WRITE_ONLY)
     private String etag;
@@ -88,7 +121,7 @@ public class EventSummaryInner extends ProxyResource {
     private Map<String, String> tags;
 
     /**
-     * Get the transactionDate property: Transaction date.
+     * Get the transactionDate property: The date of the event.
      *
      * @return the transactionDate value.
      */
@@ -97,7 +130,7 @@ public class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the description property: Transaction description.
+     * Get the description property: The description of the event.
      *
      * @return the description value.
      */
@@ -106,7 +139,7 @@ public class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the newCredit property: New Credit.
+     * Get the newCredit property: The amount of new credit or commitment for NewCredit or SettleCharges event.
      *
      * @return the newCredit value.
      */
@@ -115,7 +148,8 @@ public class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the adjustments property: Adjustments amount.
+     * Get the adjustments property: The amount of balance adjustment. The property is not available for
+     * ConsumptionCommitment lots.
      *
      * @return the adjustments value.
      */
@@ -124,7 +158,7 @@ public class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the creditExpired property: Credit expired.
+     * Get the creditExpired property: The amount of expired credit or commitment for NewCredit or SettleCharges event.
      *
      * @return the creditExpired value.
      */
@@ -133,7 +167,7 @@ public class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the charges property: Charges amount.
+     * Get the charges property: The amount of charges for events of type SettleCharges and PendingEligibleCharges.
      *
      * @return the charges value.
      */
@@ -142,7 +176,7 @@ public class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the closedBalance property: Closed balance.
+     * Get the closedBalance property: The balance after the event.
      *
      * @return the closedBalance value.
      */
@@ -151,7 +185,7 @@ public class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the eventType property: The type of event.
+     * Get the eventType property: Identifies the type of the event.
      *
      * @return the eventType value.
      */
@@ -160,7 +194,7 @@ public class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Set the eventType property: The type of event.
+     * Set the eventType property: Identifies the type of the event.
      *
      * @param eventType the eventType value to set.
      * @return the EventSummaryInner object itself.
@@ -171,7 +205,8 @@ public class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the invoiceNumber property: Invoice number.
+     * Get the invoiceNumber property: The number which uniquely identifies the invoice on which the event was billed.
+     * This will be empty for unbilled events.
      *
      * @return the invoiceNumber value.
      */
@@ -180,7 +215,45 @@ public class EventSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the etag property: Resource etag.
+     * Get the billingProfileId property: The ID that uniquely identifies the billing profile for which the event
+     * happened. The property is only available for billing account of type MicrosoftCustomerAgreement.
+     *
+     * @return the billingProfileId value.
+     */
+    public String billingProfileId() {
+        return this.billingProfileId;
+    }
+
+    /**
+     * Get the billingProfileDisplayName property: The display name of the billing profile for which the event happened.
+     * The property is only available for billing account of type MicrosoftCustomerAgreement.
+     *
+     * @return the billingProfileDisplayName value.
+     */
+    public String billingProfileDisplayName() {
+        return this.billingProfileDisplayName;
+    }
+
+    /**
+     * Get the lotId property: The ID that uniquely identifies the lot for which the event happened.
+     *
+     * @return the lotId value.
+     */
+    public String lotId() {
+        return this.lotId;
+    }
+
+    /**
+     * Get the lotSource property: Identifies the source of the lot for which the event happened.
+     *
+     * @return the lotSource value.
+     */
+    public String lotSource() {
+        return this.lotSource;
+    }
+
+    /**
+     * Get the etag property: The etag for the resource.
      *
      * @return the etag value.
      */

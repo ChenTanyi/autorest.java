@@ -47,6 +47,14 @@ public final class MetricDefinitionImpl implements MetricDefinition {
         }
     }
 
+    public String displayDescription() {
+        return this.innerModel().displayDescription();
+    }
+
+    public String category() {
+        return this.innerModel().category();
+    }
+
     public Unit unit() {
         return this.innerModel().unit();
     }

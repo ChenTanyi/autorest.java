@@ -44,6 +44,18 @@ public final class MetricDefinitionInner {
     private LocalizableStringInner name;
 
     /*
+     * Detailed description of this metric.
+     */
+    @JsonProperty(value = "displayDescription")
+    private String displayDescription;
+
+    /*
+     * Custom category name for this metric.
+     */
+    @JsonProperty(value = "category")
+    private String category;
+
+    /*
      * the unit of the metric.
      */
     @JsonProperty(value = "unit")
@@ -159,6 +171,46 @@ public final class MetricDefinitionInner {
      */
     public MetricDefinitionInner withName(LocalizableStringInner name) {
         this.name = name;
+        return this;
+    }
+
+    /**
+     * Get the displayDescription property: Detailed description of this metric.
+     *
+     * @return the displayDescription value.
+     */
+    public String displayDescription() {
+        return this.displayDescription;
+    }
+
+    /**
+     * Set the displayDescription property: Detailed description of this metric.
+     *
+     * @param displayDescription the displayDescription value to set.
+     * @return the MetricDefinitionInner object itself.
+     */
+    public MetricDefinitionInner withDisplayDescription(String displayDescription) {
+        this.displayDescription = displayDescription;
+        return this;
+    }
+
+    /**
+     * Get the category property: Custom category name for this metric.
+     *
+     * @return the category value.
+     */
+    public String category() {
+        return this.category;
+    }
+
+    /**
+     * Set the category property: Custom category name for this metric.
+     *
+     * @param category the category value to set.
+     * @return the MetricDefinitionInner object itself.
+     */
+    public MetricDefinitionInner withCategory(String category) {
+        this.category = category;
         return this;
     }
 

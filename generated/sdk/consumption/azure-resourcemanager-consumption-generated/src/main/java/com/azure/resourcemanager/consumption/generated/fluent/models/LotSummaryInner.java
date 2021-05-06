@@ -22,43 +22,56 @@ public class LotSummaryInner extends ProxyResource {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(LotSummaryInner.class);
 
     /*
-     * Original amount.
+     * The original amount of a lot.
      */
     @JsonProperty(value = "properties.originalAmount", access = JsonProperty.Access.WRITE_ONLY)
     private Amount originalAmount;
 
     /*
-     * Closed balance.
+     * The balance as of the last invoice.
      */
     @JsonProperty(value = "properties.closedBalance", access = JsonProperty.Access.WRITE_ONLY)
     private Amount closedBalance;
 
     /*
-     * Lot source.
+     * The source of the lot.
      */
     @JsonProperty(value = "properties.source", access = JsonProperty.Access.WRITE_ONLY)
     private LotSource source;
 
     /*
-     * Start date.
+     * The date when the lot became effective.
      */
     @JsonProperty(value = "properties.startDate", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime startDate;
 
     /*
-     * Expiration date.
+     * The expiration date of a lot.
      */
     @JsonProperty(value = "properties.expirationDate", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime expirationDate;
 
     /*
-     * PO number.
+     * The po number of the invoice on which the lot was added. This property
+     * is not available for ConsumptionCommitment lots.
      */
     @JsonProperty(value = "properties.poNumber", access = JsonProperty.Access.WRITE_ONLY)
     private String poNumber;
 
     /*
-     * Resource etag.
+     * The date when the lot was added.
+     */
+    @JsonProperty(value = "properties.purchaseDate", access = JsonProperty.Access.WRITE_ONLY)
+    private OffsetDateTime purchaseDate;
+
+    /*
+     * The status of the lot.
+     */
+    @JsonProperty(value = "properties.status", access = JsonProperty.Access.WRITE_ONLY)
+    private String status;
+
+    /*
+     * The etag for the resource.
      */
     @JsonProperty(value = "etag", access = JsonProperty.Access.WRITE_ONLY)
     private String etag;
@@ -70,7 +83,7 @@ public class LotSummaryInner extends ProxyResource {
     private Map<String, String> tags;
 
     /**
-     * Get the originalAmount property: Original amount.
+     * Get the originalAmount property: The original amount of a lot.
      *
      * @return the originalAmount value.
      */
@@ -79,7 +92,7 @@ public class LotSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the closedBalance property: Closed balance.
+     * Get the closedBalance property: The balance as of the last invoice.
      *
      * @return the closedBalance value.
      */
@@ -88,7 +101,7 @@ public class LotSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the source property: Lot source.
+     * Get the source property: The source of the lot.
      *
      * @return the source value.
      */
@@ -97,7 +110,7 @@ public class LotSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the startDate property: Start date.
+     * Get the startDate property: The date when the lot became effective.
      *
      * @return the startDate value.
      */
@@ -106,7 +119,7 @@ public class LotSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the expirationDate property: Expiration date.
+     * Get the expirationDate property: The expiration date of a lot.
      *
      * @return the expirationDate value.
      */
@@ -115,7 +128,8 @@ public class LotSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the poNumber property: PO number.
+     * Get the poNumber property: The po number of the invoice on which the lot was added. This property is not
+     * available for ConsumptionCommitment lots.
      *
      * @return the poNumber value.
      */
@@ -124,7 +138,25 @@ public class LotSummaryInner extends ProxyResource {
     }
 
     /**
-     * Get the etag property: Resource etag.
+     * Get the purchaseDate property: The date when the lot was added.
+     *
+     * @return the purchaseDate value.
+     */
+    public OffsetDateTime purchaseDate() {
+        return this.purchaseDate;
+    }
+
+    /**
+     * Get the status property: The status of the lot.
+     *
+     * @return the status value.
+     */
+    public String status() {
+        return this.status;
+    }
+
+    /**
+     * Get the etag property: The etag for the resource.
      *
      * @return the etag value.
      */

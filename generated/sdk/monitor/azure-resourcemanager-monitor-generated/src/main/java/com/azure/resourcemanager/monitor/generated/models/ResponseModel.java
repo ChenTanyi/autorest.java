@@ -11,7 +11,7 @@ import java.util.List;
 /** An immutable client-side representation of ResponseModel. */
 public interface ResponseModel {
     /**
-     * Gets the cost property: The integer value representing the cost of the query, for data case.
+     * Gets the cost property: The integer value representing the relative cost of the query.
      *
      * @return the cost value.
      */
@@ -36,14 +36,14 @@ public interface ResponseModel {
     Duration interval();
 
     /**
-     * Gets the namespace property: The namespace of the metrics been queried.
+     * Gets the namespace property: The namespace of the metrics being queried.
      *
      * @return the namespace value.
      */
     String namespace();
 
     /**
-     * Gets the resourceRegion property: The region of the resource been queried for metrics.
+     * Gets the resourceRegion property: The region of the resource being queried for metrics.
      *
      * @return the resourceRegion value.
      */

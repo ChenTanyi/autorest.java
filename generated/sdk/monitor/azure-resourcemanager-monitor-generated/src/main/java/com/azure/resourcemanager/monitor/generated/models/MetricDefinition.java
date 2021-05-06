@@ -38,6 +38,20 @@ public interface MetricDefinition {
     LocalizableString name();
 
     /**
+     * Gets the displayDescription property: Detailed description of this metric.
+     *
+     * @return the displayDescription value.
+     */
+    String displayDescription();
+
+    /**
+     * Gets the category property: Custom category name for this metric.
+     *
+     * @return the category value.
+     */
+    String category();
+
+    /**
      * Gets the unit property: the unit of the metric.
      *
      * @return the unit value.

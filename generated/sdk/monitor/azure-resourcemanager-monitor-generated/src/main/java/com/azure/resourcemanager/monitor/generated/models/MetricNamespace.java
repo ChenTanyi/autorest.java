@@ -9,7 +9,7 @@ import com.azure.resourcemanager.monitor.generated.fluent.models.MetricNamespace
 /** An immutable client-side representation of MetricNamespace. */
 public interface MetricNamespace {
     /**
-     * Gets the id property: The ID of the metricNamespace.
+     * Gets the id property: The ID of the metric namespace.
      *
      * @return the id value.
      */
@@ -23,11 +23,18 @@ public interface MetricNamespace {
     String type();
 
     /**
-     * Gets the name property: The name of the namespace.
+     * Gets the name property: The escaped name of the namespace.
      *
      * @return the name value.
      */
     String name();
+
+    /**
+     * Gets the classification property: Kind of namespace.
+     *
+     * @return the classification value.
+     */
+    NamespaceClassification classification();
 
     /**
      * Gets the properties property: Properties which include the fully qualified namespace name.

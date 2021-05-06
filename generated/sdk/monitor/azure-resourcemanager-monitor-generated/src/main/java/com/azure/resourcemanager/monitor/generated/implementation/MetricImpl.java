@@ -40,6 +40,14 @@ public final class MetricImpl implements Metric {
         }
     }
 
+    public String displayDescription() {
+        return this.innerModel().displayDescription();
+    }
+
+    public String errorCode() {
+        return this.innerModel().errorCode();
+    }
+
     public Unit unit() {
         return this.innerModel().unit();
     }

@@ -72,6 +72,22 @@ public final class EventSummaryImpl implements EventSummary {
         return this.innerModel().invoiceNumber();
     }
 
+    public String billingProfileId() {
+        return this.innerModel().billingProfileId();
+    }
+
+    public String billingProfileDisplayName() {
+        return this.innerModel().billingProfileDisplayName();
+    }
+
+    public String lotId() {
+        return this.innerModel().lotId();
+    }
+
+    public String lotSource() {
+        return this.innerModel().lotSource();
+    }
+
     public String etag() {
         return this.innerModel().etag();
     }

@@ -34,7 +34,6 @@ import com.azure.resourcemanager.monitor.generated.fluent.EventCategoriesClient;
 import com.azure.resourcemanager.monitor.generated.fluent.LogProfilesClient;
 import com.azure.resourcemanager.monitor.generated.fluent.MetricAlertsClient;
 import com.azure.resourcemanager.monitor.generated.fluent.MetricAlertsStatusClient;
-import com.azure.resourcemanager.monitor.generated.fluent.MetricBaselinesClient;
 import com.azure.resourcemanager.monitor.generated.fluent.MetricDefinitionsClient;
 import com.azure.resourcemanager.monitor.generated.fluent.MetricNamespacesClient;
 import com.azure.resourcemanager.monitor.generated.fluent.MetricsClient;
@@ -291,18 +290,6 @@ public final class MonitorClientImpl implements MonitorClient {
         return this.metrics;
     }
 
-    /** The MetricBaselinesClient object to access its operations. */
-    private final MetricBaselinesClient metricBaselines;
-
-    /**
-     * Gets the MetricBaselinesClient object to access its operations.
-     *
-     * @return the MetricBaselinesClient object.
-     */
-    public MetricBaselinesClient getMetricBaselines() {
-        return this.metricBaselines;
-    }
-
     /** The BaselinesClient object to access its operations. */
     private final BaselinesClient baselines;
 
@@ -471,7 +458,6 @@ public final class MonitorClientImpl implements MonitorClient {
         this.tenantActivityLogs = new TenantActivityLogsClientImpl(this);
         this.metricDefinitions = new MetricDefinitionsClientImpl(this);
         this.metrics = new MetricsClientImpl(this);
-        this.metricBaselines = new MetricBaselinesClientImpl(this);
         this.baselines = new BaselinesClientImpl(this);
         this.metricAlerts = new MetricAlertsClientImpl(this);
         this.metricAlertsStatus = new MetricAlertsStatusClientImpl(this);

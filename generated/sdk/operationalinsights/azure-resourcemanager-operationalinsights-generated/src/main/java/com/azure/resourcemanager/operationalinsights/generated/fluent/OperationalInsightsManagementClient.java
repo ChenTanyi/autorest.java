@@ -143,6 +143,13 @@ public interface OperationalInsightsManagementClient {
     WorkspacePurgesClient getWorkspacePurges();
 
     /**
+     * Gets the TablesClient object to access its operations.
+     *
+     * @return the TablesClient object.
+     */
+    TablesClient getTables();
+
+    /**
      * Gets the ClustersClient object to access its operations.
      *
      * @return the ClustersClient object.
@@ -155,13 +162,6 @@ public interface OperationalInsightsManagementClient {
      * @return the OperationsClient object.
      */
     OperationsClient getOperations();
-
-    /**
-     * Gets the TablesClient object to access its operations.
-     *
-     * @return the TablesClient object.
-     */
-    TablesClient getTables();
 
     /**
      * Gets the WorkspacesClient object to access its operations.

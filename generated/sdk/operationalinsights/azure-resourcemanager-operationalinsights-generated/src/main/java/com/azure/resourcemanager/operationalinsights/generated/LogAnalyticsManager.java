@@ -100,11 +100,11 @@ public final class LogAnalyticsManager {
 
     private WorkspacePurges workspacePurges;
 
+    private Tables tables;
+
     private Clusters clusters;
 
     private Operations operations;
-
-    private Tables tables;
 
     private Workspaces workspaces;
 
@@ -393,6 +393,14 @@ public final class LogAnalyticsManager {
         return workspacePurges;
     }
 
+    /** @return Resource collection API of Tables. */
+    public Tables tables() {
+        if (this.tables == null) {
+            this.tables = new TablesImpl(clientObject.getTables(), this);
+        }
+        return tables;
+    }
+
     /** @return Resource collection API of Clusters. */
     public Clusters clusters() {
         if (this.clusters == null) {
@@ -407,14 +415,6 @@ public final class LogAnalyticsManager {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
         }
         return operations;
-    }
-
-    /** @return Resource collection API of Tables. */
-    public Tables tables() {
-        if (this.tables == null) {
-            this.tables = new TablesImpl(clientObject.getTables(), this);
-        }
-        return tables;
     }
 
     /** @return Resource collection API of Workspaces. */

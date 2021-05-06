@@ -37,6 +37,18 @@ public final class MetricInner {
     private LocalizableStringInner name;
 
     /*
+     * Detailed description of this metric.
+     */
+    @JsonProperty(value = "displayDescription", required = true)
+    private String displayDescription;
+
+    /*
+     * 'Success' or the error details on query failures for this metric.
+     */
+    @JsonProperty(value = "errorCode")
+    private String errorCode;
+
+    /*
      * the unit of the metric.
      */
     @JsonProperty(value = "unit", required = true)
@@ -109,6 +121,46 @@ public final class MetricInner {
     }
 
     /**
+     * Get the displayDescription property: Detailed description of this metric.
+     *
+     * @return the displayDescription value.
+     */
+    public String displayDescription() {
+        return this.displayDescription;
+    }
+
+    /**
+     * Set the displayDescription property: Detailed description of this metric.
+     *
+     * @param displayDescription the displayDescription value to set.
+     * @return the MetricInner object itself.
+     */
+    public MetricInner withDisplayDescription(String displayDescription) {
+        this.displayDescription = displayDescription;
+        return this;
+    }
+
+    /**
+     * Get the errorCode property: 'Success' or the error details on query failures for this metric.
+     *
+     * @return the errorCode value.
+     */
+    public String errorCode() {
+        return this.errorCode;
+    }
+
+    /**
+     * Set the errorCode property: 'Success' or the error details on query failures for this metric.
+     *
+     * @param errorCode the errorCode value to set.
+     * @return the MetricInner object itself.
+     */
+    public MetricInner withErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+        return this;
+    }
+
+    /**
      * Get the unit property: the unit of the metric.
      *
      * @return the unit value.
@@ -169,6 +221,11 @@ public final class MetricInner {
                     new IllegalArgumentException("Missing required property name in model MetricInner"));
         } else {
             name().validate();
+        }
+        if (displayDescription() == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException("Missing required property displayDescription in model MetricInner"));
         }
         if (unit() == null) {
             throw logger

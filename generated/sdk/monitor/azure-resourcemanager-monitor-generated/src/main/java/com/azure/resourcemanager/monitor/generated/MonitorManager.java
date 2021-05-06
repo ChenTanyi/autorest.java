@@ -34,7 +34,6 @@ import com.azure.resourcemanager.monitor.generated.implementation.EventCategorie
 import com.azure.resourcemanager.monitor.generated.implementation.LogProfilesImpl;
 import com.azure.resourcemanager.monitor.generated.implementation.MetricAlertsImpl;
 import com.azure.resourcemanager.monitor.generated.implementation.MetricAlertsStatusImpl;
-import com.azure.resourcemanager.monitor.generated.implementation.MetricBaselinesImpl;
 import com.azure.resourcemanager.monitor.generated.implementation.MetricDefinitionsImpl;
 import com.azure.resourcemanager.monitor.generated.implementation.MetricNamespacesImpl;
 import com.azure.resourcemanager.monitor.generated.implementation.MetricsImpl;
@@ -61,7 +60,6 @@ import com.azure.resourcemanager.monitor.generated.models.EventCategories;
 import com.azure.resourcemanager.monitor.generated.models.LogProfiles;
 import com.azure.resourcemanager.monitor.generated.models.MetricAlerts;
 import com.azure.resourcemanager.monitor.generated.models.MetricAlertsStatus;
-import com.azure.resourcemanager.monitor.generated.models.MetricBaselines;
 import com.azure.resourcemanager.monitor.generated.models.MetricDefinitions;
 import com.azure.resourcemanager.monitor.generated.models.MetricNamespaces;
 import com.azure.resourcemanager.monitor.generated.models.Metrics;
@@ -109,8 +107,6 @@ public final class MonitorManager {
     private MetricDefinitions metricDefinitions;
 
     private Metrics metrics;
-
-    private MetricBaselines metricBaselines;
 
     private Baselines baselines;
 
@@ -408,14 +404,6 @@ public final class MonitorManager {
             this.metrics = new MetricsImpl(clientObject.getMetrics(), this);
         }
         return metrics;
-    }
-
-    /** @return Resource collection API of MetricBaselines. */
-    public MetricBaselines metricBaselines() {
-        if (this.metricBaselines == null) {
-            this.metricBaselines = new MetricBaselinesImpl(clientObject.getMetricBaselines(), this);
-        }
-        return metricBaselines;
     }
 
     /** @return Resource collection API of Baselines. */

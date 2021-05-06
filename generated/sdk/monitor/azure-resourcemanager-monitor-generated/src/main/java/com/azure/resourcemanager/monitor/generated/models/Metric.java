@@ -31,6 +31,20 @@ public interface Metric {
     LocalizableString name();
 
     /**
+     * Gets the displayDescription property: Detailed description of this metric.
+     *
+     * @return the displayDescription value.
+     */
+    String displayDescription();
+
+    /**
+     * Gets the errorCode property: 'Success' or the error details on query failures for this metric.
+     *
+     * @return the errorCode value.
+     */
+    String errorCode();
+
+    /**
      * Gets the unit property: the unit of the metric.
      *
      * @return the unit value.

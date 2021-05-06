@@ -60,6 +60,14 @@ public final class LotSummaryImpl implements LotSummary {
         return this.innerModel().poNumber();
     }
 
+    public OffsetDateTime purchaseDate() {
+        return this.innerModel().purchaseDate();
+    }
+
+    public String status() {
+        return this.innerModel().status();
+    }
+
     public String etag() {
         return this.innerModel().etag();
     }

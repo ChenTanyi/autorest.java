@@ -297,6 +297,18 @@ public final class OperationalInsightsManagementClientImpl implements Operationa
         return this.workspacePurges;
     }
 
+    /** The TablesClient object to access its operations. */
+    private final TablesClient tables;
+
+    /**
+     * Gets the TablesClient object to access its operations.
+     *
+     * @return the TablesClient object.
+     */
+    public TablesClient getTables() {
+        return this.tables;
+    }
+
     /** The ClustersClient object to access its operations. */
     private final ClustersClient clusters;
 
@@ -319,18 +331,6 @@ public final class OperationalInsightsManagementClientImpl implements Operationa
      */
     public OperationsClient getOperations() {
         return this.operations;
-    }
-
-    /** The TablesClient object to access its operations. */
-    private final TablesClient tables;
-
-    /**
-     * Gets the TablesClient object to access its operations.
-     *
-     * @return the TablesClient object.
-     */
-    public TablesClient getTables() {
-        return this.tables;
     }
 
     /** The WorkspacesClient object to access its operations. */
@@ -394,9 +394,9 @@ public final class OperationalInsightsManagementClientImpl implements Operationa
         this.gateways = new GatewaysClientImpl(this);
         this.schemas = new SchemasClientImpl(this);
         this.workspacePurges = new WorkspacePurgesClientImpl(this);
+        this.tables = new TablesClientImpl(this);
         this.clusters = new ClustersClientImpl(this);
         this.operations = new OperationsClientImpl(this);
-        this.tables = new TablesClientImpl(this);
         this.workspaces = new WorkspacesClientImpl(this);
         this.deletedWorkspaces = new DeletedWorkspacesClientImpl(this);
     }

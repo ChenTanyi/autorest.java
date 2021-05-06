@@ -136,13 +136,6 @@ public interface MonitorClient {
     MetricsClient getMetrics();
 
     /**
-     * Gets the MetricBaselinesClient object to access its operations.
-     *
-     * @return the MetricBaselinesClient object.
-     */
-    MetricBaselinesClient getMetricBaselines();
-
-    /**
      * Gets the BaselinesClient object to access its operations.
      *
      * @return the BaselinesClient object.

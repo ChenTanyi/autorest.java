@@ -32,49 +32,64 @@ public interface LotSummary {
     String type();
 
     /**
-     * Gets the originalAmount property: Original amount.
+     * Gets the originalAmount property: The original amount of a lot.
      *
      * @return the originalAmount value.
      */
     Amount originalAmount();
 
     /**
-     * Gets the closedBalance property: Closed balance.
+     * Gets the closedBalance property: The balance as of the last invoice.
      *
      * @return the closedBalance value.
      */
     Amount closedBalance();
 
     /**
-     * Gets the source property: Lot source.
+     * Gets the source property: The source of the lot.
      *
      * @return the source value.
      */
     LotSource source();
 
     /**
-     * Gets the startDate property: Start date.
+     * Gets the startDate property: The date when the lot became effective.
      *
      * @return the startDate value.
      */
     OffsetDateTime startDate();
 
     /**
-     * Gets the expirationDate property: Expiration date.
+     * Gets the expirationDate property: The expiration date of a lot.
      *
      * @return the expirationDate value.
      */
     OffsetDateTime expirationDate();
 
     /**
-     * Gets the poNumber property: PO number.
+     * Gets the poNumber property: The po number of the invoice on which the lot was added. This property is not
+     * available for ConsumptionCommitment lots.
      *
      * @return the poNumber value.
      */
     String poNumber();
 
     /**
-     * Gets the etag property: Resource etag.
+     * Gets the purchaseDate property: The date when the lot was added.
+     *
+     * @return the purchaseDate value.
+     */
+    OffsetDateTime purchaseDate();
+
+    /**
+     * Gets the status property: The status of the lot.
+     *
+     * @return the status value.
+     */
+    String status();
+
+    /**
+     * Gets the etag property: The etag for the resource.
      *
      * @return the etag value.
      */
