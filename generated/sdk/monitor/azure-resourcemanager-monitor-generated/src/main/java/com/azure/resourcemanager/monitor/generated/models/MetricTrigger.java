@@ -84,6 +84,12 @@ public final class MetricTrigger {
     @JsonProperty(value = "dimensions")
     private List<ScaleRuleMetricDimension> dimensions;
 
+    /*
+     * a value indicating whether metric should divide per instance.
+     */
+    @JsonProperty(value = "dividePerInstance")
+    private Boolean dividePerInstance;
+
     /**
      * Get the metricName property: the name of the metric that defines what the rule monitors.
      *
@@ -293,6 +299,26 @@ public final class MetricTrigger {
      */
     public MetricTrigger withDimensions(List<ScaleRuleMetricDimension> dimensions) {
         this.dimensions = dimensions;
+        return this;
+    }
+
+    /**
+     * Get the dividePerInstance property: a value indicating whether metric should divide per instance.
+     *
+     * @return the dividePerInstance value.
+     */
+    public Boolean dividePerInstance() {
+        return this.dividePerInstance;
+    }
+
+    /**
+     * Set the dividePerInstance property: a value indicating whether metric should divide per instance.
+     *
+     * @param dividePerInstance the dividePerInstance value to set.
+     * @return the MetricTrigger object itself.
+     */
+    public MetricTrigger withDividePerInstance(Boolean dividePerInstance) {
+        this.dividePerInstance = dividePerInstance;
         return this;
     }
 
