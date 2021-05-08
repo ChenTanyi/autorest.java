@@ -36,7 +36,7 @@ public interface EventHubConsumerGroupInfo {
      *
      * @return the properties value.
      */
-    Map<String, String> properties();
+    Map<String, Object> properties();
 
     /**
      * Gets the etag property: The etag.
@@ -54,7 +54,10 @@ public interface EventHubConsumerGroupInfo {
 
     /** The entirety of the EventHubConsumerGroupInfo definition. */
     interface Definition
-        extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
+        extends DefinitionStages.Blank,
+            DefinitionStages.WithParentResource,
+            DefinitionStages.WithProperties,
+            DefinitionStages.WithCreate {
     }
     /** The EventHubConsumerGroupInfo definition stages. */
     interface DefinitionStages {
@@ -71,14 +74,24 @@ public interface EventHubConsumerGroupInfo {
              * @param eventHubEndpointName The name of the Event Hub-compatible endpoint in the IoT hub.
              * @return the next definition stage.
              */
-            WithCreate withExistingEventHubEndpoint(
+            WithProperties withExistingEventHubEndpoint(
                 String resourceGroupName, String resourceName, String eventHubEndpointName);
+        }
+        /** The stage of the EventHubConsumerGroupInfo definition allowing to specify properties. */
+        interface WithProperties {
+            /**
+             * Specifies the properties property: The EventHub consumer group name..
+             *
+             * @param properties The EventHub consumer group name.
+             * @return the next definition stage.
+             */
+            WithCreate withProperties(EventHubConsumerGroupName properties);
         }
         /**
          * The stage of the EventHubConsumerGroupInfo definition which contains all the minimum required properties for
          * the resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate extends DefinitionStages.WithProperties {
+        interface WithCreate {
             /**
              * Executes the create request.
              *
@@ -93,16 +106,6 @@ public interface EventHubConsumerGroupInfo {
              * @return the created resource.
              */
             EventHubConsumerGroupInfo create(Context context);
-        }
-        /** The stage of the EventHubConsumerGroupInfo definition allowing to specify properties. */
-        interface WithProperties {
-            /**
-             * Specifies the properties property: The EventHub consumer group name..
-             *
-             * @param properties The EventHub consumer group name.
-             * @return the next definition stage.
-             */
-            WithCreate withProperties(EventHubConsumerGroupName properties);
         }
     }
     /**

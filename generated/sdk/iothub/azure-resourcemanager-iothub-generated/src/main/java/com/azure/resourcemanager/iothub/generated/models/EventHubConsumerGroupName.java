@@ -17,7 +17,7 @@ public final class EventHubConsumerGroupName {
     /*
      * EventHub consumer group name
      */
-    @JsonProperty(value = "name")
+    @JsonProperty(value = "name", required = true)
     private String name;
 
     /**
@@ -46,5 +46,10 @@ public final class EventHubConsumerGroupName {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+        if (name() == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException("Missing required property name in model EventHubConsumerGroupName"));
+        }
     }
 }

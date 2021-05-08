@@ -17,7 +17,7 @@ public final class EventHubConsumerGroupBodyDescription {
     /*
      * The EventHub consumer group name.
      */
-    @JsonProperty(value = "properties")
+    @JsonProperty(value = "properties", required = true)
     private EventHubConsumerGroupName properties;
 
     /**
@@ -46,7 +46,12 @@ public final class EventHubConsumerGroupBodyDescription {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
-        if (properties() != null) {
+        if (properties() == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        "Missing required property properties in model EventHubConsumerGroupBodyDescription"));
+        } else {
             properties().validate();
         }
     }
