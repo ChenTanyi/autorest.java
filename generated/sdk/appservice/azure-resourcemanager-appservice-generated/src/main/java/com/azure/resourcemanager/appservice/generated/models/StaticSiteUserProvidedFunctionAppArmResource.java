@@ -165,7 +165,7 @@ public interface StaticSiteUserProvidedFunctionAppArmResource {
              *     The default is &lt;code&gt;false&lt;/code&gt;.
              * @return the next definition stage.
              */
-            WithCreate withIsForced(Boolean isForced);
+            WithCreate withWithIsForced(Boolean isForced);
         }
     }
     /**
@@ -180,7 +180,7 @@ public interface StaticSiteUserProvidedFunctionAppArmResource {
         extends UpdateStages.WithKind,
             UpdateStages.WithFunctionAppResourceId,
             UpdateStages.WithFunctionAppRegion,
-            UpdateStages.WithisForced {
+            UpdateStages.WithIsForced {
         /**
          * Executes the update request.
          *
@@ -235,7 +235,7 @@ public interface StaticSiteUserProvidedFunctionAppArmResource {
             Update withFunctionAppRegion(String functionAppRegion);
         }
         /** The stage of the StaticSiteUserProvidedFunctionAppArmResource update allowing to specify isForced. */
-        interface WithisForced {
+        interface WithIsForced {
             /**
              * Specifies the isForced property: Specify &lt;code&gt;true&lt;/code&gt; to force the update of the auth
              * configuration on the function app even if an AzureStaticWebApps provider is already configured on the
@@ -246,7 +246,7 @@ public interface StaticSiteUserProvidedFunctionAppArmResource {
              *     The default is &lt;code&gt;false&lt;/code&gt;.
              * @return the next definition stage.
              */
-            Update isForced(Boolean isForced);
+            Update withIsForced(Boolean isForced);
         }
     }
     /**

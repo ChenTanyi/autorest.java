@@ -150,12 +150,12 @@ public final class CertificateDescriptionImpl
         return this;
     }
 
-    public CertificateDescriptionImpl withIfMatch(String ifMatch) {
+    public CertificateDescriptionImpl withWithIfMatch(String ifMatch) {
         this.createIfMatch = ifMatch;
         return this;
     }
 
-    public CertificateDescriptionImpl ifMatch(String ifMatch) {
+    public CertificateDescriptionImpl withIfMatch(String ifMatch) {
         this.updateIfMatch = ifMatch;
         return this;
     }

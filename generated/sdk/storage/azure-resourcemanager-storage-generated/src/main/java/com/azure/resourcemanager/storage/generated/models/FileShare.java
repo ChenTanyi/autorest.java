@@ -262,7 +262,7 @@ public interface FileShare {
              * @param expand Optional, used to create a snapshot.
              * @return the next definition stage.
              */
-            WithCreate withExpand(PutSharesExpand expand);
+            WithCreate withWithExpand(PutSharesExpand expand);
         }
     }
     /**

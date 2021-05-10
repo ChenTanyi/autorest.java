@@ -262,7 +262,7 @@ public interface Zone {
              *     the last-seen etag value to prevent accidentally overwriting any concurrent changes.
              * @return the next definition stage.
              */
-            WithCreate withIfMatch(String ifMatch);
+            WithCreate withWithIfMatch(String ifMatch);
         }
         /** The stage of the Zone definition allowing to specify ifNoneMatch. */
         interface WithIfNoneMatch {
@@ -274,7 +274,7 @@ public interface Zone {
              *     zone. Other values will be ignored.
              * @return the next definition stage.
              */
-            WithCreate withIfNoneMatch(String ifNoneMatch);
+            WithCreate withWithIfNoneMatch(String ifNoneMatch);
         }
     }
     /**
@@ -285,7 +285,7 @@ public interface Zone {
     Zone.Update update();
 
     /** The template for Zone update. */
-    interface Update extends UpdateStages.WithTags, UpdateStages.WithifMatch {
+    interface Update extends UpdateStages.WithTags, UpdateStages.WithIfMatch {
         /**
          * Executes the update request.
          *
@@ -314,7 +314,7 @@ public interface Zone {
             Update withTags(Map<String, String> tags);
         }
         /** The stage of the Zone update allowing to specify ifMatch. */
-        interface WithifMatch {
+        interface WithIfMatch {
             /**
              * Specifies the ifMatch property: The etag of the DNS zone. Omit this value to always overwrite the current
              * zone. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes..
@@ -323,7 +323,7 @@ public interface Zone {
              *     the last-seen etag value to prevent accidentally overwriting any concurrent changes.
              * @return the next definition stage.
              */
-            Update ifMatch(String ifMatch);
+            Update withIfMatch(String ifMatch);
         }
     }
     /**

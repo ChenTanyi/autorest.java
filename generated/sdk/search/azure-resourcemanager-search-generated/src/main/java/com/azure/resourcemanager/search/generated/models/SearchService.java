@@ -359,7 +359,7 @@ public interface SearchService {
              *     will be included in response information as a way to track the request.
              * @return the next definition stage.
              */
-            WithCreate withClientRequestId(UUID clientRequestId);
+            WithCreate withWithClientRequestId(UUID clientRequestId);
         }
     }
     /**
@@ -379,7 +379,7 @@ public interface SearchService {
             UpdateStages.WithHostingMode,
             UpdateStages.WithPublicNetworkAccess,
             UpdateStages.WithNetworkRuleSet,
-            UpdateStages.WithclientRequestId {
+            UpdateStages.WithClientRequestId {
         /**
          * Executes the update request.
          *
@@ -498,7 +498,7 @@ public interface SearchService {
             Update withNetworkRuleSet(NetworkRuleSet networkRuleSet);
         }
         /** The stage of the SearchService update allowing to specify clientRequestId. */
-        interface WithclientRequestId {
+        interface WithClientRequestId {
             /**
              * Specifies the clientRequestId property: A client-generated GUID value that identifies this request. If
              * specified, this will be included in response information as a way to track the request..
@@ -507,7 +507,7 @@ public interface SearchService {
              *     will be included in response information as a way to track the request.
              * @return the next definition stage.
              */
-            Update clientRequestId(UUID clientRequestId);
+            Update withClientRequestId(UUID clientRequestId);
         }
     }
     /**

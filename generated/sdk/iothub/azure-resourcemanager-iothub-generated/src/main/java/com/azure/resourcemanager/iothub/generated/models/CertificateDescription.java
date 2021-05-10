@@ -111,7 +111,7 @@ public interface CertificateDescription {
              *     update an existing certificate.
              * @return the next definition stage.
              */
-            WithCreate withIfMatch(String ifMatch);
+            WithCreate withWithIfMatch(String ifMatch);
         }
     }
     /**
@@ -122,7 +122,7 @@ public interface CertificateDescription {
     CertificateDescription.Update update();
 
     /** The template for CertificateDescription update. */
-    interface Update extends UpdateStages.WithProperties, UpdateStages.WithifMatch {
+    interface Update extends UpdateStages.WithProperties, UpdateStages.WithIfMatch {
         /**
          * Executes the update request.
          *
@@ -151,7 +151,7 @@ public interface CertificateDescription {
             Update withProperties(CertificateProperties properties);
         }
         /** The stage of the CertificateDescription update allowing to specify ifMatch. */
-        interface WithifMatch {
+        interface WithIfMatch {
             /**
              * Specifies the ifMatch property: ETag of the Certificate. Do not specify for creating a brand new
              * certificate. Required to update an existing certificate..
@@ -160,7 +160,7 @@ public interface CertificateDescription {
              *     update an existing certificate.
              * @return the next definition stage.
              */
-            Update ifMatch(String ifMatch);
+            Update withIfMatch(String ifMatch);
         }
     }
     /**

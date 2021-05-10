@@ -198,12 +198,12 @@ public final class StaticSiteUserProvidedFunctionAppArmResourceImpl
         return this;
     }
 
-    public StaticSiteUserProvidedFunctionAppArmResourceImpl withIsForced(Boolean isForced) {
+    public StaticSiteUserProvidedFunctionAppArmResourceImpl withWithIsForced(Boolean isForced) {
         this.createIsForced = isForced;
         return this;
     }
 
-    public StaticSiteUserProvidedFunctionAppArmResourceImpl isForced(Boolean isForced) {
+    public StaticSiteUserProvidedFunctionAppArmResourceImpl withIsForced(Boolean isForced) {
         this.updateIsForced = isForced;
         return this;
     }

@@ -242,7 +242,7 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
         return this;
     }
 
-    public FileShareImpl withExpand(PutSharesExpand expand) {
+    public FileShareImpl withWithExpand(PutSharesExpand expand) {
         this.createExpand = expand;
         return this;
     }

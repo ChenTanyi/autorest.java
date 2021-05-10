@@ -355,7 +355,7 @@ public final class ConnectionMonitorResultImpl
         return this;
     }
 
-    public ConnectionMonitorResultImpl withMigrate(String migrate) {
+    public ConnectionMonitorResultImpl withWithMigrate(String migrate) {
         this.createMigrate = migrate;
         return this;
     }

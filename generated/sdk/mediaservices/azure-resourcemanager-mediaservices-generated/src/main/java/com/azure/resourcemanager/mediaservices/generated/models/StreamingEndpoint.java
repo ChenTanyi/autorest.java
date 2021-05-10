@@ -383,7 +383,7 @@ public interface StreamingEndpoint {
              * @param autoStart The flag indicates if the resource should be automatically started on creation.
              * @return the next definition stage.
              */
-            WithCreate withAutoStart(Boolean autoStart);
+            WithCreate withWithAutoStart(Boolean autoStart);
         }
     }
     /**

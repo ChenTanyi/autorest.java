@@ -328,7 +328,7 @@ public final class StreamingEndpointImpl
         return this;
     }
 
-    public StreamingEndpointImpl withAutoStart(Boolean autoStart) {
+    public StreamingEndpointImpl withWithAutoStart(Boolean autoStart) {
         this.createAutoStart = autoStart;
         return this;
     }

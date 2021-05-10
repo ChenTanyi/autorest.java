@@ -347,7 +347,7 @@ public interface ConnectionMonitorResult {
              * @param migrate Value indicating whether connection monitor V1 should be migrated to V2 format.
              * @return the next definition stage.
              */
-            WithCreate withMigrate(String migrate);
+            WithCreate withWithMigrate(String migrate);
         }
     }
     /**

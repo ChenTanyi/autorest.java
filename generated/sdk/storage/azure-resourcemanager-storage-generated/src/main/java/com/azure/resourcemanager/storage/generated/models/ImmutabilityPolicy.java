@@ -158,7 +158,7 @@ public interface ImmutabilityPolicy {
              *     operation will always be applied.
              * @return the next definition stage.
              */
-            WithCreate withIfMatch(String ifMatch);
+            WithCreate withWithIfMatch(String ifMatch);
         }
     }
     /**
@@ -172,7 +172,7 @@ public interface ImmutabilityPolicy {
     interface Update
         extends UpdateStages.WithImmutabilityPeriodSinceCreationInDays,
             UpdateStages.WithAllowProtectedAppendWrites,
-            UpdateStages.WithifMatch {
+            UpdateStages.WithIfMatch {
         /**
          * Executes the update request.
          *
@@ -219,7 +219,7 @@ public interface ImmutabilityPolicy {
             Update withAllowProtectedAppendWrites(Boolean allowProtectedAppendWrites);
         }
         /** The stage of the ImmutabilityPolicy update allowing to specify ifMatch. */
-        interface WithifMatch {
+        interface WithIfMatch {
             /**
              * Specifies the ifMatch property: The entity state (ETag) version of the immutability policy to update. A
              * value of "*" can be used to apply the operation only if the immutability policy already exists. If
@@ -230,7 +230,7 @@ public interface ImmutabilityPolicy {
              *     operation will always be applied.
              * @return the next definition stage.
              */
-            Update ifMatch(String ifMatch);
+            Update withIfMatch(String ifMatch);
         }
     }
     /**

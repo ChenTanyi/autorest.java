@@ -331,12 +331,12 @@ public final class SearchServiceImpl implements SearchService, SearchService.Def
         }
     }
 
-    public SearchServiceImpl withClientRequestId(UUID clientRequestId) {
+    public SearchServiceImpl withWithClientRequestId(UUID clientRequestId) {
         this.createClientRequestId = clientRequestId;
         return this;
     }
 
-    public SearchServiceImpl clientRequestId(UUID clientRequestId) {
+    public SearchServiceImpl withClientRequestId(UUID clientRequestId) {
         this.updateClientRequestId = clientRequestId;
         return this;
     }

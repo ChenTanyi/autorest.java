@@ -243,7 +243,7 @@ public final class IotHubDescriptionImpl
         return this;
     }
 
-    public IotHubDescriptionImpl withIfMatch(String ifMatch) {
+    public IotHubDescriptionImpl withWithIfMatch(String ifMatch) {
         this.createIfMatch = ifMatch;
         return this;
     }

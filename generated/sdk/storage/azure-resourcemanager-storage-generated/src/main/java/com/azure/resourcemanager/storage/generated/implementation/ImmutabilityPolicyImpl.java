@@ -168,12 +168,12 @@ public final class ImmutabilityPolicyImpl
         return this;
     }
 
-    public ImmutabilityPolicyImpl withIfMatch(String ifMatch) {
+    public ImmutabilityPolicyImpl withWithIfMatch(String ifMatch) {
         this.createIfMatch = ifMatch;
         return this;
     }
 
-    public ImmutabilityPolicyImpl ifMatch(String ifMatch) {
+    public ImmutabilityPolicyImpl withIfMatch(String ifMatch) {
         this.updateIfMatch = ifMatch;
         return this;
     }

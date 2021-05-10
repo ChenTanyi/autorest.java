@@ -421,7 +421,7 @@ public interface Cluster {
              *     the last-seen ETag value to prevent accidentally overwriting concurrent changes.
              * @return the next definition stage.
              */
-            WithCreate withIfMatch(String ifMatch);
+            WithCreate withWithIfMatch(String ifMatch);
         }
         /** The stage of the Cluster definition allowing to specify ifNoneMatch. */
         interface WithIfNoneMatch {
@@ -433,7 +433,7 @@ public interface Cluster {
              *     cluster. Other values will result in a 412 Pre-condition Failed response.
              * @return the next definition stage.
              */
-            WithCreate withIfNoneMatch(String ifNoneMatch);
+            WithCreate withWithIfNoneMatch(String ifNoneMatch);
         }
     }
     /**
@@ -457,7 +457,7 @@ public interface Cluster {
             UpdateStages.WithEnablePurge,
             UpdateStages.WithEnableDoubleEncryption,
             UpdateStages.WithEngineType,
-            UpdateStages.WithifMatch {
+            UpdateStages.WithIfMatch {
         /**
          * Executes the update request.
          *
@@ -599,7 +599,7 @@ public interface Cluster {
             Update withEngineType(EngineType engineType);
         }
         /** The stage of the Cluster update allowing to specify ifMatch. */
-        interface WithifMatch {
+        interface WithIfMatch {
             /**
              * Specifies the ifMatch property: The ETag of the cluster. Omit this value to always overwrite the current
              * cluster. Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes..
@@ -608,7 +608,7 @@ public interface Cluster {
              *     the last-seen ETag value to prevent accidentally overwriting concurrent changes.
              * @return the next definition stage.
              */
-            Update ifMatch(String ifMatch);
+            Update withIfMatch(String ifMatch);
         }
     }
     /**

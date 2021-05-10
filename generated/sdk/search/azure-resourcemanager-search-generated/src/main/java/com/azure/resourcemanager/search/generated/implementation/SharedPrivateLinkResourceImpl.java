@@ -172,12 +172,12 @@ public final class SharedPrivateLinkResourceImpl
         return this;
     }
 
-    public SharedPrivateLinkResourceImpl withClientRequestId(UUID clientRequestId) {
+    public SharedPrivateLinkResourceImpl withWithClientRequestId(UUID clientRequestId) {
         this.createClientRequestId = clientRequestId;
         return this;
     }
 
-    public SharedPrivateLinkResourceImpl clientRequestId(UUID clientRequestId) {
+    public SharedPrivateLinkResourceImpl withClientRequestId(UUID clientRequestId) {
         this.updateClientRequestId = clientRequestId;
         return this;
     }
