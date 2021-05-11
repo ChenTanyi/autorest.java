@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
+import com.azure.core.management.SubResource;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationSecurityGroupInner;
 import com.azure.resourcemanager.network.generated.fluent.models.BackendAddressPoolInner;
 import com.azure.resourcemanager.network.generated.fluent.models.InboundNatRuleInner;
@@ -49,6 +50,14 @@ public final class NetworkInterfaceIpConfigurationImpl implements NetworkInterfa
 
     public String etag() {
         return this.innerModel().etag();
+    }
+
+    public String type() {
+        return this.innerModel().type();
+    }
+
+    public SubResource gatewayLoadBalancer() {
+        return this.innerModel().gatewayLoadBalancer();
     }
 
     public List<VirtualNetworkTap> virtualNetworkTaps() {

@@ -119,6 +119,13 @@ public interface FrontendIpConfiguration {
     SubResource publicIpPrefix();
 
     /**
+     * Gets the gatewayLoadBalancer property: The reference to gateway load balancer frontend IP.
+     *
+     * @return the gatewayLoadBalancer value.
+     */
+    SubResource gatewayLoadBalancer();
+
+    /**
      * Gets the provisioningState property: The provisioning state of the frontend IP configuration resource.
      *
      * @return the provisioningState value.

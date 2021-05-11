@@ -9,6 +9,7 @@ import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkGatewayInner;
+import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkGatewayNatRuleInner;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnClientIPsecParametersInner;
 import java.util.List;
 import java.util.Map;
@@ -185,6 +186,20 @@ public interface VirtualNetworkGateway {
     String vNetExtendedLocationResourceId();
 
     /**
+     * Gets the natRules property: NatRules for virtual network gateway.
+     *
+     * @return the natRules value.
+     */
+    List<VirtualNetworkGatewayNatRule> natRules();
+
+    /**
+     * Gets the enableBgpRouteTranslationForNat property: EnableBgpRouteTranslationForNat flag.
+     *
+     * @return the enableBgpRouteTranslationForNat value.
+     */
+    Boolean enableBgpRouteTranslationForNat();
+
+    /**
      * Gets the id property: Resource ID.
      *
      * @return the id value.
@@ -272,7 +287,9 @@ public interface VirtualNetworkGateway {
                 DefinitionStages.WithBgpSettings,
                 DefinitionStages.WithCustomRoutes,
                 DefinitionStages.WithEnableDnsForwarding,
-                DefinitionStages.WithVNetExtendedLocationResourceId {
+                DefinitionStages.WithVNetExtendedLocationResourceId,
+                DefinitionStages.WithNatRules,
+                DefinitionStages.WithEnableBgpRouteTranslationForNat {
             /**
              * Executes the create request.
              *
@@ -463,6 +480,26 @@ public interface VirtualNetworkGateway {
              * @return the next definition stage.
              */
             WithCreate withVNetExtendedLocationResourceId(String vNetExtendedLocationResourceId);
+        }
+        /** The stage of the VirtualNetworkGateway definition allowing to specify natRules. */
+        interface WithNatRules {
+            /**
+             * Specifies the natRules property: NatRules for virtual network gateway..
+             *
+             * @param natRules NatRules for virtual network gateway.
+             * @return the next definition stage.
+             */
+            WithCreate withNatRules(List<VirtualNetworkGatewayNatRuleInner> natRules);
+        }
+        /** The stage of the VirtualNetworkGateway definition allowing to specify enableBgpRouteTranslationForNat. */
+        interface WithEnableBgpRouteTranslationForNat {
+            /**
+             * Specifies the enableBgpRouteTranslationForNat property: EnableBgpRouteTranslationForNat flag..
+             *
+             * @param enableBgpRouteTranslationForNat EnableBgpRouteTranslationForNat flag.
+             * @return the next definition stage.
+             */
+            WithCreate withEnableBgpRouteTranslationForNat(Boolean enableBgpRouteTranslationForNat);
         }
     }
     /**

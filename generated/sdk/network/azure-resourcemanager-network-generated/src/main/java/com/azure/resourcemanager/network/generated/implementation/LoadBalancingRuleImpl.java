@@ -10,6 +10,8 @@ import com.azure.resourcemanager.network.generated.models.LoadBalancingRule;
 import com.azure.resourcemanager.network.generated.models.LoadDistribution;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.TransportProtocol;
+import java.util.Collections;
+import java.util.List;
 
 public final class LoadBalancingRuleImpl implements LoadBalancingRule {
     private LoadBalancingRuleInner innerObject;
@@ -44,6 +46,15 @@ public final class LoadBalancingRuleImpl implements LoadBalancingRule {
 
     public SubResource backendAddressPool() {
         return this.innerModel().backendAddressPool();
+    }
+
+    public List<SubResource> backendAddressPools() {
+        List<SubResource> inner = this.innerModel().backendAddressPools();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     public SubResource probe() {

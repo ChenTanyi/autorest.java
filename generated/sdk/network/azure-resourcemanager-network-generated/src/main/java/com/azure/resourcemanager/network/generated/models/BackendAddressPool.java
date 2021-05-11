@@ -49,6 +49,13 @@ public interface BackendAddressPool {
     String location();
 
     /**
+     * Gets the tunnelInterfaces property: An array of gateway load balancer tunnel interfaces.
+     *
+     * @return the tunnelInterfaces value.
+     */
+    List<GatewayLoadBalancerTunnelInterface> tunnelInterfaces();
+
+    /**
      * Gets the loadBalancerBackendAddresses property: An array of backend addresses.
      *
      * @return the loadBalancerBackendAddresses value.
@@ -139,6 +146,7 @@ public interface BackendAddressPool {
         interface WithCreate
             extends DefinitionStages.WithLocation,
                 DefinitionStages.WithName,
+                DefinitionStages.WithTunnelInterfaces,
                 DefinitionStages.WithLoadBalancerBackendAddresses {
             /**
              * Executes the create request.
@@ -185,6 +193,16 @@ public interface BackendAddressPool {
              */
             WithCreate withName(String name);
         }
+        /** The stage of the BackendAddressPool definition allowing to specify tunnelInterfaces. */
+        interface WithTunnelInterfaces {
+            /**
+             * Specifies the tunnelInterfaces property: An array of gateway load balancer tunnel interfaces..
+             *
+             * @param tunnelInterfaces An array of gateway load balancer tunnel interfaces.
+             * @return the next definition stage.
+             */
+            WithCreate withTunnelInterfaces(List<GatewayLoadBalancerTunnelInterface> tunnelInterfaces);
+        }
         /** The stage of the BackendAddressPool definition allowing to specify loadBalancerBackendAddresses. */
         interface WithLoadBalancerBackendAddresses {
             /**
@@ -204,7 +222,10 @@ public interface BackendAddressPool {
     BackendAddressPool.Update update();
 
     /** The template for BackendAddressPool update. */
-    interface Update extends UpdateStages.WithName, UpdateStages.WithLoadBalancerBackendAddresses {
+    interface Update
+        extends UpdateStages.WithName,
+            UpdateStages.WithTunnelInterfaces,
+            UpdateStages.WithLoadBalancerBackendAddresses {
         /**
          * Executes the update request.
          *
@@ -233,6 +254,16 @@ public interface BackendAddressPool {
              * @return the next definition stage.
              */
             Update withName(String name);
+        }
+        /** The stage of the BackendAddressPool update allowing to specify tunnelInterfaces. */
+        interface WithTunnelInterfaces {
+            /**
+             * Specifies the tunnelInterfaces property: An array of gateway load balancer tunnel interfaces..
+             *
+             * @param tunnelInterfaces An array of gateway load balancer tunnel interfaces.
+             * @return the next definition stage.
+             */
+            Update withTunnelInterfaces(List<GatewayLoadBalancerTunnelInterface> tunnelInterfaces);
         }
         /** The stage of the BackendAddressPool update allowing to specify loadBalancerBackendAddresses. */
         interface WithLoadBalancerBackendAddresses {

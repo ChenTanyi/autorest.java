@@ -177,6 +177,13 @@ public interface VirtualHub {
     Boolean allowBranchToBranchTraffic();
 
     /**
+     * Gets the preferredRoutingGateway property: The preferred gateway to route on-prem traffic.
+     *
+     * @return the preferredRoutingGateway value.
+     */
+    PreferredRoutingGateway preferredRoutingGateway();
+
+    /**
      * Gets the id property: Resource ID.
      *
      * @return the id value.
@@ -263,7 +270,8 @@ public interface VirtualHub {
                 DefinitionStages.WithSku,
                 DefinitionStages.WithVirtualRouterAsn,
                 DefinitionStages.WithVirtualRouterIps,
-                DefinitionStages.WithAllowBranchToBranchTraffic {
+                DefinitionStages.WithAllowBranchToBranchTraffic,
+                DefinitionStages.WithPreferredRoutingGateway {
             /**
              * Executes the create request.
              *
@@ -430,6 +438,16 @@ public interface VirtualHub {
              * @return the next definition stage.
              */
             WithCreate withAllowBranchToBranchTraffic(Boolean allowBranchToBranchTraffic);
+        }
+        /** The stage of the VirtualHub definition allowing to specify preferredRoutingGateway. */
+        interface WithPreferredRoutingGateway {
+            /**
+             * Specifies the preferredRoutingGateway property: The preferred gateway to route on-prem traffic.
+             *
+             * @param preferredRoutingGateway The preferred gateway to route on-prem traffic.
+             * @return the next definition stage.
+             */
+            WithCreate withPreferredRoutingGateway(PreferredRoutingGateway preferredRoutingGateway);
         }
     }
     /**

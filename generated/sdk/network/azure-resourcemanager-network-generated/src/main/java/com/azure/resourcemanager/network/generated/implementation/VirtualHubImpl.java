@@ -10,6 +10,7 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualHubInner;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualHubRouteTableV2Inner;
 import com.azure.resourcemanager.network.generated.models.EffectiveRoutesParameters;
+import com.azure.resourcemanager.network.generated.models.PreferredRoutingGateway;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.RoutingState;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
@@ -146,6 +147,10 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
 
     public Boolean allowBranchToBranchTraffic() {
         return this.innerModel().allowBranchToBranchTraffic();
+    }
+
+    public PreferredRoutingGateway preferredRoutingGateway() {
+        return this.innerModel().preferredRoutingGateway();
     }
 
     public String id() {
@@ -359,6 +364,11 @@ public final class VirtualHubImpl implements VirtualHub, VirtualHub.Definition, 
 
     public VirtualHubImpl withAllowBranchToBranchTraffic(Boolean allowBranchToBranchTraffic) {
         this.innerModel().withAllowBranchToBranchTraffic(allowBranchToBranchTraffic);
+        return this;
+    }
+
+    public VirtualHubImpl withPreferredRoutingGateway(PreferredRoutingGateway preferredRoutingGateway) {
+        this.innerModel().withPreferredRoutingGateway(preferredRoutingGateway);
         return this;
     }
 

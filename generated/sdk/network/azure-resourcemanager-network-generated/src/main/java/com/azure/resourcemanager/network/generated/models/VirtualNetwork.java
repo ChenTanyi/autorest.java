@@ -74,6 +74,13 @@ public interface VirtualNetwork {
     DhcpOptions dhcpOptions();
 
     /**
+     * Gets the flowTimeoutInMinutes property: The FlowTimeout value (in minutes) for the Virtual Network.
+     *
+     * @return the flowTimeoutInMinutes value.
+     */
+    Integer flowTimeoutInMinutes();
+
+    /**
      * Gets the subnets property: A list of subnets in a Virtual Network.
      *
      * @return the subnets value.
@@ -216,6 +223,7 @@ public interface VirtualNetwork {
                 DefinitionStages.WithExtendedLocation,
                 DefinitionStages.WithAddressSpace,
                 DefinitionStages.WithDhcpOptions,
+                DefinitionStages.WithFlowTimeoutInMinutes,
                 DefinitionStages.WithSubnets,
                 DefinitionStages.WithVirtualNetworkPeerings,
                 DefinitionStages.WithEnableDdosProtection,
@@ -281,6 +289,16 @@ public interface VirtualNetwork {
              * @return the next definition stage.
              */
             WithCreate withDhcpOptions(DhcpOptions dhcpOptions);
+        }
+        /** The stage of the VirtualNetwork definition allowing to specify flowTimeoutInMinutes. */
+        interface WithFlowTimeoutInMinutes {
+            /**
+             * Specifies the flowTimeoutInMinutes property: The FlowTimeout value (in minutes) for the Virtual Network.
+             *
+             * @param flowTimeoutInMinutes The FlowTimeout value (in minutes) for the Virtual Network.
+             * @return the next definition stage.
+             */
+            WithCreate withFlowTimeoutInMinutes(Integer flowTimeoutInMinutes);
         }
         /** The stage of the VirtualNetwork definition allowing to specify subnets. */
         interface WithSubnets {

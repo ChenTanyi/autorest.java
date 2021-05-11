@@ -16,6 +16,7 @@ import com.azure.resourcemanager.network.generated.models.TagsObject;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.Definition, CustomIpPrefix.Update {
     private CustomIpPrefixInner innerObject;
@@ -64,6 +65,37 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
         return this.innerModel().cidr();
     }
 
+    public String signedMessage() {
+        return this.innerModel().signedMessage();
+    }
+
+    public String authorizationMessage() {
+        return this.innerModel().authorizationMessage();
+    }
+
+    public CustomIpPrefix customIpPrefixParent() {
+        CustomIpPrefixInner inner = this.innerModel().customIpPrefixParent();
+        if (inner != null) {
+            return new CustomIpPrefixImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public List<CustomIpPrefix> childCustomIpPrefixes() {
+        List<CustomIpPrefixInner> inner = this.innerModel().childCustomIpPrefixes();
+        if (inner != null) {
+            return Collections
+                .unmodifiableList(
+                    inner
+                        .stream()
+                        .map(inner1 -> new CustomIpPrefixImpl(inner1, this.manager()))
+                        .collect(Collectors.toList()));
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
     public CommissionedState commissionedState() {
         return this.innerModel().commissionedState();
     }
@@ -79,6 +111,10 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
 
     public String resourceGuid() {
         return this.innerModel().resourceGuid();
+    }
+
+    public String failedReason() {
+        return this.innerModel().failedReason();
     }
 
     public ProvisioningState provisioningState() {
@@ -227,6 +263,21 @@ public final class CustomIpPrefixImpl implements CustomIpPrefix, CustomIpPrefix.
 
     public CustomIpPrefixImpl withCidr(String cidr) {
         this.innerModel().withCidr(cidr);
+        return this;
+    }
+
+    public CustomIpPrefixImpl withSignedMessage(String signedMessage) {
+        this.innerModel().withSignedMessage(signedMessage);
+        return this;
+    }
+
+    public CustomIpPrefixImpl withAuthorizationMessage(String authorizationMessage) {
+        this.innerModel().withAuthorizationMessage(authorizationMessage);
+        return this;
+    }
+
+    public CustomIpPrefixImpl withCustomIpPrefixParent(CustomIpPrefixInner customIpPrefixParent) {
+        this.innerModel().withCustomIpPrefixParent(customIpPrefixParent);
         return this;
     }
 

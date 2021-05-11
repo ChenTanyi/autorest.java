@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
+import com.azure.core.management.SubResource;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceIpConfigurationInner;
 import java.util.List;
 
@@ -30,6 +31,20 @@ public interface NetworkInterfaceIpConfiguration {
      * @return the etag value.
      */
     String etag();
+
+    /**
+     * Gets the type property: Resource type.
+     *
+     * @return the type value.
+     */
+    String type();
+
+    /**
+     * Gets the gatewayLoadBalancer property: The reference to gateway load balancer frontend IP.
+     *
+     * @return the gatewayLoadBalancer value.
+     */
+    SubResource gatewayLoadBalancer();
 
     /**
      * Gets the virtualNetworkTaps property: The reference to Virtual Network Taps.

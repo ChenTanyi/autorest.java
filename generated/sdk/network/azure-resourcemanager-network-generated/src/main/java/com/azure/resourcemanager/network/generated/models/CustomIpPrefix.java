@@ -72,6 +72,34 @@ public interface CustomIpPrefix {
     String cidr();
 
     /**
+     * Gets the signedMessage property: Signed message for WAN validation.
+     *
+     * @return the signedMessage value.
+     */
+    String signedMessage();
+
+    /**
+     * Gets the authorizationMessage property: Authorization message for WAN validation.
+     *
+     * @return the authorizationMessage value.
+     */
+    String authorizationMessage();
+
+    /**
+     * Gets the customIpPrefixParent property: The Parent CustomIpPrefix for IPv6 /64 CustomIpPrefix.
+     *
+     * @return the customIpPrefixParent value.
+     */
+    CustomIpPrefix customIpPrefixParent();
+
+    /**
+     * Gets the childCustomIpPrefixes property: The list of all Children for IPv6 /48 CustomIpPrefix.
+     *
+     * @return the childCustomIpPrefixes value.
+     */
+    List<CustomIpPrefix> childCustomIpPrefixes();
+
+    /**
      * Gets the commissionedState property: The commissioned state of the Custom IP Prefix.
      *
      * @return the commissionedState value.
@@ -91,6 +119,13 @@ public interface CustomIpPrefix {
      * @return the resourceGuid value.
      */
     String resourceGuid();
+
+    /**
+     * Gets the failedReason property: The reason why resource is in failed state.
+     *
+     * @return the failedReason value.
+     */
+    String failedReason();
 
     /**
      * Gets the provisioningState property: The provisioning state of the custom IP prefix resource.
@@ -176,6 +211,9 @@ public interface CustomIpPrefix {
                 DefinitionStages.WithExtendedLocation,
                 DefinitionStages.WithZones,
                 DefinitionStages.WithCidr,
+                DefinitionStages.WithSignedMessage,
+                DefinitionStages.WithAuthorizationMessage,
+                DefinitionStages.WithCustomIpPrefixParent,
                 DefinitionStages.WithCommissionedState {
             /**
              * Executes the create request.
@@ -233,6 +271,36 @@ public interface CustomIpPrefix {
              * @return the next definition stage.
              */
             WithCreate withCidr(String cidr);
+        }
+        /** The stage of the CustomIpPrefix definition allowing to specify signedMessage. */
+        interface WithSignedMessage {
+            /**
+             * Specifies the signedMessage property: Signed message for WAN validation..
+             *
+             * @param signedMessage Signed message for WAN validation.
+             * @return the next definition stage.
+             */
+            WithCreate withSignedMessage(String signedMessage);
+        }
+        /** The stage of the CustomIpPrefix definition allowing to specify authorizationMessage. */
+        interface WithAuthorizationMessage {
+            /**
+             * Specifies the authorizationMessage property: Authorization message for WAN validation..
+             *
+             * @param authorizationMessage Authorization message for WAN validation.
+             * @return the next definition stage.
+             */
+            WithCreate withAuthorizationMessage(String authorizationMessage);
+        }
+        /** The stage of the CustomIpPrefix definition allowing to specify customIpPrefixParent. */
+        interface WithCustomIpPrefixParent {
+            /**
+             * Specifies the customIpPrefixParent property: The Parent CustomIpPrefix for IPv6 /64 CustomIpPrefix..
+             *
+             * @param customIpPrefixParent The Parent CustomIpPrefix for IPv6 /64 CustomIpPrefix.
+             * @return the next definition stage.
+             */
+            WithCreate withCustomIpPrefixParent(CustomIpPrefixInner customIpPrefixParent);
         }
         /** The stage of the CustomIpPrefix definition allowing to specify commissionedState. */
         interface WithCommissionedState {

@@ -12,6 +12,7 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.fluent.LoadBalancersClient;
 import com.azure.resourcemanager.network.generated.fluent.models.LoadBalancerInner;
 import com.azure.resourcemanager.network.generated.models.LoadBalancer;
+import com.azure.resourcemanager.network.generated.models.LoadBalancerVipSwapRequest;
 import com.azure.resourcemanager.network.generated.models.LoadBalancers;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -78,6 +79,14 @@ public final class LoadBalancersImpl implements LoadBalancers {
     public PagedIterable<LoadBalancer> listByResourceGroup(String resourceGroupName, Context context) {
         PagedIterable<LoadBalancerInner> inner = this.serviceClient().listByResourceGroup(resourceGroupName, context);
         return Utils.mapPage(inner, inner1 -> new LoadBalancerImpl(inner1, this.manager()));
+    }
+
+    public void swapPublicIpAddresses(String location, LoadBalancerVipSwapRequest parameters) {
+        this.serviceClient().swapPublicIpAddresses(location, parameters);
+    }
+
+    public void swapPublicIpAddresses(String location, LoadBalancerVipSwapRequest parameters, Context context) {
+        this.serviceClient().swapPublicIpAddresses(location, parameters, context);
     }
 
     public LoadBalancer getById(String id) {

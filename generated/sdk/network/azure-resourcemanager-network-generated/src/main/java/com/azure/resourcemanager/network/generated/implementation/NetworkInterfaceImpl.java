@@ -12,15 +12,19 @@ import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfac
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceTapConfigurationInner;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkSecurityGroupInner;
 import com.azure.resourcemanager.network.generated.fluent.models.PrivateEndpointInner;
+import com.azure.resourcemanager.network.generated.fluent.models.PrivateLinkServiceInner;
 import com.azure.resourcemanager.network.generated.models.EffectiveNetworkSecurityGroupListResult;
 import com.azure.resourcemanager.network.generated.models.EffectiveRouteListResult;
 import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.NetworkInterface;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceDnsSettings;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceIpConfiguration;
+import com.azure.resourcemanager.network.generated.models.NetworkInterfaceMigrationPhase;
+import com.azure.resourcemanager.network.generated.models.NetworkInterfaceNicType;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceTapConfiguration;
 import com.azure.resourcemanager.network.generated.models.NetworkSecurityGroup;
 import com.azure.resourcemanager.network.generated.models.PrivateEndpoint;
+import com.azure.resourcemanager.network.generated.models.PrivateLinkService;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 import java.util.Collections;
@@ -152,6 +156,27 @@ public final class NetworkInterfaceImpl
 
     public ProvisioningState provisioningState() {
         return this.innerModel().provisioningState();
+    }
+
+    public String workloadType() {
+        return this.innerModel().workloadType();
+    }
+
+    public NetworkInterfaceNicType nicType() {
+        return this.innerModel().nicType();
+    }
+
+    public PrivateLinkService privateLinkService() {
+        PrivateLinkServiceInner inner = this.innerModel().privateLinkService();
+        if (inner != null) {
+            return new PrivateLinkServiceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public NetworkInterfaceMigrationPhase migrationPhase() {
+        return this.innerModel().migrationPhase();
     }
 
     public String id() {
@@ -333,6 +358,26 @@ public final class NetworkInterfaceImpl
 
     public NetworkInterfaceImpl withEnableIpForwarding(Boolean enableIpForwarding) {
         this.innerModel().withEnableIpForwarding(enableIpForwarding);
+        return this;
+    }
+
+    public NetworkInterfaceImpl withWorkloadType(String workloadType) {
+        this.innerModel().withWorkloadType(workloadType);
+        return this;
+    }
+
+    public NetworkInterfaceImpl withNicType(NetworkInterfaceNicType nicType) {
+        this.innerModel().withNicType(nicType);
+        return this;
+    }
+
+    public NetworkInterfaceImpl withPrivateLinkService(PrivateLinkServiceInner privateLinkService) {
+        this.innerModel().withPrivateLinkService(privateLinkService);
+        return this;
+    }
+
+    public NetworkInterfaceImpl withMigrationPhase(NetworkInterfaceMigrationPhase migrationPhase) {
+        this.innerModel().withMigrationPhase(migrationPhase);
         return this;
     }
 

@@ -25,6 +25,13 @@ public interface IpAddressAvailabilityResult {
     List<String> availableIpAddresses();
 
     /**
+     * Gets the isPlatformReserved property: Private IP address platform reserved.
+     *
+     * @return the isPlatformReserved value.
+     */
+    Boolean isPlatformReserved();
+
+    /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.IpAddressAvailabilityResultInner object.
      *
      * @return the inner object.

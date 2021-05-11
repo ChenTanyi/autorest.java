@@ -92,6 +92,24 @@ public final class VirtualNetworkGatewayConnectionImpl
         }
     }
 
+    public List<SubResource> ingressNatRules() {
+        List<SubResource> inner = this.innerModel().ingressNatRules();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public List<SubResource> egressNatRules() {
+        List<SubResource> inner = this.innerModel().egressNatRules();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
     public VirtualNetworkGatewayConnectionType connectionType() {
         return this.innerModel().connectionType();
     }
@@ -390,6 +408,16 @@ public final class VirtualNetworkGatewayConnectionImpl
 
     public VirtualNetworkGatewayConnectionImpl withLocalNetworkGateway2(LocalNetworkGatewayInner localNetworkGateway2) {
         this.innerModel().withLocalNetworkGateway2(localNetworkGateway2);
+        return this;
+    }
+
+    public VirtualNetworkGatewayConnectionImpl withIngressNatRules(List<SubResource> ingressNatRules) {
+        this.innerModel().withIngressNatRules(ingressNatRules);
+        return this;
+    }
+
+    public VirtualNetworkGatewayConnectionImpl withEgressNatRules(List<SubResource> egressNatRules) {
+        this.innerModel().withEgressNatRules(egressNatRules);
         return this;
     }
 

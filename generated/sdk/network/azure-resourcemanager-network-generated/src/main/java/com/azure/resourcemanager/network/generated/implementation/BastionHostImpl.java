@@ -10,6 +10,7 @@ import com.azure.resourcemanager.network.generated.fluent.models.BastionHostInne
 import com.azure.resourcemanager.network.generated.models.BastionHost;
 import com.azure.resourcemanager.network.generated.models.BastionHostIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
+import com.azure.resourcemanager.network.generated.models.Sku;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -42,6 +43,10 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
 
     public String etag() {
         return this.innerModel().etag();
+    }
+
+    public Sku sku() {
+        return this.innerModel().sku();
     }
 
     public List<BastionHostIpConfiguration> ipConfigurations() {
@@ -176,6 +181,11 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
 
     public BastionHostImpl withTags(Map<String, String> tags) {
         this.innerModel().withTags(tags);
+        return this;
+    }
+
+    public BastionHostImpl withSku(Sku sku) {
+        this.innerModel().withSku(sku);
         return this;
     }
 

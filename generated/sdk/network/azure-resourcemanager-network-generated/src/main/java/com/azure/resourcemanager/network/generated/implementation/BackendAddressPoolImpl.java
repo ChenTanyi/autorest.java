@@ -10,6 +10,7 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.BackendAddressPoolInner;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceIpConfigurationInner;
 import com.azure.resourcemanager.network.generated.models.BackendAddressPool;
+import com.azure.resourcemanager.network.generated.models.GatewayLoadBalancerTunnelInterface;
 import com.azure.resourcemanager.network.generated.models.LoadBalancerBackendAddress;
 import com.azure.resourcemanager.network.generated.models.NetworkInterfaceIpConfiguration;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
@@ -41,6 +42,15 @@ public final class BackendAddressPoolImpl
 
     public String location() {
         return this.innerModel().location();
+    }
+
+    public List<GatewayLoadBalancerTunnelInterface> tunnelInterfaces() {
+        List<GatewayLoadBalancerTunnelInterface> inner = this.innerModel().tunnelInterfaces();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     public List<LoadBalancerBackendAddress> loadBalancerBackendAddresses() {
@@ -212,6 +222,11 @@ public final class BackendAddressPoolImpl
 
     public BackendAddressPoolImpl withName(String name) {
         this.innerModel().withName(name);
+        return this;
+    }
+
+    public BackendAddressPoolImpl withTunnelInterfaces(List<GatewayLoadBalancerTunnelInterface> tunnelInterfaces) {
+        this.innerModel().withTunnelInterfaces(tunnelInterfaces);
         return this;
     }
 

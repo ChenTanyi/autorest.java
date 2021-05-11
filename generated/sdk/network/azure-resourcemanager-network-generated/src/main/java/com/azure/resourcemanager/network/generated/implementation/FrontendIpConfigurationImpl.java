@@ -124,6 +124,10 @@ public final class FrontendIpConfigurationImpl implements FrontendIpConfiguratio
         return this.innerModel().publicIpPrefix();
     }
 
+    public SubResource gatewayLoadBalancer() {
+        return this.innerModel().gatewayLoadBalancer();
+    }
+
     public ProvisioningState provisioningState() {
         return this.innerModel().provisioningState();
     }

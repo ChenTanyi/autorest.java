@@ -35,6 +35,10 @@ public final class AvailablePrivateEndpointTypeImpl implements AvailablePrivateE
         return this.innerModel().resourceName();
     }
 
+    public String displayName() {
+        return this.innerModel().displayName();
+    }
+
     public AvailablePrivateEndpointTypeInner innerModel() {
         return this.innerObject;
     }

@@ -8,16 +8,20 @@ import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.IpConfigurationInner;
+import com.azure.resourcemanager.network.generated.fluent.models.NatGatewayInner;
 import com.azure.resourcemanager.network.generated.fluent.models.PublicIpAddressInner;
 import com.azure.resourcemanager.network.generated.models.DdosSettings;
+import com.azure.resourcemanager.network.generated.models.DeleteOptions;
 import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.IpAllocationMethod;
 import com.azure.resourcemanager.network.generated.models.IpConfiguration;
 import com.azure.resourcemanager.network.generated.models.IpTag;
 import com.azure.resourcemanager.network.generated.models.IpVersion;
+import com.azure.resourcemanager.network.generated.models.NatGateway;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.PublicIpAddress;
 import com.azure.resourcemanager.network.generated.models.PublicIpAddressDnsSettings;
+import com.azure.resourcemanager.network.generated.models.PublicIpAddressMigrationPhase;
 import com.azure.resourcemanager.network.generated.models.PublicIpAddressSku;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 import java.util.Collections;
@@ -123,6 +127,41 @@ public final class PublicIpAddressImpl implements PublicIpAddress, PublicIpAddre
 
     public ProvisioningState provisioningState() {
         return this.innerModel().provisioningState();
+    }
+
+    public PublicIpAddress servicePublicIpAddress() {
+        PublicIpAddressInner inner = this.innerModel().servicePublicIpAddress();
+        if (inner != null) {
+            return new PublicIpAddressImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public NatGateway natGateway() {
+        NatGatewayInner inner = this.innerModel().natGateway();
+        if (inner != null) {
+            return new NatGatewayImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public PublicIpAddressMigrationPhase migrationPhase() {
+        return this.innerModel().migrationPhase();
+    }
+
+    public PublicIpAddress linkedPublicIpAddress() {
+        PublicIpAddressInner inner = this.innerModel().linkedPublicIpAddress();
+        if (inner != null) {
+            return new PublicIpAddressImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public DeleteOptions deleteOption() {
+        return this.innerModel().deleteOption();
     }
 
     public String id() {
@@ -307,6 +346,31 @@ public final class PublicIpAddressImpl implements PublicIpAddress, PublicIpAddre
 
     public PublicIpAddressImpl withIdleTimeoutInMinutes(Integer idleTimeoutInMinutes) {
         this.innerModel().withIdleTimeoutInMinutes(idleTimeoutInMinutes);
+        return this;
+    }
+
+    public PublicIpAddressImpl withServicePublicIpAddress(PublicIpAddressInner servicePublicIpAddress) {
+        this.innerModel().withServicePublicIpAddress(servicePublicIpAddress);
+        return this;
+    }
+
+    public PublicIpAddressImpl withNatGateway(NatGatewayInner natGateway) {
+        this.innerModel().withNatGateway(natGateway);
+        return this;
+    }
+
+    public PublicIpAddressImpl withMigrationPhase(PublicIpAddressMigrationPhase migrationPhase) {
+        this.innerModel().withMigrationPhase(migrationPhase);
+        return this;
+    }
+
+    public PublicIpAddressImpl withLinkedPublicIpAddress(PublicIpAddressInner linkedPublicIpAddress) {
+        this.innerModel().withLinkedPublicIpAddress(linkedPublicIpAddress);
+        return this;
+    }
+
+    public PublicIpAddressImpl withDeleteOption(DeleteOptions deleteOption) {
+        this.innerModel().withDeleteOption(deleteOption);
         return this;
     }
 

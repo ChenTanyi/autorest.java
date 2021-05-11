@@ -6,6 +6,7 @@ package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.core.management.SubResource;
 import com.azure.resourcemanager.network.generated.fluent.models.LoadBalancingRuleInner;
+import java.util.List;
 
 /** An immutable client-side representation of LoadBalancingRule. */
 public interface LoadBalancingRule {
@@ -52,6 +53,13 @@ public interface LoadBalancingRule {
      * @return the backendAddressPool value.
      */
     SubResource backendAddressPool();
+
+    /**
+     * Gets the backendAddressPools property: An array of references to pool of DIPs.
+     *
+     * @return the backendAddressPools value.
+     */
+    List<SubResource> backendAddressPools();
 
     /**
      * Gets the probe property: The reference to the load balancer probe used by the load balancing rule.

@@ -104,6 +104,29 @@ public interface LoadBalancers {
     PagedIterable<LoadBalancer> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
+     * Swaps VIPs between two load balancers.
+     *
+     * @param location The region where load balancers are located at.
+     * @param parameters Parameters that define which VIPs should be swapped.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void swapPublicIpAddresses(String location, LoadBalancerVipSwapRequest parameters);
+
+    /**
+     * Swaps VIPs between two load balancers.
+     *
+     * @param location The region where load balancers are located at.
+     * @param parameters Parameters that define which VIPs should be swapped.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void swapPublicIpAddresses(String location, LoadBalancerVipSwapRequest parameters, Context context);
+
+    /**
      * Gets the specified load balancer.
      *
      * @param id the resource ID.

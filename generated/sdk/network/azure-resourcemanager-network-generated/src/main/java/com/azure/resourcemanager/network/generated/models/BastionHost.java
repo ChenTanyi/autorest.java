@@ -48,6 +48,13 @@ public interface BastionHost {
     String etag();
 
     /**
+     * Gets the sku property: The sku of this Bastion Host.
+     *
+     * @return the sku value.
+     */
+    Sku sku();
+
+    /**
      * Gets the ipConfigurations property: IP configuration of the Bastion Host resource.
      *
      * @return the ipConfigurations value.
@@ -141,7 +148,10 @@ public interface BastionHost {
          * to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
-            extends DefinitionStages.WithTags, DefinitionStages.WithIpConfigurations, DefinitionStages.WithDnsName {
+            extends DefinitionStages.WithTags,
+                DefinitionStages.WithSku,
+                DefinitionStages.WithIpConfigurations,
+                DefinitionStages.WithDnsName {
             /**
              * Executes the create request.
              *
@@ -166,6 +176,16 @@ public interface BastionHost {
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
+        }
+        /** The stage of the BastionHost definition allowing to specify sku. */
+        interface WithSku {
+            /**
+             * Specifies the sku property: The sku of this Bastion Host..
+             *
+             * @param sku The sku of this Bastion Host.
+             * @return the next definition stage.
+             */
+            WithCreate withSku(Sku sku);
         }
         /** The stage of the BastionHost definition allowing to specify ipConfigurations. */
         interface WithIpConfigurations {
@@ -196,7 +216,11 @@ public interface BastionHost {
     BastionHost.Update update();
 
     /** The template for BastionHost update. */
-    interface Update extends UpdateStages.WithTags, UpdateStages.WithIpConfigurations, UpdateStages.WithDnsName {
+    interface Update
+        extends UpdateStages.WithTags,
+            UpdateStages.WithSku,
+            UpdateStages.WithIpConfigurations,
+            UpdateStages.WithDnsName {
         /**
          * Executes the update request.
          *
@@ -223,6 +247,16 @@ public interface BastionHost {
              * @return the next definition stage.
              */
             Update withTags(Map<String, String> tags);
+        }
+        /** The stage of the BastionHost update allowing to specify sku. */
+        interface WithSku {
+            /**
+             * Specifies the sku property: The sku of this Bastion Host..
+             *
+             * @param sku The sku of this Bastion Host.
+             * @return the next definition stage.
+             */
+            Update withSku(Sku sku);
         }
         /** The stage of the BastionHost update allowing to specify ipConfigurations. */
         interface WithIpConfigurations {

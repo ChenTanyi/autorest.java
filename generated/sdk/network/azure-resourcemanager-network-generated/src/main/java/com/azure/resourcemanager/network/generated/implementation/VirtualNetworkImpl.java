@@ -66,6 +66,10 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
         return this.innerModel().dhcpOptions();
     }
 
+    public Integer flowTimeoutInMinutes() {
+        return this.innerModel().flowTimeoutInMinutes();
+    }
+
     public List<Subnet> subnets() {
         List<SubnetInner> inner = this.innerModel().subnets();
         if (inner != null) {
@@ -266,6 +270,11 @@ public final class VirtualNetworkImpl implements VirtualNetwork, VirtualNetwork.
 
     public VirtualNetworkImpl withDhcpOptions(DhcpOptions dhcpOptions) {
         this.innerModel().withDhcpOptions(dhcpOptions);
+        return this;
+    }
+
+    public VirtualNetworkImpl withFlowTimeoutInMinutes(Integer flowTimeoutInMinutes) {
+        this.innerModel().withFlowTimeoutInMinutes(flowTimeoutInMinutes);
         return this;
     }
 

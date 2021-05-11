@@ -37,6 +37,13 @@ public interface AvailablePrivateEndpointType {
     String resourceName();
 
     /**
+     * Gets the displayName property: Display name of the resource.
+     *
+     * @return the displayName value.
+     */
+    String displayName();
+
+    /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.AvailablePrivateEndpointTypeInner
      * object.
      *

@@ -110,6 +110,7 @@ import com.azure.resourcemanager.network.generated.fluent.VirtualHubIpConfigurat
 import com.azure.resourcemanager.network.generated.fluent.VirtualHubRouteTableV2SClient;
 import com.azure.resourcemanager.network.generated.fluent.VirtualHubsClient;
 import com.azure.resourcemanager.network.generated.fluent.VirtualNetworkGatewayConnectionsClient;
+import com.azure.resourcemanager.network.generated.fluent.VirtualNetworkGatewayNatRulesClient;
 import com.azure.resourcemanager.network.generated.fluent.VirtualNetworkGatewaysClient;
 import com.azure.resourcemanager.network.generated.fluent.VirtualNetworkPeeringsClient;
 import com.azure.resourcemanager.network.generated.fluent.VirtualNetworkTapsClient;
@@ -1191,6 +1192,18 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         return this.localNetworkGateways;
     }
 
+    /** The VirtualNetworkGatewayNatRulesClient object to access its operations. */
+    private final VirtualNetworkGatewayNatRulesClient virtualNetworkGatewayNatRules;
+
+    /**
+     * Gets the VirtualNetworkGatewayNatRulesClient object to access its operations.
+     *
+     * @return the VirtualNetworkGatewayNatRulesClient object.
+     */
+    public VirtualNetworkGatewayNatRulesClient getVirtualNetworkGatewayNatRules() {
+        return this.virtualNetworkGatewayNatRules;
+    }
+
     /** The VirtualNetworkTapsClient object to access its operations. */
     private final VirtualNetworkTapsClient virtualNetworkTaps;
 
@@ -1587,6 +1600,7 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         this.virtualNetworkGateways = new VirtualNetworkGatewaysClientImpl(this);
         this.virtualNetworkGatewayConnections = new VirtualNetworkGatewayConnectionsClientImpl(this);
         this.localNetworkGateways = new LocalNetworkGatewaysClientImpl(this);
+        this.virtualNetworkGatewayNatRules = new VirtualNetworkGatewayNatRulesClientImpl(this);
         this.virtualNetworkTaps = new VirtualNetworkTapsClientImpl(this);
         this.virtualRouters = new VirtualRoutersClientImpl(this);
         this.virtualRouterPeerings = new VirtualRouterPeeringsClientImpl(this);

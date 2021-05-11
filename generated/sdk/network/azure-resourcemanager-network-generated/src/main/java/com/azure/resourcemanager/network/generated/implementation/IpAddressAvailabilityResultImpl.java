@@ -34,6 +34,10 @@ public final class IpAddressAvailabilityResultImpl implements IpAddressAvailabil
         }
     }
 
+    public Boolean isPlatformReserved() {
+        return this.innerModel().isPlatformReserved();
+    }
+
     public IpAddressAvailabilityResultInner innerModel() {
         return this.innerObject;
     }

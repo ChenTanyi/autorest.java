@@ -79,6 +79,20 @@ public interface VirtualNetworkGatewayConnection {
     LocalNetworkGateway localNetworkGateway2();
 
     /**
+     * Gets the ingressNatRules property: List of ingress NatRules.
+     *
+     * @return the ingressNatRules value.
+     */
+    List<SubResource> ingressNatRules();
+
+    /**
+     * Gets the egressNatRules property: List of egress NatRules.
+     *
+     * @return the egressNatRules value.
+     */
+    List<SubResource> egressNatRules();
+
+    /**
      * Gets the connectionType property: Gateway connection type.
      *
      * @return the connectionType value.
@@ -311,6 +325,8 @@ public interface VirtualNetworkGatewayConnection {
                 DefinitionStages.WithAuthorizationKey,
                 DefinitionStages.WithVirtualNetworkGateway2,
                 DefinitionStages.WithLocalNetworkGateway2,
+                DefinitionStages.WithIngressNatRules,
+                DefinitionStages.WithEgressNatRules,
                 DefinitionStages.WithConnectionProtocol,
                 DefinitionStages.WithRoutingWeight,
                 DefinitionStages.WithDpdTimeoutSeconds,
@@ -377,6 +393,26 @@ public interface VirtualNetworkGatewayConnection {
              * @return the next definition stage.
              */
             WithCreate withLocalNetworkGateway2(LocalNetworkGatewayInner localNetworkGateway2);
+        }
+        /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify ingressNatRules. */
+        interface WithIngressNatRules {
+            /**
+             * Specifies the ingressNatRules property: List of ingress NatRules..
+             *
+             * @param ingressNatRules List of ingress NatRules.
+             * @return the next definition stage.
+             */
+            WithCreate withIngressNatRules(List<SubResource> ingressNatRules);
+        }
+        /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify egressNatRules. */
+        interface WithEgressNatRules {
+            /**
+             * Specifies the egressNatRules property: List of egress NatRules..
+             *
+             * @param egressNatRules List of egress NatRules.
+             * @return the next definition stage.
+             */
+            WithCreate withEgressNatRules(List<SubResource> egressNatRules);
         }
         /** The stage of the VirtualNetworkGatewayConnection definition allowing to specify connectionProtocol. */
         interface WithConnectionProtocol {

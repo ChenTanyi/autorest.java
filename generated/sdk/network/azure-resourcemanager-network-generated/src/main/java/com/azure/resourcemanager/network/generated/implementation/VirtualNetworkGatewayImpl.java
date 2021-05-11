@@ -9,6 +9,7 @@ import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkGatewayInner;
+import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkGatewayNatRuleInner;
 import com.azure.resourcemanager.network.generated.fluent.models.VpnClientIPsecParametersInner;
 import com.azure.resourcemanager.network.generated.models.AddressSpace;
 import com.azure.resourcemanager.network.generated.models.BgpPeerStatusListResult;
@@ -20,6 +21,7 @@ import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGateway;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayIpConfiguration;
+import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayNatRule;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewaySku;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayType;
 import com.azure.resourcemanager.network.generated.models.VpnClientConfiguration;
@@ -33,6 +35,7 @@ import com.azure.resourcemanager.network.generated.models.VpnType;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public final class VirtualNetworkGatewayImpl
     implements VirtualNetworkGateway, VirtualNetworkGateway.Definition, VirtualNetworkGateway.Update {
@@ -140,6 +143,24 @@ public final class VirtualNetworkGatewayImpl
 
     public String vNetExtendedLocationResourceId() {
         return this.innerModel().vNetExtendedLocationResourceId();
+    }
+
+    public List<VirtualNetworkGatewayNatRule> natRules() {
+        List<VirtualNetworkGatewayNatRuleInner> inner = this.innerModel().natRules();
+        if (inner != null) {
+            return Collections
+                .unmodifiableList(
+                    inner
+                        .stream()
+                        .map(inner1 -> new VirtualNetworkGatewayNatRuleImpl(inner1, this.manager()))
+                        .collect(Collectors.toList()));
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public Boolean enableBgpRouteTranslationForNat() {
+        return this.innerModel().enableBgpRouteTranslationForNat();
     }
 
     public String id() {
@@ -517,6 +538,16 @@ public final class VirtualNetworkGatewayImpl
 
     public VirtualNetworkGatewayImpl withVNetExtendedLocationResourceId(String vNetExtendedLocationResourceId) {
         this.innerModel().withVNetExtendedLocationResourceId(vNetExtendedLocationResourceId);
+        return this;
+    }
+
+    public VirtualNetworkGatewayImpl withNatRules(List<VirtualNetworkGatewayNatRuleInner> natRules) {
+        this.innerModel().withNatRules(natRules);
+        return this;
+    }
+
+    public VirtualNetworkGatewayImpl withEnableBgpRouteTranslationForNat(Boolean enableBgpRouteTranslationForNat) {
+        this.innerModel().withEnableBgpRouteTranslationForNat(enableBgpRouteTranslationForNat);
         return this;
     }
 

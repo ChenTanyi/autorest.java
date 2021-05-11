@@ -110,6 +110,7 @@ import com.azure.resourcemanager.network.generated.implementation.VirtualHubIpCo
 import com.azure.resourcemanager.network.generated.implementation.VirtualHubRouteTableV2SImpl;
 import com.azure.resourcemanager.network.generated.implementation.VirtualHubsImpl;
 import com.azure.resourcemanager.network.generated.implementation.VirtualNetworkGatewayConnectionsImpl;
+import com.azure.resourcemanager.network.generated.implementation.VirtualNetworkGatewayNatRulesImpl;
 import com.azure.resourcemanager.network.generated.implementation.VirtualNetworkGatewaysImpl;
 import com.azure.resourcemanager.network.generated.implementation.VirtualNetworkPeeringsImpl;
 import com.azure.resourcemanager.network.generated.implementation.VirtualNetworkTapsImpl;
@@ -216,6 +217,7 @@ import com.azure.resourcemanager.network.generated.models.VirtualHubIpConfigurat
 import com.azure.resourcemanager.network.generated.models.VirtualHubRouteTableV2S;
 import com.azure.resourcemanager.network.generated.models.VirtualHubs;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayConnections;
+import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayNatRules;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGateways;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkPeerings;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkTaps;
@@ -405,6 +407,8 @@ public final class NetworkManager {
     private VirtualNetworkGatewayConnections virtualNetworkGatewayConnections;
 
     private LocalNetworkGateways localNetworkGateways;
+
+    private VirtualNetworkGatewayNatRules virtualNetworkGatewayNatRules;
 
     private VirtualNetworkTaps virtualNetworkTaps;
 
@@ -1309,6 +1313,15 @@ public final class NetworkManager {
             this.localNetworkGateways = new LocalNetworkGatewaysImpl(clientObject.getLocalNetworkGateways(), this);
         }
         return localNetworkGateways;
+    }
+
+    /** @return Resource collection API of VirtualNetworkGatewayNatRules. */
+    public VirtualNetworkGatewayNatRules virtualNetworkGatewayNatRules() {
+        if (this.virtualNetworkGatewayNatRules == null) {
+            this.virtualNetworkGatewayNatRules =
+                new VirtualNetworkGatewayNatRulesImpl(clientObject.getVirtualNetworkGatewayNatRules(), this);
+        }
+        return virtualNetworkGatewayNatRules;
     }
 
     /** @return Resource collection API of VirtualNetworkTaps. */
