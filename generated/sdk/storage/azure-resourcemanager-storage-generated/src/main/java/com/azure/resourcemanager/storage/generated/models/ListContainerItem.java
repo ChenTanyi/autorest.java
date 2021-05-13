@@ -157,6 +157,15 @@ public interface ListContainerItem {
     Boolean hasImmutabilityPolicy();
 
     /**
+     * Gets the immutableStorageWithVersioning property: The object level immutability property of the container. The
+     * property is immutable and can only be set to true at the container creation time. Existing containers must
+     * undergo a migration process.
+     *
+     * @return the immutableStorageWithVersioning value.
+     */
+    ImmutableStorageWithVersioning immutableStorageWithVersioning();
+
+    /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.ListContainerItemInner object.
      *
      * @return the inner object.

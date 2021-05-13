@@ -45,6 +45,8 @@ import com.azure.resourcemanager.compute.generated.fluent.LogAnalyticsClient;
 import com.azure.resourcemanager.compute.generated.fluent.OperationsClient;
 import com.azure.resourcemanager.compute.generated.fluent.ProximityPlacementGroupsClient;
 import com.azure.resourcemanager.compute.generated.fluent.ResourceSkusClient;
+import com.azure.resourcemanager.compute.generated.fluent.RestorePointCollectionsClient;
+import com.azure.resourcemanager.compute.generated.fluent.RestorePointsClient;
 import com.azure.resourcemanager.compute.generated.fluent.SharedGalleriesClient;
 import com.azure.resourcemanager.compute.generated.fluent.SharedGalleryImageVersionsClient;
 import com.azure.resourcemanager.compute.generated.fluent.SharedGalleryImagesClient;
@@ -321,6 +323,30 @@ public final class ComputeManagementClientImpl implements ComputeManagementClien
      */
     public ImagesClient getImages() {
         return this.images;
+    }
+
+    /** The RestorePointCollectionsClient object to access its operations. */
+    private final RestorePointCollectionsClient restorePointCollections;
+
+    /**
+     * Gets the RestorePointCollectionsClient object to access its operations.
+     *
+     * @return the RestorePointCollectionsClient object.
+     */
+    public RestorePointCollectionsClient getRestorePointCollections() {
+        return this.restorePointCollections;
+    }
+
+    /** The RestorePointsClient object to access its operations. */
+    private final RestorePointsClient restorePoints;
+
+    /**
+     * Gets the RestorePointsClient object to access its operations.
+     *
+     * @return the RestorePointsClient object.
+     */
+    public RestorePointsClient getRestorePoints() {
+        return this.restorePoints;
     }
 
     /** The VirtualMachineScaleSetExtensionsClient object to access its operations. */
@@ -685,6 +711,8 @@ public final class ComputeManagementClientImpl implements ComputeManagementClien
         this.virtualMachineScaleSets = new VirtualMachineScaleSetsClientImpl(this);
         this.virtualMachineSizes = new VirtualMachineSizesClientImpl(this);
         this.images = new ImagesClientImpl(this);
+        this.restorePointCollections = new RestorePointCollectionsClientImpl(this);
+        this.restorePoints = new RestorePointsClientImpl(this);
         this.virtualMachineScaleSetExtensions = new VirtualMachineScaleSetExtensionsClientImpl(this);
         this.virtualMachineScaleSetRollingUpgrades = new VirtualMachineScaleSetRollingUpgradesClientImpl(this);
         this.virtualMachineScaleSetVMExtensions = new VirtualMachineScaleSetVMExtensionsClientImpl(this);

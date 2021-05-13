@@ -15,6 +15,7 @@ import com.azure.resourcemanager.compute.generated.fluent.models.UpgradeOperatio
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetInstanceViewInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetSkuInner;
+import com.azure.resourcemanager.compute.generated.models.ExpandTypesForGetVMScaleSets;
 import com.azure.resourcemanager.compute.generated.models.OrchestrationServiceStateInput;
 import com.azure.resourcemanager.compute.generated.models.RecoveryWalkResponse;
 import com.azure.resourcemanager.compute.generated.models.UpgradeOperationHistoricalStatusInfo;
@@ -74,9 +75,9 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
     }
 
     public Response<VirtualMachineScaleSet> getByResourceGroupWithResponse(
-        String resourceGroupName, String vmScaleSetName, Context context) {
+        String resourceGroupName, String vmScaleSetName, ExpandTypesForGetVMScaleSets expand, Context context) {
         Response<VirtualMachineScaleSetInner> inner =
-            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, vmScaleSetName, context);
+            this.serviceClient().getByResourceGroupWithResponse(resourceGroupName, vmScaleSetName, expand, context);
         if (inner != null) {
             return new SimpleResponse<>(
                 inner.getRequest(),
@@ -414,10 +415,14 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
                                 "The resource ID '%s' is not valid. Missing path segment 'virtualMachineScaleSets'.",
                                 id)));
         }
-        return this.getByResourceGroupWithResponse(resourceGroupName, vmScaleSetName, Context.NONE).getValue();
+        ExpandTypesForGetVMScaleSets localExpand = null;
+        return this
+            .getByResourceGroupWithResponse(resourceGroupName, vmScaleSetName, localExpand, Context.NONE)
+            .getValue();
     }
 
-    public Response<VirtualMachineScaleSet> getByIdWithResponse(String id, Context context) {
+    public Response<VirtualMachineScaleSet> getByIdWithResponse(
+        String id, ExpandTypesForGetVMScaleSets expand, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw logger
@@ -436,7 +441,7 @@ public final class VirtualMachineScaleSetsImpl implements VirtualMachineScaleSet
                                 "The resource ID '%s' is not valid. Missing path segment 'virtualMachineScaleSets'.",
                                 id)));
         }
-        return this.getByResourceGroupWithResponse(resourceGroupName, vmScaleSetName, context);
+        return this.getByResourceGroupWithResponse(resourceGroupName, vmScaleSetName, expand, context);
     }
 
     public void deleteById(String id) {

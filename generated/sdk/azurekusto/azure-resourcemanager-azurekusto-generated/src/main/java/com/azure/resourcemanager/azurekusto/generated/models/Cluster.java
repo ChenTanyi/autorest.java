@@ -421,7 +421,7 @@ public interface Cluster {
              *     the last-seen ETag value to prevent accidentally overwriting concurrent changes.
              * @return the next definition stage.
              */
-            WithCreate withWithIfMatch(String ifMatch);
+            WithCreate withIfMatch(String ifMatch);
         }
         /** The stage of the Cluster definition allowing to specify ifNoneMatch. */
         interface WithIfNoneMatch {
@@ -433,7 +433,7 @@ public interface Cluster {
              *     cluster. Other values will result in a 412 Pre-condition Failed response.
              * @return the next definition stage.
              */
-            WithCreate withWithIfNoneMatch(String ifNoneMatch);
+            WithCreate withIfNoneMatch(String ifNoneMatch);
         }
     }
     /**

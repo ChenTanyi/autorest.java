@@ -70,6 +70,13 @@ public final class ExportProperties extends CommonExportPropertiesInner {
         return this;
     }
 
+    /** {@inheritDoc} */
+    @Override
+    public ExportProperties withPartitionData(Boolean partitionData) {
+        super.withPartitionData(partitionData);
+        return this;
+    }
+
     /**
      * Validates the instance.
      *

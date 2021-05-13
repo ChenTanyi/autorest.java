@@ -24,6 +24,7 @@ import com.azure.resourcemanager.compute.generated.models.Plan;
 import com.azure.resourcemanager.compute.generated.models.RetrieveBootDiagnosticsDataResult;
 import com.azure.resourcemanager.compute.generated.models.RunCommandInput;
 import com.azure.resourcemanager.compute.generated.models.RunCommandResult;
+import com.azure.resourcemanager.compute.generated.models.ScheduledEventsProfile;
 import com.azure.resourcemanager.compute.generated.models.SecurityProfile;
 import com.azure.resourcemanager.compute.generated.models.StorageProfile;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachine;
@@ -195,6 +196,14 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
 
     public Integer platformFaultDomain() {
         return this.innerModel().platformFaultDomain();
+    }
+
+    public ScheduledEventsProfile scheduledEventsProfile() {
+        return this.innerModel().scheduledEventsProfile();
+    }
+
+    public String userData() {
+        return this.innerModel().userData();
     }
 
     public Region region() {
@@ -673,6 +682,26 @@ public final class VirtualMachineImpl implements VirtualMachine, VirtualMachine.
             return this;
         } else {
             this.updateParameters.withPlatformFaultDomain(platformFaultDomain);
+            return this;
+        }
+    }
+
+    public VirtualMachineImpl withScheduledEventsProfile(ScheduledEventsProfile scheduledEventsProfile) {
+        if (isInCreateMode()) {
+            this.innerModel().withScheduledEventsProfile(scheduledEventsProfile);
+            return this;
+        } else {
+            this.updateParameters.withScheduledEventsProfile(scheduledEventsProfile);
+            return this;
+        }
+    }
+
+    public VirtualMachineImpl withUserData(String userData) {
+        if (isInCreateMode()) {
+            this.innerModel().withUserData(userData);
+            return this;
+        } else {
+            this.updateParameters.withUserData(userData);
             return this;
         }
     }

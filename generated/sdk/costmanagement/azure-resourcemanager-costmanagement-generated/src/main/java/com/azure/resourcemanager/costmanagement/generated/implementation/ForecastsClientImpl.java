@@ -128,19 +128,12 @@ public final class ForecastsClientImpl implements ForecastsClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2020-06-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
-                    service
-                        .usage(
-                            this.client.getEndpoint(),
-                            filter,
-                            this.client.getApiVersion(),
-                            scope,
-                            parameters,
-                            accept,
-                            context))
+                    service.usage(this.client.getEndpoint(), filter, apiVersion, scope, parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -188,10 +181,10 @@ public final class ForecastsClientImpl implements ForecastsClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2020-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .usage(this.client.getEndpoint(), filter, this.client.getApiVersion(), scope, parameters, accept, context);
+        return service.usage(this.client.getEndpoint(), filter, apiVersion, scope, parameters, accept, context);
     }
 
     /**
@@ -377,6 +370,7 @@ public final class ForecastsClientImpl implements ForecastsClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2020-06-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -385,7 +379,7 @@ public final class ForecastsClientImpl implements ForecastsClient {
                         .externalCloudProviderUsage(
                             this.client.getEndpoint(),
                             filter,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             externalCloudProviderType,
                             externalCloudProviderId,
                             parameters,
@@ -441,13 +435,14 @@ public final class ForecastsClientImpl implements ForecastsClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2020-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .externalCloudProviderUsage(
                 this.client.getEndpoint(),
                 filter,
-                this.client.getApiVersion(),
+                apiVersion,
                 externalCloudProviderType,
                 externalCloudProviderId,
                 parameters,

@@ -431,6 +431,43 @@ public interface BlobContainers {
         Context context);
 
     /**
+     * This operation migrates a blob container from container level WORM to object level immutability enabled
+     * container. Prerequisites require a container level immutability policy either in locked or unlocked state,
+     * Account level versioning must be enabled and there should be no Legal hold on the container.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param containerName The name of the blob container within the specified storage account. Blob container names
+     *     must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every
+     *     dash (-) character must be immediately preceded and followed by a letter or number.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void objectLevelWorm(String resourceGroupName, String accountName, String containerName);
+
+    /**
+     * This operation migrates a blob container from container level WORM to object level immutability enabled
+     * container. Prerequisites require a container level immutability policy either in locked or unlocked state,
+     * Account level versioning must be enabled and there should be no Legal hold on the container.
+     *
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     *     insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     *     must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param containerName The name of the blob container within the specified storage account. Blob container names
+     *     must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every
+     *     dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void objectLevelWorm(String resourceGroupName, String accountName, String containerName, Context context);
+
+    /**
      * Gets properties of a specified container.
      *
      * @param id the resource ID.

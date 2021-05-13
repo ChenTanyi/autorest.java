@@ -9,11 +9,16 @@ import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.storage.generated.models.AzureEntityResource;
 import com.azure.resourcemanager.storage.generated.models.EnabledProtocols;
+import com.azure.resourcemanager.storage.generated.models.LeaseDuration;
+import com.azure.resourcemanager.storage.generated.models.LeaseState;
+import com.azure.resourcemanager.storage.generated.models.LeaseStatus;
 import com.azure.resourcemanager.storage.generated.models.RootSquashType;
 import com.azure.resourcemanager.storage.generated.models.ShareAccessTier;
+import com.azure.resourcemanager.storage.generated.models.SignedIdentifier;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
+import java.util.List;
 import java.util.Map;
 
 /** Properties of the file share, including Id, resource name, resource type, Etag. */
@@ -105,6 +110,31 @@ public class FileShareInner extends AzureEntityResource {
      */
     @JsonProperty(value = "properties.shareUsageBytes", access = JsonProperty.Access.WRITE_ONLY)
     private Long shareUsageBytes;
+
+    /*
+     * The lease status of the share.
+     */
+    @JsonProperty(value = "properties.leaseStatus", access = JsonProperty.Access.WRITE_ONLY)
+    private LeaseStatus leaseStatus;
+
+    /*
+     * Lease state of the share.
+     */
+    @JsonProperty(value = "properties.leaseState", access = JsonProperty.Access.WRITE_ONLY)
+    private LeaseState leaseState;
+
+    /*
+     * Specifies whether the lease on a share is of infinite or fixed duration,
+     * only when the share is leased.
+     */
+    @JsonProperty(value = "properties.leaseDuration", access = JsonProperty.Access.WRITE_ONLY)
+    private LeaseDuration leaseDuration;
+
+    /*
+     * List of stored access policies specified on the share.
+     */
+    @JsonProperty(value = "properties.signedIdentifiers")
+    private List<SignedIdentifier> signedIdentifiers;
 
     /*
      * Creation time of share snapshot returned in the response of list shares
@@ -293,6 +323,54 @@ public class FileShareInner extends AzureEntityResource {
     }
 
     /**
+     * Get the leaseStatus property: The lease status of the share.
+     *
+     * @return the leaseStatus value.
+     */
+    public LeaseStatus leaseStatus() {
+        return this.leaseStatus;
+    }
+
+    /**
+     * Get the leaseState property: Lease state of the share.
+     *
+     * @return the leaseState value.
+     */
+    public LeaseState leaseState() {
+        return this.leaseState;
+    }
+
+    /**
+     * Get the leaseDuration property: Specifies whether the lease on a share is of infinite or fixed duration, only
+     * when the share is leased.
+     *
+     * @return the leaseDuration value.
+     */
+    public LeaseDuration leaseDuration() {
+        return this.leaseDuration;
+    }
+
+    /**
+     * Get the signedIdentifiers property: List of stored access policies specified on the share.
+     *
+     * @return the signedIdentifiers value.
+     */
+    public List<SignedIdentifier> signedIdentifiers() {
+        return this.signedIdentifiers;
+    }
+
+    /**
+     * Set the signedIdentifiers property: List of stored access policies specified on the share.
+     *
+     * @param signedIdentifiers the signedIdentifiers value to set.
+     * @return the FileShareInner object itself.
+     */
+    public FileShareInner withSignedIdentifiers(List<SignedIdentifier> signedIdentifiers) {
+        this.signedIdentifiers = signedIdentifiers;
+        return this;
+    }
+
+    /**
      * Get the snapshotTime property: Creation time of share snapshot returned in the response of list shares with
      * expand param "snapshots".
      *
@@ -310,5 +388,8 @@ public class FileShareInner extends AzureEntityResource {
     @Override
     public void validate() {
         super.validate();
+        if (signedIdentifiers() != null) {
+            signedIdentifiers().forEach(e -> e.validate());
+        }
     }
 }

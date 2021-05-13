@@ -44,6 +44,14 @@ public class CommonExportPropertiesInner {
     private ExportExecutionListResultInner runHistory;
 
     /*
+     * If set to true, exported data will be partitioned by size and placed in
+     * a blob directory together with a manifest file. Note: this option is
+     * currently available only for modern commerce scopes.
+     */
+    @JsonProperty(value = "partitionData")
+    private Boolean partitionData;
+
+    /*
      * If the export has an active schedule, provides an estimate of the next
      * execution time.
      */
@@ -127,6 +135,30 @@ public class CommonExportPropertiesInner {
      */
     public CommonExportPropertiesInner withRunHistory(ExportExecutionListResultInner runHistory) {
         this.runHistory = runHistory;
+        return this;
+    }
+
+    /**
+     * Get the partitionData property: If set to true, exported data will be partitioned by size and placed in a blob
+     * directory together with a manifest file. Note: this option is currently available only for modern commerce
+     * scopes.
+     *
+     * @return the partitionData value.
+     */
+    public Boolean partitionData() {
+        return this.partitionData;
+    }
+
+    /**
+     * Set the partitionData property: If set to true, exported data will be partitioned by size and placed in a blob
+     * directory together with a manifest file. Note: this option is currently available only for modern commerce
+     * scopes.
+     *
+     * @param partitionData the partitionData value to set.
+     * @return the CommonExportPropertiesInner object itself.
+     */
+    public CommonExportPropertiesInner withPartitionData(Boolean partitionData) {
+        this.partitionData = partitionData;
         return this;
     }
 

@@ -12,12 +12,14 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.storage.generated.fluent.FileSharesClient;
 import com.azure.resourcemanager.storage.generated.fluent.models.FileShareInner;
 import com.azure.resourcemanager.storage.generated.fluent.models.FileShareItemInner;
+import com.azure.resourcemanager.storage.generated.fluent.models.LeaseShareResponseInner;
 import com.azure.resourcemanager.storage.generated.models.DeletedShare;
 import com.azure.resourcemanager.storage.generated.models.FileShare;
 import com.azure.resourcemanager.storage.generated.models.FileShareItem;
 import com.azure.resourcemanager.storage.generated.models.FileShares;
-import com.azure.resourcemanager.storage.generated.models.GetShareExpand;
-import com.azure.resourcemanager.storage.generated.models.ListSharesExpand;
+import com.azure.resourcemanager.storage.generated.models.FileSharesLeaseResponse;
+import com.azure.resourcemanager.storage.generated.models.LeaseShareRequest;
+import com.azure.resourcemanager.storage.generated.models.LeaseShareResponse;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class FileSharesImpl implements FileShares {
@@ -43,7 +45,7 @@ public final class FileSharesImpl implements FileShares {
         String accountName,
         String maxpagesize,
         String filter,
-        ListSharesExpand expand,
+        String expand,
         Context context) {
         PagedIterable<FileShareItemInner> inner =
             this.serviceClient().list(resourceGroupName, accountName, maxpagesize, filter, expand, context);
@@ -63,7 +65,7 @@ public final class FileSharesImpl implements FileShares {
         String resourceGroupName,
         String accountName,
         String shareName,
-        GetShareExpand expand,
+        String expand,
         String xMsSnapshot,
         Context context) {
         Response<FileShareInner> inner =
@@ -86,8 +88,15 @@ public final class FileSharesImpl implements FileShares {
     }
 
     public Response<Void> deleteWithResponse(
-        String resourceGroupName, String accountName, String shareName, String xMsSnapshot, Context context) {
-        return this.serviceClient().deleteWithResponse(resourceGroupName, accountName, shareName, xMsSnapshot, context);
+        String resourceGroupName,
+        String accountName,
+        String shareName,
+        String xMsSnapshot,
+        String include,
+        Context context) {
+        return this
+            .serviceClient()
+            .deleteWithResponse(resourceGroupName, accountName, shareName, xMsSnapshot, include, context);
     }
 
     public void restore(String resourceGroupName, String accountName, String shareName, DeletedShare deletedShare) {
@@ -99,6 +108,37 @@ public final class FileSharesImpl implements FileShares {
         return this
             .serviceClient()
             .restoreWithResponse(resourceGroupName, accountName, shareName, deletedShare, context);
+    }
+
+    public LeaseShareResponse lease(String resourceGroupName, String accountName, String shareName) {
+        LeaseShareResponseInner inner = this.serviceClient().lease(resourceGroupName, accountName, shareName);
+        if (inner != null) {
+            return new LeaseShareResponseImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<LeaseShareResponse> leaseWithResponse(
+        String resourceGroupName,
+        String accountName,
+        String shareName,
+        String xMsSnapshot,
+        LeaseShareRequest parameters,
+        Context context) {
+        FileSharesLeaseResponse inner =
+            this
+                .serviceClient()
+                .leaseWithResponse(resourceGroupName, accountName, shareName, xMsSnapshot, parameters, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new LeaseShareResponseImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
     }
 
     public FileShare getById(String id) {
@@ -125,15 +165,14 @@ public final class FileSharesImpl implements FileShares {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'shares'.", id)));
         }
-        GetShareExpand localExpand = null;
+        String localExpand = null;
         String localXMsSnapshot = null;
         return this
             .getWithResponse(resourceGroupName, accountName, shareName, localExpand, localXMsSnapshot, Context.NONE)
             .getValue();
     }
 
-    public Response<FileShare> getByIdWithResponse(
-        String id, GetShareExpand expand, String xMsSnapshot, Context context) {
+    public Response<FileShare> getByIdWithResponse(String id, String expand, String xMsSnapshot, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw logger
@@ -185,10 +224,13 @@ public final class FileSharesImpl implements FileShares {
                         String.format("The resource ID '%s' is not valid. Missing path segment 'shares'.", id)));
         }
         String localXMsSnapshot = null;
-        this.deleteWithResponse(resourceGroupName, accountName, shareName, localXMsSnapshot, Context.NONE).getValue();
+        String localInclude = null;
+        this
+            .deleteWithResponse(resourceGroupName, accountName, shareName, localXMsSnapshot, localInclude, Context.NONE)
+            .getValue();
     }
 
-    public Response<Void> deleteByIdWithResponse(String id, String xMsSnapshot, Context context) {
+    public Response<Void> deleteByIdWithResponse(String id, String xMsSnapshot, String include, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
             throw logger
@@ -212,7 +254,7 @@ public final class FileSharesImpl implements FileShares {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'shares'.", id)));
         }
-        return this.deleteWithResponse(resourceGroupName, accountName, shareName, xMsSnapshot, context);
+        return this.deleteWithResponse(resourceGroupName, accountName, shareName, xMsSnapshot, include, context);
     }
 
     private FileSharesClient serviceClient() {

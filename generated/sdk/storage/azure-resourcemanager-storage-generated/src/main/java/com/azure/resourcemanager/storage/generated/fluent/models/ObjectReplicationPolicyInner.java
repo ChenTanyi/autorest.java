@@ -33,13 +33,15 @@ public class ObjectReplicationPolicyInner extends ProxyResource {
     private OffsetDateTime enabledTime;
 
     /*
-     * Required. Source account name.
+     * Required. Source account name. It should be full resource id if
+     * allowCrossTenantReplication set to false.
      */
     @JsonProperty(value = "properties.sourceAccount")
     private String sourceAccount;
 
     /*
-     * Required. Destination account name.
+     * Required. Destination account name. It should be full resource id if
+     * allowCrossTenantReplication set to false.
      */
     @JsonProperty(value = "properties.destinationAccount")
     private String destinationAccount;
@@ -69,7 +71,8 @@ public class ObjectReplicationPolicyInner extends ProxyResource {
     }
 
     /**
-     * Get the sourceAccount property: Required. Source account name.
+     * Get the sourceAccount property: Required. Source account name. It should be full resource id if
+     * allowCrossTenantReplication set to false.
      *
      * @return the sourceAccount value.
      */
@@ -78,7 +81,8 @@ public class ObjectReplicationPolicyInner extends ProxyResource {
     }
 
     /**
-     * Set the sourceAccount property: Required. Source account name.
+     * Set the sourceAccount property: Required. Source account name. It should be full resource id if
+     * allowCrossTenantReplication set to false.
      *
      * @param sourceAccount the sourceAccount value to set.
      * @return the ObjectReplicationPolicyInner object itself.
@@ -89,7 +93,8 @@ public class ObjectReplicationPolicyInner extends ProxyResource {
     }
 
     /**
-     * Get the destinationAccount property: Required. Destination account name.
+     * Get the destinationAccount property: Required. Destination account name. It should be full resource id if
+     * allowCrossTenantReplication set to false.
      *
      * @return the destinationAccount value.
      */
@@ -98,7 +103,8 @@ public class ObjectReplicationPolicyInner extends ProxyResource {
     }
 
     /**
-     * Set the destinationAccount property: Required. Destination account name.
+     * Set the destinationAccount property: Required. Destination account name. It should be full resource id if
+     * allowCrossTenantReplication set to false.
      *
      * @param destinationAccount the destinationAccount value to set.
      * @return the ObjectReplicationPolicyInner object itself.

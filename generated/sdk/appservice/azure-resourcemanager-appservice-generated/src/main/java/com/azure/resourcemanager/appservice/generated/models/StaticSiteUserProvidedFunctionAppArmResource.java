@@ -165,7 +165,7 @@ public interface StaticSiteUserProvidedFunctionAppArmResource {
              *     The default is &lt;code&gt;false&lt;/code&gt;.
              * @return the next definition stage.
              */
-            WithCreate withWithIsForced(Boolean isForced);
+            WithCreate withIsForced(Boolean isForced);
         }
     }
     /**

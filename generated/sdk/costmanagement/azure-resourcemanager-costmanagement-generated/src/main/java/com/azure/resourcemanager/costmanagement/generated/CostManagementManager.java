@@ -26,6 +26,9 @@ import com.azure.resourcemanager.costmanagement.generated.implementation.CostMan
 import com.azure.resourcemanager.costmanagement.generated.implementation.DimensionsImpl;
 import com.azure.resourcemanager.costmanagement.generated.implementation.ExportsImpl;
 import com.azure.resourcemanager.costmanagement.generated.implementation.ForecastsImpl;
+import com.azure.resourcemanager.costmanagement.generated.implementation.GenerateDetailedCostReportOperationResultsImpl;
+import com.azure.resourcemanager.costmanagement.generated.implementation.GenerateDetailedCostReportOperationStatusImpl;
+import com.azure.resourcemanager.costmanagement.generated.implementation.GenerateDetailedCostReportsImpl;
 import com.azure.resourcemanager.costmanagement.generated.implementation.OperationsImpl;
 import com.azure.resourcemanager.costmanagement.generated.implementation.QueriesImpl;
 import com.azure.resourcemanager.costmanagement.generated.implementation.ViewsImpl;
@@ -33,6 +36,9 @@ import com.azure.resourcemanager.costmanagement.generated.models.Alerts;
 import com.azure.resourcemanager.costmanagement.generated.models.Dimensions;
 import com.azure.resourcemanager.costmanagement.generated.models.Exports;
 import com.azure.resourcemanager.costmanagement.generated.models.Forecasts;
+import com.azure.resourcemanager.costmanagement.generated.models.GenerateDetailedCostReportOperationResults;
+import com.azure.resourcemanager.costmanagement.generated.models.GenerateDetailedCostReportOperationStatus;
+import com.azure.resourcemanager.costmanagement.generated.models.GenerateDetailedCostReports;
 import com.azure.resourcemanager.costmanagement.generated.models.Operations;
 import com.azure.resourcemanager.costmanagement.generated.models.Queries;
 import com.azure.resourcemanager.costmanagement.generated.models.Views;
@@ -44,6 +50,14 @@ import java.util.Objects;
 
 /** Entry point to CostManagementManager. */
 public final class CostManagementManager {
+    private Exports exports;
+
+    private GenerateDetailedCostReports generateDetailedCostReports;
+
+    private GenerateDetailedCostReportOperationResults generateDetailedCostReportOperationResults;
+
+    private GenerateDetailedCostReportOperationStatus generateDetailedCostReportOperationStatus;
+
     private Views views;
 
     private Alerts alerts;
@@ -55,8 +69,6 @@ public final class CostManagementManager {
     private Queries queries;
 
     private Operations operations;
-
-    private Exports exports;
 
     private final CostManagementClient clientObject;
 
@@ -220,6 +232,43 @@ public final class CostManagementManager {
         }
     }
 
+    /** @return Resource collection API of Exports. */
+    public Exports exports() {
+        if (this.exports == null) {
+            this.exports = new ExportsImpl(clientObject.getExports(), this);
+        }
+        return exports;
+    }
+
+    /** @return Resource collection API of GenerateDetailedCostReports. */
+    public GenerateDetailedCostReports generateDetailedCostReports() {
+        if (this.generateDetailedCostReports == null) {
+            this.generateDetailedCostReports =
+                new GenerateDetailedCostReportsImpl(clientObject.getGenerateDetailedCostReports(), this);
+        }
+        return generateDetailedCostReports;
+    }
+
+    /** @return Resource collection API of GenerateDetailedCostReportOperationResults. */
+    public GenerateDetailedCostReportOperationResults generateDetailedCostReportOperationResults() {
+        if (this.generateDetailedCostReportOperationResults == null) {
+            this.generateDetailedCostReportOperationResults =
+                new GenerateDetailedCostReportOperationResultsImpl(
+                    clientObject.getGenerateDetailedCostReportOperationResults(), this);
+        }
+        return generateDetailedCostReportOperationResults;
+    }
+
+    /** @return Resource collection API of GenerateDetailedCostReportOperationStatus. */
+    public GenerateDetailedCostReportOperationStatus generateDetailedCostReportOperationStatus() {
+        if (this.generateDetailedCostReportOperationStatus == null) {
+            this.generateDetailedCostReportOperationStatus =
+                new GenerateDetailedCostReportOperationStatusImpl(
+                    clientObject.getGenerateDetailedCostReportOperationStatus(), this);
+        }
+        return generateDetailedCostReportOperationStatus;
+    }
+
     /** @return Resource collection API of Views. */
     public Views views() {
         if (this.views == null) {
@@ -266,14 +315,6 @@ public final class CostManagementManager {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
         }
         return operations;
-    }
-
-    /** @return Resource collection API of Exports. */
-    public Exports exports() {
-        if (this.exports == null) {
-            this.exports = new ExportsImpl(clientObject.getExports(), this);
-        }
-        return exports;
     }
 
     /**

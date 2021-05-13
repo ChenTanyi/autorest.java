@@ -168,6 +168,10 @@ public final class VirtualMachineScaleSetVMImpl implements VirtualMachineScaleSe
         return this.innerModel().protectionPolicy();
     }
 
+    public String userData() {
+        return this.innerModel().userData();
+    }
+
     public VirtualMachineScaleSetVMInner innerModel() {
         return this.innerObject;
     }

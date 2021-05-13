@@ -172,13 +172,17 @@ public final class SharedPrivateLinkResourceImpl
         return this;
     }
 
-    public SharedPrivateLinkResourceImpl withWithClientRequestId(UUID clientRequestId) {
-        this.createClientRequestId = clientRequestId;
-        return this;
+    public SharedPrivateLinkResourceImpl withClientRequestId(UUID clientRequestId) {
+        if (isInCreateMode()) {
+            this.createClientRequestId = clientRequestId;
+            return this;
+        } else {
+            this.updateClientRequestId = clientRequestId;
+            return this;
+        }
     }
 
-    public SharedPrivateLinkResourceImpl withClientRequestId(UUID clientRequestId) {
-        this.updateClientRequestId = clientRequestId;
-        return this;
+    private boolean isInCreateMode() {
+        return this.innerModel().id() == null;
     }
 }

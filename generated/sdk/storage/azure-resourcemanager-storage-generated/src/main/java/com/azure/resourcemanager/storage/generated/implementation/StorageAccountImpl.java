@@ -226,6 +226,10 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this.innerModel().enableNfsV3();
     }
 
+    public Boolean allowCrossTenantReplication() {
+        return this.innerModel().allowCrossTenantReplication();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -596,6 +600,16 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
     public StorageAccountImpl withEnableNfsV3(Boolean enableNfsV3) {
         this.createParameters.withEnableNfsV3(enableNfsV3);
         return this;
+    }
+
+    public StorageAccountImpl withAllowCrossTenantReplication(Boolean allowCrossTenantReplication) {
+        if (isInCreateMode()) {
+            this.createParameters.withAllowCrossTenantReplication(allowCrossTenantReplication);
+            return this;
+        } else {
+            this.updateParameters.withAllowCrossTenantReplication(allowCrossTenantReplication);
+            return this;
+        }
     }
 
     private boolean isInCreateMode() {

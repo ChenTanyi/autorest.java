@@ -300,6 +300,14 @@ public interface StorageAccount {
     Boolean enableNfsV3();
 
     /**
+     * Gets the allowCrossTenantReplication property: Allow or disallow cross AAD tenant object replication. The default
+     * interpretation is true for this property.
+     *
+     * @return the allowCrossTenantReplication value.
+     */
+    Boolean allowCrossTenantReplication();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -411,7 +419,8 @@ public interface StorageAccount {
                 DefinitionStages.WithAllowBlobPublicAccess,
                 DefinitionStages.WithMinimumTlsVersion,
                 DefinitionStages.WithAllowSharedKeyAccess,
-                DefinitionStages.WithEnableNfsV3 {
+                DefinitionStages.WithEnableNfsV3,
+                DefinitionStages.WithAllowCrossTenantReplication {
             /**
              * Executes the create request.
              *
@@ -644,6 +653,18 @@ public interface StorageAccount {
              */
             WithCreate withEnableNfsV3(Boolean enableNfsV3);
         }
+        /** The stage of the StorageAccount definition allowing to specify allowCrossTenantReplication. */
+        interface WithAllowCrossTenantReplication {
+            /**
+             * Specifies the allowCrossTenantReplication property: Allow or disallow cross AAD tenant object
+             * replication. The default interpretation is true for this property..
+             *
+             * @param allowCrossTenantReplication Allow or disallow cross AAD tenant object replication. The default
+             *     interpretation is true for this property.
+             * @return the next definition stage.
+             */
+            WithCreate withAllowCrossTenantReplication(Boolean allowCrossTenantReplication);
+        }
     }
     /**
      * Begins update for the StorageAccount resource.
@@ -670,7 +691,8 @@ public interface StorageAccount {
             UpdateStages.WithRoutingPreference,
             UpdateStages.WithAllowBlobPublicAccess,
             UpdateStages.WithMinimumTlsVersion,
-            UpdateStages.WithAllowSharedKeyAccess {
+            UpdateStages.WithAllowSharedKeyAccess,
+            UpdateStages.WithAllowCrossTenantReplication {
         /**
          * Executes the update request.
          *
@@ -893,6 +915,18 @@ public interface StorageAccount {
              * @return the next definition stage.
              */
             Update withAllowSharedKeyAccess(Boolean allowSharedKeyAccess);
+        }
+        /** The stage of the StorageAccount update allowing to specify allowCrossTenantReplication. */
+        interface WithAllowCrossTenantReplication {
+            /**
+             * Specifies the allowCrossTenantReplication property: Allow or disallow cross AAD tenant object
+             * replication. The default interpretation is true for this property..
+             *
+             * @param allowCrossTenantReplication Allow or disallow cross AAD tenant object replication. The default
+             *     interpretation is true for this property.
+             * @return the next definition stage.
+             */
+            Update withAllowCrossTenantReplication(Boolean allowCrossTenantReplication);
         }
     }
     /**

@@ -6,6 +6,7 @@ package com.azure.resourcemanager.storage.generated.implementation;
 
 import com.azure.resourcemanager.storage.generated.fluent.models.ListContainerItemInner;
 import com.azure.resourcemanager.storage.generated.models.ImmutabilityPolicyProperties;
+import com.azure.resourcemanager.storage.generated.models.ImmutableStorageWithVersioning;
 import com.azure.resourcemanager.storage.generated.models.LeaseDuration;
 import com.azure.resourcemanager.storage.generated.models.LeaseState;
 import com.azure.resourcemanager.storage.generated.models.LeaseStatus;
@@ -110,6 +111,10 @@ public final class ListContainerItemImpl implements ListContainerItem {
 
     public Boolean hasImmutabilityPolicy() {
         return this.innerModel().hasImmutabilityPolicy();
+    }
+
+    public ImmutableStorageWithVersioning immutableStorageWithVersioning() {
+        return this.innerModel().immutableStorageWithVersioning();
     }
 
     public ListContainerItemInner innerModel() {

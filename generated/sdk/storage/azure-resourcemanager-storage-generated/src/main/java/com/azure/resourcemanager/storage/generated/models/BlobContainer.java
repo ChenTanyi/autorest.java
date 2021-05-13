@@ -160,6 +160,15 @@ public interface BlobContainer {
     Boolean hasImmutabilityPolicy();
 
     /**
+     * Gets the immutableStorageWithVersioning property: The object level immutability property of the container. The
+     * property is immutable and can only be set to true at the container creation time. Existing containers must
+     * undergo a migration process.
+     *
+     * @return the immutableStorageWithVersioning value.
+     */
+    ImmutableStorageWithVersioning immutableStorageWithVersioning();
+
+    /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.BlobContainerInner object.
      *
      * @return the inner object.
@@ -196,7 +205,8 @@ public interface BlobContainer {
             extends DefinitionStages.WithDefaultEncryptionScope,
                 DefinitionStages.WithDenyEncryptionScopeOverride,
                 DefinitionStages.WithPublicAccess,
-                DefinitionStages.WithMetadata {
+                DefinitionStages.WithMetadata,
+                DefinitionStages.WithImmutableStorageWithVersioning {
             /**
              * Executes the create request.
              *
@@ -256,6 +266,21 @@ public interface BlobContainer {
              */
             WithCreate withMetadata(Map<String, String> metadata);
         }
+        /** The stage of the BlobContainer definition allowing to specify immutableStorageWithVersioning. */
+        interface WithImmutableStorageWithVersioning {
+            /**
+             * Specifies the immutableStorageWithVersioning property: The object level immutability property of the
+             * container. The property is immutable and can only be set to true at the container creation time. Existing
+             * containers must undergo a migration process..
+             *
+             * @param immutableStorageWithVersioning The object level immutability property of the container. The
+             *     property is immutable and can only be set to true at the container creation time. Existing containers
+             *     must undergo a migration process.
+             * @return the next definition stage.
+             */
+            WithCreate withImmutableStorageWithVersioning(
+                ImmutableStorageWithVersioning immutableStorageWithVersioning);
+        }
     }
     /**
      * Begins update for the BlobContainer resource.
@@ -269,7 +294,8 @@ public interface BlobContainer {
         extends UpdateStages.WithDefaultEncryptionScope,
             UpdateStages.WithDenyEncryptionScopeOverride,
             UpdateStages.WithPublicAccess,
-            UpdateStages.WithMetadata {
+            UpdateStages.WithMetadata,
+            UpdateStages.WithImmutableStorageWithVersioning {
         /**
          * Executes the update request.
          *
@@ -330,6 +356,20 @@ public interface BlobContainer {
              * @return the next definition stage.
              */
             Update withMetadata(Map<String, String> metadata);
+        }
+        /** The stage of the BlobContainer update allowing to specify immutableStorageWithVersioning. */
+        interface WithImmutableStorageWithVersioning {
+            /**
+             * Specifies the immutableStorageWithVersioning property: The object level immutability property of the
+             * container. The property is immutable and can only be set to true at the container creation time. Existing
+             * containers must undergo a migration process..
+             *
+             * @param immutableStorageWithVersioning The object level immutability property of the container. The
+             *     property is immutable and can only be set to true at the container creation time. Existing containers
+             *     must undergo a migration process.
+             * @return the next definition stage.
+             */
+            Update withImmutableStorageWithVersioning(ImmutableStorageWithVersioning immutableStorageWithVersioning);
         }
     }
     /**
@@ -419,4 +459,26 @@ public interface BlobContainer {
      * @return lease Container response schema.
      */
     Response<LeaseContainerResponse> leaseWithResponse(LeaseContainerRequest parameters, Context context);
+
+    /**
+     * This operation migrates a blob container from container level WORM to object level immutability enabled
+     * container. Prerequisites require a container level immutability policy either in locked or unlocked state,
+     * Account level versioning must be enabled and there should be no Legal hold on the container.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void objectLevelWorm();
+
+    /**
+     * This operation migrates a blob container from container level WORM to object level immutability enabled
+     * container. Prerequisites require a container level immutability policy either in locked or unlocked state,
+     * Account level versioning must be enabled and there should be no Legal hold on the container.
+     *
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void objectLevelWorm(Context context);
 }

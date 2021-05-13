@@ -158,7 +158,7 @@ public interface ImmutabilityPolicy {
              *     operation will always be applied.
              * @return the next definition stage.
              */
-            WithCreate withWithIfMatch(String ifMatch);
+            WithCreate withIfMatch(String ifMatch);
         }
     }
     /**

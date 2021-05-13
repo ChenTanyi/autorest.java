@@ -363,7 +363,7 @@ public interface VirtualNetworkPeering {
              *     address space on the remote vNet after it's updated.
              * @return the next definition stage.
              */
-            WithCreate withWithSyncRemoteAddressSpace(SyncRemoteAddressSpace syncRemoteAddressSpace);
+            WithCreate withSyncRemoteAddressSpace(SyncRemoteAddressSpace syncRemoteAddressSpace);
         }
     }
     /**

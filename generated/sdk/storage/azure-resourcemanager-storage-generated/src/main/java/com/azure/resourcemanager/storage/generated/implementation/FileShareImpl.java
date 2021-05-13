@@ -10,12 +10,17 @@ import com.azure.resourcemanager.storage.generated.fluent.models.FileShareInner;
 import com.azure.resourcemanager.storage.generated.models.DeletedShare;
 import com.azure.resourcemanager.storage.generated.models.EnabledProtocols;
 import com.azure.resourcemanager.storage.generated.models.FileShare;
-import com.azure.resourcemanager.storage.generated.models.GetShareExpand;
-import com.azure.resourcemanager.storage.generated.models.PutSharesExpand;
+import com.azure.resourcemanager.storage.generated.models.LeaseDuration;
+import com.azure.resourcemanager.storage.generated.models.LeaseShareRequest;
+import com.azure.resourcemanager.storage.generated.models.LeaseShareResponse;
+import com.azure.resourcemanager.storage.generated.models.LeaseState;
+import com.azure.resourcemanager.storage.generated.models.LeaseStatus;
 import com.azure.resourcemanager.storage.generated.models.RootSquashType;
 import com.azure.resourcemanager.storage.generated.models.ShareAccessTier;
+import com.azure.resourcemanager.storage.generated.models.SignedIdentifier;
 import java.time.OffsetDateTime;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 
 public final class FileShareImpl implements FileShare, FileShare.Definition, FileShare.Update {
@@ -96,6 +101,27 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
         return this.innerModel().shareUsageBytes();
     }
 
+    public LeaseStatus leaseStatus() {
+        return this.innerModel().leaseStatus();
+    }
+
+    public LeaseState leaseState() {
+        return this.innerModel().leaseState();
+    }
+
+    public LeaseDuration leaseDuration() {
+        return this.innerModel().leaseDuration();
+    }
+
+    public List<SignedIdentifier> signedIdentifiers() {
+        List<SignedIdentifier> inner = this.innerModel().signedIdentifiers();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
     public OffsetDateTime snapshotTime() {
         return this.innerModel().snapshotTime();
     }
@@ -114,7 +140,7 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
 
     private String shareName;
 
-    private PutSharesExpand createExpand;
+    private String createExpand;
 
     public FileShareImpl withExistingStorageAccount(String resourceGroupName, String accountName) {
         this.resourceGroupName = resourceGroupName;
@@ -184,7 +210,7 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
     }
 
     public FileShare refresh() {
-        GetShareExpand localExpand = null;
+        String localExpand = null;
         String localXMsSnapshot = null;
         this.innerObject =
             serviceManager
@@ -196,7 +222,7 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
     }
 
     public FileShare refresh(Context context) {
-        GetShareExpand localExpand = null;
+        String localExpand = null;
         String localXMsSnapshot = null;
         this.innerObject =
             serviceManager
@@ -215,6 +241,17 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
         return serviceManager
             .fileShares()
             .restoreWithResponse(resourceGroupName, accountName, shareName, deletedShare, context);
+    }
+
+    public LeaseShareResponse lease() {
+        return serviceManager.fileShares().lease(resourceGroupName, accountName, shareName);
+    }
+
+    public Response<LeaseShareResponse> leaseWithResponse(
+        String xMsSnapshot, LeaseShareRequest parameters, Context context) {
+        return serviceManager
+            .fileShares()
+            .leaseWithResponse(resourceGroupName, accountName, shareName, xMsSnapshot, parameters, context);
     }
 
     public FileShareImpl withMetadata(Map<String, String> metadata) {
@@ -242,7 +279,12 @@ public final class FileShareImpl implements FileShare, FileShare.Definition, Fil
         return this;
     }
 
-    public FileShareImpl withWithExpand(PutSharesExpand expand) {
+    public FileShareImpl withSignedIdentifiers(List<SignedIdentifier> signedIdentifiers) {
+        this.innerModel().withSignedIdentifiers(signedIdentifiers);
+        return this;
+    }
+
+    public FileShareImpl withExpand(String expand) {
         this.createExpand = expand;
         return this;
     }

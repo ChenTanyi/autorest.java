@@ -51,8 +51,9 @@ public interface DedicatedHostGroups {
      *
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
-     * @param expand The expand expression to apply on the operation. The response shows the list of instance view of
-     *     the dedicated hosts under the dedicated host group.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the list of instance
+     *     views of the dedicated hosts under the dedicated host group. 'UserData' is not supported for dedicated host
+     *     group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -124,8 +125,9 @@ public interface DedicatedHostGroups {
      * Retrieves information about a dedicated host group.
      *
      * @param id the resource ID.
-     * @param expand The expand expression to apply on the operation. The response shows the list of instance view of
-     *     the dedicated hosts under the dedicated host group.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the list of instance
+     *     views of the dedicated hosts under the dedicated host group. 'UserData' is not supported for dedicated host
+     *     group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

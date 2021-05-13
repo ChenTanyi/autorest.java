@@ -262,7 +262,7 @@ public interface Zone {
              *     the last-seen etag value to prevent accidentally overwriting any concurrent changes.
              * @return the next definition stage.
              */
-            WithCreate withWithIfMatch(String ifMatch);
+            WithCreate withIfMatch(String ifMatch);
         }
         /** The stage of the Zone definition allowing to specify ifNoneMatch. */
         interface WithIfNoneMatch {
@@ -274,7 +274,7 @@ public interface Zone {
              *     zone. Other values will be ignored.
              * @return the next definition stage.
              */
-            WithCreate withWithIfNoneMatch(String ifNoneMatch);
+            WithCreate withIfNoneMatch(String ifNoneMatch);
         }
     }
     /**

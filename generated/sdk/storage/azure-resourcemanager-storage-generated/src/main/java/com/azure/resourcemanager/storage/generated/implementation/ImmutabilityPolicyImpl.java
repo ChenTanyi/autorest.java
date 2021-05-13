@@ -168,13 +168,17 @@ public final class ImmutabilityPolicyImpl
         return this;
     }
 
-    public ImmutabilityPolicyImpl withWithIfMatch(String ifMatch) {
-        this.createIfMatch = ifMatch;
-        return this;
+    public ImmutabilityPolicyImpl withIfMatch(String ifMatch) {
+        if (isInCreateMode()) {
+            this.createIfMatch = ifMatch;
+            return this;
+        } else {
+            this.updateIfMatch = ifMatch;
+            return this;
+        }
     }
 
-    public ImmutabilityPolicyImpl withIfMatch(String ifMatch) {
-        this.updateIfMatch = ifMatch;
-        return this;
+    private boolean isInCreateMode() {
+        return this.innerModel().id() == null;
     }
 }

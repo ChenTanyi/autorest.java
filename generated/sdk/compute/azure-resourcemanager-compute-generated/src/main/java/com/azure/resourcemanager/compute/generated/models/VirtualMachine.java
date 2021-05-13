@@ -143,15 +143,14 @@ public interface VirtualMachine {
     /**
      * Gets the availabilitySet property: Specifies information about the availability set that the virtual machine
      * should be assigned to. Virtual machines specified in the same availability set are allocated to different nodes
-     * to maximize availability. For more information about availability sets, see [Manage the availability of virtual
-     * machines](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-manage-availability?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
-     * &lt;br&gt;&lt;br&gt; For more information on Azure planned maintenance, see [Planned maintenance for virtual
-     * machines in
-     * Azure](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-planned-maintenance?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
-     * &lt;br&gt;&lt;br&gt; Currently, a VM can only be added to availability set at creation time. The availability set
-     * to which the VM is being added should be under the same resource group as the availability set resource. An
-     * existing VM cannot be added to an availability set. &lt;br&gt;&lt;br&gt;This property cannot exist along with a
-     * non-null properties.virtualMachineScaleSet reference.
+     * to maximize availability. For more information about availability sets, see [Availability sets
+     * overview](https://docs.microsoft.com/azure/virtual-machines/availability-set-overview). &lt;br&gt;&lt;br&gt; For
+     * more information on Azure planned maintenance, see [Maintenance and updates for Virtual Machines in
+     * Azure](https://docs.microsoft.com/azure/virtual-machines/maintenance-and-updates) &lt;br&gt;&lt;br&gt; Currently,
+     * a VM can only be added to availability set at creation time. The availability set to which the VM is being added
+     * should be under the same resource group as the availability set resource. An existing VM cannot be added to an
+     * availability set. &lt;br&gt;&lt;br&gt;This property cannot exist along with a non-null
+     * properties.virtualMachineScaleSet reference.
      *
      * @return the availabilitySet value.
      */
@@ -280,6 +279,21 @@ public interface VirtualMachine {
     Integer platformFaultDomain();
 
     /**
+     * Gets the scheduledEventsProfile property: Specifies Scheduled Event related configurations.
+     *
+     * @return the scheduledEventsProfile value.
+     */
+    ScheduledEventsProfile scheduledEventsProfile();
+
+    /**
+     * Gets the userData property: UserData for the VM, which must be base-64 encoded. Customer should not pass any
+     * secrets in here. &lt;br&gt;&lt;br&gt;Minimum api-version: 2021-03-01.
+     *
+     * @return the userData value.
+     */
+    String userData();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -367,7 +381,9 @@ public interface VirtualMachine {
                 DefinitionStages.WithHostGroup,
                 DefinitionStages.WithLicenseType,
                 DefinitionStages.WithExtensionsTimeBudget,
-                DefinitionStages.WithPlatformFaultDomain {
+                DefinitionStages.WithPlatformFaultDomain,
+                DefinitionStages.WithScheduledEventsProfile,
+                DefinitionStages.WithUserData {
             /**
              * Executes the create request.
              *
@@ -523,12 +539,10 @@ public interface VirtualMachine {
             /**
              * Specifies the availabilitySet property: Specifies information about the availability set that the virtual
              * machine should be assigned to. Virtual machines specified in the same availability set are allocated to
-             * different nodes to maximize availability. For more information about availability sets, see [Manage the
-             * availability of virtual
-             * machines](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-manage-availability?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
-             * &lt;br&gt;&lt;br&gt; For more information on Azure planned maintenance, see [Planned maintenance for
-             * virtual machines in
-             * Azure](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-planned-maintenance?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+             * different nodes to maximize availability. For more information about availability sets, see [Availability
+             * sets overview](https://docs.microsoft.com/azure/virtual-machines/availability-set-overview).
+             * &lt;br&gt;&lt;br&gt; For more information on Azure planned maintenance, see [Maintenance and updates for
+             * Virtual Machines in Azure](https://docs.microsoft.com/azure/virtual-machines/maintenance-and-updates)
              * &lt;br&gt;&lt;br&gt; Currently, a VM can only be added to availability set at creation time. The
              * availability set to which the VM is being added should be under the same resource group as the
              * availability set resource. An existing VM cannot be added to an availability set.
@@ -537,12 +551,11 @@ public interface VirtualMachine {
              *
              * @param availabilitySet Specifies information about the availability set that the virtual machine should
              *     be assigned to. Virtual machines specified in the same availability set are allocated to different
-             *     nodes to maximize availability. For more information about availability sets, see [Manage the
-             *     availability of virtual
-             *     machines](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-manage-availability?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
-             *     &lt;br&gt;&lt;br&gt; For more information on Azure planned maintenance, see [Planned maintenance for
-             *     virtual machines in
-             *     Azure](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-planned-maintenance?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+             *     nodes to maximize availability. For more information about availability sets, see [Availability sets
+             *     overview](https://docs.microsoft.com/azure/virtual-machines/availability-set-overview).
+             *     &lt;br&gt;&lt;br&gt; For more information on Azure planned maintenance, see [Maintenance and updates
+             *     for Virtual Machines in
+             *     Azure](https://docs.microsoft.com/azure/virtual-machines/maintenance-and-updates)
              *     &lt;br&gt;&lt;br&gt; Currently, a VM can only be added to availability set at creation time. The
              *     availability set to which the VM is being added should be under the same resource group as the
              *     availability set resource. An existing VM cannot be added to an availability set.
@@ -716,6 +729,28 @@ public interface VirtualMachine {
              */
             WithCreate withPlatformFaultDomain(Integer platformFaultDomain);
         }
+        /** The stage of the VirtualMachine definition allowing to specify scheduledEventsProfile. */
+        interface WithScheduledEventsProfile {
+            /**
+             * Specifies the scheduledEventsProfile property: Specifies Scheduled Event related configurations..
+             *
+             * @param scheduledEventsProfile Specifies Scheduled Event related configurations.
+             * @return the next definition stage.
+             */
+            WithCreate withScheduledEventsProfile(ScheduledEventsProfile scheduledEventsProfile);
+        }
+        /** The stage of the VirtualMachine definition allowing to specify userData. */
+        interface WithUserData {
+            /**
+             * Specifies the userData property: UserData for the VM, which must be base-64 encoded. Customer should not
+             * pass any secrets in here. &lt;br&gt;&lt;br&gt;Minimum api-version: 2021-03-01.
+             *
+             * @param userData UserData for the VM, which must be base-64 encoded. Customer should not pass any secrets
+             *     in here. &lt;br&gt;&lt;br&gt;Minimum api-version: 2021-03-01.
+             * @return the next definition stage.
+             */
+            WithCreate withUserData(String userData);
+        }
     }
     /**
      * Begins update for the VirtualMachine resource.
@@ -747,7 +782,9 @@ public interface VirtualMachine {
             UpdateStages.WithHostGroup,
             UpdateStages.WithLicenseType,
             UpdateStages.WithExtensionsTimeBudget,
-            UpdateStages.WithPlatformFaultDomain {
+            UpdateStages.WithPlatformFaultDomain,
+            UpdateStages.WithScheduledEventsProfile,
+            UpdateStages.WithUserData {
         /**
          * Executes the update request.
          *
@@ -895,12 +932,10 @@ public interface VirtualMachine {
             /**
              * Specifies the availabilitySet property: Specifies information about the availability set that the virtual
              * machine should be assigned to. Virtual machines specified in the same availability set are allocated to
-             * different nodes to maximize availability. For more information about availability sets, see [Manage the
-             * availability of virtual
-             * machines](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-manage-availability?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
-             * &lt;br&gt;&lt;br&gt; For more information on Azure planned maintenance, see [Planned maintenance for
-             * virtual machines in
-             * Azure](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-planned-maintenance?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+             * different nodes to maximize availability. For more information about availability sets, see [Availability
+             * sets overview](https://docs.microsoft.com/azure/virtual-machines/availability-set-overview).
+             * &lt;br&gt;&lt;br&gt; For more information on Azure planned maintenance, see [Maintenance and updates for
+             * Virtual Machines in Azure](https://docs.microsoft.com/azure/virtual-machines/maintenance-and-updates)
              * &lt;br&gt;&lt;br&gt; Currently, a VM can only be added to availability set at creation time. The
              * availability set to which the VM is being added should be under the same resource group as the
              * availability set resource. An existing VM cannot be added to an availability set.
@@ -909,12 +944,11 @@ public interface VirtualMachine {
              *
              * @param availabilitySet Specifies information about the availability set that the virtual machine should
              *     be assigned to. Virtual machines specified in the same availability set are allocated to different
-             *     nodes to maximize availability. For more information about availability sets, see [Manage the
-             *     availability of virtual
-             *     machines](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-manage-availability?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
-             *     &lt;br&gt;&lt;br&gt; For more information on Azure planned maintenance, see [Planned maintenance for
-             *     virtual machines in
-             *     Azure](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-planned-maintenance?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+             *     nodes to maximize availability. For more information about availability sets, see [Availability sets
+             *     overview](https://docs.microsoft.com/azure/virtual-machines/availability-set-overview).
+             *     &lt;br&gt;&lt;br&gt; For more information on Azure planned maintenance, see [Maintenance and updates
+             *     for Virtual Machines in
+             *     Azure](https://docs.microsoft.com/azure/virtual-machines/maintenance-and-updates)
              *     &lt;br&gt;&lt;br&gt; Currently, a VM can only be added to availability set at creation time. The
              *     availability set to which the VM is being added should be under the same resource group as the
              *     availability set resource. An existing VM cannot be added to an availability set.
@@ -1088,6 +1122,28 @@ public interface VirtualMachine {
              */
             Update withPlatformFaultDomain(Integer platformFaultDomain);
         }
+        /** The stage of the VirtualMachine update allowing to specify scheduledEventsProfile. */
+        interface WithScheduledEventsProfile {
+            /**
+             * Specifies the scheduledEventsProfile property: Specifies Scheduled Event related configurations..
+             *
+             * @param scheduledEventsProfile Specifies Scheduled Event related configurations.
+             * @return the next definition stage.
+             */
+            Update withScheduledEventsProfile(ScheduledEventsProfile scheduledEventsProfile);
+        }
+        /** The stage of the VirtualMachine update allowing to specify userData. */
+        interface WithUserData {
+            /**
+             * Specifies the userData property: UserData for the VM, which must be base-64 encoded. Customer should not
+             * pass any secrets in here. &lt;br&gt;&lt;br&gt;Minimum api-version: 2021-03-01.
+             *
+             * @param userData UserData for the VM, which must be base-64 encoded. Customer should not pass any secrets
+             *     in here. &lt;br&gt;&lt;br&gt;Minimum api-version: 2021-03-01.
+             * @return the next definition stage.
+             */
+            Update withUserData(String userData);
+        }
     }
     /**
      * Refreshes the resource to sync with Azure.
@@ -1172,9 +1228,9 @@ public interface VirtualMachine {
     /**
      * Sets the OS state of the virtual machine to generalized. It is recommended to sysprep the virtual machine before
      * performing this operation. &lt;br&gt;For Windows, please refer to [Create a managed image of a generalized VM in
-     * Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/capture-image-resource).&lt;br&gt;For
-     * Linux, please refer to [How to create an image of a virtual machine or
-     * VHD](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/capture-image).
+     * Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource).&lt;br&gt;For Linux,
+     * please refer to [How to create an image of a virtual machine or
+     * VHD](https://docs.microsoft.com/azure/virtual-machines/linux/capture-image).
      *
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1184,9 +1240,9 @@ public interface VirtualMachine {
     /**
      * Sets the OS state of the virtual machine to generalized. It is recommended to sysprep the virtual machine before
      * performing this operation. &lt;br&gt;For Windows, please refer to [Create a managed image of a generalized VM in
-     * Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/capture-image-resource).&lt;br&gt;For
-     * Linux, please refer to [How to create an image of a virtual machine or
-     * VHD](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/capture-image).
+     * Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource).&lt;br&gt;For Linux,
+     * please refer to [How to create an image of a virtual machine or
+     * VHD](https://docs.microsoft.com/azure/virtual-machines/linux/capture-image).
      *
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

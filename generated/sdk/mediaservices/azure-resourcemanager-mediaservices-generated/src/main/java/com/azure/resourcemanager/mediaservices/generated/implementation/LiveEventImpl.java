@@ -318,7 +318,7 @@ public final class LiveEventImpl implements LiveEvent, LiveEvent.Definition, Liv
         return this;
     }
 
-    public LiveEventImpl withWithAutoStart(Boolean autoStart) {
+    public LiveEventImpl withAutoStart(Boolean autoStart) {
         this.createAutoStart = autoStart;
         return this;
     }

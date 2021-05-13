@@ -117,7 +117,10 @@ public interface VirtualMachines {
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param expand The expand expression to apply on the operation.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' retrieves a snapshot of the runtime
+     *     properties of the virtual machine that is managed by the platform and can change outside of control plane
+     *     operations. 'UserData' retrieves the UserData property as part of the VM model view that was provided by the
+     *     user during the VM Create/Update operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -206,9 +209,9 @@ public interface VirtualMachines {
     /**
      * Sets the OS state of the virtual machine to generalized. It is recommended to sysprep the virtual machine before
      * performing this operation. &lt;br&gt;For Windows, please refer to [Create a managed image of a generalized VM in
-     * Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/capture-image-resource).&lt;br&gt;For
-     * Linux, please refer to [How to create an image of a virtual machine or
-     * VHD](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/capture-image).
+     * Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource).&lt;br&gt;For Linux,
+     * please refer to [How to create an image of a virtual machine or
+     * VHD](https://docs.microsoft.com/azure/virtual-machines/linux/capture-image).
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
@@ -221,9 +224,9 @@ public interface VirtualMachines {
     /**
      * Sets the OS state of the virtual machine to generalized. It is recommended to sysprep the virtual machine before
      * performing this operation. &lt;br&gt;For Windows, please refer to [Create a managed image of a generalized VM in
-     * Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/capture-image-resource).&lt;br&gt;For
-     * Linux, please refer to [How to create an image of a virtual machine or
-     * VHD](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/capture-image).
+     * Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource).&lt;br&gt;For Linux,
+     * please refer to [How to create an image of a virtual machine or
+     * VHD](https://docs.microsoft.com/azure/virtual-machines/linux/capture-image).
      *
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
@@ -662,7 +665,10 @@ public interface VirtualMachines {
      * Retrieves information about the model view or the instance view of a virtual machine.
      *
      * @param id the resource ID.
-     * @param expand The expand expression to apply on the operation.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' retrieves a snapshot of the runtime
+     *     properties of the virtual machine that is managed by the platform and can change outside of control plane
+     *     operations. 'UserData' retrieves the UserData property as part of the VM model view that was provided by the
+     *     user during the VM Create/Update operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

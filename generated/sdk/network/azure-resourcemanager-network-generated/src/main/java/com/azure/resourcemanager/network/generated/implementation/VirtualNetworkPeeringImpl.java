@@ -281,13 +281,17 @@ public final class VirtualNetworkPeeringImpl
         return this;
     }
 
-    public VirtualNetworkPeeringImpl withWithSyncRemoteAddressSpace(SyncRemoteAddressSpace syncRemoteAddressSpace) {
-        this.createSyncRemoteAddressSpace = syncRemoteAddressSpace;
-        return this;
+    public VirtualNetworkPeeringImpl withSyncRemoteAddressSpace(SyncRemoteAddressSpace syncRemoteAddressSpace) {
+        if (isInCreateMode()) {
+            this.createSyncRemoteAddressSpace = syncRemoteAddressSpace;
+            return this;
+        } else {
+            this.updateSyncRemoteAddressSpace = syncRemoteAddressSpace;
+            return this;
+        }
     }
 
-    public VirtualNetworkPeeringImpl withSyncRemoteAddressSpace(SyncRemoteAddressSpace syncRemoteAddressSpace) {
-        this.updateSyncRemoteAddressSpace = syncRemoteAddressSpace;
-        return this;
+    private boolean isInCreateMode() {
+        return this.innerModel().id() == null;
     }
 }

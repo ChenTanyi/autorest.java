@@ -139,6 +139,13 @@ public class StorageAccountUpdateParameters {
     @JsonProperty(value = "properties.allowSharedKeyAccess")
     private Boolean allowSharedKeyAccess;
 
+    /*
+     * Allow or disallow cross AAD tenant object replication. The default
+     * interpretation is true for this property.
+     */
+    @JsonProperty(value = "properties.allowCrossTenantReplication")
+    private Boolean allowCrossTenantReplication;
+
     /**
      * Get the sku property: Gets or sets the SKU name. Note that the SKU name cannot be updated to Standard_ZRS,
      * Premium_LRS or Premium_ZRS, nor can accounts of those SKU names be updated to any other value.
@@ -507,6 +514,28 @@ public class StorageAccountUpdateParameters {
      */
     public StorageAccountUpdateParameters withAllowSharedKeyAccess(Boolean allowSharedKeyAccess) {
         this.allowSharedKeyAccess = allowSharedKeyAccess;
+        return this;
+    }
+
+    /**
+     * Get the allowCrossTenantReplication property: Allow or disallow cross AAD tenant object replication. The default
+     * interpretation is true for this property.
+     *
+     * @return the allowCrossTenantReplication value.
+     */
+    public Boolean allowCrossTenantReplication() {
+        return this.allowCrossTenantReplication;
+    }
+
+    /**
+     * Set the allowCrossTenantReplication property: Allow or disallow cross AAD tenant object replication. The default
+     * interpretation is true for this property.
+     *
+     * @param allowCrossTenantReplication the allowCrossTenantReplication value to set.
+     * @return the StorageAccountUpdateParameters object itself.
+     */
+    public StorageAccountUpdateParameters withAllowCrossTenantReplication(Boolean allowCrossTenantReplication) {
+        this.allowCrossTenantReplication = allowCrossTenantReplication;
         return this;
     }
 

@@ -169,12 +169,10 @@ public final class ExportsClientImpl implements ExportsClient {
         if (scope == null) {
             return Mono.error(new IllegalArgumentException("Parameter scope is required and cannot be null."));
         }
+        final String apiVersion = "2021-01-01";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context ->
-                    service
-                        .list(this.client.getEndpoint(), scope, this.client.getApiVersion(), expand, accept, context))
+            .withContext(context -> service.list(this.client.getEndpoint(), scope, apiVersion, expand, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -214,9 +212,10 @@ public final class ExportsClientImpl implements ExportsClient {
         if (scope == null) {
             return Mono.error(new IllegalArgumentException("Parameter scope is required and cannot be null."));
         }
+        final String apiVersion = "2021-01-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service.list(this.client.getEndpoint(), scope, this.client.getApiVersion(), expand, accept, context);
+        return service.list(this.client.getEndpoint(), scope, apiVersion, expand, accept, context);
     }
 
     /**
@@ -389,19 +388,12 @@ public final class ExportsClientImpl implements ExportsClient {
         if (exportName == null) {
             return Mono.error(new IllegalArgumentException("Parameter exportName is required and cannot be null."));
         }
+        final String apiVersion = "2021-01-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
-                    service
-                        .get(
-                            this.client.getEndpoint(),
-                            scope,
-                            this.client.getApiVersion(),
-                            exportName,
-                            expand,
-                            accept,
-                            context))
+                    service.get(this.client.getEndpoint(), scope, apiVersion, exportName, expand, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -446,10 +438,10 @@ public final class ExportsClientImpl implements ExportsClient {
         if (exportName == null) {
             return Mono.error(new IllegalArgumentException("Parameter exportName is required and cannot be null."));
         }
+        final String apiVersion = "2021-01-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .get(this.client.getEndpoint(), scope, this.client.getApiVersion(), exportName, expand, accept, context);
+        return service.get(this.client.getEndpoint(), scope, apiVersion, exportName, expand, accept, context);
     }
 
     /**
@@ -632,19 +624,14 @@ public final class ExportsClientImpl implements ExportsClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-01-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
                         .createOrUpdate(
-                            this.client.getEndpoint(),
-                            scope,
-                            this.client.getApiVersion(),
-                            exportName,
-                            parameters,
-                            accept,
-                            context))
+                            this.client.getEndpoint(), scope, apiVersion, exportName, parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -694,11 +681,11 @@ public final class ExportsClientImpl implements ExportsClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-01-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .createOrUpdate(
-                this.client.getEndpoint(), scope, this.client.getApiVersion(), exportName, parameters, accept, context);
+            .createOrUpdate(this.client.getEndpoint(), scope, apiVersion, exportName, parameters, accept, context);
     }
 
     /**
@@ -838,13 +825,11 @@ public final class ExportsClientImpl implements ExportsClient {
         if (exportName == null) {
             return Mono.error(new IllegalArgumentException("Parameter exportName is required and cannot be null."));
         }
+        final String apiVersion = "2021-01-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
-                context ->
-                    service
-                        .delete(
-                            this.client.getEndpoint(), scope, this.client.getApiVersion(), exportName, accept, context))
+                context -> service.delete(this.client.getEndpoint(), scope, apiVersion, exportName, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -886,10 +871,10 @@ public final class ExportsClientImpl implements ExportsClient {
         if (exportName == null) {
             return Mono.error(new IllegalArgumentException("Parameter exportName is required and cannot be null."));
         }
+        final String apiVersion = "2021-01-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .delete(this.client.getEndpoint(), scope, this.client.getApiVersion(), exportName, accept, context);
+        return service.delete(this.client.getEndpoint(), scope, apiVersion, exportName, accept, context);
     }
 
     /**
@@ -1013,13 +998,11 @@ public final class ExportsClientImpl implements ExportsClient {
         if (exportName == null) {
             return Mono.error(new IllegalArgumentException("Parameter exportName is required and cannot be null."));
         }
+        final String apiVersion = "2021-01-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
-                context ->
-                    service
-                        .execute(
-                            this.client.getEndpoint(), scope, this.client.getApiVersion(), exportName, accept, context))
+                context -> service.execute(this.client.getEndpoint(), scope, apiVersion, exportName, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -1061,10 +1044,10 @@ public final class ExportsClientImpl implements ExportsClient {
         if (exportName == null) {
             return Mono.error(new IllegalArgumentException("Parameter exportName is required and cannot be null."));
         }
+        final String apiVersion = "2021-01-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .execute(this.client.getEndpoint(), scope, this.client.getApiVersion(), exportName, accept, context);
+        return service.execute(this.client.getEndpoint(), scope, apiVersion, exportName, accept, context);
     }
 
     /**
@@ -1189,13 +1172,13 @@ public final class ExportsClientImpl implements ExportsClient {
         if (exportName == null) {
             return Mono.error(new IllegalArgumentException("Parameter exportName is required and cannot be null."));
         }
+        final String apiVersion = "2021-01-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
-                        .getExecutionHistory(
-                            this.client.getEndpoint(), scope, this.client.getApiVersion(), exportName, accept, context))
+                        .getExecutionHistory(this.client.getEndpoint(), scope, apiVersion, exportName, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -1238,11 +1221,10 @@ public final class ExportsClientImpl implements ExportsClient {
         if (exportName == null) {
             return Mono.error(new IllegalArgumentException("Parameter exportName is required and cannot be null."));
         }
+        final String apiVersion = "2021-01-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service
-            .getExecutionHistory(
-                this.client.getEndpoint(), scope, this.client.getApiVersion(), exportName, accept, context);
+        return service.getExecutionHistory(this.client.getEndpoint(), scope, apiVersion, exportName, accept, context);
     }
 
     /**

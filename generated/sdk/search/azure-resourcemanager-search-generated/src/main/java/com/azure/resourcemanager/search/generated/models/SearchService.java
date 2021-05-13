@@ -359,7 +359,7 @@ public interface SearchService {
              *     will be included in response information as a way to track the request.
              * @return the next definition stage.
              */
-            WithCreate withWithClientRequestId(UUID clientRequestId);
+            WithCreate withClientRequestId(UUID clientRequestId);
         }
     }
     /**

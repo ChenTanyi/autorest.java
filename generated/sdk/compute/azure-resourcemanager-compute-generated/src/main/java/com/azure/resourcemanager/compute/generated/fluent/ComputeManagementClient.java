@@ -144,6 +144,20 @@ public interface ComputeManagementClient {
     ImagesClient getImages();
 
     /**
+     * Gets the RestorePointCollectionsClient object to access its operations.
+     *
+     * @return the RestorePointCollectionsClient object.
+     */
+    RestorePointCollectionsClient getRestorePointCollections();
+
+    /**
+     * Gets the RestorePointsClient object to access its operations.
+     *
+     * @return the RestorePointsClient object.
+     */
+    RestorePointsClient getRestorePoints();
+
+    /**
      * Gets the VirtualMachineScaleSetExtensionsClient object to access its operations.
      *
      * @return the VirtualMachineScaleSetExtensionsClient object.

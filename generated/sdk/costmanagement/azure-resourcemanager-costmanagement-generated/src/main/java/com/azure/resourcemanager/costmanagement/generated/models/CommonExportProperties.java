@@ -38,6 +38,15 @@ public interface CommonExportProperties {
     ExportExecutionListResult runHistory();
 
     /**
+     * Gets the partitionData property: If set to true, exported data will be partitioned by size and placed in a blob
+     * directory together with a manifest file. Note: this option is currently available only for modern commerce
+     * scopes.
+     *
+     * @return the partitionData value.
+     */
+    Boolean partitionData();
+
+    /**
      * Gets the nextRunTimeEstimate property: If the export has an active schedule, provides an estimate of the next
      * execution time.
      *

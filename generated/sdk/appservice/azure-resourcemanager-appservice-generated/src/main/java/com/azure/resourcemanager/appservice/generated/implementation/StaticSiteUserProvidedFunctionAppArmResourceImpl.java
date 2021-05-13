@@ -198,13 +198,17 @@ public final class StaticSiteUserProvidedFunctionAppArmResourceImpl
         return this;
     }
 
-    public StaticSiteUserProvidedFunctionAppArmResourceImpl withWithIsForced(Boolean isForced) {
-        this.createIsForced = isForced;
-        return this;
+    public StaticSiteUserProvidedFunctionAppArmResourceImpl withIsForced(Boolean isForced) {
+        if (isInCreateMode()) {
+            this.createIsForced = isForced;
+            return this;
+        } else {
+            this.updateIsForced = isForced;
+            return this;
+        }
     }
 
-    public StaticSiteUserProvidedFunctionAppArmResourceImpl withIsForced(Boolean isForced) {
-        this.updateIsForced = isForced;
-        return this;
+    private boolean isInCreateMode() {
+        return this.innerModel().id() == null;
     }
 }

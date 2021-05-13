@@ -7,10 +7,15 @@ package com.azure.resourcemanager.storage.generated.implementation;
 import com.azure.resourcemanager.storage.generated.fluent.models.FileShareItemInner;
 import com.azure.resourcemanager.storage.generated.models.EnabledProtocols;
 import com.azure.resourcemanager.storage.generated.models.FileShareItem;
+import com.azure.resourcemanager.storage.generated.models.LeaseDuration;
+import com.azure.resourcemanager.storage.generated.models.LeaseState;
+import com.azure.resourcemanager.storage.generated.models.LeaseStatus;
 import com.azure.resourcemanager.storage.generated.models.RootSquashType;
 import com.azure.resourcemanager.storage.generated.models.ShareAccessTier;
+import com.azure.resourcemanager.storage.generated.models.SignedIdentifier;
 import java.time.OffsetDateTime;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 
 public final class FileShareItemImpl implements FileShareItem {
@@ -95,6 +100,27 @@ public final class FileShareItemImpl implements FileShareItem {
 
     public Long shareUsageBytes() {
         return this.innerModel().shareUsageBytes();
+    }
+
+    public LeaseStatus leaseStatus() {
+        return this.innerModel().leaseStatus();
+    }
+
+    public LeaseState leaseState() {
+        return this.innerModel().leaseState();
+    }
+
+    public LeaseDuration leaseDuration() {
+        return this.innerModel().leaseDuration();
+    }
+
+    public List<SignedIdentifier> signedIdentifiers() {
+        List<SignedIdentifier> inner = this.innerModel().signedIdentifiers();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     public OffsetDateTime snapshotTime() {

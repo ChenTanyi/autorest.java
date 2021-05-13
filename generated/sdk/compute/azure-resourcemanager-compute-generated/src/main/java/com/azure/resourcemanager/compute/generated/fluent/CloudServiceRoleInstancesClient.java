@@ -102,7 +102,7 @@ public interface CloudServiceRoleInstancesClient {
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName The resourceGroupName parameter.
      * @param cloudServiceName The cloudServiceName parameter.
-     * @param expand The expand expression to apply to the operation.
+     * @param expand The expand expression to apply to the operation. 'UserData' is not supported for cloud services.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -171,7 +171,7 @@ public interface CloudServiceRoleInstancesClient {
      *
      * @param resourceGroupName The resourceGroupName parameter.
      * @param cloudServiceName The cloudServiceName parameter.
-     * @param expand The expand expression to apply to the operation.
+     * @param expand The expand expression to apply to the operation. 'UserData' is not supported for cloud services.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by

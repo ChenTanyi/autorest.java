@@ -11,6 +11,7 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetInner;
 import com.azure.resourcemanager.compute.generated.models.AdditionalCapabilities;
 import com.azure.resourcemanager.compute.generated.models.AutomaticRepairsPolicy;
+import com.azure.resourcemanager.compute.generated.models.ExpandTypesForGetVMScaleSets;
 import com.azure.resourcemanager.compute.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.compute.generated.models.OrchestrationMode;
 import com.azure.resourcemanager.compute.generated.models.OrchestrationServiceStateInput;
@@ -231,21 +232,23 @@ public final class VirtualMachineScaleSetImpl
     }
 
     public VirtualMachineScaleSet refresh() {
+        ExpandTypesForGetVMScaleSets localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getVirtualMachineScaleSets()
-                .getByResourceGroupWithResponse(resourceGroupName, vmScaleSetName, Context.NONE)
+                .getByResourceGroupWithResponse(resourceGroupName, vmScaleSetName, localExpand, Context.NONE)
                 .getValue();
         return this;
     }
 
     public VirtualMachineScaleSet refresh(Context context) {
+        ExpandTypesForGetVMScaleSets localExpand = null;
         this.innerObject =
             serviceManager
                 .serviceClient()
                 .getVirtualMachineScaleSets()
-                .getByResourceGroupWithResponse(resourceGroupName, vmScaleSetName, context)
+                .getByResourceGroupWithResponse(resourceGroupName, vmScaleSetName, localExpand, context)
                 .getValue();
         return this;
     }

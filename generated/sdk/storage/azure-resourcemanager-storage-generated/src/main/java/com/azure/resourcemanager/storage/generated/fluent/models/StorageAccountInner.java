@@ -262,6 +262,13 @@ public class StorageAccountInner extends Resource {
     @JsonProperty(value = "properties.isNfsV3Enabled")
     private Boolean enableNfsV3;
 
+    /*
+     * Allow or disallow cross AAD tenant object replication. The default
+     * interpretation is true for this property.
+     */
+    @JsonProperty(value = "properties.allowCrossTenantReplication")
+    private Boolean allowCrossTenantReplication;
+
     /**
      * Get the sku property: Gets the SKU.
      *
@@ -704,6 +711,28 @@ public class StorageAccountInner extends Resource {
      */
     public StorageAccountInner withEnableNfsV3(Boolean enableNfsV3) {
         this.enableNfsV3 = enableNfsV3;
+        return this;
+    }
+
+    /**
+     * Get the allowCrossTenantReplication property: Allow or disallow cross AAD tenant object replication. The default
+     * interpretation is true for this property.
+     *
+     * @return the allowCrossTenantReplication value.
+     */
+    public Boolean allowCrossTenantReplication() {
+        return this.allowCrossTenantReplication;
+    }
+
+    /**
+     * Set the allowCrossTenantReplication property: Allow or disallow cross AAD tenant object replication. The default
+     * interpretation is true for this property.
+     *
+     * @param allowCrossTenantReplication the allowCrossTenantReplication value to set.
+     * @return the StorageAccountInner object itself.
+     */
+    public StorageAccountInner withAllowCrossTenantReplication(Boolean allowCrossTenantReplication) {
+        this.allowCrossTenantReplication = allowCrossTenantReplication;
         return this;
     }
 

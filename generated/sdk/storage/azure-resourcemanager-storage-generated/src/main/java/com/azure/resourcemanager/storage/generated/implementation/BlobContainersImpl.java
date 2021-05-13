@@ -294,6 +294,14 @@ public final class BlobContainersImpl implements BlobContainers {
         }
     }
 
+    public void objectLevelWorm(String resourceGroupName, String accountName, String containerName) {
+        this.serviceClient().objectLevelWorm(resourceGroupName, accountName, containerName);
+    }
+
+    public void objectLevelWorm(String resourceGroupName, String accountName, String containerName, Context context) {
+        this.serviceClient().objectLevelWorm(resourceGroupName, accountName, containerName, context);
+    }
+
     public BlobContainer getById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {

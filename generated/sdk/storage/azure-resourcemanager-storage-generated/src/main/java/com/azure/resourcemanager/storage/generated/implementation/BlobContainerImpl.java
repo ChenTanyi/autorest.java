@@ -10,6 +10,7 @@ import com.azure.resourcemanager.storage.generated.fluent.models.BlobContainerIn
 import com.azure.resourcemanager.storage.generated.fluent.models.LegalHoldInner;
 import com.azure.resourcemanager.storage.generated.models.BlobContainer;
 import com.azure.resourcemanager.storage.generated.models.ImmutabilityPolicyProperties;
+import com.azure.resourcemanager.storage.generated.models.ImmutableStorageWithVersioning;
 import com.azure.resourcemanager.storage.generated.models.LeaseContainerRequest;
 import com.azure.resourcemanager.storage.generated.models.LeaseContainerResponse;
 import com.azure.resourcemanager.storage.generated.models.LeaseDuration;
@@ -110,6 +111,10 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
 
     public Boolean hasImmutabilityPolicy() {
         return this.innerModel().hasImmutabilityPolicy();
+    }
+
+    public ImmutableStorageWithVersioning immutableStorageWithVersioning() {
+        return this.innerModel().immutableStorageWithVersioning();
     }
 
     public BlobContainerInner innerModel() {
@@ -241,6 +246,14 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
             .leaseWithResponse(resourceGroupName, accountName, containerName, parameters, context);
     }
 
+    public void objectLevelWorm() {
+        serviceManager.blobContainers().objectLevelWorm(resourceGroupName, accountName, containerName);
+    }
+
+    public void objectLevelWorm(Context context) {
+        serviceManager.blobContainers().objectLevelWorm(resourceGroupName, accountName, containerName, context);
+    }
+
     public BlobContainerImpl withDefaultEncryptionScope(String defaultEncryptionScope) {
         this.innerModel().withDefaultEncryptionScope(defaultEncryptionScope);
         return this;
@@ -258,6 +271,12 @@ public final class BlobContainerImpl implements BlobContainer, BlobContainer.Def
 
     public BlobContainerImpl withMetadata(Map<String, String> metadata) {
         this.innerModel().withMetadata(metadata);
+        return this;
+    }
+
+    public BlobContainerImpl withImmutableStorageWithVersioning(
+        ImmutableStorageWithVersioning immutableStorageWithVersioning) {
+        this.innerModel().withImmutableStorageWithVersioning(immutableStorageWithVersioning);
         return this;
     }
 }

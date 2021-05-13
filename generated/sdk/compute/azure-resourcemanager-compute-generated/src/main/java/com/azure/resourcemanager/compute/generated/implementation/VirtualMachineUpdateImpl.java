@@ -14,6 +14,7 @@ import com.azure.resourcemanager.compute.generated.models.HardwareProfile;
 import com.azure.resourcemanager.compute.generated.models.NetworkProfile;
 import com.azure.resourcemanager.compute.generated.models.OSProfile;
 import com.azure.resourcemanager.compute.generated.models.Plan;
+import com.azure.resourcemanager.compute.generated.models.ScheduledEventsProfile;
 import com.azure.resourcemanager.compute.generated.models.SecurityProfile;
 import com.azure.resourcemanager.compute.generated.models.StorageProfile;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineEvictionPolicyTypes;
@@ -150,6 +151,14 @@ public final class VirtualMachineUpdateImpl implements VirtualMachineUpdate {
 
     public Integer platformFaultDomain() {
         return this.innerModel().platformFaultDomain();
+    }
+
+    public ScheduledEventsProfile scheduledEventsProfile() {
+        return this.innerModel().scheduledEventsProfile();
+    }
+
+    public String userData() {
+        return this.innerModel().userData();
     }
 
     public VirtualMachineUpdateInner innerModel() {

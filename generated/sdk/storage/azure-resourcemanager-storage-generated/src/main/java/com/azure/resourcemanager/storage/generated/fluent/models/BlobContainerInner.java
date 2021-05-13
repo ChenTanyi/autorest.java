@@ -9,6 +9,7 @@ import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.storage.generated.models.AzureEntityResource;
 import com.azure.resourcemanager.storage.generated.models.ImmutabilityPolicyProperties;
+import com.azure.resourcemanager.storage.generated.models.ImmutableStorageWithVersioning;
 import com.azure.resourcemanager.storage.generated.models.LeaseDuration;
 import com.azure.resourcemanager.storage.generated.models.LeaseState;
 import com.azure.resourcemanager.storage.generated.models.LeaseStatus;
@@ -129,6 +130,14 @@ public class BlobContainerInner extends AzureEntityResource {
      */
     @JsonProperty(value = "properties.hasImmutabilityPolicy", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean hasImmutabilityPolicy;
+
+    /*
+     * The object level immutability property of the container. The property is
+     * immutable and can only be set to true at the container creation time.
+     * Existing containers must undergo a migration process.
+     */
+    @JsonProperty(value = "properties.immutableStorageWithVersioning")
+    private ImmutableStorageWithVersioning immutableStorageWithVersioning;
 
     /**
      * Get the version property: The version of the deleted blob container.
@@ -326,6 +335,31 @@ public class BlobContainerInner extends AzureEntityResource {
     }
 
     /**
+     * Get the immutableStorageWithVersioning property: The object level immutability property of the container. The
+     * property is immutable and can only be set to true at the container creation time. Existing containers must
+     * undergo a migration process.
+     *
+     * @return the immutableStorageWithVersioning value.
+     */
+    public ImmutableStorageWithVersioning immutableStorageWithVersioning() {
+        return this.immutableStorageWithVersioning;
+    }
+
+    /**
+     * Set the immutableStorageWithVersioning property: The object level immutability property of the container. The
+     * property is immutable and can only be set to true at the container creation time. Existing containers must
+     * undergo a migration process.
+     *
+     * @param immutableStorageWithVersioning the immutableStorageWithVersioning value to set.
+     * @return the BlobContainerInner object itself.
+     */
+    public BlobContainerInner withImmutableStorageWithVersioning(
+        ImmutableStorageWithVersioning immutableStorageWithVersioning) {
+        this.immutableStorageWithVersioning = immutableStorageWithVersioning;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      *
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -338,6 +372,9 @@ public class BlobContainerInner extends AzureEntityResource {
         }
         if (legalHold() != null) {
             legalHold().validate();
+        }
+        if (immutableStorageWithVersioning() != null) {
+            immutableStorageWithVersioning().validate();
         }
     }
 }

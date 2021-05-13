@@ -8,6 +8,7 @@ import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.storage.generated.fluent.models.FileShareInner;
 import java.time.OffsetDateTime;
+import java.util.List;
 import java.util.Map;
 
 /** An immutable client-side representation of FileShare. */
@@ -136,6 +137,35 @@ public interface FileShare {
     Long shareUsageBytes();
 
     /**
+     * Gets the leaseStatus property: The lease status of the share.
+     *
+     * @return the leaseStatus value.
+     */
+    LeaseStatus leaseStatus();
+
+    /**
+     * Gets the leaseState property: Lease state of the share.
+     *
+     * @return the leaseState value.
+     */
+    LeaseState leaseState();
+
+    /**
+     * Gets the leaseDuration property: Specifies whether the lease on a share is of infinite or fixed duration, only
+     * when the share is leased.
+     *
+     * @return the leaseDuration value.
+     */
+    LeaseDuration leaseDuration();
+
+    /**
+     * Gets the signedIdentifiers property: List of stored access policies specified on the share.
+     *
+     * @return the signedIdentifiers value.
+     */
+    List<SignedIdentifier> signedIdentifiers();
+
+    /**
      * Gets the snapshotTime property: Creation time of share snapshot returned in the response of list shares with
      * expand param "snapshots".
      *
@@ -182,6 +212,7 @@ public interface FileShare {
                 DefinitionStages.WithEnabledProtocols,
                 DefinitionStages.WithRootSquash,
                 DefinitionStages.WithAccessTier,
+                DefinitionStages.WithSignedIdentifiers,
                 DefinitionStages.WithExpand {
             /**
              * Executes the create request.
@@ -254,15 +285,27 @@ public interface FileShare {
              */
             WithCreate withAccessTier(ShareAccessTier accessTier);
         }
+        /** The stage of the FileShare definition allowing to specify signedIdentifiers. */
+        interface WithSignedIdentifiers {
+            /**
+             * Specifies the signedIdentifiers property: List of stored access policies specified on the share..
+             *
+             * @param signedIdentifiers List of stored access policies specified on the share.
+             * @return the next definition stage.
+             */
+            WithCreate withSignedIdentifiers(List<SignedIdentifier> signedIdentifiers);
+        }
         /** The stage of the FileShare definition allowing to specify expand. */
         interface WithExpand {
             /**
-             * Specifies the expand property: Optional, used to create a snapshot..
+             * Specifies the expand property: Optional, used to expand the properties within share's properties. Valid
+             * values are: snapshots. Should be passed as a string with delimiter ','.
              *
-             * @param expand Optional, used to create a snapshot.
+             * @param expand Optional, used to expand the properties within share's properties. Valid values are:
+             *     snapshots. Should be passed as a string with delimiter ','.
              * @return the next definition stage.
              */
-            WithCreate withWithExpand(PutSharesExpand expand);
+            WithCreate withExpand(String expand);
         }
     }
     /**
@@ -278,7 +321,8 @@ public interface FileShare {
             UpdateStages.WithShareQuota,
             UpdateStages.WithEnabledProtocols,
             UpdateStages.WithRootSquash,
-            UpdateStages.WithAccessTier {
+            UpdateStages.WithAccessTier,
+            UpdateStages.WithSignedIdentifiers {
         /**
          * Executes the update request.
          *
@@ -352,6 +396,16 @@ public interface FileShare {
              */
             Update withAccessTier(ShareAccessTier accessTier);
         }
+        /** The stage of the FileShare update allowing to specify signedIdentifiers. */
+        interface WithSignedIdentifiers {
+            /**
+             * Specifies the signedIdentifiers property: List of stored access policies specified on the share..
+             *
+             * @param signedIdentifiers List of stored access policies specified on the share.
+             * @return the next definition stage.
+             */
+            Update withSignedIdentifiers(List<SignedIdentifier> signedIdentifiers);
+        }
     }
     /**
      * Refreshes the resource to sync with Azure.
@@ -389,4 +443,28 @@ public interface FileShare {
      * @return the response.
      */
     Response<Void> restoreWithResponse(DeletedShare deletedShare, Context context);
+
+    /**
+     * The Lease Share operation establishes and manages a lock on a share for delete operations. The lock duration can
+     * be 15 to 60 seconds, or can be infinite.
+     *
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return lease Share response schema.
+     */
+    LeaseShareResponse lease();
+
+    /**
+     * The Lease Share operation establishes and manages a lock on a share for delete operations. The lock duration can
+     * be 15 to 60 seconds, or can be infinite.
+     *
+     * @param xMsSnapshot Optional. Specify the snapshot time to lease a snapshot.
+     * @param parameters Lease Share request body.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return lease Share response schema.
+     */
+    Response<LeaseShareResponse> leaseWithResponse(String xMsSnapshot, LeaseShareRequest parameters, Context context);
 }

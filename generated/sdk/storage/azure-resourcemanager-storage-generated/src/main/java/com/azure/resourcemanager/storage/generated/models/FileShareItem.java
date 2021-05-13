@@ -6,6 +6,7 @@ package com.azure.resourcemanager.storage.generated.models;
 
 import com.azure.resourcemanager.storage.generated.fluent.models.FileShareItemInner;
 import java.time.OffsetDateTime;
+import java.util.List;
 import java.util.Map;
 
 /** An immutable client-side representation of FileShareItem. */
@@ -132,6 +133,35 @@ public interface FileShareItem {
      * @return the shareUsageBytes value.
      */
     Long shareUsageBytes();
+
+    /**
+     * Gets the leaseStatus property: The lease status of the share.
+     *
+     * @return the leaseStatus value.
+     */
+    LeaseStatus leaseStatus();
+
+    /**
+     * Gets the leaseState property: Lease state of the share.
+     *
+     * @return the leaseState value.
+     */
+    LeaseState leaseState();
+
+    /**
+     * Gets the leaseDuration property: Specifies whether the lease on a share is of infinite or fixed duration, only
+     * when the share is leased.
+     *
+     * @return the leaseDuration value.
+     */
+    LeaseDuration leaseDuration();
+
+    /**
+     * Gets the signedIdentifiers property: List of stored access policies specified on the share.
+     *
+     * @return the signedIdentifiers value.
+     */
+    List<SignedIdentifier> signedIdentifiers();
 
     /**
      * Gets the snapshotTime property: Creation time of share snapshot returned in the response of list shares with

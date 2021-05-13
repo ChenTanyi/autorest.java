@@ -45,6 +45,8 @@ import com.azure.resourcemanager.compute.generated.implementation.LogAnalyticsIm
 import com.azure.resourcemanager.compute.generated.implementation.OperationsImpl;
 import com.azure.resourcemanager.compute.generated.implementation.ProximityPlacementGroupsImpl;
 import com.azure.resourcemanager.compute.generated.implementation.ResourceSkusImpl;
+import com.azure.resourcemanager.compute.generated.implementation.RestorePointCollectionsImpl;
+import com.azure.resourcemanager.compute.generated.implementation.RestorePointsImpl;
 import com.azure.resourcemanager.compute.generated.implementation.SharedGalleriesImpl;
 import com.azure.resourcemanager.compute.generated.implementation.SharedGalleryImageVersionsImpl;
 import com.azure.resourcemanager.compute.generated.implementation.SharedGalleryImagesImpl;
@@ -87,6 +89,8 @@ import com.azure.resourcemanager.compute.generated.models.LogAnalytics;
 import com.azure.resourcemanager.compute.generated.models.Operations;
 import com.azure.resourcemanager.compute.generated.models.ProximityPlacementGroups;
 import com.azure.resourcemanager.compute.generated.models.ResourceSkus;
+import com.azure.resourcemanager.compute.generated.models.RestorePointCollections;
+import com.azure.resourcemanager.compute.generated.models.RestorePoints;
 import com.azure.resourcemanager.compute.generated.models.SharedGalleries;
 import com.azure.resourcemanager.compute.generated.models.SharedGalleryImageVersions;
 import com.azure.resourcemanager.compute.generated.models.SharedGalleryImages;
@@ -143,6 +147,10 @@ public final class ComputeManager {
     private VirtualMachineSizes virtualMachineSizes;
 
     private Images images;
+
+    private RestorePointCollections restorePointCollections;
+
+    private RestorePoints restorePoints;
 
     private VirtualMachineScaleSetExtensions virtualMachineScaleSetExtensions;
 
@@ -484,6 +492,23 @@ public final class ComputeManager {
             this.images = new ImagesImpl(clientObject.getImages(), this);
         }
         return images;
+    }
+
+    /** @return Resource collection API of RestorePointCollections. */
+    public RestorePointCollections restorePointCollections() {
+        if (this.restorePointCollections == null) {
+            this.restorePointCollections =
+                new RestorePointCollectionsImpl(clientObject.getRestorePointCollections(), this);
+        }
+        return restorePointCollections;
+    }
+
+    /** @return Resource collection API of RestorePoints. */
+    public RestorePoints restorePoints() {
+        if (this.restorePoints == null) {
+            this.restorePoints = new RestorePointsImpl(clientObject.getRestorePoints(), this);
+        }
+        return restorePoints;
     }
 
     /** @return Resource collection API of VirtualMachineScaleSetExtensions. */

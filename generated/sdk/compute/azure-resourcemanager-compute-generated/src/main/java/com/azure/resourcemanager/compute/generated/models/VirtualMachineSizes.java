@@ -10,8 +10,7 @@ import com.azure.core.util.Context;
 /** Resource collection API of VirtualMachineSizes. */
 public interface VirtualMachineSizes {
     /**
-     * This API is deprecated. Use [Resources
-     * Skus](https://docs.microsoft.com/en-us/rest/api/compute/resourceskus/list).
+     * This API is deprecated. Use [Resources Skus](https://docs.microsoft.com/rest/api/compute/resourceskus/list).
      *
      * @param location The location upon which virtual-machine-sizes is queried.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -22,8 +21,7 @@ public interface VirtualMachineSizes {
     PagedIterable<VirtualMachineSize> list(String location);
 
     /**
-     * This API is deprecated. Use [Resources
-     * Skus](https://docs.microsoft.com/en-us/rest/api/compute/resourceskus/list).
+     * This API is deprecated. Use [Resources Skus](https://docs.microsoft.com/rest/api/compute/resourceskus/list).
      *
      * @param location The location upon which virtual-machine-sizes is queried.
      * @param context The context to associate with this operation.

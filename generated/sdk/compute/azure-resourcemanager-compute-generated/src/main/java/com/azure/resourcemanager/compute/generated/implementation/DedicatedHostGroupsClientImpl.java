@@ -211,7 +211,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2020-12-01";
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -269,7 +269,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2020-12-01";
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -385,7 +385,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2020-12-01";
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -442,7 +442,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2020-12-01";
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -548,7 +548,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-12-01";
+        final String apiVersion = "2021-03-01";
         return FluxUtil
             .withContext(
                 context ->
@@ -596,7 +596,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-12-01";
+        final String apiVersion = "2021-03-01";
         context = this.client.mergeContext(context);
         return service
             .delete(
@@ -658,8 +658,9 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
      *
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
-     * @param expand The expand expression to apply on the operation. The response shows the list of instance view of
-     *     the dedicated hosts under the dedicated host group.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the list of instance
+     *     views of the dedicated hosts under the dedicated host group. 'UserData' is not supported for dedicated host
+     *     group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -687,7 +688,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-12-01";
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -710,8 +711,9 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
      *
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
-     * @param expand The expand expression to apply on the operation. The response shows the list of instance view of
-     *     the dedicated hosts under the dedicated host group.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the list of instance
+     *     views of the dedicated hosts under the dedicated host group. 'UserData' is not supported for dedicated host
+     *     group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -740,7 +742,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-12-01";
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -760,8 +762,9 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
      *
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
-     * @param expand The expand expression to apply on the operation. The response shows the list of instance view of
-     *     the dedicated hosts under the dedicated host group.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the list of instance
+     *     views of the dedicated hosts under the dedicated host group. 'UserData' is not supported for dedicated host
+     *     group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -826,8 +829,9 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
      *
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
-     * @param expand The expand expression to apply on the operation. The response shows the list of instance view of
-     *     the dedicated hosts under the dedicated host group.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the list of instance
+     *     views of the dedicated hosts under the dedicated host group. 'UserData' is not supported for dedicated host
+     *     group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -868,7 +872,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-12-01";
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -923,7 +927,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-12-01";
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1033,7 +1037,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-12-01";
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1076,7 +1080,7 @@ public final class DedicatedHostGroupsClientImpl implements DedicatedHostGroupsC
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2020-12-01";
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service

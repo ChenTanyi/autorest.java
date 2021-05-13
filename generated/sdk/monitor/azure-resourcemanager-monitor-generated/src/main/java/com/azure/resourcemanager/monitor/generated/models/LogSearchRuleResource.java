@@ -77,7 +77,7 @@ public interface LogSearchRuleResource {
 
     /**
      * Gets the autoMitigate property: The flag that indicates whether the alert should be automatically resolved or
-     * not. The default is true.
+     * not. The default is false.
      *
      * @return the autoMitigate value.
      */
@@ -289,10 +289,10 @@ public interface LogSearchRuleResource {
         interface WithAutoMitigate {
             /**
              * Specifies the autoMitigate property: The flag that indicates whether the alert should be automatically
-             * resolved or not. The default is true..
+             * resolved or not. The default is false..
              *
              * @param autoMitigate The flag that indicates whether the alert should be automatically resolved or not.
-             *     The default is true.
+             *     The default is false.
              * @return the next definition stage.
              */
             WithCreate withAutoMitigate(Boolean autoMitigate);

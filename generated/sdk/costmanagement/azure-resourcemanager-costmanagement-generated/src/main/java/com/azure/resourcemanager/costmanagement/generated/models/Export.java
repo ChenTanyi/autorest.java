@@ -62,6 +62,15 @@ public interface Export {
     ExportExecutionListResult runHistory();
 
     /**
+     * Gets the partitionData property: If set to true, exported data will be partitioned by size and placed in a blob
+     * directory together with a manifest file. Note: this option is currently available only for modern commerce
+     * scopes.
+     *
+     * @return the partitionData value.
+     */
+    Boolean partitionData();
+
+    /**
      * Gets the nextRunTimeEstimate property: If the export has an active schedule, provides an estimate of the next
      * execution time.
      *
@@ -132,6 +141,7 @@ public interface Export {
                 DefinitionStages.WithDeliveryInfo,
                 DefinitionStages.WithDefinition,
                 DefinitionStages.WithRunHistory,
+                DefinitionStages.WithPartitionData,
                 DefinitionStages.WithSchedule,
                 DefinitionStages.WithEtag {
             /**
@@ -190,6 +200,20 @@ public interface Export {
              */
             WithCreate withRunHistory(ExportExecutionListResultInner runHistory);
         }
+        /** The stage of the Export definition allowing to specify partitionData. */
+        interface WithPartitionData {
+            /**
+             * Specifies the partitionData property: If set to true, exported data will be partitioned by size and
+             * placed in a blob directory together with a manifest file. Note: this option is currently available only
+             * for modern commerce scopes..
+             *
+             * @param partitionData If set to true, exported data will be partitioned by size and placed in a blob
+             *     directory together with a manifest file. Note: this option is currently available only for modern
+             *     commerce scopes.
+             * @return the next definition stage.
+             */
+            WithCreate withPartitionData(Boolean partitionData);
+        }
         /** The stage of the Export definition allowing to specify schedule. */
         interface WithSchedule {
             /**
@@ -226,6 +250,7 @@ public interface Export {
             UpdateStages.WithDeliveryInfo,
             UpdateStages.WithDefinition,
             UpdateStages.WithRunHistory,
+            UpdateStages.WithPartitionData,
             UpdateStages.WithSchedule,
             UpdateStages.WithEtag {
         /**
@@ -285,6 +310,20 @@ public interface Export {
              * @return the next definition stage.
              */
             Update withRunHistory(ExportExecutionListResultInner runHistory);
+        }
+        /** The stage of the Export update allowing to specify partitionData. */
+        interface WithPartitionData {
+            /**
+             * Specifies the partitionData property: If set to true, exported data will be partitioned by size and
+             * placed in a blob directory together with a manifest file. Note: this option is currently available only
+             * for modern commerce scopes..
+             *
+             * @param partitionData If set to true, exported data will be partitioned by size and placed in a blob
+             *     directory together with a manifest file. Note: this option is currently available only for modern
+             *     commerce scopes.
+             * @return the next definition stage.
+             */
+            Update withPartitionData(Boolean partitionData);
         }
         /** The stage of the Export update allowing to specify schedule. */
         interface WithSchedule {
