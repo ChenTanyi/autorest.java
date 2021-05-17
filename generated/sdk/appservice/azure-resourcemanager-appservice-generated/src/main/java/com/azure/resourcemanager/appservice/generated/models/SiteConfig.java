@@ -113,6 +113,20 @@ public interface SiteConfig {
     Boolean httpLoggingEnabled();
 
     /**
+     * Gets the acrUseManagedIdentityCreds property: Flag to use Managed Identity Creds for ACR pull.
+     *
+     * @return the acrUseManagedIdentityCreds value.
+     */
+    Boolean acrUseManagedIdentityCreds();
+
+    /**
+     * Gets the acrUserManagedIdentityId property: If using user managed identity, the user managed identity ClientId.
+     *
+     * @return the acrUserManagedIdentityId value.
+     */
+    String acrUserManagedIdentityId();
+
+    /**
      * Gets the logsDirectorySizeLimit property: HTTP logs directory size limit.
      *
      * @return the logsDirectorySizeLimit value.

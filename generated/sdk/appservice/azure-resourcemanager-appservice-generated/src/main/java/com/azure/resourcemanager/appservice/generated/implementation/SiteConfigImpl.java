@@ -103,6 +103,14 @@ public final class SiteConfigImpl implements SiteConfig {
         return this.innerModel().httpLoggingEnabled();
     }
 
+    public Boolean acrUseManagedIdentityCreds() {
+        return this.innerModel().acrUseManagedIdentityCreds();
+    }
+
+    public String acrUserManagedIdentityId() {
+        return this.innerModel().acrUserManagedIdentityId();
+    }
+
     public Integer logsDirectorySizeLimit() {
         return this.innerModel().logsDirectorySizeLimit();
     }
