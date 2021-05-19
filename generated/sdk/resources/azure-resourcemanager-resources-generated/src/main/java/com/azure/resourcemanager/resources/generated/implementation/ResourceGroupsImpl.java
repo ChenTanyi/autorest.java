@@ -40,16 +40,16 @@ public final class ResourceGroupsImpl implements ResourceGroups {
         return this.serviceClient().checkExistenceWithResponse(resourceGroupName, context);
     }
 
-    public void deleteByResourceGroup(String resourceGroupName, String forceDeletionResourceTypes) {
-        this.serviceClient().delete(resourceGroupName, forceDeletionResourceTypes);
+    public void deleteByResourceGroup(String resourceGroupName, String forceDeletionTypes) {
+        this.serviceClient().delete(resourceGroupName, forceDeletionTypes);
     }
 
     public void delete(String resourceGroupName) {
         this.serviceClient().delete(resourceGroupName);
     }
 
-    public void delete(String resourceGroupName, String forceDeletionResourceTypes, Context context) {
-        this.serviceClient().delete(resourceGroupName, forceDeletionResourceTypes, context);
+    public void delete(String resourceGroupName, String forceDeletionTypes, Context context) {
+        this.serviceClient().delete(resourceGroupName, forceDeletionTypes, context);
     }
 
     public ResourceGroup get(String resourceGroupName) {
@@ -137,11 +137,11 @@ public final class ResourceGroupsImpl implements ResourceGroups {
                         String
                             .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
-        String localForceDeletionResourceTypes = null;
-        this.delete(resourceGroupName, localForceDeletionResourceTypes, Context.NONE);
+        String localForceDeletionTypes = null;
+        this.delete(resourceGroupName, localForceDeletionTypes, Context.NONE);
     }
 
-    public void deleteByIdWithResponse(String id, String forceDeletionResourceTypes, Context context) {
+    public void deleteByIdWithResponse(String id, String forceDeletionTypes, Context context) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourcegroups");
         if (resourceGroupName == null) {
             throw logger
@@ -150,7 +150,7 @@ public final class ResourceGroupsImpl implements ResourceGroups {
                         String
                             .format("The resource ID '%s' is not valid. Missing path segment 'resourcegroups'.", id)));
         }
-        this.delete(resourceGroupName, forceDeletionResourceTypes, context);
+        this.delete(resourceGroupName, forceDeletionTypes, context);
     }
 
     private ResourceGroupsClient serviceClient() {
