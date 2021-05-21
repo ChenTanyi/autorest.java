@@ -166,7 +166,6 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
         if (parameters != null) {
             parameters.validate();
         }
-        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -178,7 +177,7 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
                             cloudServiceName,
                             updateDomain,
                             this.client.getSubscriptionId(),
-                            apiVersion,
+                            this.client.getApiVersion(),
                             parameters,
                             accept,
                             context))
@@ -229,7 +228,6 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
         if (parameters != null) {
             parameters.validate();
         }
-        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -239,7 +237,7 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
                 cloudServiceName,
                 updateDomain,
                 this.client.getSubscriptionId(),
-                apiVersion,
+                this.client.getApiVersion(),
                 parameters,
                 accept,
                 context);
@@ -503,7 +501,6 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -515,7 +512,7 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
                             cloudServiceName,
                             updateDomain,
                             this.client.getSubscriptionId(),
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -558,7 +555,6 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -568,7 +564,7 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
                 cloudServiceName,
                 updateDomain,
                 this.client.getSubscriptionId(),
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context);
     }
@@ -671,7 +667,6 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -682,7 +677,7 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
                             resourceGroupName,
                             cloudServiceName,
                             this.client.getSubscriptionId(),
-                            apiVersion,
+                            this.client.getApiVersion(),
                             accept,
                             context))
             .<PagedResponse<UpdateDomainInner>>map(
@@ -731,7 +726,6 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -740,7 +734,7 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
                 resourceGroupName,
                 cloudServiceName,
                 this.client.getSubscriptionId(),
-                apiVersion,
+                this.client.getApiVersion(),
                 accept,
                 context)
             .map(

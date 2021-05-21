@@ -196,7 +196,6 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -210,7 +209,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
                             offer,
                             skus,
                             version,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -271,7 +270,6 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -283,7 +281,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
                 offer,
                 skus,
                 version,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -419,7 +417,6 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -435,7 +432,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
                             expand,
                             top,
                             orderby,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -499,7 +496,6 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -513,7 +509,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
                 expand,
                 top,
                 orderby,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -683,7 +679,6 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -694,7 +689,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
                             location,
                             edgeZone,
                             publisherName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -737,7 +732,6 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -746,7 +740,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
                 location,
                 edgeZone,
                 publisherName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -842,7 +836,6 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -852,7 +845,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
                             this.client.getEndpoint(),
                             location,
                             edgeZone,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -891,7 +884,6 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -899,7 +891,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
                 this.client.getEndpoint(),
                 location,
                 edgeZone,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -999,7 +991,6 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1011,7 +1002,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
                             edgeZone,
                             publisherName,
                             offer,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -1058,7 +1049,6 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1068,7 +1058,7 @@ public final class VirtualMachineImagesEdgeZonesClientImpl implements VirtualMac
                 edgeZone,
                 publisherName,
                 offer,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);

@@ -30,27 +30,12 @@ import com.azure.resourcemanager.compute.generated.implementation.CloudServicesU
 import com.azure.resourcemanager.compute.generated.implementation.ComputeManagementClientBuilder;
 import com.azure.resourcemanager.compute.generated.implementation.DedicatedHostGroupsImpl;
 import com.azure.resourcemanager.compute.generated.implementation.DedicatedHostsImpl;
-import com.azure.resourcemanager.compute.generated.implementation.DiskAccessesImpl;
-import com.azure.resourcemanager.compute.generated.implementation.DiskEncryptionSetsImpl;
-import com.azure.resourcemanager.compute.generated.implementation.DiskRestorePointsImpl;
-import com.azure.resourcemanager.compute.generated.implementation.DisksImpl;
-import com.azure.resourcemanager.compute.generated.implementation.GalleriesImpl;
-import com.azure.resourcemanager.compute.generated.implementation.GalleryApplicationVersionsImpl;
-import com.azure.resourcemanager.compute.generated.implementation.GalleryApplicationsImpl;
-import com.azure.resourcemanager.compute.generated.implementation.GalleryImageVersionsImpl;
-import com.azure.resourcemanager.compute.generated.implementation.GalleryImagesImpl;
-import com.azure.resourcemanager.compute.generated.implementation.GallerySharingProfilesImpl;
 import com.azure.resourcemanager.compute.generated.implementation.ImagesImpl;
 import com.azure.resourcemanager.compute.generated.implementation.LogAnalyticsImpl;
 import com.azure.resourcemanager.compute.generated.implementation.OperationsImpl;
 import com.azure.resourcemanager.compute.generated.implementation.ProximityPlacementGroupsImpl;
-import com.azure.resourcemanager.compute.generated.implementation.ResourceSkusImpl;
 import com.azure.resourcemanager.compute.generated.implementation.RestorePointCollectionsImpl;
 import com.azure.resourcemanager.compute.generated.implementation.RestorePointsImpl;
-import com.azure.resourcemanager.compute.generated.implementation.SharedGalleriesImpl;
-import com.azure.resourcemanager.compute.generated.implementation.SharedGalleryImageVersionsImpl;
-import com.azure.resourcemanager.compute.generated.implementation.SharedGalleryImagesImpl;
-import com.azure.resourcemanager.compute.generated.implementation.SnapshotsImpl;
 import com.azure.resourcemanager.compute.generated.implementation.SshPublicKeysImpl;
 import com.azure.resourcemanager.compute.generated.implementation.UsagesImpl;
 import com.azure.resourcemanager.compute.generated.implementation.VirtualMachineExtensionImagesImpl;
@@ -74,27 +59,12 @@ import com.azure.resourcemanager.compute.generated.models.CloudServices;
 import com.azure.resourcemanager.compute.generated.models.CloudServicesUpdateDomains;
 import com.azure.resourcemanager.compute.generated.models.DedicatedHostGroups;
 import com.azure.resourcemanager.compute.generated.models.DedicatedHosts;
-import com.azure.resourcemanager.compute.generated.models.DiskAccesses;
-import com.azure.resourcemanager.compute.generated.models.DiskEncryptionSets;
-import com.azure.resourcemanager.compute.generated.models.DiskRestorePoints;
-import com.azure.resourcemanager.compute.generated.models.Disks;
-import com.azure.resourcemanager.compute.generated.models.Galleries;
-import com.azure.resourcemanager.compute.generated.models.GalleryApplicationVersions;
-import com.azure.resourcemanager.compute.generated.models.GalleryApplications;
-import com.azure.resourcemanager.compute.generated.models.GalleryImageVersions;
-import com.azure.resourcemanager.compute.generated.models.GalleryImages;
-import com.azure.resourcemanager.compute.generated.models.GallerySharingProfiles;
 import com.azure.resourcemanager.compute.generated.models.Images;
 import com.azure.resourcemanager.compute.generated.models.LogAnalytics;
 import com.azure.resourcemanager.compute.generated.models.Operations;
 import com.azure.resourcemanager.compute.generated.models.ProximityPlacementGroups;
-import com.azure.resourcemanager.compute.generated.models.ResourceSkus;
 import com.azure.resourcemanager.compute.generated.models.RestorePointCollections;
 import com.azure.resourcemanager.compute.generated.models.RestorePoints;
-import com.azure.resourcemanager.compute.generated.models.SharedGalleries;
-import com.azure.resourcemanager.compute.generated.models.SharedGalleryImageVersions;
-import com.azure.resourcemanager.compute.generated.models.SharedGalleryImages;
-import com.azure.resourcemanager.compute.generated.models.Snapshots;
 import com.azure.resourcemanager.compute.generated.models.SshPublicKeys;
 import com.azure.resourcemanager.compute.generated.models.Usages;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineExtensionImages;
@@ -118,6 +88,16 @@ import java.util.Objects;
 
 /** Entry point to ComputeManager. Compute Client. */
 public final class ComputeManager {
+    private CloudServiceRoleInstances cloudServiceRoleInstances;
+
+    private CloudServiceRoles cloudServiceRoles;
+
+    private CloudServices cloudServices;
+
+    private CloudServicesUpdateDomains cloudServicesUpdateDomains;
+
+    private CloudServiceOperatingSystems cloudServiceOperatingSystems;
+
     private Operations operations;
 
     private AvailabilitySets availabilitySets;
@@ -165,46 +145,6 @@ public final class ComputeManager {
     private VirtualMachineRunCommands virtualMachineRunCommands;
 
     private VirtualMachineScaleSetVMRunCommands virtualMachineScaleSetVMRunCommands;
-
-    private ResourceSkus resourceSkus;
-
-    private Disks disks;
-
-    private Snapshots snapshots;
-
-    private DiskEncryptionSets diskEncryptionSets;
-
-    private DiskAccesses diskAccesses;
-
-    private DiskRestorePoints diskRestorePoints;
-
-    private Galleries galleries;
-
-    private GalleryImages galleryImages;
-
-    private GalleryImageVersions galleryImageVersions;
-
-    private GalleryApplications galleryApplications;
-
-    private GalleryApplicationVersions galleryApplicationVersions;
-
-    private GallerySharingProfiles gallerySharingProfiles;
-
-    private SharedGalleries sharedGalleries;
-
-    private SharedGalleryImages sharedGalleryImages;
-
-    private SharedGalleryImageVersions sharedGalleryImageVersions;
-
-    private CloudServiceRoleInstances cloudServiceRoleInstances;
-
-    private CloudServiceRoles cloudServiceRoles;
-
-    private CloudServices cloudServices;
-
-    private CloudServicesUpdateDomains cloudServicesUpdateDomains;
-
-    private CloudServiceOperatingSystems cloudServiceOperatingSystems;
 
     private final ComputeManagementClient clientObject;
 
@@ -367,6 +307,49 @@ public final class ComputeManager {
                     .build();
             return new ComputeManager(httpPipeline, profile, defaultPollInterval);
         }
+    }
+
+    /** @return Resource collection API of CloudServiceRoleInstances. */
+    public CloudServiceRoleInstances cloudServiceRoleInstances() {
+        if (this.cloudServiceRoleInstances == null) {
+            this.cloudServiceRoleInstances =
+                new CloudServiceRoleInstancesImpl(clientObject.getCloudServiceRoleInstances(), this);
+        }
+        return cloudServiceRoleInstances;
+    }
+
+    /** @return Resource collection API of CloudServiceRoles. */
+    public CloudServiceRoles cloudServiceRoles() {
+        if (this.cloudServiceRoles == null) {
+            this.cloudServiceRoles = new CloudServiceRolesImpl(clientObject.getCloudServiceRoles(), this);
+        }
+        return cloudServiceRoles;
+    }
+
+    /** @return Resource collection API of CloudServices. */
+    public CloudServices cloudServices() {
+        if (this.cloudServices == null) {
+            this.cloudServices = new CloudServicesImpl(clientObject.getCloudServices(), this);
+        }
+        return cloudServices;
+    }
+
+    /** @return Resource collection API of CloudServicesUpdateDomains. */
+    public CloudServicesUpdateDomains cloudServicesUpdateDomains() {
+        if (this.cloudServicesUpdateDomains == null) {
+            this.cloudServicesUpdateDomains =
+                new CloudServicesUpdateDomainsImpl(clientObject.getCloudServicesUpdateDomains(), this);
+        }
+        return cloudServicesUpdateDomains;
+    }
+
+    /** @return Resource collection API of CloudServiceOperatingSystems. */
+    public CloudServiceOperatingSystems cloudServiceOperatingSystems() {
+        if (this.cloudServiceOperatingSystems == null) {
+            this.cloudServiceOperatingSystems =
+                new CloudServiceOperatingSystemsImpl(clientObject.getCloudServiceOperatingSystems(), this);
+        }
+        return cloudServiceOperatingSystems;
     }
 
     /** @return Resource collection API of Operations. */
@@ -573,172 +556,6 @@ public final class ComputeManager {
                     clientObject.getVirtualMachineScaleSetVMRunCommands(), this);
         }
         return virtualMachineScaleSetVMRunCommands;
-    }
-
-    /** @return Resource collection API of ResourceSkus. */
-    public ResourceSkus resourceSkus() {
-        if (this.resourceSkus == null) {
-            this.resourceSkus = new ResourceSkusImpl(clientObject.getResourceSkus(), this);
-        }
-        return resourceSkus;
-    }
-
-    /** @return Resource collection API of Disks. */
-    public Disks disks() {
-        if (this.disks == null) {
-            this.disks = new DisksImpl(clientObject.getDisks(), this);
-        }
-        return disks;
-    }
-
-    /** @return Resource collection API of Snapshots. */
-    public Snapshots snapshots() {
-        if (this.snapshots == null) {
-            this.snapshots = new SnapshotsImpl(clientObject.getSnapshots(), this);
-        }
-        return snapshots;
-    }
-
-    /** @return Resource collection API of DiskEncryptionSets. */
-    public DiskEncryptionSets diskEncryptionSets() {
-        if (this.diskEncryptionSets == null) {
-            this.diskEncryptionSets = new DiskEncryptionSetsImpl(clientObject.getDiskEncryptionSets(), this);
-        }
-        return diskEncryptionSets;
-    }
-
-    /** @return Resource collection API of DiskAccesses. */
-    public DiskAccesses diskAccesses() {
-        if (this.diskAccesses == null) {
-            this.diskAccesses = new DiskAccessesImpl(clientObject.getDiskAccesses(), this);
-        }
-        return diskAccesses;
-    }
-
-    /** @return Resource collection API of DiskRestorePoints. */
-    public DiskRestorePoints diskRestorePoints() {
-        if (this.diskRestorePoints == null) {
-            this.diskRestorePoints = new DiskRestorePointsImpl(clientObject.getDiskRestorePoints(), this);
-        }
-        return diskRestorePoints;
-    }
-
-    /** @return Resource collection API of Galleries. */
-    public Galleries galleries() {
-        if (this.galleries == null) {
-            this.galleries = new GalleriesImpl(clientObject.getGalleries(), this);
-        }
-        return galleries;
-    }
-
-    /** @return Resource collection API of GalleryImages. */
-    public GalleryImages galleryImages() {
-        if (this.galleryImages == null) {
-            this.galleryImages = new GalleryImagesImpl(clientObject.getGalleryImages(), this);
-        }
-        return galleryImages;
-    }
-
-    /** @return Resource collection API of GalleryImageVersions. */
-    public GalleryImageVersions galleryImageVersions() {
-        if (this.galleryImageVersions == null) {
-            this.galleryImageVersions = new GalleryImageVersionsImpl(clientObject.getGalleryImageVersions(), this);
-        }
-        return galleryImageVersions;
-    }
-
-    /** @return Resource collection API of GalleryApplications. */
-    public GalleryApplications galleryApplications() {
-        if (this.galleryApplications == null) {
-            this.galleryApplications = new GalleryApplicationsImpl(clientObject.getGalleryApplications(), this);
-        }
-        return galleryApplications;
-    }
-
-    /** @return Resource collection API of GalleryApplicationVersions. */
-    public GalleryApplicationVersions galleryApplicationVersions() {
-        if (this.galleryApplicationVersions == null) {
-            this.galleryApplicationVersions =
-                new GalleryApplicationVersionsImpl(clientObject.getGalleryApplicationVersions(), this);
-        }
-        return galleryApplicationVersions;
-    }
-
-    /** @return Resource collection API of GallerySharingProfiles. */
-    public GallerySharingProfiles gallerySharingProfiles() {
-        if (this.gallerySharingProfiles == null) {
-            this.gallerySharingProfiles =
-                new GallerySharingProfilesImpl(clientObject.getGallerySharingProfiles(), this);
-        }
-        return gallerySharingProfiles;
-    }
-
-    /** @return Resource collection API of SharedGalleries. */
-    public SharedGalleries sharedGalleries() {
-        if (this.sharedGalleries == null) {
-            this.sharedGalleries = new SharedGalleriesImpl(clientObject.getSharedGalleries(), this);
-        }
-        return sharedGalleries;
-    }
-
-    /** @return Resource collection API of SharedGalleryImages. */
-    public SharedGalleryImages sharedGalleryImages() {
-        if (this.sharedGalleryImages == null) {
-            this.sharedGalleryImages = new SharedGalleryImagesImpl(clientObject.getSharedGalleryImages(), this);
-        }
-        return sharedGalleryImages;
-    }
-
-    /** @return Resource collection API of SharedGalleryImageVersions. */
-    public SharedGalleryImageVersions sharedGalleryImageVersions() {
-        if (this.sharedGalleryImageVersions == null) {
-            this.sharedGalleryImageVersions =
-                new SharedGalleryImageVersionsImpl(clientObject.getSharedGalleryImageVersions(), this);
-        }
-        return sharedGalleryImageVersions;
-    }
-
-    /** @return Resource collection API of CloudServiceRoleInstances. */
-    public CloudServiceRoleInstances cloudServiceRoleInstances() {
-        if (this.cloudServiceRoleInstances == null) {
-            this.cloudServiceRoleInstances =
-                new CloudServiceRoleInstancesImpl(clientObject.getCloudServiceRoleInstances(), this);
-        }
-        return cloudServiceRoleInstances;
-    }
-
-    /** @return Resource collection API of CloudServiceRoles. */
-    public CloudServiceRoles cloudServiceRoles() {
-        if (this.cloudServiceRoles == null) {
-            this.cloudServiceRoles = new CloudServiceRolesImpl(clientObject.getCloudServiceRoles(), this);
-        }
-        return cloudServiceRoles;
-    }
-
-    /** @return Resource collection API of CloudServices. */
-    public CloudServices cloudServices() {
-        if (this.cloudServices == null) {
-            this.cloudServices = new CloudServicesImpl(clientObject.getCloudServices(), this);
-        }
-        return cloudServices;
-    }
-
-    /** @return Resource collection API of CloudServicesUpdateDomains. */
-    public CloudServicesUpdateDomains cloudServicesUpdateDomains() {
-        if (this.cloudServicesUpdateDomains == null) {
-            this.cloudServicesUpdateDomains =
-                new CloudServicesUpdateDomainsImpl(clientObject.getCloudServicesUpdateDomains(), this);
-        }
-        return cloudServicesUpdateDomains;
-    }
-
-    /** @return Resource collection API of CloudServiceOperatingSystems. */
-    public CloudServiceOperatingSystems cloudServiceOperatingSystems() {
-        if (this.cloudServiceOperatingSystems == null) {
-            this.cloudServiceOperatingSystems =
-                new CloudServiceOperatingSystemsImpl(clientObject.getCloudServiceOperatingSystems(), this);
-        }
-        return cloudServiceOperatingSystems;
     }
 
     /**

@@ -224,7 +224,6 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
         } else {
             runCommand.validate();
         }
-        final String apiVersion = "2021-03-01";
         final String accept = "application/json, text/json";
         return FluxUtil
             .withContext(
@@ -236,7 +235,7 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
                             vmScaleSetName,
                             instanceId,
                             runCommandName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             runCommand,
                             accept,
@@ -296,7 +295,6 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
         } else {
             runCommand.validate();
         }
-        final String apiVersion = "2021-03-01";
         final String accept = "application/json, text/json";
         context = this.client.mergeContext(context);
         return service
@@ -306,7 +304,7 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
                 vmScaleSetName,
                 instanceId,
                 runCommandName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 runCommand,
                 accept,
@@ -586,7 +584,6 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
         } else {
             runCommand.validate();
         }
-        final String apiVersion = "2021-03-01";
         final String accept = "application/json, text/json";
         return FluxUtil
             .withContext(
@@ -598,7 +595,7 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
                             vmScaleSetName,
                             instanceId,
                             runCommandName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             runCommand,
                             accept,
@@ -658,7 +655,6 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
         } else {
             runCommand.validate();
         }
-        final String apiVersion = "2021-03-01";
         final String accept = "application/json, text/json";
         context = this.client.mergeContext(context);
         return service
@@ -668,7 +664,7 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
                 vmScaleSetName,
                 instanceId,
                 runCommandName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 runCommand,
                 accept,
@@ -932,7 +928,6 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-03-01";
         final String accept = "application/json, text/json";
         return FluxUtil
             .withContext(
@@ -944,7 +939,7 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
                             vmScaleSetName,
                             instanceId,
                             runCommandName,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -992,7 +987,6 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-03-01";
         final String accept = "application/json, text/json";
         context = this.client.mergeContext(context);
         return service
@@ -1002,7 +996,7 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
                 vmScaleSetName,
                 instanceId,
                 runCommandName,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -1207,7 +1201,6 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-03-01";
         final String accept = "application/json, text/json";
         return FluxUtil
             .withContext(
@@ -1220,7 +1213,7 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
                             instanceId,
                             runCommandName,
                             expand,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -1274,7 +1267,6 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-03-01";
         final String accept = "application/json, text/json";
         context = this.client.mergeContext(context);
         return service
@@ -1285,7 +1277,7 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
                 instanceId,
                 runCommandName,
                 expand,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -1427,7 +1419,6 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-03-01";
         final String accept = "application/json, text/json";
         return FluxUtil
             .withContext(
@@ -1439,7 +1430,7 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
                             vmScaleSetName,
                             instanceId,
                             expand,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -1493,7 +1484,6 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2021-03-01";
         final String accept = "application/json, text/json";
         context = this.client.mergeContext(context);
         return service
@@ -1503,7 +1493,7 @@ public final class VirtualMachineScaleSetVMRunCommandsClientImpl implements Virt
                 vmScaleSetName,
                 instanceId,
                 expand,
-                apiVersion,
+                this.client.getApiVersion(),
                 this.client.getSubscriptionId(),
                 accept,
                 context)
