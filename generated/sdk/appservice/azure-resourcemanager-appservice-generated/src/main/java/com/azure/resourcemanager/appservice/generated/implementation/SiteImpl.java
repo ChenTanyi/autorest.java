@@ -20,6 +20,7 @@ import com.azure.resourcemanager.appservice.generated.models.CloningInfo;
 import com.azure.resourcemanager.appservice.generated.models.CsmPublishingProfileOptions;
 import com.azure.resourcemanager.appservice.generated.models.CsmSlotEntity;
 import com.azure.resourcemanager.appservice.generated.models.DeletedAppRestoreRequest;
+import com.azure.resourcemanager.appservice.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.appservice.generated.models.FunctionSecrets;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentProfile;
 import com.azure.resourcemanager.appservice.generated.models.HostnameSslState;
@@ -75,6 +76,10 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
 
     public ManagedServiceIdentity identity() {
         return this.innerModel().identity();
+    }
+
+    public ExtendedLocation extendedLocation() {
+        return this.innerModel().extendedLocation();
     }
 
     public String state() {
@@ -599,6 +604,11 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
             this.updateSiteEnvelope.withIdentity(identity);
             return this;
         }
+    }
+
+    public SiteImpl withExtendedLocation(ExtendedLocation extendedLocation) {
+        this.innerModel().withExtendedLocation(extendedLocation);
+        return this;
     }
 
     public SiteImpl withEnabled(Boolean enabled) {

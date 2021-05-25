@@ -56,6 +56,13 @@ public interface AppServicePlan {
     SkuDescription sku();
 
     /**
+     * Gets the extendedLocation property: Extended Location.
+     *
+     * @return the extendedLocation value.
+     */
+    ExtendedLocation extendedLocation();
+
+    /**
      * Gets the workerTierName property: Target worker tier assigned to the App Service plan.
      *
      * @return the workerTierName value.
@@ -280,6 +287,7 @@ public interface AppServicePlan {
         interface WithCreate
             extends DefinitionStages.WithTags,
                 DefinitionStages.WithSku,
+                DefinitionStages.WithExtendedLocation,
                 DefinitionStages.WithWorkerTierName,
                 DefinitionStages.WithHostingEnvironmentProfile,
                 DefinitionStages.WithPerSiteScaling,
@@ -328,6 +336,16 @@ public interface AppServicePlan {
              * @return the next definition stage.
              */
             WithCreate withSku(SkuDescription sku);
+        }
+        /** The stage of the AppServicePlan definition allowing to specify extendedLocation. */
+        interface WithExtendedLocation {
+            /**
+             * Specifies the extendedLocation property: Extended Location..
+             *
+             * @param extendedLocation Extended Location.
+             * @return the next definition stage.
+             */
+            WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
         /** The stage of the AppServicePlan definition allowing to specify workerTierName. */
         interface WithWorkerTierName {
@@ -500,6 +518,7 @@ public interface AppServicePlan {
         extends UpdateStages.WithKind,
             UpdateStages.WithWorkerTierName,
             UpdateStages.WithPerSiteScaling,
+            UpdateStages.WithElasticScaleEnabled,
             UpdateStages.WithMaximumElasticWorkerCount,
             UpdateStages.WithIsSpot,
             UpdateStages.WithSpotExpirationTime,
@@ -557,6 +576,18 @@ public interface AppServicePlan {
              * @return the next definition stage.
              */
             Update withPerSiteScaling(Boolean perSiteScaling);
+        }
+        /** The stage of the AppServicePlan update allowing to specify elasticScaleEnabled. */
+        interface WithElasticScaleEnabled {
+            /**
+             * Specifies the elasticScaleEnabled property: ServerFarm supports ElasticScale. Apps in this plan will
+             * scale as if the ServerFarm was ElasticPremium sku.
+             *
+             * @param elasticScaleEnabled ServerFarm supports ElasticScale. Apps in this plan will scale as if the
+             *     ServerFarm was ElasticPremium sku.
+             * @return the next definition stage.
+             */
+            Update withElasticScaleEnabled(Boolean elasticScaleEnabled);
         }
         /** The stage of the AppServicePlan update allowing to specify maximumElasticWorkerCount. */
         interface WithMaximumElasticWorkerCount {

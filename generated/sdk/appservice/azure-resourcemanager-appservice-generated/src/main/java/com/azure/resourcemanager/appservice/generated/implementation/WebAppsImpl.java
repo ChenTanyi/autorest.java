@@ -2700,6 +2700,41 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnection(
+        String resourceGroupName,
+        String name,
+        String privateEndpointConnectionName,
+        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper) {
+        RemotePrivateEndpointConnectionArmResourceInner inner =
+            this
+                .serviceClient()
+                .approveOrRejectPrivateEndpointConnection(
+                    resourceGroupName, name, privateEndpointConnectionName, privateEndpointWrapper);
+        if (inner != null) {
+            return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnection(
+        String resourceGroupName,
+        String name,
+        String privateEndpointConnectionName,
+        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper,
+        Context context) {
+        RemotePrivateEndpointConnectionArmResourceInner inner =
+            this
+                .serviceClient()
+                .approveOrRejectPrivateEndpointConnection(
+                    resourceGroupName, name, privateEndpointConnectionName, privateEndpointWrapper, context);
+        if (inner != null) {
+            return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public Object deletePrivateEndpointConnection(
         String resourceGroupName, String name, String privateEndpointConnectionName) {
         return this
@@ -7981,69 +8016,6 @@ public final class WebAppsImpl implements WebApps {
         return this.getPremierAddOnWithResponse(resourceGroupName, name, premierAddOnName, context);
     }
 
-    public RemotePrivateEndpointConnectionArmResource getPrivateEndpointConnectionById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
-        if (resourceGroupName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
-        }
-        String name = Utils.getValueFromIdByName(id, "sites");
-        if (name == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
-        }
-        String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
-        if (privateEndpointConnectionName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.",
-                                id)));
-        }
-        return this
-            .getPrivateEndpointConnectionWithResponse(
-                resourceGroupName, name, privateEndpointConnectionName, Context.NONE)
-            .getValue();
-    }
-
-    public Response<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionByIdWithResponse(
-        String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
-        if (resourceGroupName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
-        }
-        String name = Utils.getValueFromIdByName(id, "sites");
-        if (name == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
-        }
-        String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
-        if (privateEndpointConnectionName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.",
-                                id)));
-        }
-        return this
-            .getPrivateEndpointConnectionWithResponse(resourceGroupName, name, privateEndpointConnectionName, context);
-    }
-
     public PublicCertificate getPublicCertificateById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
@@ -8712,65 +8684,6 @@ public final class WebAppsImpl implements WebApps {
         return this.deletePremierAddOnWithResponse(resourceGroupName, name, premierAddOnName, context);
     }
 
-    public Object deletePrivateEndpointConnectionById(String id) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
-        if (resourceGroupName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
-        }
-        String name = Utils.getValueFromIdByName(id, "sites");
-        if (name == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
-        }
-        String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
-        if (privateEndpointConnectionName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.",
-                                id)));
-        }
-        return this
-            .deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName, Context.NONE);
-    }
-
-    public Object deletePrivateEndpointConnectionByIdWithResponse(String id, Context context) {
-        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
-        if (resourceGroupName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
-        }
-        String name = Utils.getValueFromIdByName(id, "sites");
-        if (name == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
-        }
-        String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
-        if (privateEndpointConnectionName == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException(
-                        String
-                            .format(
-                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.",
-                                id)));
-        }
-        return this.deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName, context);
-    }
-
     public void deletePublicCertificateById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
@@ -8939,11 +8852,6 @@ public final class WebAppsImpl implements WebApps {
 
     public PremierAddOnImpl definePremierAddOn(String name) {
         return new PremierAddOnImpl(name, this.manager());
-    }
-
-    public RemotePrivateEndpointConnectionArmResourceImpl defineRemotePrivateEndpointConnectionArmResource(
-        String name) {
-        return new RemotePrivateEndpointConnectionArmResourceImpl(name, this.manager());
     }
 
     public PublicCertificateImpl definePublicCertificate(String name) {

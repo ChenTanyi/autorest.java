@@ -10,6 +10,7 @@ import com.azure.core.management.Resource;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.ClientCertMode;
 import com.azure.resourcemanager.appservice.generated.models.CloningInfo;
+import com.azure.resourcemanager.appservice.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentProfile;
 import com.azure.resourcemanager.appservice.generated.models.HostnameSslState;
 import com.azure.resourcemanager.appservice.generated.models.ManagedServiceIdentity;
@@ -35,6 +36,12 @@ public class SiteInner extends Resource {
      */
     @JsonProperty(value = "identity")
     private ManagedServiceIdentity identity;
+
+    /*
+     * Extended Location.
+     */
+    @JsonProperty(value = "extendedLocation")
+    private ExtendedLocation extendedLocation;
 
     /*
      * Current state of the app.
@@ -338,6 +345,26 @@ public class SiteInner extends Resource {
      */
     public SiteInner withIdentity(ManagedServiceIdentity identity) {
         this.identity = identity;
+        return this;
+    }
+
+    /**
+     * Get the extendedLocation property: Extended Location.
+     *
+     * @return the extendedLocation value.
+     */
+    public ExtendedLocation extendedLocation() {
+        return this.extendedLocation;
+    }
+
+    /**
+     * Set the extendedLocation property: Extended Location.
+     *
+     * @param extendedLocation the extendedLocation value to set.
+     * @return the SiteInner object itself.
+     */
+    public SiteInner withExtendedLocation(ExtendedLocation extendedLocation) {
+        this.extendedLocation = extendedLocation;
         return this;
     }
 
@@ -1041,6 +1068,9 @@ public class SiteInner extends Resource {
     public void validate() {
         if (identity() != null) {
             identity().validate();
+        }
+        if (extendedLocation() != null) {
+            extendedLocation().validate();
         }
         if (hostnameSslStates() != null) {
             hostnameSslStates().forEach(e -> e.validate());

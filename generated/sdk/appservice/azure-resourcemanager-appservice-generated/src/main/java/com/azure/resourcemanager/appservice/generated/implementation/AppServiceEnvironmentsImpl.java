@@ -37,7 +37,6 @@ import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentD
 import com.azure.resourcemanager.appservice.generated.models.InboundEnvironmentEndpoint;
 import com.azure.resourcemanager.appservice.generated.models.Operation;
 import com.azure.resourcemanager.appservice.generated.models.OutboundEnvironmentEndpoint;
-import com.azure.resourcemanager.appservice.generated.models.PrivateLinkConnectionApprovalRequestResource;
 import com.azure.resourcemanager.appservice.generated.models.PrivateLinkResourcesWrapper;
 import com.azure.resourcemanager.appservice.generated.models.RemotePrivateEndpointConnectionArmResource;
 import com.azure.resourcemanager.appservice.generated.models.ResourceMetricDefinition;
@@ -525,41 +524,6 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         }
     }
 
-    public RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnection(
-        String resourceGroupName,
-        String name,
-        String privateEndpointConnectionName,
-        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper) {
-        RemotePrivateEndpointConnectionArmResourceInner inner =
-            this
-                .serviceClient()
-                .approveOrRejectPrivateEndpointConnection(
-                    resourceGroupName, name, privateEndpointConnectionName, privateEndpointWrapper);
-        if (inner != null) {
-            return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnection(
-        String resourceGroupName,
-        String name,
-        String privateEndpointConnectionName,
-        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper,
-        Context context) {
-        RemotePrivateEndpointConnectionArmResourceInner inner =
-            this
-                .serviceClient()
-                .approveOrRejectPrivateEndpointConnection(
-                    resourceGroupName, name, privateEndpointConnectionName, privateEndpointWrapper, context);
-        if (inner != null) {
-            return new RemotePrivateEndpointConnectionArmResourceImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
     public Object deletePrivateEndpointConnection(
         String resourceGroupName, String name, String privateEndpointConnectionName) {
         return this
@@ -796,6 +760,73 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         return this.getByResourceGroupWithResponse(resourceGroupName, name, context);
     }
 
+    public RemotePrivateEndpointConnectionArmResource getPrivateEndpointConnectionById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
+        }
+        String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
+        if (privateEndpointConnectionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.",
+                                id)));
+        }
+        return this
+            .getPrivateEndpointConnectionWithResponse(
+                resourceGroupName, name, privateEndpointConnectionName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionByIdWithResponse(
+        String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
+        }
+        String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
+        if (privateEndpointConnectionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.",
+                                id)));
+        }
+        return this
+            .getPrivateEndpointConnectionWithResponse(resourceGroupName, name, privateEndpointConnectionName, context);
+    }
+
     public WorkerPoolResource getWorkerPoolById(String id) {
         String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
@@ -895,6 +926,69 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
         this.delete(resourceGroupName, name, forceDelete, context);
     }
 
+    public Object deletePrivateEndpointConnectionById(String id) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
+        }
+        String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
+        if (privateEndpointConnectionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.",
+                                id)));
+        }
+        return this
+            .deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName, Context.NONE);
+    }
+
+    public Object deletePrivateEndpointConnectionByIdWithResponse(String id, Context context) {
+        String resourceGroupName = Utils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = Utils.getValueFromIdByName(id, "hostingEnvironments");
+        if (name == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'hostingEnvironments'.", id)));
+        }
+        String privateEndpointConnectionName = Utils.getValueFromIdByName(id, "privateEndpointConnections");
+        if (privateEndpointConnectionName == null) {
+            throw logger
+                .logExceptionAsError(
+                    new IllegalArgumentException(
+                        String
+                            .format(
+                                "The resource ID '%s' is not valid. Missing path segment 'privateEndpointConnections'.",
+                                id)));
+        }
+        return this.deletePrivateEndpointConnection(resourceGroupName, name, privateEndpointConnectionName, context);
+    }
+
     private AppServiceEnvironmentsClient serviceClient() {
         return this.innerClient;
     }
@@ -905,6 +999,11 @@ public final class AppServiceEnvironmentsImpl implements AppServiceEnvironments 
 
     public AppServiceEnvironmentResourceImpl define(String name) {
         return new AppServiceEnvironmentResourceImpl(name, this.manager());
+    }
+
+    public RemotePrivateEndpointConnectionArmResourceImpl defineRemotePrivateEndpointConnectionArmResource(
+        String name) {
+        return new RemotePrivateEndpointConnectionArmResourceImpl(name, this.manager());
     }
 
     public WorkerPoolResourceImpl defineWorkerPool(String name) {

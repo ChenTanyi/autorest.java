@@ -3894,6 +3894,46 @@ public interface WebApps {
         String resourceGroupName, String name, String privateEndpointConnectionName, Context context);
 
     /**
+     * Description for Approves or rejects a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the site.
+     * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
+     * @param privateEndpointWrapper Private Endpoint Connection Approval ARM resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return remote Private Endpoint Connection ARM resource.
+     */
+    RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnection(
+        String resourceGroupName,
+        String name,
+        String privateEndpointConnectionName,
+        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper);
+
+    /**
+     * Description for Approves or rejects a private endpoint connection.
+     *
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the site.
+     * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
+     * @param privateEndpointWrapper Private Endpoint Connection Approval ARM resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     *     request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return remote Private Endpoint Connection ARM resource.
+     */
+    RemotePrivateEndpointConnectionArmResource approveOrRejectPrivateEndpointConnection(
+        String resourceGroupName,
+        String name,
+        String privateEndpointConnectionName,
+        PrivateLinkConnectionApprovalRequestResource privateEndpointWrapper,
+        Context context);
+
+    /**
      * Description for Deletes a private endpoint connection.
      *
      * @param resourceGroupName Name of the resource group to which the resource belongs.
@@ -12119,32 +12159,6 @@ public interface WebApps {
     Response<PremierAddOn> getPremierAddOnByIdWithResponse(String id, Context context);
 
     /**
-     * Description for Gets a private endpoint connection.
-     *
-     * @param id the resource ID.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return remote Private Endpoint Connection ARM resource.
-     */
-    RemotePrivateEndpointConnectionArmResource getPrivateEndpointConnectionById(String id);
-
-    /**
-     * Description for Gets a private endpoint connection.
-     *
-     * @param id the resource ID.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return remote Private Endpoint Connection ARM resource.
-     */
-    Response<RemotePrivateEndpointConnectionArmResource> getPrivateEndpointConnectionByIdWithResponse(
-        String id, Context context);
-
-    /**
      * Description for Get the named public certificate for an app (or deployment slot, if specified).
      *
      * @param id the resource ID.
@@ -12416,31 +12430,6 @@ public interface WebApps {
     Response<Void> deletePremierAddOnByIdWithResponse(String id, Context context);
 
     /**
-     * Description for Deletes a private endpoint connection.
-     *
-     * @param id the resource ID.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object.
-     */
-    Object deletePrivateEndpointConnectionById(String id);
-
-    /**
-     * Description for Deletes a private endpoint connection.
-     *
-     * @param id the resource ID.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
-     *     request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return any object.
-     */
-    Object deletePrivateEndpointConnectionByIdWithResponse(String id, Context context);
-
-    /**
      * Description for Deletes a hostname binding for an app.
      *
      * @param id the resource ID.
@@ -12551,15 +12540,6 @@ public interface WebApps {
      * @return the first stage of the new PremierAddOn definition.
      */
     PremierAddOn.DefinitionStages.Blank definePremierAddOn(String name);
-
-    /**
-     * Begins definition for a new RemotePrivateEndpointConnectionArmResource resource.
-     *
-     * @param name resource name.
-     * @return the first stage of the new RemotePrivateEndpointConnectionArmResource definition.
-     */
-    RemotePrivateEndpointConnectionArmResource.DefinitionStages.Blank defineRemotePrivateEndpointConnectionArmResource(
-        String name);
 
     /**
      * Begins definition for a new PublicCertificate resource.

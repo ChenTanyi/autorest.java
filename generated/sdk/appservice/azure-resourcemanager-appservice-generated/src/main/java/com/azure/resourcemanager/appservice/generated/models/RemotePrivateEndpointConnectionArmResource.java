@@ -92,10 +92,10 @@ public interface RemotePrivateEndpointConnectionArmResource {
              * Specifies resourceGroupName, name.
              *
              * @param resourceGroupName Name of the resource group to which the resource belongs.
-             * @param name Name of the site.
+             * @param name Name of the App Service Environment.
              * @return the next definition stage.
              */
-            WithCreate withExistingSite(String resourceGroupName, String name);
+            WithCreate withExistingHostingEnvironment(String resourceGroupName, String name);
         }
         /**
          * The stage of the RemotePrivateEndpointConnectionArmResource definition which contains all the minimum

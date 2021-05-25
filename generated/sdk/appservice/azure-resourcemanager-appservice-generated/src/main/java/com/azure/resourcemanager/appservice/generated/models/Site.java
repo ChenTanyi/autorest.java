@@ -64,6 +64,13 @@ public interface Site {
     ManagedServiceIdentity identity();
 
     /**
+     * Gets the extendedLocation property: Extended Location.
+     *
+     * @return the extendedLocation value.
+     */
+    ExtendedLocation extendedLocation();
+
+    /**
      * Gets the state property: Current state of the app.
      *
      * @return the state value.
@@ -446,6 +453,7 @@ public interface Site {
         interface WithCreate
             extends DefinitionStages.WithTags,
                 DefinitionStages.WithIdentity,
+                DefinitionStages.WithExtendedLocation,
                 DefinitionStages.WithEnabled,
                 DefinitionStages.WithHostnameSslStates,
                 DefinitionStages.WithServerFarmId,
@@ -504,6 +512,16 @@ public interface Site {
              * @return the next definition stage.
              */
             WithCreate withIdentity(ManagedServiceIdentity identity);
+        }
+        /** The stage of the Site definition allowing to specify extendedLocation. */
+        interface WithExtendedLocation {
+            /**
+             * Specifies the extendedLocation property: Extended Location..
+             *
+             * @param extendedLocation Extended Location.
+             * @return the next definition stage.
+             */
+            WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
         }
         /** The stage of the Site definition allowing to specify enabled. */
         interface WithEnabled {

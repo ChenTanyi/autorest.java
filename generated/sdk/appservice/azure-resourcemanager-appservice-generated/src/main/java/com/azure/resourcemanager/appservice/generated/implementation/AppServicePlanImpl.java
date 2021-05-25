@@ -10,6 +10,7 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.AppServicePlanInner;
 import com.azure.resourcemanager.appservice.generated.models.AppServicePlan;
 import com.azure.resourcemanager.appservice.generated.models.AppServicePlanPatchResource;
+import com.azure.resourcemanager.appservice.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentProfile;
 import com.azure.resourcemanager.appservice.generated.models.KubeEnvironmentProfile;
 import com.azure.resourcemanager.appservice.generated.models.ProvisioningState;
@@ -51,6 +52,10 @@ public final class AppServicePlanImpl implements AppServicePlan, AppServicePlan.
 
     public SkuDescription sku() {
         return this.innerModel().sku();
+    }
+
+    public ExtendedLocation extendedLocation() {
+        return this.innerModel().extendedLocation();
     }
 
     public String workerTierName() {
@@ -272,6 +277,11 @@ public final class AppServicePlanImpl implements AppServicePlan, AppServicePlan.
         return this;
     }
 
+    public AppServicePlanImpl withExtendedLocation(ExtendedLocation extendedLocation) {
+        this.innerModel().withExtendedLocation(extendedLocation);
+        return this;
+    }
+
     public AppServicePlanImpl withWorkerTierName(String workerTierName) {
         if (isInCreateMode()) {
             this.innerModel().withWorkerTierName(workerTierName);
@@ -390,6 +400,11 @@ public final class AppServicePlanImpl implements AppServicePlan, AppServicePlan.
             this.updateAppServicePlan.withKind(kind);
             return this;
         }
+    }
+
+    public AppServicePlanImpl withElasticScaleEnabled(Boolean elasticScaleEnabled) {
+        this.updateAppServicePlan.withElasticScaleEnabled(elasticScaleEnabled);
+        return this;
     }
 
     private boolean isInCreateMode() {

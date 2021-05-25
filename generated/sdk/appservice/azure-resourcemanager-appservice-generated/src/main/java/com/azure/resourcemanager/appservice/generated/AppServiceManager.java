@@ -32,6 +32,7 @@ import com.azure.resourcemanager.appservice.generated.implementation.Diagnostics
 import com.azure.resourcemanager.appservice.generated.implementation.DomainRegistrationProvidersImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.DomainsImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.GlobalsImpl;
+import com.azure.resourcemanager.appservice.generated.implementation.KubeEnvironmentsImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.ProvidersImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.RecommendationsImpl;
 import com.azure.resourcemanager.appservice.generated.implementation.ResourceHealthMetadatasImpl;
@@ -51,6 +52,7 @@ import com.azure.resourcemanager.appservice.generated.models.Diagnostics;
 import com.azure.resourcemanager.appservice.generated.models.DomainRegistrationProviders;
 import com.azure.resourcemanager.appservice.generated.models.Domains;
 import com.azure.resourcemanager.appservice.generated.models.Globals;
+import com.azure.resourcemanager.appservice.generated.models.KubeEnvironments;
 import com.azure.resourcemanager.appservice.generated.models.Providers;
 import com.azure.resourcemanager.appservice.generated.models.Recommendations;
 import com.azure.resourcemanager.appservice.generated.models.ResourceHealthMetadatas;
@@ -78,6 +80,10 @@ public final class AppServiceManager {
 
     private DomainRegistrationProviders domainRegistrationProviders;
 
+    private AppServiceEnvironments appServiceEnvironments;
+
+    private AppServicePlans appServicePlans;
+
     private Certificates certificates;
 
     private DeletedWebApps deletedWebApps;
@@ -90,17 +96,15 @@ public final class AppServiceManager {
 
     private Recommendations recommendations;
 
-    private ResourceProviders resourceProviders;
+    private ResourceHealthMetadatas resourceHealthMetadatas;
 
-    private WebApps webApps;
+    private ResourceProviders resourceProviders;
 
     private StaticSites staticSites;
 
-    private AppServiceEnvironments appServiceEnvironments;
+    private WebApps webApps;
 
-    private AppServicePlans appServicePlans;
-
-    private ResourceHealthMetadatas resourceHealthMetadatas;
+    private KubeEnvironments kubeEnvironments;
 
     private final WebSiteManagementClient clientObject;
 
@@ -317,6 +321,23 @@ public final class AppServiceManager {
         return domainRegistrationProviders;
     }
 
+    /** @return Resource collection API of AppServiceEnvironments. */
+    public AppServiceEnvironments appServiceEnvironments() {
+        if (this.appServiceEnvironments == null) {
+            this.appServiceEnvironments =
+                new AppServiceEnvironmentsImpl(clientObject.getAppServiceEnvironments(), this);
+        }
+        return appServiceEnvironments;
+    }
+
+    /** @return Resource collection API of AppServicePlans. */
+    public AppServicePlans appServicePlans() {
+        if (this.appServicePlans == null) {
+            this.appServicePlans = new AppServicePlansImpl(clientObject.getAppServicePlans(), this);
+        }
+        return appServicePlans;
+    }
+
     /** @return Resource collection API of Certificates. */
     public Certificates certificates() {
         if (this.certificates == null) {
@@ -365,20 +386,21 @@ public final class AppServiceManager {
         return recommendations;
     }
 
+    /** @return Resource collection API of ResourceHealthMetadatas. */
+    public ResourceHealthMetadatas resourceHealthMetadatas() {
+        if (this.resourceHealthMetadatas == null) {
+            this.resourceHealthMetadatas =
+                new ResourceHealthMetadatasImpl(clientObject.getResourceHealthMetadatas(), this);
+        }
+        return resourceHealthMetadatas;
+    }
+
     /** @return Resource collection API of ResourceProviders. */
     public ResourceProviders resourceProviders() {
         if (this.resourceProviders == null) {
             this.resourceProviders = new ResourceProvidersImpl(clientObject.getResourceProviders(), this);
         }
         return resourceProviders;
-    }
-
-    /** @return Resource collection API of WebApps. */
-    public WebApps webApps() {
-        if (this.webApps == null) {
-            this.webApps = new WebAppsImpl(clientObject.getWebApps(), this);
-        }
-        return webApps;
     }
 
     /** @return Resource collection API of StaticSites. */
@@ -389,30 +411,20 @@ public final class AppServiceManager {
         return staticSites;
     }
 
-    /** @return Resource collection API of AppServiceEnvironments. */
-    public AppServiceEnvironments appServiceEnvironments() {
-        if (this.appServiceEnvironments == null) {
-            this.appServiceEnvironments =
-                new AppServiceEnvironmentsImpl(clientObject.getAppServiceEnvironments(), this);
+    /** @return Resource collection API of WebApps. */
+    public WebApps webApps() {
+        if (this.webApps == null) {
+            this.webApps = new WebAppsImpl(clientObject.getWebApps(), this);
         }
-        return appServiceEnvironments;
+        return webApps;
     }
 
-    /** @return Resource collection API of AppServicePlans. */
-    public AppServicePlans appServicePlans() {
-        if (this.appServicePlans == null) {
-            this.appServicePlans = new AppServicePlansImpl(clientObject.getAppServicePlans(), this);
+    /** @return Resource collection API of KubeEnvironments. */
+    public KubeEnvironments kubeEnvironments() {
+        if (this.kubeEnvironments == null) {
+            this.kubeEnvironments = new KubeEnvironmentsImpl(clientObject.getKubeEnvironments(), this);
         }
-        return appServicePlans;
-    }
-
-    /** @return Resource collection API of ResourceHealthMetadatas. */
-    public ResourceHealthMetadatas resourceHealthMetadatas() {
-        if (this.resourceHealthMetadatas == null) {
-            this.resourceHealthMetadatas =
-                new ResourceHealthMetadatasImpl(clientObject.getResourceHealthMetadatas(), this);
-        }
-        return resourceHealthMetadatas;
+        return kubeEnvironments;
     }
 
     /**

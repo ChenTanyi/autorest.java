@@ -25,6 +25,10 @@ public final class CsmOperationDescriptionImpl implements CsmOperationDescriptio
         return this.innerModel().name();
     }
 
+    public Boolean isDataAction() {
+        return this.innerModel().isDataAction();
+    }
+
     public CsmOperationDisplay display() {
         return this.innerModel().display();
     }

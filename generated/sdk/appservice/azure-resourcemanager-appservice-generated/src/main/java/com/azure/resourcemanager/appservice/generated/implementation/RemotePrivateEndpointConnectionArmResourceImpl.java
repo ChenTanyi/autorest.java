@@ -76,7 +76,8 @@ public final class RemotePrivateEndpointConnectionArmResourceImpl
 
     private PrivateLinkConnectionApprovalRequestResource updatePrivateEndpointWrapper;
 
-    public RemotePrivateEndpointConnectionArmResourceImpl withExistingSite(String resourceGroupName, String name) {
+    public RemotePrivateEndpointConnectionArmResourceImpl withExistingHostingEnvironment(
+        String resourceGroupName, String name) {
         this.resourceGroupName = resourceGroupName;
         this.name = name;
         return this;
@@ -86,7 +87,7 @@ public final class RemotePrivateEndpointConnectionArmResourceImpl
         this.innerObject =
             serviceManager
                 .serviceClient()
-                .getWebApps()
+                .getAppServiceEnvironments()
                 .approveOrRejectPrivateEndpointConnection(
                     resourceGroupName, name, privateEndpointConnectionName, createPrivateEndpointWrapper, Context.NONE);
         return this;
@@ -96,7 +97,7 @@ public final class RemotePrivateEndpointConnectionArmResourceImpl
         this.innerObject =
             serviceManager
                 .serviceClient()
-                .getWebApps()
+                .getAppServiceEnvironments()
                 .approveOrRejectPrivateEndpointConnection(
                     resourceGroupName, name, privateEndpointConnectionName, createPrivateEndpointWrapper, context);
         return this;
@@ -119,7 +120,7 @@ public final class RemotePrivateEndpointConnectionArmResourceImpl
         this.innerObject =
             serviceManager
                 .serviceClient()
-                .getWebApps()
+                .getAppServiceEnvironments()
                 .approveOrRejectPrivateEndpointConnection(
                     resourceGroupName, name, privateEndpointConnectionName, updatePrivateEndpointWrapper, Context.NONE);
         return this;
@@ -129,7 +130,7 @@ public final class RemotePrivateEndpointConnectionArmResourceImpl
         this.innerObject =
             serviceManager
                 .serviceClient()
-                .getWebApps()
+                .getAppServiceEnvironments()
                 .approveOrRejectPrivateEndpointConnection(
                     resourceGroupName, name, privateEndpointConnectionName, updatePrivateEndpointWrapper, context);
         return this;
@@ -141,7 +142,7 @@ public final class RemotePrivateEndpointConnectionArmResourceImpl
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.name = Utils.getValueFromIdByName(innerObject.id(), "sites");
+        this.name = Utils.getValueFromIdByName(innerObject.id(), "hostingEnvironments");
         this.privateEndpointConnectionName = Utils.getValueFromIdByName(innerObject.id(), "privateEndpointConnections");
     }
 
@@ -149,7 +150,7 @@ public final class RemotePrivateEndpointConnectionArmResourceImpl
         this.innerObject =
             serviceManager
                 .serviceClient()
-                .getWebApps()
+                .getAppServiceEnvironments()
                 .getPrivateEndpointConnectionWithResponse(
                     resourceGroupName, name, privateEndpointConnectionName, Context.NONE)
                 .getValue();
@@ -160,7 +161,7 @@ public final class RemotePrivateEndpointConnectionArmResourceImpl
         this.innerObject =
             serviceManager
                 .serviceClient()
-                .getWebApps()
+                .getAppServiceEnvironments()
                 .getPrivateEndpointConnectionWithResponse(
                     resourceGroupName, name, privateEndpointConnectionName, context)
                 .getValue();

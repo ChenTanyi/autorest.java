@@ -16,6 +16,13 @@ public interface CsmOperationDescription {
     String name();
 
     /**
+     * Gets the isDataAction property: The isDataAction property.
+     *
+     * @return the isDataAction value.
+     */
+    Boolean isDataAction();
+
+    /**
      * Gets the display property: Meta data about operation used for display in portal.
      *
      * @return the display value.
