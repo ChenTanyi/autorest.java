@@ -18,14 +18,14 @@ public final class AccessPolicy {
     /*
      * Start time of the access policy
      */
-    @JsonProperty(value = "start")
-    private OffsetDateTime start;
+    @JsonProperty(value = "startTime")
+    private OffsetDateTime startTime;
 
     /*
      * Expiry time of the access policy
      */
-    @JsonProperty(value = "expiry")
-    private OffsetDateTime expiry;
+    @JsonProperty(value = "expiryTime")
+    private OffsetDateTime expiryTime;
 
     /*
      * List of abbreviated permissions.
@@ -34,42 +34,42 @@ public final class AccessPolicy {
     private String permission;
 
     /**
-     * Get the start property: Start time of the access policy.
+     * Get the startTime property: Start time of the access policy.
      *
-     * @return the start value.
+     * @return the startTime value.
      */
-    public OffsetDateTime start() {
-        return this.start;
+    public OffsetDateTime startTime() {
+        return this.startTime;
     }
 
     /**
-     * Set the start property: Start time of the access policy.
+     * Set the startTime property: Start time of the access policy.
      *
-     * @param start the start value to set.
+     * @param startTime the startTime value to set.
      * @return the AccessPolicy object itself.
      */
-    public AccessPolicy withStart(OffsetDateTime start) {
-        this.start = start;
+    public AccessPolicy withStartTime(OffsetDateTime startTime) {
+        this.startTime = startTime;
         return this;
     }
 
     /**
-     * Get the expiry property: Expiry time of the access policy.
+     * Get the expiryTime property: Expiry time of the access policy.
      *
-     * @return the expiry value.
+     * @return the expiryTime value.
      */
-    public OffsetDateTime expiry() {
-        return this.expiry;
+    public OffsetDateTime expiryTime() {
+        return this.expiryTime;
     }
 
     /**
-     * Set the expiry property: Expiry time of the access policy.
+     * Set the expiryTime property: Expiry time of the access policy.
      *
-     * @param expiry the expiry value to set.
+     * @param expiryTime the expiryTime value to set.
      * @return the AccessPolicy object itself.
      */
-    public AccessPolicy withExpiry(OffsetDateTime expiry) {
-        this.expiry = expiry;
+    public AccessPolicy withExpiryTime(OffsetDateTime expiryTime) {
+        this.expiryTime = expiryTime;
         return this;
     }
 
