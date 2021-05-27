@@ -62,5 +62,6 @@ public interface ResourceProviders {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the operation result for a resource.
      */
-    Vault getOperationResult(String resourceGroupName, String vaultName, String operationId, Context context);
+    Response<Vault> getOperationResultWithResponse(
+        String resourceGroupName, String vaultName, String operationId, Context context);
 }

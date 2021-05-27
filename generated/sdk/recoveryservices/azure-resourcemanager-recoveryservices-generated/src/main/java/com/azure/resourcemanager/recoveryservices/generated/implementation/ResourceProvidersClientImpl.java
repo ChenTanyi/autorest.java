@@ -19,17 +19,12 @@ import com.azure.core.annotation.UnexpectedResponseExceptionType;
 import com.azure.core.http.rest.Response;
 import com.azure.core.http.rest.RestProxy;
 import com.azure.core.management.exception.ManagementException;
-import com.azure.core.management.polling.PollResult;
 import com.azure.core.util.Context;
 import com.azure.core.util.FluxUtil;
 import com.azure.core.util.logging.ClientLogger;
-import com.azure.core.util.polling.PollerFlux;
-import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.ResourceProvidersClient;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.models.OperationResourceInner;
 import com.azure.resourcemanager.recoveryservices.generated.fluent.models.VaultInner;
-import java.nio.ByteBuffer;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 /** An instance of this class provides access to all the operations defined in ResourceProvidersClient. */
@@ -82,7 +77,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
                 + "/vaults/{vaultName}/operationResults/{operationId}")
         @ExpectedResponses({200, 202})
         @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Flux<ByteBuffer>>> getOperationResult(
+        Mono<Response<VaultInner>> getOperationResult(
             @HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId,
             @PathParam("resourceGroupName") String resourceGroupName,
@@ -268,7 +263,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @return the operation result for a resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> getOperationResultWithResponseAsync(
+    private Mono<Response<VaultInner>> getOperationResultWithResponseAsync(
         String resourceGroupName, String vaultName, String operationId) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -322,7 +317,7 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @return the operation result for a resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> getOperationResultWithResponseAsync(
+    private Mono<Response<VaultInner>> getOperationResultWithResponseAsync(
         String resourceGroupName, String vaultName, String operationId, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono
@@ -372,111 +367,16 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @return the operation result for a resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private PollerFlux<PollResult<VaultInner>, VaultInner> beginGetOperationResultAsync(
-        String resourceGroupName, String vaultName, String operationId) {
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            getOperationResultWithResponseAsync(resourceGroupName, vaultName, operationId);
-        return this
-            .client
-            .<VaultInner, VaultInner>getLroResult(
-                mono, this.client.getHttpPipeline(), VaultInner.class, VaultInner.class, Context.NONE);
-    }
-
-    /**
-     * Gets the operation result for a resource.
-     *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
-     * @param vaultName The name of the recovery services vault.
-     * @param operationId The operationId parameter.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the operation result for a resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private PollerFlux<PollResult<VaultInner>, VaultInner> beginGetOperationResultAsync(
-        String resourceGroupName, String vaultName, String operationId, Context context) {
-        context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono =
-            getOperationResultWithResponseAsync(resourceGroupName, vaultName, operationId, context);
-        return this
-            .client
-            .<VaultInner, VaultInner>getLroResult(
-                mono, this.client.getHttpPipeline(), VaultInner.class, VaultInner.class, context);
-    }
-
-    /**
-     * Gets the operation result for a resource.
-     *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
-     * @param vaultName The name of the recovery services vault.
-     * @param operationId The operationId parameter.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the operation result for a resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public SyncPoller<PollResult<VaultInner>, VaultInner> beginGetOperationResult(
-        String resourceGroupName, String vaultName, String operationId) {
-        return beginGetOperationResultAsync(resourceGroupName, vaultName, operationId).getSyncPoller();
-    }
-
-    /**
-     * Gets the operation result for a resource.
-     *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
-     * @param vaultName The name of the recovery services vault.
-     * @param operationId The operationId parameter.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the operation result for a resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public SyncPoller<PollResult<VaultInner>, VaultInner> beginGetOperationResult(
-        String resourceGroupName, String vaultName, String operationId, Context context) {
-        return beginGetOperationResultAsync(resourceGroupName, vaultName, operationId, context).getSyncPoller();
-    }
-
-    /**
-     * Gets the operation result for a resource.
-     *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
-     * @param vaultName The name of the recovery services vault.
-     * @param operationId The operationId parameter.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the operation result for a resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VaultInner> getOperationResultAsync(String resourceGroupName, String vaultName, String operationId) {
-        return beginGetOperationResultAsync(resourceGroupName, vaultName, operationId)
-            .last()
-            .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Gets the operation result for a resource.
-     *
-     * @param resourceGroupName The name of the resource group where the recovery services vault is present.
-     * @param vaultName The name of the recovery services vault.
-     * @param operationId The operationId parameter.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the operation result for a resource.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<VaultInner> getOperationResultAsync(
-        String resourceGroupName, String vaultName, String operationId, Context context) {
-        return beginGetOperationResultAsync(resourceGroupName, vaultName, operationId, context)
-            .last()
-            .flatMap(this.client::getLroFinalResultOrError);
+        return getOperationResultWithResponseAsync(resourceGroupName, vaultName, operationId)
+            .flatMap(
+                (Response<VaultInner> res) -> {
+                    if (res.getValue() != null) {
+                        return Mono.just(res.getValue());
+                    } else {
+                        return Mono.empty();
+                    }
+                });
     }
 
     /**
@@ -508,8 +408,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @return the operation result for a resource.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public VaultInner getOperationResult(
+    public Response<VaultInner> getOperationResultWithResponse(
         String resourceGroupName, String vaultName, String operationId, Context context) {
-        return getOperationResultAsync(resourceGroupName, vaultName, operationId, context).block();
+        return getOperationResultWithResponseAsync(resourceGroupName, vaultName, operationId, context).block();
     }
 }

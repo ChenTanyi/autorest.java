@@ -64,10 +64,16 @@ public final class ResourceProvidersImpl implements ResourceProviders {
         }
     }
 
-    public Vault getOperationResult(String resourceGroupName, String vaultName, String operationId, Context context) {
-        VaultInner inner = this.serviceClient().getOperationResult(resourceGroupName, vaultName, operationId, context);
+    public Response<Vault> getOperationResultWithResponse(
+        String resourceGroupName, String vaultName, String operationId, Context context) {
+        Response<VaultInner> inner =
+            this.serviceClient().getOperationResultWithResponse(resourceGroupName, vaultName, operationId, context);
         if (inner != null) {
-            return new VaultImpl(inner, this.manager());
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new VaultImpl(inner.getValue(), this.manager()));
         } else {
             return null;
         }
