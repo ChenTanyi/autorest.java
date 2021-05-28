@@ -10,26 +10,14 @@ import java.util.Collection;
 
 /** Defines values for OperationStatusType. */
 public final class OperationStatusType extends ExpandableStringEnum<OperationStatusType> {
-    /** Static value InProgress for OperationStatusType. */
-    public static final OperationStatusType IN_PROGRESS = fromString("InProgress");
+    /** Static value Running for OperationStatusType. */
+    public static final OperationStatusType RUNNING = fromString("Running");
 
     /** Static value Completed for OperationStatusType. */
     public static final OperationStatusType COMPLETED = fromString("Completed");
 
     /** Static value Failed for OperationStatusType. */
     public static final OperationStatusType FAILED = fromString("Failed");
-
-    /** Static value Queued for OperationStatusType. */
-    public static final OperationStatusType QUEUED = fromString("Queued");
-
-    /** Static value NoDataFound for OperationStatusType. */
-    public static final OperationStatusType NO_DATA_FOUND = fromString("NoDataFound");
-
-    /** Static value ReadyToDownload for OperationStatusType. */
-    public static final OperationStatusType READY_TO_DOWNLOAD = fromString("ReadyToDownload");
-
-    /** Static value TimedOut for OperationStatusType. */
-    public static final OperationStatusType TIMED_OUT = fromString("TimedOut");
 
     /**
      * Creates or finds a OperationStatusType from its string representation.

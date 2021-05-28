@@ -260,8 +260,13 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
     }
 
     public ClusterImpl withBillingType(BillingType billingType) {
-        this.innerModel().withBillingType(billingType);
-        return this;
+        if (isInCreateMode()) {
+            this.innerModel().withBillingType(billingType);
+            return this;
+        } else {
+            this.updateParameters.withBillingType(billingType);
+            return this;
+        }
     }
 
     public ClusterImpl withKeyVaultProperties(KeyVaultProperties keyVaultProperties) {

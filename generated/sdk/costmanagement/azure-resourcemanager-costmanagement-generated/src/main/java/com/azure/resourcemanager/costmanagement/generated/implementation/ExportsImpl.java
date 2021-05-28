@@ -41,8 +41,8 @@ public final class ExportsImpl implements Exports {
         }
     }
 
-    public Response<ExportListResult> listWithResponse(String scope, String expand, Context context) {
-        Response<ExportListResultInner> inner = this.serviceClient().listWithResponse(scope, expand, context);
+    public Response<ExportListResult> listWithResponse(String scope, Context context) {
+        Response<ExportListResultInner> inner = this.serviceClient().listWithResponse(scope, context);
         if (inner != null) {
             return new SimpleResponse<>(
                 inner.getRequest(),
@@ -63,8 +63,8 @@ public final class ExportsImpl implements Exports {
         }
     }
 
-    public Response<Export> getWithResponse(String scope, String exportName, String expand, Context context) {
-        Response<ExportInner> inner = this.serviceClient().getWithResponse(scope, exportName, expand, context);
+    public Response<Export> getWithResponse(String scope, String exportName, Context context) {
+        Response<ExportInner> inner = this.serviceClient().getWithResponse(scope, exportName, context);
         if (inner != null) {
             return new SimpleResponse<>(
                 inner.getRequest(),
@@ -137,11 +137,10 @@ public final class ExportsImpl implements Exports {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'exports'.", id)));
         }
-        String localExpand = null;
-        return this.getWithResponse(scope, exportName, localExpand, Context.NONE).getValue();
+        return this.getWithResponse(scope, exportName, Context.NONE).getValue();
     }
 
-    public Response<Export> getByIdWithResponse(String id, String expand, Context context) {
+    public Response<Export> getByIdWithResponse(String id, Context context) {
         String scope =
             Utils
                 .getValueFromIdByParameterName(
@@ -162,7 +161,7 @@ public final class ExportsImpl implements Exports {
                     new IllegalArgumentException(
                         String.format("The resource ID '%s' is not valid. Missing path segment 'exports'.", id)));
         }
-        return this.getWithResponse(scope, exportName, expand, context);
+        return this.getWithResponse(scope, exportName, context);
     }
 
     public void deleteById(String id) {

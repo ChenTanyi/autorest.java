@@ -222,6 +222,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -232,7 +233,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             restorePointCollectionName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             parameters,
                             accept,
                             context))
@@ -285,6 +286,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -293,7 +295,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 restorePointCollectionName,
-                this.client.getApiVersion(),
+                apiVersion,
                 parameters,
                 accept,
                 context);
@@ -407,6 +409,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -417,7 +420,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             restorePointCollectionName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             parameters,
                             accept,
                             context))
@@ -469,6 +472,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -477,7 +481,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 restorePointCollectionName,
-                this.client.getApiVersion(),
+                apiVersion,
                 parameters,
                 accept,
                 context);
@@ -582,6 +586,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
                     new IllegalArgumentException(
                         "Parameter restorePointCollectionName is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -592,7 +597,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
                             this.client.getSubscriptionId(),
                             resourceGroupName,
                             restorePointCollectionName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -635,6 +640,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
                     new IllegalArgumentException(
                         "Parameter restorePointCollectionName is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -643,7 +649,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
                 this.client.getSubscriptionId(),
                 resourceGroupName,
                 restorePointCollectionName,
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }
@@ -830,6 +836,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
                     new IllegalArgumentException(
                         "Parameter restorePointCollectionName is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -841,7 +848,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
                             resourceGroupName,
                             restorePointCollectionName,
                             expand,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -888,6 +895,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
                     new IllegalArgumentException(
                         "Parameter restorePointCollectionName is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -897,7 +905,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
                 resourceGroupName,
                 restorePointCollectionName,
                 expand,
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }
@@ -1020,6 +1028,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1029,7 +1038,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
                             this.client.getEndpoint(),
                             this.client.getSubscriptionId(),
                             resourceGroupName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .<PagedResponse<RestorePointCollectionInner>>map(
@@ -1073,6 +1082,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1080,7 +1090,7 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
                 this.client.getEndpoint(),
                 this.client.getSubscriptionId(),
                 resourceGroupName,
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context)
             .map(
@@ -1178,17 +1188,13 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
                 context ->
                     service
-                        .list(
-                            this.client.getEndpoint(),
-                            this.client.getApiVersion(),
-                            this.client.getSubscriptionId(),
-                            accept,
-                            context))
+                        .list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context))
             .<PagedResponse<RestorePointCollectionInner>>map(
                 res ->
                     new PagedResponseBase<>(
@@ -1226,15 +1232,11 @@ public final class RestorePointCollectionsClientImpl implements RestorePointColl
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(
-                this.client.getEndpoint(),
-                this.client.getApiVersion(),
-                this.client.getSubscriptionId(),
-                accept,
-                context)
+            .list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(

@@ -62,7 +62,7 @@ public final class DimensionsClientImpl implements DimensionsClient {
     private interface DimensionsService {
         @Headers({"Content-Type: application/json"})
         @Get("/{scope}/providers/Microsoft.CostManagement/dimensions")
-        @ExpectedResponses({200})
+        @ExpectedResponses({200, 204})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<DimensionsListResult>> list(
             @HostParam("$host") String endpoint,
@@ -134,7 +134,6 @@ public final class DimensionsClientImpl implements DimensionsClient {
         if (scope == null) {
             return Mono.error(new IllegalArgumentException("Parameter scope is required and cannot be null."));
         }
-        final String apiVersion = "2020-06-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -143,7 +142,7 @@ public final class DimensionsClientImpl implements DimensionsClient {
                         .list(
                             this.client.getEndpoint(),
                             scope,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             filter,
                             expand,
                             skiptoken,
@@ -200,11 +199,19 @@ public final class DimensionsClientImpl implements DimensionsClient {
         if (scope == null) {
             return Mono.error(new IllegalArgumentException("Parameter scope is required and cannot be null."));
         }
-        final String apiVersion = "2020-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(this.client.getEndpoint(), scope, apiVersion, filter, expand, skiptoken, top, accept, context)
+            .list(
+                this.client.getEndpoint(),
+                scope,
+                this.client.getApiVersion(),
+                filter,
+                expand,
+                skiptoken,
+                top,
+                accept,
+                context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -429,7 +436,6 @@ public final class DimensionsClientImpl implements DimensionsClient {
                 .error(
                     new IllegalArgumentException("Parameter externalCloudProviderId is required and cannot be null."));
         }
-        final String apiVersion = "2020-06-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -439,7 +445,7 @@ public final class DimensionsClientImpl implements DimensionsClient {
                             this.client.getEndpoint(),
                             externalCloudProviderType,
                             externalCloudProviderId,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             filter,
                             expand,
                             skiptoken,
@@ -501,7 +507,6 @@ public final class DimensionsClientImpl implements DimensionsClient {
                 .error(
                     new IllegalArgumentException("Parameter externalCloudProviderId is required and cannot be null."));
         }
-        final String apiVersion = "2020-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -509,7 +514,7 @@ public final class DimensionsClientImpl implements DimensionsClient {
                 this.client.getEndpoint(),
                 externalCloudProviderType,
                 externalCloudProviderId,
-                apiVersion,
+                this.client.getApiVersion(),
                 filter,
                 expand,
                 skiptoken,

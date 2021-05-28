@@ -35,6 +35,18 @@ public final class QueryResultImpl implements QueryResult {
         return this.innerModel().type();
     }
 
+    public String etag() {
+        return this.innerModel().etag();
+    }
+
+    public String location() {
+        return this.innerModel().location();
+    }
+
+    public String sku() {
+        return this.innerModel().sku();
+    }
+
     public String nextLink() {
         return this.innerModel().nextLink();
     }

@@ -93,9 +93,7 @@ public interface Cluster {
     Boolean isAvailabilityZonesEnabled();
 
     /**
-     * Gets the billingType property: Configures whether billing will be only on the cluster or each workspace will be
-     * billed by its proportional use. This does not change the overall billing, only how it will be distributed.
-     * Default value is 'Cluster'.
+     * Gets the billingType property: The cluster's billing type.
      *
      * @return the billingType value.
      */
@@ -287,13 +285,9 @@ public interface Cluster {
         /** The stage of the Cluster definition allowing to specify billingType. */
         interface WithBillingType {
             /**
-             * Specifies the billingType property: Configures whether billing will be only on the cluster or each
-             * workspace will be billed by its proportional use. This does not change the overall billing, only how it
-             * will be distributed. Default value is 'Cluster'.
+             * Specifies the billingType property: The cluster's billing type..
              *
-             * @param billingType Configures whether billing will be only on the cluster or each workspace will be
-             *     billed by its proportional use. This does not change the overall billing, only how it will be
-             *     distributed. Default value is 'Cluster'.
+             * @param billingType The cluster's billing type.
              * @return the next definition stage.
              */
             WithCreate withBillingType(BillingType billingType);
@@ -342,7 +336,8 @@ public interface Cluster {
         extends UpdateStages.WithTags,
             UpdateStages.WithIdentity,
             UpdateStages.WithSku,
-            UpdateStages.WithKeyVaultProperties {
+            UpdateStages.WithKeyVaultProperties,
+            UpdateStages.WithBillingType {
         /**
          * Executes the update request.
          *
@@ -399,6 +394,16 @@ public interface Cluster {
              * @return the next definition stage.
              */
             Update withKeyVaultProperties(KeyVaultProperties keyVaultProperties);
+        }
+        /** The stage of the Cluster update allowing to specify billingType. */
+        interface WithBillingType {
+            /**
+             * Specifies the billingType property: The cluster's billing type..
+             *
+             * @param billingType The cluster's billing type.
+             * @return the next definition stage.
+             */
+            Update withBillingType(BillingType billingType);
         }
     }
     /**

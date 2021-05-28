@@ -41,6 +41,12 @@ public class ClusterPatch {
     @JsonProperty(value = "properties.keyVaultProperties")
     private KeyVaultProperties keyVaultProperties;
 
+    /*
+     * The cluster's billing type.
+     */
+    @JsonProperty(value = "properties.billingType")
+    private BillingType billingType;
+
     /**
      * Get the identity property: The identity of the resource.
      *
@@ -118,6 +124,26 @@ public class ClusterPatch {
      */
     public ClusterPatch withKeyVaultProperties(KeyVaultProperties keyVaultProperties) {
         this.keyVaultProperties = keyVaultProperties;
+        return this;
+    }
+
+    /**
+     * Get the billingType property: The cluster's billing type.
+     *
+     * @return the billingType value.
+     */
+    public BillingType billingType() {
+        return this.billingType;
+    }
+
+    /**
+     * Set the billingType property: The cluster's billing type.
+     *
+     * @param billingType the billingType value to set.
+     * @return the ClusterPatch object itself.
+     */
+    public ClusterPatch withBillingType(BillingType billingType) {
+        this.billingType = billingType;
         return this;
     }
 

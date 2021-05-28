@@ -67,9 +67,7 @@ public class ClusterInner extends Resource {
     private Boolean isAvailabilityZonesEnabled;
 
     /*
-     * Configures whether billing will be only on the cluster or each workspace
-     * will be billed by its proportional use. This does not change the overall
-     * billing, only how it will be distributed. Default value is 'Cluster'
+     * The cluster's billing type.
      */
     @JsonProperty(value = "properties.billingType")
     private BillingType billingType;
@@ -209,9 +207,7 @@ public class ClusterInner extends Resource {
     }
 
     /**
-     * Get the billingType property: Configures whether billing will be only on the cluster or each workspace will be
-     * billed by its proportional use. This does not change the overall billing, only how it will be distributed.
-     * Default value is 'Cluster'.
+     * Get the billingType property: The cluster's billing type.
      *
      * @return the billingType value.
      */
@@ -220,9 +216,7 @@ public class ClusterInner extends Resource {
     }
 
     /**
-     * Set the billingType property: Configures whether billing will be only on the cluster or each workspace will be
-     * billed by its proportional use. This does not change the overall billing, only how it will be distributed.
-     * Default value is 'Cluster'.
+     * Set the billingType property: The cluster's billing type.
      *
      * @param billingType the billingType value to set.
      * @return the ClusterInner object itself.

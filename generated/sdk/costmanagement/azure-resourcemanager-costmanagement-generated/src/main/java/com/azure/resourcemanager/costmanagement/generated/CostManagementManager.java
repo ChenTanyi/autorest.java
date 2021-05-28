@@ -26,21 +26,19 @@ import com.azure.resourcemanager.costmanagement.generated.implementation.CostMan
 import com.azure.resourcemanager.costmanagement.generated.implementation.DimensionsImpl;
 import com.azure.resourcemanager.costmanagement.generated.implementation.ExportsImpl;
 import com.azure.resourcemanager.costmanagement.generated.implementation.ForecastsImpl;
-import com.azure.resourcemanager.costmanagement.generated.implementation.GenerateDetailedCostReportOperationResultsImpl;
-import com.azure.resourcemanager.costmanagement.generated.implementation.GenerateDetailedCostReportOperationStatusImpl;
-import com.azure.resourcemanager.costmanagement.generated.implementation.GenerateDetailedCostReportsImpl;
+import com.azure.resourcemanager.costmanagement.generated.implementation.GenerateReservationDetailsReportsImpl;
 import com.azure.resourcemanager.costmanagement.generated.implementation.OperationsImpl;
 import com.azure.resourcemanager.costmanagement.generated.implementation.QueriesImpl;
+import com.azure.resourcemanager.costmanagement.generated.implementation.SettingsImpl;
 import com.azure.resourcemanager.costmanagement.generated.implementation.ViewsImpl;
 import com.azure.resourcemanager.costmanagement.generated.models.Alerts;
 import com.azure.resourcemanager.costmanagement.generated.models.Dimensions;
 import com.azure.resourcemanager.costmanagement.generated.models.Exports;
 import com.azure.resourcemanager.costmanagement.generated.models.Forecasts;
-import com.azure.resourcemanager.costmanagement.generated.models.GenerateDetailedCostReportOperationResults;
-import com.azure.resourcemanager.costmanagement.generated.models.GenerateDetailedCostReportOperationStatus;
-import com.azure.resourcemanager.costmanagement.generated.models.GenerateDetailedCostReports;
+import com.azure.resourcemanager.costmanagement.generated.models.GenerateReservationDetailsReports;
 import com.azure.resourcemanager.costmanagement.generated.models.Operations;
 import com.azure.resourcemanager.costmanagement.generated.models.Queries;
+import com.azure.resourcemanager.costmanagement.generated.models.Settings;
 import com.azure.resourcemanager.costmanagement.generated.models.Views;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
@@ -50,13 +48,7 @@ import java.util.Objects;
 
 /** Entry point to CostManagementManager. */
 public final class CostManagementManager {
-    private Exports exports;
-
-    private GenerateDetailedCostReports generateDetailedCostReports;
-
-    private GenerateDetailedCostReportOperationResults generateDetailedCostReportOperationResults;
-
-    private GenerateDetailedCostReportOperationStatus generateDetailedCostReportOperationStatus;
+    private Settings settings;
 
     private Views views;
 
@@ -68,7 +60,11 @@ public final class CostManagementManager {
 
     private Queries queries;
 
+    private GenerateReservationDetailsReports generateReservationDetailsReports;
+
     private Operations operations;
+
+    private Exports exports;
 
     private final CostManagementClient clientObject;
 
@@ -112,6 +108,7 @@ public final class CostManagementManager {
         private HttpClient httpClient;
         private HttpLogOptions httpLogOptions;
         private final List<HttpPipelinePolicy> policies = new ArrayList<>();
+        private final List<String> scopes = new ArrayList<>();
         private RetryPolicy retryPolicy;
         private Duration defaultPollInterval;
 
@@ -148,6 +145,17 @@ public final class CostManagementManager {
          */
         public Configurable withPolicy(HttpPipelinePolicy policy) {
             this.policies.add(Objects.requireNonNull(policy, "'policy' cannot be null."));
+            return this;
+        }
+
+        /**
+         * Adds the scope to permission sets.
+         *
+         * @param scope the scope.
+         * @return the configurable object itself.
+         */
+        public Configurable withScope(String scope) {
+            this.scopes.add(Objects.requireNonNull(scope, "'scope' cannot be null."));
             return this;
         }
 
@@ -207,6 +215,9 @@ public final class CostManagementManager {
                 userAgentBuilder.append(" (auto-generated)");
             }
 
+            if (scopes.isEmpty()) {
+                scopes.add(profile.getEnvironment().getManagementEndpoint() + "/.default");
+            }
             if (retryPolicy == null) {
                 retryPolicy = new RetryPolicy("Retry-After", ChronoUnit.SECONDS);
             }
@@ -216,10 +227,7 @@ public final class CostManagementManager {
             HttpPolicyProviders.addBeforeRetryPolicies(policies);
             policies.add(retryPolicy);
             policies.add(new AddDatePolicy());
-            policies
-                .add(
-                    new BearerTokenAuthenticationPolicy(
-                        credential, profile.getEnvironment().getManagementEndpoint() + "/.default"));
+            policies.add(new BearerTokenAuthenticationPolicy(credential, scopes.toArray(new String[0])));
             policies.addAll(this.policies);
             HttpPolicyProviders.addAfterRetryPolicies(policies);
             policies.add(new HttpLoggingPolicy(httpLogOptions));
@@ -232,41 +240,12 @@ public final class CostManagementManager {
         }
     }
 
-    /** @return Resource collection API of Exports. */
-    public Exports exports() {
-        if (this.exports == null) {
-            this.exports = new ExportsImpl(clientObject.getExports(), this);
+    /** @return Resource collection API of Settings. */
+    public Settings settings() {
+        if (this.settings == null) {
+            this.settings = new SettingsImpl(clientObject.getSettings(), this);
         }
-        return exports;
-    }
-
-    /** @return Resource collection API of GenerateDetailedCostReports. */
-    public GenerateDetailedCostReports generateDetailedCostReports() {
-        if (this.generateDetailedCostReports == null) {
-            this.generateDetailedCostReports =
-                new GenerateDetailedCostReportsImpl(clientObject.getGenerateDetailedCostReports(), this);
-        }
-        return generateDetailedCostReports;
-    }
-
-    /** @return Resource collection API of GenerateDetailedCostReportOperationResults. */
-    public GenerateDetailedCostReportOperationResults generateDetailedCostReportOperationResults() {
-        if (this.generateDetailedCostReportOperationResults == null) {
-            this.generateDetailedCostReportOperationResults =
-                new GenerateDetailedCostReportOperationResultsImpl(
-                    clientObject.getGenerateDetailedCostReportOperationResults(), this);
-        }
-        return generateDetailedCostReportOperationResults;
-    }
-
-    /** @return Resource collection API of GenerateDetailedCostReportOperationStatus. */
-    public GenerateDetailedCostReportOperationStatus generateDetailedCostReportOperationStatus() {
-        if (this.generateDetailedCostReportOperationStatus == null) {
-            this.generateDetailedCostReportOperationStatus =
-                new GenerateDetailedCostReportOperationStatusImpl(
-                    clientObject.getGenerateDetailedCostReportOperationStatus(), this);
-        }
-        return generateDetailedCostReportOperationStatus;
+        return settings;
     }
 
     /** @return Resource collection API of Views. */
@@ -309,12 +288,29 @@ public final class CostManagementManager {
         return queries;
     }
 
+    /** @return Resource collection API of GenerateReservationDetailsReports. */
+    public GenerateReservationDetailsReports generateReservationDetailsReports() {
+        if (this.generateReservationDetailsReports == null) {
+            this.generateReservationDetailsReports =
+                new GenerateReservationDetailsReportsImpl(clientObject.getGenerateReservationDetailsReports(), this);
+        }
+        return generateReservationDetailsReports;
+    }
+
     /** @return Resource collection API of Operations. */
     public Operations operations() {
         if (this.operations == null) {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
         }
         return operations;
+    }
+
+    /** @return Resource collection API of Exports. */
+    public Exports exports() {
+        if (this.exports == null) {
+            this.exports = new ExportsImpl(clientObject.getExports(), this);
+        }
+        return exports;
     }
 
     /**

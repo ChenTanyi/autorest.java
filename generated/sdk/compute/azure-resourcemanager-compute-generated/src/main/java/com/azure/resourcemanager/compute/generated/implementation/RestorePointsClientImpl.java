@@ -161,6 +161,7 @@ public final class RestorePointsClientImpl implements RestorePointsClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -172,7 +173,7 @@ public final class RestorePointsClientImpl implements RestorePointsClient {
                             resourceGroupName,
                             restorePointCollectionName,
                             restorePointName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             parameters,
                             accept,
                             context))
@@ -230,6 +231,7 @@ public final class RestorePointsClientImpl implements RestorePointsClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -239,7 +241,7 @@ public final class RestorePointsClientImpl implements RestorePointsClient {
                 resourceGroupName,
                 restorePointCollectionName,
                 restorePointName,
-                this.client.getApiVersion(),
+                apiVersion,
                 parameters,
                 accept,
                 context);
@@ -480,6 +482,7 @@ public final class RestorePointsClientImpl implements RestorePointsClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter restorePointName is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -491,7 +494,7 @@ public final class RestorePointsClientImpl implements RestorePointsClient {
                             resourceGroupName,
                             restorePointCollectionName,
                             restorePointName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -538,6 +541,7 @@ public final class RestorePointsClientImpl implements RestorePointsClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter restorePointName is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -547,7 +551,7 @@ public final class RestorePointsClientImpl implements RestorePointsClient {
                 resourceGroupName,
                 restorePointCollectionName,
                 restorePointName,
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }
@@ -743,6 +747,7 @@ public final class RestorePointsClientImpl implements RestorePointsClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter restorePointName is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -754,7 +759,7 @@ public final class RestorePointsClientImpl implements RestorePointsClient {
                             resourceGroupName,
                             restorePointCollectionName,
                             restorePointName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -801,6 +806,7 @@ public final class RestorePointsClientImpl implements RestorePointsClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter restorePointName is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -810,7 +816,7 @@ public final class RestorePointsClientImpl implements RestorePointsClient {
                 resourceGroupName,
                 restorePointCollectionName,
                 restorePointName,
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }

@@ -58,7 +58,7 @@ public final class QueriesClientImpl implements QueriesClient {
     private interface QueriesService {
         @Headers({"Content-Type: application/json"})
         @Post("/{scope}/providers/Microsoft.CostManagement/query")
-        @ExpectedResponses({200})
+        @ExpectedResponses({200, 204})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<QueryResultInner>> usage(
             @HostParam("$host") String endpoint,
@@ -122,11 +122,13 @@ public final class QueriesClientImpl implements QueriesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2020-06-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
-                context -> service.usage(this.client.getEndpoint(), scope, apiVersion, parameters, accept, context))
+                context ->
+                    service
+                        .usage(
+                            this.client.getEndpoint(), scope, this.client.getApiVersion(), parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -172,10 +174,10 @@ public final class QueriesClientImpl implements QueriesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2020-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service.usage(this.client.getEndpoint(), scope, apiVersion, parameters, accept, context);
+        return service
+            .usage(this.client.getEndpoint(), scope, this.client.getApiVersion(), parameters, accept, context);
     }
 
     /**
@@ -315,7 +317,6 @@ public final class QueriesClientImpl implements QueriesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2020-06-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -325,7 +326,7 @@ public final class QueriesClientImpl implements QueriesClient {
                             this.client.getEndpoint(),
                             externalCloudProviderType,
                             externalCloudProviderId,
-                            apiVersion,
+                            this.client.getApiVersion(),
                             parameters,
                             accept,
                             context))
@@ -375,7 +376,6 @@ public final class QueriesClientImpl implements QueriesClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2020-06-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -383,7 +383,7 @@ public final class QueriesClientImpl implements QueriesClient {
                 this.client.getEndpoint(),
                 externalCloudProviderType,
                 externalCloudProviderId,
-                apiVersion,
+                this.client.getApiVersion(),
                 parameters,
                 accept,
                 context);

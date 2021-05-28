@@ -17,6 +17,13 @@ public interface CostManagementClient {
     String getEndpoint();
 
     /**
+     * Gets Api Version.
+     *
+     * @return the apiVersion value.
+     */
+    String getApiVersion();
+
+    /**
      * Gets The HTTP pipeline to send requests through.
      *
      * @return the httpPipeline value.
@@ -31,32 +38,11 @@ public interface CostManagementClient {
     Duration getDefaultPollInterval();
 
     /**
-     * Gets the ExportsClient object to access its operations.
+     * Gets the SettingsClient object to access its operations.
      *
-     * @return the ExportsClient object.
+     * @return the SettingsClient object.
      */
-    ExportsClient getExports();
-
-    /**
-     * Gets the GenerateDetailedCostReportsClient object to access its operations.
-     *
-     * @return the GenerateDetailedCostReportsClient object.
-     */
-    GenerateDetailedCostReportsClient getGenerateDetailedCostReports();
-
-    /**
-     * Gets the GenerateDetailedCostReportOperationResultsClient object to access its operations.
-     *
-     * @return the GenerateDetailedCostReportOperationResultsClient object.
-     */
-    GenerateDetailedCostReportOperationResultsClient getGenerateDetailedCostReportOperationResults();
-
-    /**
-     * Gets the GenerateDetailedCostReportOperationStatusClient object to access its operations.
-     *
-     * @return the GenerateDetailedCostReportOperationStatusClient object.
-     */
-    GenerateDetailedCostReportOperationStatusClient getGenerateDetailedCostReportOperationStatus();
+    SettingsClient getSettings();
 
     /**
      * Gets the ViewsClient object to access its operations.
@@ -94,9 +80,23 @@ public interface CostManagementClient {
     QueriesClient getQueries();
 
     /**
+     * Gets the GenerateReservationDetailsReportsClient object to access its operations.
+     *
+     * @return the GenerateReservationDetailsReportsClient object.
+     */
+    GenerateReservationDetailsReportsClient getGenerateReservationDetailsReports();
+
+    /**
      * Gets the OperationsClient object to access its operations.
      *
      * @return the OperationsClient object.
      */
     OperationsClient getOperations();
+
+    /**
+     * Gets the ExportsClient object to access its operations.
+     *
+     * @return the ExportsClient object.
+     */
+    ExportsClient getExports();
 }

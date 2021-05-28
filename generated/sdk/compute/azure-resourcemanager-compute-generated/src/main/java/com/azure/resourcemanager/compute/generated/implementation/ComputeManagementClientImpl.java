@@ -30,12 +30,27 @@ import com.azure.resourcemanager.compute.generated.fluent.CloudServicesUpdateDom
 import com.azure.resourcemanager.compute.generated.fluent.ComputeManagementClient;
 import com.azure.resourcemanager.compute.generated.fluent.DedicatedHostGroupsClient;
 import com.azure.resourcemanager.compute.generated.fluent.DedicatedHostsClient;
+import com.azure.resourcemanager.compute.generated.fluent.DiskAccessesClient;
+import com.azure.resourcemanager.compute.generated.fluent.DiskEncryptionSetsClient;
+import com.azure.resourcemanager.compute.generated.fluent.DiskRestorePointsClient;
+import com.azure.resourcemanager.compute.generated.fluent.DisksClient;
+import com.azure.resourcemanager.compute.generated.fluent.GalleriesClient;
+import com.azure.resourcemanager.compute.generated.fluent.GalleryApplicationVersionsClient;
+import com.azure.resourcemanager.compute.generated.fluent.GalleryApplicationsClient;
+import com.azure.resourcemanager.compute.generated.fluent.GalleryImageVersionsClient;
+import com.azure.resourcemanager.compute.generated.fluent.GalleryImagesClient;
+import com.azure.resourcemanager.compute.generated.fluent.GallerySharingProfilesClient;
 import com.azure.resourcemanager.compute.generated.fluent.ImagesClient;
 import com.azure.resourcemanager.compute.generated.fluent.LogAnalyticsClient;
 import com.azure.resourcemanager.compute.generated.fluent.OperationsClient;
 import com.azure.resourcemanager.compute.generated.fluent.ProximityPlacementGroupsClient;
+import com.azure.resourcemanager.compute.generated.fluent.ResourceSkusClient;
 import com.azure.resourcemanager.compute.generated.fluent.RestorePointCollectionsClient;
 import com.azure.resourcemanager.compute.generated.fluent.RestorePointsClient;
+import com.azure.resourcemanager.compute.generated.fluent.SharedGalleriesClient;
+import com.azure.resourcemanager.compute.generated.fluent.SharedGalleryImageVersionsClient;
+import com.azure.resourcemanager.compute.generated.fluent.SharedGalleryImagesClient;
+import com.azure.resourcemanager.compute.generated.fluent.SnapshotsClient;
 import com.azure.resourcemanager.compute.generated.fluent.SshPublicKeysClient;
 import com.azure.resourcemanager.compute.generated.fluent.UsagesClient;
 import com.azure.resourcemanager.compute.generated.fluent.VirtualMachineExtensionImagesClient;
@@ -94,18 +109,6 @@ public final class ComputeManagementClientImpl implements ComputeManagementClien
         return this.endpoint;
     }
 
-    /** Api Version. */
-    private final String apiVersion;
-
-    /**
-     * Gets Api Version.
-     *
-     * @return the apiVersion value.
-     */
-    public String getApiVersion() {
-        return this.apiVersion;
-    }
-
     /** The HTTP pipeline to send requests through. */
     private final HttpPipeline httpPipeline;
 
@@ -140,66 +143,6 @@ public final class ComputeManagementClientImpl implements ComputeManagementClien
      */
     public Duration getDefaultPollInterval() {
         return this.defaultPollInterval;
-    }
-
-    /** The CloudServiceRoleInstancesClient object to access its operations. */
-    private final CloudServiceRoleInstancesClient cloudServiceRoleInstances;
-
-    /**
-     * Gets the CloudServiceRoleInstancesClient object to access its operations.
-     *
-     * @return the CloudServiceRoleInstancesClient object.
-     */
-    public CloudServiceRoleInstancesClient getCloudServiceRoleInstances() {
-        return this.cloudServiceRoleInstances;
-    }
-
-    /** The CloudServiceRolesClient object to access its operations. */
-    private final CloudServiceRolesClient cloudServiceRoles;
-
-    /**
-     * Gets the CloudServiceRolesClient object to access its operations.
-     *
-     * @return the CloudServiceRolesClient object.
-     */
-    public CloudServiceRolesClient getCloudServiceRoles() {
-        return this.cloudServiceRoles;
-    }
-
-    /** The CloudServicesClient object to access its operations. */
-    private final CloudServicesClient cloudServices;
-
-    /**
-     * Gets the CloudServicesClient object to access its operations.
-     *
-     * @return the CloudServicesClient object.
-     */
-    public CloudServicesClient getCloudServices() {
-        return this.cloudServices;
-    }
-
-    /** The CloudServicesUpdateDomainsClient object to access its operations. */
-    private final CloudServicesUpdateDomainsClient cloudServicesUpdateDomains;
-
-    /**
-     * Gets the CloudServicesUpdateDomainsClient object to access its operations.
-     *
-     * @return the CloudServicesUpdateDomainsClient object.
-     */
-    public CloudServicesUpdateDomainsClient getCloudServicesUpdateDomains() {
-        return this.cloudServicesUpdateDomains;
-    }
-
-    /** The CloudServiceOperatingSystemsClient object to access its operations. */
-    private final CloudServiceOperatingSystemsClient cloudServiceOperatingSystems;
-
-    /**
-     * Gets the CloudServiceOperatingSystemsClient object to access its operations.
-     *
-     * @return the CloudServiceOperatingSystemsClient object.
-     */
-    public CloudServiceOperatingSystemsClient getCloudServiceOperatingSystems() {
-        return this.cloudServiceOperatingSystems;
     }
 
     /** The OperationsClient object to access its operations. */
@@ -490,6 +433,246 @@ public final class ComputeManagementClientImpl implements ComputeManagementClien
         return this.virtualMachineScaleSetVMRunCommands;
     }
 
+    /** The ResourceSkusClient object to access its operations. */
+    private final ResourceSkusClient resourceSkus;
+
+    /**
+     * Gets the ResourceSkusClient object to access its operations.
+     *
+     * @return the ResourceSkusClient object.
+     */
+    public ResourceSkusClient getResourceSkus() {
+        return this.resourceSkus;
+    }
+
+    /** The DisksClient object to access its operations. */
+    private final DisksClient disks;
+
+    /**
+     * Gets the DisksClient object to access its operations.
+     *
+     * @return the DisksClient object.
+     */
+    public DisksClient getDisks() {
+        return this.disks;
+    }
+
+    /** The SnapshotsClient object to access its operations. */
+    private final SnapshotsClient snapshots;
+
+    /**
+     * Gets the SnapshotsClient object to access its operations.
+     *
+     * @return the SnapshotsClient object.
+     */
+    public SnapshotsClient getSnapshots() {
+        return this.snapshots;
+    }
+
+    /** The DiskEncryptionSetsClient object to access its operations. */
+    private final DiskEncryptionSetsClient diskEncryptionSets;
+
+    /**
+     * Gets the DiskEncryptionSetsClient object to access its operations.
+     *
+     * @return the DiskEncryptionSetsClient object.
+     */
+    public DiskEncryptionSetsClient getDiskEncryptionSets() {
+        return this.diskEncryptionSets;
+    }
+
+    /** The DiskAccessesClient object to access its operations. */
+    private final DiskAccessesClient diskAccesses;
+
+    /**
+     * Gets the DiskAccessesClient object to access its operations.
+     *
+     * @return the DiskAccessesClient object.
+     */
+    public DiskAccessesClient getDiskAccesses() {
+        return this.diskAccesses;
+    }
+
+    /** The DiskRestorePointsClient object to access its operations. */
+    private final DiskRestorePointsClient diskRestorePoints;
+
+    /**
+     * Gets the DiskRestorePointsClient object to access its operations.
+     *
+     * @return the DiskRestorePointsClient object.
+     */
+    public DiskRestorePointsClient getDiskRestorePoints() {
+        return this.diskRestorePoints;
+    }
+
+    /** The GalleriesClient object to access its operations. */
+    private final GalleriesClient galleries;
+
+    /**
+     * Gets the GalleriesClient object to access its operations.
+     *
+     * @return the GalleriesClient object.
+     */
+    public GalleriesClient getGalleries() {
+        return this.galleries;
+    }
+
+    /** The GalleryImagesClient object to access its operations. */
+    private final GalleryImagesClient galleryImages;
+
+    /**
+     * Gets the GalleryImagesClient object to access its operations.
+     *
+     * @return the GalleryImagesClient object.
+     */
+    public GalleryImagesClient getGalleryImages() {
+        return this.galleryImages;
+    }
+
+    /** The GalleryImageVersionsClient object to access its operations. */
+    private final GalleryImageVersionsClient galleryImageVersions;
+
+    /**
+     * Gets the GalleryImageVersionsClient object to access its operations.
+     *
+     * @return the GalleryImageVersionsClient object.
+     */
+    public GalleryImageVersionsClient getGalleryImageVersions() {
+        return this.galleryImageVersions;
+    }
+
+    /** The GalleryApplicationsClient object to access its operations. */
+    private final GalleryApplicationsClient galleryApplications;
+
+    /**
+     * Gets the GalleryApplicationsClient object to access its operations.
+     *
+     * @return the GalleryApplicationsClient object.
+     */
+    public GalleryApplicationsClient getGalleryApplications() {
+        return this.galleryApplications;
+    }
+
+    /** The GalleryApplicationVersionsClient object to access its operations. */
+    private final GalleryApplicationVersionsClient galleryApplicationVersions;
+
+    /**
+     * Gets the GalleryApplicationVersionsClient object to access its operations.
+     *
+     * @return the GalleryApplicationVersionsClient object.
+     */
+    public GalleryApplicationVersionsClient getGalleryApplicationVersions() {
+        return this.galleryApplicationVersions;
+    }
+
+    /** The GallerySharingProfilesClient object to access its operations. */
+    private final GallerySharingProfilesClient gallerySharingProfiles;
+
+    /**
+     * Gets the GallerySharingProfilesClient object to access its operations.
+     *
+     * @return the GallerySharingProfilesClient object.
+     */
+    public GallerySharingProfilesClient getGallerySharingProfiles() {
+        return this.gallerySharingProfiles;
+    }
+
+    /** The SharedGalleriesClient object to access its operations. */
+    private final SharedGalleriesClient sharedGalleries;
+
+    /**
+     * Gets the SharedGalleriesClient object to access its operations.
+     *
+     * @return the SharedGalleriesClient object.
+     */
+    public SharedGalleriesClient getSharedGalleries() {
+        return this.sharedGalleries;
+    }
+
+    /** The SharedGalleryImagesClient object to access its operations. */
+    private final SharedGalleryImagesClient sharedGalleryImages;
+
+    /**
+     * Gets the SharedGalleryImagesClient object to access its operations.
+     *
+     * @return the SharedGalleryImagesClient object.
+     */
+    public SharedGalleryImagesClient getSharedGalleryImages() {
+        return this.sharedGalleryImages;
+    }
+
+    /** The SharedGalleryImageVersionsClient object to access its operations. */
+    private final SharedGalleryImageVersionsClient sharedGalleryImageVersions;
+
+    /**
+     * Gets the SharedGalleryImageVersionsClient object to access its operations.
+     *
+     * @return the SharedGalleryImageVersionsClient object.
+     */
+    public SharedGalleryImageVersionsClient getSharedGalleryImageVersions() {
+        return this.sharedGalleryImageVersions;
+    }
+
+    /** The CloudServiceRoleInstancesClient object to access its operations. */
+    private final CloudServiceRoleInstancesClient cloudServiceRoleInstances;
+
+    /**
+     * Gets the CloudServiceRoleInstancesClient object to access its operations.
+     *
+     * @return the CloudServiceRoleInstancesClient object.
+     */
+    public CloudServiceRoleInstancesClient getCloudServiceRoleInstances() {
+        return this.cloudServiceRoleInstances;
+    }
+
+    /** The CloudServiceRolesClient object to access its operations. */
+    private final CloudServiceRolesClient cloudServiceRoles;
+
+    /**
+     * Gets the CloudServiceRolesClient object to access its operations.
+     *
+     * @return the CloudServiceRolesClient object.
+     */
+    public CloudServiceRolesClient getCloudServiceRoles() {
+        return this.cloudServiceRoles;
+    }
+
+    /** The CloudServicesClient object to access its operations. */
+    private final CloudServicesClient cloudServices;
+
+    /**
+     * Gets the CloudServicesClient object to access its operations.
+     *
+     * @return the CloudServicesClient object.
+     */
+    public CloudServicesClient getCloudServices() {
+        return this.cloudServices;
+    }
+
+    /** The CloudServicesUpdateDomainsClient object to access its operations. */
+    private final CloudServicesUpdateDomainsClient cloudServicesUpdateDomains;
+
+    /**
+     * Gets the CloudServicesUpdateDomainsClient object to access its operations.
+     *
+     * @return the CloudServicesUpdateDomainsClient object.
+     */
+    public CloudServicesUpdateDomainsClient getCloudServicesUpdateDomains() {
+        return this.cloudServicesUpdateDomains;
+    }
+
+    /** The CloudServiceOperatingSystemsClient object to access its operations. */
+    private final CloudServiceOperatingSystemsClient cloudServiceOperatingSystems;
+
+    /**
+     * Gets the CloudServiceOperatingSystemsClient object to access its operations.
+     *
+     * @return the CloudServiceOperatingSystemsClient object.
+     */
+    public CloudServiceOperatingSystemsClient getCloudServiceOperatingSystems() {
+        return this.cloudServiceOperatingSystems;
+    }
+
     /**
      * Initializes an instance of ComputeManagementClient client.
      *
@@ -513,12 +696,6 @@ public final class ComputeManagementClientImpl implements ComputeManagementClien
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
-        this.apiVersion = "2021-03-01";
-        this.cloudServiceRoleInstances = new CloudServiceRoleInstancesClientImpl(this);
-        this.cloudServiceRoles = new CloudServiceRolesClientImpl(this);
-        this.cloudServices = new CloudServicesClientImpl(this);
-        this.cloudServicesUpdateDomains = new CloudServicesUpdateDomainsClientImpl(this);
-        this.cloudServiceOperatingSystems = new CloudServiceOperatingSystemsClientImpl(this);
         this.operations = new OperationsClientImpl(this);
         this.availabilitySets = new AvailabilitySetsClientImpl(this);
         this.proximityPlacementGroups = new ProximityPlacementGroupsClientImpl(this);
@@ -543,6 +720,26 @@ public final class ComputeManagementClientImpl implements ComputeManagementClien
         this.logAnalytics = new LogAnalyticsClientImpl(this);
         this.virtualMachineRunCommands = new VirtualMachineRunCommandsClientImpl(this);
         this.virtualMachineScaleSetVMRunCommands = new VirtualMachineScaleSetVMRunCommandsClientImpl(this);
+        this.resourceSkus = new ResourceSkusClientImpl(this);
+        this.disks = new DisksClientImpl(this);
+        this.snapshots = new SnapshotsClientImpl(this);
+        this.diskEncryptionSets = new DiskEncryptionSetsClientImpl(this);
+        this.diskAccesses = new DiskAccessesClientImpl(this);
+        this.diskRestorePoints = new DiskRestorePointsClientImpl(this);
+        this.galleries = new GalleriesClientImpl(this);
+        this.galleryImages = new GalleryImagesClientImpl(this);
+        this.galleryImageVersions = new GalleryImageVersionsClientImpl(this);
+        this.galleryApplications = new GalleryApplicationsClientImpl(this);
+        this.galleryApplicationVersions = new GalleryApplicationVersionsClientImpl(this);
+        this.gallerySharingProfiles = new GallerySharingProfilesClientImpl(this);
+        this.sharedGalleries = new SharedGalleriesClientImpl(this);
+        this.sharedGalleryImages = new SharedGalleryImagesClientImpl(this);
+        this.sharedGalleryImageVersions = new SharedGalleryImageVersionsClientImpl(this);
+        this.cloudServiceRoleInstances = new CloudServiceRoleInstancesClientImpl(this);
+        this.cloudServiceRoles = new CloudServiceRolesClientImpl(this);
+        this.cloudServices = new CloudServicesClientImpl(this);
+        this.cloudServicesUpdateDomains = new CloudServicesUpdateDomainsClientImpl(this);
+        this.cloudServiceOperatingSystems = new CloudServiceOperatingSystemsClientImpl(this);
     }
 
     /**

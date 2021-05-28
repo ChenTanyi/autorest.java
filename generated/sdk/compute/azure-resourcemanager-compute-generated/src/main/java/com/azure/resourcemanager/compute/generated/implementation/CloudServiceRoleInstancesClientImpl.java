@@ -255,6 +255,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -266,7 +267,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                             resourceGroupName,
                             cloudServiceName,
                             this.client.getSubscriptionId(),
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -311,6 +312,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -320,7 +322,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                 resourceGroupName,
                 cloudServiceName,
                 this.client.getSubscriptionId(),
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }
@@ -512,6 +514,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -523,7 +526,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                             resourceGroupName,
                             cloudServiceName,
                             this.client.getSubscriptionId(),
-                            this.client.getApiVersion(),
+                            apiVersion,
                             expand,
                             accept,
                             context))
@@ -574,6 +577,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -583,7 +587,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                 resourceGroupName,
                 cloudServiceName,
                 this.client.getSubscriptionId(),
-                this.client.getApiVersion(),
+                apiVersion,
                 expand,
                 accept,
                 context);
@@ -719,6 +723,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -730,7 +735,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                             resourceGroupName,
                             cloudServiceName,
                             this.client.getSubscriptionId(),
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -775,6 +780,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -784,7 +790,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                 resourceGroupName,
                 cloudServiceName,
                 this.client.getSubscriptionId(),
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }
@@ -884,6 +890,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -894,7 +901,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                             resourceGroupName,
                             cloudServiceName,
                             this.client.getSubscriptionId(),
-                            this.client.getApiVersion(),
+                            apiVersion,
                             expand,
                             accept,
                             context))
@@ -946,6 +953,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -954,7 +962,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                 resourceGroupName,
                 cloudServiceName,
                 this.client.getSubscriptionId(),
-                this.client.getApiVersion(),
+                apiVersion,
                 expand,
                 accept,
                 context)
@@ -1103,6 +1111,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1114,7 +1123,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                             resourceGroupName,
                             cloudServiceName,
                             this.client.getSubscriptionId(),
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -1159,6 +1168,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1168,7 +1178,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                 resourceGroupName,
                 cloudServiceName,
                 this.client.getSubscriptionId(),
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }
@@ -1360,6 +1370,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1371,7 +1382,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                             resourceGroupName,
                             cloudServiceName,
                             this.client.getSubscriptionId(),
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -1417,6 +1428,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1426,7 +1438,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                 resourceGroupName,
                 cloudServiceName,
                 this.client.getSubscriptionId(),
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }
@@ -1627,6 +1639,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1638,7 +1651,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                             resourceGroupName,
                             cloudServiceName,
                             this.client.getSubscriptionId(),
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -1685,6 +1698,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1694,7 +1708,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                 resourceGroupName,
                 cloudServiceName,
                 this.client.getSubscriptionId(),
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }
@@ -1901,6 +1915,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/x-rdp";
         return FluxUtil
             .withContext(
@@ -1912,7 +1927,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                             resourceGroupName,
                             cloudServiceName,
                             this.client.getSubscriptionId(),
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -1957,6 +1972,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/x-rdp";
         context = this.client.mergeContext(context);
         return service
@@ -1966,7 +1982,7 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
                 resourceGroupName,
                 cloudServiceName,
                 this.client.getSubscriptionId(),
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }

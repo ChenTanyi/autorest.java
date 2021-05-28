@@ -25,13 +25,6 @@ public interface ComputeManagementClient {
     String getEndpoint();
 
     /**
-     * Gets Api Version.
-     *
-     * @return the apiVersion value.
-     */
-    String getApiVersion();
-
-    /**
      * Gets The HTTP pipeline to send requests through.
      *
      * @return the httpPipeline value.
@@ -44,41 +37,6 @@ public interface ComputeManagementClient {
      * @return the defaultPollInterval value.
      */
     Duration getDefaultPollInterval();
-
-    /**
-     * Gets the CloudServiceRoleInstancesClient object to access its operations.
-     *
-     * @return the CloudServiceRoleInstancesClient object.
-     */
-    CloudServiceRoleInstancesClient getCloudServiceRoleInstances();
-
-    /**
-     * Gets the CloudServiceRolesClient object to access its operations.
-     *
-     * @return the CloudServiceRolesClient object.
-     */
-    CloudServiceRolesClient getCloudServiceRoles();
-
-    /**
-     * Gets the CloudServicesClient object to access its operations.
-     *
-     * @return the CloudServicesClient object.
-     */
-    CloudServicesClient getCloudServices();
-
-    /**
-     * Gets the CloudServicesUpdateDomainsClient object to access its operations.
-     *
-     * @return the CloudServicesUpdateDomainsClient object.
-     */
-    CloudServicesUpdateDomainsClient getCloudServicesUpdateDomains();
-
-    /**
-     * Gets the CloudServiceOperatingSystemsClient object to access its operations.
-     *
-     * @return the CloudServiceOperatingSystemsClient object.
-     */
-    CloudServiceOperatingSystemsClient getCloudServiceOperatingSystems();
 
     /**
      * Gets the OperationsClient object to access its operations.
@@ -247,4 +205,144 @@ public interface ComputeManagementClient {
      * @return the VirtualMachineScaleSetVMRunCommandsClient object.
      */
     VirtualMachineScaleSetVMRunCommandsClient getVirtualMachineScaleSetVMRunCommands();
+
+    /**
+     * Gets the ResourceSkusClient object to access its operations.
+     *
+     * @return the ResourceSkusClient object.
+     */
+    ResourceSkusClient getResourceSkus();
+
+    /**
+     * Gets the DisksClient object to access its operations.
+     *
+     * @return the DisksClient object.
+     */
+    DisksClient getDisks();
+
+    /**
+     * Gets the SnapshotsClient object to access its operations.
+     *
+     * @return the SnapshotsClient object.
+     */
+    SnapshotsClient getSnapshots();
+
+    /**
+     * Gets the DiskEncryptionSetsClient object to access its operations.
+     *
+     * @return the DiskEncryptionSetsClient object.
+     */
+    DiskEncryptionSetsClient getDiskEncryptionSets();
+
+    /**
+     * Gets the DiskAccessesClient object to access its operations.
+     *
+     * @return the DiskAccessesClient object.
+     */
+    DiskAccessesClient getDiskAccesses();
+
+    /**
+     * Gets the DiskRestorePointsClient object to access its operations.
+     *
+     * @return the DiskRestorePointsClient object.
+     */
+    DiskRestorePointsClient getDiskRestorePoints();
+
+    /**
+     * Gets the GalleriesClient object to access its operations.
+     *
+     * @return the GalleriesClient object.
+     */
+    GalleriesClient getGalleries();
+
+    /**
+     * Gets the GalleryImagesClient object to access its operations.
+     *
+     * @return the GalleryImagesClient object.
+     */
+    GalleryImagesClient getGalleryImages();
+
+    /**
+     * Gets the GalleryImageVersionsClient object to access its operations.
+     *
+     * @return the GalleryImageVersionsClient object.
+     */
+    GalleryImageVersionsClient getGalleryImageVersions();
+
+    /**
+     * Gets the GalleryApplicationsClient object to access its operations.
+     *
+     * @return the GalleryApplicationsClient object.
+     */
+    GalleryApplicationsClient getGalleryApplications();
+
+    /**
+     * Gets the GalleryApplicationVersionsClient object to access its operations.
+     *
+     * @return the GalleryApplicationVersionsClient object.
+     */
+    GalleryApplicationVersionsClient getGalleryApplicationVersions();
+
+    /**
+     * Gets the GallerySharingProfilesClient object to access its operations.
+     *
+     * @return the GallerySharingProfilesClient object.
+     */
+    GallerySharingProfilesClient getGallerySharingProfiles();
+
+    /**
+     * Gets the SharedGalleriesClient object to access its operations.
+     *
+     * @return the SharedGalleriesClient object.
+     */
+    SharedGalleriesClient getSharedGalleries();
+
+    /**
+     * Gets the SharedGalleryImagesClient object to access its operations.
+     *
+     * @return the SharedGalleryImagesClient object.
+     */
+    SharedGalleryImagesClient getSharedGalleryImages();
+
+    /**
+     * Gets the SharedGalleryImageVersionsClient object to access its operations.
+     *
+     * @return the SharedGalleryImageVersionsClient object.
+     */
+    SharedGalleryImageVersionsClient getSharedGalleryImageVersions();
+
+    /**
+     * Gets the CloudServiceRoleInstancesClient object to access its operations.
+     *
+     * @return the CloudServiceRoleInstancesClient object.
+     */
+    CloudServiceRoleInstancesClient getCloudServiceRoleInstances();
+
+    /**
+     * Gets the CloudServiceRolesClient object to access its operations.
+     *
+     * @return the CloudServiceRolesClient object.
+     */
+    CloudServiceRolesClient getCloudServiceRoles();
+
+    /**
+     * Gets the CloudServicesClient object to access its operations.
+     *
+     * @return the CloudServicesClient object.
+     */
+    CloudServicesClient getCloudServices();
+
+    /**
+     * Gets the CloudServicesUpdateDomainsClient object to access its operations.
+     *
+     * @return the CloudServicesUpdateDomainsClient object.
+     */
+    CloudServicesUpdateDomainsClient getCloudServicesUpdateDomains();
+
+    /**
+     * Gets the CloudServiceOperatingSystemsClient object to access its operations.
+     *
+     * @return the CloudServiceOperatingSystemsClient object.
+     */
+    CloudServiceOperatingSystemsClient getCloudServiceOperatingSystems();
 }

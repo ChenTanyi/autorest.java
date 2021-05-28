@@ -169,6 +169,7 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -179,7 +180,7 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
                             location,
                             osVersionName,
                             this.client.getSubscriptionId(),
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -218,6 +219,7 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -226,7 +228,7 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
                 location,
                 osVersionName,
                 this.client.getSubscriptionId(),
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }
@@ -317,6 +319,7 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -326,7 +329,7 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
                             this.client.getEndpoint(),
                             location,
                             this.client.getSubscriptionId(),
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .<PagedResponse<OSVersionInner>>map(
@@ -371,16 +374,12 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .listOSVersions(
-                this.client.getEndpoint(),
-                location,
-                this.client.getSubscriptionId(),
-                this.client.getApiVersion(),
-                accept,
-                context)
+                this.client.getEndpoint(), location, this.client.getSubscriptionId(), apiVersion, accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(
@@ -496,6 +495,7 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -506,7 +506,7 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
                             location,
                             osFamilyName,
                             this.client.getSubscriptionId(),
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -545,6 +545,7 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -553,7 +554,7 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
                 location,
                 osFamilyName,
                 this.client.getSubscriptionId(),
-                this.client.getApiVersion(),
+                apiVersion,
                 accept,
                 context);
     }
@@ -644,6 +645,7 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -653,7 +655,7 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
                             this.client.getEndpoint(),
                             location,
                             this.client.getSubscriptionId(),
-                            this.client.getApiVersion(),
+                            apiVersion,
                             accept,
                             context))
             .<PagedResponse<OSFamilyInner>>map(
@@ -698,16 +700,12 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
             .listOSFamilies(
-                this.client.getEndpoint(),
-                location,
-                this.client.getSubscriptionId(),
-                this.client.getApiVersion(),
-                accept,
-                context)
+                this.client.getEndpoint(), location, this.client.getSubscriptionId(), apiVersion, accept, context)
             .map(
                 res ->
                     new PagedResponseBase<>(

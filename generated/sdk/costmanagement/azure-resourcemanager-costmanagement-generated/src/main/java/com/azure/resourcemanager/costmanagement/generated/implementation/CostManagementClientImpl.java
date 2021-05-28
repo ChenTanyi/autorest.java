@@ -26,11 +26,10 @@ import com.azure.resourcemanager.costmanagement.generated.fluent.CostManagementC
 import com.azure.resourcemanager.costmanagement.generated.fluent.DimensionsClient;
 import com.azure.resourcemanager.costmanagement.generated.fluent.ExportsClient;
 import com.azure.resourcemanager.costmanagement.generated.fluent.ForecastsClient;
-import com.azure.resourcemanager.costmanagement.generated.fluent.GenerateDetailedCostReportOperationResultsClient;
-import com.azure.resourcemanager.costmanagement.generated.fluent.GenerateDetailedCostReportOperationStatusClient;
-import com.azure.resourcemanager.costmanagement.generated.fluent.GenerateDetailedCostReportsClient;
+import com.azure.resourcemanager.costmanagement.generated.fluent.GenerateReservationDetailsReportsClient;
 import com.azure.resourcemanager.costmanagement.generated.fluent.OperationsClient;
 import com.azure.resourcemanager.costmanagement.generated.fluent.QueriesClient;
+import com.azure.resourcemanager.costmanagement.generated.fluent.SettingsClient;
 import com.azure.resourcemanager.costmanagement.generated.fluent.ViewsClient;
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -57,6 +56,18 @@ public final class CostManagementClientImpl implements CostManagementClient {
      */
     public String getEndpoint() {
         return this.endpoint;
+    }
+
+    /** Api Version. */
+    private final String apiVersion;
+
+    /**
+     * Gets Api Version.
+     *
+     * @return the apiVersion value.
+     */
+    public String getApiVersion() {
+        return this.apiVersion;
     }
 
     /** The HTTP pipeline to send requests through. */
@@ -95,52 +106,16 @@ public final class CostManagementClientImpl implements CostManagementClient {
         return this.defaultPollInterval;
     }
 
-    /** The ExportsClient object to access its operations. */
-    private final ExportsClient exports;
+    /** The SettingsClient object to access its operations. */
+    private final SettingsClient settings;
 
     /**
-     * Gets the ExportsClient object to access its operations.
+     * Gets the SettingsClient object to access its operations.
      *
-     * @return the ExportsClient object.
+     * @return the SettingsClient object.
      */
-    public ExportsClient getExports() {
-        return this.exports;
-    }
-
-    /** The GenerateDetailedCostReportsClient object to access its operations. */
-    private final GenerateDetailedCostReportsClient generateDetailedCostReports;
-
-    /**
-     * Gets the GenerateDetailedCostReportsClient object to access its operations.
-     *
-     * @return the GenerateDetailedCostReportsClient object.
-     */
-    public GenerateDetailedCostReportsClient getGenerateDetailedCostReports() {
-        return this.generateDetailedCostReports;
-    }
-
-    /** The GenerateDetailedCostReportOperationResultsClient object to access its operations. */
-    private final GenerateDetailedCostReportOperationResultsClient generateDetailedCostReportOperationResults;
-
-    /**
-     * Gets the GenerateDetailedCostReportOperationResultsClient object to access its operations.
-     *
-     * @return the GenerateDetailedCostReportOperationResultsClient object.
-     */
-    public GenerateDetailedCostReportOperationResultsClient getGenerateDetailedCostReportOperationResults() {
-        return this.generateDetailedCostReportOperationResults;
-    }
-
-    /** The GenerateDetailedCostReportOperationStatusClient object to access its operations. */
-    private final GenerateDetailedCostReportOperationStatusClient generateDetailedCostReportOperationStatus;
-
-    /**
-     * Gets the GenerateDetailedCostReportOperationStatusClient object to access its operations.
-     *
-     * @return the GenerateDetailedCostReportOperationStatusClient object.
-     */
-    public GenerateDetailedCostReportOperationStatusClient getGenerateDetailedCostReportOperationStatus() {
-        return this.generateDetailedCostReportOperationStatus;
+    public SettingsClient getSettings() {
+        return this.settings;
     }
 
     /** The ViewsClient object to access its operations. */
@@ -203,6 +178,18 @@ public final class CostManagementClientImpl implements CostManagementClient {
         return this.queries;
     }
 
+    /** The GenerateReservationDetailsReportsClient object to access its operations. */
+    private final GenerateReservationDetailsReportsClient generateReservationDetailsReports;
+
+    /**
+     * Gets the GenerateReservationDetailsReportsClient object to access its operations.
+     *
+     * @return the GenerateReservationDetailsReportsClient object.
+     */
+    public GenerateReservationDetailsReportsClient getGenerateReservationDetailsReports() {
+        return this.generateReservationDetailsReports;
+    }
+
     /** The OperationsClient object to access its operations. */
     private final OperationsClient operations;
 
@@ -213,6 +200,18 @@ public final class CostManagementClientImpl implements CostManagementClient {
      */
     public OperationsClient getOperations() {
         return this.operations;
+    }
+
+    /** The ExportsClient object to access its operations. */
+    private final ExportsClient exports;
+
+    /**
+     * Gets the ExportsClient object to access its operations.
+     *
+     * @return the ExportsClient object.
+     */
+    public ExportsClient getExports() {
+        return this.exports;
     }
 
     /**
@@ -234,17 +233,16 @@ public final class CostManagementClientImpl implements CostManagementClient {
         this.serializerAdapter = serializerAdapter;
         this.defaultPollInterval = defaultPollInterval;
         this.endpoint = endpoint;
-        this.exports = new ExportsClientImpl(this);
-        this.generateDetailedCostReports = new GenerateDetailedCostReportsClientImpl(this);
-        this.generateDetailedCostReportOperationResults =
-            new GenerateDetailedCostReportOperationResultsClientImpl(this);
-        this.generateDetailedCostReportOperationStatus = new GenerateDetailedCostReportOperationStatusClientImpl(this);
+        this.apiVersion = "2019-11-01";
+        this.settings = new SettingsClientImpl(this);
         this.views = new ViewsClientImpl(this);
         this.alerts = new AlertsClientImpl(this);
         this.forecasts = new ForecastsClientImpl(this);
         this.dimensions = new DimensionsClientImpl(this);
         this.queries = new QueriesClientImpl(this);
+        this.generateReservationDetailsReports = new GenerateReservationDetailsReportsClientImpl(this);
         this.operations = new OperationsClientImpl(this);
+        this.exports = new ExportsClientImpl(this);
     }
 
     /**

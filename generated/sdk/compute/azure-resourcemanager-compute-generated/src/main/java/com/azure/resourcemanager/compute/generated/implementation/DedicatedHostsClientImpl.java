@@ -204,6 +204,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -214,7 +215,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
                             resourceGroupName,
                             hostGroupName,
                             hostname,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -269,6 +270,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -277,7 +279,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
                 resourceGroupName,
                 hostGroupName,
                 hostname,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -506,6 +508,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -516,7 +519,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
                             resourceGroupName,
                             hostGroupName,
                             hostname,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             parameters,
                             accept,
@@ -571,6 +574,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
         } else {
             parameters.validate();
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -579,7 +583,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
                 resourceGroupName,
                 hostGroupName,
                 hostname,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 parameters,
                 accept,
@@ -801,6 +805,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         return FluxUtil
             .withContext(
                 context ->
@@ -810,7 +815,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
                             resourceGroupName,
                             hostGroupName,
                             hostname,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -853,6 +858,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         context = this.client.mergeContext(context);
         return service
             .delete(
@@ -860,7 +866,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
                 resourceGroupName,
                 hostGroupName,
                 hostname,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 context);
     }
@@ -1049,6 +1055,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1060,7 +1067,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
                             hostGroupName,
                             hostname,
                             expand,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -1106,6 +1113,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1115,7 +1123,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
                 hostGroupName,
                 hostname,
                 expand,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 accept,
                 context);
@@ -1243,6 +1251,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(
@@ -1252,7 +1261,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
                             this.client.getEndpoint(),
                             resourceGroupName,
                             hostGroupName,
-                            this.client.getApiVersion(),
+                            apiVersion,
                             this.client.getSubscriptionId(),
                             accept,
                             context))
@@ -1302,6 +1311,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
                     new IllegalArgumentException(
                         "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
+        final String apiVersion = "2021-03-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1309,7 +1319,7 @@ public final class DedicatedHostsClientImpl implements DedicatedHostsClient {
                 this.client.getEndpoint(),
                 resourceGroupName,
                 hostGroupName,
-                this.client.getApiVersion(),
+                apiVersion,
                 this.client.getSubscriptionId(),
                 accept,
                 context)
