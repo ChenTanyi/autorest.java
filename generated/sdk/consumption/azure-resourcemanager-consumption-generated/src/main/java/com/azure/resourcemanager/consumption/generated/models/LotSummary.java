@@ -86,7 +86,42 @@ public interface LotSummary {
      *
      * @return the status value.
      */
-    String status();
+    Status status();
+
+    /**
+     * Gets the creditCurrency property: The currency of the lot.
+     *
+     * @return the creditCurrency value.
+     */
+    String creditCurrency();
+
+    /**
+     * Gets the billingCurrency property: The billing currency of the lot.
+     *
+     * @return the billingCurrency value.
+     */
+    String billingCurrency();
+
+    /**
+     * Gets the originalAmountInBillingCurrency property: The original amount of a lot in billing currency.
+     *
+     * @return the originalAmountInBillingCurrency value.
+     */
+    AmountWithExchangeRate originalAmountInBillingCurrency();
+
+    /**
+     * Gets the closedBalanceInBillingCurrency property: The balance as of the last invoice in billing currency.
+     *
+     * @return the closedBalanceInBillingCurrency value.
+     */
+    AmountWithExchangeRate closedBalanceInBillingCurrency();
+
+    /**
+     * Gets the reseller property: The reseller of the lot.
+     *
+     * @return the reseller value.
+     */
+    Reseller reseller();
 
     /**
      * Gets the etag property: The etag for the resource.

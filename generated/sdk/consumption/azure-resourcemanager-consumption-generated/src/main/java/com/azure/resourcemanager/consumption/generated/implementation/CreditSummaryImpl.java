@@ -8,6 +8,7 @@ import com.azure.resourcemanager.consumption.generated.fluent.models.CreditSumma
 import com.azure.resourcemanager.consumption.generated.models.Amount;
 import com.azure.resourcemanager.consumption.generated.models.CreditBalanceSummary;
 import com.azure.resourcemanager.consumption.generated.models.CreditSummary;
+import com.azure.resourcemanager.consumption.generated.models.Reseller;
 import java.util.Collections;
 import java.util.Map;
 
@@ -49,6 +50,18 @@ public final class CreditSummaryImpl implements CreditSummary {
 
     public Amount pendingEligibleCharges() {
         return this.innerModel().pendingEligibleCharges();
+    }
+
+    public String creditCurrency() {
+        return this.innerModel().creditCurrency();
+    }
+
+    public String billingCurrency() {
+        return this.innerModel().billingCurrency();
+    }
+
+    public Reseller reseller() {
+        return this.innerModel().reseller();
     }
 
     public String etag() {

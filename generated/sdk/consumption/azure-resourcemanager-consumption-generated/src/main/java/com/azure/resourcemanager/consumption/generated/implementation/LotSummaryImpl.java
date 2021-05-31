@@ -6,8 +6,11 @@ package com.azure.resourcemanager.consumption.generated.implementation;
 
 import com.azure.resourcemanager.consumption.generated.fluent.models.LotSummaryInner;
 import com.azure.resourcemanager.consumption.generated.models.Amount;
+import com.azure.resourcemanager.consumption.generated.models.AmountWithExchangeRate;
 import com.azure.resourcemanager.consumption.generated.models.LotSource;
 import com.azure.resourcemanager.consumption.generated.models.LotSummary;
+import com.azure.resourcemanager.consumption.generated.models.Reseller;
+import com.azure.resourcemanager.consumption.generated.models.Status;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.Map;
@@ -64,8 +67,28 @@ public final class LotSummaryImpl implements LotSummary {
         return this.innerModel().purchaseDate();
     }
 
-    public String status() {
+    public Status status() {
         return this.innerModel().status();
+    }
+
+    public String creditCurrency() {
+        return this.innerModel().creditCurrency();
+    }
+
+    public String billingCurrency() {
+        return this.innerModel().billingCurrency();
+    }
+
+    public AmountWithExchangeRate originalAmountInBillingCurrency() {
+        return this.innerModel().originalAmountInBillingCurrency();
+    }
+
+    public AmountWithExchangeRate closedBalanceInBillingCurrency() {
+        return this.innerModel().closedBalanceInBillingCurrency();
+    }
+
+    public Reseller reseller() {
+        return this.innerModel().reseller();
     }
 
     public String etag() {

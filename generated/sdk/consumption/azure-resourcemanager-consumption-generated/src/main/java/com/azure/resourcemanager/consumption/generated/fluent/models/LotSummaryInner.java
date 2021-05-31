@@ -9,7 +9,10 @@ import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.management.ProxyResource;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.consumption.generated.models.Amount;
+import com.azure.resourcemanager.consumption.generated.models.AmountWithExchangeRate;
 import com.azure.resourcemanager.consumption.generated.models.LotSource;
+import com.azure.resourcemanager.consumption.generated.models.Reseller;
+import com.azure.resourcemanager.consumption.generated.models.Status;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
@@ -68,7 +71,37 @@ public class LotSummaryInner extends ProxyResource {
      * The status of the lot.
      */
     @JsonProperty(value = "properties.status", access = JsonProperty.Access.WRITE_ONLY)
-    private String status;
+    private Status status;
+
+    /*
+     * The currency of the lot.
+     */
+    @JsonProperty(value = "properties.creditCurrency", access = JsonProperty.Access.WRITE_ONLY)
+    private String creditCurrency;
+
+    /*
+     * The billing currency of the lot.
+     */
+    @JsonProperty(value = "properties.billingCurrency", access = JsonProperty.Access.WRITE_ONLY)
+    private String billingCurrency;
+
+    /*
+     * The original amount of a lot in billing currency.
+     */
+    @JsonProperty(value = "properties.originalAmountInBillingCurrency", access = JsonProperty.Access.WRITE_ONLY)
+    private AmountWithExchangeRate originalAmountInBillingCurrency;
+
+    /*
+     * The balance as of the last invoice in billing currency.
+     */
+    @JsonProperty(value = "properties.closedBalanceInBillingCurrency", access = JsonProperty.Access.WRITE_ONLY)
+    private AmountWithExchangeRate closedBalanceInBillingCurrency;
+
+    /*
+     * The reseller of the lot.
+     */
+    @JsonProperty(value = "properties.reseller", access = JsonProperty.Access.WRITE_ONLY)
+    private Reseller reseller;
 
     /*
      * The etag for the resource.
@@ -151,8 +184,53 @@ public class LotSummaryInner extends ProxyResource {
      *
      * @return the status value.
      */
-    public String status() {
+    public Status status() {
         return this.status;
+    }
+
+    /**
+     * Get the creditCurrency property: The currency of the lot.
+     *
+     * @return the creditCurrency value.
+     */
+    public String creditCurrency() {
+        return this.creditCurrency;
+    }
+
+    /**
+     * Get the billingCurrency property: The billing currency of the lot.
+     *
+     * @return the billingCurrency value.
+     */
+    public String billingCurrency() {
+        return this.billingCurrency;
+    }
+
+    /**
+     * Get the originalAmountInBillingCurrency property: The original amount of a lot in billing currency.
+     *
+     * @return the originalAmountInBillingCurrency value.
+     */
+    public AmountWithExchangeRate originalAmountInBillingCurrency() {
+        return this.originalAmountInBillingCurrency;
+    }
+
+    /**
+     * Get the closedBalanceInBillingCurrency property: The balance as of the last invoice in billing currency.
+     *
+     * @return the closedBalanceInBillingCurrency value.
+     */
+    public AmountWithExchangeRate closedBalanceInBillingCurrency() {
+        return this.closedBalanceInBillingCurrency;
+    }
+
+    /**
+     * Get the reseller property: The reseller of the lot.
+     *
+     * @return the reseller value.
+     */
+    public Reseller reseller() {
+        return this.reseller;
     }
 
     /**
@@ -184,6 +262,15 @@ public class LotSummaryInner extends ProxyResource {
         }
         if (closedBalance() != null) {
             closedBalance().validate();
+        }
+        if (originalAmountInBillingCurrency() != null) {
+            originalAmountInBillingCurrency().validate();
+        }
+        if (closedBalanceInBillingCurrency() != null) {
+            closedBalanceInBillingCurrency().validate();
+        }
+        if (reseller() != null) {
+            reseller().validate();
         }
     }
 }

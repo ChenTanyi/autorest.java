@@ -127,6 +127,72 @@ public interface EventSummary {
     String lotSource();
 
     /**
+     * Gets the canceledCredit property: Amount of canceled credit.
+     *
+     * @return the canceledCredit value.
+     */
+    Amount canceledCredit();
+
+    /**
+     * Gets the creditCurrency property: The credit currency of the event.
+     *
+     * @return the creditCurrency value.
+     */
+    String creditCurrency();
+
+    /**
+     * Gets the billingCurrency property: The billing currency of the event.
+     *
+     * @return the billingCurrency value.
+     */
+    String billingCurrency();
+
+    /**
+     * Gets the reseller property: The reseller of the event.
+     *
+     * @return the reseller value.
+     */
+    Reseller reseller();
+
+    /**
+     * Gets the creditExpiredInBillingCurrency property: The amount of expired credit or commitment for NewCredit or
+     * SettleCharges event in billing currency.
+     *
+     * @return the creditExpiredInBillingCurrency value.
+     */
+    AmountWithExchangeRate creditExpiredInBillingCurrency();
+
+    /**
+     * Gets the newCreditInBillingCurrency property: The amount of new credit or commitment for NewCredit or
+     * SettleCharges event in billing currency.
+     *
+     * @return the newCreditInBillingCurrency value.
+     */
+    AmountWithExchangeRate newCreditInBillingCurrency();
+
+    /**
+     * Gets the adjustmentsInBillingCurrency property: The amount of balance adjustment in billing currency.
+     *
+     * @return the adjustmentsInBillingCurrency value.
+     */
+    AmountWithExchangeRate adjustmentsInBillingCurrency();
+
+    /**
+     * Gets the chargesInBillingCurrency property: The amount of charges for events of type SettleCharges and
+     * PendingEligibleCharges in billing currency.
+     *
+     * @return the chargesInBillingCurrency value.
+     */
+    AmountWithExchangeRate chargesInBillingCurrency();
+
+    /**
+     * Gets the closedBalanceInBillingCurrency property: The balance in billing currency after the event.
+     *
+     * @return the closedBalanceInBillingCurrency value.
+     */
+    AmountWithExchangeRate closedBalanceInBillingCurrency();
+
+    /**
      * Gets the etag property: The etag for the resource.
      *
      * @return the etag value.

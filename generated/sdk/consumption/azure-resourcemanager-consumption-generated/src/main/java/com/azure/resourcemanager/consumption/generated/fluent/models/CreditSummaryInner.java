@@ -10,6 +10,7 @@ import com.azure.core.management.ProxyResource;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.consumption.generated.models.Amount;
 import com.azure.resourcemanager.consumption.generated.models.CreditBalanceSummary;
+import com.azure.resourcemanager.consumption.generated.models.Reseller;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
@@ -43,6 +44,24 @@ public class CreditSummaryInner extends ProxyResource {
      */
     @JsonProperty(value = "properties.pendingEligibleCharges", access = JsonProperty.Access.WRITE_ONLY)
     private Amount pendingEligibleCharges;
+
+    /*
+     * The credit currency.
+     */
+    @JsonProperty(value = "properties.creditCurrency", access = JsonProperty.Access.WRITE_ONLY)
+    private String creditCurrency;
+
+    /*
+     * The billing currency.
+     */
+    @JsonProperty(value = "properties.billingCurrency", access = JsonProperty.Access.WRITE_ONLY)
+    private String billingCurrency;
+
+    /*
+     * Credit's reseller.
+     */
+    @JsonProperty(value = "properties.reseller", access = JsonProperty.Access.WRITE_ONLY)
+    private Reseller reseller;
 
     /*
      * The etag for the resource.
@@ -93,6 +112,33 @@ public class CreditSummaryInner extends ProxyResource {
     }
 
     /**
+     * Get the creditCurrency property: The credit currency.
+     *
+     * @return the creditCurrency value.
+     */
+    public String creditCurrency() {
+        return this.creditCurrency;
+    }
+
+    /**
+     * Get the billingCurrency property: The billing currency.
+     *
+     * @return the billingCurrency value.
+     */
+    public String billingCurrency() {
+        return this.billingCurrency;
+    }
+
+    /**
+     * Get the reseller property: Credit's reseller.
+     *
+     * @return the reseller value.
+     */
+    public Reseller reseller() {
+        return this.reseller;
+    }
+
+    /**
      * Get the etag property: The etag for the resource.
      *
      * @return the etag value.
@@ -127,6 +173,9 @@ public class CreditSummaryInner extends ProxyResource {
         }
         if (pendingEligibleCharges() != null) {
             pendingEligibleCharges().validate();
+        }
+        if (reseller() != null) {
+            reseller().validate();
         }
     }
 }

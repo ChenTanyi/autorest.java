@@ -6,8 +6,10 @@ package com.azure.resourcemanager.consumption.generated.implementation;
 
 import com.azure.resourcemanager.consumption.generated.fluent.models.EventSummaryInner;
 import com.azure.resourcemanager.consumption.generated.models.Amount;
+import com.azure.resourcemanager.consumption.generated.models.AmountWithExchangeRate;
 import com.azure.resourcemanager.consumption.generated.models.EventSummary;
 import com.azure.resourcemanager.consumption.generated.models.EventType;
+import com.azure.resourcemanager.consumption.generated.models.Reseller;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.Map;
@@ -86,6 +88,42 @@ public final class EventSummaryImpl implements EventSummary {
 
     public String lotSource() {
         return this.innerModel().lotSource();
+    }
+
+    public Amount canceledCredit() {
+        return this.innerModel().canceledCredit();
+    }
+
+    public String creditCurrency() {
+        return this.innerModel().creditCurrency();
+    }
+
+    public String billingCurrency() {
+        return this.innerModel().billingCurrency();
+    }
+
+    public Reseller reseller() {
+        return this.innerModel().reseller();
+    }
+
+    public AmountWithExchangeRate creditExpiredInBillingCurrency() {
+        return this.innerModel().creditExpiredInBillingCurrency();
+    }
+
+    public AmountWithExchangeRate newCreditInBillingCurrency() {
+        return this.innerModel().newCreditInBillingCurrency();
+    }
+
+    public AmountWithExchangeRate adjustmentsInBillingCurrency() {
+        return this.innerModel().adjustmentsInBillingCurrency();
+    }
+
+    public AmountWithExchangeRate chargesInBillingCurrency() {
+        return this.innerModel().chargesInBillingCurrency();
+    }
+
+    public AmountWithExchangeRate closedBalanceInBillingCurrency() {
+        return this.innerModel().closedBalanceInBillingCurrency();
     }
 
     public String etag() {

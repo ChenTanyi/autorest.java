@@ -59,6 +59,27 @@ public interface CreditSummary {
     Amount pendingEligibleCharges();
 
     /**
+     * Gets the creditCurrency property: The credit currency.
+     *
+     * @return the creditCurrency value.
+     */
+    String creditCurrency();
+
+    /**
+     * Gets the billingCurrency property: The billing currency.
+     *
+     * @return the billingCurrency value.
+     */
+    String billingCurrency();
+
+    /**
+     * Gets the reseller property: Credit's reseller.
+     *
+     * @return the reseller value.
+     */
+    Reseller reseller();
+
+    /**
      * Gets the etag property: The etag for the resource.
      *
      * @return the etag value.
