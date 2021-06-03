@@ -69,6 +69,13 @@ public interface EHNamespace {
     String provisioningState();
 
     /**
+     * Gets the status property: Status of the Namespace.
+     *
+     * @return the status value.
+     */
+    String status();
+
+    /**
      * Gets the createdAt property: The time the Namespace was created.
      *
      * @return the createdAt value.

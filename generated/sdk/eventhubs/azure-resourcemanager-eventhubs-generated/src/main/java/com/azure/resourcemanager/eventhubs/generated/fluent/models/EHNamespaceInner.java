@@ -41,6 +41,12 @@ public class EHNamespaceInner extends Resource {
     private String provisioningState;
 
     /*
+     * Status of the Namespace.
+     */
+    @JsonProperty(value = "properties.status", access = JsonProperty.Access.WRITE_ONLY)
+    private String status;
+
+    /*
      * The time the Namespace was created.
      */
     @JsonProperty(value = "properties.createdAt", access = JsonProperty.Access.WRITE_ONLY)
@@ -151,6 +157,15 @@ public class EHNamespaceInner extends Resource {
      */
     public String provisioningState() {
         return this.provisioningState;
+    }
+
+    /**
+     * Get the status property: Status of the Namespace.
+     *
+     * @return the status value.
+     */
+    public String status() {
+        return this.status;
     }
 
     /**

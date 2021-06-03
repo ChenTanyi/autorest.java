@@ -57,6 +57,10 @@ public final class EHNamespaceImpl implements EHNamespace, EHNamespace.Definitio
         return this.innerModel().provisioningState();
     }
 
+    public String status() {
+        return this.innerModel().status();
+    }
+
     public OffsetDateTime createdAt() {
         return this.innerModel().createdAt();
     }

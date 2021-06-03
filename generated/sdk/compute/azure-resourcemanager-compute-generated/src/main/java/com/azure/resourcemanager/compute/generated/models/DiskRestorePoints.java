@@ -90,4 +90,98 @@ public interface DiskRestorePoints {
      */
     PagedIterable<DiskRestorePoint> listByRestorePoint(
         String resourceGroupName, String restorePointCollectionName, String vmRestorePointName, Context context);
+
+    /**
+     * Grants access to a diskRestorePoint.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param restorePointCollectionName The name of the restore point collection that the disk restore point belongs.
+     *     Supported characters for the name are a-z, A-Z, 0-9 and _. The maximum name length is 80 characters.
+     * @param vmRestorePointName The name of the vm restore point that the disk disk restore point belongs. Supported
+     *     characters for the name are a-z, A-Z, 0-9 and _. The maximum name length is 80 characters.
+     * @param diskRestorePointName The name of the disk restore point created. Supported characters for the name are
+     *     a-z, A-Z, 0-9 and _. The maximum name length is 80 characters.
+     * @param grantAccessData Access data object supplied in the body of the get disk access operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a disk access SAS uri.
+     */
+    AccessUri grantAccess(
+        String resourceGroupName,
+        String restorePointCollectionName,
+        String vmRestorePointName,
+        String diskRestorePointName,
+        GrantAccessData grantAccessData);
+
+    /**
+     * Grants access to a diskRestorePoint.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param restorePointCollectionName The name of the restore point collection that the disk restore point belongs.
+     *     Supported characters for the name are a-z, A-Z, 0-9 and _. The maximum name length is 80 characters.
+     * @param vmRestorePointName The name of the vm restore point that the disk disk restore point belongs. Supported
+     *     characters for the name are a-z, A-Z, 0-9 and _. The maximum name length is 80 characters.
+     * @param diskRestorePointName The name of the disk restore point created. Supported characters for the name are
+     *     a-z, A-Z, 0-9 and _. The maximum name length is 80 characters.
+     * @param grantAccessData Access data object supplied in the body of the get disk access operation.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a disk access SAS uri.
+     */
+    AccessUri grantAccess(
+        String resourceGroupName,
+        String restorePointCollectionName,
+        String vmRestorePointName,
+        String diskRestorePointName,
+        GrantAccessData grantAccessData,
+        Context context);
+
+    /**
+     * Revokes access to a diskRestorePoint.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param restorePointCollectionName The name of the restore point collection that the disk restore point belongs.
+     *     Supported characters for the name are a-z, A-Z, 0-9 and _. The maximum name length is 80 characters.
+     * @param vmRestorePointName The name of the vm restore point that the disk disk restore point belongs. Supported
+     *     characters for the name are a-z, A-Z, 0-9 and _. The maximum name length is 80 characters.
+     * @param diskRestorePointName The name of the disk restore point created. Supported characters for the name are
+     *     a-z, A-Z, 0-9 and _. The maximum name length is 80 characters.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void revokeAccess(
+        String resourceGroupName,
+        String restorePointCollectionName,
+        String vmRestorePointName,
+        String diskRestorePointName);
+
+    /**
+     * Revokes access to a diskRestorePoint.
+     *
+     * @param resourceGroupName The name of the resource group.
+     * @param restorePointCollectionName The name of the restore point collection that the disk restore point belongs.
+     *     Supported characters for the name are a-z, A-Z, 0-9 and _. The maximum name length is 80 characters.
+     * @param vmRestorePointName The name of the vm restore point that the disk disk restore point belongs. Supported
+     *     characters for the name are a-z, A-Z, 0-9 and _. The maximum name length is 80 characters.
+     * @param diskRestorePointName The name of the disk restore point created. Supported characters for the name are
+     *     a-z, A-Z, 0-9 and _. The maximum name length is 80 characters.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     *     server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void revokeAccess(
+        String resourceGroupName,
+        String restorePointCollectionName,
+        String vmRestorePointName,
+        String diskRestorePointName,
+        Context context);
 }

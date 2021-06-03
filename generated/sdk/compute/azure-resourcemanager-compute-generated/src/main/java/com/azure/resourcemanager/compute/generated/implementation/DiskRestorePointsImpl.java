@@ -10,9 +10,12 @@ import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.compute.generated.fluent.DiskRestorePointsClient;
+import com.azure.resourcemanager.compute.generated.fluent.models.AccessUriInner;
 import com.azure.resourcemanager.compute.generated.fluent.models.DiskRestorePointInner;
+import com.azure.resourcemanager.compute.generated.models.AccessUri;
 import com.azure.resourcemanager.compute.generated.models.DiskRestorePoint;
 import com.azure.resourcemanager.compute.generated.models.DiskRestorePoints;
+import com.azure.resourcemanager.compute.generated.models.GrantAccessData;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public final class DiskRestorePointsImpl implements DiskRestorePoints {
@@ -81,6 +84,74 @@ public final class DiskRestorePointsImpl implements DiskRestorePoints {
                 .serviceClient()
                 .listByRestorePoint(resourceGroupName, restorePointCollectionName, vmRestorePointName, context);
         return Utils.mapPage(inner, inner1 -> new DiskRestorePointImpl(inner1, this.manager()));
+    }
+
+    public AccessUri grantAccess(
+        String resourceGroupName,
+        String restorePointCollectionName,
+        String vmRestorePointName,
+        String diskRestorePointName,
+        GrantAccessData grantAccessData) {
+        AccessUriInner inner =
+            this
+                .serviceClient()
+                .grantAccess(
+                    resourceGroupName,
+                    restorePointCollectionName,
+                    vmRestorePointName,
+                    diskRestorePointName,
+                    grantAccessData);
+        if (inner != null) {
+            return new AccessUriImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public AccessUri grantAccess(
+        String resourceGroupName,
+        String restorePointCollectionName,
+        String vmRestorePointName,
+        String diskRestorePointName,
+        GrantAccessData grantAccessData,
+        Context context) {
+        AccessUriInner inner =
+            this
+                .serviceClient()
+                .grantAccess(
+                    resourceGroupName,
+                    restorePointCollectionName,
+                    vmRestorePointName,
+                    diskRestorePointName,
+                    grantAccessData,
+                    context);
+        if (inner != null) {
+            return new AccessUriImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public void revokeAccess(
+        String resourceGroupName,
+        String restorePointCollectionName,
+        String vmRestorePointName,
+        String diskRestorePointName) {
+        this
+            .serviceClient()
+            .revokeAccess(resourceGroupName, restorePointCollectionName, vmRestorePointName, diskRestorePointName);
+    }
+
+    public void revokeAccess(
+        String resourceGroupName,
+        String restorePointCollectionName,
+        String vmRestorePointName,
+        String diskRestorePointName,
+        Context context) {
+        this
+            .serviceClient()
+            .revokeAccess(
+                resourceGroupName, restorePointCollectionName, vmRestorePointName, diskRestorePointName, context);
     }
 
     private DiskRestorePointsClient serviceClient() {
