@@ -22,6 +22,7 @@ import com.azure.core.util.Configuration;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.keyvault.generated.fluent.KeyVaultManagementClient;
 import com.azure.resourcemanager.keyvault.generated.implementation.KeyVaultManagementClientBuilder;
+import com.azure.resourcemanager.keyvault.generated.implementation.KeysImpl;
 import com.azure.resourcemanager.keyvault.generated.implementation.ManagedHsmsImpl;
 import com.azure.resourcemanager.keyvault.generated.implementation.MhsmPrivateEndpointConnectionsImpl;
 import com.azure.resourcemanager.keyvault.generated.implementation.MhsmPrivateLinkResourcesImpl;
@@ -30,6 +31,7 @@ import com.azure.resourcemanager.keyvault.generated.implementation.PrivateEndpoi
 import com.azure.resourcemanager.keyvault.generated.implementation.PrivateLinkResourcesImpl;
 import com.azure.resourcemanager.keyvault.generated.implementation.SecretsImpl;
 import com.azure.resourcemanager.keyvault.generated.implementation.VaultsImpl;
+import com.azure.resourcemanager.keyvault.generated.models.Keys;
 import com.azure.resourcemanager.keyvault.generated.models.ManagedHsms;
 import com.azure.resourcemanager.keyvault.generated.models.MhsmPrivateEndpointConnections;
 import com.azure.resourcemanager.keyvault.generated.models.MhsmPrivateLinkResources;
@@ -49,6 +51,8 @@ import java.util.Objects;
  * Azure Key Vault.
  */
 public final class KeyVaultManager {
+    private Keys keys;
+
     private Vaults vaults;
 
     private PrivateEndpointConnections privateEndpointConnections;
@@ -238,6 +242,14 @@ public final class KeyVaultManager {
                     .build();
             return new KeyVaultManager(httpPipeline, profile, defaultPollInterval);
         }
+    }
+
+    /** @return Resource collection API of Keys. */
+    public Keys keys() {
+        if (this.keys == null) {
+            this.keys = new KeysImpl(clientObject.getKeys(), this);
+        }
+        return keys;
     }
 
     /** @return Resource collection API of Vaults. */

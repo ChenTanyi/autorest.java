@@ -46,6 +46,13 @@ public interface KeyVaultManagementClient {
     Duration getDefaultPollInterval();
 
     /**
+     * Gets the KeysClient object to access its operations.
+     *
+     * @return the KeysClient object.
+     */
+    KeysClient getKeys();
+
+    /**
      * Gets the VaultsClient object to access its operations.
      *
      * @return the VaultsClient object.
