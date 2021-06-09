@@ -56,7 +56,7 @@ public interface MetricDefinition {
      *
      * @return the unit value.
      */
-    Unit unit();
+    MetricUnit unit();
 
     /**
      * Gets the primaryAggregationType property: the primary aggregation type value defining how to use the values for

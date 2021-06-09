@@ -117,6 +117,10 @@ public final class WorkspaceImpl implements Workspace, Workspace.Definition, Wor
         return this.innerModel().clusterResourceId();
     }
 
+    public Boolean disableLocalAuth() {
+        return this.innerModel().disableLocalAuth();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -359,6 +363,16 @@ public final class WorkspaceImpl implements Workspace, Workspace.Definition, Wor
             return this;
         } else {
             this.updateParameters.withClusterResourceId(clusterResourceId);
+            return this;
+        }
+    }
+
+    public WorkspaceImpl withDisableLocalAuth(Boolean disableLocalAuth) {
+        if (isInCreateMode()) {
+            this.innerModel().withDisableLocalAuth(disableLocalAuth);
+            return this;
+        } else {
+            this.updateParameters.withDisableLocalAuth(disableLocalAuth);
             return this;
         }
     }

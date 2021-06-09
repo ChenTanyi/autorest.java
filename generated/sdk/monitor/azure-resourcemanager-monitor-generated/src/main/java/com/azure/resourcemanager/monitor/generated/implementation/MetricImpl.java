@@ -8,8 +8,8 @@ import com.azure.resourcemanager.monitor.generated.fluent.models.LocalizableStri
 import com.azure.resourcemanager.monitor.generated.fluent.models.MetricInner;
 import com.azure.resourcemanager.monitor.generated.models.LocalizableString;
 import com.azure.resourcemanager.monitor.generated.models.Metric;
+import com.azure.resourcemanager.monitor.generated.models.MetricUnit;
 import com.azure.resourcemanager.monitor.generated.models.TimeSeriesElement;
-import com.azure.resourcemanager.monitor.generated.models.Unit;
 import java.util.Collections;
 import java.util.List;
 
@@ -48,7 +48,7 @@ public final class MetricImpl implements Metric {
         return this.innerModel().errorCode();
     }
 
-    public Unit unit() {
+    public MetricUnit unit() {
         return this.innerModel().unit();
     }
 

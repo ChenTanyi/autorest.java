@@ -49,7 +49,7 @@ public interface Metric {
      *
      * @return the unit value.
      */
-    Unit unit();
+    MetricUnit unit();
 
     /**
      * Gets the timeseries property: the time series returned when a data query is performed.

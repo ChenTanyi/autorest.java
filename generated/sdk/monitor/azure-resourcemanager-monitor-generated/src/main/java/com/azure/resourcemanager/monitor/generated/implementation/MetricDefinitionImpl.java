@@ -10,7 +10,7 @@ import com.azure.resourcemanager.monitor.generated.models.AggregationType;
 import com.azure.resourcemanager.monitor.generated.models.LocalizableString;
 import com.azure.resourcemanager.monitor.generated.models.MetricAvailability;
 import com.azure.resourcemanager.monitor.generated.models.MetricDefinition;
-import com.azure.resourcemanager.monitor.generated.models.Unit;
+import com.azure.resourcemanager.monitor.generated.models.MetricUnit;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -55,7 +55,7 @@ public final class MetricDefinitionImpl implements MetricDefinition {
         return this.innerModel().category();
     }
 
-    public Unit unit() {
+    public MetricUnit unit() {
         return this.innerModel().unit();
     }
 

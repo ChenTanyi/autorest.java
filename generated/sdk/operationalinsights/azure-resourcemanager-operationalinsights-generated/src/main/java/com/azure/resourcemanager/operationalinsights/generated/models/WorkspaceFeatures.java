@@ -44,6 +44,12 @@ public final class WorkspaceFeatures {
     private String clusterResourceId;
 
     /*
+     * Disable Non-AAD based Auth.
+     */
+    @JsonProperty(value = "disableLocalAuth")
+    private Boolean disableLocalAuth;
+
+    /*
      * Workspace features.
      */
     @JsonIgnore private Map<String, Object> additionalProperties;
@@ -128,6 +134,26 @@ public final class WorkspaceFeatures {
      */
     public WorkspaceFeatures withClusterResourceId(String clusterResourceId) {
         this.clusterResourceId = clusterResourceId;
+        return this;
+    }
+
+    /**
+     * Get the disableLocalAuth property: Disable Non-AAD based Auth.
+     *
+     * @return the disableLocalAuth value.
+     */
+    public Boolean disableLocalAuth() {
+        return this.disableLocalAuth;
+    }
+
+    /**
+     * Set the disableLocalAuth property: Disable Non-AAD based Auth.
+     *
+     * @param disableLocalAuth the disableLocalAuth value to set.
+     * @return the WorkspaceFeatures object itself.
+     */
+    public WorkspaceFeatures withDisableLocalAuth(Boolean disableLocalAuth) {
+        this.disableLocalAuth = disableLocalAuth;
         return this;
     }
 

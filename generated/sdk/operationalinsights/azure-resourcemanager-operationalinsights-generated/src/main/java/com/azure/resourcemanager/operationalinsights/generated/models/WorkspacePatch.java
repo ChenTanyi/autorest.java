@@ -118,6 +118,12 @@ public class WorkspacePatch extends AzureEntityResource {
     @JsonProperty(value = "properties.features.clusterResourceId")
     private String clusterResourceId;
 
+    /*
+     * Disable Non-AAD based Auth.
+     */
+    @JsonProperty(value = "properties.features.disableLocalAuth")
+    private Boolean disableLocalAuth;
+
     /**
      * Get the tags property: Resource tags. Optional.
      *
@@ -396,6 +402,26 @@ public class WorkspacePatch extends AzureEntityResource {
      */
     public WorkspacePatch withClusterResourceId(String clusterResourceId) {
         this.clusterResourceId = clusterResourceId;
+        return this;
+    }
+
+    /**
+     * Get the disableLocalAuth property: Disable Non-AAD based Auth.
+     *
+     * @return the disableLocalAuth value.
+     */
+    public Boolean disableLocalAuth() {
+        return this.disableLocalAuth;
+    }
+
+    /**
+     * Set the disableLocalAuth property: Disable Non-AAD based Auth.
+     *
+     * @param disableLocalAuth the disableLocalAuth value to set.
+     * @return the WorkspacePatch object itself.
+     */
+    public WorkspacePatch withDisableLocalAuth(Boolean disableLocalAuth) {
+        this.disableLocalAuth = disableLocalAuth;
         return this;
     }
 

@@ -162,6 +162,13 @@ public interface Workspace {
     String clusterResourceId();
 
     /**
+     * Gets the disableLocalAuth property: Disable Non-AAD based Auth.
+     *
+     * @return the disableLocalAuth value.
+     */
+    Boolean disableLocalAuth();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -239,7 +246,8 @@ public interface Workspace {
                 DefinitionStages.WithEnableDataExport,
                 DefinitionStages.WithImmediatePurgeDataOn30Days,
                 DefinitionStages.WithEnableLogAccessUsingOnlyResourcePermissions,
-                DefinitionStages.WithClusterResourceId {
+                DefinitionStages.WithClusterResourceId,
+                DefinitionStages.WithDisableLocalAuth {
             /**
              * Executes the create request.
              *
@@ -395,6 +403,16 @@ public interface Workspace {
              */
             WithCreate withClusterResourceId(String clusterResourceId);
         }
+        /** The stage of the Workspace definition allowing to specify disableLocalAuth. */
+        interface WithDisableLocalAuth {
+            /**
+             * Specifies the disableLocalAuth property: Disable Non-AAD based Auth..
+             *
+             * @param disableLocalAuth Disable Non-AAD based Auth.
+             * @return the next definition stage.
+             */
+            WithCreate withDisableLocalAuth(Boolean disableLocalAuth);
+        }
     }
     /**
      * Begins update for the Workspace resource.
@@ -416,7 +434,8 @@ public interface Workspace {
             UpdateStages.WithEnableDataExport,
             UpdateStages.WithImmediatePurgeDataOn30Days,
             UpdateStages.WithEnableLogAccessUsingOnlyResourcePermissions,
-            UpdateStages.WithClusterResourceId {
+            UpdateStages.WithClusterResourceId,
+            UpdateStages.WithDisableLocalAuth {
         /**
          * Executes the update request.
          *
@@ -562,6 +581,16 @@ public interface Workspace {
              * @return the next definition stage.
              */
             Update withClusterResourceId(String clusterResourceId);
+        }
+        /** The stage of the Workspace update allowing to specify disableLocalAuth. */
+        interface WithDisableLocalAuth {
+            /**
+             * Specifies the disableLocalAuth property: Disable Non-AAD based Auth..
+             *
+             * @param disableLocalAuth Disable Non-AAD based Auth.
+             * @return the next definition stage.
+             */
+            Update withDisableLocalAuth(Boolean disableLocalAuth);
         }
     }
     /**

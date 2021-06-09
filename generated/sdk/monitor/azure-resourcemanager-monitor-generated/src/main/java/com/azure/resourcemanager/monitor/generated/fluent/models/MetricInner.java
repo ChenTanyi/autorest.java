@@ -6,8 +6,8 @@ package com.azure.resourcemanager.monitor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.resourcemanager.monitor.generated.models.MetricUnit;
 import com.azure.resourcemanager.monitor.generated.models.TimeSeriesElement;
-import com.azure.resourcemanager.monitor.generated.models.Unit;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -52,7 +52,7 @@ public final class MetricInner {
      * the unit of the metric.
      */
     @JsonProperty(value = "unit", required = true)
-    private Unit unit;
+    private MetricUnit unit;
 
     /*
      * the time series returned when a data query is performed.
@@ -165,7 +165,7 @@ public final class MetricInner {
      *
      * @return the unit value.
      */
-    public Unit unit() {
+    public MetricUnit unit() {
         return this.unit;
     }
 
@@ -175,7 +175,7 @@ public final class MetricInner {
      * @param unit the unit value to set.
      * @return the MetricInner object itself.
      */
-    public MetricInner withUnit(Unit unit) {
+    public MetricInner withUnit(MetricUnit unit) {
         this.unit = unit;
         return this;
     }
