@@ -58,6 +58,9 @@ public final class KeyPermissions extends ExpandableStringEnum<KeyPermissions> {
     /** Static value purge for KeyPermissions. */
     public static final KeyPermissions PURGE = fromString("purge");
 
+    /** Static value release for KeyPermissions. */
+    public static final KeyPermissions RELEASE = fromString("release");
+
     /**
      * Creates or finds a KeyPermissions from its string representation.
      *
