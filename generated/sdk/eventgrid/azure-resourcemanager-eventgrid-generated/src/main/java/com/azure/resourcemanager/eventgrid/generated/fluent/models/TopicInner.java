@@ -116,6 +116,14 @@ public class TopicInner extends Resource {
     @JsonProperty(value = "properties.inboundIpRules")
     private List<InboundIpRule> inboundIpRules;
 
+    /*
+     * This boolean is used to enable or disable local auth. Default value is
+     * false. When the property is set to true, only AAD token will be used to
+     * authenticate if user is allowed to publish to the topic.
+     */
+    @JsonProperty(value = "properties.disableLocalAuth")
+    private Boolean disableLocalAuth;
+
     /**
      * Get the sku property: The Sku pricing tier for the topic.
      *
@@ -330,6 +338,30 @@ public class TopicInner extends Resource {
      */
     public TopicInner withInboundIpRules(List<InboundIpRule> inboundIpRules) {
         this.inboundIpRules = inboundIpRules;
+        return this;
+    }
+
+    /**
+     * Get the disableLocalAuth property: This boolean is used to enable or disable local auth. Default value is false.
+     * When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to
+     * the topic.
+     *
+     * @return the disableLocalAuth value.
+     */
+    public Boolean disableLocalAuth() {
+        return this.disableLocalAuth;
+    }
+
+    /**
+     * Set the disableLocalAuth property: This boolean is used to enable or disable local auth. Default value is false.
+     * When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to
+     * the topic.
+     *
+     * @param disableLocalAuth the disableLocalAuth value to set.
+     * @return the TopicInner object itself.
+     */
+    public TopicInner withDisableLocalAuth(Boolean disableLocalAuth) {
+        this.disableLocalAuth = disableLocalAuth;
         return this;
     }
 

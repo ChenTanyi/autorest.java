@@ -9,13 +9,19 @@ import com.azure.core.management.Region;
 import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.PartnerNamespaceInner;
+import com.azure.resourcemanager.eventgrid.generated.fluent.models.PrivateEndpointConnectionInner;
+import com.azure.resourcemanager.eventgrid.generated.models.InboundIpRule;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerNamespace;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerNamespaceProvisioningState;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerNamespaceRegenerateKeyRequest;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerNamespaceSharedAccessKeys;
 import com.azure.resourcemanager.eventgrid.generated.models.PartnerNamespaceUpdateParameters;
+import com.azure.resourcemanager.eventgrid.generated.models.PrivateEndpointConnection;
+import com.azure.resourcemanager.eventgrid.generated.models.PublicNetworkAccess;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public final class PartnerNamespaceImpl
     implements PartnerNamespace, PartnerNamespace.Definition, PartnerNamespace.Update {
@@ -52,6 +58,20 @@ public final class PartnerNamespaceImpl
         return this.innerModel().systemData();
     }
 
+    public List<PrivateEndpointConnection> privateEndpointConnections() {
+        List<PrivateEndpointConnectionInner> inner = this.innerModel().privateEndpointConnections();
+        if (inner != null) {
+            return Collections
+                .unmodifiableList(
+                    inner
+                        .stream()
+                        .map(inner1 -> new PrivateEndpointConnectionImpl(inner1, this.manager()))
+                        .collect(Collectors.toList()));
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
     public PartnerNamespaceProvisioningState provisioningState() {
         return this.innerModel().provisioningState();
     }
@@ -62,6 +82,23 @@ public final class PartnerNamespaceImpl
 
     public String endpoint() {
         return this.innerModel().endpoint();
+    }
+
+    public PublicNetworkAccess publicNetworkAccess() {
+        return this.innerModel().publicNetworkAccess();
+    }
+
+    public List<InboundIpRule> inboundIpRules() {
+        List<InboundIpRule> inner = this.innerModel().inboundIpRules();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public Boolean disableLocalAuth() {
+        return this.innerModel().disableLocalAuth();
     }
 
     public Region region() {
@@ -213,6 +250,36 @@ public final class PartnerNamespaceImpl
     public PartnerNamespaceImpl withPartnerRegistrationFullyQualifiedId(String partnerRegistrationFullyQualifiedId) {
         this.innerModel().withPartnerRegistrationFullyQualifiedId(partnerRegistrationFullyQualifiedId);
         return this;
+    }
+
+    public PartnerNamespaceImpl withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess) {
+        if (isInCreateMode()) {
+            this.innerModel().withPublicNetworkAccess(publicNetworkAccess);
+            return this;
+        } else {
+            this.updatePartnerNamespaceUpdateParameters.withPublicNetworkAccess(publicNetworkAccess);
+            return this;
+        }
+    }
+
+    public PartnerNamespaceImpl withInboundIpRules(List<InboundIpRule> inboundIpRules) {
+        if (isInCreateMode()) {
+            this.innerModel().withInboundIpRules(inboundIpRules);
+            return this;
+        } else {
+            this.updatePartnerNamespaceUpdateParameters.withInboundIpRules(inboundIpRules);
+            return this;
+        }
+    }
+
+    public PartnerNamespaceImpl withDisableLocalAuth(Boolean disableLocalAuth) {
+        if (isInCreateMode()) {
+            this.innerModel().withDisableLocalAuth(disableLocalAuth);
+            return this;
+        } else {
+            this.updatePartnerNamespaceUpdateParameters.withDisableLocalAuth(disableLocalAuth);
+            return this;
+        }
     }
 
     private boolean isInCreateMode() {

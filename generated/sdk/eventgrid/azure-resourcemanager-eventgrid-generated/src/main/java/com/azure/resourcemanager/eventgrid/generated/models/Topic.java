@@ -147,6 +147,15 @@ public interface Topic {
     List<InboundIpRule> inboundIpRules();
 
     /**
+     * Gets the disableLocalAuth property: This boolean is used to enable or disable local auth. Default value is false.
+     * When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to
+     * the topic.
+     *
+     * @return the disableLocalAuth value.
+     */
+    Boolean disableLocalAuth();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -220,7 +229,8 @@ public interface Topic {
                 DefinitionStages.WithInputSchema,
                 DefinitionStages.WithInputSchemaMapping,
                 DefinitionStages.WithPublicNetworkAccess,
-                DefinitionStages.WithInboundIpRules {
+                DefinitionStages.WithInboundIpRules,
+                DefinitionStages.WithDisableLocalAuth {
             /**
              * Executes the create request.
              *
@@ -339,6 +349,20 @@ public interface Topic {
              */
             WithCreate withInboundIpRules(List<InboundIpRule> inboundIpRules);
         }
+        /** The stage of the Topic definition allowing to specify disableLocalAuth. */
+        interface WithDisableLocalAuth {
+            /**
+             * Specifies the disableLocalAuth property: This boolean is used to enable or disable local auth. Default
+             * value is false. When the property is set to true, only AAD token will be used to authenticate if user is
+             * allowed to publish to the topic..
+             *
+             * @param disableLocalAuth This boolean is used to enable or disable local auth. Default value is false.
+             *     When the property is set to true, only AAD token will be used to authenticate if user is allowed to
+             *     publish to the topic.
+             * @return the next definition stage.
+             */
+            WithCreate withDisableLocalAuth(Boolean disableLocalAuth);
+        }
     }
     /**
      * Begins update for the Topic resource.
@@ -353,7 +377,8 @@ public interface Topic {
             UpdateStages.WithIdentity,
             UpdateStages.WithSku,
             UpdateStages.WithPublicNetworkAccess,
-            UpdateStages.WithInboundIpRules {
+            UpdateStages.WithInboundIpRules,
+            UpdateStages.WithDisableLocalAuth {
         /**
          * Executes the update request.
          *
@@ -374,9 +399,9 @@ public interface Topic {
         /** The stage of the Topic update allowing to specify tags. */
         interface WithTags {
             /**
-             * Specifies the tags property: Tags of the resource..
+             * Specifies the tags property: Tags of the Topic resource..
              *
-             * @param tags Tags of the resource.
+             * @param tags Tags of the Topic resource.
              * @return the next definition stage.
              */
             Update withTags(Map<String, String> tags);
@@ -384,9 +409,9 @@ public interface Topic {
         /** The stage of the Topic update allowing to specify identity. */
         interface WithIdentity {
             /**
-             * Specifies the identity property: Resource identity information..
+             * Specifies the identity property: Topic resource identity information..
              *
-             * @param identity Resource identity information.
+             * @param identity Topic resource identity information.
              * @return the next definition stage.
              */
             Update withIdentity(IdentityInfo identity);
@@ -430,6 +455,20 @@ public interface Topic {
              * @return the next definition stage.
              */
             Update withInboundIpRules(List<InboundIpRule> inboundIpRules);
+        }
+        /** The stage of the Topic update allowing to specify disableLocalAuth. */
+        interface WithDisableLocalAuth {
+            /**
+             * Specifies the disableLocalAuth property: This boolean is used to enable or disable local auth. Default
+             * value is false. When the property is set to true, only AAD token will be used to authenticate if user is
+             * allowed to publish to the topic..
+             *
+             * @param disableLocalAuth This boolean is used to enable or disable local auth. Default value is false.
+             *     When the property is set to true, only AAD token will be used to authenticate if user is allowed to
+             *     publish to the topic.
+             * @return the next definition stage.
+             */
+            Update withDisableLocalAuth(Boolean disableLocalAuth);
         }
     }
     /**

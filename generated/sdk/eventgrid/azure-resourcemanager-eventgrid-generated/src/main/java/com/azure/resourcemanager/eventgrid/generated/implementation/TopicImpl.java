@@ -126,6 +126,10 @@ public final class TopicImpl implements Topic, Topic.Definition, Topic.Update {
         }
     }
 
+    public Boolean disableLocalAuth() {
+        return this.innerModel().disableLocalAuth();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -319,6 +323,16 @@ public final class TopicImpl implements Topic, Topic.Definition, Topic.Update {
             return this;
         } else {
             this.updateTopicUpdateParameters.withInboundIpRules(inboundIpRules);
+            return this;
+        }
+    }
+
+    public TopicImpl withDisableLocalAuth(Boolean disableLocalAuth) {
+        if (isInCreateMode()) {
+            this.innerModel().withDisableLocalAuth(disableLocalAuth);
+            return this;
+        } else {
+            this.updateTopicUpdateParameters.withDisableLocalAuth(disableLocalAuth);
             return this;
         }
     }

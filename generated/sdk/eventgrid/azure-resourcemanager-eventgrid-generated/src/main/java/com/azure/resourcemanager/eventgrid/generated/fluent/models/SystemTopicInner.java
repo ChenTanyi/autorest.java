@@ -22,16 +22,16 @@ public class SystemTopicInner extends Resource {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(SystemTopicInner.class);
 
     /*
-     * Identity information for the resource.
-     */
-    @JsonProperty(value = "identity")
-    private IdentityInfo identity;
-
-    /*
      * The system metadata relating to System Topic resource.
      */
     @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
+
+    /*
+     * Identity information for the resource.
+     */
+    @JsonProperty(value = "identity")
+    private IdentityInfo identity;
 
     /*
      * Provisioning state of the system topic.
@@ -58,6 +58,15 @@ public class SystemTopicInner extends Resource {
     private String metricResourceId;
 
     /**
+     * Get the systemData property: The system metadata relating to System Topic resource.
+     *
+     * @return the systemData value.
+     */
+    public SystemData systemData() {
+        return this.systemData;
+    }
+
+    /**
      * Get the identity property: Identity information for the resource.
      *
      * @return the identity value.
@@ -75,15 +84,6 @@ public class SystemTopicInner extends Resource {
     public SystemTopicInner withIdentity(IdentityInfo identity) {
         this.identity = identity;
         return this;
-    }
-
-    /**
-     * Get the systemData property: The system metadata relating to System Topic resource.
-     *
-     * @return the systemData value.
-     */
-    public SystemData systemData() {
-        return this.systemData;
     }
 
     /**

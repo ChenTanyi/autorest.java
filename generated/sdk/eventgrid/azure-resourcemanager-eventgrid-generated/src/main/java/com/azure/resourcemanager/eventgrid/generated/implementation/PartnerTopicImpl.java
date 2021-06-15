@@ -50,12 +50,12 @@ public final class PartnerTopicImpl implements PartnerTopic {
         }
     }
 
-    public IdentityInfo identity() {
-        return this.innerModel().identity();
-    }
-
     public SystemData systemData() {
         return this.innerModel().systemData();
+    }
+
+    public IdentityInfo identity() {
+        return this.innerModel().identity();
     }
 
     public String source() {

@@ -63,13 +63,13 @@ public final class PartnerRegistrationsImpl implements PartnerRegistrations {
         return this.serviceClient().deleteWithResponse(resourceGroupName, partnerRegistrationName, context);
     }
 
-    public PagedIterable<PartnerRegistration> listBySubscription() {
-        PagedIterable<PartnerRegistrationInner> inner = this.serviceClient().listBySubscription();
+    public PagedIterable<PartnerRegistration> list() {
+        PagedIterable<PartnerRegistrationInner> inner = this.serviceClient().list();
         return Utils.mapPage(inner, inner1 -> new PartnerRegistrationImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<PartnerRegistration> listBySubscription(String filter, Integer top, Context context) {
-        PagedIterable<PartnerRegistrationInner> inner = this.serviceClient().listBySubscription(filter, top, context);
+    public PagedIterable<PartnerRegistration> list(String filter, Integer top, Context context) {
+        PagedIterable<PartnerRegistrationInner> inner = this.serviceClient().list(filter, top, context);
         return Utils.mapPage(inner, inner1 -> new PartnerRegistrationImpl(inner1, this.manager()));
     }
 
@@ -82,16 +82,6 @@ public final class PartnerRegistrationsImpl implements PartnerRegistrations {
         String resourceGroupName, String filter, Integer top, Context context) {
         PagedIterable<PartnerRegistrationInner> inner =
             this.serviceClient().listByResourceGroup(resourceGroupName, filter, top, context);
-        return Utils.mapPage(inner, inner1 -> new PartnerRegistrationImpl(inner1, this.manager()));
-    }
-
-    public PagedIterable<PartnerRegistration> list() {
-        PagedIterable<PartnerRegistrationInner> inner = this.serviceClient().list();
-        return Utils.mapPage(inner, inner1 -> new PartnerRegistrationImpl(inner1, this.manager()));
-    }
-
-    public PagedIterable<PartnerRegistration> list(Context context) {
-        PagedIterable<PartnerRegistrationInner> inner = this.serviceClient().list(context);
         return Utils.mapPage(inner, inner1 -> new PartnerRegistrationImpl(inner1, this.manager()));
     }
 

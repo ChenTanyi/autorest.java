@@ -116,6 +116,18 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
         }
     }
 
+    public Boolean disableLocalAuth() {
+        return this.innerModel().disableLocalAuth();
+    }
+
+    public Boolean autoCreateTopicWithFirstSubscription() {
+        return this.innerModel().autoCreateTopicWithFirstSubscription();
+    }
+
+    public Boolean autoDeleteTopicWithLastSubscription() {
+        return this.innerModel().autoDeleteTopicWithLastSubscription();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -302,6 +314,40 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
             return this;
         } else {
             this.updateDomainUpdateParameters.withInboundIpRules(inboundIpRules);
+            return this;
+        }
+    }
+
+    public DomainImpl withDisableLocalAuth(Boolean disableLocalAuth) {
+        if (isInCreateMode()) {
+            this.innerModel().withDisableLocalAuth(disableLocalAuth);
+            return this;
+        } else {
+            this.updateDomainUpdateParameters.withDisableLocalAuth(disableLocalAuth);
+            return this;
+        }
+    }
+
+    public DomainImpl withAutoCreateTopicWithFirstSubscription(Boolean autoCreateTopicWithFirstSubscription) {
+        if (isInCreateMode()) {
+            this.innerModel().withAutoCreateTopicWithFirstSubscription(autoCreateTopicWithFirstSubscription);
+            return this;
+        } else {
+            this
+                .updateDomainUpdateParameters
+                .withAutoCreateTopicWithFirstSubscription(autoCreateTopicWithFirstSubscription);
+            return this;
+        }
+    }
+
+    public DomainImpl withAutoDeleteTopicWithLastSubscription(Boolean autoDeleteTopicWithLastSubscription) {
+        if (isInCreateMode()) {
+            this.innerModel().withAutoDeleteTopicWithLastSubscription(autoDeleteTopicWithLastSubscription);
+            return this;
+        } else {
+            this
+                .updateDomainUpdateParameters
+                .withAutoDeleteTopicWithLastSubscription(autoDeleteTopicWithLastSubscription);
             return this;
         }
     }
