@@ -60,7 +60,7 @@ public final class MetricDefinitionsClientImpl implements MetricDefinitionsClien
     @ServiceInterface(name = "MonitorClientMetricD")
     private interface MetricDefinitionsService {
         @Headers({"Content-Type: application/json"})
-        @Get("/{resourceUri}/providers/microsoft.insights/metricDefinitions")
+        @Get("/{resourceUri}/providers/Microsoft.Insights/metricDefinitions")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<MetricDefinitionCollection>> list(

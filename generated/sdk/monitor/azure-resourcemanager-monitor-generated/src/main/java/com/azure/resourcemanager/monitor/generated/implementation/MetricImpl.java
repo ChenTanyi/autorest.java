@@ -48,6 +48,10 @@ public final class MetricImpl implements Metric {
         return this.innerModel().errorCode();
     }
 
+    public String errorMessage() {
+        return this.innerModel().errorMessage();
+    }
+
     public MetricUnit unit() {
         return this.innerModel().unit();
     }

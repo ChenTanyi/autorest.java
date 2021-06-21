@@ -45,7 +45,14 @@ public interface Metric {
     String errorCode();
 
     /**
-     * Gets the unit property: the unit of the metric.
+     * Gets the errorMessage property: Error message encountered querying this specific metric.
+     *
+     * @return the errorMessage value.
+     */
+    String errorMessage();
+
+    /**
+     * Gets the unit property: The unit of the metric.
      *
      * @return the unit value.
      */

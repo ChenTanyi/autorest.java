@@ -52,7 +52,14 @@ public interface MetricDefinition {
     String category();
 
     /**
-     * Gets the unit property: the unit of the metric.
+     * Gets the metricClass property: The class of the metric.
+     *
+     * @return the metricClass value.
+     */
+    MetricClass metricClass();
+
+    /**
+     * Gets the unit property: The unit of the metric.
      *
      * @return the unit value.
      */

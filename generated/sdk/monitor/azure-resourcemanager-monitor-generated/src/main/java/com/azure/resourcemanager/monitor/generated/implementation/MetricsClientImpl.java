@@ -56,7 +56,7 @@ public final class MetricsClientImpl implements MetricsClient {
     @ServiceInterface(name = "MonitorClientMetrics")
     private interface MetricsService {
         @Headers({"Content-Type: application/json"})
-        @Get("/{resourceUri}/providers/microsoft.insights/metrics")
+        @Get("/{resourceUri}/providers/Microsoft.Insights/metrics")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<ResponseInner>> list(

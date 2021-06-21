@@ -8,6 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.models.AggregationType;
 import com.azure.resourcemanager.monitor.generated.models.MetricAvailability;
+import com.azure.resourcemanager.monitor.generated.models.MetricClass;
 import com.azure.resourcemanager.monitor.generated.models.MetricUnit;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -56,7 +57,13 @@ public final class MetricDefinitionInner {
     private String category;
 
     /*
-     * the unit of the metric.
+     * The class of the metric.
+     */
+    @JsonProperty(value = "metricClass")
+    private MetricClass metricClass;
+
+    /*
+     * The unit of the metric.
      */
     @JsonProperty(value = "unit")
     private MetricUnit unit;
@@ -215,7 +222,27 @@ public final class MetricDefinitionInner {
     }
 
     /**
-     * Get the unit property: the unit of the metric.
+     * Get the metricClass property: The class of the metric.
+     *
+     * @return the metricClass value.
+     */
+    public MetricClass metricClass() {
+        return this.metricClass;
+    }
+
+    /**
+     * Set the metricClass property: The class of the metric.
+     *
+     * @param metricClass the metricClass value to set.
+     * @return the MetricDefinitionInner object itself.
+     */
+    public MetricDefinitionInner withMetricClass(MetricClass metricClass) {
+        this.metricClass = metricClass;
+        return this;
+    }
+
+    /**
+     * Get the unit property: The unit of the metric.
      *
      * @return the unit value.
      */
@@ -224,7 +251,7 @@ public final class MetricDefinitionInner {
     }
 
     /**
-     * Set the unit property: the unit of the metric.
+     * Set the unit property: The unit of the metric.
      *
      * @param unit the unit value to set.
      * @return the MetricDefinitionInner object itself.

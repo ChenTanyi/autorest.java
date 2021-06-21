@@ -39,7 +39,7 @@ public final class MetricInner {
     /*
      * Detailed description of this metric.
      */
-    @JsonProperty(value = "displayDescription", required = true)
+    @JsonProperty(value = "displayDescription")
     private String displayDescription;
 
     /*
@@ -49,7 +49,13 @@ public final class MetricInner {
     private String errorCode;
 
     /*
-     * the unit of the metric.
+     * Error message encountered querying this specific metric.
+     */
+    @JsonProperty(value = "errorMessage")
+    private String errorMessage;
+
+    /*
+     * The unit of the metric.
      */
     @JsonProperty(value = "unit", required = true)
     private MetricUnit unit;
@@ -161,7 +167,27 @@ public final class MetricInner {
     }
 
     /**
-     * Get the unit property: the unit of the metric.
+     * Get the errorMessage property: Error message encountered querying this specific metric.
+     *
+     * @return the errorMessage value.
+     */
+    public String errorMessage() {
+        return this.errorMessage;
+    }
+
+    /**
+     * Set the errorMessage property: Error message encountered querying this specific metric.
+     *
+     * @param errorMessage the errorMessage value to set.
+     * @return the MetricInner object itself.
+     */
+    public MetricInner withErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+        return this;
+    }
+
+    /**
+     * Get the unit property: The unit of the metric.
      *
      * @return the unit value.
      */
@@ -170,7 +196,7 @@ public final class MetricInner {
     }
 
     /**
-     * Set the unit property: the unit of the metric.
+     * Set the unit property: The unit of the metric.
      *
      * @param unit the unit value to set.
      * @return the MetricInner object itself.
@@ -221,11 +247,6 @@ public final class MetricInner {
                     new IllegalArgumentException("Missing required property name in model MetricInner"));
         } else {
             name().validate();
-        }
-        if (displayDescription() == null) {
-            throw logger
-                .logExceptionAsError(
-                    new IllegalArgumentException("Missing required property displayDescription in model MetricInner"));
         }
         if (unit() == null) {
             throw logger
