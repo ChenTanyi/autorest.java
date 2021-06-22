@@ -12,6 +12,7 @@ import com.azure.resourcemanager.operationalinsights.generated.models.PublicNetw
 import com.azure.resourcemanager.operationalinsights.generated.models.Workspace;
 import com.azure.resourcemanager.operationalinsights.generated.models.WorkspaceCapping;
 import com.azure.resourcemanager.operationalinsights.generated.models.WorkspaceEntityStatus;
+import com.azure.resourcemanager.operationalinsights.generated.models.WorkspaceFeatures;
 import com.azure.resourcemanager.operationalinsights.generated.models.WorkspacePatch;
 import com.azure.resourcemanager.operationalinsights.generated.models.WorkspaceSku;
 import java.util.Collections;
@@ -101,24 +102,8 @@ public final class WorkspaceImpl implements Workspace, Workspace.Definition, Wor
         }
     }
 
-    public Boolean enableDataExport() {
-        return this.innerModel().enableDataExport();
-    }
-
-    public Boolean immediatePurgeDataOn30Days() {
-        return this.innerModel().immediatePurgeDataOn30Days();
-    }
-
-    public Boolean enableLogAccessUsingOnlyResourcePermissions() {
-        return this.innerModel().enableLogAccessUsingOnlyResourcePermissions();
-    }
-
-    public String clusterResourceId() {
-        return this.innerModel().clusterResourceId();
-    }
-
-    public Boolean disableLocalAuth() {
-        return this.innerModel().disableLocalAuth();
+    public WorkspaceFeatures features() {
+        return this.innerModel().features();
     }
 
     public Region region() {
@@ -322,57 +307,12 @@ public final class WorkspaceImpl implements Workspace, Workspace.Definition, Wor
         }
     }
 
-    public WorkspaceImpl withEnableDataExport(Boolean enableDataExport) {
+    public WorkspaceImpl withFeatures(WorkspaceFeatures features) {
         if (isInCreateMode()) {
-            this.innerModel().withEnableDataExport(enableDataExport);
+            this.innerModel().withFeatures(features);
             return this;
         } else {
-            this.updateParameters.withEnableDataExport(enableDataExport);
-            return this;
-        }
-    }
-
-    public WorkspaceImpl withImmediatePurgeDataOn30Days(Boolean immediatePurgeDataOn30Days) {
-        if (isInCreateMode()) {
-            this.innerModel().withImmediatePurgeDataOn30Days(immediatePurgeDataOn30Days);
-            return this;
-        } else {
-            this.updateParameters.withImmediatePurgeDataOn30Days(immediatePurgeDataOn30Days);
-            return this;
-        }
-    }
-
-    public WorkspaceImpl withEnableLogAccessUsingOnlyResourcePermissions(
-        Boolean enableLogAccessUsingOnlyResourcePermissions) {
-        if (isInCreateMode()) {
-            this
-                .innerModel()
-                .withEnableLogAccessUsingOnlyResourcePermissions(enableLogAccessUsingOnlyResourcePermissions);
-            return this;
-        } else {
-            this
-                .updateParameters
-                .withEnableLogAccessUsingOnlyResourcePermissions(enableLogAccessUsingOnlyResourcePermissions);
-            return this;
-        }
-    }
-
-    public WorkspaceImpl withClusterResourceId(String clusterResourceId) {
-        if (isInCreateMode()) {
-            this.innerModel().withClusterResourceId(clusterResourceId);
-            return this;
-        } else {
-            this.updateParameters.withClusterResourceId(clusterResourceId);
-            return this;
-        }
-    }
-
-    public WorkspaceImpl withDisableLocalAuth(Boolean disableLocalAuth) {
-        if (isInCreateMode()) {
-            this.innerModel().withDisableLocalAuth(disableLocalAuth);
-            return this;
-        } else {
-            this.updateParameters.withDisableLocalAuth(disableLocalAuth);
+            this.updateParameters.withFeatures(features);
             return this;
         }
     }

@@ -133,40 +133,11 @@ public interface Workspace {
     List<PrivateLinkScopedResource> privateLinkScopedResources();
 
     /**
-     * Gets the enableDataExport property: Flag that indicate if data should be exported.
+     * Gets the features property: Workspace features.
      *
-     * @return the enableDataExport value.
+     * @return the features value.
      */
-    Boolean enableDataExport();
-
-    /**
-     * Gets the immediatePurgeDataOn30Days property: Flag that describes if we want to remove the data after 30 days.
-     *
-     * @return the immediatePurgeDataOn30Days value.
-     */
-    Boolean immediatePurgeDataOn30Days();
-
-    /**
-     * Gets the enableLogAccessUsingOnlyResourcePermissions property: Flag that indicate which permission to use -
-     * resource or workspace or both.
-     *
-     * @return the enableLogAccessUsingOnlyResourcePermissions value.
-     */
-    Boolean enableLogAccessUsingOnlyResourcePermissions();
-
-    /**
-     * Gets the clusterResourceId property: Dedicated LA cluster resourceId that is linked to the workspaces.
-     *
-     * @return the clusterResourceId value.
-     */
-    String clusterResourceId();
-
-    /**
-     * Gets the disableLocalAuth property: Disable Non-AAD based Auth.
-     *
-     * @return the disableLocalAuth value.
-     */
-    Boolean disableLocalAuth();
+    WorkspaceFeatures features();
 
     /**
      * Gets the region of the resource.
@@ -243,11 +214,7 @@ public interface Workspace {
                 DefinitionStages.WithPublicNetworkAccessForIngestion,
                 DefinitionStages.WithPublicNetworkAccessForQuery,
                 DefinitionStages.WithForceCmkForQuery,
-                DefinitionStages.WithEnableDataExport,
-                DefinitionStages.WithImmediatePurgeDataOn30Days,
-                DefinitionStages.WithEnableLogAccessUsingOnlyResourcePermissions,
-                DefinitionStages.WithClusterResourceId,
-                DefinitionStages.WithDisableLocalAuth {
+                DefinitionStages.WithFeatures {
             /**
              * Executes the create request.
              *
@@ -358,60 +325,15 @@ public interface Workspace {
              */
             WithCreate withForceCmkForQuery(Boolean forceCmkForQuery);
         }
-        /** The stage of the Workspace definition allowing to specify enableDataExport. */
-        interface WithEnableDataExport {
+        /** The stage of the Workspace definition allowing to specify features. */
+        interface WithFeatures {
             /**
-             * Specifies the enableDataExport property: Flag that indicate if data should be exported..
+             * Specifies the features property: Workspace features..
              *
-             * @param enableDataExport Flag that indicate if data should be exported.
+             * @param features Workspace features.
              * @return the next definition stage.
              */
-            WithCreate withEnableDataExport(Boolean enableDataExport);
-        }
-        /** The stage of the Workspace definition allowing to specify immediatePurgeDataOn30Days. */
-        interface WithImmediatePurgeDataOn30Days {
-            /**
-             * Specifies the immediatePurgeDataOn30Days property: Flag that describes if we want to remove the data
-             * after 30 days..
-             *
-             * @param immediatePurgeDataOn30Days Flag that describes if we want to remove the data after 30 days.
-             * @return the next definition stage.
-             */
-            WithCreate withImmediatePurgeDataOn30Days(Boolean immediatePurgeDataOn30Days);
-        }
-        /** The stage of the Workspace definition allowing to specify enableLogAccessUsingOnlyResourcePermissions. */
-        interface WithEnableLogAccessUsingOnlyResourcePermissions {
-            /**
-             * Specifies the enableLogAccessUsingOnlyResourcePermissions property: Flag that indicate which permission
-             * to use - resource or workspace or both..
-             *
-             * @param enableLogAccessUsingOnlyResourcePermissions Flag that indicate which permission to use - resource
-             *     or workspace or both.
-             * @return the next definition stage.
-             */
-            WithCreate withEnableLogAccessUsingOnlyResourcePermissions(
-                Boolean enableLogAccessUsingOnlyResourcePermissions);
-        }
-        /** The stage of the Workspace definition allowing to specify clusterResourceId. */
-        interface WithClusterResourceId {
-            /**
-             * Specifies the clusterResourceId property: Dedicated LA cluster resourceId that is linked to the
-             * workspaces..
-             *
-             * @param clusterResourceId Dedicated LA cluster resourceId that is linked to the workspaces.
-             * @return the next definition stage.
-             */
-            WithCreate withClusterResourceId(String clusterResourceId);
-        }
-        /** The stage of the Workspace definition allowing to specify disableLocalAuth. */
-        interface WithDisableLocalAuth {
-            /**
-             * Specifies the disableLocalAuth property: Disable Non-AAD based Auth..
-             *
-             * @param disableLocalAuth Disable Non-AAD based Auth.
-             * @return the next definition stage.
-             */
-            WithCreate withDisableLocalAuth(Boolean disableLocalAuth);
+            WithCreate withFeatures(WorkspaceFeatures features);
         }
     }
     /**
@@ -431,11 +353,7 @@ public interface Workspace {
             UpdateStages.WithPublicNetworkAccessForIngestion,
             UpdateStages.WithPublicNetworkAccessForQuery,
             UpdateStages.WithForceCmkForQuery,
-            UpdateStages.WithEnableDataExport,
-            UpdateStages.WithImmediatePurgeDataOn30Days,
-            UpdateStages.WithEnableLogAccessUsingOnlyResourcePermissions,
-            UpdateStages.WithClusterResourceId,
-            UpdateStages.WithDisableLocalAuth {
+            UpdateStages.WithFeatures {
         /**
          * Executes the update request.
          *
@@ -538,59 +456,15 @@ public interface Workspace {
              */
             Update withForceCmkForQuery(Boolean forceCmkForQuery);
         }
-        /** The stage of the Workspace update allowing to specify enableDataExport. */
-        interface WithEnableDataExport {
+        /** The stage of the Workspace update allowing to specify features. */
+        interface WithFeatures {
             /**
-             * Specifies the enableDataExport property: Flag that indicate if data should be exported..
+             * Specifies the features property: Workspace features..
              *
-             * @param enableDataExport Flag that indicate if data should be exported.
+             * @param features Workspace features.
              * @return the next definition stage.
              */
-            Update withEnableDataExport(Boolean enableDataExport);
-        }
-        /** The stage of the Workspace update allowing to specify immediatePurgeDataOn30Days. */
-        interface WithImmediatePurgeDataOn30Days {
-            /**
-             * Specifies the immediatePurgeDataOn30Days property: Flag that describes if we want to remove the data
-             * after 30 days..
-             *
-             * @param immediatePurgeDataOn30Days Flag that describes if we want to remove the data after 30 days.
-             * @return the next definition stage.
-             */
-            Update withImmediatePurgeDataOn30Days(Boolean immediatePurgeDataOn30Days);
-        }
-        /** The stage of the Workspace update allowing to specify enableLogAccessUsingOnlyResourcePermissions. */
-        interface WithEnableLogAccessUsingOnlyResourcePermissions {
-            /**
-             * Specifies the enableLogAccessUsingOnlyResourcePermissions property: Flag that indicate which permission
-             * to use - resource or workspace or both..
-             *
-             * @param enableLogAccessUsingOnlyResourcePermissions Flag that indicate which permission to use - resource
-             *     or workspace or both.
-             * @return the next definition stage.
-             */
-            Update withEnableLogAccessUsingOnlyResourcePermissions(Boolean enableLogAccessUsingOnlyResourcePermissions);
-        }
-        /** The stage of the Workspace update allowing to specify clusterResourceId. */
-        interface WithClusterResourceId {
-            /**
-             * Specifies the clusterResourceId property: Dedicated LA cluster resourceId that is linked to the
-             * workspaces..
-             *
-             * @param clusterResourceId Dedicated LA cluster resourceId that is linked to the workspaces.
-             * @return the next definition stage.
-             */
-            Update withClusterResourceId(String clusterResourceId);
-        }
-        /** The stage of the Workspace update allowing to specify disableLocalAuth. */
-        interface WithDisableLocalAuth {
-            /**
-             * Specifies the disableLocalAuth property: Disable Non-AAD based Auth..
-             *
-             * @param disableLocalAuth Disable Non-AAD based Auth.
-             * @return the next definition stage.
-             */
-            Update withDisableLocalAuth(Boolean disableLocalAuth);
+            Update withFeatures(WorkspaceFeatures features);
         }
     }
     /**

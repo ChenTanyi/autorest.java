@@ -4,11 +4,9 @@
 
 package com.azure.resourcemanager.postgresql.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.postgresql.generated.fluent.models.ConfigurationInner;
 import com.azure.resourcemanager.postgresql.generated.models.Configuration;
-import com.azure.resourcemanager.postgresql.generated.models.ConfigurationDataType;
 
 public final class ConfigurationImpl implements Configuration, Configuration.Definition, Configuration.Update {
     private ConfigurationInner innerObject;
@@ -27,10 +25,6 @@ public final class ConfigurationImpl implements Configuration, Configuration.Def
         return this.innerModel().type();
     }
 
-    public SystemData systemData() {
-        return this.innerModel().systemData();
-    }
-
     public String value() {
         return this.innerModel().value();
     }
@@ -43,7 +37,7 @@ public final class ConfigurationImpl implements Configuration, Configuration.Def
         return this.innerModel().defaultValue();
     }
 
-    public ConfigurationDataType dataType() {
+    public String dataType() {
         return this.innerModel().dataType();
     }
 
@@ -69,7 +63,7 @@ public final class ConfigurationImpl implements Configuration, Configuration.Def
 
     private String configurationName;
 
-    public ConfigurationImpl withExistingFlexibleServer(String resourceGroupName, String serverName) {
+    public ConfigurationImpl withExistingServer(String resourceGroupName, String serverName) {
         this.resourceGroupName = resourceGroupName;
         this.serverName = serverName;
         return this;
@@ -80,7 +74,7 @@ public final class ConfigurationImpl implements Configuration, Configuration.Def
             serviceManager
                 .serviceClient()
                 .getConfigurations()
-                .put(resourceGroupName, serverName, configurationName, this.innerModel(), Context.NONE);
+                .createOrUpdate(resourceGroupName, serverName, configurationName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -89,7 +83,7 @@ public final class ConfigurationImpl implements Configuration, Configuration.Def
             serviceManager
                 .serviceClient()
                 .getConfigurations()
-                .put(resourceGroupName, serverName, configurationName, this.innerModel(), context);
+                .createOrUpdate(resourceGroupName, serverName, configurationName, this.innerModel(), context);
         return this;
     }
 
@@ -108,7 +102,7 @@ public final class ConfigurationImpl implements Configuration, Configuration.Def
             serviceManager
                 .serviceClient()
                 .getConfigurations()
-                .update(resourceGroupName, serverName, configurationName, this.innerModel(), Context.NONE);
+                .createOrUpdate(resourceGroupName, serverName, configurationName, this.innerModel(), Context.NONE);
         return this;
     }
 
@@ -117,7 +111,7 @@ public final class ConfigurationImpl implements Configuration, Configuration.Def
             serviceManager
                 .serviceClient()
                 .getConfigurations()
-                .update(resourceGroupName, serverName, configurationName, this.innerModel(), context);
+                .createOrUpdate(resourceGroupName, serverName, configurationName, this.innerModel(), context);
         return this;
     }
 
@@ -127,7 +121,7 @@ public final class ConfigurationImpl implements Configuration, Configuration.Def
         this.innerObject = innerObject;
         this.serviceManager = serviceManager;
         this.resourceGroupName = Utils.getValueFromIdByName(innerObject.id(), "resourceGroups");
-        this.serverName = Utils.getValueFromIdByName(innerObject.id(), "flexibleServers");
+        this.serverName = Utils.getValueFromIdByName(innerObject.id(), "servers");
         this.configurationName = Utils.getValueFromIdByName(innerObject.id(), "configurations");
     }
 
