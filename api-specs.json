@@ -101,6 +101,7 @@
     },
     "postgresql": {
         "source": "specification/postgresql/resource-manager/readme.md",
+        "tag": "package-2020-01-01",
         "namespace": "com.azure.resourcemanager.postgresql.generated",
         "output": "sdk/postgresql/azure-resourcemanager-postgresql-generated"
     },
