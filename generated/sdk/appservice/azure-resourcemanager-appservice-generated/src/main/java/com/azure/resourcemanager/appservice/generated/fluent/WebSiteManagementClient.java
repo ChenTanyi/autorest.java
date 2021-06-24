@@ -129,6 +129,13 @@ public interface WebSiteManagementClient {
     GlobalsClient getGlobals();
 
     /**
+     * Gets the KubeEnvironmentsClient object to access its operations.
+     *
+     * @return the KubeEnvironmentsClient object.
+     */
+    KubeEnvironmentsClient getKubeEnvironments();
+
+    /**
      * Gets the ProvidersClient object to access its operations.
      *
      * @return the ProvidersClient object.
@@ -169,11 +176,4 @@ public interface WebSiteManagementClient {
      * @return the WebAppsClient object.
      */
     WebAppsClient getWebApps();
-
-    /**
-     * Gets the KubeEnvironmentsClient object to access its operations.
-     *
-     * @return the KubeEnvironmentsClient object.
-     */
-    KubeEnvironmentsClient getKubeEnvironments();
 }

@@ -40,7 +40,7 @@ public class ManagedServiceIdentity {
      * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}
      */
     @JsonProperty(value = "userAssignedIdentities")
-    private Map<String, ManagedServiceIdentityUserAssignedIdentities> userAssignedIdentities;
+    private Map<String, UserAssignedIdentity> userAssignedIdentities;
 
     /**
      * Get the type property: Type of managed service identity.
@@ -87,7 +87,7 @@ public class ManagedServiceIdentity {
      *
      * @return the userAssignedIdentities value.
      */
-    public Map<String, ManagedServiceIdentityUserAssignedIdentities> userAssignedIdentities() {
+    public Map<String, UserAssignedIdentity> userAssignedIdentities() {
         return this.userAssignedIdentities;
     }
 
@@ -99,8 +99,7 @@ public class ManagedServiceIdentity {
      * @param userAssignedIdentities the userAssignedIdentities value to set.
      * @return the ManagedServiceIdentity object itself.
      */
-    public ManagedServiceIdentity withUserAssignedIdentities(
-        Map<String, ManagedServiceIdentityUserAssignedIdentities> userAssignedIdentities) {
+    public ManagedServiceIdentity withUserAssignedIdentities(Map<String, UserAssignedIdentity> userAssignedIdentities) {
         this.userAssignedIdentities = userAssignedIdentities;
         return this;
     }

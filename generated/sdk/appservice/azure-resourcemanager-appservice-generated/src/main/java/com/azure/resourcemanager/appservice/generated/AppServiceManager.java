@@ -92,6 +92,8 @@ public final class AppServiceManager {
 
     private Globals globals;
 
+    private KubeEnvironments kubeEnvironments;
+
     private Providers providers;
 
     private Recommendations recommendations;
@@ -103,8 +105,6 @@ public final class AppServiceManager {
     private StaticSites staticSites;
 
     private WebApps webApps;
-
-    private KubeEnvironments kubeEnvironments;
 
     private final WebSiteManagementClient clientObject;
 
@@ -382,6 +382,14 @@ public final class AppServiceManager {
         return globals;
     }
 
+    /** @return Resource collection API of KubeEnvironments. */
+    public KubeEnvironments kubeEnvironments() {
+        if (this.kubeEnvironments == null) {
+            this.kubeEnvironments = new KubeEnvironmentsImpl(clientObject.getKubeEnvironments(), this);
+        }
+        return kubeEnvironments;
+    }
+
     /** @return Resource collection API of Providers. */
     public Providers providers() {
         if (this.providers == null) {
@@ -429,14 +437,6 @@ public final class AppServiceManager {
             this.webApps = new WebAppsImpl(clientObject.getWebApps(), this);
         }
         return webApps;
-    }
-
-    /** @return Resource collection API of KubeEnvironments. */
-    public KubeEnvironments kubeEnvironments() {
-        if (this.kubeEnvironments == null) {
-            this.kubeEnvironments = new KubeEnvironmentsImpl(clientObject.getKubeEnvironments(), this);
-        }
-        return kubeEnvironments;
     }
 
     /**

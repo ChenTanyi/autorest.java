@@ -17,7 +17,6 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.BackupItemIn
 import com.azure.resourcemanager.appservice.generated.fluent.models.BackupRequestInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ConnectionStringDictionaryInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.ContinuousWebJobInner;
-import com.azure.resourcemanager.appservice.generated.fluent.models.CsmPublishingCredentialsPoliciesCollectionInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmPublishingCredentialsPoliciesEntityInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CsmUsageQuotaInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.CustomHostnameAnalysisResultInner;
@@ -77,7 +76,6 @@ import com.azure.resourcemanager.appservice.generated.models.BackupItem;
 import com.azure.resourcemanager.appservice.generated.models.BackupRequest;
 import com.azure.resourcemanager.appservice.generated.models.ConnectionStringDictionary;
 import com.azure.resourcemanager.appservice.generated.models.ContinuousWebJob;
-import com.azure.resourcemanager.appservice.generated.models.CsmPublishingCredentialsPoliciesCollection;
 import com.azure.resourcemanager.appservice.generated.models.CsmPublishingCredentialsPoliciesEntity;
 import com.azure.resourcemanager.appservice.generated.models.CsmPublishingProfileOptions;
 import com.azure.resourcemanager.appservice.generated.models.CsmSlotEntity;
@@ -353,30 +351,18 @@ public final class WebAppsImpl implements WebApps {
         this.serviceClient().restore(resourceGroupName, name, backupId, request, context);
     }
 
-    public CsmPublishingCredentialsPoliciesCollection getBasicPublishingCredentialsPolicies(
+    public PagedIterable<CsmPublishingCredentialsPoliciesEntity> listBasicPublishingCredentialsPolicies(
         String resourceGroupName, String name) {
-        CsmPublishingCredentialsPoliciesCollectionInner inner =
-            this.serviceClient().getBasicPublishingCredentialsPolicies(resourceGroupName, name);
-        if (inner != null) {
-            return new CsmPublishingCredentialsPoliciesCollectionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+        PagedIterable<CsmPublishingCredentialsPoliciesEntityInner> inner =
+            this.serviceClient().listBasicPublishingCredentialsPolicies(resourceGroupName, name);
+        return Utils.mapPage(inner, inner1 -> new CsmPublishingCredentialsPoliciesEntityImpl(inner1, this.manager()));
     }
 
-    public Response<CsmPublishingCredentialsPoliciesCollection> getBasicPublishingCredentialsPoliciesWithResponse(
+    public PagedIterable<CsmPublishingCredentialsPoliciesEntity> listBasicPublishingCredentialsPolicies(
         String resourceGroupName, String name, Context context) {
-        Response<CsmPublishingCredentialsPoliciesCollectionInner> inner =
-            this.serviceClient().getBasicPublishingCredentialsPoliciesWithResponse(resourceGroupName, name, context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new CsmPublishingCredentialsPoliciesCollectionImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
+        PagedIterable<CsmPublishingCredentialsPoliciesEntityInner> inner =
+            this.serviceClient().listBasicPublishingCredentialsPolicies(resourceGroupName, name, context);
+        return Utils.mapPage(inner, inner1 -> new CsmPublishingCredentialsPoliciesEntityImpl(inner1, this.manager()));
     }
 
     public CsmPublishingCredentialsPoliciesEntity getFtpAllowed(String resourceGroupName, String name) {
@@ -2346,6 +2332,37 @@ public final class WebAppsImpl implements WebApps {
         return this.serviceClient().deleteSwiftVirtualNetworkWithResponse(resourceGroupName, name, context);
     }
 
+    public SwiftVirtualNetwork updateSwiftVirtualNetworkConnectionWithCheck(
+        String resourceGroupName, String name, SwiftVirtualNetworkInner connectionEnvelope) {
+        SwiftVirtualNetworkInner inner =
+            this
+                .serviceClient()
+                .updateSwiftVirtualNetworkConnectionWithCheck(resourceGroupName, name, connectionEnvelope);
+        if (inner != null) {
+            return new SwiftVirtualNetworkImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<SwiftVirtualNetwork> updateSwiftVirtualNetworkConnectionWithCheckWithResponse(
+        String resourceGroupName, String name, SwiftVirtualNetworkInner connectionEnvelope, Context context) {
+        Response<SwiftVirtualNetworkInner> inner =
+            this
+                .serviceClient()
+                .updateSwiftVirtualNetworkConnectionWithCheckWithResponse(
+                    resourceGroupName, name, connectionEnvelope, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new SwiftVirtualNetworkImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
     public NetworkFeatures listNetworkFeatures(String resourceGroupName, String name, String view) {
         NetworkFeaturesInner inner = this.serviceClient().listNetworkFeatures(resourceGroupName, name, view);
         if (inner != null) {
@@ -3302,32 +3319,18 @@ public final class WebAppsImpl implements WebApps {
         this.serviceClient().restoreSlot(resourceGroupName, name, backupId, slot, request, context);
     }
 
-    public CsmPublishingCredentialsPoliciesCollection getBasicPublishingCredentialsPoliciesSlot(
+    public PagedIterable<CsmPublishingCredentialsPoliciesEntity> listBasicPublishingCredentialsPoliciesSlot(
         String resourceGroupName, String name, String slot) {
-        CsmPublishingCredentialsPoliciesCollectionInner inner =
-            this.serviceClient().getBasicPublishingCredentialsPoliciesSlot(resourceGroupName, name, slot);
-        if (inner != null) {
-            return new CsmPublishingCredentialsPoliciesCollectionImpl(inner, this.manager());
-        } else {
-            return null;
-        }
+        PagedIterable<CsmPublishingCredentialsPoliciesEntityInner> inner =
+            this.serviceClient().listBasicPublishingCredentialsPoliciesSlot(resourceGroupName, name, slot);
+        return Utils.mapPage(inner, inner1 -> new CsmPublishingCredentialsPoliciesEntityImpl(inner1, this.manager()));
     }
 
-    public Response<CsmPublishingCredentialsPoliciesCollection> getBasicPublishingCredentialsPoliciesSlotWithResponse(
+    public PagedIterable<CsmPublishingCredentialsPoliciesEntity> listBasicPublishingCredentialsPoliciesSlot(
         String resourceGroupName, String name, String slot, Context context) {
-        Response<CsmPublishingCredentialsPoliciesCollectionInner> inner =
-            this
-                .serviceClient()
-                .getBasicPublishingCredentialsPoliciesSlotWithResponse(resourceGroupName, name, slot, context);
-        if (inner != null) {
-            return new SimpleResponse<>(
-                inner.getRequest(),
-                inner.getStatusCode(),
-                inner.getHeaders(),
-                new CsmPublishingCredentialsPoliciesCollectionImpl(inner.getValue(), this.manager()));
-        } else {
-            return null;
-        }
+        PagedIterable<CsmPublishingCredentialsPoliciesEntityInner> inner =
+            this.serviceClient().listBasicPublishingCredentialsPoliciesSlot(resourceGroupName, name, slot, context);
+        return Utils.mapPage(inner, inner1 -> new CsmPublishingCredentialsPoliciesEntityImpl(inner1, this.manager()));
     }
 
     public CsmPublishingCredentialsPoliciesEntity getFtpAllowedSlot(
@@ -5668,6 +5671,42 @@ public final class WebAppsImpl implements WebApps {
         }
     }
 
+    public SwiftVirtualNetwork createOrUpdateSwiftVirtualNetworkConnectionWithCheckSlot(
+        String resourceGroupName, String name, String slot, SwiftVirtualNetworkInner connectionEnvelope) {
+        SwiftVirtualNetworkInner inner =
+            this
+                .serviceClient()
+                .createOrUpdateSwiftVirtualNetworkConnectionWithCheckSlot(
+                    resourceGroupName, name, slot, connectionEnvelope);
+        if (inner != null) {
+            return new SwiftVirtualNetworkImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<SwiftVirtualNetwork> createOrUpdateSwiftVirtualNetworkConnectionWithCheckSlotWithResponse(
+        String resourceGroupName,
+        String name,
+        String slot,
+        SwiftVirtualNetworkInner connectionEnvelope,
+        Context context) {
+        Response<SwiftVirtualNetworkInner> inner =
+            this
+                .serviceClient()
+                .createOrUpdateSwiftVirtualNetworkConnectionWithCheckSlotWithResponse(
+                    resourceGroupName, name, slot, connectionEnvelope, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new SwiftVirtualNetworkImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
     public void deleteSwiftVirtualNetworkSlot(String resourceGroupName, String name, String slot) {
         this.serviceClient().deleteSwiftVirtualNetworkSlot(resourceGroupName, name, slot);
     }
@@ -5675,6 +5714,41 @@ public final class WebAppsImpl implements WebApps {
     public Response<Void> deleteSwiftVirtualNetworkSlotWithResponse(
         String resourceGroupName, String name, String slot, Context context) {
         return this.serviceClient().deleteSwiftVirtualNetworkSlotWithResponse(resourceGroupName, name, slot, context);
+    }
+
+    public SwiftVirtualNetwork updateSwiftVirtualNetworkConnectionWithCheckSlot(
+        String resourceGroupName, String name, String slot, SwiftVirtualNetworkInner connectionEnvelope) {
+        SwiftVirtualNetworkInner inner =
+            this
+                .serviceClient()
+                .updateSwiftVirtualNetworkConnectionWithCheckSlot(resourceGroupName, name, slot, connectionEnvelope);
+        if (inner != null) {
+            return new SwiftVirtualNetworkImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<SwiftVirtualNetwork> updateSwiftVirtualNetworkConnectionWithCheckSlotWithResponse(
+        String resourceGroupName,
+        String name,
+        String slot,
+        SwiftVirtualNetworkInner connectionEnvelope,
+        Context context) {
+        Response<SwiftVirtualNetworkInner> inner =
+            this
+                .serviceClient()
+                .updateSwiftVirtualNetworkConnectionWithCheckSlotWithResponse(
+                    resourceGroupName, name, slot, connectionEnvelope, context);
+        if (inner != null) {
+            return new SimpleResponse<>(
+                inner.getRequest(),
+                inner.getStatusCode(),
+                inner.getHeaders(),
+                new SwiftVirtualNetworkImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
     }
 
     public NetworkFeatures listNetworkFeaturesSlot(String resourceGroupName, String name, String view, String slot) {

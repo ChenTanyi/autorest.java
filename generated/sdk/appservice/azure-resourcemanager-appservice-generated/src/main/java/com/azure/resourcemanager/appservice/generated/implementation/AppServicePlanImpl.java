@@ -86,6 +86,10 @@ public final class AppServicePlanImpl implements AppServicePlan, AppServicePlan.
         return this.innerModel().perSiteScaling();
     }
 
+    public Boolean elasticScaleEnabled() {
+        return this.innerModel().elasticScaleEnabled();
+    }
+
     public Integer maximumElasticWorkerCount() {
         return this.innerModel().maximumElasticWorkerCount();
     }
@@ -307,6 +311,16 @@ public final class AppServicePlanImpl implements AppServicePlan, AppServicePlan.
         }
     }
 
+    public AppServicePlanImpl withElasticScaleEnabled(Boolean elasticScaleEnabled) {
+        if (isInCreateMode()) {
+            this.innerModel().withElasticScaleEnabled(elasticScaleEnabled);
+            return this;
+        } else {
+            this.updateAppServicePlan.withElasticScaleEnabled(elasticScaleEnabled);
+            return this;
+        }
+    }
+
     public AppServicePlanImpl withMaximumElasticWorkerCount(Integer maximumElasticWorkerCount) {
         if (isInCreateMode()) {
             this.innerModel().withMaximumElasticWorkerCount(maximumElasticWorkerCount);
@@ -400,11 +414,6 @@ public final class AppServicePlanImpl implements AppServicePlan, AppServicePlan.
             this.updateAppServicePlan.withKind(kind);
             return this;
         }
-    }
-
-    public AppServicePlanImpl withElasticScaleEnabled(Boolean elasticScaleEnabled) {
-        this.updateAppServicePlan.withElasticScaleEnabled(elasticScaleEnabled);
-        return this;
     }
 
     private boolean isInCreateMode() {

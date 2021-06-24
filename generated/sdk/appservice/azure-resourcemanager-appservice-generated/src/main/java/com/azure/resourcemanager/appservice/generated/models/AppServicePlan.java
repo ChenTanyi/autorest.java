@@ -116,6 +116,14 @@ public interface AppServicePlan {
     Boolean perSiteScaling();
 
     /**
+     * Gets the elasticScaleEnabled property: ServerFarm supports ElasticScale. Apps in this plan will scale as if the
+     * ServerFarm was ElasticPremium sku.
+     *
+     * @return the elasticScaleEnabled value.
+     */
+    Boolean elasticScaleEnabled();
+
+    /**
      * Gets the maximumElasticWorkerCount property: Maximum number of total workers allowed for this ElasticScaleEnabled
      * App Service Plan.
      *
@@ -291,6 +299,7 @@ public interface AppServicePlan {
                 DefinitionStages.WithWorkerTierName,
                 DefinitionStages.WithHostingEnvironmentProfile,
                 DefinitionStages.WithPerSiteScaling,
+                DefinitionStages.WithElasticScaleEnabled,
                 DefinitionStages.WithMaximumElasticWorkerCount,
                 DefinitionStages.WithIsSpot,
                 DefinitionStages.WithSpotExpirationTime,
@@ -382,6 +391,18 @@ public interface AppServicePlan {
              * @return the next definition stage.
              */
             WithCreate withPerSiteScaling(Boolean perSiteScaling);
+        }
+        /** The stage of the AppServicePlan definition allowing to specify elasticScaleEnabled. */
+        interface WithElasticScaleEnabled {
+            /**
+             * Specifies the elasticScaleEnabled property: ServerFarm supports ElasticScale. Apps in this plan will
+             * scale as if the ServerFarm was ElasticPremium sku.
+             *
+             * @param elasticScaleEnabled ServerFarm supports ElasticScale. Apps in this plan will scale as if the
+             *     ServerFarm was ElasticPremium sku.
+             * @return the next definition stage.
+             */
+            WithCreate withElasticScaleEnabled(Boolean elasticScaleEnabled);
         }
         /** The stage of the AppServicePlan definition allowing to specify maximumElasticWorkerCount. */
         interface WithMaximumElasticWorkerCount {

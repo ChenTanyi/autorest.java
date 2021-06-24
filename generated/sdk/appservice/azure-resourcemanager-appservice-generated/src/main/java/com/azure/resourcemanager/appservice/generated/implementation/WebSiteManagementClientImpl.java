@@ -272,6 +272,18 @@ public final class WebSiteManagementClientImpl implements WebSiteManagementClien
         return this.globals;
     }
 
+    /** The KubeEnvironmentsClient object to access its operations. */
+    private final KubeEnvironmentsClient kubeEnvironments;
+
+    /**
+     * Gets the KubeEnvironmentsClient object to access its operations.
+     *
+     * @return the KubeEnvironmentsClient object.
+     */
+    public KubeEnvironmentsClient getKubeEnvironments() {
+        return this.kubeEnvironments;
+    }
+
     /** The ProvidersClient object to access its operations. */
     private final ProvidersClient providers;
 
@@ -344,18 +356,6 @@ public final class WebSiteManagementClientImpl implements WebSiteManagementClien
         return this.webApps;
     }
 
-    /** The KubeEnvironmentsClient object to access its operations. */
-    private final KubeEnvironmentsClient kubeEnvironments;
-
-    /**
-     * Gets the KubeEnvironmentsClient object to access its operations.
-     *
-     * @return the KubeEnvironmentsClient object.
-     */
-    public KubeEnvironmentsClient getKubeEnvironments() {
-        return this.kubeEnvironments;
-    }
-
     /**
      * Initializes an instance of WebSiteManagementClient client.
      *
@@ -379,7 +379,7 @@ public final class WebSiteManagementClientImpl implements WebSiteManagementClien
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
-        this.apiVersion = "2021-01-01";
+        this.apiVersion = "2021-01-15";
         this.appServiceCertificateOrders = new AppServiceCertificateOrdersClientImpl(this);
         this.certificateOrdersDiagnostics = new CertificateOrdersDiagnosticsClientImpl(this);
         this.certificateRegistrationProviders = new CertificateRegistrationProvidersClientImpl(this);
@@ -392,13 +392,13 @@ public final class WebSiteManagementClientImpl implements WebSiteManagementClien
         this.deletedWebApps = new DeletedWebAppsClientImpl(this);
         this.diagnostics = new DiagnosticsClientImpl(this);
         this.globals = new GlobalsClientImpl(this);
+        this.kubeEnvironments = new KubeEnvironmentsClientImpl(this);
         this.providers = new ProvidersClientImpl(this);
         this.recommendations = new RecommendationsClientImpl(this);
         this.resourceHealthMetadatas = new ResourceHealthMetadatasClientImpl(this);
         this.resourceProviders = new ResourceProvidersClientImpl(this);
         this.staticSites = new StaticSitesClientImpl(this);
         this.webApps = new WebAppsClientImpl(this);
-        this.kubeEnvironments = new KubeEnvironmentsClientImpl(this);
     }
 
     /**
