@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.fluent.models;
 
-import com.azure.core.annotation.Immutable;
+import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.BuildStatus;
@@ -17,7 +17,7 @@ import java.util.List;
 
 /** Static Site Build ARM resource. */
 @JsonFlatten
-@Immutable
+@Fluent
 public class StaticSiteBuildArmResourceInner extends ProxyOnlyResource {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(StaticSiteBuildArmResourceInner.class);
 

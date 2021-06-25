@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.fluent.models;
 
-import com.azure.core.annotation.Immutable;
+import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.ProxyOnlyResource;
@@ -14,7 +14,7 @@ import java.time.OffsetDateTime;
 
 /** A snapshot of a web app configuration. */
 @JsonFlatten
-@Immutable
+@Fluent
 public class SiteConfigurationSnapshotInfoInner extends ProxyOnlyResource {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(SiteConfigurationSnapshotInfoInner.class);
 

@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.network.generated.fluent.models;
 
-import com.azure.core.annotation.Immutable;
+import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.management.Resource;
 import com.azure.core.management.SubResource;
@@ -17,7 +17,7 @@ import java.util.Map;
 
 /** A DDoS protection plan in a resource group. */
 @JsonFlatten
-@Immutable
+@Fluent
 public class DdosProtectionPlanInner extends Resource {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(DdosProtectionPlanInner.class);
 

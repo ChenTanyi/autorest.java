@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.fluent.models;
 
-import com.azure.core.annotation.Immutable;
+import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.ProxyOnlyResource;
@@ -14,7 +14,7 @@ import java.time.OffsetDateTime;
 
 /** Static sites user roles invitation link resource. */
 @JsonFlatten
-@Immutable
+@Fluent
 public class StaticSiteUserInvitationResponseResourceInner extends ProxyOnlyResource {
     @JsonIgnore
     private final ClientLogger logger = new ClientLogger(StaticSiteUserInvitationResponseResourceInner.class);

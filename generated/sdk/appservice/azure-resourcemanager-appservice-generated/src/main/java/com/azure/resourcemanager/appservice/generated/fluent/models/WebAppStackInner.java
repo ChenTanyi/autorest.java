@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.fluent.models;
 
-import com.azure.core.annotation.Immutable;
+import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.ProxyOnlyResource;
@@ -16,7 +16,7 @@ import java.util.List;
 
 /** Web App stack. */
 @JsonFlatten
-@Immutable
+@Fluent
 public class WebAppStackInner extends ProxyOnlyResource {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(WebAppStackInner.class);
 

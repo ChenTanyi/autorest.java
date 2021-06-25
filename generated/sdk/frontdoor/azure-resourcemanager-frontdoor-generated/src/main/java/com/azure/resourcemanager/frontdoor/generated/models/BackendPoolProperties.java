@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.frontdoor.generated.models;
 
-import com.azure.core.annotation.Immutable;
+import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The JSON object that contains the properties required to create a Backend Pool. */
-@Immutable
+@Fluent
 public final class BackendPoolProperties extends BackendPoolUpdateParameters {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(BackendPoolProperties.class);
 

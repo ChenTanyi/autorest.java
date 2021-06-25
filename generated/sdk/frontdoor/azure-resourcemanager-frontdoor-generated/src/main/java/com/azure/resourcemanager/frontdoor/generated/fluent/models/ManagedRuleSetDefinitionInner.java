@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.frontdoor.generated.fluent.models;
 
-import com.azure.core.annotation.Immutable;
+import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.management.Resource;
 import com.azure.core.util.logging.ClientLogger;
@@ -16,7 +16,7 @@ import java.util.Map;
 
 /** Describes the a managed rule set definition. */
 @JsonFlatten
-@Immutable
+@Fluent
 public class ManagedRuleSetDefinitionInner extends Resource {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(ManagedRuleSetDefinitionInner.class);
 

@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.frontdoor.generated.models;
 
-import com.azure.core.annotation.Immutable;
+import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.FrontendEndpointInner;
 import com.azure.resourcemanager.frontdoor.generated.fluent.models.RulesEngineInner;
@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** The JSON object that contains the properties required to create an endpoint. */
-@Immutable
+@Fluent
 public final class FrontDoorProperties extends FrontDoorUpdateParameters {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(FrontDoorProperties.class);
 

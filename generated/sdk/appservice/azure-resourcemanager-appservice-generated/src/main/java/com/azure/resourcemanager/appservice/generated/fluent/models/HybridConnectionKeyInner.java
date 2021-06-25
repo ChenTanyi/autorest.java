@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.fluent.models;
 
-import com.azure.core.annotation.Immutable;
+import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.ProxyOnlyResource;
@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 /** Hybrid Connection key contract. This has the send key name and value for a Hybrid Connection. */
 @JsonFlatten
-@Immutable
+@Fluent
 public class HybridConnectionKeyInner extends ProxyOnlyResource {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(HybridConnectionKeyInner.class);
 

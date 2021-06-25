@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.monitor.generated.fluent.models;
 
-import com.azure.core.annotation.Immutable;
+import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.monitor.generated.models.PrivateLinkScopesResource;
@@ -15,7 +15,7 @@ import java.util.Map;
 
 /** An Azure Monitor PrivateLinkScope definition. */
 @JsonFlatten
-@Immutable
+@Fluent
 public class AzureMonitorPrivateLinkScopeInner extends PrivateLinkScopesResource {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(AzureMonitorPrivateLinkScopeInner.class);
 

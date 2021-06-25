@@ -4,7 +4,7 @@
 
 package com.azure.resourcemanager.appservice.generated.fluent.models;
 
-import com.azure.core.annotation.Immutable;
+import com.azure.core.annotation.Fluent;
 import com.azure.core.annotation.JsonFlatten;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.appservice.generated.models.ProxyOnlyResource;
@@ -14,7 +14,7 @@ import java.util.List;
 
 /** Full view of network features for an app (presently VNET integration and Hybrid Connections). */
 @JsonFlatten
-@Immutable
+@Fluent
 public class NetworkFeaturesInner extends ProxyOnlyResource {
     @JsonIgnore private final ClientLogger logger = new ClientLogger(NetworkFeaturesInner.class);
 
