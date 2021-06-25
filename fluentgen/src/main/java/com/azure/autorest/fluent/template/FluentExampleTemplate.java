@@ -7,20 +7,28 @@ package com.azure.autorest.fluent.template;
 
 import com.azure.autorest.extension.base.plugin.PluginLogger;
 import com.azure.autorest.fluent.FluentGen;
+import com.azure.autorest.fluent.model.clientmodel.FluentExample;
 import com.azure.autorest.fluent.model.clientmodel.FluentStatic;
 import com.azure.autorest.fluent.model.clientmodel.examplemodel.ClientModelNode;
 import com.azure.autorest.fluent.model.clientmodel.examplemodel.ExampleNode;
 import com.azure.autorest.fluent.model.clientmodel.examplemodel.FluentCollectionMethodExample;
+import com.azure.autorest.fluent.model.clientmodel.examplemodel.FluentResourceCreateExample;
 import com.azure.autorest.fluent.model.clientmodel.examplemodel.ListNode;
 import com.azure.autorest.fluent.model.clientmodel.examplemodel.LiteralNode;
 import com.azure.autorest.fluent.model.clientmodel.examplemodel.MapNode;
+import com.azure.autorest.model.clientmodel.ClassType;
 import com.azure.autorest.model.clientmodel.ClientModel;
 import com.azure.autorest.model.clientmodel.ClientModelProperty;
 import com.azure.autorest.model.javamodel.JavaFile;
+import com.azure.autorest.model.javamodel.JavaModifier;
+import com.azure.autorest.model.javamodel.JavaVisibility;
 import com.azure.autorest.util.CodeNamer;
 import org.slf4j.Logger;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -34,8 +42,49 @@ public class FluentExampleTemplate {
         return INSTANCE;
     }
 
-    public final void write(FluentCollectionMethodExample collectionMethodExample, JavaFile javaFile) {
-        String className = collectionMethodExample.getClassName();
+    public final void write(FluentExample example, JavaFile javaFile) {
+        String className = example.getClassName();
+
+        List<ExampleMethod> exampleMethods = new ArrayList<>();
+        exampleMethods.addAll(
+                example.getResourceCreateExamples().stream()
+                        .map(this::generateExampleMethod)
+                        .collect(Collectors.toList()));
+        exampleMethods.addAll(
+                example.getCollectionMethodExamples().stream()
+                        .map(this::generateExampleMethod)
+                        .collect(Collectors.toList()));
+
+        Set<String> imports = exampleMethods.stream().flatMap(em -> em.getImports().stream()).collect(Collectors.toSet());
+        javaFile.declareImport(imports);
+
+        Set<HelperMethod> helperMethods = exampleMethods.stream().flatMap(em -> em.getHelperMethods().stream()).collect(Collectors.toSet());
+
+        javaFile.publicFinalClass(className, classBlock -> {
+            for (ExampleMethod exampleMethod : exampleMethods) {
+                classBlock.publicStaticMethod(exampleMethod.getMethodSignature(), methodBlock -> {
+                    methodBlock.line(exampleMethod.getMethodContent());
+                });
+            }
+
+            if (helperMethods.contains(HelperMethod.MapOfMethod)) {
+                classBlock.annotation("SuppressWarnings(\"unchecked\")");
+                classBlock.method(JavaVisibility.Private, Arrays.asList(JavaModifier.Static), "<T> Map<String, T> mapOf(Object... inputs)", methodBlock -> {
+                    methodBlock.line("Map<String, T> map = new HashMap<>();");
+                    methodBlock.line("for (int i = 0; i < inputs.length; i += 2) {");
+                    methodBlock.indent(() -> {
+                        methodBlock.line("String key = (String) inputs[i];");
+                        methodBlock.line("T value = (T) inputs[i + 1];");
+                        methodBlock.line("map.put(key, value);");
+                    });
+                    methodBlock.line("}");
+                    methodBlock.line("return map;");
+                });
+            }
+        });
+    }
+
+    private ExampleMethod generateExampleMethod(FluentCollectionMethodExample collectionMethodExample) {
         String methodName = CodeNamer.toCamelCase(collectionMethodExample.getName());
         String managerName = CodeNamer.toCamelCase(collectionMethodExample.getManager().getType().getName());
 
@@ -50,35 +99,48 @@ public class FluentExampleTemplate {
                 collectionMethodExample.getCollectionMethod().getMethodName(),
                 parameterInvocations);
 
-        Set<String> imports = new HashSet<>(visitor.imports);
-        //imports.add(FluentStatic.getFluentManager().getType().getFullName());
-        javaFile.declareImport(imports);
-
-        javaFile.publicFinalClass(className, classBlock -> {
-            classBlock.publicMethod(String.format("void %1$s(%2$s %3$s)", methodName, FluentStatic.getFluentManager().getType().getFullName(), managerName), methodBlock -> {
-                methodBlock.line(snippet);
-            });
-        });
+        ExampleMethod exampleMethod = new ExampleMethod()
+                .setImports(visitor.imports)
+                .setMethodSignature(String.format("void %1$s(%2$s %3$s)", methodName, FluentStatic.getFluentManager().getType().getFullName(), managerName))
+                .setMethodContent(snippet)
+                .setHelperMethods(visitor.helperMethods);
+        return exampleMethod;
     }
 
-    public String writeSnippet(FluentCollectionMethodExample collectionMethodExample) {
-        String managerName = CodeNamer.toCamelCase(collectionMethodExample.getManager().getType().getName());
+    private ExampleMethod generateExampleMethod(FluentResourceCreateExample resourceCreateExample) {
+        String methodName = CodeNamer.toCamelCase(resourceCreateExample.getName());
+        String managerName = CodeNamer.toCamelCase(resourceCreateExample.getManager().getType().getName());
 
         ExampleNodeVisitor visitor = new ExampleNodeVisitor();
-        String parameterInvocations = collectionMethodExample.getParameters().stream()
-                .map(p -> visitor.accept(p.getExampleNode()))
-                .collect(Collectors.joining(", "));
+        StringBuilder sb = new StringBuilder(managerName)
+                .append(".").append(CodeNamer.toCamelCase(resourceCreateExample.getResourceCollection().getInterfaceType().getName())).append("()");
+        for (FluentResourceCreateExample.ParameterExample parameter : resourceCreateExample.getParameters()) {
+            String parameterInvocations = parameter.getExampleNodes().stream()
+                    .map(visitor::accept)
+                    .collect(Collectors.joining(", "));
+            if (parameter.getExampleNodes().size() == 1 && parameterInvocations.equals("null")) {
+                // avoid ambiguous type on "null"
+                parameterInvocations = String.format("(%1$s) %2$s",
+                        parameter.getExampleNodes().iterator().next().getClientType().toString(),
+                        parameterInvocations);
+            }
+            sb.append(".").append(parameter.getFluentMethod().getName())
+                    .append("(").append(parameterInvocations).append(")");
+        }
+        sb.append(".create();");
 
-        return String.format("%1$s.%2$s().%3$s(%4$s);",
-                managerName,
-                CodeNamer.toCamelCase(collectionMethodExample.getResourceCollection().getInterfaceType().getName()),
-                collectionMethodExample.getCollectionMethod().getMethodName(),
-                parameterInvocations);
+        ExampleMethod exampleMethod = new ExampleMethod()
+                .setImports(visitor.imports)
+                .setMethodSignature(String.format("void %1$s(%2$s %3$s)", methodName, FluentStatic.getFluentManager().getType().getFullName(), managerName))
+                .setMethodContent(sb.toString())
+                .setHelperMethods(visitor.helperMethods);
+        return exampleMethod;
     }
 
     private static class ExampleNodeVisitor {
 
         private final Set<String> imports = new HashSet<>();
+        private final Set<HelperMethod> helperMethods = new HashSet<>();
 
         private String accept(ExampleNode node) {
             if (node instanceof LiteralNode) {
@@ -96,7 +158,30 @@ public class FluentExampleTemplate {
 
                 return builder.toString();
             } else if (node instanceof MapNode) {
-                // TODO need some helper method to create Map
+                imports.add(java.util.Map.class.getName());
+                imports.add(java.util.HashMap.class.getName());
+
+                helperMethods.add(HelperMethod.MapOfMethod);
+
+                List<String> keys = ((MapNode) node).getKeys();
+
+                StringBuilder builder = new StringBuilder();
+                // mapOf(...)
+                // similar to Map.of in Java 9
+                builder.append("mapOf(");
+                for (int i = 0; i < keys.size(); ++i) {
+                    if (i != 0) {
+                        builder.append(", ");
+                    }
+                    String key = keys.get(i);
+                    ExampleNode elementNode = node.getChildNodes().get(i);
+                    builder.append(ClassType.String.defaultValueExpression(key))
+                            .append(", ")
+                            .append(this.accept(elementNode));
+                }
+                builder.append(")");
+
+                return builder.toString();
             } else if (node instanceof ClientModelNode) {
                 ClientModelNode clientModelNode = ((ClientModelNode) node);
 
@@ -115,6 +200,53 @@ public class FluentExampleTemplate {
                 return builder.toString();
             }
             return null;
+        }
+    }
+
+    private enum HelperMethod {
+        MapOfMethod
+    }
+
+    private static class ExampleMethod {
+        private Set<String> imports;
+        private String methodSignature;
+        private String methodContent;
+        private Set<HelperMethod> helperMethods;
+
+        private Set<String> getImports() {
+            return imports;
+        }
+
+        public ExampleMethod setImports(Set<String> imports) {
+            this.imports = imports;
+            return this;
+        }
+
+        private String getMethodSignature() {
+            return methodSignature;
+        }
+
+        private ExampleMethod setMethodSignature(String methodSignature) {
+            this.methodSignature = methodSignature;
+            return this;
+        }
+
+        private String getMethodContent() {
+            return methodContent;
+        }
+
+        private ExampleMethod setMethodContent(String methodContent) {
+            this.methodContent = methodContent;
+            return this;
+        }
+
+        public Set<HelperMethod> getHelperMethods() {
+            return helperMethods;
+        }
+
+        public ExampleMethod setHelperMethods(Set<HelperMethod> helperMethods) {
+            this.helperMethods = helperMethods;
+            return this;
         }
     }
 }
