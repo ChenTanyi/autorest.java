@@ -16,13 +16,17 @@ import com.azure.autorest.fluent.model.clientmodel.examplemodel.FluentResourceCr
 import com.azure.autorest.fluent.model.clientmodel.examplemodel.ListNode;
 import com.azure.autorest.fluent.model.clientmodel.examplemodel.LiteralNode;
 import com.azure.autorest.fluent.model.clientmodel.examplemodel.MapNode;
+import com.azure.autorest.fluent.model.clientmodel.examplemodel.ObjectNode;
 import com.azure.autorest.model.clientmodel.ClassType;
 import com.azure.autorest.model.clientmodel.ClientModel;
 import com.azure.autorest.model.clientmodel.ClientModelProperty;
+import com.azure.autorest.model.clientmodel.PrimitiveType;
 import com.azure.autorest.model.javamodel.JavaFile;
 import com.azure.autorest.model.javamodel.JavaModifier;
 import com.azure.autorest.model.javamodel.JavaVisibility;
 import com.azure.autorest.util.CodeNamer;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 
 import java.util.ArrayList;
@@ -35,6 +39,8 @@ import java.util.stream.Collectors;
 public class FluentExampleTemplate {
 
     private static final Logger logger = new PluginLogger(FluentGen.getPluginInstance(), FluentExampleTemplate.class);
+
+    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
     private static final FluentExampleTemplate INSTANCE = new FluentExampleTemplate();
 
@@ -58,16 +64,20 @@ public class FluentExampleTemplate {
         Set<String> imports = exampleMethods.stream().flatMap(em -> em.getImports().stream()).collect(Collectors.toSet());
         javaFile.declareImport(imports);
 
-        Set<HelperMethod> helperMethods = exampleMethods.stream().flatMap(em -> em.getHelperMethods().stream()).collect(Collectors.toSet());
+        Set<HelperFeature> helperFeatures = exampleMethods.stream().flatMap(em -> em.getHelperFeatures().stream()).collect(Collectors.toSet());
 
         javaFile.publicFinalClass(className, classBlock -> {
             for (ExampleMethod exampleMethod : exampleMethods) {
-                classBlock.publicStaticMethod(exampleMethod.getMethodSignature(), methodBlock -> {
+                String methodSignature = exampleMethod.getMethodSignature();
+                if (exampleMethod.getHelperFeatures().contains(HelperFeature.ThrowsIOException)) {
+                    methodSignature += " throws IOException";
+                }
+                classBlock.publicStaticMethod(methodSignature, methodBlock -> {
                     methodBlock.line(exampleMethod.getMethodContent());
                 });
             }
 
-            if (helperMethods.contains(HelperMethod.MapOfMethod)) {
+            if (helperFeatures.contains(HelperFeature.MapOfMethod)) {
                 classBlock.annotation("SuppressWarnings(\"unchecked\")");
                 classBlock.method(JavaVisibility.Private, Arrays.asList(JavaModifier.Static), "<T> Map<String, T> mapOf(Object... inputs)", methodBlock -> {
                     methodBlock.line("Map<String, T> map = new HashMap<>();");
@@ -85,7 +95,7 @@ public class FluentExampleTemplate {
     }
 
     private ExampleMethod generateExampleMethod(FluentCollectionMethodExample collectionMethodExample) {
-        String methodName = CodeNamer.toCamelCase(collectionMethodExample.getName());
+        String methodName = CodeNamer.toCamelCase(CodeNamer.removeInvalidCharacters(collectionMethodExample.getName()));
         String managerName = CodeNamer.toCamelCase(collectionMethodExample.getManager().getType().getName());
 
         ExampleNodeVisitor visitor = new ExampleNodeVisitor();
@@ -103,12 +113,12 @@ public class FluentExampleTemplate {
                 .setImports(visitor.imports)
                 .setMethodSignature(String.format("void %1$s(%2$s %3$s)", methodName, FluentStatic.getFluentManager().getType().getFullName(), managerName))
                 .setMethodContent(snippet)
-                .setHelperMethods(visitor.helperMethods);
+                .setHelperFeatures(visitor.helperFeatures);
         return exampleMethod;
     }
 
     private ExampleMethod generateExampleMethod(FluentResourceCreateExample resourceCreateExample) {
-        String methodName = CodeNamer.toCamelCase(resourceCreateExample.getName());
+        String methodName = CodeNamer.toCamelCase(CodeNamer.removeInvalidCharacters(resourceCreateExample.getName()));
         String managerName = CodeNamer.toCamelCase(resourceCreateExample.getManager().getType().getName());
 
         ExampleNodeVisitor visitor = new ExampleNodeVisitor();
@@ -133,20 +143,53 @@ public class FluentExampleTemplate {
                 .setImports(visitor.imports)
                 .setMethodSignature(String.format("void %1$s(%2$s %3$s)", methodName, FluentStatic.getFluentManager().getType().getFullName(), managerName))
                 .setMethodContent(sb.toString())
-                .setHelperMethods(visitor.helperMethods);
+                .setHelperFeatures(visitor.helperFeatures);
         return exampleMethod;
     }
 
     private static class ExampleNodeVisitor {
 
         private final Set<String> imports = new HashSet<>();
-        private final Set<HelperMethod> helperMethods = new HashSet<>();
+        private final Set<HelperFeature> helperFeatures = new HashSet<>();
 
         private String accept(ExampleNode node) {
             if (node instanceof LiteralNode) {
                 node.getClientType().addImportsTo(imports, false);
 
                 return node.getClientType().defaultValueExpression(((LiteralNode) node).getLiteralsValue());
+            } else if (node instanceof ObjectNode) {
+                PrimitiveType primitiveType = null;
+                if (node.getObjectValue() instanceof Integer) {
+                    primitiveType = PrimitiveType.Int;
+                } else if (node.getObjectValue() instanceof Long) {
+                    primitiveType = PrimitiveType.Long;
+                } else if (node.getObjectValue() instanceof Float) {
+                    primitiveType = PrimitiveType.Float;
+                } else if (node.getObjectValue() instanceof Double) {
+                    primitiveType = PrimitiveType.Double;
+                } else if (node.getObjectValue() instanceof Boolean) {
+                    primitiveType = PrimitiveType.Boolean;
+                }
+
+                if (primitiveType != null) {
+                    return primitiveType.defaultValueExpression(node.getObjectValue().toString());
+                } else {
+                    imports.add(com.azure.core.management.serializer.SerializerFactory.class.getName());
+                    imports.add(com.azure.core.util.serializer.SerializerEncoding.class.getName());
+                    imports.add(java.io.IOException.class.getName());
+
+                    helperFeatures.add(HelperFeature.ThrowsIOException);
+
+                    try {
+                        String jsonStr = OBJECT_MAPPER.writeValueAsString(node.getObjectValue());
+
+                        return String.format("SerializerFactory.createDefaultManagementSerializerAdapter().deserialize(%s, Object.class, SerializerEncoding.JSON)",
+                                ClassType.String.defaultValueExpression(jsonStr));
+                    } catch (JsonProcessingException e) {
+                        logger.error("Failed to write JSON {}", node.getObjectValue());
+                        throw new IllegalStateException(e);
+                    }
+                }
             } else if (node instanceof ListNode) {
                 imports.add(java.util.Arrays.class.getName());
 
@@ -161,7 +204,7 @@ public class FluentExampleTemplate {
                 imports.add(java.util.Map.class.getName());
                 imports.add(java.util.HashMap.class.getName());
 
-                helperMethods.add(HelperMethod.MapOfMethod);
+                helperFeatures.add(HelperFeature.MapOfMethod);
 
                 List<String> keys = ((MapNode) node).getKeys();
 
@@ -203,15 +246,19 @@ public class FluentExampleTemplate {
         }
     }
 
-    private enum HelperMethod {
-        MapOfMethod
+    private enum HelperFeature {
+        // 'mapOf(...)' method in class
+        MapOfMethod,
+
+        // 'throws IOException' in method signature
+        ThrowsIOException
     }
 
     private static class ExampleMethod {
         private Set<String> imports;
         private String methodSignature;
         private String methodContent;
-        private Set<HelperMethod> helperMethods;
+        private Set<HelperFeature> helperFeatures;
 
         private Set<String> getImports() {
             return imports;
@@ -240,12 +287,12 @@ public class FluentExampleTemplate {
             return this;
         }
 
-        public Set<HelperMethod> getHelperMethods() {
-            return helperMethods;
+        public Set<HelperFeature> getHelperFeatures() {
+            return helperFeatures;
         }
 
-        public ExampleMethod setHelperMethods(Set<HelperMethod> helperMethods) {
-            this.helperMethods = helperMethods;
+        public ExampleMethod setHelperFeatures(Set<HelperFeature> helperFeatures) {
+            this.helperFeatures = helperFeatures;
             return this;
         }
     }

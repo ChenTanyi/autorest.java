@@ -20,6 +20,7 @@ import com.azure.autorest.fluent.model.clientmodel.examplemodel.FluentResourceCr
 import com.azure.autorest.fluent.model.clientmodel.examplemodel.ListNode;
 import com.azure.autorest.fluent.model.clientmodel.examplemodel.LiteralNode;
 import com.azure.autorest.fluent.model.clientmodel.examplemodel.MapNode;
+import com.azure.autorest.fluent.model.clientmodel.examplemodel.ObjectNode;
 import com.azure.autorest.fluent.model.clientmodel.fluentmodel.create.DefinitionStage;
 import com.azure.autorest.fluent.model.clientmodel.fluentmodel.create.DefinitionStageBlank;
 import com.azure.autorest.fluent.model.clientmodel.fluentmodel.create.DefinitionStageCreate;
@@ -41,12 +42,14 @@ import com.azure.autorest.model.clientmodel.MapType;
 import com.azure.autorest.model.clientmodel.ProxyMethodExample;
 import com.azure.autorest.model.clientmodel.ProxyMethodParameter;
 import com.azure.autorest.util.CodeNamer;
+import com.azure.core.util.CoreUtils;
 import org.slf4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -94,7 +97,7 @@ public class ExampleParser {
         String name = CodeNamer.toPascalCase(groupName) + CodeNamer.toPascalCase(methodName);
         FluentExample example = examples.get(name);
         if (example == null) {
-            example = new FluentExample(name);
+            example = new FluentExample(CodeNamer.toPascalCase(groupName), CodeNamer.toPascalCase(methodName));
             examples.put(name, example);
         }
         return example;
@@ -261,26 +264,13 @@ public class ExampleParser {
         if (parameterValue == null) {
             node = new LiteralNode(clientModelProperty.getClientType(), null);
         } else {
-            List<String> flattenedNames = Collections.singletonList(clientModelProperty.getSerializedName());
+            List<String> jsonPropertyNames = Collections.singletonList(clientModelProperty.getSerializedName());
             if (clientModel.getNeedsFlatten()) {
-                flattenedNames = flattenedNames(clientModelProperty.getSerializedName());
+                jsonPropertyNames = flattenedNames(clientModelProperty.getSerializedName());
             }
 
-            boolean found = true;
-            Object childObjectValue = parameterValue.getObjectValue();
-            for (String name : flattenedNames) {
-                if (childObjectValue instanceof Map) {
-                    childObjectValue = ((Map<String, Object>) childObjectValue).get(name);
-                    if (childObjectValue == null) {
-                        found = false;
-                        break;
-                    }
-                } else {
-                    found = false;
-                    break;
-                }
-            }
-            if (found) {
+            Object childObjectValue = getChildObjectValue(jsonPropertyNames, parameterValue.getObjectValue());
+            if (childObjectValue != null) {
                 node = parseNode(clientModelProperty.getClientType(), childObjectValue);
             } else {
                 if (isRequired) {
@@ -311,49 +301,64 @@ public class ExampleParser {
             node = mapNode;
 
             Map<String, Object> dict = (Map<String, Object>) objectValue;
-            for (Map.Entry<String, Object> entry: dict.entrySet()) {
+            for (Map.Entry<String, Object> entry : dict.entrySet()) {
                 ExampleNode childNode = parseNode(elementType, entry.getValue());
                 node.getChildNodes().add(childNode);
                 mapNode.getKeys().add(entry.getKey());
             }
+        } else if (type == ClassType.Object) {
+            node = new ObjectNode(type, objectValue);
         } else if (type instanceof ClassType && objectValue instanceof Map) {
             ClientModel model = FluentUtils.getClientModel(((ClassType) type).getName());
             if (model != null) {
-                ClientModelNode clientModelNode = new ClientModelNode(type, objectValue);
+                if (model.getIsPolymorphic()) {
+                    // polymorphic, need to get the correct subclass from discriminator
+                    String serializedName = model.getPolymorphicDiscriminator();
+                    List<String> jsonPropertyNames = Collections.singletonList(serializedName);
+                    if (model.getNeedsFlatten()) {
+                        jsonPropertyNames = flattenedNames(serializedName);
+                    }
+
+                    Object childObjectValue = getChildObjectValue(jsonPropertyNames, objectValue);
+                    if (childObjectValue instanceof String) {
+                        String discriminatorValue = (String) childObjectValue;
+                        ClientModel directiveModel = model.getDerivedModels().stream()
+                                .filter(m -> discriminatorValue.equalsIgnoreCase(m.getSerializedName()))
+                                .findFirst().orElse(null);
+                        if (directiveModel != null) {
+                            // use the subclass
+                            type = directiveModel.getType();
+                            model = directiveModel;
+                        } else {
+                            logger.warn("Failed to find the subclass with discriminator value '{}'", discriminatorValue);
+                        }
+                    } else {
+                        logger.warn("Failed to find the sample value for discriminator property '{}'", serializedName);
+                    }
+                }
+
+                ClientModelNode clientModelNode = new ClientModelNode(type, objectValue).setClientModel(model);
                 node = clientModelNode;
 
                 clientModelNode.setClientModel(model);
 
-                for (ClientModelProperty modelProperty : model.getProperties()) {
+                for (ClientModelProperty modelProperty : getPropertiesIncludeSuperclass(model)) {
                     String serializedName = modelProperty.getSerializedName();
 
-                    List<String> flattenedNames = Collections.singletonList(serializedName);
-                    if (model.getNeedsFlatten()) {
-                        flattenedNames = flattenedNames(serializedName);
+                    List<String> jsonPropertyNames = Collections.singletonList(serializedName);
+                    if (model.getNeedsFlatten() || modelProperty.getNeedsFlatten()) {
+                        jsonPropertyNames = flattenedNames(serializedName);
                     }
 
-                    boolean found = true;
-                    Object childObjectValue = objectValue;
-                    for (String name : flattenedNames) {
-                        if (childObjectValue instanceof Map) {
-                            childObjectValue = ((Map<String, Object>) childObjectValue).get(name);
-                            if (childObjectValue == null) {
-                                found = false;
-                                break;
-                            }
-                        } else {
-                            found = false;
-                            break;
-                        }
-                    }
-                    if (found) {
+                    Object childObjectValue = getChildObjectValue(jsonPropertyNames, objectValue);
+                    if (childObjectValue != null) {
                         ExampleNode childNode = parseNode(modelProperty.getClientType(), childObjectValue);
                         node.getChildNodes().add(childNode);
                         clientModelNode.getClientModelProperties().put(childNode, modelProperty);
                     }
                 }
             } else {
-                // TODO error
+                throw new IllegalStateException("model type not found for type " + type + " and value " + objectValue);
             }
         } else {
             LiteralNode literalNode = new LiteralNode(type, objectValue);
@@ -369,6 +374,24 @@ public class ExampleParser {
         return Arrays.asList(serializedName.split(Pattern.quote(".")));
     }
 
+    private static Object getChildObjectValue(List<String> jsonPropertyNames, Object objectValue) {
+        boolean found = true;
+        Object childObjectValue = objectValue;
+        for (String name : jsonPropertyNames) {
+            if (childObjectValue instanceof Map) {
+                childObjectValue = ((Map<String, Object>) childObjectValue).get(name);
+                if (childObjectValue == null) {
+                    found = false;
+                    break;
+                }
+            } else {
+                found = false;
+                break;
+            }
+        }
+        return found ? childObjectValue : null;
+    }
+
     private static List<MethodParameter> getParameters(ClientMethod clientMethod) {
         Map<String, ProxyMethodParameter> proxyMethodParameterByClientParameterName = clientMethod.getProxyMethod().getParameters().stream()
                 .collect(Collectors.toMap(p -> CodeNamer.getEscapedReservedClientMethodParameterName(p.getName()), Function.identity()));
@@ -377,6 +400,46 @@ public class ExampleParser {
                 .filter(p -> !p.getIsConstant() && !p.getFromClient())
                 .map(p -> new MethodParameter(proxyMethodParameterByClientParameterName.get(p.getName()), p))
                 .collect(Collectors.toList());
+    }
+
+    private static List<ClientModelProperty> getPropertiesIncludeSuperclass(ClientModel model) {
+        Map<String, ClientModelProperty> propertiesMap = new LinkedHashMap<>();
+        List<ClientModelProperty> properties = new ArrayList<>();
+
+        List<ClientModel> parentModels = new ArrayList<>();
+        String parentModelName = model.getParentModelName();
+        while (!CoreUtils.isNullOrEmpty(parentModelName)) {
+            ClientModel parentModel = FluentUtils.getClientModel(parentModelName);
+            if (parentModel != null) {
+                parentModels.add(parentModel);
+            }
+            parentModelName = parentModel == null ? null :parentModel.getParentModelName();
+        }
+
+        List<List<ClientModelProperty>> propertiesFromTypeAndParents = new ArrayList<>();
+        propertiesFromTypeAndParents.add(new ArrayList<>());
+        model.getProperties().stream().filter(p -> !p.getIsConstant() && !p.getIsReadOnly()).forEach(p -> {
+            if (propertiesMap.putIfAbsent(p.getName(), p) == null) {
+                propertiesFromTypeAndParents.get(propertiesFromTypeAndParents.size() - 1).add(p);
+            }
+        });
+
+        for (ClientModel parent : parentModels) {
+            propertiesFromTypeAndParents.add(new ArrayList<>());
+
+            parent.getProperties().stream().filter(p -> !p.getIsConstant() && !p.getIsReadOnly()).forEach(p -> {
+                if (propertiesMap.putIfAbsent(p.getName(), p) == null) {
+                    propertiesFromTypeAndParents.get(propertiesFromTypeAndParents.size() - 1).add(p);
+                }
+            });
+        }
+
+        Collections.reverse(propertiesFromTypeAndParents);
+        for (List<ClientModelProperty> properties1 : propertiesFromTypeAndParents) {
+            properties.addAll(properties1);
+        }
+
+        return properties;
     }
 
     private static boolean requiresExample(ClientMethod clientMethod) {
