@@ -37,6 +37,15 @@ public final class RestorePointImpl implements RestorePoint, RestorePoint.Defini
         return this.innerModel().type();
     }
 
+    public List<ApiEntityReference> excludeDisks() {
+        List<ApiEntityReference> inner = this.innerModel().excludeDisks();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
     public RestorePointSourceMetadata sourceMetadata() {
         return this.innerModel().sourceMetadata();
     }
@@ -51,15 +60,6 @@ public final class RestorePointImpl implements RestorePoint, RestorePoint.Defini
 
     public RestorePointProvisioningDetails provisioningDetails() {
         return this.innerModel().provisioningDetails();
-    }
-
-    public List<ApiEntityReference> excludeDisks() {
-        List<ApiEntityReference> inner = this.innerModel().excludeDisks();
-        if (inner != null) {
-            return Collections.unmodifiableList(inner);
-        } else {
-            return Collections.emptyList();
-        }
     }
 
     public RestorePointInner innerModel() {

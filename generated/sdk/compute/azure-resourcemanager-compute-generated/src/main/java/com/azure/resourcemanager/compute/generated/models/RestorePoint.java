@@ -32,6 +32,14 @@ public interface RestorePoint {
     String type();
 
     /**
+     * Gets the excludeDisks property: List of disk resource ids that the customer wishes to exclude from the restore
+     * point. If no disks are specified, all disks will be included.
+     *
+     * @return the excludeDisks value.
+     */
+    List<ApiEntityReference> excludeDisks();
+
+    /**
      * Gets the sourceMetadata property: Gets the details of the VM captured at the time of the restore point creation.
      *
      * @return the sourceMetadata value.
@@ -60,14 +68,6 @@ public interface RestorePoint {
      * @return the provisioningDetails value.
      */
     RestorePointProvisioningDetails provisioningDetails();
-
-    /**
-     * Gets the excludeDisks property: List of disk resource ids that the customer wishes to exclude from the restore
-     * point. If no disks are specified, all disks will be included.
-     *
-     * @return the excludeDisks value.
-     */
-    List<ApiEntityReference> excludeDisks();
 
     /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.RestorePointInner object.
