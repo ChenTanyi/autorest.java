@@ -65,7 +65,7 @@ public final class LogProfilesClientImpl implements LogProfilesClient {
     @ServiceInterface(name = "MonitorClientLogProf")
     private interface LogProfilesService {
         @Headers({"Accept: application/json;q=0.9", "Content-Type: application/json"})
-        @Delete("/subscriptions/{subscriptionId}/providers/microsoft.insights/logprofiles/{logProfileName}")
+        @Delete("/subscriptions/{subscriptionId}/providers/Microsoft.Insights/logprofiles/{logProfileName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<Void>> delete(
@@ -76,7 +76,7 @@ public final class LogProfilesClientImpl implements LogProfilesClient {
             Context context);
 
         @Headers({"Content-Type: application/json"})
-        @Get("/subscriptions/{subscriptionId}/providers/microsoft.insights/logprofiles/{logProfileName}")
+        @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Insights/logprofiles/{logProfileName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<LogProfileResourceInner>> get(
@@ -88,7 +88,7 @@ public final class LogProfilesClientImpl implements LogProfilesClient {
             Context context);
 
         @Headers({"Content-Type: application/json"})
-        @Put("/subscriptions/{subscriptionId}/providers/microsoft.insights/logprofiles/{logProfileName}")
+        @Put("/subscriptions/{subscriptionId}/providers/Microsoft.Insights/logprofiles/{logProfileName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<LogProfileResourceInner>> createOrUpdate(
@@ -101,7 +101,7 @@ public final class LogProfilesClientImpl implements LogProfilesClient {
             Context context);
 
         @Headers({"Content-Type: application/json"})
-        @Patch("/subscriptions/{subscriptionId}/providers/microsoft.insights/logprofiles/{logProfileName}")
+        @Patch("/subscriptions/{subscriptionId}/providers/Microsoft.Insights/logprofiles/{logProfileName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<LogProfileResourceInner>> update(
@@ -114,7 +114,7 @@ public final class LogProfilesClientImpl implements LogProfilesClient {
             Context context);
 
         @Headers({"Content-Type: application/json"})
-        @Get("/subscriptions/{subscriptionId}/providers/microsoft.insights/logprofiles")
+        @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Insights/logprofiles")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<LogProfileCollection>> list(

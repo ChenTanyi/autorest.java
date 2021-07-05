@@ -76,6 +76,10 @@ public final class AutoscaleSettingResourceImpl
         return this.innerModel().targetResourceUri();
     }
 
+    public String targetResourceLocation() {
+        return this.innerModel().targetResourceLocation();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -246,6 +250,16 @@ public final class AutoscaleSettingResourceImpl
             return this;
         } else {
             this.updateAutoscaleSettingResource.withTargetResourceUri(targetResourceUri);
+            return this;
+        }
+    }
+
+    public AutoscaleSettingResourceImpl withTargetResourceLocation(String targetResourceLocation) {
+        if (isInCreateMode()) {
+            this.innerModel().withTargetResourceLocation(targetResourceLocation);
+            return this;
+        } else {
+            this.updateAutoscaleSettingResource.withTargetResourceLocation(targetResourceLocation);
             return this;
         }
     }

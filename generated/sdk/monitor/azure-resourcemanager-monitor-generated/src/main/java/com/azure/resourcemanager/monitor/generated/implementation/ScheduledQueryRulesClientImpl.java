@@ -66,7 +66,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
     private interface ScheduledQueryRulesService {
         @Headers({"Content-Type: application/json"})
         @Put(
-            "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.insights"
+            "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Insights"
                 + "/scheduledQueryRules/{ruleName}")
         @ExpectedResponses({200, 201})
         @UnexpectedResponseExceptionType(ManagementException.class)
@@ -82,7 +82,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.insights"
+            "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Insights"
                 + "/scheduledQueryRules/{ruleName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
@@ -97,7 +97,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
 
         @Headers({"Content-Type: application/json"})
         @Patch(
-            "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.insights"
+            "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Insights"
                 + "/scheduledQueryRules/{ruleName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
@@ -113,7 +113,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
 
         @Headers({"Content-Type: application/json"})
         @Delete(
-            "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.insights"
+            "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Insights"
                 + "/scheduledQueryRules/{ruleName}")
         @ExpectedResponses({200, 204})
         @UnexpectedResponseExceptionType(ManagementException.class)
@@ -127,7 +127,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
             Context context);
 
         @Headers({"Content-Type: application/json"})
-        @Get("/subscriptions/{subscriptionId}/providers/microsoft.insights/scheduledQueryRules")
+        @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Insights/scheduledQueryRules")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<LogSearchRuleResourceCollection>> list(
@@ -140,7 +140,7 @@ public final class ScheduledQueryRulesClientImpl implements ScheduledQueryRulesC
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.insights"
+            "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Insights"
                 + "/scheduledQueryRules")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)

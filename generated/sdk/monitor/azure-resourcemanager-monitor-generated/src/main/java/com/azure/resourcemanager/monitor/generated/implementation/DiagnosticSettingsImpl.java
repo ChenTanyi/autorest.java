@@ -88,7 +88,7 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
         String resourceUri =
             Utils
                 .getValueFromIdByParameterName(
-                    id, "/{resourceUri}/providers/microsoft.insights/diagnosticSettings/{name}", "resourceUri");
+                    id, "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "resourceUri");
         if (resourceUri == null) {
             throw logger
                 .logExceptionAsError(
@@ -98,7 +98,7 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
         String name =
             Utils
                 .getValueFromIdByParameterName(
-                    id, "/{resourceUri}/providers/microsoft.insights/diagnosticSettings/{name}", "name");
+                    id, "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "name");
         if (name == null) {
             throw logger
                 .logExceptionAsError(
@@ -114,7 +114,7 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
         String resourceUri =
             Utils
                 .getValueFromIdByParameterName(
-                    id, "/{resourceUri}/providers/microsoft.insights/diagnosticSettings/{name}", "resourceUri");
+                    id, "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "resourceUri");
         if (resourceUri == null) {
             throw logger
                 .logExceptionAsError(
@@ -124,7 +124,7 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
         String name =
             Utils
                 .getValueFromIdByParameterName(
-                    id, "/{resourceUri}/providers/microsoft.insights/diagnosticSettings/{name}", "name");
+                    id, "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "name");
         if (name == null) {
             throw logger
                 .logExceptionAsError(
@@ -140,7 +140,7 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
         String resourceUri =
             Utils
                 .getValueFromIdByParameterName(
-                    id, "/{resourceUri}/providers/microsoft.insights/diagnosticSettings/{name}", "resourceUri");
+                    id, "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "resourceUri");
         if (resourceUri == null) {
             throw logger
                 .logExceptionAsError(
@@ -150,7 +150,7 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
         String name =
             Utils
                 .getValueFromIdByParameterName(
-                    id, "/{resourceUri}/providers/microsoft.insights/diagnosticSettings/{name}", "name");
+                    id, "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "name");
         if (name == null) {
             throw logger
                 .logExceptionAsError(
@@ -166,7 +166,7 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
         String resourceUri =
             Utils
                 .getValueFromIdByParameterName(
-                    id, "/{resourceUri}/providers/microsoft.insights/diagnosticSettings/{name}", "resourceUri");
+                    id, "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "resourceUri");
         if (resourceUri == null) {
             throw logger
                 .logExceptionAsError(
@@ -176,7 +176,7 @@ public final class DiagnosticSettingsImpl implements DiagnosticSettings {
         String name =
             Utils
                 .getValueFromIdByParameterName(
-                    id, "/{resourceUri}/providers/microsoft.insights/diagnosticSettings/{name}", "name");
+                    id, "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "name");
         if (name == null) {
             throw logger
                 .logExceptionAsError(

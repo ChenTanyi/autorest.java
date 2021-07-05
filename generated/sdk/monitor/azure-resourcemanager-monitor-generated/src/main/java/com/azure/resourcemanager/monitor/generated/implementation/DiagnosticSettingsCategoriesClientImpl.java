@@ -58,7 +58,7 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
     @ServiceInterface(name = "MonitorClientDiagnos")
     private interface DiagnosticSettingsCategoriesService {
         @Headers({"Content-Type: application/json"})
-        @Get("/{resourceUri}/providers/microsoft.insights/diagnosticSettingsCategories/{name}")
+        @Get("/{resourceUri}/providers/Microsoft.Insights/diagnosticSettingsCategories/{name}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<DiagnosticSettingsCategoryResourceInner>> get(
@@ -70,7 +70,7 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
             Context context);
 
         @Headers({"Content-Type: application/json"})
-        @Get("/{resourceUri}/providers/microsoft.insights/diagnosticSettingsCategories")
+        @Get("/{resourceUri}/providers/Microsoft.Insights/diagnosticSettingsCategories")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<DiagnosticSettingsCategoryResourceCollectionInner>> list(

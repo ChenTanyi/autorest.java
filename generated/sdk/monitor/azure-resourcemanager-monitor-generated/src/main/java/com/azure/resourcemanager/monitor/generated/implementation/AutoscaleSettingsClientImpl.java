@@ -66,7 +66,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
     private interface AutoscaleSettingsService {
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.insights"
+            "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Insights"
                 + "/autoscalesettings")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
@@ -80,7 +80,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
 
         @Headers({"Content-Type: application/json"})
         @Put(
-            "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.insights"
+            "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Insights"
                 + "/autoscalesettings/{autoscaleSettingName}")
         @ExpectedResponses({200, 201})
         @UnexpectedResponseExceptionType(ManagementException.class)
@@ -96,7 +96,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
 
         @Headers({"Content-Type: application/json"})
         @Delete(
-            "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.insights"
+            "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Insights"
                 + "/autoscalesettings/{autoscaleSettingName}")
         @ExpectedResponses({200, 204})
         @UnexpectedResponseExceptionType(ManagementException.class)
@@ -111,7 +111,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
 
         @Headers({"Content-Type: application/json"})
         @Get(
-            "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.insights"
+            "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Insights"
                 + "/autoscalesettings/{autoscaleSettingName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
@@ -126,7 +126,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
 
         @Headers({"Content-Type: application/json"})
         @Patch(
-            "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.insights"
+            "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Insights"
                 + "/autoscalesettings/{autoscaleSettingName}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
@@ -141,7 +141,7 @@ public final class AutoscaleSettingsClientImpl implements AutoscaleSettingsClien
             Context context);
 
         @Headers({"Content-Type: application/json"})
-        @Get("/subscriptions/{subscriptionId}/providers/microsoft.insights/autoscalesettings")
+        @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Insights/autoscalesettings")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<AutoscaleSettingResourceCollection>> list(

@@ -59,7 +59,7 @@ public final class EventCategoriesClientImpl implements EventCategoriesClient {
     @ServiceInterface(name = "MonitorClientEventCa")
     private interface EventCategoriesService {
         @Headers({"Content-Type: application/json"})
-        @Get("/providers/microsoft.insights/eventcategories")
+        @Get("/providers/Microsoft.Insights/eventcategories")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<EventCategoryCollection>> list(

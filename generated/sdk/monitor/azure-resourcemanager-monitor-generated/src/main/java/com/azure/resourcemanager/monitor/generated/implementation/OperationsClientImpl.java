@@ -54,7 +54,7 @@ public final class OperationsClientImpl implements OperationsClient {
     @ServiceInterface(name = "MonitorClientOperati")
     private interface OperationsService {
         @Headers({"Content-Type: application/json"})
-        @Get("/providers/microsoft.insights/operations")
+        @Get("/providers/Microsoft.Insights/operations")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<OperationListResultInner>> list(

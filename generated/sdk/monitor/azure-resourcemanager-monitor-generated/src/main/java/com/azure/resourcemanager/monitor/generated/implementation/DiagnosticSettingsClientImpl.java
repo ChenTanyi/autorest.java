@@ -59,7 +59,7 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
     @ServiceInterface(name = "MonitorClientDiagnos")
     private interface DiagnosticSettingsService {
         @Headers({"Content-Type: application/json"})
-        @Get("/{resourceUri}/providers/microsoft.insights/diagnosticSettings/{name}")
+        @Get("/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<DiagnosticSettingsResourceInner>> get(
@@ -71,7 +71,7 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
             Context context);
 
         @Headers({"Content-Type: application/json"})
-        @Put("/{resourceUri}/providers/microsoft.insights/diagnosticSettings/{name}")
+        @Put("/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<DiagnosticSettingsResourceInner>> createOrUpdate(
@@ -84,7 +84,7 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
             Context context);
 
         @Headers({"Content-Type: application/json"})
-        @Delete("/{resourceUri}/providers/microsoft.insights/diagnosticSettings/{name}")
+        @Delete("/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}")
         @ExpectedResponses({200, 204})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<Void>> delete(
@@ -96,7 +96,7 @@ public final class DiagnosticSettingsClientImpl implements DiagnosticSettingsCli
             Context context);
 
         @Headers({"Content-Type: application/json"})
-        @Get("/{resourceUri}/providers/microsoft.insights/diagnosticSettings")
+        @Get("/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<DiagnosticSettingsResourceCollectionInner>> list(

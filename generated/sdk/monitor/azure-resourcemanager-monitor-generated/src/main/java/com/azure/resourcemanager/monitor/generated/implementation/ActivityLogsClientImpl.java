@@ -60,7 +60,7 @@ public final class ActivityLogsClientImpl implements ActivityLogsClient {
     @ServiceInterface(name = "MonitorClientActivit")
     private interface ActivityLogsService {
         @Headers({"Content-Type: application/json"})
-        @Get("/subscriptions/{subscriptionId}/providers/microsoft.insights/eventtypes/management/values")
+        @Get("/subscriptions/{subscriptionId}/providers/Microsoft.Insights/eventtypes/management/values")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<EventDataCollection>> list(

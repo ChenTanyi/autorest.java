@@ -149,12 +149,12 @@ public final class DiagnosticSettingsResourceImpl
             Utils
                 .getValueFromIdByParameterName(
                     innerObject.id(),
-                    "/{resourceUri}/providers/microsoft.insights/diagnosticSettings/{name}",
+                    "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}",
                     "resourceUri");
         this.name =
             Utils
                 .getValueFromIdByParameterName(
-                    innerObject.id(), "/{resourceUri}/providers/microsoft.insights/diagnosticSettings/{name}", "name");
+                    innerObject.id(), "/{resourceUri}/providers/Microsoft.Insights/diagnosticSettings/{name}", "name");
     }
 
     public DiagnosticSettingsResource refresh() {

@@ -86,6 +86,14 @@ public interface AutoscaleSettingResource {
     String targetResourceUri();
 
     /**
+     * Gets the targetResourceLocation property: the location of the resource that the autoscale setting should be added
+     * to.
+     *
+     * @return the targetResourceLocation value.
+     */
+    String targetResourceLocation();
+
+    /**
      * Gets the region of the resource.
      *
      * @return the region of the resource.
@@ -168,7 +176,8 @@ public interface AutoscaleSettingResource {
                 DefinitionStages.WithNotifications,
                 DefinitionStages.WithEnabled,
                 DefinitionStages.WithNamePropertiesName,
-                DefinitionStages.WithTargetResourceUri {
+                DefinitionStages.WithTargetResourceUri,
+                DefinitionStages.WithTargetResourceLocation {
             /**
              * Executes the create request.
              *
@@ -238,6 +247,17 @@ public interface AutoscaleSettingResource {
              */
             WithCreate withTargetResourceUri(String targetResourceUri);
         }
+        /** The stage of the AutoscaleSettingResource definition allowing to specify targetResourceLocation. */
+        interface WithTargetResourceLocation {
+            /**
+             * Specifies the targetResourceLocation property: the location of the resource that the autoscale setting
+             * should be added to..
+             *
+             * @param targetResourceLocation the location of the resource that the autoscale setting should be added to.
+             * @return the next definition stage.
+             */
+            WithCreate withTargetResourceLocation(String targetResourceLocation);
+        }
     }
     /**
      * Begins update for the AutoscaleSettingResource resource.
@@ -253,7 +273,8 @@ public interface AutoscaleSettingResource {
             UpdateStages.WithNotifications,
             UpdateStages.WithEnabled,
             UpdateStages.WithName,
-            UpdateStages.WithTargetResourceUri {
+            UpdateStages.WithTargetResourceUri,
+            UpdateStages.WithTargetResourceLocation {
         /**
          * Executes the update request.
          *
@@ -336,6 +357,17 @@ public interface AutoscaleSettingResource {
              * @return the next definition stage.
              */
             Update withTargetResourceUri(String targetResourceUri);
+        }
+        /** The stage of the AutoscaleSettingResource update allowing to specify targetResourceLocation. */
+        interface WithTargetResourceLocation {
+            /**
+             * Specifies the targetResourceLocation property: the location of the resource that the autoscale setting
+             * should be added to..
+             *
+             * @param targetResourceLocation the location of the resource that the autoscale setting should be added to.
+             * @return the next definition stage.
+             */
+            Update withTargetResourceLocation(String targetResourceLocation);
         }
     }
     /**

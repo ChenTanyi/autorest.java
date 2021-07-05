@@ -60,7 +60,7 @@ public final class TenantActivityLogsClientImpl implements TenantActivityLogsCli
     @ServiceInterface(name = "MonitorClientTenantA")
     private interface TenantActivityLogsService {
         @Headers({"Content-Type: application/json"})
-        @Get("/providers/microsoft.insights/eventtypes/management/values")
+        @Get("/providers/Microsoft.Insights/eventtypes/management/values")
         @ExpectedResponses({200})
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<EventDataCollection>> list(

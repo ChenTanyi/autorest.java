@@ -35,6 +35,12 @@ public final class MetricTrigger {
     private String metricResourceUri;
 
     /*
+     * the location of the resource the rule monitors.
+     */
+    @JsonProperty(value = "metricResourceLocation")
+    private String metricResourceLocation;
+
+    /*
      * the granularity of metrics the rule monitors. Must be one of the
      * predefined values returned from metric definitions for the metric. Must
      * be between 12 hours and 1 minute.
@@ -147,6 +153,26 @@ public final class MetricTrigger {
      */
     public MetricTrigger withMetricResourceUri(String metricResourceUri) {
         this.metricResourceUri = metricResourceUri;
+        return this;
+    }
+
+    /**
+     * Get the metricResourceLocation property: the location of the resource the rule monitors.
+     *
+     * @return the metricResourceLocation value.
+     */
+    public String metricResourceLocation() {
+        return this.metricResourceLocation;
+    }
+
+    /**
+     * Set the metricResourceLocation property: the location of the resource the rule monitors.
+     *
+     * @param metricResourceLocation the metricResourceLocation value to set.
+     * @return the MetricTrigger object itself.
+     */
+    public MetricTrigger withMetricResourceLocation(String metricResourceLocation) {
+        this.metricResourceLocation = metricResourceLocation;
         return this;
     }
 
