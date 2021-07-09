@@ -26,12 +26,6 @@ public final class CapacityReservationProperties {
     @JsonProperty(value = "minCapacity", access = JsonProperty.Access.WRITE_ONLY)
     private Long minCapacity;
 
-    /*
-     * Maximum CapacityReservation value in GB.
-     */
-    @JsonProperty(value = "maxCapacity", access = JsonProperty.Access.WRITE_ONLY)
-    private Long maxCapacity;
-
     /**
      * Get the lastSkuUpdate property: The last time Sku was updated.
      *
@@ -48,15 +42,6 @@ public final class CapacityReservationProperties {
      */
     public Long minCapacity() {
         return this.minCapacity;
-    }
-
-    /**
-     * Get the maxCapacity property: Maximum CapacityReservation value in GB.
-     *
-     * @return the maxCapacity value.
-     */
-    public Long maxCapacity() {
-        return this.maxCapacity;
     }
 
     /**
