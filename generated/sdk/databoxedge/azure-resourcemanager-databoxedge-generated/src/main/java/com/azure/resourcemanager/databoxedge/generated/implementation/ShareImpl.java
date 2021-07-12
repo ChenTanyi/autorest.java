@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.databoxedge.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.ShareInner;
 import com.azure.resourcemanager.databoxedge.generated.models.AzureContainerInfo;
@@ -34,6 +35,10 @@ public final class ShareImpl implements Share, Share.Definition, Share.Update {
 
     public String type() {
         return this.innerModel().type();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String description() {

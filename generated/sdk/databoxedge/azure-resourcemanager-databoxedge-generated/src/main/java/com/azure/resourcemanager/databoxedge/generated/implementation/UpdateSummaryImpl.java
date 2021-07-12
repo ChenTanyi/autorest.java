@@ -4,8 +4,11 @@
 
 package com.azure.resourcemanager.databoxedge.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.UpdateSummaryInner;
 import com.azure.resourcemanager.databoxedge.generated.models.InstallRebootBehavior;
+import com.azure.resourcemanager.databoxedge.generated.models.JobStatus;
+import com.azure.resourcemanager.databoxedge.generated.models.UpdateDetails;
 import com.azure.resourcemanager.databoxedge.generated.models.UpdateOperation;
 import com.azure.resourcemanager.databoxedge.generated.models.UpdateSummary;
 import java.time.OffsetDateTime;
@@ -36,6 +39,10 @@ public final class UpdateSummaryImpl implements UpdateSummary {
         return this.innerModel().type();
     }
 
+    public SystemData systemData() {
+        return this.innerModel().systemData();
+    }
+
     public String deviceVersionNumber() {
         return this.innerModel().deviceVersionNumber();
     }
@@ -52,12 +59,36 @@ public final class UpdateSummaryImpl implements UpdateSummary {
         return this.innerModel().lastCompletedScanJobDateTime();
     }
 
+    public OffsetDateTime lastSuccessfulScanJobTime() {
+        return this.innerModel().lastSuccessfulScanJobTime();
+    }
+
     public OffsetDateTime lastCompletedDownloadJobDateTime() {
         return this.innerModel().lastCompletedDownloadJobDateTime();
     }
 
+    public String lastCompletedDownloadJobId() {
+        return this.innerModel().lastCompletedDownloadJobId();
+    }
+
+    public JobStatus lastDownloadJobStatus() {
+        return this.innerModel().lastDownloadJobStatus();
+    }
+
+    public OffsetDateTime lastSuccessfulInstallJobDateTime() {
+        return this.innerModel().lastSuccessfulInstallJobDateTime();
+    }
+
     public OffsetDateTime lastCompletedInstallJobDateTime() {
         return this.innerModel().lastCompletedInstallJobDateTime();
+    }
+
+    public String lastCompletedInstallJobId() {
+        return this.innerModel().lastCompletedInstallJobId();
+    }
+
+    public JobStatus lastInstallJobStatus() {
+        return this.innerModel().lastInstallJobStatus();
     }
 
     public Integer totalNumberOfUpdatesAvailable() {
@@ -105,8 +136,21 @@ public final class UpdateSummaryImpl implements UpdateSummary {
         }
     }
 
+    public List<UpdateDetails> updates() {
+        List<UpdateDetails> inner = this.innerModel().updates();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
     public Double totalUpdateSizeInBytes() {
         return this.innerModel().totalUpdateSizeInBytes();
+    }
+
+    public Integer totalTimeInMinutes() {
+        return this.innerModel().totalTimeInMinutes();
     }
 
     public UpdateSummaryInner innerModel() {

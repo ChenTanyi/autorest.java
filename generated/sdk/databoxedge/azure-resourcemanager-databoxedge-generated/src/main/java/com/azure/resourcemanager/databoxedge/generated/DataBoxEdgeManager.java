@@ -21,37 +21,45 @@ import com.azure.core.management.profile.AzureProfile;
 import com.azure.core.util.Configuration;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.fluent.DataBoxEdgeManagementClient;
+import com.azure.resourcemanager.databoxedge.generated.implementation.AddonsImpl;
 import com.azure.resourcemanager.databoxedge.generated.implementation.AlertsImpl;
+import com.azure.resourcemanager.databoxedge.generated.implementation.AvailableSkusImpl;
 import com.azure.resourcemanager.databoxedge.generated.implementation.BandwidthSchedulesImpl;
 import com.azure.resourcemanager.databoxedge.generated.implementation.ContainersImpl;
 import com.azure.resourcemanager.databoxedge.generated.implementation.DataBoxEdgeManagementClientBuilder;
 import com.azure.resourcemanager.databoxedge.generated.implementation.DevicesImpl;
+import com.azure.resourcemanager.databoxedge.generated.implementation.DiagnosticSettingsImpl;
 import com.azure.resourcemanager.databoxedge.generated.implementation.JobsImpl;
+import com.azure.resourcemanager.databoxedge.generated.implementation.MonitoringConfigsImpl;
 import com.azure.resourcemanager.databoxedge.generated.implementation.NodesImpl;
 import com.azure.resourcemanager.databoxedge.generated.implementation.OperationsImpl;
 import com.azure.resourcemanager.databoxedge.generated.implementation.OperationsStatusImpl;
 import com.azure.resourcemanager.databoxedge.generated.implementation.OrdersImpl;
 import com.azure.resourcemanager.databoxedge.generated.implementation.RolesImpl;
 import com.azure.resourcemanager.databoxedge.generated.implementation.SharesImpl;
-import com.azure.resourcemanager.databoxedge.generated.implementation.SkusImpl;
 import com.azure.resourcemanager.databoxedge.generated.implementation.StorageAccountCredentialsImpl;
 import com.azure.resourcemanager.databoxedge.generated.implementation.StorageAccountsImpl;
+import com.azure.resourcemanager.databoxedge.generated.implementation.SupportPackagesImpl;
 import com.azure.resourcemanager.databoxedge.generated.implementation.TriggersImpl;
 import com.azure.resourcemanager.databoxedge.generated.implementation.UsersImpl;
+import com.azure.resourcemanager.databoxedge.generated.models.Addons;
 import com.azure.resourcemanager.databoxedge.generated.models.Alerts;
+import com.azure.resourcemanager.databoxedge.generated.models.AvailableSkus;
 import com.azure.resourcemanager.databoxedge.generated.models.BandwidthSchedules;
 import com.azure.resourcemanager.databoxedge.generated.models.Containers;
 import com.azure.resourcemanager.databoxedge.generated.models.Devices;
+import com.azure.resourcemanager.databoxedge.generated.models.DiagnosticSettings;
 import com.azure.resourcemanager.databoxedge.generated.models.Jobs;
+import com.azure.resourcemanager.databoxedge.generated.models.MonitoringConfigs;
 import com.azure.resourcemanager.databoxedge.generated.models.Nodes;
 import com.azure.resourcemanager.databoxedge.generated.models.Operations;
 import com.azure.resourcemanager.databoxedge.generated.models.OperationsStatus;
 import com.azure.resourcemanager.databoxedge.generated.models.Orders;
 import com.azure.resourcemanager.databoxedge.generated.models.Roles;
 import com.azure.resourcemanager.databoxedge.generated.models.Shares;
-import com.azure.resourcemanager.databoxedge.generated.models.Skus;
 import com.azure.resourcemanager.databoxedge.generated.models.StorageAccountCredentials;
 import com.azure.resourcemanager.databoxedge.generated.models.StorageAccounts;
+import com.azure.resourcemanager.databoxedge.generated.models.SupportPackages;
 import com.azure.resourcemanager.databoxedge.generated.models.Triggers;
 import com.azure.resourcemanager.databoxedge.generated.models.Users;
 import java.time.Duration;
@@ -64,11 +72,15 @@ import java.util.Objects;
 public final class DataBoxEdgeManager {
     private Operations operations;
 
+    private AvailableSkus availableSkus;
+
     private Devices devices;
 
     private Alerts alerts;
 
     private BandwidthSchedules bandwidthSchedules;
+
+    private DiagnosticSettings diagnosticSettings;
 
     private Jobs jobs;
 
@@ -80,6 +92,10 @@ public final class DataBoxEdgeManager {
 
     private Roles roles;
 
+    private Addons addons;
+
+    private MonitoringConfigs monitoringConfigs;
+
     private Shares shares;
 
     private StorageAccountCredentials storageAccountCredentials;
@@ -90,9 +106,9 @@ public final class DataBoxEdgeManager {
 
     private Triggers triggers;
 
-    private Users users;
+    private SupportPackages supportPackages;
 
-    private Skus skus;
+    private Users users;
 
     private final DataBoxEdgeManagementClient clientObject;
 
@@ -277,6 +293,14 @@ public final class DataBoxEdgeManager {
         return operations;
     }
 
+    /** @return Resource collection API of AvailableSkus. */
+    public AvailableSkus availableSkus() {
+        if (this.availableSkus == null) {
+            this.availableSkus = new AvailableSkusImpl(clientObject.getAvailableSkus(), this);
+        }
+        return availableSkus;
+    }
+
     /** @return Resource collection API of Devices. */
     public Devices devices() {
         if (this.devices == null) {
@@ -299,6 +323,14 @@ public final class DataBoxEdgeManager {
             this.bandwidthSchedules = new BandwidthSchedulesImpl(clientObject.getBandwidthSchedules(), this);
         }
         return bandwidthSchedules;
+    }
+
+    /** @return Resource collection API of DiagnosticSettings. */
+    public DiagnosticSettings diagnosticSettings() {
+        if (this.diagnosticSettings == null) {
+            this.diagnosticSettings = new DiagnosticSettingsImpl(clientObject.getDiagnosticSettings(), this);
+        }
+        return diagnosticSettings;
     }
 
     /** @return Resource collection API of Jobs. */
@@ -339,6 +371,22 @@ public final class DataBoxEdgeManager {
             this.roles = new RolesImpl(clientObject.getRoles(), this);
         }
         return roles;
+    }
+
+    /** @return Resource collection API of Addons. */
+    public Addons addons() {
+        if (this.addons == null) {
+            this.addons = new AddonsImpl(clientObject.getAddons(), this);
+        }
+        return addons;
+    }
+
+    /** @return Resource collection API of MonitoringConfigs. */
+    public MonitoringConfigs monitoringConfigs() {
+        if (this.monitoringConfigs == null) {
+            this.monitoringConfigs = new MonitoringConfigsImpl(clientObject.getMonitoringConfigs(), this);
+        }
+        return monitoringConfigs;
     }
 
     /** @return Resource collection API of Shares. */
@@ -382,20 +430,20 @@ public final class DataBoxEdgeManager {
         return triggers;
     }
 
+    /** @return Resource collection API of SupportPackages. */
+    public SupportPackages supportPackages() {
+        if (this.supportPackages == null) {
+            this.supportPackages = new SupportPackagesImpl(clientObject.getSupportPackages(), this);
+        }
+        return supportPackages;
+    }
+
     /** @return Resource collection API of Users. */
     public Users users() {
         if (this.users == null) {
             this.users = new UsersImpl(clientObject.getUsers(), this);
         }
         return users;
-    }
-
-    /** @return Resource collection API of Skus. */
-    public Skus skus() {
-        if (this.skus == null) {
-            this.skus = new SkusImpl(clientObject.getSkus(), this);
-        }
-        return skus;
     }
 
     /**

@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.databoxedge.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.AlertInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Alert;
 import com.azure.resourcemanager.databoxedge.generated.models.AlertErrorDetails;
@@ -33,6 +34,10 @@ public final class AlertImpl implements Alert {
 
     public String type() {
         return this.innerModel().type();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public String title() {

@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.databoxedge.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.RoleInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Role;
 
@@ -27,6 +28,10 @@ public final class RoleImpl implements Role {
 
     public String type() {
         return this.innerModel().type();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public RoleInner innerModel() {

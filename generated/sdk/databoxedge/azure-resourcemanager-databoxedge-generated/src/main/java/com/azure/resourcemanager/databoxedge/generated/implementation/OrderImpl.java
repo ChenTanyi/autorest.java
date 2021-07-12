@@ -4,11 +4,13 @@
 
 package com.azure.resourcemanager.databoxedge.generated.implementation;
 
+import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.OrderInner;
 import com.azure.resourcemanager.databoxedge.generated.models.Address;
 import com.azure.resourcemanager.databoxedge.generated.models.ContactDetails;
 import com.azure.resourcemanager.databoxedge.generated.models.Order;
 import com.azure.resourcemanager.databoxedge.generated.models.OrderStatus;
+import com.azure.resourcemanager.databoxedge.generated.models.ShipmentType;
 import com.azure.resourcemanager.databoxedge.generated.models.TrackingInfo;
 import java.util.Collections;
 import java.util.List;
@@ -34,6 +36,10 @@ public final class OrderImpl implements Order {
 
     public String type() {
         return this.innerModel().type();
+    }
+
+    public SystemData systemData() {
+        return this.innerModel().systemData();
     }
 
     public ContactDetails contactInformation() {
@@ -77,6 +83,10 @@ public final class OrderImpl implements Order {
         } else {
             return Collections.emptyList();
         }
+    }
+
+    public ShipmentType shipmentType() {
+        return this.innerModel().shipmentType();
     }
 
     public OrderInner innerModel() {
