@@ -393,13 +393,7 @@ public interface AppServiceCertificateOrder {
     AppServiceCertificateOrder.Update update();
 
     /** The template for AppServiceCertificateOrder update. */
-    interface Update
-        extends UpdateStages.WithKind,
-            UpdateStages.WithCertificates,
-            UpdateStages.WithDistinguishedName,
-            UpdateStages.WithProductType,
-            UpdateStages.WithAutoRenew,
-            UpdateStages.WithCsr {
+    interface Update extends UpdateStages.WithKind, UpdateStages.WithCertificates, UpdateStages.WithAutoRenew {
         /**
          * Executes the update request.
          *
@@ -437,26 +431,6 @@ public interface AppServiceCertificateOrder {
              */
             Update withCertificates(Map<String, AppServiceCertificate> certificates);
         }
-        /** The stage of the AppServiceCertificateOrder update allowing to specify distinguishedName. */
-        interface WithDistinguishedName {
-            /**
-             * Specifies the distinguishedName property: Certificate distinguished name..
-             *
-             * @param distinguishedName Certificate distinguished name.
-             * @return the next definition stage.
-             */
-            Update withDistinguishedName(String distinguishedName);
-        }
-        /** The stage of the AppServiceCertificateOrder update allowing to specify productType. */
-        interface WithProductType {
-            /**
-             * Specifies the productType property: Certificate product type..
-             *
-             * @param productType Certificate product type.
-             * @return the next definition stage.
-             */
-            Update withProductType(CertificateProductType productType);
-        }
         /** The stage of the AppServiceCertificateOrder update allowing to specify autoRenew. */
         interface WithAutoRenew {
             /**
@@ -468,16 +442,6 @@ public interface AppServiceCertificateOrder {
              * @return the next definition stage.
              */
             Update withAutoRenew(Boolean autoRenew);
-        }
-        /** The stage of the AppServiceCertificateOrder update allowing to specify csr. */
-        interface WithCsr {
-            /**
-             * Specifies the csr property: Last CSR that was created for this order..
-             *
-             * @param csr Last CSR that was created for this order.
-             * @return the next definition stage.
-             */
-            Update withCsr(String csr);
         }
     }
     /**

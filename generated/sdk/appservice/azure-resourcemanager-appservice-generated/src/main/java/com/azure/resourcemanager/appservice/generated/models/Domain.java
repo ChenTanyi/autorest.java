@@ -443,8 +443,7 @@ public interface Domain {
             UpdateStages.WithAutoRenew,
             UpdateStages.WithDnsType,
             UpdateStages.WithDnsZoneId,
-            UpdateStages.WithTargetDnsType,
-            UpdateStages.WithAuthCode {
+            UpdateStages.WithTargetDnsType {
         /**
          * Executes the update request.
          *
@@ -525,16 +524,6 @@ public interface Domain {
              * @return the next definition stage.
              */
             Update withTargetDnsType(DnsType targetDnsType);
-        }
-        /** The stage of the Domain update allowing to specify authCode. */
-        interface WithAuthCode {
-            /**
-             * Specifies the authCode property: The authCode property..
-             *
-             * @param authCode The authCode property.
-             * @return the next definition stage.
-             */
-            Update withAuthCode(String authCode);
         }
     }
     /**

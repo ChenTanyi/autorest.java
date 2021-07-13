@@ -26,6 +26,7 @@ import com.azure.resourcemanager.mediaservices.generated.fluent.AssetFiltersClie
 import com.azure.resourcemanager.mediaservices.generated.fluent.AssetsClient;
 import com.azure.resourcemanager.mediaservices.generated.fluent.AzureMediaServices;
 import com.azure.resourcemanager.mediaservices.generated.fluent.ContentKeyPoliciesClient;
+import com.azure.resourcemanager.mediaservices.generated.fluent.JobsClient;
 import com.azure.resourcemanager.mediaservices.generated.fluent.LiveEventsClient;
 import com.azure.resourcemanager.mediaservices.generated.fluent.LiveOutputsClient;
 import com.azure.resourcemanager.mediaservices.generated.fluent.LocationsClient;
@@ -36,6 +37,7 @@ import com.azure.resourcemanager.mediaservices.generated.fluent.PrivateLinkResou
 import com.azure.resourcemanager.mediaservices.generated.fluent.StreamingEndpointsClient;
 import com.azure.resourcemanager.mediaservices.generated.fluent.StreamingLocatorsClient;
 import com.azure.resourcemanager.mediaservices.generated.fluent.StreamingPoliciesClient;
+import com.azure.resourcemanager.mediaservices.generated.fluent.TransformsClient;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.nio.ByteBuffer;
@@ -231,6 +233,30 @@ public final class AzureMediaServicesImpl implements AzureMediaServices {
         return this.contentKeyPolicies;
     }
 
+    /** The TransformsClient object to access its operations. */
+    private final TransformsClient transforms;
+
+    /**
+     * Gets the TransformsClient object to access its operations.
+     *
+     * @return the TransformsClient object.
+     */
+    public TransformsClient getTransforms() {
+        return this.transforms;
+    }
+
+    /** The JobsClient object to access its operations. */
+    private final JobsClient jobs;
+
+    /**
+     * Gets the JobsClient object to access its operations.
+     *
+     * @return the JobsClient object.
+     */
+    public JobsClient getJobs() {
+        return this.jobs;
+    }
+
     /** The StreamingPoliciesClient object to access its operations. */
     private final StreamingPoliciesClient streamingPolicies;
 
@@ -323,6 +349,8 @@ public final class AzureMediaServicesImpl implements AzureMediaServices {
         this.assets = new AssetsClientImpl(this);
         this.assetFilters = new AssetFiltersClientImpl(this);
         this.contentKeyPolicies = new ContentKeyPoliciesClientImpl(this);
+        this.transforms = new TransformsClientImpl(this);
+        this.jobs = new JobsClientImpl(this);
         this.streamingPolicies = new StreamingPoliciesClientImpl(this);
         this.streamingLocators = new StreamingLocatorsClientImpl(this);
         this.liveEvents = new LiveEventsClientImpl(this);

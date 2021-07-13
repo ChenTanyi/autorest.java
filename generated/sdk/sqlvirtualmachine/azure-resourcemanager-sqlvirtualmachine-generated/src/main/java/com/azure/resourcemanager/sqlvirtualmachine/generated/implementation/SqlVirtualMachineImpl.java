@@ -265,11 +265,6 @@ public final class SqlVirtualMachineImpl
         return this;
     }
 
-    public SqlVirtualMachineImpl withSqlVirtualMachineGroupResourceId(String sqlVirtualMachineGroupResourceId) {
-        this.innerModel().withSqlVirtualMachineGroupResourceId(sqlVirtualMachineGroupResourceId);
-        return this;
-    }
-
     public SqlVirtualMachineImpl withWsfcDomainCredentials(WsfcDomainCredentials wsfcDomainCredentials) {
         this.innerModel().withWsfcDomainCredentials(wsfcDomainCredentials);
         return this;

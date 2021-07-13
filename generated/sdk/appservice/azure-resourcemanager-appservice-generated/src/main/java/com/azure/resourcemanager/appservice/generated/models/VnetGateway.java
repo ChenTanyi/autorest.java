@@ -142,7 +142,7 @@ public interface VnetGateway {
     VnetGateway.Update update();
 
     /** The template for VnetGateway update. */
-    interface Update extends UpdateStages.WithKind, UpdateStages.WithVnetName, UpdateStages.WithVpnPackageUri {
+    interface Update extends UpdateStages.WithKind, UpdateStages.WithVpnPackageUri {
         /**
          * Executes the update request.
          *
@@ -169,16 +169,6 @@ public interface VnetGateway {
              * @return the next definition stage.
              */
             Update withKind(String kind);
-        }
-        /** The stage of the VnetGateway update allowing to specify vnetName. */
-        interface WithVnetName {
-            /**
-             * Specifies the vnetName property: The Virtual Network name..
-             *
-             * @param vnetName The Virtual Network name.
-             * @return the next definition stage.
-             */
-            Update withVnetName(String vnetName);
         }
         /** The stage of the VnetGateway update allowing to specify vpnPackageUri. */
         interface WithVpnPackageUri {

@@ -411,7 +411,6 @@ public interface Certificate {
     /** The template for Certificate update. */
     interface Update
         extends UpdateStages.WithKind,
-            UpdateStages.WithPassword,
             UpdateStages.WithHostNames,
             UpdateStages.WithPfxBlob,
             UpdateStages.WithKeyVaultId,
@@ -445,16 +444,6 @@ public interface Certificate {
              * @return the next definition stage.
              */
             Update withKind(String kind);
-        }
-        /** The stage of the Certificate update allowing to specify password. */
-        interface WithPassword {
-            /**
-             * Specifies the password property: Certificate password..
-             *
-             * @param password Certificate password.
-             * @return the next definition stage.
-             */
-            Update withPassword(String password);
         }
         /** The stage of the Certificate update allowing to specify hostNames. */
         interface WithHostNames {

@@ -319,7 +319,6 @@ public interface FileShare {
     interface Update
         extends UpdateStages.WithMetadata,
             UpdateStages.WithShareQuota,
-            UpdateStages.WithEnabledProtocols,
             UpdateStages.WithRootSquash,
             UpdateStages.WithAccessTier,
             UpdateStages.WithSignedIdentifiers {
@@ -361,18 +360,6 @@ public interface FileShare {
              * @return the next definition stage.
              */
             Update withShareQuota(Integer shareQuota);
-        }
-        /** The stage of the FileShare update allowing to specify enabledProtocols. */
-        interface WithEnabledProtocols {
-            /**
-             * Specifies the enabledProtocols property: The authentication protocol that is used for the file share. Can
-             * only be specified when creating a share..
-             *
-             * @param enabledProtocols The authentication protocol that is used for the file share. Can only be
-             *     specified when creating a share.
-             * @return the next definition stage.
-             */
-            Update withEnabledProtocols(EnabledProtocols enabledProtocols);
         }
         /** The stage of the FileShare update allowing to specify rootSquash. */
         interface WithRootSquash {

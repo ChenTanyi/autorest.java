@@ -354,13 +354,8 @@ public final class DomainImpl implements Domain, Domain.Definition, Domain.Updat
     }
 
     public DomainImpl withAuthCode(String authCode) {
-        if (isInCreateMode()) {
-            this.innerModel().withAuthCode(authCode);
-            return this;
-        } else {
-            this.updateDomain.withAuthCode(authCode);
-            return this;
-        }
+        this.innerModel().withAuthCode(authCode);
+        return this;
     }
 
     public DomainImpl withKind(String kind) {

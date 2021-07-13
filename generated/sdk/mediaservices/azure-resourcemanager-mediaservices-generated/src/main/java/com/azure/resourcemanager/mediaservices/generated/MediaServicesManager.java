@@ -26,6 +26,7 @@ import com.azure.resourcemanager.mediaservices.generated.implementation.AssetFil
 import com.azure.resourcemanager.mediaservices.generated.implementation.AssetsImpl;
 import com.azure.resourcemanager.mediaservices.generated.implementation.AzureMediaServicesBuilder;
 import com.azure.resourcemanager.mediaservices.generated.implementation.ContentKeyPoliciesImpl;
+import com.azure.resourcemanager.mediaservices.generated.implementation.JobsImpl;
 import com.azure.resourcemanager.mediaservices.generated.implementation.LiveEventsImpl;
 import com.azure.resourcemanager.mediaservices.generated.implementation.LiveOutputsImpl;
 import com.azure.resourcemanager.mediaservices.generated.implementation.LocationsImpl;
@@ -36,10 +37,12 @@ import com.azure.resourcemanager.mediaservices.generated.implementation.PrivateL
 import com.azure.resourcemanager.mediaservices.generated.implementation.StreamingEndpointsImpl;
 import com.azure.resourcemanager.mediaservices.generated.implementation.StreamingLocatorsImpl;
 import com.azure.resourcemanager.mediaservices.generated.implementation.StreamingPoliciesImpl;
+import com.azure.resourcemanager.mediaservices.generated.implementation.TransformsImpl;
 import com.azure.resourcemanager.mediaservices.generated.models.AccountFilters;
 import com.azure.resourcemanager.mediaservices.generated.models.AssetFilters;
 import com.azure.resourcemanager.mediaservices.generated.models.Assets;
 import com.azure.resourcemanager.mediaservices.generated.models.ContentKeyPolicies;
+import com.azure.resourcemanager.mediaservices.generated.models.Jobs;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEvents;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveOutputs;
 import com.azure.resourcemanager.mediaservices.generated.models.Locations;
@@ -50,6 +53,7 @@ import com.azure.resourcemanager.mediaservices.generated.models.PrivateLinkResou
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingEndpoints;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingLocators;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingPolicies;
+import com.azure.resourcemanager.mediaservices.generated.models.Transforms;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -75,6 +79,10 @@ public final class MediaServicesManager {
     private AssetFilters assetFilters;
 
     private ContentKeyPolicies contentKeyPolicies;
+
+    private Transforms transforms;
+
+    private Jobs jobs;
 
     private StreamingPolicies streamingPolicies;
 
@@ -332,6 +340,22 @@ public final class MediaServicesManager {
             this.contentKeyPolicies = new ContentKeyPoliciesImpl(clientObject.getContentKeyPolicies(), this);
         }
         return contentKeyPolicies;
+    }
+
+    /** @return Resource collection API of Transforms. */
+    public Transforms transforms() {
+        if (this.transforms == null) {
+            this.transforms = new TransformsImpl(clientObject.getTransforms(), this);
+        }
+        return transforms;
+    }
+
+    /** @return Resource collection API of Jobs. */
+    public Jobs jobs() {
+        if (this.jobs == null) {
+            this.jobs = new JobsImpl(clientObject.getJobs(), this);
+        }
+        return jobs;
     }
 
     /** @return Resource collection API of StreamingPolicies. */

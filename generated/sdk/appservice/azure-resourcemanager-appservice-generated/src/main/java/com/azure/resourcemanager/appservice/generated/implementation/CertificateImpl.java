@@ -261,13 +261,8 @@ public final class CertificateImpl implements Certificate, Certificate.Definitio
     }
 
     public CertificateImpl withPassword(String password) {
-        if (isInCreateMode()) {
-            this.innerModel().withPassword(password);
-            return this;
-        } else {
-            this.updateCertificateEnvelope.withPassword(password);
-            return this;
-        }
+        this.innerModel().withPassword(password);
+        return this;
     }
 
     public CertificateImpl withHostNames(List<String> hostNames) {

@@ -322,8 +322,6 @@ public interface MyWorkbook {
     /** The template for MyWorkbook update. */
     interface Update
         extends UpdateStages.WithTags,
-            UpdateStages.WithName,
-            UpdateStages.WithType,
             UpdateStages.WithKind,
             UpdateStages.WithDisplayName,
             UpdateStages.WithSerializedData,
@@ -357,26 +355,6 @@ public interface MyWorkbook {
              * @return the next definition stage.
              */
             Update withTags(Map<String, String> tags);
-        }
-        /** The stage of the MyWorkbook update allowing to specify name. */
-        interface WithName {
-            /**
-             * Specifies the name property: Azure resource name.
-             *
-             * @param name Azure resource name.
-             * @return the next definition stage.
-             */
-            Update withName(String name);
-        }
-        /** The stage of the MyWorkbook update allowing to specify type. */
-        interface WithType {
-            /**
-             * Specifies the type property: Azure resource type.
-             *
-             * @param type Azure resource type.
-             * @return the next definition stage.
-             */
-            Update withType(String type);
         }
         /** The stage of the MyWorkbook update allowing to specify kind. */
         interface WithKind {

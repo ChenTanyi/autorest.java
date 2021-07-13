@@ -301,11 +301,7 @@ public interface KubeEnvironment {
 
     /** The template for KubeEnvironment update. */
     interface Update
-        extends UpdateStages.WithKind,
-            UpdateStages.WithStaticIp,
-            UpdateStages.WithArcConfiguration,
-            UpdateStages.WithAppLogsConfiguration,
-            UpdateStages.WithAksResourceId {
+        extends UpdateStages.WithKind, UpdateStages.WithArcConfiguration, UpdateStages.WithAppLogsConfiguration {
         /**
          * Executes the update request.
          *
@@ -333,16 +329,6 @@ public interface KubeEnvironment {
              */
             Update withKind(String kind);
         }
-        /** The stage of the KubeEnvironment update allowing to specify staticIp. */
-        interface WithStaticIp {
-            /**
-             * Specifies the staticIp property: Static IP of the KubeEnvironment.
-             *
-             * @param staticIp Static IP of the KubeEnvironment.
-             * @return the next definition stage.
-             */
-            Update withStaticIp(String staticIp);
-        }
         /** The stage of the KubeEnvironment update allowing to specify arcConfiguration. */
         interface WithArcConfiguration {
             /**
@@ -366,16 +352,6 @@ public interface KubeEnvironment {
              * @return the next definition stage.
              */
             Update withAppLogsConfiguration(AppLogsConfiguration appLogsConfiguration);
-        }
-        /** The stage of the KubeEnvironment update allowing to specify aksResourceId. */
-        interface WithAksResourceId {
-            /**
-             * Specifies the aksResourceId property: The aksResourceID property..
-             *
-             * @param aksResourceId The aksResourceID property.
-             * @return the next definition stage.
-             */
-            Update withAksResourceId(String aksResourceId);
         }
     }
     /**

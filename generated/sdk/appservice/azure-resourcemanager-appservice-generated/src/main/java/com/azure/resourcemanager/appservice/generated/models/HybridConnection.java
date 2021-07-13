@@ -261,8 +261,6 @@ public interface HybridConnection {
     /** The template for HybridConnection update. */
     interface Update
         extends UpdateStages.WithKind,
-            UpdateStages.WithServiceBusNamespace,
-            UpdateStages.WithRelayName,
             UpdateStages.WithRelayArmUri,
             UpdateStages.WithHostname,
             UpdateStages.WithPort,
@@ -295,26 +293,6 @@ public interface HybridConnection {
              * @return the next definition stage.
              */
             Update withKind(String kind);
-        }
-        /** The stage of the HybridConnection update allowing to specify serviceBusNamespace. */
-        interface WithServiceBusNamespace {
-            /**
-             * Specifies the serviceBusNamespace property: The name of the Service Bus namespace..
-             *
-             * @param serviceBusNamespace The name of the Service Bus namespace.
-             * @return the next definition stage.
-             */
-            Update withServiceBusNamespace(String serviceBusNamespace);
-        }
-        /** The stage of the HybridConnection update allowing to specify relayName. */
-        interface WithRelayName {
-            /**
-             * Specifies the relayName property: The name of the Service Bus relay..
-             *
-             * @param relayName The name of the Service Bus relay.
-             * @return the next definition stage.
-             */
-            Update withRelayName(String relayName);
         }
         /** The stage of the HybridConnection update allowing to specify relayArmUri. */
         interface WithRelayArmUri {

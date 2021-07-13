@@ -108,6 +108,20 @@ public interface AzureMediaServices {
     ContentKeyPoliciesClient getContentKeyPolicies();
 
     /**
+     * Gets the TransformsClient object to access its operations.
+     *
+     * @return the TransformsClient object.
+     */
+    TransformsClient getTransforms();
+
+    /**
+     * Gets the JobsClient object to access its operations.
+     *
+     * @return the JobsClient object.
+     */
+    JobsClient getJobs();
+
+    /**
      * Gets the StreamingPoliciesClient object to access its operations.
      *
      * @return the StreamingPoliciesClient object.

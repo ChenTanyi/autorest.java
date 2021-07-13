@@ -217,13 +217,8 @@ public final class KubeEnvironmentImpl implements KubeEnvironment, KubeEnvironme
     }
 
     public KubeEnvironmentImpl withStaticIp(String staticIp) {
-        if (isInCreateMode()) {
-            this.innerModel().withStaticIp(staticIp);
-            return this;
-        } else {
-            this.updateKubeEnvironmentEnvelope.withStaticIp(staticIp);
-            return this;
-        }
+        this.innerModel().withStaticIp(staticIp);
+        return this;
     }
 
     public KubeEnvironmentImpl withArcConfiguration(ArcConfiguration arcConfiguration) {
@@ -247,13 +242,8 @@ public final class KubeEnvironmentImpl implements KubeEnvironment, KubeEnvironme
     }
 
     public KubeEnvironmentImpl withAksResourceId(String aksResourceId) {
-        if (isInCreateMode()) {
-            this.innerModel().withAksResourceId(aksResourceId);
-            return this;
-        } else {
-            this.updateKubeEnvironmentEnvelope.withAksResourceId(aksResourceId);
-            return this;
-        }
+        this.innerModel().withAksResourceId(aksResourceId);
+        return this;
     }
 
     public KubeEnvironmentImpl withKind(String kind) {

@@ -255,16 +255,7 @@ public interface HostnameBinding {
     HostnameBinding.Update update();
 
     /** The template for HostnameBinding update. */
-    interface Update
-        extends UpdateStages.WithKind,
-            UpdateStages.WithSiteName,
-            UpdateStages.WithDomainId,
-            UpdateStages.WithAzureResourceName,
-            UpdateStages.WithAzureResourceType,
-            UpdateStages.WithCustomHostnameDnsRecordType,
-            UpdateStages.WithHostnameType,
-            UpdateStages.WithSslState,
-            UpdateStages.WithThumbprint {
+    interface Update extends UpdateStages.WithKind {
         /**
          * Executes the update request.
          *
@@ -291,86 +282,6 @@ public interface HostnameBinding {
              * @return the next definition stage.
              */
             Update withKind(String kind);
-        }
-        /** The stage of the HostnameBinding update allowing to specify siteName. */
-        interface WithSiteName {
-            /**
-             * Specifies the siteName property: App Service app name..
-             *
-             * @param siteName App Service app name.
-             * @return the next definition stage.
-             */
-            Update withSiteName(String siteName);
-        }
-        /** The stage of the HostnameBinding update allowing to specify domainId. */
-        interface WithDomainId {
-            /**
-             * Specifies the domainId property: Fully qualified ARM domain resource URI..
-             *
-             * @param domainId Fully qualified ARM domain resource URI.
-             * @return the next definition stage.
-             */
-            Update withDomainId(String domainId);
-        }
-        /** The stage of the HostnameBinding update allowing to specify azureResourceName. */
-        interface WithAzureResourceName {
-            /**
-             * Specifies the azureResourceName property: Azure resource name..
-             *
-             * @param azureResourceName Azure resource name.
-             * @return the next definition stage.
-             */
-            Update withAzureResourceName(String azureResourceName);
-        }
-        /** The stage of the HostnameBinding update allowing to specify azureResourceType. */
-        interface WithAzureResourceType {
-            /**
-             * Specifies the azureResourceType property: Azure resource type..
-             *
-             * @param azureResourceType Azure resource type.
-             * @return the next definition stage.
-             */
-            Update withAzureResourceType(AzureResourceType azureResourceType);
-        }
-        /** The stage of the HostnameBinding update allowing to specify customHostnameDnsRecordType. */
-        interface WithCustomHostnameDnsRecordType {
-            /**
-             * Specifies the customHostnameDnsRecordType property: Custom DNS record type..
-             *
-             * @param customHostnameDnsRecordType Custom DNS record type.
-             * @return the next definition stage.
-             */
-            Update withCustomHostnameDnsRecordType(CustomHostnameDnsRecordType customHostnameDnsRecordType);
-        }
-        /** The stage of the HostnameBinding update allowing to specify hostnameType. */
-        interface WithHostnameType {
-            /**
-             * Specifies the hostnameType property: Hostname type..
-             *
-             * @param hostnameType Hostname type.
-             * @return the next definition stage.
-             */
-            Update withHostnameType(HostnameType hostnameType);
-        }
-        /** The stage of the HostnameBinding update allowing to specify sslState. */
-        interface WithSslState {
-            /**
-             * Specifies the sslState property: SSL type.
-             *
-             * @param sslState SSL type.
-             * @return the next definition stage.
-             */
-            Update withSslState(SslState sslState);
-        }
-        /** The stage of the HostnameBinding update allowing to specify thumbprint. */
-        interface WithThumbprint {
-            /**
-             * Specifies the thumbprint property: SSL certificate thumbprint.
-             *
-             * @param thumbprint SSL certificate thumbprint.
-             * @return the next definition stage.
-             */
-            Update withThumbprint(String thumbprint);
         }
     }
     /**

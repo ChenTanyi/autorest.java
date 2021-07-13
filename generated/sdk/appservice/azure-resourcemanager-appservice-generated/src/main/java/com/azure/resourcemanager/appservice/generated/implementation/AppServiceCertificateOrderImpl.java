@@ -358,13 +358,8 @@ public final class AppServiceCertificateOrderImpl
     }
 
     public AppServiceCertificateOrderImpl withDistinguishedName(String distinguishedName) {
-        if (isInCreateMode()) {
-            this.innerModel().withDistinguishedName(distinguishedName);
-            return this;
-        } else {
-            this.updateCertificateDistinguishedName.withDistinguishedName(distinguishedName);
-            return this;
-        }
+        this.innerModel().withDistinguishedName(distinguishedName);
+        return this;
     }
 
     public AppServiceCertificateOrderImpl withValidityInYears(Integer validityInYears) {
@@ -378,13 +373,8 @@ public final class AppServiceCertificateOrderImpl
     }
 
     public AppServiceCertificateOrderImpl withProductType(CertificateProductType productType) {
-        if (isInCreateMode()) {
-            this.innerModel().withProductType(productType);
-            return this;
-        } else {
-            this.updateCertificateDistinguishedName.withProductType(productType);
-            return this;
-        }
+        this.innerModel().withProductType(productType);
+        return this;
     }
 
     public AppServiceCertificateOrderImpl withAutoRenew(Boolean autoRenew) {
@@ -398,13 +388,8 @@ public final class AppServiceCertificateOrderImpl
     }
 
     public AppServiceCertificateOrderImpl withCsr(String csr) {
-        if (isInCreateMode()) {
-            this.innerModel().withCsr(csr);
-            return this;
-        } else {
-            this.updateCertificateDistinguishedName.withCsr(csr);
-            return this;
-        }
+        this.innerModel().withCsr(csr);
+        return this;
     }
 
     public AppServiceCertificateOrderImpl withKind(String kind) {
