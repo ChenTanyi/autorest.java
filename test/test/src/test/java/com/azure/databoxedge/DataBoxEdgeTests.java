@@ -30,8 +30,8 @@ public class DataBoxEdgeTests extends Base {
                 .withRegion(Region.US_EAST)
                 .withExistingResourceGroup(rgName)
                 .withDataBoxEdgeDeviceStatus(DataBoxEdgeDeviceStatus.OFFLINE)
-                .withDescription("Test only for Java SDK.")
-                .withFriendlyName("fluentDevice")
+                //.withDescription("Test only for Java SDK.")
+                //.withFriendlyName("fluentDevice")
                 .create();
 
         Assertions.assertNotNull(device);
